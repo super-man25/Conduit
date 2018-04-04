@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
     render() {
         const { user, users } = this.props;
         return (
-          <div className="td-md-6 td-md-offset-3">
+          <div  style={{width:'500px', padding:'50px'}}>
             <h1>Hi {user.firstName}!</h1>
             <p>Team Dashboard</p>
             <h3>All registered users:</h3>

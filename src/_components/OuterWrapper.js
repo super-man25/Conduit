@@ -11,5 +11,4 @@ export const OuterWrapper = styled.div`
   margin: 0;
   padding:0;
   background: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-
 `;
