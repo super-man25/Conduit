@@ -101,7 +101,7 @@ class RegisterPage extends React.Component {
     const { user, submitted, emailHadFocus, passwordHadFocus, firstNameHadFocus, lastNameHadFocus, validEmail, validPassword, registerEnabled } = this.state;
     return (
       <OuterWrapper> 
-        <H3 style={{paddingLeft:'50px'}}>Register</H3>
+        <H3 style={{paddingLeft:'50px'}}>Create User</H3>
         <HelpBlockDiv type={this.props.alert.type} show={this.props.alert} style={{paddingLeft:'50px'}}>{this.props.alert.message}</HelpBlockDiv>
 
         <form name="form" onSubmit={this.handleSubmit} style={{width:'500px', padding:'50px', paddingTop: '0px'}}>
