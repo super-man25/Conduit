@@ -22,6 +22,7 @@ class RegisterPage extends React.Component {
       lastNameHadFocus: false,
       passwordHadFocus: false,
       validEmail: false,
+      validPassword: false,
       registerEnabled: false
     };
 
@@ -32,7 +33,7 @@ class RegisterPage extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    const { user } = this.state;
+    const { user, validEmail, validPassword } = this.state;
     this.setState({
       user: {
         ...user,
@@ -40,8 +41,8 @@ class RegisterPage extends React.Component {
       }
     });
     this.setState({ submitted: false });
-    this.setState({ registerEnabled: this.state.validEmail && user.password && user.firstName && user.lastName });
-    if (name === 'password' && value.length === 0) { 
+    this.setState({ registerEnabled: validEmail && validPassword && user.firstName && user.lastName });
+    if (name === 'password' && !this.passCheck(value)) { 
       this.setState({ registerEnabled: false });
     } else if (name === 'email' && !this.emailCheck(value)) { 
       this.setState({ registerEnabled: false });
@@ -67,11 +68,12 @@ class RegisterPage extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
+    const { validEmail, validPassword } = this.state;
+    
     this.setState({ submitted: true });
     const { user } = this.state;
     const { dispatch } = this.props;
-    if (user.firstName && user.lastName && user.email && user.password) {
+    if (user.firstName && user.lastName && validEmail && validPassword) {
       dispatch(userActions.register(user));
     }
   }
@@ -83,9 +85,20 @@ class RegisterPage extends React.Component {
     return emailOK;
   }
 
+  passCheck(password) {
+    // const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
+    // Password must be at least 8 characters long, and include at least one of each of these characters: upper and lowercase letters, numbers, and special characters.
+    // Password must be at least 8 characters long, with at least one uppercase letter, lowercase letter, number, and special character.
+    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // Password must be at least 8 characters long, with at least one number and at least one letter.
+    const passOK = passRegex.test(password);
+    this.setState({ validPassword: passOK });
+    return passOK;
+  }
+
   render() {
     const { registering  } = this.props;
-    const { user, submitted, emailHadFocus, passwordHadFocus, firstNameHadFocus, lastNameHadFocus, validEmail, registerEnabled } = this.state;
+    const { user, submitted, emailHadFocus, passwordHadFocus, firstNameHadFocus, lastNameHadFocus, validEmail, validPassword, registerEnabled } = this.state;
     return (
       <OuterWrapper> 
         <H3 style={{paddingLeft:'50px'}}>Register</H3>
@@ -106,8 +119,8 @@ class RegisterPage extends React.Component {
             <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
           
             <Label htmlFor="password">Password</Label>
-            <Input type="password" name="password" id="password" value={user.password} inValid={!user.password} valid={user.password} onChange={this.handleChange} onBlur={this.handleBlur} />
-            <HelpBlockDiv type='alert-danger' show={!user.password && (submitted || passwordHadFocus)}>Password is required</HelpBlockDiv>
+            <Input type="password" name="password" id="password" value={user.password} inValid={!validPassword} valid={validPassword} onChange={this.handleChange} onBlur={this.handleBlur} />
+            <HelpBlockDiv type='alert-danger' show={!validPassword && (submitted || passwordHadFocus)}>Password must be at least 8 characters long, with at least one number and at least one letter.</HelpBlockDiv>
 
             <Button disabled={!registerEnabled}>Register</Button>
             {registering && 
@@ -122,8 +135,10 @@ class RegisterPage extends React.Component {
 
 function mapStateToProps(state) {
   const { registering } = state.registration;
+  const { alert } = state;
   return {
-    registering
+    registering,
+    alert
   };
 }
 

@@ -13,6 +13,3 @@ export const ContentWrapper = styled.div`
   background-position: right top;
   background-size: 70% auto;
 `;
-
-//background-image: url(${stadiumImage});
-// background-image: ${props => (props.login ? url(stadiumImage) : 'none')};

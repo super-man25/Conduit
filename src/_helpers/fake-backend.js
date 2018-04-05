@@ -12,11 +12,9 @@ export function configureFakeBackend() {
         if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
           // get parameters from post request
           let params = JSON.parse(opts.body);
-          console.log('~~~~~~~~~~ params ~~~~~~~~~~', params);
           
           // find if any user matches login credentials
           let filteredUsers = users.filter(user => {
-            console.log('~~~~~~~~~~ user ~~~~~~~~~~', user);
             return user.email === params.email && user.password === params.password;
           });
 
@@ -33,7 +31,7 @@ export function configureFakeBackend() {
             resolve({ ok: true, json: () => responseJson });
           } else {
             // else return error
-            reject('email or password is incorrect');
+            reject('Email or password is incorrect');
           }
 
           return;

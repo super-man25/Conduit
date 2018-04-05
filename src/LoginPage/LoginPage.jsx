@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1 } from '../_components';
+import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink } from '../_components';
 import LogoName from './LogoName';
 import LoginFormDiv from './LoginFormDiv';
+import LoginFooterDiv from './LoginFooterDiv';
 // import { cssConstants } from '../_constants';
 // import { media } from '../_helpers';
 
@@ -21,8 +22,8 @@ class LoginPage extends React.Component {
       password: '',
       submitted: false,
       emailHadFocus: false,
-      passwordHadFocus: false,
       validEmail: false,
+      passwordHadFocus: false,
       loginEnabled: false
     };
 
@@ -79,25 +80,24 @@ class LoginPage extends React.Component {
             <H3 login>Log In</H3>
             <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv>
             <br />
-            <form name="form" onSubmit={this.handleSubmit}>
-              
+            <form name="form" autoComplete="false" onSubmit={this.handleSubmit}>
               <Label htmlFor="email">Email Address</Label>
-              <Input type="text" name="email" id="email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+              <Input type="text" name="email" id="email" autoComplete="email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
               <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
             
               <Label htmlFor="password">Password</Label>
-              <Input type="password" name="password" id="password" value={password} inValid={!password} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
+              <Input type="password" name="password" id="password" autoComplete="current-password" value={password} inValid={!password && (submitted || passwordHadFocus)} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
               <HelpBlockDiv type='alert-danger' show={!password && (submitted || passwordHadFocus)}>Password is required</HelpBlockDiv>
             
-              <Button disabled={!loginEnabled}>Login</Button>
+              <Button disabled={!loginEnabled} id='login'>Login</Button>
               {loggingIn &&
                 <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner"/>
               }
               <br />
               <S1><Link to="/register">Forgot password?</Link></S1>
-            
             </form>
           </LoginFormDiv>
+          <LoginFooterDiv>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooterDiv>
         </ContentWrapper>
       </OuterWrapper>
     );
@@ -106,8 +106,10 @@ class LoginPage extends React.Component {
 
 function mapStateToProps(state) {
   const { loggingIn } = state.authentication;
+  const { alert } = state;
   return {
-    loggingIn
+    loggingIn,
+    alert
   };
 }
 
