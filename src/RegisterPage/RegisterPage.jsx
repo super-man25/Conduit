@@ -105,28 +105,27 @@ class RegisterPage extends React.Component {
         <HelpBlockDiv type={this.props.alert.type} show={this.props.alert} style={{paddingLeft:'50px'}}>{this.props.alert.message}</HelpBlockDiv>
 
         <form name="form" onSubmit={this.handleSubmit} style={{width:'500px', padding:'50px', paddingTop: '0px'}}>
+          <Label htmlFor="firstName">First Name</Label>
+          <Input type="text" name="firstName" id="firstName" value={user.firstName} valid={user.firstName} inValid={!user.firstName && (submitted || firstNameHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <HelpBlockDiv type='alert-danger' show={!user.firstName && (submitted || firstNameHadFocus)}>First Name is required</HelpBlockDiv>
 
-            <Label htmlFor="firstName">First Name</Label>
-            <Input type="text" name="firstName" id="firstName" value={user.firstName} valid={user.firstName} inValid={!user.firstName && (submitted || firstNameHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
-            <HelpBlockDiv type='alert-danger' show={!user.firstName && (submitted || firstNameHadFocus)}>First Name is required</HelpBlockDiv>
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input type="text" name="lastName" id="lastName" value={user.lastName} valid={user.lastName} inValid={!user.lastName && (submitted || lastNameHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <HelpBlockDiv type='alert-danger' show={!user.lastName && (submitted || lastNameHadFocus)}>Last Name is required</HelpBlockDiv>
 
-            <Label htmlFor="lastName">Last Name</Label>
-            <Input type="text" name="lastName" id="lastName" value={user.lastName} valid={user.lastName} inValid={!user.lastName && (submitted || lastNameHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
-            <HelpBlockDiv type='alert-danger' show={!user.lastName && (submitted || lastNameHadFocus)}>Last Name is required</HelpBlockDiv>
+          <Label htmlFor="email">Email</Label>
+          <Input type="text" name="email" id="email" value={user.email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
+        
+          <Label htmlFor="password">Password</Label>
+          <Input type="password" name="password" id="password" value={user.password} inValid={!validPassword} valid={validPassword} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <HelpBlockDiv type='alert-danger' show={!validPassword && (submitted || passwordHadFocus)}>Password must be at least 8 characters long, with at least one number and at least one letter.</HelpBlockDiv>
 
-            <Label htmlFor="email">Email</Label>
-            <Input type="text" name="email" id="email" value={user.email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
-            <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
-          
-            <Label htmlFor="password">Password</Label>
-            <Input type="password" name="password" id="password" value={user.password} inValid={!validPassword} valid={validPassword} onChange={this.handleChange} onBlur={this.handleBlur} />
-            <HelpBlockDiv type='alert-danger' show={!validPassword && (submitted || passwordHadFocus)}>Password must be at least 8 characters long, with at least one number and at least one letter.</HelpBlockDiv>
-
-            <Button disabled={!registerEnabled}>Register</Button>
-            {registering && 
-              <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner" />
-            }
-            <S1><Link to="/login">Cancel</Link></S1>
+          <Button disabled={!registerEnabled}>Register</Button>
+          {registering && 
+            <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner" />
+          }
+          <S1><Link to="/login">Cancel</Link></S1>
         </form>
       </OuterWrapper>
     );

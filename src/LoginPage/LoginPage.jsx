@@ -80,13 +80,13 @@ class LoginPage extends React.Component {
             <H3 login>Log In</H3>
             <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv>
             <br />
-            <form name="form" autoComplete="false" onSubmit={this.handleSubmit}>
+            <form name="form" onSubmit={this.handleSubmit}>
               <Label htmlFor="email">Email Address</Label>
-              <Input type="text" name="email" id="email" autoComplete="email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+              <Input type="text" name="email" id="email" autoComplete="new-email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
               <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
             
               <Label htmlFor="password">Password</Label>
-              <Input type="password" name="password" id="password" autoComplete="current-password" value={password} inValid={!password && (submitted || passwordHadFocus)} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
+              <Input type="password" name="password" id="password" autoComplete="new-password" value={password} inValid={!password && (submitted || passwordHadFocus)} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
               <HelpBlockDiv type='alert-danger' show={!password && (submitted || passwordHadFocus)}>Password is required</HelpBlockDiv>
             
               <Button disabled={!loginEnabled} id='login'>Login</Button>
