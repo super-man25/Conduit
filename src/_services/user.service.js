@@ -1,4 +1,32 @@
 import { authHeader } from '../_helpers';
+import cookie from 'react-cookies'
+
+const fakeAPI = {
+  loginURL: '/users/authenticate',
+  getAllURL: '/users',
+  getByIdURL: '/users/',
+  registerURL: '/users/register',
+  updateURL: '/users/',
+  deleteURL: '/users/'
+}
+
+const API = {
+  loginURL: 'http://localhost:9000/auth/signIn',
+  getAllURL: '/users',
+  getByIdURL: '/users/',
+  registerURL: 'http://localhost:9000/auth/createUser',
+  updateURL: '/users/',
+  deleteURL: 'http://localhost:9000/auth/delete'
+}
+
+const realAPI = true;
+
+const loginURL = realAPI ? API.loginURL : fakeAPI.loginURL;
+const getAllURL = realAPI ? API.getAllURL : fakeAPI.getAllURL;
+const getByIdURL = realAPI ? API.getByIdURL : fakeAPI.getByIdURL;
+const registerURL = realAPI ? API.registerURL : fakeAPI.registerURL;
+const updateURL = realAPI ? API.updateURL : fakeAPI.updateURL;
+const deleteURL = realAPI ? API.deleteURL : fakeAPI.deleteURL;
 
 export const userService = {
   login,
@@ -13,11 +41,11 @@ export const userService = {
 function login(email, password) {
   const requestOptions = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'X-Permitted-Cross-Domain-Policies': 'master-only' },
     body: JSON.stringify({ email, password })
   };
 
-  return fetch('/users/authenticate', requestOptions)
+  return fetch(loginURL, requestOptions)
     .then(response => {
       if (!response.ok) { 
         return Promise.reject(response.statusText);
@@ -26,10 +54,19 @@ function login(email, password) {
       return response.json();
     })
     .then(user => {
+      // // login successful if there's a jwt token in the response
+      // if (user && user.token) {
+      //   // store user details and jwt token in local storage to keep user logged in between page refreshes
+      //   localStorage.setItem('user', JSON.stringify(user));
+
       // login successful if there's a jwt token in the response
-      if (user && user.token) {
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('user', JSON.stringify(user));
+      if (user && user['x-axis-token']) {
+        // store user details and jwt token in a cookie to keep user logged in between page refreshes
+        
+        console.log(user);
+        console.log('~~~~~ x-access-token: ', user['x-axis-token']);
+        cookie.save('x-access-token', user['x-access-token']);
+
       }
 
       return user;
@@ -47,7 +84,7 @@ function getAll() {
     headers: authHeader()
   };
 
-  return fetch('/users', requestOptions).then(handleResponse);
+  return fetch(getAllURL, requestOptions).then(handleResponse);
 }
 
 function getById(id) {
@@ -56,17 +93,18 @@ function getById(id) {
     headers: authHeader()
   };
 
-  return fetch('/users/' + id, requestOptions).then(handleResponse);
+  return fetch(getByIdURL + id, requestOptions).then(handleResponse);
 }
 
 function register(user) {
   const requestOptions = {
+    credentials: 'same-origin',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
   };
 
-  return fetch('/users/register', requestOptions).then(handleResponse);
+  return fetch(registerURL, requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -76,7 +114,7 @@ function update(user) {
     body: JSON.stringify(user)
   };
 
-  return fetch('/users/' + user.id, requestOptions).then(handleResponse);
+  return fetch(updateURL + user.id, requestOptions).then(handleResponse);
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
@@ -86,7 +124,7 @@ function _delete(id) {
     headers: authHeader()
   };
 
-  return fetch('/users/' + id, requestOptions).then(handleResponse);
+  return fetch(deleteURL + id, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
