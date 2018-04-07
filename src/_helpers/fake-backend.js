@@ -9,7 +9,7 @@ export function configureFakeBackend() {
       setTimeout(() => {
 
         // authenticate
-        if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
+        if (url.endsWith('/fake/auth/signIn') && opts.method === 'POST') {
           // get parameters from post request
           let params = JSON.parse(opts.body);
           
@@ -38,7 +38,7 @@ export function configureFakeBackend() {
         }
 
         // get users
-        if (url.endsWith('/users') && opts.method === 'GET') {
+        if (url.endsWith('/fake/users') && opts.method === 'GET') {
           // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
           if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
             resolve({ ok: true, json: () => users });
@@ -51,7 +51,7 @@ export function configureFakeBackend() {
         }
 
         // get user by id
-        if (url.match(/\/users\/\d+$/) && opts.method === 'GET') {
+        if (url.match(/\/fake\/users\/\d+$/) && opts.method === 'GET') {
           // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
           if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
             // find user by id in users array
@@ -71,7 +71,7 @@ export function configureFakeBackend() {
         }
 
         // register user
-        if (url.endsWith('/users/register') && opts.method === 'POST') {
+        if (url.endsWith('/fake/users/create') && opts.method === 'POST') {
           // get new user object from post body
           let newUser = JSON.parse(opts.body);
 
@@ -94,7 +94,7 @@ export function configureFakeBackend() {
         }
 
         // delete user
-        if (url.match(/\/users\/\d+$/) && opts.method === 'DELETE') {
+        if (url.match(/\/fake\/users\/\d+$/) && opts.method === 'DELETE') {
           // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
           if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
             // find user by id in users array
