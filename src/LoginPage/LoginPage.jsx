@@ -7,8 +7,6 @@ import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S
 import LogoName from './LogoName';
 import LoginFormDiv from './LoginFormDiv';
 import LoginFooterDiv from './LoginFooterDiv';
-// import { cssConstants } from '../_constants';
-// import { media } from '../_helpers';
 
 class LoginPage extends React.Component {
   constructor(props) {

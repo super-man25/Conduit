@@ -40,32 +40,34 @@ class Dashboard extends React.Component {
             <p>
                 <Link to="/login">Logout</Link>
             </p>
-            <table cellspacing={'25px'}>
-              <tr>
-                <th width={'90px'}>Props</th>
-                <th width={'90px'}>Enabled</th>
-                <th width={'90px'}>Disabled</th>
-              </tr>
-              <tr>
-                <td>Primary</td>
-                <td><Button primary>DEFAULT</Button></td>
-                <td><Button primary disabled>DISABLED</Button></td>
-              </tr>
-              <tr>
-              <td>Primary Small</td>
-                <td><Button primary small>DEFAULT</Button></td>
-                <td><Button primary small disabled>DISABLED</Button></td>
-              </tr>
-              <tr>
-                <td>Secondary</td>
-                <td><Button secondary>DEFAULT</Button></td>
-                <td><Button secondary disabled>DISABLED</Button></td>
-              </tr>
-              <tr>
-              <td>Secondary Small</td>
-                <td><Button secondary small>DEFAULT</Button></td>
-                <td><Button secondary small disabled>DISABLED</Button></td>
-              </tr>
+            <table cellSpacing={'25px'}>
+              <tbody>
+                <tr>
+                  <th width={'90px'}>Props</th>
+                  <th width={'90px'}>Enabled</th>
+                  <th width={'90px'}>Disabled</th>
+                </tr>
+                <tr>
+                  <td>Primary</td>
+                  <td><Button primary>DEFAULT</Button></td>
+                  <td><Button primary disabled>DISABLED</Button></td>
+                </tr>
+                <tr>
+                <td>Primary Small</td>
+                  <td><Button primary small>DEFAULT</Button></td>
+                  <td><Button primary small disabled>DISABLED</Button></td>
+                </tr>
+                <tr>
+                  <td>Secondary</td>
+                  <td><Button secondary>DEFAULT</Button></td>
+                  <td><Button secondary disabled>DISABLED</Button></td>
+                </tr>
+                <tr>
+                <td>Secondary Small</td>
+                  <td><Button secondary small>DEFAULT</Button></td>
+                  <td><Button secondary small disabled>DISABLED</Button></td>
+                </tr>
+              </tbody>
             </table>
           </div> 
         );

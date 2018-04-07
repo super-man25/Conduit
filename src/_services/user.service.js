@@ -1,8 +1,8 @@
 import { authHeader } from '../_helpers';
-import cookie from 'react-cookies'
 
 const fakeAPI = {
   loginURL: '/users/authenticate',
+  logoutURL: '/users/logout',
   getAllURL: '/users',
   getByIdURL: '/users/',
   registerURL: '/users/register',
@@ -12,6 +12,7 @@ const fakeAPI = {
 
 const API = {
   loginURL: 'http://localhost:9000/auth/signIn',
+  logoutURL: 'http://localhost:9000/auth/logout',
   getAllURL: '/users',
   getByIdURL: '/users/',
   registerURL: 'http://localhost:9000/auth/createUser',
@@ -22,6 +23,7 @@ const API = {
 const realAPI = true;
 
 const loginURL = realAPI ? API.loginURL : fakeAPI.loginURL;
+const logoutURL = realAPI ? API.logoutURL : fakeAPI.logoutURL;
 const getAllURL = realAPI ? API.getAllURL : fakeAPI.getAllURL;
 const getByIdURL = realAPI ? API.getByIdURL : fakeAPI.getByIdURL;
 const registerURL = realAPI ? API.registerURL : fakeAPI.registerURL;
@@ -39,34 +41,40 @@ export const userService = {
 };
 
 function login(email, password) {
+
+  console.log('~~~~~~~~~~ login function in user service ~~~~~~~~~~');
   const requestOptions = {
+    credentials: 'include',        // this is required to have cookies sent back and forth in the headers
+    mode: 'cors',
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'X-Permitted-Cross-Domain-Policies': 'master-only' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
   };
 
+  console.log('~~~~~~~~~~ requestOptions: ', requestOptions);
+
   return fetch(loginURL, requestOptions)
     .then(response => {
+      console.log('~~~~~ response: ~~~~~', response);
       if (!response.ok) { 
+        console.log('~~~~~~~~~~ gonna reject it');
         return Promise.reject(response.statusText);
       }
 
       return response.json();
     })
     .then(user => {
-      // // login successful if there's a jwt token in the response
-      // if (user && user.token) {
-      //   // store user details and jwt token in local storage to keep user logged in between page refreshes
-      //   localStorage.setItem('user', JSON.stringify(user));
-
-      // login successful if there's a jwt token in the response
-      if (user && user['x-axis-token']) {
-        // store user details and jwt token in a cookie to keep user logged in between page refreshes
-        
-        console.log(user);
-        console.log('~~~~~ x-access-token: ', user['x-axis-token']);
-        cookie.save('x-access-token', user['x-access-token']);
-
+      console.log('~~~~~ user: ~~~~~', user);
+      // login successful if the response is a user object with an id
+      if (realAPI && user && user.id) {        
+        console.log('~~~~~ successfully logged in this user using the real API and cookie authentication: ~~~~~', user);
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('user', JSON.stringify(user));
+      } else if (!realAPI && user && user.token) {
+        // login successful if there's a jwt token in the response
+        console.log('~~~~~ successfully logged in this user using the fake backend and JWT authentication: ~~~~~', user);
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('user', JSON.stringify(user));
       }
 
       return user;
@@ -74,12 +82,27 @@ function login(email, password) {
 }
 
 function logout() {
-  // remove user from local storage to log user out
-  localStorage.removeItem('user');
+  console.log('~~~~~~~~~~ logout function in user service ~~~~~~~~~~');
+  const requestOptions = {
+    credentials: 'include',
+    mode: 'cors',
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  };
+  return fetch(logoutURL, requestOptions)
+  .then(response => {
+    if (!response.ok) { 
+      return Promise.reject(response.statusText);
+    }
+    console.log('~~~~~ successfully logged out this user! ~~~~~');
+    return response.json();
+  });
 }
 
 function getAll() {
   const requestOptions = {
+    credentials: 'include',
+    mode: 'cors',
     method: 'GET',
     headers: authHeader()
   };
@@ -89,6 +112,7 @@ function getAll() {
 
 function getById(id) {
   const requestOptions = {
+    credentials: 'include',
     method: 'GET',
     headers: authHeader()
   };
@@ -98,7 +122,7 @@ function getById(id) {
 
 function register(user) {
   const requestOptions = {
-    credentials: 'same-origin',
+    credentials: 'include',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
@@ -109,6 +133,7 @@ function register(user) {
 
 function update(user) {
   const requestOptions = {
+    credentials: 'include',
     method: 'PUT',
     headers: { ...authHeader(), 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
@@ -120,6 +145,7 @@ function update(user) {
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
   const requestOptions = {
+    credentials: 'include',
     method: 'DELETE',
     headers: authHeader()
   };

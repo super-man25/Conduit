@@ -11,12 +11,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { configureFakeBackend } from './_helpers';
 configureFakeBackend();
 
-// injectGlobal`
-//   @font-face {
-//     font-family: 'Roboto Regular';
-//     src: url('../fonts/Operator-Mono.ttf');
-//   }`;
-
 // prevent text input backgrounds from becoming yellow after autofill in Chrome
 injectGlobal`
   @-webkit-keyframes autofill {
