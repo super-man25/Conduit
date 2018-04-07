@@ -1,4 +1,3 @@
-
 export const FAKE_API = false;
 const NODE_ENV = !FAKE_API ? process.env.NODE_ENV : 'fake';
 
@@ -11,4 +10,20 @@ export const urlConstants = {
     PROD_API_URL: 'http://api.eventdynamic.com'
 };
 
-export const baseURL = NODE_ENV === 'development' ? urlConstants.LOCAL_API_URL : NODE_ENV === 'test' ? urlConstants.QA_API_URL : NODE_ENV === 'fake' ? urlConstants.FAKE_API_URL : urlConstants.PROD_API_URL;
+let base_url;
+
+switch (NODE_ENV) {
+  case 'development': 
+    base_url = urlConstants.LOCAL_API_URL;
+    break;
+  case 'test': 
+    base_url = urlConstants.QA_API_URL;
+    break; 
+  case 'fake':
+    base_url = urlConstants.FAKE_API_URL;
+    break;
+  default: 
+    base_url = urlConstants.PROD_API_URL;
+}
+
+export const baseURL = base_url;
