@@ -7,7 +7,7 @@ import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
 import { Dashboard } from '../Dashboard';
 import { LoginPage } from '../LoginPage';
-import { RegisterPage } from '../RegisterPage';
+import { CreateUserPage } from '../CreateUserPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,9 +30,9 @@ class App extends React.Component {
         }
         <Router history={history}>
           <div>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/users/create" component={CreateUserPage} />} />
           </div>
         </Router>
       </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import { Button } from '../_components';
+import { Button, H3 } from '../_components';
 
 class Dashboard extends React.Component {
     componentDidMount() {
@@ -38,8 +38,10 @@ class Dashboard extends React.Component {
                 </ul>
             }
             <p>
-                <Link to="/login">Logout</Link>
+                <Link to="/login">Logout</Link> &nbsp; <Link to="/users/create">Create New User</Link>
             </p>
+
+            <H3>Styled Button Examples</H3>
             <table cellSpacing={'25px'}>
               <tbody>
                 <tr>

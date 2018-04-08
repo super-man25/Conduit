@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Button, Input, HelpBlockDiv, OuterWrapper, H3, Label, S1 } from '../_components';
+import { Button, Input, Checkbox, HelpBlockDiv, OuterWrapper, H3, Label, S1 } from '../_components';
 
 import { userActions } from '../_actions';
 
-class RegisterPage extends React.Component {
+class CreateUserPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +14,8 @@ class RegisterPage extends React.Component {
         firstName: '',
         lastName: '',
         email: '',
-        password: ''
+        password: '',
+        isAdmin: false
       },
       submitted: false,
       emailHadFocus: false,
@@ -23,7 +24,7 @@ class RegisterPage extends React.Component {
       passwordHadFocus: false,
       validEmail: false,
       validPassword: false,
-      registerEnabled: false
+      createEnabled: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,8 +33,11 @@ class RegisterPage extends React.Component {
   }
 
   handleChange(event) {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
     const { user, validEmail, validPassword } = this.state;
+
+    if (name === 'isAdmin') { value = event.target.checked ? true : false; }
+
     this.setState({
       user: {
         ...user,
@@ -41,15 +45,17 @@ class RegisterPage extends React.Component {
       }
     });
     this.setState({ submitted: false });
-    this.setState({ registerEnabled: validEmail && validPassword && user.firstName && user.lastName });
+    this.setState({ createEnabled: validEmail && validPassword && user.firstName.length > 0 && user.lastName.length > 0 });
     if (name === 'password' && !this.passCheck(value)) { 
-      this.setState({ registerEnabled: false });
+      this.setState({ createEnabled: false });
     } else if (name === 'email' && !this.emailCheck(value)) { 
-      this.setState({ registerEnabled: false });
+      this.setState({ createEnabled: false });
     } else if (name === 'firstName' && value.length === 0) { 
-      this.setState({ registerEnabled: false });
+      this.setState({ createEnabled: false });
     } else if (name === 'lastName' && value.length === 0) { 
-      this.setState({ registerEnabled: false });
+      this.setState({ createEnabled: false });
+    } else {
+      this.setState({ createEnabled: true });
     }
   }
 
@@ -86,11 +92,11 @@ class RegisterPage extends React.Component {
   }
 
   passCheck(password) {
-    // const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
-    // Password must be at least 8 characters long, and include at least one of each of these characters: upper and lowercase letters, numbers, and special characters.
     // Password must be at least 8 characters long, with at least one uppercase letter, lowercase letter, number, and special character.
-    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
+    
     // Password must be at least 8 characters long, with at least one number and at least one letter.
+    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const passOK = passRegex.test(password);
     this.setState({ validPassword: passOK });
     return passOK;
@@ -98,7 +104,7 @@ class RegisterPage extends React.Component {
 
   render() {
     const { registering  } = this.props;
-    const { user, submitted, emailHadFocus, passwordHadFocus, firstNameHadFocus, lastNameHadFocus, validEmail, validPassword, registerEnabled } = this.state;
+    const { user, submitted, emailHadFocus, passwordHadFocus, firstNameHadFocus, lastNameHadFocus, validEmail, validPassword, createEnabled } = this.state;
     return (
       <OuterWrapper> 
         <H3 style={{paddingLeft:'50px'}}>Create User</H3>
@@ -114,18 +120,21 @@ class RegisterPage extends React.Component {
           <HelpBlockDiv type='alert-danger' show={!user.lastName && (submitted || lastNameHadFocus)}>Last Name is required</HelpBlockDiv>
 
           <Label htmlFor="email">Email</Label>
-          <Input type="text" name="email" id="email" value={user.email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <Input type="text" name="email" id="email"  autoComplete="new-email" value={user.email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
           <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
         
           <Label htmlFor="password">Password</Label>
-          <Input type="password" name="password" id="password" value={user.password} inValid={!validPassword} valid={validPassword} onChange={this.handleChange} onBlur={this.handleBlur} />
+          <Input type="password" name="password" id="password"  autoComplete="new-password" value={user.password} inValid={!validPassword && (submitted || passwordHadFocus)} valid={validPassword} onChange={this.handleChange} onBlur={this.handleBlur} />
           <HelpBlockDiv type='alert-danger' show={!validPassword && (submitted || passwordHadFocus)}>Password must be at least 8 characters long, with at least one number and at least one letter.</HelpBlockDiv>
 
-          <Button disabled={!registerEnabled}>Register</Button>
+          <Checkbox type="checkbox" name="isAdmin" value="isAdmin" label="Admin Privileges?" onChange={this.handleChange} onBlur={this.handleBlur} />
+          <br />
+
+          <Button disabled={!createEnabled}>Create</Button>
           {registering && 
             <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner" />
           }
-          <S1><Link to="/login">Cancel</Link></S1>
+          <S1><Link to="/dashboard">Cancel</Link></S1>
         </form>
       </OuterWrapper>
     );
@@ -141,5 +150,5 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedRegisterPage = connect(mapStateToProps)(RegisterPage);
-export { connectedRegisterPage as RegisterPage };
+const connectedCreateUserPage = connect(mapStateToProps)(CreateUserPage);
+export { connectedCreateUserPage as CreateUserPage };

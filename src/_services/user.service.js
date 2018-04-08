@@ -25,8 +25,6 @@ export const userService = {
 };
 
 function login(email, password) {
-
-  console.log('~~~~~~~~~~ login function in user service ~~~~~~~~~~');
   const requestOptions = {
     credentials: 'include',        // this is required to have cookies sent back and forth in the headers
     mode: 'cors',
@@ -35,20 +33,14 @@ function login(email, password) {
     body: JSON.stringify({ email, password })
   };
 
-  console.log('~~~~~~~~~~ login requestOptions: ', requestOptions);
-
   return fetch(API.loginURL, requestOptions)
     .then(response => {
-      console.log('~~~~~ login response: ~~~~~', response);
       if (!response.ok) { 
-        console.log('~~~~~~~~~~ login - gonna reject it');
         return Promise.reject(response.statusText);
       }
-
       return response.json();
     })
     .then(user => {
-      console.log('~~~~~ login user: ~~~~~', user);
       // login successful if the response is a user object with an id
       if (!FAKE_API && user && user.id) {        
         console.log('~~~~~ successfully logged in this user using the real API and cookie authentication: ~~~~~', user);
@@ -60,13 +52,14 @@ function login(email, password) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));
       }
-
       return user;
     });
 }
 
 function logout() {
   console.log('~~~~~~~~~~ logout function in user service ~~~~~~~~~~');
+  // remove user from local storage to close private routes on client
+  localStorage.removeItem('user');
   const requestOptions = {
     credentials: 'include',
     method: 'GET'
@@ -105,6 +98,7 @@ function getById(id) {
 function register(user) {
   const requestOptions = {
     credentials: 'include',
+    mode: 'cors',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
