@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import sprocketImg from '../_images/sprocket.png';
 
-const sprocketImage = 'url(' + sprocketImg + ')';
-
 export const SprocketMenu = styled.div`
   height: 100%;
   width: 38px;
@@ -11,7 +9,7 @@ export const SprocketMenu = styled.div`
   margin: 0;
   margin-right: 28px;
   background: none;
-  background-image: ${sprocketImage};
+  background-image: ${'url(' + sprocketImg + ')'};
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;

@@ -23,6 +23,7 @@ class SiteHeader extends React.Component {
 
   handleSprocketClick(e) {
     // code here tht will result in the menu dropping, when we know what it is...
+    history.push('/login')
   }
 
   render() {
@@ -30,7 +31,7 @@ class SiteHeader extends React.Component {
     return (
       <SiteHeaderDiv>
         <LogoName />
-        <SprocketMenu onClick={() => { history.push('/login') }} />
+        <SprocketMenu onClick={this.handleSprocketClick} />
         <UserAvatar user={user} />
         <UserWelcome user={user} />
       </SiteHeaderDiv>
