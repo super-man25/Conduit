@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+// import { cssConstants } from '../_constants';
 import { Label } from './StyledTags';
 
 // const MaterialIcon = (props) => (
@@ -134,7 +134,8 @@ const MdcCheckboxMixedmarkDiv = styled.div`
 
 export class Checkbox extends React.Component {
   render() {
-    const { disabled, rtl, alignEnd, label } = this.props;
+    const { label } = this.props;
+    // const { disabled, rtl, alignEnd, label } = this.props;
     return (
       <MdcFormFieldDiv>
         <MdcCheckboxDiv>

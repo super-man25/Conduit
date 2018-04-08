@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink } from '../_components';
-import LogoName from './LogoName';
+import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink, LogoName } from '../_components';
 import LoginFormDiv from './LoginFormDiv';
 import LoginFooterDiv from './LoginFooterDiv';
 
@@ -74,7 +73,7 @@ class LoginPage extends React.Component {
       <OuterWrapper login>
         <ContentWrapper login>
           <LoginFormDiv>
-            <LogoName>Event Dynamic</LogoName>
+            <LogoName login />
             <H3 login>Log In</H3>
             <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv>
             <br />

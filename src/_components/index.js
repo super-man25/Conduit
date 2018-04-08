@@ -7,3 +7,8 @@ export * from './StyledTags';
 export * from './HelpBlockDiv';
 export * from './OuterWrapper';
 export * from './ContentWrapper';
+export * from './SiteHeader';
+export * from './LogoName';
+export * from './UserWelcome';
+export * from './UserAvatar';
+export * from './SprocketMenu';
