@@ -17,7 +17,9 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
 display: block;
-color: ${props => (props.login ? cssConstants.PRIMARY_DARK_BLUE : props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK)};
+color: ${props => (props.login ? cssConstants.PRIMARY_DARK_BLUE 
+  : props.screenTitle ? cssConstants.PRIMARY_LIGHT_BLUE
+  : props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK)};
 font-size: ${props => (props.size ? props.size : cssConstants.TITLE_SIZE_H3)};
 font-weight: ${props => (props.login ? 'bold' : props.weight ? props.weight :cssConstants.TITLE_WEIGHT_H3)};
 `;

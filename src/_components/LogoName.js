@@ -12,7 +12,6 @@ export const LogoName = styled.div`
   line-height: 50px;
   margin: 0;
   padding: 0;
-  margin-bottom: 30px;
   float: ${props => (props.login ? 'none' : 'left')};
   margin-left: ${props => (props.login ? '0' : '20px')};
   padding-top: ${props => (props.login ? '0' : '10px')};
