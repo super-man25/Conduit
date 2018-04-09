@@ -27,4 +27,5 @@ render(
   </Provider>,
   document.getElementById('root')
 );
-registerServiceWorker();
+// registerServiceWorker();   // commented out because it will not work until we have an https connection  
+                              // in localhost, the requirement for a secure host is relaxed, for ease in development
