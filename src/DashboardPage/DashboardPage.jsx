@@ -2,14 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
 import { Button, H3, OuterWrapper, ContentWrapper, SiteHeader } from '../_components'
 
-class DashboardPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }    
+class DashboardPage extends React.Component {   
   
   componentDidMount() {
       // probably will need something here...

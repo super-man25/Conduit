@@ -5,7 +5,7 @@ import { injectGlobal } from 'styled-components';
 
 import { store } from './_helpers';
 import { App } from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';   // until we have an https connection on the web...
 
 // setup fake backend
 import { configureFakeBackend } from './_helpers';
