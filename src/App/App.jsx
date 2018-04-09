@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { history } from '../_helpers';
@@ -23,6 +23,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props;
+    const RedirectElsewhere = () => <Redirect to="/login" />;
 
     return (
       <div>
@@ -31,10 +32,11 @@ class App extends React.Component {
         }
         <Router history={history}>
           <div>
-            <Route path="/login" component={LoginPage} />
+            <Route exact path="/login" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={DashboardPage} />
             <PrivateRoute exact path="/dashboard/settings" component={SettingsPage} />
             <PrivateRoute exact path="/dashboard/users/create" component={CreateUserPage} />
+            <Route component={RedirectElsewhere} />
           </div>
         </Router>
       </div>
