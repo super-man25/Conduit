@@ -3,27 +3,13 @@ const NODE_ENV = !FAKE_API ? process.env.NODE_ENV : 'fake';
 
 console.log('~~~~~ NODE_ENV is ' + NODE_ENV + ' ~~~~~');
 
-export const urlConstants = {
-    LOCAL_API_URL: 'http://localhost:9000',
-    FAKE_API_URL: 'http://localhost:3000/fake',
-    QA_API_URL: 'http://qaapi.eventdynamic.com',
-    PROD_API_URL: 'http://api.eventdynamic.com'
-};
-
 let base_url;
-
-switch (NODE_ENV) {
-  case 'development': 
-    base_url = urlConstants.LOCAL_API_URL;
-    break;
-  case 'test': 
-    base_url = urlConstants.QA_API_URL;
-    break; 
-  case 'fake':
-    base_url = urlConstants.FAKE_API_URL;
-    break;
-  default: 
-    base_url = urlConstants.PROD_API_URL;
+if (process.env.REACT_APP_ED_API_URL) {
+  base_url = process.env.REACT_APP_ED_API_URL;
+} else {
+  base_url = 'http://localhost:9000';
 }
+
+console.log('~~~~~ API is ' + base_url + ' ~~~~~');
 
 export const baseURL = base_url;
