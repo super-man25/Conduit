@@ -34,6 +34,7 @@ class App extends React.Component {
           <div>
             <Route exact path="/" component={RedirectToLogin} />
             <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/logout" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={DashboardPage} />
             <PrivateRoute exact path="/dashboard/settings" component={SettingsPage} />
             <PrivateRoute exact path="/dashboard/users/create" component={CreateUserPage} />

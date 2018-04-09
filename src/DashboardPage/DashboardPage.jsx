@@ -2,12 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { userActions } from '../_actions';
 import { Button, H3, OuterWrapper, ContentWrapper, SiteHeader } from '../_components'
 
 class DashboardPage extends React.Component {   
-  
+  constructor(props) {
+    super(props);
+
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+  }
   componentDidMount() {
       // probably will need something here...
+  }
+
+  handleLogoutClick(e) {
+    e.preventDefault();
+    this.props.dispatch(userActions.logout());
   }
 
   render() {
@@ -37,7 +47,7 @@ class DashboardPage extends React.Component {
               </ul>
             }
             <p>
-              <Link to="/login">Logout</Link> &nbsp; <Link to="/dashboard/users/create">Create New User</Link>
+              <Link to="/logout" onClick={this.handleLogoutClick}>Logout</Link> &nbsp; <Link to="/dashboard/users/create">Create New User</Link>
             </p>
 
             <H3>Styled Button Examples</H3>

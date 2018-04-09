@@ -22,7 +22,7 @@ class SiteHeader extends React.Component {
   }
 
   handleSprocketClick(e) {
-    // code here tht will result in the menu dropping, when we know what it is...
+    // code here that will result in the menu dropping, when we know what it is...
     history.push('/dashboard/settings')
   }
 
