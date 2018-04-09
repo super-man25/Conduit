@@ -18,6 +18,10 @@
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
-    "eject": "NODE_PATH=src react-scripts eject"
+    "eject": "NODE_PATH=src react-scripts eject",
+    "test:ui": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^2.1.0"
   }
 }
