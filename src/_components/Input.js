@@ -14,8 +14,8 @@ export const Input = styled.input`
   background-image: ${props => (props.valid ? OK : props.inValid ? BAD : 'none')};
   background-repeat: no-repeat;
   background-position: right center;
-  &:-webkit-autofill {
-    -webkit-animation-name: autofill;
+  &:-webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
+    -webkit-animation-name: ${props => (props.valid ? 'autofillOK' : props.inValid ? 'autofillBAD' : 'none')};
     -webkit-animation-fill-mode: both;
   }
   font-size: 13.5px;
