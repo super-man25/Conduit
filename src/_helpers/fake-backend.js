@@ -9,7 +9,7 @@ export function configureFakeBackend() {
       setTimeout(() => {
 
         // authenticate
-        if (url.endsWith('/fake/auth/signIn') && opts.method === 'POST') {
+        if (url.endsWith('/fake/auth') && opts.method === 'POST') {
           // get parameters from post request
           let params = JSON.parse(opts.body);
           
@@ -71,7 +71,7 @@ export function configureFakeBackend() {
         }
 
         // register user
-        if (url.endsWith('/fake/users/create') && opts.method === 'POST') {
+        if (url.endsWith('/fake/users') && opts.method === 'POST') {
           // get new user object from post body
           let newUser = JSON.parse(opts.body);
 
