@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const LoginFormDiv = styled.div`
   width: 23%;
-  height: 100%;
+  position: absolute;
+  bottom: 70px;
   margin-left: 0;
   margin-top: 0;
   top: 0;
