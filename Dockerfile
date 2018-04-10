@@ -3,6 +3,9 @@
 
 FROM nginx:1.13.10-alpine
 
+# Copy the nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copy the output of yarn build
 COPY build /usr/share/nginx/html
 
