@@ -48,7 +48,7 @@ class SettingsPage extends React.Component {
             <br />
             <Link to="/logout" onClick={this.handleLogoutClick}>Logout</Link>
           </LeftNav>
-          <MainContent>
+          <MainContent leftNav>
             <Breadcrumbs>Dashboard / Settings / Users & Permissions</Breadcrumbs>
             <ScreenTitleBlock>
               <H3 screenTitle>Users & Permissions</H3>

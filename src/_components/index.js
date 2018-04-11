@@ -16,4 +16,6 @@ export * from './LeftNav';
 export * from './MainContent';
 export * from './Breadcrumbs';
 export * from './ScreenTitleBlock';
+export * from './Sidebar';
+export * from './SidebarHeader';
 

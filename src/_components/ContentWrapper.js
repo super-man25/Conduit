@@ -6,7 +6,7 @@ const stadium = 'url(' + stadiumImage + ')';
 
 export const ContentWrapper = styled.div`
   position: relative;
-  height: 100%;
+  height: ${props => (props.login ? '100%' : 'calc(100% - 70px)')};
   margin: 0;
   padding: 0;
   background: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
