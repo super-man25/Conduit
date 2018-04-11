@@ -24,7 +24,8 @@
     "build": "NODE_PATH=src react-scripts build",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src react-scripts eject",
-    "test:ui": "cypress open"
+    "test:ui": "cypress open",
+    "test:e2e": "cypress run --browser chrome"
   },
   "devDependencies": {
     "cypress": "^2.1.0"
