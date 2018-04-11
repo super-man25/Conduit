@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { cssConstants } from '../_constants';
 
 const LoginFormDiv = styled.div`
   width: 23%;
@@ -8,6 +7,7 @@ const LoginFormDiv = styled.div`
   margin-top: 0;
   top: 0;
   padding:0;
+  padding-top: 15%;
   padding-left: 10%;
   padding-right: 10%;
   background: white;
