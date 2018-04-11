@@ -23,7 +23,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props;
-    const RedirectToLogin = () => <Redirect to="/login" />;
+    const RedirectToDashboard = () => <Redirect to="/dashboard" />;
 
     return (
       <div>
@@ -32,7 +32,7 @@ class App extends React.Component {
         }
         <Router history={history}>
           <div>
-            <Route exact path="/" component={RedirectToLogin} />
+            <Route exact path="/" component={RedirectToDashboard} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/logout" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={DashboardPage} />
