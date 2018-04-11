@@ -7,23 +7,13 @@ describe('Login', function() {
 
     it('can log into the application', function() {
       // login page
-      cy.visit('http://localhost:3000/');
-      cy.get('.btn-link').click();
-
-      // forgot password page
-      cy.get('input[name="firstName"]').type(this.user.firstName);
-      cy.get('input[name="lastName"]').type(this.user.lastName);
-      cy.get('input[name="username"]').type(this.user.email);
-      cy.get('input[name="password"]').type(this.user.password);
-      cy.get('button').click();
-
-      // login page
+      cy.visit('http://qa.eventdynamic.com/login');
       cy.get('input[name="email"]').type(this.user.email);
       cy.get('input[name="password"]').type(this.user.password);
       cy.get('button').click();
 
       // season dashboard -- assertion of url
-      cy.url().should('not.include', 'login')
+      cy.url().should('include', 'dashboard')
     });
   });
   

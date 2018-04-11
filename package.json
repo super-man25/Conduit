@@ -20,7 +20,6 @@
     "vanilla-autofill-event": "^1.0.3"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",
@@ -29,12 +28,5 @@
   },
   "devDependencies": {
     "cypress": "^2.1.0"
-=======
-    "start": "env-cmd base,dev react-scripts start",
-    "build-qa": "env-cmd base,qa react-scripts build",
-    "build-prod": "env-cmd base,prod react-scripts build",
-    "test": "env-cmd base,test react-scripts test --env=jsdom",
-    "eject": "env-cmd base react-scripts eject"
->>>>>>> develop
   }
 }
