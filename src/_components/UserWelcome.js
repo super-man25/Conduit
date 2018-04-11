@@ -22,7 +22,7 @@ export const UserWelcome = styled.div`
   ::before {
     content: '${props => (
       props.user ? 'Welcome, ' + capString(props.user.firstName) + ' ' + capString(props.user.lastName) 
-      : 'Welcome, John Smith'
+      : ''
     )}';
   }
 `;
