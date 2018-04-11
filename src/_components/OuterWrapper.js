@@ -7,6 +7,9 @@ export const OuterWrapper = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  min-width: 1280px;
+  max-width: 1600px;
+  min-height: 800px;
   overflow: auto;
   margin: 0;
   padding:0;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { OuterWrapper, ContentWrapper, SiteHeader, Sidebar, SidebarHeader, MainContent, Breadcrumbs } from '../_components'
+import { OuterWrapper, ContentWrapper, SiteHeader, Sidebar, SidebarHeader, Button, MainContent, Breadcrumbs, H4, H5 } from '../_components'
 import EventList from './EventList';
 import TeamOverview from './TeamOverview';
 
@@ -9,31 +9,45 @@ class DashboardPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleSidebarCollapseClick = this.handleSidebarCollapseClick.bind(this);
+    this.state = {
+      sideBarCollapsed: false
+    };
+
+    this.handleSidebarToggleClick = this.handleSidebarToggleClick.bind(this);
   }
   componentDidMount() {
       // probably will need something here...
   }
 
-  handleSidebarCollapseClick(e) {
-    //
+  handleSidebarToggleClick(e) {
+    console.log('~~~~~ expand/collapse toggle clicked - before updating this.state.sidebarCollapsed is ', this.state.sidebarCollapsed);
+    this.setState((prevState) => {
+      return { sideBarCollapsed: !prevState.sideBarCollapsed }
+    });
   }
 
   render() {
     // const { user, event, events } = this.props;
+    // const { sidebarCollapsed } = this.state;
+    const sidebarCollapsed = true;
+    console.log('~~~~~ sidebarCollapsed is ', sidebarCollapsed);
     return (
       <OuterWrapper>
         <SiteHeader />
         <ContentWrapper>
-          <Sidebar>
+          <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
-              <TeamOverview />
+              <TeamOverview>
+                <Button small collapse onClick={this.handleSidebarToggleClick}></Button>
+              </TeamOverview>
             </SidebarHeader>
             <EventList />  
           </Sidebar>
-          <MainContent sidebar>
+          <MainContent sidebar={!sidebarCollapsed}>
             <Breadcrumbs>Dashboard / Game / Inventory</Breadcrumbs>
-            <div> More stuff here... </div>                           
+            <Button hidden={!sidebarCollapsed} expand onClick={this.handleSidebarToggleClick}></Button>
+            <H4 floatLeft>Some Title Here</H4>
+            <H5 clearLeft> More stuff here... </H5>                           
           </MainContent>
         </ContentWrapper>         
       </OuterWrapper>
