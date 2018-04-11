@@ -24,7 +24,6 @@ import { Label } from './StyledTags';
 // --- alignEnd                   - switch the position of the inline label and the checkbox
 
 const MdcFormFieldDiv = styled.div`
-  font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 0.875rem;

@@ -9,5 +9,4 @@ export const MainContent = styled.div`
   margin: 0;
   padding: 35px;
   background: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  font-family: Roboto;
 `;

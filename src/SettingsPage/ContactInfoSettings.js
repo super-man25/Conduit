@@ -9,7 +9,6 @@ export const ContactInfoSettings = styled.div`
   margin-bottom: 30px;
   padding: 0;
   background: ${cssConstants.PRIMARY_WHITE};
-  font-family: Roboto;
 `;
 
 export default ContactInfoSettings;

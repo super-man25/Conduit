@@ -8,8 +8,7 @@ export const NotificationSettings = styled.div`
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
-  background: ${cssConstants.PRIMARY_WHITE};
-  font-family: Roboto;
+  background: ${cssConstants.PRIMARY_WHITE};  
 `;
 
 export default NotificationSettings;

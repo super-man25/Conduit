@@ -11,5 +11,4 @@ export const LeftNav = styled.div`
   padding: 20px;
   background: ${cssConstants.PRIMARY_WHITE};
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  font-family: Roboto;
 `;

@@ -7,6 +7,5 @@ export const Breadcrumbs = styled.div`
   margin: 0;
   padding: 0;
   background: ${cssConstants.PRIMARY_WHITE};
-  font-family: Roboto;
   font-size: 12px;
 `;

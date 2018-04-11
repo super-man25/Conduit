@@ -1,10 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { cssConstants } from '../_constants';
 import okIcon from '../_images/valid.png';
 import badIcon from '../_images/invalid.png';
 
 const OK = 'url(' + okIcon + ')';
 const BAD = 'url(' + badIcon + ')';
+
+function autofillOK(valid) {
+  const status = keyframes`
+    to {
+      color: #666;
+      background: white;
+      background-image: ${valid ? 'url(' + okIcon + ')' : 'url(' + badIcon + ')' };
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+  `;
+  return status;
+}
 
 export const Input = styled.input`
   display: block;
@@ -15,7 +28,7 @@ export const Input = styled.input`
   background-repeat: no-repeat;
   background-position: right center;
   &:-webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
-    -webkit-animation-name: ${props => (props.valid ? 'autofillOK' : props.inValid ? 'autofillBAD' : 'none')};
+    -webkit-animation-name: ${props => (props.valid ? autofillOK(true) : props.inValid ? autofillOK(false) : 'none')};
     -webkit-animation-fill-mode: both;
   }
   font-size: 13.5px;

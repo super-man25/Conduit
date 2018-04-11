@@ -14,5 +14,4 @@ export const Sidebar = styled.div`
   padding: 0;
   background: ${cssConstants.PRIMARY_WHITE};
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  font-family: Roboto;
 `;
