@@ -10,27 +10,25 @@ class DashboardPage extends React.Component {
     super(props);
 
     this.state = {
-      sideBarCollapsed: false
+      sidebarCollapsed: false
     };
 
     this.handleSidebarToggleClick = this.handleSidebarToggleClick.bind(this);
   }
+
   componentDidMount() {
       // probably will need something here...
   }
 
   handleSidebarToggleClick(e) {
-    console.log('~~~~~ expand/collapse toggle clicked - before updating this.state.sidebarCollapsed is ', this.state.sidebarCollapsed);
     this.setState((prevState) => {
-      return { sideBarCollapsed: !prevState.sideBarCollapsed }
+      return { sidebarCollapsed: !prevState.sidebarCollapsed }
     });
   }
 
   render() {
     // const { user, event, events } = this.props;
-    // const { sidebarCollapsed } = this.state;
-    const sidebarCollapsed = true;
-    console.log('~~~~~ sidebarCollapsed is ', sidebarCollapsed);
+    const { sidebarCollapsed } = this.state;
     return (
       <OuterWrapper>
         <SiteHeader />
