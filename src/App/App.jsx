@@ -33,7 +33,7 @@ class App extends React.Component {
         <Router history={history}>
           <div>
             <Route exact path="/" component={RedirectToDashboard} />
-            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/login" component={localStorage.getItem('user') ? RedirectToDashboard : LoginPage} />
             <Route exact path="/logout" component={LoginPage} />
             <PrivateRoute exact path="/dashboard" component={DashboardPage} />
             <PrivateRoute exact path="/dashboard/settings" component={SettingsPage} />
