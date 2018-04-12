@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "deep-freeze": "0.0.1",
-    "expect": "^22.4.3",
     "express": "^4.16.3",
+    "env-cmd": "^7.0.0",
     "history": "^4.6.3",
-    "jest": "^22.0.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -25,5 +23,15 @@
     "build-prod": "env-cmd base,prod react-scripts build",
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject"
+  },
+  "devDependencies": {
+    "deep-freeze": "0.0.1",
+    "enzyme-redux": "^0.2.1",
+    "expect": "^22.4.3",
+    "jest": "^22.0.4",
+    "jest-cli": "^22.4.3",
+    "jest-localstorage-mock": "^2.2.0",
+    "react-test-renderer": "^16.3.1",
+    "redux-mock-store": "^1.5.1"
   }
 }

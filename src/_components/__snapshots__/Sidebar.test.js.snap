@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with collapsed prop 1`] = `
+<div
+  className="sc-hSdWYo leNBna"
+/>
+`;
+
+exports[`renders correctly with no props 1`] = `
+<div
+  className="sc-hSdWYo dgOuOe"
+/>
+`;

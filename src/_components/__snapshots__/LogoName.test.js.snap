@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with login prop 1`] = `
+<div
+  className="sc-dxgOiQ kWxRZm"
+/>
+`;
+
+exports[`renders correctly with no props 1`] = `
+<div
+  className="sc-dxgOiQ fniRqU"
+/>
+`;

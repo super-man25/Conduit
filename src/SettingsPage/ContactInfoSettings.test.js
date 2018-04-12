@@ -1,5 +1,6 @@
 import React from 'react';
-import ContactInfoSettings from './';
+import ContactInfoSettings from './ContactInfoSettings';
+import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer

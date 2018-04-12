@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamOverview from './';
+import TeamOverview from './TeamOverview';
 import renderer from 'react-test-renderer';
 
 // this will evolve to test winLoss and gamesRemaining props, when component is fleshed out...

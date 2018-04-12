@@ -5,7 +5,7 @@ import { cssConstants } from '../_constants';
 import { history } from '../_helpers';
 import { LogoName, UserWelcome, UserAvatar, SprocketMenu } from './';
 
-const SiteHeaderDiv = styled.div`
+export const SiteHeaderDiv = styled.div`
   position: relative;
   width: 100%;
   height: 70px;
@@ -39,12 +39,14 @@ class SiteHeader extends React.Component {
   }
 }
 
+export { SiteHeader as SiteHeaderTest };
+
 function mapStateToProps(state) {
-    const { authentication } = state;
-    const { user } = authentication;
-    return {
-        user
-    };
+  const { authentication } = state;
+  const { user } = authentication;
+  return {
+    user
+  };
 }
 
 const connectedSiteHeader = connect(mapStateToProps)(SiteHeader);

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
 import { OuterWrapper, SiteHeader, ContentWrapper, LeftNav, MainContent, Breadcrumbs, ScreenTitleBlock, H3 } from '../_components';
-
 import ContactInfoSettings from './ContactInfoSettings';
 import NotificationSettings from './NotificationSettings';
 import TeamSettings from './TeamSettings';
@@ -68,6 +67,8 @@ class SettingsPage extends React.Component {
     );
   }
 }
+
+export { SettingsPage as SettingsPageTest };
 
 function mapStateToProps(state) {
   const { users, authentication } = state;

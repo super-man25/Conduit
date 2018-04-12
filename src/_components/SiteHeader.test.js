@@ -1,0 +1,21 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+import localStorageTest from '../setupTests';
+import { LogoName, SprocketMenu, UserAvatar, UserWelcome, SiteHeader, SiteHeaderDiv, SiteHeaderTest } from './';
+
+const testUser = { id: 1, firstName: 'John', lastName: 'Smith' };
+
+it('SiteHeaderDiv renders correctly with no props', () => {
+  const tree = renderer
+    .create(<SiteHeaderDiv></SiteHeaderDiv>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders correctly with a user=testUser prop', () => {
+  const tree = renderer
+    .create(<SiteHeaderTest user={testUser}></SiteHeaderTest>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+

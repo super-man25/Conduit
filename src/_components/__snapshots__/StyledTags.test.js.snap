@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H1 renders correctly with color prop 1`] = `
+<h1
+  className="sc-bwzfXH bKIQVW"
+  color="red"
+/>
+`;
+
+exports[`H1 renders correctly with floatLeft prop 1`] = `
+<h1
+  className="sc-bwzfXH karSZx"
+/>
+`;
+
+exports[`H1 renders correctly with floatRight prop 1`] = `
+<h1
+  className="sc-bwzfXH kuiEMf"
+/>
+`;
+
+exports[`H1 renders correctly with no props 1`] = `
+<h1
+  className="sc-bwzfXH buRMpD"
+/>
+`;
+
+exports[`H1 renders correctly with size prop 1`] = `
+<h1
+  className="sc-bwzfXH cUamcU"
+  size="31px"
+/>
+`;
+
+exports[`H1 renders correctly with weight prop 1`] = `
+<h1
+  className="sc-bwzfXH dXNtPw"
+/>
+`;
+
+exports[`H2 renders correctly with color prop 1`] = `
+<h2
+  className="sc-htpNat CciVl"
+  color="red"
+/>
+`;
+
+exports[`H2 renders correctly with floatLeft prop 1`] = `
+<h2
+  className="sc-htpNat dMHdLx"
+/>
+`;
+
+exports[`H2 renders correctly with floatRight prop 1`] = `
+<h2
+  className="sc-htpNat cFMCKp"
+/>
+`;
+
+exports[`H2 renders correctly with no props 1`] = `
+<h2
+  className="sc-htpNat eCWswd"
+/>
+`;
+
+exports[`H2 renders correctly with size prop 1`] = `
+<h2
+  className="sc-htpNat gDRmkc"
+  size="31px"
+/>
+`;
+
+exports[`H2 renders correctly with weight prop 1`] = `
+<h2
+  className="sc-htpNat fppjev"
+/>
+`;
+
+exports[`H3 renders correctly with color prop 1`] = `
+<h3
+  className="sc-bxivhb eyMsOe"
+  color="red"
+/>
+`;
+
+exports[`H3 renders correctly with floatLeft prop 1`] = `
+<h3
+  className="sc-bxivhb iauLoG"
+/>
+`;
+
+exports[`H3 renders correctly with floatRight prop 1`] = `
+<h3
+  className="sc-bxivhb iyIDtN"
+/>
+`;
+
+exports[`H3 renders correctly with no props 1`] = `
+<h3
+  className="sc-bxivhb bODpLn"
+/>
+`;
+
+exports[`H3 renders correctly with size prop 1`] = `
+<h3
+  className="sc-bxivhb jhUrcq"
+  size="31px"
+/>
+`;
+
+exports[`H3 renders correctly with weight prop 1`] = `
+<h3
+  className="sc-bxivhb hqIFao"
+/>
+`;
+
+exports[`H4 renders correctly with color prop 1`] = `
+<h4
+  className="sc-ifAKCX saCdl"
+  color="red"
+/>
+`;
+
+exports[`H4 renders correctly with floatLeft prop 1`] = `
+<h4
+  className="sc-ifAKCX erCeFX"
+/>
+`;
+
+exports[`H4 renders correctly with floatRight prop 1`] = `
+<h4
+  className="sc-ifAKCX ejvFcg"
+/>
+`;
+
+exports[`H4 renders correctly with no props 1`] = `
+<h4
+  className="sc-ifAKCX bprrlF"
+/>
+`;
+
+exports[`H4 renders correctly with size prop 1`] = `
+<h4
+  className="sc-ifAKCX karqEg"
+  size="31px"
+/>
+`;
+
+exports[`H4 renders correctly with weight prop 1`] = `
+<h4
+  className="sc-ifAKCX gYUcoq"
+/>
+`;
+
+exports[`H5 renders correctly with clearLeft prop 1`] = `
+<h5
+  className="sc-EHOje kUhcvF"
+/>
+`;
+
+exports[`H5 renders correctly with clearRight prop 1`] = `
+<h5
+  className="sc-EHOje hcLAsc"
+/>
+`;
+
+exports[`H5 renders correctly with color prop 1`] = `
+<h5
+  className="sc-EHOje hNBnvd"
+  color="red"
+/>
+`;
+
+exports[`H5 renders correctly with floatLeft prop 1`] = `
+<h5
+  className="sc-EHOje cszomj"
+/>
+`;
+
+exports[`H5 renders correctly with floatRight prop 1`] = `
+<h5
+  className="sc-EHOje unGOr"
+/>
+`;
+
+exports[`H5 renders correctly with no props 1`] = `
+<h5
+  className="sc-EHOje kpiWmy"
+/>
+`;
+
+exports[`H5 renders correctly with size prop 1`] = `
+<h5
+  className="sc-EHOje cKWzkI"
+  size="31px"
+/>
+`;
+
+exports[`H5 renders correctly with weight prop 1`] = `
+<h5
+  className="sc-EHOje kpiWmy"
+/>
+`;
+
+exports[`Label renders correctly with no props 1`] = `
+<label
+  className="sc-dnqmqq hFQHVS"
+/>
+`;
+
+exports[`P1 renders correctly with no props 1`] = `
+<p
+  className="sc-bZQynM dESxzr"
+/>
+`;
+
+exports[`P2 renders correctly with no props 1`] = `
+<p
+  className="sc-gzVnrw kFsvTA"
+/>
+`;
+
+exports[`S1 renders correctly with no props 1`] = `
+<span
+  className="sc-htoDjs cfMUhB"
+/>
+`;

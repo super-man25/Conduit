@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with no props 1`] = `
+<div
+  className="sc-chPdSV inppsi"
+/>
+`;
+
+exports[`renders correctly with show and type="alert-danger" props 1`] = `
+<div
+  className="sc-chPdSV bYYfGQ"
+  type="alert-danger"
+>
+  error message
+</div>
+`;
+
+exports[`renders correctly with show and type="alert-success" props 1`] = `
+<div
+  className="sc-chPdSV iFnZkg"
+  type="alert-success"
+>
+  error message
+</div>
+`;
+
+exports[`renders correctly with show and type="hint" props 1`] = `
+<div
+  className="sc-chPdSV gcxQuB"
+  type="hint"
+>
+  error message
+</div>
+`;
+
+exports[`renders correctly with show prop 1`] = `
+<div
+  className="sc-chPdSV kHWVKn"
+>
+  message
+</div>
+`;
