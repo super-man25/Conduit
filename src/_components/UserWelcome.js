@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 
 function capString(word) {
-
   return word && word.length >0 ? word.charAt(0).toUpperCase() + word.slice(1) : '';
 }
 

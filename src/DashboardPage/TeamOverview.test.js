@@ -1,0 +1,12 @@
+import React from 'react';
+import TeamOverview from './';
+import renderer from 'react-test-renderer';
+
+// this will evolve to test winLoss and gamesRemaining props, when component is fleshed out...
+
+it('renders correctly with no props', () => {
+  const tree = renderer
+    .create(<TeamOverview></TeamOverview>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
