@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<LeftNav></LeftNav>)
+    .create(<LeftNav />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<HelpBlockDiv></HelpBlockDiv>)
+    .create(<HelpBlockDiv />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

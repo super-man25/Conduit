@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<OuterWrapper></OuterWrapper>)
+    .create(<OuterWrapper />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -4,21 +4,21 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<MainContent></MainContent>)
+    .create(<MainContent />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with sidebar prop', () => {
   const tree = renderer
-    .create(<MainContent sidebar></MainContent>)
+    .create(<MainContent sidebar />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with leftNav prop', () => {
   const tree = renderer
-    .create(<MainContent leftNav></MainContent>)
+    .create(<MainContent leftNav />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

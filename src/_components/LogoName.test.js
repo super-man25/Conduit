@@ -4,14 +4,14 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<LogoName></LogoName>)
+    .create(<LogoName />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with login prop', () => {
   const tree = renderer
-    .create(<LogoName login></LogoName>)
+    .create(<LogoName login />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

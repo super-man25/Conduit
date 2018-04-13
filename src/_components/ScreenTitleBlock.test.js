@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<ScreenTitleBlock></ScreenTitleBlock>)
+    .create(<ScreenTitleBlock />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
