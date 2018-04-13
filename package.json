@@ -7,7 +7,6 @@
     "expect": "^22.4.3",
     "express": "^4.16.3",
     "history": "^4.6.3",
-    "jest": "^22.0.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -20,14 +19,22 @@
     "vanilla-autofill-event": "^1.0.3"
   },
   "scripts": {
-    "start": "NODE_PATH=src react-scripts start",
-    "build": "NODE_PATH=src react-scripts build",
-    "test": "NODE_PATH=src react-scripts test --env=jsdom",
-    "eject": "NODE_PATH=src react-scripts eject",
+    "start": "env-cmd base,dev react-scripts start",
+    "build-qa": "env-cmd base,qa react-scripts build",
+    "build-prod": "env-cmd base,prod react-scripts build",
+    "test": "env-cmd base,test react-scripts test --env=jsdom",
+    "eject": "env-cmd base react-scripts eject",
+    "lint": "eslint src",
     "test:ui": "cypress open",
     "test:e2e": "cypress run --reporter junit --reporter-options 'mochaFile=junit/results.xml'" 
   },
   "devDependencies": {
+    "@dialexa/eslint-config-dialexa": "^4.1.1",
+    "env-cmd": "^7.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
     "cypress": "^2.1.0"
   }
 }

@@ -1,18 +1,18 @@
 import { authHeader } from '../_helpers';
 import { baseURL, FAKE_API } from '../_constants';
 
-console.log('~~~~~ baseURL is ' + baseURL + ' ~~~~~');
-console.log('~~~~~ FAKE_API is ' + FAKE_API + ' ~~~~~');
+console.log(`~~~~~ baseURL is ${ baseURL } ~~~~~`);
+console.log(`~~~~~ FAKE_API is ${ FAKE_API } ~~~~~`);
 
 const API = {
-  loginURL: baseURL + '/auth',                          // - method POST
-  logoutURL: baseURL + '/auth',                         // - method DELETE
-  getAllURL: baseURL + '/users',                        // - method GET (for isAdmin users only)
-  getByIdURL: baseURL + '/users/',                      // users/{id} - method GET
-  registerURL: baseURL + '/users',                      // - method POST (for isAdmin users only)
-  updateURL: baseURL + '/users/',                       // users/{id} - method PUT (for isAdmin users only)
-  deleteURL: baseURL + '/users'                         // users/{id} - method DELETE (for isAdmin users only)
-}
+  loginURL: `${baseURL }/auth`, // - method POST
+  logoutURL: `${baseURL }/auth`, // - method DELETE
+  getAllURL: `${baseURL }/users`, // - method GET (for isAdmin users only)
+  getByIdURL: `${baseURL }/users/`, // users/{id} - method GET
+  registerURL: `${baseURL }/users`, // - method POST (for isAdmin users only)
+  updateURL: `${baseURL }/users/`, // users/{id} - method PUT (for isAdmin users only)
+  deleteURL: `${baseURL }/users` // users/{id} - method DELETE (for isAdmin users only)
+};
 
 export const userService = {
   login,
@@ -26,7 +26,7 @@ export const userService = {
 
 function login(email, password) {
   const requestOptions = {
-    credentials: 'include',        // this is required to have cookies sent back and forth in the headers
+    credentials: 'include', // this is required to have cookies sent back and forth in the headers
     mode: 'cors',
     method: 'POST',
     // headers: { 'Content-Type': 'application/json' },
@@ -34,16 +34,16 @@ function login(email, password) {
   };
 
   return fetch(API.loginURL, requestOptions)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
-        console.log('~~~~~ response: ~~~~~', response); 
+        console.log('~~~~~ response: ~~~~~', response);
         return Promise.reject(response.statusText);
       }
       return response.json();
     })
-    .then(user => {
+    .then((user) => {
       // login successful if the response is a user object with an id
-      if (!FAKE_API && user && user.id) {        
+      if (!FAKE_API && user && user.id) {
         console.log('~~~~~ successfully logged in this user using the real API and cookie authentication: ~~~~~', user);
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));
@@ -66,13 +66,13 @@ function logout() {
     method: 'DELETE'
   };
   return fetch(API.logoutURL, requestOptions)
-  .then(response => {
-    if (!response.ok) { 
-      return Promise.reject(response.statusText);
-    }
-    console.log('~~~~~ successfully logged out this user! ~~~~~');
-    return response.statusText;
-  });
+    .then((response) => {
+      if (!response.ok) {
+        return Promise.reject(response.statusText);
+      }
+      console.log('~~~~~ successfully logged out this user! ~~~~~');
+      return response.statusText;
+    });
 }
 
 function getAll() {
@@ -131,7 +131,7 @@ function _delete(id) {
 }
 
 function handleResponse(response) {
-  if (!response.ok) { 
+  if (!response.ok) {
     return Promise.reject(response.statusText);
   }
 

@@ -13,4 +13,4 @@ const TeamOverview = styled.div`
   }
 `;
 
-export default TeamOverview
+export default TeamOverview;

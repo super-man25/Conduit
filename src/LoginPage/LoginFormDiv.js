@@ -15,4 +15,4 @@ const LoginFormDiv = styled.div`
   font-family: 'Roboto';
 `;
 
-export default LoginFormDiv
+export default LoginFormDiv;
