@@ -15,6 +15,6 @@ export function alert(state = {}, action) {
     case alertConstants.CLEAR:
       return {};
     default:
-      return state
+      return state;
   }
 }

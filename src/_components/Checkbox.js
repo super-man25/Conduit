@@ -129,7 +129,7 @@ const MdcCheckboxMixedmarkDiv = styled.div`
   background-color: white;
 `;
 
-// 
+//
 
 export class Checkbox extends React.Component {
   render() {
@@ -138,20 +138,18 @@ export class Checkbox extends React.Component {
     return (
       <MdcFormFieldDiv>
         <MdcCheckboxDiv>
-          <MdcCheckboxInput>
-          </MdcCheckboxInput>
+          <MdcCheckboxInput />
           <MdcCheckboxBgDiv>
             <MdcCheckboxCheckmarkSvg viewbox="0 0 24 24">
-              <MdcCheckboxCheckmarkPath fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></MdcCheckboxCheckmarkPath>
+              <MdcCheckboxCheckmarkPath fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
             </MdcCheckboxCheckmarkSvg>
-            <MdcCheckboxMixedmarkDiv></MdcCheckboxMixedmarkDiv>
-          </MdcCheckboxBgDiv>          
+            <MdcCheckboxMixedmarkDiv />
+          </MdcCheckboxBgDiv>
         </MdcCheckboxDiv>
         <Label>{label}</Label>
       </MdcFormFieldDiv>
-    )
+    );
   }
 
 }
-
 

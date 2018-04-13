@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 
 export const Sidebar = styled.div`
-  display: ${props => (props.collapsed ? 'none' : 'block')};
+  display: ${(props) => (props.collapsed ? 'none' : 'block')};
   position: relative;
   top: 0px;
   bottom: 0px;

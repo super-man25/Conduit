@@ -18,4 +18,4 @@ const LoginFooterDiv = styled.div`
   background: ${cssConstants.PRIMARY_EVEN_LIGHTER_GRAY};
 `;
 
-export default LoginFooterDiv
+export default LoginFooterDiv;
