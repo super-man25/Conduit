@@ -25,7 +25,7 @@
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject",
     "lint": "eslint src",
-    "test:ui": "cypress open",
+    "test:cypress": "cypress open",
     "test:e2e": "cypress run --reporter junit --reporter-options 'mochaFile=junit/results.xml'" 
   },
   "devDependencies": {
