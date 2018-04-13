@@ -1,0 +1,3 @@
+{
+	"extends": "@dialexa/eslint-config-dialexa/react"
+}

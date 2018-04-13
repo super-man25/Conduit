@@ -9,7 +9,7 @@ export const SprocketMenu = styled.div`
   margin: 0;
   margin-right: 28px;
   background: none;
-  background-image: ${'url(' + sprocketImg + ')'};
+  background-image: ${`url(${ sprocketImg })`};
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
