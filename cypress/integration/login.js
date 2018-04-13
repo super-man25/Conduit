@@ -7,7 +7,7 @@ describe('Login', function() {
 
     it('can log into the application', function() {
       // login page
-      cy.visit('http://qa.eventdynamic.com/login');
+      cy.visit('/login');
       cy.get('input[name="email"]').type(this.user.email);
       cy.get('input[name="password"]').type(this.user.password);
       cy.get('button').click();
