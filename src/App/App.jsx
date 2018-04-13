@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
@@ -15,7 +16,7 @@ class App extends React.Component {
     super(props);
 
     const { dispatch } = this.props;
-    history.listen((location, action) => {
+    history.listen(() => {
       // clear alert on location change
       dispatch(alertActions.clear());
     });
@@ -45,12 +46,17 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  alert: PropTypes.objectOf(PropTypes.any),
+  dispatch: PropTypes.func
+};
+
 function mapStateToProps(state) {
-    const { alert } = state;
-    return {
-        alert
-    };
+  const { alert } = state;
+  return {
+    alert
+  };
 }
 
 const connectedApp = connect(mapStateToProps)(App);
-export { connectedApp as App }; 
+export { connectedApp as App };

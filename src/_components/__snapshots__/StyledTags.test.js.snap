@@ -78,39 +78,39 @@ exports[`H2 renders correctly with weight prop 1`] = `
 
 exports[`H3 renders correctly with color prop 1`] = `
 <h3
-  className="sc-bxivhb eyMsOe"
+  className="sc-bxivhb gCVibU"
   color="red"
 />
 `;
 
 exports[`H3 renders correctly with floatLeft prop 1`] = `
 <h3
-  className="sc-bxivhb iauLoG"
+  className="sc-bxivhb hvZmhf"
 />
 `;
 
 exports[`H3 renders correctly with floatRight prop 1`] = `
 <h3
-  className="sc-bxivhb iyIDtN"
+  className="sc-bxivhb lgUQyo"
 />
 `;
 
 exports[`H3 renders correctly with no props 1`] = `
 <h3
-  className="sc-bxivhb bODpLn"
+  className="sc-bxivhb jNAfjK"
 />
 `;
 
 exports[`H3 renders correctly with size prop 1`] = `
 <h3
-  className="sc-bxivhb jhUrcq"
+  className="sc-bxivhb nDKmy"
   size="31px"
 />
 `;
 
 exports[`H3 renders correctly with weight prop 1`] = `
 <h3
-  className="sc-bxivhb hqIFao"
+  className="sc-bxivhb dRGpxY"
 />
 `;
 
@@ -154,51 +154,51 @@ exports[`H4 renders correctly with weight prop 1`] = `
 
 exports[`H5 renders correctly with clearLeft prop 1`] = `
 <h5
-  className="sc-EHOje kUhcvF"
+  className="sc-EHOje cmeeNn"
 />
 `;
 
 exports[`H5 renders correctly with clearRight prop 1`] = `
 <h5
-  className="sc-EHOje hcLAsc"
+  className="sc-EHOje gXBTpn"
 />
 `;
 
 exports[`H5 renders correctly with color prop 1`] = `
 <h5
-  className="sc-EHOje hNBnvd"
+  className="sc-EHOje bbBYfV"
   color="red"
 />
 `;
 
 exports[`H5 renders correctly with floatLeft prop 1`] = `
 <h5
-  className="sc-EHOje cszomj"
+  className="sc-EHOje gltaOo"
 />
 `;
 
 exports[`H5 renders correctly with floatRight prop 1`] = `
 <h5
-  className="sc-EHOje unGOr"
+  className="sc-EHOje bRTip"
 />
 `;
 
 exports[`H5 renders correctly with no props 1`] = `
 <h5
-  className="sc-EHOje kpiWmy"
+  className="sc-EHOje ctVFbK"
 />
 `;
 
 exports[`H5 renders correctly with size prop 1`] = `
 <h5
-  className="sc-EHOje cKWzkI"
+  className="sc-EHOje hMbYZg"
   size="31px"
 />
 `;
 
 exports[`H5 renders correctly with weight prop 1`] = `
 <h5
-  className="sc-EHOje kpiWmy"
+  className="sc-EHOje ctVFbK"
 />
 `;
 
