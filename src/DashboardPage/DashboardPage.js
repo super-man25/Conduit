@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { OuterWrapper, ContentWrapper, SiteHeader, Sidebar, SidebarHeader, Button, MainContent, Breadcrumbs, H4, H5 } from '../_components'
+import { OuterWrapper, ContentWrapper, SiteHeader, Sidebar, SidebarHeader, Button, MainContent, Breadcrumbs, H4, H5 } from '../_components';
 import EventList from './EventList';
 import TeamOverview from './TeamOverview';
 
-class DashboardPage extends React.Component {   
+class DashboardPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,12 +17,12 @@ class DashboardPage extends React.Component {
   }
 
   componentDidMount() {
-      // probably will need something here...
+    // probably will need something here...
   }
 
-  handleSidebarToggleClick(e) {
+  handleSidebarToggleClick() {
     this.setState((prevState) => {
-      return { sidebarCollapsed: !prevState.sidebarCollapsed }
+      return { sidebarCollapsed: !prevState.sidebarCollapsed };
     });
   }
 
@@ -36,18 +36,18 @@ class DashboardPage extends React.Component {
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
               <TeamOverview>
-                <Button small collapse onClick={this.handleSidebarToggleClick}></Button>
+                <Button small collapse onClick={this.handleSidebarToggleClick} />
               </TeamOverview>
             </SidebarHeader>
-            <EventList />  
+            <EventList />
           </Sidebar>
           <MainContent sidebar={!sidebarCollapsed}>
             <Breadcrumbs>Dashboard / Game / Inventory</Breadcrumbs>
-            <Button hidden={!sidebarCollapsed} expand onClick={this.handleSidebarToggleClick}></Button>
+            <Button hidden={!sidebarCollapsed} expand onClick={this.handleSidebarToggleClick} />
             <H4 floatLeft>Some Title Here</H4>
-            <H5 clearLeft> More stuff here... </H5>                           
+            <H5 clearLeft> More stuff here... </H5>
           </MainContent>
-        </ContentWrapper>         
+        </ContentWrapper>
       </OuterWrapper>
     );
   }
