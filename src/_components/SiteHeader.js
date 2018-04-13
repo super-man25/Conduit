@@ -23,7 +23,7 @@ class SiteHeader extends React.Component {
 
   handleSprocketClick(e) {
     // code here that will result in the menu dropping, when we know what it is...
-    history.push('/dashboard/settings')
+    history.push('/dashboard/settings');
   }
 
   render() {
@@ -35,7 +35,7 @@ class SiteHeader extends React.Component {
         <UserAvatar user={user} />
         <UserWelcome user={user} />
       </SiteHeaderDiv>
-    )
+    );
   }
 }
 
