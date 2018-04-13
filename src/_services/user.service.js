@@ -5,13 +5,13 @@ console.log('~~~~~ baseURL is ' + baseURL + ' ~~~~~');
 console.log('~~~~~ FAKE_API is ' + FAKE_API + ' ~~~~~');
 
 const API = {
-  loginURL: baseURL + '/auth/signIn',                             // still in auth/
-  logoutURL: baseURL + '/auth/logout',                            // still in auth/
-  getAllURL: baseURL + '/users',                                  // users/
-  getByIdURL: baseURL + '/users/',                                // users/
-  registerURL: baseURL + '/users/create',                         // users/create
-  updateURL: baseURL + '/users/',                                 // not yet, but users/?
-  deleteURL: baseURL + '/users/delete'                            // users/delete
+  loginURL: baseURL + '/auth',                          // - method POST
+  logoutURL: baseURL + '/auth',                         // - method DELETE
+  getAllURL: baseURL + '/users',                        // - method GET (for isAdmin users only)
+  getByIdURL: baseURL + '/users/',                      // users/{id} - method GET
+  registerURL: baseURL + '/users',                      // - method POST (for isAdmin users only)
+  updateURL: baseURL + '/users/',                       // users/{id} - method PUT (for isAdmin users only)
+  deleteURL: baseURL + '/users'                         // users/{id} - method DELETE (for isAdmin users only)
 }
 
 export const userService = {
@@ -29,13 +29,14 @@ function login(email, password) {
     credentials: 'include',        // this is required to have cookies sent back and forth in the headers
     mode: 'cors',
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    // headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
   };
 
   return fetch(API.loginURL, requestOptions)
     .then(response => {
-      if (!response.ok) { 
+      if (!response.ok) {
+        console.log('~~~~~ response: ~~~~~', response); 
         return Promise.reject(response.statusText);
       }
       return response.json();
@@ -62,7 +63,7 @@ function logout() {
   localStorage.removeItem('user');
   const requestOptions = {
     credentials: 'include',
-    method: 'GET'
+    method: 'DELETE'
   };
   return fetch(API.logoutURL, requestOptions)
   .then(response => {

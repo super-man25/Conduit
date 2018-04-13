@@ -3,17 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink } from '../_components';
-import LogoName from './LogoName';
+import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink, LogoName } from '../_components';
 import LoginFormDiv from './LoginFormDiv';
 import LoginFooterDiv from './LoginFooterDiv';
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
-
-    // reset login status
-    this.props.dispatch(userActions.logout());
 
     this.state = {
       email: '',
@@ -28,17 +24,32 @@ class LoginPage extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+  }  
+
+  handleLogoutClick(e) {
+    e.preventDefault();
+    this.props.dispatch(userActions.logout());
   }
 
   handleChange(e) {       
     const { name, value } = e.target;
     this.setState({ [name]: value });
     this.setState({ submitted: false });
-    this.setState({ loginEnabled: this.state.validEmail && this.state.password });
-    if (name === 'password' && value.length === 0) { 
-      this.setState({ loginEnabled: false });
-    } else if (name === 'email' && !this.emailCheck(value)) { 
-      this.setState({ loginEnabled: false });
+    // this next step needs to NOT depend on the state value of something that is/was changed by this event
+    // state will probably not be updated in time for it's value to be up-to-date... // root@eventdynamic.com
+    if (name === 'password') {
+      if (value.length === 0) {                                 // check the password value directly
+        this.setState({ loginEnabled: false });
+      } else {
+        this.setState({ loginEnabled: this.state.validEmail }); // rely on state for the value of validEmail
+      }
+    } else if (name === 'email') { 
+      if (!this.emailCheck(value)) {                            // check the email directly
+        this.setState({ loginEnabled: false });
+      } else {
+        this.setState({ loginEnabled: this.state.password });   // rely on state for the value of password
+      }
     }
   }
   
@@ -74,7 +85,7 @@ class LoginPage extends React.Component {
       <OuterWrapper login>
         <ContentWrapper login>
           <LoginFormDiv>
-            <LogoName>Event Dynamic</LogoName>
+            <LogoName login />
             <H3 login>Log In</H3>
             <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv>
             <br />
@@ -92,7 +103,7 @@ class LoginPage extends React.Component {
                 <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner"/>
               }
               <br />
-              <S1><Link to="/users/create">Forgot password?</Link></S1>
+              <S1><Link to="/users/create">Forgot password?</Link> &nbsp; &nbsp; <Link to="/logout" onClick={this.handleLogoutClick}>Logout</Link></S1>
             </form>
           </LoginFormDiv>
           <LoginFooterDiv>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooterDiv>
