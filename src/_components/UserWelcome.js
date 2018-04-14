@@ -19,9 +19,6 @@ export const UserWelcome = styled.div`
   color: ${cssConstants.PRIMARY_WHITE};
   background: 'none';
   ::before {
-    content: '${(props) => {
-    if (props.user) {
-      return `Welcome, ${ capString(props.user.firstName) } ${ capString(props.user.lastName)}`;
-    } return '';
-  }};
+    content: '${(props) => { return props.user ? `Welcome, ${ capString(props.user.firstName) } ${ capString(props.user.lastName)}` : ''; }}';
+  }
 `;
