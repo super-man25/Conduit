@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 
 function capString(word) {
-
   return word && word.length > 0 ? word.charAt(0).toUpperCase() + word.slice(1) : '';
 }
 
@@ -20,9 +19,9 @@ export const UserWelcome = styled.div`
   color: ${cssConstants.PRIMARY_WHITE};
   background: 'none';
   ::before {
-    content: '${(props) => (
-    props.user ? `Welcome, ${ capString(props.user.firstName) } ${ capString(props.user.lastName)}`
-      : ''
-  )}';
-  }
+    content: '${(props) => {
+    if (props.user) {
+      return `Welcome, ${ capString(props.user.firstName) } ${ capString(props.user.lastName)}`;
+    } return '';
+  }};
 `;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 import { history } from '../_helpers';
@@ -16,9 +15,14 @@ export const SiteHeaderDiv = styled.div`
 `;
 
 class SiteHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    // This binding is necessary to make `this` work in the callback
+    this.handleSprocketClick = this.handleSprocketClick.bind(this);
+  }
 
-  // code here that will result in the menu dropping, when we know what it is...
-  static handleSprocketClick() {
+  handleSprocketClick(e) {
+    // code here that will result in the menu dropping, when we know what it is...
     history.push('/dashboard/settings');
   }
 
@@ -34,10 +38,6 @@ class SiteHeader extends React.Component {
     );
   }
 }
-
-SiteHeader.propTypes = {
-  user: PropTypes.objectOf(PropTypes.any)
-};
 
 export { SiteHeader as SiteHeaderTest };
 
