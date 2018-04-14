@@ -15,13 +15,13 @@ exports[`renders correctly with a user=testUser prop 1`] = `
   />
   <div
     className="sc-eNQAEJ bRsigH"
-    onClick={[Function]}
+    onClick={undefined}
   />
   <div
     className="sc-jKJlTe iglQE"
   />
   <div
-    className="sc-ckVGcZ icySUo"
+    className="sc-ckVGcZ gFSOEM"
   />
 </div>
 `;

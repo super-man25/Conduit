@@ -12,15 +12,15 @@ export const LogoName = styled.div`
   line-height: 50px;
   margin: 0;
   padding: 0;
-  float: ${(props) => (props.login ? 'none' : 'left')};
-  margin-left: ${(props) => (props.login ? '0' : '20px')};
-  padding-top: ${(props) => (props.login ? '0' : '10px')};
-  padding-left: ${(props) => (props.login ? '60px' : '55px')};
-  font-size: ${(props) => (props.login ? '22px' : '24px')};
-  color: ${(props) => (props.login ? cssConstants.PRIMARTY_LIGHT_BLACK : cssConstants.PRIMARY_WHITE)};
-  background: ${(props) => (props.login ? cssConstants.PRIMARY_WHITE : 'none')};
-  background-image: ${(props) => (props.login ? edLogo : edLogoWhite)};
-  background-position: ${(props) => (props.login ? 'left center' : '7px 20px')};
+  float: ${(props) => { return props.login ? 'none' : 'left'; }};
+  margin-left: ${(props) => { return props.login ? '0' : '20px'; }};
+  padding-top: ${(props) => { return props.login ? '0' : '10px'; }};
+  padding-left: ${(props) => { return props.login ? '60px' : '55px'; }};
+  font-size: ${(props) => { return props.login ? '22px' : '24px'; }};
+  color: ${(props) => { return props.login ? cssConstants.PRIMARTY_LIGHT_BLACK : cssConstants.PRIMARY_WHITE; }};
+  background: ${(props) => { return props.login ? cssConstants.PRIMARY_WHITE : 'none'; }};
+  background-image: ${(props) => { return props.login ? edLogo : edLogoWhite; }};
+  background-position: ${(props) => { return props.login ? 'left center' : '7px 20px'; }};
   background-repeat: no-repeat;
   ::before { 
     content: 'Event Dynamic'
