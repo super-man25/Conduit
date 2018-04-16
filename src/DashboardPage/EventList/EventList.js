@@ -6,6 +6,7 @@ import { cssConstants } from '../../_constants';
 import {
   H4,
   Input,
+  Loader,
   Spacing
 } from '../../_components';
 
@@ -25,10 +26,6 @@ export class EventList extends React.Component {
     const { loading, events } = this.props;
     const { active } = this.state;
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
     return (
       <div>
         <HeaderContainer>
@@ -38,11 +35,13 @@ export class EventList extends React.Component {
           </Spacing>
         </HeaderContainer>
         <div>
-          {loading && <div>Loading...</div>}
+          {!!loading && <Spacing padding="20vh 0">
+            <Loader />
+          </Spacing>}
 
-          {!events.length && <div>No events</div>}
+          {!loading && !events.length && <div>No events</div>}
 
-          {!!events.length && events.map((event, key) => (
+          {!loading && !!events.length && events.map((event, key) => (
             <EventListItem
               onClick={() => this.setState({ active: key })}
               active={key === active}

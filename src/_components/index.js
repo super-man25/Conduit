@@ -6,6 +6,7 @@ export * from './Flex';
 export * from './HelpBlockDiv';
 export * from './Input';
 export * from './LeftNav';
+export * from './Loader';
 export * from './LogoName';
 export * from './MailtoLink';
 export * from './MainContent';
