@@ -1,12 +1,13 @@
-describe('Login', () => {
-
+describe('Login', function () {
   // static data
-  beforeEach(() => {
+  beforeEach( function () {
     // alias the users fixtures
-    cy.fixture('user').as('user');
+    cy.fixture('user.json').as('user').then((user) => {
+      console.log('HELP');
+    });
   });
 
-  it('can log into the application', () => {
+  it('can log into the application', function () {
     // login page
     cy.visit('/login');
     cy.get('input[name="email"]').type(this.user.email);
