@@ -26,6 +26,7 @@ const Label = P1.extend`
 const IconContainer = styled.div`
   position: relative;
   width: 24px;
+  height: 24px;
 `;
 
 const Abs = styled.div`
@@ -52,17 +53,17 @@ export const SortableLabel = (props) => {
 
   return (
     <Container>
-      <Flex direction="row">
+      <Flex direction="row" align="center">
         <Label onClick={() => onClick(direction, nextDirection(direction))}>{children}</Label>
         <IconContainer>
-          <Abs top="-6px">
+          <Abs top="-2px">
             <Icon
               name="arrow-drop-up"
               size={24}
               color={direction === 'desc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)}
             />
           </Abs>
-          <Abs top="1px">
+          <Abs top="4px">
             <Icon
               name="arrow-drop-down"
               size={24}

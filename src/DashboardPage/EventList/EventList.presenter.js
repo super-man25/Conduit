@@ -4,10 +4,12 @@ import { EventListItem } from './EventListItem';
 import { cssConstants } from '../../_constants';
 
 import {
+  Flex,
   H4,
   Input,
   Loader,
   SortableLabel,
+  DropdownLabel,
   Spacing
 } from '../../_components';
 
@@ -31,7 +33,12 @@ export const EventList = (props) => {
     active,
     events,
     loading,
-    onClick
+    onClick,
+    filterOptions,
+    selectedFilter,
+    onFilterSelect,
+    timestampSort,
+    onTimestampSortChange
   } = props;
 
   return (
@@ -40,8 +47,16 @@ export const EventList = (props) => {
         <Spacing padding="24px 40px">
           <Heading>All Events</Heading>
           <Input type="text" />
-          <Spacing padding="6px 0 0">
-            <SortableLabel>Upcoming</SortableLabel>
+          <Spacing padding="4px 0 0">
+            <Flex direction="row" justify="space-between">
+              <SortableLabel direction={timestampSort} onClick={onTimestampSortChange}>Upcoming</SortableLabel>
+              <DropdownLabel
+                options={filterOptions}
+                parseLabel={(o) => o.label}
+                selected={selectedFilter}
+                onSelect={onFilterSelect}
+              />
+            </Flex>
           </Spacing>
         </Spacing>
       </HeaderContainer>
