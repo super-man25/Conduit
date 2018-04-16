@@ -25,13 +25,14 @@ const Heading = H4.extend`
 const Container = styled.div`
   padding: 16px 32px 16px 40px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  background-color: ${(props) => props.background};
+  background-color: ${(props) => { return props.past ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE; }};
+  color: ${(props) => { return props.past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK; }};
   transition: 0.15s ease-in-out all;
   position: relative;
 
   :hover {
     cursor: pointer;
-    background-color: ${(props) => darken(0.05, props.background)};
+    background-color: ${(props) => darken(0.05, (props.past ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE))};
   }
 
   ::before {
@@ -50,7 +51,7 @@ export const EventListItem = (props) => {
   const { event, active, onClick } = props;
 
   return (
-    <Container onClick={onClick} active={active} background={isPast(event.timestamp) ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE}>
+    <Container onClick={onClick} active={active} past={isPast(event.timestamp)}>
       <Flex direction="row" justify="space-between">
         <P2 color={cssConstants.PRIMARY_GRAY}>GAME SCORE: {orDash(event.score)}</P2>
         <P2 color={cssConstants.PRIMARY_GRAY}>updated {readableDuration(event.modifiedAt)} ago</P2>

@@ -6,7 +6,7 @@ import { events } from './events.mock';
 const EL = () => (
   <EventList
     events={events}
-    loading
+    // loading
   />
 );
 

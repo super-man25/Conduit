@@ -39,7 +39,9 @@ export class EventList extends React.Component {
             <Loader />
           </Spacing>}
 
-          {!loading && !events.length && <div>No events</div>}
+          {!loading && !events.length && <Spacing padding="20vh 0">
+            <Heading>No events</Heading>
+          </Spacing>}
 
           {!loading && !!events.length && events.map((event, key) => (
             <EventListItem

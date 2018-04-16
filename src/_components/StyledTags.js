@@ -30,7 +30,7 @@ font-weight: ${(props) => (props.login ? 'bold' : props.weight ? props.weight : 
 export const H4 = styled.h4`
   display: block;
   float: ${(props) => (props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none')};
-  color: ${(props) => (props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK)};
+  color: ${(props) => props.color || 'inherit'};
   font-size: ${(props) => (props.size ? props.size : cssConstants.TITLE_SIZE_H4)};
   font-weight: ${(props) => (props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H4)};
   `;
@@ -46,14 +46,14 @@ font-weight: ${(props) => (props.weight ? props.weight : cssConstants.TITLE_WEIG
 
 export const P1 = styled.p`
   margin: 0;
-  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${(props) => props.color || 'inherit'};
   font-size: ${(props) => props.size || '14px'};
   font-weight: ${(props) => props.weight || 'normal'}
 `;
 
 export const P2 = styled.p`
   margin: 0;
-  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${(props) => props.color || 'inherit'};
   font-size: ${(props) => props.size || '12px'};
   font-weight: ${(props) => props.weight || 'normal'}
 `;
