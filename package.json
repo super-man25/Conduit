@@ -24,17 +24,12 @@
     "build-prod": "env-cmd base,prod react-scripts build",
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject",
-    "lint": "eslint src",
-    "test:cypress": "cypress open",
-    "test:e2e": "cypress run --reporter junit --reporter-options 'mochaFile=junit/results.xml'",
-    "set:env:cypress": "(cp -nv ./cypress.env.example.json ./cypress.env.json || true)"
+    "lint": "eslint src"
   },
   "devDependencies": {
     "@dialexa/eslint-config-dialexa": "^4.1.1",
-    "cypress": "^2.1.0",
     "env-cmd": "^7.0.0",
     "eslint": "^4.19.1",
-    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3"
