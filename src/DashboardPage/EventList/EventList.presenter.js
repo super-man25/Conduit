@@ -8,8 +8,8 @@ import {
   H4,
   Input,
   Loader,
-  SortableLabel,
-  DropdownLabel,
+  SortableButton,
+  DropdownButton,
   Spacing
 } from '../../_components';
 
@@ -49,8 +49,8 @@ export const EventList = (props) => {
           <Input type="text" />
           <Spacing padding="4px 0 0">
             <Flex direction="row" justify="space-between">
-              <SortableLabel direction={timestampSort} onClick={onTimestampSortChange}>Upcoming</SortableLabel>
-              <DropdownLabel
+              <SortableButton direction={timestampSort} onClick={onTimestampSortChange}>Upcoming</SortableButton>
+              <DropdownButton
                 options={filterOptions}
                 parseLabel={(o) => o.label}
                 selected={selectedFilter}

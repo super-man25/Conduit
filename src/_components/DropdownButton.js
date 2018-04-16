@@ -58,7 +58,7 @@ const Option = styled.div`
   }
 `;
 
-export class DropdownLabel extends React.Component {
+export class DropdownButton extends React.Component {
   static defaultProps = {
     onSelect: () => {},
     parseLabel: (opt) => opt

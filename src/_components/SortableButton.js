@@ -44,7 +44,7 @@ const nextDirection = (dir) => {
   return steps[dir] || 'indeterminate';
 };
 
-export const SortableLabel = (props) => {
+export const SortableButton = (props) => {
   const {
     children,
     direction,
@@ -76,7 +76,7 @@ export const SortableLabel = (props) => {
   );
 };
 
-SortableLabel.defaultProps = {
+SortableButton.defaultProps = {
   onClick: () => {},
   direction: 'indeterminate'
 };
