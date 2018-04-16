@@ -6,7 +6,7 @@ import { format, distanceInWords } from 'date-fns';
  * @param {Date} d - date to format
  */
 export function readableDate(d) {
-  return format(d, 'ddd, DD/M/YY @ h:mmA');
+  return format(d, 'ddd, M/DD/YY @ h:mmA');
 }
 
 /**
