@@ -2,9 +2,7 @@ describe('Login', function () {
   // static data
   beforeEach( function () {
     // alias the users fixtures
-    cy.fixture('user.json').as('user').then((user) => {
-      console.log('HELP');
-    });
+    cy.fixture('user.json').as('user');
   });
 
   it('can log into the application', function () {
