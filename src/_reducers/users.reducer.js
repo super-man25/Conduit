@@ -34,7 +34,8 @@ export function users(state = {}, action) {
         items: state.items.map((user) => {
           if (user.id === action.id) {
             // make copy of user without 'deleting:true' property
-            const { ...userCopy } = user;
+            let { ...userCopy } = user;
+            delete userCopy.deleting;
             // return copy of user with 'deleteError:[error]' property
             return { ...userCopy, deleteError: action.error };
           }

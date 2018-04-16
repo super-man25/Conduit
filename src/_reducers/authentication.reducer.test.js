@@ -1,11 +1,11 @@
 import { authentication } from './authentication.reducer';
 import { userConstants } from '../_constants';
 
-const testUser = { firstName: 'bob', lastName: 'bob', email: 'bob@bob.com' }
+const testUser = { firstName: 'bob', lastName: 'bob', email: 'bob@bob.com' };
 
 describe('authentication Reducer', () => {
   it(`action with type of ${ userConstants.LOGIN_REQUEST } should return the appropriate object`, () => {
-    const expectedResult = { loggingIn: true , user: testUser };
+    const expectedResult = { loggingIn: true, user: testUser };
 
     expect(authentication({}, { type: userConstants.LOGIN_REQUEST, user: testUser })).toEqual(expectedResult);
   });
