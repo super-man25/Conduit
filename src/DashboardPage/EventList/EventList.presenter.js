@@ -46,7 +46,7 @@ export const EventList = (props) => {
       <HeaderContainer>
         <Spacing padding="24px 40px">
           <Heading>All Events</Heading>
-          <Input type="text" />
+          <Input type="text" placeholder="Search" />
           <Spacing padding="4px 0 0">
             <Flex direction="row" justify="space-between">
               <SortableButton direction={timestampSort} onClick={onTimestampSortChange}>Upcoming</SortableButton>
