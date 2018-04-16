@@ -7,6 +7,7 @@ import {
   H4,
   Input,
   Loader,
+  SortableLabel,
   Spacing
 } from '../../_components';
 
@@ -39,6 +40,9 @@ export const EventList = (props) => {
         <Spacing padding="24px 40px">
           <Heading>All Events</Heading>
           <Input type="text" />
+          <Spacing padding="6px 0 0">
+            <SortableLabel>Upcoming</SortableLabel>
+          </Spacing>
         </Spacing>
       </HeaderContainer>
       <div>
