@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "prefer-arrow-callback": "off"
+  },
+	"plugins": [
+		"cypress"
+	],
+	"env": {
+		"cypress/globals": true
+	}
+}

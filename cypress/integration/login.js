@@ -1,6 +1,6 @@
 describe('Login', function () {
   // static data
-  beforeEach( function () {
+  beforeEach(function () {
     // alias the users fixtures
     cy.fixture('user.json').as('user');
   });
