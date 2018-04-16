@@ -19,6 +19,12 @@ const HeaderContainer = styled.div`
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
 `;
 
+const NoContentWrap = styled.div`
+  padding: 10vh 0;
+  text-align: center;
+  color: ${cssConstants.PRIMARY_DARK_GRAY};
+`;
+
 export class EventList extends React.Component {
   state = { active: -1 };
 
@@ -35,13 +41,13 @@ export class EventList extends React.Component {
           </Spacing>
         </HeaderContainer>
         <div>
-          {!!loading && <Spacing padding="20vh 0">
+          {!!loading && <Spacing padding="10vh 0">
             <Loader />
           </Spacing>}
 
-          {!loading && !events.length && <Spacing padding="20vh 0">
-            <Heading>No events</Heading>
-          </Spacing>}
+          {!loading && !events.length && <NoContentWrap>
+            <Heading>No events matching query</Heading>
+          </NoContentWrap>}
 
           {!loading && !!events.length && events.map((event, key) => (
             <EventListItem
