@@ -1,13 +1,3 @@
-import React from 'react';
-import { EventList } from './EventList';
-import { events } from './events.mock';
+import { EventList } from './EventList.container';
 
-
-const EL = () => (
-  <EventList
-    events={events}
-    // loading
-  />
-);
-
-export { EL as EventList };
+export default EventList;
