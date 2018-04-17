@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { cssConstants } from '../../_constants';
 import { isPast } from 'date-fns';
 import { darken } from 'polished';
+import PropTypes from 'prop-types';
+import { Event as EventModel } from '../../_models';
 
 import {
   Flex,
@@ -51,7 +53,7 @@ export const EventListItem = (props) => {
   const { event, active, onClick } = props;
 
   return (
-    <Container onClick={onClick} active={active} past={isPast(event.timestamp)}>
+    <Container onClick={() => onClick(event)} active={active} past={isPast(event.timestamp)}>
       <Flex direction="row" justify="space-between">
         <P2 color={cssConstants.PRIMARY_GRAY}>GAME SCORE: {orDash(event.score)}</P2>
         <P2 color={cssConstants.PRIMARY_GRAY}>updated {readableDuration(event.modifiedAt)} ago</P2>
@@ -69,6 +71,16 @@ export const EventListItem = (props) => {
 
 EventListItem.defaultProps = {
   onClick: () => {},
-  event: {},
   active: false
+};
+
+EventListItem.propTypes = {
+  /** An event object */
+  event: EventModel.isRequired,
+
+  /** Whether or not the current list item is active. Defaults to false. */
+  active: PropTypes.bool,
+
+  /** Callback fired when a list item is clicked. Passed the event. */
+  onClick: PropTypes.bool
 };

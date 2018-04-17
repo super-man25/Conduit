@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { EventListItem } from './EventListItem';
 import { cssConstants } from '../../_constants';
+import { PropTypes } from 'prop-types';
+import { Event as EventModel } from '../../_models';
 
 import {
   Flex,
@@ -49,7 +51,12 @@ export const EventList = (props) => {
           <Input type="text" placeholder="Search" />
           <Spacing padding="4px 0 0">
             <Flex direction="row" justify="space-between">
-              <SortableButton direction={timestampSort} onClick={onTimestampSortChange}>Upcoming</SortableButton>
+              <SortableButton
+                direction={timestampSort}
+                onClick={onTimestampSortChange}
+              >
+                Upcoming
+              </SortableButton>
               <DropdownButton
                 options={filterOptions}
                 parseLabel={(o) => o.label}
@@ -85,6 +92,34 @@ export const EventList = (props) => {
 EventList.defaultProps = {
   events: [],
   loading: false,
-  onclick: () => {}
+  onClick: () => {}
 };
 
+EventList.propTypes = {
+  /** Index of the currently selected event. Should be -1 if no event is active. */
+  active: PropTypes.number,
+
+  /** List of events */
+  events: PropTypes.arrayOf(EventModel),
+
+  /** Whether or not the list is loading. Defaults to false. */
+  loading: PropTypes.bool,
+
+  /** Callback fired when a list item is clicked. Called with the event item key and object. */
+  onClick: PropTypes.func,
+
+  /** Options for the filter */
+  filterOptions: DropdownButton.propTypes.options,
+
+  /** The selected filter */
+  selectedFilter: DropdownButton.propTypes.selected,
+
+  /** Callback fired when a filter is selected */
+  onFilterSelect: DropdownButton.propTypes.onSelect,
+
+  /** Sort direction for timestamp */
+  timestampSort: SortableButton.propTypes.direction,
+
+  /** Callback fired when the timestamp sort direction is changed */
+  onTimestampSortChange: SortableButton.propTypes.onClick
+};
