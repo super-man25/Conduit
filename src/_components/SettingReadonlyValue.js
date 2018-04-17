@@ -9,5 +9,6 @@ export const SettingReadonlyValue = styled.span`
   float: right;
   margin: 0;
   padding: 0;
+  line-height: 40px;
   background: transparent;
 `;

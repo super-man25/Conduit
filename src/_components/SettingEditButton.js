@@ -12,6 +12,7 @@ export const SettingEditButton = styled.span`
   padding: 0;
   padding-right: 2px;
   font-size: 12px;
+  line-height: 40px;
   text-align: center;
   color: ${cssConstants.SECONDARY_LIGHTEST_BLUE};
   background: transparent; 

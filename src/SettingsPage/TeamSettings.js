@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 // import { clientActions } from '../_actions';   // client = team
-import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue } from '../_components';
+import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue, SelectBox } from '../_components';
 
 /* eslint react/no-did-mount-set-state: "off" */
 
@@ -41,8 +41,6 @@ class TeamSettings extends React.Component {
     this.state = {
       editTeam: false, // what do we expect to do here? Allow the client to change the team name, or... ? Client cannot change team?
       teamValue: 'fakeTeam',
-      editColors: false,
-      colorsValue: 'fakeColors', // do we expect this to be an array of objects like { colorHex: #ff8833, colorName: 'some red } ?
       editInterval: false,
       intervalValue: 30,
       intervalName: '',
@@ -85,7 +83,7 @@ class TeamSettings extends React.Component {
 
   render() {
     // const { user, users } = this.props;
-    const { editTeam, editColors, editInterval, editIntegrations, intervalValue, intervalName } = this.state;
+    const { editTeam, editInterval, editIntegrations, intervalValue, intervalName } = this.state;
     return (
       <TeamSettingsDiv>
         Team Settings
@@ -101,17 +99,6 @@ class TeamSettings extends React.Component {
             Team (name?) Input would go here
           </SettingEditableValue>
         </Setting>
-        <Setting edit={editColors} id='editColors'>
-          Set team colors
-          <SettingEditButton onClick={this.handleButtonClick} />
-          <SettingSaveButton onClick={this.handleButtonClick} />
-          <SettingReadonlyValue>
-            Blue - hex #002D72, Orange - hex #FC4C02
-          </SettingReadonlyValue>
-          <SettingEditableValue>
-            This is where the Colors Input would go
-          </SettingEditableValue>
-        </Setting>
         <Setting edit={editInterval} id='editInterval'>
           Generate pricing updates every
           <SettingEditButton onClick={this.handleButtonClick} />
@@ -120,13 +107,13 @@ class TeamSettings extends React.Component {
             {intervalName}
           </SettingReadonlyValue>
           <SettingEditableValue>
-            <select id="pricingInterval" value={intervalValue} onChange={this.handleIntervalChange}>
+            <SelectBox noBg id="pricingInterval" value={intervalValue} onChange={this.handleIntervalChange}>
               <option value="15">15 minutes</option>
               <option value="30">30 minutes</option>
               <option value="60">1 hour</option>
               <option value="360">6 hours</option>
-              <option value="720">daily</option>
-            </select>
+              <option value="1440">daily</option>
+            </SelectBox>
           </SettingEditableValue>
         </Setting>
         <Setting edit={editIntegrations} id='editIntegrations'>
