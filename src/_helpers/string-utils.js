@@ -23,7 +23,7 @@ export function readableDuration(t1, t0 = new Date()) {
 /**
  * Fill with dashes if the value is null or undefined
  *
- * @param {string} value
+ * @param {any} value
  */
 export function orDash(value) {
   return (value !== undefined && value !== null) ? value : '--';

@@ -19,7 +19,7 @@ import {
   readableDuration,
   readableDate,
   orDash
-} from '../../_helpers/stringUtils';
+} from '../../_helpers/string-utils';
 
 const Heading = H4.extend`
   margin: 0;
