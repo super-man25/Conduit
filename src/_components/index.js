@@ -18,4 +18,9 @@ export * from './Breadcrumbs';
 export * from './ScreenTitleBlock';
 export * from './Sidebar';
 export * from './SidebarHeader';
+export * from './Setting';
+export * from './SettingEditButton';
+export * from './SettingSaveButton';
+export * from './SettingReadonlyValue';
+export * from './SettingEditableValue';
 

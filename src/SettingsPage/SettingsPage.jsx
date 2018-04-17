@@ -6,7 +6,7 @@ import { userActions } from '../_actions';
 import { OuterWrapper, SiteHeader, ContentWrapper, LeftNav, MainContent, Breadcrumbs, ScreenTitleBlock, H3 } from '../_components';
 import ContactInfoSettings from './ContactInfoSettings';
 import NotificationSettings from './NotificationSettings';
-import TeamSettings from './TeamSettings';
+import { TeamSettings } from './TeamSettings';
 
 class SettingsPage extends React.Component {
   constructor(props) {
@@ -15,19 +15,21 @@ class SettingsPage extends React.Component {
     // This binding is necessary to make `this` work in the callback
     this.handleDeleteUser = this.handleDeleteUser.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
-  }  
-
-  handleLogoutClick(e) {
-    e.preventDefault();
-    this.props.dispatch(userActions.logout());
   }
   
   componentDidMount() {
     // this.props.dispatch(userActions.getAll());
   }
 
+  handleLogoutClick(e) {
+    e.preventDefault();
+    console.log('~~~~~ using this.something ~~~~~', this);
+    this.props.dispatch(userActions.logout());
+  }
+
+
   handleDeleteUser(id) {
-    return (e) => this.props.dispatch(userActions.delete(id));
+    return () => this.props.dispatch(userActions.delete(id));
   }
 
   render() {
@@ -57,12 +59,10 @@ class SettingsPage extends React.Component {
             </ContactInfoSettings>
             <NotificationSettings>
               Some Notification settings here...
-            </NotificationSettings>  
-            <TeamSettings>
-              Some Team settings here...
-            </TeamSettings>                           
+            </NotificationSettings>
+            <TeamSettings />
           </MainContent>
-        </ContentWrapper>         
+        </ContentWrapper>
       </OuterWrapper>
     );
   }
