@@ -45,17 +45,17 @@ font-weight: ${(props) => (props.weight ? props.weight : cssConstants.TITLE_WEIG
 `;
 
 export const P1 = styled.p`
-display: block;
-color: ${(props) => (props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK)};
-font-size: ${(props) => (props.size ? props.size : cssConstants.PARAGRAPH_SIZE_P1)};
-font-weight: ${(props) => (props.weight ? props.weight : cssConstants.PARAGRAPH_WEIGHT_P1)};
+  margin: 0;
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  font-size: ${(props) => props.size || '14px'};
+  font-weight: ${(props) => props.weight || 'normal'}
 `;
 
 export const P2 = styled.p`
-display: block;
-color: ${(props) => (props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK)};
-font-size: ${(props) => (props.size ? props.size : cssConstants.PARAGRAPH_SIZE_P2)};
-font-weight: ${(props) => (props.weight ? props.weight : cssConstants.PARAGRAPH_WEIGHT_P2)};
+  margin: 0;
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  font-size: ${(props) => props.size || '12px'};
+  font-weight: ${(props) => props.weight || 'normal'}
 `;
 
 export const S1 = styled.span`

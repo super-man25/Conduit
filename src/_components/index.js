@@ -2,6 +2,7 @@ export * from './Breadcrumbs';
 export * from './Button';
 export * from './Checkbox';
 export * from './ContentWrapper';
+export * from './Flex';
 export * from './HelpBlockDiv';
 export * from './Input';
 export * from './LeftNav';
@@ -19,4 +20,3 @@ export * from './SprocketMenu';
 export * from './StyledTags';
 export * from './UserAvatar';
 export * from './UserWelcome';
-

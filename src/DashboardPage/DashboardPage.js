@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { OuterWrapper, ContentWrapper, SiteHeader, Sidebar, SidebarHeader, Button, MainContent, Breadcrumbs, H4, H5 } from '../_components';
-import EventList from './EventList';
+import { EventList } from './EventList';
 import TeamOverview from './TeamOverview';
 
 class DashboardPage extends React.Component {
