@@ -14,16 +14,6 @@ const API = {
   deleteURL: `${baseURL }/users` // users/{id} - method DELETE (for isAdmin users only)
 };
 
-export const userService = {
-  login,
-  logout,
-  register,
-  getAll,
-  getById,
-  update,
-  delete: _delete
-};
-
 function login(email, password) {
   const requestOptions = {
     credentials: 'include', // this is required to have cookies sent back and forth in the headers
@@ -73,6 +63,14 @@ function logout() {
       console.log('~~~~~ successfully logged out this user! ~~~~~');
       return response.statusText;
     });
+}
+
+function handleResponse(response) {
+  if (!response.ok) {
+    return Promise.reject(response.statusText);
+  }
+
+  return response.json();
 }
 
 function getAll() {
@@ -130,10 +128,12 @@ function _delete(id) {
   return fetch(API.deleteURL + id, requestOptions).then(handleResponse);
 }
 
-function handleResponse(response) {
-  if (!response.ok) {
-    return Promise.reject(response.statusText);
-  }
-
-  return response.json();
-}
+export const userService = {
+  login,
+  logout,
+  register,
+  getAll,
+  getById,
+  update,
+  delete: _delete
+};

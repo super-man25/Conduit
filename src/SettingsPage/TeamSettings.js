@@ -6,6 +6,8 @@ import { cssConstants } from '../_constants';
 // import { clientActions } from '../_actions';   // client = team
 import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue } from '../_components';
 
+/* eslint react/no-did-mount-set-state: "off" */
+
 export const TeamSettingsDiv = styled.div`
   width: 100%;
   height: auto;
@@ -27,51 +29,54 @@ export const TeamSettingsDiv = styled.div`
 `;
 
 class TeamSettings extends React.Component {
+
+  static intervalNameFromSelect() {
+    const intervalSelect = document.getElementById('pricingInterval');
+    return intervalSelect.options[intervalSelect.selectedIndex].innerHTML;
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
-      editTeam: false,
+      editTeam: false, // what do we expect to do here? Allow the client to change the team name, or... ? Client cannot change team?
+      teamValue: 'fakeTeam',
       editColors: false,
+      colorsValue: 'fakeColors', // do we expect this to be an array of objects like { colorHex: #ff8833, colorName: 'some red } ?
       editInterval: false,
-      editIntegrations: false
+      intervalValue: 30,
+      intervalName: '',
+      editIntegrations: false,
+      integrationsValue: [1, 2, 3, 4, 5, 6, 7] // just ids here - we'd getAll integrations like { id: [int], name: [str], on: [bool] }
     };
 
     // This binding is necessary to make `this` work in the callback
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleIntervalChange = this.handleIntervalChange.bind(this);
   }
 
   componentDidMount() {
-    // this.props.dispatch(userActions.getAll());
+    // maybe fetch some client data?
+    this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
+  }
+
+  handleIntervalChange() {
+    this.setState({ intervalValue: document.getElementById('pricingInterval').value },
+      () => { this.setState({ intervalName: TeamSettings.intervalNameFromSelect() }); }
+    );
   }
 
   handleButtonClick(e) {
     e.preventDefault();
     const editFlagName = e.target.parentElement.id;
     if (e.target.tagName === 'DIV') { // the 'SAVE' button was clicked
-      // here we would have a switch / case statement on editFlagName, where
-      // we would retrieve the data to be saved from the input elements
-      let saveData;
-      switch (editFlagName) {
-        case 'editTeam':
-          saveData = 1;
-          break;
-        case 'editColors':
-          saveData = 2;
-          break;
-        case 'editInterval':
-          saveData = 3;
-          break;
-        case 'editIntegrations':
-          saveData = 4;
-          break;
-        default:
-          saveData = 0;
-      }
-      console.log(`~~~~~ saveData was: ${saveData} ~~~~~`);
+      // derive the name of the associated state attribute from editFlagName
+      const attrName = `${editFlagName.substr(4).toLowerCase()}Value`;
+      const saveData = this.state[attrName];
       // create the string to use for SAVE action
       const saveAction = `CLIENT_SAVE_${editFlagName.toUpperCase().substr(4)}`;
-      console.log(`~~~~~ we would have dispatched a ${saveAction} action ~~~~~`);
+      console.log(`~~~~~ we would have dispatched a ${saveAction} action with data = ${saveData} ~~~~~`);
+      // this.props.dispatch(saveAction, saveData);
       this.setState({ [editFlagName]: false });
     } else { // the 'EDIT' link was clicked
       this.setState({ [editFlagName]: true });
@@ -80,7 +85,7 @@ class TeamSettings extends React.Component {
 
   render() {
     // const { user, users } = this.props;
-    const { editTeam, editColors, editInterval, editIntegrations } = this.state;
+    const { editTeam, editColors, editInterval, editIntegrations, intervalValue, intervalName } = this.state;
     return (
       <TeamSettingsDiv>
         Team Settings
@@ -93,7 +98,7 @@ class TeamSettings extends React.Component {
             New York Mets
           </SettingReadonlyValue>
           <SettingEditableValue>
-            This is where the Input would go
+            Team (name?) Input would go here
           </SettingEditableValue>
         </Setting>
         <Setting edit={editColors} id='editColors'>
@@ -104,7 +109,7 @@ class TeamSettings extends React.Component {
             Blue - hex #002D72, Orange - hex #FC4C02
           </SettingReadonlyValue>
           <SettingEditableValue>
-            This is where the Input would go
+            This is where the Colors Input would go
           </SettingEditableValue>
         </Setting>
         <Setting edit={editInterval} id='editInterval'>
@@ -112,10 +117,16 @@ class TeamSettings extends React.Component {
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
           <SettingReadonlyValue>
-            15 minutes
+            {intervalName}
           </SettingReadonlyValue>
           <SettingEditableValue>
-            This is where the Input would go
+            <select id="pricingInterval" value={intervalValue} onChange={this.handleIntervalChange}>
+              <option value="15">15 minutes</option>
+              <option value="30">30 minutes</option>
+              <option value="60">1 hour</option>
+              <option value="360">6 hours</option>
+              <option value="720">daily</option>
+            </select>
           </SettingEditableValue>
         </Setting>
         <Setting edit={editIntegrations} id='editIntegrations'>
@@ -127,7 +138,7 @@ class TeamSettings extends React.Component {
             <br />
             VividSeats - On
             <br />
-            Tickets.com
+            Tickets.com - On
             <br />
             SeatGeek - On
             <br />
@@ -138,7 +149,7 @@ class TeamSettings extends React.Component {
             TicketFly - On
           </SettingReadonlyValue>
           <SettingEditableValue>
-            This is where the Input would go
+            Integrations Input(s) would go here
           </SettingEditableValue>
         </Setting>
       </TeamSettingsDiv>
