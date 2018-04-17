@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { userActions } from '../_actions';
 import { Button, Input, HelpBlockDiv, OuterWrapper, ContentWrapper, H3, Label, S1, MailtoLink, LogoName } from '../_components';
@@ -112,6 +113,12 @@ class LoginPage extends React.Component {
     );
   }
 }
+
+LoginPage.propTypes = {
+  loggingIn: PropTypes.bool,
+  alert: PropTypes.object,
+  dispatch: PropTypes.func
+};
 
 function mapStateToProps(state) {
   const { loggingIn } = state.authentication;
