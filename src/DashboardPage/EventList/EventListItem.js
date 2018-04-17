@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '../../_constants';
+import { isPast } from 'date-fns';
+import { darken } from 'polished';
 
 import {
   Flex,
@@ -23,13 +25,32 @@ const Heading = H4.extend`
 const Container = styled.div`
   padding: 16px 32px 16px 40px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  background-color: ${(props) => props.background};
+  transition: 0.15s ease-in-out all;
+  position: relative;
+
+  :hover {
+    cursor: pointer;
+    background-color: ${(props) => darken(0.05, props.background)};
+  }
+
+  ::before {
+    transition: 0.1s ease-in-out width;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: ${(props) => { return props.active ? '16px' : '0px'; }};
+    background-color: ${cssConstants.PRIMARY_DARK_BLUE};
+  }
 `;
 
 export const EventListItem = (props) => {
-  const { event } = props;
+  const { event, active, onClick } = props;
 
   return (
-    <Container>
+    <Container onClick={onClick} active={active} background={isPast(event.timestamp) ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE}>
       <Flex direction="row" justify="space-between">
         <P2 color={cssConstants.PRIMARY_GRAY}>GAME SCORE: {orDash(event.score)}</P2>
         <P2 color={cssConstants.PRIMARY_GRAY}>updated {readableDuration(event.modifiedAt)} ago</P2>
@@ -43,4 +64,10 @@ export const EventListItem = (props) => {
       </Flex>
     </Container>
   );
+};
+
+EventListItem.defaultProps = {
+  onClick: () => {},
+  event: {},
+  active: false
 };
