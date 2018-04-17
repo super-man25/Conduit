@@ -18,3 +18,16 @@ Flex.propTypes = {
   /** Align items */
   align: PropTypes.string
 };
+
+
+export const FlexItem = styled.div`
+  flex: ${(props) => props.flex || 1};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+`;
+
+FlexItem.propTypes = {
+  flex: PropTypes.number,
+  width: PropTypes.string,
+  height: PropTypes.string
+};

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const Evnet = PropTypes.shape({
+export const Event = PropTypes.shape({
   id: PropTypes.number.isRequired,
   createdAt: PropTypes.instanceOf(Date).isRequired,
   modifiedAt: PropTypes.instanceOf(Date).isRequired,
