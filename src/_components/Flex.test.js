@@ -1,11 +1,15 @@
 import React from 'react';
-import { Breadcrumbs } from './Breadcrumbs';
 import renderer from 'react-test-renderer';
+import { Flex } from './Flex';
 import 'jest-styled-components';
 
-it('renders correctly', () => {
+it('renders correcly', () => {
   const tree = renderer
-    .create(<Breadcrumbs />)
+    .create(
+      <Flex direction="row" align="center" justify="center">
+        <span>Child</span>
+      </Flex>
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

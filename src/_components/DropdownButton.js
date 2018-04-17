@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import { cssConstants } from '../_constants';
 import { withClickAway } from '../_hoc';
+import PropTypes from 'prop-types';
 
 import { Icon } from './Icon';
 import { P1 } from './StyledTags';
@@ -116,3 +117,23 @@ export class DropdownButton extends React.Component {
     );
   }
 }
+
+DropdownButton.propTypes = {
+  /** Index of the selected option */
+  selected: PropTypes.number.isRequired,
+
+  /** List of options that can be in any form */
+  options: PropTypes.arrayOf(PropTypes.any).isRequired,
+
+  /**
+   * Function for parsing the label from an option. It is passed an option and should return
+   * a string. Defaults to an identity function.
+   */
+  parseLabel: PropTypes.func,
+
+  /**
+   * Function to be called when an item is selected. It is passed the selected option and
+   * its index.
+   */
+  onSelect: PropTypes.func
+};

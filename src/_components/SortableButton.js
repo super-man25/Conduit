@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 import { cssConstants } from '../_constants';
+import PropTypes from 'prop-types';
 
 import { P1 } from './StyledTags';
 import { Icon } from './Icon';
@@ -79,4 +80,19 @@ export const SortableButton = (props) => {
 SortableButton.defaultProps = {
   onClick: () => {},
   direction: 'indeterminate'
+};
+
+
+SortableButton.propTypes = {
+  /** Renderable label value for the button */
+  children: PropTypes.node,
+
+  /** The sort direction for the field correspending to the visual state of the arrows */
+  direction: PropTypes.oneOf(['asc', 'desc', 'indeterminate']),
+
+  /**
+   * Callback fired when the button is clicked on. The function is passed the current direction
+   * and the suggested next direction ("asc" -> "desc" -> "indeterminate" -> ...).
+   */
+  onClick: PropTypes.func
 };

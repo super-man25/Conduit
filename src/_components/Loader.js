@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { cssConstants } from '../_constants';
+import PropTypes from 'prop-types';
 
 const SIZE_LARGE = '14px';
 const SIZE_SMALL = '10px';
@@ -52,3 +53,11 @@ export const Loader = (props) => (
     <Dot index={2} {...props} />
   </Wrapper>
 );
+
+Loader.propTypes = {
+  /** Modify the loader to make it small */
+  small: PropTypes.bool,
+
+  /** HTML color (HEX or color string) for the loader */
+  color: PropTypes.string
+};
