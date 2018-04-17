@@ -1,6 +1,6 @@
 import React from 'react';
-import { Breadcrumbs } from './';
 import renderer from 'react-test-renderer';
+import { Breadcrumbs } from './';
 
 it('renders correctly', () => {
   const tree = renderer
