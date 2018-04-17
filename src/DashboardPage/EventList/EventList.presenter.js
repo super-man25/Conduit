@@ -34,37 +34,38 @@ export const EventList = (props) => {
   const {
     active,
     events,
+    filterOptions,
     loading,
     onClick,
-    filterOptions,
-    selectedFilter,
     onFilterSelect,
+    onTimestampSortChange,
+    selectedFilter,
     timestampSort,
-    onTimestampSortChange
+    title
   } = props;
 
   return (
     <div>
       <HeaderContainer>
         <Spacing padding="24px 40px">
-          <Heading>All Events</Heading>
+          <Heading>{title}</Heading>
+          <Spacing height="4px" />
           <Input type="text" placeholder="Search" />
-          <Spacing padding="4px 0 0">
-            <Flex direction="row" justify="space-between">
-              <SortableButton
-                direction={timestampSort}
-                onClick={onTimestampSortChange}
-              >
-                Upcoming
-              </SortableButton>
-              <DropdownButton
-                options={filterOptions}
-                parseLabel={(o) => o.label}
-                selected={selectedFilter}
-                onSelect={onFilterSelect}
-              />
-            </Flex>
-          </Spacing>
+          <Spacing height="4px" />
+          <Flex direction="row" justify="space-between">
+            <SortableButton
+              direction={timestampSort}
+              onClick={onTimestampSortChange}
+            >
+              Upcoming
+            </SortableButton>
+            <DropdownButton
+              options={filterOptions}
+              parseLabel={(o) => o.label}
+              selected={selectedFilter}
+              onSelect={onFilterSelect}
+            />
+          </Flex>
         </Spacing>
       </HeaderContainer>
       <div>
@@ -121,5 +122,8 @@ EventList.propTypes = {
   timestampSort: SortableButton.propTypes.direction,
 
   /** Callback fired when the timestamp sort direction is changed */
-  onTimestampSortChange: SortableButton.propTypes.onClick
+  onTimestampSortChange: SortableButton.propTypes.onClick,
+
+  /** Title to show at the top of the list */
+  title: PropTypes.string
 };

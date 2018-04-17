@@ -27,6 +27,7 @@ export class EventList extends React.Component {
         onClick={(a) => this.setState({ active: a })}
         active={active}
         events={events}
+        title="2018 Season"
 
         filterOptions={filterOptions}
         onFilterSelect={(o, i) => this.setState({ selectedFilter: i })}
