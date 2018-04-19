@@ -38,7 +38,7 @@ class LoginPage extends React.Component {
     this.setState({ [name]: value });
     this.setState({ submitted: false });
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
-    // state will probably not be updated in time for it's value to be up-to-date... // root@eventdynamic.com
+    // state will probably not be updated in time for it's value to be up-to-date...
     if (name === 'password') {
       if (value.length === 0) {                                 // check the password value directly
         this.setState({ loginEnabled: false });

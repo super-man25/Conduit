@@ -14,41 +14,34 @@ import TeamSettings from './TeamSettings';
 import { SettingsPageTest } from './SettingsPage';
 
 const testUser = { id: 1, firstName: 'John', lastName: 'Smith' };
-const testStore = { 
+const testStore = {
   getState: jest.fn(() => ({})),
-  dispatch: jest.fn(),
+  dispatch: jest.fn()
 };
 
 // create any initial state needed
 const initialState = {
   user: testUser
-}; 
+};
 // here it is possible to pass in any middleware if needed into //configureStore
 const mockStore = configureStore();
 let wrapper;
 let store;
 
 beforeEach(() => {
-  //creates the store with any initial state or middleware needed  
+  // creates the store with any initial state or middleware needed  
   store = mockStore(initialState);
   // wrapper = shallow(<Login store={store}/>)
- })
+});
 
 xit('renders correctly with no props', () => {
   const tree = renderer
-    .create(<MemoryRouter>
-              <Provider store>
-                <SettingsPageTest></SettingsPageTest>
-              </Provider>
-            </MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <Provider store>
+          <SettingsPageTest />
+        </Provider>
+      </MemoryRouter>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-
-// .create(<MemoryRouter>
-//   <Provider store={testStore}>
-//     <SettingsPageTest></SettingsPageTest>
-//   </Provider>
-// </MemoryRouter>)
-
