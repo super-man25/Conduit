@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with inValid prop 1`] = `
+<select
+  className="sc-jDwBTQ dxWESe"
+/>
+`;
+
+exports[`renders correctly with no props 1`] = `
+<select
+  className="sc-jDwBTQ goylHR"
+/>
+`;
+
+exports[`renders correctly with noBg prop 1`] = `
+<select
+  className="sc-jDwBTQ fglLhX"
+/>
+`;
+
+exports[`renders correctly with valid prop 1`] = `
+<select
+  className="sc-jDwBTQ jcuSbL"
+/>
+`;

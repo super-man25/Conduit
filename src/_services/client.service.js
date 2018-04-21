@@ -1,96 +1,55 @@
 import { authHeader } from '../_helpers';
-import { baseURL, FAKE_API } from '../_constants';
-
-console.log(`~~~~~ baseURL is ${ baseURL } ~~~~~`);
-console.log(`~~~~~ FAKE_API is ${ FAKE_API } ~~~~~`);
+import { baseURL } from '../_constants';
 
 const API = {
-  getSettingsURL: `${baseURL }/client/settings`, // - method GET
-  updateSettingsURL: `${baseURL }/client/settings` // method PUT
+  getURL: `${baseURL}/clients`, // - method GET
+  updateURL: `${baseURL}/clients` // - method PUT
 };
 
-// function login(email, password) {
-//   const requestOptions = {
-//     credentials: 'include', // this is required to have cookies sent back and forth in the headers
-//     mode: 'cors',
-//     method: 'POST',
-//     // headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({ email, password })
-//   };
+const user = JSON.parse(localStorage.getItem('user'));
+let tempId = 2;
 
-//   return fetch(API.loginURL, requestOptions)
-//     .then((response) => {
-//       if (!response.ok) {
-//         console.log('~~~~~ response: ~~~~~', response);
-//         return Promise.reject(response.statusText);
-//       }
-//       return response.json();
-//     })
-//     .then((user) => {
-//       // login successful if the response is a user object with an id
-//       if (!FAKE_API && user && user.id) {
-//         console.log('~~~~~ successfully logged in this user using the real API and cookie authentication: ~~~~~', user);
-//         // store user details and jwt token in local storage to keep user logged in between page refreshes
-//         localStorage.setItem('user', JSON.stringify(user));
-//       } else if (FAKE_API && user && user.token) {
-//         // login successful if there's a jwt token in the response
-//         console.log('~~~~~ successfully logged in this user using the fake backend and JWT authentication: ~~~~~', user);
-//         // store user details and jwt token in local storage to keep user logged in between page refreshes
-//         localStorage.setItem('user', JSON.stringify(user));
-//       }
-//       return user;
-//     });
-// }
+if (API.getURL.indexOf('fake') === -1) {
+  tempId = user.id;
+  // console.log('~~~~~ clientService NOT in test mode, userId based on user in localstorage ~~~~~');
+}
 
-// function logout() {
-//   console.log('~~~~~~~~~~ logout function in user service ~~~~~~~~~~');
-//   // remove user from local storage to close private routes on client
-//   localStorage.removeItem('user');
-//   const requestOptions = {
-//     credentials: 'include',
-//     method: 'DELETE'
-//   };
-//   return fetch(API.logoutURL, requestOptions)
-//     .then((response) => {
-//       if (!response.ok) {
-//         return Promise.reject(response.statusText);
-//       }
-//       console.log('~~~~~ successfully logged out this user! ~~~~~');
-//       return response.statusText;
-//     });
-// }
+const clientId = tempId;
 
 function handleResponse(response) {
   if (!response.ok) {
     return Promise.reject(response.statusText);
   }
-
-  return response.json();
+  const apiResponse = response.json();
+  return apiResponse;
 }
 
-function getSettings() {
+function getClient() {
   const requestOptions = {
     credentials: 'include',
     mode: 'cors',
     method: 'GET',
     headers: authHeader()
   };
+  const requestURL = `${API.getURL}/${clientId}`;
 
-  return fetch(API.getSettingsURL, requestOptions).then(handleResponse);
+  return fetch(requestURL, requestOptions).then(handleResponse);
 }
 
-function updateSettings(updateObj) {
+function updateClient(updateObj) {
+  // console.log(`~~~~~ clientService.getClient(${updateObj}) ~~~~~`);
   const requestOptions = {
     credentials: 'include',
+    mode: 'cors',
     method: 'PUT',
-    headers: { ...authHeader(), 'Content-Type': 'application/json' },
+    headers: authHeader(),
     body: JSON.stringify(updateObj)
   };
 
-  return fetch(API.updateSettingsURL, requestOptions).then(handleResponse);
+  return fetch(`${API.updateURL}/${clientId}`, requestOptions).then(handleResponse);
 }
 
 export const clientService = {
-  getSettings,
-  updateSettings
+  getClient,
+  updateClient
 };

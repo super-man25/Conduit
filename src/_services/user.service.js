@@ -1,9 +1,6 @@
 import { authHeader } from '../_helpers';
 import { baseURL, FAKE_API } from '../_constants';
 
-console.log(`~~~~~ baseURL is ${ baseURL } ~~~~~`);
-console.log(`~~~~~ FAKE_API is ${ FAKE_API } ~~~~~`);
-
 const API = {
   loginURL: `${baseURL }/auth`, // - method POST
   logoutURL: `${baseURL }/auth`, // - method DELETE

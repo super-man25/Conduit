@@ -16,7 +16,7 @@ class SettingsPage extends React.Component {
     this.handleDeleteUser = this.handleDeleteUser.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
-  
+
   componentDidMount() {
     // this.props.dispatch(userActions.getAll());
   }

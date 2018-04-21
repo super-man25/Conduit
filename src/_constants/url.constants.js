@@ -7,6 +7,6 @@ if (process.env.REACT_APP_ED_API_URL) {
   baseurl = 'http://localhost:9000';
 }
 
-console.log(`~~~~~ baseURL is ${ baseurl } ~~~~~`);
+// console.log(`~~~~~ baseURL is ${ baseurl } ~~~~~`);
 
 export const baseURL = baseurl;

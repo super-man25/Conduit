@@ -2,35 +2,42 @@ import { clientConstants } from '../_constants';
 import { clientService } from '../_services';
 import { alertActions } from './';
 
-function getSettings() {
-  function request() { return { type: clientConstants.GET_SETTINGS_REQUEST }; }
-  function success(settings) { return { type: clientConstants.GET_SETTINGS_SUCCESS, settings }; }
-  function failure(error) { return { type: clientConstants.GET_SETTINGS_FAILURE, error }; }
-  console.log(`~~~~~ getSettings action ~~~~~`);
-  return (dispatch) => {
-    dispatch(request());
+function getClient() {
+  function request() { return { type: clientConstants.GET_REQUEST }; }
+  function success(client) { return { type: clientConstants.GET_SUCCESS, client }; }
+  function failure(error) { return { type: clientConstants.GET_FAILURE, error }; }
 
-    clientService.getSettings()
+  return (dispatch) => {
+    dispatch(request()); // dispatch function that will dispatch the action that will update the local state
+
+    return clientService.getClient() // use the clientService to hit the API and get the client object
       .then(
-        (settings) => dispatch(success(settings)),
-        (error) => dispatch(failure(error))
+        (client) => dispatch(success(client)),
+        (error) => {
+          dispatch(failure(error));
+          dispatch(alertActions.error(error)); // get failure also dispatches alertActions.error(error)
+        }
       );
   };
 }
 
-function updateSettings(attribute, value) {
-  function request(updateObj) { return { type: clientConstants.UPDATE_SETTINGS_REQUEST, updateObj }; }
-  function success(settings) { return { type: clientConstants.UPDATE_SETTINGS_SUCCESS, settings }; }
-  function failure(error) { return { type: clientConstants.UPDATE_SETTINGS_FAILURE, error }; }
-  console.log(`~~~~~ updateSettings action, attribute = ${ attribute }, value = ${ value } ~~~~~`);
-  return (dispatch) => {
-    dispatch(request({ attribute, value })); // dispatches request(updateObj) ?
+function updateClient(attribute, value) {
+  function request(client) { return { type: clientConstants.UPDATE_REQUEST, client }; }
+  function success(client) { return { type: clientConstants.UPDATE_SUCCESS, client }; }
+  function failure(error) { return { type: clientConstants.UPDATE_FAILURE, error }; }
+  // console.log(`~~~~~ updateClient action, attribute = ${ attribute }, value = ${ value } ~~~~~`);
+  return (dispatch, getState) => {
+    // here we need to make an 'update' client from attribute, value and the current state.client
+    const currentClient = getState().client;
+    const client = { ...currentClient, [attribute]: value };
 
-    clientService.updateSettings(attribute, value) // service should return updated settings if update works
+    dispatch(request(client)); // dispatches request(client) ?
+
+    return clientService.updateClient(client) // service should return updated client if update works ?? really ?
       .then(
-        (settings) => {
-          dispatch(success(settings)); // update success dispatches success(client)
-          dispatch(alertActions.success()); // update success also dispatches alertActions.success()
+        (updatedClient) => {
+          dispatch(success(updatedClient)); // update success dispatches success(updatedClient)
+          dispatch(alertActions.success('Client successfully updated')); // update success also dispatches alertActions.success()
         },
         (error) => {
           dispatch(failure(error)); // update failure dispatches failure(error)
@@ -41,6 +48,6 @@ function updateSettings(attribute, value) {
 }
 
 export const clientActions = {
-  getSettings,
-  updateSettings
+  getClient,
+  updateClient
 };

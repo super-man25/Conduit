@@ -2,45 +2,31 @@ import { clientConstants } from '../_constants';
 
 export function client(state = {}, action) {
   switch (action.type) {
-    case clientConstants.GET_SETTINGS_REQUEST:
+    case clientConstants.GET_REQUEST:
       return {
         loading: true
       };
-    case clientConstants.GET_SETTINGS_SUCCESS:
+    case clientConstants.GET_SUCCESS:
       return {
-        clientSettings: action.settings // action data is clientSettings
+        client: action.client
       };
-    case clientConstants.GET_SETTINGS_FAILURE:
+    case clientConstants.GET_FAILURE:
       return {
         error: action.error
       };
-    case clientConstants.UPDATE_SETTINGS_REQUEST:
-      // add 'updating:true' property to client settings
+    case clientConstants.UPDATE_REQUEST:
       return {
-        ...state,
-        items: state.items.map((user) => {
-          return user.id === action.id ? { ...user, deleting: true } : user;
-        })
+        client: { ...state.client, updating: true }
       };
-    case clientConstants.UPDATE_SETTINGS_SUCCESS:
-      // update clientSettings in state
+    case clientConstants.UPDATE_SUCCESS:
       return {
-        clientSettings: action.settings
+        client: action.client
       };
-    case clientConstants.UPDATE_SETTINGS_FAILURE:
-      // remove 'updating:true' property and add 'updateError:[error]' property to clientSettings
+    case clientConstants.UPDATE_FAILURE:
+      const updatedClient = { ...state.client, updateError: action.error };
+      delete updatedClient.updating;
       return {
-        ...state,
-        items: state.items.map((user) => {
-          if (user.id === action.id) {
-            // make copy of user without 'deleting:true' property
-            let { ...userCopy } = user;
-            delete userCopy.deleting; 
-            // return copy of user with 'deleteError:[error]' property
-            return { ...userCopy, deleteError: action.error };
-          }
-          return user;
-        })
+        client: updatedClient
       };
     default:
       return state;

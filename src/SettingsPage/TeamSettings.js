@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { cssConstants } from '../_constants';
-// import { clientActions } from '../_actions';   // client = team
+import { clientActions } from '../_actions'; // client = team
 import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue, SelectBox } from '../_components';
 
 /* eslint react/no-did-mount-set-state: "off" */
@@ -70,11 +71,12 @@ class TeamSettings extends React.Component {
     if (e.target.tagName === 'DIV') { // the 'SAVE' button was clicked
       // derive the name of the associated state attribute from editFlagName
       const attrName = `${editFlagName.substr(4).toLowerCase()}Value`;
-      const saveData = this.state[attrName];
+      const saveData = { attribute: attrName, value: this.state[attrName] };
       // create the string to use for SAVE action
-      const saveAction = `CLIENT_SAVE_${editFlagName.toUpperCase().substr(4)}`;
-      console.log(`~~~~~ we would have dispatched a ${saveAction} action with data = ${saveData} ~~~~~`);
+      // const saveAction = clientActions.updateClient(saveData);
+      console.log(`~~~~~ we would have dispatched a clientActions.updateClient() action with data = ${saveData} ~~~~~`);
       // this.props.dispatch(saveAction, saveData);
+      this.props.dispatch(clientActions.updateClient(attrName, this.state[attrName]));
       this.setState({ [editFlagName]: false });
     } else { // the 'EDIT' link was clicked
       this.setState({ [editFlagName]: true });
@@ -82,7 +84,7 @@ class TeamSettings extends React.Component {
   }
 
   render() {
-    // const { user, users } = this.props;
+    const { user, client } = this.props;
     const { editTeam, editInterval, editIntegrations, intervalValue, intervalName } = this.state;
     return (
       <TeamSettingsDiv>
@@ -146,11 +148,19 @@ class TeamSettings extends React.Component {
 
 export { TeamSettings as TeamSettingsTest };
 
+TeamSettings.propTypes = {
+  user: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  client: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  alert: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  dispatch: PropTypes.func
+};
+
 function mapStateToProps(state) {
-  const { authentication } = state;
+  const { authentication, client } = state;
   const { user } = authentication;
   return {
-    user
+    user,
+    client
   };
 }
 
