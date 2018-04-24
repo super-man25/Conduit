@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -45,16 +46,16 @@ class Login extends React.Component {
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
     // state will probably not be updated in time for it's value to be up-to-date... // root@eventdynamic.com
     if (name === 'password') {
-      if (value.length === 0) {                                 // check the password value directly
+      if (value.length === 0) { // check the password value directly
         this.setState({ loginEnabled: false });
       } else {
         this.setState({ loginEnabled: this.state.validEmail }); // rely on state for the value of validEmail
       }
     } else if (name === 'email') {
-      if (!this.emailCheck(value)) {                            // check the email directly
+      if (!this.emailCheck(value)) { // check the email directly
         this.setState({ loginEnabled: false });
       } else {
-        this.setState({ loginEnabled: this.state.password });   // rely on state for the value of password
+        this.setState({ loginEnabled: this.state.password }); // rely on state for the value of password
       }
     }
   }
@@ -94,7 +95,6 @@ class Login extends React.Component {
             <LogoName login />
             <H3 login>Log In</H3>
             {/* <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv> */}
-            <br />
             <form name="form" onSubmit={this.handleSubmit}>
               <Label htmlFor="email">Email Address</Label>
               <Input type="text" name="email" id="email" autoComplete="new-email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
@@ -108,7 +108,6 @@ class Login extends React.Component {
               {authState.pending &&
                 <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner"/>
               }
-              <br />
             </form>
           </LoginFormDiv>
           <LoginFooterDiv>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooterDiv>
@@ -117,6 +116,11 @@ class Login extends React.Component {
     );
   }
 }
+
+Login.propTypes = {
+  authState: PropTypes.shape(),
+  authActions: PropTypes.shape()
+};
 
 function mapStateToProps(state) {
   return {
