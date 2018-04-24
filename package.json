@@ -25,7 +25,8 @@
     "build-prod": "env-cmd base,prod react-scripts build",
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test-ci": "yarn test --coverage --coverageReporters=cobertura --testResultsProcessor jest-junit"
   },
   "devDependencies": {
     "@dialexa/eslint-config-dialexa": "^4.1.1",
@@ -34,6 +35,7 @@
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-react": "^7.7.0",
     "jest-styled-components": "^5.0.1",
+    "jest-junit": "^3.6.0",
     "react-test-renderer": "^16.3.2"
   }
 }
