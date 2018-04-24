@@ -16,5 +16,6 @@ export const Sidebar = styled.div`
     width: 0;
     max-width: 0;
     min-width: 0;
+    overflow-x: hidden;
   `}
 `;
