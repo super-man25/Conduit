@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
-import { history } from '../_helpers';
-import { LogoName, UserWelcome, UserAvatar, SprocketMenu } from './';
+import { LogoName, UserWelcome, SprocketMenu } from './';
+import { Link, withRouter } from 'react-router-dom';
 
 const SiteHeaderDiv = styled.div`
   position: relative;
@@ -23,29 +24,33 @@ class SiteHeader extends React.Component {
 
   handleSprocketClick(e) {
     // code here that will result in the menu dropping, when we know what it is...
-    history.push('/dashboard/settings');
+    this.props.history.push('/settings');
   }
 
   render() {
-    const { user } = this.props;
+    const { authState } = this.props;
     return (
       <SiteHeaderDiv>
-        <LogoName />
+        <Link to="/">
+          <LogoName />
+        </Link>
         <SprocketMenu onClick={this.handleSprocketClick} />
-        <UserAvatar user={user} />
-        <UserWelcome user={user} />
+        <UserWelcome user={authState.model} />
       </SiteHeaderDiv>
     );
   }
 }
 
+SiteHeader.propTypes = {
+  history: PropTypes.shape(),
+  authState: PropTypes.shape()
+};
+
 function mapStateToProps(state) {
-  const { authentication } = state;
-  const { user } = authentication;
   return {
-    user
+    authState: state.auth
   };
 }
 
-const connectedSiteHeader = connect(mapStateToProps)(SiteHeader);
+const connectedSiteHeader = withRouter(connect(mapStateToProps)(SiteHeader));
 export { connectedSiteHeader as SiteHeader };
