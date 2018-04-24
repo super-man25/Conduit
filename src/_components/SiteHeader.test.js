@@ -12,7 +12,7 @@ it('SiteHeaderDiv renders correctly with no props', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with a user=testUser prop', () => {
+xit('renders correctly with a user=testUser prop', () => {
   const tree = renderer
     .create(<SiteHeaderTest user={testUser} />)
     .toJSON();

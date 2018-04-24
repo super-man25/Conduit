@@ -1,17 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { cssConstants } from '../_constants';
 
 export const Sidebar = styled.div`
-  display: ${(props) => { return props.collapsed ? 'none' : 'block'; }};
-  position: relative;
-  top: 0px;
-  bottom: 0px;
-  width: calc(32.7%);
-  height: 100%;
-  clear: left;
-  float: left;
-  margin: 0;
-  padding: 0;
-  background: ${cssConstants.PRIMARY_WHITE};
+  width: 36%;
+  max-width: 500px;
+  min-width: 380px;
+  visibility: visible;
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  overflow-x: hidden;
+  transition: 0.1s ease-in-out all;
+  ${(props) => props.collapsed && css`
+    transform: translate3d(-100%, 0, 0);
+    width: 0;
+    max-width: 0;
+    min-width: 0;
+  `}
 `;

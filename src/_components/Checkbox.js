@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { cssConstants } from '../_constants';
+import PropTypes from 'prop-types';
 import { Label } from './StyledTags';
 
 // const MaterialIcon = (props) => (
@@ -129,27 +129,26 @@ const MdcCheckboxMixedmarkDiv = styled.div`
   background-color: white;
 `;
 
-//
+export const Checkbox = (props) => {
+  const { label } = props;
 
-export class Checkbox extends React.Component {
-  render() {
-    const { label } = this.props;
-    // const { disabled, rtl, alignEnd, label } = this.props;
-    return (
-      <MdcFormFieldDiv>
-        <MdcCheckboxDiv>
-          <MdcCheckboxInput />
-          <MdcCheckboxBgDiv>
-            <MdcCheckboxCheckmarkSvg viewbox="0 0 24 24">
-              <MdcCheckboxCheckmarkPath fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-            </MdcCheckboxCheckmarkSvg>
-            <MdcCheckboxMixedmarkDiv />
-          </MdcCheckboxBgDiv>
-        </MdcCheckboxDiv>
-        <Label>{label}</Label>
-      </MdcFormFieldDiv>
-    );
-  }
+  return (
+    <MdcFormFieldDiv>
+      <MdcCheckboxDiv>
+        <MdcCheckboxInput />
+        <MdcCheckboxBgDiv>
+          <MdcCheckboxCheckmarkSvg viewbox="0 0 24 24">
+            <MdcCheckboxCheckmarkPath fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+          </MdcCheckboxCheckmarkSvg>
+          <MdcCheckboxMixedmarkDiv />
+        </MdcCheckboxBgDiv>
+      </MdcCheckboxDiv>
+      <Label>{label}</Label>
+    </MdcFormFieldDiv>
+  );
+};
 
-}
+Checkbox.propTypes = {
+  label: PropTypes.label
+};
 
