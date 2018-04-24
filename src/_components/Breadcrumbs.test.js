@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Breadcrumbs } from './';
+import 'jest-styled-components';
 
 it('renders correctly', () => {
   const tree = renderer

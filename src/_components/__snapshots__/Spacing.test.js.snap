@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with no props 1`] = `
+<div
+  className=""
+>
+  <span>
+    Chillen
+  </span>
+</div>
+`;
+
+exports[`renders with optional props 1`] = `
+.c0 {
+  padding: 12px;
+  margin: 12px;
+  height: 12px;
+  width: 12px;
+}
+
+<div
+  className="c0"
+  height="12px"
+  width="12px"
+>
+  <span>
+    Chillen
+  </span>
+</div>
+`;

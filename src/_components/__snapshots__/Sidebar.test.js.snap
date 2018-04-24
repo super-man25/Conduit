@@ -2,12 +2,12 @@
 
 exports[`renders correctly with collapsed prop 1`] = `
 <div
-  className="sc-hSdWYo leNBna"
+  className="sc-gipzik fMEzEz"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <div
-  className="sc-hSdWYo dgOuOe"
+  className="sc-gipzik kKDUEU"
 />
 `;

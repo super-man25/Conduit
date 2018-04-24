@@ -2,26 +2,26 @@
 
 exports[`SiteHeaderDiv renders correctly with no props 1`] = `
 <div
-  className="sc-kpOJdX edQipM"
+  className="sc-Rmtcm ikceqg"
 />
 `;
 
 exports[`renders correctly with a user=testUser prop 1`] = `
 <div
-  className="sc-kpOJdX edQipM"
+  className="sc-Rmtcm ikceqg"
 >
   <div
-    className="sc-dxgOiQ fniRqU"
+    className="sc-hSdWYo jOPEW"
   />
   <div
-    className="sc-eNQAEJ bRsigH"
+    className="sc-dVhcbM hFWwbS"
     onClick={[Function]}
   />
   <div
-    className="sc-jKJlTe iglQE"
+    className="sc-eqIVtm kqooiG"
   />
   <div
-    className="sc-ckVGcZ icySUo"
+    className="sc-fAjcbJ hXABc"
   />
 </div>
 `;

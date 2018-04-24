@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: auto;
+  width: 68px;
+  height: 14px;
+  -webkit-aligh-self: center;
+  -ms-flex-item-aligh: center;
+  aligh-self: center;
+}
+
+.c1 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: #38A9DB;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.c2 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: #38A9DB;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.30000000000000004s;
+  animation-delay: 0.30000000000000004s;
+}
+
+.c3 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: #38A9DB;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+</div>
+`;
+
+exports[`should render with optional props 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: auto;
+  width: 68px;
+  height: 14px;
+  -webkit-aligh-self: center;
+  -ms-flex-item-aligh: center;
+  aligh-self: center;
+  height: 10px;
+  width: 46px;
+}
+
+.c1 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: pink;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  height: 10px;
+  width: 10px;
+  border-radiusd: 10px;
+}
+
+.c2 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: pink;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.30000000000000004s;
+  animation-delay: 0.30000000000000004s;
+  height: 10px;
+  width: 10px;
+  border-radiusd: 10px;
+}
+
+.c3 {
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background-color: pink;
+  -webkit-animation: dvjWxo 1.3s ease infinite;
+  animation: dvjWxo 1.3s ease infinite;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  height: 10px;
+  width: 10px;
+  border-radiusd: 10px;
+}
+
+<div
+  className="c0"
+  color="pink"
+>
+  <div
+    className="c1"
+    color="pink"
+  />
+  <div
+    className="c2"
+    color="pink"
+  />
+  <div
+    className="c3"
+    color="pink"
+  />
+</div>
+`;

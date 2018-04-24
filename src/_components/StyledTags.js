@@ -93,17 +93,18 @@ export const H5 = styled.h5`
 `;
 
 export const P1 = styled.p`
-  display: block;
-  color: ${(props) => { return props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK; }};
-  font-size: ${(props) => { return props.size ? props.size : cssConstants.PARAGRAPH_SIZE_P1; }};
-  font-weight: ${(props) => { return props.weight ? props.weight : cssConstants.PARAGRAPH_WEIGHT_P1; }};
+  margin: 0;
+  color: ${(props) => props.color || 'inherit'};
+  font-size: ${(props) => props.size || '14px'};
+  font-weight: ${(props) => props.weight || 'normal'}
 `;
 
 export const P2 = styled.p`
-  display: block;
-  color: ${(props) => { return props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK; }};
-  font-size: ${(props) => { return props.size ? props.size : cssConstants.PARAGRAPH_SIZE_P2; }};
-  font-weight: ${(props) => { return props.weight ? props.weight : cssConstants.PARAGRAPH_WEIGHT_P2; }};
+  margin: 0;
+  color: ${(props) => props.color || 'inherit'};
+  font-size: ${(props) => props.size || '12px'};
+  font-weight: ${(props) => props.weight || 'normal'}
+>>>>>>> develop
 `;
 
 export const S1 = styled.span`

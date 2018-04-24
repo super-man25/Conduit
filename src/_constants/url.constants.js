@@ -1,6 +1,7 @@
 export const FAKE_API = false;
 
 let baseurl;
+
 if (process.env.REACT_APP_ED_API_URL) {
   baseurl = process.env.REACT_APP_ED_API_URL;
 } else {

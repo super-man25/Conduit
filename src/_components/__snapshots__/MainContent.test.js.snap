@@ -2,18 +2,18 @@
 
 exports[`renders correctly with leftNav prop 1`] = `
 <div
-  className="sc-kEYyzF WJvwT"
+  className="sc-cvbbAY bBpPKw"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <div
-  className="sc-kEYyzF YSzlW"
+  className="sc-cvbbAY fwSTmF"
 />
 `;
 
 exports[`renders correctly with sidebar prop 1`] = `
 <div
-  className="sc-kEYyzF ffPMMz"
+  className="sc-cvbbAY eukJgk"
 />
 `;
