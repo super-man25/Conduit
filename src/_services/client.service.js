@@ -9,7 +9,7 @@ const API = {
 const user = JSON.parse(localStorage.getItem('user'));
 let tempId = 2;
 
-if (API.getURL.indexOf('fake') === -1) {
+if (API.getURL.indexOf('fake') === -1 && typeof user !== undefined && user) {
   tempId = user.id;
   // console.log('~~~~~ clientService NOT in test mode, userId based on user in localstorage ~~~~~');
 }
@@ -37,7 +37,7 @@ function getClient() {
 }
 
 function updateClient(updateObj) {
-  // console.log(`~~~~~ clientService.getClient(${updateObj}) ~~~~~`);
+  // console.log('~~~~~ clientService.getClient()  - updateObj is: ~~~~~', updateObj);
   const requestOptions = {
     credentials: 'include',
     mode: 'cors',

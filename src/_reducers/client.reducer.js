@@ -1,5 +1,6 @@
 import { clientConstants } from '../_constants';
-
+// note that due to reducer composition, the state referred to here is
+// the 'state' of the 'client' attribute of the Redux store
 export function client(state = {}, action) {
   switch (action.type) {
     case clientConstants.GET_REQUEST:
@@ -7,26 +8,28 @@ export function client(state = {}, action) {
         loading: true
       };
     case clientConstants.GET_SUCCESS:
-      return {
-        client: action.client
+      return { // api serializer to remove createdAt, modifiedAt ?
+        id: action.client.id,
+        name: action.client.name,
+        pricingInterval: action.client.pricingInterval
       };
     case clientConstants.GET_FAILURE:
       return {
+        ...state,
         error: action.error
       };
     case clientConstants.UPDATE_REQUEST:
       return {
-        client: { ...state.client, updating: true }
+        ...state,
+        updating: true
       };
     case clientConstants.UPDATE_SUCCESS:
-      return {
-        client: action.client
-      };
+      return action.client;
     case clientConstants.UPDATE_FAILURE:
-      const updatedClient = { ...state.client, updateError: action.error };
-      delete updatedClient.updating;
+      const updateErrorClient = { ...state, updateError: action.error };
+      delete updateErrorClient.updating;
       return {
-        client: updatedClient
+        client: updateErrorClient
       };
     default:
       return state;

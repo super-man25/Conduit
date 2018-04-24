@@ -8,7 +8,7 @@ describe('client Reducer', () => {
     expect(client({}, { type: clientConstants.GET_REQUEST })).toEqual(expectedResult);
   });
   it(`action with type of ${ clientConstants.GET_SUCCESS } should return an object with the client attribute passed with the action`, () => {
-    const expectedResult = { client: { id: 1, name: 'Mets', pricingInterval: 30 } };
+    const expectedResult = { id: 1, name: 'Mets', pricingInterval: 30 };
 
     expect(client({}, { type: clientConstants.GET_SUCCESS, client: { id: 1, name: 'Mets', pricingInterval: 30 } })).toEqual(expectedResult);
   });
@@ -20,22 +20,22 @@ describe('client Reducer', () => {
   });
 
   it(`action with type of ${ clientConstants.UPDATE_REQUEST } should return an object where the client attribute has an updating : true property`, () => {
-    const originalState = { client: { id: 1, name: 'Mets', pricingInterval: 30 } };
+    const originalState = { id: 1, name: 'Mets', pricingInterval: 30 };
     const futureClient = { id: 1, name: 'MetZ', pricingInterval: 30 };
-    const expectedResult = { client: { id: 1, name: 'Mets', pricingInterval: 30, updating: true } };
+    const expectedResult = { id: 1, name: 'Mets', pricingInterval: 30, updating: true };
 
-    expect(client({ client: { id: 1, name: 'Mets', pricingInterval: 30 } }, { type: clientConstants.UPDATE_REQUEST, client: { id: 2, name: 'Mets', pricingInterval: 30 } })).toEqual(expectedResult);
-    expect(client(originalState, { type: clientConstants.UPDATE_REQUEST, client: futureClient }).client.updating).toEqual(true);
+    expect(client(originalState, { type: clientConstants.UPDATE_REQUEST, client: { id: 2, name: 'Mets', pricingInterval: 30 } })).toEqual(expectedResult);
+    expect(client(originalState, { type: clientConstants.UPDATE_REQUEST, client: futureClient }).updating).toEqual(true);
   });
 
   it(`action with type of ${ clientConstants.UPDATE_SUCCESS } should return an object with the client attribute passed with the action`, () => {
-    const originalState = { client: { id: 1, name: 'Mets', pricingInterval: 30 } };
+    const originalState = { id: 1, name: 'Mets', pricingInterval: 30 };
 
-    expect(client(originalState, { type: clientConstants.UPDATE_SUCCESS, client: { id: 1, name: 'Jets', pricingInterval: 30 } }).client.name).toEqual('Jets');
+    expect(client(originalState, { type: clientConstants.UPDATE_SUCCESS, client: { id: 1, name: 'Jets', pricingInterval: 30 } }).name).toEqual('Jets');
   });
 
   it(`action with type of ${ clientConstants.UPDATE_FAILURE } should return an object with the client attribute that has an updateError attribute and no updating:true attribute`, () => {
-    const originalState = { client: { id: 1, name: 'Mets', pricingInterval: 30, updating: true } };
+    const originalState = { id: 1, name: 'Mets', pricingInterval: 30, updating: true };
     const refError = { id: 111, message: 'Bad weather on the interwebs' };
 
     expect(client(originalState, { type: clientConstants.UPDATE_FAILURE, error: refError }).client.updateError).toEqual(refError);

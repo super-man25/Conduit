@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { userActions } from '../_actions';
 import { OuterWrapper, SiteHeader, ContentWrapper, LeftNav, MainContent, Breadcrumbs, ScreenTitleBlock, H3 } from '../_components';
@@ -18,7 +19,7 @@ class SettingsPage extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(userActions.getAll());
+    // this.props.dispatch(clientActions.getClient(localStorage.getItem('user').id));
   }
 
   handleLogoutClick(e) {
@@ -33,7 +34,7 @@ class SettingsPage extends React.Component {
   }
 
   render() {
-    // const { user, users } = this.props;
+    // const { user } = this.props;
     return (
       <OuterWrapper>
         <SiteHeader />
@@ -68,14 +69,20 @@ class SettingsPage extends React.Component {
   }
 }
 
+SettingsPage.propTypes = {
+  // user: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  // client: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  // alert: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  dispatch: PropTypes.func
+};
+
 export { SettingsPage as SettingsPageTest };
 
 function mapStateToProps(state) {
-  const { users, authentication } = state;
+  const { authentication } = state;
   const { user } = authentication;
   return {
-    user,
-    users
+    user
   };
 }
 

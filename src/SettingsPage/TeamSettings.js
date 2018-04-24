@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { Client as ClientModel } from '../_models';
 import { cssConstants } from '../_constants';
 import { clientActions } from '../_actions'; // client = team
 import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue, SelectBox } from '../_components';
@@ -41,9 +42,9 @@ class TeamSettings extends React.Component {
 
     this.state = {
       editTeam: false, // what do we expect to do here? Allow the client to change the team name, or... ? Client cannot change team?
-      teamValue: 'fakeTeam',
-      editInterval: false,
-      intervalValue: 30,
+      teamName: '',
+      editpricingInterval: false,
+      pricingInterval: 30,
       intervalName: '',
       editIntegrations: false,
       integrationsValue: [1, 2, 3, 4, 5, 6, 7] // just ids here - we'd getAll integrations like { id: [int], name: [str], on: [bool] }
@@ -55,12 +56,17 @@ class TeamSettings extends React.Component {
   }
 
   componentDidMount() {
-    // maybe fetch some client data?
-    this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
+    this.props.dispatch(clientActions.getClient(localStorage.getItem('user').clientId))
+      .then(() => { // set field values to data retrieved from api
+        // this.setState({ teamName: this.props.client.name });
+        this.setState({ pricingInterval: this.props.client.pricingInterval });
+        this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
+        return true;
+      });
   }
 
   handleIntervalChange() {
-    this.setState({ intervalValue: document.getElementById('pricingInterval').value },
+    this.setState({ pricingInterval: document.getElementById('pricingInterval').value },
       () => { this.setState({ intervalName: TeamSettings.intervalNameFromSelect() }); }
     );
   }
@@ -69,13 +75,7 @@ class TeamSettings extends React.Component {
     e.preventDefault();
     const editFlagName = e.target.parentElement.id;
     if (e.target.tagName === 'DIV') { // the 'SAVE' button was clicked
-      // derive the name of the associated state attribute from editFlagName
-      const attrName = `${editFlagName.substr(4).toLowerCase()}Value`;
-      const saveData = { attribute: attrName, value: this.state[attrName] };
-      // create the string to use for SAVE action
-      // const saveAction = clientActions.updateClient(saveData);
-      console.log(`~~~~~ we would have dispatched a clientActions.updateClient() action with data = ${saveData} ~~~~~`);
-      // this.props.dispatch(saveAction, saveData);
+      const attrName = editFlagName.substr(4); // derive name of state attribute from editFlagName
       this.props.dispatch(clientActions.updateClient(attrName, this.state[attrName]));
       this.setState({ [editFlagName]: false });
     } else { // the 'EDIT' link was clicked
@@ -84,8 +84,8 @@ class TeamSettings extends React.Component {
   }
 
   render() {
-    const { user, client } = this.props;
-    const { editTeam, editInterval, editIntegrations, intervalValue, intervalName } = this.state;
+    const { client } = this.props;
+    const { editTeam, editpricingInterval, pricingInterval, editIntegrations, intervalName } = this.state;
     return (
       <TeamSettingsDiv>
         Team Settings
@@ -95,13 +95,13 @@ class TeamSettings extends React.Component {
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
           <SettingReadonlyValue>
-            New York Mets
+            {client.name}
           </SettingReadonlyValue>
           <SettingEditableValue>
             Team (name?) Input would go here
           </SettingEditableValue>
         </Setting>
-        <Setting edit={editInterval} id='editInterval'>
+        <Setting edit={editpricingInterval} id='editpricingInterval'>
           Generate pricing updates every
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
@@ -109,7 +109,7 @@ class TeamSettings extends React.Component {
             {intervalName}
           </SettingReadonlyValue>
           <SettingEditableValue>
-            <SelectBox noBg id="pricingInterval" value={intervalValue} onChange={this.handleIntervalChange}>
+            <SelectBox noBg id="pricingInterval" value={pricingInterval} onChange={this.handleIntervalChange}>
               <option value="15">15 minutes</option>
               <option value="30">30 minutes</option>
               <option value="60">1 hour</option>
@@ -149,17 +149,13 @@ class TeamSettings extends React.Component {
 export { TeamSettings as TeamSettingsTest };
 
 TeamSettings.propTypes = {
-  user: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
-  client: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
-  alert: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
+  client: ClientModel, // some attributes of the client are undefined initially, that is a problem
   dispatch: PropTypes.func
 };
 
 function mapStateToProps(state) {
-  const { authentication, client } = state;
-  const { user } = authentication;
+  const { client } = state;
   return {
-    user,
     client
   };
 }

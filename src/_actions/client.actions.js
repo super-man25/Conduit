@@ -12,7 +12,9 @@ function getClient() {
 
     return clientService.getClient() // use the clientService to hit the API and get the client object
       .then(
-        (client) => dispatch(success(client)),
+        (fetchedClient) => {
+          dispatch(success(fetchedClient));
+        },
         (error) => {
           dispatch(failure(error));
           dispatch(alertActions.error(error)); // get failure also dispatches alertActions.error(error)
@@ -25,17 +27,19 @@ function updateClient(attribute, value) {
   function request(client) { return { type: clientConstants.UPDATE_REQUEST, client }; }
   function success(client) { return { type: clientConstants.UPDATE_SUCCESS, client }; }
   function failure(error) { return { type: clientConstants.UPDATE_FAILURE, error }; }
-  // console.log(`~~~~~ updateClient action, attribute = ${ attribute }, value = ${ value } ~~~~~`);
   return (dispatch, getState) => {
     // here we need to make an 'update' client from attribute, value and the current state.client
     const currentClient = getState().client;
-    const client = { ...currentClient, [attribute]: value };
+    const proposedClient = {
+      ...currentClient,
+      [attribute]: attribute !== 'name' ? parseInt(value, 10) : value
+    };
+    dispatch(request(proposedClient)); // dispatches request(client) ?
 
-    dispatch(request(client)); // dispatches request(client) ?
-
-    return clientService.updateClient(client) // service should return updated client if update works ?? really ?
+    return clientService.updateClient(proposedClient) // api returns updated client if update works
       .then(
         (updatedClient) => {
+          // console.log('updatedClient returned by API: ', updatedClient);
           dispatch(success(updatedClient)); // update success dispatches success(updatedClient)
           dispatch(alertActions.success('Client successfully updated')); // update success also dispatches alertActions.success()
         },
