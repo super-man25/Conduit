@@ -1,20 +1,10 @@
-import { authHeader } from '../_helpers';
 import { baseURL } from '../_constants';
+import { store } from '../state/store';
 
 const API = {
   getURL: `${baseURL}/clients`, // - method GET
   updateURL: `${baseURL}/clients` // - method PUT
 };
-
-const user = JSON.parse(localStorage.getItem('user'));
-let tempId = 2;
-
-if (API.getURL.indexOf('fake') === -1 && typeof user !== undefined && user) {
-  tempId = user.id;
-  // console.log('~~~~~ clientService NOT in test mode, userId based on user in localstorage ~~~~~');
-}
-
-const clientId = tempId;
 
 function handleResponse(response) {
   if (!response.ok) {
@@ -28,25 +18,23 @@ function getClient() {
   const requestOptions = {
     credentials: 'include',
     mode: 'cors',
-    method: 'GET',
-    headers: authHeader()
+    method: 'GET'
   };
-  const requestURL = `${API.getURL}/${clientId}`;
+  const requestURL = `${API.getURL}/${store.getState().auth.model.clientId}`;
 
   return fetch(requestURL, requestOptions).then(handleResponse);
 }
 
 function updateClient(updateObj) {
-  // console.log('~~~~~ clientService.getClient()  - updateObj is: ~~~~~', updateObj);
   const requestOptions = {
     credentials: 'include',
     mode: 'cors',
     method: 'PUT',
-    headers: authHeader(),
     body: JSON.stringify(updateObj)
   };
+  const requestURL = `${API.getURL}/${updateObj.id}`;
 
-  return fetch(`${API.updateURL}/${clientId}`, requestOptions).then(handleResponse);
+  return fetch(requestURL, requestOptions).then(handleResponse);
 }
 
 export const clientService = {
