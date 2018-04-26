@@ -22,7 +22,7 @@ function getEventIdFromPath(path) {
   if (parts[1] !== 'event') {
     return null;
   }
-  const parsed = parseInt(parts[2]);
+  const parsed = parseInt(parts[2], 10);
   return isNaN(parsed) ? null : parsed;
 }
 

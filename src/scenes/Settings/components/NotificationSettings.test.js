@@ -1,10 +1,10 @@
 import React from 'react';
-import LoginFooterDiv from './LoginFooterDiv';
+import NotificationSettings from './NotificationSettings';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<LoginFooterDiv></LoginFooterDiv>)
+    .create(<NotificationSettings />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

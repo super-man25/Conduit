@@ -2,17 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-<<<<<<< HEAD:ed-web/src/SettingsPage/TeamSettings.js
 
-import { Client as ClientModel } from '../_models';
-import { cssConstants } from '../_constants';
-import { clientActions } from '../_actions'; // client = team
-import { Setting, SettingEditButton, SettingSaveButton, SettingReadonlyValue, SettingEditableValue, SelectBox } from '../_components';
+import { cssConstants } from '../../../_constants';
+import {
+  Setting,
+  SettingEditButton,
+  SettingSaveButton,
+  SettingReadonlyValue,
+  SettingEditableValue,
+  SelectBox
+} from '../../../_components';
+import {
+  actions as clientActions
+} from '../../../state/clients'; // client = team
 
 /* eslint react/no-did-mount-set-state: "off" */
-=======
-import { cssConstants } from '../../../_constants';
->>>>>>> develop:ed-web/src/scenes/Settings/components/TeamSettings.js
 
 export const TeamSettingsDiv = styled.div`
   width: 100%;
@@ -60,13 +64,16 @@ class TeamSettings extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(clientActions.getClient(localStorage.getItem('user').clientId))
-      .then(() => { // set field values to data retrieved from api
-        // this.setState({ teamName: this.props.client.name });
-        this.setState({ pricingInterval: this.props.client.pricingInterval });
-        this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
-        return true;
-      });
+    this.props.dispatch(clientActions.getClient());
+    const self = this;
+    setTimeout(() => { // need a cleaner way of making these happen after the action dispatch
+      this.setState({ teamName: self.props.client.name });
+      this.setState({ pricingInterval: self.props.client.pricingInterval });
+      this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
+    },
+    500
+    );
+
   }
 
   handleIntervalChange() {
@@ -88,8 +95,7 @@ class TeamSettings extends React.Component {
   }
 
   render() {
-    const { client } = this.props;
-    const { editTeam, editpricingInterval, pricingInterval, editIntegrations, intervalName } = this.state;
+    const { editTeam, teamName, editpricingInterval, pricingInterval, editIntegrations, intervalName } = this.state;
     return (
       <TeamSettingsDiv>
         Team Settings
@@ -99,7 +105,7 @@ class TeamSettings extends React.Component {
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
           <SettingReadonlyValue>
-            {client.name}
+            {teamName}
           </SettingReadonlyValue>
           <SettingEditableValue>
             Team (name?) Input would go here
@@ -153,14 +159,15 @@ class TeamSettings extends React.Component {
 export { TeamSettings as TeamSettingsTest };
 
 TeamSettings.propTypes = {
-  client: ClientModel, // some attributes of the client are undefined initially, that is a problem
+  auth: PropTypes.object, // eslint-disable-line
   dispatch: PropTypes.func
 };
 
 function mapStateToProps(state) {
-  const { client } = state;
+  const { client, auth } = state;
   return {
-    client
+    client,
+    auth
   };
 }
 

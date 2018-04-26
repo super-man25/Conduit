@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import LoginFormDiv from './components/LoginForm';
 import LoginFooterDiv from './components/LoginFooter';
