@@ -10,9 +10,20 @@ const CenteredContainer = styled.div`
   margin: auto;
 `;
 
+const ContentMock = styled.div`
+  margin: 64px 0;
+  width: 100%;
+  height: 720px;
+  background-color: #ddd;
+`;
+
 const Season = () => (
   <CenteredContainer>
     <H1>Season</H1>
+    <ContentMock />
+    <ContentMock />
+    <ContentMock />
+    <ContentMock />
   </CenteredContainer>
 );
 

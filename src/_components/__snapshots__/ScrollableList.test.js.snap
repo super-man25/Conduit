@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div>
+    Mets
+  </div>
+  <div>
+    Rangers
+  </div>
+  <div>
+    Athletics
+  </div>
+</div>
+`;
+
+exports[`renders correctly with scrollTo 1`] = `
+<div>
+  <div>
+    Mets
+  </div>
+  <div>
+    Rangers
+  </div>
+  <div>
+    Athletics
+  </div>
+</div>
+`;
