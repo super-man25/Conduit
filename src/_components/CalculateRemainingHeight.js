@@ -15,14 +15,14 @@ export class CalculateRemainingHeight extends React.Component {
 
   state = {
     remainingHeight: null
-  }
+  };
 
   setRemainingHeight = (contentHeight) => {
     const containerNode = this.containerRef.current;
     this.setState({
       remainingHeight: containerNode.clientHeight - contentHeight
     });
-  }
+  };
 
   render() {
     const children = [].concat(this.props.children);
@@ -34,7 +34,9 @@ export class CalculateRemainingHeight extends React.Component {
     const func = children[total - 1];
 
     if (typeof func !== 'function') {
-      throw new Error('CalculateRemainingHeight: Expected the last child to be a function');
+      throw new Error(
+        'CalculateRemainingHeight: Expected the last child to be a function'
+      );
     }
 
     return (
@@ -48,18 +50,12 @@ export class CalculateRemainingHeight extends React.Component {
   }
 }
 
-const childProp = PropTypes.oneOfType([
-  PropTypes.node,
-  PropTypes.func
-]);
+const childProp = PropTypes.oneOfType([PropTypes.node, PropTypes.func]);
 
 CalculateRemainingHeight.propTypes = {
   /**
    * Children to display. The last child should be a function which receives the remaining
    * height in the container as a parameter and returns a node to render.
    */
-  children: PropTypes.oneOfType([
-    childProp,
-    PropTypes.arrayOf(childProp)
-  ])
+  children: PropTypes.oneOfType([childProp, PropTypes.arrayOf(childProp)])
 };

@@ -55,9 +55,5 @@ function* watchSignOutAsync() {
 }
 
 export default function* authSaga() {
-  yield all([
-    watchFetchAsync(),
-    watchSignInAsync(),
-    watchSignOutAsync()
-  ]);
+  yield all([watchFetchAsync(), watchSignInAsync(), watchSignOutAsync()]);
 }

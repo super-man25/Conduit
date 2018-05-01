@@ -6,14 +6,7 @@ import { darken } from 'polished';
 import PropTypes from 'prop-types';
 import { Event as EventModel } from '../../../_models';
 
-import {
-  Flex,
-  FlexItem,
-  Icon,
-  Spacing,
-  H4,
-  P2
-} from '../../../_components';
+import { Flex, FlexItem, Icon, Spacing, H4, P2 } from '../../../_components';
 
 import {
   readableDuration,
@@ -31,14 +24,28 @@ const Container = styled.div`
   flex-direction: row;
   padding: 16px 16px 16px 40px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  background-color: ${(props) => { return props.past ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE; }};
-  color: ${(props) => { return props.past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK; }};
+  background-color: ${(props) => {
+    return props.past
+      ? cssConstants.PRIMARY_LIGHTER_GRAY
+      : cssConstants.PRIMARY_WHITE;
+  }};
+  color: ${(props) => {
+    return props.past
+      ? cssConstants.PRIMARY_DARK_GRAY
+      : cssConstants.PRIMARY_BLACK;
+  }};
   transition: 0.15s ease-in-out all;
   position: relative;
 
   :hover {
     cursor: pointer;
-    background-color: ${(props) => darken(0.05, (props.past ? cssConstants.PRIMARY_LIGHTER_GRAY : cssConstants.PRIMARY_WHITE))};
+    background-color: ${(props) =>
+      darken(
+        0.05,
+        props.past
+          ? cssConstants.PRIMARY_LIGHTER_GRAY
+          : cssConstants.PRIMARY_WHITE
+      )};
   }
 
   ::before {
@@ -48,7 +55,9 @@ const Container = styled.div`
     top: 0;
     left: 0;
     bottom: 0;
-    width: ${(props) => { return props.active ? '16px' : '0px'; }};
+    width: ${(props) => {
+      return props.active ? '16px' : '0px';
+    }};
     background-color: ${cssConstants.PRIMARY_DARK_BLUE};
   }
 `;
@@ -61,15 +70,21 @@ export const EventListItem = (props) => {
     <Container onClick={() => onClick(event)} active={active} past={past}>
       <FlexItem flex={4}>
         <Flex direction="row" justify="space-between">
-          <P2 color={cssConstants.PRIMARY_GRAY}>GAME SCORE: {orDash(event.score)}</P2>
-          <P2 color={cssConstants.PRIMARY_GRAY}>updated {readableDuration(event.modifiedAt)} ago</P2>
+          <P2 color={cssConstants.PRIMARY_GRAY}>
+            GAME SCORE: {orDash(event.score)}
+          </P2>
+          <P2 color={cssConstants.PRIMARY_GRAY}>
+            updated {readableDuration(event.modifiedAt)} ago
+          </P2>
         </Flex>
         <Spacing height="16px" />
         <Heading>{event.name}</Heading>
         <Spacing height="8px" />
         <Flex direction="row" justify="space-between">
           <P2>{readableDate(event.timestamp)}</P2>
-          <P2>QUANTITY: {orDash(event.inventory)}/{orDash(event.capacity)}</P2>
+          <P2>
+            QUANTITY: {orDash(event.inventory)}/{orDash(event.capacity)}
+          </P2>
         </Flex>
       </FlexItem>
       <Spacing width="16px" />
@@ -78,7 +93,15 @@ export const EventListItem = (props) => {
           <Flex direction="column" align="center">
             <P2 color={cssConstants.PRIMARY_GRAY}>promotion</P2>
             <Spacing height="8px" />
-            <Icon name="award" size={28} color={past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK} />
+            <Icon
+              name="award"
+              size={28}
+              color={
+                past
+                  ? cssConstants.PRIMARY_DARK_GRAY
+                  : cssConstants.PRIMARY_BLACK
+              }
+            />
           </Flex>
         )}
       </Spacing>

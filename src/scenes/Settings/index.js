@@ -28,7 +28,7 @@ class SettingsPage extends React.Component {
   handleLogoutClick = (e) => {
     e.preventDefault();
     this.props.userActions.signOut();
-  }
+  };
 
   render() {
     // const { user, users } = this.props;
@@ -45,10 +45,14 @@ class SettingsPage extends React.Component {
             <br />
             <br />
             <br />
-            <Link to="/logout" onClick={this.handleLogoutClick}>Logout</Link>
+            <Link to="/logout" onClick={this.handleLogoutClick}>
+              Logout
+            </Link>
           </LeftNav>
           <MainContent leftNav>
-            <Breadcrumbs>Dashboard / Settings / Users & Permissions</Breadcrumbs>
+            <Breadcrumbs>
+              Dashboard / Settings / Users & Permissions
+            </Breadcrumbs>
             <ScreenTitleBlock>
               <H3 screenTitle>Users & Permissions</H3>
             </ScreenTitleBlock>
@@ -58,9 +62,7 @@ class SettingsPage extends React.Component {
             <NotificationSettings>
               Some Notification settings here...
             </NotificationSettings>
-            <TeamSettings>
-              Some Team settings here...
-            </TeamSettings>
+            <TeamSettings>Some Team settings here...</TeamSettings>
           </MainContent>
         </ContentWrapper>
       </OuterWrapper>

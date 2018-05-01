@@ -12,7 +12,7 @@ export const OuterWrapper = styled.div`
   min-height: 800px;
   overflow: auto;
   margin: 0;
-  padding:0;
+  padding: 0;
   background: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
   font-family: Roboto;
 `;

@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@dialexa/eslint-config-dialexa/react",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "jest"
+  ],
+  "env": {
+    "jest/globals": true
+  }
+}

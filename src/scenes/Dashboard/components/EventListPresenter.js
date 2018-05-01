@@ -69,7 +69,7 @@ class EventListPresenter extends React.Component {
 
   state = {
     scrollIndex: undefined
-  }
+  };
 
   render() {
     const {
@@ -114,26 +114,33 @@ class EventListPresenter extends React.Component {
 
         {(height) => (
           <OverflowContent height={height}>
-            {!!loading && <Spacing padding="10vh 0">
-              <Loader />
-            </Spacing>}
-
-            {!loading && (!events || !events.length) && <NoContentWrap>
-              <Heading>No events matching query</Heading>
-            </NoContentWrap>}
-
-            {!loading && !!events && !!events.length && (
-              <ScrollableList data={events} scrollIndex={scrollIndex}>
-                {(event, key) => (
-                  <EventListItem
-                    onClick={() => onClick(key, event)}
-                    active={event.id === activeId}
-                    key={key}
-                    event={event}
-                  />
-                )}
-              </ScrollableList>
+            {!!loading && (
+              <Spacing padding="10vh 0">
+                <Loader />
+              </Spacing>
             )}
+
+            {!loading &&
+              (!events || !events.length) && (
+                <NoContentWrap>
+                  <Heading>No events matching query</Heading>
+                </NoContentWrap>
+              )}
+
+            {!loading &&
+              !!events &&
+              !!events.length && (
+                <ScrollableList data={events} scrollIndex={scrollIndex}>
+                  {(event, key) => (
+                    <EventListItem
+                      onClick={() => onClick(key, event)}
+                      active={event.id === activeId}
+                      key={key}
+                      event={event}
+                    />
+                  )}
+                </ScrollableList>
+              )}
           </OverflowContent>
         )}
       </CalculateRemainingHeight>

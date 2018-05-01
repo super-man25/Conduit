@@ -1,10 +1,6 @@
 import { all, takeEvery, call, put } from 'redux-saga/effects';
 import { userService } from '../../_services';
-import {
-  CREATE_ASYNC,
-  CREATE_SUCCESS,
-  CREATE_ERROR
-} from './actions';
+import { CREATE_ASYNC, CREATE_SUCCESS, CREATE_ERROR } from './actions';
 
 // Workers
 export function* createAsync(action) {
@@ -22,7 +18,5 @@ function* watchCreateAsync() {
 }
 
 export default function* usersSaga() {
-  yield all([
-    watchCreateAsync()
-  ]);
+  yield all([watchCreateAsync()]);
 }

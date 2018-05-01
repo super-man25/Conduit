@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  H1
-} from '../../../../_components';
+import { H1 } from '../../../../_components';
 
 const CenteredContainer = styled.div`
   max-width: 1440px;

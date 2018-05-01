@@ -10,9 +10,7 @@ const requiredProps = {
 };
 
 it('renders correctly', () => {
-  const tree = renderer
-    .create(<DropdownButton {...requiredProps} />)
-    .toJSON();
+  const tree = renderer.create(<DropdownButton {...requiredProps} />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

@@ -1,12 +1,5 @@
 import fetchMock from 'fetch-mock';
-import {
-  ApiError,
-  request,
-  get,
-  post,
-  put,
-  del
-} from './api';
+import { ApiError, request, get, post, put, del } from './api';
 
 const path = 'path';
 const rawBody = '{ "some": "json" }';
@@ -38,11 +31,10 @@ describe('request', () => {
       headers: {}
     });
 
-    return request(path)
-      .then((data) => {
-        expect(mock.called()).toBe(true);
-        expect(data).toEqual(body);
-      });
+    return request(path).then((data) => {
+      expect(mock.called()).toBe(true);
+      expect(data).toEqual(body);
+    });
   });
 
   it('should make a request with opts', () => {
@@ -55,11 +47,10 @@ describe('request', () => {
       headers
     });
 
-    return request(path, { headers })
-      .then((data) => {
-        expect(mock.called()).toBe(true);
-        expect(data).toEqual(body);
-      });
+    return request(path, { headers }).then((data) => {
+      expect(mock.called()).toBe(true);
+      expect(data).toEqual(body);
+    });
   });
 
   it('should throw ApiError if the response code is >= 400', () => {
@@ -72,14 +63,13 @@ describe('request', () => {
       }
     });
 
-    return request(path)
-      .catch((err) => {
-        expect(mock.called()).toBe(true);
-        expect(err).toBeInstanceOf(ApiError);
-        expect(err.code).toBe(400);
-        expect(err.body).toEqual(body);
-        expect(err.message).toEqual('Bad Request');
-      });
+    return request(path).catch((err) => {
+      expect(mock.called()).toBe(true);
+      expect(err).toBeInstanceOf(ApiError);
+      expect(err.code).toBe(400);
+      expect(err.body).toEqual(body);
+      expect(err.message).toEqual('Bad Request');
+    });
   });
 });
 
@@ -95,11 +85,10 @@ it('get should make a GET request', () => {
     response: rawBody
   });
 
-  return get(path, params)
-    .then((data) => {
-      expect(mock.called()).toBe(true);
-      expect(data).toEqual(body);
-    });
+  return get(path, params).then((data) => {
+    expect(mock.called()).toBe(true);
+    expect(data).toEqual(body);
+  });
 });
 
 it('post should make a POST request', () => {
@@ -110,13 +99,11 @@ it('post should make a POST request', () => {
     response: rawBody
   });
 
-  return post(path, reqBody)
-    .then((data) => {
-      expect(mock.called()).toBe(true);
-      expect(data).toEqual(body);
-    });
+  return post(path, reqBody).then((data) => {
+    expect(mock.called()).toBe(true);
+    expect(data).toEqual(body);
+  });
 });
-
 
 it('put should make a PUT request', () => {
   const reqBody = { some: 'body' };
@@ -126,11 +113,10 @@ it('put should make a PUT request', () => {
     response: rawBody
   });
 
-  return put(path, reqBody)
-    .then((data) => {
-      expect(mock.called()).toBe(true);
-      expect(data).toEqual(body);
-    });
+  return put(path, reqBody).then((data) => {
+    expect(mock.called()).toBe(true);
+    expect(data).toEqual(body);
+  });
 });
 
 it('del should make a DELETE request', () => {
@@ -145,9 +131,8 @@ it('del should make a DELETE request', () => {
     response: rawBody
   });
 
-  return del(path, params)
-    .then((data) => {
-      expect(mock.called()).toBe(true);
-      expect(data).toEqual(body);
-    });
+  return del(path, params).then((data) => {
+    expect(mock.called()).toBe(true);
+    expect(data).toEqual(body);
+  });
 });

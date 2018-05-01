@@ -1,9 +1,5 @@
 import { put, takeLatest, all, call } from 'redux-saga/effects';
-import {
-  FETCH_ASYNC,
-  FETCH_ERROR,
-  FETCH_SUCCESS
-} from './actions';
+import { FETCH_ASYNC, FETCH_ERROR, FETCH_SUCCESS } from './actions';
 
 import { eventService } from '../../_services';
 
@@ -23,7 +19,5 @@ function* watchFetchAsync() {
 }
 
 export default function* eventsSaga() {
-  yield all([
-    watchFetchAsync()
-  ]);
+  yield all([watchFetchAsync()]);
 }

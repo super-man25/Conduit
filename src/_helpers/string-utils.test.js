@@ -1,10 +1,6 @@
 import { addHours } from 'date-fns';
 
-import {
-  readableDate,
-  readableDuration,
-  orDash
-} from './string-utils';
+import { readableDate, readableDuration, orDash } from './string-utils';
 
 describe('readableDate', () => {
   it('should format the date to the correct format', () => {
@@ -36,15 +32,7 @@ describe('readableDuration', () => {
 
 describe('orDash', () => {
   it('should return the value if it exists', () => {
-    const vals = [
-      'cat',
-      1,
-      {},
-      [],
-      new Date(),
-      true,
-      false
-    ];
+    const vals = ['cat', 1, {}, [], new Date(), true, false];
 
     for (const v of vals) {
       expect(orDash(v)).toEqual(v);

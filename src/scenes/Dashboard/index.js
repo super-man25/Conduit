@@ -67,7 +67,11 @@ class Dashboard extends React.Component {
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
               <TeamOverview>
-                <Button small collapse onClick={this.handleSidebarToggleClick} />
+                <Button
+                  small
+                  collapse
+                  onClick={this.handleSidebarToggleClick}
+                />
               </TeamOverview>
             </SidebarHeader>
             <SidebarContent>
@@ -90,4 +94,3 @@ class Dashboard extends React.Component {
 }
 
 export default Dashboard;
-

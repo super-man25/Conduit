@@ -21,9 +21,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(
-    sagaMiddleware
-  )
+  applyMiddleware(sagaMiddleware)
 );
 
 // Run Sagas
@@ -31,6 +29,4 @@ sagaMiddleware.run(authSaga);
 sagaMiddleware.run(eventsSaga);
 sagaMiddleware.run(usersSaga);
 
-export {
-  store
-};
+export { store };

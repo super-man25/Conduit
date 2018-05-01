@@ -89,7 +89,8 @@ const MdcCheckboxBgDiv = styled.div`
   box-sizing: border-box;
   width: 45%;
   height: 45%;
-  transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1), border-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+  transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    border-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
   border: 2px solid currentColor;
   border-radius: 2px;
   background-color: transparent;
@@ -122,9 +123,13 @@ const MdcCheckboxMixedmarkDiv = styled.div`
   height: 2px;
   -webkit-transform: scaleX(0) rotate(0deg);
   transform: scaleX(0) rotate(0deg);
-  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
-  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
-  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1), transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1), -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+  transition: opacity 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+    -webkit-transform 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
   opacity: 0;
   background-color: white;
 `;
@@ -138,7 +143,11 @@ export const Checkbox = (props) => {
         <MdcCheckboxInput />
         <MdcCheckboxBgDiv>
           <MdcCheckboxCheckmarkSvg viewbox="0 0 24 24">
-            <MdcCheckboxCheckmarkPath fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+            <MdcCheckboxCheckmarkPath
+              fill="none"
+              stroke="white"
+              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+            />
           </MdcCheckboxCheckmarkSvg>
           <MdcCheckboxMixedmarkDiv />
         </MdcCheckboxBgDiv>
@@ -151,4 +160,3 @@ export const Checkbox = (props) => {
 Checkbox.propTypes = {
   label: PropTypes.label
 };
-

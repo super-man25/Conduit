@@ -8,7 +8,7 @@ const data = ['Mets', 'Rangers', 'Athletics'];
 it('renders correctly', () => {
   const tree = renderer
     .create(
-      <ScrollableList data={data} >
+      <ScrollableList data={data}>
         {(item, index) => <div key={index}>{item}</div>}
       </ScrollableList>
     )

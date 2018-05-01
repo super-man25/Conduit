@@ -1,7 +1,4 @@
-import {
-  IS_PENDING,
-  SET_USER
-} from './actions';
+import { IS_PENDING, SET_USER } from './actions';
 
 const initialState = {
   model: null,
@@ -10,9 +7,9 @@ const initialState = {
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
-    case (SET_USER):
+    case SET_USER:
       return { ...state, model: action.payload };
-    case (IS_PENDING):
+    case IS_PENDING:
       return { ...state, pending: action.payload };
     default:
       return state;

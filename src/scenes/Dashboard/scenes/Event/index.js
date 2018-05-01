@@ -2,15 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-  readableDate
-} from '../../../../_helpers/string-utils';
+import { readableDate } from '../../../../_helpers/string-utils';
 
-import {
-  H1,
-  P1,
-  Loader
-} from '../../../../_components';
+import { H1, P1, Loader } from '../../../../_components';
 
 const CenteredContainer = styled.div`
   max-width: 1440px;
@@ -30,14 +24,15 @@ const Event = (props) => {
   const { eventState, location } = props;
 
   const activeId = getEventIdFromPath(location.pathname);
-  const event = eventState.model && eventState.model.length ? eventState.model.find((e) => e.id === activeId) : null;
+  const event =
+    eventState.model && eventState.model.length
+      ? eventState.model.find((e) => e.id === activeId)
+      : null;
 
   return (
     <CenteredContainer>
       <H1>Event</H1>
-      {!event && (
-        <Loader />
-      )}
+      {!event && <Loader />}
 
       {!!event && (
         <div>

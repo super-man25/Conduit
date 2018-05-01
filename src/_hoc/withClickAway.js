@@ -1,11 +1,11 @@
 import React from 'react';
 import omit from 'lodash/omit';
 
-export const withClickAway = (Wrapped) => (
+export const withClickAway = (Wrapped) =>
   class VisibilityToggle extends React.Component {
     static defaultProps = {
       onClickAway: () => {}
-    }
+    };
 
     componentDidMount() {
       document.addEventListener('mousedown', this.handleOutsideClick);
@@ -21,13 +21,13 @@ export const withClickAway = (Wrapped) => (
       if (this.wrappedRef && !this.wrappedRef.contains(event.target)) {
         this.props.onClickAway(event);
       }
-    }
+    };
 
     handleKey = (event) => {
       if (this.wrappedRef && event.key === 'Escape') {
         this.props.onClickAway(event);
       }
-    }
+    };
 
     render() {
       const passProps = omit(this.props, 'onClickAway');
@@ -42,5 +42,4 @@ export const withClickAway = (Wrapped) => (
         </div>
       );
     }
-  }
-);
+  };

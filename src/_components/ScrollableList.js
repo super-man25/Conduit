@@ -31,16 +31,12 @@ export class ScrollableList extends React.Component {
     if (target) {
       target.scrollIntoView();
     }
-  }
+  };
 
-  render () {
+  render() {
     const { children, data } = this.props;
 
-    return (
-      <div ref={this.containerRef}>
-        {data.map(children)}
-      </div>
-    );
+    return <div ref={this.containerRef}>{data.map(children)}</div>;
   }
 }
 

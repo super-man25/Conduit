@@ -13,21 +13,12 @@ const Svg = styled.svg`
 `;
 
 export const Icon = (props) => {
-  const {
-    name,
-    size,
-    color,
-    data
-  } = props;
+  const { name, size, color, data } = props;
 
   const path = data || paths[name];
 
   return (
-    <Svg
-      color={color}
-      width={`${size}px`}
-      viewBox="0 0 24 24"
-    >
+    <Svg color={color} width={`${size}px`} viewBox="0 0 24 24">
       <path d={path} />
     </Svg>
   );

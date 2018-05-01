@@ -66,4 +66,3 @@ function mapActionCreators(dispatch) {
 }
 
 export default connect(mapStateToProps, mapActionCreators)(App);
-

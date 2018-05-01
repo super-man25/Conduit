@@ -1,8 +1,4 @@
-import {
-  SUCCESS,
-  ERROR,
-  CLEAR
-} from './actions';
+import { SUCCESS, ERROR, CLEAR } from './actions';
 
 const initialState = {
   show: false,
@@ -12,22 +8,21 @@ const initialState = {
 
 export default function alertReducer(state = initialState, action) {
   switch (action.type) {
-    case (SUCCESS):
+    case SUCCESS:
       return {
         show: true,
         type: 'alert-success',
         message: action.payload
       };
-    case (ERROR):
+    case ERROR:
       return {
         show: true,
         type: 'alert-danger',
         message: action.payload
       };
-    case (CLEAR):
+    case CLEAR:
       return initialState;
     default:
       return state;
   }
 }
-

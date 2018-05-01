@@ -1,9 +1,0 @@
-{
-	"extends": "@dialexa/eslint-config-dialexa/react",
-	"plugins": [
-		"jest"
-	],
-	"env": {
-		"jest/globals": true
-	}
-}

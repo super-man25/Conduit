@@ -1,6 +1,4 @@
-import {
-  normalize
-} from './event.normalize';
+import { normalize } from './event.normalize';
 
 describe('normalize', () => {
   it('should set default values', () => {
@@ -33,4 +31,3 @@ describe('normalize', () => {
     });
   });
 });
-

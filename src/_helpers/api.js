@@ -25,7 +25,8 @@ function handleResponse(response) {
     return response.json();
   }
 
-  return response.json()
+  return response
+    .json()
     .catch(() => null)
     .then((body) => {
       throw new ApiError(statusCode, response.statusText, body);

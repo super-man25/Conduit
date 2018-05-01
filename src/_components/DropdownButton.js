@@ -37,11 +37,13 @@ const Dropdown = styled.div`
   transform: translateY(20px);
   visibility: hidden;
 
-  ${(props) => props.show && css`
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  `}
+  ${(props) =>
+    props.show &&
+    css`
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    `};
 `;
 
 const Option = styled.div`
@@ -63,7 +65,7 @@ export class DropdownButton extends React.Component {
   static defaultProps = {
     onSelect: () => {},
     parseLabel: (opt) => opt
-  }
+  };
 
   state = {
     show: false
@@ -74,41 +76,30 @@ export class DropdownButton extends React.Component {
     if (show) {
       this.setState({ show: false });
     }
-  }
+  };
 
   handleSelect = (option, index) => {
     const { onSelect } = this.props;
     onSelect(option, index);
     this.setState({ show: false });
-  }
+  };
 
   render() {
-    const {
-      selected,
-      options,
-      parseLabel
-    } = this.props;
+    const { selected, options, parseLabel } = this.props;
 
-    const {
-      show
-    } = this.state;
+    const { show } = this.state;
 
     return (
       <Container onClickAway={this.handleClickAway}>
         <Flex direction="row" align="center">
-          <Label onClick={() => this.setState({ show: !show })}>{parseLabel(options[selected])}</Label>
-          <Icon
-            name="arrow-drop-down"
-            size={24}
-            color="#000"
-          />
+          <Label onClick={() => this.setState({ show: !show })}>
+            {parseLabel(options[selected])}
+          </Label>
+          <Icon name="arrow-drop-down" size={24} color="#000" />
         </Flex>
         <Dropdown show={show}>
           {options.map((o, key) => (
-            <Option
-              key={key}
-              onClick={() => this.handleSelect(o, key)}
-            >
+            <Option key={key} onClick={() => this.handleSelect(o, key)}>
               {parseLabel(o)}
             </Option>
           ))}

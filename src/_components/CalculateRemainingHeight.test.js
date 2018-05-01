@@ -20,7 +20,8 @@ it('renders correctly', () => {
         }}
       </CalculateRemainingHeight>,
       { createNodeMock }
-    ).toJSON();
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
@@ -28,11 +29,10 @@ it('renders correctly', () => {
 it('renders correctly with one child', () => {
   const tree = renderer
     .create(
-      <CalculateRemainingHeight>
-        {() => <div />}
-      </CalculateRemainingHeight>,
+      <CalculateRemainingHeight>{() => <div />}</CalculateRemainingHeight>,
       { createNodeMock }
-    ).toJSON();
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
@@ -42,13 +42,14 @@ it('throws an error if the last child is not a function', () => {
   const consoleMock = spyOn(console, 'error'); // eslint-disable-line
 
   expect(() => {
-    renderer
-      .create(
-        <CalculateRemainingHeight>
-          <div />
-          <div />
-        </CalculateRemainingHeight>,
-        { createNodeMock }
-      );
-  }).toThrow('CalculateRemainingHeight: Expected the last child to be a function');
+    renderer.create(
+      <CalculateRemainingHeight>
+        <div />
+        <div />
+      </CalculateRemainingHeight>,
+      { createNodeMock }
+    );
+  }).toThrow(
+    'CalculateRemainingHeight: Expected the last child to be a function'
+  );
 });

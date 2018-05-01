@@ -46,29 +46,31 @@ const nextDirection = (dir) => {
 };
 
 export const SortableButton = (props) => {
-  const {
-    children,
-    direction,
-    onClick
-  } = props;
+  const { children, direction, onClick } = props;
 
   return (
     <Container>
       <Flex direction="row" align="center">
-        <Label onClick={() => onClick(direction, nextDirection(direction))}>{children}</Label>
+        <Label onClick={() => onClick(direction, nextDirection(direction))}>
+          {children}
+        </Label>
         <IconContainer>
           <Abs top="-2px">
             <Icon
               name="arrow-drop-up"
               size={24}
-              color={direction === 'desc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)}
+              color={
+                direction === 'desc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)
+              }
             />
           </Abs>
           <Abs top="4px">
             <Icon
               name="arrow-drop-down"
               size={24}
-              color={direction === 'asc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)}
+              color={
+                direction === 'asc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)
+              }
             />
           </Abs>
         </IconContainer>
@@ -81,7 +83,6 @@ SortableButton.defaultProps = {
   onClick: () => {},
   direction: 'indeterminate'
 };
-
 
 SortableButton.propTypes = {
   /** Renderable label value for the button */

@@ -66,13 +66,15 @@ class Login extends React.Component {
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
     // state will probably not be updated in time for it's value to be up-to-date... // root@eventdynamic.com
     if (name === 'password') {
-      if (value.length === 0) { // check the password value directly
+      if (value.length === 0) {
+        // check the password value directly
         this.setState({ loginEnabled: false });
       } else {
         this.setState({ loginEnabled: this.state.validEmail }); // rely on state for the value of validEmail
       }
     } else if (name === 'email') {
-      if (!this.emailCheck(value)) { // check the email directly
+      if (!this.emailCheck(value)) {
+        // check the email directly
         this.setState({ loginEnabled: false });
       } else {
         this.setState({ loginEnabled: this.state.password }); // rely on state for the value of password
@@ -106,10 +108,18 @@ class Login extends React.Component {
 
   render() {
     const { authState } = this.props;
-    const { email, password, submitted, emailHadFocus, passwordHadFocus, validEmail, loginEnabled } = this.state;
+    const {
+      email,
+      password,
+      submitted,
+      emailHadFocus,
+      passwordHadFocus,
+      validEmail,
+      loginEnabled
+    } = this.state;
 
     return (
-      <ImageLayout imageSrc={`url(${ stadiumImage })`}>
+      <ImageLayout imageSrc={`url(${stadiumImage})`}>
         <Content>
           <FlexItem>
             <Spacing padding="20% 40px 40px">
@@ -118,25 +128,60 @@ class Login extends React.Component {
                 <H3 login>Log In</H3>
                 <form name="form" onSubmit={this.handleSubmit}>
                   <Label htmlFor="email">Email Address</Label>
-                  <Input type="text" name="email" id="email" autoComplete="new-email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
-                  <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
+                  <Input
+                    type="text"
+                    name="email"
+                    id="email"
+                    autoComplete="new-email"
+                    value={email}
+                    valid={validEmail}
+                    inValid={!validEmail && (submitted || emailHadFocus)}
+                    onChange={this.handleChange}
+                    onBlur={this.handleBlur}
+                  />
+                  <HelpBlockDiv
+                    type="alert-danger"
+                    show={!validEmail && (submitted || emailHadFocus)}
+                  >
+                    A valid Email is required
+                  </HelpBlockDiv>
 
                   <Label htmlFor="password">Password</Label>
-                  <Input type="password" name="password" id="password" autoComplete="new-password" value={password} inValid={!password && (submitted || passwordHadFocus)} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
-                  <HelpBlockDiv type='alert-danger' show={!password && (submitted || passwordHadFocus)}>Password is required</HelpBlockDiv>
+                  <Input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autoComplete="new-password"
+                    value={password}
+                    inValid={!password && (submitted || passwordHadFocus)}
+                    valid={password}
+                    onChange={this.handleChange}
+                    onBlur={this.handleBlur}
+                  />
+                  <HelpBlockDiv
+                    type="alert-danger"
+                    show={!password && (submitted || passwordHadFocus)}
+                  >
+                    Password is required
+                  </HelpBlockDiv>
 
-                  <Button disabled={!loginEnabled} id='login'>
-                    {authState.pending
-                      ? <Loader small color={cssConstants.PRIMARY_WHITE} />
-                      : 'Login'
-                    }
+                  <Button disabled={!loginEnabled} id="login">
+                    {authState.pending ? (
+                      <Loader small color={cssConstants.PRIMARY_WHITE} />
+                    ) : (
+                      'Login'
+                    )}
                   </Button>
                 </form>
               </CenteredContainer>
             </Spacing>
           </FlexItem>
           <LoginFooter>
-            If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.
+            If you do not already have an account please contact{' '}
+            <MailtoLink mailto="robert.smith@soldoutsports.com">
+              robert.smith@soldoutsports.com
+            </MailtoLink>{' '}
+            to begin setting up an account for your organization.
           </LoginFooter>
         </Content>
       </ImageLayout>

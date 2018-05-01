@@ -26,9 +26,7 @@ export const ImageLayout = (props) => {
 
   return (
     <Wrapper>
-      <ContentPane>
-        {children}
-      </ContentPane>
+      <ContentPane>{children}</ContentPane>
       <ImagePane src={imageSrc} />
     </Wrapper>
   );

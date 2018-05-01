@@ -10,12 +10,14 @@ export const Sidebar = styled.div`
 
   transition: 0.1s ease-in-out all;
 
-  ${(props) => props.collapsed && css`
-    overflow: hidden;
-    transform: translate3d(-100%, 0, 0);
-    width: 0;
-    max-width: 0;
-    min-width: 0;
-    overflow-x: hidden;
-  `}
+  ${(props) =>
+    props.collapsed &&
+    css`
+      overflow: hidden;
+      transform: translate3d(-100%, 0, 0);
+      width: 0;
+      max-width: 0;
+      min-width: 0;
+      overflow-x: hidden;
+    `};
 `;

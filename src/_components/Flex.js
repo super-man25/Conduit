@@ -19,7 +19,6 @@ Flex.propTypes = {
   align: PropTypes.string
 };
 
-
 export const FlexItem = styled.div`
   flex: ${(props) => props.flex || 1};
   width: ${(props) => props.width};
