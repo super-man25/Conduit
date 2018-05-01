@@ -19,7 +19,7 @@ import {
   OuterWrapper
 } from '../../_components';
 
-class Login extends React.Component {
+export class LoginPresenter extends React.Component {
   constructor(props) {
     super(props);
 
@@ -118,7 +118,7 @@ class Login extends React.Component {
   }
 }
 
-Login.propTypes = {
+LoginPresenter.propTypes = {
   authActions: PropTypes.object, // eslint-disable-line
   authState: PropTypes.object, // eslint-disable-line
   alert: PropTypes.object // eslint-disable-line
@@ -137,4 +137,4 @@ function mapActionCreators(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(Login);
+export default connect(mapStateToProps, mapActionCreators)(LoginPresenter);

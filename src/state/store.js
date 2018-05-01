@@ -13,7 +13,7 @@ const reducer = combineReducers({
   auth: authReducer,
   events: eventsReducer,
   users: usersReducer,
-  client: clientsReducer
+  clients: clientsReducer
 });
 
 // Setup enhancers
