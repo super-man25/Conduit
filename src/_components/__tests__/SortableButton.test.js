@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { SortableButton } from './SortableButton';
+import { SortableButton } from '_components/SortableButton';
 
 it('should render correctly', () => {
   const tree = renderer.create(<SortableButton />).toJSON();

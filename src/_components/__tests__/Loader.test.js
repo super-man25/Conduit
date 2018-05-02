@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Loader } from './Loader';
+import { Loader } from '_components/Loader';
 
 it('should render default', () => {
   const tree = renderer.create(<Loader />).toJSON();

@@ -28,21 +28,28 @@
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject",
     "lint": "eslint src",
-    "test-ci": "yarn test --coverage --coverageReporters=cobertura --testResultsProcessor jest-junit",
-    "test-staged": "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests",
+    "test-ci":
+      "yarn lint && yarn test --coverage --coverageReporters=cobertura --testResultsProcessor jest-junit",
+    "test-staged":
+      "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests",
     "precommit": "lint-staged",
-    "prettier": "prettier --write src/**/*.{js,json}"
+    "prettier": "prettier-eslint --write '/src/**/*.{js|jsx}'",
+    "prettier-dry-run": "prettier-eslint --write '/src/**/*.{js|jsx}' -l debug"
   },
   "lint-staged": {
-    "src/**/*.{js,json}": ["eslint --fix", "yarn test-staged", "git add"]
+    "*.{js|jsx}": ["prettier-eslint --write", "yarn test-staged", "git add"]
   },
   "devDependencies": {
-    "@dialexa/eslint-config-dialexa": "^4.1.1",
+    "babel-eslint": "^7.2.3",
     "cross-env": "^5.1.4",
     "env-cmd": "^7.0.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "fetch-mock": "^6.3.0",
@@ -50,7 +57,7 @@
     "jest-junit": "^3.6.0",
     "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.0.5",
-    "prettier": "^1.12.1",
+    "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.3.2"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageLayout } from './ImageLayout';
+import { ImageLayout } from '_components/ImageLayout';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 

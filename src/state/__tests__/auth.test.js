@@ -1,9 +1,9 @@
 import { put, call } from 'redux-saga/effects';
-import { userService } from '../_services';
+import { userService } from '_services';
 
-import { actions, reducer } from './auth';
+import { actions, reducer } from 'state/auth';
 
-import { signInAsync, signOutAsync, fetchAsync } from './auth/saga';
+import { signInAsync, signOutAsync, fetchAsync } from 'state/auth/saga';
 
 import {
   FETCH_ASYNC,
@@ -11,7 +11,7 @@ import {
   SET_USER,
   SIGN_IN_ASYNC,
   SIGN_OUT_ASYNC
-} from './auth/actions';
+} from 'state/auth/actions';
 
 describe('actions', () => {
   it('should create an action to sign in', () => {

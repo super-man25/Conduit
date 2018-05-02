@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Flex } from './Flex';
+import { Flex } from '_components/Flex';
 import 'jest-styled-components';
 
 it('renders correcly', () => {

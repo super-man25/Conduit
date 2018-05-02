@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollableList } from './ScrollableList';
+import { ScrollableList } from '_components/ScrollableList';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 

@@ -1,6 +1,6 @@
-import { actions, reducer } from './alert';
+import { actions, reducer } from 'state/alert';
 
-import { SUCCESS, ERROR, CLEAR } from './alert/actions';
+import { SUCCESS, ERROR, CLEAR } from 'state/alert/actions';
 
 describe('actions', () => {
   it('should create an action for a success message', () => {

@@ -1,16 +1,16 @@
 import { call, put } from 'redux-saga/effects';
-import { eventService } from '../_services';
+import { eventService } from '_services';
 import { cloneableGenerator } from 'redux-saga/utils';
-import { actions, reducer } from './events';
+import { actions, reducer } from 'state/events';
 
-import { fetchAsync } from './events/saga';
+import { fetchAsync } from 'state/events/saga';
 
 import {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
   RESET
-} from './events/actions';
+} from 'state/events/actions';
 
 describe('actions', () => {
   it('should create an action to fetch events', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs } from './Breadcrumbs';
+import { Breadcrumbs } from '_components/Breadcrumbs';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 

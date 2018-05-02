@@ -1,6 +1,6 @@
 import { addHours } from 'date-fns';
 
-import { readableDate, readableDuration, orDash } from './string-utils';
+import { readableDate, readableDuration, orDash } from '_helpers/string-utils';
 
 describe('readableDate', () => {
   it('should format the date to the correct format', () => {

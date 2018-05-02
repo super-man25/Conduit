@@ -1,11 +1,15 @@
 import { cloneableGenerator } from 'redux-saga/utils';
 import { call, put } from 'redux-saga/effects';
-import { userService } from '../_services';
-import { actions, reducer } from './users';
+import { userService } from '_services';
+import { actions, reducer } from 'state/users';
 
-import { CREATE_ASYNC, CREATE_SUCCESS, CREATE_ERROR } from './users/actions';
+import {
+  CREATE_ASYNC,
+  CREATE_SUCCESS,
+  CREATE_ERROR
+} from 'state/users/actions';
 
-import { createAsync } from './users/saga';
+import { createAsync } from 'state/users/saga';
 
 describe('actions', () => {
   it('should create an action for create a user', () => {

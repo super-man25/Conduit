@@ -1,11 +1,11 @@
 {
   "extends": [
-    "@dialexa/eslint-config-dialexa/react",
-    "plugin:prettier/recommended"
+    "react-app",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier/react"
   ],
-  "plugins": [
-    "jest"
-  ],
+  "plugins": ["jest", "jsx-a11y"],
   "env": {
     "jest/globals": true
   }

@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import { ApiError, request, get, post, put, del } from './api';
+import { ApiError, request, get, post, put, del } from '_helpers/api';
 
 const path = 'path';
 const rawBody = '{ "some": "json" }';
