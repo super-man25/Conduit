@@ -1,7 +1,9 @@
 
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import { reducer } from '../../state/auth';
+import { shallow, mount } from 'enzyme';
+import configureStore from 'redux-mock-store';
+import authActions from '../../state/auth/actions';
+
 import {
   OuterWrapper,
   ContentWrapper,
@@ -12,18 +14,12 @@ import {
   HelpBlockDiv,
   Button
 } from '../../_components';
-import LoginFormDiv from './components/LoginForm';
-
-import { LoginPresenter } from './index';
+import LoginForm from './components/LoginForm';
+import Login, { LoginPresenter } from './index';
 
 const myAuth = {
   model: null,
   pending: false
-};
-
-const myAuthPending = {
-  model: null,
-  pending: true
 };
 
 describe('<LoginPresenter />', () => {
@@ -38,9 +34,9 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.find(ContentWrapper)).toHaveLength(1);
   });
 
-  it('contains a <LoginFormDiv /> component', () => {
+  it('contains a <LoginForm /> component', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(LoginFormDiv)).toHaveLength(1);
+    expect(wrapper.find(LoginForm)).toHaveLength(1);
   });
 
   it('contains a <LogoName /> component', () => {
@@ -79,6 +75,10 @@ describe('<LoginPresenter />', () => {
   });
 
   it('contains an <img /> component when auth is pending', () => {
+    const myAuthPending = {
+      model: null,
+      pending: true
+    };
     const wrapper = shallow(<LoginPresenter authState={myAuthPending} />);
     expect(wrapper.find('img')).toHaveLength(1);
   });
@@ -137,36 +137,76 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.state().loginEnabled).toEqual(true);
   });
 
+  it('clicking submit button fires handleSubmit method, which updates component state', () => {
+    const handleSubmitSpy = jest.spyOn(LoginPresenter.prototype, 'handleSubmit');
+    const wrapper = mount(<LoginPresenter authState={myAuth} authActions={authActions} />);
+    expect(wrapper.state().submitted).toEqual(false);
+    expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(0);
+    wrapper.find('#login').first().simulate('submit');
+    expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(1);
+    expect(wrapper.state().submitted).toEqual(true);
+    handleSubmitSpy.mockClear();
+  });
+
+  // need a test to verify signIn action has been dispatched when handleSubmit runs
+
+  it('renders LoginPresenter with authState prop from store.auth', () => {
+    const authTest = { pending: false };
+    // Stubbing out store. Would normally use a helper method. Did it inline for simplicity.
+    const store = {
+      getState: () => ({
+        auth: authTest
+      }),
+      dispatch: () => {},
+      subscribe: () => {}
+    };
+    const subject = shallow(<Login store={store} />).find(LoginPresenter);
+    const actual = subject.prop('authState');
+    expect(actual).toBe(authTest);
+  });
 });
 
-// expect(wrapper.find('#email').first().props().value).toEqual('root@dialexa.com');
+describe('<LoginPresenter />', () => {
 
+  const middlewares = [];
+  const mockStore = configureStore(middlewares);
+  const loginRequest = () => ({ type: 'auth/SIGN_IN_ASYNC' }); // update this to use appropriate constant
 
-// p.s. Here's how I would test the props are wired properly:
+  it('dispatches the signIn action to the store when store.dispatch() used', () => {
+    // Initialize mockstore with empty state
+    const initialState = {};
+    const store = mockStore(initialState);
+    // Dispatch the action
+    store.dispatch(loginRequest());
+    // Test if your store dispatched the expected actions
+    const actions = store.getActions();
+    const expectedPayload = { type: 'auth/SIGN_IN_ASYNC' };
+    expect(actions).toEqual([expectedPayload]);
+  });
 
-// import React from 'react';
-// import { shallow } from 'enzyme';
+  it('dispatches the signIn action to the store when login form submitted', () => {
+    // Initialize mockstore with empty state
+    const initialState = {};
+    const store = mockStore(initialState);
+    // Render the component and submit the form
+    const wrapper = shallow(<LoginPresenter authState={myAuth} authActions={authActions} store={store} />);
+    expect(wrapper.state().submitted).toEqual(false);
+    wrapper.find('form').simulate('submit', { preventDefault: () => { } });
+    expect(wrapper.state().submitted).toEqual(true);
+    // Test if the store dispatched the signIn action
+    // const actions = store.getActions();
+    // const expectedPayload = { type: 'auth/SIGN_IN_ASYNC' };
+    // expect(actions).toEqual([expectedPayload]);
+  });
 
-// import TestContainer, { TestComponent } from './TestContainer';
-
-// it('renders TestComponent with approriate props from store', () => {
-//   const userPermissions = {};
-//   // Stubbing out store. Would normally use a helper method. Did it inline for simplicity.
-//   const store = {
-//     getState: () => ({
-//       auth: { userPermissions },
-//     }),
-//     dispatch: () => {},
-//     subscribe: () => {},
-//   };
-//   const subject = shallow(<TestContainer store={store} />).find(TestComponent);
-
-//   const actual = subject.prop('permissions');
-//   expect(actual).toBe(userPermissions);
-// });
-
+  it('the emailCheck() method that returns true for a valid email, and false otherwise', () => {
+    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
+    expect(wrapper.instance().emailCheck('greg@dialexa')).toEqual(false);
+    expect(wrapper.instance().emailCheck('greg@dialexa.com')).toEqual(true);
+  });
+});
 
 // tested.  handleBlur,
 // tested.  handleChange,
-// handleSubmit,
-// emailCheck
+// tested.  handleSubmit, (mostly)
+// tested.  emailCheck

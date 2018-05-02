@@ -12,9 +12,7 @@ import {
   SettingEditableValue,
   SelectBox
 } from '../../../_components';
-import {
-  actions as clientActions
-} from '../../../state/clients'; // client = team
+import actions from '../../../state/clients/actions'; // client = team
 
 /* eslint react/no-did-mount-set-state: "off" */
 
@@ -38,7 +36,7 @@ export const TeamSettingsDiv = styled.div`
   background: transparent;
 `;
 
-class TeamSettings extends React.Component {
+export class TeamSettingsPresenter extends React.Component {
 
   static intervalNameFromSelect() {
     const intervalSelect = document.getElementById('pricingInterval');
@@ -64,12 +62,12 @@ class TeamSettings extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(clientActions.getClient());
+    this.props.dispatch(actions.getClient());
     const self = this;
     setTimeout(() => { // need a cleaner way of making these happen after the action dispatch
       this.setState({ teamName: self.props.client.name });
       this.setState({ pricingInterval: self.props.client.pricingInterval });
-      this.setState({ intervalName: TeamSettings.intervalNameFromSelect() });
+      this.setState({ intervalName: TeamSettingsPresenter.intervalNameFromSelect() });
     },
     500
     );
@@ -78,7 +76,7 @@ class TeamSettings extends React.Component {
 
   handleIntervalChange() {
     this.setState({ pricingInterval: document.getElementById('pricingInterval').value },
-      () => { this.setState({ intervalName: TeamSettings.intervalNameFromSelect() }); }
+      () => { this.setState({ intervalName: TeamSettingsPresenter.intervalNameFromSelect() }); }
     );
   }
 
@@ -87,7 +85,7 @@ class TeamSettings extends React.Component {
     const editFlagName = e.target.parentElement.id;
     if (e.target.tagName === 'DIV') { // the 'SAVE' button was clicked
       const attrName = editFlagName.substr(4); // derive name of state attribute from editFlagName
-      this.props.dispatch(clientActions.updateClient(attrName, this.state[attrName]));
+      this.props.dispatch(actions.updateClient(attrName, this.state[attrName]));
       this.setState({ [editFlagName]: false });
     } else { // the 'EDIT' link was clicked
       this.setState({ [editFlagName]: true });
@@ -156,9 +154,7 @@ class TeamSettings extends React.Component {
   }
 }
 
-export { TeamSettings as TeamSettingsTest };
-
-TeamSettings.propTypes = {
+TeamSettingsPresenter.propTypes = {
   auth: PropTypes.object, // eslint-disable-line
   dispatch: PropTypes.func
 };
@@ -171,5 +167,5 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedTeamSettings = connect(mapStateToProps)(TeamSettings);
+const connectedTeamSettings = connect(mapStateToProps)(TeamSettingsPresenter);
 export { connectedTeamSettings as TeamSettings };

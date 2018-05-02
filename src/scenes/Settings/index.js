@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { actions as authActions } from '../../state/auth';
+import authActions from '../../state/auth/actions';
 
 import {
   OuterWrapper,
@@ -20,8 +20,8 @@ import ContactInfoSettings from './components/ContactInfoSettings';
 import NotificationSettings from './components/NotificationSettings';
 import { TeamSettings } from './components/TeamSettings';
 
-class SettingsPage extends React.Component {
-  handleLogoutClick = (e) => {
+export class SettingsPresenter extends React.Component {
+  handleLogoutClick(e) {  // eslint-disable-line
     e.preventDefault();
     authActions.signOut();
   }
@@ -41,7 +41,7 @@ class SettingsPage extends React.Component {
             <br />
             <br />
             <br />
-            <Link to="/logout" onClick={this.handleLogoutClick}>Logout</Link>
+            <Link id='logout' to="/logout" onClick={this.handleLogoutClick}>Logout</Link>
           </LeftNav>
           <MainContent leftNav>
             <Breadcrumbs>Dashboard / Settings / Users & Permissions</Breadcrumbs>
@@ -62,13 +62,11 @@ class SettingsPage extends React.Component {
   }
 }
 
-SettingsPage.propTypes = {
+SettingsPresenter.propTypes = {
   // user: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
   // client: PropTypes.object, // refer to model ? (that does not exist, and is not imported as yet)
   // alert: PropTypes.object // refer to model ? (that does not exist, and is not imported as yet)
 };
-
-export { SettingsPage as SettingsPageTest };
 
 function mapStateToProps(state) {
   return {
@@ -76,10 +74,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     authActions: bindActionCreators(authActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(SettingsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsPresenter);

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import LoginFormDiv from './components/LoginForm';
-import LoginFooterDiv from './components/LoginFooter';
-import { actions as authActions } from '../../state/auth';
+import LoginForm from './components/LoginForm';
+import LoginFooter from './components/LoginFooter';
+import authActions from '../../state/auth/actions';
 
 import {
   Button,
@@ -72,7 +72,6 @@ export class LoginPresenter extends React.Component {
     e.preventDefault();
     this.setState({ submitted: true });
     const { email, password } = this.state;
-
     this.props.authActions.signIn(email, password);
   }
 
@@ -90,7 +89,7 @@ export class LoginPresenter extends React.Component {
     return (
       <OuterWrapper login>
         <ContentWrapper login>
-          <LoginFormDiv>
+          <LoginForm>
             <LogoName login />
             <H3 login>Log In</H3>
             {/* <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv> */}
@@ -110,8 +109,8 @@ export class LoginPresenter extends React.Component {
               }
               <br />
             </form>
-          </LoginFormDiv>
-          <LoginFooterDiv>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooterDiv>
+          </LoginForm>
+          <LoginFooter>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooter>
         </ContentWrapper>
       </OuterWrapper>
     );
@@ -131,10 +130,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     authActions: bindActionCreators(authActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(LoginPresenter);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPresenter);

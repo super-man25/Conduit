@@ -13,7 +13,7 @@ const initialState = {
 
 // note that due to reducer composition, the state referred to here is
 // the 'state' of the 'client' attribute of the Redux store
-export default function clientsReducer(state = initialState, action) {
+export default function clientReducer(state = initialState, action) {
   console.log('~~~~~ client reducer, action.type is ~~~~~', action.type);
   switch (action.type) {
     case GET_REQUEST:
