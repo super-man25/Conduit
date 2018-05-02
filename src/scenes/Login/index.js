@@ -48,13 +48,13 @@ export class LoginPresenter extends React.Component {
       if (value.length === 0) { // check the password value directly
         this.setState({ loginEnabled: false });
       } else {
-        this.setState({ loginEnabled: this.state.validEmail }); // rely on state for the value of validEmail
+        this.setState({ loginEnabled: !!this.state.validEmail }); // rely on state for the value of validEmail
       }
     } else if (name === 'email') {
       if (!this.emailCheck(value)) { // check the email directly
         this.setState({ loginEnabled: false });
       } else {
-        this.setState({ loginEnabled: this.state.password }); // rely on state for the value of password
+        this.setState({ loginEnabled: !!this.state.password }); // rely on state for the value of password
       }
     }
   }

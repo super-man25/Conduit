@@ -1,5 +1,7 @@
 import { baseURL } from '../_constants';
-import { store } from '../state/store';
+// import { store } from '../state/store';
+// ^^ commenting that out allows tests to run without saga error
+// - how else can we get the clientId we need for request URLs ?
 
 const API = {
   getURL: `${baseURL}/clients`, // - method GET
