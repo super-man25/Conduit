@@ -1,9 +1,4 @@
-import {
-  FETCH_ASYNC,
-  FETCH_SUCCESS,
-  FETCH_ERROR,
-  RESET
-} from './actions';
+import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
 
 const initialState = {
   loading: false,
@@ -12,16 +7,15 @@ const initialState = {
 
 export default function eventsReducer(state = initialState, action) {
   switch (action.type) {
-    case (FETCH_ASYNC):
+    case FETCH_ASYNC:
       return { ...state, loading: true };
-    case (FETCH_SUCCESS):
+    case FETCH_SUCCESS:
       return { loading: false, model: action.payload };
-    case (FETCH_ERROR):
+    case FETCH_ERROR:
       return { ...state, loading: false };
-    case (RESET):
+    case RESET:
       return initialState;
     default:
       return state;
   }
 }
-

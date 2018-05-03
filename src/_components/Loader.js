@@ -14,20 +14,20 @@ const Wrapper = styled.div`
   height: ${SIZE_LARGE};
   aligh-self: center;
 
-  ${(props) => props.small && css`
-    height: ${SIZE_SMALL};
-    width: 46px;
-  `}
+  ${(props) =>
+    props.small &&
+    css`
+      height: ${SIZE_SMALL};
+      width: 46px;
+    `};
 `;
 
 const dotAnimation = keyframes`
   0%, 100% {
     opacity: 1;
-    transform: translateY(0px);
   }
   60% {
     opacity: 0;
-    transform: translateY(3px);
   }
 `;
 
@@ -35,19 +35,22 @@ const Dot = styled.div`
   height: ${SIZE_LARGE};
   width: ${SIZE_LARGE};
   border-radius: ${SIZE_LARGE};
-  background-color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${(props) =>
+    props.color || cssConstants.PRIMARY_LIGHT_BLUE};
   animation: ${dotAnimation} 1.3s ease infinite;
   animation-delay: ${(props) => `${0.1 + props.index * 0.2}s`};
 
-  ${(props) => props.small && css`
-    height: ${SIZE_SMALL};
-    width: ${SIZE_SMALL};
-    border-radiusd: ${SIZE_SMALL};
-  `}
+  ${(props) =>
+    props.small &&
+    css`
+      height: ${SIZE_SMALL};
+      width: ${SIZE_SMALL};
+      border-radiusd: ${SIZE_SMALL};
+    `};
 `;
 
 export const Loader = (props) => (
-  <Wrapper {...props} >
+  <Wrapper {...props}>
     <Dot index={0} {...props} />
     <Dot index={1} {...props} />
     <Dot index={2} {...props} />

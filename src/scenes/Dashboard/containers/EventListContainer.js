@@ -10,7 +10,8 @@ const filterOptions = [
   {
     id: 1,
     label: 'All Events'
-  }, {
+  },
+  {
     id: 2,
     label: 'Promotions'
   }
@@ -30,7 +31,7 @@ class EventListContainer extends React.Component {
     active: -1,
     selectedFilter: 0,
     timestampSort: 'asc'
-  }
+  };
 
   componentDidMount() {
     this.props.eventsActions.fetch();
@@ -49,13 +50,13 @@ class EventListContainer extends React.Component {
         events={eventsState.model}
         loading={eventsState.loading}
         title="2018 Season"
-
         filterOptions={filterOptions}
         onFilterSelect={(o, i) => this.setState({ selectedFilter: i })}
         selectedFilter={selectedFilter}
-
         timestampSort={timestampSort}
-        onTimestampSortChange={(curr, next) => this.setState({ timestampSort: next })}
+        onTimestampSortChange={(curr, next) =>
+          this.setState({ timestampSort: next })
+        }
       />
     );
   }
@@ -67,9 +68,7 @@ EventListContainer.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string // eslint-disable-line
   }),
-  history: PropTypes.shape({
-
-  })
+  history: PropTypes.shape({})
 };
 
 function mapStateToProps(state) {
@@ -84,4 +83,6 @@ function mapActionCreators(dispatch) {
   };
 }
 
-export default withRouter(connect(mapStateToProps, mapActionCreators)(EventListContainer));
+export default withRouter(
+  connect(mapStateToProps, mapActionCreators)(EventListContainer)
+);

@@ -18,11 +18,7 @@ const connectedRedirect = (selector, redirectUrl) => (Component) => {
   });
 
   const RedirectComponent = ({ authorized }) => {
-    return (
-      authorized
-        ? <Component />
-        : <Redirect to={redirectUrl} />
-    );
+    return authorized ? <Component /> : <Redirect to={redirectUrl} />;
   };
 
   RedirectComponent.propTypes = {

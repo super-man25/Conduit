@@ -1,21 +1,16 @@
 import { call, put } from 'redux-saga/effects';
-import { eventService } from '../_services';
+import { eventService } from '_services';
 import { cloneableGenerator } from 'redux-saga/utils';
-import {
-  actions,
-  reducer
-} from './events';
+import { actions, reducer } from 'state/events';
 
-import {
-  fetchAsync
-} from './events/saga';
+import { fetchAsync } from 'state/events/saga';
 
 import {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
   RESET
-} from './events/actions';
+} from 'state/events/actions';
 
 describe('actions', () => {
   it('should create an action to fetch events', () => {
@@ -112,12 +107,15 @@ describe('saga workers', () => {
 
     const success = generator.clone();
     const events = ['events'];
-    expect(success.next(events).value).toEqual(put({ type: FETCH_SUCCESS, payload: events }));
+    expect(success.next(events).value).toEqual(
+      put({ type: FETCH_SUCCESS, payload: events })
+    );
     expect(success.next().done).toBe(true);
-
 
     const fail = generator.clone();
     const error = new Error('some API error');
-    expect(fail.throw(error).value).toEqual(put({ type: FETCH_ERROR, payload: error }));
+    expect(fail.throw(error).value).toEqual(
+      put({ type: FETCH_ERROR, payload: error })
+    );
   });
 });

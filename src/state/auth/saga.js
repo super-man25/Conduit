@@ -28,7 +28,7 @@ export function* signInAsync(action) {
     const user = yield call(userService.login, email, password);
     yield put({ type: SET_USER, payload: user });
   } catch (err) {
-    // console.warn(err);
+    console.warn(err);
   }
 }
 
@@ -55,9 +55,5 @@ function* watchSignOutAsync() {
 }
 
 export default function* authSaga() {
-  yield all([
-    watchFetchAsync(),
-    watchSignInAsync(),
-    watchSignOutAsync()
-  ]);
+  yield all([watchFetchAsync(), watchSignInAsync(), watchSignOutAsync()]);
 }

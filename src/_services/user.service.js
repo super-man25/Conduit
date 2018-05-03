@@ -2,13 +2,13 @@ import { baseURL } from '../_constants';
 
 const API = {
   meURL: `${baseURL}/me`,
-  loginURL: `${baseURL }/auth`, // - method POST
-  logoutURL: `${baseURL }/auth`, // - method DELETE
-  getAllURL: `${baseURL }/users`, // - method GET (for isAdmin users only)
-  getByIdURL: `${baseURL }/users/`, // users/{id} - method GET
-  registerURL: `${baseURL }/users`, // - method POST (for isAdmin users only)
-  updateURL: `${baseURL }/users/`, // users/{id} - method PUT (for isAdmin users only)
-  deleteURL: `${baseURL }/users` // users/{id} - method DELETE (for isAdmin users only)
+  loginURL: `${baseURL}/auth`, // - method POST
+  logoutURL: `${baseURL}/auth`, // - method DELETE
+  getAllURL: `${baseURL}/users`, // - method GET (for isAdmin users only)
+  getByIdURL: `${baseURL}/users/`, // users/{id} - method GET
+  registerURL: `${baseURL}/users`, // - method POST (for isAdmin users only)
+  updateURL: `${baseURL}/users/`, // users/{id} - method PUT (for isAdmin users only)
+  deleteURL: `${baseURL}/users` // users/{id} - method DELETE (for isAdmin users only)
 };
 
 function handleResponse(response) {
@@ -28,13 +28,12 @@ function login(email, password) {
     body: JSON.stringify({ email, password })
   };
 
-  return fetch(API.loginURL, requestOptions)
-    .then((response) => {
-      if (!response.ok) {
-        return Promise.reject(response.statusText);
-      }
-      return response.json();
-    });
+  return fetch(API.loginURL, requestOptions).then((response) => {
+    if (!response.ok) {
+      return Promise.reject(response.statusText);
+    }
+    return response.json();
+  });
 }
 
 function logout() {
@@ -42,13 +41,12 @@ function logout() {
     credentials: 'include',
     method: 'DELETE'
   };
-  return fetch(API.logoutURL, requestOptions)
-    .then((response) => {
-      if (!response.ok) {
-        return Promise.reject(response.statusText);
-      }
-      return response.statusText;
-    });
+  return fetch(API.logoutURL, requestOptions).then((response) => {
+    if (!response.ok) {
+      return Promise.reject(response.statusText);
+    }
+    return response.statusText;
+  });
 }
 
 function getMe() {

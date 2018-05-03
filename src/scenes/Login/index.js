@@ -1,23 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import LoginForm from './components/LoginForm';
-import LoginFooter from './components/LoginFooter';
 import authActions from '../../state/auth/actions';
-
+import stadiumImage from '../../_images/stadium.jpg';
+import { cssConstants } from '../../_constants';
 import {
   Button,
-  ContentWrapper,
   H3,
   HelpBlockDiv,
+  ImageLayout,
   Input,
   Label,
   LogoName,
   MailtoLink,
-  OuterWrapper
+  Spacing,
+  FlexItem,
+  Loader
 } from '../../_components';
+
+const Content = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const LoginFooter = styled.div`
+  padding: 40px;
+  background-color: ${cssConstants.PRIMARY_EVEN_LIGHTER_GRAY};
+  font-size: 10px;
+  line-height: 130%;
+`;
+
+const CenteredContainer = styled.div`
+  max-width: 400px;
+  margin: auto;
+`;
 
 export class LoginPresenter extends React.Component {
   constructor(props) {
@@ -45,13 +65,15 @@ export class LoginPresenter extends React.Component {
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
     // state will probably not be updated in time for it's value to be up-to-date...
     if (name === 'password') {
-      if (value.length === 0) { // check the password value directly
+      if (value.length === 0) {
+        // check the password value directly
         this.setState({ loginEnabled: false });
       } else {
         this.setState({ loginEnabled: !!this.state.validEmail }); // rely on state for the value of validEmail
       }
     } else if (name === 'email') {
-      if (!this.emailCheck(value)) { // check the email directly
+      if (!this.emailCheck(value)) {
+        // check the email directly
         this.setState({ loginEnabled: false });
       } else {
         this.setState({ loginEnabled: !!this.state.password }); // rely on state for the value of password
@@ -84,43 +106,90 @@ export class LoginPresenter extends React.Component {
 
   render() {
     const { authState } = this.props;
-    const { email, password, submitted, emailHadFocus, passwordHadFocus, validEmail, loginEnabled } = this.state;
+    const {
+      email,
+      password,
+      submitted,
+      emailHadFocus,
+      passwordHadFocus,
+      validEmail,
+      loginEnabled
+    } = this.state;
 
     return (
-      <OuterWrapper login>
-        <ContentWrapper login>
-          <LoginForm>
-            <LogoName login />
-            <H3 login>Log In</H3>
-            {/* <HelpBlockDiv type={this.props.alert.type} show={this.props.alert}>{this.props.alert.message}</HelpBlockDiv> */}
-            <br />
-            <form name="form" onSubmit={this.handleSubmit}>
-              <Label htmlFor="email">Email Address</Label>
-              <Input type="text" name="email" id="email" autoComplete="new-email" value={email} valid={validEmail} inValid={!validEmail && (submitted || emailHadFocus)} onChange={this.handleChange} onBlur={this.handleBlur} />
-              <HelpBlockDiv type='alert-danger' show={!validEmail && (submitted || emailHadFocus)}>A valid Email is required</HelpBlockDiv>
+      <ImageLayout imageSrc={`url(${stadiumImage})`}>
+        <Content>
+          <FlexItem>
+            <Spacing padding="20% 40px 40px">
+              <CenteredContainer>
+                <LogoName login />
+                <H3 login>Log In</H3>
+                <form name="form" onSubmit={this.handleSubmit}>
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    type="text"
+                    name="email"
+                    id="email"
+                    autoComplete="new-email"
+                    value={email}
+                    valid={validEmail}
+                    inValid={!validEmail && (submitted || emailHadFocus)}
+                    onChange={this.handleChange}
+                    onBlur={this.handleBlur}
+                  />
+                  <HelpBlockDiv
+                    type="alert-danger"
+                    show={!validEmail && (submitted || emailHadFocus)}
+                  >
+                    A valid Email is required
+                  </HelpBlockDiv>
 
-              <Label htmlFor="password">Password</Label>
-              <Input type="password" name="password" id="password" autoComplete="new-password" value={password} inValid={!password && (submitted || passwordHadFocus)} valid={password} onChange={this.handleChange} onBlur={this.handleBlur} />
-              <HelpBlockDiv type='alert-danger' show={!password && (submitted || passwordHadFocus)}>Password is required</HelpBlockDiv>
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autoComplete="new-password"
+                    value={password}
+                    inValid={!password && (submitted || passwordHadFocus)}
+                    valid={password}
+                    onChange={this.handleChange}
+                    onBlur={this.handleBlur}
+                  />
+                  <HelpBlockDiv
+                    type="alert-danger"
+                    show={!password && (submitted || passwordHadFocus)}
+                  >
+                    Password is required
+                  </HelpBlockDiv>
 
-              <Button disabled={!loginEnabled} id='login'>Login</Button>
-              {authState.pending &&
-                <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="processing spinner"/>
-              }
-              <br />
-            </form>
-          </LoginForm>
-          <LoginFooter>If you do not already have an account please contact <MailtoLink mailto="robert.smith@soldoutsports.com">robert.smith@soldoutsports.com</MailtoLink> to begin setting up an account for your organization.</LoginFooter>
-        </ContentWrapper>
-      </OuterWrapper>
+                  <Button disabled={!loginEnabled} id="login">
+                    {authState.pending ? (
+                      <Loader small color={cssConstants.PRIMARY_WHITE} />
+                    ) : (
+                      'Login'
+                    )}
+                  </Button>
+                </form>
+              </CenteredContainer>
+            </Spacing>
+          </FlexItem>
+          <LoginFooter>
+            If you do not already have an account please contact{' '}
+            <MailtoLink mailto="robert.smith@soldoutsports.com">
+              robert.smith@soldoutsports.com
+            </MailtoLink>{' '}
+            to begin setting up an account for your organization.
+          </LoginFooter>
+        </Content>
+      </ImageLayout>
     );
   }
 }
 
 LoginPresenter.propTypes = {
-  authActions: PropTypes.object, // eslint-disable-line
-  authState: PropTypes.object, // eslint-disable-line
-  alert: PropTypes.object // eslint-disable-line
+  authState: PropTypes.shape(),
+  authActions: PropTypes.shape()
 };
 
 function mapStateToProps(state) {

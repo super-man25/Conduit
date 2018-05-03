@@ -7,12 +7,17 @@ export const Sidebar = styled.div`
   min-width: 380px;
   visibility: visible;
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  overflow-x: hidden;
+
   transition: 0.1s ease-in-out all;
-  ${(props) => props.collapsed && css`
-    transform: translate3d(-100%, 0, 0);
-    width: 0;
-    max-width: 0;
-    min-width: 0;
-  `}
+
+  ${(props) =>
+    props.collapsed &&
+    css`
+      overflow: hidden;
+      transform: translate3d(-100%, 0, 0);
+      width: 0;
+      max-width: 0;
+      min-width: 0;
+      overflow-x: hidden;
+    `};
 `;

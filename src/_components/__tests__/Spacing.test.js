@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Spacing } from './Spacing';
+import { Spacing } from '_components/Spacing';
 
 it('renders with no props', () => {
   const tree = renderer

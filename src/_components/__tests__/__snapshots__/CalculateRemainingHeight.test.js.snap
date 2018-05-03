@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div />
+    <div />
+  </div>
+</div>
+`;
+
+exports[`renders correctly with one child 1`] = `
+.c0 {
+  height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div />
+</div>
+`;

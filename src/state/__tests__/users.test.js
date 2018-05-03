@@ -1,20 +1,15 @@
 import { cloneableGenerator } from 'redux-saga/utils';
 import { call, put } from 'redux-saga/effects';
-import { userService } from '../_services';
-import {
-  actions,
-  reducer
-} from './users';
+import { userService } from '_services';
+import { actions, reducer } from 'state/users';
 
 import {
   CREATE_ASYNC,
   CREATE_SUCCESS,
   CREATE_ERROR
-} from './users/actions';
+} from 'state/users/actions';
 
-import {
-  createAsync
-} from './users/saga';
+import { createAsync } from 'state/users/saga';
 
 describe('actions', () => {
   it('should create an action for create a user', () => {
@@ -87,6 +82,8 @@ describe('saga workers', () => {
 
     const fail = generator.clone();
     const error = new Error('some API error');
-    expect(fail.throw(error).value).toEqual(put({ type: CREATE_ERROR, payload: error }));
+    expect(fail.throw(error).value).toEqual(
+      put({ type: CREATE_ERROR, payload: error })
+    );
   });
 });

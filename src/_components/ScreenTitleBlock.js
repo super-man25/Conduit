@@ -6,7 +6,7 @@ export const ScreenTitleBlock = styled.div`
   height: 80px;
   margin: 0;
   margin-bottom: 30px;
-  padding:0;
+  padding: 0;
   background: ${cssConstants.PRIMARY_WHITE};
   color: ${cssConstants.SECONDARY_BLUE};
 `;

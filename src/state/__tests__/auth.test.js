@@ -1,16 +1,9 @@
 import { put, call } from 'redux-saga/effects';
-import { userService } from '../_services';
+import { userService } from '_services';
 
-import {
-  actions,
-  reducer
-} from './auth';
+import { actions, reducer } from 'state/auth';
 
-import {
-  signInAsync,
-  signOutAsync,
-  fetchAsync
-} from './auth/saga';
+import { signInAsync, signOutAsync, fetchAsync } from 'state/auth/saga';
 
 import {
   FETCH_ASYNC,
@@ -18,7 +11,7 @@ import {
   SET_USER,
   SIGN_IN_ASYNC,
   SIGN_OUT_ASYNC
-} from './auth/actions';
+} from 'state/auth/actions';
 
 describe('actions', () => {
   it('should create an action to sign in', () => {
@@ -81,7 +74,10 @@ describe('reducer', () => {
 
     const pending = true;
 
-    const nextState = reducer(prevState, { type: IS_PENDING, payload: pending });
+    const nextState = reducer(prevState, {
+      type: IS_PENDING,
+      payload: pending
+    });
     expect(nextState).toEqual({
       model: null,
       pending
@@ -94,8 +90,12 @@ describe('saga workers', () => {
     const user = { id: 1 };
     const action = actions.signIn('some@email.com', 'password');
     const generator = signInAsync(action);
-    expect(generator.next().value).toEqual(call(userService.login, 'some@email.com', 'password'));
-    expect(generator.next(user).value).toEqual(put({ type: SET_USER, payload: user }));
+    expect(generator.next().value).toEqual(
+      call(userService.login, 'some@email.com', 'password')
+    );
+    expect(generator.next(user).value).toEqual(
+      put({ type: SET_USER, payload: user })
+    );
     expect(generator.next().done).toBe(true);
   });
 
@@ -103,7 +103,9 @@ describe('saga workers', () => {
     const action = actions.signOut();
     const generator = signOutAsync(action);
     expect(generator.next().value).toEqual(call(userService.logout));
-    expect(generator.next().value).toEqual(put({ type: SET_USER, payload: null }));
+    expect(generator.next().value).toEqual(
+      put({ type: SET_USER, payload: null })
+    );
     expect(generator.next().done).toBe(true);
   });
 
@@ -111,10 +113,16 @@ describe('saga workers', () => {
     const user = { id: 1 };
     const action = actions.fetch();
     const generator = fetchAsync(action);
-    expect(generator.next().value).toEqual(put({ type: IS_PENDING, payload: true }));
+    expect(generator.next().value).toEqual(
+      put({ type: IS_PENDING, payload: true })
+    );
     expect(generator.next().value).toEqual(call(userService.getMe));
-    expect(generator.next(user).value).toEqual(put({ type: SET_USER, payload: user }));
-    expect(generator.next().value).toEqual(put({ type: IS_PENDING, payload: false }));
+    expect(generator.next(user).value).toEqual(
+      put({ type: SET_USER, payload: user })
+    );
+    expect(generator.next().value).toEqual(
+      put({ type: IS_PENDING, payload: false })
+    );
     expect(generator.next().done).toBe(true);
   });
 });

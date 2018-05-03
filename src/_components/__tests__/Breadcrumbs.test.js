@@ -1,11 +1,10 @@
 import React from 'react';
+import { Breadcrumbs } from '_components/Breadcrumbs';
 import renderer from 'react-test-renderer';
-import { Breadcrumbs } from './';
 import 'jest-styled-components';
 
 it('renders correctly', () => {
-  const tree = renderer
-    .create(<Breadcrumbs>Dashboard / Settings</Breadcrumbs>)
-    .toJSON();
+  const tree = renderer.create(<Breadcrumbs />).toJSON();
+
   expect(tree).toMatchSnapshot();
 });

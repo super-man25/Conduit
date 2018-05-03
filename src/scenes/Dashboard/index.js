@@ -10,7 +10,6 @@ import Event from './scenes/Event';
 
 import {
   Button,
-  FlexItem,
   Sidebar,
   SidebarHeader,
   SiteHeader,
@@ -20,14 +19,26 @@ import {
 const PageWrapper = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
   position: absolute;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
 `;
 
 const FullContent = styled.div`
   display: flex;
-  direction: row;
-  min-height: calc(100% - 70px);
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
+const PrimaryContent = styled.div`
+  overflow-y: scroll;
+  flex: 1;
+`;
+
+const SidebarContent = styled.div`
+  height: calc(100% - 116px);
 `;
 
 class Dashboard extends React.Component {
@@ -56,12 +67,18 @@ class Dashboard extends React.Component {
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
               <TeamOverview>
-                <Button small collapse onClick={this.handleSidebarToggleClick} />
+                <Button
+                  small
+                  collapse
+                  onClick={this.handleSidebarToggleClick}
+                />
               </TeamOverview>
             </SidebarHeader>
-            <EventListContainer />
+            <SidebarContent>
+              <EventListContainer />
+            </SidebarContent>
           </Sidebar>
-          <FlexItem>
+          <PrimaryContent>
             <Spacing padding="16px 32px">
               <Switch>
                 <Route path="/season" component={Season} />
@@ -69,7 +86,7 @@ class Dashboard extends React.Component {
                 <Redirect to="/season" />
               </Switch>
             </Spacing>
-          </FlexItem>
+          </PrimaryContent>
         </FullContent>
       </PageWrapper>
     );
@@ -77,4 +94,3 @@ class Dashboard extends React.Component {
 }
 
 export default Dashboard;
-

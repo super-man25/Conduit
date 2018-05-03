@@ -23,7 +23,7 @@ import { TeamSettings } from './components/TeamSettings';
 export class SettingsPresenter extends React.Component {
   handleLogoutClick(e) {  // eslint-disable-line
     e.preventDefault();
-    authActions.signOut();
+    this.props.authActions.signOut();
   }
 
   render() {
@@ -41,10 +41,14 @@ export class SettingsPresenter extends React.Component {
             <br />
             <br />
             <br />
-            <Link id='logout' to="/logout" onClick={this.handleLogoutClick}>Logout</Link>
+            <Link id="logout" to="/logout" onClick={this.handleLogoutClick}>
+              Logout
+            </Link>
           </LeftNav>
           <MainContent leftNav>
-            <Breadcrumbs>Dashboard / Settings / Users & Permissions</Breadcrumbs>
+            <Breadcrumbs>
+              Dashboard / Settings / Users & Permissions
+            </Breadcrumbs>
             <ScreenTitleBlock>
               <H3 screenTitle>Users & Permissions</H3>
             </ScreenTitleBlock>

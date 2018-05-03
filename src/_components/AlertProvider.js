@@ -20,9 +20,10 @@ class AlertProviderPresenter extends React.Component {
     // TODO: style alerts
     return (
       <div>
-        {alert && alert.show && (
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
-        )}
+        {alert &&
+          alert.show && (
+            <div className={`alert ${alert.type}`}>{alert.message}</div>
+          )}
         {children}
       </div>
     );
@@ -50,4 +51,3 @@ function mapStateToProps(state) {
 }
 
 export const AlertProvider = connect(mapStateToProps)(AlertProviderPresenter);
-
