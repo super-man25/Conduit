@@ -14,7 +14,7 @@ export const SettingSaveButton = styled.div`
   line-height: 40px;
   float: right;
   margin: 0;
-  margin-right: 1%;
+  margin-right: ${(props) => (props.team ? '23%' : '1%')};
   padding: 0;
   background: ${cssConstants.PRIMARY_WHITE};
   cursor: pointer;

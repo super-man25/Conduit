@@ -121,7 +121,7 @@ export class TeamSettingsPresenter extends React.Component {
         <Setting edit={editpricingInterval} id="editpricingInterval">
           Generate pricing updates every
           <SettingEditButton onClick={this.handleButtonClick} />
-          <SettingSaveButton onClick={this.handleButtonClick} />
+          <SettingSaveButton team onClick={this.handleButtonClick} />
           <SettingReadonlyValue>{intervalName}</SettingReadonlyValue>
           <SettingEditableValue>
             <SelectBox
@@ -141,7 +141,7 @@ export class TeamSettingsPresenter extends React.Component {
         <Setting edit={editIntegrations} id="editIntegrations">
           Team ticket integrations
           <SettingEditButton onClick={this.handleButtonClick} />
-          <SettingSaveButton onClick={this.handleButtonClick} />
+          <SettingSaveButton team onClick={this.handleButtonClick} />
           <SettingReadonlyValue>
             Stubhub - On
             <br />
