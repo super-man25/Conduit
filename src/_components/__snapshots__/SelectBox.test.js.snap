@@ -2,24 +2,24 @@
 
 exports[`renders correctly with inValid prop 1`] = `
 <select
-  className="sc-jAaTju cgCdKQ"
+  className="sc-jDwBTQ dxWESe"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <select
-  className="sc-jAaTju dKkScg"
+  className="sc-jDwBTQ goylHR"
 />
 `;
 
 exports[`renders correctly with noBg prop 1`] = `
 <select
-  className="sc-jAaTju kdEJkS"
+  className="sc-jDwBTQ fglLhX"
 />
 `;
 
 exports[`renders correctly with valid prop 1`] = `
 <select
-  className="sc-jAaTju hdIsiu"
+  className="sc-jDwBTQ jcuSbL"
 />
 `;

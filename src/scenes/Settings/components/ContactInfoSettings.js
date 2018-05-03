@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { cssConstants } from '../../../_constants';
-import { actions as userActions } from '../../../state/auth';
+import userActions from '../../../state/users/actions';
 import {
   validateEmail,
   validatePhoneNumber
@@ -441,10 +441,12 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     userActions: bindActionCreators(userActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(ContactInfoSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  ContactInfoSettings
+);
