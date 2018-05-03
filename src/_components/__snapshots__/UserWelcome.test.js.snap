@@ -2,12 +2,12 @@
 
 exports[`renders correctly with a valid user prop 1`] = `
 <div
-  className="sc-fAjcbJ hXABc"
+  className="sc-caSCKo gXaPkV"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <div
-  className="sc-fAjcbJ dxIRTV"
+  className="sc-caSCKo gfIZkt"
 />
 `;

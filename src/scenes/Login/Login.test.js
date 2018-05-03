@@ -5,16 +5,18 @@ import configureStore from 'redux-mock-store';
 import authActions from '../../state/auth/actions';
 
 import {
-  OuterWrapper,
-  ContentWrapper,
-  LogoName,
+  Button,
   H3,
-  Label,
-  Input,
   HelpBlockDiv,
-  Button
+  ImageLayout,
+  Input,
+  Label,
+  LogoName,
+  MailtoLink,
+  Spacing,
+  FlexItem,
+  Loader
 } from '../../_components';
-import LoginForm from './components/LoginForm';
 import Login, { LoginPresenter } from './index';
 
 const myAuth = {
@@ -23,20 +25,14 @@ const myAuth = {
 };
 
 describe('<LoginPresenter />', () => {
-
-  it('contains an <OuterWrapper /> component', () => {
+  it('contains an <ImageLayout /> component', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(OuterWrapper)).toHaveLength(1);
+    expect(wrapper.find(ImageLayout)).toHaveLength(1);
   });
 
-  it('contains a <ContentWrapper /> component', () => {
+  it('contains a <MailtoLink /> component', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(ContentWrapper)).toHaveLength(1);
-  });
-
-  it('contains a <LoginForm /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(LoginForm)).toHaveLength(1);
+    expect(wrapper.find(MailtoLink)).toHaveLength(1);
   });
 
   it('contains a <LogoName /> component', () => {
@@ -47,6 +43,16 @@ describe('<LoginPresenter />', () => {
   it('contains an <H3 /> component', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
     expect(wrapper.find(H3)).toHaveLength(1);
+  });
+
+  it('contains an <Spacing /> component', () => {
+    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
+    expect(wrapper.find(Spacing)).toHaveLength(1);
+  });
+
+  it('contains an <FlexItem /> component', () => {
+    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
+    expect(wrapper.find(FlexItem)).toHaveLength(1);
   });
 
   it('contains two <Label /> components', () => {
@@ -69,18 +75,18 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.find(Button)).toHaveLength(1);
   });
 
-  it('contains no <img /> component when auth.pending is false', () => {
+  it('contains no <Loader /> component when auth.pending is false', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find('img')).toHaveLength(0);
+    expect(wrapper.find(Loader)).toHaveLength(0);
   });
 
-  it('contains an <img /> component when auth is pending', () => {
+  it('contains an <Loader /> component when auth is pending', () => {
     const myAuthPending = {
       model: null,
       pending: true
     };
     const wrapper = shallow(<LoginPresenter authState={myAuthPending} />);
-    expect(wrapper.find('img')).toHaveLength(1);
+    expect(wrapper.find(Loader)).toHaveLength(1);
   });
 
   it('contains a <form /> component', () => {
@@ -89,7 +95,9 @@ describe('<LoginPresenter />', () => {
   });
 
   it('email and password input changes fire handleChange method', () => {
-    const handleChangeSpy = jest.spyOn(LoginPresenter.prototype, 'handleChange');
+    const handleChangeSpy = jest.spyOn(LoginPresenter.prototype,
+      'handleChange'
+    );
     const wrapper = mount(<LoginPresenter authState={myAuth} />);
     wrapper.setState({
       email: '',
@@ -101,9 +109,15 @@ describe('<LoginPresenter />', () => {
       loginEnabled: false
     });
     expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(0);
-    wrapper.find('#email').first().simulate('change', { target: { value: 'root@' } });
+    wrapper
+      .find('#email')
+      .first()
+      .simulate('change', { target: { value: 'root@' } });
     expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(1);
-    wrapper.find('#password').first().simulate('change', { target: { value: '1234' } });
+    wrapper
+      .find('#password')
+      .first()
+      .simulate('change', { target: { value: '1234' } });
     expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(2);
     handleChangeSpy.mockClear();
   });
@@ -122,27 +136,49 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.state().loginEnabled).toEqual(false);
     expect(wrapper.state().email).toEqual('');
     expect(wrapper.state().emailHadFocus).toEqual(false);
-    wrapper.find('#email').first().simulate('change', { target: { value: 'root@dialexa.com', name: 'email' } });
-    wrapper.find('#email').first().simulate('blur', { target: { name: 'email' } });
+    wrapper
+      .find('#email')
+      .first()
+      .simulate('change', {
+        target: { value: 'root@dialexa.com', name: 'email' }
+      });
+    wrapper
+      .find('#email')
+      .first()
+      .simulate('blur', { target: { name: 'email' } });
     expect(wrapper.state().email).toEqual('root@dialexa.com');
     expect(wrapper.state().emailHadFocus).toEqual(true);
     wrapper.setState({ validEmail: true });
     expect(wrapper.state().password).toEqual('');
     expect(wrapper.state().loginEnabled).toEqual(false);
     expect(wrapper.state().passwordHadFocus).toEqual(false);
-    wrapper.find('#password').first().simulate('change', { target: { value: 'password1', name: 'password' } });
-    wrapper.find('#password').first().simulate('blur', { target: { name: 'password' } });
+    wrapper
+      .find('#password')
+      .first()
+      .simulate('change', { target: { value: 'password1', name: 'password' } });
+    wrapper
+      .find('#password')
+      .first()
+      .simulate('blur', { target: { name: 'password' } });
     expect(wrapper.state().password).toEqual('password1');
     expect(wrapper.state().passwordHadFocus).toEqual(true);
     expect(wrapper.state().loginEnabled).toEqual(true);
   });
 
   it('clicking submit button fires handleSubmit method, which updates component state', () => {
-    const handleSubmitSpy = jest.spyOn(LoginPresenter.prototype, 'handleSubmit');
-    const wrapper = mount(<LoginPresenter authState={myAuth} authActions={authActions} />);
+    const handleSubmitSpy = jest.spyOn(
+      LoginPresenter.prototype,
+      'handleSubmit'
+    );
+    const wrapper = mount(
+      <LoginPresenter authState={myAuth} authActions={authActions} />
+    );
     expect(wrapper.state().submitted).toEqual(false);
     expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(0);
-    wrapper.find('#login').first().simulate('submit');
+    wrapper
+      .find('#login')
+      .first()
+      .simulate('submit');
     expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(1);
     expect(wrapper.state().submitted).toEqual(true);
     handleSubmitSpy.mockClear();
@@ -189,9 +225,15 @@ describe('<LoginPresenter />', () => {
     const initialState = {};
     const store = mockStore(initialState);
     // Render the component and submit the form
-    const wrapper = shallow(<LoginPresenter authState={myAuth} authActions={authActions} store={store} />);
+    const wrapper = shallow(
+      <LoginPresenter
+        authState={myAuth}
+        authActions={authActions}
+        store={store}
+      />
+    );
     expect(wrapper.state().submitted).toEqual(false);
-    wrapper.find('form').simulate('submit', { preventDefault: () => { } });
+    wrapper.find('form').simulate('submit', { preventDefault: () => {} });
     expect(wrapper.state().submitted).toEqual(true);
     // Test if the store dispatched the signIn action
     // const actions = store.getActions();

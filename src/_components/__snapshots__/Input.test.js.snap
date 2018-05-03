@@ -2,25 +2,25 @@
 
 exports[`renders correctly with disabled prop 1`] = `
 <input
-  className="sc-hMqMXs biMCcI"
+  className="sc-kEYyzF bdKYpI"
   disabled={true}
 />
 `;
 
 exports[`renders correctly with inValid prop 1`] = `
 <input
-  className="sc-hMqMXs gUVDmu"
+  className="sc-kEYyzF idBrhT"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <input
-  className="sc-hMqMXs kIiiqr"
+  className="sc-kEYyzF fMpxOL"
 />
 `;
 
 exports[`renders correctly with valid prop 1`] = `
 <input
-  className="sc-hMqMXs cPKttb"
+  className="sc-kEYyzF crifQZ"
 />
 `;

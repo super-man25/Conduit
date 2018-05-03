@@ -2,12 +2,12 @@
 
 exports[`renders correctly with edit prop 1`] = `
 <div
-  className="sc-cMljjf eIlZgS"
+  className="sc-jDwBTQ iYNUQa"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <div
-  className="sc-cMljjf hqliCm"
+  className="sc-jDwBTQ evLGhK"
 />
 `;

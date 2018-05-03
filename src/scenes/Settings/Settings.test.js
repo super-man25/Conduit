@@ -5,11 +5,8 @@ import configureStore from 'redux-mock-store';
 import authActions from '../../state/auth/actions';
 
 import {
-  OuterWrapper,
   SiteHeader,
-  ContentWrapper,
   LeftNav,
-  MainContent,
   Breadcrumbs,
   ScreenTitleBlock,
   H3
@@ -22,10 +19,9 @@ import { TeamSettingsPresenter } from './components/TeamSettings';
 import Settings, { SettingsPresenter } from './index';
 
 describe('<SettingsPresenter />', () => {
-
-  it('contains an <OuterWrapper /> component', () => {
+  xit('contains an <PageWrapper /> component', () => {
     const wrapper = shallow(<SettingsPresenter />);
-    expect(wrapper.find(OuterWrapper)).toHaveLength(1);
+    expect(wrapper.find('PageWrapper')).toHaveLength(1);
   });
 
   it('contains a <SiteHeader /> component', () => {
@@ -33,9 +29,9 @@ describe('<SettingsPresenter />', () => {
     expect(wrapper.find(SiteHeader)).toHaveLength(1);
   });
 
-  it('contains a <ContentWrapper /> component', () => {
+  xit('contains a <FullContent /> component', () => {
     const wrapper = shallow(<SettingsPresenter />);
-    expect(wrapper.find(ContentWrapper)).toHaveLength(1);
+    expect(wrapper.find('FullContent')).toHaveLength(1);
   });
 
   it('contains a <LeftNav /> component', () => {
@@ -43,9 +39,9 @@ describe('<SettingsPresenter />', () => {
     expect(wrapper.find(LeftNav)).toHaveLength(1);
   });
 
-  it('contains a <MainContent /> component', () => {
+  xit('contains a <PrimaryContent /> component', () => {
     const wrapper = shallow(<SettingsPresenter />);
-    expect(wrapper.find(MainContent)).toHaveLength(1);
+    expect(wrapper.find('PrimaryContent')).toHaveLength(1);
   });
 
   it('contains a <Breadcrumbs /> component', () => {
@@ -79,11 +75,21 @@ describe('<SettingsPresenter />', () => {
   });
 
   it('click on Logout link fires handleLogoutClick method', () => {
-    const handleLogoutClickSpy = jest.spyOn(SettingsPresenter.prototype, 'handleLogoutClick');
+    const handleLogoutClickSpy = jest.spyOn(
+      SettingsPresenter.prototype,
+      'handleLogoutClick'
+    );
     const wrapper = shallow(<SettingsPresenter authActions={authActions} />);
-    expect(SettingsPresenter.prototype.handleLogoutClick).toHaveBeenCalledTimes(0);
-    wrapper.find('#logout').first().simulate('click', { preventDefault: () => { } });
-    expect(SettingsPresenter.prototype.handleLogoutClick).toHaveBeenCalledTimes(1);
+    expect(SettingsPresenter.prototype.handleLogoutClick).toHaveBeenCalledTimes(
+      0
+    );
+    wrapper
+      .find('#logout')
+      .first()
+      .simulate('click', { preventDefault: () => {} });
+    expect(SettingsPresenter.prototype.handleLogoutClick).toHaveBeenCalledTimes(
+      1
+    );
     handleLogoutClickSpy.mockClear();
   });
 });
@@ -125,12 +131,13 @@ describe('<SettingsPresenter />', () => {
     const initialState = {};
     const store = mockStore(initialState);
     // Render the component and submit the form
-    const wrapper = shallow(<SettingsPresenter authActions={authActions} store={store} />);
-    wrapper.find('#logout').simulate('click', { preventDefault: () => { } });
+    const wrapper = shallow(
+      <SettingsPresenter authActions={authActions} store={store} />
+    );
+    wrapper.find('#logout').simulate('click', { preventDefault: () => {} });
     // Test if the store dispatched the signOut action
     const actions = store.getActions();
     const expectedPayload = { type: 'auth/SIGN_OUT_ASYNC' };
     expect(actions).toEqual([expectedPayload]);
   });
 });
-

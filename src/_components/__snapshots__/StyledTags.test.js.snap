@@ -2,226 +2,226 @@
 
 exports[`H1 renders correctly with color prop 1`] = `
 <h1
-  className="sc-htpNat jUQWHu"
+  className="sc-bxivhb gdORBh"
   color="red"
 />
 `;
 
 exports[`H1 renders correctly with floatLeft prop 1`] = `
 <h1
-  className="sc-htpNat gVjrkk"
+  className="sc-bxivhb fYfjgZ"
 />
 `;
 
 exports[`H1 renders correctly with floatRight prop 1`] = `
 <h1
-  className="sc-htpNat gmUMAQ"
+  className="sc-bxivhb kVMhLd"
 />
 `;
 
 exports[`H1 renders correctly with no props 1`] = `
 <h1
-  className="sc-htpNat fDCtBa"
+  className="sc-bxivhb gyEqD"
 />
 `;
 
 exports[`H1 renders correctly with size prop 1`] = `
 <h1
-  className="sc-htpNat hMjQsm"
+  className="sc-bxivhb eFjRci"
   size="31px"
 />
 `;
 
 exports[`H1 renders correctly with weight prop 1`] = `
 <h1
-  className="sc-htpNat bZxSW"
+  className="sc-bxivhb jFaIcX"
 />
 `;
 
 exports[`H2 renders correctly with color prop 1`] = `
 <h2
-  className="sc-bxivhb iazwlb"
+  className="sc-ifAKCX TjCVL"
   color="red"
 />
 `;
 
 exports[`H2 renders correctly with floatLeft prop 1`] = `
 <h2
-  className="sc-bxivhb behYEK"
+  className="sc-ifAKCX lAuRp"
 />
 `;
 
 exports[`H2 renders correctly with floatRight prop 1`] = `
 <h2
-  className="sc-bxivhb XAVRg"
+  className="sc-ifAKCX kehYmr"
 />
 `;
 
 exports[`H2 renders correctly with no props 1`] = `
 <h2
-  className="sc-bxivhb hjEbEM"
+  className="sc-ifAKCX bvcRas"
 />
 `;
 
 exports[`H2 renders correctly with size prop 1`] = `
 <h2
-  className="sc-bxivhb jhUrcq"
+  className="sc-ifAKCX karqEg"
   size="31px"
 />
 `;
 
 exports[`H2 renders correctly with weight prop 1`] = `
 <h2
-  className="sc-bxivhb ecbssa"
+  className="sc-ifAKCX iWTbI"
 />
 `;
 
 exports[`H3 renders correctly with color prop 1`] = `
 <h3
-  className="sc-ifAKCX jiJfGX"
+  className="sc-EHOje haOeyz"
   color="red"
 />
 `;
 
 exports[`H3 renders correctly with floatLeft prop 1`] = `
 <h3
-  className="sc-ifAKCX jCSPFi"
+  className="sc-EHOje dSloBB"
 />
 `;
 
 exports[`H3 renders correctly with floatRight prop 1`] = `
 <h3
-  className="sc-ifAKCX hHDrVk"
+  className="sc-EHOje hanTRh"
 />
 `;
 
 exports[`H3 renders correctly with no props 1`] = `
 <h3
-  className="sc-ifAKCX EqkBF"
+  className="sc-EHOje fsyxVc"
 />
 `;
 
 exports[`H3 renders correctly with size prop 1`] = `
 <h3
-  className="sc-ifAKCX XQeyL"
+  className="sc-EHOje gpYrhu"
   size="31px"
 />
 `;
 
 exports[`H3 renders correctly with weight prop 1`] = `
 <h3
-  className="sc-ifAKCX dBtmtW"
+  className="sc-EHOje gZSGwm"
 />
 `;
 
 exports[`H4 renders correctly with color prop 1`] = `
 <h4
-  className="sc-EHOje dRMlBX"
+  className="sc-bZQynM jLTonR"
   color="red"
 />
 `;
 
 exports[`H4 renders correctly with floatLeft prop 1`] = `
 <h4
-  className="sc-EHOje clLpTl"
+  className="sc-bZQynM hwYzAU"
 />
 `;
 
 exports[`H4 renders correctly with floatRight prop 1`] = `
 <h4
-  className="sc-EHOje fxLVE"
+  className="sc-bZQynM bcHQcc"
 />
 `;
 
 exports[`H4 renders correctly with no props 1`] = `
 <h4
-  className="sc-EHOje gKKwWJ"
+  className="sc-bZQynM lmbOpe"
 />
 `;
 
 exports[`H4 renders correctly with size prop 1`] = `
 <h4
-  className="sc-EHOje gpYrhu"
+  className="sc-bZQynM fAbwwL"
   size="31px"
 />
 `;
 
 exports[`H4 renders correctly with weight prop 1`] = `
 <h4
-  className="sc-EHOje feFqyf"
+  className="sc-bZQynM dlcHVE"
 />
 `;
 
 exports[`H5 renders correctly with clearLeft prop 1`] = `
 <h5
-  className="sc-bZQynM heDFfk"
+  className="sc-gzVnrw cqNKbz"
 />
 `;
 
 exports[`H5 renders correctly with clearRight prop 1`] = `
 <h5
-  className="sc-bZQynM gzTXPa"
+  className="sc-gzVnrw iqcNt"
 />
 `;
 
 exports[`H5 renders correctly with color prop 1`] = `
 <h5
-  className="sc-bZQynM jmjuZw"
+  className="sc-gzVnrw kKxJsW"
   color="red"
 />
 `;
 
 exports[`H5 renders correctly with floatLeft prop 1`] = `
 <h5
-  className="sc-bZQynM iJeNDY"
+  className="sc-gzVnrw gHfgBd"
 />
 `;
 
 exports[`H5 renders correctly with floatRight prop 1`] = `
 <h5
-  className="sc-bZQynM KaDoh"
+  className="sc-gzVnrw kCxcBU"
 />
 `;
 
 exports[`H5 renders correctly with no props 1`] = `
 <h5
-  className="sc-bZQynM IRECq"
+  className="sc-gzVnrw hIIUUA"
 />
 `;
 
 exports[`H5 renders correctly with size prop 1`] = `
 <h5
-  className="sc-bZQynM hoOnWt"
+  className="sc-gzVnrw dCnSHJ"
   size="31px"
 />
 `;
 
 exports[`H5 renders correctly with weight prop 1`] = `
 <h5
-  className="sc-bZQynM IRECq"
+  className="sc-gzVnrw hIIUUA"
 />
 `;
 
 exports[`Label renders correctly with no props 1`] = `
 <label
-  className="sc-iwsKbI hyPKGg"
+  className="sc-gZMcBi bKibDO"
 />
 `;
 
 exports[`P1 renders correctly with no props 1`] = `
 <p
-  className="sc-gzVnrw hqoLCq"
+  className="sc-htoDjs eWHOyG"
 />
 `;
 
 exports[`P2 renders correctly with no props 1`] = `
 <p
-  className="sc-htoDjs fXGNOh"
+  className="sc-dnqmqq ifpjuD"
 />
 `;
 
 exports[`S1 renders correctly with no props 1`] = `
 <span
-  className="sc-dnqmqq hWfOKC"
+  className="sc-iwsKbI cdKkcq"
 />
 `;

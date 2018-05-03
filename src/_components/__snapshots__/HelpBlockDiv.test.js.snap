@@ -2,13 +2,13 @@
 
 exports[`renders correctly with no props 1`] = `
 <div
-  className="sc-eNQAEJ fiEKMC"
+  className="sc-hMqMXs gYuuML"
 />
 `;
 
 exports[`renders correctly with show and type="alert-danger" props 1`] = `
 <div
-  className="sc-eNQAEJ bEjdlZ"
+  className="sc-hMqMXs eiUdPV"
   type="alert-danger"
 >
   error message
@@ -17,7 +17,7 @@ exports[`renders correctly with show and type="alert-danger" props 1`] = `
 
 exports[`renders correctly with show and type="alert-success" props 1`] = `
 <div
-  className="sc-eNQAEJ bpwicB"
+  className="sc-hMqMXs dZODKu"
   type="alert-success"
 >
   error message
@@ -26,7 +26,7 @@ exports[`renders correctly with show and type="alert-success" props 1`] = `
 
 exports[`renders correctly with show and type="hint" props 1`] = `
 <div
-  className="sc-eNQAEJ gGKNtV"
+  className="sc-hMqMXs bdxywj"
   type="hint"
 >
   error message
@@ -35,7 +35,7 @@ exports[`renders correctly with show and type="hint" props 1`] = `
 
 exports[`renders correctly with show prop 1`] = `
 <div
-  className="sc-eNQAEJ iMnQiV"
+  className="sc-hMqMXs cPUyUa"
 >
   message
 </div>
