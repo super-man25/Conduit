@@ -12,7 +12,7 @@ export const LeftNav = styled.div`
   height: auto;
   margin: 0;
   padding: 20px;
-  margin-bottom: -5000px;
+  /*margin-bottom: -5000px;*/
   background: ${cssConstants.PRIMARY_WHITE};
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
 `;

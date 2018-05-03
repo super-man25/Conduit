@@ -37,7 +37,6 @@ export const TeamSettingsDiv = styled.div`
 `;
 
 export class TeamSettingsPresenter extends React.Component {
-
   static intervalNameFromSelect() {
     const intervalSelect = document.getElementById('pricingInterval');
     return intervalSelect.options[intervalSelect.selectedIndex].innerHTML;
@@ -64,60 +63,73 @@ export class TeamSettingsPresenter extends React.Component {
   componentDidMount() {
     this.props.dispatch(actions.getClient());
     const self = this;
-    setTimeout(() => { // need a cleaner way of making these happen after the action dispatch
+    setTimeout(() => {
+      // need a cleaner way of making these happen after the action dispatch
       this.setState({ teamName: self.props.client.name });
       this.setState({ pricingInterval: self.props.client.pricingInterval });
-      this.setState({ intervalName: TeamSettingsPresenter.intervalNameFromSelect() });
-    },
-    500
-    );
-
+      this.setState({
+        intervalName: TeamSettingsPresenter.intervalNameFromSelect()
+      });
+    }, 500);
   }
 
   handleIntervalChange() {
-    this.setState({ pricingInterval: document.getElementById('pricingInterval').value },
-      () => { this.setState({ intervalName: TeamSettingsPresenter.intervalNameFromSelect() }); }
+    this.setState(
+      {
+        pricingInterval: document.getElementById('pricingInterval').value
+      },
+      () => {
+        this.setState({
+          intervalName: TeamSettingsPresenter.intervalNameFromSelect()
+        });
+      }
     );
   }
 
   handleButtonClick(e) {
     e.preventDefault();
     const editFlagName = e.target.parentElement.id;
-    if (e.target.tagName === 'DIV') { // the 'SAVE' button was clicked
+    if (e.target.tagName === 'DIV') {
+      // the 'SAVE' button was clicked
       const attrName = editFlagName.substr(4); // derive name of state attribute from editFlagName
       this.props.dispatch(actions.updateClient(attrName, this.state[attrName]));
       this.setState({ [editFlagName]: false });
-    } else { // the 'EDIT' link was clicked
+    } else {
+      // the 'EDIT' link was clicked
       this.setState({ [editFlagName]: true });
     }
   }
 
   render() {
-    const { editTeam, teamName, editpricingInterval, pricingInterval, editIntegrations, intervalName } = this.state;
+    const {
+      editTeam,
+      teamName,
+      editpricingInterval,
+      pricingInterval,
+      editIntegrations,
+      intervalName
+    } = this.state;
     return (
       <TeamSettingsDiv>
         Team Settings
         <br />
-        <Setting edit={editTeam} id='editTeam'>
+        <Setting edit={editTeam} id="editTeam">
           Team
-          <SettingEditButton onClick={this.handleButtonClick} />
-          <SettingSaveButton onClick={this.handleButtonClick} />
-          <SettingReadonlyValue>
-            {teamName}
-          </SettingReadonlyValue>
-          <SettingEditableValue>
-            Team (name?) Input would go here
-          </SettingEditableValue>
+          <SettingEditButton noEdit />
+          <SettingReadonlyValue>{teamName}</SettingReadonlyValue>
         </Setting>
-        <Setting edit={editpricingInterval} id='editpricingInterval'>
+        <Setting edit={editpricingInterval} id="editpricingInterval">
           Generate pricing updates every
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
-          <SettingReadonlyValue>
-            {intervalName}
-          </SettingReadonlyValue>
+          <SettingReadonlyValue>{intervalName}</SettingReadonlyValue>
           <SettingEditableValue>
-            <SelectBox noBg id="pricingInterval" value={pricingInterval} onChange={this.handleIntervalChange}>
+            <SelectBox
+              noBg
+              id="pricingInterval"
+              value={pricingInterval}
+              onChange={this.handleIntervalChange}
+            >
               <option value="15">15 minutes</option>
               <option value="30">30 minutes</option>
               <option value="60">1 hour</option>
@@ -126,7 +138,7 @@ export class TeamSettingsPresenter extends React.Component {
             </SelectBox>
           </SettingEditableValue>
         </Setting>
-        <Setting edit={editIntegrations} id='editIntegrations'>
+        <Setting edit={editIntegrations} id="editIntegrations">
           Team ticket integrations
           <SettingEditButton onClick={this.handleButtonClick} />
           <SettingSaveButton onClick={this.handleButtonClick} />
@@ -167,5 +179,4 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedTeamSettings = connect(mapStateToProps)(TeamSettingsPresenter);
-export { connectedTeamSettings as TeamSettings };
+export default connect(mapStateToProps)(TeamSettingsPresenter);

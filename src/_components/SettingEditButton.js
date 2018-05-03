@@ -3,6 +3,7 @@ import { cssConstants } from '../_constants';
 
 export const SettingEditButton = styled.span`
   display: block;
+  visibility: ${(props) => (props.noEdit ? 'hidden' : 'visible')};
   position: relative;
   width: 7.5%;
   clear: right;
@@ -15,7 +16,7 @@ export const SettingEditButton = styled.span`
   line-height: 40px;
   text-align: center;
   color: ${cssConstants.SECONDARY_LIGHTEST_BLUE};
-  background: transparent; 
+  background: transparent;
   cursor: pointer;
   ::before {
     content: 'EDIT';
