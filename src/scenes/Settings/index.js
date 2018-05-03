@@ -12,14 +12,16 @@ import {
   LeftNav,
   Breadcrumbs,
   ScreenTitleBlock,
-  H3
+  H3,
+  P2,
+  Spacing
 } from '../../_components';
 
 import ContactInfoSettings from './components/ContactInfoSettings';
 import NotificationSettings from './components/NotificationSettings';
 import TeamSettings from './components/TeamSettings';
 
-// this could be a shared component for 'scenes'
+//  this could be a shared component for 'scenes'
 const PageWrapper = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
   position: absolute;
@@ -77,11 +79,16 @@ export class SettingsPresenter extends React.Component {
               Dashboard / Settings / Users & Permissions
             </Breadcrumbs>
             <ScreenTitleBlock>
-              <H3 screenTitle>Users & Permissions</H3>
+              <H3 screenTitle>
+                Users & Permissions
+                <Spacing margin="10px 0 0 0">
+                  <P2 color="black" weight="100">
+                    <i>User Information and Team Settings</i>
+                  </P2>
+                </Spacing>
+              </H3>
             </ScreenTitleBlock>
-            <ContactInfoSettings>
-              Some Contact Info settings here...
-            </ContactInfoSettings>
+            <ContactInfoSettings />
             <NotificationSettings>
               Some Notification settings here...
             </NotificationSettings>

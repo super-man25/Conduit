@@ -1,13 +1,13 @@
 import { baseURL } from '../_constants';
+import { normalize } from './user.normalize';
+import { get, put, post } from '../_helpers/api';
 
 const API = {
   meURL: `${baseURL}/me`,
-  loginURL: `${baseURL}/auth`, // - method POST
   logoutURL: `${baseURL}/auth`, // - method DELETE
   getAllURL: `${baseURL}/users`, // - method GET (for isAdmin users only)
   getByIdURL: `${baseURL}/users/`, // users/{id} - method GET
   registerURL: `${baseURL}/users`, // - method POST (for isAdmin users only)
-  updateURL: `${baseURL}/users/`, // users/{id} - method PUT (for isAdmin users only)
   deleteURL: `${baseURL}/users` // users/{id} - method DELETE (for isAdmin users only)
 };
 
@@ -20,20 +20,7 @@ function handleResponse(response) {
 }
 
 function login(email, password) {
-  const requestOptions = {
-    credentials: 'include', // this is required to have cookies sent back and forth in the headers
-    mode: 'cors',
-    method: 'POST',
-    // headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
-  };
-
-  return fetch(API.loginURL, requestOptions).then((response) => {
-    if (!response.ok) {
-      return Promise.reject(response.statusText);
-    }
-    return response.json();
-  });
+  return post('auth', { email, password }).then((user) => normalize(user));
 }
 
 function logout() {
@@ -50,11 +37,7 @@ function logout() {
 }
 
 function getMe() {
-  return fetch(API.meURL, {
-    credentials: 'include',
-    mode: 'cors',
-    method: 'GET'
-  }).then(handleResponse);
+  return get('me').then((user) => normalize(user));
 }
 
 function getAll() {
@@ -88,15 +71,16 @@ function register(user) {
   return fetch(API.registerURL, requestOptions).then(handleResponse);
 }
 
-function update(user) {
-  const requestOptions = {
-    credentials: 'include',
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(user)
-  };
+function update(data) {
+  return put('users', data).then((user) => normalize(user));
+}
 
-  return fetch(API.updateURL + user.id, requestOptions).then(handleResponse);
+function updateEmail(data) {
+  return put('users/email', data).then((user) => normalize(user));
+}
+
+function changePassword(data) {
+  return put('users/password', data).then((user) => normalize(user));
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
@@ -117,5 +101,7 @@ export const userService = {
   getById,
   update,
   getMe,
+  changePassword,
+  updateEmail,
   delete: _delete
 };

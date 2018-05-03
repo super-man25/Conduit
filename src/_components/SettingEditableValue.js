@@ -8,6 +8,7 @@ export const SettingEditableValue = styled.div`
   width: 32%;
   float: right;
   margin: 0;
+  margin-right: 15px;
   padding: 0;
   line-height: 40px;
   background: transparent;

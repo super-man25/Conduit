@@ -33,7 +33,7 @@ export const H3 = styled.h3`
     props.login
       ? cssConstants.PRIMARY_DARK_BLUE
       : props.screenTitle
-        ? cssConstants.PRIMARY_LIGHT_BLUE
+        ? cssConstants.SECONDARY_BLUE
         : props.color
           ? props.color
           : cssConstants.PRIMARY_LIGHT_BLACK};

@@ -49,7 +49,7 @@ App.propTypes = {
 
   authState: PropTypes.shape({
     model: UserModel, // eslint-disable-line
-    pending: PropTypes.bool.isRequired // eslint-disable-line
+    loading: PropTypes.bool.isRequired // eslint-disable-line
   })
 };
 
