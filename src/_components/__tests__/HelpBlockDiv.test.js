@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpBlockDiv } from './';
+import { HelpBlockDiv } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {

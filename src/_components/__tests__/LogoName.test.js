@@ -1,17 +1,17 @@
 import React from 'react';
-import { ContentWrapper } from './';
+import { LogoName } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<ContentWrapper />)
+    .create(<LogoName />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with login prop', () => {
   const tree = renderer
-    .create(<ContentWrapper login />)
+    .create(<LogoName login />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

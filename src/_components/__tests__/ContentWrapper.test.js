@@ -1,17 +1,17 @@
 import React from 'react';
-import { Sidebar } from './';
+import { ContentWrapper } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
   const tree = renderer
-    .create(<Sidebar />)
+    .create(<ContentWrapper />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with collapsed prop', () => {
+it('renders correctly with login prop', () => {
   const tree = renderer
-    .create(<Sidebar collapsed />)
+    .create(<ContentWrapper login />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

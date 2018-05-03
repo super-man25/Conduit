@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
@@ -95,7 +94,8 @@ describe('<LoginPresenter />', () => {
   });
 
   it('email and password input changes fire handleChange method', () => {
-    const handleChangeSpy = jest.spyOn(LoginPresenter.prototype,
+    const handleChangeSpy = jest.spyOn(
+      LoginPresenter.prototype,
       'handleChange'
     );
     const wrapper = mount(<LoginPresenter authState={myAuth} />);
@@ -203,7 +203,6 @@ describe('<LoginPresenter />', () => {
 });
 
 describe('<LoginPresenter />', () => {
-
   const middlewares = [];
   const mockStore = configureStore(middlewares);
   const loginRequest = () => ({ type: 'auth/SIGN_IN_ASYNC' }); // update this to use appropriate constant

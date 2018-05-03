@@ -1,10 +1,10 @@
 import React from 'react';
-import { MailtoLink } from './';
+import { SprocketMenu } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MailtoLink />)
+    .create(<SprocketMenu />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

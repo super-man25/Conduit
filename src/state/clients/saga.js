@@ -7,10 +7,7 @@ import {
   UPDATE_SUCCESS,
   UPDATE_FAILURE
 } from './actions';
-import {
-  SUCCESS,
-  ERROR
-} from '../alert/actions';
+import { SUCCESS, ERROR } from '../alert/actions';
 import { clientService } from '../../_services';
 import { store } from '../store';
 
@@ -20,7 +17,6 @@ export function* getClientAsync() {
     const client = yield call(clientService.getClient); // call a function and return the response
     yield put({ type: GET_SUCCESS, payload: client }); // if it succeeded, dispatch an action to store
   } catch (err) {
-    console.log('~~~~~ getClientAsync error, err is ', err);
     yield put({ type: ERROR, payload: err });
     yield put({ type: GET_FAILURE, payload: err }); // if it failed, dispatch an action to store
   }
@@ -29,7 +25,8 @@ export function* getClientAsync() {
 export function* updateClientAsync(action) {
   // here we need to make an 'update' client from attribute, value and the current state.client
   const attribute = action.attribute;
-  const value = attribute !== 'name' ? parseInt(action.value, 10) : action.value;
+  const value =
+    attribute !== 'name' ? parseInt(action.value, 10) : action.value;
   const currentClient = store.getState().client;
   const proposedClient = {
     id: currentClient.id,
@@ -43,7 +40,6 @@ export function* updateClientAsync(action) {
     yield put({ type: UPDATE_SUCCESS, payload: client });
     yield put({ type: SUCCESS, payload: 'Client successfully updated!' });
   } catch (err) {
-    console.log('~~~~~ updateClientAsync error, err is ', err);
     yield put({ type: UPDATE_FAILURE, payload: err });
     yield put({ type: ERROR, payload: err });
   }
@@ -59,8 +55,5 @@ function* watchUpdateClientAsync() {
 }
 
 export default function* clientsSaga() {
-  yield all([
-    watchGetClientAsync(),
-    watchUpdateClientAsync()
-  ]);
+  yield all([watchGetClientAsync(), watchUpdateClientAsync()]);
 }

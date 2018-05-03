@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with disabled prop 1`] = `
+<span
+  className="sc-kkGfuU gZuFbW"
+  disabled={true}
+/>
+`;
+
+exports[`renders correctly with no props 1`] = `
+<span
+  className="sc-kkGfuU egjCFP"
+/>
+`;

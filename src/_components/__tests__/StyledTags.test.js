@@ -1,5 +1,5 @@
 import React from 'react';
-import { H1, H2, H3, H4, H5, P1, P2, S1, Label } from './';
+import { H1, H2, H3, H4, H5, P1, P2, S1, Label } from '_components/';
 import renderer from 'react-test-renderer';
 // import localStorageTest from '../setupTests';
 

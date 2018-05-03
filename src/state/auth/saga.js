@@ -7,7 +7,6 @@ import {
   SIGN_OUT_ASYNC
 } from './actions';
 
-import { SUCCESS, ERROR } from '../alert/actions';
 import { userService } from '../../_services';
 
 // Workers

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Setting } from './';
+import { Setting } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {

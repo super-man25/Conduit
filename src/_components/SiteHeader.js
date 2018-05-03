@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 import { LogoName, UserWelcome, SprocketMenu } from './';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -15,11 +15,12 @@ export const SiteHeaderDiv = styled.div`
   background: ${cssConstants.PRIMARY_DARK_BLUE};
 `;
 
-class SiteHeader extends React.Component {
+export class SiteHeaderPresenter extends React.Component {
   constructor(props) {
     super(props);
     // This binding is necessary to make `this` work in the callback
     this.handleSprocketClick = this.handleSprocketClick.bind(this);
+    this.handleLogoClick = this.handleLogoClick.bind(this);
   }
 
   handleSprocketClick() {
@@ -27,23 +28,23 @@ class SiteHeader extends React.Component {
     this.props.history.push('/settings');
   }
 
+  handleLogoClick() {
+    this.props.history.push('/');
+  }
+
   render() {
     const { authState } = this.props;
     return (
       <SiteHeaderDiv>
-        <Link to="/">
-          <LogoName />
-        </Link>
-        <SprocketMenu onClick={this.handleSprocketClick} />
+        <LogoName onClick={this.handleLogoClick} />
+        <SprocketMenu id="sprocket" onClick={this.handleSprocketClick} />
         <UserWelcome user={authState.model} />
       </SiteHeaderDiv>
     );
   }
 }
 
-export { SiteHeader as SiteHeaderTest }; // do we still need this for testing??
-
-SiteHeader.propTypes = {
+SiteHeaderPresenter.propTypes = {
   history: PropTypes.shape(),
   authState: PropTypes.shape()
 };
@@ -54,5 +55,7 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedSiteHeader = withRouter(connect(mapStateToProps)(SiteHeader));
+const connectedSiteHeader = withRouter(
+  connect(mapStateToProps)(SiteHeaderPresenter)
+);
 export { connectedSiteHeader as SiteHeader };

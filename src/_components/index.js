@@ -32,6 +32,5 @@ export * from './SortableButton';
 export * from './Spacing';
 export * from './SprocketMenu';
 export * from './StyledTags';
-export * from './UserAvatar';
 export * from './UserWelcome';
 export * from './ImageLayout';

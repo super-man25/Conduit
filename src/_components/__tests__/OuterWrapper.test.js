@@ -1,10 +1,10 @@
 import React from 'react';
-import { SprocketMenu } from './';
+import { OuterWrapper } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<SprocketMenu />)
+    .create(<OuterWrapper />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

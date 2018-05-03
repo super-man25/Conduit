@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with no props 1`] = `
+<span
+  className="sc-jlyJG dlGOOi"
+/>
+`;
+
+exports[`renders correctly with noEdit prop 1`] = `
+<span
+  className="sc-jlyJG gYsmKZ"
+/>
+`;

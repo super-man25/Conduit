@@ -14,14 +14,18 @@ const initialState = {
 // note that due to reducer composition, the state referred to here is
 // the 'state' of the 'client' attribute of the Redux store
 export default function clientReducer(state = initialState, action) {
-  console.log('~~~~~ client reducer, action.type is ~~~~~', action.type);
+  // console.log('~~~~~ client reducer, action.type is ~~~~~', action.type);
   switch (action.type) {
     case GET_REQUEST:
       return {
+        ...state,
         loading: true
       };
     case GET_SUCCESS:
-      return { // api serializer to remove createdAt, modifiedAt ?
+      return {
+        // api serializer to remove createdAt, modifiedAt ?
+        ...state,
+        loading: false,
         id: action.payload.id,
         name: action.payload.name,
         pricingInterval: action.payload.pricingInterval
@@ -37,8 +41,9 @@ export default function clientReducer(state = initialState, action) {
         updating: true
       };
     case UPDATE_SUCCESS:
-      console.log('~~~~~ client reducer UPDATE_SUCCESS, action is ~~~~~', action);
-      return { // api serializer to remove createdAt, modifiedAt ?
+      return {
+        // api serializer to remove createdAt, modifiedAt ?
+        updating: false,
         id: action.payload.id,
         name: action.payload.name,
         pricingInterval: action.payload.pricingInterval
