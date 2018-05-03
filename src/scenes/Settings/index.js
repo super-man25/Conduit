@@ -13,7 +13,9 @@ import {
   MainContent,
   Breadcrumbs,
   ScreenTitleBlock,
-  H3
+  H3,
+  P2,
+  Spacing
 } from '../../_components';
 
 import ContactInfoSettings from './components/ContactInfoSettings';
@@ -21,9 +23,7 @@ import NotificationSettings from './components/NotificationSettings';
 import TeamSettings from './components/TeamSettings';
 
 class SettingsPage extends React.Component {
-  componentDidMount() {
-    // this.props.dispatch(userActions.getAll());
-  }
+  componentDidMount() {}
 
   handleLogoutClick = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ class SettingsPage extends React.Component {
   };
 
   render() {
-    // const { user, users } = this.props;
+    const { userState } = this.props;
     return (
       <OuterWrapper>
         <SiteHeader />
@@ -54,11 +54,16 @@ class SettingsPage extends React.Component {
               Dashboard / Settings / Users & Permissions
             </Breadcrumbs>
             <ScreenTitleBlock>
-              <H3 screenTitle>Users & Permissions</H3>
+              <H3 screenTitle>
+                Users & Permissions
+                <Spacing margin="10px 0 0 0">
+                  <P2 color="black" weight="100">
+                    <i>User Information and Team Settings</i>
+                  </P2>
+                </Spacing>
+              </H3>
             </ScreenTitleBlock>
-            <ContactInfoSettings>
-              Some Contact Info settings here...
-            </ContactInfoSettings>
+            <ContactInfoSettings />
             <NotificationSettings>
               Some Notification settings here...
             </NotificationSettings>

@@ -26,32 +26,37 @@ describe('reducer', () => {
   it('should return initial state', () => {
     const state = reducer(undefined, {});
     expect(state).toEqual({
-      creating: false
+      model: null,
+      pending: false
     });
   });
 
   it('should handle CREATE_ASYNC', () => {
     const prevState = {
-      creating: false
+      model: null,
+      pending: false
     };
 
     const action = actions.create();
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
+      model: null,
+      pending: false,
       creating: true
     });
   });
 
   it('should handle CREATE_SUCCESS', () => {
     const prevState = {
-      creating: true
+      pending: true
     };
 
     const action = { type: CREATE_SUCCESS };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
+      pending: true,
       creating: false
     });
   });

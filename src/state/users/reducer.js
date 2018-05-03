@@ -1,7 +1,8 @@
 import { CREATE_ASYNC, CREATE_SUCCESS, CREATE_ERROR } from './actions';
 
 const initialState = {
-  creating: false
+  pending: false,
+  model: null
 };
 
 export default function usersReducer(state = initialState, action) {
