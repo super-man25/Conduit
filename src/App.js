@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     const { authState } = this.props;
 
-    if (authState.pending) {
+    if (authState.loading) {
       return <div>Loading User Info...</div>;
     }
 

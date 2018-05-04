@@ -34,7 +34,7 @@ const connectedRedirect = (selector, redirectUrl) => (Component) => {
  * @param {Object} Component
  */
 export const secured = connectedRedirect(
-  (state) => !!state.auth.model || state.auth.loading, // don't redirect to login screen during refreshes
+  (state) => !!state.auth.model,
   UNSECURED_ROUTE
 );
 
