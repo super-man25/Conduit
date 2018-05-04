@@ -36,15 +36,22 @@ export const TeamSettingsDiv = styled.div`
   background: transparent;
 `;
 
-export class TeamSettingsPresenter extends React.Component {
-  static intervalNameFromSelect() {
-    const intervalSelect = document.getElementById('pricingInterval');
-    return intervalSelect.options[intervalSelect.selectedIndex].innerHTML;
-  }
+const intervals = [
+  { label: '15 minutes', value: 15 },
+  { label: '30 minutes', value: 30 },
+  { label: '1 hour', value: 60 },
+  { label: '6 hours', value: 360 },
+  { label: 'daily', value: 1440 }
+]
 
+function findLabel(value) {
+  const sO = intervals.find((obj) => { return obj.value === value; });
+  return sO.label;
+}
+
+export class TeamSettingsPresenter extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       editTeam: false, // what do we expect to do here? Allow the client to change the team name, or... ? Client cannot change team?
       teamName: '',
@@ -67,23 +74,14 @@ export class TeamSettingsPresenter extends React.Component {
       // need a cleaner way of making these happen after the action dispatch
       this.setState({ teamName: self.props.client.name });
       this.setState({ pricingInterval: self.props.client.pricingInterval });
-      this.setState({
-        intervalName: TeamSettingsPresenter.intervalNameFromSelect()
-      });
+      this.setState({ intervalName: findLabel(self.props.client.pricingInterval) });
     }, 500);
   }
 
-  handleIntervalChange() {
-    this.setState(
-      {
-        pricingInterval: document.getElementById('pricingInterval').value
-      },
-      () => {
-        this.setState({
-          intervalName: TeamSettingsPresenter.intervalNameFromSelect()
-        });
-      }
-    );
+  handleIntervalChange(e) {
+    const sI = e.target.selectedIndex;
+    this.setState({ pricingInterval: intervals[sI].value });
+    this.setState({ intervalName: intervals[sI].label });
   }
 
   handleButtonClick(e) {
@@ -126,15 +124,14 @@ export class TeamSettingsPresenter extends React.Component {
           <SettingEditableValue>
             <SelectBox
               noBg
-              id="pricingInterval"
               value={pricingInterval}
               onChange={this.handleIntervalChange}
             >
-              <option value="15">15 minutes</option>
-              <option value="30">30 minutes</option>
-              <option value="60">1 hour</option>
-              <option value="360">6 hours</option>
-              <option value="1440">daily</option>
+              {intervals.map((o, key) => (
+                <option key={key} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
             </SelectBox>
           </SettingEditableValue>
         </Setting>
