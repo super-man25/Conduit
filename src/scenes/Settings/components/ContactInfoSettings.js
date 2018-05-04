@@ -47,6 +47,12 @@ class ContactInfoSettings extends React.Component {
   constructor(props) {
     super(props);
 
+    const blankUser = {
+      firstName: '',
+      lastName: '',
+      phoneNumber: ''
+    };
+
     this.state = {
       confirmPassword: '',
       editEmail: false,
@@ -56,7 +62,7 @@ class ContactInfoSettings extends React.Component {
       newPassword: '',
       password: '',
       passwordsMatch: false,
-      user: props.authState.model,
+      user: props.authState.model || blankUser,
       touchedFields: {}
     };
 

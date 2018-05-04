@@ -39,7 +39,10 @@ export const TeamSettingsDiv = styled.div`
 export class TeamSettingsPresenter extends React.Component {
   static intervalNameFromSelect() {
     const intervalSelect = document.getElementById('pricingInterval');
-    return intervalSelect.options[intervalSelect.selectedIndex].innerHTML;
+    const selectLabel = intervalSelect
+      ? intervalSelect.options[intervalSelect.selectedIndex].innerHTML
+      : 'loading...';
+    return selectLabel;
   }
 
   constructor(props) {

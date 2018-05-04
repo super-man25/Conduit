@@ -34,7 +34,7 @@ const connectedRedirect = (selector, redirectUrl) => (Component) => {
  * @param {Object} Component
  */
 export const secured = connectedRedirect(
-  (state) => !!state.auth.model,
+  (state) => !!state.auth.model || state.auth.loading, // don't redirect to login screen during refreshes
   UNSECURED_ROUTE
 );
 
@@ -50,6 +50,6 @@ export const unsecured = connectedRedirect(
  * Wrapper for admin routes
  */
 export const admin = connectedRedirect(
-  (state) => state.auth.model && state.auth.model.isAdmin,
+  (state) => !!state.auth.model && state.auth.model.isAdmin,
   SECURED_ROUTE
 );
