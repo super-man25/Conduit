@@ -323,7 +323,7 @@ class ContactInfoSettings extends React.Component {
                 name="phoneNumber"
                 id="phoneNumber"
                 placeholder="Phone Number"
-                value={user.phoneNumber}
+                value={user.phoneNumber || ''}
                 valid={
                   validatePhoneNumber(user.phoneNumber) &&
                   touchedFields.phoneNumber
