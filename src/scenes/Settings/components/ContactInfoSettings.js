@@ -47,12 +47,6 @@ class ContactInfoSettings extends React.Component {
   constructor(props) {
     super(props);
 
-    const blankUser = {
-      firstName: '',
-      lastName: '',
-      phoneNumber: ''
-    };
-
     this.state = {
       confirmPassword: '',
       editEmail: false,
@@ -62,7 +56,7 @@ class ContactInfoSettings extends React.Component {
       newPassword: '',
       password: '',
       passwordsMatch: false,
-      user: props.authState.model || blankUser,
+      user: props.authState.model,
       touchedFields: {}
     };
 
@@ -329,7 +323,7 @@ class ContactInfoSettings extends React.Component {
                 name="phoneNumber"
                 id="phoneNumber"
                 placeholder="Phone Number"
-                value={user.phoneNumber || ''}
+                value={user.phoneNumber}
                 valid={
                   validatePhoneNumber(user.phoneNumber) &&
                   touchedFields.phoneNumber
