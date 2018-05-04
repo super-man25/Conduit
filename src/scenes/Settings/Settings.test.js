@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import authActions from '../../state/auth/actions';
 

@@ -13,8 +13,6 @@ import {
   SIGN_OUT_ASYNC
 } from 'state/auth/actions';
 
-import { SUCCESS } from 'state/alert/actions';
-
 describe('actions', () => {
   it('should create an action to sign in', () => {
     const email = 'email@dom.com';

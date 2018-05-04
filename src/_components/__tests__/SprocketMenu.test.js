@@ -3,8 +3,6 @@ import { SprocketMenu } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  const tree = renderer
-    .create(<SprocketMenu />)
-    .toJSON();
+  const tree = renderer.create(<SprocketMenu />).toJSON();
   expect(tree).toMatchSnapshot();
 });

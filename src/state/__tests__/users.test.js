@@ -25,7 +25,7 @@ import {
   updateEmailAsync
 } from 'state/users/saga';
 
-import { SUCCESS, ERROR } from 'state/alert/actions';
+import { SUCCESS } from 'state/alert/actions';
 
 describe('actions', () => {
   it('should create an action for create a user', () => {

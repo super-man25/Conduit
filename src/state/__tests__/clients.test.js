@@ -3,7 +3,7 @@ import { clientService } from '_services';
 import { cloneableGenerator } from 'redux-saga/utils';
 import { actions, reducer } from 'state/clients';
 
-import { getClientAsync, updateClientAsync } from 'state/clients/saga';
+import { getClientAsync } from 'state/clients/saga';
 
 import {
   GET_REQUEST,
@@ -13,7 +13,7 @@ import {
   UPDATE_SUCCESS,
   UPDATE_FAILURE
 } from 'state/clients/actions';
-import { SUCCESS, ERROR } from '../alert/actions';
+import { ERROR } from '../alert/actions';
 
 describe('actions', () => {
   it('should create an action to get a client', () => {

@@ -3,9 +3,7 @@ import { HelpBlockDiv } from '_components/';
 import renderer from 'react-test-renderer';
 
 it('renders correctly with no props', () => {
-  const tree = renderer
-    .create(<HelpBlockDiv />)
-    .toJSON();
+  const tree = renderer.create(<HelpBlockDiv />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -18,21 +16,33 @@ it('renders correctly with show prop', () => {
 
 it('renders correctly with show and type="alert-danger" props', () => {
   const tree = renderer
-    .create(<HelpBlockDiv show type="alert-danger">error message</HelpBlockDiv>)
+    .create(
+      <HelpBlockDiv show type="alert-danger">
+        error message
+      </HelpBlockDiv>
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with show and type="alert-success" props', () => {
   const tree = renderer
-    .create(<HelpBlockDiv show type="alert-success">error message</HelpBlockDiv>)
+    .create(
+      <HelpBlockDiv show type="alert-success">
+        error message
+      </HelpBlockDiv>
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with show and type="hint" props', () => {
   const tree = renderer
-    .create(<HelpBlockDiv show type="hint">error message</HelpBlockDiv>)
+    .create(
+      <HelpBlockDiv show type="hint">
+        error message
+      </HelpBlockDiv>
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
