@@ -62,20 +62,25 @@ export class TeamSettingsPresenter extends React.Component {
       integrationsValue: [1, 2, 3, 4, 5, 6, 7] // just ids here - we'd getAll integrations like { id: [int], name: [str], on: [bool] }
     };
 
-    // This binding is necessary to make `this` work in the callback
+    // These bindings are necessary to make `this` work in the callbacks
     this.handleButtonClick = this.handleButtonClick.bind(this);
     this.handleIntervalChange = this.handleIntervalChange.bind(this);
   }
 
+  static getDerivedStateFromProps(props, current_state) {
+    if (props.client.pricingInterval && current_state.pricingInterval !== props.client.pricingInterval) {
+      return {
+        teamName: props.client.name,
+        pricingInterval: props.client.pricingInterval,
+        intervalName: findLabel(props.client.pricingInterval)
+      }
+    }
+    // Return null to indicate no change to state.
+    return null;
+  }
+
   componentDidMount() {
     this.props.dispatch(actions.getClient());
-    const self = this;
-    setTimeout(() => {
-      // need a cleaner way of making these happen after the action dispatch
-      this.setState({ teamName: self.props.client.name });
-      this.setState({ pricingInterval: self.props.client.pricingInterval });
-      this.setState({ intervalName: findLabel(self.props.client.pricingInterval) });
-    }, 500);
   }
 
   handleIntervalChange(e) {
