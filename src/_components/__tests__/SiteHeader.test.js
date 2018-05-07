@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import configureStore from 'redux-mock-store';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { SiteHeaderPresenter, UserWelcome } from '_components/';
 
 const authState = { model: { id: 1, firstName: 'root', lastName: 'root' } };

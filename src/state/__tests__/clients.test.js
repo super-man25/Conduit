@@ -10,8 +10,7 @@ import {
   GET_SUCCESS,
   GET_FAILURE,
   UPDATE_REQUEST,
-  UPDATE_SUCCESS,
-  UPDATE_FAILURE
+  UPDATE_SUCCESS
 } from 'state/clients/actions';
 import { ERROR } from '../alert/actions';
 

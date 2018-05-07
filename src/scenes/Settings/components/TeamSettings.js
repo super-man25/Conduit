@@ -42,10 +42,12 @@ const intervals = [
   { label: '1 hour', value: 60 },
   { label: '6 hours', value: 360 },
   { label: 'daily', value: 1440 }
-]
+];
 
 function findLabel(value) {
-  const sO = intervals.find((obj) => { return obj.value === value; });
+  const sO = intervals.find((obj) => {
+    return obj.value === value;
+  });
   return sO.label;
 }
 
@@ -68,12 +70,15 @@ export class TeamSettingsPresenter extends React.Component {
   }
 
   static getDerivedStateFromProps(props, current_state) {
-    if (props.client.pricingInterval && current_state.pricingInterval !== props.client.pricingInterval) {
+    if (
+      props.client.pricingInterval &&
+      current_state.pricingInterval !== props.client.pricingInterval
+    ) {
       return {
         teamName: props.client.name,
         pricingInterval: props.client.pricingInterval,
         intervalName: findLabel(props.client.pricingInterval)
-      }
+      };
     }
     // Return null to indicate no change to state.
     return null;
