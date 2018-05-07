@@ -26,6 +26,7 @@ import {
 } from 'state/users/saga';
 
 import { SUCCESS } from 'state/alert/actions';
+import { FETCH_ASYNC } from 'state/auth/actions';
 
 describe('actions', () => {
   it('should create an action for create a user', () => {
@@ -341,6 +342,7 @@ describe('saga workers', () => {
     expect(generator.next(user).value).toEqual(
       put({ type: UPDATE_SUCCESS, payload: user })
     );
+    expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
       put({
         type: SUCCESS,
@@ -365,6 +367,7 @@ describe('saga workers', () => {
     expect(generator.next(data).value).toEqual(
       put({ type: CHANGE_PASSWORD_SUCCESS, payload: data })
     );
+    expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
       put({ type: SUCCESS, payload: 'Successfully Changed Password' })
     );
@@ -384,6 +387,7 @@ describe('saga workers', () => {
     expect(generator.next(data).value).toEqual(
       put({ type: UPDATE_EMAIL_SUCCESS, payload: data })
     );
+    expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
       put({ type: SUCCESS, payload: 'Successfully Updated Email' })
     );
