@@ -2,7 +2,7 @@ import React from 'react';
 import EventListContainer from './containers/EventListContainer';
 import TeamOverview from './components/TeamOverview';
 import styled from 'styled-components';
-import { cssConstants } from '../../_constants';
+import { cssConstants } from '_constants';
 import { Switch, Route, Redirect } from 'react-router';
 
 import Season from './scenes/Season';

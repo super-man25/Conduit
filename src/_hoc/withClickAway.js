@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
 export const withClickAway = (Wrapped) =>
   class VisibilityToggle extends React.Component {
     static defaultProps = {
       onClickAway: () => {}
+    };
+
+    static propTypes = {
+      onClickAway: PropTypes.func
     };
 
     componentDidMount() {

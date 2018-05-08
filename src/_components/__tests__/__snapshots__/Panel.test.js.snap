@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-kgAjT fubQTA"
+>
+  No Content
+</div>
+`;
+
+exports[`renders correctly with a header 1`] = `
+<div
+  className="sc-kgAjT fubQTA"
+>
+  <header
+    className="sc-cJSrbW gHmig"
+  >
+    This is a header
+  </header>
+</div>
+`;
+
+exports[`renders correctly with a header and content 1`] = `
+<div
+  className="sc-kgAjT fubQTA"
+>
+  <header
+    className="sc-cJSrbW gHmig"
+  >
+    This is a header
+  </header>
+  <section
+    className="sc-ksYbfQ Qrbwy"
+  >
+    This is the panels content
+  </section>
+</div>
+`;

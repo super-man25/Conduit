@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { H1 } from '../../../../_components';
+import { H1 } from '_components';
+import CumulativeRevenueContainer from 'scenes/Dashboard/containers/CumulativeRevenueContainer';
 
 const CenteredContainer = styled.div`
   max-width: 1440px;
@@ -18,6 +19,7 @@ const ContentMock = styled.div`
 const Season = () => (
   <CenteredContainer>
     <H1>Season</H1>
+    <CumulativeRevenueContainer />
     <ContentMock />
     <ContentMock />
     <ContentMock />

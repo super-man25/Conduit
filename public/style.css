@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+:root {
+  --SECONDARY_BLUE: #2670ae;
+  --PRIMARY_LIGHT_BLUE: #38a9db;
+}
+
+/*
+  Necessary to add styles in a stylesheet because DayPicker expects css
+  styles and does not accept css-in-js styles May be worth looking into
+*/
+.DayPicker-Caption {
+  color: var(--SECONDARY_BLUE);
+}
+
+.DayPicker-Day--selected {
+  background-color: var(--PRIMARY_LIGHT_BLUE);
+}
