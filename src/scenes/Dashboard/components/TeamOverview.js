@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Flex, FlexItem, H4, Button, H1, Spacing, H3, P2 } from '_components';
+import { Flex, FlexItem, H4, Button, H3, P2 } from '_components';
 import { cssConstants } from '_constants';
 
 const TeamOverviewContainer = styled.div`
@@ -22,6 +22,8 @@ const Heading = H4.extend`
 const StatLabel = H3.extend`
   margin: 0;
   padding: 0;
+  color: ${cssConstants.PRIMARY_WHITE};
+  weight: 300;
 `;
 
 class TeamOverview extends React.Component {
@@ -40,17 +42,13 @@ class TeamOverview extends React.Component {
 
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel color="white" weight="300">
-              0.650
-            </StatLabel>
+            <StatLabel>0.650</StatLabel>
             <P2 weight="100">
               <i>Win / Loss</i>
             </P2>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel color="white" weight="300">
-              81
-            </StatLabel>
+            <StatLabel>81</StatLabel>
             <P2 weight="100">
               <i>Games Remaining</i>
             </P2>
