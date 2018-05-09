@@ -5,6 +5,10 @@ import { reducer as alertReducer } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
 import { reducer as eventsReducer, saga as eventsSaga } from './events';
 import { reducer as usersReducer, saga as usersSaga } from './users';
+import {
+  reducer as eventStatsReducer,
+  saga as eventStatsSaga
+} from './eventStats';
 import { reducer as clientReducer, saga as clientSaga } from './clients';
 
 // Build root reducer
@@ -13,7 +17,8 @@ const reducer = combineReducers({
   auth: authReducer,
   events: eventsReducer,
   users: usersReducer,
-  client: clientReducer
+  client: clientReducer,
+  eventStats: eventStatsReducer
 });
 
 // Setup enhancers
@@ -31,5 +36,6 @@ sagaMiddleware.run(authSaga);
 sagaMiddleware.run(eventsSaga);
 sagaMiddleware.run(usersSaga);
 sagaMiddleware.run(clientSaga);
+sagaMiddleware.run(eventStatsSaga);
 
 export { store };

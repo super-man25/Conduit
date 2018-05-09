@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-uJMKN kmAOmQ"
+>
+  <div
+    className="sc-bbmXgH kBfYzo"
+    color="#38A9DB"
+  />
+  <span
+    className="sc-gGBfsJ dcMdgu"
+  >
+    Chart Legend
+  </span>
+</div>
+`;
+
+exports[`renders correctly with dashed prop 1`] = `
+<div
+  className="sc-uJMKN kmAOmQ"
+>
+  <div
+    className="sc-bbmXgH bTWiZZ"
+    color="#38A9DB"
+  />
+  <span
+    className="sc-gGBfsJ dcMdgu"
+  >
+    Chart Legend
+  </span>
+</div>
+`;

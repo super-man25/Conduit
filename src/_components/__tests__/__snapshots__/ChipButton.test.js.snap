@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChipButton renders correctly 1`] = `
+<button
+  className="sc-cIShpX jCJptr"
+>
+  Chip Button
+</button>
+`;
+
+exports[`ChipButton renders correctly with an active prop 1`] = `
+<button
+  className="sc-cIShpX cLhpPY"
+>
+  Chip Button
+</button>
+`;
+
+exports[`ChipButtonGroup renders correctly 1`] = `
+<div
+  className="sc-kafWEX jWDLDc"
+>
+  <button
+    className="sc-cIShpX cLhpPY"
+    onClick={[Function]}
+  >
+    ChipButton 1
+  </button>
+  <button
+    className="sc-cIShpX cLhpPY"
+    onClick={[Function]}
+  >
+    ChipButton 2
+  </button>
+</div>
+`;
+
+exports[`ChipButtonGroup renders correctly with a value set 1`] = `
+<div
+  className="sc-kafWEX jWDLDc"
+>
+  <button
+    className="sc-cIShpX cLhpPY"
+    onClick={[Function]}
+    value="Active"
+  >
+    ChipButton 1
+  </button>
+  <button
+    className="sc-cIShpX jCJptr"
+    onClick={[Function]}
+  >
+    ChipButton 2
+  </button>
+</div>
+`;

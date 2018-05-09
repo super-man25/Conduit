@@ -42,3 +42,7 @@ export const cssConstants = {
   LABEL_SIZE: '14px',
   LABEL_WEIGHT: 'normal'
 };
+
+export const shadows = {
+  SHADOW_PRIMARY: '0 1px 1px 0 #BBBBBB, 0 2px 4px 0 rgba(0,0,0,0.5);'
+};
