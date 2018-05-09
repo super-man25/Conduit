@@ -66,13 +66,7 @@ class Dashboard extends React.Component {
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
-              <TeamOverview>
-                <Button
-                  small
-                  collapse
-                  onClick={this.handleSidebarToggleClick}
-                />
-              </TeamOverview>
+              <TeamOverview onToggleSidebar={this.handleSidebarToggleClick} />
             </SidebarHeader>
             <SidebarContent>
               <EventListContainer />

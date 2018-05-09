@@ -25,16 +25,24 @@ const width = (props) =>
     width: ${props.width};
   `;
 
+const display = (props) =>
+  props.display !== undefined &&
+  css`
+    display: ${props.display};
+  `;
+
 export const Spacing = styled.div`
   ${padding}
   ${margin}
   ${height}
   ${width}
+  ${display}
 `;
 
 Spacing.propTypes = {
   padding: PropTypes.string,
   margin: PropTypes.string,
   height: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
+  inline: PropTypes.string
 };
