@@ -158,5 +158,5 @@ export const Checkbox = (props) => {
 };
 
 Checkbox.propTypes = {
-  label: PropTypes.label
+  label: PropTypes.string
 };

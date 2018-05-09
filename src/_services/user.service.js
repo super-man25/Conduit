@@ -64,7 +64,6 @@ function register(user) {
     credentials: 'include',
     mode: 'cors',
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
   };
 

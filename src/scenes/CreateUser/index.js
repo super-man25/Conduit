@@ -26,7 +26,8 @@ class CreateUser extends React.Component {
         lastName: '',
         email: '',
         password: '',
-        isAdmin: false
+        isAdmin: false,
+        clientId: 0
       },
       submitted: false,
       emailHadFocus: false,
@@ -94,6 +95,7 @@ class CreateUser extends React.Component {
 
     this.setState({ submitted: true });
     const { user } = this.state;
+    user.clientId = this.props.authState.model.clientId;
     if (user.firstName && user.lastName && validEmail && validPassword) {
       this.props.usersActions.create(user);
     }
@@ -107,9 +109,6 @@ class CreateUser extends React.Component {
   }
 
   passCheck(password) {
-    // Password must be at least 8 characters long, with at least one uppercase letter, lowercase letter, number, and special character.
-    // const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$/;
-
     // Password must be at least 8 characters long, with at least one number and at least one letter.
     const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const passOK = passRegex.test(password);
@@ -265,7 +264,8 @@ CreateUser.propTypes = {
 function mapStateToProps(state) {
   return {
     alertState: state.alert,
-    usersState: state.users
+    usersState: state.users,
+    authState: state.auth
   };
 }
 
