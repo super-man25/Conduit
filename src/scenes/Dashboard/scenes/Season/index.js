@@ -18,7 +18,7 @@ const ContentMock = styled.div`
 
 const Season = () => (
   <CenteredContainer>
-    <H1>Season</H1>
+    <H1 weight="100">Season Overview</H1>
     <CumulativeRevenueContainer />
     <ContentMock />
     <ContentMock />
