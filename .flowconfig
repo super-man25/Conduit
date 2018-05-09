@@ -1,0 +1,20 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='_components' -> '<PROJECT_ROOT>/src/_components'
+module.name_mapper='_helpers' -> '<PROJECT_ROOT>/src/_helpers'
+module.name_mapper='_hoc' -> '<PROJECT_ROOT>/src/_hoc'
+module.name_mapper='_images' -> '<PROJECT_ROOT>/src/_images'
+module.name_mapper='_models' -> '<PROJECT_ROOT>/src/_models'
+module.name_mapper='_scenes' -> '<PROJECT_ROOT>/src/_scenes'
+module.name_mapper='_services' -> '<PROJECT_ROOT>/src/_services'
+module.name_mapper='_state' -> '<PROJECT_ROOT>/src/_state'
+module.name_mapper='_constants' -> '<PROJECT_ROOT>/src/_constants'
+
+[strict]

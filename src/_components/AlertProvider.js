@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { history } from '../_helpers';
-import { actions as alertActions } from '../state/alert';
+import { history } from '_helpers';
+import { actions as alertActions } from '_state/alert';
 
 class AlertProviderPresenter extends React.Component {
   constructor(props) {
@@ -36,8 +36,8 @@ AlertProviderPresenter.propTypes = {
 
   /** Alert object */
   alert: PropTypes.shape({
-    message: PropTypes.string, // eslint-disable-line
-    type: PropTypes.string // eslint-disable-line
+    message: PropTypes.string,
+    type: PropTypes.string
   }),
 
   /** Children */

@@ -2,7 +2,7 @@
 
 exports[`ChipButton renders correctly 1`] = `
 <button
-  className="sc-cIShpX jCJptr"
+  className="sc-kafWEX DPEMr"
 >
   Chip Button
 </button>
@@ -10,7 +10,7 @@ exports[`ChipButton renders correctly 1`] = `
 
 exports[`ChipButton renders correctly with an active prop 1`] = `
 <button
-  className="sc-cIShpX cLhpPY"
+  className="sc-kafWEX hRxQqf"
 >
   Chip Button
 </button>
@@ -18,16 +18,16 @@ exports[`ChipButton renders correctly with an active prop 1`] = `
 
 exports[`ChipButtonGroup renders correctly 1`] = `
 <div
-  className="sc-kafWEX jWDLDc"
+  className="sc-feJyhm gEOoZs"
 >
   <button
-    className="sc-cIShpX cLhpPY"
+    className="sc-kafWEX hRxQqf"
     onClick={[Function]}
   >
     ChipButton 1
   </button>
   <button
-    className="sc-cIShpX cLhpPY"
+    className="sc-kafWEX hRxQqf"
     onClick={[Function]}
   >
     ChipButton 2
@@ -37,17 +37,17 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 
 exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 <div
-  className="sc-kafWEX jWDLDc"
+  className="sc-feJyhm gEOoZs"
 >
   <button
-    className="sc-cIShpX cLhpPY"
+    className="sc-kafWEX hRxQqf"
     onClick={[Function]}
     value="Active"
   >
     ChipButton 1
   </button>
   <button
-    className="sc-cIShpX jCJptr"
+    className="sc-kafWEX DPEMr"
     onClick={[Function]}
   >
     ChipButton 2

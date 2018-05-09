@@ -14,16 +14,18 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders correctly with scrollTo 1`] = `
+exports[`renders correctly with scrollIndex 1`] = `
 <div>
   <div>
-    Mets
-  </div>
-  <div>
-    Rangers
-  </div>
-  <div>
-    Athletics
+    <div>
+      Mets
+    </div>
+    <div>
+      Rangers
+    </div>
+    <div>
+      Athletics
+    </div>
   </div>
 </div>
 `;

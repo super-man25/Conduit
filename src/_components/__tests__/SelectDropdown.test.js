@@ -1,7 +1,6 @@
 import React from 'react';
 import { SelectDropdown } from '_components';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
 
 const selectOptions = [
   { label: 'Option 1', value: 1 },
