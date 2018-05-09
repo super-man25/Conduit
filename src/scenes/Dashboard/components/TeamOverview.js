@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { P1, H4, Button } from '_components';
+import { Flex, FlexItem, H4, Button, H1, Spacing, H3, P2 } from '_components';
 import { cssConstants } from '_constants';
-import { Spacing } from '../../../_components';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;
@@ -14,15 +13,49 @@ const TeamOverviewContainer = styled.div`
   background: 'none';
 `;
 
+const Heading = H4.extend`
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+`;
+
+const StatLabel = H3.extend`
+  margin: 0;
+  padding: 0;
+`;
+
 class TeamOverview extends React.Component {
   render() {
     const { onToggleSidebar } = this.props;
     return (
       <TeamOverviewContainer>
-        <Spacing margin="0 80px 0 0" display="inline-block">
-          <H4 floatLeft> Team Overview </H4>
-        </Spacing>
-        <Button small collapse onClick={onToggleSidebar} />
+        <Flex direction="row" align="center" justify="space-between">
+          <FlexItem flex={1}>
+            <Heading> Team Overview </Heading>
+          </FlexItem>
+          <FlexItem flex={2}>
+            <Button small collapse onClick={onToggleSidebar} />
+          </FlexItem>
+        </Flex>
+
+        <Flex direction="row" align="center" justify="space-between">
+          <FlexItem flex={1}>
+            <StatLabel color="white" weight="300">
+              0.650
+            </StatLabel>
+            <P2 weight="100">
+              <i>Win / Loss</i>
+            </P2>
+          </FlexItem>
+          <FlexItem flex={2}>
+            <StatLabel color="white" weight="300">
+              81
+            </StatLabel>
+            <P2 weight="100">
+              <i>Games Remaining</i>
+            </P2>
+          </FlexItem>
+        </Flex>
       </TeamOverviewContainer>
     );
   }
