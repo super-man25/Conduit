@@ -17,7 +17,6 @@ import styled from 'styled-components';
 import ContactInfoSettings from './components/ContactInfoSettings';
 import NotificationSettings from './components/NotificationSettings';
 import TeamSettings from './components/TeamSettings';
-import PropTypes from 'prop-types';
 
 //  this could be a shared component for 'scenes'
 const PageWrapper = styled.div`

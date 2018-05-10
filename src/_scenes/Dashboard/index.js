@@ -54,7 +54,7 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      sidebarCollapsed: false,
+      sidebarCollapsed: false
     };
   }
 
@@ -71,7 +71,10 @@ class Dashboard extends React.Component {
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
-              <TeamOverview onToggleSidebar={this.handleSidebarToggleClick} stats={mlbTeamStatsState.model} />
+              <TeamOverview
+                onToggleSidebar={this.handleSidebarToggleClick}
+                stats={mlbTeamStatsState.model}
+              />
             </SidebarHeader>
             <SidebarContent>
               <EventListContainer />

@@ -10,7 +10,10 @@ import {
 } from './eventStats';
 import { reducer as eventReducer, saga as eventSaga } from './events';
 import { reducer as userReducer, saga as userSaga } from './users';
-import { reducer as mlbTeamStatsReducer, saga as mlbTeamStatSaga } from './mlbTeamStats';
+import {
+  reducer as mlbTeamStatsReducer,
+  saga as mlbTeamStatSaga
+} from './mlbTeamStats';
 
 // Build root reducer
 const reducer = combineReducers({

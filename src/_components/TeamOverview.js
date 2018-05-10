@@ -27,7 +27,6 @@ const StatLabel = H3.extend`
 `;
 
 export class TeamOverview extends React.Component {
-
   calculateRecord = (wins, losses) => {
     const record = (wins / (wins + losses)).toFixed(3);
     if (isNaN(record)) {
@@ -56,13 +55,15 @@ export class TeamOverview extends React.Component {
 
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel>{ this.calculateRecord(stats.wins, stats.losses) }</StatLabel>
+            <StatLabel>
+              {this.calculateRecord(stats.wins, stats.losses)}
+            </StatLabel>
             <P2 weight="100">
               <i>Win / Loss</i>
             </P2>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>{ stats.gamesRemaining || '--' }</StatLabel>
+            <StatLabel>{stats.gamesRemaining || '--'}</StatLabel>
             <P2 weight="100">
               <i>Games Remaining</i>
             </P2>
