@@ -17,6 +17,7 @@ import styled from 'styled-components';
 import ContactInfoSettings from './components/ContactInfoSettings';
 import NotificationSettings from './components/NotificationSettings';
 import TeamSettings from './components/TeamSettings';
+import PropTypes from 'prop-types';
 
 //  this could be a shared component for 'scenes'
 const PageWrapper = styled.div`
@@ -64,6 +65,7 @@ export class SettingsPresenter extends React.Component {
             <br />
             <br />
             <Link
+              data-test-id="logout-button"
               id="logout"
               to="/logout"
               onClick={this.handleLogoutClick.bind(this)}

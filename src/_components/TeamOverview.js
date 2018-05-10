@@ -27,8 +27,22 @@ const StatLabel = H3.extend`
 `;
 
 export class TeamOverview extends React.Component {
+
+  calculateRecord = (wins, losses) => {
+    const record = (wins / (wins + losses)).toFixed(2);
+    if (isNaN(record)) {
+      return '--';
+    }
+    return record;
+  };
+
   render() {
-    const { onToggleSidebar, record, gamesRemaining } = this.props;
+    const { onToggleSidebar, stats } = this.props;
+
+    if (stats === null) {
+      return <div>Loading Team Stats...</div>;
+    }
+
     return (
       <TeamOverviewContainer>
         <Flex direction="row" align="center" justify="space-between">
@@ -42,13 +56,13 @@ export class TeamOverview extends React.Component {
 
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel>{ record }</StatLabel>
+            <StatLabel>{ this.calculateRecord(stats.wins, stats.losses) }</StatLabel>
             <P2 weight="100">
               <i>Win / Loss</i>
             </P2>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>{ gamesRemaining }</StatLabel>
+            <StatLabel>{ stats.gamesRemaining || '--' }</StatLabel>
             <P2 weight="100">
               <i>Games Remaining</i>
             </P2>
@@ -58,3 +72,7 @@ export class TeamOverview extends React.Component {
     );
   }
 }
+
+TeamOverview.propTypes = {
+  stats: PropTypes.shape()
+};

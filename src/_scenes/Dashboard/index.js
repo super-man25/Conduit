@@ -18,6 +18,7 @@ import { toggleSidebar } from './stateChanges';
 import { connect } from 'react-redux';
 import { actions as mlbTeamStatsActions } from '_state/mlbTeamStats';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 const PageWrapper = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
@@ -46,15 +47,14 @@ const SidebarContent = styled.div`
 
 class Dashboard extends React.Component {
   componentDidMount() {
-    const mlb = mlbTeamStatsActions.fetch();
-    console.log(mlb);
+    this.props.mlbTeamStatsActions.fetch();
   }
 
   constructor(props) {
     super(props);
 
     this.state = {
-      sidebarCollapsed: false
+      sidebarCollapsed: false,
     };
   }
 
@@ -64,13 +64,14 @@ class Dashboard extends React.Component {
 
   render() {
     const { sidebarCollapsed } = this.state;
+    const { mlbTeamStatsState } = this.props;
     return (
       <PageWrapper>
         <SiteHeader />
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
-              <TeamOverview onToggleSidebar={this.handleSidebarToggleClick} record={0.654} gamesRemaining={81} />
+              <TeamOverview onToggleSidebar={this.handleSidebarToggleClick} stats={mlbTeamStatsState.model} />
             </SidebarHeader>
             <SidebarContent>
               <EventListContainer />
@@ -91,6 +92,11 @@ class Dashboard extends React.Component {
   }
 }
 
+Dashboard.propTypes = {
+  mlbTeamStatsState: PropTypes.shape(),
+  mlbTeamStatsActions: PropTypes.shape()
+};
+
 function mapStateToProps(state) {
   console.log(state);
 
@@ -100,7 +106,6 @@ function mapStateToProps(state) {
 }
 
 function mapActionCreators(dispatch) {
-  console.log(dispatch)
   return {
     mlbTeamStatsActions: bindActionCreators(mlbTeamStatsActions, dispatch)
   };
