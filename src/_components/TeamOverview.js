@@ -29,7 +29,7 @@ const StatLabel = H3.extend`
 export class TeamOverview extends React.Component {
 
   calculateRecord = (wins, losses) => {
-    const record = (wins / (wins + losses)).toFixed(2);
+    const record = (wins / (wins + losses)).toFixed(3);
     if (isNaN(record)) {
       return '--';
     }
