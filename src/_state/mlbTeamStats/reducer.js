@@ -1,6 +1,6 @@
 import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
 
-const initialState = {
+export const initialState = {
   loading: false,
   model: null
 };

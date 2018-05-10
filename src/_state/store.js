@@ -21,9 +21,9 @@ const reducer = combineReducers({
   auth: authReducer,
   event: eventReducer,
   user: userReducer,
-  mlbTeamStats: mlbTeamStatsReducer,
   client: clientReducer,
-  eventStats: eventStatReducer
+  eventStats: eventStatReducer,
+  mlbTeamStats: mlbTeamStatsReducer
 });
 
 // Setup enhancers
@@ -39,10 +39,10 @@ const store = createStore(
 const combineSagas = {
   auth: authSaga,
   event: eventSaga,
-  mlbTeamStat: mlbTeamStatSaga,
   user: userSaga,
   client: clientSaga,
-  eventStat: eventStatSaga
+  eventStat: eventStatSaga,
+  mlbTeamStat: mlbTeamStatSaga
 };
 
 export function* rootSaga() {
