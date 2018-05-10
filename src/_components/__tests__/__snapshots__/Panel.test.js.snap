@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-cJSrbW cEMchq"
+  className="sc-hmzhuo cLqCC"
 >
   No Content
 </div>
@@ -10,10 +10,10 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly with a header 1`] = `
 <div
-  className="sc-cJSrbW cEMchq"
+  className="sc-hmzhuo cLqCC"
 >
   <header
-    className="sc-ksYbfQ kjoMeg"
+    className="sc-frDJqD fHeDxK"
   >
     This is a header
   </header>
@@ -22,15 +22,15 @@ exports[`renders correctly with a header 1`] = `
 
 exports[`renders correctly with a header and content 1`] = `
 <div
-  className="sc-cJSrbW cEMchq"
+  className="sc-hmzhuo cLqCC"
 >
   <header
-    className="sc-ksYbfQ kjoMeg"
+    className="sc-frDJqD fHeDxK"
   >
     This is a header
   </header>
   <section
-    className="sc-hmzhuo izgkUQ"
+    className="sc-kvZOFW fwmSsJ"
   >
     This is the panels content
   </section>

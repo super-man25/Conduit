@@ -3,17 +3,17 @@
 exports[`SelectDropdown renders correctly 1`] = `
 <div>
   <div
-    className="sc-fYxtnH jOgkyz"
+    className="sc-hEsumM gYMQkY"
     onClick={[Function]}
   >
     <div
-      className="sc-tilXH oqMJK"
+      className="sc-ktHwxA jDzWQr"
     >
       <span>
         Option 1
       </span>
       <span
-        className="sc-hEsumM WbShL"
+        className="sc-cIShpX bSzRvd"
       >
         <svg
           className="sc-kgoBCf ilnGdb"
