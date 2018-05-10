@@ -125,6 +125,7 @@ export class LoginPresenter extends React.Component {
                     type="text"
                     name="email"
                     id="email"
+                    data-test-id="email-input"
                     autoComplete="new-email"
                     value={email}
                     valid={validEmail}
@@ -144,6 +145,7 @@ export class LoginPresenter extends React.Component {
                     type="password"
                     name="password"
                     id="password"
+                    data-test-id="password-input"
                     autoComplete="new-password"
                     value={password}
                     inValid={!password && (submitted || passwordHadFocus)}
@@ -158,7 +160,11 @@ export class LoginPresenter extends React.Component {
                     Password is required
                   </HelpBlockDiv>
 
-                  <Button disabled={!loginEnabled} id="login">
+                  <Button
+                    disabled={!loginEnabled}
+                    id="login"
+                    data-test-id="login-button"
+                  >
                     {authState.pending ? (
                       <Loader small color={cssConstants.PRIMARY_WHITE} />
                     ) : (

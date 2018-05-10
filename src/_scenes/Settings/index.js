@@ -64,6 +64,7 @@ export class SettingsPresenter extends React.Component {
             <br />
             <br />
             <Link
+              data-test-id="logout-button"
               id="logout"
               to="/logout"
               onClick={this.handleLogoutClick.bind(this)}

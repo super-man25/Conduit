@@ -37,7 +37,11 @@ export class SiteHeaderPresenter extends React.Component {
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
-        <SprocketMenu id="sprocket" onClick={this.handleSprocketClick} />
+        <SprocketMenu
+          id="sprocket"
+          data-test-id="settings-icon"
+          onClick={this.handleSprocketClick}
+        />
         <UserWelcome user={authState.model} />
       </SiteHeaderDiv>
     );
