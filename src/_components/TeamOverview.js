@@ -28,7 +28,7 @@ const StatLabel = H3.extend`
 
 export class TeamOverview extends React.Component {
   render() {
-    const { onToggleSidebar } = this.props;
+    const { onToggleSidebar, record, gamesRemaining } = this.props;
     return (
       <TeamOverviewContainer>
         <Flex direction="row" align="center" justify="space-between">
@@ -42,13 +42,13 @@ export class TeamOverview extends React.Component {
 
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel>0.650</StatLabel>
+            <StatLabel>{ record }</StatLabel>
             <P2 weight="100">
               <i>Win / Loss</i>
             </P2>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>81</StatLabel>
+            <StatLabel>{ gamesRemaining }</StatLabel>
             <P2 weight="100">
               <i>Games Remaining</i>
             </P2>

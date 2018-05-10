@@ -10,6 +10,7 @@ import {
 } from './eventStats';
 import { reducer as eventReducer, saga as eventSaga } from './events';
 import { reducer as userReducer, saga as userSaga } from './users';
+import { reducer as mlbTeamStatsReducer, saga as mlbTeamStatSaga } from './mlbTeamStats';
 
 // Build root reducer
 const reducer = combineReducers({
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   auth: authReducer,
   event: eventReducer,
   user: userReducer,
+  mlbTeamStats: mlbTeamStatsReducer,
   client: clientReducer,
   eventStats: eventStatReducer
 });
@@ -34,6 +36,7 @@ const store = createStore(
 const combineSagas = {
   auth: authSaga,
   event: eventSaga,
+  mlbTeamStat: mlbTeamStatSaga,
   user: userSaga,
   client: clientSaga,
   eventStat: eventStatSaga
