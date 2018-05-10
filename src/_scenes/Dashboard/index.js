@@ -3,9 +3,9 @@ import {
   Sidebar,
   SidebarHeader,
   SiteHeader,
-  Spacing
+  Spacing,
+  TeamOverview
 } from '_components';
-import TeamOverview from '_scenes/Dashboard/containers/TeamOverview';
 import { cssConstants } from '_constants';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';

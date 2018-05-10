@@ -34,6 +34,7 @@ export * from './SprocketMenu';
 export * from './StyledTags';
 export * from './UserWelcome';
 export * from './ImageLayout';
+export * from './TeamOverview';
 export * from './Panel';
 export * from './HorizontalBars';
 export * from './LegendItem';

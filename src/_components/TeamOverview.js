@@ -26,7 +26,7 @@ const StatLabel = H3.extend`
   weight: 300;
 `;
 
-class TeamOverview extends React.Component {
+export class TeamOverview extends React.Component {
   render() {
     const { onToggleSidebar } = this.props;
     return (
@@ -58,5 +58,3 @@ class TeamOverview extends React.Component {
     );
   }
 }
-
-export default TeamOverview;
