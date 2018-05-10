@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-
-import { store } from './state/store';
+import { store } from '_state/store';
 import '../node_modules/react-vis/dist/style.css';
+
 import App from './App';
 
 render(

@@ -44,6 +44,6 @@ function getAll(/* start, end, eventId */) {
   // );
 }
 
-export const eventStatsService = {
+export const eventStatService = {
   getAll
 };

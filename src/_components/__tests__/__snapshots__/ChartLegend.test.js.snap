@@ -2,14 +2,14 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-uJMKN kmAOmQ"
+  className="sc-bbmXgH ecpPdX"
 >
   <div
-    className="sc-bbmXgH kBfYzo"
+    className="sc-gGBfsJ jKcKMF"
     color="#38A9DB"
   />
   <span
-    className="sc-gGBfsJ dcMdgu"
+    className="sc-jnlKLf gmSzmg"
   >
     Chart Legend
   </span>
@@ -18,14 +18,14 @@ exports[`renders correctly 1`] = `
 
 exports[`renders correctly with dashed prop 1`] = `
 <div
-  className="sc-uJMKN kmAOmQ"
+  className="sc-bbmXgH ecpPdX"
 >
   <div
-    className="sc-bbmXgH bTWiZZ"
+    className="sc-gGBfsJ kpfjvU"
     color="#38A9DB"
   />
   <span
-    className="sc-gGBfsJ dcMdgu"
+    className="sc-jnlKLf gmSzmg"
   >
     Chart Legend
   </span>

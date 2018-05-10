@@ -14,22 +14,21 @@ export class ScrollableList extends React.Component {
 
   componentDidUpdate(prevProps) {
     const { scrollIndex } = this.props;
-    if (scrollIndex === prevProps.scrollIndex) {
-      return;
-    }
 
     this.scrollTo(scrollIndex);
   }
 
   scrollTo = (index) => {
-    if (index === undefined) {
+    if (index === -1) {
       return;
     }
 
+    const prevTarget = index > 1 ? index-- : 0;
     const containerNode = this.containerRef.current;
-    const target = containerNode.children[index];
+    const target = containerNode.children[prevTarget];
+
     if (target) {
-      target.scrollIntoView();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
