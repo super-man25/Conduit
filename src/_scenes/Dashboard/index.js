@@ -101,8 +101,6 @@ Dashboard.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log(state);
-
   return {
     mlbTeamStatsState: state.mlbTeamStats
   };
