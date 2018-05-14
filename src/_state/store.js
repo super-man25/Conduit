@@ -11,9 +11,9 @@ import {
 import { reducer as eventReducer, saga as eventSaga } from './events';
 import { reducer as userReducer, saga as userSaga } from './users';
 import {
-  reducer as mlbTeamStatsReducer,
+  reducer as mlbTeamStatReducer,
   saga as mlbTeamStatSaga
-} from './mlbTeamStats';
+} from './mlbTeamStat';
 
 // Build root reducer
 const reducer = combineReducers({
@@ -23,7 +23,7 @@ const reducer = combineReducers({
   user: userReducer,
   client: clientReducer,
   eventStats: eventStatReducer,
-  mlbTeamStats: mlbTeamStatsReducer
+  mlbTeamStat: mlbTeamStatReducer
 });
 
 // Setup enhancers

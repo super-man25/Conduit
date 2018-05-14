@@ -16,7 +16,7 @@ import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
 import { toggleSidebar } from './stateChanges';
 import { connect } from 'react-redux';
-import { actions as mlbTeamStatsActions } from '_state/mlbTeamStats';
+import { actions as mlbTeamStatActions } from '_state/mlbTeamStat';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
@@ -47,7 +47,7 @@ const SidebarContent = styled.div`
 
 class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.mlbTeamStatsActions.fetch();
+    this.props.mlbTeamStatActions.fetch();
   }
 
   constructor(props) {
@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
 
   render() {
     const { sidebarCollapsed } = this.state;
-    const { mlbTeamStatsState } = this.props;
+    const { mlbTeamStatState } = this.props;
     return (
       <PageWrapper>
         <SiteHeader />
@@ -73,7 +73,7 @@ class Dashboard extends React.Component {
             <SidebarHeader>
               <TeamOverview
                 onToggleSidebar={this.handleSidebarToggleClick}
-                stats={mlbTeamStatsState.model}
+                stats={mlbTeamStatState.overview}
               />
             </SidebarHeader>
             <SidebarContent>
@@ -96,19 +96,19 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
-  mlbTeamStatsState: PropTypes.shape(),
-  mlbTeamStatsActions: PropTypes.shape()
+  mlbTeamStatState: PropTypes.shape(),
+  mlbTeamStatActions: PropTypes.shape()
 };
 
 function mapStateToProps(state) {
   return {
-    mlbTeamStatsState: state.mlbTeamStats
+    mlbTeamStatState: state.mlbTeamStat
   };
 }
 
 function mapActionCreators(dispatch) {
   return {
-    mlbTeamStatsActions: bindActionCreators(mlbTeamStatsActions, dispatch)
+    mlbTeamStatActions: bindActionCreators(mlbTeamStatActions, dispatch)
   };
 }
 

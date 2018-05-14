@@ -1,10 +1,10 @@
-import { normalize } from './mlbTeamStats.normalize';
+import { normalize } from './mlbTeamStat.normalize';
 import { get } from '../_helpers/api';
 
 function getStats() {
   return get('mlb/teamStats').then((data) => normalize(data));
 }
 
-export const mlbTeamStatsService = {
+export const mlbTeamStatService = {
   getStats
 };

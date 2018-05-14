@@ -1,16 +1,16 @@
-import { mlbTeamStatsService } from '_services';
+import { mlbTeamStatService } from '_services';
 import { delay } from 'redux-saga';
 import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
-import { actions, reducer } from '_state/mlbTeamStats';
+import { actions, reducer } from '_state/mlbTeamStat';
 import {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
   RESET
-} from '_state/mlbTeamStats/actions';
-import { fetchMLBTeamStatsAsync } from '_state/mlbTeamStats/saga';
-import { initialState } from '_state/mlbTeamStats/reducer';
+} from '_state/mlbTeamStat/actions';
+import { fetchMLBTeamStatAsync } from '_state/mlbTeamStat/saga';
+import { initialState } from '_state/mlbTeamStat/reducer';
 
 describe('actions', () => {
   it('should create an action to fetch mlbTeamStats', () => {
@@ -71,7 +71,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      model: mlbTeamStat
+      overview: mlbTeamStat
     });
   });
 
@@ -104,8 +104,8 @@ describe('saga workers', () => {
     };
 
     const action = actions.fetch();
-    const generator = cloneableGenerator(fetchMLBTeamStatsAsync)(action);
-    expect(generator.next().value).toEqual(call(mlbTeamStatsService.getStats));
+    const generator = cloneableGenerator(fetchMLBTeamStatAsync)(action);
+    expect(generator.next().value).toEqual(call(mlbTeamStatService.getStats));
     expect(generator.next(mlbTeamStat).value).toEqual(
       put({ type: FETCH_SUCCESS, payload: mlbTeamStat })
     );

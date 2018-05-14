@@ -2,15 +2,15 @@ import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
 
 export const initialState = {
   loading: false,
-  model: null
+  overview: null
 };
 
-export default function mlbTeamStatsReducer(state = initialState, action) {
+export default function mlbTeamStatReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_ASYNC:
       return { ...state, loading: true };
     case FETCH_SUCCESS:
-      return { ...state, loading: false, model: action.payload };
+      return { ...state, loading: false, overview: action.payload };
     case FETCH_ERROR:
       return { ...state, loading: false };
     case RESET:

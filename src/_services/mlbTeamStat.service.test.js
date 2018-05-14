@@ -1,4 +1,4 @@
-import { mlbTeamStatsService } from './mlbTeamStats.service';
+import { mlbTeamStatService } from './mlbTeamStat.service';
 import fetchMock from 'fetch-mock';
 
 const mlbTeamStat = {
@@ -17,7 +17,7 @@ describe('get by Id', () => {
   it('should get mlbTeamStat by id', () => {
     const mock = fetchMock.get('end:mlb/teamStats?', mlbTeamStat);
 
-    return mlbTeamStatsService.getStats().then((res) => {
+    return mlbTeamStatService.getStats().then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(mlbTeamStat);
     });

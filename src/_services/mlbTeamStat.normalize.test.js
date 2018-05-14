@@ -1,4 +1,4 @@
-import { normalize } from './mlbTeamStats.normalize';
+import { normalize } from './mlbTeamStat.normalize';
 
 describe('normalize', () => {
   it('should set default values', () => {
