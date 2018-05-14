@@ -10,7 +10,7 @@ export default function mlbTeamStatsReducer(state = initialState, action) {
     case FETCH_ASYNC:
       return { ...state, loading: true };
     case FETCH_SUCCESS:
-      return { loading: false, model: action.payload };
+      return { ...state, loading: false, model: action.payload };
     case FETCH_ERROR:
       return { ...state, loading: false };
     case RESET:

@@ -35,12 +35,24 @@ export class TeamOverview extends React.Component {
     return record;
   };
 
+  showRecord = (stats) => {
+    if (stats === null) {
+      return '--';
+    } else {
+      return this.calculateRecord(stats.wins, stats.losses);
+    }
+  };
+
+  showGamesRemaining = (stats) => {
+    if (stats === null) {
+      return '--';
+    } else {
+      return stats.gamesRemaining || '--';
+    }
+  };
+
   render() {
     const { onToggleSidebar, stats } = this.props;
-
-    if (stats === null) {
-      return <div>Loading Team Stats...</div>;
-    }
 
     return (
       <TeamOverviewContainer>
@@ -55,15 +67,13 @@ export class TeamOverview extends React.Component {
 
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel>
-              {this.calculateRecord(stats.wins, stats.losses)}
-            </StatLabel>
+            <StatLabel>{this.showRecord(stats)}</StatLabel>
             <P2 weight="100">
               <i>Win / Loss</i>
             </P2>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>{stats.gamesRemaining || '--'}</StatLabel>
+            <StatLabel>{this.showGamesRemaining(stats)}</StatLabel>
             <P2 weight="100">
               <i>Games Remaining</i>
             </P2>
