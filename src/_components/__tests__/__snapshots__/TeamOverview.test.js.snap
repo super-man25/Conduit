@@ -52,7 +52,7 @@ exports[`renders correctly with props 1`] = `
       <h3
         className="sc-ksYbfQ hbsBi"
       >
-        --
+        -10
       </h3>
       <p
         className="sc-dnqmqq cXamce"
@@ -118,7 +118,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       <h3
         className="sc-ksYbfQ hbsBi"
       >
-        --
+        -10
       </h3>
       <p
         className="sc-dnqmqq cXamce"
