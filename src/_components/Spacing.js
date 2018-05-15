@@ -44,5 +44,5 @@ Spacing.propTypes = {
   margin: PropTypes.string,
   height: PropTypes.string,
   width: PropTypes.string,
-  inline: PropTypes.string
+  display: PropTypes.string
 };
