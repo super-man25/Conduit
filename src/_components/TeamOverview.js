@@ -47,7 +47,8 @@ export class TeamOverview extends React.Component {
     if (stats === null) {
       return '--';
     } else {
-      return stats.gamesRemaining || '--';
+      const total = stats.gamesTotal - stats.wins - stats.losses;
+      return total || '--';
     }
   };
 

@@ -1,4 +1,4 @@
-import { normalize } from './mlbTeamStat.normalize';
+import { normalize } from './teamStat.normalize';
 
 describe('normalize', () => {
   it('should set default values', () => {
@@ -11,7 +11,7 @@ describe('normalize', () => {
       clientId: undefined,
       wins: undefined,
       losses: undefined,
-      gamesRemaining: undefined
+      gamesTotal: undefined
     });
   });
 

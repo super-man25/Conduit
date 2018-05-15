@@ -5,7 +5,7 @@ export const initialState = {
   overview: null
 };
 
-export default function mlbTeamStatReducer(state = initialState, action) {
+export default function teamStatReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_ASYNC:
       return { ...state, loading: true };

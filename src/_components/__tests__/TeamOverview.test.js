@@ -4,16 +4,16 @@ import renderer from 'react-test-renderer';
 
 // this will evolve to test winLoss and gamesRemaining props, when component is fleshed out...
 
-const mlbStats = { wins: 10, losses: 1, gamesRemsining: 1 };
+const stats = { wins: 10, losses: 1, gamesTotal: 1 };
 
 it('renders correctly with props', () => {
-  const tree = renderer.create(<TeamOverview stats={mlbStats} />).toJSON();
+  const tree = renderer.create(<TeamOverview stats={stats} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with toggledSidebar', () => {
   const tree = renderer
-    .create(<TeamOverview onToggleSidebar="" stats={mlbStats} />)
+    .create(<TeamOverview onToggleSidebar="" stats={stats} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

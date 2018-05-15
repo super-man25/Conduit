@@ -1,10 +1,10 @@
 /**
- * Normalize MlB Team Stats from api
+ * Normalize Team Stats from api
  *
- * @param {Object} rawMLBTeamStat - mlbTeamStat record from API
- * @return {Object} normalized mlbTeamStat
+ * @param {Object} rawTeamStat - teamStat record from API
+ * @return {Object} normalized teamStat
  */
-export function normalize(rawMLBTeamStat) {
+export function normalize(rawTeamStat) {
   const {
     id,
     createdAt,
@@ -12,8 +12,8 @@ export function normalize(rawMLBTeamStat) {
     clientId,
     wins,
     losses,
-    gamesRemaining
-  } = rawMLBTeamStat;
+    gamesTotal
+  } = rawTeamStat;
 
   return {
     id,
@@ -22,6 +22,6 @@ export function normalize(rawMLBTeamStat) {
     clientId,
     wins,
     losses,
-    gamesRemaining
+    gamesTotal
   };
 }
