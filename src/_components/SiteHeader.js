@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
-import { LogoName, UserWelcome, SprocketMenu, LinkButton, DropdownMenuItem, Icon, Spacing } from './';
+import {
+  LogoName,
+  UserWelcome,
+  SprocketMenu,
+  DropdownMenuItem,
+  Icon,
+  Spacing
+} from './';
 import { withRouter } from 'react-router-dom';
 import { actions as authActions } from '_state/auth';
 import { bindActionCreators } from 'redux';
@@ -17,7 +24,7 @@ export const SiteHeaderDiv = styled.div`
   background: ${cssConstants.PRIMARY_DARK_BLUE};
 `;
 
-export const WrapperDropdown = styled.div`
+export const DropdownMenuWrapper = styled.div`
   width: 130px;
   position: fixed;
   z-index: 1000;
@@ -25,10 +32,11 @@ export const WrapperDropdown = styled.div`
   top: 75px;
   padding: 15px;
   background: ${cssConstants.SECONDARY_LIGHT_BLUE};
-  ::after, ::before {
+  ::after,
+  ::before {
     bottom: 100%;
     border: solid transparent;
-    content: " ";
+    content: ' ';
     height: 0;
     width: 0;
     position: absolute;
@@ -42,12 +50,12 @@ export const WrapperDropdown = styled.div`
     margin-left: -19px;
   }
   ::before {
-      border-color: rgba(113, 158, 206, 0);
-      border-bottom-color: #719ECE;
-      border-width: 20px;
-      left: 70%;
-      margin-left: -20px;
-}
+    border-color: rgba(113, 158, 206, 0);
+    border-bottom-color: #719ece;
+    border-width: 20px;
+    left: 70%;
+    margin-left: -20px;
+  }
 `;
 
 export class SiteHeaderPresenter extends React.Component {
@@ -55,37 +63,33 @@ export class SiteHeaderPresenter extends React.Component {
     super(props);
 
     this.state = {
-      showMenu: false,
-    }
+      showMenu: false
+    };
 
-    this.handleSprocketClick = this.handleSprocketClick.bind(this);
+    this.handleSettingsClick = this.handleSettingsClick.bind(this);
     this.handleLogoClick = this.handleLogoClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(event) {
     event.preventDefault();
-  
+
     this.setState({ showMenu: true }, () => {
       document.addEventListener('click', this.closeMenu);
     });
   }
-  
+
   closeMenu(event) {
-    
     if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
-      
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu);
-      });  
-      
+      });
     }
   }
 
-  handleSprocketClick() {
-    // code here that will result in the menu dropping, when we know what it is...
-    this.closeMenu;
+  handleSettingsClick() {
     this.props.history.push('/settings');
   }
 
@@ -107,35 +111,31 @@ export class SiteHeaderPresenter extends React.Component {
           id="sprocket"
           data-test-id="settings-icon"
           onClick={this.showMenu}
-        />  
+        />
         <UserWelcome user={authState.model} />
-        {
-          this.state.showMenu
-            ? (
-              <WrapperDropdown>
-                <div
-                  ref={(element) => {
-                    this.dropdownMenu = element;
-                  }}
-                >
-                  <DropdownMenuItem onClick={this.handleSprocketClick}> Settings </DropdownMenuItem>
-                  <DropdownMenuItem 
-                    data-test-id="logout-button"
-                    to="/logout"
-                    onClick={this.handleLogoutClick.bind(this)}
-                  > 
-                    Logout 
-                    <Spacing right padding="0 0 0 30px" display="inline-block">
-                      <Icon name="award" size={24} color="white"></Icon>
-                    </Spacing>
-                  </DropdownMenuItem>
-                </div>
-              </WrapperDropdown>
-            )
-            : (
-              null
-            )
-        }
+        {this.state.showMenu ? (
+          <DropdownMenuWrapper>
+            <div
+              ref={(element) => {
+                this.dropdownMenu = element;
+              }}
+            >
+              <DropdownMenuItem onClick={this.handleSettingsClick}>
+                Settings
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                data-test-id="logout-button"
+                to="/logout"
+                onClick={this.handleLogoutClick}
+              >
+                Logout
+                <Spacing right padding="0 0 0 30px" display="inline-block">
+                  <Icon name="award" size={24} color="white" />
+                </Spacing>
+              </DropdownMenuItem>
+            </div>
+          </DropdownMenuWrapper>
+        ) : null}
       </SiteHeaderDiv>
     );
   }
