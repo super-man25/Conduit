@@ -25,7 +25,7 @@ class CreateUser extends React.Component {
         firstName: '',
         lastName: '',
         email: '',
-        password: '',
+        password: 'placeholder',
         isAdmin: false,
         clientId: 0
       },
@@ -33,9 +33,7 @@ class CreateUser extends React.Component {
       emailHadFocus: false,
       firstNameHadFocus: false,
       lastNameHadFocus: false,
-      passwordHadFocus: false,
       validEmail: false,
-      validPassword: false,
       createEnabled: false
     };
 
@@ -47,7 +45,7 @@ class CreateUser extends React.Component {
   handleChange(event) {
     const { name, value: rawValue } = event.target;
     const value = name === 'isAdmin' ? !!event.target.checked : rawValue;
-    const { user, validEmail, validPassword } = this.state;
+    const { user, validEmail } = this.state;
 
     this.setState({
       user: {
@@ -58,14 +56,9 @@ class CreateUser extends React.Component {
     this.setState({ submitted: false });
     this.setState({
       createEnabled:
-        validEmail &&
-        validPassword &&
-        user.firstName.length > 0 &&
-        user.lastName.length > 0
+        validEmail && user.firstName.length > 0 && user.lastName.length > 0
     });
-    if (name === 'password' && !this.passCheck(value)) {
-      this.setState({ createEnabled: false });
-    } else if (name === 'email' && !this.emailCheck(value)) {
+    if (name === 'email' && !this.emailCheck(value)) {
       this.setState({ createEnabled: false });
     } else if (name === 'firstName' && value.length === 0) {
       this.setState({ createEnabled: false });
@@ -80,8 +73,6 @@ class CreateUser extends React.Component {
     const { name } = e.target;
     if (name === 'email') {
       this.setState({ emailHadFocus: true });
-    } else if (name === 'password') {
-      this.setState({ passwordHadFocus: true });
     } else if (name === 'firstName') {
       this.setState({ firstNameHadFocus: true });
     } else if (name === 'lastName') {
@@ -91,12 +82,12 @@ class CreateUser extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { validEmail, validPassword } = this.state;
+    const { validEmail } = this.state;
 
     this.setState({ submitted: true });
     const { user } = this.state;
     user.clientId = this.props.authState.model.clientId;
-    if (user.firstName && user.lastName && validEmail && validPassword) {
+    if (user.firstName && user.lastName && validEmail) {
       this.props.usersActions.create(user);
     }
   }
@@ -108,14 +99,6 @@ class CreateUser extends React.Component {
     return emailOK;
   }
 
-  passCheck(password) {
-    // Password must be at least 8 characters long, with at least one number and at least one letter.
-    const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    const passOK = passRegex.test(password);
-    this.setState({ validPassword: passOK });
-    return passOK;
-  }
-
   render() {
     const { usersState } = this.props;
 
@@ -123,11 +106,9 @@ class CreateUser extends React.Component {
       user,
       submitted,
       emailHadFocus,
-      passwordHadFocus,
       firstNameHadFocus,
       lastNameHadFocus,
       validEmail,
-      validPassword,
       createEnabled
     } = this.state;
     return (
@@ -146,6 +127,7 @@ class CreateUser extends React.Component {
           onSubmit={this.handleSubmit}
           style={{ width: '500px', padding: '50px', paddingTop: '0px' }}
         >
+          <input type="hidden" name="password" value="placeholder_pass" />
           <Label htmlFor="firstName">First Name</Label>
           <Input
             type="text"
@@ -199,26 +181,6 @@ class CreateUser extends React.Component {
             show={!validEmail && (submitted || emailHadFocus)}
           >
             A valid Email is required
-          </HelpBlockDiv>
-
-          <Label htmlFor="password">Password</Label>
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            autoComplete="new-password"
-            value={user.password}
-            inValid={!validPassword && (submitted || passwordHadFocus)}
-            valid={validPassword}
-            onChange={this.handleChange}
-            onBlur={this.handleBlur}
-          />
-          <HelpBlockDiv
-            type="alert-danger"
-            show={!validPassword && (submitted || passwordHadFocus)}
-          >
-            Password must be at least 8 characters long, with at least one
-            number and at least one letter.
           </HelpBlockDiv>
 
           <Checkbox
