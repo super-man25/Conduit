@@ -10,5 +10,8 @@
   "plugins": ["jest", "jsx-a11y", "redux-saga", "flowtype", "import"],
   "env": {
     "jest/globals": true
+  },
+  "rules": {
+    "flowtype/generic-spacing": [0, "never"]
   }
 }

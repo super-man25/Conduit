@@ -1,5 +1,4 @@
 import {
-  Button,
   Sidebar,
   SidebarHeader,
   SiteHeader,
@@ -19,6 +18,7 @@ import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 const PageWrapper = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
@@ -112,4 +112,6 @@ function mapActionCreators(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(Dashboard);
+export default withRouter(
+  connect(mapStateToProps, mapActionCreators)(Dashboard)
+);

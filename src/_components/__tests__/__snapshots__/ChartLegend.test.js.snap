@@ -5,8 +5,24 @@ exports[`renders correctly 1`] = `
   className="sc-jnlKLf bIFLzo"
 >
   <div
-    className="sc-fYxtnH dWawWO"
+    className="sc-fYxtnH imJrgr"
     color="#38A9DB"
+  />
+  <span
+    className="sc-tilXH hVgrQB"
+  >
+    Chart Legend
+  </span>
+</div>
+`;
+
+exports[`renders correctly with color prop 1`] = `
+<div
+  className="sc-jnlKLf bIFLzo"
+>
+  <div
+    className="sc-fYxtnH gYNVH"
+    color="#CCCCCC"
   />
   <span
     className="sc-tilXH hVgrQB"
@@ -21,7 +37,7 @@ exports[`renders correctly with dashed prop 1`] = `
   className="sc-jnlKLf bIFLzo"
 >
   <div
-    className="sc-fYxtnH cyzOaU"
+    className="sc-fYxtnH cDSTgU"
     color="#38A9DB"
   />
   <span

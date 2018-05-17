@@ -5,11 +5,11 @@ exports[`renders correctly with props 1`] = `
   className="sc-kgAjT dptCsA"
 >
   <div
-    className="sc-kGXeez isEPTP"
+    className="sc-kGXeez kJeZmt"
     direction="row"
   >
     <div
-      className="sc-kpOJdX dgsGgO"
+      className="sc-kpOJdX cFoARy"
     >
       <h4
         className="sc-cJSrbW ivjXeI"
@@ -18,7 +18,7 @@ exports[`renders correctly with props 1`] = `
       </h4>
     </div>
     <div
-      className="sc-kpOJdX hTxKyn"
+      className="sc-kpOJdX cJUGvc"
     >
       <button
         className="sc-bwzfXH cqQrNb"
@@ -27,11 +27,11 @@ exports[`renders correctly with props 1`] = `
     </div>
   </div>
   <div
-    className="sc-kGXeez isEPTP"
+    className="sc-kGXeez kJeZmt"
     direction="row"
   >
     <div
-      className="sc-kpOJdX dgsGgO"
+      className="sc-kpOJdX cFoARy"
     >
       <h3
         className="sc-ksYbfQ hbsBi"
@@ -47,7 +47,7 @@ exports[`renders correctly with props 1`] = `
       </p>
     </div>
     <div
-      className="sc-kpOJdX hTxKyn"
+      className="sc-kpOJdX cJUGvc"
     >
       <h3
         className="sc-ksYbfQ hbsBi"
@@ -71,11 +71,11 @@ exports[`renders correctly with toggledSidebar 1`] = `
   className="sc-kgAjT dptCsA"
 >
   <div
-    className="sc-kGXeez isEPTP"
+    className="sc-kGXeez kJeZmt"
     direction="row"
   >
     <div
-      className="sc-kpOJdX dgsGgO"
+      className="sc-kpOJdX cFoARy"
     >
       <h4
         className="sc-cJSrbW ivjXeI"
@@ -84,7 +84,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </h4>
     </div>
     <div
-      className="sc-kpOJdX hTxKyn"
+      className="sc-kpOJdX cJUGvc"
     >
       <button
         className="sc-bwzfXH cqQrNb"
@@ -93,11 +93,11 @@ exports[`renders correctly with toggledSidebar 1`] = `
     </div>
   </div>
   <div
-    className="sc-kGXeez isEPTP"
+    className="sc-kGXeez kJeZmt"
     direction="row"
   >
     <div
-      className="sc-kpOJdX dgsGgO"
+      className="sc-kpOJdX cFoARy"
     >
       <h3
         className="sc-ksYbfQ hbsBi"
@@ -113,7 +113,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </p>
     </div>
     <div
-      className="sc-kpOJdX hTxKyn"
+      className="sc-kpOJdX cJUGvc"
     >
       <h3
         className="sc-ksYbfQ hbsBi"

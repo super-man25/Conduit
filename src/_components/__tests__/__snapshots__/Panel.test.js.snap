@@ -13,7 +13,7 @@ exports[`renders correctly with a header 1`] = `
   className="sc-hmzhuo cLqCC"
 >
   <header
-    className="sc-frDJqD fHeDxK"
+    className="sc-frDJqD dVBssv"
   >
     This is a header
   </header>
@@ -25,7 +25,7 @@ exports[`renders correctly with a header and content 1`] = `
   className="sc-hmzhuo cLqCC"
 >
   <header
-    className="sc-frDJqD fHeDxK"
+    className="sc-frDJqD dVBssv"
   >
     This is a header
   </header>
