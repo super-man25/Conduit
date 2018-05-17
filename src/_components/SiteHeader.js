@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
-import { LogoName, UserWelcome, SprocketMenu } from './';
+import { LogoName, UserWelcome, SprocketMenu, LinkButton, DropdownMenuItem } from './';
 import { withRouter } from 'react-router-dom';
 
 export const SiteHeaderDiv = styled.div`
@@ -15,12 +15,46 @@ export const SiteHeaderDiv = styled.div`
   background: ${cssConstants.PRIMARY_DARK_BLUE};
 `;
 
+export const WrapperDropdown = styled.div`
+  width: 150px;
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  top: 75px;
+  background: ${cssConstants.PRIMARY_LIGHT_BLUE};
+`;
+
 export class SiteHeaderPresenter extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      showMenu: false,
+    }
     // This binding is necessary to make `this` work in the callback
     this.handleSprocketClick = this.handleSprocketClick.bind(this);
     this.handleLogoClick = this.handleLogoClick.bind(this);
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  showMenu(event) {
+    event.preventDefault();
+  
+    this.setState({ showMenu: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
+  }
+  
+  closeMenu(event) {
+    
+    if (!this.dropdownMenu.contains(event.target)) {
+      
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });  
+      
+    }
   }
 
   handleSprocketClick() {
@@ -40,9 +74,27 @@ export class SiteHeaderPresenter extends React.Component {
         <SprocketMenu
           id="sprocket"
           data-test-id="settings-icon"
-          onClick={this.handleSprocketClick}
-        />
+          onClick={this.showMenu}
+        />  
         <UserWelcome user={authState.model} />
+        {
+          this.state.showMenu
+            ? (
+              <WrapperDropdown>
+                <div
+                  ref={(element) => {
+                    this.dropdownMenu = element;
+                  }}
+                >
+                  <DropdownMenuItem> Settings </DropdownMenuItem>
+                  <DropdownMenuItem> Logout </DropdownMenuItem>
+                </div>
+              </WrapperDropdown>
+            )
+            : (
+              null
+            )
+        }
       </SiteHeaderDiv>
     );
   }
