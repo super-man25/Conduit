@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
-import { LogoName, UserWelcome, SprocketMenu, LinkButton, DropdownMenuItem } from './';
+import { LogoName, UserWelcome, SprocketMenu, LinkButton, DropdownMenuItem, Icon, Spacing } from './';
 import { withRouter } from 'react-router-dom';
+import { actions as authActions } from '_state/auth';
+import { bindActionCreators } from 'redux';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -16,12 +18,36 @@ export const SiteHeaderDiv = styled.div`
 `;
 
 export const WrapperDropdown = styled.div`
-  width: 150px;
+  width: 130px;
   position: fixed;
   z-index: 1000;
   right: 0;
   top: 75px;
-  background: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  padding: 15px;
+  background: ${cssConstants.SECONDARY_LIGHT_BLUE};
+  ::after, ::before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  ::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: ${cssConstants.SECONDARY_LIGHT_BLUE};
+    border-width: 19px;
+    left: 70%;
+    margin-left: -19px;
+  }
+  ::before {
+      border-color: rgba(113, 158, 206, 0);
+      border-bottom-color: #719ECE;
+      border-width: 20px;
+      left: 70%;
+      margin-left: -20px;
+}
 `;
 
 export class SiteHeaderPresenter extends React.Component {
@@ -31,7 +57,7 @@ export class SiteHeaderPresenter extends React.Component {
     this.state = {
       showMenu: false,
     }
-    // This binding is necessary to make `this` work in the callback
+
     this.handleSprocketClick = this.handleSprocketClick.bind(this);
     this.handleLogoClick = this.handleLogoClick.bind(this);
     this.showMenu = this.showMenu.bind(this);
@@ -48,7 +74,7 @@ export class SiteHeaderPresenter extends React.Component {
   
   closeMenu(event) {
     
-    if (!this.dropdownMenu.contains(event.target)) {
+    if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
       
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu);
@@ -59,11 +85,17 @@ export class SiteHeaderPresenter extends React.Component {
 
   handleSprocketClick() {
     // code here that will result in the menu dropping, when we know what it is...
+    this.closeMenu;
     this.props.history.push('/settings');
   }
 
   handleLogoClick() {
     this.props.history.push('/');
+  }
+
+  handleLogoutClick(e) {
+    e.preventDefault();
+    this.props.authActions.signOut();
   }
 
   render() {
@@ -86,8 +118,17 @@ export class SiteHeaderPresenter extends React.Component {
                     this.dropdownMenu = element;
                   }}
                 >
-                  <DropdownMenuItem> Settings </DropdownMenuItem>
-                  <DropdownMenuItem> Logout </DropdownMenuItem>
+                  <DropdownMenuItem onClick={this.handleSprocketClick}> Settings </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    data-test-id="logout-button"
+                    to="/logout"
+                    onClick={this.handleLogoutClick.bind(this)}
+                  > 
+                    Logout 
+                    <Spacing right padding="0 0 0 30px" display="inline-block">
+                      <Icon name="award" size={24} color="white"></Icon>
+                    </Spacing>
+                  </DropdownMenuItem>
                 </div>
               </WrapperDropdown>
             )
@@ -111,7 +152,13 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    authActions: bindActionCreators(authActions, dispatch)
+  };
+}
+
 const connectedSiteHeader = withRouter(
-  connect(mapStateToProps)(SiteHeaderPresenter)
+  connect(mapStateToProps, mapDispatchToProps)(SiteHeaderPresenter)
 );
 export { connectedSiteHeader as SiteHeader };

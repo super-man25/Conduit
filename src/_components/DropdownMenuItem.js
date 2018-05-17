@@ -4,15 +4,12 @@ import { cssConstants } from '../_constants';
 export const DropdownMenuItem = styled.span`
   display: ${(props) => (props.hidden ? 'none' : 'block')};;
   position: relative;
-  width: 100%;
   float: ${(props) => (props.right ? 'right' : props.left ? 'left' : 'none')};
   margin: 0;
-  padding: 5px 25px;
-  // padding-left: 25px;
+  padding-left: 20px;
   font-size: 13px;
-  height: 50px;
   font-weight: lighter;
-  line-height: 50px;
+  line-height: 40px;
   color: ${(props) =>
     props.disabled
       ? cssConstants.PRIMARY_DARK_GRAY
