@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { withClickAway } from '_hoc';
+import { cssConstants } from '_constants';
 import {
   LogoName,
   UserWelcome,
@@ -24,7 +25,7 @@ export const SiteHeaderDiv = styled.div`
   background: ${cssConstants.PRIMARY_DARK_BLUE};
 `;
 
-export const DropdownMenuWrapper = styled.div`
+export const DropdownMenuWrapper = withClickAway(styled.div`
   width: 130px;
   position: fixed;
   z-index: 1000;
@@ -58,7 +59,7 @@ export const DropdownMenuWrapper = styled.div`
     left: 80%;
     margin-left: -20px;
   }
-`;
+`);
 
 export class SiteHeaderPresenter extends React.Component {
   constructor(props) {
@@ -67,39 +68,28 @@ export class SiteHeaderPresenter extends React.Component {
     this.state = {
       showMenu: false
     };
-
-    this.handleSettingsClick = this.handleSettingsClick.bind(this);
-    this.handleLogoClick = this.handleLogoClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
   }
 
-  showMenu(event) {
+  showMenu = (event) => {
     event.preventDefault();
-
-    this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
-    });
+    this.setState({ showMenu: true });
   }
 
-  closeMenu(event) {
+  closeMenu = (event) => {
     if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu);
-      });
+      this.setState({ showMenu: false });
     }
   }
 
-  handleSettingsClick() {
+  handleSettingsClick = () => {
     this.props.history.push('/settings');
   }
 
-  handleLogoClick() {
+  handleLogoClick = () => {
     this.props.history.push('/');
   }
 
-  handleLogoutClick(e) {
+  handleLogoutClick = (e) => {
     e.preventDefault();
     this.props.authActions.signOut();
   }
@@ -115,8 +105,8 @@ export class SiteHeaderPresenter extends React.Component {
           onClick={this.showMenu}
         />
         <UserWelcome user={authState.model} />
-        {this.state.showMenu ? (
-          <DropdownMenuWrapper>
+        {this.state.showMenu && (
+          <DropdownMenuWrapper onClickAway={this.closeMenu}>
             <div
               ref={(element) => {
                 this.dropdownMenu = element;
@@ -137,7 +127,7 @@ export class SiteHeaderPresenter extends React.Component {
               </DropdownMenuItem>
             </div>
           </DropdownMenuWrapper>
-        ) : null}
+        )}
       </SiteHeaderDiv>
     );
   }
