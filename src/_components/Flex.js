@@ -1,32 +1,97 @@
+// @flow
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import type { ComponentType } from 'react';
 
-export const Flex = styled.div`
-  display: flex;
-  flex-direction: ${(props) => props.direction};
+type FlexContentAlignment =
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-around'
+  | 'space-between';
+
+type FlexAlignment =
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'baseline'
+  | 'stretch';
+
+type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+
+type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+
+type FlexProps = {
+  +flex: string,
+  +height: string,
+  +width: string,
+  +flexGrow: number,
+  +flexShrink: number,
+  +flexBasis: number,
+  +flexWrap: FlexWrap,
+  +direction: FlexDirection,
+  +order: number,
+  +inline: boolean,
+  +column: boolean,
+  +reverse: boolean,
+  +align: FlexContentAlignment,
+  +justify: FlexContentAlignment,
+  +alignItems: FlexAlignment,
+  +alignSelf: FlexAlignment
+};
+
+function generateFlexDirection(props: FlexProps): FlexDirection {
+  const { column, reverse, direction } = props;
+
+  if (direction) return direction;
+
+  return column
+    ? reverse
+      ? 'column-reverse'
+      : 'column'
+    : reverse
+      ? 'row-reverse'
+      : 'row';
+}
+
+export const Flex: ComponentType<FlexProps> = styled.div`
+  display: ${(props) => (props.inline ? 'inline-flex' : 'flex')};
+  flex: ${(props) => props.flex};
+  flex-direction: ${generateFlexDirection}
+  flex-grow: ${(props) => props.flexGrow};
+  flex-shrink: ${(props) => props.flexShrink};
+  flex-basis: ${(props) => props.flexBasis};
+  flex-wrap: ${(props) => props.flexWrap};
+  order: ${(props) => props.order};
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
-`;
-
-Flex.propTypes = {
-  /** Flex direction */
-  direction: PropTypes.string,
-
-  /** Justify content */
-  justify: PropTypes.string,
-
-  /** Align items */
-  align: PropTypes.string
-};
-
-export const FlexItem = styled.div`
-  flex: ${(props) => props.flex || 1};
-  width: ${(props) => props.width};
+  align-content: ${(props) => props.alignContent};
+  align-self: ${(props) => props.alignSelf};
   height: ${(props) => props.height};
+  width: ${(props) => props.width};
 `;
 
-FlexItem.propTypes = {
-  flex: PropTypes.number,
-  width: PropTypes.string,
-  height: PropTypes.string
+type FlexItemProps = {
+  flex: number,
+  width: string,
+  height: string,
+  alignSelf: FlexAlignment,
+  margin: string,
+  padding: string
 };
+
+export const FlexItem: ComponentType<FlexItemProps> = styled.div`
+  flex: ${(props) => props.flex};
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
+  align-self: ${(props) => props.alignSelf};
+  margin: ${(props) => props.margin};
+  padding: ${(props) => props.padding};
+`;
+
+// $FlowFixMe - FlexItem defaultProps
+FlexItem.defaultProps = {
+  flex: 1
+};
+
+Flex.displayName = 'Flex';
+FlexItem.displayName = 'FlexItem';

@@ -1,5 +1,5 @@
 import { H1, CenteredContainer } from '_components';
-import CumulativeRevenueContainer from '_scenes/Dashboard/containers/CumulativeRevenueContainer';
+import SeasonRevenuePanel from '_scenes/Dashboard/Season/containers/SeasonRevenuePanel';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -12,8 +12,8 @@ const ContentMock = styled.div`
 
 const Season = () => (
   <CenteredContainer>
-    <H1>Season</H1>
-    <CumulativeRevenueContainer />
+    <H1 weight="100">Season Overview</H1>
+    <SeasonRevenuePanel />
     <ContentMock />
     <ContentMock />
     <ContentMock />

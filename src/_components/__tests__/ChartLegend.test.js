@@ -15,3 +15,10 @@ it('renders correctly with dashed prop', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('renders correctly with color prop', () => {
+  const tree = renderer
+    .create(<ChartLegendItem color="#CCCCCC" label="Chart Legend" dashed />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});

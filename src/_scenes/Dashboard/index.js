@@ -1,5 +1,4 @@
 import {
-  Button,
   Sidebar,
   SidebarHeader,
   SiteHeader,
@@ -15,6 +14,11 @@ import Event from './Event';
 import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
 import { toggleSidebar } from './stateChanges';
+import { connect } from 'react-redux';
+import { actions as teamStatActions } from '_state/teamStat';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 const PageWrapper = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
@@ -42,6 +46,10 @@ const SidebarContent = styled.div`
 `;
 
 class Dashboard extends React.Component {
+  componentDidMount() {
+    this.props.teamStatActions.fetch();
+  }
+
   constructor(props) {
     super(props);
 
@@ -56,19 +64,17 @@ class Dashboard extends React.Component {
 
   render() {
     const { sidebarCollapsed } = this.state;
+    const { teamStatState } = this.props;
     return (
       <PageWrapper>
         <SiteHeader />
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
-              <TeamOverview>
-                <Button
-                  small
-                  collapse
-                  onClick={this.handleSidebarToggleClick}
-                />
-              </TeamOverview>
+              <TeamOverview
+                onToggleSidebar={this.handleSidebarToggleClick}
+                stats={teamStatState.overview}
+              />
             </SidebarHeader>
             <SidebarContent>
               <EventListContainer />
@@ -89,4 +95,23 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+  teamStatState: PropTypes.shape(),
+  teamStatActions: PropTypes.shape()
+};
+
+function mapStateToProps(state) {
+  return {
+    teamStatState: state.teamStat
+  };
+}
+
+function mapActionCreators(dispatch) {
+  return {
+    teamStatActions: bindActionCreators(teamStatActions, dispatch)
+  };
+}
+
+export default withRouter(
+  connect(mapStateToProps, mapActionCreators)(Dashboard)
+);

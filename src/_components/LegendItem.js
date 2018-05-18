@@ -1,9 +1,10 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { cssConstants } from '_constants';
 
-const LegendItemContainer = styled.div`
+const LegendItemContainer: ComponentType<{}> = styled.div`
   display: inline-flex;
 
   & + & {
@@ -11,29 +12,41 @@ const LegendItemContainer = styled.div`
   }
 `;
 
-const LegendItemColoredBar = styled.div`
+const LegendItemColoredBar: ComponentType<{ color: string }> = styled.div`
   background-color: ${(props) => props.color};
   margin-right: 14px;
-  width: 7px;
+  min-width: 7px;
 `;
 
-const LegendItemContent = styled.div`
+const LegendItemContent: ComponentType<{}> = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const LegendItemTitle = styled.span`
+const LegendItemTitle: ComponentType<{}> = styled.span`
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: 12px;
   margin-bottom: 2px;
 `;
 
-const LegendItemValue = styled.span`
+const LegendItemValue: ComponentType<{}> = styled.span`
   font-size: 18px;
   letter-spacing: 0.4;
 `;
 
-export function LegendItem({ color, label, value }) {
+LegendItemContainer.displayName = 'LegendItemContainer';
+LegendItemColoredBar.displayName = 'LegendItemColoredBar';
+LegendItemContent.displayName = 'LegendItemContent';
+LegendItemTitle.displayName = 'LegendItemTitle';
+LegendItemValue.displayName = 'LegendItemValue';
+
+type Props = {
+  color: string,
+  label: string,
+  value: number | string
+};
+
+export function LegendItem({ color, label, value }: Props) {
   return (
     <LegendItemContainer>
       <LegendItemColoredBar color={color} />
@@ -44,9 +57,3 @@ export function LegendItem({ color, label, value }) {
     </LegendItemContainer>
   );
 }
-
-LegendItem.propTypes = {
-  color: PropTypes.string,
-  label: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};

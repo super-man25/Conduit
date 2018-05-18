@@ -11,7 +11,7 @@ import {
 } from '_components';
 import { cssConstants } from '_constants';
 import { validateEmail, validatePhoneNumber } from '_helpers/string-utils';
-import { actions as userActions } from '_state/auth';
+import { actions as userActions } from '_state/users';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';

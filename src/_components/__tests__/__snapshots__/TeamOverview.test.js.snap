@@ -1,7 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with no props 1`] = `
+exports[`renders correctly with props 1`] = `
 <div
-  className="sc-kgAjT djnAhm"
-/>
+  className="sc-kgAjT dptCsA"
+>
+  <div
+    className="sc-kGXeez kJeZmt"
+    direction="row"
+  >
+    <div
+      className="sc-kpOJdX cFoARy"
+    >
+      <h4
+        className="sc-cJSrbW ivjXeI"
+      >
+         Team Overview 
+      </h4>
+    </div>
+    <div
+      className="sc-kpOJdX cJUGvc"
+    >
+      <button
+        className="sc-bwzfXH cqQrNb"
+        onClick={undefined}
+      />
+    </div>
+  </div>
+  <div
+    className="sc-kGXeez kJeZmt"
+    direction="row"
+  >
+    <div
+      className="sc-kpOJdX cFoARy"
+    >
+      <h3
+        className="sc-ksYbfQ hbsBi"
+      >
+        0.909
+      </h3>
+      <p
+        className="sc-dnqmqq cXamce"
+      >
+        <i>
+          Win / Loss
+        </i>
+      </p>
+    </div>
+    <div
+      className="sc-kpOJdX cJUGvc"
+    >
+      <h3
+        className="sc-ksYbfQ hbsBi"
+      >
+        -10
+      </h3>
+      <p
+        className="sc-dnqmqq cXamce"
+      >
+        <i>
+          Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with toggledSidebar 1`] = `
+<div
+  className="sc-kgAjT dptCsA"
+>
+  <div
+    className="sc-kGXeez kJeZmt"
+    direction="row"
+  >
+    <div
+      className="sc-kpOJdX cFoARy"
+    >
+      <h4
+        className="sc-cJSrbW ivjXeI"
+      >
+         Team Overview 
+      </h4>
+    </div>
+    <div
+      className="sc-kpOJdX cJUGvc"
+    >
+      <button
+        className="sc-bwzfXH cqQrNb"
+        onClick=""
+      />
+    </div>
+  </div>
+  <div
+    className="sc-kGXeez kJeZmt"
+    direction="row"
+  >
+    <div
+      className="sc-kpOJdX cFoARy"
+    >
+      <h3
+        className="sc-ksYbfQ hbsBi"
+      >
+        0.909
+      </h3>
+      <p
+        className="sc-dnqmqq cXamce"
+      >
+        <i>
+          Win / Loss
+        </i>
+      </p>
+    </div>
+    <div
+      className="sc-kpOJdX cJUGvc"
+    >
+      <h3
+        className="sc-ksYbfQ hbsBi"
+      >
+        -10
+      </h3>
+      <p
+        className="sc-dnqmqq cXamce"
+      >
+        <i>
+          Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
 `;

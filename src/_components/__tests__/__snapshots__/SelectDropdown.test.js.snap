@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectDropdown renders correctly 1`] = `
+exports[`<SelectDropdown /> renders correctly 1`] = `
 <div>
   <div
-    className="sc-fYxtnH jOgkyz"
-    onClick={[Function]}
+    className="sc-hEsumM gYMQkY"
   >
     <div
-      className="sc-tilXH oqMJK"
+      className="sc-ktHwxA jDzWQr"
+      onClick={[Function]}
     >
       <span>
         Option 1
       </span>
       <span
-        className="sc-hEsumM WbShL"
+        className="sc-cIShpX bSzRvd"
       >
         <svg
           className="sc-kgoBCf ilnGdb"
