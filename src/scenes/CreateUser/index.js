@@ -7,7 +7,6 @@ import { actions as usersActions } from '../../state/users';
 
 import {
   Button,
-  Checkbox,
   H3,
   HelpBlockDiv,
   Input,
@@ -46,7 +45,6 @@ class CreateUser extends React.Component {
     const { name, value: rawValue } = event.target;
     const value = name === 'isAdmin' ? !!event.target.checked : rawValue;
     const { user, validEmail } = this.state;
-
     this.setState({
       user: {
         ...user,
@@ -182,15 +180,14 @@ class CreateUser extends React.Component {
           >
             A valid Email is required
           </HelpBlockDiv>
-
-          <Checkbox
+          <input
             type="checkbox"
             name="isAdmin"
             value="isAdmin"
             label="Admin Privileges?"
             onChange={this.handleChange}
-            onBlur={this.handleBlur}
           />
+          <label labelfor="isAdmin"> Admin</label>
           <br />
 
           <Button disabled={!createEnabled}>Create</Button>
