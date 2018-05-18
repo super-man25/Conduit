@@ -50,27 +50,16 @@ export class SettingsPresenter extends React.Component {
   }
 
   render() {
+    const { authState } = this.props;
     return (
       <PageWrapper>
-        <SiteHeader />
+        <SiteHeader auth={authState.model} />
         <FullContent>
           <LeftNav>
             Navigation Links here
             <br />
             <br />
             <Link to="/users/create">Create New User</Link>
-            <br />
-            <br />
-            <br />
-            <br />
-            <Link
-              data-test-id="logout-button"
-              id="logout"
-              to="/logout"
-              onClick={this.handleLogoutClick.bind(this)}
-            >
-              Logout
-            </Link>
           </LeftNav>
           <PrimaryContent>
             <Breadcrumbs>
@@ -106,7 +95,8 @@ SettingsPresenter.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    userState: state.user
+    userState: state.user,
+    authState: state.auth
   };
 }
 

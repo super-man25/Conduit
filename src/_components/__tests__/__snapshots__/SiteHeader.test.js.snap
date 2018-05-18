@@ -15,7 +15,7 @@ exports[`<SiteHeaderPresenter /> SiteHeaderPresenter renders correctly with no p
     onClick={[Function]}
   />
   <div
-    className="sc-kjoXOD gOCEjv"
+    className="sc-kjoXOD bwmNiY"
   />
 </div>
 `;

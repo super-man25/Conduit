@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { withClickAway } from '_hoc';
 import { cssConstants } from '_constants';
@@ -13,8 +12,6 @@ import {
   Spacing
 } from './';
 import { withRouter } from 'react-router-dom';
-import { actions as authActions } from '_state/auth';
-import { bindActionCreators } from 'redux';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -73,29 +70,29 @@ export class SiteHeaderPresenter extends React.Component {
   showMenu = (event) => {
     event.preventDefault();
     this.setState({ showMenu: true });
-  }
+  };
 
   closeMenu = (event) => {
     if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
       this.setState({ showMenu: false });
     }
-  }
+  };
 
   handleSettingsClick = () => {
     this.props.history.push('/settings');
-  }
+  };
 
   handleLogoClick = () => {
     this.props.history.push('/');
-  }
+  };
 
   handleLogoutClick = (e) => {
     e.preventDefault();
     this.props.authActions.signOut();
-  }
+  };
 
   render() {
-    const { authState } = this.props;
+    const { auth } = this.props;
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
@@ -104,7 +101,7 @@ export class SiteHeaderPresenter extends React.Component {
           data-test-id="settings-icon"
           onClick={this.showMenu}
         />
-        <UserWelcome user={authState.model} />
+        <UserWelcome user={auth} />
         {this.state.showMenu && (
           <DropdownMenuWrapper onClickAway={this.closeMenu}>
             <div
@@ -138,19 +135,5 @@ SiteHeaderPresenter.propTypes = {
   authState: PropTypes.shape()
 };
 
-function mapStateToProps(state) {
-  return {
-    authState: state.auth
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    authActions: bindActionCreators(authActions, dispatch)
-  };
-}
-
-const connectedSiteHeader = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SiteHeaderPresenter)
-);
+const connectedSiteHeader = withRouter(SiteHeaderPresenter);
 export { connectedSiteHeader as SiteHeader };
