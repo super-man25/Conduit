@@ -43,6 +43,6 @@ export * from './Tabbable';
 export * from './SelectDropdown';
 export * from './ChipButton';
 export * from './CustomAxisLabel';
-export * from './DatepickerDropdown';
+export * from './DateRangeDropdown';
 export * from './CenteredContainer';
 export * from './DropdownMenuItem';

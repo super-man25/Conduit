@@ -130,7 +130,7 @@ export class SiteHeaderPresenter extends React.Component {
               >
                 Logout
                 <Spacing right padding="0 0 0 30px" display="inline-block">
-                  <Icon name="award" size={24} color="white" />
+                  <Icon name="logout" size={24} color="white" />
                 </Spacing>
               </DropdownMenuItem>
             </div>

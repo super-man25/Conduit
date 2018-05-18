@@ -19,7 +19,7 @@ const reducer = combineReducers({
   event: eventReducer,
   user: userReducer,
   client: clientReducer,
-  eventStats: eventStatReducer,
+  eventStat: eventStatReducer,
   teamStat: teamStatReducer
 });
 

@@ -12,8 +12,8 @@ body {
 }
 
 :root {
-  --SECONDARY_BLUE: #2670ae;
   --PRIMARY_LIGHT_BLUE: #38a9db;
+  --SECONDARY_BLUE: #2670ae;
 }
 
 /*
@@ -24,6 +24,26 @@ body {
   color: var(--SECONDARY_BLUE);
 }
 
-.DayPicker-Day--selected {
+.DayPicker-Day--selected:not(.DayPicker-Day--outside):not(.DayPicker-Day--disabled) {
   background-color: var(--PRIMARY_LIGHT_BLUE);
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: rgba(56, 169, 219, 0.3) !important;
+  color: #333333;
+}
+.DayPicker-Day {
+  border-radius: 0 !important;
+}
+.DayPicker-Day--start {
+  background-color: var(--PRIMARY_LIGHT_BLUE) !important;
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+  color: #ffffff;
+}
+.DayPicker-Day--end {
+  background-color: var(--PRIMARY_LIGHT_BLUE) !important;
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+  color: #ffffff !important;
 }

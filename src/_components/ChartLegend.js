@@ -1,9 +1,10 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { cssConstants } from '_constants';
 
-export const ChartLegendItemContainer = styled.div`
+export const ChartLegendItemContainer: ComponentType<{}> = styled.div`
   display: inline-flex;
   flex-direction: row;
   align-items: flex-end;
@@ -14,9 +15,12 @@ export const ChartLegendItemContainer = styled.div`
   }
 `;
 
-export const ChartLegendBar = styled.div`
+export const ChartLegendBar: ComponentType<{
+  dashed: boolean,
+  color: string
+}> = styled.div`
   height: 32px;
-  width: 8px;
+  min-width: 8px;
   background: ${(props) =>
     props.dashed
       ? `repeating-linear-gradient(to bottom, ${props.color}, ${
@@ -25,25 +29,29 @@ export const ChartLegendBar = styled.div`
       : props.color};
 `;
 
-export const ChartLegendLabel = styled.span`
+export const ChartLegendLabel: ComponentType<{}> = styled.span`
   color: #323232;
   font-size: 12px;
   margin-left: 10px;
 `;
 
-export const ChartLegendItem = ({ label, color, dashed }) => {
+ChartLegendItemContainer.displayName = 'ChartLegendItemContainer';
+ChartLegendBar.displayName = 'ChartLegendBar';
+ChartLegendLabel.displayName = 'ChartLegendLabel';
+
+type Props = {
+  label: string,
+  color: string,
+  dashed: boolean
+};
+
+export const ChartLegendItem = ({ label, color, dashed }: Props) => {
   return (
     <ChartLegendItemContainer>
       <ChartLegendBar dashed={dashed} color={color} />
       <ChartLegendLabel>{label}</ChartLegendLabel>
     </ChartLegendItemContainer>
   );
-};
-
-ChartLegendItem.propTypes = {
-  label: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  dashed: PropTypes.bool
 };
 
 ChartLegendItem.defaultProps = {

@@ -1,12 +1,16 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { withClickAway } from '_hoc';
 import { cssConstants } from '_constants';
 import { fadeIn } from './keyframes';
 import { Icon } from '_components';
+import type { Option } from '_helpers/types';
 
-const DropdownContainer = withClickAway(styled.div`
+const DropdownContainer: ComponentType<{
+  active: boolean
+}> = withClickAway(styled.div`
   display: inline-block;
   position: relative;
   min-width: 100px;
@@ -20,9 +24,10 @@ const DropdownContainer = withClickAway(styled.div`
   border-radius: 3px;
   font-size: 14px;
 `);
-DropdownContainer.displayName = 'DropdownContainer';
 
-const DropdownSelectedItem = styled.div`
+const DropdownSelectedItem: ComponentType<{
+  dropdownOpen: boolean
+}> = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,22 +37,23 @@ const DropdownSelectedItem = styled.div`
       props.dropdownOpen ? cssConstants.PRIMARY_LIGHT_GRAY : 'transparent'};
 `;
 
-const DropdownIconWrapper = styled.span`
+const DropdownIconWrapper: ComponentType<{ active: boolean }> = styled.span`
   transition: transform ease-out 0.2s;
   transform: ${(props) => (props.active ? 'rotate(180deg)' : 'rotate(0)')};
 `;
 
 const DropdownMenu = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
   position: absolute;
-  min-width: 100%;
-  box-shadow: 0 0 0 1px ${cssConstants.PRIMARY_LIGHT_BLUE};
-  border-top: none;
-  z-index: 10;
+  left: -1px;
   background-color: ${cssConstants.PRIMARY_WHITE};
+  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  border-top: none;
+  list-style: none;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
   opacity: 0;
+  z-index: 10;
 
   animation: ${fadeIn} 0.2s ease-out;
   animation-fill-mode: forwards;
@@ -58,35 +64,37 @@ const DropdownItem = styled.li`
 
   &:hover {
     color: #54a1d5;
+    background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
   }
 `;
 
-export class SelectDropdown extends React.Component {
-  constructor(props) {
-    super(props);
+DropdownContainer.displayName = 'DropdownContainer';
+DropdownSelectedItem.displayName = 'DropdownSelectedItem';
+DropdownIconWrapper.displayName = 'DropdownIconWrapper';
+DropdownMenu.displayName = 'DropdownMenu';
+DropdownItem.displayName = 'DropdownItem';
 
-    this.state = {
-      isOpen: false
-    };
-  }
+type Props = {
+  options: Option[],
+  selected: Option,
+  selectedValue?: any,
+  onChange: (option: Option) => void,
+  placeholder: string
+};
 
-  onDropdownItemClicked = (value) => {
-    const { options } = this.props;
+type State = {
+  isOpen: boolean
+};
 
-    const selectedOption = options.find((option) => option.value === value);
-    this.props.onChange(selectedOption);
+export class SelectDropdown extends React.Component<Props, State> {
+  state = {
+    isOpen: false
   };
 
-  getSelectedOption() {
-    const { options } = this.props;
-    const { selectedOption } = this.state;
-
-    if (!selectedOption) {
-      return null;
-    }
-
-    return options.find((option) => option.value === selectedOption.value);
-  }
+  static defaultProps = {
+    onChange: () => {},
+    placeholder: 'Select'
+  };
 
   handleClickAway = () => {
     const { isOpen } = this.state;
@@ -96,36 +104,42 @@ export class SelectDropdown extends React.Component {
     }
   };
 
-  toggleIsOpen = (value) => {
+  toggleIsOpen = () => {
     this.setState({
-      isOpen: value
+      isOpen: !this.state.isOpen
     });
   };
 
+  triggerOnChange = (option: Option) => {
+    const { onChange, selected } = this.props;
+
+    if (option !== selected) {
+      onChange(option);
+    }
+
+    this.toggleIsOpen();
+  };
+
   render() {
-    const { options, selected } = this.props;
+    const { options, selected, placeholder } = this.props;
     const { isOpen } = this.state;
 
     return (
-      <DropdownContainer
-        onClickAway={this.handleClickAway}
-        active={isOpen}
-        onClick={this.toggleIsOpen}
-      >
-        <DropdownSelectedItem dropdownOpen={isOpen}>
-          <span>{selected.label}</span>
+      <DropdownContainer onClickAway={this.handleClickAway} active={isOpen}>
+        <DropdownSelectedItem onClick={this.toggleIsOpen} dropdownOpen={isOpen}>
+          <span>{selected ? selected.label : placeholder}</span>
           <DropdownIconWrapper active={isOpen}>
             <Icon size={24} name="arrow-drop-down" />
           </DropdownIconWrapper>
         </DropdownSelectedItem>
         {isOpen && (
           <DropdownMenu>
-            {options.map(({ label, value }) => (
+            {options.map((option) => (
               <DropdownItem
-                key={value}
-                onClick={() => this.onDropdownItemClicked(value)}
+                key={option.value}
+                onClick={() => this.triggerOnChange(option)}
               >
-                {label}
+                {option.label}
               </DropdownItem>
             ))}
           </DropdownMenu>
@@ -134,13 +148,3 @@ export class SelectDropdown extends React.Component {
     );
   }
 }
-
-SelectDropdown.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  selected: PropTypes.shape().isRequired,
-  onChange: PropTypes.func
-};
-
-SelectDropdown.defaultProps = {
-  onChange: () => {}
-};
