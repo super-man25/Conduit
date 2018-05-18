@@ -6,7 +6,7 @@ export const DropdownMenuItem = styled.span`
   position: relative;
   float: ${(props) => (props.right ? 'right' : props.left ? 'left' : 'none')};
   margin: 0;
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 13px;
   font-weight: lighter;
   line-height: 40px;

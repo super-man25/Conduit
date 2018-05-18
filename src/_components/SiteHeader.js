@@ -31,7 +31,9 @@ export const DropdownMenuWrapper = styled.div`
   right: 0;
   top: 75px;
   padding: 15px;
+  margin-right: 15px;
   background: ${cssConstants.SECONDARY_LIGHT_BLUE};
+  box-shadow: 5px 10px 18px ${cssConstants.PRIMARY_LIGHT_GRAY};
   ::after,
   ::before {
     bottom: 100%;
@@ -46,14 +48,14 @@ export const DropdownMenuWrapper = styled.div`
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: ${cssConstants.SECONDARY_LIGHT_BLUE};
     border-width: 19px;
-    left: 70%;
+    left: 80%;
     margin-left: -19px;
   }
   ::before {
     border-color: rgba(113, 158, 206, 0);
     border-bottom-color: #719ece;
     border-width: 20px;
-    left: 70%;
+    left: 80%;
     margin-left: -20px;
   }
 `;
@@ -129,7 +131,7 @@ export class SiteHeaderPresenter extends React.Component {
                 onClick={this.handleLogoutClick}
               >
                 Logout
-                <Spacing right padding="0 0 0 30px" display="inline-block">
+                <Spacing right padding="0 0 0 40px" display="inline-block">
                   <Icon name="logout" size={24} color="white" />
                 </Spacing>
               </DropdownMenuItem>
