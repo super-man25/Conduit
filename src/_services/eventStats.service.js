@@ -1,49 +1,23 @@
+// @flow
 import { normalize } from './eventStats.normalize';
-import { subDays, addDays, isFuture, addHours, isAfter } from 'date-fns';
-// import { get } from '../_helpers/api';
+import { get } from '../_helpers/api';
+import { toScalaDate } from '_helpers';
 
-function mockGetAll() {
-  let id = 0;
-  let inventory = 15000;
-  let revenue = 0;
-  let curr = subDays(new Date(), 40);
-  const end = addDays(new Date(), 40);
-
-  const data = [];
-
-  while (!isAfter(curr, end)) {
-    data.push({
-      id: id++,
-      eventId: id++,
-      date: curr,
-      createdAt: new Date(),
-      modifiedAt: new Date(),
-      inventory: (inventory -= Math.floor(Math.random() * 10)),
-      revenue: (revenue += Math.floor(Math.random() * 1000)),
-      isProjected: isFuture(curr)
-    });
-
-    curr = addHours(curr, 1);
-  }
-
-  return Promise.resolve(data);
-}
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+type EventTimeStatsParams = {
+  eventId: number,
+  startTime?: string,
+  endTime?: string
+};
 
 // start/end/eventId will be used when service is built
-function getAll(/* start, end, eventId */) {
-  return delay(1000).then(() =>
-    mockGetAll().then((data) => data.map(normalize))
-  );
+function getAll(eventId: number = 1, start: ?Date, end: ?Date) {
+  let params: EventTimeStatsParams = { eventId };
+  if (start) params.startTime = toScalaDate(start);
+  if (end) params.endTime = toScalaDate(end);
 
-  // return get('eventTimeStats', { start, end, eventId }).then((data) =>
-  //   data.map(normalize)
-  // );
+  return get('eventTimeStats', params).then((data) => data.map(normalize));
 }
 
-export const eventStatsService = {
+export const eventStatService = {
   getAll
 };

@@ -5,25 +5,15 @@
  * @return {Object} normalized eventTimeStat
  */
 export function normalize(rawEvent) {
-  const {
-    id,
-    createdAt,
-    modifiedAt,
-    date,
-    inventory,
-    revenue,
-    isProjected,
-    eventId
-  } = rawEvent;
+  const { eventId, id, inventory, revenue, isProjected, timestamp } = rawEvent;
 
   return {
+    eventId,
     id,
-    createdAt,
-    modifiedAt,
-    date: date ? new Date(date) : date,
     inventory,
     revenue,
     isProjected,
-    eventId
+    date: timestamp ? new Date(timestamp) : timestamp,
+    timestamp: timestamp
   };
 }

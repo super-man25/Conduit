@@ -8,7 +8,7 @@ const data = ['Mets', 'Rangers', 'Athletics'];
 it('renders correctly', () => {
   const tree = renderer
     .create(
-      <ScrollableList data={data}>
+      <ScrollableList data={data} scrollIndex={-1}>
         {(item, index) => <div key={index}>{item}</div>}
       </ScrollableList>
     )
@@ -17,12 +17,14 @@ it('renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with scrollTo', () => {
+it('renders correctly with scrollIndex', () => {
   const tree = renderer
     .create(
-      <ScrollableList data={data} scrollTo={1}>
-        {(item, index) => <div key={index}>{item}</div>}
-      </ScrollableList>
+      <div>
+        <ScrollableList data={data} scrollIndex={-1}>
+          {(item, index) => <div key={index}>{item}</div>}
+        </ScrollableList>
+      </div>
     )
     .toJSON();
 

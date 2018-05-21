@@ -2,18 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="sc-hmzhuo jkCyOb"
+  className="sc-hqyNC dNhtkt"
 >
   <div
-    className="sc-frDJqD cgGldK"
+    className="sc-jbKcbu dZzjQz"
     width={20}
   />
   <div
-    className="sc-frDJqD hpXYyJ"
+    className="sc-jbKcbu bOEeIm"
     width={30}
   />
   <div
-    className="sc-frDJqD khhMiC"
+    className="sc-jbKcbu eFNciW"
     width={50}
   />
 </div>

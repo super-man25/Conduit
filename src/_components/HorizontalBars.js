@@ -1,6 +1,7 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { scaleToRight } from './keyframes';
 import { cssConstants } from '_constants';
 
@@ -29,7 +30,12 @@ HorizontalBar.defaultProps = {
   backgroundColor: cssConstants.PRIMARY_DARK_BLUE
 };
 
-export const HorizontalBars = ({ data, colors }) => {
+type HorizontalBarProps = {
+  data: number[],
+  colors: number[]
+};
+
+export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
   const sum = data.reduce((acc, value) => acc + value, 0);
 
   return (
@@ -43,11 +49,6 @@ export const HorizontalBars = ({ data, colors }) => {
       ))}
     </BarContainer>
   );
-};
-
-HorizontalBars.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.number).isRequired,
-  colors: PropTypes.arrayOf(PropTypes.string)
 };
 
 HorizontalBar.defaultProps = {

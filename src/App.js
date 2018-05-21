@@ -1,19 +1,17 @@
-import React from 'react';
+import { AlertProvider } from '_components';
+import { history } from '_helpers';
+import { secured, unsecured } from '_hoc/secured';
+import { User as UserModel } from '_models';
+import CreateUser from '_scenes/CreateUser';
+import Dashboard from '_scenes/Dashboard';
+import Login from '_scenes/Login';
+import Settings from '_scenes/Settings';
+import { actions as authActions } from '_state/auth';
 import PropTypes from 'prop-types';
-import { Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Route, Router, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { actions as authActions } from './state/auth';
-import { User as UserModel } from './_models';
-
-import CreateUser from './scenes/CreateUser';
-import Dashboard from './scenes/Dashboard';
-import Login from './scenes/Login';
-import Settings from './scenes/Settings';
-
-import { history } from './_helpers';
-import { AlertProvider } from './_components';
-import { secured, unsecured } from './_hoc/secured';
 
 class App extends React.Component {
   componentDidMount() {
@@ -48,8 +46,8 @@ App.propTypes = {
   }),
 
   authState: PropTypes.shape({
-    model: UserModel, // eslint-disable-line
-    loading: PropTypes.bool.isRequired // eslint-disable-line
+    model: UserModel,
+    loading: PropTypes.bool.isRequired
   })
 };
 

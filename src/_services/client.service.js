@@ -1,5 +1,5 @@
-import { baseURL } from '../_constants';
-import { store } from '../state/store';
+import { baseURL } from '_constants';
+import { store } from '_state/store';
 
 const API = {
   getURL: `${baseURL}/clients`, // - method GET
