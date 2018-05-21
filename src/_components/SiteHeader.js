@@ -31,7 +31,10 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
   padding: 15px;
   margin-right: 15px;
   background: ${cssConstants.SECONDARY_LIGHT_BLUE};
-  box-shadow: 5px 10px 18px ${cssConstants.PRIMARY_LIGHT_GRAY};
+  box-shadow: 5px 10px 20px ${cssConstants.PRIMARY_DARK_GRAY};
+  -webkit-box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
+  -moz-box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
+  box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
   ::after,
   ::before {
     bottom: 100%;
