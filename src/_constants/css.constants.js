@@ -49,4 +49,4 @@ export const shadows = {
 
 export const zIndexes = {
   BASE: '1000'
-}
+};
