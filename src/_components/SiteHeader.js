@@ -24,17 +24,14 @@ export const SiteHeaderDiv = styled.div`
 
 export const DropdownMenuWrapper = withClickAway(styled.div`
   width: 130px;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   right: 0;
   top: 75px;
   padding: 15px;
   margin-right: 15px;
   background: ${cssConstants.SECONDARY_LIGHT_BLUE};
-  box-shadow: 5px 10px 20px ${cssConstants.PRIMARY_DARK_GRAY};
-  -webkit-box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
-  -moz-box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
-  box-shadow: 3px 3px 12px 0px ${cssConstants.PRIMARY_DARK_GRAY};
+  box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.5);
   ::after,
   ::before {
     bottom: 100%;
@@ -54,7 +51,7 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
   }
   ::before {
     border-color: rgba(113, 158, 206, 0);
-    border-bottom-color: #719ece;
+    border-bottom-color: ${cssConstants.SECONDARY_LIGHT_BLUE};;
     border-width: 20px;
     left: 80%;
     margin-left: -20px;
@@ -76,9 +73,7 @@ export class SiteHeaderPresenter extends React.Component {
   };
 
   closeMenu = (event) => {
-    if (this.dropdownMenu && !this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false });
-    }
+    this.setState({ showMenu: false });
   };
 
   handleSettingsClick = () => {
