@@ -112,10 +112,14 @@ export class SiteHeaderPresenter extends React.Component {
                 this.dropdownMenu = element;
               }}
             >
-              <DropdownMenuItem onClick={this.handleSettingsClick}>
+              <DropdownMenuItem
+                id="settings"
+                onClick={this.handleSettingsClick}
+              >
                 Settings
               </DropdownMenuItem>
               <DropdownMenuItem
+                id="logout"
                 data-test-id="logout-button"
                 to="/logout"
                 onClick={this.handleLogoutClick}
