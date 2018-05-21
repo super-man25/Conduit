@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withClickAway } from '_hoc';
-import { cssConstants } from '_constants';
+import { cssConstants, zIndexes } from '_constants';
 import {
   LogoName,
   UserWelcome,
@@ -25,7 +25,7 @@ export const SiteHeaderDiv = styled.div`
 export const DropdownMenuWrapper = withClickAway(styled.div`
   width: 130px;
   position: absolute;
-  z-index: 1000;
+  z-index: ${zIndexes.BASE};
   right: 0;
   top: 75px;
   padding: 15px;

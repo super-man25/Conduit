@@ -46,3 +46,7 @@ export const cssConstants = {
 export const shadows = {
   SHADOW_PRIMARY: '0 1px 1px 0 #BBBBBB, 0 2px 4px 0 rgba(0,0,0,0.5);'
 };
+
+export const zIndexes = {
+  BASE: '1000'
+}
