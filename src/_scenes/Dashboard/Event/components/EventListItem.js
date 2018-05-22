@@ -61,7 +61,12 @@ export const EventListItem = (props) => {
   const past = isPast(event.timestamp);
 
   return (
-    <Container onClick={() => onClick(event)} active={active} past={past}>
+    <Container
+      onClick={() => onClick(event)}
+      active={active}
+      past={past}
+      data-test-id="event-list-card"
+    >
       <FlexItem flex={4}>
         <Flex direction="row" justify="space-between">
           <P2 color={cssConstants.PRIMARY_GRAY}>
