@@ -2,44 +2,44 @@
 
 exports[`renders correctly with collapse prop 1`] = `
 <button
-  className="sc-bwzfXH cqQrNb"
+  className="sc-bwzfXH jCmPqI"
 />
 `;
 
 exports[`renders correctly with disabled prop 1`] = `
 <button
-  className="sc-bwzfXH fxhIar"
+  className="sc-bwzfXH MRQQs"
   disabled={true}
 />
 `;
 
 exports[`renders correctly with expand prop 1`] = `
 <button
-  className="sc-bwzfXH jCSSmV"
+  className="sc-bwzfXH bzTgZQ"
 />
 `;
 
 exports[`renders correctly with hidden prop 1`] = `
 <button
-  className="sc-bwzfXH dDWPnY"
+  className="sc-bwzfXH jKNZC"
   hidden={true}
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 <button
-  className="sc-bwzfXH fRwFix"
+  className="sc-bwzfXH iXKwGU"
 />
 `;
 
 exports[`renders correctly with secondary prop 1`] = `
 <button
-  className="sc-bwzfXH hrizdo"
+  className="sc-bwzfXH bfoTQe"
 />
 `;
 
 exports[`renders correctly with small prop 1`] = `
 <button
-  className="sc-bwzfXH vFvYX"
+  className="sc-bwzfXH glNthc"
 />
 `;

@@ -18,9 +18,20 @@ import {
 import { cssConstants } from '_constants';
 import { LineSeriesChart } from './LineSeriesChart';
 import { RevenueBreakdown } from './RevenueBreakdown';
+import { ChartTooltip } from './ChartTooltip';
+import { format, differenceInCalendarDays } from 'date-fns';
+import { formatUSD } from '_helpers/string-utils';
 import type { EventStatState } from '_state/eventStats/reducer';
 import type { EventStatChartData } from '_state/eventStats/selectors';
+import type { ChartPoint } from '_helpers/chart-utils';
 import typeof EventStatActions from '_state/eventStats/actions';
+
+const CHART_HEIGHT = 400;
+
+const DATE_FORMATS = {
+  time: 'MMM DD, YYYY hh:mm a',
+  day: 'MMM DD, YYYY'
+};
 
 const ChartContainer = styled.div`
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
@@ -54,6 +65,39 @@ const DateFilterOptions = styled.div`
   }
 `;
 
+function formatRevenueTooltip(
+  data: ChartPoint,
+  type: 'ACTUAL' | 'PROJECTED',
+  dateFormat: string
+): { title: string, bodyTitle: string, bodyText: string } {
+  const title = format(data.x, dateFormat);
+  const bodyTitle = type === 'ACTUAL' ? 'Total Revenue' : 'Projected Revenue';
+  const bodyText = formatUSD(data.y);
+
+  return {
+    title,
+    bodyTitle,
+    bodyText
+  };
+}
+
+function formatInventoryTooltip(
+  data: ChartPoint,
+  type: 'ACTUAL' | 'PROJECTED',
+  dateFormat: string
+): { title: string, bodyTitle: string, bodyText: string } {
+  const title = format(data.x, dateFormat);
+  const bodyTitle =
+    type === 'ACTUAL' ? 'Total Inventory' : 'Projected Inventory';
+  const bodyText = '' + data.y;
+
+  return {
+    title,
+    bodyTitle,
+    bodyText
+  };
+}
+
 type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
@@ -62,6 +106,12 @@ type Props = {
   },
   eventStatActions: EventStatActions
 };
+
+const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
+  <Flex justify="center" align="center" height={`${CHART_HEIGHT}px`}>
+    No {type} Data to Display
+  </Flex>
+);
 
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
@@ -75,6 +125,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         groupFilters,
         dateRange: { from, to },
         eventDateLimits,
+        eventStats,
         selectedGroupFilter
       },
       eventStatsSelectors: {
@@ -82,6 +133,11 @@ export class SeasonRevenuePanel extends React.Component<Props> {
       },
       eventStatActions: { setDateRange, setGroupFilter }
     } = this.props;
+
+    const tooltipDateFormat =
+      from && to && differenceInCalendarDays(to, from) <= 7
+        ? DATE_FORMATS.time
+        : DATE_FORMATS.day;
 
     return (
       <Tabbable>
@@ -165,19 +221,39 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                 <ChartContainer>
                   {selectedTab === 0 && (
                     <LineSeriesChart
-                      height={400}
+                      height={CHART_HEIGHT}
                       data={revenue}
                       xAxisLabel="Date"
                       yAxisLabel="Revenue"
+                      renderTooltip={({ value, type }) => (
+                        <ChartTooltip
+                          {...formatRevenueTooltip(
+                            value,
+                            type,
+                            tooltipDateFormat
+                          )}
+                        />
+                      )}
+                      renderNoData={() => <NoData type="Revenue" />}
                     />
                   )}
 
                   {selectedTab === 1 && (
                     <LineSeriesChart
-                      height={400}
+                      height={CHART_HEIGHT}
                       data={inventory}
                       xAxisLabel="Date"
                       yAxisLabel="Inventory"
+                      renderTooltip={({ value, type }) => (
+                        <ChartTooltip
+                          {...formatInventoryTooltip(
+                            value,
+                            type,
+                            tooltipDateFormat
+                          )}
+                        />
+                      )}
+                      renderNoData={() => <NoData type="Inventory" />}
                     />
                   )}
                 </ChartContainer>

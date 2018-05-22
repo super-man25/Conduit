@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CenteredContainer /> renders correctly 1`] = `
+<div
+  className="sc-gxMtzJ fqgGib"
+/>
+`;
+
+exports[`<CenteredContainer /> renders correctly with maxWidth 1`] = `
+<div
+  className="sc-gxMtzJ bIMlLH"
+/>
+`;

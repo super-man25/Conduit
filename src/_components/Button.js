@@ -1,14 +1,25 @@
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '../_constants';
 
-export const Button = styled.button`
+type Props = {
+  hidden: boolean,
+  secondary: boolean,
+  disabled: boolean,
+  collapse: boolean,
+  expand: boolean,
+  small: boolean
+};
+
+export const Button: React.ComponentType<Props> = styled.button`
   display: ${(props) => (props.hidden ? 'none' : 'block')};
   color: ${(props) =>
     !props.secondary
       ? cssConstants.PRIMARY_WHITE
       : props.disabled
         ? cssConstants.PRIMARY_WHITE
-        : cssConstants.PRIMARY_LIGHT_BLUE}; 
+        : cssConstants.PRIMARY_LIGHT_BLUE};
   font-size: ${(props) => (props.collapse || props.expand ? '16px' : '0.8em')};
   font-weight: 200;
   float: ${(props) =>

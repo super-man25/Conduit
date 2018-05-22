@@ -7,10 +7,10 @@ import {
   differenceInCalendarDays
 } from 'date-fns';
 
-type Point = { x: Date, y: number };
+export type ChartPoint = { x: Date, y: number };
 
 type DataSet = {
-  [string]: Array<Point>
+  [string]: Array<ChartPoint>
 };
 
 type TickProps = {
@@ -22,7 +22,7 @@ export function dayFormat(t: Date): string {
   return format(new Date(t), 'MM/DD');
 }
 
-export function timeFormat(t: Date): string {
+export function dayTimeFormat(t: Date): string {
   return format(new Date(t), 'MM/DD HH:MM');
 }
 
@@ -53,7 +53,7 @@ export function getAxisTickOptions(dataset: DataSet = {}): TickProps {
   if (totalDays <= 1) {
     return {
       tickTotal: Math.min(differenceInHours(lastDay, firstDay), 6),
-      tickFormat: timeFormat
+      tickFormat: dayTimeFormat
     };
   } else if (totalDays) {
     return {
@@ -61,6 +61,9 @@ export function getAxisTickOptions(dataset: DataSet = {}): TickProps {
       tickFormat: dayFormat
     };
   }
+
+  // Fallback
+  return { tickTotal: 10, tickFormat: dayFormat };
 }
 
 export function getChartRange(dataset: DataSet = {}): [number, number] {
