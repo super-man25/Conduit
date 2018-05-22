@@ -64,10 +64,10 @@ class Dashboard extends React.Component {
 
   render() {
     const { sidebarCollapsed } = this.state;
-    const { teamStatState } = this.props;
+    const { teamStatState, authState } = this.props;
     return (
       <PageWrapper>
-        <SiteHeader />
+        <SiteHeader auth={authState.model} />
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
@@ -102,7 +102,8 @@ Dashboard.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    teamStatState: state.teamStat
+    teamStatState: state.teamStat,
+    authState: state.auth
   };
 }
 

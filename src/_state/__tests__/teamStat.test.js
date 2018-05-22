@@ -1,6 +1,5 @@
 import { teamStatService } from '_services';
-import { delay } from 'redux-saga';
-import { call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
 import { actions, reducer } from '_state/teamStat';
 import {

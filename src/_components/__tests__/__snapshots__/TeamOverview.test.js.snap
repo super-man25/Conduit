@@ -2,7 +2,7 @@
 
 exports[`renders correctly with props 1`] = `
 <div
-  className="sc-kgAjT dptCsA"
+  className="sc-cJSrbW fQmHam"
 >
   <div
     className="sc-kGXeez kJeZmt"
@@ -12,7 +12,7 @@ exports[`renders correctly with props 1`] = `
       className="sc-kpOJdX cFoARy"
     >
       <h4
-        className="sc-cJSrbW ivjXeI"
+        className="sc-ksYbfQ ZEHVB"
       >
          Team Overview 
       </h4>
@@ -34,7 +34,7 @@ exports[`renders correctly with props 1`] = `
       className="sc-kpOJdX cFoARy"
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="sc-hmzhuo elVuTL"
       >
         0.909
       </h3>
@@ -50,7 +50,7 @@ exports[`renders correctly with props 1`] = `
       className="sc-kpOJdX cJUGvc"
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="sc-hmzhuo elVuTL"
       >
         -10
       </h3>
@@ -68,7 +68,7 @@ exports[`renders correctly with props 1`] = `
 
 exports[`renders correctly with toggledSidebar 1`] = `
 <div
-  className="sc-kgAjT dptCsA"
+  className="sc-cJSrbW fQmHam"
 >
   <div
     className="sc-kGXeez kJeZmt"
@@ -78,7 +78,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className="sc-kpOJdX cFoARy"
     >
       <h4
-        className="sc-cJSrbW ivjXeI"
+        className="sc-ksYbfQ ZEHVB"
       >
          Team Overview 
       </h4>
@@ -100,7 +100,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className="sc-kpOJdX cFoARy"
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="sc-hmzhuo elVuTL"
       >
         0.909
       </h3>
@@ -116,7 +116,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className="sc-kpOJdX cJUGvc"
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="sc-hmzhuo elVuTL"
       >
         -10
       </h3>

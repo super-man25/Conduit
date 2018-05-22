@@ -45,3 +45,4 @@ export * from './ChipButton';
 export * from './CustomAxisLabel';
 export * from './DateRangeDropdown';
 export * from './CenteredContainer';
+export * from './DropdownMenuItem';

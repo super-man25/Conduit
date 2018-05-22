@@ -3,20 +3,20 @@
 exports[`<DateRangeDropdown /> renders correctly 1`] = `
 <div>
   <div
-    className="sc-lhVmIH ciGXdJ"
+    className="sc-bYSBpT llAgQU"
   >
     <div
-      className="sc-btzYZH hVwSrB"
+      className="sc-lhVmIH gXCaEr"
       onClick={[Function]}
     >
       <div
-        className="sc-elJkPf hSLQfS"
+        className="sc-jtRfpW bYOFHi"
       >
         <span>
           04/17/2018
         </span>
         <span
-          className="sc-jtRfpW biYDvI"
+          className="sc-kTUwUJ koYIBY"
         >
           <svg
             className="sc-kgoBCf ilnGdb"
@@ -32,17 +32,17 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-btzYZH hVwSrB"
+      className="sc-lhVmIH gXCaEr"
       onClick={[Function]}
     >
       <div
-        className="sc-elJkPf hSLQfS"
+        className="sc-jtRfpW bYOFHi"
       >
         <span>
           04/20/2018
         </span>
         <span
-          className="sc-jtRfpW biYDvI"
+          className="sc-kTUwUJ koYIBY"
         >
           <svg
             className="sc-kgoBCf ilnGdb"

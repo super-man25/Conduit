@@ -1,11 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import configureStore from 'redux-mock-store';
 import { SiteHeaderPresenter, UserWelcome } from '_components/';
+import authActions from '_state/auth/actions';
+import { SiteHeader } from '..';
 
 const authState = { model: { id: 1, firstName: 'root', lastName: 'root' } };
 
 describe('<SiteHeaderPresenter />', () => {
+  const middlewares = [];
+  const mockStore = configureStore(middlewares);
+  const logoutRequest = () => ({ type: 'auth/SIGN_OUT_ASYNC' }); // update this to use appropriate constant
+
   it('SiteHeaderPresenter renders correctly with no props', () => {
     const tree = renderer
       .create(<SiteHeaderPresenter authState={authState} />)
