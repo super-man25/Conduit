@@ -1,9 +1,8 @@
 // @flow
-import React from 'react';
-import type { ComponentType } from 'react';
+import * as React from 'react';
 import styled, { css } from 'styled-components';
 import DayPicker from 'react-day-picker';
-import { format } from 'date-fns';
+import { format, isSameDay } from 'date-fns';
 import 'react-day-picker/lib/style.css';
 
 import { withClickAway } from '_hoc';
@@ -11,7 +10,7 @@ import { Icon } from '_components';
 import { cssConstants } from '_constants';
 import { fadeIn } from './keyframes';
 
-const DateRangeInput: ComponentType<{ active: boolean }> = styled.div`
+const DateRangeInput: React.ComponentType<{ active: boolean }> = styled.div`
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -35,7 +34,7 @@ const DateRangeInput: ComponentType<{ active: boolean }> = styled.div`
   }
 `;
 
-const DateRangeDropdownContainer: ComponentType<{}> = styled.div`
+const DateRangeDropdownContainer: React.ComponentType<{}> = styled.div`
   display: inline-flex;
   cursor: pointer;
   text-align: left;
@@ -55,7 +54,7 @@ const DateRangeDropdownContainer: ComponentType<{}> = styled.div`
 
 const ClickAwayDropdownContainer = withClickAway(DateRangeDropdownContainer);
 
-const DateRangeLabel: ComponentType<{}> = styled.span`
+const DateRangeLabel: React.ComponentType<{}> = styled.span`
   color: ${cssConstants.PRIMARY_GRAY};
   font-size: 12px;
   position: absolute;
@@ -63,7 +62,7 @@ const DateRangeLabel: ComponentType<{}> = styled.span`
   left: 24px;
 `;
 
-const DropdownSelectedItem: ComponentType<{
+const DropdownSelectedItem: React.ComponentType<{
   dropdownOpen: boolean
 }> = styled.div`
   display: flex;
@@ -75,12 +74,12 @@ const DropdownSelectedItem: ComponentType<{
       props.dropdownOpen ? cssConstants.PRIMARY_LIGHT_GRAY : 'transparent'};
 `;
 
-const DropdownIconWrapper: ComponentType<{}> = styled.span`
+const DropdownIconWrapper: React.ComponentType<{}> = styled.span`
   transition: transform ease-out 0.2s;
   transform: ${(props) => (props.active ? 'rotate(180deg)' : 'rotate(0)')};
 `;
 
-const DropdownMenu: ComponentType<{}> = styled.div`
+const DropdownMenu: React.ComponentType<{}> = styled.div`
   list-style: none;
   padding: 12px 0 0;
   margin: 0;
@@ -106,7 +105,7 @@ DropdownMenu.displayName = 'DropdownMenu';
 type Props = {
   to: Date,
   from: Date,
-  onChange: ({ from: Date, to: Date }) => void,
+  onChange: ({ from: ?Date, to: ?Date }) => void,
   disabledDays: { after: Date, before: Date },
   startPlaceholder: string,
   endPlaceholder: string,
@@ -155,23 +154,31 @@ export class DateRangeDropdown extends React.Component<Props, State> {
   }
 
   handleFromChange = (fromDay: Date, modifiers: { disabled: boolean }) => {
-    const { onChange, to } = this.props;
+    const { onChange, to, from } = this.props;
 
     if (modifiers.disabled) {
       return;
     }
 
-    onChange({ from: fromDay, to });
+    if (isSameDay(fromDay, from)) {
+      onChange({ from: null, to: to });
+    } else {
+      onChange({ from: fromDay, to });
+    }
   };
 
   handleToChange = (toDay: Date, modifiers: { disabled: boolean }) => {
-    const { onChange, from } = this.props;
+    const { onChange, from, to } = this.props;
 
     if (modifiers.disabled) {
       return;
     }
 
-    onChange({ from, to: toDay });
+    if (isSameDay(toDay, to)) {
+      onChange({ from, to: null });
+    } else {
+      onChange({ from, to: toDay });
+    }
   };
 
   openFromInput = () => {

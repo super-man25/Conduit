@@ -21,7 +21,7 @@ exports[`renders correctly with props 1`] = `
       className="sc-kpOJdX cJUGvc"
     >
       <button
-        className="sc-bwzfXH cqQrNb"
+        className="sc-bwzfXH jCmPqI"
         onClick={undefined}
       />
     </div>
@@ -87,7 +87,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className="sc-kpOJdX cJUGvc"
     >
       <button
-        className="sc-bwzfXH cqQrNb"
+        className="sc-bwzfXH jCmPqI"
         onClick=""
       />
     </div>

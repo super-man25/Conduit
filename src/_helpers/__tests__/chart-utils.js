@@ -1,10 +1,10 @@
 import {
   getAxisTickOptions,
   dayFormat,
-  timeFormat,
+  dayTimeFormat,
   getChartRange
 } from '../chart-utils';
-import { addDays, subDays, startOfDay, endOfDay } from 'date-fns';
+import { addDays, subDays, startOfDay, endOfDay, format } from 'date-fns';
 
 describe('getAxisTickOptions', () => {
   it('should return a sane default', () => {
@@ -57,7 +57,7 @@ describe('getAxisTickOptions', () => {
 
     expect(getAxisTickOptions(dataset)).toEqual({
       tickTotal: 6,
-      tickFormat: timeFormat
+      tickFormat: dayTimeFormat
     });
   });
 
@@ -81,6 +81,20 @@ describe('getAxisTickOptions', () => {
       tickTotal: 31,
       tickFormat: dayFormat
     });
+  });
+});
+
+describe('dayFormat', () => {
+  it('should return a date formatted as MM/DD', () => {
+    const d = new Date('2018-04-17T19:28:43+00:00');
+    expect(dayFormat(d)).toEqual(format(d, 'MM/DD'));
+  });
+});
+
+describe('timeFormat', () => {
+  it('should return a date formatted as MM/DD HH:MM', () => {
+    const d = new Date('2018-04-17T19:28:43+00:00');
+    expect(dayTimeFormat(d)).toEqual(format(d, 'MM/DD HH:MM'));
   });
 });
 
