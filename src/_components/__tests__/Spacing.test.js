@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-
 import { Spacing } from '_components/Spacing';
 
 it('renders with no props', () => {

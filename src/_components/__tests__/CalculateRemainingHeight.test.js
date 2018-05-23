@@ -2,7 +2,6 @@ import React from 'react';
 import { CalculateRemainingHeight } from '_components/CalculateRemainingHeight';
 import renderer from 'react-test-renderer';
 
-
 function createNodeMock() {
   return {
     clientHeight: 100

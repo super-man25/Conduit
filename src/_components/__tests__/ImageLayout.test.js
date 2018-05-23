@@ -2,7 +2,6 @@ import React from 'react';
 import { ImageLayout } from '_components/ImageLayout';
 import renderer from 'react-test-renderer';
 
-
 it('renders correctly', () => {
   const tree = renderer.create(<ImageLayout imageSrc="url(test)" />).toJSON();
 

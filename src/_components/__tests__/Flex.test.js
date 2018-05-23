@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Flex, FlexItem } from '_components/Flex';
 
-
 describe('Flex', () => {
   it('renders correcly', () => {
     const tree = renderer

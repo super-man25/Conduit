@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollableList } from '_components/ScrollableList';
 import renderer from 'react-test-renderer';
 
-
 const data = ['Mets', 'Rangers', 'Athletics'];
 
 it('renders correctly', () => {

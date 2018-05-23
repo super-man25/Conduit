@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-
 import { Loader } from '_components/Loader';
 
 it('should render default', () => {
