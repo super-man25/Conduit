@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Icon } from './Icon';
-import 'jest-styled-components';
+
 
 it('renders with a name', () => {
   const tree = renderer

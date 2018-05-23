@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollableList } from '_components/ScrollableList';
 import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+
 
 const data = ['Mets', 'Rangers', 'Athletics'];
 

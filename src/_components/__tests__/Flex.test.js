@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Flex, FlexItem } from '_components/Flex';
-import 'jest-styled-components';
+
 
 describe('Flex', () => {
   it('renders correcly', () => {
