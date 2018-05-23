@@ -1,25 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with inValid prop 1`] = `
+.c0 {
+  position: relative;
+  width: 35%;
+  height: 40px;
+  border: 2px solid;
+  border-color: #DC0A0A;
+  border-radius: 3px;
+  color: #323232;
+  font-size: 15.7px;
+  font-family: 'Roboto';
+  margin: 0;
+  margin-left: 0;
+  padding: 0;
+  padding-right: 35%;
+  background: #FFFFFF;
+}
+
 <select
-  className="sc-jDwBTQ cudbNf"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  position: relative;
+  width: 35%;
+  height: 40px;
+  border: 2px solid;
+  border-color: #767676;
+  border-radius: 3px;
+  color: #323232;
+  font-size: 15.7px;
+  font-family: 'Roboto';
+  margin: 0;
+  margin-left: 0;
+  padding: 0;
+  padding-right: 35%;
+  background: #FFFFFF;
+}
+
 <select
-  className="sc-jDwBTQ gOnHZx"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with noBg prop 1`] = `
+.c0 {
+  position: relative;
+  width: 35%;
+  height: 40px;
+  border: none;
+  border-color: #767676;
+  border-radius: 3px;
+  color: #38A9DB;
+  font-size: 15.7px;
+  font-family: 'Roboto';
+  margin: 0;
+  margin-left: -6px;
+  padding: 0;
+  padding-right: 35%;
+  background: transparent;
+}
+
+.c0:focus {
+  outline: 0;
+}
+
 <select
-  className="sc-jDwBTQ hQuQSp"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with valid prop 1`] = `
+.c0 {
+  position: relative;
+  width: 35%;
+  height: 40px;
+  border: 2px solid;
+  border-color: #399E5A;
+  border-radius: 3px;
+  color: #323232;
+  font-size: 15.7px;
+  font-family: 'Roboto';
+  margin: 0;
+  margin-left: 0;
+  padding: 0;
+  padding-right: 35%;
+  background: #FFFFFF;
+}
+
 <select
-  className="sc-jDwBTQ fxrJcM"
+  className="c0"
 />
 `;

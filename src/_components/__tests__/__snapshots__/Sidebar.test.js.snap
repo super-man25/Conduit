@@ -1,13 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with collapsed prop 1`] = `
+.c0 {
+  width: 36%;
+  max-width: 500px;
+  min-width: 380px;
+  visibility: visible;
+  border-right: 1px solid #D1D1D1;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  overflow: hidden;
+  -webkit-transform: translate3d(-100%,0,0);
+  -ms-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+  width: 0;
+  max-width: 0;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
 <div
-  className="sc-bRBYWo dSCqvJ"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  width: 36%;
+  max-width: 500px;
+  min-width: 380px;
+  visibility: visible;
+  border-right: 1px solid #D1D1D1;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
+
 <div
-  className="sc-bRBYWo cfDaah"
+  className="c0"
 />
 `;

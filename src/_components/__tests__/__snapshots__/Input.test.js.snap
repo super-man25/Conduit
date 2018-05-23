@@ -1,26 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with disabled prop 1`] = `
+.c0 {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #D1D1D1;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 13.5px;
+  font-weight: 200;
+  width: 96%;
+  padding-left: 3%;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #767676;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.c0:-webkit-autofill,
+.c0 -webkit-autofill:hover,
+.c0 -webkit-autofill:focus {
+  -webkit-animation-name: none;
+  -webkit-animation-fill-mode: both;
+}
+
 <input
-  className="sc-kEYyzF bdKYpI"
+  className="c0"
   disabled={true}
 />
 `;
 
 exports[`renders correctly with inValid prop 1`] = `
+.c0 {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #FFFFFF;
+  background-image: url(invalid.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 13.5px;
+  font-weight: 200;
+  width: 96%;
+  padding-left: 3%;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #DC0A0A;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.c0:-webkit-autofill,
+.c0 -webkit-autofill:hover,
+.c0 -webkit-autofill:focus {
+  -webkit-animation-name: beEagS;
+  -webkit-animation-fill-mode: both;
+}
+
 <input
-  className="sc-kEYyzF idBrhT"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #FFFFFF;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 13.5px;
+  font-weight: 200;
+  width: 96%;
+  padding-left: 3%;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #767676;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.c0:-webkit-autofill,
+.c0 -webkit-autofill:hover,
+.c0 -webkit-autofill:focus {
+  -webkit-animation-name: none;
+  -webkit-animation-fill-mode: both;
+}
+
 <input
-  className="sc-kEYyzF fMpxOL"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with valid prop 1`] = `
+.c0 {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #FFFFFF;
+  background-image: url(valid.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 13.5px;
+  font-weight: 200;
+  width: 96%;
+  padding-left: 3%;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #399E5A;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.c0:-webkit-autofill,
+.c0 -webkit-autofill:hover,
+.c0 -webkit-autofill:focus {
+  -webkit-animation-name: fbmvYu;
+  -webkit-animation-fill-mode: both;
+}
+
 <input
-  className="sc-kEYyzF crifQZ"
+  className="c0"
 />
 `;

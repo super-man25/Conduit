@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CustomAxisLabel /> renders correctly as the yAxis 1`] = `
+.c0 {
+  font-size: 12px;
+  color: #323232;
+}
+
 <g
   transform="translate(50, 112.99999999999999)"
 >
   <text
-    className="sc-btzYZH khMJGf"
+    className="c0"
   >
     X Axis
   </text>
@@ -13,11 +18,16 @@ exports[`<CustomAxisLabel /> renders correctly as the yAxis 1`] = `
 `;
 
 exports[`<CustomAxisLabel /> renders correctly with no props 1`] = `
+.c0 {
+  font-size: 12px;
+  color: #323232;
+}
+
 <g
   transform="translate(0, 68) rotate(-90)"
 >
   <text
-    className="sc-btzYZH khMJGf"
+    className="c0"
   >
     Y Axis
   </text>

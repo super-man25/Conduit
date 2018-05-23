@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c0 {
+  height: 100%;
+  width: 38px;
+  float: right;
+  padding: 0;
+  margin: 0;
+  margin-right: 28px;
+  background: none;
+  background-image: url(sprocket.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 <div
-  className="sc-gisBJw haUJhk"
+  className="c0"
 />
 `;
