@@ -1,21 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SiteHeaderPresenter /> SiteHeaderPresenter renders correctly with no props 1`] = `
+.c1 {
+  width: 300px;
+  height: 40px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-left: 55px;
+  font-size: 24px;
+  color: #FFFFFF;
+  background: none;
+  background-image: url(edlogowhite.png);
+  background-position: 7px 20px;
+  background-repeat: no-repeat;
+}
+
+.c1::before {
+  content: 'Event Dynamic';
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  background: #024A8F;
+}
+
+.c2 {
+  height: 100%;
+  width: 38px;
+  float: right;
+  padding: 0;
+  margin: 0;
+  margin-right: 28px;
+  background: none;
+  background-image: url(sprocket.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.c3 {
+  height: 70px;
+  line-height: 70px;
+  width: auto;
+  float: right;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  font-size: 13px;
+  font-weight: lighter;
+  -webkit-letter-spacing: .05em;
+  -moz-letter-spacing: .05em;
+  -ms-letter-spacing: .05em;
+  letter-spacing: .05em;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c3::before {
+  content: '';
+}
+
 <div
-  className="sc-jhAzac hQTcwM"
+  className="c0"
 >
   <div
-    className="sc-cvbbAY dFpkqW"
+    className="c1"
     onClick={[Function]}
   />
   <div
-    className="sc-caSCKo dWxfcz"
+    className="c2"
     data-test-id="settings-icon"
     id="sprocket"
     onClick={[Function]}
   />
   <div
-    className="sc-gisBJw jRdUoZ"
+    className="c3"
   />
 </div>
 `;

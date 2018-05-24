@@ -1,14 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with disabled prop 1`] = `
+.c0 {
+  display: none;
+  position: relative;
+  width: 7.5%;
+  height: 40px;
+  border: 2px solid #D1D1D1;
+  border-radius: 3px;
+  color: #D1D1D1;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  clear: right;
+  float: right;
+  margin: 0;
+  margin-right: 14%;
+  padding: 0;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c0:hover {
+  cursor: not-allowed;
+  color: #767676;
+  border-color: #767676;
+}
+
+.c0::before {
+  content: 'Cancel';
+}
+
 <div
-  className="sc-iRbamj ksvwOZ"
+  className="c0"
   disabled={true}
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  display: none;
+  position: relative;
+  width: 7.5%;
+  height: 40px;
+  border: 2px solid #D1D1D1;
+  border-radius: 3px;
+  color: #D1D1D1;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  clear: right;
+  float: right;
+  margin: 0;
+  margin-right: 14%;
+  padding: 0;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #767676;
+  border-color: #767676;
+}
+
+.c0::before {
+  content: 'Cancel';
+}
+
 <div
-  className="sc-iRbamj buNiex"
+  className="c0"
 />
 `;

@@ -1,9 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { isDefined } from '_helpers';
 
-export class Tabbable extends React.Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
+type Props = {
+  selectedIndex?: number,
+  children: (
+    selectedIndex: number,
+    onTabChange: (index: number) => void
+  ) => React.Node
+};
+
+type State = {
+  selectedIndex: number
+};
+
+export class Tabbable extends React.Component<Props, State> {
+  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
     if (
       isDefined(nextProps.selectedIndex) &&
       nextProps.selectedIndex !== prevState.selectedIndex
@@ -16,26 +28,17 @@ export class Tabbable extends React.Component {
     return null;
   }
 
-  constructor() {
-    super();
-    this.state = {
-      selectedIndex: 0
-    };
+  state = {
+    selectedIndex: 0
+  };
 
-    this.onTabChange = this.onTabChange.bind(this);
-  }
-
-  onTabChange(idx) {
+  onTabChange = (idx: number) => {
     this.setState({
       selectedIndex: idx
     });
-  }
+  };
 
   render() {
     return this.props.children(this.state.selectedIndex, this.onTabChange);
   }
 }
-
-Tabbable.propTypes = {
-  children: PropTypes.func.isRequired
-};

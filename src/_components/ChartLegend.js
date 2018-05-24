@@ -1,10 +1,9 @@
 // @flow
-import React from 'react';
-import type { ComponentType } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 
-export const ChartLegendItemContainer: ComponentType<{}> = styled.div`
+export const ChartLegendItemContainer: React.ComponentType<{}> = styled.div`
   display: inline-flex;
   flex-direction: row;
   align-items: flex-end;
@@ -15,7 +14,7 @@ export const ChartLegendItemContainer: ComponentType<{}> = styled.div`
   }
 `;
 
-export const ChartLegendBar: ComponentType<{
+export const ChartLegendBar: React.ComponentType<{
   dashed: boolean,
   color: string
 }> = styled.div`
@@ -29,7 +28,7 @@ export const ChartLegendBar: ComponentType<{
       : props.color};
 `;
 
-export const ChartLegendLabel: ComponentType<{}> = styled.span`
+export const ChartLegendLabel: React.ComponentType<{}> = styled.span`
   color: #323232;
   font-size: 12px;
   margin-left: 10px;

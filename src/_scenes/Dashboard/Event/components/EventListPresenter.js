@@ -81,6 +81,7 @@ export function EventListPresenter(props: Props) {
             type="text"
             placeholder="Search"
             onChange={onSearchInputChange}
+            data-test-id="event-list-search"
           />
           <Spacing height="4px" />
           <Flex direction="row" justify="space-between">
@@ -110,7 +111,9 @@ export function EventListPresenter(props: Props) {
 
           {noResult && (
             <NoContentWrap>
-              <Heading>No events matching query</Heading>
+              <Heading data-test-id="no-events-message">
+                No events matching query
+              </Heading>
             </NoContentWrap>
           )}
 

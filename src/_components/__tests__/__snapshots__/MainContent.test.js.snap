@@ -1,19 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with leftNav prop 1`] = `
+.c0 {
+  position: relative;
+  float: left;
+  width: calc(81% - 71px);
+  height: calc(100% - 70px);
+  margin: 0;
+  padding: 35px;
+  background: #F8F8F8;
+}
+
 <div
-  className="sc-brqgnP kGZrBP"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  position: relative;
+  float: left;
+  width: calc(100% - 71px);
+  height: calc(100% - 70px);
+  margin: 0;
+  padding: 35px;
+  background: #F8F8F8;
+}
+
 <div
-  className="sc-brqgnP bHQSNg"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with sidebar prop 1`] = `
+.c0 {
+  position: relative;
+  float: left;
+  width: calc(67.3% - 71px);
+  height: calc(100% - 70px);
+  margin: 0;
+  padding: 35px;
+  background: #F8F8F8;
+}
+
 <div
-  className="sc-brqgnP kJLqLv"
+  className="c0"
 />
 `;

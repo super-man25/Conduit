@@ -1,13 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 
-const AxisLabel = styled.text`
+const AxisLabel: React.ComponentType<{}> = styled.text`
   font-size: 12px;
   color: #323232;
 `;
 
-export const CustomAxisLabel = ({ title, xAxis, innerWidth, innerHeight }) => {
+type Props = {
+  title: string,
+  xAxis: boolean,
+  innerWidth: number,
+  innerHeight: number
+};
+
+export const CustomAxisLabel = ({
+  title,
+  xAxis,
+  innerWidth,
+  innerHeight
+}: Props) => {
   let offset;
 
   if (xAxis) {
@@ -31,13 +43,6 @@ export const CustomAxisLabel = ({ title, xAxis, innerWidth, innerHeight }) => {
       <AxisLabel>{title}</AxisLabel>
     </g>
   );
-};
-
-CustomAxisLabel.propTypes = {
-  title: PropTypes.string,
-  xAxis: PropTypes.bool,
-  innerWidth: PropTypes.number,
-  innerHeight: PropTypes.number
 };
 
 CustomAxisLabel.requiresSVG = true;

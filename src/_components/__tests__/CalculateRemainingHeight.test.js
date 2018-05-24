@@ -1,7 +1,6 @@
 import React from 'react';
 import { CalculateRemainingHeight } from '_components/CalculateRemainingHeight';
 import renderer from 'react-test-renderer';
-import 'jest-styled-components';
 
 function createNodeMock() {
   return {

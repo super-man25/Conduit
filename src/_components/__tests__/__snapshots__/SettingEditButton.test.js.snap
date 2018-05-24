@@ -1,13 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  display: block;
+  visibility: visible;
+  position: relative;
+  width: 7.5%;
+  clear: right;
+  float: right;
+  margin: 0;
+  margin-right: 23%;
+  padding: 0;
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 40px;
+  text-align: center;
+  color: #7CBCDD;
+  background: transparent;
+  cursor: pointer;
+}
+
+.c0::before {
+  content: 'EDIT';
+}
+
 <span
-  className="sc-jlyJG dlGOOi"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with noEdit prop 1`] = `
+.c0 {
+  display: block;
+  visibility: hidden;
+  position: relative;
+  width: 7.5%;
+  clear: right;
+  float: right;
+  margin: 0;
+  margin-right: 23%;
+  padding: 0;
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 40px;
+  text-align: center;
+  color: #7CBCDD;
+  background: transparent;
+  cursor: pointer;
+}
+
+.c0::before {
+  content: 'EDIT';
+}
+
 <span
-  className="sc-jlyJG gYsmKZ"
+  className="c0"
 />
 `;

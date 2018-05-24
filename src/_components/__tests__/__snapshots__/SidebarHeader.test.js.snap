@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c0 {
+  height: 116px;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #F8F8F8;
+  background: #031E35;
+}
+
 <div
-  className="sc-hzDkRC fxqKEi"
+  className="c0"
 />
 `;

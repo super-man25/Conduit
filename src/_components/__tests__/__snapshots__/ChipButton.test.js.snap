@@ -1,33 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChipButton renders correctly 1`] = `
+.c0 {
+  background-color: transparent;
+  color: #070707;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c0:hover {
+  background-color: #4B98CF;
+  color: #FFFFFF;
+}
+
 <button
-  className="sc-iELTvK bcMrYS"
+  className="c0"
 >
   Chip Button
 </button>
 `;
 
 exports[`ChipButton renders correctly with an active prop 1`] = `
+.c0 {
+  background-color: #2670AE;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c0:hover {
+  background-color: #4B98CF;
+  color: #FFFFFF;
+}
+
 <button
-  className="sc-iELTvK fsXoVL"
+  className="c0"
 >
   Chip Button
 </button>
 `;
 
 exports[`ChipButtonGroup renders correctly 1`] = `
+.c2 {
+  background-color: #2670AE;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c2:hover {
+  background-color: #4B98CF;
+  color: #FFFFFF;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 .c1 + .c1 {
+  margin-left: 12px;
+}
+
 <div
-  className="sc-cmTdod faHWIS"
+  className="c0"
 >
   <button
-    className="sc-iELTvK fsXoVL"
+    className="c1 c2"
     onClick={[Function]}
   >
     ChipButton 1
   </button>
   <button
-    className="sc-iELTvK fsXoVL"
+    className="c1 c2"
     onClick={[Function]}
   >
     ChipButton 2
@@ -36,18 +101,66 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 `;
 
 exports[`ChipButtonGroup renders correctly with a value set 1`] = `
+.c3 {
+  background-color: transparent;
+  color: #070707;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c3:hover {
+  background-color: #4B98CF;
+  color: #FFFFFF;
+}
+
+.c2 {
+  background-color: #2670AE;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c2:hover {
+  background-color: #4B98CF;
+  color: #FFFFFF;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 .c1 + .c1 {
+  margin-left: 12px;
+}
+
 <div
-  className="sc-cmTdod faHWIS"
+  className="c0"
 >
   <button
-    className="sc-iELTvK fsXoVL"
+    className="c1 c2"
     onClick={[Function]}
     value="Active"
   >
     ChipButton 1
   </button>
   <button
-    className="sc-iELTvK bcMrYS"
+    className="c1 c3"
     onClick={[Function]}
   >
     ChipButton 2

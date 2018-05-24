@@ -1,7 +1,6 @@
 import React from 'react';
 import { ImageLayout } from '_components/ImageLayout';
 import renderer from 'react-test-renderer';
-import 'jest-styled-components';
 
 it('renders correctly', () => {
   const tree = renderer.create(<ImageLayout imageSrc="url(test)" />).toJSON();

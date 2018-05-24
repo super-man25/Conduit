@@ -16,6 +16,7 @@ import Season from './Season';
 import { toggleSidebar } from './stateChanges';
 import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
+import { actions as authActions } from '_state/auth';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
@@ -64,10 +65,11 @@ class Dashboard extends React.Component {
 
   render() {
     const { sidebarCollapsed } = this.state;
-    const { teamStatState } = this.props;
+    const { teamStatState, authState, authActions } = this.props;
+
     return (
       <PageWrapper>
-        <SiteHeader />
+        <SiteHeader auth={authState.model} authActions={authActions} />
         <FullContent>
           <Sidebar collapsed={sidebarCollapsed}>
             <SidebarHeader>
@@ -102,13 +104,15 @@ Dashboard.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    teamStatState: state.teamStat
+    teamStatState: state.teamStat,
+    authState: state.auth
   };
 }
 
 function mapActionCreators(dispatch) {
   return {
-    teamStatActions: bindActionCreators(teamStatActions, dispatch)
+    teamStatActions: bindActionCreators(teamStatActions, dispatch),
+    authActions: bindActionCreators(authActions, dispatch)
   };
 }
 

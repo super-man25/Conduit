@@ -1,19 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+}
+
 <div
-  className="sc-hmzhuo cLqCC"
+  className="c0"
 >
   No Content
 </div>
 `;
 
 exports[`renders correctly with a header 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+}
+
+.c1 {
+  border: 1px solid #D1D1D1;
+  border-radius: 6px 6px 0 0;
+  padding: 0 24px;
+  height: 56px;
+}
+
 <div
-  className="sc-hmzhuo cLqCC"
+  className="c0"
 >
   <header
-    className="sc-frDJqD dVBssv"
+    className="c1"
   >
     This is a header
   </header>
@@ -21,16 +36,34 @@ exports[`renders correctly with a header 1`] = `
 `;
 
 exports[`renders correctly with a header and content 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+}
+
+.c1 {
+  border: 1px solid #D1D1D1;
+  border-radius: 6px 6px 0 0;
+  padding: 0 24px;
+  height: 56px;
+}
+
+.c2 {
+  border: 1px solid #D1D1D1;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 24px;
+}
+
 <div
-  className="sc-hmzhuo cLqCC"
+  className="c0"
 >
   <header
-    className="sc-frDJqD dVBssv"
+    className="c1"
   >
     This is a header
   </header>
   <section
-    className="sc-kvZOFW fwmSsJ"
+    className="c2"
   >
     This is the panels content
   </section>

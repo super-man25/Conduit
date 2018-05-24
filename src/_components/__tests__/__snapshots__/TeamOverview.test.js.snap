@@ -1,45 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with props 1`] = `
+.c3 {
+  display: block;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 200;
+  float: right;
+  width: 30px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: auto;
+  margin-right: 20px;
+  padding: 0.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #38A9DB;
+  background-color: #38A9DB;
+}
+
+.c3:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #2670AE;
+  border-color: #2670AE;
+}
+
+.c3::before {
+  content: ' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.c0 {;
+}
+
+.c1 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c2 {
+  display: block;
+  float: none;
+  color: inherit;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.c4 {
+  display: block;
+  float: none;
+  color: #070707;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  weight: 300;
+}
+
 <div
-  className="sc-kgAjT dptCsA"
+  className="c0 c1"
 >
   <div
-    className="sc-kGXeez kJeZmt"
+    className=""
     direction="row"
   >
     <div
-      className="sc-kpOJdX cFoARy"
+      className=""
     >
       <h4
-        className="sc-cJSrbW ivjXeI"
+        className="c2"
       >
          Team Overview 
       </h4>
     </div>
     <div
-      className="sc-kpOJdX cJUGvc"
+      className=""
     >
       <button
-        className="sc-bwzfXH cqQrNb"
+        className="c3"
         onClick={undefined}
       />
     </div>
   </div>
   <div
-    className="sc-kGXeez kJeZmt"
+    className=""
     direction="row"
   >
     <div
-      className="sc-kpOJdX cFoARy"
+      className=""
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="c4"
       >
         0.909
       </h3>
       <p
-        className="sc-dnqmqq cXamce"
+        className=""
       >
         <i>
           Win / Loss
@@ -47,15 +152,15 @@ exports[`renders correctly with props 1`] = `
       </p>
     </div>
     <div
-      className="sc-kpOJdX cJUGvc"
+      className=""
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="c4"
       >
         -10
       </h3>
       <p
-        className="sc-dnqmqq cXamce"
+        className=""
       >
         <i>
           Games Remaining
@@ -67,45 +172,150 @@ exports[`renders correctly with props 1`] = `
 `;
 
 exports[`renders correctly with toggledSidebar 1`] = `
+.c3 {
+  display: block;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 200;
+  float: right;
+  width: 30px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: auto;
+  margin-right: 20px;
+  padding: 0.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #38A9DB;
+  background-color: #38A9DB;
+}
+
+.c3:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #2670AE;
+  border-color: #2670AE;
+}
+
+.c3::before {
+  content: ' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.c0 {;
+}
+
+.c1 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c2 {
+  display: block;
+  float: none;
+  color: inherit;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.c4 {
+  display: block;
+  float: none;
+  color: #070707;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  weight: 300;
+}
+
 <div
-  className="sc-kgAjT dptCsA"
+  className="c0 c1"
 >
   <div
-    className="sc-kGXeez kJeZmt"
+    className=""
     direction="row"
   >
     <div
-      className="sc-kpOJdX cFoARy"
+      className=""
     >
       <h4
-        className="sc-cJSrbW ivjXeI"
+        className="c2"
       >
          Team Overview 
       </h4>
     </div>
     <div
-      className="sc-kpOJdX cJUGvc"
+      className=""
     >
       <button
-        className="sc-bwzfXH cqQrNb"
+        className="c3"
         onClick=""
       />
     </div>
   </div>
   <div
-    className="sc-kGXeez kJeZmt"
+    className=""
     direction="row"
   >
     <div
-      className="sc-kpOJdX cFoARy"
+      className=""
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="c4"
       >
         0.909
       </h3>
       <p
-        className="sc-dnqmqq cXamce"
+        className=""
       >
         <i>
           Win / Loss
@@ -113,15 +323,15 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </p>
     </div>
     <div
-      className="sc-kpOJdX cJUGvc"
+      className=""
     >
       <h3
-        className="sc-ksYbfQ hbsBi"
+        className="c4"
       >
         -10
       </h3>
       <p
-        className="sc-dnqmqq cXamce"
+        className=""
       >
         <i>
           Games Remaining

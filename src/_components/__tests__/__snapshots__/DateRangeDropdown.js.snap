@@ -1,25 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DateRangeDropdown /> renders correctly 1`] = `
+.c5 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  border: 1px solid #999999;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+}
+
+.c0 .c1:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-right: none;
+}
+
+.c0 .c1:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 8px 14px;
+  border-bottom: 1px solid transparent;
+}
+
+.c4 {
+  -webkit-transition: -webkit-transform ease-out 0.2s;
+  -webkit-transition: transform ease-out 0.2s;
+  transition: transform ease-out 0.2s;
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
 <div>
   <div
-    className="sc-lhVmIH ciGXdJ"
+    className="c0"
   >
     <div
-      className="sc-btzYZH hVwSrB"
+      className="c1 c2"
       onClick={[Function]}
     >
       <div
-        className="sc-elJkPf hSLQfS"
+        className="c3"
       >
         <span>
           04/17/2018
         </span>
         <span
-          className="sc-jtRfpW biYDvI"
+          className="c4"
         >
           <svg
-            className="sc-kgoBCf ilnGdb"
+            className="c5"
             color={undefined}
             viewBox="0 0 24 24"
             width="24px"
@@ -32,20 +98,20 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="sc-btzYZH hVwSrB"
+      className="c1 c2"
       onClick={[Function]}
     >
       <div
-        className="sc-elJkPf hSLQfS"
+        className="c3"
       >
         <span>
           04/20/2018
         </span>
         <span
-          className="sc-jtRfpW biYDvI"
+          className="c4"
         >
           <svg
-            className="sc-kgoBCf ilnGdb"
+            className="c5"
             color={undefined}
             viewBox="0 0 24 24"
             width="24px"

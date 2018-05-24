@@ -1,13 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with edit prop 1`] = `
+.c0 {
+  overflow: auto;
+  width: 100%;
+  min-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: transparent;
+}
+
+.c0 > div {
+  display: block;
+}
+
+.c0 > span {
+  display: none;
+}
+
 <div
-  className="sc-gPEVay gzinDL"
+  className="c0"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
+.c0 {
+  overflow: auto;
+  width: 100%;
+  min-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: transparent;
+}
+
+.c0 > div {
+  display: none;
+}
+
+.c0 > span {
+  display: block;
+}
+
 <div
-  className="sc-gPEVay cGUZKx"
+  className="c0"
 />
 `;
