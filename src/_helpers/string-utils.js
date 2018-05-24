@@ -1,4 +1,4 @@
-import { format, distanceInWords } from 'date-fns';
+import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
 
 /**
  * Return a date as a string
@@ -13,10 +13,14 @@ export function readableDate(d) {
  * Given two dates, generate a human readable time duration
  *
  * @param {Date} t1 - time in question
- * @param {Date} t0 - time to compare (defaults to now)
+ * @param {Date} t0 - time to compare
  * @return {string}
  */
-export function readableDuration(t1, t0 = new Date()) {
+export function readableDuration(t1, t0) {
+  if (!t0) {
+    return distanceInWordsToNow(t1);
+  }
+
   return distanceInWords(t1, t0);
 }
 
@@ -68,4 +72,30 @@ export function validatePhoneNumber(phoneNumber) {
     return phoneNumberOk;
   }
   return true;
+}
+
+/**
+ * Format string as sentence case eg This is a sentence...
+ *
+ * @param {string} str
+ */
+export function sentenceCase(str) {
+  if (typeof str !== 'string') return '';
+
+  return str.toLowerCase().replace(str[0], str[0].toUpperCase());
+}
+
+/**
+ * Format string as title case eg This is a Title...
+ *
+ * @param {string} str
+ */
+export function titleCase(str) {
+  if (typeof str !== 'string') return '';
+
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map((word) => word.replace(word[0], word[0].toUpperCase()))
+    .join(' ');
 }

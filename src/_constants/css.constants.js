@@ -32,7 +32,7 @@ export const cssConstants = {
   TITLE_SIZE_H4: '18px',
   TITLE_WEIGHT_H4: 'normal',
   TITLE_SIZE_H5: '14px',
-  TITLE_WEIGHT_H5: 'bold',
+  TITLE_WEIGHT_H5: '300',
   PARAGRAPH_SIZE_P1: '36px',
   PARAGRAPH_WEIGHT_P1: 'bold',
   PARAGRAPH_SIZE_P2: '28px',

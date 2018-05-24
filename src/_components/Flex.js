@@ -21,22 +21,22 @@ type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse';
 type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
 
 type FlexProps = {
-  +flex: string,
-  +height: string,
-  +width: string,
-  +flexGrow: number,
-  +flexShrink: number,
-  +flexBasis: number,
-  +flexWrap: FlexWrap,
-  +direction: FlexDirection,
-  +order: number,
-  +inline: boolean,
-  +column: boolean,
-  +reverse: boolean,
-  +align: FlexContentAlignment,
-  +justify: FlexContentAlignment,
-  +alignItems: FlexAlignment,
-  +alignSelf: FlexAlignment
+  flex?: string,
+  height?: string,
+  width?: string,
+  flexGrow?: number,
+  flexShrink?: number,
+  flexBasis?: number,
+  flexWrap?: FlexWrap,
+  direction?: FlexDirection,
+  order?: number,
+  inline?: boolean,
+  column?: boolean,
+  reverse?: boolean,
+  align?: FlexContentAlignment,
+  justify?: FlexContentAlignment,
+  alignItems?: FlexAlignment,
+  alignSelf?: FlexAlignment
 };
 
 function generateFlexDirection(props: FlexProps): FlexDirection {

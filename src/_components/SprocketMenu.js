@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import sprocketImg from '../_images/sprocket.png';
+import sprocketImg from '_images/sprocket.png';
 
 export const SprocketMenu = styled.div`
   height: 100%;

@@ -2,58 +2,52 @@
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  display: block;
-  visibility: visible;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   position: relative;
-  width: 7.5%;
-  clear: right;
-  float: right;
-  margin: 0;
-  margin-right: 23%;
-  padding: 0;
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 40px;
+  font-size: 1rem;
   text-align: center;
-  color: #7CBCDD;
-  background: transparent;
+  font-size: 1rem;
   cursor: pointer;
+  color: #38A9DB;
 }
 
 .c0::before {
   content: 'EDIT';
 }
 
-<span
+<div
   className="c0"
 />
 `;
 
 exports[`renders correctly with noEdit prop 1`] = `
 .c0 {
-  display: block;
-  visibility: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   position: relative;
-  width: 7.5%;
-  clear: right;
-  float: right;
-  margin: 0;
-  margin-right: 23%;
-  padding: 0;
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 40px;
+  font-size: 1rem;
   text-align: center;
-  color: #7CBCDD;
-  background: transparent;
+  font-size: 1rem;
   cursor: pointer;
+  color: #38A9DB;
 }
 
 .c0::before {
   content: 'EDIT';
 }
 
-<span
+<div
   className="c0"
 />
 `;

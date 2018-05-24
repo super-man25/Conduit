@@ -1,4 +1,4 @@
-import { actions as eventActions } from '_state/events';
+import { actions as eventActions } from '_state/event';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -112,12 +112,12 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     eventActions: bindActionCreators(eventActions, dispatch)
   };
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapActionCreators)(EventListContainer)
+  connect(mapStateToProps, mapDispatchToProps)(EventListContainer)
 );

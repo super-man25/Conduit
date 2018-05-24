@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 
-export const ChartLegendItemContainer: React.ComponentType<{}> = styled.div`
+export const ChartLegendItemContainer = styled.div`
   display: inline-flex;
   flex-direction: row;
   align-items: flex-end;
@@ -28,7 +28,7 @@ export const ChartLegendBar: React.ComponentType<{
       : props.color};
 `;
 
-export const ChartLegendLabel: React.ComponentType<{}> = styled.span`
+export const ChartLegendLabel = styled.span`
   color: #323232;
   font-size: 12px;
   margin-left: 10px;

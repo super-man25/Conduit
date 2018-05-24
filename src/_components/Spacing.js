@@ -1,5 +1,7 @@
+// @flow
+
+import * as React from 'react';
 import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
 
 const padding = (props) =>
   props.padding !== undefined &&
@@ -31,18 +33,18 @@ const display = (props) =>
     display: ${props.display};
   `;
 
-export const Spacing = styled.div`
+type Props = {
+  padding?: string,
+  margin?: string,
+  height?: string,
+  width?: string,
+  display?: string
+};
+
+export const Spacing: React.ComponentType<Props> = styled.div`
   ${padding}
   ${margin}
   ${height}
   ${width}
   ${display}
 `;
-
-Spacing.propTypes = {
-  padding: PropTypes.string,
-  margin: PropTypes.string,
-  height: PropTypes.string,
-  width: PropTypes.string,
-  display: PropTypes.string
-};

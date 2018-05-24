@@ -1,25 +1,23 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
 import PropTypes from 'prop-types';
 
-const SIZE_LARGE = '14px';
-const SIZE_SMALL = '10px';
+const LARGE_HEIGHT = '14px';
+const SMALL_HEIGHT = '10px';
+const LARGE_WIDTH = '68px';
+const SMALL_WIDTH = '46px';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  height: (props) => (props.small ? SMALL_HEIGHT : LARGE_HEIGHT),
+  width: (props) => (props.small ? SMALL_WIDTH : LARGE_WIDTH)
+})`
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 68px;
-  height: ${SIZE_LARGE};
-  aligh-self: center;
-
-  ${(props) =>
-    props.small &&
-    css`
-      height: ${SIZE_SMALL};
-      width: 46px;
-    `};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  align-self: center;
 `;
 
 const dotAnimation = keyframes`
@@ -32,9 +30,9 @@ const dotAnimation = keyframes`
 `;
 
 const Dot = styled.div`
-  height: ${SIZE_LARGE};
-  width: ${SIZE_LARGE};
-  border-radius: ${SIZE_LARGE};
+  height: ${LARGE_HEIGHT};
+  width: ${LARGE_HEIGHT};
+  border-radius: ${LARGE_HEIGHT};
   background-color: ${(props) =>
     props.color || cssConstants.PRIMARY_LIGHT_BLUE};
   animation: ${dotAnimation} 1.3s ease infinite;
@@ -43,9 +41,9 @@ const Dot = styled.div`
   ${(props) =>
     props.small &&
     css`
-      height: ${SIZE_SMALL};
-      width: ${SIZE_SMALL};
-      border-radiusd: ${SIZE_SMALL};
+      height: ${SMALL_HEIGHT};
+      width: ${SMALL_HEIGHT};
+      border-radiusd: ${SMALL_HEIGHT};
     `};
 `;
 
@@ -58,9 +56,6 @@ export const Loader = (props) => (
 );
 
 Loader.propTypes = {
-  /** Modify the loader to make it small */
   small: PropTypes.bool,
-
-  /** HTML color (HEX or color string) for the loader */
   color: PropTypes.string
 };

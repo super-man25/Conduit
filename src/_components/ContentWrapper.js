@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
-import stadiumImage from '../_images/stadium.jpg';
+import { cssConstants } from '_constants';
+import stadiumImage from '_images/stadium.jpg';
 
 const stadium = `url(${stadiumImage})`;
 

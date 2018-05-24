@@ -1,4 +1,4 @@
-import { baseURL } from '../_constants';
+import { baseURL } from '_constants';
 import { stringify } from 'querystring';
 
 /**

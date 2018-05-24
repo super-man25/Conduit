@@ -3,13 +3,13 @@ import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { reducer as alertReducer } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
-import { reducer as clientReducer, saga as clientSaga } from './clients';
+import { reducer as clientReducer, saga as clientSaga } from './client';
 import {
   reducer as eventStatReducer,
   saga as eventStatSaga
-} from './eventStats';
-import { reducer as eventReducer, saga as eventSaga } from './events';
-import { reducer as userReducer, saga as userSaga } from './users';
+} from './eventStat';
+import { reducer as eventReducer, saga as eventSaga } from './event';
+import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
 
 // Build root reducer

@@ -31,7 +31,7 @@ exports[`should render correctly 1`] = `
 .c2 {
   margin: 0;
   color: inherit;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: normal;
   color: #38A9DB;
   -webkit-transition: 0.2s ease-in-out all;
@@ -69,6 +69,7 @@ exports[`should render correctly 1`] = `
     <p
       className="c2"
       onClick={[Function]}
+      size={undefined}
     />
     <div
       className="c3"
@@ -146,7 +147,7 @@ exports[`should render correctly with optional props 1`] = `
 .c2 {
   margin: 0;
   color: inherit;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: normal;
   color: #38A9DB;
   -webkit-transition: 0.2s ease-in-out all;
@@ -184,6 +185,7 @@ exports[`should render correctly with optional props 1`] = `
     <p
       className="c2"
       onClick={[Function]}
+      size={undefined}
     >
       Button Label
     </p>

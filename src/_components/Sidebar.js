@@ -1,7 +1,14 @@
-import styled, { css } from 'styled-components';
-import { cssConstants } from '../_constants';
+// @flow
 
-export const Sidebar = styled.div`
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import { cssConstants } from '_constants';
+
+type Props = {
+  collapsed: boolean
+};
+
+export const Sidebar: React.ComponentType<Props> = styled.div`
   width: 36%;
   max-width: 500px;
   min-width: 380px;

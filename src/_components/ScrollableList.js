@@ -1,8 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-export class ScrollableList extends React.Component {
-  constructor(props) {
+import * as React from 'react';
+
+type Props = {
+  children: () => React.Node,
+  data: Array<any>,
+  scrollIndex: number
+};
+
+export class ScrollableList extends React.Component<Props> {
+  containerRef: React.ElementRef<any>;
+
+  constructor(props: Props) {
     super(props);
     this.containerRef = React.createRef();
   }
@@ -12,13 +21,13 @@ export class ScrollableList extends React.Component {
     this.scrollTo(scrollIndex);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     const { scrollIndex } = this.props;
 
     this.scrollTo(scrollIndex);
   }
 
-  scrollTo = (index) => {
+  scrollTo = (index: number) => {
     if (index === -1) {
       return;
     }
@@ -38,14 +47,3 @@ export class ScrollableList extends React.Component {
     return <div ref={this.containerRef}>{data.map(children)}</div>;
   }
 }
-
-ScrollableList.propTypes = {
-  /** Function for how to render a list item */
-  children: PropTypes.func.isRequired,
-
-  /** Data for list */
-  data: PropTypes.arrayOf(PropTypes.any).isRequired,
-
-  /** Index of list item to scroll to */
-  scrollIndex: PropTypes.number
-};

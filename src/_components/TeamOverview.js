@@ -1,7 +1,8 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { Flex, FlexItem, H4, Button, H3, P2 } from '_components';
+import { Flex, FlexItem, H4, Button, H3, P1 } from '_components';
 import { cssConstants } from '_constants';
 
 const TeamOverviewContainer = styled.div`
@@ -17,6 +18,7 @@ const Heading = H4.extend`
   margin: 0;
   padding: 0;
   vertical-align: top;
+  color: ${cssConstants.PRIMARY_WHITE};
 `;
 
 const StatLabel = H3.extend`
@@ -26,8 +28,19 @@ const StatLabel = H3.extend`
   weight: 300;
 `;
 
-export class TeamOverview extends React.Component {
-  calculateRecord = (wins, losses) => {
+type Stats = {
+  wins: number,
+  losses: number,
+  gamesTotal: number
+};
+
+type Props = {
+  onToggleSidebar: boolean,
+  stats: Stats
+};
+
+export class TeamOverview extends React.Component<Props> {
+  calculateRecord = (wins: number, losses: number) => {
     const record = (wins / (wins + losses)).toFixed(3);
     if (isNaN(record)) {
       return '--';
@@ -35,7 +48,7 @@ export class TeamOverview extends React.Component {
     return record;
   };
 
-  showRecord = (stats) => {
+  showRecord = (stats: Stats) => {
     if (stats === null) {
       return '--';
     } else {
@@ -43,7 +56,7 @@ export class TeamOverview extends React.Component {
     }
   };
 
-  showGamesRemaining = (stats) => {
+  showGamesRemaining = (stats: Stats) => {
     if (stats === null) {
       return '--';
     } else {
@@ -69,22 +82,18 @@ export class TeamOverview extends React.Component {
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
             <StatLabel>{this.showRecord(stats)}</StatLabel>
-            <P2 weight="100">
+            <P1 weight="100">
               <i>Win / Loss</i>
-            </P2>
+            </P1>
           </FlexItem>
           <FlexItem flex={2}>
             <StatLabel>{this.showGamesRemaining(stats)}</StatLabel>
-            <P2 weight="100">
+            <P1 weight="100">
               <i>Games Remaining</i>
-            </P2>
+            </P1>
           </FlexItem>
         </Flex>
       </TeamOverviewContainer>
     );
   }
 }
-
-TeamOverview.propTypes = {
-  stats: PropTypes.shape()
-};

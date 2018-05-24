@@ -1,5 +1,5 @@
 import React from 'react';
-import { H1, H2, H3, H4, H5, P1, P2, S1, Label } from '_components/';
+import { H1, H2, H3, H4, H5, P1, S1, Label } from '_components/';
 import renderer from 'react-test-renderer';
 // import localStorageTest from '../setupTests';
 
@@ -165,11 +165,6 @@ it('H5 renders correctly with weight prop', () => {
 
 it('P1 renders correctly with no props', () => {
   const tree = renderer.create(<P1 />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-it('P2 renders correctly with no props', () => {
-  const tree = renderer.create(<P2 />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 

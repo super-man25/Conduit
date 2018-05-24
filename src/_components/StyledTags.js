@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
+
+const WEIGHTS = new Map()
+  .set('normal', '400')
+  .set('heavy', '500')
+  .set('light', '300')
+  .set('lighter', '200');
 
 export const H1 = styled.h1`
-  display: block;
-  float: ${(props) =>
-    props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none'};
   color: ${(props) =>
     !props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) =>
@@ -14,9 +17,6 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  display: block;
-  float: ${(props) =>
-    props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none'};
   color: ${(props) =>
     props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) =>
@@ -25,82 +25,73 @@ export const H2 = styled.h2`
     props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H2};
 `;
 
-export const H3 = styled.h3`
-  display: block;
-  float: ${(props) =>
-    props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none'};
-  color: ${(props) =>
-    props.login
-      ? cssConstants.PRIMARY_DARK_BLUE
-      : props.screenTitle
-        ? cssConstants.SECONDARY_BLUE
-        : props.color
-          ? props.color
-          : cssConstants.PRIMARY_LIGHT_BLACK};
-  font-size: ${(props) =>
-    props.size ? props.size : cssConstants.TITLE_SIZE_H3};
+export const H3 = styled.h3.attrs({
+  color: (props) => {
+    return (
+      (props.type === 'secondary' && cssConstants.SECONDARY_BLUE) ||
+      (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
+      cssConstants.PRIMARY_DARK_BLUE
+    );
+  }
+})`
+  color: ${(props) => props.color}
+  font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H3};
   font-weight: ${(props) =>
-    props.login
-      ? 'bold'
-      : props.weight
-        ? props.weight
-        : cssConstants.TITLE_WEIGHT_H3};
+    WEIGHTS.get(props.weight) || cssConstants.TITLE_WEIGHT_H3};
 `;
 
-export const H4 = styled.h4`
-  display: block;
-  float: ${(props) =>
-    props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none'};
-  color: ${(props) => props.color || 'inherit'};
-  font-size: ${(props) =>
-    props.size ? props.size : cssConstants.TITLE_SIZE_H4};
-  font-weight: ${(props) =>
-    props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H4};
+export const H4 = styled.h4.attrs({
+  color: (props) => {
+    return (
+      (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
+      cssConstants.PRIMARY_LIGHT_BLACK
+    );
+  }
+})`
+  color: ${(props) => props.color};
+  font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H4};
+  font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H4};
 `;
 
-export const H5 = styled.h5`
-  display: block;
-  clear: ${(props) =>
-    props.clearLeft ? 'left' : props.clearRight ? 'right' : 'none'};
-  float: ${(props) =>
-    props.floatLeft ? 'left' : props.floatRight ? 'right' : 'none'};
-  color: ${(props) =>
-    props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
-  font-size: ${(props) =>
-    props.size ? props.size : cssConstants.TITLE_SIZE_H5};
-  font-weight: ${(props) =>
-    props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H5};
+export const H5 = styled.h5.attrs({
+  color: (props) => {
+    return (
+      (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
+      cssConstants.PRIMARY_LIGHT_BLACK
+    );
+  }
+})`
+  color: ${(props) => props.color};
+  font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H5};
+  font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H5};
 `;
 
-export const P1 = styled.p`
+export const P1 = styled.p.attrs({
+  size: (props) => (props.size === 'small' ? '0.875rem' : props.size)
+})`
   margin: 0;
   color: ${(props) => props.color || 'inherit'};
-  font-size: ${(props) => props.size || '14px'};
-  font-weight: ${(props) => props.weight || 'normal'};
-`;
-
-export const P2 = styled.p`
-  margin: 0;
-  color: ${(props) => props.color || 'inherit'};
-  font-size: ${(props) => props.size || '12px'};
+  font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.weight || 'normal'};
 `;
 
 export const S1 = styled.span`
-  display: block;
-  color: ${(props) =>
-    props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
-  font-size: ${(props) =>
-    props.size ? props.size : cssConstants.SUBHEADING_SIZE_S1};
-  font-weight: ${(props) =>
-    props.weight ? props.weight : cssConstants.SUBHEADING_WEIGHT_S1};
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  font-size: ${(props) => props.size || cssConstants.SUBHEADING_SIZE_S1};
+  font-weight: ${(props) => props.weight || cssConstants.SUBHEADING_WEIGHT_S1};
 `;
 
 export const Label = styled.label`
   display: ${(props) => (props.inline ? 'inline-block' : 'block')};
   color: ${(props) =>
     props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
-  font-size: ${(props) => (props.size ? props.size : cssConstants.LABEL_SIZE)};
-  font-weight: ${(props) =>
-    props.weight ? props.weight : cssConstants.LABEL_WEIGHT};
+  font-size: ${(props) => props.size || cssConstants.LABEL_SIZE};
+  font-weight: ${(props) => props.weight || cssConstants.LABEL_WEIGHT};
+`;
+
+export const HR = styled.hr`
+  width: 100%;
+  opacity: 0.5;
+  margin: ${(props) => props.margin || '2rem 0'};
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHTEST_GRAY};
 `;

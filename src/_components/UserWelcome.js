@@ -1,13 +1,18 @@
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
+import { titleCase } from '_helpers/string-utils';
 
-function capString(word) {
-  return word && word.length > 0
-    ? word.charAt(0).toUpperCase() + word.slice(1)
-    : '';
-}
+type Props = {
+  user: {
+    firstName: string,
+    lastName: string
+  }
+};
 
-export const UserWelcome = styled.div`
+export const UserWelcome: React.ComponentType<Props> = styled.div`
   height: 70px;
   line-height: 70px;
   width: auto;
@@ -23,7 +28,7 @@ export const UserWelcome = styled.div`
   ::before {
     content: '${(props) =>
       props.user
-        ? `Welcome, ${capString(props.user.firstName)} ${capString(
+        ? `Welcome, ${titleCase(props.user.firstName)} ${titleCase(
             props.user.lastName
           )}`
         : ''}';

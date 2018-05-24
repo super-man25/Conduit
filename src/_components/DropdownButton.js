@@ -1,10 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-import { cssConstants } from '../_constants';
-import { withClickAway } from '../_hoc';
+import { cssConstants } from '_constants';
+import { withClickAway } from '_hoc';
 import PropTypes from 'prop-types';
-
 import { Icon } from './Icon';
 import { P1 } from './StyledTags';
 import { Flex } from './Flex';

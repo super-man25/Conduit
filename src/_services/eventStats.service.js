@@ -1,6 +1,6 @@
 // @flow
-import { normalize } from './eventStats.normalize';
-import { get } from '../_helpers/api';
+
+import { get } from '_helpers/api';
 import { toScalaDate } from '_helpers';
 
 type EventTimeStatsParams = {
@@ -15,7 +15,14 @@ function getAll(eventId: number = 1, start: ?Date, end: ?Date) {
   if (start) params.startTime = toScalaDate(start);
   if (end) params.endTime = toScalaDate(end);
 
-  return get('eventTimeStats', params).then((data) => data.map(normalize));
+  return get('eventTimeStats', params).then((data) =>
+    data.map((eventTimeStat: { timestamp: Date }) => ({
+      ...eventTimeStat,
+      date: eventTimeStat.timestamp
+        ? new Date(eventTimeStat.timestamp)
+        : eventTimeStat.timestamp
+    }))
+  );
 }
 
 export const eventStatService = {
