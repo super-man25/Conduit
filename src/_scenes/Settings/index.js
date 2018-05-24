@@ -50,15 +50,11 @@ type Props = {
 };
 
 export class Settings extends React.Component<Props> {
-  handleSignOut = (event: SyntheticMouseEvent<Element>) => {
-    this.props.authActions.signOut();
-  };
-
   render() {
-    const { authState } = this.props;
+    const { authState, authActions } = this.props;
     return (
       <PageWrapper>
-        <SiteHeader auth={authState.model} />
+        <SiteHeader auth={authState.model} authActions={authActions} />
         <FullContent>
           <LeftNav>
             <Spacing padding="2rem">
