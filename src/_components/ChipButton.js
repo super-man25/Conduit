@@ -1,6 +1,7 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { cssConstants } from '_constants';
 
 export const ChipButton = styled.button`
@@ -33,8 +34,19 @@ const ChipButtonGroupContainer = styled.div`
   }
 `;
 
-export class ChipButtonGroup extends React.Component {
-  cloneChildren(children) {
+type Props = {
+  children: React.Node,
+  onChange: (value: any) => void,
+  value: any,
+  handleChange: () => void
+};
+
+export class ChipButtonGroup extends React.Component<Props> {
+  static defaultProps = {
+    handleChange: () => {}
+  };
+
+  cloneChildren(children: React.Node) {
     return React.Children.map(children, (child) => {
       return React.cloneElement(child, {
         ...child.props,
@@ -54,13 +66,3 @@ export class ChipButtonGroup extends React.Component {
     );
   }
 }
-
-ChipButtonGroup.propTypes = {
-  children: PropTypes.node,
-  onChange: PropTypes.func,
-  value: PropTypes.oneOfType([PropTypes.any])
-};
-
-ChipButtonGroup.defaultProps = {
-  handleChange: () => {}
-};

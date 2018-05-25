@@ -2,33 +2,23 @@
 
 exports[`renders correctly with disabled prop 1`] = `
 .c0 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   position: relative;
-  width: 7.5%;
-  height: 40px;
-  border: 2px solid #D1D1D1;
-  border-radius: 3px;
-  color: #D1D1D1;
-  font-size: 14px;
+  font-size: 1rem;
   text-align: center;
-  line-height: 40px;
-  clear: right;
-  float: right;
-  margin: 0;
-  margin-right: 14%;
-  padding: 0;
-  background: #FFFFFF;
+  font-size: 1rem;
   cursor: pointer;
-}
-
-.c0:hover {
-  cursor: not-allowed;
-  color: #767676;
-  border-color: #767676;
+  color: #f75555;
 }
 
 .c0::before {
-  content: 'Cancel';
+  content: 'CANCEL';
 }
 
 <div
@@ -39,33 +29,23 @@ exports[`renders correctly with disabled prop 1`] = `
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   position: relative;
-  width: 7.5%;
-  height: 40px;
-  border: 2px solid #D1D1D1;
-  border-radius: 3px;
-  color: #D1D1D1;
-  font-size: 14px;
+  font-size: 1rem;
   text-align: center;
-  line-height: 40px;
-  clear: right;
-  float: right;
-  margin: 0;
-  margin-right: 14%;
-  padding: 0;
-  background: #FFFFFF;
+  font-size: 1rem;
   cursor: pointer;
-}
-
-.c0:hover {
-  cursor: pointer;
-  color: #767676;
-  border-color: #767676;
+  color: #f75555;
 }
 
 .c0::before {
-  content: 'Cancel';
+  content: 'CANCEL';
 }
 
 <div

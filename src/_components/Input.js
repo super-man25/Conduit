@@ -1,7 +1,10 @@
+// @flow
+
+import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { cssConstants } from '../_constants';
-import okIcon from '../_images/valid.png';
-import badIcon from '../_images/invalid.png';
+import { cssConstants } from '_constants';
+import okIcon from '_images/valid.png';
+import badIcon from '_images/invalid.png';
 
 const OK = `url(${okIcon})`;
 const BAD = `url(${badIcon})`;
@@ -19,7 +22,18 @@ function autofillOK(valid) {
   return status;
 }
 
-export const Input = styled.input`
+type Props = {
+  disabled?: boolean,
+  valid?: boolean,
+  inValid?: boolean
+};
+
+export const Input: React.ComponentType<Props> = styled.input.attrs({
+  bordercolor: (props) =>
+    (props.valid && cssConstants.SECONDARY_GREEN) ||
+    (props.inValid && cssConstants.SECONDARY_RED) ||
+    cssConstants.PRIMARY_DARK_GRAY
+})`
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -42,18 +56,12 @@ export const Input = styled.input`
           : 'none'};
     -webkit-animation-fill-mode: both;
   }
-  font-size: 13.5px;
-  font-weight: 200;
-  width: 96%;
+  font-size: 1rem;
+  width: 100%;
   padding-left: 3%;
   border: 2px solid;
   border-radius: 3px;
-  border-color: ${(props) =>
-    props.valid
-      ? cssConstants.SECONDARY_GREEN
-      : props.inValid
-        ? cssConstants.SECONDARY_RED
-        : cssConstants.PRIMARY_DARK_GRAY};
+  border-color: ${(props) => props.bordercolor};
   padding-top: 0.9em;
   padding-bottom: 0.9em;
 `;

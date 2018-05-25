@@ -1,8 +1,7 @@
-import { normalize } from './teamStat.normalize';
-import { get } from '../_helpers/api';
+import { get } from '_helpers/api';
 
 function getStats() {
-  return get('teamStatistics').then((data) => normalize(data));
+  return get('teamStatistics');
 }
 
 export const teamStatService = {

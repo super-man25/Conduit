@@ -1,95 +1,44 @@
-import { baseURL } from '../_constants';
-import { normalize } from './user.normalize';
-import { get, put, post } from '../_helpers/api';
-
-const API = {
-  meURL: `${baseURL}/me`,
-  logoutURL: `${baseURL}/auth`, // - method DELETE
-  getAllURL: `${baseURL}/users`, // - method GET (for isAdmin users only)
-  getByIdURL: `${baseURL}/users/`, // users/{id} - method GET
-  registerURL: `${baseURL}/users`, // - method POST (for isAdmin users only)
-  deleteURL: `${baseURL}/users` // users/{id} - method DELETE (for isAdmin users only)
-};
-
-function handleResponse(response) {
-  if (!response.ok) {
-    return Promise.reject(response.statusText);
-  }
-
-  return response.json();
-}
+import { get, put, post, del } from '_helpers/api';
 
 function login(email, password) {
-  return post('auth', { email, password }).then((user) => normalize(user));
+  return post('auth', { email, password });
 }
 
 function logout() {
-  const requestOptions = {
-    credentials: 'include',
-    method: 'DELETE'
-  };
-  return fetch(API.logoutURL, requestOptions).then((response) => {
-    if (!response.ok) {
-      return Promise.reject(response.statusText);
-    }
-    return response.statusText;
-  });
+  return del('auth');
 }
 
 function getMe() {
-  return get('me').then((user) => normalize(user));
+  return get('me');
 }
 
 function getAll() {
-  const requestOptions = {
-    credentials: 'include',
-    mode: 'cors',
-    method: 'GET'
-  };
-
-  return fetch(API.getAllURL, requestOptions).then(handleResponse);
+  return get('users');
 }
 
 function getById(id) {
-  const requestOptions = {
-    credentials: 'include',
-    method: 'GET'
-  };
-
-  return fetch(API.getByIdURL + id, requestOptions).then(handleResponse);
+  return get(`users/${id}`);
 }
 
 function register(user) {
-  const requestOptions = {
-    credentials: 'include',
-    mode: 'cors',
-    method: 'POST',
-    body: JSON.stringify(user)
-  };
-
-  return fetch(API.registerURL, requestOptions).then(handleResponse);
+  return post('users', user);
 }
 
 function update(data) {
-  return put('users', data).then((user) => normalize(user));
+  return put('users', data);
 }
 
 function updateEmail(data) {
-  return put('users/email', data).then((user) => normalize(user));
+  return put('users/email', data);
 }
 
 function changePassword(data) {
-  return put('users/password', data).then((user) => normalize(user));
+  return put('users/password', data);
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
-  const requestOptions = {
-    credentials: 'include',
-    method: 'DELETE'
-  };
-
-  return fetch(API.deleteURL + id, requestOptions).then(handleResponse);
+  return del(`users/${id}`);
 }
 
 export const userService = {

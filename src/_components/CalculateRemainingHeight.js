@@ -1,5 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
 import { ReactHeight } from 'react-height';
 
@@ -7,8 +8,18 @@ const Container = styled.div`
   height: 100%;
 `;
 
-export class CalculateRemainingHeight extends React.Component {
-  constructor(props) {
+type Props = {
+  children: Array<React.Node> | Array<() => React.Node>
+};
+
+type State = {
+  remainingHeight: ?number
+};
+
+export class CalculateRemainingHeight extends React.Component<Props, State> {
+  containerRef: React.ElementRef<any>;
+
+  constructor(props: Props) {
     super(props);
     this.containerRef = React.createRef();
   }
@@ -17,7 +28,7 @@ export class CalculateRemainingHeight extends React.Component {
     remainingHeight: null
   };
 
-  setRemainingHeight = (contentHeight) => {
+  setRemainingHeight = (contentHeight: number) => {
     const containerNode = this.containerRef.current;
     this.setState({
       remainingHeight: containerNode.clientHeight - contentHeight
@@ -49,13 +60,3 @@ export class CalculateRemainingHeight extends React.Component {
     );
   }
 }
-
-const childProp = PropTypes.oneOfType([PropTypes.node, PropTypes.func]);
-
-CalculateRemainingHeight.propTypes = {
-  /**
-   * Children to display. The last child should be a function which receives the remaining
-   * height in the container as a parameter and returns a node to render.
-   */
-  children: PropTypes.oneOfType([childProp, PropTypes.arrayOf(childProp)])
-};

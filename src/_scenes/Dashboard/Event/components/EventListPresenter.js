@@ -6,17 +6,15 @@ import {
   Flex,
   H4,
   Input,
-  Loader,
   ScrollableList,
   SortableButton,
   Spacing
 } from '_components';
 import { cssConstants } from '_constants';
-import { Event as EventModel } from '_models';
-import { PropTypes } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { EventListItem } from './EventListItem';
+import type { EDEvent } from '_models';
 
 const OverflowContent = styled.div`
   height: ${(props) => `${props.height}px`};
@@ -43,13 +41,13 @@ type Props = {
   activeId: number,
   timestampSort: string,
   title: string,
-  onSearchInputChange: (event: {}) => void,
-  onClick: (event: {}) => void,
+  onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
+  onClick: (event: EDEvent) => void,
   loading: boolean,
-  events: Array<{}>,
-  onFilterSelect: (event: {}) => void,
-  onTimestampSortChange: (event: {}) => void,
-  selectedFilter: (event: {}) => void,
+  events: Array<EDEvent>,
+  onFilterSelect: (event: EDEvent) => void,
+  onTimestampSortChange: (dir: string) => void,
+  selectedFilter: (event: EDEvent) => void,
   scrollIndex: ?number
 };
 
@@ -103,12 +101,6 @@ export function EventListPresenter(props: Props) {
 
       {(height) => (
         <OverflowContent height={height}>
-          {loading && (
-            <Spacing padding="10vh 0">
-              <Loader />
-            </Spacing>
-          )}
-
           {noResult && (
             <NoContentWrap>
               <Heading data-test-id="no-events-message">
@@ -135,41 +127,6 @@ export function EventListPresenter(props: Props) {
 
 EventListPresenter.defaultProps = {
   loading: true
-};
-
-EventListPresenter.propTypes = {
-  /** ID of the currently active event. */
-  activeId: PropTypes.number,
-
-  /** List of events */
-  events: PropTypes.arrayOf(EventModel),
-
-  /** Whether or not the list is loading. Defaults to false. */
-  loading: PropTypes.bool,
-
-  /** Callback fired when a list item is clicked. Called with the event item key and object. */
-  onClick: PropTypes.func,
-
-  /** Options for the filter */
-  filterOptions: DropdownButton.propTypes.options,
-
-  /** The selected filter */
-  selectedFilter: DropdownButton.propTypes.selected,
-
-  /** Callback fired when a filter is selected */
-  onFilterSelect: DropdownButton.propTypes.onSelect,
-
-  /** Sort direction for timestamp */
-  timestampSort: SortableButton.propTypes.direction,
-
-  /** Callback fired when the timestamp sort direction is changed */
-  onTimestampSortChange: SortableButton.propTypes.onClick,
-
-  /** Title to show at the top of the list */
-  title: PropTypes.string,
-
-  /** Callback for search input */
-  onSearchInputChange: PropTypes.func
 };
 
 export default EventListPresenter;

@@ -1,24 +1,25 @@
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
 
-export const Setting = styled.div`
-  overflow: auto;
-  width: 100%;
-  min-height: 30px;
-  padding: 0;
-  margin: 0;
-  margin-top: 0px;
-  margin-bottom: 30px;
-  background: transparent;
-  > div {
-    display: ${(props) => {
-      return props.edit ? 'block' : 'none';
-    }};
+type Props = {
+  cols: number,
+  width: string,
+  margin: string,
+  columns: string // override for css grid-template-columns
+};
+
+export const Setting: React.ComponentType<Props> = styled.div.attrs({
+  columns: (props) => {
+    const cols = props.cols || 2;
+    return `repeat(${cols}, 1fr)`;
   }
-  > span {
-    display: ${(props) => {
-      return props.edit ? 'none' : 'block';
-    }};
-  }
+})`
+  display: grid;
+  grid-template-columns: ${(props) => props.columns};
+  width: ${(props) => props.width || '100%'};
+  margin: ${(props) => props.margin || 0};
 `;
 
 export default Setting;

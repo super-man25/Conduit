@@ -1,6 +1,12 @@
 import { addHours } from 'date-fns';
 
-import { readableDate, readableDuration, orDash } from '_helpers/string-utils';
+import {
+  readableDate,
+  readableDuration,
+  orDash,
+  titleCase,
+  sentenceCase
+} from '_helpers/string-utils';
 
 describe('readableDate', () => {
   it('should format the date to the correct format', () => {
@@ -44,5 +50,21 @@ describe('orDash', () => {
     for (const v of vals) {
       expect(orDash(v)).toEqual('--');
     }
+  });
+
+  describe('titleCase', () => {
+    it('should return the string in title case', () => {
+      const original = 'john malcolm';
+      const result = titleCase(original);
+      expect(result).toEqual('John Malcolm');
+    });
+  });
+
+  describe('sentenceCase', () => {
+    it('should return the string in sentence case', () => {
+      const original = 'all Small lettErs';
+      const result = sentenceCase(original);
+      expect(result).toEqual('All small letters');
+    });
   });
 });

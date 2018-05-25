@@ -16,6 +16,8 @@ module.name_mapper='_scenes' -> '<PROJECT_ROOT>/src/_scenes'
 module.name_mapper='_services' -> '<PROJECT_ROOT>/src/_services'
 module.name_mapper='_state' -> '<PROJECT_ROOT>/src/_state'
 module.name_mapper='_constants' -> '<PROJECT_ROOT>/src/_constants'
+module.name_mapper='_models' -> '<PROJECT_ROOT>/src/_models'
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+
 
 [strict]

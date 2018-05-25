@@ -1,55 +1,64 @@
-import { AlertProvider } from '_components';
+// @flow
+
+import { CenteredLoader } from '_components';
 import { history } from '_helpers';
 import { secured, unsecured } from '_hoc/secured';
-import { User as UserModel } from '_models';
-import CreateUser from '_scenes/CreateUser';
-import Dashboard from '_scenes/Dashboard';
-import Login from '_scenes/Login';
-import Settings from '_scenes/Settings';
 import { actions as authActions } from '_state/auth';
-import PropTypes from 'prop-types';
 import React from 'react';
+import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
 import { Route, Router, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import type { EDUser } from '_models';
 
-class App extends React.Component {
+const Dashboard = Loadable({
+  loader: () => import('_scenes/Dashboard'),
+  loading: CenteredLoader
+});
+
+const Login = Loadable({
+  loader: () => import('_scenes/Login'),
+  loading: CenteredLoader
+});
+
+const Settings = Loadable({
+  loader: () => import('_scenes/Settings'),
+  loading: CenteredLoader
+});
+
+type Props = {
+  authActions: {
+    fetch: () => void
+  },
+  authState: {
+    loading: boolean,
+    model: EDUser
+  }
+};
+
+class App extends React.Component<Props> {
   componentDidMount() {
     this.props.authActions.fetch();
   }
 
   render() {
-    const { authState } = this.props;
+    const {
+      authState: { loading }
+    } = this.props;
 
-    if (authState.loading) {
-      return <div>Loading User Info...</div>;
-    }
-
-    return (
-      <AlertProvider>
-        <Router history={history}>
-          <Switch>
-            <Route path="/login" component={unsecured(Login)} />
-            <Route path="/users/create" component={secured(CreateUser)} />
-            <Route path="/settings" component={secured(Settings)} />
-            <Route path="/" component={secured(Dashboard)} />
-          </Switch>
-        </Router>
-      </AlertProvider>
+    return loading ? (
+      <CenteredLoader />
+    ) : (
+      <Router history={history}>
+        <Switch>
+          <Route path="/login" component={unsecured(Login)} />
+          <Route path="/settings" component={secured(Settings)} />
+          <Route path="/" component={secured(Dashboard)} />
+        </Switch>
+      </Router>
     );
   }
 }
-
-App.propTypes = {
-  authActions: PropTypes.shape({
-    fetch: PropTypes.func.isRequired
-  }),
-
-  authState: PropTypes.shape({
-    model: UserModel,
-    loading: PropTypes.bool.isRequired
-  })
-};
 
 function mapStateToProps(state) {
   return {
@@ -57,10 +66,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     authActions: bindActionCreators(authActions, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

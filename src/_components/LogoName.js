@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
-import edLogoImage from '../_images/edlogo.png';
-import edLogoImageWhite from '../_images/edlogowhite.png';
+import { cssConstants } from '_constants';
+import edLogoImage from '_images/edlogo.png';
+import edLogoImageWhite from '_images/edlogowhite.png';
 
 const edLogo = `url(${edLogoImage})`;
 const edLogoWhite = `url(${edLogoImageWhite})`;

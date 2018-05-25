@@ -2,50 +2,28 @@
 
 exports[`renders correctly with edit prop 1`] = `
 .c0 {
-  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   width: 100%;
-  min-height: 30px;
-  padding: 0;
   margin: 0;
-  margin-top: 0px;
-  margin-bottom: 30px;
-  background: transparent;
-}
-
-.c0 > div {
-  display: block;
-}
-
-.c0 > span {
-  display: none;
 }
 
 <div
   className="c0"
+  columns="repeat(2, 1fr)"
 />
 `;
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   width: 100%;
-  min-height: 30px;
-  padding: 0;
   margin: 0;
-  margin-top: 0px;
-  margin-bottom: 30px;
-  background: transparent;
-}
-
-.c0 > div {
-  display: none;
-}
-
-.c0 > span {
-  display: block;
 }
 
 <div
   className="c0"
+  columns="repeat(2, 1fr)"
 />
 `;

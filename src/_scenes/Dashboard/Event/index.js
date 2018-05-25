@@ -1,4 +1,4 @@
-import { H1, Loader, P1, CenteredContainer } from '_components';
+import { H1, Flex, P1, CenteredContainer } from '_components';
 import { readableDate } from '_helpers/string-utils';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -11,18 +11,16 @@ const Event = (props) => {
   const event = events.find((e) => e.id === activeId);
 
   return (
-    <CenteredContainer>
-      <H1>Event</H1>
-      {!event && <Loader />}
-
-      {!!event && (
-        <div>
+    !!event && (
+      <CenteredContainer>
+        <H1>Event</H1>
+        <Flex>
           <P1>ID: {event.id}</P1>
           <P1>Name: {event.name}</P1>
           <P1>Timestamp: {readableDate(event.timestamp)}</P1>
-        </div>
-      )}
-    </CenteredContainer>
+        </Flex>
+      </CenteredContainer>
+    )
   );
 };
 

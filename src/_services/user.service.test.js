@@ -20,7 +20,7 @@ describe('get by Id', () => {
 
   it('should get user by id', () => {
     const id = 1;
-    const mock = fetchMock.get(`end:users/${id}`, user);
+    const mock = fetchMock.get(`end:users/${id}?`, user);
 
     return userService.getById(id).then((res) => {
       expect(mock.called()).toBe(true);

@@ -21,10 +21,10 @@ import { RevenueBreakdown } from './RevenueBreakdown';
 import { ChartTooltip } from './ChartTooltip';
 import { format, differenceInCalendarDays } from 'date-fns';
 import { formatUSD } from '_helpers/string-utils';
-import type { EventStatState } from '_state/eventStats/reducer';
-import type { EventStatChartData } from '_state/eventStats/selectors';
+import type { EventStatState } from '_state/eventStat/reducer';
+import type { EventStatChartData } from '_state/eventStat/selectors';
+import typeof EventStatActions from '_state/eventStat/actions';
 import type { ChartPoint } from '_helpers/chart-utils';
-import typeof EventStatActions from '_state/eventStats/actions';
 
 const CHART_HEIGHT = 400;
 
@@ -125,7 +125,6 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         groupFilters,
         dateRange: { from, to },
         eventDateLimits,
-        eventStats,
         selectedGroupFilter
       },
       eventStatsSelectors: {

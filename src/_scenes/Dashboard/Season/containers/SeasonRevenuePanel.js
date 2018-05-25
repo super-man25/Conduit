@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { SeasonRevenuePanel } from '_scenes/Dashboard/Season/components/SeasonRevenuePanel';
-import { actions as eventStatActions } from '_state/eventStats';
-import { getChartData } from '_state/eventStats/selectors';
+import { actions as eventStatActions } from '_state/eventStat';
+import { getChartData } from '_state/eventStat/selectors';
 
 function mapStateToProps(state) {
   return {

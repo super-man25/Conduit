@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
 
 export const MainContent = styled.div`
   position: relative;

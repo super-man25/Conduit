@@ -51,26 +51,6 @@ exports[`renders correctly with props 1`] = `
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .c0 {;
 }
 
@@ -84,20 +64,17 @@ exports[`renders correctly with props 1`] = `
 }
 
 .c2 {
-  display: block;
-  float: none;
-  color: inherit;
+  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
   padding: 0;
   vertical-align: top;
+  color: #FFFFFF;
 }
 
 .c4 {
-  display: block;
-  float: none;
-  color: #070707;
+  color: #024A8F;
   font-size: 22px;
   font-weight: normal;
   margin: 0;
@@ -118,6 +95,7 @@ exports[`renders correctly with props 1`] = `
     >
       <h4
         className="c2"
+        color="#070707"
       >
          Team Overview 
       </h4>
@@ -140,11 +118,13 @@ exports[`renders correctly with props 1`] = `
     >
       <h3
         className="c4"
+        color="#024A8F"
       >
         0.909
       </h3>
       <p
         className=""
+        size={undefined}
       >
         <i>
           Win / Loss
@@ -156,11 +136,13 @@ exports[`renders correctly with props 1`] = `
     >
       <h3
         className="c4"
+        color="#024A8F"
       >
         -10
       </h3>
       <p
         className=""
+        size={undefined}
       >
         <i>
           Games Remaining
@@ -222,26 +204,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .c0 {;
 }
 
@@ -255,20 +217,17 @@ exports[`renders correctly with toggledSidebar 1`] = `
 }
 
 .c2 {
-  display: block;
-  float: none;
-  color: inherit;
+  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
   padding: 0;
   vertical-align: top;
+  color: #FFFFFF;
 }
 
 .c4 {
-  display: block;
-  float: none;
-  color: #070707;
+  color: #024A8F;
   font-size: 22px;
   font-weight: normal;
   margin: 0;
@@ -289,6 +248,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
     >
       <h4
         className="c2"
+        color="#070707"
       >
          Team Overview 
       </h4>
@@ -311,11 +271,13 @@ exports[`renders correctly with toggledSidebar 1`] = `
     >
       <h3
         className="c4"
+        color="#024A8F"
       >
         0.909
       </h3>
       <p
         className=""
+        size={undefined}
       >
         <i>
           Win / Loss
@@ -327,11 +289,13 @@ exports[`renders correctly with toggledSidebar 1`] = `
     >
       <h3
         className="c4"
+        color="#024A8F"
       >
         -10
       </h3>
       <p
         className=""
+        size={undefined}
       >
         <i>
           Games Remaining

@@ -1,17 +1,18 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { withClickAway } from '_hoc';
 import { cssConstants, zIndexes } from '_constants';
+import { withClickAway } from '_hoc';
 import {
-  LogoName,
-  UserWelcome,
-  SprocketMenu,
   DropdownMenuItem,
   Icon,
-  Spacing
+  LogoName,
+  Spacing,
+  SprocketMenu,
+  UserWelcome
 } from './';
-import { withRouter } from 'react-router-dom';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -58,8 +59,22 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
   }
 `);
 
-export class SiteHeaderPresenter extends React.Component {
-  constructor(props) {
+type Props = {
+  history: {
+    push: (path: string) => void
+  },
+  auth: {},
+  authActions: {
+    signOut: () => void
+  }
+};
+
+type State = {
+  showMenu: boolean
+};
+
+export class SiteHeaderPresenter extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -67,25 +82,23 @@ export class SiteHeaderPresenter extends React.Component {
     };
   }
 
-  showMenu = (event) => {
-    event.preventDefault();
+  showMenu = () => {
     this.setState({ showMenu: true });
   };
 
-  closeMenu = (event) => {
+  closeMenu = () => {
     this.setState({ showMenu: false });
   };
 
   handleSettingsClick = () => {
-    this.props.history.push('/settings');
+    this.props.history.push('/settings/team');
   };
 
   handleLogoClick = () => {
     this.props.history.push('/');
   };
 
-  handleLogoutClick = (e) => {
-    e.preventDefault();
+  handleLogoutClick = () => {
     this.props.authActions.signOut();
   };
 
@@ -102,11 +115,7 @@ export class SiteHeaderPresenter extends React.Component {
         <UserWelcome user={auth} />
         {this.state.showMenu && (
           <DropdownMenuWrapper onClickAway={this.closeMenu}>
-            <div
-              ref={(element) => {
-                this.dropdownMenu = element;
-              }}
-            >
+            <div>
               <DropdownMenuItem
                 id="settings"
                 onClick={this.handleSettingsClick}
@@ -132,10 +141,4 @@ export class SiteHeaderPresenter extends React.Component {
   }
 }
 
-SiteHeaderPresenter.propTypes = {
-  history: PropTypes.shape(),
-  authState: PropTypes.shape()
-};
-
-const connectedSiteHeader = withRouter(SiteHeaderPresenter);
-export { connectedSiteHeader as SiteHeader };
+export const SiteHeader = withRouter(SiteHeaderPresenter);

@@ -118,7 +118,7 @@ export class LoginPresenter extends React.Component {
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
                 <LogoName login />
-                <H3 login>Log In</H3>
+                <H3>Log In</H3>
                 <form name="form" onSubmit={this.handleSubmit}>
                   <Label htmlFor="email">Email Address</Label>
                   <Input

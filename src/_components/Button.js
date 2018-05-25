@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
 
 type Props = {
   hidden: boolean,

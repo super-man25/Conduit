@@ -1,3 +1,4 @@
 {
-  "presets": ["flow"]
+  "presets": ["flow"],
+  "plugins": ["syntax-dynamic-import"]
 }

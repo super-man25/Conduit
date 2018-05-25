@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-const AxisLabel: React.ComponentType<{}> = styled.text`
+const AxisLabel = styled.text`
   font-size: 12px;
   color: #323232;
 `;

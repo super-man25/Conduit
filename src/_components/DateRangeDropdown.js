@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import DayPicker from 'react-day-picker';
 import { format, isSameDay } from 'date-fns';
 import 'react-day-picker/lib/style.css';
-
 import { withClickAway } from '_hoc';
 import { Icon } from '_components';
 import { cssConstants } from '_constants';

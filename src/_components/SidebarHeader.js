@@ -1,5 +1,7 @@
+// @flow
+
 import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+import { cssConstants } from '_constants';
 
 export const SidebarHeader = styled.div`
   height: 116px;

@@ -1,15 +1,25 @@
-import styled from 'styled-components';
-import { cssConstants } from '../_constants';
+// @flow
 
-export const HelpBlockDiv = styled.div`
-  color: ${(props) =>
-    props.type && props.type === 'alert-danger'
-      ? cssConstants.SECONDARY_RED
-      : props.type && props.type === 'alert-success'
-        ? cssConstants.SECONDARY_GREEN
-        : props.type && props.type === 'hint'
-          ? cssConstants.SECONDARY_PURPLE
-          : cssConstants.PRIMARY_LIGHT_BLACK};
+import * as React from 'react';
+import styled from 'styled-components';
+import { cssConstants } from '_constants';
+
+type Props = {
+  type: 'alert-danger' | 'alert-success' | 'hint',
+  show: 'visible' | 'hidden'
+};
+
+export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs({
+  color: (props) => {
+    return (
+      (props.type === 'alert-danger' && cssConstants.SECONDARY_RED) ||
+      (props.type === 'alert-success' && cssConstants.SECONDARY_GREEN) ||
+      (props.type === 'hint' && cssConstants.SECONDARY_PURPLE) ||
+      cssConstants.PRIMARY_LIGHT_BLACK
+    );
+  }
+})`
+  color: ${(props) => props.color}
   font-size: 0.9em;
   font-weight: 200;
   width: 100%;

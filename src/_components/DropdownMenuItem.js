@@ -1,5 +1,12 @@
+// @flow
+
+import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
+
+type Props = {
+  disabled?: boolean
+};
 
 const attrs = {
   hidden: (props) => {
@@ -16,7 +23,9 @@ const attrs = {
   }
 };
 
-export const DropdownMenuItem = styled.span.attrs({ ...attrs })`
+export const DropdownMenuItem: React.ComponentType<Props> = styled.span.attrs({
+  ...attrs
+})`
   display: ${(props) => props.hidden};
   position: relative;
   float: ${(props) => props.floating};
