@@ -80,7 +80,6 @@ export class TeamInfo extends React.Component<Props, State> {
   };
 
   get pricingDescription() {
-    console.log(this.props);
     const { pricingInterval } = this.props;
 
     if (!pricingInterval) {
