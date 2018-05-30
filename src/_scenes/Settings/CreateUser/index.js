@@ -211,7 +211,7 @@ class CreateUser extends React.Component<Props, State> {
             value="isAdmin"
             onChange={this.handleChange}
           />
-          <label labelfor="isAdmin"> Admin Privileges?</label>
+          <label htmlFor="isAdmin"> Admin Privileges?</label>
           <br />
           <br />
           <br />
