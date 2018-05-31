@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { rgba } from 'polished';
 import { Toggle, Flex, EDText } from '_components';
-import { readableDuration, titleCase } from '_helpers/string-utils';
+import { readableDuration, sentenceCase } from '_helpers/string-utils';
 
 const Card = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export function Integration(props: Props) {
   return (
     <Card>
       <EDText size="small" type="tertiary">
-        {titleCase(`Last Updated ${readableDuration(modifiedAt)}`)}
+        {sentenceCase(`last updated ${readableDuration(modifiedAt)} ago`)}
       </EDText>
       <Details>
         <Img src={logoUrl} alt={name} />

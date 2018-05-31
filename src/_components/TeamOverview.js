@@ -71,12 +71,8 @@ export class TeamOverview extends React.Component<Props> {
     return (
       <TeamOverviewContainer>
         <Flex direction="row" align="center" justify="space-between">
-          <FlexItem flex={1}>
-            <Heading> Team Overview </Heading>
-          </FlexItem>
-          <FlexItem flex={2}>
-            <Button small collapse onClick={onToggleSidebar} />
-          </FlexItem>
+          <Heading> Team Overview </Heading>
+          <Button small collapse onClick={onToggleSidebar} />
         </Flex>
 
         <Flex direction="row" align="center" justify="space-between">

@@ -1,5 +1,6 @@
 // @flow
 import styled from 'styled-components';
+import { withBoxModelProps } from '_helpers/style-utils';
 import type { ComponentType } from 'react';
 
 type FlexContentAlignment =
@@ -53,7 +54,7 @@ function generateFlexDirection(props: FlexProps): FlexDirection {
       : 'row';
 }
 
-export const Flex: ComponentType<FlexProps> = styled.div`
+export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`
   display: ${(props) => (props.inline ? 'inline-flex' : 'flex')};
   flex: ${(props) => props.flex};
   flex-direction: ${generateFlexDirection}
@@ -68,7 +69,7 @@ export const Flex: ComponentType<FlexProps> = styled.div`
   align-self: ${(props) => props.alignSelf};
   height: ${(props) => props.height};
   width: ${(props) => props.width};
-`;
+`);
 
 type FlexItemProps = {
   flex: number,

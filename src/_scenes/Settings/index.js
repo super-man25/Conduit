@@ -21,6 +21,7 @@ import CreateUser from './CreateUser';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import type { Node } from 'react';
+import type { EDUser } from '_models/user';
 
 type RouteConfig = {
   path: string,
@@ -46,7 +47,9 @@ type Props = {
   authActions: {
     signOut: () => void
   },
-  authState: any
+  authState: {
+    model: EDUser
+  }
 };
 
 export class Settings extends React.Component<Props> {

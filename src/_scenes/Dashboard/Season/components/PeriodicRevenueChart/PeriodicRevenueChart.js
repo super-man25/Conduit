@@ -60,7 +60,7 @@ export const PeriodicRevenueChart = ({
 
   return (
     <ChartContainer>
-      <ResponsiveContainer width="100%" height={height}>
+      <ResponsiveContainer width="100%" height={height} debounce={100}>
         <BarChart data={formatPeriodicRevenueData(data)}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />

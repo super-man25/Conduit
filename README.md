@@ -9,6 +9,7 @@
 * Install deps `yarn install`
 * Run `yarn start`
 * Test `yarn test`
+* Install [EditorConfig](http://editorconfig.org/) plugin for your editor or IDE
 
 ## Flow
 

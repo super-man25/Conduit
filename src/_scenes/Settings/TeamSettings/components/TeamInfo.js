@@ -12,7 +12,6 @@ import {
 import { toggleEditing } from '../stateChanges';
 import React from 'react';
 import { titleCase, orDash } from '_helpers/string-utils';
-import type { EDClient } from '_models';
 import { withClickAway } from '_hoc';
 
 const TeamInfoWrapper = Flex.extend`
@@ -30,8 +29,12 @@ const SettingButtonGroup = Flex.extend`
 const TeamSetting = withClickAway(Setting.extend``);
 
 type Props = {
-  ...EDClient,
-  update: (pricingInterval: number) => void
+  name: string,
+  pricingInterval: number,
+  dirtyPricingInterval: number,
+  resetDirtyPricingInterval: () => void,
+  setPricingInterval: (number) => void,
+  update: ({ pricingInterval: number }) => void
 };
 
 type State = {

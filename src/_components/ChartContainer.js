@@ -6,4 +6,5 @@ export const ChartContainer = styled.div`
   border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   position: relative;
   padding: 14px 14px;
+  overflow: hidden;
 `;

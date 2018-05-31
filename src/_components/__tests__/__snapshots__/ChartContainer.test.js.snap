@@ -6,6 +6,7 @@ exports[`<ChartContainer /> renders correctly 1`] = `
   border: 1px solid #D1D1D1;
   position: relative;
   padding: 14px 14px;
+  overflow: hidden;
 }
 
 <div

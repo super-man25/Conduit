@@ -20,3 +20,11 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
   `;
   return accumulator;
 }, {});
+
+export const withBoxModelProps = (styledComponent) => {
+  return styledComponent.extend`
+    margin: ${(props) => props.margin};
+    padding: ${(props) => props.padding};
+    border: ${(props) => props.border};
+  `;
+};
