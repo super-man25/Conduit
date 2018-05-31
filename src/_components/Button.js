@@ -22,8 +22,6 @@ export const Button: React.ComponentType<Props> = styled.button`
         : cssConstants.PRIMARY_LIGHT_BLUE};
   font-size: ${(props) => (props.collapse || props.expand ? '16px' : '0.8em')};
   font-weight: 200;
-  float: ${(props) =>
-    props.collapse ? 'right' : props.expand ? 'left' : 'none'};
   width: ${(props) => (props.collapse || props.expand ? '30px' : '100%')};
   margin: 0;
   margin-top: ${(props) =>

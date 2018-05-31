@@ -6,7 +6,6 @@ exports[`renders correctly with props 1`] = `
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 200;
-  float: right;
   width: 30px;
   margin: 0;
   margin-top: 20px;
@@ -30,6 +29,10 @@ exports[`renders correctly with props 1`] = `
 
 .c3::before {
   content: ' 
+
+
+
+
 
 
 
@@ -90,24 +93,16 @@ exports[`renders correctly with props 1`] = `
     className=""
     direction="row"
   >
-    <div
-      className=""
+    <h4
+      className="c2"
+      color="#070707"
     >
-      <h4
-        className="c2"
-        color="#070707"
-      >
-         Team Overview 
-      </h4>
-    </div>
-    <div
-      className=""
-    >
-      <button
-        className="c3"
-        onClick={undefined}
-      />
-    </div>
+       Team Overview 
+    </h4>
+    <button
+      className="c3"
+      onClick={undefined}
+    />
   </div>
   <div
     className=""
@@ -159,7 +154,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 200;
-  float: right;
   width: 30px;
   margin: 0;
   margin-top: 20px;
@@ -183,6 +177,10 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 .c3::before {
   content: ' 
+
+
+
+
 
 
 
@@ -243,24 +241,16 @@ exports[`renders correctly with toggledSidebar 1`] = `
     className=""
     direction="row"
   >
-    <div
-      className=""
+    <h4
+      className="c2"
+      color="#070707"
     >
-      <h4
-        className="c2"
-        color="#070707"
-      >
-         Team Overview 
-      </h4>
-    </div>
-    <div
-      className=""
-    >
-      <button
-        className="c3"
-        onClick=""
-      />
-    </div>
+       Team Overview 
+    </h4>
+    <button
+      className="c3"
+      onClick=""
+    />
   </div>
   <div
     className=""

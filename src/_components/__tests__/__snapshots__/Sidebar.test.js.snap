@@ -7,8 +7,9 @@ exports[`renders correctly with collapsed prop 1`] = `
   min-width: 380px;
   visibility: visible;
   border-right: 1px solid #D1D1D1;
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
+  -webkit-transition: 0.1s ease-in-out -webkit-transform;
+  -webkit-transition: 0.1s ease-in-out transform;
+  transition: 0.1s ease-in-out transform;
   overflow: hidden;
   -webkit-transform: translate3d(-100%,0,0);
   -ms-transform: translate3d(-100%,0,0);
@@ -31,8 +32,9 @@ exports[`renders correctly with no props 1`] = `
   min-width: 380px;
   visibility: visible;
   border-right: 1px solid #D1D1D1;
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
+  -webkit-transition: 0.1s ease-in-out -webkit-transform;
+  -webkit-transition: 0.1s ease-in-out transform;
+  transition: 0.1s ease-in-out transform;
 }
 
 <div

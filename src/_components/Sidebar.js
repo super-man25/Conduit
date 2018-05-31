@@ -15,7 +15,7 @@ export const Sidebar: React.ComponentType<Props> = styled.div`
   visibility: visible;
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
 
-  transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out transform;
 
   ${(props) =>
     props.collapsed &&

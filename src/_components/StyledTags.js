@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
+import { withBoxModelProps } from '_helpers/style-utils';
 
 const WEIGHTS = new Map()
   .set('normal', '400')
@@ -7,14 +8,14 @@ const WEIGHTS = new Map()
   .set('light', '300')
   .set('lighter', '200');
 
-export const H1 = styled.h1`
+export const H1 = withBoxModelProps(styled.h1`
   color: ${(props) =>
     !props.color ? props.color : cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) =>
     !props.size ? props.size : cssConstants.TITLE_SIZE_H1};
   font-weight: ${(props) =>
     !props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H1};
-`;
+`);
 
 export const H2 = styled.h2`
   color: ${(props) =>
