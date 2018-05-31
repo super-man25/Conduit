@@ -1,0 +1,1411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TeamInfo /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TeamInfo
+    id={1}
+    name="New York Mets"
+    pricingInterval={15}
+    resetDirtyPricingInterval={[Function]}
+    setPricingInterval={[Function]}
+    update={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.h5
+          type="secondary"
+>
+          Basic Settings
+</styled.h5>,
+        <styled.div
+          cols={3}
+>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    Team
+          </styled.div>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    New York Mets
+          </styled.div>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          />
+</styled.div>,
+        <VisibilityToggle
+          cols={3}
+          onClickAway={[Function]}
+>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    Generate pricing updates every
+          </styled.div>
+          <Unknown>
+                    <styled.div
+                              margin="1rem 0"
+                              size="large"
+                    >
+                              15 Minutes
+                    </styled.div>
+                    <styled.div>
+                              <styled.div
+                                        onClick={[Function]}
+                              />
+                    </styled.div>
+          </Unknown>
+</VisibilityToggle>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Basic Settings",
+          "type": "secondary",
+        },
+        "ref": null,
+        "rendered": "Basic Settings",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              Team
+</styled.div>,
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              New York Mets
+</styled.div>,
+            <styled.div
+              margin="1rem 0"
+              size="large"
+/>,
+          ],
+          "cols": 3,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Team",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "Team",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "New York Mets",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "New York Mets",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              Generate pricing updates every
+</styled.div>,
+            <Unknown>
+              <styled.div
+                            margin="1rem 0"
+                            size="large"
+              >
+                            15 Minutes
+              </styled.div>
+              <styled.div>
+                            <styled.div
+                                          onClick={[Function]}
+                            />
+              </styled.div>
+</Unknown>,
+          ],
+          "cols": 3,
+          "onClickAway": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Generate pricing updates every",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "Generate pricing updates every",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <styled.div
+                  margin="1rem 0"
+                  size="large"
+>
+                  15 Minutes
+</styled.div>,
+                <styled.div>
+                  <styled.div
+                                    onClick={[Function]}
+                  />
+</styled.div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "15 Minutes",
+                  "margin": "1rem 0",
+                  "size": "large",
+                },
+                "ref": null,
+                "rendered": "15 Minutes",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.div
+                    onClick={[Function]}
+/>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.h5
+            type="secondary"
+>
+            Basic Settings
+</styled.h5>,
+          <styled.div
+            cols={3}
+>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        Team
+            </styled.div>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        New York Mets
+            </styled.div>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            />
+</styled.div>,
+          <VisibilityToggle
+            cols={3}
+            onClickAway={[Function]}
+>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        Generate pricing updates every
+            </styled.div>
+            <Unknown>
+                        <styled.div
+                                    margin="1rem 0"
+                                    size="large"
+                        >
+                                    15 Minutes
+                        </styled.div>
+                        <styled.div>
+                                    <styled.div
+                                                onClick={[Function]}
+                                    />
+                        </styled.div>
+            </Unknown>
+</VisibilityToggle>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Basic Settings",
+            "type": "secondary",
+          },
+          "ref": null,
+          "rendered": "Basic Settings",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                Team
+</styled.div>,
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                New York Mets
+</styled.div>,
+              <styled.div
+                margin="1rem 0"
+                size="large"
+/>,
+            ],
+            "cols": 3,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Team",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "Team",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "New York Mets",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "New York Mets",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                Generate pricing updates every
+</styled.div>,
+              <Unknown>
+                <styled.div
+                                margin="1rem 0"
+                                size="large"
+                >
+                                15 Minutes
+                </styled.div>
+                <styled.div>
+                                <styled.div
+                                                onClick={[Function]}
+                                />
+                </styled.div>
+</Unknown>,
+            ],
+            "cols": 3,
+            "onClickAway": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Generate pricing updates every",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "Generate pricing updates every",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    margin="1rem 0"
+                    size="large"
+>
+                    15 Minutes
+</styled.div>,
+                  <styled.div>
+                    <styled.div
+                                        onClick={[Function]}
+                    />
+</styled.div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "15 Minutes",
+                    "margin": "1rem 0",
+                    "size": "large",
+                  },
+                  "ref": null,
+                  "rendered": "15 Minutes",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.div
+                      onClick={[Function]}
+/>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<TeamInfo /> renders correctly when isEditing is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TeamInfo
+    id={1}
+    name="New York Mets"
+    pricingInterval={15}
+    resetDirtyPricingInterval={[Function]}
+    setPricingInterval={[Function]}
+    update={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.h5
+          type="secondary"
+>
+          Basic Settings
+</styled.h5>,
+        <styled.div
+          cols={3}
+>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    Team
+          </styled.div>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    New York Mets
+          </styled.div>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          />
+</styled.div>,
+        <VisibilityToggle
+          cols={3}
+          onClickAway={[Function]}
+>
+          <styled.div
+                    margin="1rem 0"
+                    size="large"
+          >
+                    Generate pricing updates every
+          </styled.div>
+          <Unknown>
+                    <styled.select
+                              noBg={true}
+                              onChange={[Function]}
+                              size="large"
+                              value={undefined}
+                    >
+                              <option
+                                        value={15}
+                              >
+                                        15 minutes
+                              </option>
+                              <option
+                                        value={30}
+                              >
+                                        30 minutes
+                              </option>
+                              <option
+                                        value={60}
+                              >
+                                        1 hour
+                              </option>
+                              <option
+                                        value={360}
+                              >
+                                        6 hours
+                              </option>
+                              <option
+                                        value={1440}
+                              >
+                                        Daily
+                              </option>
+                    </styled.select>
+                    <styled.div>
+                              <styled.button
+                                        onClick={[Function]}
+                              >
+                                        Save
+                              </styled.button>
+                    </styled.div>
+          </Unknown>
+</VisibilityToggle>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Basic Settings",
+          "type": "secondary",
+        },
+        "ref": null,
+        "rendered": "Basic Settings",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              Team
+</styled.div>,
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              New York Mets
+</styled.div>,
+            <styled.div
+              margin="1rem 0"
+              size="large"
+/>,
+          ],
+          "cols": 3,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Team",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "Team",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "New York Mets",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "New York Mets",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div
+              margin="1rem 0"
+              size="large"
+>
+              Generate pricing updates every
+</styled.div>,
+            <Unknown>
+              <styled.select
+                            noBg={true}
+                            onChange={[Function]}
+                            size="large"
+                            value={undefined}
+              >
+                            <option
+                                          value={15}
+                            >
+                                          15 minutes
+                            </option>
+                            <option
+                                          value={30}
+                            >
+                                          30 minutes
+                            </option>
+                            <option
+                                          value={60}
+                            >
+                                          1 hour
+                            </option>
+                            <option
+                                          value={360}
+                            >
+                                          6 hours
+                            </option>
+                            <option
+                                          value={1440}
+                            >
+                                          Daily
+                            </option>
+              </styled.select>
+              <styled.div>
+                            <styled.button
+                                          onClick={[Function]}
+                            >
+                                          Save
+                            </styled.button>
+              </styled.div>
+</Unknown>,
+          ],
+          "cols": 3,
+          "onClickAway": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Generate pricing updates every",
+              "margin": "1rem 0",
+              "size": "large",
+            },
+            "ref": null,
+            "rendered": "Generate pricing updates every",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <styled.select
+                  noBg={true}
+                  onChange={[Function]}
+                  size="large"
+                  value={undefined}
+>
+                  <option
+                                    value={15}
+                  >
+                                    15 minutes
+                  </option>
+                  <option
+                                    value={30}
+                  >
+                                    30 minutes
+                  </option>
+                  <option
+                                    value={60}
+                  >
+                                    1 hour
+                  </option>
+                  <option
+                                    value={360}
+                  >
+                                    6 hours
+                  </option>
+                  <option
+                                    value={1440}
+                  >
+                                    Daily
+                  </option>
+</styled.select>,
+                <styled.div>
+                  <styled.button
+                                    onClick={[Function]}
+                  >
+                                    Save
+                  </styled.button>
+</styled.div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <option
+                      value={15}
+>
+                      15 minutes
+</option>,
+                    <option
+                      value={30}
+>
+                      30 minutes
+</option>,
+                    <option
+                      value={60}
+>
+                      1 hour
+</option>,
+                    <option
+                      value={360}
+>
+                      6 hours
+</option>,
+                    <option
+                      value={1440}
+>
+                      Daily
+</option>,
+                  ],
+                  "noBg": true,
+                  "onChange": [Function],
+                  "size": "large",
+                  "value": undefined,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "0",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "15 minutes",
+                      "value": 15,
+                    },
+                    "ref": null,
+                    "rendered": "15 minutes",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "1",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "30 minutes",
+                      "value": 30,
+                    },
+                    "ref": null,
+                    "rendered": "30 minutes",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "2",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "1 hour",
+                      "value": 60,
+                    },
+                    "ref": null,
+                    "rendered": "1 hour",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "3",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "6 hours",
+                      "value": 360,
+                    },
+                    "ref": null,
+                    "rendered": "6 hours",
+                    "type": "option",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "4",
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Daily",
+                      "value": 1440,
+                    },
+                    "ref": null,
+                    "rendered": "Daily",
+                    "type": "option",
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.button
+                    onClick={[Function]}
+>
+                    Save
+</styled.button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Save",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Save",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.h5
+            type="secondary"
+>
+            Basic Settings
+</styled.h5>,
+          <styled.div
+            cols={3}
+>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        Team
+            </styled.div>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        New York Mets
+            </styled.div>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            />
+</styled.div>,
+          <VisibilityToggle
+            cols={3}
+            onClickAway={[Function]}
+>
+            <styled.div
+                        margin="1rem 0"
+                        size="large"
+            >
+                        Generate pricing updates every
+            </styled.div>
+            <Unknown>
+                        <styled.select
+                                    noBg={true}
+                                    onChange={[Function]}
+                                    size="large"
+                                    value={undefined}
+                        >
+                                    <option
+                                                value={15}
+                                    >
+                                                15 minutes
+                                    </option>
+                                    <option
+                                                value={30}
+                                    >
+                                                30 minutes
+                                    </option>
+                                    <option
+                                                value={60}
+                                    >
+                                                1 hour
+                                    </option>
+                                    <option
+                                                value={360}
+                                    >
+                                                6 hours
+                                    </option>
+                                    <option
+                                                value={1440}
+                                    >
+                                                Daily
+                                    </option>
+                        </styled.select>
+                        <styled.div>
+                                    <styled.button
+                                                onClick={[Function]}
+                                    >
+                                                Save
+                                    </styled.button>
+                        </styled.div>
+            </Unknown>
+</VisibilityToggle>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Basic Settings",
+            "type": "secondary",
+          },
+          "ref": null,
+          "rendered": "Basic Settings",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                Team
+</styled.div>,
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                New York Mets
+</styled.div>,
+              <styled.div
+                margin="1rem 0"
+                size="large"
+/>,
+            ],
+            "cols": 3,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Team",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "Team",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "New York Mets",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "New York Mets",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div
+                margin="1rem 0"
+                size="large"
+>
+                Generate pricing updates every
+</styled.div>,
+              <Unknown>
+                <styled.select
+                                noBg={true}
+                                onChange={[Function]}
+                                size="large"
+                                value={undefined}
+                >
+                                <option
+                                                value={15}
+                                >
+                                                15 minutes
+                                </option>
+                                <option
+                                                value={30}
+                                >
+                                                30 minutes
+                                </option>
+                                <option
+                                                value={60}
+                                >
+                                                1 hour
+                                </option>
+                                <option
+                                                value={360}
+                                >
+                                                6 hours
+                                </option>
+                                <option
+                                                value={1440}
+                                >
+                                                Daily
+                                </option>
+                </styled.select>
+                <styled.div>
+                                <styled.button
+                                                onClick={[Function]}
+                                >
+                                                Save
+                                </styled.button>
+                </styled.div>
+</Unknown>,
+            ],
+            "cols": 3,
+            "onClickAway": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Generate pricing updates every",
+                "margin": "1rem 0",
+                "size": "large",
+              },
+              "ref": null,
+              "rendered": "Generate pricing updates every",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <styled.select
+                    noBg={true}
+                    onChange={[Function]}
+                    size="large"
+                    value={undefined}
+>
+                    <option
+                                        value={15}
+                    >
+                                        15 minutes
+                    </option>
+                    <option
+                                        value={30}
+                    >
+                                        30 minutes
+                    </option>
+                    <option
+                                        value={60}
+                    >
+                                        1 hour
+                    </option>
+                    <option
+                                        value={360}
+                    >
+                                        6 hours
+                    </option>
+                    <option
+                                        value={1440}
+                    >
+                                        Daily
+                    </option>
+</styled.select>,
+                  <styled.div>
+                    <styled.button
+                                        onClick={[Function]}
+                    >
+                                        Save
+                    </styled.button>
+</styled.div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <option
+                        value={15}
+>
+                        15 minutes
+</option>,
+                      <option
+                        value={30}
+>
+                        30 minutes
+</option>,
+                      <option
+                        value={60}
+>
+                        1 hour
+</option>,
+                      <option
+                        value={360}
+>
+                        6 hours
+</option>,
+                      <option
+                        value={1440}
+>
+                        Daily
+</option>,
+                    ],
+                    "noBg": true,
+                    "onChange": [Function],
+                    "size": "large",
+                    "value": undefined,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "0",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "15 minutes",
+                        "value": 15,
+                      },
+                      "ref": null,
+                      "rendered": "15 minutes",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "30 minutes",
+                        "value": 30,
+                      },
+                      "ref": null,
+                      "rendered": "30 minutes",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "2",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "1 hour",
+                        "value": 60,
+                      },
+                      "ref": null,
+                      "rendered": "1 hour",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "3",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "6 hours",
+                        "value": 360,
+                      },
+                      "ref": null,
+                      "rendered": "6 hours",
+                      "type": "option",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "4",
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Daily",
+                        "value": 1440,
+                      },
+                      "ref": null,
+                      "rendered": "Daily",
+                      "type": "option",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.button
+                      onClick={[Function]}
+>
+                      Save
+</styled.button>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Save",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Save",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

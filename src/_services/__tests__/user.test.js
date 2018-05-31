@@ -1,4 +1,4 @@
-import { userService } from './user.service';
+import { userService } from '../user';
 import fetchMock from 'fetch-mock';
 
 const user = {

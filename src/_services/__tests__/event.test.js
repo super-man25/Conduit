@@ -1,4 +1,4 @@
-import { eventService } from './event.service';
+import { eventService } from '../event';
 import fetchMock from 'fetch-mock';
 
 const events = [

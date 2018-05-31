@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import { eventStatService } from './eventStats.service';
+import { eventStatService } from '../eventStats';
 import { stringify } from 'querystring';
 import { toScalaDate } from '_helpers';
 

@@ -1,4 +1,4 @@
-import { teamStatService } from './teamStat.service';
+import { teamStatService } from '../teamStat';
 import fetchMock from 'fetch-mock';
 
 const teamStat = {

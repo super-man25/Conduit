@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -71,8 +71,8 @@ type State = {
   touchedFields: EDUser
 };
 
-class ContactInfo extends React.Component<Props, State> {
-  constructor(props) {
+export class ContactInfo extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -104,17 +104,17 @@ class ContactInfo extends React.Component<Props, State> {
     });
   };
 
-  handleEditClick = (editFlagName) => {
+  handleEditClick = (editFlagName: string) => {
     this.reset();
     this.setState({ [editFlagName]: true });
   };
 
-  handlePasswordChange = (event) => {
+  handlePasswordChange = (event: SyntheticInputEvent<Input>) => {
     const { value } = event.target;
     this.setState({ password: value });
   };
 
-  handleChange = (event) => {
+  handleChange = (event: SyntheticInputEvent<Input>) => {
     const { name, value } = event.target;
     const { user } = this.state;
 
@@ -131,13 +131,13 @@ class ContactInfo extends React.Component<Props, State> {
     }
   };
 
-  handleBlur = (e) => {
+  handleBlur = (e: SyntheticInputEvent<Input>) => {
     const touchedFields = Object.assign({}, this.state.touchedFields);
     touchedFields[e.target.name] = true;
     this.setState({ touchedFields });
   };
 
-  matchingPasswordCheck = (name, value) => {
+  matchingPasswordCheck = (name: string, value: string) => {
     const { newPassword, confirmPassword } = this.state;
     let passwordsMatch = false;
 
@@ -155,26 +155,28 @@ class ContactInfo extends React.Component<Props, State> {
     return passwordsMatch;
   };
 
-  savePersonalInfo = (e) => {
+  savePersonalInfo = (e: SyntheticInputEvent<SettingBorderButton>) => {
     e.preventDefault();
 
-    const editFlagName = e.target.parentElement.id;
-    const { user } = this.state;
+    if (e.target.parentElement && e.target.parentElement.id) {
+      const editFlagName = e.target.parentElement.id;
+      const { user } = this.state;
 
-    if (editFlagName === 'editPhoneNumber') {
-      if (validatePhoneNumber(user.phoneNumber)) {
-        this.props.userActions.update(user);
-        this.reset();
-      }
-    } else {
-      if (user.firstName.length >= 1 && user.lastName.length >= 1) {
-        this.props.userActions.update(user);
-        this.reset();
+      if (editFlagName === 'editPhoneNumber') {
+        if (validatePhoneNumber(user.phoneNumber)) {
+          this.props.userActions.update(user);
+          this.reset();
+        }
+      } else {
+        if (user.firstName.length >= 1 && user.lastName.length >= 1) {
+          this.props.userActions.update(user);
+          this.reset();
+        }
       }
     }
   };
 
-  saveEmail = (e) => {
+  saveEmail = (e: SyntheticInputEvent<SettingBorderButton>) => {
     e.preventDefault();
 
     const { user, password } = this.state;
@@ -192,7 +194,7 @@ class ContactInfo extends React.Component<Props, State> {
     }
   };
 
-  savePassword = (e) => {
+  savePassword = (e: SyntheticInputEvent<SettingBorderButton>) => {
     e.preventDefault();
 
     const {
