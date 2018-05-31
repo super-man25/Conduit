@@ -1,3 +1,4 @@
+// @flow
 import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
 
 /**
@@ -5,7 +6,7 @@ import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
  *
  * @param {Date} d - date to format
  */
-export function readableDate(d) {
+export function readableDate(d: Date): string {
   return format(d, 'ddd, M/DD/YY @ h:mmA');
 }
 
@@ -16,7 +17,7 @@ export function readableDate(d) {
  * @param {Date} t0 - time to compare
  * @return {string}
  */
-export function readableDuration(t1, t0) {
+export function readableDuration(t1: Date, t0?: Date): string {
   if (!t0) {
     return distanceInWordsToNow(t1);
   }
@@ -29,7 +30,7 @@ export function readableDuration(t1, t0) {
  *
  * @param {any} value
  */
-export function orDash(value) {
+export function orDash(value: any): string {
   return value !== undefined && value !== null ? value : '--';
 }
 
@@ -37,7 +38,7 @@ export function orDash(value) {
  * Given a number, format it as USD. Limits value to cents
  * @param {number} value
  */
-export function formatUSD(value) {
+export function formatUSD(value: number): string {
   const formatter = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -53,7 +54,7 @@ export function formatUSD(value) {
  *
  * @param {any} email
  */
-export function validateEmail(email) {
+export function validateEmail(email: any): boolean {
   const emailRegex = /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/;
   const emailOK = emailRegex.test(email);
   return emailOK;
@@ -64,7 +65,7 @@ export function validateEmail(email) {
  *
  * @param {any} phoneNumber
  */
-export function validatePhoneNumber(phoneNumber) {
+export function validatePhoneNumber(phoneNumber: any): boolean {
   if (phoneNumber !== null) {
     const phoneNumberRegex = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
     const phoneNumberOk =
@@ -79,7 +80,7 @@ export function validatePhoneNumber(phoneNumber) {
  *
  * @param {string} str
  */
-export function sentenceCase(str) {
+export function sentenceCase(str: string): string {
   if (typeof str !== 'string') return '';
 
   return str.toLowerCase().replace(str[0], str[0].toUpperCase());
@@ -90,7 +91,7 @@ export function sentenceCase(str) {
  *
  * @param {string} str
  */
-export function titleCase(str) {
+export function titleCase(str: string): string {
   if (typeof str !== 'string') return '';
 
   return str
@@ -98,4 +99,21 @@ export function titleCase(str) {
     .split(' ')
     .map((word) => word.replace(word[0], word[0].toUpperCase()))
     .join(' ');
+}
+
+// Helper for truncateNumber
+const fixToTwoDecimals = (num: number) => num.toFixed(2).replace(/[.,]00$/, '');
+
+/**
+ * Truncate a number to a common string representation. 1000 -> 1k, 1000000 -> 1M
+ * and truncate to at most 2 decimal places
+ */
+export function truncateNumber(value: number): string {
+  if (Math.abs(value) >= 1000000) {
+    return `${fixToTwoDecimals(value / 1000000)}M`;
+  } else if (Math.abs(value) >= 1000) {
+    return `${fixToTwoDecimals(value / 1000)}k`;
+  } else {
+    return `${fixToTwoDecimals(value)}`;
+  }
 }

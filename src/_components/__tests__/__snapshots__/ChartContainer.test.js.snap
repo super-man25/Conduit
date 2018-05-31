@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChartContainer /> renders correctly 1`] = `
+.c0 {
+  background-color: #F8F8F8;
+  border: 1px solid #D1D1D1;
+  position: relative;
+  padding: 14px 14px;
+}
+
+<div
+  className="c0"
+/>
+`;

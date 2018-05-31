@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
@@ -16,24 +16,31 @@ const TooltipContainer: ComponentType<{}> = styled.div`
 const TooltipHeader: ComponentType<{}> = styled.header`
   background-color: ${cssConstants.PRIMARY_DARK_BLUE};
   color: ${cssConstants.PRIMARY_WHITE};
+  font-weight: 300;
+  padding: 4px 12px;
+  text-transform: uppercase;
+`;
+
+export const TooltipHeaderText: ComponentType<{}> = styled.p`
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
   font-size: 10px;
   font-weight: 300;
-  padding: 8px 12px;
-  text-transform: uppercase;
 `;
 
 const TooltipBody: ComponentType<{}> = styled.section`
   padding: 6px 12px;
 `;
 
-const TooltipBodyTitle: ComponentType<{}> = styled.h3`
+export const TooltipBodyTitle: ComponentType<{}> = styled.h3`
   margin: 0;
   padding: 0;
   font-size: 12px;
   font-weight: 400;
 `;
 
-const TooltipBodyText: ComponentType<{}> = styled.p`
+export const TooltipBodyText: ComponentType<{}> = styled.p`
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -41,17 +48,13 @@ const TooltipBodyText: ComponentType<{}> = styled.p`
 `;
 
 type Props = {
-  title: string,
-  bodyTitle: string,
-  bodyText: string
+  headerComponent: React.Node,
+  bodyComponent: React.Node
 };
 
-export const ChartTooltip = ({ title, bodyTitle, bodyText }: Props) => (
+export const ChartTooltip = ({ headerComponent, bodyComponent }: Props) => (
   <TooltipContainer>
-    <TooltipHeader>{title}</TooltipHeader>
-    <TooltipBody>
-      <TooltipBodyTitle>{bodyTitle}</TooltipBodyTitle>
-      <TooltipBodyText>{bodyText}</TooltipBodyText>
-    </TooltipBody>
+    <TooltipHeader>{headerComponent}</TooltipHeader>
+    <TooltipBody>{bodyComponent}</TooltipBody>
   </TooltipContainer>
 );

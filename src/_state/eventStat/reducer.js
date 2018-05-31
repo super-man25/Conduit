@@ -35,8 +35,8 @@ export const initialState: EventStatState = {
     to: null
   },
   eventDateLimits: {
-    from: new Date('2018-04-30T19:28:43+00:00'),
-    to: new Date('2018-06-05T19:28:43+00:00')
+    from: null,
+    to: null
   }
 };
 
