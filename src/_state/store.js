@@ -11,6 +11,7 @@ import {
 import { reducer as eventReducer, saga as eventSaga } from './event';
 import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
+import { reducer as uiReducer } from './ui';
 
 // Build root reducer
 const reducer = combineReducers({
@@ -20,7 +21,8 @@ const reducer = combineReducers({
   user: userReducer,
   client: clientReducer,
   eventStat: eventStatReducer,
-  teamStat: teamStatReducer
+  teamStat: teamStatReducer,
+  ui: uiReducer
 });
 
 // Setup enhancers

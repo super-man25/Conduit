@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChartTooltip /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    colors={
+        Array [
+            "#000",
+            "#111",
+            "#222",
+          ]
+    }
+    data={
+        Array [
+            10,
+            20,
+            30,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <styled.p>
+          Revenue Breakdown
+</styled.p>,
+        <styled.div
+          height="12px"
+/>,
+        <Unknown
+          colors={
+                    Array [
+                              "#000",
+                              "#111",
+                              "#222",
+                            ]
+          }
+          data={
+                    Array [
+                              10,
+                              20,
+                              30,
+                            ]
+          }
+/>,
+        <styled.div
+          height="12px"
+/>,
+        <div>
+          <LegendItem
+                    color="#144670"
+                    label="Single Game"
+                    value="$9504.13"
+          />
+          <LegendItem
+                    color="#4B98CF"
+                    label="Group Tickets"
+                    value="$9504.13"
+          />
+          <LegendItem
+                    color="#2670AE"
+                    label="Single Suites"
+                    value="$9504.13"
+          />
+          <LegendItem
+                    color="#C4D2E1"
+                    label="Season Tickets"
+                    value="$9504.13"
+          />
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Revenue Breakdown",
+        },
+        "ref": null,
+        "rendered": "Revenue Breakdown",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "height": "12px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "colors": Array [
+            "#000",
+            "#111",
+            "#222",
+          ],
+          "data": Array [
+            10,
+            20,
+            30,
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "height": "12px",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <LegendItem
+              color="#144670"
+              label="Single Game"
+              value="$9504.13"
+/>,
+            <LegendItem
+              color="#4B98CF"
+              label="Group Tickets"
+              value="$9504.13"
+/>,
+            <LegendItem
+              color="#2670AE"
+              label="Single Suites"
+              value="$9504.13"
+/>,
+            <LegendItem
+              color="#C4D2E1"
+              label="Season Tickets"
+              value="$9504.13"
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#144670",
+              "label": "Single Game",
+              "value": "$9504.13",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#4B98CF",
+              "label": "Group Tickets",
+              "value": "$9504.13",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#2670AE",
+              "label": "Single Suites",
+              "value": "$9504.13",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#C4D2E1",
+              "label": "Season Tickets",
+              "value": "$9504.13",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <styled.p>
+            Revenue Breakdown
+</styled.p>,
+          <styled.div
+            height="12px"
+/>,
+          <Unknown
+            colors={
+                        Array [
+                                    "#000",
+                                    "#111",
+                                    "#222",
+                                  ]
+            }
+            data={
+                        Array [
+                                    10,
+                                    20,
+                                    30,
+                                  ]
+            }
+/>,
+          <styled.div
+            height="12px"
+/>,
+          <div>
+            <LegendItem
+                        color="#144670"
+                        label="Single Game"
+                        value="$9504.13"
+            />
+            <LegendItem
+                        color="#4B98CF"
+                        label="Group Tickets"
+                        value="$9504.13"
+            />
+            <LegendItem
+                        color="#2670AE"
+                        label="Single Suites"
+                        value="$9504.13"
+            />
+            <LegendItem
+                        color="#C4D2E1"
+                        label="Season Tickets"
+                        value="$9504.13"
+            />
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Revenue Breakdown",
+          },
+          "ref": null,
+          "rendered": "Revenue Breakdown",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "12px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "colors": Array [
+              "#000",
+              "#111",
+              "#222",
+            ],
+            "data": Array [
+              10,
+              20,
+              30,
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "12px",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <LegendItem
+                color="#144670"
+                label="Single Game"
+                value="$9504.13"
+/>,
+              <LegendItem
+                color="#4B98CF"
+                label="Group Tickets"
+                value="$9504.13"
+/>,
+              <LegendItem
+                color="#2670AE"
+                label="Single Suites"
+                value="$9504.13"
+/>,
+              <LegendItem
+                color="#C4D2E1"
+                label="Season Tickets"
+                value="$9504.13"
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#144670",
+                "label": "Single Game",
+                "value": "$9504.13",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#4B98CF",
+                "label": "Group Tickets",
+                "value": "$9504.13",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#2670AE",
+                "label": "Single Suites",
+                "value": "$9504.13",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#C4D2E1",
+                "label": "Season Tickets",
+                "value": "$9504.13",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -13,10 +13,10 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Event from './Event';
 import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
-import { toggleSidebar } from './stateChanges';
 import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
 import { actions as authActions } from '_state/auth';
+import { actions as uiActions } from '_state/ui';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
@@ -26,30 +26,23 @@ class Dashboard extends React.Component {
     this.props.teamStatActions.fetch();
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      sidebarCollapsed: false
-    };
-  }
-
-  handleSidebarToggleClick = () => {
-    this.setState(toggleSidebar);
-  };
-
   render() {
-    const { sidebarCollapsed } = this.state;
-    const { teamStatState, authState, authActions } = this.props;
+    const {
+      teamStatState,
+      authState,
+      authActions,
+      uiState: { sidebarIsOpen },
+      uiActions: { toggleSidebar }
+    } = this.props;
 
     return (
       <PageWrapper>
         <SiteHeader auth={authState.model} authActions={authActions} />
         <FullContent>
-          <Sidebar collapsed={sidebarCollapsed}>
+          <Sidebar collapsed={!sidebarIsOpen}>
             <SidebarHeader>
               <TeamOverview
-                onToggleSidebar={this.handleSidebarToggleClick}
+                onToggleSidebar={toggleSidebar}
                 stats={teamStatState.overview}
               />
             </SidebarHeader>
@@ -78,14 +71,16 @@ Dashboard.propTypes = {
 function mapStateToProps(state) {
   return {
     teamStatState: state.teamStat,
-    authState: state.auth
+    authState: state.auth,
+    uiState: state.ui
   };
 }
 
 function mapActionCreators(dispatch) {
   return {
     teamStatActions: bindActionCreators(teamStatActions, dispatch),
-    authActions: bindActionCreators(authActions, dispatch)
+    authActions: bindActionCreators(authActions, dispatch),
+    uiActions: bindActionCreators(uiActions, dispatch)
   };
 }
 

@@ -19,10 +19,15 @@ body {
 
 /*
   Necessary to add styles in a stylesheet because DayPicker expects css
-  styles and does not accept css-in-js styles May be worth looking into
+  styles and does not accept css-in-js styles May be worth looking into.
+  Also note important being used to override :(
 */
 .DayPicker-Caption {
   color: var(--SECONDARY_BLUE);
+}
+
+.DayPicker-Month {
+  margin-top: 1.75rem !important;
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--outside):not(.DayPicker-Day--disabled) {

@@ -15,30 +15,23 @@ import {
   ChipButtonGroup,
   DateRangeDropdown
 } from '_components';
-import { cssConstants } from '_constants';
-import { LineSeriesChart } from './LineSeriesChart';
+import { cssConstants, DATE_FORMATS } from '_constants';
+import { PeriodicInventoryChart } from './PeriodicInventoryChart';
+import { PeriodicRevenueChart } from './PeriodicRevenueChart';
+import { CumulativeRevenueChart } from './CumulativeRevenueChart';
+import { CumulativeInventoryChart } from './CumulativeInventoryChart';
 import { RevenueBreakdown } from './RevenueBreakdown';
-import { ChartTooltip } from './ChartTooltip';
-import { format, differenceInCalendarDays } from 'date-fns';
-import { formatUSD } from '_helpers/string-utils';
+import { differenceInCalendarDays } from 'date-fns';
 import type { EventStatState } from '_state/eventStat/reducer';
-import type { EventStatChartData } from '_state/eventStat/selectors';
+import type { EventStat } from '_models/eventStat';
 import typeof EventStatActions from '_state/eventStat/actions';
-import type { ChartPoint } from '_helpers/chart-utils';
 
 const CHART_HEIGHT = 400;
 
-const DATE_FORMATS = {
-  time: 'MMM DD, YYYY hh:mm a',
-  day: 'MMM DD, YYYY'
+const GROUP_FILTERS = {
+  periodic: 0,
+  cumulative: 1
 };
-
-const ChartContainer = styled.div`
-  background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  position: relative;
-  padding: 14px 14px;
-`;
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -65,44 +58,11 @@ const DateFilterOptions = styled.div`
   }
 `;
 
-function formatRevenueTooltip(
-  data: ChartPoint,
-  type: 'ACTUAL' | 'PROJECTED',
-  dateFormat: string
-): { title: string, bodyTitle: string, bodyText: string } {
-  const title = format(data.x, dateFormat);
-  const bodyTitle = type === 'ACTUAL' ? 'Total Revenue' : 'Projected Revenue';
-  const bodyText = formatUSD(data.y);
-
-  return {
-    title,
-    bodyTitle,
-    bodyText
-  };
-}
-
-function formatInventoryTooltip(
-  data: ChartPoint,
-  type: 'ACTUAL' | 'PROJECTED',
-  dateFormat: string
-): { title: string, bodyTitle: string, bodyText: string } {
-  const title = format(data.x, dateFormat);
-  const bodyTitle =
-    type === 'ACTUAL' ? 'Total Inventory' : 'Projected Inventory';
-  const bodyText = '' + data.y;
-
-  return {
-    title,
-    bodyTitle,
-    bodyText
-  };
-}
-
 type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
   eventStatsSelectors: {
-    chartData: EventStatChartData
+    model: EventStat[]
   },
   eventStatActions: EventStatActions
 };
@@ -127,15 +87,13 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         eventDateLimits,
         selectedGroupFilter
       },
-      eventStatsSelectors: {
-        chartData: { inventory, revenue }
-      },
+      eventStatsSelectors: { model },
       eventStatActions: { setDateRange, setGroupFilter }
     } = this.props;
 
     const tooltipDateFormat =
       from && to && differenceInCalendarDays(to, from) <= 7
-        ? DATE_FORMATS.time
+        ? DATE_FORMATS.datetime
         : DATE_FORMATS.day;
 
     return (
@@ -202,60 +160,83 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                     <Flex>
                       {selectedTab === 0 && (
                         <Fragment>
-                          <ChartLegendItem dashed label="Projected Revenue" />
-                          <ChartLegendItem label="Real Revenue" />
+                          <ChartLegendItem
+                            dashed={
+                              selectedGroupFilter === GROUP_FILTERS.cumulative
+                            }
+                            color={
+                              selectedGroupFilter === GROUP_FILTERS.cumulative
+                                ? cssConstants.PRIMARY_LIGHT_BLUE
+                                : cssConstants.PRIMARY_DARK_BLUE
+                            }
+                            label="Projected Revenue"
+                          />
+                          <ChartLegendItem label="Actual Revenue" />
                         </Fragment>
                       )}
 
                       {selectedTab === 1 && (
                         <Fragment>
-                          <ChartLegendItem dashed label="Projected Inventory" />
-                          <ChartLegendItem label="Real Inventory" />
+                          <ChartLegendItem
+                            dashed={
+                              selectedGroupFilter === GROUP_FILTERS.cumulative
+                            }
+                            color={
+                              selectedGroupFilter === GROUP_FILTERS.cumulative
+                                ? cssConstants.PRIMARY_LIGHT_BLUE
+                                : cssConstants.PRIMARY_DARK_BLUE
+                            }
+                            label="Projected Inventory"
+                          />
+                          <ChartLegendItem label="Actual Inventory" />
                         </Fragment>
                       )}
                     </Flex>
                   </FlexItem>
                 </Flex>
                 <Spacing height="18px" />
-                <ChartContainer>
-                  {selectedTab === 0 && (
-                    <LineSeriesChart
-                      height={CHART_HEIGHT}
-                      data={revenue}
-                      xAxisLabel="Date"
-                      yAxisLabel="Revenue"
-                      renderTooltip={({ value, type }) => (
-                        <ChartTooltip
-                          {...formatRevenueTooltip(
-                            value,
-                            type,
-                            tooltipDateFormat
-                          )}
-                        />
-                      )}
-                      renderNoData={() => <NoData type="Revenue" />}
-                    />
-                  )}
+                {selectedTab === 0 && (
+                  <Fragment>
+                    {selectedGroupFilter === GROUP_FILTERS.periodic && (
+                      <PeriodicRevenueChart
+                        data={model}
+                        height={CHART_HEIGHT}
+                        dateFormat={tooltipDateFormat}
+                        renderNoData={() => <NoData type="Revenue" />}
+                      />
+                    )}
 
-                  {selectedTab === 1 && (
-                    <LineSeriesChart
-                      height={CHART_HEIGHT}
-                      data={inventory}
-                      xAxisLabel="Date"
-                      yAxisLabel="Inventory"
-                      renderTooltip={({ value, type }) => (
-                        <ChartTooltip
-                          {...formatInventoryTooltip(
-                            value,
-                            type,
-                            tooltipDateFormat
-                          )}
-                        />
-                      )}
-                      renderNoData={() => <NoData type="Inventory" />}
-                    />
-                  )}
-                </ChartContainer>
+                    {selectedGroupFilter === GROUP_FILTERS.cumulative && (
+                      <CumulativeRevenueChart
+                        data={model}
+                        height={CHART_HEIGHT}
+                        dateFormat={tooltipDateFormat}
+                        renderNoData={() => <NoData type="Revenue" />}
+                      />
+                    )}
+                  </Fragment>
+                )}
+                {selectedTab === 1 && (
+                  <Fragment>
+                    {selectedGroupFilter === GROUP_FILTERS.periodic && (
+                      <PeriodicInventoryChart
+                        data={model}
+                        height={CHART_HEIGHT}
+                        dateFormat={tooltipDateFormat}
+                        renderNoData={() => <NoData type="Inventory" />}
+                      />
+                    )}
+
+                    {selectedGroupFilter === GROUP_FILTERS.cumulative && (
+                      <CumulativeInventoryChart
+                        data={model}
+                        height={CHART_HEIGHT}
+                        dateFormat={tooltipDateFormat}
+                        renderNoData={() => <NoData type="Inventory" />}
+                      />
+                    )}
+                  </Fragment>
+                )}
                 <Spacing height="18px" />
                 <RevenueBreakdown
                   data={[12, 20, 30, 40]}

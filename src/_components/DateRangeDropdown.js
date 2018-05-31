@@ -57,8 +57,8 @@ const DateRangeLabel: React.ComponentType<{}> = styled.span`
   color: ${cssConstants.PRIMARY_GRAY};
   font-size: 12px;
   position: absolute;
-  top: 12px;
-  left: 24px;
+  top: 8px;
+  left: 1.5rem;
 `;
 
 const DropdownSelectedItem: React.ComponentType<{
@@ -80,7 +80,7 @@ const DropdownIconWrapper: React.ComponentType<{}> = styled.span`
 
 const DropdownMenu: React.ComponentType<{}> = styled.div`
   list-style: none;
-  padding: 12px 0 0;
+  padding: 0;
   margin: 0;
   position: absolute;
   top: 100%;
@@ -213,9 +213,10 @@ export class DateRangeDropdown extends React.Component<Props, State> {
           </DropdownSelectedItem>
           {fromIsOpen && (
             <DropdownMenu>
-              <DateRangeLabel>End Date</DateRangeLabel>
+              <DateRangeLabel>Start Date</DateRangeLabel>
               <DayPicker
                 disabledDays={this.generateDisabledStartDates()}
+                initialMonth={from || undefined}
                 onDayClick={this.handleFromChange}
                 selectedDays={[from, { from, to }]}
                 modifiers={modifiers}
@@ -235,6 +236,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
             <DropdownMenu>
               <DateRangeLabel>End Date</DateRangeLabel>
               <DayPicker
+                initialMonth={to || undefined}
                 disabledDays={this.generateDisabledEndDates()}
                 onDayClick={this.handleToChange}
                 selectedDays={[from, { from, to }]}

@@ -5,7 +5,8 @@ import {
   readableDuration,
   orDash,
   titleCase,
-  sentenceCase
+  sentenceCase,
+  truncateNumber
 } from '_helpers/string-utils';
 
 describe('readableDate', () => {
@@ -66,5 +67,24 @@ describe('orDash', () => {
       const result = sentenceCase(original);
       expect(result).toEqual('All small letters');
     });
+  });
+});
+
+describe('truncateNumber', () => {
+  it('should return a truncated number formatted based on its value', () => {
+    expect(truncateNumber(100)).toEqual('100');
+    expect(truncateNumber(1000)).toEqual('1k');
+    expect(truncateNumber(1500)).toEqual('1.50k');
+    expect(truncateNumber(100000)).toEqual('100k');
+    expect(truncateNumber(1000000)).toEqual('1M');
+    expect(truncateNumber(1500000)).toEqual('1.50M');
+    expect(truncateNumber(155550000)).toEqual('155.55M');
+    expect(truncateNumber(-100)).toEqual('-100');
+    expect(truncateNumber(-1000)).toEqual('-1k');
+    expect(truncateNumber(-1500)).toEqual('-1.50k');
+    expect(truncateNumber(-100000)).toEqual('-100k');
+    expect(truncateNumber(-1000000)).toEqual('-1M');
+    expect(truncateNumber(-1500000)).toEqual('-1.50M');
+    expect(truncateNumber(-155550000)).toEqual('-155.55M');
   });
 });
