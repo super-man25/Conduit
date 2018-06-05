@@ -106,12 +106,10 @@ export default function clientReducer(
         error: action.payload
       };
     case UPDATE_INTEGRATION:
+      const { id, isActive, modifiedAt } = action.payload;
       return {
         ...state,
         integrations: state.integrations.map((integration) => {
-          // $FlowFixMe
-          const { id, isActive, modifiedAt } = action.payload;
-
           if (integration.id === id) {
             return { ...integration, isActive, modifiedAt };
           }
