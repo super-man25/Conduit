@@ -4,17 +4,17 @@ exports[`renders correctly with login prop 1`] = `
 .c0 {
   width: 300px;
   height: 40px;
-  line-height: 50px;
-  margin: 0;
+  line-height: 42px;
   padding: 0;
-  float: none;
-  margin-left: 0;
-  padding-top: 0;
-  padding-left: 60px;
-  font-size: 22px;
-  background: #FFFFFF;
-  background-image: url(edlogo.png);
-  background-position: left center;
+  float: left;
+  margin-left: 28px;
+  margin-top: 14px;
+  padding-left: 55px;
+  font-size: 24px;
+  color: #FFFFFF;
+  background: none;
+  background-image: url(eventdynamiclogo.svg);
+  background-position: 0px 0px;
   background-repeat: no-repeat;
 }
 
@@ -31,18 +31,17 @@ exports[`renders correctly with no props 1`] = `
 .c0 {
   width: 300px;
   height: 40px;
-  line-height: 50px;
-  margin: 0;
+  line-height: 42px;
   padding: 0;
   float: left;
-  margin-left: 20px;
-  padding-top: 10px;
+  margin-left: 28px;
+  margin-top: 14px;
   padding-left: 55px;
   font-size: 24px;
   color: #FFFFFF;
   background: none;
-  background-image: url(edlogowhite.png);
-  background-position: 7px 20px;
+  background-image: url(eventdynamiclogo.svg);
+  background-position: 0px 0px;
   background-repeat: no-repeat;
 }
 
