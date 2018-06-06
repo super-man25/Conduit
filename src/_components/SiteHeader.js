@@ -21,6 +21,7 @@ export const SiteHeaderDiv = styled.div`
   margin: 0;
   padding: 0;
   background: ${cssConstants.PRIMARY_DARK_BLUE};
+  justify-content: space-between;
 `;
 
 export const DropdownMenuWrapper = withClickAway(styled.div`

@@ -13,12 +13,12 @@ import type { EventStat } from '_models';
 import type { Filter, DateRange } from '_helpers/types';
 
 export type EventStatState = {
-  loading: boolean,
-  eventStats: EventStat[],
-  groupFilters: Filter[],
-  selectedGroupFilter: number,
-  eventDateLimits: DateRange,
-  dateRange: DateRange
+  +loading: boolean,
+  +eventStats: EventStat[],
+  +groupFilters: Filter[],
+  +selectedGroupFilter: number,
+  +eventDateLimits: DateRange,
+  +dateRange: DateRange
 };
 
 // When there is an endpoint to get first/last date, replace eventDateLimits

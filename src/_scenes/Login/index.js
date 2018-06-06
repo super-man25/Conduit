@@ -8,18 +8,18 @@ import {
   Input,
   Label,
   Loader,
-  LogoName,
   MailtoLink,
   Spacing
 } from '_components';
 import { cssConstants } from '_constants';
-import stadiumImage from '_images/stadium.jpg';
+import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
+import edLogoImage from '_images/eventdynamiclogo.svg';
 
 const Content = styled.div`
   height: 100%;
@@ -32,6 +32,14 @@ const LoginFooter = styled.div`
   background-color: ${cssConstants.PRIMARY_EVEN_LIGHTER_GRAY};
   font-size: 10px;
   line-height: 130%;
+`;
+
+const LogoImg = styled.img`
+  display: block;
+  margin: auto;
+  padding: 40px;
+  paddingtop: 10px;
+  width: 40%;
 `;
 
 export class LoginPresenter extends React.Component {
@@ -117,7 +125,7 @@ export class LoginPresenter extends React.Component {
           <FlexItem>
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
-                <LogoName login />
+                <LogoImg src={edLogoImage} alt="Event Dynamic Logo" />
                 <H3>Log In</H3>
                 <form name="form" onSubmit={this.handleSubmit}>
                   <Label htmlFor="email">Email Address</Label>

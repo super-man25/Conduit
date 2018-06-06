@@ -1,5 +1,7 @@
 // @flow
 
+import type { EDClient, EDIntegration } from '_models';
+
 // Constants
 export const FETCH_ASYNC = 'client/FETCH_ASYNC';
 export const FETCH_SUCCESS = 'client/FETCH_SUCCESS';
@@ -21,20 +23,20 @@ export type Action =
   | { type: typeof FETCH_ERROR, payload?: Error }
   | { type: typeof SET_PRICING_INTERVAL, payload: number }
   | { type: typeof RESET_DIRTY_PRICING_INTERVAL, payload: number }
-  | { type: typeof FETCH_SUCCESS, payload: any }
-  | { type: typeof UPDATE_ASYNC, payload: any }
-  | { type: typeof UPDATE_SUCCESS, payload: any }
+  | { type: typeof FETCH_SUCCESS, payload: EDClient }
+  | { type: typeof UPDATE_ASYNC, payload: { pricingInterval: number } }
+  | { type: typeof UPDATE_SUCCESS, payload: EDClient }
   | { type: typeof UPDATE_ERROR, payload?: Error }
   | { type: typeof FETCH_INTEGRATIONS_ASYNC, payload: boolean }
-  | { type: typeof FETCH_INTEGRATIONS_SUCCESS, payload: Array<any> }
+  | { type: typeof FETCH_INTEGRATIONS_SUCCESS, payload: Array<EDIntegration> }
   | { type: typeof FETCH_INTEGRATIONS_ERROR, payload?: Error }
   | {
       type: typeof TOGGLE_INTEGRATION,
-      payload: any
+      payload: { id: number, isActive: boolean }
     }
   | {
       type: typeof UPDATE_INTEGRATION,
-      payload: { id: number, isActive: boolean }
+      payload: { id: number, isActive: boolean, modifiedAt: Date }
     };
 
 // Action creators

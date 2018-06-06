@@ -10,7 +10,6 @@ import {
   ImageLayout,
   Input,
   Label,
-  LogoName,
   MailtoLink,
   Spacing,
   FlexItem,
@@ -32,11 +31,6 @@ describe('<LoginPresenter />', () => {
   it('contains a <MailtoLink /> component', () => {
     const wrapper = shallow(<LoginPresenter authState={myAuth} />);
     expect(wrapper.find(MailtoLink)).toHaveLength(1);
-  });
-
-  it('contains a <LogoName /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(LogoName)).toHaveLength(1);
   });
 
   it('contains an <H3 /> component', () => {
