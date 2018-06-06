@@ -1,0 +1,1647 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginPresenter /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginPresenter
+    alertState={
+        Object {
+            "message": "",
+            "show": false,
+            "type": null,
+          }
+    }
+    authState={
+        Object {
+            "model": null,
+            "pending": false,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <styled.div>
+        <FlexItem
+                flex={1}
+        >
+                <styled.div
+                        padding="20% 40px 40px"
+                >
+                        <styled.div
+                                maxWidth="400px"
+                        >
+                                <styled.img
+                                        alt="Event Dynamic Logo"
+                                        src="eventdynamiclogo.svg"
+                                />
+                                <styled.h3
+                                        style={
+                                                Object {
+                                                        "marginBottom": "5px",
+                                                      }
+                                        }
+                                >
+                                        Log In
+                                </styled.h3>
+                                <form
+                                        name="form"
+                                        onSubmit={[Function]}
+                                >
+                                        <styled.div
+                                                show={false}
+                                                style={
+                                                        Object {
+                                                                "fontWeight": "bold",
+                                                                "marginBottom": "0px",
+                                                                "marginTop": "0px",
+                                                              }
+                                                }
+                                                type={null}
+                                        >
+                                                Incorrect Email Address or Password.
+                                        </styled.div>
+                                        <styled.label
+                                                htmlFor="email"
+                                        >
+                                                Email Address
+                                        </styled.label>
+                                        <styled.input
+                                                autoComplete="new-email"
+                                                data-test-id="email-input"
+                                                id="email"
+                                                inValid={false}
+                                                name="email"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                type="text"
+                                                valid={false}
+                                                value=""
+                                        />
+                                        <styled.div
+                                                show={false}
+                                                type="alert-danger"
+                                        >
+                                                A valid Email is required
+                                        </styled.div>
+                                        <styled.label
+                                                htmlFor="password"
+                                        >
+                                                Password
+                                        </styled.label>
+                                        <styled.input
+                                                autoComplete="new-password"
+                                                data-test-id="password-input"
+                                                id="password"
+                                                inValid={false}
+                                                name="password"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                type="password"
+                                                valid=""
+                                                value=""
+                                        />
+                                        <styled.div
+                                                show={false}
+                                                type="alert-danger"
+                                        >
+                                                Password is required
+                                        </styled.div>
+                                        <styled.button
+                                                data-test-id="login-button"
+                                                disabled={true}
+                                                id="login"
+                                        >
+                                                Login
+                                        </styled.button>
+                                </form>
+                        </styled.div>
+                </styled.div>
+        </FlexItem>
+        <styled.div>
+                If you do not already have an account please contact
+                 
+                <styled.a
+                        mailto="robert.smith@soldoutsports.com"
+                >
+                        robert.smith@soldoutsports.com
+                </styled.a>
+                 
+                to begin setting up an account for your organization.
+        </styled.div>
+</styled.div>,
+      "imageSrc": "url(stadiumseats.jpg)",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <FlexItem
+            flex={1}
+>
+            <styled.div
+                        padding="20% 40px 40px"
+            >
+                        <styled.div
+                                    maxWidth="400px"
+                        >
+                                    <styled.img
+                                                alt="Event Dynamic Logo"
+                                                src="eventdynamiclogo.svg"
+                                    />
+                                    <styled.h3
+                                                style={
+                                                            Object {
+                                                                        "marginBottom": "5px",
+                                                                      }
+                                                }
+                                    >
+                                                Log In
+                                    </styled.h3>
+                                    <form
+                                                name="form"
+                                                onSubmit={[Function]}
+                                    >
+                                                <styled.div
+                                                            show={false}
+                                                            style={
+                                                                        Object {
+                                                                                    "fontWeight": "bold",
+                                                                                    "marginBottom": "0px",
+                                                                                    "marginTop": "0px",
+                                                                                  }
+                                                            }
+                                                            type={null}
+                                                >
+                                                            Incorrect Email Address or Password.
+                                                </styled.div>
+                                                <styled.label
+                                                            htmlFor="email"
+                                                >
+                                                            Email Address
+                                                </styled.label>
+                                                <styled.input
+                                                            autoComplete="new-email"
+                                                            data-test-id="email-input"
+                                                            id="email"
+                                                            inValid={false}
+                                                            name="email"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                            valid={false}
+                                                            value=""
+                                                />
+                                                <styled.div
+                                                            show={false}
+                                                            type="alert-danger"
+                                                >
+                                                            A valid Email is required
+                                                </styled.div>
+                                                <styled.label
+                                                            htmlFor="password"
+                                                >
+                                                            Password
+                                                </styled.label>
+                                                <styled.input
+                                                            autoComplete="new-password"
+                                                            data-test-id="password-input"
+                                                            id="password"
+                                                            inValid={false}
+                                                            name="password"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            type="password"
+                                                            valid=""
+                                                            value=""
+                                                />
+                                                <styled.div
+                                                            show={false}
+                                                            type="alert-danger"
+                                                >
+                                                            Password is required
+                                                </styled.div>
+                                                <styled.button
+                                                            data-test-id="login-button"
+                                                            disabled={true}
+                                                            id="login"
+                                                >
+                                                            Login
+                                                </styled.button>
+                                    </form>
+                        </styled.div>
+            </styled.div>
+</FlexItem>,
+          <styled.div>
+            If you do not already have an account please contact
+             
+            <styled.a
+                        mailto="robert.smith@soldoutsports.com"
+            >
+                        robert.smith@soldoutsports.com
+            </styled.a>
+             
+            to begin setting up an account for your organization.
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="20% 40px 40px"
+>
+              <styled.div
+                            maxWidth="400px"
+              >
+                            <styled.img
+                                          alt="Event Dynamic Logo"
+                                          src="eventdynamiclogo.svg"
+                            />
+                            <styled.h3
+                                          style={
+                                                        Object {
+                                                                      "marginBottom": "5px",
+                                                                    }
+                                          }
+                            >
+                                          Log In
+                            </styled.h3>
+                            <form
+                                          name="form"
+                                          onSubmit={[Function]}
+                            >
+                                          <styled.div
+                                                        show={false}
+                                                        style={
+                                                                      Object {
+                                                                                    "fontWeight": "bold",
+                                                                                    "marginBottom": "0px",
+                                                                                    "marginTop": "0px",
+                                                                                  }
+                                                        }
+                                                        type={null}
+                                          >
+                                                        Incorrect Email Address or Password.
+                                          </styled.div>
+                                          <styled.label
+                                                        htmlFor="email"
+                                          >
+                                                        Email Address
+                                          </styled.label>
+                                          <styled.input
+                                                        autoComplete="new-email"
+                                                        data-test-id="email-input"
+                                                        id="email"
+                                                        inValid={false}
+                                                        name="email"
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        type="text"
+                                                        valid={false}
+                                                        value=""
+                                          />
+                                          <styled.div
+                                                        show={false}
+                                                        type="alert-danger"
+                                          >
+                                                        A valid Email is required
+                                          </styled.div>
+                                          <styled.label
+                                                        htmlFor="password"
+                                          >
+                                                        Password
+                                          </styled.label>
+                                          <styled.input
+                                                        autoComplete="new-password"
+                                                        data-test-id="password-input"
+                                                        id="password"
+                                                        inValid={false}
+                                                        name="password"
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        type="password"
+                                                        valid=""
+                                                        value=""
+                                          />
+                                          <styled.div
+                                                        show={false}
+                                                        type="alert-danger"
+                                          >
+                                                        Password is required
+                                          </styled.div>
+                                          <styled.button
+                                                        data-test-id="login-button"
+                                                        disabled={true}
+                                                        id="login"
+                                          >
+                                                        Login
+                                          </styled.button>
+                            </form>
+              </styled.div>
+</styled.div>,
+            "flex": 1,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <styled.div
+                maxWidth="400px"
+>
+                <styled.img
+                                alt="Event Dynamic Logo"
+                                src="eventdynamiclogo.svg"
+                />
+                <styled.h3
+                                style={
+                                                Object {
+                                                                "marginBottom": "5px",
+                                                              }
+                                }
+                >
+                                Log In
+                </styled.h3>
+                <form
+                                name="form"
+                                onSubmit={[Function]}
+                >
+                                <styled.div
+                                                show={false}
+                                                style={
+                                                                Object {
+                                                                                "fontWeight": "bold",
+                                                                                "marginBottom": "0px",
+                                                                                "marginTop": "0px",
+                                                                              }
+                                                }
+                                                type={null}
+                                >
+                                                Incorrect Email Address or Password.
+                                </styled.div>
+                                <styled.label
+                                                htmlFor="email"
+                                >
+                                                Email Address
+                                </styled.label>
+                                <styled.input
+                                                autoComplete="new-email"
+                                                data-test-id="email-input"
+                                                id="email"
+                                                inValid={false}
+                                                name="email"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                type="text"
+                                                valid={false}
+                                                value=""
+                                />
+                                <styled.div
+                                                show={false}
+                                                type="alert-danger"
+                                >
+                                                A valid Email is required
+                                </styled.div>
+                                <styled.label
+                                                htmlFor="password"
+                                >
+                                                Password
+                                </styled.label>
+                                <styled.input
+                                                autoComplete="new-password"
+                                                data-test-id="password-input"
+                                                id="password"
+                                                inValid={false}
+                                                name="password"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                type="password"
+                                                valid=""
+                                                value=""
+                                />
+                                <styled.div
+                                                show={false}
+                                                type="alert-danger"
+                                >
+                                                Password is required
+                                </styled.div>
+                                <styled.button
+                                                data-test-id="login-button"
+                                                disabled={true}
+                                                id="login"
+                                >
+                                                Login
+                                </styled.button>
+                </form>
+</styled.div>,
+              "padding": "20% 40px 40px",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.img
+                    alt="Event Dynamic Logo"
+                    src="eventdynamiclogo.svg"
+/>,
+                  <styled.h3
+                    style={
+                                        Object {
+                                                            "marginBottom": "5px",
+                                                          }
+                    }
+>
+                    Log In
+</styled.h3>,
+                  <form
+                    name="form"
+                    onSubmit={[Function]}
+>
+                    <styled.div
+                                        show={false}
+                                        style={
+                                                            Object {
+                                                                                "fontWeight": "bold",
+                                                                                "marginBottom": "0px",
+                                                                                "marginTop": "0px",
+                                                                              }
+                                        }
+                                        type={null}
+                    >
+                                        Incorrect Email Address or Password.
+                    </styled.div>
+                    <styled.label
+                                        htmlFor="email"
+                    >
+                                        Email Address
+                    </styled.label>
+                    <styled.input
+                                        autoComplete="new-email"
+                                        data-test-id="email-input"
+                                        id="email"
+                                        inValid={false}
+                                        name="email"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        type="text"
+                                        valid={false}
+                                        value=""
+                    />
+                    <styled.div
+                                        show={false}
+                                        type="alert-danger"
+                    >
+                                        A valid Email is required
+                    </styled.div>
+                    <styled.label
+                                        htmlFor="password"
+                    >
+                                        Password
+                    </styled.label>
+                    <styled.input
+                                        autoComplete="new-password"
+                                        data-test-id="password-input"
+                                        id="password"
+                                        inValid={false}
+                                        name="password"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        type="password"
+                                        valid=""
+                                        value=""
+                    />
+                    <styled.div
+                                        show={false}
+                                        type="alert-danger"
+                    >
+                                        Password is required
+                    </styled.div>
+                    <styled.button
+                                        data-test-id="login-button"
+                                        disabled={true}
+                                        id="login"
+                    >
+                                        Login
+                    </styled.button>
+</form>,
+                ],
+                "maxWidth": "400px",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "alt": "Event Dynamic Logo",
+                    "src": "eventdynamiclogo.svg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Log In",
+                    "style": Object {
+                      "marginBottom": "5px",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Log In",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <styled.div
+                        show={false}
+                        style={
+                                                Object {
+                                                                        "fontWeight": "bold",
+                                                                        "marginBottom": "0px",
+                                                                        "marginTop": "0px",
+                                                                      }
+                        }
+                        type={null}
+>
+                        Incorrect Email Address or Password.
+</styled.div>,
+                      <styled.label
+                        htmlFor="email"
+>
+                        Email Address
+</styled.label>,
+                      <styled.input
+                        autoComplete="new-email"
+                        data-test-id="email-input"
+                        id="email"
+                        inValid={false}
+                        name="email"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        type="text"
+                        valid={false}
+                        value=""
+/>,
+                      <styled.div
+                        show={false}
+                        type="alert-danger"
+>
+                        A valid Email is required
+</styled.div>,
+                      <styled.label
+                        htmlFor="password"
+>
+                        Password
+</styled.label>,
+                      <styled.input
+                        autoComplete="new-password"
+                        data-test-id="password-input"
+                        id="password"
+                        inValid={false}
+                        name="password"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        type="password"
+                        valid=""
+                        value=""
+/>,
+                      <styled.div
+                        show={false}
+                        type="alert-danger"
+>
+                        Password is required
+</styled.div>,
+                      <styled.button
+                        data-test-id="login-button"
+                        disabled={true}
+                        id="login"
+>
+                        Login
+</styled.button>,
+                    ],
+                    "name": "form",
+                    "onSubmit": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Incorrect Email Address or Password.",
+                        "show": false,
+                        "style": Object {
+                          "fontWeight": "bold",
+                          "marginBottom": "0px",
+                          "marginTop": "0px",
+                        },
+                        "type": null,
+                      },
+                      "ref": null,
+                      "rendered": "Incorrect Email Address or Password.",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Email Address",
+                        "htmlFor": "email",
+                      },
+                      "ref": null,
+                      "rendered": "Email Address",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "autoComplete": "new-email",
+                        "data-test-id": "email-input",
+                        "id": "email",
+                        "inValid": false,
+                        "name": "email",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "type": "text",
+                        "valid": false,
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "A valid Email is required",
+                        "show": false,
+                        "type": "alert-danger",
+                      },
+                      "ref": null,
+                      "rendered": "A valid Email is required",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Password",
+                        "htmlFor": "password",
+                      },
+                      "ref": null,
+                      "rendered": "Password",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "autoComplete": "new-password",
+                        "data-test-id": "password-input",
+                        "id": "password",
+                        "inValid": false,
+                        "name": "password",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "type": "password",
+                        "valid": "",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Password is required",
+                        "show": false,
+                        "type": "alert-danger",
+                      },
+                      "ref": null,
+                      "rendered": "Password is required",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Login",
+                        "data-test-id": "login-button",
+                        "disabled": true,
+                        "id": "login",
+                      },
+                      "ref": null,
+                      "rendered": "Login",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "form",
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "If you do not already have an account please contact",
+              " ",
+              <styled.a
+                mailto="robert.smith@soldoutsports.com"
+>
+                robert.smith@soldoutsports.com
+</styled.a>,
+              " ",
+              "to begin setting up an account for your organization.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "If you do not already have an account please contact",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "robert.smith@soldoutsports.com",
+                "mailto": "robert.smith@soldoutsports.com",
+              },
+              "ref": null,
+              "rendered": "robert.smith@soldoutsports.com",
+              "type": [Function],
+            },
+            " ",
+            "to begin setting up an account for your organization.",
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <styled.div>
+          <FlexItem
+                    flex={1}
+          >
+                    <styled.div
+                              padding="20% 40px 40px"
+                    >
+                              <styled.div
+                                        maxWidth="400px"
+                              >
+                                        <styled.img
+                                                  alt="Event Dynamic Logo"
+                                                  src="eventdynamiclogo.svg"
+                                        />
+                                        <styled.h3
+                                                  style={
+                                                            Object {
+                                                                      "marginBottom": "5px",
+                                                                    }
+                                                  }
+                                        >
+                                                  Log In
+                                        </styled.h3>
+                                        <form
+                                                  name="form"
+                                                  onSubmit={[Function]}
+                                        >
+                                                  <styled.div
+                                                            show={false}
+                                                            style={
+                                                                      Object {
+                                                                                "fontWeight": "bold",
+                                                                                "marginBottom": "0px",
+                                                                                "marginTop": "0px",
+                                                                              }
+                                                            }
+                                                            type={null}
+                                                  >
+                                                            Incorrect Email Address or Password.
+                                                  </styled.div>
+                                                  <styled.label
+                                                            htmlFor="email"
+                                                  >
+                                                            Email Address
+                                                  </styled.label>
+                                                  <styled.input
+                                                            autoComplete="new-email"
+                                                            data-test-id="email-input"
+                                                            id="email"
+                                                            inValid={false}
+                                                            name="email"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            type="text"
+                                                            valid={false}
+                                                            value=""
+                                                  />
+                                                  <styled.div
+                                                            show={false}
+                                                            type="alert-danger"
+                                                  >
+                                                            A valid Email is required
+                                                  </styled.div>
+                                                  <styled.label
+                                                            htmlFor="password"
+                                                  >
+                                                            Password
+                                                  </styled.label>
+                                                  <styled.input
+                                                            autoComplete="new-password"
+                                                            data-test-id="password-input"
+                                                            id="password"
+                                                            inValid={false}
+                                                            name="password"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            type="password"
+                                                            valid=""
+                                                            value=""
+                                                  />
+                                                  <styled.div
+                                                            show={false}
+                                                            type="alert-danger"
+                                                  >
+                                                            Password is required
+                                                  </styled.div>
+                                                  <styled.button
+                                                            data-test-id="login-button"
+                                                            disabled={true}
+                                                            id="login"
+                                                  >
+                                                            Login
+                                                  </styled.button>
+                                        </form>
+                              </styled.div>
+                    </styled.div>
+          </FlexItem>
+          <styled.div>
+                    If you do not already have an account please contact
+                     
+                    <styled.a
+                              mailto="robert.smith@soldoutsports.com"
+                    >
+                              robert.smith@soldoutsports.com
+                    </styled.a>
+                     
+                    to begin setting up an account for your organization.
+          </styled.div>
+</styled.div>,
+        "imageSrc": "url(stadiumseats.jpg)",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <FlexItem
+              flex={1}
+>
+              <styled.div
+                            padding="20% 40px 40px"
+              >
+                            <styled.div
+                                          maxWidth="400px"
+                            >
+                                          <styled.img
+                                                        alt="Event Dynamic Logo"
+                                                        src="eventdynamiclogo.svg"
+                                          />
+                                          <styled.h3
+                                                        style={
+                                                                      Object {
+                                                                                    "marginBottom": "5px",
+                                                                                  }
+                                                        }
+                                          >
+                                                        Log In
+                                          </styled.h3>
+                                          <form
+                                                        name="form"
+                                                        onSubmit={[Function]}
+                                          >
+                                                        <styled.div
+                                                                      show={false}
+                                                                      style={
+                                                                                    Object {
+                                                                                                  "fontWeight": "bold",
+                                                                                                  "marginBottom": "0px",
+                                                                                                  "marginTop": "0px",
+                                                                                                }
+                                                                      }
+                                                                      type={null}
+                                                        >
+                                                                      Incorrect Email Address or Password.
+                                                        </styled.div>
+                                                        <styled.label
+                                                                      htmlFor="email"
+                                                        >
+                                                                      Email Address
+                                                        </styled.label>
+                                                        <styled.input
+                                                                      autoComplete="new-email"
+                                                                      data-test-id="email-input"
+                                                                      id="email"
+                                                                      inValid={false}
+                                                                      name="email"
+                                                                      onBlur={[Function]}
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                                      valid={false}
+                                                                      value=""
+                                                        />
+                                                        <styled.div
+                                                                      show={false}
+                                                                      type="alert-danger"
+                                                        >
+                                                                      A valid Email is required
+                                                        </styled.div>
+                                                        <styled.label
+                                                                      htmlFor="password"
+                                                        >
+                                                                      Password
+                                                        </styled.label>
+                                                        <styled.input
+                                                                      autoComplete="new-password"
+                                                                      data-test-id="password-input"
+                                                                      id="password"
+                                                                      inValid={false}
+                                                                      name="password"
+                                                                      onBlur={[Function]}
+                                                                      onChange={[Function]}
+                                                                      type="password"
+                                                                      valid=""
+                                                                      value=""
+                                                        />
+                                                        <styled.div
+                                                                      show={false}
+                                                                      type="alert-danger"
+                                                        >
+                                                                      Password is required
+                                                        </styled.div>
+                                                        <styled.button
+                                                                      data-test-id="login-button"
+                                                                      disabled={true}
+                                                                      id="login"
+                                                        >
+                                                                      Login
+                                                        </styled.button>
+                                          </form>
+                            </styled.div>
+              </styled.div>
+</FlexItem>,
+            <styled.div>
+              If you do not already have an account please contact
+               
+              <styled.a
+                            mailto="robert.smith@soldoutsports.com"
+              >
+                            robert.smith@soldoutsports.com
+              </styled.a>
+               
+              to begin setting up an account for your organization.
+</styled.div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <styled.div
+                padding="20% 40px 40px"
+>
+                <styled.div
+                                maxWidth="400px"
+                >
+                                <styled.img
+                                                alt="Event Dynamic Logo"
+                                                src="eventdynamiclogo.svg"
+                                />
+                                <styled.h3
+                                                style={
+                                                                Object {
+                                                                                "marginBottom": "5px",
+                                                                              }
+                                                }
+                                >
+                                                Log In
+                                </styled.h3>
+                                <form
+                                                name="form"
+                                                onSubmit={[Function]}
+                                >
+                                                <styled.div
+                                                                show={false}
+                                                                style={
+                                                                                Object {
+                                                                                                "fontWeight": "bold",
+                                                                                                "marginBottom": "0px",
+                                                                                                "marginTop": "0px",
+                                                                                              }
+                                                                }
+                                                                type={null}
+                                                >
+                                                                Incorrect Email Address or Password.
+                                                </styled.div>
+                                                <styled.label
+                                                                htmlFor="email"
+                                                >
+                                                                Email Address
+                                                </styled.label>
+                                                <styled.input
+                                                                autoComplete="new-email"
+                                                                data-test-id="email-input"
+                                                                id="email"
+                                                                inValid={false}
+                                                                name="email"
+                                                                onBlur={[Function]}
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                                valid={false}
+                                                                value=""
+                                                />
+                                                <styled.div
+                                                                show={false}
+                                                                type="alert-danger"
+                                                >
+                                                                A valid Email is required
+                                                </styled.div>
+                                                <styled.label
+                                                                htmlFor="password"
+                                                >
+                                                                Password
+                                                </styled.label>
+                                                <styled.input
+                                                                autoComplete="new-password"
+                                                                data-test-id="password-input"
+                                                                id="password"
+                                                                inValid={false}
+                                                                name="password"
+                                                                onBlur={[Function]}
+                                                                onChange={[Function]}
+                                                                type="password"
+                                                                valid=""
+                                                                value=""
+                                                />
+                                                <styled.div
+                                                                show={false}
+                                                                type="alert-danger"
+                                                >
+                                                                Password is required
+                                                </styled.div>
+                                                <styled.button
+                                                                data-test-id="login-button"
+                                                                disabled={true}
+                                                                id="login"
+                                                >
+                                                                Login
+                                                </styled.button>
+                                </form>
+                </styled.div>
+</styled.div>,
+              "flex": 1,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <styled.div
+                  maxWidth="400px"
+>
+                  <styled.img
+                                    alt="Event Dynamic Logo"
+                                    src="eventdynamiclogo.svg"
+                  />
+                  <styled.h3
+                                    style={
+                                                      Object {
+                                                                        "marginBottom": "5px",
+                                                                      }
+                                    }
+                  >
+                                    Log In
+                  </styled.h3>
+                  <form
+                                    name="form"
+                                    onSubmit={[Function]}
+                  >
+                                    <styled.div
+                                                      show={false}
+                                                      style={
+                                                                        Object {
+                                                                                          "fontWeight": "bold",
+                                                                                          "marginBottom": "0px",
+                                                                                          "marginTop": "0px",
+                                                                                        }
+                                                      }
+                                                      type={null}
+                                    >
+                                                      Incorrect Email Address or Password.
+                                    </styled.div>
+                                    <styled.label
+                                                      htmlFor="email"
+                                    >
+                                                      Email Address
+                                    </styled.label>
+                                    <styled.input
+                                                      autoComplete="new-email"
+                                                      data-test-id="email-input"
+                                                      id="email"
+                                                      inValid={false}
+                                                      name="email"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      type="text"
+                                                      valid={false}
+                                                      value=""
+                                    />
+                                    <styled.div
+                                                      show={false}
+                                                      type="alert-danger"
+                                    >
+                                                      A valid Email is required
+                                    </styled.div>
+                                    <styled.label
+                                                      htmlFor="password"
+                                    >
+                                                      Password
+                                    </styled.label>
+                                    <styled.input
+                                                      autoComplete="new-password"
+                                                      data-test-id="password-input"
+                                                      id="password"
+                                                      inValid={false}
+                                                      name="password"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      type="password"
+                                                      valid=""
+                                                      value=""
+                                    />
+                                    <styled.div
+                                                      show={false}
+                                                      type="alert-danger"
+                                    >
+                                                      Password is required
+                                    </styled.div>
+                                    <styled.button
+                                                      data-test-id="login-button"
+                                                      disabled={true}
+                                                      id="login"
+                                    >
+                                                      Login
+                                    </styled.button>
+                  </form>
+</styled.div>,
+                "padding": "20% 40px 40px",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.img
+                      alt="Event Dynamic Logo"
+                      src="eventdynamiclogo.svg"
+/>,
+                    <styled.h3
+                      style={
+                                            Object {
+                                                                  "marginBottom": "5px",
+                                                                }
+                      }
+>
+                      Log In
+</styled.h3>,
+                    <form
+                      name="form"
+                      onSubmit={[Function]}
+>
+                      <styled.div
+                                            show={false}
+                                            style={
+                                                                  Object {
+                                                                                        "fontWeight": "bold",
+                                                                                        "marginBottom": "0px",
+                                                                                        "marginTop": "0px",
+                                                                                      }
+                                            }
+                                            type={null}
+                      >
+                                            Incorrect Email Address or Password.
+                      </styled.div>
+                      <styled.label
+                                            htmlFor="email"
+                      >
+                                            Email Address
+                      </styled.label>
+                      <styled.input
+                                            autoComplete="new-email"
+                                            data-test-id="email-input"
+                                            id="email"
+                                            inValid={false}
+                                            name="email"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            type="text"
+                                            valid={false}
+                                            value=""
+                      />
+                      <styled.div
+                                            show={false}
+                                            type="alert-danger"
+                      >
+                                            A valid Email is required
+                      </styled.div>
+                      <styled.label
+                                            htmlFor="password"
+                      >
+                                            Password
+                      </styled.label>
+                      <styled.input
+                                            autoComplete="new-password"
+                                            data-test-id="password-input"
+                                            id="password"
+                                            inValid={false}
+                                            name="password"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            type="password"
+                                            valid=""
+                                            value=""
+                      />
+                      <styled.div
+                                            show={false}
+                                            type="alert-danger"
+                      >
+                                            Password is required
+                      </styled.div>
+                      <styled.button
+                                            data-test-id="login-button"
+                                            disabled={true}
+                                            id="login"
+                      >
+                                            Login
+                      </styled.button>
+</form>,
+                  ],
+                  "maxWidth": "400px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "alt": "Event Dynamic Logo",
+                      "src": "eventdynamiclogo.svg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Log In",
+                      "style": Object {
+                        "marginBottom": "5px",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "Log In",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <styled.div
+                          show={false}
+                          style={
+                                                    Object {
+                                                                              "fontWeight": "bold",
+                                                                              "marginBottom": "0px",
+                                                                              "marginTop": "0px",
+                                                                            }
+                          }
+                          type={null}
+>
+                          Incorrect Email Address or Password.
+</styled.div>,
+                        <styled.label
+                          htmlFor="email"
+>
+                          Email Address
+</styled.label>,
+                        <styled.input
+                          autoComplete="new-email"
+                          data-test-id="email-input"
+                          id="email"
+                          inValid={false}
+                          name="email"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="text"
+                          valid={false}
+                          value=""
+/>,
+                        <styled.div
+                          show={false}
+                          type="alert-danger"
+>
+                          A valid Email is required
+</styled.div>,
+                        <styled.label
+                          htmlFor="password"
+>
+                          Password
+</styled.label>,
+                        <styled.input
+                          autoComplete="new-password"
+                          data-test-id="password-input"
+                          id="password"
+                          inValid={false}
+                          name="password"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          type="password"
+                          valid=""
+                          value=""
+/>,
+                        <styled.div
+                          show={false}
+                          type="alert-danger"
+>
+                          Password is required
+</styled.div>,
+                        <styled.button
+                          data-test-id="login-button"
+                          disabled={true}
+                          id="login"
+>
+                          Login
+</styled.button>,
+                      ],
+                      "name": "form",
+                      "onSubmit": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Incorrect Email Address or Password.",
+                          "show": false,
+                          "style": Object {
+                            "fontWeight": "bold",
+                            "marginBottom": "0px",
+                            "marginTop": "0px",
+                          },
+                          "type": null,
+                        },
+                        "ref": null,
+                        "rendered": "Incorrect Email Address or Password.",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Email Address",
+                          "htmlFor": "email",
+                        },
+                        "ref": null,
+                        "rendered": "Email Address",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "autoComplete": "new-email",
+                          "data-test-id": "email-input",
+                          "id": "email",
+                          "inValid": false,
+                          "name": "email",
+                          "onBlur": [Function],
+                          "onChange": [Function],
+                          "type": "text",
+                          "valid": false,
+                          "value": "",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "A valid Email is required",
+                          "show": false,
+                          "type": "alert-danger",
+                        },
+                        "ref": null,
+                        "rendered": "A valid Email is required",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Password",
+                          "htmlFor": "password",
+                        },
+                        "ref": null,
+                        "rendered": "Password",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "autoComplete": "new-password",
+                          "data-test-id": "password-input",
+                          "id": "password",
+                          "inValid": false,
+                          "name": "password",
+                          "onBlur": [Function],
+                          "onChange": [Function],
+                          "type": "password",
+                          "valid": "",
+                          "value": "",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Password is required",
+                          "show": false,
+                          "type": "alert-danger",
+                        },
+                        "ref": null,
+                        "rendered": "Password is required",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Login",
+                          "data-test-id": "login-button",
+                          "disabled": true,
+                          "id": "login",
+                        },
+                        "ref": null,
+                        "rendered": "Login",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "form",
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "If you do not already have an account please contact",
+                " ",
+                <styled.a
+                  mailto="robert.smith@soldoutsports.com"
+>
+                  robert.smith@soldoutsports.com
+</styled.a>,
+                " ",
+                "to begin setting up an account for your organization.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "If you do not already have an account please contact",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "robert.smith@soldoutsports.com",
+                  "mailto": "robert.smith@soldoutsports.com",
+                },
+                "ref": null,
+                "rendered": "robert.smith@soldoutsports.com",
+                "type": [Function],
+              },
+              " ",
+              "to begin setting up an account for your organization.",
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
