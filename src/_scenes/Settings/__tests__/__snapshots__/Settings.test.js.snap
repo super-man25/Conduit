@@ -80,16 +80,6 @@ ShallowWrapper {
                                                             User Settings
                                                   </Styled(NavLink)>
                                         </styled.div>
-                                        <styled.div
-                                                  padding="2rem 0"
-                                        >
-                                                  <Styled(Link)
-                                                            to="/settings/create-user"
-                                                            weight="light"
-                                                  >
-                                                            Create User
-                                                  </Styled(Link)>
-                                        </styled.div>
                               </Flex>
                     </styled.div>
           </styled.div>
@@ -174,16 +164,6 @@ ShallowWrapper {
                                                                       User Settings
                                                         </Styled(NavLink)>
                                           </styled.div>
-                                          <styled.div
-                                                        padding="2rem 0"
-                                          >
-                                                        <Styled(Link)
-                                                                      to="/settings/create-user"
-                                                                      weight="light"
-                                                        >
-                                                                      Create User
-                                                        </Styled(Link)>
-                                          </styled.div>
                             </Flex>
               </styled.div>
 </styled.div>,
@@ -249,16 +229,6 @@ ShallowWrapper {
                                                                 User Settings
                                                 </Styled(NavLink)>
                                 </styled.div>
-                                <styled.div
-                                                padding="2rem 0"
-                                >
-                                                <Styled(Link)
-                                                                to="/settings/create-user"
-                                                                weight="light"
-                                                >
-                                                                Create User
-                                                </Styled(Link)>
-                                </styled.div>
                 </Flex>
 </styled.div>,
             },
@@ -304,16 +274,6 @@ ShallowWrapper {
                                                       User Settings
                                     </Styled(NavLink)>
                   </styled.div>
-                  <styled.div
-                                    padding="2rem 0"
-                  >
-                                    <Styled(Link)
-                                                      to="/settings/create-user"
-                                                      weight="light"
-                                    >
-                                                      Create User
-                                    </Styled(Link)>
-                  </styled.div>
 </Flex>,
                 "padding": "2rem",
               },
@@ -357,16 +317,7 @@ ShallowWrapper {
                                             User Settings
                       </Styled(NavLink)>
 </styled.div>,
-                    <styled.div
-                      padding="2rem 0"
->
-                      <Styled(Link)
-                                            to="/settings/create-user"
-                                            weight="light"
-                      >
-                                            Create User
-                      </Styled(Link)>
-</styled.div>,
+                    undefined,
                   ],
                   "direction": "column",
                 },
@@ -450,35 +401,7 @@ ShallowWrapper {
                     },
                     "type": [Function],
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": <Styled(Link)
-                        to="/settings/create-user"
-                        weight="light"
->
-                        Create User
-</Styled(Link)>,
-                      "padding": "2rem 0",
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": "Create User",
-                        "to": "/settings/create-user",
-                        "weight": "light",
-                      },
-                      "ref": null,
-                      "rendered": "Create User",
-                      "type": [Function],
-                    },
-                    "type": [Function],
-                  },
+                  undefined,
                 ],
                 "type": [Function],
               },
@@ -611,16 +534,6 @@ ShallowWrapper {
                                                                         User Settings
                                                             </Styled(NavLink)>
                                                 </styled.div>
-                                                <styled.div
-                                                            padding="2rem 0"
-                                                >
-                                                            <Styled(Link)
-                                                                        to="/settings/create-user"
-                                                                        weight="light"
-                                                            >
-                                                                        Create User
-                                                            </Styled(Link)>
-                                                </styled.div>
                                     </Flex>
                         </styled.div>
             </styled.div>
@@ -705,16 +618,6 @@ ShallowWrapper {
                                                                                 User Settings
                                                                 </Styled(NavLink)>
                                                 </styled.div>
-                                                <styled.div
-                                                                padding="2rem 0"
-                                                >
-                                                                <Styled(Link)
-                                                                                to="/settings/create-user"
-                                                                                weight="light"
-                                                                >
-                                                                                Create User
-                                                                </Styled(Link)>
-                                                </styled.div>
                                 </Flex>
                 </styled.div>
 </styled.div>,
@@ -780,16 +683,6 @@ ShallowWrapper {
                                                                         User Settings
                                                       </Styled(NavLink)>
                                     </styled.div>
-                                    <styled.div
-                                                      padding="2rem 0"
-                                    >
-                                                      <Styled(Link)
-                                                                        to="/settings/create-user"
-                                                                        weight="light"
-                                                      >
-                                                                        Create User
-                                                      </Styled(Link)>
-                                    </styled.div>
                   </Flex>
 </styled.div>,
               },
@@ -835,16 +728,6 @@ ShallowWrapper {
                                                             User Settings
                                         </Styled(NavLink)>
                     </styled.div>
-                    <styled.div
-                                        padding="2rem 0"
-                    >
-                                        <Styled(Link)
-                                                            to="/settings/create-user"
-                                                            weight="light"
-                                        >
-                                                            Create User
-                                        </Styled(Link)>
-                    </styled.div>
 </Flex>,
                   "padding": "2rem",
                 },
@@ -888,16 +771,7 @@ ShallowWrapper {
                                                 User Settings
                         </Styled(NavLink)>
 </styled.div>,
-                      <styled.div
-                        padding="2rem 0"
->
-                        <Styled(Link)
-                                                to="/settings/create-user"
-                                                weight="light"
-                        >
-                                                Create User
-                        </Styled(Link)>
-</styled.div>,
+                      undefined,
                     ],
                     "direction": "column",
                   },
@@ -981,35 +855,7 @@ ShallowWrapper {
                       },
                       "type": [Function],
                     },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": <Styled(Link)
-                          to="/settings/create-user"
-                          weight="light"
->
-                          Create User
-</Styled(Link)>,
-                        "padding": "2rem 0",
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "children": "Create User",
-                          "to": "/settings/create-user",
-                          "weight": "light",
-                        },
-                        "ref": null,
-                        "rendered": "Create User",
-                        "type": [Function],
-                      },
-                      "type": [Function],
-                    },
+                    undefined,
                   ],
                   "type": [Function],
                 },
