@@ -97,7 +97,7 @@ export function CumulativeInventoryChart({
             name="actual"
             dot={false}
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_LIGHT_BLUE}
+            stroke={cssConstants.SECONDARY_LIGHT_PURPLE}
           />
 
           <Line
@@ -108,11 +108,11 @@ export function CumulativeInventoryChart({
             dot={false}
             name="projected"
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_LIGHT_BLUE}
+            stroke={cssConstants.SECONDARY_LIGHT_PURPLE}
           />
           <Tooltip
             cursor={{
-              stroke: cssConstants.PRIMARY_LIGHT_BLUE,
+              stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
               strokeWidth: 2,
               opacity: 0.5
             }}

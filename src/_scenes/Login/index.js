@@ -109,6 +109,7 @@ export class LoginPresenter extends React.Component {
 
   render() {
     const { authState } = this.props;
+    const { alertState } = this.props;
     const {
       email,
       password,
@@ -126,8 +127,20 @@ export class LoginPresenter extends React.Component {
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
                 <LogoImg src={edLogoImage} alt="Event Dynamic Logo" />
-                <H3>Log In</H3>
+                <H3 style={{ marginBottom: '5px' }}>Log In</H3>
                 <form name="form" onSubmit={this.handleSubmit}>
+                  <HelpBlockDiv
+                    type={alertState.type}
+                    show={alertState.show && submitted}
+                    style={{
+                      marginTop: alertState.show && submitted ? '15px' : '0px',
+                      marginBottom:
+                        alertState.show && submitted ? '10px' : '0px',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Incorrect Email Address or Password.
+                  </HelpBlockDiv>
                   <Label htmlFor="email">Email Address</Label>
                   <Input
                     type="text"
@@ -136,8 +149,11 @@ export class LoginPresenter extends React.Component {
                     data-test-id="email-input"
                     autoComplete="new-email"
                     value={email}
-                    valid={validEmail}
-                    inValid={!validEmail && (submitted || emailHadFocus)}
+                    valid={validEmail && !(alertState.show && submitted)}
+                    inValid={
+                      (!validEmail && (submitted || emailHadFocus)) ||
+                      (alertState.show && submitted)
+                    }
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
                   />
@@ -156,8 +172,11 @@ export class LoginPresenter extends React.Component {
                     data-test-id="password-input"
                     autoComplete="new-password"
                     value={password}
-                    inValid={!password && (submitted || passwordHadFocus)}
-                    valid={password}
+                    inValid={
+                      (!password && (submitted || passwordHadFocus)) ||
+                      (alertState.show && submitted)
+                    }
+                    valid={password && !(alertState.show && submitted)}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
                   />

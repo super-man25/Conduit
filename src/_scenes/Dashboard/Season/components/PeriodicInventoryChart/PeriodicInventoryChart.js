@@ -97,17 +97,17 @@ export const PeriodicInventoryChart = ({
           <Bar
             dataKey={CHART_KEYS.actual}
             stackId="a"
-            fill={cssConstants.PRIMARY_DARK_BLUE}
+            fill={cssConstants.SECONDARY_PURPLE}
           />
           <Bar
             dataKey={CHART_KEYS.projected}
             stackId="a"
-            fill={cssConstants.PRIMARY_LIGHT_BLUE}
+            fill={cssConstants.SECONDARY_LIGHT_PURPLE}
           />
 
           <Tooltip
             cursor={{
-              fill: cssConstants.SECONDARY_LIGHT_BLUE,
+              fill: cssConstants.SECONDARY_LIGHT_PURPLE,
               opacity: 0.4
             }}
             animationDuration={500}

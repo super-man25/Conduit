@@ -3,18 +3,6 @@ import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import authActions from '_state/auth/actions';
 
-import {
-  Button,
-  H3,
-  HelpBlockDiv,
-  ImageLayout,
-  Input,
-  Label,
-  MailtoLink,
-  Spacing,
-  FlexItem,
-  Loader
-} from '_components';
 import Login, { LoginPresenter } from './index';
 
 const myAuth = {
@@ -22,69 +10,18 @@ const myAuth = {
   pending: false
 };
 
+const myAlert = {
+  show: false,
+  type: null,
+  message: ''
+};
+
 describe('<LoginPresenter />', () => {
-  it('contains an <ImageLayout /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(ImageLayout)).toHaveLength(1);
-  });
-
-  it('contains a <MailtoLink /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(MailtoLink)).toHaveLength(1);
-  });
-
-  it('contains an <H3 /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(H3)).toHaveLength(1);
-  });
-
-  it('contains an <Spacing /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(Spacing)).toHaveLength(1);
-  });
-
-  it('contains an <FlexItem /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(FlexItem)).toHaveLength(1);
-  });
-
-  it('contains two <Label /> components', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(Label)).toHaveLength(2);
-  });
-
-  it('contains two <Input /> components', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(Input)).toHaveLength(2);
-  });
-
-  it('contains two <HelpBlockDiv /> components', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(HelpBlockDiv)).toHaveLength(2);
-  });
-
-  it('contains a <Button /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(Button)).toHaveLength(1);
-  });
-
-  it('contains no <Loader /> component when auth.pending is false', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find(Loader)).toHaveLength(0);
-  });
-
-  it('contains an <Loader /> component when auth is pending', () => {
-    const myAuthPending = {
-      model: null,
-      pending: true
-    };
-    const wrapper = shallow(<LoginPresenter authState={myAuthPending} />);
-    expect(wrapper.find(Loader)).toHaveLength(1);
-  });
-
-  it('contains a <form /> component', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
-    expect(wrapper.find('form')).toHaveLength(1);
+  it('renders correctly', () => {
+    const wrapper = shallow(
+      <LoginPresenter authState={myAuth} alertState={myAlert} />
+    );
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('email and password input changes fire handleChange method', () => {
@@ -92,7 +29,9 @@ describe('<LoginPresenter />', () => {
       LoginPresenter.prototype,
       'handleChange'
     );
-    const wrapper = mount(<LoginPresenter authState={myAuth} />);
+    const wrapper = mount(
+      <LoginPresenter authState={myAuth} alertState={myAlert} />
+    );
     wrapper.setState({
       email: '',
       password: '',
@@ -117,7 +56,9 @@ describe('<LoginPresenter />', () => {
   });
 
   it('email and password input changes update component state', () => {
-    const wrapper = mount(<LoginPresenter authState={myAuth} />);
+    const wrapper = mount(
+      <LoginPresenter authState={myAuth} alertState={myAlert} />
+    );
     wrapper.setState({
       email: '',
       password: '',
@@ -165,7 +106,11 @@ describe('<LoginPresenter />', () => {
       'handleSubmit'
     );
     const wrapper = mount(
-      <LoginPresenter authState={myAuth} authActions={authActions} />
+      <LoginPresenter
+        authState={myAuth}
+        alertState={myAlert}
+        authActions={authActions}
+      />
     );
     expect(wrapper.state().submitted).toEqual(false);
     expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(0);
@@ -221,6 +166,7 @@ describe('<LoginPresenter />', () => {
     const wrapper = shallow(
       <LoginPresenter
         authState={myAuth}
+        alertState={myAlert}
         authActions={authActions}
         store={store}
       />
@@ -235,7 +181,9 @@ describe('<LoginPresenter />', () => {
   });
 
   it('the emailCheck() method that returns true for a valid email, and false otherwise', () => {
-    const wrapper = shallow(<LoginPresenter authState={myAuth} />);
+    const wrapper = shallow(
+      <LoginPresenter authState={myAuth} alertState={myAlert} />
+    );
     expect(wrapper.instance().emailCheck('greg@dialexa')).toEqual(false);
     expect(wrapper.instance().emailCheck('greg@dialexa.com')).toEqual(true);
   });

@@ -8,7 +8,6 @@ import {
   PanelContent,
   Flex,
   FlexItem,
-  ChartLegendItem,
   Tabbable,
   Loader,
   ChipButton,
@@ -16,10 +15,22 @@ import {
   DateRangeDropdown
 } from '_components';
 import { cssConstants, DATE_FORMATS } from '_constants';
-import { PeriodicInventoryChart } from './PeriodicInventoryChart';
-import { PeriodicRevenueChart } from './PeriodicRevenueChart';
-import { CumulativeRevenueChart } from './CumulativeRevenueChart';
-import { CumulativeInventoryChart } from './CumulativeInventoryChart';
+import {
+  PeriodicInventoryChart,
+  PeriodicInventoryChartLegend
+} from './PeriodicInventoryChart';
+import {
+  PeriodicRevenueChart,
+  PeriodicRevenueChartLegend
+} from './PeriodicRevenueChart';
+import {
+  CumulativeRevenueChart,
+  CumulativeRevenueChartLegend
+} from './CumulativeRevenueChart';
+import {
+  CumulativeInventoryChart,
+  CumulativeInventoryChartLegend
+} from './CumulativeInventoryChart';
 import { RevenueBreakdown } from './RevenueBreakdown';
 import { differenceInCalendarDays } from 'date-fns';
 import type { EventStatState } from '_state/eventStat/reducer';
@@ -72,6 +83,23 @@ const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
     No {type} Data to Display
   </Flex>
 );
+
+const ChartLegend = ({
+  selectedGroupFilter,
+  selectedTab
+}: {
+  selectedGroupFilter: number,
+  selectedTab: number
+}) => {
+  if (selectedGroupFilter === 0 && selectedTab === 0)
+    return <PeriodicRevenueChartLegend />;
+  else if (selectedGroupFilter === 0 && selectedTab === 1)
+    return <PeriodicInventoryChartLegend />;
+  else if (selectedGroupFilter === 1 && selectedTab === 0)
+    return <CumulativeRevenueChartLegend />;
+  else if (selectedGroupFilter === 1 && selectedTab === 1)
+    return <CumulativeInventoryChartLegend />;
+};
 
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
@@ -158,39 +186,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                   </FlexItem>
                   <FlexItem flex={0}>
                     <Flex>
-                      {selectedTab === 0 && (
-                        <Fragment>
-                          <ChartLegendItem
-                            dashed={
-                              selectedGroupFilter === GROUP_FILTERS.cumulative
-                            }
-                            color={
-                              selectedGroupFilter === GROUP_FILTERS.cumulative
-                                ? cssConstants.PRIMARY_LIGHT_BLUE
-                                : cssConstants.PRIMARY_DARK_BLUE
-                            }
-                            label="Projected Revenue"
-                          />
-                          <ChartLegendItem label="Actual Revenue" />
-                        </Fragment>
-                      )}
-
-                      {selectedTab === 1 && (
-                        <Fragment>
-                          <ChartLegendItem
-                            dashed={
-                              selectedGroupFilter === GROUP_FILTERS.cumulative
-                            }
-                            color={
-                              selectedGroupFilter === GROUP_FILTERS.cumulative
-                                ? cssConstants.PRIMARY_LIGHT_BLUE
-                                : cssConstants.PRIMARY_DARK_BLUE
-                            }
-                            label="Projected Inventory"
-                          />
-                          <ChartLegendItem label="Actual Inventory" />
-                        </Fragment>
-                      )}
+                      <ChartLegend
+                        selectedGroupFilter={selectedGroupFilter}
+                        selectedTab={selectedTab}
+                      />
                     </Flex>
                   </FlexItem>
                 </Flex>

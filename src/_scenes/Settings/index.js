@@ -22,6 +22,7 @@ import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import type { Node } from 'react';
 import type { EDUser } from '_models/user';
+import { admin } from '_hoc/secured';
 
 type RouteConfig = {
   path: string,
@@ -39,7 +40,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/settings/create-user',
-    main: CreateUser
+    main: admin(CreateUser)
   }
 ];
 
@@ -86,11 +87,13 @@ export class Settings extends React.Component<Props> {
                     User Settings
                   </EDNavLink>
                 </Spacing>
-                <Spacing padding="2rem 0">
-                  <EDLink weight="light" to="/settings/create-user">
-                    Create User
-                  </EDLink>
-                </Spacing>
+                {authState.model.isAdmin && (
+                  <Spacing padding="2rem 0">
+                    <EDLink weight="light" to="/settings/create-user">
+                      Create User
+                    </EDLink>
+                  </Spacing>
+                )}
               </Flex>
             </Spacing>
           </LeftNav>
