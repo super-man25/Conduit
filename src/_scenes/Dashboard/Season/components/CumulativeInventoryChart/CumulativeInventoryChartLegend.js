@@ -6,13 +6,13 @@ export function CumulativeInventoryChartLegend() {
   return (
     <Fragment>
       <ChartLegendItem
+        label="Actual Inventory"
+        color={cssConstants.SECONDARY_LIGHT_PURPLE}
+      />
+      <ChartLegendItem
         dashed
         color={cssConstants.SECONDARY_LIGHT_PURPLE}
         label="Projected Inventory"
-      />
-      <ChartLegendItem
-        label="Actual Inventory"
-        color={cssConstants.SECONDARY_LIGHT_PURPLE}
       />
     </Fragment>
   );
