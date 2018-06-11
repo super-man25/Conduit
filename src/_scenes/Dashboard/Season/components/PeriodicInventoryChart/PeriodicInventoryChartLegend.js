@@ -7,11 +7,11 @@ export function PeriodicInventoryChartLegend() {
     <Fragment>
       <ChartLegendItem
         color={cssConstants.SECONDARY_PURPLE}
-        label="Projected Inventory"
+        label="Actual Inventory"
       />
       <ChartLegendItem
-        label="Actual Inventory"
         color={cssConstants.SECONDARY_LIGHT_PURPLE}
+        label="Projected Inventory"
       />
     </Fragment>
   );

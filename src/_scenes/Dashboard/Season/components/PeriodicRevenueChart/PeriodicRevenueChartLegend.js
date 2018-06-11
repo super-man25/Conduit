@@ -6,10 +6,10 @@ export function PeriodicRevenueChartLegend() {
   return (
     <Fragment>
       <ChartLegendItem
+        label="Actual Revenue"
         color={cssConstants.PRIMARY_DARK_BLUE}
-        label="Projected Revenue"
       />
-      <ChartLegendItem label="Actual Revenue" />
+      <ChartLegendItem label="Projected Revenue" />
     </Fragment>
   );
 }
