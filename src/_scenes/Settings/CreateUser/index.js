@@ -52,9 +52,8 @@ class CreateUser extends React.Component<Props, State> {
         firstName: '',
         lastName: '',
         email: '',
-        password: 'placeholder',
         isAdmin: false,
-        clientId: 0
+        clientId: null
       },
       submitted: false,
       emailHadFocus: false,
@@ -148,7 +147,6 @@ class CreateUser extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}
           style={{ width: '500px', padding: '50px', paddingTop: '0px' }}
         >
-          <input type="hidden" name="password" value="placeholder_pass" />
           <H3 type="secondary">Create User</H3>
           <Label htmlFor="firstName">First Name</Label>
           <Input
