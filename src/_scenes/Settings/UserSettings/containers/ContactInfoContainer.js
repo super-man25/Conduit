@@ -155,24 +155,25 @@ export class ContactInfo extends React.Component<Props, State> {
     return passwordsMatch;
   };
 
-  savePersonalInfo = (e: SyntheticInputEvent<SettingBorderButton>) => {
+  saveName = (e: SyntheticInputEvent<SettingBorderButton>) => {
     e.preventDefault();
 
-    if (e.target.parentElement && e.target.parentElement.id) {
-      const editFlagName = e.target.parentElement.id;
-      const { user } = this.state;
+    const { user } = this.state;
 
-      if (editFlagName === 'editPhoneNumber') {
-        if (validatePhoneNumber(user.phoneNumber)) {
-          this.props.userActions.update(user);
-          this.reset();
-        }
-      } else {
-        if (user.firstName.length >= 1 && user.lastName.length >= 1) {
-          this.props.userActions.update(user);
-          this.reset();
-        }
-      }
+    if (user.firstName.length >= 1 && user.lastName.length >= 1) {
+      this.props.userActions.update(user);
+      this.reset();
+    }
+  };
+
+  savePhoneNumber = (e: SyntheticInputEvent<SettingBorderButton>) => {
+    e.preventDefault();
+
+    const { user } = this.state;
+
+    if (validatePhoneNumber(user.phoneNumber)) {
+      this.props.userActions.update(user);
+      this.reset();
     }
   };
 
@@ -261,7 +262,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 />
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.savePersonalInfo}>
+                <SettingBorderButton onClick={this.saveName}>
                   Save
                 </SettingBorderButton>
               </SettingButtonGroup>
@@ -369,7 +370,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 </HelpBlockDiv>
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.savePersonalInfo}>
+                <SettingBorderButton onClick={this.savePhoneNumber}>
                   Save
                 </SettingBorderButton>
               </SettingButtonGroup>

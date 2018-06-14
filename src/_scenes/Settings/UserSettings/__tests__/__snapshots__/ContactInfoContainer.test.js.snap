@@ -7,7 +7,16 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ContactInfo
     authState={
         Object {
-            "model": Object {},
+            "model": Object {
+              "clientId": 1,
+              "createdAt": null,
+              "email": "test@eventdynamic.com",
+              "firstName": "First",
+              "id": 1,
+              "lastName": "Last",
+              "modifiedAt": null,
+              "phoneNumber": "",
+            },
           }
     }
     userActions={
@@ -47,7 +56,7 @@ ShallowWrapper {
           <Unknown>
                     <styled.div>
                               <styled.div>
-                                        Undefined Undefined
+                                        First Last
                               </styled.div>
                     </styled.div>
                     <styled.div
@@ -66,7 +75,9 @@ ShallowWrapper {
                     Contact Email
           </styled.div>
           <Unknown>
-                    <styled.div />
+                    <styled.div>
+                              test@eventdynamic.com
+                    </styled.div>
                     <styled.div
                               onClick={[Function]}
                     />
@@ -84,9 +95,7 @@ ShallowWrapper {
           </styled.div>
           <Unknown>
                     <styled.div>
-                              <styled.div>
-                                        --
-                              </styled.div>
+                              <styled.div />
                     </styled.div>
                     <styled.div
                               onClick={[Function]}
@@ -152,7 +161,7 @@ ShallowWrapper {
             <Unknown>
               <styled.div>
                             <styled.div>
-                                          Undefined Undefined
+                                          First Last
                             </styled.div>
               </styled.div>
               <styled.div
@@ -184,7 +193,7 @@ ShallowWrapper {
               "children": Array [
                 <styled.div>
                   <styled.div>
-                                    Undefined Undefined
+                                    First Last
                   </styled.div>
 </styled.div>,
                 <styled.div
@@ -200,7 +209,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": <styled.div>
-                    Undefined Undefined
+                    First Last
 </styled.div>,
                 },
                 "ref": null,
@@ -209,10 +218,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Undefined Undefined",
+                    "children": "First Last",
                   },
                   "ref": null,
-                  "rendered": "Undefined Undefined",
+                  "rendered": "First Last",
                   "type": [Function],
                 },
                 "type": [Function],
@@ -255,7 +264,9 @@ ShallowWrapper {
               Contact Email
 </styled.div>,
             <Unknown>
-              <styled.div />
+              <styled.div>
+                            test@eventdynamic.com
+              </styled.div>
               <styled.div
                             onClick={[Function]}
               />
@@ -283,7 +294,9 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                <styled.div />,
+                <styled.div>
+                  test@eventdynamic.com
+</styled.div>,
                 <styled.div
                   onClick={[Function]}
 />,
@@ -296,10 +309,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
+                  "children": "test@eventdynamic.com",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": "test@eventdynamic.com",
                 "type": [Function],
               },
               Object {
@@ -341,9 +354,7 @@ ShallowWrapper {
 </styled.div>,
             <Unknown>
               <styled.div>
-                            <styled.div>
-                                          --
-                            </styled.div>
+                            <styled.div />
               </styled.div>
               <styled.div
                             onClick={[Function]}
@@ -373,9 +384,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <styled.div>
-                  <styled.div>
-                                    --
-                  </styled.div>
+                  <styled.div />
 </styled.div>,
                 <styled.div
                   onClick={[Function]}
@@ -389,9 +398,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": <styled.div>
-                    --
-</styled.div>,
+                  "children": <styled.div />,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -399,10 +406,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "--",
+                    "children": "",
                   },
                   "ref": null,
-                  "rendered": "--",
+                  "rendered": "",
                   "type": [Function],
                 },
                 "type": [Function],
@@ -555,7 +562,7 @@ ShallowWrapper {
             <Unknown>
                         <styled.div>
                                     <styled.div>
-                                                Undefined Undefined
+                                                First Last
                                     </styled.div>
                         </styled.div>
                         <styled.div
@@ -574,7 +581,9 @@ ShallowWrapper {
                         Contact Email
             </styled.div>
             <Unknown>
-                        <styled.div />
+                        <styled.div>
+                                    test@eventdynamic.com
+                        </styled.div>
                         <styled.div
                                     onClick={[Function]}
                         />
@@ -592,9 +601,7 @@ ShallowWrapper {
             </styled.div>
             <Unknown>
                         <styled.div>
-                                    <styled.div>
-                                                --
-                                    </styled.div>
+                                    <styled.div />
                         </styled.div>
                         <styled.div
                                     onClick={[Function]}
@@ -660,7 +667,7 @@ ShallowWrapper {
               <Unknown>
                 <styled.div>
                                 <styled.div>
-                                                Undefined Undefined
+                                                First Last
                                 </styled.div>
                 </styled.div>
                 <styled.div
@@ -692,7 +699,7 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div>
                     <styled.div>
-                                        Undefined Undefined
+                                        First Last
                     </styled.div>
 </styled.div>,
                   <styled.div
@@ -708,7 +715,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": <styled.div>
-                      Undefined Undefined
+                      First Last
 </styled.div>,
                   },
                   "ref": null,
@@ -717,10 +724,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Undefined Undefined",
+                      "children": "First Last",
                     },
                     "ref": null,
-                    "rendered": "Undefined Undefined",
+                    "rendered": "First Last",
                     "type": [Function],
                   },
                   "type": [Function],
@@ -763,7 +770,9 @@ ShallowWrapper {
                 Contact Email
 </styled.div>,
               <Unknown>
-                <styled.div />
+                <styled.div>
+                                test@eventdynamic.com
+                </styled.div>
                 <styled.div
                                 onClick={[Function]}
                 />
@@ -791,7 +800,9 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": Array [
-                  <styled.div />,
+                  <styled.div>
+                    test@eventdynamic.com
+</styled.div>,
                   <styled.div
                     onClick={[Function]}
 />,
@@ -804,10 +815,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
+                    "children": "test@eventdynamic.com",
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": "test@eventdynamic.com",
                   "type": [Function],
                 },
                 Object {
@@ -849,9 +860,7 @@ ShallowWrapper {
 </styled.div>,
               <Unknown>
                 <styled.div>
-                                <styled.div>
-                                                --
-                                </styled.div>
+                                <styled.div />
                 </styled.div>
                 <styled.div
                                 onClick={[Function]}
@@ -881,9 +890,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <styled.div>
-                    <styled.div>
-                                        --
-                    </styled.div>
+                    <styled.div />
 </styled.div>,
                   <styled.div
                     onClick={[Function]}
@@ -897,9 +904,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": <styled.div>
-                      --
-</styled.div>,
+                    "children": <styled.div />,
                   },
                   "ref": null,
                   "rendered": Object {
@@ -907,10 +912,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "--",
+                      "children": "",
                     },
                     "ref": null,
-                    "rendered": "--",
+                    "rendered": "",
                     "type": [Function],
                   },
                   "type": [Function],

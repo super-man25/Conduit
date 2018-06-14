@@ -1,11 +1,21 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { ContactInfo } from '../containers/ContactInfoContainer';
+import { SettingBorderButton } from '_components';
 
 describe('<ContactInfo />', () => {
   const props = {
     authState: {
-      model: {}
+      model: {
+        id: 1,
+        email: 'test@eventdynamic.com',
+        createdAt: null,
+        modifiedAt: null,
+        firstName: 'First',
+        lastName: 'Last',
+        phoneNumber: '',
+        clientId: 1
+      }
     },
     userActions: {
       changePassword: jest.fn(),
@@ -17,5 +27,23 @@ describe('<ContactInfo />', () => {
   it('renders correctly', () => {
     const wrapper = shallow(<ContactInfo {...props} />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('updates name', () => {
+    const wrapper = shallow(<ContactInfo {...props} />);
+    wrapper.setState({ editName: true });
+    wrapper
+      .find(SettingBorderButton)
+      .simulate('click', { preventDefault() {} });
+    expect(props.userActions.update).toBeCalled();
+  });
+
+  it('updates phone number', () => {
+    const wrapper = shallow(<ContactInfo {...props} />);
+    wrapper.setState({ editPhoneNumber: true });
+    wrapper
+      .find(SettingBorderButton)
+      .simulate('click', { preventDefault() {} });
+    expect(props.userActions.update).toBeCalled();
   });
 });
