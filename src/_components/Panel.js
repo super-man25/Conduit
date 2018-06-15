@@ -19,8 +19,16 @@ export const PanelHeader: ComponentType<{}> = styled.header`
 export const PanelContent: ComponentType<{}> = styled.section`
   border: ${panelBorder};
   border-top: none;
-  border-radius: 0 0 6px 6px;
-  padding: 24px;
+  padding: 18px 24px 30px;
+
+  & + ${() => PanelContent} {
+    padding-top: 24px;
+  }
+
+  &:last-child {
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 18px;
+  }
 `;
 
 Panel.displayName = 'Panel';

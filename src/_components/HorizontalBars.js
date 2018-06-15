@@ -7,6 +7,9 @@ import { cssConstants } from '_constants';
 
 const BarContainer = styled.div`
   overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
   font-size: 0;
   margin: 0;
   padding: 0;
@@ -19,7 +22,8 @@ const HorizontalBar = styled.div`
   height: 25px;
   width: ${(props) => `${props.width}%` || 'auto'};
   transform-origin: left;
-  animation: ${scaleToRight} 1.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  animation: ${scaleToRight} 1s ease-in-out;
 
   &:not(:last-child) {
     border-right: 1px solid ${cssConstants.PRIMARY_WHITE};
@@ -32,7 +36,7 @@ HorizontalBar.defaultProps = {
 
 type HorizontalBarProps = {
   data: number[],
-  colors: number[]
+  colors: string[]
 };
 
 export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
@@ -44,7 +48,7 @@ export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
         <HorizontalBar
           key={idx}
           backgroundColor={colors[idx]}
-          width={value / sum * 100}
+          width={(value / sum * 100).toFixed(2)}
         />
       ))}
     </BarContainer>

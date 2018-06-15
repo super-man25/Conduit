@@ -47,11 +47,19 @@ exports[`renders correctly with a header and content 1`] = `
   height: 56px;
 }
 
-.c2 {
+.c3 {
   border: 1px solid #D1D1D1;
   border-top: none;
+  padding: 18px 24px 30px;
+}
+
+.c3 + .c2 {
+  padding-top: 24px;
+}
+
+.c3:last-child {
   border-radius: 0 0 6px 6px;
-  padding: 24px;
+  padding-bottom: 18px;
 }
 
 <div
@@ -63,7 +71,7 @@ exports[`renders correctly with a header and content 1`] = `
     This is a header
   </header>
   <section
-    className="c2"
+    className="c2 c3"
   >
     This is the panels content
   </section>

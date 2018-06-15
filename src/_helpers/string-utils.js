@@ -38,15 +38,33 @@ export function orDash(value: any): string {
  * Given a number, format it as USD. Limits value to cents
  * @param {number} value
  */
-export function formatUSD(value: number): string {
-  const formatter = Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+type USDFormatOptions = {
+  minimumFractionDigits: number,
+  maximumFractionDigits: number
+};
+
+export function formatUSD(
+  value: number,
+  options: USDFormatOptions = {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
+  }
+): string {
+  const defaults = {
+    style: 'currency',
+    currency: 'USD'
+  };
+
+  const formatter = new Intl.NumberFormat('en-US', {
+    ...defaults,
+    ...options
   });
 
   return formatter.format(value);
+}
+
+export function formatNumber(value: number): string {
+  return Intl.NumberFormat('en').format(value);
 }
 
 /*

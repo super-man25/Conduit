@@ -1,8 +1,14 @@
-import { getYear } from 'date-fns';
+// @flow
 import { get } from '_helpers/api';
+import { getYear } from 'date-fns';
 
-function getAll(year = getYear(new Date())) {
-  return get('events', { year });
+type GetAllParams = {
+  seasonId?: number,
+  year?: Date
+};
+
+function getAll(params: GetAllParams = { year: getYear(new Date()) }) {
+  return get('events', params);
 }
 
 export const eventService = {

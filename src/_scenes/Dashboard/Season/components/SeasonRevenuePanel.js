@@ -15,6 +15,7 @@ import {
   DateRangeDropdown
 } from '_components';
 import { cssConstants, DATE_FORMATS } from '_constants';
+import RevenueBreakdown from './RevenueBreakdown';
 import {
   PeriodicInventoryChart,
   PeriodicInventoryChartLegend
@@ -31,7 +32,6 @@ import {
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend
 } from './CumulativeInventoryChart';
-import { RevenueBreakdown } from './RevenueBreakdown';
 import { differenceInCalendarDays } from 'date-fns';
 import type { EventStatState } from '_state/eventStat/reducer';
 import type { EventStat } from '_models/eventStat';
@@ -104,6 +104,10 @@ const ChartLegend = ({
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
     this.props.eventStatActions.fetch();
+  }
+
+  componentWillUnmount() {
+    this.props.eventStatActions.clear();
   }
 
   render() {
@@ -236,13 +240,13 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                     )}
                   </Fragment>
                 )}
-                <Spacing height="18px" />
-                <RevenueBreakdown
-                  data={[12, 20, 30, 40]}
-                  colors={['#144670', '#4B98CF', '#4B98CF', '#C4D2E1']}
-                />
               </PanelContent>
             )}
+            <PanelContent>
+              <RevenueBreakdown
+                type={selectedTab === 0 ? 'revenue' : 'inventory'}
+              />
+            </PanelContent>
           </Panel>
         )}
       </Tabbable>

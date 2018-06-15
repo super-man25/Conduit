@@ -96,3 +96,8 @@ export const HR = styled.hr`
   margin: ${(props) => props.margin || '2rem 0'};
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHTEST_GRAY};
 `;
+
+export const Box = withBoxModelProps(styled.div`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+`);

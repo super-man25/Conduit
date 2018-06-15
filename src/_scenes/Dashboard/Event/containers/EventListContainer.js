@@ -46,7 +46,7 @@ class EventListContainer extends React.Component {
   };
 
   get title() {
-    return '2018 Season';
+    return 'Events';
   }
 
   get scrollIndex() {

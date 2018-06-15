@@ -6,10 +6,6 @@ import { cssConstants } from '_constants';
 
 const LegendItemContainer: ComponentType<{}> = styled.div`
   display: inline-flex;
-
-  & + & {
-    margin-left: 24px;
-  }
 `;
 
 const LegendItemColoredBar: ComponentType<{ color: string }> = styled.div`

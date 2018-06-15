@@ -15,7 +15,7 @@ describe('get all', () => {
     const year = new Date().getFullYear();
     const mock = fetchMock.get(`end:events?year=${year}`, events);
 
-    return eventService.getAll().then((res) => {
+    return eventService.getAll({ year }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(events);
     });
@@ -25,7 +25,17 @@ describe('get all', () => {
     const year = 1999;
     const mock = fetchMock.get(`end:events?year=${year}`, events);
 
-    return eventService.getAll(year).then((res) => {
+    return eventService.getAll({ year }).then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual(events);
+    });
+  });
+
+  it('should get all with a seasonId', () => {
+    const seasonId = 1;
+    const mock = fetchMock.get(`end:events?seasonId=${seasonId}`, events);
+
+    return eventService.getAll({ seasonId }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(events);
     });

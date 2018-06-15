@@ -12,6 +12,10 @@ import { reducer as eventReducer, saga as eventSaga } from './event';
 import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
 import { reducer as uiReducer } from './ui';
+import {
+  reducer as revenueStatReducer,
+  saga as revenueStatSaga
+} from './revenueStat';
 
 // Build root reducer
 const reducer = combineReducers({
@@ -22,6 +26,7 @@ const reducer = combineReducers({
   client: clientReducer,
   eventStat: eventStatReducer,
   teamStat: teamStatReducer,
+  revenueStat: revenueStatReducer,
   ui: uiReducer
 });
 
@@ -41,7 +46,8 @@ const combineSagas = {
   user: userSaga,
   client: clientSaga,
   eventStat: eventStatSaga,
-  teamStat: teamStatSaga
+  teamStat: teamStatSaga,
+  revenueStat: revenueStatSaga
 };
 
 export function* rootSaga() {

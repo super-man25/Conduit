@@ -1,24 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ChartTooltip /> should render correctly 1`] = `
+exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    colors={
-        Array [
-            "#000",
-            "#111",
-            "#222",
-          ]
+  Symbol(enzyme.__unrendered__): <RevenueBreakdown
+    revenueStatActions={
+        Object {
+            "fetch": [Function],
+            "reset": [Function],
+          }
     }
-    data={
-        Array [
-            10,
-            20,
-            30,
-          ]
+    revenueStatState={
+        Object {
+            "loading": false,
+            "ticketBreakdown": Array [
+              Object {
+                "id": 1,
+                "inventory": 10000,
+                "name": "Single Game",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 2,
+                "inventory": 5000,
+                "name": "Group Tickets",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 3,
+                "inventory": 7000,
+                "name": "Single Suites",
+                "revenue": 1000,
+              },
+            ],
+          }
     }
+    type="revenue"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -30,56 +48,72 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
         <styled.p>
           Revenue Breakdown
 </styled.p>,
         <styled.div
-          height="12px"
+          height="0.75rem"
 />,
-        <Unknown
-          colors={
-                    Array [
-                              "#000",
-                              "#111",
-                              "#222",
-                            ]
-          }
-          data={
-                    Array [
-                              10,
-                              20,
-                              30,
-                            ]
-          }
-/>,
-        <styled.div
-          height="12px"
-/>,
-        <div>
-          <LegendItem
-                    color="#144670"
-                    label="Single Game"
-                    value="$9504.13"
+        <Unknown>
+          <Unknown
+                    colors={
+                              Array [
+                                        "#024A8F",
+                                        "#2670AE",
+                                        "#4B98CF",
+                                        "#7CBCDD",
+                                        "#C4D2E1",
+                                        "#817CB8",
+                                        "#621F95",
+                                      ]
+                    }
+                    data={
+                              Array [
+                                        1000,
+                                        1000,
+                                        1000,
+                                      ]
+                    }
           />
-          <LegendItem
-                    color="#4B98CF"
-                    label="Group Tickets"
-                    value="$9504.13"
-          />
-          <LegendItem
-                    color="#2670AE"
-                    label="Single Suites"
-                    value="$9504.13"
-          />
-          <LegendItem
-                    color="#C4D2E1"
-                    label="Season Tickets"
-                    value="$9504.13"
-          />
-</div>,
+          <Flex
+                    flexWrap="wrap"
+                    margin="0 -1rem -1rem"
+          >
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#024A8F"
+                                        label="Single Game"
+                                        value="$1,000"
+                              />
+                    </FlexItem>
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#2670AE"
+                                        label="Group Tickets"
+                                        value="$1,000"
+                              />
+                    </FlexItem>
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#4B98CF"
+                                        label="Single Suites"
+                                        value="$1,000"
+                              />
+                    </FlexItem>
+          </Flex>
+</Unknown>,
       ],
     },
     "ref": null,
@@ -100,7 +134,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "height": "12px",
+          "height": "0.75rem",
         },
         "ref": null,
         "rendered": null,
@@ -111,58 +145,62 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "colors": Array [
-            "#000",
-            "#111",
-            "#222",
-          ],
-          "data": Array [
-            10,
-            20,
-            30,
-          ],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "height": "12px",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
           "children": Array [
-            <LegendItem
-              color="#144670"
-              label="Single Game"
-              value="$9504.13"
+            <Unknown
+              colors={
+                            Array [
+                                          "#024A8F",
+                                          "#2670AE",
+                                          "#4B98CF",
+                                          "#7CBCDD",
+                                          "#C4D2E1",
+                                          "#817CB8",
+                                          "#621F95",
+                                        ]
+              }
+              data={
+                            Array [
+                                          1000,
+                                          1000,
+                                          1000,
+                                        ]
+              }
 />,
-            <LegendItem
-              color="#4B98CF"
-              label="Group Tickets"
-              value="$9504.13"
-/>,
-            <LegendItem
-              color="#2670AE"
-              label="Single Suites"
-              value="$9504.13"
-/>,
-            <LegendItem
-              color="#C4D2E1"
-              label="Season Tickets"
-              value="$9504.13"
-/>,
+            <Flex
+              flexWrap="wrap"
+              margin="0 -1rem -1rem"
+>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#024A8F"
+                                          label="Single Game"
+                                          value="$1,000"
+                            />
+              </FlexItem>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#2670AE"
+                                          label="Group Tickets"
+                                          value="$1,000"
+                            />
+              </FlexItem>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#4B98CF"
+                                          label="Single Suites"
+                                          value="$1,000"
+                            />
+              </FlexItem>
+</Flex>,
           ],
         },
         "ref": null,
@@ -172,9 +210,20 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "color": "#144670",
-              "label": "Single Game",
-              "value": "$9504.13",
+              "colors": Array [
+                "#024A8F",
+                "#2670AE",
+                "#4B98CF",
+                "#7CBCDD",
+                "#C4D2E1",
+                "#817CB8",
+                "#621F95",
+              ],
+              "data": Array [
+                1000,
+                1000,
+                1000,
+              ],
             },
             "ref": null,
             "rendered": null,
@@ -183,102 +232,211 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
-              "color": "#4B98CF",
-              "label": "Group Tickets",
-              "value": "$9504.13",
+              "children": Array [
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#024A8F"
+                                    label="Single Game"
+                                    value="$1,000"
+                  />
+</FlexItem>,
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#2670AE"
+                                    label="Group Tickets"
+                                    value="$1,000"
+                  />
+</FlexItem>,
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#4B98CF"
+                                    label="Single Suites"
+                                    value="$1,000"
+                  />
+</FlexItem>,
+              ],
+              "flexWrap": "wrap",
+              "margin": "0 -1rem -1rem",
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "color": "#2670AE",
-              "label": "Single Suites",
-              "value": "$9504.13",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "color": "#C4D2E1",
-              "label": "Season Tickets",
-              "value": "$9504.13",
-            },
-            "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#024A8F"
+                    label="Single Game"
+                    value="$1,000"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#024A8F",
+                    "label": "Single Game",
+                    "value": "$1,000",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="$1,000"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#2670AE",
+                    "label": "Group Tickets",
+                    "value": "$1,000",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="$1,000"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#4B98CF",
+                    "label": "Single Suites",
+                    "value": "$1,000",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
-        "type": "div",
+        "type": Symbol(react.fragment),
       },
     ],
-    "type": Symbol(react.fragment),
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
           <styled.p>
             Revenue Breakdown
 </styled.p>,
           <styled.div
-            height="12px"
+            height="0.75rem"
 />,
-          <Unknown
-            colors={
-                        Array [
-                                    "#000",
-                                    "#111",
-                                    "#222",
-                                  ]
-            }
-            data={
-                        Array [
-                                    10,
-                                    20,
-                                    30,
-                                  ]
-            }
-/>,
-          <styled.div
-            height="12px"
-/>,
-          <div>
-            <LegendItem
-                        color="#144670"
-                        label="Single Game"
-                        value="$9504.13"
+          <Unknown>
+            <Unknown
+                        colors={
+                                    Array [
+                                                "#024A8F",
+                                                "#2670AE",
+                                                "#4B98CF",
+                                                "#7CBCDD",
+                                                "#C4D2E1",
+                                                "#817CB8",
+                                                "#621F95",
+                                              ]
+                        }
+                        data={
+                                    Array [
+                                                1000,
+                                                1000,
+                                                1000,
+                                              ]
+                        }
             />
-            <LegendItem
-                        color="#4B98CF"
-                        label="Group Tickets"
-                        value="$9504.13"
-            />
-            <LegendItem
-                        color="#2670AE"
-                        label="Single Suites"
-                        value="$9504.13"
-            />
-            <LegendItem
-                        color="#C4D2E1"
-                        label="Season Tickets"
-                        value="$9504.13"
-            />
-</div>,
+            <Flex
+                        flexWrap="wrap"
+                        margin="0 -1rem -1rem"
+            >
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#024A8F"
+                                                label="Single Game"
+                                                value="$1,000"
+                                    />
+                        </FlexItem>
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#2670AE"
+                                                label="Group Tickets"
+                                                value="$1,000"
+                                    />
+                        </FlexItem>
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#4B98CF"
+                                                label="Single Suites"
+                                                value="$1,000"
+                                    />
+                        </FlexItem>
+            </Flex>
+</Unknown>,
         ],
       },
       "ref": null,
@@ -299,7 +457,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "height": "12px",
+            "height": "0.75rem",
           },
           "ref": null,
           "rendered": null,
@@ -310,58 +468,62 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "colors": Array [
-              "#000",
-              "#111",
-              "#222",
-            ],
-            "data": Array [
-              10,
-              20,
-              30,
-            ],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "height": "12px",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "children": Array [
-              <LegendItem
-                color="#144670"
-                label="Single Game"
-                value="$9504.13"
+              <Unknown
+                colors={
+                                Array [
+                                                "#024A8F",
+                                                "#2670AE",
+                                                "#4B98CF",
+                                                "#7CBCDD",
+                                                "#C4D2E1",
+                                                "#817CB8",
+                                                "#621F95",
+                                              ]
+                }
+                data={
+                                Array [
+                                                1000,
+                                                1000,
+                                                1000,
+                                              ]
+                }
 />,
-              <LegendItem
-                color="#4B98CF"
-                label="Group Tickets"
-                value="$9504.13"
-/>,
-              <LegendItem
-                color="#2670AE"
-                label="Single Suites"
-                value="$9504.13"
-/>,
-              <LegendItem
-                color="#C4D2E1"
-                label="Season Tickets"
-                value="$9504.13"
-/>,
+              <Flex
+                flexWrap="wrap"
+                margin="0 -1rem -1rem"
+>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#024A8F"
+                                                label="Single Game"
+                                                value="$1,000"
+                                />
+                </FlexItem>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#2670AE"
+                                                label="Group Tickets"
+                                                value="$1,000"
+                                />
+                </FlexItem>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#4B98CF"
+                                                label="Single Suites"
+                                                value="$1,000"
+                                />
+                </FlexItem>
+</Flex>,
             ],
           },
           "ref": null,
@@ -371,9 +533,20 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "color": "#144670",
-                "label": "Single Game",
-                "value": "$9504.13",
+                "colors": Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ],
+                "data": Array [
+                  1000,
+                  1000,
+                  1000,
+                ],
               },
               "ref": null,
               "rendered": null,
@@ -382,47 +555,916 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
               "props": Object {
-                "color": "#4B98CF",
-                "label": "Group Tickets",
-                "value": "$9504.13",
+                "children": Array [
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#024A8F"
+                                        label="Single Game"
+                                        value="$1,000"
+                    />
+</FlexItem>,
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#2670AE"
+                                        label="Group Tickets"
+                                        value="$1,000"
+                    />
+</FlexItem>,
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#4B98CF"
+                                        label="Single Suites"
+                                        value="$1,000"
+                    />
+</FlexItem>,
+                ],
+                "flexWrap": "wrap",
+                "margin": "0 -1rem -1rem",
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "color": "#2670AE",
-                "label": "Single Suites",
-                "value": "$9504.13",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "color": "#C4D2E1",
-                "label": "Season Tickets",
-                "value": "$9504.13",
-              },
-              "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "0",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#024A8F"
+                      label="Single Game"
+                      value="$1,000"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#024A8F",
+                      "label": "Single Game",
+                      "value": "$1,000",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#2670AE"
+                      label="Group Tickets"
+                      value="$1,000"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#2670AE",
+                      "label": "Group Tickets",
+                      "value": "$1,000",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#4B98CF"
+                      label="Single Suites"
+                      value="$1,000"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#4B98CF",
+                      "label": "Single Suites",
+                      "value": "$1,000",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
-          "type": "div",
+          "type": Symbol(react.fragment),
         },
       ],
-      "type": Symbol(react.fragment),
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RevenueBreakdown
+    revenueStatActions={
+        Object {
+            "fetch": [Function],
+            "reset": [Function],
+          }
+    }
+    revenueStatState={
+        Object {
+            "loading": false,
+            "ticketBreakdown": Array [
+              Object {
+                "id": 1,
+                "inventory": 10000,
+                "name": "Single Game",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 2,
+                "inventory": 5000,
+                "name": "Group Tickets",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 3,
+                "inventory": 7000,
+                "name": "Single Suites",
+                "revenue": 1000,
+              },
+            ],
+          }
+    }
+    type="inventory"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.p>
+          Tickets Sold Breakdown
+</styled.p>,
+        <styled.div
+          height="0.75rem"
+/>,
+        <Unknown>
+          <Unknown
+                    colors={
+                              Array [
+                                        "#024A8F",
+                                        "#2670AE",
+                                        "#4B98CF",
+                                        "#7CBCDD",
+                                        "#C4D2E1",
+                                        "#817CB8",
+                                        "#621F95",
+                                      ]
+                    }
+                    data={
+                              Array [
+                                        undefined,
+                                        undefined,
+                                        undefined,
+                                      ]
+                    }
+          />
+          <Flex
+                    flexWrap="wrap"
+                    margin="0 -1rem -1rem"
+          >
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#024A8F"
+                                        label="Single Game"
+                                        value="NaN"
+                              />
+                    </FlexItem>
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#2670AE"
+                                        label="Group Tickets"
+                                        value="NaN"
+                              />
+                    </FlexItem>
+                    <FlexItem
+                              flex="0 0 auto"
+                              padding="1rem"
+                    >
+                              <LegendItem
+                                        color="#4B98CF"
+                                        label="Single Suites"
+                                        value="NaN"
+                              />
+                    </FlexItem>
+          </Flex>
+</Unknown>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Tickets Sold Breakdown",
+        },
+        "ref": null,
+        "rendered": "Tickets Sold Breakdown",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "height": "0.75rem",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              colors={
+                            Array [
+                                          "#024A8F",
+                                          "#2670AE",
+                                          "#4B98CF",
+                                          "#7CBCDD",
+                                          "#C4D2E1",
+                                          "#817CB8",
+                                          "#621F95",
+                                        ]
+              }
+              data={
+                            Array [
+                                          undefined,
+                                          undefined,
+                                          undefined,
+                                        ]
+              }
+/>,
+            <Flex
+              flexWrap="wrap"
+              margin="0 -1rem -1rem"
+>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#024A8F"
+                                          label="Single Game"
+                                          value="NaN"
+                            />
+              </FlexItem>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#2670AE"
+                                          label="Group Tickets"
+                                          value="NaN"
+                            />
+              </FlexItem>
+              <FlexItem
+                            flex="0 0 auto"
+                            padding="1rem"
+              >
+                            <LegendItem
+                                          color="#4B98CF"
+                                          label="Single Suites"
+                                          value="NaN"
+                            />
+              </FlexItem>
+</Flex>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "colors": Array [
+                "#024A8F",
+                "#2670AE",
+                "#4B98CF",
+                "#7CBCDD",
+                "#C4D2E1",
+                "#817CB8",
+                "#621F95",
+              ],
+              "data": Array [
+                undefined,
+                undefined,
+                undefined,
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#024A8F"
+                                    label="Single Game"
+                                    value="NaN"
+                  />
+</FlexItem>,
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#2670AE"
+                                    label="Group Tickets"
+                                    value="NaN"
+                  />
+</FlexItem>,
+                <FlexItem
+                  flex="0 0 auto"
+                  padding="1rem"
+>
+                  <LegendItem
+                                    color="#4B98CF"
+                                    label="Single Suites"
+                                    value="NaN"
+                  />
+</FlexItem>,
+              ],
+              "flexWrap": "wrap",
+              "margin": "0 -1rem -1rem",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#024A8F"
+                    label="Single Game"
+                    value="NaN"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#024A8F",
+                    "label": "Single Game",
+                    "value": "NaN",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="NaN"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#2670AE",
+                    "label": "Group Tickets",
+                    "value": "NaN",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "class",
+                "props": Object {
+                  "children": <LegendItem
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="NaN"
+/>,
+                  "flex": "0 0 auto",
+                  "padding": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "color": "#4B98CF",
+                    "label": "Single Suites",
+                    "value": "NaN",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.p>
+            Tickets Sold Breakdown
+</styled.p>,
+          <styled.div
+            height="0.75rem"
+/>,
+          <Unknown>
+            <Unknown
+                        colors={
+                                    Array [
+                                                "#024A8F",
+                                                "#2670AE",
+                                                "#4B98CF",
+                                                "#7CBCDD",
+                                                "#C4D2E1",
+                                                "#817CB8",
+                                                "#621F95",
+                                              ]
+                        }
+                        data={
+                                    Array [
+                                                undefined,
+                                                undefined,
+                                                undefined,
+                                              ]
+                        }
+            />
+            <Flex
+                        flexWrap="wrap"
+                        margin="0 -1rem -1rem"
+            >
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#024A8F"
+                                                label="Single Game"
+                                                value="NaN"
+                                    />
+                        </FlexItem>
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#2670AE"
+                                                label="Group Tickets"
+                                                value="NaN"
+                                    />
+                        </FlexItem>
+                        <FlexItem
+                                    flex="0 0 auto"
+                                    padding="1rem"
+                        >
+                                    <LegendItem
+                                                color="#4B98CF"
+                                                label="Single Suites"
+                                                value="NaN"
+                                    />
+                        </FlexItem>
+            </Flex>
+</Unknown>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Tickets Sold Breakdown",
+          },
+          "ref": null,
+          "rendered": "Tickets Sold Breakdown",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "0.75rem",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <Unknown
+                colors={
+                                Array [
+                                                "#024A8F",
+                                                "#2670AE",
+                                                "#4B98CF",
+                                                "#7CBCDD",
+                                                "#C4D2E1",
+                                                "#817CB8",
+                                                "#621F95",
+                                              ]
+                }
+                data={
+                                Array [
+                                                undefined,
+                                                undefined,
+                                                undefined,
+                                              ]
+                }
+/>,
+              <Flex
+                flexWrap="wrap"
+                margin="0 -1rem -1rem"
+>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#024A8F"
+                                                label="Single Game"
+                                                value="NaN"
+                                />
+                </FlexItem>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#2670AE"
+                                                label="Group Tickets"
+                                                value="NaN"
+                                />
+                </FlexItem>
+                <FlexItem
+                                flex="0 0 auto"
+                                padding="1rem"
+                >
+                                <LegendItem
+                                                color="#4B98CF"
+                                                label="Single Suites"
+                                                value="NaN"
+                                />
+                </FlexItem>
+</Flex>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "colors": Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ],
+                "data": Array [
+                  undefined,
+                  undefined,
+                  undefined,
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#024A8F"
+                                        label="Single Game"
+                                        value="NaN"
+                    />
+</FlexItem>,
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#2670AE"
+                                        label="Group Tickets"
+                                        value="NaN"
+                    />
+</FlexItem>,
+                  <FlexItem
+                    flex="0 0 auto"
+                    padding="1rem"
+>
+                    <LegendItem
+                                        color="#4B98CF"
+                                        label="Single Suites"
+                                        value="NaN"
+                    />
+</FlexItem>,
+                ],
+                "flexWrap": "wrap",
+                "margin": "0 -1rem -1rem",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "0",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#024A8F"
+                      label="Single Game"
+                      value="NaN"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#024A8F",
+                      "label": "Single Game",
+                      "value": "NaN",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#2670AE"
+                      label="Group Tickets"
+                      value="NaN"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#2670AE",
+                      "label": "Group Tickets",
+                      "value": "NaN",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <LegendItem
+                      color="#4B98CF"
+                      label="Single Suites"
+                      value="NaN"
+/>,
+                    "flex": "0 0 auto",
+                    "padding": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "color": "#4B98CF",
+                      "label": "Single Suites",
+                      "value": "NaN",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<RevenueBreakdown /> should render the loading state correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RevenueBreakdown
+    revenueStatActions={
+        Object {
+            "fetch": [Function],
+            "reset": [Function],
+          }
+    }
+    revenueStatState={
+        Object {
+            "loading": true,
+            "ticketBreakdown": Array [
+              Object {
+                "id": 1,
+                "inventory": 10000,
+                "name": "Single Game",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 2,
+                "inventory": 5000,
+                "name": "Group Tickets",
+                "revenue": 1000,
+              },
+              Object {
+                "id": 3,
+                "inventory": 7000,
+                "name": "Single Suites",
+                "revenue": 1000,
+              },
+            ],
+          }
+    }
+    type="revenue"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

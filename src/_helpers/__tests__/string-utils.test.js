@@ -6,7 +6,9 @@ import {
   orDash,
   titleCase,
   sentenceCase,
-  truncateNumber
+  truncateNumber,
+  formatNumber,
+  formatUSD
 } from '_helpers/string-utils';
 
 describe('readableDate', () => {
@@ -86,5 +88,25 @@ describe('truncateNumber', () => {
     expect(truncateNumber(-1000000)).toEqual('-1M');
     expect(truncateNumber(-1500000)).toEqual('-1.50M');
     expect(truncateNumber(-155550000)).toEqual('-155.55M');
+  });
+});
+
+describe('formatNumber', () => {
+  it('should return a number with commas in the correct places', () => {
+    expect(formatNumber(100)).toEqual('100');
+    expect(formatNumber(1000)).toEqual('1,000');
+    expect(formatNumber(1000000)).toEqual('1,000,000');
+    expect(formatNumber(-100)).toEqual('-100');
+    expect(formatNumber(-1000)).toEqual('-1,000');
+    expect(formatNumber(-1000000)).toEqual('-1,000,000');
+  });
+});
+
+describe('formatUSD', () => {
+  it('should return a number formatted in US currency', () => {
+    expect(formatUSD(100)).toEqual('$100.00');
+    expect(formatUSD(1000)).toEqual('$1,000.00');
+    expect(formatUSD(100.5)).toEqual('$100.50');
+    expect(formatUSD(1000.5)).toEqual('$1,000.50');
   });
 });
