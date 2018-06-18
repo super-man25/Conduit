@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import authActions from '_state/auth/actions';
+import alertActions from '_state/alert/actions';
 
 import Login, { LoginPresenter } from './index';
 
@@ -30,7 +31,11 @@ describe('<LoginPresenter />', () => {
       'handleChange'
     );
     const wrapper = mount(
-      <LoginPresenter authState={myAuth} alertState={myAlert} />
+      <LoginPresenter
+        authState={myAuth}
+        alertState={myAlert}
+        alertActions={alertActions}
+      />
     );
     wrapper.setState({
       email: '',
@@ -57,7 +62,11 @@ describe('<LoginPresenter />', () => {
 
   it('email and password input changes update component state', () => {
     const wrapper = mount(
-      <LoginPresenter authState={myAuth} alertState={myAlert} />
+      <LoginPresenter
+        authState={myAuth}
+        alertState={myAlert}
+        alertActions={alertActions}
+      />
     );
     wrapper.setState({
       email: '',

@@ -14,6 +14,7 @@ import {
 import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
+import { actions as alertActions } from '_state/alert';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -65,6 +66,7 @@ export class LoginPresenter extends React.Component {
     const { name, value } = e.target;
     this.setState({ [name]: value });
     this.setState({ submitted: false });
+    this.props.alertActions.clear();
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
     // state will probably not be updated in time for it's value to be up-to-date...
     if (name === 'password') {
@@ -217,7 +219,8 @@ export class LoginPresenter extends React.Component {
 
 LoginPresenter.propTypes = {
   authState: PropTypes.shape(),
-  authActions: PropTypes.shape()
+  authActions: PropTypes.shape(),
+  alertActions: PropTypes.shape()
 };
 
 function mapStateToProps(state) {
@@ -229,7 +232,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    authActions: bindActionCreators(authActions, dispatch)
+    authActions: bindActionCreators(authActions, dispatch),
+    alertActions: bindActionCreators(alertActions, dispatch)
   };
 }
 
