@@ -8,6 +8,5 @@ export type EventStat = {
   revenue: number,
   periodicRevenue: number,
   isProjected: boolean,
-  date: Date,
   timestamp: number
 };

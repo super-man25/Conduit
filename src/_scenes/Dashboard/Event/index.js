@@ -1,33 +1,58 @@
-import { H1, Flex, P1, CenteredContainer } from '_components';
-import { readableDate } from '_helpers/string-utils';
+// @flow
+import { PageWrapper, Spacing, Breadcrumbs, Button, Flex } from '_components';
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { EventHeader } from './components/EventHeader';
+import EventChart from './components/EventChart';
+import { withSidebar } from '_hoc';
+import { compose } from 'recompose';
+import type { EDEvent } from '_models';
+import { getActiveEvent } from '_state/event/selectors';
 
-const Event = (props) => {
-  const { eventState } = props;
-  const { events, activeId } = eventState;
+const ToggleButton = Button.extend`
+  margin: 0;
+  margin-right: 1rem;
+`;
 
-  const event = events.find((e) => e.id === activeId);
-
-  return (
-    !!event && (
-      <CenteredContainer>
-        <H1>Event</H1>
-        <Flex>
-          <P1>ID: {event.id}</P1>
-          <P1>Name: {event.name}</P1>
-          <P1>Timestamp: {readableDate(event.timestamp)}</P1>
-        </Flex>
-      </CenteredContainer>
-    )
-  );
+const createCrumbs = (event: EDEvent) => {
+  return [{ title: 'Season Dashboard', path: '/season' }].concat({
+    title: event.name,
+    path: `/event/${event.id}`
+  });
 };
+
+type Props = {
+  event: ?EDEvent,
+  toggleSidebar: () => void,
+  isSidebarOpen: boolean
+};
+
+const Event = ({ event, toggleSidebar, isSidebarOpen }: Props) =>
+  !!event && (
+    <PageWrapper>
+      <Spacing padding="1.5rem 2rem">
+        <Flex align="center">
+          {!isSidebarOpen && (
+            <ToggleButton small expand onClick={toggleSidebar} />
+          )}
+          <Breadcrumbs crumbs={createCrumbs(event)} />
+        </Flex>
+        <Spacing height="1.5rem" />
+        <EventHeader
+          event={event}
+          availableInventory={15000}
+          totalInventory={40000}
+        />
+        <Spacing height="1rem" />
+        <EventChart event={event} />
+      </Spacing>
+    </PageWrapper>
+  );
 
 function mapStateToProps(state) {
   return {
-    eventState: state.event
+    event: getActiveEvent(state)
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Event));
+export default compose(connect(mapStateToProps), withSidebar)(Event);

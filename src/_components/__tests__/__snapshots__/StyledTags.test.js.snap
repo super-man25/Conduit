@@ -403,7 +403,7 @@ exports[`Label renders correctly with no props 1`] = `
 exports[`P1 renders correctly with no props 1`] = `
 .c0 {
   margin: 0;
-  color: inherit;
+  color: #070707;
   font-size: 1rem;
   font-weight: normal;
 }

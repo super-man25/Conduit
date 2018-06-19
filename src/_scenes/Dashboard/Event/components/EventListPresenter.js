@@ -37,7 +37,7 @@ const NoContentWrap = styled.div`
 `;
 
 type Props = {
-  filterOptions: {},
+  filterOptions: Array<{ id: number, label: string }>,
   activeId: number,
   timestampSort: string,
   title: string,
@@ -47,7 +47,7 @@ type Props = {
   events: Array<EDEvent>,
   onFilterSelect: (event: EDEvent) => void,
   onTimestampSortChange: (dir: string) => void,
-  selectedFilter: (event: EDEvent) => void,
+  selectedFilter: number,
   scrollIndex: ?number
 };
 
@@ -114,7 +114,7 @@ export function EventListPresenter(props: Props) {
               <EventListItem
                 onClick={() => onClick(event)}
                 active={event.id === activeId}
-                key={key}
+                key={event.id}
                 event={event}
               />
             )}

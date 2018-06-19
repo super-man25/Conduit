@@ -7,8 +7,9 @@ import { actions as authActions } from '_state/auth';
 import React from 'react';
 import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import { ConnectedRouter } from 'connected-react-router';
 import type { EDUser } from '_models';
 
 const Dashboard = Loadable({
@@ -49,13 +50,13 @@ class App extends React.Component<Props> {
     return loading ? (
       <CenteredLoader />
     ) : (
-      <Router history={history}>
+      <ConnectedRouter history={history}>
         <Switch>
           <Route path="/login" component={unsecured(Login)} />
           <Route path="/settings" component={secured(Settings)} />
           <Route path="/" component={secured(Dashboard)} />
         </Switch>
-      </Router>
+      </ConnectedRouter>
     );
   }
 }

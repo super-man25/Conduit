@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CumulativeRevenueTooltip /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CumulativeRevenueTooltip
+    active={true}
+    dateFormat="MMM DD, YYYY"
+    payload={
+        Array [
+            Object {
+              "payload": Object {
+                "eventId": 1,
+                "id": 1,
+                "inventory": 100,
+                "isProjected": false,
+                "periodicInventory": 100,
+                "periodicRevenue": 100,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "bodyComponent": <Unknown>
+        <styled.h3>
+                Revenue
+        </styled.h3>
+        <styled.p>
+                $100.00
+        </styled.p>
+</Unknown>,
+      "headerComponent": <styled.p>
+        2018-06-18T15:47:45.706Z @MMM DD, YYYY
+</styled.p>,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "bodyComponent": <Unknown>
+          <styled.h3>
+                    Revenue
+          </styled.h3>
+          <styled.p>
+                    $100.00
+          </styled.p>
+</Unknown>,
+        "headerComponent": <styled.p>
+          2018-06-18T15:47:45.706Z @MMM DD, YYYY
+</styled.p>,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<CumulativeRevenueTooltip /> should render correctly when active is false 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CumulativeRevenueTooltip
+    active={false}
+    dateFormat="MMM DD, YYYY"
+    payload={
+        Array [
+            Object {
+              "payload": Object {
+                "eventId": 1,
+                "id": 1,
+                "inventory": 100,
+                "isProjected": false,
+                "periodicInventory": 100,
+                "periodicRevenue": 100,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): null,
+  Symbol(enzyme.__nodes__): Array [
+    null,
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<CumulativeRevenueTooltip /> should render correctly when no payload is passed 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CumulativeRevenueTooltip
+    active={true}
+    dateFormat="MMM DD, YYYY"
+    payload={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): null,
+  Symbol(enzyme.__nodes__): Array [
+    null,
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<CumulativeRevenueTooltip /> should render correctly with different dateformats  1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CumulativeRevenueTooltip
+    active={true}
+    dateFormat="hh:mm a"
+    payload={
+        Array [
+            Object {
+              "payload": Object {
+                "eventId": 1,
+                "id": 1,
+                "inventory": 100,
+                "isProjected": false,
+                "periodicInventory": 100,
+                "periodicRevenue": 100,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "bodyComponent": <Unknown>
+        <styled.h3>
+                Revenue
+        </styled.h3>
+        <styled.p>
+                $100.00
+        </styled.p>
+</Unknown>,
+      "headerComponent": <Unknown>
+        <styled.p>
+                2018-06-18T15:47:45.706Z @MMM DD, YYYY
+        </styled.p>
+        <styled.p>
+                2018-06-18T15:47:45.706Z @hh:mm a
+        </styled.p>
+</Unknown>,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "bodyComponent": <Unknown>
+          <styled.h3>
+                    Revenue
+          </styled.h3>
+          <styled.p>
+                    $100.00
+          </styled.p>
+</Unknown>,
+        "headerComponent": <Unknown>
+          <styled.p>
+                    2018-06-18T15:47:45.706Z @MMM DD, YYYY
+          </styled.p>
+          <styled.p>
+                    2018-06-18T15:47:45.706Z @hh:mm a
+          </styled.p>
+</Unknown>,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

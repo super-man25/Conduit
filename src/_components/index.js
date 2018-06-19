@@ -46,3 +46,4 @@ export * from './EDLink';
 export * from './EDText';
 export * from './Toggle';
 export * from './Integration';
+export * from './Charts';

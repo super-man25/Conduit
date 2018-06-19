@@ -1,33 +1,44 @@
+// @flow
 import { actions as eventActions } from '_state/event';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import EventListPresenter from '../components/EventListPresenter';
+import { push } from 'connected-react-router';
+import { EDEvent } from '_models';
+import { getActiveEventId } from '_state/event/selectors';
 
-class EventListContainer extends React.Component {
+type Props = {
+  eventActions: {
+    fetch: () => void,
+    setActive: (value: number) => void,
+    search: (term: string) => void
+  },
+  eventState: {
+    filterOptions: Array<{ id: number, label: string }>,
+    sortDir: string,
+    loading: boolean,
+    filter: string,
+    events: EDEvent[],
+    visibleEvents: EDEvent[],
+    selectedFilter: number,
+    activeId: number
+  },
+  selectors: {
+    activeEventId: number
+  },
+  location: {
+    pathname: string
+  },
+  push: (path: string) => void
+};
+
+class EventListContainer extends React.Component<Props> {
   componentDidMount() {
     this.props.eventActions.fetch();
-    this.setActive();
   }
 
-  setActive() {
-    const {
-      location: { pathname },
-      eventState: { activeId }
-    } = this.props;
-
-    const [, resource, index] = pathname.split('/');
-
-    const routeIndex = parseInt(index, 10);
-
-    if (resource === 'event' && routeIndex !== activeId) {
-      this.props.eventActions.setActive(routeIndex);
-    }
-  }
-
-  handleSearchInput = (event) => {
+  handleSearchInput = (event: any) => {
     const { value } = event.target;
     this.props.eventActions.search(value);
   };
@@ -41,7 +52,7 @@ class EventListContainer extends React.Component {
   };
 
   handleOnClick = (event) => {
-    this.props.history.push(`/event/${event.id}`);
+    this.props.push(`/event/${event.id}`);
     this.props.eventActions.setActive(event.id);
   };
 
@@ -68,20 +79,21 @@ class EventListContainer extends React.Component {
   }
 
   render() {
-    const { eventState } = this.props;
     const {
-      filterOptions,
-      sortDir,
-      loading,
-      visibleEvents,
-      selectedFilter,
-      activeId
-    } = eventState;
+      eventState: {
+        filterOptions,
+        sortDir,
+        loading,
+        visibleEvents,
+        selectedFilter
+      },
+      selectors: { activeEventId }
+    } = this.props;
 
     return (
       <EventListPresenter
         onClick={this.handleOnClick}
-        activeId={activeId}
+        activeId={activeEventId}
         scrollIndex={this.scrollIndex}
         events={visibleEvents}
         loading={loading}
@@ -97,27 +109,21 @@ class EventListContainer extends React.Component {
   }
 }
 
-EventListContainer.propTypes = {
-  eventActions: PropTypes.shape(),
-  eventState: PropTypes.shape(),
-  location: PropTypes.shape({
-    pathname: PropTypes.string
-  }),
-  history: PropTypes.shape({})
-};
-
 function mapStateToProps(state) {
   return {
-    eventState: state.event
+    eventState: state.event,
+    location: state.router.location,
+    selectors: {
+      activeEventId: getActiveEventId(state)
+    }
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    eventActions: bindActionCreators(eventActions, dispatch)
+    eventActions: bindActionCreators(eventActions, dispatch),
+    push: (path) => dispatch(push(path))
   };
 }
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(EventListContainer)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(EventListContainer);

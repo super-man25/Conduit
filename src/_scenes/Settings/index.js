@@ -53,64 +53,58 @@ type Props = {
   }
 };
 
-export class Settings extends React.Component<Props> {
-  render() {
-    const { authState, authActions } = this.props;
-    return (
-      <PageWrapper>
-        <SiteHeader auth={authState.model} authActions={authActions} />
-        <FullContent>
-          <LeftNav>
-            <Spacing padding="2rem">
-              <Flex direction="column" align-items="center">
-                <Spacing padding="2rem 0">
-                  <EDNavLink
-                    weight="light"
-                    to="/settings/team"
-                    activeStyle={{
-                      color: cssConstants.PRIMARY_LIGHT_BLUE,
-                      textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
-                    }}
-                  >
-                    Team Settings
-                  </EDNavLink>
-                </Spacing>
-                <Spacing padding="2rem 0">
-                  <EDNavLink
-                    weight="light"
-                    to="/settings/user"
-                    activeStyle={{
-                      color: cssConstants.PRIMARY_LIGHT_BLUE,
-                      textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
-                    }}
-                  >
-                    User Settings
-                  </EDNavLink>
-                </Spacing>
-                {authState.model.isAdmin && (
-                  <Spacing padding="2rem 0">
-                    <EDLink weight="light" to="/settings/create-user">
-                      Create User
-                    </EDLink>
-                  </Spacing>
-                )}
-              </Flex>
+export const Settings = ({ authState, authActions }: Props) => (
+  <PageWrapper>
+    <SiteHeader auth={authState.model} authActions={authActions} />
+    <FullContent>
+      <LeftNav>
+        <Spacing padding="2rem">
+          <Flex direction="column" align-items="center">
+            <Spacing padding="2rem 0">
+              <EDNavLink
+                weight="light"
+                to="/settings/team"
+                activeStyle={{
+                  color: cssConstants.PRIMARY_LIGHT_BLUE,
+                  textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
+                }}
+              >
+                Team Settings
+              </EDNavLink>
             </Spacing>
-          </LeftNav>
-          <PrimaryContent>
-            {routes.map((route, index) => (
-              <Route key={index} path={route.path} component={route.main} />
-            ))}
-          </PrimaryContent>
-        </FullContent>
-      </PageWrapper>
-    );
-  }
-}
+            <Spacing padding="2rem 0">
+              <EDNavLink
+                weight="light"
+                to="/settings/user"
+                activeStyle={{
+                  color: cssConstants.PRIMARY_LIGHT_BLUE,
+                  textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
+                }}
+              >
+                User Settings
+              </EDNavLink>
+            </Spacing>
+            {authState.model.isAdmin && (
+              <Spacing padding="2rem 0">
+                <EDLink weight="light" to="/settings/create-user">
+                  Create User
+                </EDLink>
+              </Spacing>
+            )}
+          </Flex>
+        </Spacing>
+      </LeftNav>
+      <PrimaryContent>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} component={route.main} />
+        ))}
+      </PrimaryContent>
+    </FullContent>
+  </PageWrapper>
+);
 
 function mapStateToProps(state) {
   return {
-    userState: state.user,
     authState: state.auth
   };
 }

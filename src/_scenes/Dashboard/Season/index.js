@@ -1,10 +1,8 @@
 import { H1, Spacing, PageWrapper, Flex, Button } from '_components';
-import SeasonRevenuePanel from '_scenes/Dashboard/Season/containers/SeasonRevenuePanel';
+import SeasonRevenuePanel from './containers/SeasonRevenuePanel';
 import React from 'react';
 import styled from 'styled-components';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { actions as uiActions } from '_state/ui';
+import { withSidebar } from '_hoc';
 
 const ContentMock = styled.div`
   margin: 64px 0;
@@ -21,17 +19,14 @@ const ToggleButton = Button.extend`
   margin: 0;
 `;
 
-const Season = ({
-  uiState: { sidebarIsOpen },
-  uiActions: { toggleSidebar }
-}) => (
+const Season = ({ isSidebarOpen, toggleSidebar }) => (
   <PageWrapper>
     <Spacing padding="1.5rem 2rem">
       <Flex align="center" margin="0 0 1.5rem">
-        {!sidebarIsOpen && (
+        {!isSidebarOpen && (
           <ToggleButton small expand onClick={toggleSidebar} />
         )}
-        <SeasonOverviewTitle weight="400" sidebarIsOpen={sidebarIsOpen}>
+        <SeasonOverviewTitle weight="400" sidebarIsOpen={isSidebarOpen}>
           Season Overview
         </SeasonOverviewTitle>
       </Flex>
@@ -44,16 +39,4 @@ const Season = ({
   </PageWrapper>
 );
 
-function mapStateToProps(state) {
-  return {
-    uiState: state.ui
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    uiActions: bindActionCreators(uiActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Season);
+export default withSidebar(Season);

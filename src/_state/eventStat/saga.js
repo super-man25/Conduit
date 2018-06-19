@@ -6,17 +6,16 @@ import {
   SET_DATE_RANGE
 } from './actions';
 import { eventStatService } from '_services';
-import { getFilterArguments } from './selectors';
-
-export const selectDateFilter = (state) => getFilterArguments(state.eventStat);
+import { getEventStatFilterArguments } from './selectors';
+import { getActiveEventId } from '../event/selectors';
 
 // Workers
-// TODO: When current seasonId/eventId is stored, switch out static `1` id with selected season/eventId
 export function* fetchEventStatsAsync(action) {
   try {
-    const { from, to } = yield select(selectDateFilter);
+    const { from, to } = yield select(getEventStatFilterArguments);
+    const activeId = yield select(getActiveEventId);
 
-    const events = yield call(eventStatService.getAll, 1, from, to);
+    const events = yield call(eventStatService.getAll, activeId, from, to);
     yield put({ type: FETCH_SUCCESS, payload: events });
   } catch (err) {
     yield put({ type: FETCH_ERROR, payload: err });

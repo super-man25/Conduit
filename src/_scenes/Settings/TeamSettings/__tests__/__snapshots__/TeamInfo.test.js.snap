@@ -50,7 +50,7 @@ ShallowWrapper {
                     size="large"
           />
 </styled.div>,
-        <VisibilityToggle
+        <withClickAway(styled.div)
           cols={3}
           onClickAway={[Function]}
 >
@@ -73,7 +73,7 @@ ShallowWrapper {
                               />
                     </styled.div>
           </Unknown>
-</VisibilityToggle>,
+</withClickAway(styled.div)>,
       ],
     },
     "ref": null,
@@ -300,7 +300,7 @@ ShallowWrapper {
                         size="large"
             />
 </styled.div>,
-          <VisibilityToggle
+          <withClickAway(styled.div)
             cols={3}
             onClickAway={[Function]}
 >
@@ -323,7 +323,7 @@ ShallowWrapper {
                                     />
                         </styled.div>
             </Unknown>
-</VisibilityToggle>,
+</withClickAway(styled.div)>,
         ],
       },
       "ref": null,
@@ -579,7 +579,7 @@ ShallowWrapper {
                     size="large"
           />
 </styled.div>,
-        <VisibilityToggle
+        <withClickAway(styled.div)
           cols={3}
           onClickAway={[Function]}
 >
@@ -630,7 +630,7 @@ ShallowWrapper {
                               </styled.button>
                     </styled.div>
           </Unknown>
-</VisibilityToggle>,
+</withClickAway(styled.div)>,
       ],
     },
     "ref": null,
@@ -1005,7 +1005,7 @@ ShallowWrapper {
                         size="large"
             />
 </styled.div>,
-          <VisibilityToggle
+          <withClickAway(styled.div)
             cols={3}
             onClickAway={[Function]}
 >
@@ -1056,7 +1056,7 @@ ShallowWrapper {
                                     </styled.button>
                         </styled.div>
             </Unknown>
-</VisibilityToggle>,
+</withClickAway(styled.div)>,
         ],
       },
       "ref": null,

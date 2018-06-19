@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { cssConstants, zIndexes } from '_constants';
 import { withClickAway } from '_hoc';
 import {
@@ -13,6 +13,7 @@ import {
   SprocketMenu,
   UserWelcome
 } from './';
+import { push } from 'connected-react-router';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -61,9 +62,7 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 `);
 
 type Props = {
-  history: {
-    push: (path: string) => void
-  },
+  push: (path: string) => void,
   auth: {},
   authActions: {
     signOut: () => void
@@ -92,11 +91,11 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   };
 
   handleSettingsClick = () => {
-    this.props.history.push('/settings/team');
+    this.props.push('/settings/team');
   };
 
   handleLogoClick = () => {
-    this.props.history.push('/');
+    this.props.push('/');
   };
 
   handleLogoutClick = () => {
@@ -142,4 +141,12 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   }
 }
 
-export const SiteHeader = withRouter(SiteHeaderPresenter);
+function mapDispatchToProps(dispatch) {
+  return {
+    push: (path) => dispatch(push(path))
+  };
+}
+
+export const SiteHeader = connect(null, mapDispatchToProps)(
+  SiteHeaderPresenter
+);

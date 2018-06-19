@@ -10,3 +10,10 @@ export const DATE_FORMATS = {
   day: 'MMM DD, YYYY',
   time: 'hh:mm a'
 };
+
+export const GROUP_FILTERS = {
+  periodic: 0,
+  cumulative: 1
+};
+
+export const CHART_HEIGHT = 400;

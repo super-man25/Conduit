@@ -4,17 +4,15 @@ import { SeasonRevenuePanel } from '../SeasonRevenuePanel';
 
 describe('<SeasonRevenuePanel />', () => {
   const props = {
-    eventStatState: {
+    seasonStatState: {
       loading: true,
       groupFilters: [],
       dateRange: { from: null, to: null },
       eventDateLimits: { from: null, to: null },
-      selectedGroupFilter: null
+      selectedGroupFilter: null,
+      seasonStats: []
     },
-    eventStatsSelectors: {
-      model: []
-    },
-    eventStatActions: {
+    seasonStatActions: {
       fetch: jest.fn(),
       setGroupFilter: jest.fn(),
       setDateRange: jest.fn()
@@ -24,6 +22,10 @@ describe('<SeasonRevenuePanel />', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<SeasonRevenuePanel {...props} />);
     expect(wrapper).toMatchSnapshot();
-    expect(props.eventStatActions.fetch).toHaveBeenCalled();
+  });
+
+  it('should call fetch on componentDidMount', () => {
+    const wrapper = shallow(<SeasonRevenuePanel {...props} />);
+    expect(props.seasonStatActions.fetch).toHaveBeenCalled();
   });
 });

@@ -26,10 +26,9 @@ describe('<LoginPresenter />', () => {
   });
 
   it('email and password input changes fire handleChange method', () => {
-    const handleChangeSpy = jest.spyOn(
-      LoginPresenter.prototype,
-      'handleChange'
-    );
+    // Unfortunately when methods aren't passed as props, we have to follow these steps
+    // Get instance of component, attach spy to method we want to spy on, and forceUpdate.
+    // ForceUpdate is required to attach the spy. \_o_/
     const wrapper = mount(
       <LoginPresenter
         authState={myAuth}
@@ -37,6 +36,10 @@ describe('<LoginPresenter />', () => {
         alertActions={alertActions}
       />
     );
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'handleChange');
+    instance.forceUpdate();
+
     wrapper.setState({
       email: '',
       password: '',
@@ -46,18 +49,18 @@ describe('<LoginPresenter />', () => {
       passwordHadFocus: false,
       loginEnabled: false
     });
-    expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(0);
+    expect(spy).toHaveBeenCalledTimes(0);
     wrapper
       .find('#email')
       .first()
       .simulate('change', { target: { value: 'root@' } });
-    expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledTimes(1);
     wrapper
       .find('#password')
       .first()
       .simulate('change', { target: { value: '1234' } });
-    expect(LoginPresenter.prototype.handleChange).toHaveBeenCalledTimes(2);
-    handleChangeSpy.mockClear();
+    expect(spy).toHaveBeenCalledTimes(2);
+    spy.mockClear();
   });
 
   it('email and password input changes update component state', () => {
@@ -110,10 +113,6 @@ describe('<LoginPresenter />', () => {
   });
 
   it('clicking submit button fires handleSubmit method, which updates component state', () => {
-    const handleSubmitSpy = jest.spyOn(
-      LoginPresenter.prototype,
-      'handleSubmit'
-    );
     const wrapper = mount(
       <LoginPresenter
         authState={myAuth}
@@ -121,15 +120,19 @@ describe('<LoginPresenter />', () => {
         authActions={authActions}
       />
     );
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'handleSubmit');
+    instance.forceUpdate();
+
     expect(wrapper.state().submitted).toEqual(false);
-    expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(0);
+    expect(spy).toHaveBeenCalledTimes(0);
     wrapper
       .find('#login')
       .first()
       .simulate('submit');
-    expect(LoginPresenter.prototype.handleSubmit).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledTimes(1);
     expect(wrapper.state().submitted).toEqual(true);
-    handleSubmitSpy.mockClear();
+    spy.mockClear();
   });
 
   // need a test to verify signIn action has been dispatched when handleSubmit runs

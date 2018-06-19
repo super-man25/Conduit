@@ -17,7 +17,12 @@ import {
   initFuse
 } from '_state/event/saga';
 import { initialState } from '_state/event/reducer';
-import { getEvents, getSearchFilter } from '_state/event/selectors';
+import {
+  getEvents,
+  getSearchFilter,
+  getActiveEventId,
+  getActiveEvent
+} from '_state/event/selectors';
 
 describe('actions', () => {
   it('should create an action to fetch events', () => {
@@ -174,5 +179,61 @@ describe('saga workers', () => {
     expect(noFilter.next(events).value).toEqual(
       put({ type: VISIBLE_EVENTS, payload: events })
     );
+  });
+});
+
+describe('selectors', () => {
+  it('getEvents selector should return all events', () => {
+    const state = {
+      event: {
+        ...initialState,
+        events: [1, 2, 3]
+      }
+    };
+
+    expect(getEvents(state)).toEqual([1, 2, 3]);
+  });
+
+  it('getSearchFilter selector should return the current search filter', () => {
+    const state = {
+      event: {
+        ...initialState,
+        filter: 'Some filter'
+      }
+    };
+
+    expect(getSearchFilter(state)).toEqual('Some filter');
+  });
+
+  it('getActiveEventId selector should return the current active eventId', () => {
+    const state = {
+      event: {
+        ...initialState,
+        events: [{ id: 1 }, { id: 2 }]
+      },
+      router: {
+        location: {
+          pathname: '/event/2'
+        }
+      }
+    };
+
+    expect(getActiveEventId(state)).toEqual(2);
+  });
+
+  it('getActiveEvent selector should return the current active event', () => {
+    const state = {
+      event: {
+        ...initialState,
+        events: [{ id: 1 }, { id: 2 }]
+      },
+      router: {
+        location: {
+          pathname: '/event/2'
+        }
+      }
+    };
+
+    expect(getActiveEvent(state)).toEqual({ id: 2 });
   });
 });

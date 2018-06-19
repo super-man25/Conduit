@@ -9,8 +9,6 @@ import {
   S1,
   Spacing
 } from '_components';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import React from 'react';
 import ContactInfoContainer from './containers/ContactInfoContainer';
 
@@ -19,7 +17,6 @@ const UserWrapper = Flex.extend`
   justify-content: left;
   min-width: 100%;
 `;
-type Props = {};
 
 const userCrumb = [
   {
@@ -31,6 +28,8 @@ const userCrumb = [
     path: '/settings/user'
   }
 ];
+
+type Props = {};
 
 export function UserSettings(props: Props) {
   return (
@@ -51,10 +50,4 @@ export function UserSettings(props: Props) {
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    clientState: state.client
-  };
-}
-
-export default withRouter(connect(mapStateToProps)(UserSettings));
+export default UserSettings;

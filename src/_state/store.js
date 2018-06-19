@@ -13,6 +13,12 @@ import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
 import { reducer as uiReducer } from './ui';
 import {
+  reducer as seasonStatReducer,
+  saga as seasonStatSaga
+} from './seasonStat';
+import { routerMiddleware, connectRouter } from 'connected-react-router';
+import { history } from '_helpers';
+import {
   reducer as revenueStatReducer,
   saga as revenueStatSaga
 } from './revenueStat';
@@ -24,6 +30,7 @@ const reducer = combineReducers({
   event: eventReducer,
   user: userReducer,
   client: clientReducer,
+  seasonStat: seasonStatReducer,
   eventStat: eventStatReducer,
   teamStat: teamStatReducer,
   revenueStat: revenueStatReducer,
@@ -35,9 +42,9 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Create store
 const store = createStore(
-  reducer,
+  connectRouter(history)(reducer),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(routerMiddleware(history), sagaMiddleware)
 );
 
 const combineSagas = {
@@ -47,6 +54,7 @@ const combineSagas = {
   client: clientSaga,
   eventStat: eventStatSaga,
   teamStat: teamStatSaga,
+  seasonStat: seasonStatSaga,
   revenueStat: revenueStatSaga
 };
 

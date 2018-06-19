@@ -12,37 +12,26 @@ import {
   Loader,
   ChipButton,
   ChipButtonGroup,
-  DateRangeDropdown
-} from '_components';
-import { cssConstants, DATE_FORMATS } from '_constants';
-import RevenueBreakdown from './RevenueBreakdown';
-import {
+  DateRangeDropdown,
   PeriodicInventoryChart,
-  PeriodicInventoryChartLegend
-} from './PeriodicInventoryChart';
-import {
+  PeriodicInventoryChartLegend,
   PeriodicRevenueChart,
-  PeriodicRevenueChartLegend
-} from './PeriodicRevenueChart';
-import {
+  PeriodicRevenueChartLegend,
   CumulativeRevenueChart,
-  CumulativeRevenueChartLegend
-} from './CumulativeRevenueChart';
-import {
+  CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend
-} from './CumulativeInventoryChart';
+} from '_components';
+import {
+  cssConstants,
+  DATE_FORMATS,
+  CHART_HEIGHT,
+  GROUP_FILTERS
+} from '_constants';
+import RevenueBreakdown from './RevenueBreakdown';
 import { differenceInCalendarDays } from 'date-fns';
-import type { EventStatState } from '_state/eventStat/reducer';
-import type { EventStat } from '_models/eventStat';
-import typeof EventStatActions from '_state/eventStat/actions';
-
-const CHART_HEIGHT = 400;
-
-const GROUP_FILTERS = {
-  periodic: 0,
-  cumulative: 1
-};
+import type { SeasonStatState } from '_state/seasonStat/reducer';
+import typeof SeasonStatActions from '_state/seasonStat/actions';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -70,12 +59,8 @@ const DateFilterOptions = styled.div`
 `;
 
 type Props = {
-  eventStatState: EventStatState,
-  eventStatActions: EventStatActions,
-  eventStatsSelectors: {
-    model: EventStat[]
-  },
-  eventStatActions: EventStatActions
+  seasonStatState: SeasonStatState,
+  seasonStatActions: SeasonStatActions
 };
 
 const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
@@ -103,24 +88,20 @@ const ChartLegend = ({
 
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
-    this.props.eventStatActions.fetch();
-  }
-
-  componentWillUnmount() {
-    this.props.eventStatActions.clear();
+    this.props.seasonStatActions.fetch();
   }
 
   render() {
     const {
-      eventStatState: {
+      seasonStatState: {
         loading,
         groupFilters,
         dateRange: { from, to },
-        eventDateLimits,
-        selectedGroupFilter
+        dateLimits,
+        selectedGroupFilter,
+        seasonStats
       },
-      eventStatsSelectors: { model },
-      eventStatActions: { setDateRange, setGroupFilter }
+      seasonStatActions: { setDateRange, setGroupFilter }
     } = this.props;
 
     const tooltipDateFormat =
@@ -181,8 +162,8 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         from={from}
                         to={to}
                         disabledDays={{
-                          before: eventDateLimits.from,
-                          after: eventDateLimits.to
+                          before: dateLimits.from,
+                          after: dateLimits.to
                         }}
                         onChange={setDateRange}
                       />
@@ -202,7 +183,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                   <Fragment>
                     {selectedGroupFilter === GROUP_FILTERS.periodic && (
                       <PeriodicRevenueChart
-                        data={model}
+                        data={seasonStats}
                         height={CHART_HEIGHT}
                         dateFormat={tooltipDateFormat}
                         renderNoData={() => <NoData type="Revenue" />}
@@ -211,7 +192,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 
                     {selectedGroupFilter === GROUP_FILTERS.cumulative && (
                       <CumulativeRevenueChart
-                        data={model}
+                        data={seasonStats}
                         height={CHART_HEIGHT}
                         dateFormat={tooltipDateFormat}
                         renderNoData={() => <NoData type="Revenue" />}
@@ -223,7 +204,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                   <Fragment>
                     {selectedGroupFilter === GROUP_FILTERS.periodic && (
                       <PeriodicInventoryChart
-                        data={model}
+                        data={seasonStats}
                         height={CHART_HEIGHT}
                         dateFormat={tooltipDateFormat}
                         renderNoData={() => <NoData type="Inventory" />}
@@ -232,7 +213,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 
                     {selectedGroupFilter === GROUP_FILTERS.cumulative && (
                       <CumulativeInventoryChart
-                        data={model}
+                        data={seasonStats}
                         height={CHART_HEIGHT}
                         dateFormat={tooltipDateFormat}
                         renderNoData={() => <NoData type="Inventory" />}

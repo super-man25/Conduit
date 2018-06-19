@@ -11,8 +11,14 @@ import {
   SET_GROUPING_FILTER,
   SET_DATE_RANGE
 } from '_state/eventStat/actions';
-import { fetchEventStatsAsync, selectDateFilter } from '_state/eventStat/saga';
+import { fetchEventStatsAsync } from '_state/eventStat/saga';
 import { initialState } from '_state/eventStat/reducer';
+import {
+  getEventStatFilterArguments,
+  getEventStats,
+  getEventStatDateLimits
+} from '../eventStat/selectors';
+import { getActiveEventId } from '../event/selectors';
 
 describe('actions', () => {
   it('should create an action to fetch eventStats', () => {
@@ -183,17 +189,17 @@ describe('saga workers', () => {
   it('should handle fetch', () => {
     const action = actions.fetch();
     const generator = cloneableGenerator(fetchEventStatsAsync)(action);
-    const state = {
-      dateRange: {
-        from: new Date(),
-        to: new Date()
-      }
+    const dateRange = {
+      from: new Date(),
+      to: new Date()
     };
+    const activeEventId = 1;
 
-    expect(generator.next().value).toEqual(select(selectDateFilter));
+    expect(generator.next().value).toEqual(select(getEventStatFilterArguments));
+    expect(generator.next(dateRange).value).toEqual(select(getActiveEventId));
 
-    expect(generator.next(state.dateRange).value).toEqual(
-      call(eventStatService.getAll, 1, state.dateRange.from, state.dateRange.to)
+    expect(generator.next(activeEventId).value).toEqual(
+      call(eventStatService.getAll, 1, dateRange.from, dateRange.to)
     );
 
     // Fetch Success
@@ -215,5 +221,46 @@ describe('saga workers', () => {
     expect(failurePath.throw(error).value).toEqual(
       put({ type: FETCH_ERROR, payload: error })
     );
+  });
+});
+
+describe('selectors', () => {
+  it('getEventStats selector should return all eventStats', () => {
+    const state = {
+      eventStat: {
+        ...initialState,
+        eventStats: [1, 2, 3]
+      }
+    };
+
+    expect(getEventStats(state)).toEqual([1, 2, 3]);
+  });
+
+  it('getEventStatFilterArguments should return the current dateRange filter', () => {
+    const state = {
+      eventStat: {
+        ...initialState,
+        dateRange: {
+          from: 1,
+          to: 1
+        }
+      }
+    };
+
+    expect(getEventStatFilterArguments(state)).toEqual({ from: 1, to: 1 });
+  });
+
+  it('getEventStatDateLimits should return the current eventDateLimits', () => {
+    const state = {
+      eventStat: {
+        ...initialState,
+        eventDateLimits: {
+          from: 1,
+          to: 1
+        }
+      }
+    };
+
+    expect(getEventStatDateLimits(state)).toEqual({ from: 1, to: 1 });
   });
 });

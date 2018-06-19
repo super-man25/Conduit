@@ -71,7 +71,7 @@ export const P1 = styled.p.attrs({
   size: (props) => (props.size === 'small' ? '0.875rem' : props.size)
 })`
   margin: 0;
-  color: ${(props) => props.color || 'inherit'};
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.weight || 'normal'};
 `;

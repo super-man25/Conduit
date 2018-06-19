@@ -4,7 +4,7 @@ exports[`<Settings /> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Settings
+  Symbol(enzyme.__unrendered__): <Unknown
     authActions={Object {}}
     authState={
         Object {
@@ -29,7 +29,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <withRouter(SiteHeaderPresenter)
+        <Connect(SiteHeaderPresenter)
           auth={
                     Object {
                               "firstName": "groot",
@@ -105,7 +105,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "auth": Object {
             "firstName": "groot",
@@ -483,7 +483,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <withRouter(SiteHeaderPresenter)
+          <Connect(SiteHeaderPresenter)
             auth={
                         Object {
                                     "firstName": "groot",
@@ -559,7 +559,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "auth": Object {
               "firstName": "groot",

@@ -63,6 +63,9 @@ export function formatUSD(
   return formatter.format(value);
 }
 
+/**
+ * Return a number formatted to include commas at the correct place values
+ */
 export function formatNumber(value: number): string {
   return Intl.NumberFormat('en').format(value);
 }
@@ -72,10 +75,8 @@ export function formatNumber(value: number): string {
  *
  * @param {any} email
  */
-export function validateEmail(email: any): boolean {
-  const emailRegex = /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/;
-  const emailOK = emailRegex.test(email);
-  return emailOK;
+export function validateEmail(email: string): boolean {
+  return /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/.test(email);
 }
 
 /**

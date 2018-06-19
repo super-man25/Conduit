@@ -2,7 +2,12 @@
 import type { EventStatState } from './reducer';
 import type { DateRange } from '_helpers/types';
 
-export const getModel = (state: EventStatState) => state.eventStats;
-export const getFilterArguments = (state: EventStatState) => state.dateRange;
-export const getDateLimits = (state: EventStatState): DateRange =>
-  state.eventDateLimits;
+type State = {
+  eventStat: EventStatState
+};
+
+export const getEventStats = (state: State) => state.eventStat.eventStats;
+export const getEventStatFilterArguments = (state: State) =>
+  state.eventStat.dateRange;
+export const getEventStatDateLimits = (state: State): DateRange =>
+  state.eventStat.eventDateLimits;

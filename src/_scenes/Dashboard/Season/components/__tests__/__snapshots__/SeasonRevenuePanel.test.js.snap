@@ -5,14 +5,14 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SeasonRevenuePanel
-    eventStatActions={
+    seasonStatActions={
         Object {
             "fetch": [Function],
             "setDateRange": [Function],
             "setGroupFilter": [Function],
           }
     }
-    eventStatState={
+    seasonStatState={
         Object {
             "dateRange": Object {
               "from": null,
@@ -24,12 +24,8 @@ ShallowWrapper {
             },
             "groupFilters": Array [],
             "loading": true,
+            "seasonStats": Array [],
             "selectedGroupFilter": null,
-          }
-    }
-    eventStatsSelectors={
-        Object {
-            "model": Array [],
           }
     }
 />,

@@ -22,7 +22,7 @@ let fuse;
 export function initFuse(events: Array<EDEvent>) {
   const options = {
     shouldSort: false,
-    threshold: 0.3,
+    threshold: 0.2,
     keys: ['name']
   };
 

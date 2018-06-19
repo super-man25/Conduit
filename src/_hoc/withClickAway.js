@@ -1,9 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
-export const withClickAway = (Wrapped) =>
-  class VisibilityToggle extends React.Component {
+export const withClickAway = (WrappedComponent) => {
+  const displayName = WrappedComponent.displayName || WrappedComponent.name;
+
+  class Clickaway extends React.Component {
     static defaultProps = {
       onClickAway: () => {}
     };
@@ -43,8 +45,12 @@ export const withClickAway = (Wrapped) =>
             this.wrappedRef = node;
           }}
         >
-          <Wrapped {...passProps} />
+          <WrappedComponent {...passProps} />
         </div>
       );
     }
-  };
+  }
+
+  Clickaway.displayName = `withClickAway(${displayName})`;
+  return Clickaway;
+};

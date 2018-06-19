@@ -1,12 +1,13 @@
 // @flow
 
 export type EDUser = {
-  id: number,
-  email: string,
+  clientId: number,
   createdAt: Date,
-  modifiedAt: Date,
+  email: string,
   firstName: string,
+  id: number,
+  isAdmin: boolean,
   lastName: string,
-  phoneNumber: string,
-  clientId: number
+  modifiedAt: Date,
+  phoneNumber: string
 };

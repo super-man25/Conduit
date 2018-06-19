@@ -40,15 +40,13 @@ const Container = styled.div`
   }
 
   ::before {
-    transition: 0.3s ease-in-out width;
+    transition: 0.3s ease-out width;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: ${(props) => {
-      return props.active ? '14px' : '0px';
-    }};
+    width: ${(props) => (props.active ? '14px' : '0px')};
     background-color: ${cssConstants.PRIMARY_DARK_BLUE};
   }
 `;
