@@ -15,6 +15,10 @@ const updatedUser = {
   lastName: 'user1'
 };
 
+const forgotEmail = {
+  email: 'test@dialexa.com'
+};
+
 describe('get by Id', () => {
   afterEach(fetchMock.restore);
 
@@ -64,6 +68,19 @@ describe('change password', () => {
     return userService.changePassword(user).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(user);
+    });
+  });
+});
+
+describe('forgot password', () => {
+  afterEach(fetchMock.restore);
+
+  it('should change users password', () => {
+    const mock = fetchMock.post('end:users/forgot', forgotEmail);
+
+    return userService.forgotPass(forgotEmail).then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual(forgotEmail);
     });
   });
 });

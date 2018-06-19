@@ -11,6 +11,8 @@ import {
   MailtoLink,
   Spacing
 } from '_components';
+import { ForgotLink } from './components/ForgotLink';
+import { HideMe } from './components/HideMe';
 import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
@@ -50,16 +52,18 @@ export class LoginPresenter extends React.Component {
     this.state = {
       email: '',
       password: '',
+      forgot: '',
       submitted: false,
       emailHadFocus: false,
       validEmail: false,
       passwordHadFocus: false,
-      loginEnabled: false
+      submitEnabled: false
     };
 
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
+    this.handleForgotClick = this.handleForgotClick.bind(this);
   }
 
   handleChange(e) {
@@ -72,16 +76,19 @@ export class LoginPresenter extends React.Component {
     if (name === 'password') {
       if (value.length === 0) {
         // check the password value directly
-        this.setState({ loginEnabled: false });
+        this.setState({ submitEnabled: false });
       } else {
-        this.setState({ loginEnabled: !!this.state.validEmail }); // rely on state for the value of validEmail
+        this.setState({ submitEnabled: !!this.state.validEmail }); // rely on state for the value of validEmail
       }
     } else if (name === 'email') {
       if (!this.emailCheck(value)) {
         // check the email directly
-        this.setState({ loginEnabled: false });
+        this.setState({ submitEnabled: false });
       } else {
-        this.setState({ loginEnabled: !!this.state.password }); // rely on state for the value of password
+        this.setState({
+          // rely on state for the value of password
+          submitEnabled: !!this.state.password || !!this.state.forgot
+        });
       }
     }
   }
@@ -95,11 +102,31 @@ export class LoginPresenter extends React.Component {
     }
   }
 
+  // handles submittal of Login / Forgot Password form
   handleSubmit(e) {
     e.preventDefault();
     this.setState({ submitted: true });
     const { email, password } = this.state;
-    this.props.authActions.signIn(email, password);
+    if (this.state.forgot) {
+      this.props.authActions.forgotPass(email);
+    } else {
+      this.props.authActions.signIn(email, password);
+    }
+  }
+
+  handleForgotClick() {
+    const oldForgot = this.state.forgot;
+    this.setState({ forgot: !oldForgot });
+    // revisit the value of this.state.submitEnabled
+    if (oldForgot) {
+      // we just returned to login form
+      this.setState({
+        submitEnabled: !!this.state.password && !!this.state.validEmail
+      });
+    } else {
+      // we just moved to Forgot Password Form
+      this.setState({ submitEnabled: !!this.state.validEmail });
+    }
   }
 
   emailCheck(email) {
@@ -115,11 +142,12 @@ export class LoginPresenter extends React.Component {
     const {
       email,
       password,
+      forgot,
       submitted,
       emailHadFocus,
       passwordHadFocus,
       validEmail,
-      loginEnabled
+      submitEnabled
     } = this.state;
 
     return (
@@ -129,7 +157,9 @@ export class LoginPresenter extends React.Component {
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
                 <LogoImg src={edLogoImage} alt="Event Dynamic Logo" />
-                <H3 style={{ marginBottom: '5px' }}>Log In</H3>
+                <H3 style={{ marginBottom: '5px' }}>
+                  {forgot ? 'Forgot Password' : 'Log In'}
+                </H3>
                 <form name="form" onSubmit={this.handleSubmit}>
                   <HelpBlockDiv
                     type={alertState.type}
@@ -165,41 +195,41 @@ export class LoginPresenter extends React.Component {
                   >
                     A valid Email is required
                   </HelpBlockDiv>
-
-                  <Label htmlFor="password">Password</Label>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="password"
-                    data-test-id="password-input"
-                    autoComplete="new-password"
-                    value={password}
-                    inValid={
-                      (!password && (submitted || passwordHadFocus)) ||
-                      (alertState.show && submitted)
-                    }
-                    valid={password && !(alertState.show && submitted)}
-                    onChange={this.handleChange}
-                    onBlur={this.handleBlur}
-                  />
-                  <HelpBlockDiv
-                    type="alert-danger"
-                    show={!password && (submitted || passwordHadFocus)}
-                  >
-                    Password is required
-                  </HelpBlockDiv>
-
+                  <HideMe show={!forgot}>
+                    <Label htmlFor="password">Password</Label>
+                    <Input
+                      type="password"
+                      name="password"
+                      id="password"
+                      data-test-id="password-input"
+                      autoComplete="new-password"
+                      value={password}
+                      inValid={!password && (submitted || passwordHadFocus)}
+                      valid={password}
+                      onChange={this.handleChange}
+                      onBlur={this.handleBlur}
+                    />
+                    <HelpBlockDiv
+                      type="alert-danger"
+                      show={!password && (submitted || passwordHadFocus)}
+                    >
+                      Password is required
+                    </HelpBlockDiv>
+                  </HideMe>
                   <Button
-                    disabled={!loginEnabled}
+                    disabled={!submitEnabled}
                     id="login"
                     data-test-id="login-button"
                   >
                     {authState.pending ? (
                       <Loader small color={cssConstants.PRIMARY_WHITE} />
                     ) : (
-                      'Login'
+                      'Submit'
                     )}
                   </Button>
+                  <ForgotLink onClick={this.handleForgotClick}>
+                    {forgot ? 'back to Login' : 'forgot password?'}
+                  </ForgotLink>
                 </form>
               </CenteredContainer>
             </Spacing>

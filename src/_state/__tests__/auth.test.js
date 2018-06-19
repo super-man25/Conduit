@@ -5,9 +5,15 @@ import {
   IS_PENDING,
   SET_USER,
   SIGN_IN_ASYNC,
-  SIGN_OUT_ASYNC
+  SIGN_OUT_ASYNC,
+  FORGOT_PASS_ASYNC
 } from '_state/auth/actions';
-import { fetchAsync, signInAsync, signOutAsync } from '_state/auth/saga';
+import {
+  fetchAsync,
+  signInAsync,
+  signOutAsync,
+  forgotPassAsync
+} from '_state/auth/saga';
 import { call, put } from 'redux-saga/effects';
 
 describe('actions', () => {
@@ -25,6 +31,15 @@ describe('actions', () => {
     const action = actions.signOut();
     expect(action).toEqual({
       type: SIGN_OUT_ASYNC
+    });
+  });
+
+  it('should create an action to reset password', () => {
+    const email = 'email@dom.com';
+    const action = actions.forgotPass(email);
+    expect(action).toEqual({
+      type: FORGOT_PASS_ASYNC,
+      payload: { email }
     });
   });
 
@@ -103,6 +118,15 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(call(userService.logout));
     expect(generator.next().value).toEqual(
       put({ type: SET_USER, payload: null })
+    );
+    expect(generator.next().done).toBe(true);
+  });
+
+  it('should handle forgot password', () => {
+    const action = actions.forgotPass('some@email.com');
+    const generator = forgotPassAsync(action);
+    expect(generator.next().value).toEqual(
+      call(userService.forgotPass, { email: 'some@email.com' })
     );
     expect(generator.next().done).toBe(true);
   });

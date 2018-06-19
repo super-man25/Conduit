@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store';
 import authActions from '_state/auth/actions';
 import alertActions from '_state/alert/actions';
 
-import Login, { LoginPresenter } from './index';
+import Login, { LoginPresenter } from '../index';
 
 const myAuth = {
   model: null,
@@ -18,10 +18,20 @@ const myAlert = {
 };
 
 describe('<LoginPresenter />', () => {
-  it('renders correctly', () => {
+  it('renders correctly as login form when forgot=false', () => {
     const wrapper = shallow(
       <LoginPresenter authState={myAuth} alertState={myAlert} />
     );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders correctly as forgot password form when forgot=true', () => {
+    const wrapper = shallow(
+      <LoginPresenter authState={myAuth} alertState={myAlert} />
+    );
+    wrapper.setState({
+      forgot: true
+    });
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -47,7 +57,7 @@ describe('<LoginPresenter />', () => {
       emailHadFocus: false,
       validEmail: false,
       passwordHadFocus: false,
-      loginEnabled: false
+      submitEnabled: false
     });
     expect(spy).toHaveBeenCalledTimes(0);
     wrapper
@@ -74,13 +84,14 @@ describe('<LoginPresenter />', () => {
     wrapper.setState({
       email: '',
       password: '',
+      forgot: '',
       submitted: false,
       emailHadFocus: false,
       validEmail: false,
       passwordHadFocus: false,
-      loginEnabled: false
+      submitEnabled: false
     });
-    expect(wrapper.state().loginEnabled).toEqual(false);
+    expect(wrapper.state().submitEnabled).toEqual(false);
     expect(wrapper.state().email).toEqual('');
     expect(wrapper.state().emailHadFocus).toEqual(false);
     wrapper
@@ -97,7 +108,7 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.state().emailHadFocus).toEqual(true);
     wrapper.setState({ validEmail: true });
     expect(wrapper.state().password).toEqual('');
-    expect(wrapper.state().loginEnabled).toEqual(false);
+    expect(wrapper.state().submitEnabled).toEqual(false);
     expect(wrapper.state().passwordHadFocus).toEqual(false);
     wrapper
       .find('#password')
@@ -109,7 +120,7 @@ describe('<LoginPresenter />', () => {
       .simulate('blur', { target: { name: 'password' } });
     expect(wrapper.state().password).toEqual('password1');
     expect(wrapper.state().passwordHadFocus).toEqual(true);
-    expect(wrapper.state().loginEnabled).toEqual(true);
+    expect(wrapper.state().submitEnabled).toEqual(true);
   });
 
   it('clicking submit button fires handleSubmit method, which updates component state', () => {
@@ -135,8 +146,6 @@ describe('<LoginPresenter />', () => {
     spy.mockClear();
   });
 
-  // need a test to verify signIn action has been dispatched when handleSubmit runs
-
   it('renders LoginPresenter with authState prop from store.auth', () => {
     const authTest = { pending: false };
     // Stubbing out store. Would normally use a helper method. Did it inline for simplicity.
@@ -156,7 +165,8 @@ describe('<LoginPresenter />', () => {
 describe('<LoginPresenter />', () => {
   const middlewares = [];
   const mockStore = configureStore(middlewares);
-  const loginRequest = () => ({ type: 'auth/SIGN_IN_ASYNC' }); // update this to use appropriate constant
+  const loginRequest = () => ({ type: 'auth/SIGN_IN_ASYNC' });
+  const forgotPassRequest = () => ({ type: 'auth/FORGOT_PASS_ASYNC' });
 
   it('dispatches the signIn action to the store when store.dispatch() used', () => {
     // Initialize mockstore with empty state
@@ -170,26 +180,54 @@ describe('<LoginPresenter />', () => {
     expect(actions).toEqual([expectedPayload]);
   });
 
-  it('dispatches the signIn action to the store when login form submitted', () => {
+  it('dispatches the forgotPass action to the store when store.dispatch() used', () => {
     // Initialize mockstore with empty state
     const initialState = {};
     const store = mockStore(initialState);
+    // Dispatch the action
+    store.dispatch(forgotPassRequest());
+    // Test if your store dispatched the expected actions
+    const actions = store.getActions();
+    const expectedPayload = { type: 'auth/FORGOT_PASS_ASYNC' };
+    expect(actions).toEqual([expectedPayload]);
+  });
+
+  it('dispatches the signIn action to the store when login form submitted', () => {
     // Render the component and submit the form
-    const wrapper = shallow(
-      <LoginPresenter
-        authState={myAuth}
-        alertState={myAlert}
-        authActions={authActions}
-        store={store}
-      />
-    );
+    const props = {
+      authState: myAuth,
+      alertState: myAlert,
+      authActions: {
+        signIn: jest.fn(),
+        forgotPass: jest.fn()
+      }
+    };
+    const authActionsSignIn = jest.spyOn(props.authActions, 'signIn');
+    const wrapper = shallow(<LoginPresenter {...props} />);
     expect(wrapper.state().submitted).toEqual(false);
     wrapper.find('form').simulate('submit', { preventDefault: () => {} });
     expect(wrapper.state().submitted).toEqual(true);
-    // Test if the store dispatched the signIn action
-    // const actions = store.getActions();
-    // const expectedPayload = { type: 'auth/SIGN_IN_ASYNC' };
-    // expect(actions).toEqual([expectedPayload]);
+    expect(authActionsSignIn).toBeCalled();
+  });
+
+  it('dispatches the forgotPass action to the store when forgot password form submitted', () => {
+    // Render the component and submit the form
+    const props = {
+      authState: myAuth,
+      alertState: myAlert,
+      authActions: {
+        signIn: jest.fn(),
+        forgotPass: jest.fn()
+      }
+    };
+    const authActionsForgotPass = jest.spyOn(props.authActions, 'forgotPass');
+    const wrapper = shallow(<LoginPresenter {...props} />);
+    wrapper.state().forgot = true;
+    expect(wrapper.state().submitted).toEqual(false);
+
+    wrapper.find('form').simulate('submit', { preventDefault: () => {} });
+    expect(wrapper.state().submitted).toEqual(true);
+    expect(authActionsForgotPass).toBeCalled();
   });
 
   it('the emailCheck() method that returns true for a valid email, and false otherwise', () => {
@@ -200,8 +238,3 @@ describe('<LoginPresenter />', () => {
     expect(wrapper.instance().emailCheck('greg@dialexa.com')).toEqual(true);
   });
 });
-
-// tested.  handleBlur,
-// tested.  handleChange,
-// tested.  handleSubmit, (mostly)
-// tested.  emailCheck

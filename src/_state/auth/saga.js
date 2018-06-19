@@ -5,7 +5,8 @@ import {
   IS_PENDING,
   SET_USER,
   SIGN_IN_ASYNC,
-  SIGN_OUT_ASYNC
+  SIGN_OUT_ASYNC,
+  FORGOT_PASS_ASYNC
 } from './actions';
 import { ERROR } from '../alert/actions';
 
@@ -42,6 +43,15 @@ export function* signOutAsync() {
   }
 }
 
+export function* forgotPassAsync(action) {
+  const { email } = action.payload;
+  try {
+    yield call(userService.forgotPass, { email: email });
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
 // Sagas
 function* watchFetchAsync() {
   yield takeLatest(FETCH_ASYNC, fetchAsync);
@@ -55,8 +65,13 @@ function* watchSignOutAsync() {
   yield takeEvery(SIGN_OUT_ASYNC, signOutAsync);
 }
 
+function* watchForgotPassAsync() {
+  yield takeEvery(FORGOT_PASS_ASYNC, forgotPassAsync);
+}
+
 export default {
   watchFetchAsync,
   watchSignInAsync,
-  watchSignOutAsync
+  watchSignOutAsync,
+  watchForgotPassAsync
 };
