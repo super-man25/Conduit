@@ -19,6 +19,7 @@ ShallowWrapper {
             "venueId": 1,
           }
     }
+    pathname="/event/1/"
     totalInventory={1000}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -33,125 +34,111 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "align": "flex-end",
-      "children": <FlexItem
-        flex="0 0 auto"
-        margin="0 auto 0 0"
+      "children": Array [
+        <Flex
+          align="center"
 >
-        <styled.h1>
-                Some Event
-        </styled.h1>
-        <styled.h4>
-                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-        </styled.h4>
-        <Styled(Link)
-                to="#"
-        />
-</FlexItem>,
-      "justify": "space-between",
+          <styled.button
+                    expand={true}
+                    onClick={undefined}
+                    small={true}
+          />
+          <Breadcrumbs
+                    crumbs={
+                              Array [
+                                        Object {
+                                          "path": "/season",
+                                          "title": "Season Dashboard",
+                                        },
+                                        Object {
+                                          "path": "/event/1",
+                                          "title": "Some Event",
+                                        },
+                                      ]
+                    }
+          />
+</Flex>,
+        <styled.div
+          height="1.5rem"
+/>,
+        <Flex
+          align="flex-start"
+          justify="space-between"
+>
+          <FlexItem
+                    flex="0 0 auto"
+                    margin="0 auto 0 0"
+          >
+                    <styled.h1>
+                              Some Event
+                    </styled.h1>
+                    <styled.h4>
+                              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                    </styled.h4>
+                    <Styled(Link)
+                              to="/event/1/inventory"
+                    >
+                              <styled.span
+                                        color="#38A9DB"
+                              >
+                                        See Inventory List
+                              </styled.span>
+                    </Styled(Link)>
+          </FlexItem>
+          <FlexItem
+                    flex="0 0 auto"
+          >
+                    <styled.p
+                              size="16px"
+                    >
+                              Current Game Inventory
+                    </styled.p>
+                    <styled.p
+                              color="#2670AE"
+                              size="22px"
+                    >
+                              100
+                               / 
+                              1,000
+                    </styled.p>
+                    <styled.span
+                              color="#2670AE"
+                    >
+                              Available / Total
+                    </styled.span>
+          </FlexItem>
+</Flex>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <styled.h1>
-            Some Event
-</styled.h1>,
-          <styled.h4>
-            2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
-          <Styled(Link)
-            to="#"
-/>,
-        ],
-        "flex": "0 0 auto",
-        "margin": "0 auto 0 0",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": "Some Event",
-          },
-          "ref": null,
-          "rendered": "Some Event",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
-          },
-          "ref": null,
-          "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "to": "#",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "align": "flex-end",
-        "children": <FlexItem
-          flex="0 0 auto"
-          margin="0 auto 0 0"
->
-          <styled.h1>
-                    Some Event
-          </styled.h1>
-          <styled.h4>
-                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-          </styled.h4>
-          <Styled(Link)
-                    to="#"
-          />
-</FlexItem>,
-        "justify": "space-between",
-      },
-      "ref": null,
-      "rendered": Object {
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "align": "center",
           "children": Array [
-            <styled.h1>
-              Some Event
-</styled.h1>,
-            <styled.h4>
-              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
-            <Styled(Link)
-              to="#"
+            <styled.button
+              expand={true}
+              onClick={undefined}
+              small={true}
+/>,
+            <Breadcrumbs
+              crumbs={
+                            Array [
+                                          Object {
+                                            "path": "/season",
+                                            "title": "Season Dashboard",
+                                          },
+                                          Object {
+                                            "path": "/event/1",
+                                            "title": "Some Event",
+                                          },
+                                        ]
+              }
 />,
           ],
-          "flex": "0 0 auto",
-          "margin": "0 auto 0 0",
         },
         "ref": null,
         "rendered": Array [
@@ -160,29 +147,29 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": "Some Event",
+              "expand": true,
+              "onClick": undefined,
+              "small": true,
             },
             "ref": null,
-            "rendered": "Some Event",
+            "rendered": null,
             "type": [Function],
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
-            },
-            "ref": null,
-            "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "to": "#",
+              "crumbs": Array [
+                Object {
+                  "path": "/season",
+                  "title": "Season Dashboard",
+                },
+                Object {
+                  "path": "/event/1",
+                  "title": "Some Event",
+                },
+              ],
             },
             "ref": null,
             "rendered": null,
@@ -191,6 +178,1321 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "height": "1.5rem",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "flex-start",
+          "children": Array [
+            <FlexItem
+              flex="0 0 auto"
+              margin="0 auto 0 0"
+>
+              <styled.h1>
+                            Some Event
+              </styled.h1>
+              <styled.h4>
+                            2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              </styled.h4>
+              <Styled(Link)
+                            to="/event/1/inventory"
+              >
+                            <styled.span
+                                          color="#38A9DB"
+                            >
+                                          See Inventory List
+                            </styled.span>
+              </Styled(Link)>
+</FlexItem>,
+            <FlexItem
+              flex="0 0 auto"
+>
+              <styled.p
+                            size="16px"
+              >
+                            Current Game Inventory
+              </styled.p>
+              <styled.p
+                            color="#2670AE"
+                            size="22px"
+              >
+                            100
+                             / 
+                            1,000
+              </styled.p>
+              <styled.span
+                            color="#2670AE"
+              >
+                            Available / Total
+              </styled.span>
+</FlexItem>,
+          ],
+          "justify": "space-between",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h1>
+                  Some Event
+</styled.h1>,
+                <styled.h4>
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+</styled.h4>,
+                <Styled(Link)
+                  to="/event/1/inventory"
+>
+                  <styled.span
+                                    color="#38A9DB"
+                  >
+                                    See Inventory List
+                  </styled.span>
+</Styled(Link)>,
+              ],
+              "flex": "0 0 auto",
+              "margin": "0 auto 0 0",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Some Event",
+                },
+                "ref": null,
+                "rendered": "Some Event",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                },
+                "ref": null,
+                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.span
+                    color="#38A9DB"
+>
+                    See Inventory List
+</styled.span>,
+                  "to": "/event/1/inventory",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "See Inventory List",
+                    "color": "#38A9DB",
+                  },
+                  "ref": null,
+                  "rendered": "See Inventory List",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.p
+                  size="16px"
+>
+                  Current Game Inventory
+</styled.p>,
+                <styled.p
+                  color="#2670AE"
+                  size="22px"
+>
+                  100
+                   / 
+                  1,000
+</styled.p>,
+                <styled.span
+                  color="#2670AE"
+>
+                  Available / Total
+</styled.span>,
+              ],
+              "flex": "0 0 auto",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Current Game Inventory",
+                  "size": "16px",
+                },
+                "ref": null,
+                "rendered": "Current Game Inventory",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "100",
+                    " / ",
+                    "1,000",
+                  ],
+                  "color": "#2670AE",
+                  "size": "22px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "100",
+                  " / ",
+                  "1,000",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Available / Total",
+                  "color": "#2670AE",
+                },
+                "ref": null,
+                "rendered": "Available / Total",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Flex
+            align="center"
+>
+            <styled.button
+                        expand={true}
+                        onClick={undefined}
+                        small={true}
+            />
+            <Breadcrumbs
+                        crumbs={
+                                    Array [
+                                                Object {
+                                                  "path": "/season",
+                                                  "title": "Season Dashboard",
+                                                },
+                                                Object {
+                                                  "path": "/event/1",
+                                                  "title": "Some Event",
+                                                },
+                                              ]
+                        }
+            />
+</Flex>,
+          <styled.div
+            height="1.5rem"
+/>,
+          <Flex
+            align="flex-start"
+            justify="space-between"
+>
+            <FlexItem
+                        flex="0 0 auto"
+                        margin="0 auto 0 0"
+            >
+                        <styled.h1>
+                                    Some Event
+                        </styled.h1>
+                        <styled.h4>
+                                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                        </styled.h4>
+                        <Styled(Link)
+                                    to="/event/1/inventory"
+                        >
+                                    <styled.span
+                                                color="#38A9DB"
+                                    >
+                                                See Inventory List
+                                    </styled.span>
+                        </Styled(Link)>
+            </FlexItem>
+            <FlexItem
+                        flex="0 0 auto"
+            >
+                        <styled.p
+                                    size="16px"
+                        >
+                                    Current Game Inventory
+                        </styled.p>
+                        <styled.p
+                                    color="#2670AE"
+                                    size="22px"
+                        >
+                                    100
+                                     / 
+                                    1,000
+                        </styled.p>
+                        <styled.span
+                                    color="#2670AE"
+                        >
+                                    Available / Total
+                        </styled.span>
+            </FlexItem>
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": Array [
+              <styled.button
+                expand={true}
+                onClick={undefined}
+                small={true}
+/>,
+              <Breadcrumbs
+                crumbs={
+                                Array [
+                                                Object {
+                                                  "path": "/season",
+                                                  "title": "Season Dashboard",
+                                                },
+                                                Object {
+                                                  "path": "/event/1",
+                                                  "title": "Some Event",
+                                                },
+                                              ]
+                }
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "expand": true,
+                "onClick": undefined,
+                "small": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "crumbs": Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "1.5rem",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "flex-start",
+            "children": Array [
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 auto 0 0"
+>
+                <styled.h1>
+                                Some Event
+                </styled.h1>
+                <styled.h4>
+                                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                </styled.h4>
+                <Styled(Link)
+                                to="/event/1/inventory"
+                >
+                                <styled.span
+                                                color="#38A9DB"
+                                >
+                                                See Inventory List
+                                </styled.span>
+                </Styled(Link)>
+</FlexItem>,
+              <FlexItem
+                flex="0 0 auto"
+>
+                <styled.p
+                                size="16px"
+                >
+                                Current Game Inventory
+                </styled.p>
+                <styled.p
+                                color="#2670AE"
+                                size="22px"
+                >
+                                100
+                                 / 
+                                1,000
+                </styled.p>
+                <styled.span
+                                color="#2670AE"
+                >
+                                Available / Total
+                </styled.span>
+</FlexItem>,
+            ],
+            "justify": "space-between",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h1>
+                    Some Event
+</styled.h1>,
+                  <styled.h4>
+                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+</styled.h4>,
+                  <Styled(Link)
+                    to="/event/1/inventory"
+>
+                    <styled.span
+                                        color="#38A9DB"
+                    >
+                                        See Inventory List
+                    </styled.span>
+</Styled(Link)>,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 auto 0 0",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Some Event",
+                  },
+                  "ref": null,
+                  "rendered": "Some Event",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  },
+                  "ref": null,
+                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.span
+                      color="#38A9DB"
+>
+                      See Inventory List
+</styled.span>,
+                    "to": "/event/1/inventory",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "See Inventory List",
+                      "color": "#38A9DB",
+                    },
+                    "ref": null,
+                    "rendered": "See Inventory List",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.p
+                    size="16px"
+>
+                    Current Game Inventory
+</styled.p>,
+                  <styled.p
+                    color="#2670AE"
+                    size="22px"
+>
+                    100
+                     / 
+                    1,000
+</styled.p>,
+                  <styled.span
+                    color="#2670AE"
+>
+                    Available / Total
+</styled.span>,
+                ],
+                "flex": "0 0 auto",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Current Game Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Current Game Inventory",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "100",
+                      " / ",
+                      "1,000",
+                    ],
+                    "color": "#2670AE",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "100",
+                    " / ",
+                    "1,000",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Available / Total",
+                    "color": "#2670AE",
+                  },
+                  "ref": null,
+                  "rendered": "Available / Total",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<EventHeader /> should render correctly when on the location route 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventHeader
+    availableInventory={100}
+    event={
+        Object {
+            "clientId": 1,
+            "createdAt": 1529336865706,
+            "id": 1,
+            "integrationId": 1,
+            "modifiedAt": 1529336865706,
+            "name": "Some Event",
+            "seasonId": 1,
+            "timestamp": 1529336865706,
+            "venueId": 1,
+          }
+    }
+    pathname="/event/1/inventory"
+    totalInventory={1000}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Flex
+          align="center"
+>
+          <styled.button
+                    expand={true}
+                    onClick={undefined}
+                    small={true}
+          />
+          <Breadcrumbs
+                    crumbs={
+                              Array [
+                                        Object {
+                                          "path": "/season",
+                                          "title": "Season Dashboard",
+                                        },
+                                        Object {
+                                          "path": "/event/1",
+                                          "title": "Some Event",
+                                        },
+                                        Object {
+                                          "path": "/event/1/inventory",
+                                          "title": "Inventory",
+                                        },
+                                      ]
+                    }
+          />
+</Flex>,
+        <styled.div
+          height="1.5rem"
+/>,
+        <Flex
+          align="flex-start"
+          justify="space-between"
+>
+          <FlexItem
+                    flex="0 0 auto"
+                    margin="0 auto 0 0"
+          >
+                    <styled.h1>
+                              Some Event
+                    </styled.h1>
+                    <styled.h4>
+                              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                    </styled.h4>
+          </FlexItem>
+          <FlexItem
+                    flex="0 0 auto"
+          >
+                    <styled.p
+                              size="16px"
+                    >
+                              Current Game Inventory
+                    </styled.p>
+                    <styled.p
+                              color="#2670AE"
+                              size="22px"
+                    >
+                              100
+                               / 
+                              1,000
+                    </styled.p>
+                    <styled.span
+                              color="#2670AE"
+                    >
+                              Available / Total
+                    </styled.span>
+          </FlexItem>
+</Flex>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            <styled.button
+              expand={true}
+              onClick={undefined}
+              small={true}
+/>,
+            <Breadcrumbs
+              crumbs={
+                            Array [
+                                          Object {
+                                            "path": "/season",
+                                            "title": "Season Dashboard",
+                                          },
+                                          Object {
+                                            "path": "/event/1",
+                                            "title": "Some Event",
+                                          },
+                                          Object {
+                                            "path": "/event/1/inventory",
+                                            "title": "Inventory",
+                                          },
+                                        ]
+              }
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "expand": true,
+              "onClick": undefined,
+              "small": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "crumbs": Array [
+                Object {
+                  "path": "/season",
+                  "title": "Season Dashboard",
+                },
+                Object {
+                  "path": "/event/1",
+                  "title": "Some Event",
+                },
+                Object {
+                  "path": "/event/1/inventory",
+                  "title": "Inventory",
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "height": "1.5rem",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "flex-start",
+          "children": Array [
+            <FlexItem
+              flex="0 0 auto"
+              margin="0 auto 0 0"
+>
+              <styled.h1>
+                            Some Event
+              </styled.h1>
+              <styled.h4>
+                            2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              </styled.h4>
+</FlexItem>,
+            <FlexItem
+              flex="0 0 auto"
+>
+              <styled.p
+                            size="16px"
+              >
+                            Current Game Inventory
+              </styled.p>
+              <styled.p
+                            color="#2670AE"
+                            size="22px"
+              >
+                            100
+                             / 
+                            1,000
+              </styled.p>
+              <styled.span
+                            color="#2670AE"
+              >
+                            Available / Total
+              </styled.span>
+</FlexItem>,
+          ],
+          "justify": "space-between",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h1>
+                  Some Event
+</styled.h1>,
+                <styled.h4>
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+</styled.h4>,
+                false,
+              ],
+              "flex": "0 0 auto",
+              "margin": "0 auto 0 0",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Some Event",
+                },
+                "ref": null,
+                "rendered": "Some Event",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                },
+                "ref": null,
+                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                "type": [Function],
+              },
+              false,
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.p
+                  size="16px"
+>
+                  Current Game Inventory
+</styled.p>,
+                <styled.p
+                  color="#2670AE"
+                  size="22px"
+>
+                  100
+                   / 
+                  1,000
+</styled.p>,
+                <styled.span
+                  color="#2670AE"
+>
+                  Available / Total
+</styled.span>,
+              ],
+              "flex": "0 0 auto",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Current Game Inventory",
+                  "size": "16px",
+                },
+                "ref": null,
+                "rendered": "Current Game Inventory",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "100",
+                    " / ",
+                    "1,000",
+                  ],
+                  "color": "#2670AE",
+                  "size": "22px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "100",
+                  " / ",
+                  "1,000",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Available / Total",
+                  "color": "#2670AE",
+                },
+                "ref": null,
+                "rendered": "Available / Total",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Flex
+            align="center"
+>
+            <styled.button
+                        expand={true}
+                        onClick={undefined}
+                        small={true}
+            />
+            <Breadcrumbs
+                        crumbs={
+                                    Array [
+                                                Object {
+                                                  "path": "/season",
+                                                  "title": "Season Dashboard",
+                                                },
+                                                Object {
+                                                  "path": "/event/1",
+                                                  "title": "Some Event",
+                                                },
+                                                Object {
+                                                  "path": "/event/1/inventory",
+                                                  "title": "Inventory",
+                                                },
+                                              ]
+                        }
+            />
+</Flex>,
+          <styled.div
+            height="1.5rem"
+/>,
+          <Flex
+            align="flex-start"
+            justify="space-between"
+>
+            <FlexItem
+                        flex="0 0 auto"
+                        margin="0 auto 0 0"
+            >
+                        <styled.h1>
+                                    Some Event
+                        </styled.h1>
+                        <styled.h4>
+                                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                        </styled.h4>
+            </FlexItem>
+            <FlexItem
+                        flex="0 0 auto"
+            >
+                        <styled.p
+                                    size="16px"
+                        >
+                                    Current Game Inventory
+                        </styled.p>
+                        <styled.p
+                                    color="#2670AE"
+                                    size="22px"
+                        >
+                                    100
+                                     / 
+                                    1,000
+                        </styled.p>
+                        <styled.span
+                                    color="#2670AE"
+                        >
+                                    Available / Total
+                        </styled.span>
+            </FlexItem>
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": Array [
+              <styled.button
+                expand={true}
+                onClick={undefined}
+                small={true}
+/>,
+              <Breadcrumbs
+                crumbs={
+                                Array [
+                                                Object {
+                                                  "path": "/season",
+                                                  "title": "Season Dashboard",
+                                                },
+                                                Object {
+                                                  "path": "/event/1",
+                                                  "title": "Some Event",
+                                                },
+                                                Object {
+                                                  "path": "/event/1/inventory",
+                                                  "title": "Inventory",
+                                                },
+                                              ]
+                }
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "expand": true,
+                "onClick": undefined,
+                "small": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "crumbs": Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                  Object {
+                    "path": "/event/1/inventory",
+                    "title": "Inventory",
+                  },
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "1.5rem",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "flex-start",
+            "children": Array [
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 auto 0 0"
+>
+                <styled.h1>
+                                Some Event
+                </styled.h1>
+                <styled.h4>
+                                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                </styled.h4>
+</FlexItem>,
+              <FlexItem
+                flex="0 0 auto"
+>
+                <styled.p
+                                size="16px"
+                >
+                                Current Game Inventory
+                </styled.p>
+                <styled.p
+                                color="#2670AE"
+                                size="22px"
+                >
+                                100
+                                 / 
+                                1,000
+                </styled.p>
+                <styled.span
+                                color="#2670AE"
+                >
+                                Available / Total
+                </styled.span>
+</FlexItem>,
+            ],
+            "justify": "space-between",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h1>
+                    Some Event
+</styled.h1>,
+                  <styled.h4>
+                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+</styled.h4>,
+                  false,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 auto 0 0",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Some Event",
+                  },
+                  "ref": null,
+                  "rendered": "Some Event",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  },
+                  "ref": null,
+                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "type": [Function],
+                },
+                false,
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.p
+                    size="16px"
+>
+                    Current Game Inventory
+</styled.p>,
+                  <styled.p
+                    color="#2670AE"
+                    size="22px"
+>
+                    100
+                     / 
+                    1,000
+</styled.p>,
+                  <styled.span
+                    color="#2670AE"
+>
+                    Available / Total
+</styled.span>,
+                ],
+                "flex": "0 0 auto",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Current Game Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Current Game Inventory",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "100",
+                      " / ",
+                      "1,000",
+                    ],
+                    "color": "#2670AE",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "100",
+                    " / ",
+                    "1,000",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Available / Total",
+                    "color": "#2670AE",
+                  },
+                  "ref": null,
+                  "rendered": "Available / Total",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],

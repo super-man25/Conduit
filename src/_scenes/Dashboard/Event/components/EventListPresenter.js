@@ -112,7 +112,7 @@ export function EventListPresenter(props: Props) {
           <ScrollableList data={events} scrollIndex={scrollIndex}>
             {(event, key) => (
               <EventListItem
-                onClick={() => onClick(event)}
+                onClick={onClick}
                 active={event.id === activeId}
                 key={event.id}
                 event={event}

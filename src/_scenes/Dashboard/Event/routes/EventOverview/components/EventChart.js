@@ -33,7 +33,7 @@ import {
   GROUP_FILTERS
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
-import { getActiveEventId, getActiveEvent } from '_state/event/selectors';
+import { getActiveEventId } from '_state/event/selectors';
 import typeof EventStatActions from '_state/eventStat/actions';
 
 const TabLink = styled.span`

@@ -1,58 +1,29 @@
 // @flow
-import { PageWrapper, Spacing, Breadcrumbs, Button, Flex } from '_components';
 import React from 'react';
-import { connect } from 'react-redux';
-import { EventHeader } from './components/EventHeader';
-import EventChart from './components/EventChart';
-import { withSidebar } from '_hoc';
-import { compose } from 'recompose';
-import type { EDEvent } from '_models';
-import { getActiveEvent } from '_state/event/selectors';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { Loader, Flex } from '_components';
 
-const ToggleButton = Button.extend`
-  margin: 0;
-  margin-right: 1rem;
-`;
+const EventRouteLoading = () => (
+  <Flex height="100%" width="100%" justify="center" align="center">
+    <Loader />
+  </Flex>
+);
 
-const createCrumbs = (event: EDEvent) => {
-  return [{ title: 'Season Dashboard', path: '/season' }].concat({
-    title: event.name,
-    path: `/event/${event.id}`
-  });
-};
+const EventInventory = Loadable({
+  loader: () => import('_scenes/Dashboard/Event/routes/EventInventory'),
+  loading: EventRouteLoading
+});
 
-type Props = {
-  event: ?EDEvent,
-  toggleSidebar: () => void,
-  isSidebarOpen: boolean
-};
+const EventOverview = Loadable({
+  loader: () => import('_scenes/Dashboard/Event/routes/EventOverview'),
+  loading: EventRouteLoading
+});
 
-const Event = ({ event, toggleSidebar, isSidebarOpen }: Props) =>
-  !!event && (
-    <PageWrapper>
-      <Spacing padding="1.5rem 2rem">
-        <Flex align="center">
-          {!isSidebarOpen && (
-            <ToggleButton small expand onClick={toggleSidebar} />
-          )}
-          <Breadcrumbs crumbs={createCrumbs(event)} />
-        </Flex>
-        <Spacing height="1.5rem" />
-        <EventHeader
-          event={event}
-          availableInventory={15000}
-          totalInventory={40000}
-        />
-        <Spacing height="1rem" />
-        <EventChart event={event} />
-      </Spacing>
-    </PageWrapper>
-  );
-
-function mapStateToProps(state) {
-  return {
-    event: getActiveEvent(state)
-  };
-}
-
-export default compose(connect(mapStateToProps), withSidebar)(Event);
+export const Event = () => (
+  <Switch>
+    <Route path="/event/:id/inventory" component={EventInventory} />
+    <Route path="/event/:id" component={EventOverview} />
+    <Redirect to="/season" />
+  </Switch>
+);

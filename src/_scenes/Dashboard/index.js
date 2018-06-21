@@ -10,7 +10,7 @@ import {
 } from '_components';
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Event from './Event';
+import { Event } from './Event';
 import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
 import { connect } from 'react-redux';
@@ -53,7 +53,7 @@ class Dashboard extends React.Component {
           <PrimaryContent>
             <Switch>
               <Route path="/season" component={Season} />
-              <Route path="/event/:id" component={Event} />
+              <Route path="/event" component={Event} />
               <Redirect to="/season" />
             </Switch>
           </PrimaryContent>

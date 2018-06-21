@@ -7,7 +7,7 @@ jest.mock('date-fns', () => ({
   format: (date, format) => mockDateFnsFormat(date, format)
 }));
 
-const props = {
+const createProps = () => ({
   event: {
     clientId: 1,
     createdAt: 1529336865706,
@@ -20,11 +20,21 @@ const props = {
     venueId: 1
   },
   availableInventory: 100,
-  totalInventory: 1000
-};
+  totalInventory: 1000,
+  pathname: '/event/1/'
+});
 
 describe('<EventHeader />', () => {
   it('should render correctly', () => {
+    const props = createProps();
+    const wrapper = shallow(<EventHeader {...props} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly when on the location route', () => {
+    const props = createProps();
+    props.pathname = '/event/1/inventory';
+
     const wrapper = shallow(<EventHeader {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

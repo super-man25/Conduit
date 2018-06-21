@@ -40,13 +40,15 @@ const Container = styled.div`
   }
 
   ::before {
-    transition: 0.3s ease-out width;
+    transition: 0.3s ease-out transform;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: ${(props) => (props.active ? '14px' : '0px')};
+    width: 14px;
+    transform: scaleX(${(props) => (props.active ? 1 : 0)});
+    transform-origin: left;
     background-color: ${cssConstants.PRIMARY_DARK_BLUE};
   }
 `;
@@ -57,59 +59,56 @@ type Props = {
   onClick: (event: EDEvent) => void
 };
 
-export const EventListItem = (props: Props) => {
-  const { event, active, onClick } = props;
-  const past = isPast(event.timestamp);
+export class EventListItem extends React.PureComponent<Props> {
+  render() {
+    const { event, active, onClick } = this.props;
+    const past = isPast(event.timestamp);
 
-  return (
-    <Container
-      onClick={() => onClick(event)}
-      active={active}
-      past={past}
-      data-test-id="event-list-card"
-    >
-      <FlexItem flex={4}>
-        <Flex direction="row" justify="space-between">
-          <P1 color={cssConstants.PRIMARY_GRAY} size="small">
-            GAME SCORE: {orDash(event.score)}
-          </P1>
-          <P1 color={cssConstants.PRIMARY_GRAY} size="small">
-            Updated {readableDuration(event.modifiedAt)} ago
-          </P1>
-        </Flex>
-        <Spacing height="16px" />
-        <Heading>{event.name}</Heading>
-        <Spacing height="8px" />
-        <Flex direction="row" justify="space-between">
-          <P1 size="small">{readableDate(event.timestamp)}</P1>
-          <P1 size="small">
-            QUANTITY: {orDash(event.inventory)}/{orDash(event.capacity)}
-          </P1>
-        </Flex>
-      </FlexItem>
-      <Spacing width="16px" />
-      <Spacing width="60px">
-        {!!event.promotion && (
-          <Flex direction="column" align="center">
-            <P1 color={cssConstants.PRIMARY_GRAY}>promotion</P1>
-            <Spacing height="8px" />
-            <Icon
-              name="award"
-              size={28}
-              color={
-                past
-                  ? cssConstants.PRIMARY_DARK_GRAY
-                  : cssConstants.PRIMARY_BLACK
-              }
-            />
+    return (
+      <Container
+        onClick={() => onClick(event)}
+        active={active}
+        past={past}
+        data-test-id="event-list-card"
+      >
+        <FlexItem flex={4}>
+          <Flex direction="row" justify="space-between">
+            <P1 color={cssConstants.PRIMARY_GRAY} size="small">
+              GAME SCORE: {orDash(event.score)}
+            </P1>
+            <P1 color={cssConstants.PRIMARY_GRAY} size="small">
+              Updated {readableDuration(event.modifiedAt)} ago
+            </P1>
           </Flex>
-        )}
-      </Spacing>
-    </Container>
-  );
-};
-
-EventListItem.defaultProps = {
-  onClick: () => {},
-  active: false
-};
+          <Spacing height="16px" />
+          <Heading>{event.name}</Heading>
+          <Spacing height="8px" />
+          <Flex direction="row" justify="space-between">
+            <P1 size="small">{readableDate(event.timestamp)}</P1>
+            <P1 size="small">
+              QUANTITY: {orDash(event.inventory)}/{orDash(event.capacity)}
+            </P1>
+          </Flex>
+        </FlexItem>
+        <Spacing width="16px" />
+        <Spacing width="60px">
+          {!!event.promotion && (
+            <Flex direction="column" align="center">
+              <P1 color={cssConstants.PRIMARY_GRAY}>promotion</P1>
+              <Spacing height="8px" />
+              <Icon
+                name="award"
+                size={28}
+                color={
+                  past
+                    ? cssConstants.PRIMARY_DARK_GRAY
+                    : cssConstants.PRIMARY_BLACK
+                }
+              />
+            </Flex>
+          )}
+        </Spacing>
+      </Container>
+    );
+  }
+}
