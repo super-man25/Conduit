@@ -101,3 +101,11 @@ export const Box = withBoxModelProps(styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 `);
+
+export const Text = withBoxModelProps(styled.p`
+  font-size: ${(props) => `${props.size}px`};
+  font-weight=${(props) => props.weight};
+  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+  margin: ${(props) => props.margin || 0};
+  text-align: ${(props) => (props.center ? 'center' : '')};
+`);

@@ -58,6 +58,10 @@ exports[`renders correctly with props 1`] = `
 
 
 
+
+
+
+
 .c0 {;
 }
 
@@ -123,6 +127,7 @@ exports[`renders correctly with props 1`] = `
       </h3>
       <p
         className=""
+        color="#FFFFFF"
         size={undefined}
       >
         <i>
@@ -141,6 +146,7 @@ exports[`renders correctly with props 1`] = `
       </h3>
       <p
         className=""
+        color="#FFFFFF"
         size={undefined}
       >
         <i>
@@ -181,6 +187,10 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 .c3::before {
   content: ' 
+
+
+
+
 
 
 
@@ -275,6 +285,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </h3>
       <p
         className=""
+        color="#FFFFFF"
         size={undefined}
       >
         <i>
@@ -293,6 +304,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </h3>
       <p
         className=""
+        color="#FFFFFF"
         size={undefined}
       >
         <i>

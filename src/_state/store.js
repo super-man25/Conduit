@@ -11,7 +11,7 @@ import {
 import { reducer as eventReducer, saga as eventSaga } from './event';
 import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
-import { reducer as uiReducer } from './ui';
+import uiReducer from './ui';
 import {
   reducer as seasonStatReducer,
   saga as seasonStatSaga
@@ -22,6 +22,9 @@ import {
   reducer as revenueStatReducer,
   saga as revenueStatSaga
 } from './revenueStat';
+import ticketIntegrationReducer, {
+  saga as ticketIntegrationSaga
+} from './ticketIntegrations';
 
 // Build root reducer
 const reducer = combineReducers({
@@ -34,7 +37,8 @@ const reducer = combineReducers({
   eventStat: eventStatReducer,
   teamStat: teamStatReducer,
   revenueStat: revenueStatReducer,
-  ui: uiReducer
+  ui: uiReducer,
+  ticketIntegration: ticketIntegrationReducer
 });
 
 // Setup enhancers
@@ -55,7 +59,8 @@ const combineSagas = {
   eventStat: eventStatSaga,
   teamStat: teamStatSaga,
   seasonStat: seasonStatSaga,
-  revenueStat: revenueStatSaga
+  revenueStat: revenueStatSaga,
+  ticketIntegration: ticketIntegrationSaga
 };
 
 export function* rootSaga() {
@@ -68,5 +73,9 @@ export function* rootSaga() {
 
 // Run Sagas
 sagaMiddleware.run(rootSaga);
+
+store.injectSaga = (saga) => {
+  sagaMiddleware.run(saga);
+};
 
 export { store };

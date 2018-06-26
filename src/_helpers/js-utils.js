@@ -7,3 +7,7 @@ export function isDefined(v: any): boolean {
 export function toScalaDate(date: Date): string {
   return date.toISOString().slice(0, -1);
 }
+
+export const createActionTypeCreator = (reducerName: string) => (
+  type: string
+) => `${reducerName}/${type}`;

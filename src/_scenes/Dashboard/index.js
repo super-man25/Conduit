@@ -16,7 +16,7 @@ import Season from './Season';
 import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
 import { actions as authActions } from '_state/auth';
-import { actions as uiActions } from '_state/ui';
+import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
@@ -31,8 +31,8 @@ class Dashboard extends React.Component {
       teamStatState,
       authState,
       authActions,
-      uiState: { sidebarIsOpen },
-      uiActions: { toggleSidebar }
+      uiActions: { toggleSidebar },
+      sidebarIsOpen
     } = this.props;
 
     return (
@@ -72,7 +72,7 @@ function mapStateToProps(state) {
   return {
     teamStatState: state.teamStat,
     authState: state.auth,
-    uiState: state.ui
+    sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state)
   };
 }
 

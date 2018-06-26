@@ -1,30 +1,29 @@
-// these sizes are arbitrary and you can set them to whatever you wish
-import { css } from 'styled-components';
-
-const sizes = {
-  giant: 1170,
-  desktop: 992,
-  tablet: 768,
-  phone: 376
+// Sizes based on common resolutions above 1024px (our min width)
+export const sizes = {
+  large: 1440,
+  medium: 1280,
+  small: 1120,
+  xSmall: 1024
 };
-
-// iterate through the sizes and create a media template
-export const media = Object.keys(sizes).reduce((accumulator, label) => {
-  // use em in breakpoints to work properly cross-browser and support users
-  // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
-  const emSize = sizes[label] / 16;
-  accumulator[label] = (...args) => css`
-    @media (max-width: ${emSize}em) {
-      ${css(...args)};
-    }
-  `;
-  return accumulator;
-}, {});
 
 export const withBoxModelProps = (styledComponent) => {
   return styledComponent.extend`
     margin: ${(props) => props.margin};
+    margin-top: ${(props) => props.marginTop};
+    margin-bottom: ${(props) => props.marginBottom};
+    margin-left: ${(props) => props.marginLeft};
+    margin-right: ${(props) => props.marginRight};
+
     padding: ${(props) => props.padding};
+    padding-top: ${(props) => props.paddingTop};
+    padding-bottom: ${(props) => props.paddingBottom};
+    padding-left: ${(props) => props.paddingLeft};
+    padding-right: ${(props) => props.paddingRight};
+    
     border: ${(props) => props.border};
+    border-top: ${(props) => props.borderTop};
+    border-bottom: ${(props) => props.borderBottom};
+    border-left: ${(props) => props.borderLeft};
+    border-right: ${(props) => props.borderRight};
   `;
 };

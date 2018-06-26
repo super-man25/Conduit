@@ -78,13 +78,13 @@ export class TeamOverview extends React.Component<Props> {
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
             <StatLabel>{this.showRecord(stats)}</StatLabel>
-            <P1 weight="100">
+            <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
               <i>Win / Loss</i>
             </P1>
           </FlexItem>
           <FlexItem flex={2}>
             <StatLabel>{this.showGamesRemaining(stats)}</StatLabel>
-            <P1 weight="100">
+            <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
               <i>Games Remaining</i>
             </P1>
           </FlexItem>

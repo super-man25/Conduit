@@ -20,7 +20,12 @@ package-lock.json
 /artifacts
 junit.xml
 
+# editor specific
+.vscode
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 jsconfig.json
+
+

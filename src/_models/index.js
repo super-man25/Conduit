@@ -4,3 +4,4 @@ export * from './eventStat';
 export * from './integration';
 export * from './ticket-breakdown';
 export * from './user';
+export * from './integrationStat';

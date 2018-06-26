@@ -1,6 +1,11 @@
 // @flow
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actions as seasonStatActions } from '_state/seasonStat';
+import { differenceInCalendarDays } from 'date-fns';
 import styled from 'styled-components';
+import RevenueBreakdown from './RevenueBreakdown';
 import {
   Spacing,
   Panel,
@@ -28,8 +33,6 @@ import {
   CHART_HEIGHT,
   GROUP_FILTERS
 } from '_constants';
-import RevenueBreakdown from './RevenueBreakdown';
-import { differenceInCalendarDays } from 'date-fns';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
 
@@ -234,3 +237,17 @@ export class SeasonRevenuePanel extends React.Component<Props> {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    seasonStatState: state.seasonStat
+  };
+}
+
+function mapActionCreators(dispatch) {
+  return {
+    seasonStatActions: bindActionCreators(seasonStatActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapActionCreators)(SeasonRevenuePanel);

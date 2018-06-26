@@ -1,8 +1,9 @@
 import { H1, Spacing, PageWrapper, Flex, Button } from '_components';
-import SeasonRevenuePanel from './containers/SeasonRevenuePanel';
+import SeasonRevenuePanel from './components/SeasonRevenuePanel';
 import React from 'react';
 import styled from 'styled-components';
 import { withSidebar } from '_hoc';
+import { TicketIntegrations } from './components/TicketIntegrations';
 
 const ContentMock = styled.div`
   margin: 64px 0;
@@ -31,6 +32,8 @@ const Season = ({ isSidebarOpen, toggleSidebar }) => (
         </SeasonOverviewTitle>
       </Flex>
       <SeasonRevenuePanel />
+      <Spacing height="2rem" />
+      <TicketIntegrations />
       <ContentMock />
       <ContentMock />
       <ContentMock />

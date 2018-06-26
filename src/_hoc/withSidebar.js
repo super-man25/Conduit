@@ -1,20 +1,16 @@
 import { connect } from 'react-redux';
-import { actions as uiActions } from '_state/ui';
+import { actions, selectors } from '_state/ui';
 
 export const withSidebar = (WrappedComponent) => {
   const displayName = WrappedComponent.displayName || WrappedComponent.name;
 
   const mapSidebarToProps = (state) => ({
-    isSidebarOpen: state.ui.sidebarIsOpen
+    isSidebarOpen: selectors.selectIsSidebarOpen(state)
   });
 
-  const mapDispatchToProps = (dispatch) => ({
-    toggleSidebar: () => dispatch(uiActions.toggleSidebar())
-  });
-
-  const ComponentWithSidebar = connect(mapSidebarToProps, mapDispatchToProps)(
-    WrappedComponent
-  );
+  const ComponentWithSidebar = connect(mapSidebarToProps, {
+    toggleSidebar: actions.toggleSidebar
+  })(WrappedComponent);
   ComponentWithSidebar.displayName = `withSidebar${displayName}`;
 
   return ComponentWithSidebar;
