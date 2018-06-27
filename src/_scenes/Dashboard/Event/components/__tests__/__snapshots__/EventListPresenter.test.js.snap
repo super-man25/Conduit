@@ -1,0 +1,3145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EventListPresenter /> when filtered 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventListPresenter
+    activeId={1}
+    events={
+        Array [
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+          ]
+    }
+    filterOptions={
+        Array [
+            Object {
+              "id": 1,
+              "label": "one",
+            },
+          ]
+    }
+    filtered={true}
+    loading={false}
+    onClick={[Function]}
+    onFilterSelect={[Function]}
+    onSearchInputChange={[Function]}
+    onTimestampSortChange={[Function]}
+    selectedFilter={0}
+    timestampSort="asc"
+    title="title"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div
+                    padding="24px 40px"
+          >
+                    <styled.h4>
+                              title
+                    </styled.h4>
+                    <styled.div
+                              height="4px"
+                    />
+                    <styled.input
+                              data-test-id="event-list-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              type="text"
+                    />
+                    <styled.div
+                              height="4px"
+                    />
+                    <Flex
+                              direction="row"
+                              justify="space-between"
+                    >
+                              <Unknown
+                                        direction="asc"
+                                        onClick={[Function]}
+                              >
+                                        Upcoming
+                              </Unknown>
+                              <DropdownButton
+                                        onSelect={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                        }
+                                        parseLabel={[Function]}
+                                        selected={0}
+                              />
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        [Function],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            padding="24px 40px"
+>
+            <styled.h4>
+                        title
+            </styled.h4>
+            <styled.div
+                        height="4px"
+            />
+            <styled.input
+                        data-test-id="event-list-search"
+                        onChange={[Function]}
+                        placeholder="Search"
+                        type="text"
+            />
+            <styled.div
+                        height="4px"
+            />
+            <Flex
+                        direction="row"
+                        justify="space-between"
+            >
+                        <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                        >
+                                    Upcoming
+                        </Unknown>
+                        <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                        />
+            </Flex>
+</styled.div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h4>
+                title
+</styled.h4>,
+              <styled.div
+                height="4px"
+/>,
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+/>,
+              <styled.div
+                height="4px"
+/>,
+              <Flex
+                direction="row"
+                justify="space-between"
+>
+                <Unknown
+                                direction="asc"
+                                onClick={[Function]}
+                >
+                                Upcoming
+                </Unknown>
+                <DropdownButton
+                                onSelect={[Function]}
+                                options={
+                                                Array [
+                                                                Object {
+                                                                  "id": 1,
+                                                                  "label": "one",
+                                                                },
+                                                              ]
+                                }
+                                parseLabel={[Function]}
+                                selected={0}
+                />
+</Flex>,
+            ],
+            "padding": "24px 40px",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "title",
+              },
+              "ref": null,
+              "rendered": "title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "data-test-id": "event-list-search",
+                "onChange": [Function],
+                "placeholder": "Search",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    direction="asc"
+                    onClick={[Function]}
+>
+                    Upcoming
+</Unknown>,
+                  <DropdownButton
+                    onSelect={[Function]}
+                    options={
+                                        Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                    }
+                    parseLabel={[Function]}
+                    selected={0}
+/>,
+                ],
+                "direction": "row",
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Upcoming",
+                    "direction": "asc",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Upcoming",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onSelect": [Function],
+                    "options": Array [
+                      Object {
+                        "id": 1,
+                        "label": "one",
+                      },
+                    ],
+                    "parseLabel": [Function],
+                    "selected": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      [Function],
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div
+                        padding="24px 40px"
+            >
+                        <styled.h4>
+                                    title
+                        </styled.h4>
+                        <styled.div
+                                    height="4px"
+                        />
+                        <styled.input
+                                    data-test-id="event-list-search"
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                                    type="text"
+                        />
+                        <styled.div
+                                    height="4px"
+                        />
+                        <Flex
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <Unknown
+                                                direction="asc"
+                                                onClick={[Function]}
+                                    >
+                                                Upcoming
+                                    </Unknown>
+                                    <DropdownButton
+                                                onSelect={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                                }
+                                                parseLabel={[Function]}
+                                                selected={0}
+                                    />
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          [Function],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="24px 40px"
+>
+              <styled.h4>
+                            title
+              </styled.h4>
+              <styled.div
+                            height="4px"
+              />
+              <styled.input
+                            data-test-id="event-list-search"
+                            onChange={[Function]}
+                            placeholder="Search"
+                            type="text"
+              />
+              <styled.div
+                            height="4px"
+              />
+              <Flex
+                            direction="row"
+                            justify="space-between"
+              >
+                            <Unknown
+                                          direction="asc"
+                                          onClick={[Function]}
+                            >
+                                          Upcoming
+                            </Unknown>
+                            <DropdownButton
+                                          onSelect={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "id": 1,
+                                                                        "label": "one",
+                                                                      },
+                                                                    ]
+                                          }
+                                          parseLabel={[Function]}
+                                          selected={0}
+                            />
+              </Flex>
+</styled.div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  title
+</styled.h4>,
+                <styled.div
+                  height="4px"
+/>,
+                <styled.input
+                  data-test-id="event-list-search"
+                  onChange={[Function]}
+                  placeholder="Search"
+                  type="text"
+/>,
+                <styled.div
+                  height="4px"
+/>,
+                <Flex
+                  direction="row"
+                  justify="space-between"
+>
+                  <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                  >
+                                    Upcoming
+                  </Unknown>
+                  <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                  />
+</Flex>,
+              ],
+              "padding": "24px 40px",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "title",
+                },
+                "ref": null,
+                "rendered": "title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "data-test-id": "event-list-search",
+                  "onChange": [Function],
+                  "placeholder": "Search",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Unknown
+                      direction="asc"
+                      onClick={[Function]}
+>
+                      Upcoming
+</Unknown>,
+                    <DropdownButton
+                      onSelect={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "id": 1,
+                                                                    "label": "one",
+                                                                  },
+                                                                ]
+                      }
+                      parseLabel={[Function]}
+                      selected={0}
+/>,
+                  ],
+                  "direction": "row",
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Upcoming",
+                      "direction": "asc",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Upcoming",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onSelect": [Function],
+                      "options": Array [
+                        Object {
+                          "id": 1,
+                          "label": "one",
+                        },
+                      ],
+                      "parseLabel": [Function],
+                      "selected": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        [Function],
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<EventListPresenter /> when loading 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventListPresenter
+    activeId={1}
+    events={
+        Array [
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+          ]
+    }
+    filterOptions={
+        Array [
+            Object {
+              "id": 1,
+              "label": "one",
+            },
+          ]
+    }
+    filtered={false}
+    loading={true}
+    onClick={[Function]}
+    onFilterSelect={[Function]}
+    onSearchInputChange={[Function]}
+    onTimestampSortChange={[Function]}
+    selectedFilter={0}
+    timestampSort="asc"
+    title="title"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div
+                    padding="24px 40px"
+          >
+                    <styled.h4>
+                              title
+                    </styled.h4>
+                    <styled.div
+                              height="4px"
+                    />
+                    <styled.input
+                              data-test-id="event-list-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              type="text"
+                    />
+                    <styled.div
+                              height="4px"
+                    />
+                    <Flex
+                              direction="row"
+                              justify="space-between"
+                    >
+                              <Unknown
+                                        direction="asc"
+                                        onClick={[Function]}
+                              >
+                                        Upcoming
+                              </Unknown>
+                              <DropdownButton
+                                        onSelect={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                        }
+                                        parseLabel={[Function]}
+                                        selected={0}
+                              />
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        [Function],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            padding="24px 40px"
+>
+            <styled.h4>
+                        title
+            </styled.h4>
+            <styled.div
+                        height="4px"
+            />
+            <styled.input
+                        data-test-id="event-list-search"
+                        onChange={[Function]}
+                        placeholder="Search"
+                        type="text"
+            />
+            <styled.div
+                        height="4px"
+            />
+            <Flex
+                        direction="row"
+                        justify="space-between"
+            >
+                        <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                        >
+                                    Upcoming
+                        </Unknown>
+                        <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                        />
+            </Flex>
+</styled.div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h4>
+                title
+</styled.h4>,
+              <styled.div
+                height="4px"
+/>,
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+/>,
+              <styled.div
+                height="4px"
+/>,
+              <Flex
+                direction="row"
+                justify="space-between"
+>
+                <Unknown
+                                direction="asc"
+                                onClick={[Function]}
+                >
+                                Upcoming
+                </Unknown>
+                <DropdownButton
+                                onSelect={[Function]}
+                                options={
+                                                Array [
+                                                                Object {
+                                                                  "id": 1,
+                                                                  "label": "one",
+                                                                },
+                                                              ]
+                                }
+                                parseLabel={[Function]}
+                                selected={0}
+                />
+</Flex>,
+            ],
+            "padding": "24px 40px",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "title",
+              },
+              "ref": null,
+              "rendered": "title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "data-test-id": "event-list-search",
+                "onChange": [Function],
+                "placeholder": "Search",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    direction="asc"
+                    onClick={[Function]}
+>
+                    Upcoming
+</Unknown>,
+                  <DropdownButton
+                    onSelect={[Function]}
+                    options={
+                                        Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                    }
+                    parseLabel={[Function]}
+                    selected={0}
+/>,
+                ],
+                "direction": "row",
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Upcoming",
+                    "direction": "asc",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Upcoming",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onSelect": [Function],
+                    "options": Array [
+                      Object {
+                        "id": 1,
+                        "label": "one",
+                      },
+                    ],
+                    "parseLabel": [Function],
+                    "selected": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      [Function],
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div
+                        padding="24px 40px"
+            >
+                        <styled.h4>
+                                    title
+                        </styled.h4>
+                        <styled.div
+                                    height="4px"
+                        />
+                        <styled.input
+                                    data-test-id="event-list-search"
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                                    type="text"
+                        />
+                        <styled.div
+                                    height="4px"
+                        />
+                        <Flex
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <Unknown
+                                                direction="asc"
+                                                onClick={[Function]}
+                                    >
+                                                Upcoming
+                                    </Unknown>
+                                    <DropdownButton
+                                                onSelect={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                                }
+                                                parseLabel={[Function]}
+                                                selected={0}
+                                    />
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          [Function],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="24px 40px"
+>
+              <styled.h4>
+                            title
+              </styled.h4>
+              <styled.div
+                            height="4px"
+              />
+              <styled.input
+                            data-test-id="event-list-search"
+                            onChange={[Function]}
+                            placeholder="Search"
+                            type="text"
+              />
+              <styled.div
+                            height="4px"
+              />
+              <Flex
+                            direction="row"
+                            justify="space-between"
+              >
+                            <Unknown
+                                          direction="asc"
+                                          onClick={[Function]}
+                            >
+                                          Upcoming
+                            </Unknown>
+                            <DropdownButton
+                                          onSelect={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "id": 1,
+                                                                        "label": "one",
+                                                                      },
+                                                                    ]
+                                          }
+                                          parseLabel={[Function]}
+                                          selected={0}
+                            />
+              </Flex>
+</styled.div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  title
+</styled.h4>,
+                <styled.div
+                  height="4px"
+/>,
+                <styled.input
+                  data-test-id="event-list-search"
+                  onChange={[Function]}
+                  placeholder="Search"
+                  type="text"
+/>,
+                <styled.div
+                  height="4px"
+/>,
+                <Flex
+                  direction="row"
+                  justify="space-between"
+>
+                  <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                  >
+                                    Upcoming
+                  </Unknown>
+                  <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                  />
+</Flex>,
+              ],
+              "padding": "24px 40px",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "title",
+                },
+                "ref": null,
+                "rendered": "title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "data-test-id": "event-list-search",
+                  "onChange": [Function],
+                  "placeholder": "Search",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Unknown
+                      direction="asc"
+                      onClick={[Function]}
+>
+                      Upcoming
+</Unknown>,
+                    <DropdownButton
+                      onSelect={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "id": 1,
+                                                                    "label": "one",
+                                                                  },
+                                                                ]
+                      }
+                      parseLabel={[Function]}
+                      selected={0}
+/>,
+                  ],
+                  "direction": "row",
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Upcoming",
+                      "direction": "asc",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Upcoming",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onSelect": [Function],
+                      "options": Array [
+                        Object {
+                          "id": 1,
+                          "label": "one",
+                        },
+                      ],
+                      "parseLabel": [Function],
+                      "selected": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        [Function],
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<EventListPresenter /> when passed no events 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventListPresenter
+    activeId={1}
+    events={Array []}
+    filterOptions={
+        Array [
+            Object {
+              "id": 1,
+              "label": "one",
+            },
+          ]
+    }
+    filtered={false}
+    loading={false}
+    onClick={[Function]}
+    onFilterSelect={[Function]}
+    onSearchInputChange={[Function]}
+    onTimestampSortChange={[Function]}
+    selectedFilter={0}
+    timestampSort="asc"
+    title="title"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div
+                    padding="24px 40px"
+          >
+                    <styled.h4>
+                              title
+                    </styled.h4>
+                    <styled.div
+                              height="4px"
+                    />
+                    <styled.input
+                              data-test-id="event-list-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              type="text"
+                    />
+                    <styled.div
+                              height="4px"
+                    />
+                    <Flex
+                              direction="row"
+                              justify="space-between"
+                    >
+                              <Unknown
+                                        direction="asc"
+                                        onClick={[Function]}
+                              >
+                                        Upcoming
+                              </Unknown>
+                              <DropdownButton
+                                        onSelect={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                        }
+                                        parseLabel={[Function]}
+                                        selected={0}
+                              />
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        [Function],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            padding="24px 40px"
+>
+            <styled.h4>
+                        title
+            </styled.h4>
+            <styled.div
+                        height="4px"
+            />
+            <styled.input
+                        data-test-id="event-list-search"
+                        onChange={[Function]}
+                        placeholder="Search"
+                        type="text"
+            />
+            <styled.div
+                        height="4px"
+            />
+            <Flex
+                        direction="row"
+                        justify="space-between"
+            >
+                        <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                        >
+                                    Upcoming
+                        </Unknown>
+                        <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                        />
+            </Flex>
+</styled.div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h4>
+                title
+</styled.h4>,
+              <styled.div
+                height="4px"
+/>,
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+/>,
+              <styled.div
+                height="4px"
+/>,
+              <Flex
+                direction="row"
+                justify="space-between"
+>
+                <Unknown
+                                direction="asc"
+                                onClick={[Function]}
+                >
+                                Upcoming
+                </Unknown>
+                <DropdownButton
+                                onSelect={[Function]}
+                                options={
+                                                Array [
+                                                                Object {
+                                                                  "id": 1,
+                                                                  "label": "one",
+                                                                },
+                                                              ]
+                                }
+                                parseLabel={[Function]}
+                                selected={0}
+                />
+</Flex>,
+            ],
+            "padding": "24px 40px",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "title",
+              },
+              "ref": null,
+              "rendered": "title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "data-test-id": "event-list-search",
+                "onChange": [Function],
+                "placeholder": "Search",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    direction="asc"
+                    onClick={[Function]}
+>
+                    Upcoming
+</Unknown>,
+                  <DropdownButton
+                    onSelect={[Function]}
+                    options={
+                                        Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                    }
+                    parseLabel={[Function]}
+                    selected={0}
+/>,
+                ],
+                "direction": "row",
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Upcoming",
+                    "direction": "asc",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Upcoming",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onSelect": [Function],
+                    "options": Array [
+                      Object {
+                        "id": 1,
+                        "label": "one",
+                      },
+                    ],
+                    "parseLabel": [Function],
+                    "selected": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      [Function],
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div
+                        padding="24px 40px"
+            >
+                        <styled.h4>
+                                    title
+                        </styled.h4>
+                        <styled.div
+                                    height="4px"
+                        />
+                        <styled.input
+                                    data-test-id="event-list-search"
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                                    type="text"
+                        />
+                        <styled.div
+                                    height="4px"
+                        />
+                        <Flex
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <Unknown
+                                                direction="asc"
+                                                onClick={[Function]}
+                                    >
+                                                Upcoming
+                                    </Unknown>
+                                    <DropdownButton
+                                                onSelect={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                                }
+                                                parseLabel={[Function]}
+                                                selected={0}
+                                    />
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          [Function],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="24px 40px"
+>
+              <styled.h4>
+                            title
+              </styled.h4>
+              <styled.div
+                            height="4px"
+              />
+              <styled.input
+                            data-test-id="event-list-search"
+                            onChange={[Function]}
+                            placeholder="Search"
+                            type="text"
+              />
+              <styled.div
+                            height="4px"
+              />
+              <Flex
+                            direction="row"
+                            justify="space-between"
+              >
+                            <Unknown
+                                          direction="asc"
+                                          onClick={[Function]}
+                            >
+                                          Upcoming
+                            </Unknown>
+                            <DropdownButton
+                                          onSelect={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "id": 1,
+                                                                        "label": "one",
+                                                                      },
+                                                                    ]
+                                          }
+                                          parseLabel={[Function]}
+                                          selected={0}
+                            />
+              </Flex>
+</styled.div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  title
+</styled.h4>,
+                <styled.div
+                  height="4px"
+/>,
+                <styled.input
+                  data-test-id="event-list-search"
+                  onChange={[Function]}
+                  placeholder="Search"
+                  type="text"
+/>,
+                <styled.div
+                  height="4px"
+/>,
+                <Flex
+                  direction="row"
+                  justify="space-between"
+>
+                  <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                  >
+                                    Upcoming
+                  </Unknown>
+                  <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                  />
+</Flex>,
+              ],
+              "padding": "24px 40px",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "title",
+                },
+                "ref": null,
+                "rendered": "title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "data-test-id": "event-list-search",
+                  "onChange": [Function],
+                  "placeholder": "Search",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Unknown
+                      direction="asc"
+                      onClick={[Function]}
+>
+                      Upcoming
+</Unknown>,
+                    <DropdownButton
+                      onSelect={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "id": 1,
+                                                                    "label": "one",
+                                                                  },
+                                                                ]
+                      }
+                      parseLabel={[Function]}
+                      selected={0}
+/>,
+                  ],
+                  "direction": "row",
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Upcoming",
+                      "direction": "asc",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Upcoming",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onSelect": [Function],
+                      "options": Array [
+                        Object {
+                          "id": 1,
+                          "label": "one",
+                        },
+                      ],
+                      "parseLabel": [Function],
+                      "selected": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        [Function],
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<EventListPresenter /> with active event 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventListPresenter
+    activeId={1}
+    events={
+        Array [
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+          ]
+    }
+    filterOptions={
+        Array [
+            Object {
+              "id": 1,
+              "label": "one",
+            },
+          ]
+    }
+    filtered={false}
+    loading={false}
+    onClick={[Function]}
+    onFilterSelect={[Function]}
+    onSearchInputChange={[Function]}
+    onTimestampSortChange={[Function]}
+    selectedFilter={0}
+    timestampSort="asc"
+    title="title"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div
+                    padding="24px 40px"
+          >
+                    <styled.h4>
+                              title
+                    </styled.h4>
+                    <styled.div
+                              height="4px"
+                    />
+                    <styled.input
+                              data-test-id="event-list-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              type="text"
+                    />
+                    <styled.div
+                              height="4px"
+                    />
+                    <Flex
+                              direction="row"
+                              justify="space-between"
+                    >
+                              <Unknown
+                                        direction="asc"
+                                        onClick={[Function]}
+                              >
+                                        Upcoming
+                              </Unknown>
+                              <DropdownButton
+                                        onSelect={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                        }
+                                        parseLabel={[Function]}
+                                        selected={0}
+                              />
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        [Function],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            padding="24px 40px"
+>
+            <styled.h4>
+                        title
+            </styled.h4>
+            <styled.div
+                        height="4px"
+            />
+            <styled.input
+                        data-test-id="event-list-search"
+                        onChange={[Function]}
+                        placeholder="Search"
+                        type="text"
+            />
+            <styled.div
+                        height="4px"
+            />
+            <Flex
+                        direction="row"
+                        justify="space-between"
+            >
+                        <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                        >
+                                    Upcoming
+                        </Unknown>
+                        <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                        />
+            </Flex>
+</styled.div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h4>
+                title
+</styled.h4>,
+              <styled.div
+                height="4px"
+/>,
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+/>,
+              <styled.div
+                height="4px"
+/>,
+              <Flex
+                direction="row"
+                justify="space-between"
+>
+                <Unknown
+                                direction="asc"
+                                onClick={[Function]}
+                >
+                                Upcoming
+                </Unknown>
+                <DropdownButton
+                                onSelect={[Function]}
+                                options={
+                                                Array [
+                                                                Object {
+                                                                  "id": 1,
+                                                                  "label": "one",
+                                                                },
+                                                              ]
+                                }
+                                parseLabel={[Function]}
+                                selected={0}
+                />
+</Flex>,
+            ],
+            "padding": "24px 40px",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "title",
+              },
+              "ref": null,
+              "rendered": "title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "data-test-id": "event-list-search",
+                "onChange": [Function],
+                "placeholder": "Search",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    direction="asc"
+                    onClick={[Function]}
+>
+                    Upcoming
+</Unknown>,
+                  <DropdownButton
+                    onSelect={[Function]}
+                    options={
+                                        Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                    }
+                    parseLabel={[Function]}
+                    selected={0}
+/>,
+                ],
+                "direction": "row",
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Upcoming",
+                    "direction": "asc",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Upcoming",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onSelect": [Function],
+                    "options": Array [
+                      Object {
+                        "id": 1,
+                        "label": "one",
+                      },
+                    ],
+                    "parseLabel": [Function],
+                    "selected": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      [Function],
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div
+                        padding="24px 40px"
+            >
+                        <styled.h4>
+                                    title
+                        </styled.h4>
+                        <styled.div
+                                    height="4px"
+                        />
+                        <styled.input
+                                    data-test-id="event-list-search"
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                                    type="text"
+                        />
+                        <styled.div
+                                    height="4px"
+                        />
+                        <Flex
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <Unknown
+                                                direction="asc"
+                                                onClick={[Function]}
+                                    >
+                                                Upcoming
+                                    </Unknown>
+                                    <DropdownButton
+                                                onSelect={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                                }
+                                                parseLabel={[Function]}
+                                                selected={0}
+                                    />
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          [Function],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="24px 40px"
+>
+              <styled.h4>
+                            title
+              </styled.h4>
+              <styled.div
+                            height="4px"
+              />
+              <styled.input
+                            data-test-id="event-list-search"
+                            onChange={[Function]}
+                            placeholder="Search"
+                            type="text"
+              />
+              <styled.div
+                            height="4px"
+              />
+              <Flex
+                            direction="row"
+                            justify="space-between"
+              >
+                            <Unknown
+                                          direction="asc"
+                                          onClick={[Function]}
+                            >
+                                          Upcoming
+                            </Unknown>
+                            <DropdownButton
+                                          onSelect={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "id": 1,
+                                                                        "label": "one",
+                                                                      },
+                                                                    ]
+                                          }
+                                          parseLabel={[Function]}
+                                          selected={0}
+                            />
+              </Flex>
+</styled.div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  title
+</styled.h4>,
+                <styled.div
+                  height="4px"
+/>,
+                <styled.input
+                  data-test-id="event-list-search"
+                  onChange={[Function]}
+                  placeholder="Search"
+                  type="text"
+/>,
+                <styled.div
+                  height="4px"
+/>,
+                <Flex
+                  direction="row"
+                  justify="space-between"
+>
+                  <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                  >
+                                    Upcoming
+                  </Unknown>
+                  <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                  />
+</Flex>,
+              ],
+              "padding": "24px 40px",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "title",
+                },
+                "ref": null,
+                "rendered": "title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "data-test-id": "event-list-search",
+                  "onChange": [Function],
+                  "placeholder": "Search",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Unknown
+                      direction="asc"
+                      onClick={[Function]}
+>
+                      Upcoming
+</Unknown>,
+                    <DropdownButton
+                      onSelect={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "id": 1,
+                                                                    "label": "one",
+                                                                  },
+                                                                ]
+                      }
+                      parseLabel={[Function]}
+                      selected={0}
+/>,
+                  ],
+                  "direction": "row",
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Upcoming",
+                      "direction": "asc",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Upcoming",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onSelect": [Function],
+                      "options": Array [
+                        Object {
+                          "id": 1,
+                          "label": "one",
+                        },
+                      ],
+                      "parseLabel": [Function],
+                      "selected": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        [Function],
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<EventListPresenter /> with no active event 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventListPresenter
+    activeId={-1}
+    events={
+        Array [
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+            Object {
+              "clientId": 1,
+              "createdAt": 1529336865706,
+              "id": 1,
+              "integrationId": 1,
+              "modifiedAt": 1529336865706,
+              "name": "Some Event",
+              "seasonId": 1,
+              "timestamp": 1529336865706,
+              "venueId": 1,
+            },
+          ]
+    }
+    filterOptions={
+        Array [
+            Object {
+              "id": 1,
+              "label": "one",
+            },
+          ]
+    }
+    filtered={false}
+    loading={false}
+    onClick={[Function]}
+    onFilterSelect={[Function]}
+    onSearchInputChange={[Function]}
+    onTimestampSortChange={[Function]}
+    selectedFilter={0}
+    timestampSort="asc"
+    title="title"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div
+                    padding="24px 40px"
+          >
+                    <styled.h4>
+                              title
+                    </styled.h4>
+                    <styled.div
+                              height="4px"
+                    />
+                    <styled.input
+                              data-test-id="event-list-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              type="text"
+                    />
+                    <styled.div
+                              height="4px"
+                    />
+                    <Flex
+                              direction="row"
+                              justify="space-between"
+                    >
+                              <Unknown
+                                        direction="asc"
+                                        onClick={[Function]}
+                              >
+                                        Upcoming
+                              </Unknown>
+                              <DropdownButton
+                                        onSelect={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                        }
+                                        parseLabel={[Function]}
+                                        selected={0}
+                              />
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        [Function],
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <styled.div
+            padding="24px 40px"
+>
+            <styled.h4>
+                        title
+            </styled.h4>
+            <styled.div
+                        height="4px"
+            />
+            <styled.input
+                        data-test-id="event-list-search"
+                        onChange={[Function]}
+                        placeholder="Search"
+                        type="text"
+            />
+            <styled.div
+                        height="4px"
+            />
+            <Flex
+                        direction="row"
+                        justify="space-between"
+            >
+                        <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                        >
+                                    Upcoming
+                        </Unknown>
+                        <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                        />
+            </Flex>
+</styled.div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h4>
+                title
+</styled.h4>,
+              <styled.div
+                height="4px"
+/>,
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+/>,
+              <styled.div
+                height="4px"
+/>,
+              <Flex
+                direction="row"
+                justify="space-between"
+>
+                <Unknown
+                                direction="asc"
+                                onClick={[Function]}
+                >
+                                Upcoming
+                </Unknown>
+                <DropdownButton
+                                onSelect={[Function]}
+                                options={
+                                                Array [
+                                                                Object {
+                                                                  "id": 1,
+                                                                  "label": "one",
+                                                                },
+                                                              ]
+                                }
+                                parseLabel={[Function]}
+                                selected={0}
+                />
+</Flex>,
+            ],
+            "padding": "24px 40px",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "title",
+              },
+              "ref": null,
+              "rendered": "title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "data-test-id": "event-list-search",
+                "onChange": [Function],
+                "placeholder": "Search",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "4px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    direction="asc"
+                    onClick={[Function]}
+>
+                    Upcoming
+</Unknown>,
+                  <DropdownButton
+                    onSelect={[Function]}
+                    options={
+                                        Array [
+                                                            Object {
+                                                              "id": 1,
+                                                              "label": "one",
+                                                            },
+                                                          ]
+                    }
+                    parseLabel={[Function]}
+                    selected={0}
+/>,
+                ],
+                "direction": "row",
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Upcoming",
+                    "direction": "asc",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Upcoming",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onSelect": [Function],
+                    "options": Array [
+                      Object {
+                        "id": 1,
+                        "label": "one",
+                      },
+                    ],
+                    "parseLabel": [Function],
+                    "selected": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      [Function],
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div
+                        padding="24px 40px"
+            >
+                        <styled.h4>
+                                    title
+                        </styled.h4>
+                        <styled.div
+                                    height="4px"
+                        />
+                        <styled.input
+                                    data-test-id="event-list-search"
+                                    onChange={[Function]}
+                                    placeholder="Search"
+                                    type="text"
+                        />
+                        <styled.div
+                                    height="4px"
+                        />
+                        <Flex
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <Unknown
+                                                direction="asc"
+                                                onClick={[Function]}
+                                    >
+                                                Upcoming
+                                    </Unknown>
+                                    <DropdownButton
+                                                onSelect={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                                }
+                                                parseLabel={[Function]}
+                                                selected={0}
+                                    />
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          [Function],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <styled.div
+              padding="24px 40px"
+>
+              <styled.h4>
+                            title
+              </styled.h4>
+              <styled.div
+                            height="4px"
+              />
+              <styled.input
+                            data-test-id="event-list-search"
+                            onChange={[Function]}
+                            placeholder="Search"
+                            type="text"
+              />
+              <styled.div
+                            height="4px"
+              />
+              <Flex
+                            direction="row"
+                            justify="space-between"
+              >
+                            <Unknown
+                                          direction="asc"
+                                          onClick={[Function]}
+                            >
+                                          Upcoming
+                            </Unknown>
+                            <DropdownButton
+                                          onSelect={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "id": 1,
+                                                                        "label": "one",
+                                                                      },
+                                                                    ]
+                                          }
+                                          parseLabel={[Function]}
+                                          selected={0}
+                            />
+              </Flex>
+</styled.div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  title
+</styled.h4>,
+                <styled.div
+                  height="4px"
+/>,
+                <styled.input
+                  data-test-id="event-list-search"
+                  onChange={[Function]}
+                  placeholder="Search"
+                  type="text"
+/>,
+                <styled.div
+                  height="4px"
+/>,
+                <Flex
+                  direction="row"
+                  justify="space-between"
+>
+                  <Unknown
+                                    direction="asc"
+                                    onClick={[Function]}
+                  >
+                                    Upcoming
+                  </Unknown>
+                  <DropdownButton
+                                    onSelect={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "id": 1,
+                                                                          "label": "one",
+                                                                        },
+                                                                      ]
+                                    }
+                                    parseLabel={[Function]}
+                                    selected={0}
+                  />
+</Flex>,
+              ],
+              "padding": "24px 40px",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "title",
+                },
+                "ref": null,
+                "rendered": "title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "data-test-id": "event-list-search",
+                  "onChange": [Function],
+                  "placeholder": "Search",
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "height": "4px",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Unknown
+                      direction="asc"
+                      onClick={[Function]}
+>
+                      Upcoming
+</Unknown>,
+                    <DropdownButton
+                      onSelect={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "id": 1,
+                                                                    "label": "one",
+                                                                  },
+                                                                ]
+                      }
+                      parseLabel={[Function]}
+                      selected={0}
+/>,
+                  ],
+                  "direction": "row",
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Upcoming",
+                      "direction": "asc",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Upcoming",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onSelect": [Function],
+                      "options": Array [
+                        Object {
+                          "id": 1,
+                          "label": "one",
+                        },
+                      ],
+                      "parseLabel": [Function],
+                      "selected": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        [Function],
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

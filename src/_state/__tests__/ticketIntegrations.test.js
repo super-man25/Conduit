@@ -115,7 +115,6 @@ describe('saga workers', () => {
   it('should handle fetch', () => {
     const generator = cloneableGenerator(fetchTicketIntegrationsSaga)();
 
-    const success = generator.clone();
     expect(generator.next().value).toEqual(
       call(integrationStatService.getAll, 1)
     );

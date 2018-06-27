@@ -29,9 +29,7 @@ const userCrumb = [
   }
 ];
 
-type Props = {};
-
-export function UserSettings(props: Props) {
+function UserSettings() {
   return (
     <PageWrapper>
       <PrimaryContent padding="2rem">

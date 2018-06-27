@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import { EventListItem } from '_scenes/Dashboard/Event/components/EventListItem';
 
 const createProps = () => ({

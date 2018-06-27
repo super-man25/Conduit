@@ -25,7 +25,7 @@ describe('<SeasonRevenuePanel />', () => {
   });
 
   it('should call fetch on componentDidMount', () => {
-    const wrapper = shallow(<SeasonRevenuePanel {...props} />);
+    shallow(<SeasonRevenuePanel {...props} />);
     expect(props.seasonStatActions.fetch).toHaveBeenCalled();
   });
 });

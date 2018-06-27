@@ -12,6 +12,7 @@
     "jest/globals": true
   },
   "rules": {
-    "flowtype/generic-spacing": [0, "never"]
+    "flowtype/generic-spacing": [0, "never"],
+    "camelcase": 2
   }
 }

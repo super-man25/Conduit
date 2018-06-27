@@ -36,13 +36,13 @@
     "eject": "env-cmd base react-scripts eject",
     "lint": "eslint src",
     "test-ci": "yarn lint && yarn test --coverage --coverageReporters=cobertura --testResultsProcessor jest-junit",
-    "test-staged": "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests",
-    "precommit": "lint-staged",
+    "test-staged": "yarn test --coverage --coverageReporters=cobertura --testResultsProcessor jest-junit --findRelatedTests",
+    "precommit": "flow && lint-staged",
     "prettier": "prettier-eslint --write '/src/**/*.{js|jsx}'",
     "prettier-dry-run": "prettier-eslint --write '/src/**/*.{js|jsx}' -l debug"
   },
   "lint-staged": {
-    "*.{js|jsx}": [
+    "*.js": [
       "prettier-eslint --write",
       "yarn test-staged",
       "git add"

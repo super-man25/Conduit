@@ -59,25 +59,6 @@ class EventListContainer extends React.Component<Props> {
   get title() {
     return 'Events';
   }
-
-  get scrollIndex() {
-    const { events, activeId, filter } = this.props.eventState;
-
-    if (events.length > 0) {
-      if (filter) {
-        return 0; // scroll to the top
-      }
-
-      if (activeId) {
-        return events.findIndex((e) => e.id === activeId);
-      }
-
-      return events.findIndex((e) => e.timestamp > new Date());
-    }
-
-    return -1;
-  }
-
   render() {
     const {
       eventState: {
@@ -85,7 +66,8 @@ class EventListContainer extends React.Component<Props> {
         sortDir,
         loading,
         visibleEvents,
-        selectedFilter
+        selectedFilter,
+        filter
       },
       selectors: { activeEventId }
     } = this.props;
@@ -94,7 +76,6 @@ class EventListContainer extends React.Component<Props> {
       <EventListPresenter
         onClick={this.handleOnClick}
         activeId={activeEventId}
-        scrollIndex={this.scrollIndex}
         events={visibleEvents}
         loading={loading}
         title={this.title}
@@ -104,6 +85,7 @@ class EventListContainer extends React.Component<Props> {
         timestampSort={sortDir}
         onTimestampSortChange={this.handleTimestampSortChange}
         onSearchInputChange={this.handleSearchInput}
+        filtered={!!filter}
       />
     );
   }

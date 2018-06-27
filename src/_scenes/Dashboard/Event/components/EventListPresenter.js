@@ -36,6 +36,22 @@ const NoContentWrap = styled.div`
   color: ${cssConstants.PRIMARY_DARK_GRAY};
 `;
 
+function getScrollIndex(events, activeId, filtered) {
+  if (!events.length) {
+    return -1;
+  }
+
+  if (filtered) {
+    return 0;
+  }
+
+  if (activeId && activeId !== -1) {
+    return events.findIndex((e) => e.id === activeId);
+  }
+
+  return events.findIndex((e) => e.timestamp > new Date());
+}
+
 type Props = {
   filterOptions: Array<{ id: number, label: string }>,
   activeId: number,
@@ -48,7 +64,7 @@ type Props = {
   onFilterSelect: (event: EDEvent) => void,
   onTimestampSortChange: (dir: string) => void,
   selectedFilter: number,
-  scrollIndex: ?number
+  filtered: boolean
 };
 
 export function EventListPresenter(props: Props) {
@@ -64,7 +80,7 @@ export function EventListPresenter(props: Props) {
     timestampSort,
     title,
     onSearchInputChange,
-    scrollIndex
+    filtered
   } = props;
 
   const noResult = !loading && (!events || !events.length);
@@ -109,7 +125,10 @@ export function EventListPresenter(props: Props) {
             </NoContentWrap>
           )}
 
-          <ScrollableList data={events} scrollIndex={scrollIndex}>
+          <ScrollableList
+            data={events}
+            scrollIndex={getScrollIndex(events, activeId, filtered)}
+          >
             {(event, key) => (
               <EventListItem
                 onClick={onClick}

@@ -20,6 +20,9 @@ type Props = {
   userState: {
     creating: boolean
   },
+  authState: {
+    model: EDUser
+  },
   alertState: {
     type: string,
     show: boolean,
@@ -33,7 +36,8 @@ type State = {
     lastName: string,
     email: string,
     password: string,
-    isAdmin: boolean
+    isAdmin: boolean,
+    clientId: ?number
   },
   submitted: boolean,
   emailHadFocus: boolean,
@@ -52,6 +56,7 @@ class CreateUser extends React.Component<Props, State> {
         firstName: '',
         lastName: '',
         email: '',
+        password: '',
         isAdmin: false,
         clientId: null
       },

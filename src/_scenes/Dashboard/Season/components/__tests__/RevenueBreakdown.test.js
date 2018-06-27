@@ -36,7 +36,7 @@ describe('<RevenueBreakdown />', () => {
 
   it('should call fetch on componentDidMount', () => {
     const props = generateProps();
-    const wrapper = shallow(<RevenueBreakdown {...props} />);
+    shallow(<RevenueBreakdown {...props} />);
 
     expect(props.revenueStatActions.fetch).toHaveBeenCalled();
   });

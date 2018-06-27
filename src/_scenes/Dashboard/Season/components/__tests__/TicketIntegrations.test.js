@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SeasonRevenuePanel } from '../SeasonRevenuePanel';
 import { TicketIntegrationsPresenter } from '../TicketIntegrations';
 
 describe('<SeasonRevenuePanel />', () => {
@@ -59,7 +58,7 @@ describe('<SeasonRevenuePanel />', () => {
 
   it('should call fetch on componentDidMount', () => {
     const props = createProps();
-    const wrapper = shallow(<TicketIntegrationsPresenter {...props} />);
+    shallow(<TicketIntegrationsPresenter {...props} />);
     expect(props.fetchTicketIntegrations).toHaveBeenCalled();
   });
 });

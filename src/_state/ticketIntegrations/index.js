@@ -23,7 +23,10 @@ type Store = {
   ticketIntegration: State
 };
 
-export default function reducer(state: State = initialState, action = {}) {
+export default function reducer(
+  state: State = initialState,
+  action: Object = {}
+) {
   switch (action.type) {
     case FETCH:
       return { ...state, loading: true, error: null };

@@ -17,7 +17,10 @@ type Store = {
   ui: State
 };
 
-export default function reducer(state: State = initialState, action = {}) {
+export default function reducer(
+  state: State = initialState,
+  action: Object = {}
+) {
   switch (action.type) {
     case SIDEBAR_TOGGLE:
       return { ...state, sidebarIsOpen: !state.sidebarIsOpen };
