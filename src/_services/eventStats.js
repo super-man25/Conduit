@@ -15,7 +15,7 @@ function getAll(eventId: number = 1, start: ?Date, end: ?Date) {
   if (start) params.startTime = toScalaDate(start);
   if (end) params.endTime = toScalaDate(end);
 
-  return get('eventTimeStats', params).then((data) =>
+  return get('timeStats', params).then((data) =>
     data.map((eventTimeStat: { timestamp: Date }) => ({
       ...eventTimeStat,
       date: eventTimeStat.timestamp

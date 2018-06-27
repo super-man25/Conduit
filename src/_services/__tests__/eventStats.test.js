@@ -16,7 +16,7 @@ describe('get all', () => {
 
   it('should get get all eventStats', () => {
     const id = 1;
-    const mock = fetchMock.get(`end:eventTimeStats?eventId=${id}`, eventStats);
+    const mock = fetchMock.get(`end:timeStats?eventId=${id}`, eventStats);
 
     return eventStatService.getAll().then((res) => {
       expect(mock.called()).toBe(true);
@@ -34,7 +34,7 @@ describe('get all', () => {
     };
 
     const mock = fetchMock.get(
-      `end:eventTimeStats?${stringify(params)}`,
+      `end:timeStats?${stringify(params)}`,
       eventStats
     );
 
@@ -54,7 +54,7 @@ describe('get all', () => {
     };
 
     const mock = fetchMock.get(
-      `end:eventTimeStats?${stringify(params)}`,
+      `end:timeStats?${stringify(params)}`,
       eventStats
     );
 
@@ -76,7 +76,7 @@ describe('get all', () => {
     };
 
     const mock = fetchMock.get(
-      `end:eventTimeStats?${stringify(params)}`,
+      `end:timeStats?${stringify(params)}`,
       eventStats
     );
 
