@@ -1,6 +1,7 @@
 import { clientService, integrationService } from '_services';
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import { getClientId, getClient } from './selectors';
+import alertActions from '../alert/actions';
 import {
   FETCH_ERROR,
   FETCH_ASYNC,
@@ -34,8 +35,10 @@ export function* updateClientAsync({ payload: diff }) {
       ...diff
     });
     yield put({ type: UPDATE_SUCCESS, payload: updatedClient });
+    yield put(alertActions.success('Successfully Updated Team Information'));
   } catch (err) {
     yield put({ type: UPDATE_ERROR, payload: err });
+    yield put(alertActions.error('Team information Could Not Be Updated'));
   }
 }
 

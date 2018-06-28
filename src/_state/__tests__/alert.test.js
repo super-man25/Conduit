@@ -1,13 +1,22 @@
 import { actions, reducer } from '_state/alert';
-
-import { SUCCESS, ERROR, CLEAR } from '_state/alert/actions';
+import {
+  SUCCESS,
+  ERROR,
+  CLEAR,
+  SUCCESS_ASYNC,
+  ERROR_ASYNC
+} from '_state/alert/actions';
+import { successAlertAsync, errorAlertAsync } from '_state/alert/saga';
+import { delay } from 'redux-saga';
+import { cloneableGenerator } from 'redux-saga/utils';
+import { call, put } from 'redux-saga/effects';
 
 describe('actions', () => {
   it('should create an action for a success message', () => {
     const message = 'message';
     const action = actions.success(message);
     expect(action).toEqual({
-      type: SUCCESS,
+      type: SUCCESS_ASYNC,
       payload: message
     });
   });
@@ -16,15 +25,8 @@ describe('actions', () => {
     const message = 'message';
     const action = actions.error(message);
     expect(action).toEqual({
-      type: ERROR,
+      type: ERROR_ASYNC,
       payload: message
-    });
-  });
-
-  it('should create an action to clear the message', () => {
-    const action = actions.clear();
-    expect(action).toEqual({
-      type: CLEAR
     });
   });
 });
@@ -34,7 +36,6 @@ describe('reducer', () => {
     const state = reducer(undefined, {});
 
     expect(state).toEqual({
-      show: false,
       type: null,
       message: null
     });
@@ -42,54 +43,69 @@ describe('reducer', () => {
 
   it('should handle SUCCESS', () => {
     const prevState = {
-      show: false,
       type: null,
       message: null
     };
 
     const message = 'message';
-    const action = actions.success(message);
-    const nextState = reducer(prevState, action);
+    const nextState = reducer(prevState, { type: SUCCESS, payload: message });
 
     expect(nextState).toEqual({
-      show: true,
-      type: 'alert-success',
+      type: 'api-success',
       message
     });
   });
 
   it('should handle ERROR', () => {
     const prevState = {
-      show: false,
       type: null,
       message: null
     };
 
     const message = 'message';
-    const action = actions.error(message);
-    const nextState = reducer(prevState, action);
+    const nextState = reducer(prevState, { type: ERROR, payload: message });
 
     expect(nextState).toEqual({
-      show: true,
-      type: 'alert-danger',
+      type: 'api-error',
       message
     });
   });
 
   it('should handle CLEAR', () => {
     const prevState = {
-      show: true,
-      type: 'alert-success',
+      type: 'api-success',
       message: 'message'
     };
 
-    const action = actions.clear();
-    const nextState = reducer(prevState, action);
+    const nextState = reducer(prevState, { type: CLEAR });
 
     expect(nextState).toEqual({
-      show: false,
       type: null,
       message: null
     });
+  });
+});
+
+describe('saga workers', () => {
+  it('should handle success', () => {
+    const message = 'It worked!';
+    const action = actions.success(message);
+    const generator = cloneableGenerator(successAlertAsync)(action);
+    expect(generator.next().value).toEqual(
+      put({ type: SUCCESS, payload: message })
+    );
+    expect(generator.next().value).toEqual(call(delay, 3000));
+    expect(generator.next().value).toEqual(put({ type: CLEAR }));
+  });
+
+  it('should handle error', () => {
+    const message = 'It failed :-(';
+    const action = actions.error(message);
+    const generator = cloneableGenerator(errorAlertAsync)(action);
+    expect(generator.next().value).toEqual(
+      put({ type: ERROR, payload: message })
+    );
+    expect(generator.next().value).toEqual(call(delay, 3000));
+    expect(generator.next().value).toEqual(put({ type: CLEAR }));
   });
 });

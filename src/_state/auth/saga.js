@@ -8,7 +8,7 @@ import {
   SIGN_OUT_ASYNC,
   FORGOT_PASS_ASYNC
 } from './actions';
-import { ERROR } from '../alert/actions';
+import alertActions from '../alert/actions';
 
 // Workers
 export function* fetchAsync() {
@@ -30,7 +30,7 @@ export function* signInAsync(action) {
     yield put({ type: SET_USER, payload: user });
   } catch (err) {
     console.warn(err);
-    yield put({ type: ERROR, payload: err });
+    yield put(alertActions.error(err.message));
   }
 }
 

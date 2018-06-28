@@ -1,6 +1,14 @@
 // @flow
 
-import { Button, HelpBlockDiv, Input, Label, Flex, H3 } from '_components';
+import {
+  ApiAlert,
+  Button,
+  HelpBlockDiv,
+  Input,
+  Label,
+  Flex,
+  H3
+} from '_components';
 import { actions as usersActions } from '_state/user';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -22,11 +30,6 @@ type Props = {
   },
   authState: {
     model: EDUser
-  },
-  alertState: {
-    type: string,
-    show: boolean,
-    message: string
   }
 };
 
@@ -139,14 +142,7 @@ class CreateUser extends React.Component<Props, State> {
     } = this.state;
     return (
       <CreateUserWrapper>
-        <HelpBlockDiv
-          type={this.props.alertState.type}
-          show={this.props.alertState.show}
-          style={{ paddingLeft: '50px' }}
-        >
-          {this.props.alertState.message}
-        </HelpBlockDiv>
-
+        <ApiAlert />
         <form
           name="form"
           onSubmit={this.handleSubmit}
@@ -236,7 +232,6 @@ class CreateUser extends React.Component<Props, State> {
 
 function mapStateToProps(state) {
   return {
-    alertState: state.alert,
     userState: state.user,
     authState: state.auth
   };

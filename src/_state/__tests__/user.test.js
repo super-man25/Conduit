@@ -1,5 +1,5 @@
 import { userService } from '_services';
-import { SUCCESS } from '_state/alert/actions';
+import { SUCCESS_ASYNC } from '_state/alert/actions';
 import { FETCH_ASYNC } from '_state/auth/actions';
 import { actions, reducer } from '_state/user';
 import {
@@ -342,7 +342,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
       put({
-        type: SUCCESS,
+        type: SUCCESS_ASYNC,
         payload: 'Successfully Updated Personal Information'
       })
     );
@@ -366,7 +366,7 @@ describe('saga workers', () => {
     );
     expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
-      put({ type: SUCCESS, payload: 'Successfully Changed Password' })
+      put({ type: SUCCESS_ASYNC, payload: 'Successfully Changed Password' })
     );
     expect(generator.next().done).toBe(true);
   });
@@ -386,7 +386,7 @@ describe('saga workers', () => {
     );
     expect(generator.next().value).toEqual(put({ type: FETCH_ASYNC }));
     expect(generator.next().value).toEqual(
-      put({ type: SUCCESS, payload: 'Successfully Updated Email' })
+      put({ type: SUCCESS_ASYNC, payload: 'Successfully Updated Email' })
     );
     expect(generator.next().done).toBe(true);
   });

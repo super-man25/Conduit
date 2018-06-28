@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import {
+  ApiAlert,
   EDLink,
   EDNavLink,
   Flex,
@@ -57,6 +58,7 @@ export const Settings = ({ authState, authActions }: Props) => (
   <PageWrapper>
     <SiteHeader auth={authState.model} authActions={authActions} />
     <FullContent>
+      <ApiAlert />
       <LeftNav>
         <Spacing padding="2rem">
           <Flex direction="column" align-items="center">

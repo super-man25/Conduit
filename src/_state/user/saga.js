@@ -1,6 +1,6 @@
 import { userService } from '_services';
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { ERROR, SUCCESS } from '../alert/actions';
+import alertActions from '../alert/actions';
 import {
   CHANGE_PASSWORD_ASYNC,
   CHANGE_PASSWORD_ERROR,
@@ -22,8 +22,10 @@ export function* createAsync(action) {
   try {
     yield call(userService.register, action.payload);
     yield put({ type: CREATE_SUCCESS });
+    yield put(alertActions.success('Successfully Crested User'));
   } catch (err) {
     yield put({ type: CREATE_ERROR, payload: err });
+    yield put(alertActions.error('User Could Not Be Created'));
   }
 }
 
@@ -33,13 +35,14 @@ export function* updateAsync(action) {
     const updatedUser = yield call(userService.update, user);
     yield put({ type: UPDATE_SUCCESS, payload: updatedUser });
     yield put({ type: FETCH_ASYNC });
-    yield put({
-      type: SUCCESS,
-      payload: 'Successfully Updated Personal Information'
-    });
+    yield put(
+      alertActions.success('Successfully Updated Personal Information')
+    );
   } catch (err) {
     put({ type: UPDATE_ERROR, payload: err });
-    yield put({ type: ERROR, payload: err });
+    yield put(
+      alertActions.error('Your Personal Information Could Not Be Updated')
+    );
   }
 }
 
@@ -49,10 +52,10 @@ export function* updateEmailAsync(action) {
     const updatedUser = yield call(userService.updateEmail, data);
     yield put({ type: UPDATE_EMAIL_SUCCESS, payload: updatedUser });
     yield put({ type: FETCH_ASYNC });
-    yield put({ type: SUCCESS, payload: 'Successfully Updated Email' });
+    yield put(alertActions.success('Successfully Updated Email'));
   } catch (err) {
     put({ type: UPDATE_EMAIL_ERROR, payload: err });
-    yield put({ type: ERROR, payload: err });
+    yield put(alertActions.error('Your Email Could Not Be Updated'));
   }
 }
 
@@ -62,10 +65,10 @@ export function* changePasswordAsync(action) {
     const updatedUser = yield call(userService.changePassword, data);
     yield put({ type: CHANGE_PASSWORD_SUCCESS, payload: updatedUser });
     yield put({ type: FETCH_ASYNC });
-    yield put({ type: SUCCESS, payload: 'Successfully Changed Password' });
+    yield put(alertActions.success('Successfully Changed Password'));
   } catch (err) {
     put({ type: CHANGE_PASSWORD_ERROR, payload: err });
-    yield put({ type: ERROR, payload: err });
+    yield put(alertActions.error('Your Password Could Not Be Updated'));
   }
 }
 

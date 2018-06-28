@@ -1,4 +1,5 @@
 import {
+  ApiAlert,
   FullContent,
   PageWrapper,
   PrimaryContent,
@@ -39,6 +40,7 @@ class Dashboard extends React.Component {
       <PageWrapper>
         <SiteHeader auth={authState.model} authActions={authActions} />
         <FullContent>
+          <ApiAlert />
           <Sidebar collapsed={!sidebarIsOpen}>
             <SidebarHeader>
               <TeamOverview
@@ -76,7 +78,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapActionCreators(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     teamStatActions: bindActionCreators(teamStatActions, dispatch),
     authActions: bindActionCreators(authActions, dispatch),
@@ -85,5 +87,5 @@ function mapActionCreators(dispatch) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapActionCreators)(Dashboard)
+  connect(mapStateToProps, mapDispatchToProps)(Dashboard)
 );

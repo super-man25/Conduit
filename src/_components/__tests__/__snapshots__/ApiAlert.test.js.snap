@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with no props 1`] = `
+.c0 {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 9999;
+  font-size: 18px;
+  width: 357px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 1px solid;
+  border-color: #399E5A;
+  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  visibility: hidden;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`renders correctly with show = true & no type prop 1`] = `
+.c0 {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 9999;
+  font-size: 18px;
+  width: 357px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 1px solid;
+  border-color: #399E5A;
+  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  visibility: visible;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`renders correctly with show = true & type = api-error 1`] = `
+.c0 {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 9999;
+  font-size: 18px;
+  width: 357px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 1px solid;
+  border-color: #DC0A0A;
+  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  visibility: visible;
+}
+
+<div
+  className="c0"
+  type="api-error"
+/>
+`;
+
+exports[`renders correctly with show = true & type = api-success 1`] = `
+.c0 {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 9999;
+  font-size: 18px;
+  width: 357px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border: 1px solid;
+  border-color: #399E5A;
+  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  visibility: visible;
+}
+
+<div
+  className="c0"
+  type="api-success"
+/>
+`;

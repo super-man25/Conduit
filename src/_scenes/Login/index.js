@@ -16,7 +16,6 @@ import { HideMe } from './components/HideMe';
 import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
-import { actions as alertActions } from '_state/alert';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -57,7 +56,8 @@ export class LoginPresenter extends React.Component {
       emailHadFocus: false,
       validEmail: false,
       passwordHadFocus: false,
-      submitEnabled: false
+      submitEnabled: false,
+      showAlert: false
     };
 
     this.handleBlur = this.handleBlur.bind(this);
@@ -66,11 +66,19 @@ export class LoginPresenter extends React.Component {
     this.handleForgotClick = this.handleForgotClick.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (
+      this.props.alertState.type !== null ||
+      this.props.alertState.message !== null
+    ) {
+      this.setState({ showAlert: true });
+    }
+  }
+
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-    this.setState({ submitted: false });
-    this.props.alertActions.clear();
+    this.setState({ submitted: false, showAlert: false });
     // this next step needs to NOT depend on the state value of something that is/was changed by this event
     // state will probably not be updated in time for it's value to be up-to-date...
     if (name === 'password') {
@@ -147,7 +155,8 @@ export class LoginPresenter extends React.Component {
       emailHadFocus,
       passwordHadFocus,
       validEmail,
-      submitEnabled
+      submitEnabled,
+      showAlert
     } = this.state;
 
     return (
@@ -163,11 +172,10 @@ export class LoginPresenter extends React.Component {
                 <form name="form" onSubmit={this.handleSubmit}>
                   <HelpBlockDiv
                     type={alertState.type}
-                    show={alertState.show && submitted}
+                    show={showAlert && submitted}
                     style={{
-                      marginTop: alertState.show && submitted ? '15px' : '0px',
-                      marginBottom:
-                        alertState.show && submitted ? '10px' : '0px',
+                      marginTop: showAlert && submitted ? '15px' : '0px',
+                      marginBottom: showAlert && submitted ? '10px' : '0px',
                       fontWeight: 'bold'
                     }}
                   >
@@ -181,10 +189,10 @@ export class LoginPresenter extends React.Component {
                     data-test-id="email-input"
                     autoComplete="new-email"
                     value={email}
-                    valid={validEmail && !(alertState.show && submitted)}
+                    valid={validEmail && !(showAlert && submitted)}
                     inValid={
                       (!validEmail && (submitted || emailHadFocus)) ||
-                      (alertState.show && submitted)
+                      (showAlert && submitted)
                     }
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
@@ -204,8 +212,11 @@ export class LoginPresenter extends React.Component {
                       data-test-id="password-input"
                       autoComplete="new-password"
                       value={password}
-                      inValid={!password && (submitted || passwordHadFocus)}
-                      valid={password}
+                      inValid={
+                        (!password && (submitted || passwordHadFocus)) ||
+                        (showAlert && submitted)
+                      }
+                      valid={password && !(showAlert && submitted)}
                       onChange={this.handleChange}
                       onBlur={this.handleBlur}
                     />
@@ -249,8 +260,7 @@ export class LoginPresenter extends React.Component {
 
 LoginPresenter.propTypes = {
   authState: PropTypes.shape(),
-  authActions: PropTypes.shape(),
-  alertActions: PropTypes.shape()
+  authActions: PropTypes.shape()
 };
 
 function mapStateToProps(state) {
@@ -262,8 +272,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    authActions: bindActionCreators(authActions, dispatch),
-    alertActions: bindActionCreators(alertActions, dispatch)
+    authActions: bindActionCreators(authActions, dispatch)
   };
 }
 

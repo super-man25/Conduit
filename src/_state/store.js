@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
-import { reducer as alertReducer } from './alert';
+import { reducer as alertReducer, saga as alertSaga } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
 import { reducer as clientReducer, saga as clientSaga } from './client';
 import {
@@ -52,6 +52,7 @@ const store = createStore(
 );
 
 const combineSagas = {
+  alert: alertSaga,
   auth: authSaga,
   event: eventSaga,
   user: userSaga,
