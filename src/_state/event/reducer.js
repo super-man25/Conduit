@@ -7,7 +7,10 @@ import {
   RESET,
   SEARCH,
   VISIBLE_EVENTS,
-  SET_ACTIVE_ID
+  SET_ACTIVE_ID,
+  SET_BROADCASTING,
+  SET_BROADCASTING_SUCCESS,
+  SET_BROADCASTING_ERROR
 } from './actions';
 import type { Action } from './actions';
 import type { EDEvent } from '_models';
@@ -44,7 +47,8 @@ export const initialState: State = {
     }
   ],
   sortDir: 'asc',
-  selectedFilter: 1
+  selectedFilter: 1,
+  isTogglingBroadcasting: false
 };
 
 export default function eventsReducer(
@@ -68,8 +72,26 @@ export default function eventsReducer(
       return { ...state, filter: action.payload };
     case SET_ACTIVE_ID:
       return { ...state, activeId: action.payload };
+    case SET_BROADCASTING:
+      return { ...state, isTogglingBroadcasting: true };
+    case SET_BROADCASTING_ERROR:
+      return { ...state, isTogglingBroadcasting: false };
     case RESET:
       return initialState;
+    case SET_BROADCASTING_SUCCESS:
+      const { eventId, isBroadcast, modifiedAt } = action.payload;
+
+      return {
+        ...state,
+        isTogglingBroadcasting: false,
+        events: state.events.map((event) => {
+          if (event.id === eventId) {
+            return { ...event, isBroadcast, modifiedAt };
+          }
+
+          return event;
+        })
+      };
     default:
       return state;
   }

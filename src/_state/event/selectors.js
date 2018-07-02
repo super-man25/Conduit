@@ -29,3 +29,6 @@ export const getActiveEvent = createSelector(
     return events.find((e) => e.id === activeEventId);
   }
 );
+
+export const getTogglingBroadcasting = (state) =>
+  state.event.isTogglingBroadcasting;

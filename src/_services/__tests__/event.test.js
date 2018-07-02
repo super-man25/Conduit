@@ -41,3 +41,25 @@ describe('get all', () => {
     });
   });
 });
+
+describe('toggle broadcasting', () => {
+  afterEach(fetchMock.restore);
+  const toggleBroadcastResponse = {
+    isBroadcast: true,
+    modifiedAt: 123
+  };
+
+  it('should toggle an events broadcasting flag', () => {
+    const eventId = 1;
+    const isBroadcast = true;
+    const mock = fetchMock.put(
+      `end:events/${eventId}/toggle`,
+      toggleBroadcastResponse
+    );
+
+    return eventService.toggleBroadcasting(eventId, isBroadcast).then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual(toggleBroadcastResponse);
+    });
+  });
+});

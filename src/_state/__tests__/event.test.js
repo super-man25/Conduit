@@ -8,20 +8,26 @@ import {
   FETCH_ERROR,
   FETCH_SUCCESS,
   RESET,
-  VISIBLE_EVENTS
+  VISIBLE_EVENTS,
+  SET_ACTIVE_ID,
+  SET_BROADCASTING,
+  SET_BROADCASTING_ERROR,
+  SET_BROADCASTING_SUCCESS
 } from '_state/event/actions';
 import {
   fetchAsync,
   handleSearchInput,
   fuzzySearch,
-  initFuse
+  initFuse,
+  toggleBroadcasting
 } from '_state/event/saga';
 import { initialState } from '_state/event/reducer';
 import {
   getEvents,
   getSearchFilter,
   getActiveEventId,
-  getActiveEvent
+  getActiveEvent,
+  getTogglingBroadcasting
 } from '_state/event/selectors';
 
 describe('actions', () => {
@@ -36,6 +42,25 @@ describe('actions', () => {
     const action = actions.clear();
     expect(action).toEqual({
       type: RESET
+    });
+  });
+
+  it('should create an action to setActiveId', () => {
+    const action = actions.setActive(1);
+    expect(action).toEqual({
+      type: SET_ACTIVE_ID,
+      payload: 1
+    });
+  });
+
+  it('should create an action to set whether an event is broadcasting', () => {
+    const action = actions.setBroadcasting(1, true);
+    expect(action).toEqual({
+      type: SET_BROADCASTING,
+      payload: {
+        eventId: 1,
+        isBroadcast: true
+      }
     });
   });
 });
@@ -128,6 +153,60 @@ describe('reducer', () => {
 
     expect(nextState).toEqual(initialState);
   });
+
+  it('should handle SET_BROADCASTING', () => {
+    const prevState = {
+      ...initialState,
+      isTogglingBroadcasting: false
+    };
+
+    const action = { type: SET_BROADCASTING };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      isTogglingBroadcasting: true
+    });
+  });
+
+  it('should handle SET_BROADCASTING_ERROR', () => {
+    const prevState = {
+      ...initialState,
+      isTogglingBroadcasting: true
+    };
+
+    const action = { type: SET_BROADCASTING_ERROR };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      isTogglingBroadcasting: false
+    });
+  });
+
+  it('should handle SET_BROADCASTING_SUCCESS', () => {
+    const prevState = {
+      ...initialState,
+      isTogglingBroadcasting: true,
+      events: [{ id: 1, isBroadcast: false, modifiedAt: 0 }]
+    };
+
+    const action = {
+      type: SET_BROADCASTING_SUCCESS,
+      payload: {
+        eventId: 1,
+        isBroadcast: true,
+        modifiedAt: 123
+      }
+    };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      isTogglingBroadcasting: false,
+      events: [{ id: 1, isBroadcast: true, modifiedAt: 123 }]
+    });
+  });
 });
 
 describe('saga workers', () => {
@@ -178,6 +257,39 @@ describe('saga workers', () => {
     expect(noFilter.next().value).toEqual(select(getEvents));
     expect(noFilter.next(events).value).toEqual(
       put({ type: VISIBLE_EVENTS, payload: events })
+    );
+  });
+
+  it('should handle toggleing broadcasting for an event', () => {
+    const action = actions.setBroadcasting(1, true);
+    const generator = cloneableGenerator(toggleBroadcasting)(action);
+
+    expect(generator.next().value).toEqual(
+      call(
+        eventService.toggleBroadcasting,
+        action.payload.eventId,
+        action.payload.isBroadcast
+      )
+    );
+
+    const success = generator.clone();
+
+    expect(success.next({ modifiedAt: 123, isBroadcast: true }).value).toEqual(
+      put({
+        type: SET_BROADCASTING_SUCCESS,
+        payload: {
+          eventId: action.payload.eventId,
+          modifiedAt: 123,
+          isBroadcast: true
+        }
+      })
+    );
+
+    const fail = generator.clone();
+    const error = new Error('some api error');
+
+    expect(fail.throw(error).value).toEqual(
+      put({ type: SET_BROADCASTING_ERROR, payload: error })
     );
   });
 });
@@ -235,5 +347,16 @@ describe('selectors', () => {
     };
 
     expect(getActiveEvent(state)).toEqual({ id: 2 });
+  });
+
+  it('getTogglingBroadcasting selector should return whether broadcasting is being toggled', () => {
+    const state = {
+      event: {
+        ...initialState,
+        isTogglingBroadcasting: true
+      }
+    };
+
+    expect(getTogglingBroadcasting(state)).toEqual(true);
   });
 });

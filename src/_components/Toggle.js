@@ -4,55 +4,61 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import React from 'react';
 
-const SLIDER_WIDTH = '60px';
-const SLIDER_HEIGHT = '10px';
+const toggleSizes = {
+  small: {
+    width: 40,
+    height: 8,
+    toggleRadius: 15
+  },
+  large: {
+    width: 60,
+    height: 10,
+    toggleRadius: 20
+  }
+};
+
+function getSliderTransformX(props) {
+  const {
+    isActive,
+    size: { width, toggleRadius }
+  } = props;
+
+  return isActive ? width - toggleRadius : 0;
+}
 
 const Slider = styled.span`
-  content: '';
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: ${SLIDER_WIDTH};
-  height: ${SLIDER_HEIGHT};
+  width: ${(props) => props.size.width}px;
+  height: ${(props) => props.size.height}px;
   border-radius: 1rem;
   background-color: ${cssConstants.PRIMARY_DARK_GRAY};
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  position: relative;
 
   ::before {
     content: '';
     position: absolute;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    left: 0px;
-    bottom: -5px;
+    height: ${(props) => props.size.toggleRadius}px;
+    width: ${(props) => props.size.toggleRadius}px;
+    left: 0;
+    top: 50%;
+    transform: translate(${getSliderTransformX}px, -50%);
     border: 0.5px solid ${cssConstants.SECONDARY_BLUE}
     box-shadow: 0 1px 1px ${cssConstants.PRIMARY_DARK_GRAY};
     background-color: ${cssConstants.PRIMARY_WHITE};
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    transition: 0.3s transform;
   }
 `;
 
 const Label = styled.label`
-  position: relative;
-  display: inline-block;
-  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 `;
 
 const Input = styled.input`
   display: none;
-
-  :checked + ${Slider}:before {
-    -webkit-transform: translateX(200%);
-    -ms-transform: translateX(200%);
-    transform: translateX(200%);
-  }
 
   :checked + ${Slider} {
     background-color: ${cssConstants.SECONDARY_BLUE};
@@ -67,19 +73,25 @@ const Input = styled.input`
 type Props = {
   isChecked: boolean,
   onChange: () => void,
-  isDisabled: boolean
+  isDisabled: boolean,
+  size: 'large' | 'small',
+  title?: string
 };
 
 export function Toggle(props: Props) {
   return (
-    <Label>
+    <Label title={props.title}>
       <Input
         type="checkbox"
-        defaultChecked={props.isChecked}
+        checked={props.isChecked}
         onChange={props.onChange}
         disabled={props.isDisabled}
       />
-      <Slider />
+      <Slider isActive={props.isChecked} size={toggleSizes[props.size]} />
     </Label>
   );
 }
+
+Toggle.defaultProps = {
+  size: 'large'
+};

@@ -82,6 +82,8 @@ exports[`renders correctly with collapse prop 1`] = `
 
 
 
+
+
 @-webkit-keyframes dxgQlt{from{-webkit-transform:scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);

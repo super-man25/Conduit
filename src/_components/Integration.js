@@ -10,7 +10,6 @@ import { readableDuration, sentenceCase } from '_helpers/string-utils';
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: ${rgba(196, 210, 225, 0.5)};
   height: 7.5rem;
   width: 20rem;
@@ -19,8 +18,8 @@ const Card = styled.div`
 `;
 
 const Details = Flex.extend`
-  position: relative;
   justify-content: space-between;
+  align-items: center;
   margin: 1rem 0 0;
 `;
 
@@ -32,9 +31,6 @@ const Img = styled.img`
 
 export const ToggleContainer = styled.div`
   margin: 0;
-  position: absolute;
-  top: 30%;
-  left: 70%;
 `;
 
 type Props = {

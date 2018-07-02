@@ -9,16 +9,21 @@ import {
   Box,
   Text,
   FlexItem,
-  CenteredLoader
+  CenteredLoader,
+  Toggle
 } from '_components';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { connect } from 'react-redux';
-import type { EDIntegrationStat } from '_models';
-import { selectors, actions } from '_state/ticketIntegrations';
+import type { EDIntegrationStat, EDEvent } from '_models';
+import {
+  selectors as ticketIntegrationSelectors,
+  actions as ticketIntegrationActions
+} from '_state/ticketIntegrations';
 import { formatNumber } from '_helpers/string-utils';
 import { sizes } from '_helpers/style-utils';
 import { createStructuredSelector } from 'reselect';
+import { selectors, actions } from '_state/event';
 
 const percentFormatter = Intl.NumberFormat('en-US', {
   style: 'percent',
@@ -146,25 +151,78 @@ const RenderError = () => (
 type Props = {
   ticketIntegrations: EDIntegrationStat[],
   loading: boolean,
-  fetchTicketIntegrations: ({ seasonId: number }) => void,
+  event: EDEvent,
+  fetchTicketIntegrations: ({ eventId: number }) => void,
+  setBroadcasting: (eventId: number, isBroadcasting: boolean) => void,
+  togglingBroadcasting: boolean,
   error: ?Error
 };
 
 export class TicketIntegrationsPresenter extends React.Component<Props> {
   componentDidMount() {
-    const seasonId = 1;
-    this.props.fetchTicketIntegrations({ seasonId });
+    const {
+      event: { id }
+    } = this.props;
+    this.props.fetchTicketIntegrations({ eventId: id });
   }
 
+  componentDidUpdate(prevProps: Props) {
+    const {
+      event: { id }
+    } = this.props;
+
+    if (id !== prevProps.event.id) {
+      this.props.fetchTicketIntegrations({ eventId: id });
+    }
+  }
+
+  toggleIsBroadcasting = (e: SyntheticInputEvent<HTMLInputElement>) => {
+    const {
+      setBroadcasting,
+      event: { id }
+    } = this.props;
+    const { checked } = e.target;
+
+    setBroadcasting(id, checked);
+  };
+
   render() {
-    const { ticketIntegrations, loading, error } = this.props;
+    const {
+      ticketIntegrations,
+      loading,
+      error,
+      event: { isBroadcast },
+      togglingBroadcasting
+    } = this.props;
+
     const hasNoData = !ticketIntegrations.length;
 
     return (
       <Panel>
         <PanelHeader>
-          <Flex height="100%" align="center">
-            <H4>Ticket Integrations</H4>
+          <Flex height="100%" align="center" justify="space-between">
+            {!loading && (
+              <React.Fragment>
+                <Flex>
+                  <H4 margin="0" marginRight="2.5rem">
+                    Integrations
+                  </H4>
+                  <Toggle
+                    isChecked={isBroadcast}
+                    onChange={this.toggleIsBroadcasting}
+                    isDisabled={false}
+                    size="small"
+                    title={`Toggle Integrations ${isBroadcast ? 'Off' : 'On'}`}
+                  />
+                  {togglingBroadcasting && (
+                    <Text marginLeft="1.5rem">Toggling Broadcasting</Text>
+                  )}
+                </Flex>
+                <Text marginLeft="2rem" size={12}>
+                  MANAGE ALL
+                </Text>
+              </React.Fragment>
+            )}
           </Flex>
         </PanelHeader>
         <UnpaddedPanelContent>
@@ -192,13 +250,16 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
 }
 
 const mapStateToProps = createStructuredSelector({
-  ticketIntegrations: selectors.selectTicketIntegrations,
-  loading: selectors.selectTicketIntegrationsLoading,
-  error: selectors.selectTicketIntegrationsError
+  ticketIntegrations: ticketIntegrationSelectors.selectTicketIntegrations,
+  loading: ticketIntegrationSelectors.selectTicketIntegrationsLoading,
+  error: ticketIntegrationSelectors.selectTicketIntegrationsError,
+  event: selectors.getActiveEvent,
+  togglingBroadcasting: selectors.getTogglingBroadcasting
 });
 
 const mapDispatchToProps = {
-  fetchTicketIntegrations: actions.fetchTicketIntegrations
+  fetchTicketIntegrations: ticketIntegrationActions.fetchTicketIntegrations,
+  setBroadcasting: actions.setBroadcasting
 };
 
 export const TicketIntegrations = connect(mapStateToProps, mapDispatchToProps)(

@@ -41,18 +41,20 @@ export const H3 = styled.h3.attrs({
     WEIGHTS.get(props.weight) || cssConstants.TITLE_WEIGHT_H3};
 `;
 
-export const H4 = styled.h4.attrs({
-  color: (props) => {
-    return (
-      (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
-      cssConstants.PRIMARY_LIGHT_BLACK
-    );
-  }
-})`
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H4};
-  font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H4};
-`;
+export const H4 = withBoxModelProps(
+  styled.h4.attrs({
+    color: (props) => {
+      return (
+        (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
+        cssConstants.PRIMARY_LIGHT_BLACK
+      );
+    }
+  })`
+    color: ${(props) => props.color};
+    font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H4};
+    font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H4};
+  `
+);
 
 export const H5 = styled.h5.attrs({
   color: (props) => {

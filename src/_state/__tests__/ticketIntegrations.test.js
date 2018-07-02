@@ -113,10 +113,11 @@ describe('selectors', () => {
 
 describe('saga workers', () => {
   it('should handle fetch', () => {
-    const generator = cloneableGenerator(fetchTicketIntegrationsSaga)();
+    const action = actions.fetchTicketIntegrations({ eventId: 1 });
+    const generator = cloneableGenerator(fetchTicketIntegrationsSaga)(action);
 
     expect(generator.next().value).toEqual(
-      call(integrationStatService.getAll, 1)
+      call(integrationStatService.getAll, action.payload)
     );
 
     const mockPayload = [1, 2, 3];

@@ -2,8 +2,10 @@
 import { get } from '_helpers/api';
 import type { EDIntegrationStat } from '_models';
 
-function getAll(seasonId: number): Promise<EDIntegrationStat[]> {
-  return get('integrationStats', { seasonId });
+type GetAllParams = { seasonId: number } | { eventId: number };
+
+function getAll(params: GetAllParams): Promise<EDIntegrationStat[]> {
+  return get('integrationStats', params);
 }
 
 export const integrationStatService = {

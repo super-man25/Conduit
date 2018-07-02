@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { TicketIntegrationsPresenter } from '../TicketIntegrations';
 
-describe('<SeasonRevenuePanel />', () => {
+describe('<TicketIntegrations />', () => {
   const createProps = () => ({
     ticketIntegrations: [
       {

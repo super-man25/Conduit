@@ -18,7 +18,20 @@ describe('get all', () => {
       integrations
     );
 
-    return integrationStatService.getAll(seasonId).then((res) => {
+    return integrationStatService.getAll({ seasonId }).then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual(integrations);
+    });
+  });
+
+  it('should get all integrationStats when passed an eventId', () => {
+    const eventId = 1;
+    const mock = fetchMock.get(
+      `end:integrationStats?eventId=${eventId}`,
+      integrations
+    );
+
+    return integrationStatService.getAll({ eventId }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(integrations);
     });

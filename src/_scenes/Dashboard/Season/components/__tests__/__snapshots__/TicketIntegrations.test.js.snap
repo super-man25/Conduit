@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SeasonRevenuePanel /> should render correctly 1`] = `
+exports[`<TicketIntegrations /> should render correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -761,7 +761,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<SeasonRevenuePanel /> should render correctly when an error occurs 1`] = `
+exports[`<TicketIntegrations /> should render correctly when an error occurs 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -983,7 +983,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<SeasonRevenuePanel /> should render correctly when loading is true 1`] = `
+exports[`<TicketIntegrations /> should render correctly when loading is true 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -1204,7 +1204,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<SeasonRevenuePanel /> should render correctly when no data is found 1`] = `
+exports[`<TicketIntegrations /> should render correctly when no data is found 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

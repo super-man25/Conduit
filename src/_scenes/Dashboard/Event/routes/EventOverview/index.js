@@ -6,6 +6,7 @@ import EventHeader from '../../components/EventHeader';
 import EventChart from './components/EventChart';
 import type { EDEvent } from '_models';
 import { getActiveEvent } from '_state/event/selectors';
+import { TicketIntegrations } from './components/TicketIntegrations';
 
 type Props = {
   event: ?EDEvent
@@ -18,6 +19,8 @@ export const EventOverview = ({ event }: Props) =>
         <EventHeader availableInventory={15000} totalInventory={40000} />
         <Spacing height="1rem" />
         <EventChart event={event} />
+        <Spacing height="2rem" />
+        <TicketIntegrations />
       </Box>
     </PageWrapper>
   );
