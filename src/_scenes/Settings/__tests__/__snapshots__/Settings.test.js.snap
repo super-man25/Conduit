@@ -75,6 +75,7 @@ ShallowWrapper {
                                                                                 "textShadow": "0 0 .1px #38A9DB",
                                                                               }
                                                             }
+                                                            data-test-id="user-settings-button"
                                                             to="/settings/user"
                                                             weight="light"
                                                   >
@@ -160,6 +161,7 @@ ShallowWrapper {
                                                                                                   "textShadow": "0 0 .1px #38A9DB",
                                                                                                 }
                                                                       }
+                                                                      data-test-id="user-settings-button"
                                                                       to="/settings/user"
                                                                       weight="light"
                                                         >
@@ -234,6 +236,7 @@ ShallowWrapper {
                                                                                                 "textShadow": "0 0 .1px #38A9DB",
                                                                                               }
                                                                 }
+                                                                data-test-id="user-settings-button"
                                                                 to="/settings/user"
                                                                 weight="light"
                                                 >
@@ -279,6 +282,7 @@ ShallowWrapper {
                                                                                           "textShadow": "0 0 .1px #38A9DB",
                                                                                         }
                                                       }
+                                                      data-test-id="user-settings-button"
                                                       to="/settings/user"
                                                       weight="light"
                                     >
@@ -322,6 +326,7 @@ ShallowWrapper {
                                                                                         "textShadow": "0 0 .1px #38A9DB",
                                                                                       }
                                             }
+                                            data-test-id="user-settings-button"
                                             to="/settings/user"
                                             weight="light"
                       >
@@ -385,6 +390,7 @@ ShallowWrapper {
                                                                         "textShadow": "0 0 .1px #38A9DB",
                                                                       }
                         }
+                        data-test-id="user-settings-button"
                         to="/settings/user"
                         weight="light"
 >
@@ -403,6 +409,7 @@ ShallowWrapper {
                           "textShadow": "0 0 .1px #38A9DB",
                         },
                         "children": "User Settings",
+                        "data-test-id": "user-settings-button",
                         "to": "/settings/user",
                         "weight": "light",
                       },
@@ -540,6 +547,7 @@ ShallowWrapper {
                                                                                                 "textShadow": "0 0 .1px #38A9DB",
                                                                                               }
                                                                         }
+                                                                        data-test-id="user-settings-button"
                                                                         to="/settings/user"
                                                                         weight="light"
                                                             >
@@ -625,6 +633,7 @@ ShallowWrapper {
                                                                                                                 "textShadow": "0 0 .1px #38A9DB",
                                                                                                               }
                                                                                 }
+                                                                                data-test-id="user-settings-button"
                                                                                 to="/settings/user"
                                                                                 weight="light"
                                                                 >
@@ -699,6 +708,7 @@ ShallowWrapper {
                                                                                                             "textShadow": "0 0 .1px #38A9DB",
                                                                                                           }
                                                                         }
+                                                                        data-test-id="user-settings-button"
                                                                         to="/settings/user"
                                                                         weight="light"
                                                       >
@@ -744,6 +754,7 @@ ShallowWrapper {
                                                                                                     "textShadow": "0 0 .1px #38A9DB",
                                                                                                   }
                                                             }
+                                                            data-test-id="user-settings-button"
                                                             to="/settings/user"
                                                             weight="light"
                                         >
@@ -787,6 +798,7 @@ ShallowWrapper {
                                                                                                 "textShadow": "0 0 .1px #38A9DB",
                                                                                               }
                                                 }
+                                                data-test-id="user-settings-button"
                                                 to="/settings/user"
                                                 weight="light"
                         >
@@ -850,6 +862,7 @@ ShallowWrapper {
                                                                               "textShadow": "0 0 .1px #38A9DB",
                                                                             }
                           }
+                          data-test-id="user-settings-button"
                           to="/settings/user"
                           weight="light"
 >
@@ -868,6 +881,7 @@ ShallowWrapper {
                             "textShadow": "0 0 .1px #38A9DB",
                           },
                           "children": "User Settings",
+                          "data-test-id": "user-settings-button",
                           "to": "/settings/user",
                           "weight": "light",
                         },

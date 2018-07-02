@@ -112,12 +112,13 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
           data-test-id="settings-icon"
           onClick={this.showMenu}
         />
-        <UserWelcome user={auth} />
+        <UserWelcome user={auth} data-test-id="user-name-text" />
         {this.state.showMenu && (
           <DropdownMenuWrapper onClickAway={this.closeMenu}>
             <div>
               <DropdownMenuItem
                 id="settings"
+                data-test-id="settings-button"
                 onClick={this.handleSettingsClick}
               >
                 Settings

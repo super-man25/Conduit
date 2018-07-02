@@ -82,6 +82,7 @@ export const Settings = ({ authState, authActions }: Props) => (
                   color: cssConstants.PRIMARY_LIGHT_BLUE,
                   textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
                 }}
+                data-test-id="user-settings-button"
               >
                 User Settings
               </EDNavLink>

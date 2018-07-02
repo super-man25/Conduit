@@ -242,6 +242,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   type="text"
                   name="firstName"
                   id="firstName"
+                  data-test-id="first-name-input"
                   placeholder="First Name"
                   value={user.firstName}
                   valid={user.firstName.length >= 1 && touchedFields.firstName}
@@ -253,6 +254,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   type="text"
                   name="lastName"
                   id="lastName"
+                  data-test-id="last-name-input"
                   placeholder="Last Name"
                   value={user.lastName}
                   valid={user.lastName.length >= 1 && touchedFields.lastName}
@@ -262,7 +264,10 @@ export class ContactInfo extends React.Component<Props, State> {
                 />
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.saveName}>
+                <SettingBorderButton
+                  onClick={this.saveName}
+                  data-test-id="save-name-button"
+                >
                   Save
                 </SettingBorderButton>
               </SettingButtonGroup>
@@ -270,12 +275,13 @@ export class ContactInfo extends React.Component<Props, State> {
           ) : (
             <React.Fragment>
               <ContactSection>
-                <ContactText>
+                <ContactText data-test-id="full-name-text">
                   {titleCase(`${user.firstName} ${user.lastName}`)}
                 </ContactText>
               </ContactSection>
               <SettingEditButton
                 onClick={() => this.handleEditClick('editName')}
+                data-test-id="edit-name-button"
               />
             </React.Fragment>
           )}
@@ -338,7 +344,9 @@ export class ContactInfo extends React.Component<Props, State> {
         </Setting>
         <Spacing margin="1rem 0" />
         <Setting cols={3} id="editPhoneNumber">
-          <ContactText>Phone Number</ContactText>
+          <ContactText data-test-id="phone-number-text">
+            Phone Number
+          </ContactText>
           {editPhoneNumber ? (
             <React.Fragment>
               <ContactSection>
@@ -346,6 +354,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   type="text"
                   name="phoneNumber"
                   id="phoneNumber"
+                  data-test-id="phone-number-input"
                   placeholder="Phone Number"
                   value={user.phoneNumber || ''}
                   valid={
@@ -370,7 +379,10 @@ export class ContactInfo extends React.Component<Props, State> {
                 </HelpBlockDiv>
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.savePhoneNumber}>
+                <SettingBorderButton
+                  onClick={this.savePhoneNumber}
+                  data-test-id="save-phone-number-button"
+                >
                   Save
                 </SettingBorderButton>
               </SettingButtonGroup>
@@ -382,6 +394,7 @@ export class ContactInfo extends React.Component<Props, State> {
               </ContactSection>
               <SettingEditButton
                 onClick={() => this.handleEditClick('editPhoneNumber')}
+                data-test-id="edit-phone-number-button"
               />
             </React.Fragment>
           )}

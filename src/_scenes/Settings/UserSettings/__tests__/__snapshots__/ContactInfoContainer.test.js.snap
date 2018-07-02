@@ -55,11 +55,14 @@ ShallowWrapper {
           </styled.div>
           <Unknown>
                     <styled.div>
-                              <styled.div>
+                              <styled.div
+                                        data-test-id="full-name-text"
+                              >
                                         First Last
                               </styled.div>
                     </styled.div>
                     <styled.div
+                              data-test-id="edit-name-button"
                               onClick={[Function]}
                     />
           </Unknown>
@@ -90,7 +93,9 @@ ShallowWrapper {
           cols={3}
           id="editPhoneNumber"
 >
-          <styled.div>
+          <styled.div
+                    data-test-id="phone-number-text"
+          >
                     Phone Number
           </styled.div>
           <Unknown>
@@ -98,6 +103,7 @@ ShallowWrapper {
                               <styled.div />
                     </styled.div>
                     <styled.div
+                              data-test-id="edit-phone-number-button"
                               onClick={[Function]}
                     />
           </Unknown>
@@ -160,11 +166,14 @@ ShallowWrapper {
 </styled.div>,
             <Unknown>
               <styled.div>
-                            <styled.div>
+                            <styled.div
+                                          data-test-id="full-name-text"
+                            >
                                           First Last
                             </styled.div>
               </styled.div>
               <styled.div
+                            data-test-id="edit-name-button"
                             onClick={[Function]}
               />
 </Unknown>,
@@ -192,11 +201,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <styled.div>
-                  <styled.div>
+                  <styled.div
+                                    data-test-id="full-name-text"
+                  >
                                     First Last
                   </styled.div>
 </styled.div>,
                 <styled.div
+                  data-test-id="edit-name-button"
                   onClick={[Function]}
 />,
               ],
@@ -208,7 +220,9 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": <styled.div>
+                  "children": <styled.div
+                    data-test-id="full-name-text"
+>
                     First Last
 </styled.div>,
                 },
@@ -219,6 +233,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": "First Last",
+                    "data-test-id": "full-name-text",
                   },
                   "ref": null,
                   "rendered": "First Last",
@@ -231,6 +246,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "data-test-id": "edit-name-button",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -349,7 +365,9 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <styled.div>
+            <styled.div
+              data-test-id="phone-number-text"
+>
               Phone Number
 </styled.div>,
             <Unknown>
@@ -357,6 +375,7 @@ ShallowWrapper {
                             <styled.div />
               </styled.div>
               <styled.div
+                            data-test-id="edit-phone-number-button"
                             onClick={[Function]}
               />
 </Unknown>,
@@ -372,6 +391,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "Phone Number",
+              "data-test-id": "phone-number-text",
             },
             "ref": null,
             "rendered": "Phone Number",
@@ -387,6 +407,7 @@ ShallowWrapper {
                   <styled.div />
 </styled.div>,
                 <styled.div
+                  data-test-id="edit-phone-number-button"
                   onClick={[Function]}
 />,
               ],
@@ -419,6 +440,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "data-test-id": "edit-phone-number-button",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -561,11 +583,14 @@ ShallowWrapper {
             </styled.div>
             <Unknown>
                         <styled.div>
-                                    <styled.div>
+                                    <styled.div
+                                                data-test-id="full-name-text"
+                                    >
                                                 First Last
                                     </styled.div>
                         </styled.div>
                         <styled.div
+                                    data-test-id="edit-name-button"
                                     onClick={[Function]}
                         />
             </Unknown>
@@ -596,7 +621,9 @@ ShallowWrapper {
             cols={3}
             id="editPhoneNumber"
 >
-            <styled.div>
+            <styled.div
+                        data-test-id="phone-number-text"
+            >
                         Phone Number
             </styled.div>
             <Unknown>
@@ -604,6 +631,7 @@ ShallowWrapper {
                                     <styled.div />
                         </styled.div>
                         <styled.div
+                                    data-test-id="edit-phone-number-button"
                                     onClick={[Function]}
                         />
             </Unknown>
@@ -666,11 +694,14 @@ ShallowWrapper {
 </styled.div>,
               <Unknown>
                 <styled.div>
-                                <styled.div>
+                                <styled.div
+                                                data-test-id="full-name-text"
+                                >
                                                 First Last
                                 </styled.div>
                 </styled.div>
                 <styled.div
+                                data-test-id="edit-name-button"
                                 onClick={[Function]}
                 />
 </Unknown>,
@@ -698,11 +729,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <styled.div>
-                    <styled.div>
+                    <styled.div
+                                        data-test-id="full-name-text"
+                    >
                                         First Last
                     </styled.div>
 </styled.div>,
                   <styled.div
+                    data-test-id="edit-name-button"
                     onClick={[Function]}
 />,
                 ],
@@ -714,7 +748,9 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": <styled.div>
+                    "children": <styled.div
+                      data-test-id="full-name-text"
+>
                       First Last
 </styled.div>,
                   },
@@ -725,6 +761,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": "First Last",
+                      "data-test-id": "full-name-text",
                     },
                     "ref": null,
                     "rendered": "First Last",
@@ -737,6 +774,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
+                    "data-test-id": "edit-name-button",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -855,7 +893,9 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <styled.div>
+              <styled.div
+                data-test-id="phone-number-text"
+>
                 Phone Number
 </styled.div>,
               <Unknown>
@@ -863,6 +903,7 @@ ShallowWrapper {
                                 <styled.div />
                 </styled.div>
                 <styled.div
+                                data-test-id="edit-phone-number-button"
                                 onClick={[Function]}
                 />
 </Unknown>,
@@ -878,6 +919,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": "Phone Number",
+                "data-test-id": "phone-number-text",
               },
               "ref": null,
               "rendered": "Phone Number",
@@ -893,6 +935,7 @@ ShallowWrapper {
                     <styled.div />
 </styled.div>,
                   <styled.div
+                    data-test-id="edit-phone-number-button"
                     onClick={[Function]}
 />,
                 ],
@@ -925,6 +968,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
+                    "data-test-id": "edit-phone-number-button",
                     "onClick": [Function],
                   },
                   "ref": null,
