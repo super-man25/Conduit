@@ -18,6 +18,7 @@ import {
   getSeasonStatFilterArguments,
   getSeasonStatDateLimits
 } from '../seasonStat/selectors';
+import { selectors } from '../season';
 
 describe('actions', () => {
   it('should create an action to fetch seasonStats', () => {
@@ -34,7 +35,7 @@ describe('actions', () => {
     });
   });
 
-  it('should create an action to set the group gilter', () => {
+  it('should create an action to set the group filter', () => {
     const action = actions.setGroupFilter(1);
     expect(action).toEqual({
       type: SET_GROUPING_FILTER,
@@ -192,13 +193,22 @@ describe('saga workers', () => {
       from: new Date(),
       to: new Date()
     };
+    const seasonId = 1;
 
     expect(generator.next().value).toEqual(
       select(getSeasonStatFilterArguments)
     );
 
     expect(generator.next(dateRange).value).toEqual(
-      call(eventStatService.getAll, 1, dateRange.from, dateRange.to)
+      select(selectors.selectActiveSeasonId)
+    );
+
+    expect(generator.next(seasonId).value).toEqual(
+      call(eventStatService.getAll, {
+        seasonId,
+        start: dateRange.from,
+        end: dateRange.to
+      })
     );
 
     // Fetch Success

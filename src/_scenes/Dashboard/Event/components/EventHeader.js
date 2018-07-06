@@ -18,9 +18,9 @@ import { format } from 'date-fns';
 import { EDEvent } from '_models';
 import { formatNumber } from '_helpers/string-utils';
 import { compose } from 'recompose';
-import { getActiveEvent } from '_state/event/selectors';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
+import { selectors } from '_state/event';
 
 const DATE_FORMAT = 'dddd, MMMM Do, YYYY @ h:mmA';
 
@@ -122,7 +122,7 @@ export function EventHeader(props: Props) {
 
 function mapStateToProps(state) {
   return {
-    event: getActiveEvent(state),
+    event: selectors.selectEvent(state),
     pathname: state.router.location.pathname
   };
 }

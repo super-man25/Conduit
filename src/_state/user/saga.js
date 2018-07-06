@@ -1,6 +1,5 @@
 import { userService } from '_services';
 import { call, put, takeEvery } from 'redux-saga/effects';
-import alertActions from '../alert/actions';
 import {
   CHANGE_PASSWORD_ASYNC,
   CHANGE_PASSWORD_ERROR,
@@ -15,7 +14,8 @@ import {
   UPDATE_ERROR,
   UPDATE_SUCCESS
 } from './actions';
-import { FETCH_ASYNC } from '../auth/actions';
+import { actions as alertActions } from '../alert';
+import { actions as authActions } from '../auth';
 
 // Workers
 export function* createAsync(action) {
@@ -34,7 +34,7 @@ export function* updateAsync(action) {
     const user = action.payload;
     const updatedUser = yield call(userService.update, user);
     yield put({ type: UPDATE_SUCCESS, payload: updatedUser });
-    yield put({ type: FETCH_ASYNC });
+    yield put(authActions.fetch());
     yield put(
       alertActions.success('Successfully Updated Personal Information')
     );
@@ -51,7 +51,7 @@ export function* updateEmailAsync(action) {
     const data = action.payload;
     const updatedUser = yield call(userService.updateEmail, data);
     yield put({ type: UPDATE_EMAIL_SUCCESS, payload: updatedUser });
-    yield put({ type: FETCH_ASYNC });
+    yield put(authActions.fetch());
     yield put(alertActions.success('Successfully Updated Email'));
   } catch (err) {
     put({ type: UPDATE_EMAIL_ERROR, payload: err });
@@ -64,7 +64,7 @@ export function* changePasswordAsync(action) {
     const data = action.payload;
     const updatedUser = yield call(userService.changePassword, data);
     yield put({ type: CHANGE_PASSWORD_SUCCESS, payload: updatedUser });
-    yield put({ type: FETCH_ASYNC });
+    yield put(authActions.fetch());
     yield put(alertActions.success('Successfully Changed Password'));
   } catch (err) {
     put({ type: CHANGE_PASSWORD_ERROR, payload: err });

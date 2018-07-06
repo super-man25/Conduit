@@ -1,22 +1,23 @@
+// @flow
+import type { Saga } from 'redux-saga';
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { FETCH_SUCCESS, FETCH_ERROR, FETCH } from './actions';
+import { types } from '.';
+import type { FetchStatsAction } from '.';
 import { revenueStatsService } from '_services';
 
-// TODO: Select current season/event when concept of season switching is introduced
-export function* fetchRevenueBreakdown() {
+export function* fetchRevenueBreakdown(action: FetchStatsAction): Saga<void> {
   try {
-    const revenueBreakdown = yield call(revenueStatsService.getAll, {
-      seasonId: 1
-    });
+    const { payload } = action;
+    const revenueBreakdown = yield call(revenueStatsService.getAll, payload);
 
-    yield put({ type: FETCH_SUCCESS, payload: revenueBreakdown });
+    yield put({ type: types.FETCH_SUCCESS, payload: revenueBreakdown });
   } catch (err) {
-    yield put({ type: FETCH_ERROR, payload: err });
+    yield put({ type: types.FETCH_ERROR, payload: err });
   }
 }
 
-function* fetchRevenueBreakdownSaga() {
-  yield takeLatest(FETCH, fetchRevenueBreakdown);
+function* fetchRevenueBreakdownSaga(): Saga<void> {
+  yield takeLatest(types.FETCH, fetchRevenueBreakdown);
 }
 
 export default {

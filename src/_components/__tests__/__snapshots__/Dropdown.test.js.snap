@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> renders correctly with a selected item 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c2 path {
+  fill: #FFFFFF;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c5 {
+  padding: 12px 16px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+}
+
+.c5:not(:last-child) {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.c5:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.c4 {
+  padding: 12px 16px;
+  background-color: #f2f2f2;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+}
+
+.c4:not(:last-child) {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.c4:hover {
+  cursor: default;
+  background-color: #f2f2f2;
+}
+
+<div>
+  <div
+    className="c0"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      <div>
+        Option 1
+      </div>
+      <svg
+        className="c2"
+        color="#FFFFFF"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        onClick={[Function]}
+      >
+        Option 1
+      </div>
+      <div
+        className="c5"
+        onClick={[Function]}
+      >
+        Option 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> renders correctly with none selected 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c2 path {
+  fill: #FFFFFF;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c3 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c4 {
+  padding: 12px 16px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+}
+
+.c4:not(:last-child) {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.c4:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+<div>
+  <div
+    className="c0"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      None selected
+      <svg
+        className="c2"
+        color="#FFFFFF"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        onClick={[Function]}
+      >
+        Option 1
+      </div>
+      <div
+        className="c4"
+        onClick={[Function]}
+      >
+        Option 2
+      </div>
+    </div>
+  </div>
+</div>
+`;

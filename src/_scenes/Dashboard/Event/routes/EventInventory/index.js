@@ -4,7 +4,7 @@ import { PageWrapper, Spacing, Box } from '_components';
 import { connect } from 'react-redux';
 import EventHeader from '../../components/EventHeader';
 import type { EDEvent } from '_models';
-import { getActiveEvent } from '_state/event/selectors';
+import { selectors } from '_state/event';
 
 type Props = {
   event: ?EDEvent
@@ -22,7 +22,7 @@ export const EventInventory = ({ event }: Props) =>
 
 function mapStateToProps(state) {
   return {
-    event: getActiveEvent(state)
+    event: selectors.selectEvent(state)
   };
 }
 

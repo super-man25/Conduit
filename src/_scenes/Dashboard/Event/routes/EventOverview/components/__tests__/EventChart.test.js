@@ -16,12 +16,10 @@ const createProps = () => ({
     setGroupFilter: jest.fn(),
     setDateRange: jest.fn()
   },
-  selectors: {
-    activeEventId: 1
-  }
+  activeEvent: { id: 1 }
 });
 
-describe('<EventHeader />', () => {
+describe('<EventChart />', () => {
   it('should render correctly', () => {
     const props = createProps();
     const wrapper = shallow(<EventChart {...props} />);
@@ -46,9 +44,7 @@ describe('<EventHeader />', () => {
     expect(props.eventStatActions.fetch).toHaveBeenCalledTimes(1);
 
     wrapper.setProps({
-      selectors: {
-        activeEventId: 2
-      }
+      activeEvent: { id: 2 }
     });
 
     expect(props.eventStatActions.fetch).toHaveBeenCalledTimes(2);

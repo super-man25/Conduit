@@ -1,46 +1,41 @@
 // @flow
-import { actions as eventActions } from '_state/event';
+import { actions as eventListActions, selectors } from '_state/eventList';
+import { selectors as seasonSelectors } from '_state/season';
+import type { State as EventListState } from '_state/eventList';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import EventListPresenter from '../components/EventListPresenter';
 import { push } from 'connected-react-router';
-import { EDEvent } from '_models';
-import { getActiveEventId } from '_state/event/selectors';
 
 type Props = {
-  eventActions: {
-    fetch: () => void,
-    setActive: (value: number) => void,
-    search: (term: string) => void
-  },
-  eventState: {
-    filterOptions: Array<{ id: number, label: string }>,
-    sortDir: string,
-    loading: boolean,
-    filter: string,
-    events: EDEvent[],
-    visibleEvents: EDEvent[],
-    selectedFilter: number,
-    activeId: number
-  },
-  selectors: {
-    activeEventId: number
-  },
-  location: {
-    pathname: string
-  },
+  eventListActions: typeof eventListActions,
+  eventListState: EventListState,
+  activeEventId: number,
+  activeSeasonId: number,
   push: (path: string) => void
 };
 
 class EventListContainer extends React.Component<Props> {
   componentDidMount() {
-    this.props.eventActions.fetch();
+    const { activeSeasonId } = this.props;
+    if (activeSeasonId > 0) {
+      this.props.eventListActions.fetchEventList({ seasonId: activeSeasonId });
+    }
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.activeSeasonId !== prevProps.activeSeasonId) {
+      this.props.eventListActions.resetEventList();
+      this.props.eventListActions.fetchEventList({
+        seasonId: this.props.activeSeasonId
+      });
+    }
   }
 
   handleSearchInput = (event: any) => {
     const { value } = event.target;
-    this.props.eventActions.search(value);
+    this.props.eventListActions.searchEventList(value);
   };
 
   handleSelectedFilter = (event) => {
@@ -53,15 +48,15 @@ class EventListContainer extends React.Component<Props> {
 
   handleOnClick = (event) => {
     this.props.push(`/event/${event.id}`);
-    this.props.eventActions.setActive(event.id);
   };
 
   get title() {
     return 'Events';
   }
+
   render() {
     const {
-      eventState: {
+      eventListState: {
         filterOptions,
         sortDir,
         loading,
@@ -69,7 +64,7 @@ class EventListContainer extends React.Component<Props> {
         selectedFilter,
         filter
       },
-      selectors: { activeEventId }
+      activeEventId
     } = this.props;
 
     return (
@@ -85,7 +80,7 @@ class EventListContainer extends React.Component<Props> {
         timestampSort={sortDir}
         onTimestampSortChange={this.handleTimestampSortChange}
         onSearchInputChange={this.handleSearchInput}
-        filtered={!!filter}
+        filter={filter}
       />
     );
   }
@@ -93,17 +88,16 @@ class EventListContainer extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    eventState: state.event,
-    location: state.router.location,
-    selectors: {
-      activeEventId: getActiveEventId(state)
-    }
+    eventListState: state.eventList,
+    activeEventId: selectors.selectActiveEventListId(state),
+    activeSeasonId: seasonSelectors.selectActiveSeasonId(state),
+    loading: state.eventList.loading || state.season.loading
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    eventActions: bindActionCreators(eventActions, dispatch),
+    eventListActions: bindActionCreators(eventListActions, dispatch),
     push: (path) => dispatch(push(path))
   };
 }

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import EventHeader from '../../components/EventHeader';
 import EventChart from './components/EventChart';
 import type { EDEvent } from '_models';
-import { getActiveEvent } from '_state/event/selectors';
+import { selectors } from '_state/event';
 import { TicketIntegrations } from './components/TicketIntegrations';
 
 type Props = {
@@ -27,7 +27,7 @@ export const EventOverview = ({ event }: Props) =>
 
 function mapStateToProps(state) {
   return {
-    event: getActiveEvent(state)
+    event: selectors.selectEvent(state)
   };
 }
 

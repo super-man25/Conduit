@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with props 1`] = `
-.c3 {
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c6 {
   display: block;
   color: #FFFFFF;
   font-size: 16px;
@@ -20,14 +29,14 @@ exports[`renders correctly with props 1`] = `
   background-color: #38A9DB;
 }
 
-.c3:hover {
+.c6:hover {
   cursor: pointer;
   color: #FFFFFF;
   background-color: #2670AE;
   border-color: #2670AE;
 }
 
-.c3::before {
+.c6::before {
   content: ' 
 
 
@@ -72,10 +81,31 @@ exports[`renders correctly with props 1`] = `
 
 
 
-.c0 {;
+.c1 {;
 }
 
-.c1 {
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c0 {
   height: 100%;
   width: auto;
   margin: 0;
@@ -84,7 +114,7 @@ exports[`renders correctly with props 1`] = `
   background: 'none';
 }
 
-.c2 {
+.c3 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -94,7 +124,7 @@ exports[`renders correctly with props 1`] = `
   color: #FFFFFF;
 }
 
-.c4 {
+.c7 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -105,21 +135,45 @@ exports[`renders correctly with props 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0"
 >
   <div
     className=""
     direction="row"
   >
-    <h4
-      className="c2"
-      color="#070707"
-    >
-       Team Overview 
-    </h4>
+    <div>
+      <div
+        className="c1 c2"
+        onClick={[Function]}
+      >
+        <div
+          className=""
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
     <button
-      className="c3"
-      onClick={undefined}
+      className="c6"
+      onClick={[Function]}
     />
   </div>
   <div
@@ -130,7 +184,7 @@ exports[`renders correctly with props 1`] = `
       className=""
     >
       <h3
-        className="c4"
+        className="c7"
         color="#024A8F"
       >
         0.909
@@ -149,7 +203,7 @@ exports[`renders correctly with props 1`] = `
       className=""
     >
       <h3
-        className="c4"
+        className="c7"
         color="#024A8F"
       >
         -10
@@ -169,7 +223,16 @@ exports[`renders correctly with props 1`] = `
 `;
 
 exports[`renders correctly with toggledSidebar 1`] = `
-.c3 {
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c6 {
   display: block;
   color: #FFFFFF;
   font-size: 16px;
@@ -188,14 +251,14 @@ exports[`renders correctly with toggledSidebar 1`] = `
   background-color: #38A9DB;
 }
 
-.c3:hover {
+.c6:hover {
   cursor: pointer;
   color: #FFFFFF;
   background-color: #2670AE;
   border-color: #2670AE;
 }
 
-.c3::before {
+.c6::before {
   content: ' 
 
 
@@ -240,10 +303,31 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 
 
-.c0 {;
+.c1 {;
 }
 
-.c1 {
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c0 {
   height: 100%;
   width: auto;
   margin: 0;
@@ -252,7 +336,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   background: 'none';
 }
 
-.c2 {
+.c3 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -262,7 +346,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   color: #FFFFFF;
 }
 
-.c4 {
+.c7 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -273,21 +357,45 @@ exports[`renders correctly with toggledSidebar 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0"
 >
   <div
     className=""
     direction="row"
   >
-    <h4
-      className="c2"
-      color="#070707"
-    >
-       Team Overview 
-    </h4>
+    <div>
+      <div
+        className="c1 c2"
+        onClick={[Function]}
+      >
+        <div
+          className=""
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
     <button
-      className="c3"
-      onClick=""
+      className="c6"
+      onClick={[Function]}
     />
   </div>
   <div
@@ -298,7 +406,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className=""
     >
       <h3
-        className="c4"
+        className="c7"
         color="#024A8F"
       >
         0.909
@@ -317,7 +425,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className=""
     >
       <h3
-        className="c4"
+        className="c7"
         color="#024A8F"
       >
         -10

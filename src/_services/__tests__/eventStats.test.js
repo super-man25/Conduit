@@ -15,10 +15,10 @@ describe('get all', () => {
   afterEach(fetchMock.restore);
 
   it('should get get all eventStats', () => {
-    const id = 1;
-    const mock = fetchMock.get(`end:timeStats?eventId=${id}`, eventStats);
+    const eventId = 1;
+    const mock = fetchMock.get(`end:timeStats?eventId=${eventId}`, eventStats);
 
-    return eventStatService.getAll().then((res) => {
+    return eventStatService.getAll({ eventId: 1 }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(eventStats);
     });
@@ -26,11 +26,11 @@ describe('get all', () => {
 
   it('should get all with a startTime', () => {
     const eventId = 1;
-    const startTime = new Date();
+    const start = new Date();
 
     const params = {
       eventId,
-      startTime: toScalaDate(startTime)
+      startTime: toScalaDate(start)
     };
 
     const mock = fetchMock.get(
@@ -38,7 +38,7 @@ describe('get all', () => {
       eventStats
     );
 
-    return eventStatService.getAll(eventId, startTime).then((res) => {
+    return eventStatService.getAll({ eventId, start }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(eventStats);
     });
@@ -46,11 +46,11 @@ describe('get all', () => {
 
   it('should get all with a endTime', () => {
     const eventId = 1;
-    const endTime = new Date();
+    const end = new Date();
 
     const params = {
       eventId,
-      endTime: toScalaDate(endTime)
+      endTime: toScalaDate(end)
     };
 
     const mock = fetchMock.get(
@@ -58,7 +58,7 @@ describe('get all', () => {
       eventStats
     );
 
-    return eventStatService.getAll(eventId, undefined, endTime).then((res) => {
+    return eventStatService.getAll({ eventId, end }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(eventStats);
     });
@@ -66,13 +66,13 @@ describe('get all', () => {
 
   it('should get all with a startTime & endTime', () => {
     const eventId = 1;
-    const endTime = new Date();
-    const startTime = new Date();
+    const end = new Date();
+    const start = new Date();
 
     const params = {
       eventId,
-      startTime: toScalaDate(startTime),
-      endTime: toScalaDate(endTime)
+      startTime: toScalaDate(start),
+      endTime: toScalaDate(end)
     };
 
     const mock = fetchMock.get(
@@ -80,7 +80,7 @@ describe('get all', () => {
       eventStats
     );
 
-    return eventStatService.getAll(eventId, startTime, endTime).then((res) => {
+    return eventStatService.getAll({ eventId, start, end }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(eventStats);
     });

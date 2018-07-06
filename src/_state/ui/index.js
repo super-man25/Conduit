@@ -1,8 +1,13 @@
 // @flow
-import { createActionTypeCreator } from '_helpers';
 
-const reducerName = 'ui';
-const createActionType = createActionTypeCreator(reducerName);
+// Action Types
+const SIDEBAR_TOGGLE = 'ui/SIDEBAR_TOGGLE';
+
+export type SidebarToggleAction = { type: 'ui/SIDEBAR_TOGGLE' };
+export type Action = SidebarToggleAction;
+
+// Actions
+const toggleSidebar = (): SidebarToggleAction => ({ type: SIDEBAR_TOGGLE });
 
 // State/Reducer
 type State = {
@@ -17,10 +22,7 @@ type Store = {
   ui: State
 };
 
-export default function reducer(
-  state: State = initialState,
-  action: Object = {}
-) {
+export default function reducer(state: State = initialState, action: Action) {
   switch (action.type) {
     case SIDEBAR_TOGGLE:
       return { ...state, sidebarIsOpen: !state.sidebarIsOpen };
@@ -30,13 +32,7 @@ export default function reducer(
 }
 
 // Selectors
-const selectIsSidebarOpen = (state: Store) => state[reducerName].sidebarIsOpen;
-
-// Action Types
-const SIDEBAR_TOGGLE = createActionType('SIDEBAR_TOGGLE');
-
-// Actions
-const toggleSidebar = () => ({ type: SIDEBAR_TOGGLE });
+const selectIsSidebarOpen = (state: Store): boolean => state.ui.sidebarIsOpen;
 
 // exports
 export const types = { SIDEBAR_TOGGLE };

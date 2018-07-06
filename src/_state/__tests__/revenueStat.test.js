@@ -1,21 +1,18 @@
-import { actions, reducer } from '_state/revenueStat';
-import {
-  FETCH,
-  FETCH_ERROR,
-  FETCH_SUCCESS,
-  RESET
-} from '_state/revenueStat/actions';
-import { initialState } from '_state/revenueStat/reducer';
+import { actions, reducer, initialState, types } from '_state/revenueStat';
 import { fetchRevenueBreakdown } from '../revenueStat/saga';
 import { cloneableGenerator } from 'redux-saga/utils';
 import { revenueStatsService } from '_services';
 import { call, put } from 'redux-saga/effects';
 
+const { FETCH, RESET, FETCH_ERROR, FETCH_SUCCESS } = types;
+
 describe('actions', () => {
   it('should create an action to fetch revenueStats', () => {
-    const action = actions.fetch();
+    const payload = { seasonId: 1, eventId: 1 };
+    const action = actions.fetch(payload);
     expect(action).toEqual({
-      type: FETCH
+      type: FETCH,
+      payload
     });
   });
 
@@ -101,7 +98,7 @@ describe('reducer', () => {
 
 describe('saga workers', () => {
   it('should handle fetch', () => {
-    const action = actions.fetch();
+    const action = actions.fetch({ seasonId: 1 });
     const generator = cloneableGenerator(fetchRevenueBreakdown)(action);
 
     expect(generator.next().value).toEqual(

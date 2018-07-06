@@ -17,6 +17,7 @@ import { cssConstants } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { EDTicketBreakdown } from '_models';
 import { ApiError } from '_helpers/api';
+import { selectors as seasonSelectors } from '_state/season';
 
 type BreakdownType = 'revenue' | 'inventory';
 
@@ -69,15 +70,24 @@ type Props = {
     error?: ApiError
   },
   revenueStatActions: {
-    fetch: () => void,
+    fetch: ({ seasonId: number }) => void,
     reset: () => void
   },
+  seasonId: number,
   type: BreakdownType
 };
 
 export class RevenueBreakdown extends React.Component<Props> {
   componentDidMount() {
-    this.props.revenueStatActions.fetch();
+    const { seasonId } = this.props;
+    this.props.revenueStatActions.fetch({ seasonId });
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { seasonId } = this.props;
+    if (seasonId !== prevProps.seasonId) {
+      this.props.revenueStatActions.fetch({ seasonId });
+    }
   }
 
   render() {
@@ -132,7 +142,8 @@ export class RevenueBreakdown extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    revenueStatState: state.revenueStat
+    revenueStatState: state.revenueStat,
+    seasonId: seasonSelectors.selectActiveSeasonId(state)
   };
 }
 

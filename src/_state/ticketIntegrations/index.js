@@ -41,10 +41,6 @@ export const initialState = {
   error: null
 };
 
-type Store = {
-  ticketIntegration: State
-};
-
 export default function reducer(state: State = initialState, action: Action) {
   switch (action.type) {
     case FETCH:
@@ -58,12 +54,14 @@ export default function reducer(state: State = initialState, action: Action) {
   }
 }
 
+type Store = { ticketIntegration: State };
+
 // selectors
-const selectTicketIntegrations = (state: Store) =>
+const selectTicketIntegrations = (state: Store): EDIntegrationStat[] =>
   state.ticketIntegration.ticketIntegrations;
-const selectTicketIntegrationsLoading = (state: Store) =>
+const selectTicketIntegrationsLoading = (state: Store): boolean =>
   state.ticketIntegration.loading;
-const selectTicketIntegrationsError = (state: Store) =>
+const selectTicketIntegrationsError = (state: Store): ?Error =>
   state.ticketIntegration.error;
 
 // bundled exports - allows doing things like bindActionCreators

@@ -1,13 +1,14 @@
 // @flow
+import type { Saga } from 'redux-saga';
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { integrationStatService } from '_services';
 import { types } from '.';
-import type { Saga } from 'redux-saga';
 import type { FetchAction } from '.';
 
 export function* fetchTicketIntegrations(action: FetchAction): Saga {
   try {
     const { payload } = action;
+
     const ticketIntegrations = yield call(
       integrationStatService.getAll,
       payload

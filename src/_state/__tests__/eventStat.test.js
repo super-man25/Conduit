@@ -18,7 +18,7 @@ import {
   getEventStats,
   getEventStatDateLimits
 } from '../eventStat/selectors';
-import { getActiveEventId } from '../event/selectors';
+import { selectors } from '../event';
 
 describe('actions', () => {
   it('should create an action to fetch eventStats', () => {
@@ -193,13 +193,19 @@ describe('saga workers', () => {
       from: new Date(),
       to: new Date()
     };
-    const activeEventId = 1;
+    const activeEvent = { id: 1 };
 
     expect(generator.next().value).toEqual(select(getEventStatFilterArguments));
-    expect(generator.next(dateRange).value).toEqual(select(getActiveEventId));
+    expect(generator.next(dateRange).value).toEqual(
+      select(selectors.selectEvent)
+    );
 
-    expect(generator.next(activeEventId).value).toEqual(
-      call(eventStatService.getAll, 1, dateRange.from, dateRange.to)
+    expect(generator.next(activeEvent).value).toEqual(
+      call(eventStatService.getAll, {
+        eventId: 1,
+        start: dateRange.from,
+        end: dateRange.to
+      })
     );
 
     // Fetch Success

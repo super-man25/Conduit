@@ -21,14 +21,6 @@ export class ScrollableList extends React.Component<Props> {
     this.scrollTo(scrollIndex);
   }
 
-  componentDidUpdate(prevProps: Props) {
-    const { scrollIndex } = this.props;
-
-    if (prevProps.scrollIndex !== this.props.scrollIndex) {
-      this.scrollTo(scrollIndex);
-    }
-  }
-
   scrollTo(index: number) {
     if (index === -1) {
       return;
@@ -39,7 +31,7 @@ export class ScrollableList extends React.Component<Props> {
     const target = containerNode.children[prevTarget];
 
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: 'instant', block: 'start' });
     }
   }
 

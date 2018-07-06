@@ -6,3 +6,4 @@ export * from './teamStat';
 export * from './integration';
 export * from './revenueStats';
 export * from './integrationStats';
+export * from './season';

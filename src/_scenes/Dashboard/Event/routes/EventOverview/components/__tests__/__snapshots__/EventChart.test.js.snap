@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<EventHeader /> should render correctly 1`] = `
+exports[`<EventChart /> should render correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EventChart
+    activeEvent={
+        Object {
+            "id": 1,
+          }
+    }
     eventStatActions={
         Object {
             "fetch": [Function],
@@ -26,11 +31,6 @@ ShallowWrapper {
             "groupFilters": Array [],
             "loading": true,
             "selectedGroupFilter": null,
-          }
-    }
-    selectors={
-        Object {
-            "activeEventId": 1,
           }
     }
 />,

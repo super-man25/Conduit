@@ -253,13 +253,13 @@ const mapStateToProps = createStructuredSelector({
   ticketIntegrations: ticketIntegrationSelectors.selectTicketIntegrations,
   loading: ticketIntegrationSelectors.selectTicketIntegrationsLoading,
   error: ticketIntegrationSelectors.selectTicketIntegrationsError,
-  event: selectors.getActiveEvent,
-  togglingBroadcasting: selectors.getTogglingBroadcasting
+  event: selectors.selectEvent,
+  togglingBroadcasting: selectors.selectEventTogglingBroadcasting
 });
 
 const mapDispatchToProps = {
   fetchTicketIntegrations: ticketIntegrationActions.fetchTicketIntegrations,
-  setBroadcasting: actions.setBroadcasting
+  setBroadcasting: actions.setEventBroadcasting
 };
 
 export const TicketIntegrations = connect(mapStateToProps, mapDispatchToProps)(

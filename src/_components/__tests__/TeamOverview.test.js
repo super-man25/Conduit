@@ -1,19 +1,23 @@
 import React from 'react';
-import { TeamOverview } from '_components';
+import { TeamOverviewPresenter as TeamOverview } from '_components';
 import renderer from 'react-test-renderer';
 
-// this will evolve to test winLoss and gamesRemaining props, when component is fleshed out...
-
-const stats = { wins: 10, losses: 1, gamesTotal: 1 };
+const createProps = () => ({
+  stats: { wins: 10, losses: 1, gamesTotal: 1 },
+  onToggleSidebar: jest.fn(),
+  seasons: [],
+  selectedSeason: null,
+  setActiveSeasonId: jest.fn()
+});
 
 it('renders correctly with props', () => {
-  const tree = renderer.create(<TeamOverview stats={stats} />).toJSON();
+  const props = createProps();
+  const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly with toggledSidebar', () => {
-  const tree = renderer
-    .create(<TeamOverview onToggleSidebar="" stats={stats} />)
-    .toJSON();
+  const props = createProps();
+  const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

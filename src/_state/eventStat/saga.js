@@ -7,15 +7,20 @@ import {
 } from './actions';
 import { eventStatService } from '_services';
 import { getEventStatFilterArguments } from './selectors';
-import { getActiveEventId } from '../event/selectors';
+import { selectors as eventSelectors } from '../event';
 
 // Workers
 export function* fetchEventStatsAsync(action) {
   try {
     const { from, to } = yield select(getEventStatFilterArguments);
-    const activeId = yield select(getActiveEventId);
+    const activeEvent = yield select(eventSelectors.selectEvent);
+    const { id: eventId } = activeEvent;
 
-    const events = yield call(eventStatService.getAll, activeId, from, to);
+    const events = yield call(eventStatService.getAll, {
+      eventId,
+      start: from,
+      end: to
+    });
     yield put({ type: FETCH_SUCCESS, payload: events });
   } catch (err) {
     yield put({ type: FETCH_ERROR, payload: err });

@@ -18,6 +18,7 @@ import type { EDIntegrationStat } from '_models';
 import { selectors, actions } from '_state/ticketIntegrations';
 import { formatNumber } from '_helpers/string-utils';
 import { sizes } from '_helpers/style-utils';
+import { selectors as seasonSelectors } from '_state/season';
 import { createStructuredSelector } from 'reselect';
 
 const percentFormatter = Intl.NumberFormat('en-US', {
@@ -92,6 +93,15 @@ type ListItemProps = {
   integrations: EDIntegrationStat[]
 };
 
+// To prevent division by zero
+const getTicketShare = (sold: number, total: number): string => {
+  if (total === 0) {
+    return '0%';
+  }
+
+  return percentFormatter.format(sold / total);
+};
+
 export const TicketIntegrationListItem = ({
   integration,
   integrations
@@ -122,7 +132,7 @@ export const TicketIntegrationListItem = ({
         )}
         <Box>
           <Text marginBottom=".33rem" size={22} center>
-            {percentFormatter.format(integration.sold / integration.total)}
+            {getTicketShare(integration.sold, integration.total)}
           </Text>
           <Text size={12}>Ticket Share</Text>
         </Box>
@@ -146,14 +156,22 @@ const RenderError = () => (
 type Props = {
   ticketIntegrations: EDIntegrationStat[],
   loading: boolean,
-  fetchTicketIntegrations: ({ seasonId: number }) => void,
-  error: ?Error
+  error: ?Error,
+  seasonId: number,
+  fetchTicketIntegrations: ({ seasonId: number }) => void
 };
 
 export class TicketIntegrationsPresenter extends React.Component<Props> {
   componentDidMount() {
-    const seasonId = 1;
+    const { seasonId } = this.props;
     this.props.fetchTicketIntegrations({ seasonId });
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { seasonId } = this.props;
+    if (seasonId !== prevProps.seasonId) {
+      this.props.fetchTicketIntegrations({ seasonId });
+    }
   }
 
   render() {
@@ -194,7 +212,8 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
 const mapStateToProps = createStructuredSelector({
   ticketIntegrations: selectors.selectTicketIntegrations,
   loading: selectors.selectTicketIntegrationsLoading,
-  error: selectors.selectTicketIntegrationsError
+  error: selectors.selectTicketIntegrationsError,
+  seasonId: seasonSelectors.selectActiveSeasonId
 });
 
 const mapDispatchToProps = {

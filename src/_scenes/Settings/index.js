@@ -27,7 +27,7 @@ import { admin } from '_hoc/secured';
 
 type RouteConfig = {
   path: string,
-  main: () => Node
+  main: (...args: any) => Node
 };
 
 const routes: Array<RouteConfig> = [

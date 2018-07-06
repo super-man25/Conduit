@@ -25,9 +25,13 @@ import {
 import ticketIntegrationReducer, {
   saga as ticketIntegrationSaga
 } from './ticketIntegrations';
+import { reducer as seasonReducer, saga as seasonSaga } from './season';
+import {
+  reducer as eventListReducer,
+  saga as eventListSaga
+} from './eventList';
 
-// Build root reducer
-const reducer = combineReducers({
+export const reducers = {
   alert: alertReducer,
   auth: authReducer,
   event: eventReducer,
@@ -38,17 +42,23 @@ const reducer = combineReducers({
   teamStat: teamStatReducer,
   revenueStat: revenueStatReducer,
   ui: uiReducer,
-  ticketIntegration: ticketIntegrationReducer
-});
+  ticketIntegration: ticketIntegrationReducer,
+  season: seasonReducer,
+  eventList: eventListReducer
+};
+
+// Build root reducer
+const reducer = combineReducers(reducers);
 
 // Setup enhancers
 const sagaMiddleware = createSagaMiddleware();
+const middlewares = [routerMiddleware(history), sagaMiddleware];
 
 // Create store
 const store = createStore(
   connectRouter(history)(reducer),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(routerMiddleware(history), sagaMiddleware)
+  applyMiddleware(...middlewares)
 );
 
 const combineSagas = {
@@ -61,7 +71,9 @@ const combineSagas = {
   teamStat: teamStatSaga,
   seasonStat: seasonStatSaga,
   revenueStat: revenueStatSaga,
-  ticketIntegration: ticketIntegrationSaga
+  ticketIntegration: ticketIntegrationSaga,
+  season: seasonSaga,
+  eventList: eventListSaga
 };
 
 export function* rootSaga() {

@@ -34,6 +34,7 @@ import {
   GROUP_FILTERS
 } from '_constants';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
+import { selectors as seasonSelectors } from '_state/season';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
 
 const TabLink = styled.span`
@@ -63,6 +64,7 @@ const DateFilterOptions = styled.div`
 
 type Props = {
   seasonStatState: SeasonStatState,
+  selectedSeasonId: number,
   seasonStatActions: SeasonStatActions
 };
 
@@ -91,7 +93,16 @@ const ChartLegend = ({
 
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
-    this.props.seasonStatActions.fetch();
+    const { selectedSeasonId } = this.props;
+    this.props.seasonStatActions.fetch({ seasonId: selectedSeasonId });
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { selectedSeasonId } = this.props;
+    if (this.props.selectedSeasonId !== prevProps.selectedSeasonId) {
+      this.props.seasonStatActions.clear();
+      this.props.seasonStatActions.fetch({ seasonId: selectedSeasonId });
+    }
   }
 
   render() {
@@ -240,7 +251,8 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    seasonStatState: state.seasonStat
+    seasonStatState: state.seasonStat,
+    selectedSeasonId: seasonSelectors.selectActiveSeasonId(state)
   };
 }
 

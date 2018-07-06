@@ -4,6 +4,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Flex, FlexItem, H4, Button, H3, P1 } from '_components';
 import { cssConstants } from '_constants';
+import { Dropdown } from './Dropdown';
+import { connect } from 'react-redux';
+import { selectors, actions } from '_state/season';
+import { createStructuredSelector } from 'reselect';
+import type { EDSeason } from '_models';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;
@@ -36,10 +41,13 @@ type Stats = {
 
 type Props = {
   onToggleSidebar: boolean,
-  stats: Stats
+  stats: Stats,
+  seasons: EDSeason[],
+  selectedSeason: EDSeason,
+  setActiveSeasonId: (id: number) => void
 };
 
-export class TeamOverview extends React.Component<Props> {
+export class TeamOverviewPresenter extends React.Component<Props> {
   calculateRecord = (wins: number, losses: number) => {
     const record = (wins / (wins + losses)).toFixed(3);
     if (isNaN(record)) {
@@ -66,12 +74,25 @@ export class TeamOverview extends React.Component<Props> {
   };
 
   render() {
-    const { onToggleSidebar, stats } = this.props;
+    const {
+      onToggleSidebar,
+      stats,
+      seasons,
+      selectedSeason,
+      setActiveSeasonId
+    } = this.props;
 
     return (
       <TeamOverviewContainer>
         <Flex direction="row" align="center" justify="space-between">
-          <Heading> Team Overview </Heading>
+          <Dropdown
+            options={seasons}
+            selected={selectedSeason}
+            noneSelected={<Heading>Select a Season</Heading>}
+            parseOption={(option) => option.name}
+            onChange={(option) => setActiveSeasonId(option.id)}
+            renderSelected={(option) => <Heading>{option.name}</Heading>}
+          />
           <Button small collapse onClick={onToggleSidebar} />
         </Flex>
 
@@ -93,3 +114,16 @@ export class TeamOverview extends React.Component<Props> {
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  seasons: selectors.selectSeasons,
+  selectedSeason: selectors.selectActiveSeason
+});
+
+const mapDispatchToProps = {
+  setActiveSeasonId: actions.setActiveId
+};
+
+export const TeamOverview = connect(mapStateToProps, mapDispatchToProps)(
+  TeamOverviewPresenter
+);

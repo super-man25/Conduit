@@ -1,7 +1,7 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 import paths from './icons.data';
-import PropTypes from 'prop-types';
 
 const Svg = styled.svg`
   display: inline-block;
@@ -12,9 +12,21 @@ const Svg = styled.svg`
   }
 `;
 
-export const Icon = (props) => {
-  const { name, size, color, data } = props;
+type Props = {
+  /** The name of the icon as defined in icons.data.json */
+  name: string,
 
+  /** Raw path data that takes precedence over name */
+  data: string,
+
+  /** Raw path data that takes precedence over name */
+  size: number,
+
+  /** HTML color (HEX or color string) for the icon fill  */
+  color: string
+};
+
+export const Icon = ({ name, size, color, data }: Props) => {
   const path = data || paths[name];
 
   return (
@@ -22,18 +34,4 @@ export const Icon = (props) => {
       <path d={path} />
     </Svg>
   );
-};
-
-Icon.propTypes = {
-  /** The name of the icon as defined in icons.data.json */
-  name: PropTypes.string,
-
-  /** Raw path data that takes precedence over name */
-  data: PropTypes.string,
-
-  /** Size (in pixels) of the icon */
-  size: PropTypes.number,
-
-  /** HTML color (HEX or color string) for the icon fill  */
-  color: PropTypes.string
 };

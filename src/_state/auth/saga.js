@@ -1,24 +1,17 @@
 import { userService } from '_services';
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import {
-  FETCH_ASYNC,
-  IS_PENDING,
-  SET_USER,
-  SIGN_IN_ASYNC,
-  SIGN_OUT_ASYNC,
-  FORGOT_PASS_ASYNC
-} from './actions';
-import alertActions from '../alert/actions';
+import { types } from '.';
+import { actions as alertActions } from '_state/alert';
 
 // Workers
 export function* fetchAsync() {
   try {
-    yield put({ type: IS_PENDING, payload: true });
+    yield put({ type: types.IS_PENDING, payload: true });
     const user = yield call(userService.getMe);
-    yield put({ type: SET_USER, payload: user });
-    yield put({ type: IS_PENDING, payload: false });
+    yield put({ type: types.SET_USER, payload: user });
+    yield put({ type: types.IS_PENDING, payload: false });
   } catch (err) {
-    yield put({ type: IS_PENDING, payload: false });
+    yield put({ type: types.IS_PENDING, payload: false });
     console.warn(err);
   }
 }
@@ -27,7 +20,7 @@ export function* signInAsync(action) {
   try {
     const { email, password } = action.payload;
     const user = yield call(userService.login, email, password);
-    yield put({ type: SET_USER, payload: user });
+    yield put({ type: types.SET_USER, payload: user });
   } catch (err) {
     console.warn(err);
     yield put(alertActions.error(err.message));
@@ -37,7 +30,7 @@ export function* signInAsync(action) {
 export function* signOutAsync() {
   try {
     yield call(userService.logout);
-    yield put({ type: SET_USER, payload: null });
+    yield put({ type: types.UNSET_USER });
   } catch (err) {
     console.warn(err);
   }
@@ -54,19 +47,19 @@ export function* forgotPassAsync(action) {
 
 // Sagas
 function* watchFetchAsync() {
-  yield takeLatest(FETCH_ASYNC, fetchAsync);
+  yield takeLatest(types.FETCH_ASYNC, fetchAsync);
 }
 
 function* watchSignInAsync() {
-  yield takeEvery(SIGN_IN_ASYNC, signInAsync);
+  yield takeEvery(types.SIGN_IN_ASYNC, signInAsync);
 }
 
 function* watchSignOutAsync() {
-  yield takeEvery(SIGN_OUT_ASYNC, signOutAsync);
+  yield takeEvery(types.SIGN_OUT_ASYNC, signOutAsync);
 }
 
 function* watchForgotPassAsync() {
-  yield takeEvery(FORGOT_PASS_ASYNC, forgotPassAsync);
+  yield takeEvery(types.FORGOT_PASS_ASYNC, forgotPassAsync);
 }
 
 export default {

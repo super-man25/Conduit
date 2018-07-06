@@ -14,6 +14,7 @@ import {
   UserWelcome
 } from './';
 import { push } from 'connected-react-router';
+import { actions } from '_state/auth';
 
 export const SiteHeaderDiv = styled.div`
   position: relative;
@@ -64,9 +65,7 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 type Props = {
   push: (path: string) => void,
   auth: {},
-  authActions: {
-    signOut: () => void
-  }
+  signOut: () => void
 };
 
 type State = {
@@ -74,13 +73,7 @@ type State = {
 };
 
 export class SiteHeaderPresenter extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      showMenu: false
-    };
-  }
+  state = { showMenu: false };
 
   showMenu = () => {
     this.setState({ showMenu: true });
@@ -99,11 +92,12 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   };
 
   handleLogoutClick = () => {
-    this.props.authActions.signOut();
+    this.props.signOut();
   };
 
   render() {
     const { auth } = this.props;
+
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
@@ -142,12 +136,12 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    push: (path) => dispatch(push(path))
-  };
-}
+const mapStateToProps = (state) => ({
+  auth: state.auth.model
+});
 
-export const SiteHeader = connect(null, mapDispatchToProps)(
+const mapDispatchToProps = { push, signOut: actions.signOut };
+
+export const SiteHeader = connect(mapStateToProps, mapDispatchToProps)(
   SiteHeaderPresenter
 );

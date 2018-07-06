@@ -10,8 +10,8 @@ export const SET_DATE_RANGE = 'seasonStat/SET_DATE_RANGE';
 
 type SeasonStatParams = {
   seasonId: number,
-  start: ?Date,
-  end: ?Date
+  start?: Date,
+  end?: Date
 };
 
 export type Action =
@@ -27,7 +27,7 @@ export type Action =
     };
 
 // Action creators
-function fetch(seasonStatPrarams?: SeasonStatParams): Action {
+function fetch(seasonStatPrarams: SeasonStatParams): Action {
   return {
     type: FETCH_ASYNC,
     payload: seasonStatPrarams

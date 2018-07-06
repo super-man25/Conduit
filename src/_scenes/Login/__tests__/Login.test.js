@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import authActions from '_state/auth/actions';
+import { actions as authActions } from '_state/auth';
 import alertActions from '_state/alert/actions';
 
 import Login, { LoginPresenter } from '../index';

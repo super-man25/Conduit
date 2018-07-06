@@ -48,7 +48,7 @@ const defaultProps = {
   onFilterSelect: () => {},
   onTimestampSortChange: () => {},
   selectedFilter: 0,
-  filtered: false
+  filter: ''
 };
 
 describe('<EventListPresenter />', () => {
@@ -79,7 +79,9 @@ describe('<EventListPresenter />', () => {
   });
 
   it('when filtered', () => {
-    const wrapper = shallow(<EventListPresenter {...defaultProps} filtered />);
+    const wrapper = shallow(
+      <EventListPresenter {...defaultProps} filter="Query" />
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });

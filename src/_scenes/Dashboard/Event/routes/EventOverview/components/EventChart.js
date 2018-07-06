@@ -33,7 +33,8 @@ import {
   GROUP_FILTERS
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
-import { getActiveEventId } from '_state/event/selectors';
+import { selectors } from '_state/event';
+import { EDEvent } from '_models';
 import typeof EventStatActions from '_state/eventStat/actions';
 
 const TabLink = styled.span`
@@ -87,9 +88,7 @@ const ChartLegend = ({
 type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
-  selectors: {
-    activeEventId: number
-  }
+  activeEvent: EDEvent
 };
 
 export class EventChart extends React.Component<Props> {
@@ -98,9 +97,7 @@ export class EventChart extends React.Component<Props> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    if (
-      prevProps.selectors.activeEventId !== this.props.selectors.activeEventId
-    ) {
+    if (prevProps.activeEvent.id !== this.props.activeEvent.id) {
       this.props.eventStatActions.fetch();
     }
   }
@@ -248,9 +245,7 @@ export class EventChart extends React.Component<Props> {
 function mapStateToProps(state) {
   return {
     eventStatState: state.eventStat,
-    selectors: {
-      activeEventId: getActiveEventId(state)
-    }
+    activeEvent: selectors.selectEvent(state)
   };
 }
 

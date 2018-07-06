@@ -53,18 +53,18 @@ function getScrollIndex(events, activeId, filtered) {
 }
 
 type Props = {
-  filterOptions: Array<{ id: number, label: string }>,
-  activeId: number,
-  timestampSort: string,
-  title: string,
-  onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
-  onClick: (event: EDEvent) => void,
-  loading: boolean,
-  events: Array<EDEvent>,
-  onFilterSelect: (event: EDEvent) => void,
-  onTimestampSortChange: (dir: string) => void,
-  selectedFilter: number,
-  filtered: boolean
+  +filterOptions: Array<{ +id: number, +label: string }>,
+  +activeId: number,
+  +timestampSort: string,
+  +title: string,
+  +onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
+  +onClick: (event: EDEvent) => void,
+  +loading: boolean,
+  +events: Array<EDEvent>,
+  +onFilterSelect: (event: EDEvent) => void,
+  +onTimestampSortChange: (dir: string) => void,
+  +selectedFilter: number,
+  +filter: string
 };
 
 export function EventListPresenter(props: Props) {
@@ -80,9 +80,10 @@ export function EventListPresenter(props: Props) {
     timestampSort,
     title,
     onSearchInputChange,
-    filtered
+    filter
   } = props;
 
+  const filtered = !!filter;
   const noResult = !loading && (!events || !events.length);
 
   return (
@@ -95,6 +96,7 @@ export function EventListPresenter(props: Props) {
             type="text"
             placeholder="Search"
             onChange={onSearchInputChange}
+            value={filter}
             data-test-id="event-list-search"
           />
           <Spacing height="4px" />
@@ -125,19 +127,21 @@ export function EventListPresenter(props: Props) {
             </NoContentWrap>
           )}
 
-          <ScrollableList
-            data={events}
-            scrollIndex={getScrollIndex(events, activeId, filtered)}
-          >
-            {(event, key) => (
-              <EventListItem
-                onClick={onClick}
-                active={event.id === activeId}
-                key={event.id}
-                event={event}
-              />
-            )}
-          </ScrollableList>
+          {!noResult && (
+            <ScrollableList
+              data={events}
+              scrollIndex={getScrollIndex(events, activeId, filtered)}
+            >
+              {(event, key) => (
+                <EventListItem
+                  onClick={onClick}
+                  active={event.id === activeId}
+                  key={event.id}
+                  event={event}
+                />
+              )}
+            </ScrollableList>
+          )}
         </OverflowContent>
       )}
     </CalculateRemainingHeight>

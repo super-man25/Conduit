@@ -16,7 +16,6 @@ import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
 import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
-import { actions as authActions } from '_state/auth';
 import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
@@ -30,15 +29,13 @@ class Dashboard extends React.Component {
   render() {
     const {
       teamStatState,
-      authState,
-      authActions,
       uiActions: { toggleSidebar },
       sidebarIsOpen
     } = this.props;
 
     return (
       <PageWrapper>
-        <SiteHeader auth={authState.model} authActions={authActions} />
+        <SiteHeader />
         <FullContent>
           <ApiAlert />
           <Sidebar collapsed={!sidebarIsOpen}>
@@ -55,7 +52,7 @@ class Dashboard extends React.Component {
           <PrimaryContent>
             <Switch>
               <Route path="/season" component={Season} />
-              <Route path="/event" component={Event} />
+              <Route path="/event/:id" component={Event} />
               <Redirect to="/season" />
             </Switch>
           </PrimaryContent>
@@ -73,7 +70,6 @@ Dashboard.propTypes = {
 function mapStateToProps(state) {
   return {
     teamStatState: state.teamStat,
-    authState: state.auth,
     sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state)
   };
 }
@@ -81,7 +77,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     teamStatActions: bindActionCreators(teamStatActions, dispatch),
-    authActions: bindActionCreators(authActions, dispatch),
     uiActions: bindActionCreators(uiActions, dispatch)
   };
 }
