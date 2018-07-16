@@ -94,6 +94,23 @@ export function validatePhoneNumber(phoneNumber: any): boolean {
   return true;
 }
 
+type DecimalValidationOptions = {
+  decimalDigits: number,
+  forceDecimal: boolean
+};
+
+export function validateDecimal(
+  str: string,
+  options: DecimalValidationOptions = { decimalDigits: 2, forceDecimal: false }
+) {
+  const { decimalDigits, forceDecimal } = options;
+  const regExp = new RegExp(
+    `^[-+]?([0-9]+)?([,.][0-9]{${decimalDigits}})${forceDecimal ? '' : '?'}$`
+  );
+
+  return regExp.test(str);
+}
+
 /**
  * Format string as sentence case eg This is a sentence...
  *

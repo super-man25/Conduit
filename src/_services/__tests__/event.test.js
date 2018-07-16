@@ -63,3 +63,27 @@ describe('toggle broadcasting', () => {
     });
   });
 });
+
+describe('getInventory', () => {
+  afterEach(fetchMock.restore);
+  const eventRows = [
+    { eventId: 1, row: '1', section: '1' },
+    { eventId: 2, row: '2', section: '2' },
+    { eventId: 3, row: '3', section: '3' }
+  ];
+
+  it('should get all inventory for an event', () => {
+    const eventId = 1;
+    const mock = fetchMock.get(`end:eventRows?eventId=${eventId}`, eventRows);
+
+    return eventService.getInventory(eventId).then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual(
+        eventRows.map((row) => ({
+          ...row,
+          id: `${row.eventId}_${row.section}_${row.row}`
+        }))
+      );
+    });
+  });
+});

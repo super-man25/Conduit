@@ -110,4 +110,5 @@ export const Text = withBoxModelProps(styled.p`
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   margin: ${(props) => props.margin || 0};
   text-align: ${(props) => (props.center ? 'center' : '')};
+  opacity: ${(props) => props.opacity};
 `);

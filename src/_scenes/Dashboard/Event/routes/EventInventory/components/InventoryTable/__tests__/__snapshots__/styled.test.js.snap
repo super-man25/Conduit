@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InventoryTable styled components <IconContainer /> should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0.667;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <ManualPricingButton /> should render correctly 1`] = `
+.c0 {
+  display: block;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  font-weight: 200;
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 0;
+  padding: 0.8em;
+  padding-top: 0.9em;
+  padding-bottom: 0.85em;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #38A9DB;
+  background-color: #38A9DB;
+  box-sizing: border-box;
+  margin: 0;
+  max-width: 80px;
+  max-height: 35px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #2670AE;
+  border-color: #2670AE;
+}
+
+.c0::before {
+  content: '';
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <ManualPricingInput /> should render correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #FFFFFF;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 1rem;
+  width: 100%;
+  padding-left: 3%;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #767676;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  box-sizing: border-box;
+  margin: 0 0.5rem 0 0;
+  padding: 10px 16px;
+  max-height: 35px;
+  max-width: 80px;
+}
+
+.c0:-webkit-autofill,
+.c0 -webkit-autofill:hover,
+.c0 -webkit-autofill:focus {
+  -webkit-animation-name: none;
+  -webkit-animation-fill-mode: both;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
+}
+
+<input
+  bordercolor="#767676"
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <PositionedCellContent /> should render correctly 1`] = `
+.c0 {
+  position: relative;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <TableHeaderCell /> should render correctly 1`] = `
+.c0 {
+  text-align: left;
+  color: #323232;
+  font-weight: 500;
+}
+
+<div
+  className="c0"
+/>
+`;

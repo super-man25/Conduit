@@ -65,4 +65,8 @@ export const Input: React.ComponentType<Props> = styled.input.attrs({
   border-color: ${(props) => props.bordercolor};
   padding-top: 0.9em;
   padding-bottom: 0.9em;
+
+  ::placeholder {
+    color: ${cssConstants.PRIMARY_GRAY};
+  }
 `;

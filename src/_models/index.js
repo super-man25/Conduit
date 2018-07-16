@@ -6,3 +6,4 @@ export * from './ticket-breakdown';
 export * from './user';
 export * from './integrationStat';
 export * from './season';
+export * from './inventory';

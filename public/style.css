@@ -15,6 +15,9 @@ body {
 :root {
   --PRIMARY_LIGHT_BLUE: #38a9db;
   --SECONDARY_BLUE: #2670ae;
+  --PRIMARY_LIGHT_GRAY: #d1d1d1;
+  --PRIMARY_LIGHTER_GRAY: #eeeeee;
+  --PRIMARY_DARK_GRAY: #767676;
 }
 
 /*
@@ -52,4 +55,24 @@ body {
   border-top-right-radius: 50% !important;
   border-bottom-right-radius: 50% !important;
   color: #ffffff !important;
+}
+
+/**
+  Styles for react virtualized table
+*/
+.ReactVirtualized__Table {
+  background-color: #070707;
+}
+
+.ReactVirtualized__Table__headerRow {
+  border-bottom: 1px solid var(--PRIMARY_DARK_GRAY);
+}
+
+.ReactVirtualized__Table__row--even {
+  background-color: var(--PRIMARY_LIGHTER_GRAY);
+}
+
+.ReactVirtualized__Table__row:hover {
+  box-shadow: inset 4px 0 0 var(--PRIMARY_LIGHT_BLUE);
+  background-color: #eaf6fb;
 }

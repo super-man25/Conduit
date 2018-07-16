@@ -1,0 +1,671 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DefaultColumnHeaderPresenter /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    disableSort={false}
+    filterDirection="asc"
+    isFiltered={false}
+    label="Label"
+    setFilter={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "active": false,
+      "children": <styled.div>
+        <Unknown
+                filterDirection="asc"
+                isFiltered={false}
+                onClick={[Function]}
+        />
+        <Flex
+                align="center"
+                marginLeft="1.25rem"
+        >
+                Label
+        </Flex>
+</styled.div>,
+      "sortable": true,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            filterDirection="asc"
+            isFiltered={false}
+            onClick={[Function]}
+/>,
+          <Flex
+            align="center"
+            marginLeft="1.25rem"
+>
+            Label
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "filterDirection": "asc",
+            "isFiltered": false,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Label",
+            "marginLeft": "1.25rem",
+          },
+          "ref": null,
+          "rendered": "Label",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "active": false,
+        "children": <styled.div>
+          <Unknown
+                    filterDirection="asc"
+                    isFiltered={false}
+                    onClick={[Function]}
+          />
+          <Flex
+                    align="center"
+                    marginLeft="1.25rem"
+          >
+                    Label
+          </Flex>
+</styled.div>,
+        "sortable": true,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              filterDirection="asc"
+              isFiltered={false}
+              onClick={[Function]}
+/>,
+            <Flex
+              align="center"
+              marginLeft="1.25rem"
+>
+              Label
+</Flex>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "filterDirection": "asc",
+              "isFiltered": false,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Label",
+              "marginLeft": "1.25rem",
+            },
+            "ref": null,
+            "rendered": "Label",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when disableSort is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    disableSort={true}
+    filterDirection="asc"
+    isFiltered={false}
+    label="Label"
+    setFilter={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "active": false,
+      "children": <styled.div>
+        <Flex
+                align="center"
+                marginLeft={false}
+        >
+                Label
+        </Flex>
+</styled.div>,
+      "sortable": false,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          false,
+          <Flex
+            align="center"
+            marginLeft={false}
+>
+            Label
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Label",
+            "marginLeft": false,
+          },
+          "ref": null,
+          "rendered": "Label",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "active": false,
+        "children": <styled.div>
+          <Flex
+                    align="center"
+                    marginLeft={false}
+          >
+                    Label
+          </Flex>
+</styled.div>,
+        "sortable": false,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            false,
+            <Flex
+              align="center"
+              marginLeft={false}
+>
+              Label
+</Flex>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Label",
+              "marginLeft": false,
+            },
+            "ref": null,
+            "rendered": "Label",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when isFiltered is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    disableSort={false}
+    filterDirection="asc"
+    isFiltered={true}
+    label="Label"
+    setFilter={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "active": true,
+      "children": <styled.div>
+        <Unknown
+                filterDirection="asc"
+                isFiltered={true}
+                onClick={[Function]}
+        />
+        <Flex
+                align="center"
+                marginLeft="1.25rem"
+        >
+                Label
+        </Flex>
+</styled.div>,
+      "sortable": true,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            filterDirection="asc"
+            isFiltered={true}
+            onClick={[Function]}
+/>,
+          <Flex
+            align="center"
+            marginLeft="1.25rem"
+>
+            Label
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "filterDirection": "asc",
+            "isFiltered": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Label",
+            "marginLeft": "1.25rem",
+          },
+          "ref": null,
+          "rendered": "Label",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "active": true,
+        "children": <styled.div>
+          <Unknown
+                    filterDirection="asc"
+                    isFiltered={true}
+                    onClick={[Function]}
+          />
+          <Flex
+                    align="center"
+                    marginLeft="1.25rem"
+          >
+                    Label
+          </Flex>
+</styled.div>,
+        "sortable": true,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              filterDirection="asc"
+              isFiltered={true}
+              onClick={[Function]}
+/>,
+            <Flex
+              align="center"
+              marginLeft="1.25rem"
+>
+              Label
+</Flex>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "filterDirection": "asc",
+              "isFiltered": true,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Label",
+              "marginLeft": "1.25rem",
+            },
+            "ref": null,
+            "rendered": "Label",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when sort isFiltered is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    disableSort={false}
+    filterDirection="asc"
+    isFiltered={true}
+    label="Label"
+    setFilter={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "active": true,
+      "children": <styled.div>
+        <Unknown
+                filterDirection="asc"
+                isFiltered={true}
+                onClick={[Function]}
+        />
+        <Flex
+                align="center"
+                marginLeft="1.25rem"
+        >
+                Label
+        </Flex>
+</styled.div>,
+      "sortable": true,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            filterDirection="asc"
+            isFiltered={true}
+            onClick={[Function]}
+/>,
+          <Flex
+            align="center"
+            marginLeft="1.25rem"
+>
+            Label
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "filterDirection": "asc",
+            "isFiltered": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": "Label",
+            "marginLeft": "1.25rem",
+          },
+          "ref": null,
+          "rendered": "Label",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "active": true,
+        "children": <styled.div>
+          <Unknown
+                    filterDirection="asc"
+                    isFiltered={true}
+                    onClick={[Function]}
+          />
+          <Flex
+                    align="center"
+                    marginLeft="1.25rem"
+          >
+                    Label
+          </Flex>
+</styled.div>,
+        "sortable": true,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              filterDirection="asc"
+              isFiltered={true}
+              onClick={[Function]}
+/>,
+            <Flex
+              align="center"
+              marginLeft="1.25rem"
+>
+              Label
+</Flex>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "filterDirection": "asc",
+              "isFiltered": true,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "align": "center",
+              "children": "Label",
+              "marginLeft": "1.25rem",
+            },
+            "ref": null,
+            "rendered": "Label",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

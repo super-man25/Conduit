@@ -5,6 +5,11 @@ import { cssConstants } from '_constants';
 import React from 'react';
 
 const toggleSizes = {
+  xsmall: {
+    width: 30,
+    height: 6,
+    toggleRadius: 10
+  },
   small: {
     width: 40,
     height: 8,
@@ -74,7 +79,7 @@ type Props = {
   isChecked: boolean,
   onChange: () => void,
   isDisabled: boolean,
-  size: 'large' | 'small',
+  size: 'large' | 'small' | 'xsmall',
   title?: string
 };
 

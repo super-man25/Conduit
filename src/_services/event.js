@@ -1,7 +1,7 @@
 // @flow
 import { get, put } from '_helpers/api';
 import { getYear } from 'date-fns';
-import type { EDEvent } from '_models';
+import type { EDEvent, EDInventoryRow } from '_models';
 
 type GetAllParams = { seasonId: number } | { year: Date };
 
@@ -27,8 +27,23 @@ function toggleBroadcasting(
   return put(`events/${eventId}/toggle`, { isBroadcast });
 }
 
+// Since rows Ids are computed from the three properties eventId+section+row and aren't
+// returned from the server, we generate a computed id here instead of computing it.
+// Remove if an Id starts getting generated on the server
+const generateComputedInventoryRowId = (row: EDInventoryRow) => ({
+  ...row,
+  id: `${row.eventId}_${row.section}_${row.row}`
+});
+
+function getInventory(eventId: number): EDInventoryRow[] {
+  return get(`eventRows`, { eventId }).then((rows) =>
+    rows.map(generateComputedInventoryRowId)
+  );
+}
+
 export const eventService = {
   getAll,
   getOne,
-  toggleBroadcasting
+  toggleBroadcasting,
+  getInventory
 };

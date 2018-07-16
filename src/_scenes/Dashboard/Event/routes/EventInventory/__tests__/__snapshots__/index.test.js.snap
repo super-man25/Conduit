@@ -19,17 +19,29 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <styled.div
-        padding="1.5rem 2rem"
+      "children": <Flex
+        direction="column"
+        height="100%"
 >
-        <Connect(withSidebarEventHeader)
-                availableInventory={15000}
-                totalInventory={40000}
-        />
         <styled.div
-                height="1rem"
+                padding="1.5rem 2rem"
+        >
+                <Connect(withSidebarEventHeader)
+                        availableInventory={15000}
+                        totalInventory={40000}
+                />
+        </styled.div>
+        <styled.div
+                height="2rem"
         />
-</styled.div>,
+        <FlexItem
+                flex={1}
+        >
+                <Connect(VirtualizedEventInventoryPresenter)
+                        event={Object {}}
+                />
+        </FlexItem>
+</Flex>,
     },
     "ref": null,
     "rendered": Object {
@@ -38,15 +50,27 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Connect(withSidebarEventHeader)
-            availableInventory={15000}
-            totalInventory={40000}
-/>,
           <styled.div
-            height="1rem"
+            padding="1.5rem 2rem"
+>
+            <Connect(withSidebarEventHeader)
+                        availableInventory={15000}
+                        totalInventory={40000}
+            />
+</styled.div>,
+          <styled.div
+            height="2rem"
 />,
+          <FlexItem
+            flex={1}
+>
+            <Connect(VirtualizedEventInventoryPresenter)
+                        event={Object {}}
+            />
+</FlexItem>,
         ],
-        "padding": "1.5rem 2rem",
+        "direction": "column",
+        "height": "100%",
       },
       "ref": null,
       "rendered": Array [
@@ -55,8 +79,33 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "availableInventory": 15000,
-            "totalInventory": 40000,
+            "children": <Connect(withSidebarEventHeader)
+              availableInventory={15000}
+              totalInventory={40000}
+/>,
+            "padding": "1.5rem 2rem",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "availableInventory": 15000,
+              "totalInventory": 40000,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "2rem",
           },
           "ref": null,
           "rendered": null,
@@ -67,10 +116,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "height": "1rem",
+            "children": <Connect(VirtualizedEventInventoryPresenter)
+              event={Object {}}
+/>,
+            "flex": 1,
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "event": Object {},
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -84,17 +146,29 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <styled.div
-          padding="1.5rem 2rem"
+        "children": <Flex
+          direction="column"
+          height="100%"
 >
-          <Connect(withSidebarEventHeader)
-                    availableInventory={15000}
-                    totalInventory={40000}
-          />
           <styled.div
-                    height="1rem"
+                    padding="1.5rem 2rem"
+          >
+                    <Connect(withSidebarEventHeader)
+                              availableInventory={15000}
+                              totalInventory={40000}
+                    />
+          </styled.div>
+          <styled.div
+                    height="2rem"
           />
-</styled.div>,
+          <FlexItem
+                    flex={1}
+          >
+                    <Connect(VirtualizedEventInventoryPresenter)
+                              event={Object {}}
+                    />
+          </FlexItem>
+</Flex>,
       },
       "ref": null,
       "rendered": Object {
@@ -103,15 +177,27 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Connect(withSidebarEventHeader)
-              availableInventory={15000}
-              totalInventory={40000}
-/>,
             <styled.div
-              height="1rem"
+              padding="1.5rem 2rem"
+>
+              <Connect(withSidebarEventHeader)
+                            availableInventory={15000}
+                            totalInventory={40000}
+              />
+</styled.div>,
+            <styled.div
+              height="2rem"
 />,
+            <FlexItem
+              flex={1}
+>
+              <Connect(VirtualizedEventInventoryPresenter)
+                            event={Object {}}
+              />
+</FlexItem>,
           ],
-          "padding": "1.5rem 2rem",
+          "direction": "column",
+          "height": "100%",
         },
         "ref": null,
         "rendered": Array [
@@ -120,8 +206,33 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "availableInventory": 15000,
-              "totalInventory": 40000,
+              "children": <Connect(withSidebarEventHeader)
+                availableInventory={15000}
+                totalInventory={40000}
+/>,
+              "padding": "1.5rem 2rem",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "availableInventory": 15000,
+                "totalInventory": 40000,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "height": "2rem",
             },
             "ref": null,
             "rendered": null,
@@ -132,10 +243,23 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "height": "1rem",
+              "children": <Connect(VirtualizedEventInventoryPresenter)
+                event={Object {}}
+/>,
+              "flex": 1,
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "event": Object {},
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],

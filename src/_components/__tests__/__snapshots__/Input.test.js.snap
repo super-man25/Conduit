@@ -27,6 +27,22 @@ exports[`renders correctly with disabled prop 1`] = `
   -webkit-animation-fill-mode: both;
 }
 
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
+}
+
 <input
   bordercolor="#767676"
   className="c0"
@@ -59,6 +75,22 @@ exports[`renders correctly with inValid prop 1`] = `
 .c0 -webkit-autofill:focus {
   -webkit-animation-name: beEagS;
   -webkit-animation-fill-mode: both;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
 }
 
 <input
@@ -94,6 +126,22 @@ exports[`renders correctly with no props 1`] = `
   -webkit-animation-fill-mode: both;
 }
 
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
+}
+
 <input
   bordercolor="#767676"
   className="c0"
@@ -125,6 +173,22 @@ exports[`renders correctly with valid prop 1`] = `
 .c0 -webkit-autofill:focus {
   -webkit-animation-name: fbmvYu;
   -webkit-animation-fill-mode: both;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
 }
 
 <input
