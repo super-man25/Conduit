@@ -1,28 +1,13 @@
 // @flow
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Loadable from 'react-loadable';
-import { Loader, Flex, CenteredLoader } from '_components';
+import { CenteredLoader } from '_components';
 import { connect } from 'react-redux';
 import { actions } from '_state/event';
 import type { State as EventState } from '_state/event';
 import { replace } from 'connected-react-router';
-
-const EventRouteLoading = () => (
-  <Flex height="100%" width="100%" justify="center" align="center">
-    <Loader />
-  </Flex>
-);
-
-const EventInventory = Loadable({
-  loader: () => import('_scenes/Dashboard/Event/routes/EventInventory'),
-  loading: EventRouteLoading
-});
-
-const EventOverview = Loadable({
-  loader: () => import('_scenes/Dashboard/Event/routes/EventOverview'),
-  loading: EventRouteLoading
-});
+import EventInventory from './routes/EventInventory';
+import EventOverview from './routes/EventOverview';
 
 type Props = {
   match: { params: { id: string } },
