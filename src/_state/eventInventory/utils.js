@@ -36,14 +36,28 @@ const sortFuncs = {
 export function calculateFilteredRows(
   rows: EDInventoryRow[],
   filterDirection: 'asc' | 'desc',
-  filterName: string
+  filterName: string,
+  selectedScaleFilters: any[] = []
 ) {
-  if (!filterName) return rows;
+  const rowsFilteredByScale = selectedScaleFilters.length
+    ? rows.filter((row) => selectedScaleFilters.includes(row.priceScaleId))
+    : rows;
 
-  let sorted: EDInventoryRow[] = [...rows].sort(sortFuncs[filterName]);
+  if (!filterName) return rowsFilteredByScale;
+
+  let sorted: EDInventoryRow[] = [...rowsFilteredByScale].sort(
+    sortFuncs[filterName]
+  );
+
   if (filterDirection === 'desc') {
     sorted.reverse();
   }
 
   return sorted;
+}
+
+export function findUniqueKeys(prop: string, objArray: any[]): any[] {
+  return objArray
+    .map((o) => o[prop])
+    .filter((val, idx, arr) => arr.indexOf(val) === idx);
 }

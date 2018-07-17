@@ -3,9 +3,9 @@ import React from 'react';
 import { PageWrapper, Spacing, Box, Flex, FlexItem } from '_components';
 import { connect } from 'react-redux';
 import EventHeader from '../../components/EventHeader';
-import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
-import { VirtualizedEventInventory } from './components/InventoryTable/VirtualizedInventoryTable';
+import { VirtualizedEventInventory } from './components/InventoryTable';
+import type { EDEvent } from '_models';
 
 type Props = {
   event: ?EDEvent

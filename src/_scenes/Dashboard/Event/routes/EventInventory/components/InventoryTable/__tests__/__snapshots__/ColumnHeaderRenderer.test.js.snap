@@ -24,7 +24,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "active": false,
-      "children": <styled.div>
+      "children": <styled.div
+        position="relative"
+>
         <Unknown
                 filterDirection="asc"
                 isFiltered={false}
@@ -58,6 +60,7 @@ ShallowWrapper {
             Label
 </Flex>,
         ],
+        "position": "relative",
       },
       "ref": null,
       "rendered": Array [
@@ -99,7 +102,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "active": false,
-        "children": <styled.div>
+        "children": <styled.div
+          position="relative"
+>
           <Unknown
                     filterDirection="asc"
                     isFiltered={false}
@@ -133,6 +138,7 @@ ShallowWrapper {
               Label
 </Flex>,
           ],
+          "position": "relative",
         },
         "ref": null,
         "rendered": Array [
@@ -202,7 +208,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "active": false,
-      "children": <styled.div>
+      "children": <styled.div
+        position="relative"
+>
         <Flex
                 align="center"
                 marginLeft={false}
@@ -227,6 +235,7 @@ ShallowWrapper {
             Label
 </Flex>,
         ],
+        "position": "relative",
       },
       "ref": null,
       "rendered": Array [
@@ -256,7 +265,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "active": false,
-        "children": <styled.div>
+        "children": <styled.div
+          position="relative"
+>
           <Flex
                     align="center"
                     marginLeft={false}
@@ -281,6 +292,7 @@ ShallowWrapper {
               Label
 </Flex>,
           ],
+          "position": "relative",
         },
         "ref": null,
         "rendered": Array [
@@ -338,7 +350,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "active": true,
-      "children": <styled.div>
+      "children": <styled.div
+        position="relative"
+>
         <Unknown
                 filterDirection="asc"
                 isFiltered={true}
@@ -372,6 +386,7 @@ ShallowWrapper {
             Label
 </Flex>,
         ],
+        "position": "relative",
       },
       "ref": null,
       "rendered": Array [
@@ -413,7 +428,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "active": true,
-        "children": <styled.div>
+        "children": <styled.div
+          position="relative"
+>
           <Unknown
                     filterDirection="asc"
                     isFiltered={true}
@@ -447,6 +464,7 @@ ShallowWrapper {
               Label
 </Flex>,
           ],
+          "position": "relative",
         },
         "ref": null,
         "rendered": Array [
@@ -516,7 +534,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "active": true,
-      "children": <styled.div>
+      "children": <styled.div
+        position="relative"
+>
         <Unknown
                 filterDirection="asc"
                 isFiltered={true}
@@ -550,6 +570,7 @@ ShallowWrapper {
             Label
 </Flex>,
         ],
+        "position": "relative",
       },
       "ref": null,
       "rendered": Array [
@@ -591,7 +612,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "active": true,
-        "children": <styled.div>
+        "children": <styled.div
+          position="relative"
+>
           <Unknown
                     filterDirection="asc"
                     isFiltered={true}
@@ -625,6 +648,7 @@ ShallowWrapper {
               Label
 </Flex>,
           ],
+          "position": "relative",
         },
         "ref": null,
         "rendered": Array [

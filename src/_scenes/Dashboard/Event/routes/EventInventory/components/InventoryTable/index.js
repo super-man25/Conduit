@@ -18,6 +18,7 @@ import { selectableColumnHeaderRenderer } from './SelectableHeaderRenderer';
 import { selectableColumnCellRenderer } from './SelectableCellRenderer';
 import { defaultCellRenderer } from './CellRenderer';
 import { CenteredLoader, Flex, Text } from '_components';
+import { scaleColumnHeaderRenderer } from './ScaleColumnHeaderRenderer';
 import type { EDEvent, EDInventoryRow } from '_models';
 
 function combineColumnWithDefaults(column) {
@@ -42,7 +43,7 @@ const columns = [
     width: 0,
     dataKey: 'priceScaleId',
     flexGrow: 15,
-    headerRenderer: defaultColumnHeaderRenderer
+    headerRenderer: scaleColumnHeaderRenderer
   },
   {
     label: 'Section',
@@ -90,6 +91,7 @@ const columns = [
 
 type Props = {
   event: EDEvent,
+  allRows: EDInventoryRow[],
   rows: EDInventoryRow[],
   loading: boolean,
   error: ?Error,
@@ -117,6 +119,12 @@ const withAlternatingBackgroundColor = (rowRenderer) => {
 
 const rowRenderer = withAlternatingBackgroundColor(defaultTableRowRenderer);
 
+const NoTableRowsText = ({ children }) => (
+  <Flex justify="center" align="center" height="100%">
+    <Text size={16}>{children}</Text>
+  </Flex>
+);
+
 export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
   componentDidMount() {
     const { event } = this.props;
@@ -128,7 +136,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
   }
 
   render() {
-    const { rows: data, loading, error } = this.props;
+    const { allRows, rows, loading, error } = this.props;
 
     if (loading) {
       return (
@@ -140,21 +148,17 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
 
     if (error) {
       return (
-        <Flex justify="center" align="center" height="100%">
-          <Text size={16}>
-            There was an issue loading inventory. Refresh to try again.
-          </Text>
-        </Flex>
+        <NoTableRowsText>
+          There was an issue loading this events inventory.
+        </NoTableRowsText>
       );
     }
 
-    if (data.length === 0) {
+    if (allRows.length === 0) {
       return (
-        <Flex justify="center" align="center" height="100%">
-          <Text size={16}>
-            There is no inventory data available for this event.
-          </Text>
-        </Flex>
+        <NoTableRowsText>
+          There is no inventory data available for this event.
+        </NoTableRowsText>
       );
     }
 
@@ -166,10 +170,15 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
             width={width}
             headerHeight={45}
             rowHeight={60}
-            rowCount={data.length}
-            rowGetter={({ index }) => data[index]}
+            rowCount={rows.length}
+            rowGetter={({ index }) => rows[index]}
             overscanRowCount={50}
             rowRenderer={rowRenderer}
+            noRowsRenderer={() => (
+              <NoTableRowsText>
+                There is no data available for the selected filters
+              </NoTableRowsText>
+            )}
           >
             {columns.map((column) => <Column key={column.label} {...column} />)}
           </Table>
@@ -180,6 +189,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
 }
 
 const mapStateToProps = createStructuredSelector({
+  allRows: selectors.selectAllEventInventoryRows,
   rows: selectors.selectEventInventoryRows,
   loading: selectors.selectEventInventoryLoading,
   error: selectors.selectEventInventoryError

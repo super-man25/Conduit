@@ -41,9 +41,14 @@ function getInventory(eventId: number): EDInventoryRow[] {
   );
 }
 
+function setEventRowListed(id: number, isListed: boolean) {
+  return true;
+}
+
 export const eventService = {
   getAll,
   getOne,
   toggleBroadcasting,
-  getInventory
+  getInventory,
+  setEventRowListed
 };

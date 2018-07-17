@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Flex } from '_components';
-import { actions } from '_state/eventInventory';
+import { actions, selectors } from '_state/eventInventory';
 import { connect } from 'react-redux';
 
 type Props = {
@@ -20,9 +20,14 @@ export const SelectableHeaderPresenter = ({
   );
 };
 
-const mapStateToProps = ({ eventInventory: { selectedRowIds, rows } }) => ({
-  allSelected: selectedRowIds.length === rows.length
-});
+const mapStateToProps = (store) => {
+  const { selectedRowIds } = store.eventInventory;
+  const rows = selectors.selectEventInventoryRows(store);
+
+  return {
+    allSelected: selectedRowIds.length === rows.length
+  };
+};
 
 const mapDispatchToProps = {
   selectAll: actions.selectAllEventRows

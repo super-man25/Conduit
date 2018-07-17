@@ -5,7 +5,12 @@ import {
   ManualPricingButton,
   TableHeaderCell,
   IconContainer,
-  PositionedCellContent
+  PositionedBox,
+  ScaleFilterContainer,
+  ScaleFilterList,
+  ScaleFilterListItem,
+  Checkbox,
+  ScaleFilterButton
 } from '../styled';
 
 describe('InventoryTable styled components', () => {
@@ -29,8 +34,33 @@ describe('InventoryTable styled components', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('<PositionedCellContent /> should render correctly', () => {
-    const tree = renderer.create(<PositionedCellContent />).toJSON();
+  it('<PositionedBox /> should render correctly', () => {
+    const tree = renderer.create(<PositionedBox />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('<ScaleFilterContainer /> should render correctly', () => {
+    const tree = renderer.create(<ScaleFilterContainer />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('<ScaleFilterList /> should render correctly', () => {
+    const tree = renderer.create(<ScaleFilterList />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('<ScaleFilterListItem /> should render correctly', () => {
+    const tree = renderer.create(<ScaleFilterListItem />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('<Checkbox /> should render correctly', () => {
+    const tree = renderer.create(<Checkbox />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('<ScaleFilterButton /> should render correctly', () => {
+    const tree = renderer.create(<ScaleFilterButton />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

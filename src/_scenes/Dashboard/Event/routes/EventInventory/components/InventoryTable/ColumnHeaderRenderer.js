@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { TableHeaderCell, PositionedCellContent } from './styled';
+import { TableHeaderCell, PositionedBox } from './styled';
 import { SortIcon } from './SortIcon';
 import { Flex } from '_components';
 import { actions } from '_state/eventInventory';
@@ -23,7 +23,7 @@ export const DefaultColumnHeaderPresenter = ({
 }: Props) => {
   return (
     <TableHeaderCell sortable={!disableSort} active={isFiltered}>
-      <PositionedCellContent>
+      <PositionedBox position="relative">
         {!disableSort && (
           <SortIcon
             isFiltered={isFiltered}
@@ -34,7 +34,7 @@ export const DefaultColumnHeaderPresenter = ({
         <Flex align="center" marginLeft={!disableSort && '1.25rem'}>
           {label}
         </Flex>
-      </PositionedCellContent>
+      </PositionedBox>
     </TableHeaderCell>
   );
 };

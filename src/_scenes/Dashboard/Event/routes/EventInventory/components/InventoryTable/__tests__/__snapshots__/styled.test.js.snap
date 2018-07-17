@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InventoryTable styled components <Checkbox /> should render correctly 1`] = `
+.c0 {
+  margin-right: 0.5rem;
+}
+
+<input
+  className="c0"
+  type="checkbox"
+/>
+`;
+
 exports[`InventoryTable styled components <IconContainer /> should render correctly 1`] = `
 .c0 {
   display: -webkit-box;
@@ -122,12 +133,88 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
 />
 `;
 
-exports[`InventoryTable styled components <PositionedCellContent /> should render correctly 1`] = `
+exports[`InventoryTable styled components <PositionedBox /> should render correctly 1`] = `
+<div
+  className=""
+/>
+`;
+
+exports[`InventoryTable styled components <ScaleFilterButton /> should render correctly 1`] = `
 .c0 {
+  background-color: #38A9DB;
+  border: none;
+  border-radius: 2px;
+  color: #FFFFFF;
+  font-weight: 300;
+  height: 25px;
+  min-width: 60px;
+  padding: 0 1rem;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <ScaleFilterContainer /> should render correctly 1`] = `
+.c0 {
+  width: 280px;
+  border: 1px solid #2670AE;
+  background-color: #FFFFFF;
   position: relative;
+  box-shadow: 0 2px 5px 0px rgba(0,0,0,0.43);
+}
+
+.c0::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: -5px;
+  left: 43px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 1;
+  background-color: #FFFFFF;
+  border-top: 1px solid #2670AE;
+  border-left: 1px solid #2670AE;
 }
 
 <div
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <ScaleFilterList /> should render correctly 1`] = `
+.c0 {
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  overflow: auto;
+}
+
+<ul
+  className="c0"
+/>
+`;
+
+exports[`InventoryTable styled components <ScaleFilterListItem /> should render correctly 1`] = `
+.c0 {
+  height: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<li
   className="c0"
 />
 `;
