@@ -14,7 +14,8 @@ const createProps = () => ({
   eventStatActions: {
     fetch: jest.fn(),
     setGroupFilter: jest.fn(),
-    setDateRange: jest.fn()
+    setDateRange: jest.fn(),
+    clear: jest.fn()
   },
   activeEvent: { id: 1 }
 });

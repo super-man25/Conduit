@@ -12,6 +12,7 @@ ShallowWrapper {
     }
     eventStatActions={
         Object {
+            "clear": [Function],
             "fetch": [Function],
             "setDateRange": [Function],
             "setGroupFilter": [Function],

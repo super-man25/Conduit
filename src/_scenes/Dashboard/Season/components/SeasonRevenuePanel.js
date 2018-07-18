@@ -97,6 +97,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
     this.props.seasonStatActions.fetch({ seasonId: selectedSeasonId });
   }
 
+  componentWillUnmount() {
+    this.props.seasonStatActions.clear();
+  }
+
   componentDidUpdate(prevProps: Props) {
     const { selectedSeasonId } = this.props;
     if (this.props.selectedSeasonId !== prevProps.selectedSeasonId) {

@@ -11,7 +11,10 @@ import {
   SET_GROUPING_FILTER,
   SET_DATE_RANGE
 } from '_state/eventStat/actions';
-import { fetchEventStatsAsync } from '_state/eventStat/saga';
+import {
+  setDefaultDateRange,
+  fetchEventTimeStats
+} from '_state/eventStat/saga';
 import { initialState } from '_state/eventStat/reducer';
 import {
   getEventStatFilterArguments,
@@ -19,6 +22,7 @@ import {
   getEventStatDateLimits
 } from '../eventStat/selectors';
 import { selectors } from '../event';
+import { selectors as seasonSelectors } from '../season';
 
 describe('actions', () => {
   it('should create an action to fetch eventStats', () => {
@@ -186,9 +190,42 @@ describe('reducer', () => {
 });
 
 describe('saga workers', () => {
+  it('should handle setDefaultDateRange', () => {
+    const generator = cloneableGenerator(setDefaultDateRange)();
+    const seasons = [
+      {
+        id: 1,
+        startTimestamp: 1531934104198,
+        endTimestamp: 1531934104198
+      }
+    ];
+
+    const event = {
+      id: 1,
+      seasonId: 1,
+      timestamp: 1531934104198
+    };
+
+    expect(generator.next().value).toEqual(
+      select(seasonSelectors.selectSeasons)
+    );
+    expect(generator.next(seasons).value).toEqual(
+      select(selectors.selectEvent)
+    );
+
+    expect(generator.next(event).value).toEqual(
+      put(
+        actions.setDateRange({
+          from: new Date(seasons[0].startTimestamp),
+          to: new Date(event.timestamp)
+        })
+      )
+    );
+  });
+
   it('should handle fetch', () => {
     const action = actions.fetch();
-    const generator = cloneableGenerator(fetchEventStatsAsync)(action);
+    const generator = cloneableGenerator(fetchEventTimeStats)();
     const dateRange = {
       from: new Date(),
       to: new Date()

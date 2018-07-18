@@ -1,5 +1,5 @@
 import { put, takeLatest, call, select } from 'redux-saga/effects';
-import {
+import actions, {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
@@ -8,13 +8,32 @@ import {
 import { eventStatService } from '_services';
 import { getEventStatFilterArguments } from './selectors';
 import { selectors as eventSelectors } from '../event';
+import { selectors as seasonSelectors } from '../season';
+import { subMonths } from 'date-fns';
 
 // Workers
-export function* fetchEventStatsAsync(action) {
+export function* setDefaultDateRange() {
+  let from, to;
+  const seasons = yield select(seasonSelectors.selectSeasons);
+  const event = yield select(eventSelectors.selectEvent);
+
+  const seasonForEvent = seasons.find((season) => season.id === event.seasonId);
+  const { startTimestamp: seasonStart } = seasonForEvent;
+  const { timestamp: eventStart } = event;
+
+  if (!seasonStart) {
+    [from, to] = [subMonths(new Date(eventStart), 1), new Date(eventStart)];
+  } else {
+    [from, to] = [new Date(seasonStart), new Date(eventStart)];
+  }
+
+  yield put(actions.setDateRange({ from, to }));
+}
+
+export function* fetchEventTimeStats() {
   try {
     const { from, to } = yield select(getEventStatFilterArguments);
-    const activeEvent = yield select(eventSelectors.selectEvent);
-    const { id: eventId } = activeEvent;
+    const { id: eventId } = yield select(eventSelectors.selectEvent);
 
     const events = yield call(eventStatService.getAll, {
       eventId,
@@ -28,15 +47,18 @@ export function* fetchEventStatsAsync(action) {
 }
 
 // Sagas
-function* watchFetchEventStatsAsync() {
-  yield takeLatest(FETCH_ASYNC, fetchEventStatsAsync);
+
+// On initial fetch, set the default date range for this event this will trigger the
+// setDateRange saga due to putting a SET_DATE_RANGE action
+function* watchFetchEventStats() {
+  yield takeLatest(FETCH_ASYNC, setDefaultDateRange);
 }
 
-function* watchSetDateFilter() {
-  yield takeLatest(SET_DATE_RANGE, fetchEventStatsAsync);
+function* watchSetDateRange() {
+  yield takeLatest(SET_DATE_RANGE, fetchEventTimeStats);
 }
 
 export default {
-  watchFetchEventStatsAsync,
-  watchSetDateFilter
+  watchFetchEventStats,
+  watchSetDateRange
 };

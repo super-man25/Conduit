@@ -11,7 +11,10 @@ import {
   SET_GROUPING_FILTER,
   SET_DATE_RANGE
 } from '_state/seasonStat/actions';
-import { fetchSeasonTimeStats } from '_state/seasonStat/saga';
+import {
+  fetchSeasonTimeStats,
+  setDefaultDateRange
+} from '_state/seasonStat/saga';
 import { initialState } from '_state/seasonStat/reducer';
 import {
   getSeasonStats,
@@ -19,6 +22,7 @@ import {
   getSeasonStatDateLimits
 } from '../seasonStat/selectors';
 import { selectors } from '../season';
+import { subMonths } from 'date-fns';
 
 describe('actions', () => {
   it('should create an action to fetch seasonStats', () => {
@@ -186,6 +190,27 @@ describe('reducer', () => {
 });
 
 describe('saga workers', () => {
+  it('should handle setDefaultDateRange', () => {
+    const generator = cloneableGenerator(setDefaultDateRange)();
+    expect(generator.next().value).toEqual(
+      select(selectors.selectActiveSeason)
+    );
+
+    const season = {
+      startTimestamp: 1531934104198,
+      endTimestamp: 1531934104198
+    };
+
+    expect(generator.next(season).value).toEqual(
+      put(
+        actions.setDateRange({
+          from: new Date(season.startTimestamp),
+          to: new Date(season.endTimestamp)
+        })
+      )
+    );
+  });
+
   it('should handle fetch', () => {
     const action = actions.fetch();
     const generator = cloneableGenerator(fetchSeasonTimeStats)(action);

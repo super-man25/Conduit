@@ -96,8 +96,13 @@ export class EventChart extends React.Component<Props> {
     this.props.eventStatActions.fetch();
   }
 
+  componentWillUnmount() {
+    this.props.eventStatActions.clear();
+  }
+
   componentDidUpdate(prevProps: Props) {
     if (prevProps.activeEvent.id !== this.props.activeEvent.id) {
+      this.props.eventStatActions.clear();
       this.props.eventStatActions.fetch();
     }
   }
