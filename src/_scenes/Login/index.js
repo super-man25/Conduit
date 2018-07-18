@@ -1,3 +1,4 @@
+// @flow
 import {
   Button,
   CenteredContainer,
@@ -11,8 +12,6 @@ import {
   MailtoLink,
   Spacing
 } from '_components';
-import { ForgotLink } from './components/ForgotLink';
-import { HideMe } from './components/HideMe';
 import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
@@ -20,98 +19,84 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import styled from 'styled-components';
 import edLogoImage from '_images/eventdynamiclogo.svg';
+import {
+  Content,
+  LoginFooter,
+  LogoImg,
+  ForgotLink,
+  HideMe
+} from './components/styled';
+import { validateEmail } from '_helpers/string-utils';
 
-const Content = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-`;
+type Props = {
+  authState: {
+    error: ?Error,
+    loggingIn: boolean
+  },
+  authActions: typeof authActions
+};
 
-const LoginFooter = styled.div`
-  padding: 40px;
-  background-color: ${cssConstants.PRIMARY_EVEN_LIGHTER_GRAY};
-  font-size: 10px;
-  line-height: 130%;
-`;
+type State = {
+  email: string,
+  password: string,
+  forgot: boolean,
+  submitted: boolean,
+  showAlert: boolean,
+  touched: { [name: string]: boolean }
+};
 
-const LogoImg = styled.img`
-  display: block;
-  margin: auto;
-  padding: 40px;
-  paddingtop: 10px;
-  width: 40%;
-`;
+export class LoginPresenter extends React.Component<Props, State> {
+  state = {
+    email: '',
+    password: '',
+    forgot: false,
+    submitted: false,
+    showAlert: false,
+    touched: {}
+  };
 
-export class LoginPresenter extends React.Component {
-  constructor(props) {
-    super(props);
+  submitEnabled() {
+    const { email, password, forgot } = this.state;
+    const isValidPassword = !!password.length;
+    const isValidEmail = validateEmail(email);
 
-    this.state = {
-      email: '',
-      password: '',
-      forgot: '',
+    if (forgot) {
+      return isValidEmail;
+    } else {
+      return isValidPassword && isValidEmail;
+    }
+  }
+
+  static getDerivedStateFromProps(props: Props) {
+    if (props.authState.error) {
+      return { showAlert: true };
+    }
+
+    return null;
+  }
+
+  handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
+    const { name, value } = (e.currentTarget: HTMLInputElement);
+
+    this.setState({
+      [name]: value,
       submitted: false,
-      emailHadFocus: false,
-      validEmail: false,
-      passwordHadFocus: false,
-      submitEnabled: false,
       showAlert: false
-    };
+    });
+  };
 
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleForgotClick = this.handleForgotClick.bind(this);
-  }
+  handleBlur = (e: SyntheticFocusEvent<HTMLInputElement>) => {
+    const { name } = (e.currentTarget: HTMLInputElement);
+    const { touched } = this.state;
 
-  componentWillReceiveProps(nextProps) {
-    if (
-      this.props.alertState.type !== null ||
-      this.props.alertState.message !== null
-    ) {
-      this.setState({ showAlert: true });
-    }
-  }
-
-  handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-    this.setState({ submitted: false, showAlert: false });
-    // this next step needs to NOT depend on the state value of something that is/was changed by this event
-    // state will probably not be updated in time for it's value to be up-to-date...
-    if (name === 'password') {
-      if (value.length === 0) {
-        // check the password value directly
-        this.setState({ submitEnabled: false });
-      } else {
-        this.setState({ submitEnabled: !!this.state.validEmail }); // rely on state for the value of validEmail
-      }
-    } else if (name === 'email') {
-      if (!this.emailCheck(value)) {
-        // check the email directly
-        this.setState({ submitEnabled: false });
-      } else {
-        this.setState({
-          // rely on state for the value of password
-          submitEnabled: !!this.state.password || !!this.state.forgot
-        });
-      }
-    }
-  }
-
-  handleBlur(e) {
-    const { name } = e.target;
-    if (name === 'email') {
-      this.setState({ emailHadFocus: true });
-    } else if (name === 'password') {
-      this.setState({ passwordHadFocus: true });
-    }
-  }
+    this.setState({
+      touched: { ...touched, [name]: true }
+    });
+  };
 
   // handles submittal of Login / Forgot Password form
-  handleSubmit(e) {
+  handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     this.setState({ submitted: true });
     const { email, password } = this.state;
@@ -120,44 +105,25 @@ export class LoginPresenter extends React.Component {
     } else {
       this.props.authActions.signIn(email, password);
     }
-  }
+  };
 
-  handleForgotClick() {
-    const oldForgot = this.state.forgot;
-    this.setState({ forgot: !oldForgot });
-    // revisit the value of this.state.submitEnabled
-    if (oldForgot) {
-      // we just returned to login form
-      this.setState({
-        submitEnabled: !!this.state.password && !!this.state.validEmail
-      });
-    } else {
-      // we just moved to Forgot Password Form
-      this.setState({ submitEnabled: !!this.state.validEmail });
-    }
-  }
-
-  emailCheck(email) {
-    const emailRegex = /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/;
-    const emailOK = emailRegex.test(email);
-    this.setState({ validEmail: emailOK });
-    return emailOK;
-  }
+  handleForgotClick = () => {
+    this.setState({ forgot: !this.state.forgot });
+  };
 
   render() {
     const { authState } = this.props;
-    const { alertState } = this.props;
     const {
       email,
       password,
       forgot,
       submitted,
-      emailHadFocus,
-      passwordHadFocus,
-      validEmail,
-      submitEnabled,
-      showAlert
+      showAlert,
+      touched
     } = this.state;
+
+    const submitEnabled = this.submitEnabled();
+    const validEmail = validateEmail(email);
 
     return (
       <ImageLayout imageSrc={`url(${stadiumImage})`}>
@@ -171,7 +137,7 @@ export class LoginPresenter extends React.Component {
                 </H3>
                 <form name="form" onSubmit={this.handleSubmit}>
                   <HelpBlockDiv
-                    type={alertState.type}
+                    type={'alert-danger'}
                     show={showAlert && submitted}
                     style={{
                       marginTop: showAlert && submitted ? '15px' : '0px',
@@ -191,7 +157,7 @@ export class LoginPresenter extends React.Component {
                     value={email}
                     valid={validEmail && !(showAlert && submitted)}
                     inValid={
-                      (!validEmail && (submitted || emailHadFocus)) ||
+                      (!validEmail && (submitted || touched.email)) ||
                       (showAlert && submitted)
                     }
                     onChange={this.handleChange}
@@ -199,7 +165,7 @@ export class LoginPresenter extends React.Component {
                   />
                   <HelpBlockDiv
                     type="alert-danger"
-                    show={!validEmail && (submitted || emailHadFocus)}
+                    show={!validEmail && (submitted || touched.email)}
                   >
                     A valid Email is required
                   </HelpBlockDiv>
@@ -213,7 +179,7 @@ export class LoginPresenter extends React.Component {
                       autoComplete="new-password"
                       value={password}
                       inValid={
-                        (!password && (submitted || passwordHadFocus)) ||
+                        (!password && (submitted || touched.password)) ||
                         (showAlert && submitted)
                       }
                       valid={password && !(showAlert && submitted)}
@@ -222,7 +188,7 @@ export class LoginPresenter extends React.Component {
                     />
                     <HelpBlockDiv
                       type="alert-danger"
-                      show={!password && (submitted || passwordHadFocus)}
+                      show={!password && (submitted || touched.password)}
                     >
                       Password is required
                     </HelpBlockDiv>
@@ -232,7 +198,7 @@ export class LoginPresenter extends React.Component {
                     id="login"
                     data-test-id="login-button"
                   >
-                    {authState.pending ? (
+                    {authState.loggingIn ? (
                       <Loader small color={cssConstants.PRIMARY_WHITE} />
                     ) : (
                       'Submit'
@@ -259,14 +225,12 @@ export class LoginPresenter extends React.Component {
 }
 
 LoginPresenter.propTypes = {
-  authState: PropTypes.shape(),
-  authActions: PropTypes.shape()
+  authState: PropTypes.shape()
 };
 
 function mapStateToProps(state) {
   return {
-    authState: state.auth,
-    alertState: state.alert
+    authState: state.auth
   };
 }
 

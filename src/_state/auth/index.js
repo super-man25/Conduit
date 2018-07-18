@@ -6,17 +6,25 @@ const createActionType = (type) => `${reducerName}/${type}`;
 // Initial State / Reducer
 export const initialState = {
   model: null,
-  loading: true
+  loading: true,
+  loggingIn: false,
+  error: null
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
-      return { ...state, model: action.payload };
+      return { ...state, model: action.payload, error: null };
     case UNSET_USER:
       return { ...state, model: null };
     case IS_PENDING:
       return { ...state, loading: action.payload };
+    case LOGIN_REQUEST:
+      return { ...state, loggingIn: true, error: null };
+    case LOGIN_ERROR:
+      return { ...state, error: action.payload, loggingIn: false };
+    case LOGIN_SUCCESS:
+      return { ...state, model: action.payload, loggingIn: false };
     default:
       return state;
   }
@@ -25,6 +33,7 @@ export const reducer = (state = initialState, action) => {
 // Selectors
 const selectUser = (store) => store[reducerName].model;
 const selectLoading = (store) => store[reducerName].loading;
+const selectLoggingIn = (store) => store[reducerName].loggingIn;
 
 // Action Types
 const FETCH_ASYNC = createActionType('FETCH_ASYNC');
@@ -34,6 +43,9 @@ const UNSET_USER = createActionType('UNSET_USER');
 const SIGN_IN_ASYNC = createActionType('SIGN_IN_ASYNC');
 const SIGN_OUT_ASYNC = createActionType('SIGN_OUT_ASYNC');
 const FORGOT_PASS_ASYNC = createActionType('FORGOT_PASS_ASYNC');
+const LOGIN_REQUEST = createActionType('LOGIN_REQUEST');
+const LOGIN_SUCCESS = createActionType('LOGIN_SUCCESS');
+const LOGIN_ERROR = createActionType('LOGIN_ERROR');
 
 // Actions
 const signIn = (email, password) => ({
@@ -52,7 +64,10 @@ export const types = {
   UNSET_USER,
   SIGN_IN_ASYNC,
   SIGN_OUT_ASYNC,
-  FORGOT_PASS_ASYNC
+  FORGOT_PASS_ASYNC,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR
 };
 export const actions = {
   signIn,
@@ -62,5 +77,6 @@ export const actions = {
 };
 export const selectors = {
   selectUser,
-  selectLoading
+  selectLoading,
+  selectLoggingIn
 };

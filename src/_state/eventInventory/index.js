@@ -277,7 +277,9 @@ export const reducer = (state: State = initialState, action: Action) => {
       );
 
       const selectedRowIds: number[] =
-        rows === state.selectedRowIds.length ? [] : rows.map((row) => row.id);
+        rows.length === state.selectedRowIds.length
+          ? []
+          : rows.map((row) => row.id);
 
       return {
         ...state,

@@ -1,7 +1,7 @@
 import { put, takeLatest, take, call, select } from 'redux-saga/effects';
 import { seasonService } from '_services';
 import { types, selectors } from '.';
-import { SET_USER } from '../auth/actions';
+import { types as authTypes } from '../auth';
 
 export function* fetchSeasons() {
   try {
@@ -35,7 +35,8 @@ function* watchFetchSeasons() {
 
 function* watchFetchSeasonsOnLogin() {
   while (true) {
-    yield take(SET_USER);
+    // On login or on auth fetch seasons
+    yield take([authTypes.SET_USER, authTypes.LOGIN_SUCCESS]);
     yield put({ type: types.FETCH });
   }
 }

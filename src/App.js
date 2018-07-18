@@ -3,14 +3,13 @@
 import { CenteredLoader } from '_components';
 import { history } from '_helpers';
 import { secured, unsecured } from '_hoc/secured';
-import { actions as authActions } from '_state/auth';
+import { actions as authActions, selectors } from '_state/auth';
 import React from 'react';
 import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import { ConnectedRouter } from 'connected-react-router';
-import type { EDUser } from '_models';
+import { createStructuredSelector } from 'reselect';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
@@ -28,24 +27,17 @@ const Settings = Loadable({
 });
 
 type Props = {
-  authActions: {
-    fetch: () => void
-  },
-  authState: {
-    loading: boolean,
-    model: EDUser
-  }
+  fetch: () => void,
+  loading: boolean
 };
 
 class App extends React.Component<Props> {
   componentDidMount() {
-    this.props.authActions.fetch();
+    this.props.fetch();
   }
 
   render() {
-    const {
-      authState: { loading }
-    } = this.props;
+    const { loading } = this.props;
 
     return loading ? (
       <CenteredLoader />
@@ -61,16 +53,12 @@ class App extends React.Component<Props> {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    authState: state.auth
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  loading: selectors.selectLoading
+});
 
-function mapDispatchToProps(dispatch) {
-  return {
-    authActions: bindActionCreators(authActions, dispatch)
-  };
-}
+const mapDispatchToProps = {
+  fetch: authActions.fetch
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,7 +1,6 @@
 import { userService } from '_services';
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { types } from '.';
-import { actions as alertActions } from '_state/alert';
 
 // Workers
 export function* fetchAsync() {
@@ -19,11 +18,12 @@ export function* fetchAsync() {
 export function* signInAsync(action) {
   try {
     const { email, password } = action.payload;
+    yield put({ type: types.LOGIN_REQUEST });
     const user = yield call(userService.login, email, password);
-    yield put({ type: types.SET_USER, payload: user });
+    yield put({ type: types.LOGIN_SUCCESS, payload: user });
   } catch (err) {
     console.warn(err);
-    yield put(alertActions.error(err.message));
+    yield put({ type: types.LOGIN_ERROR, payload: err });
   }
 }
 

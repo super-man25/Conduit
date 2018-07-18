@@ -1,5 +1,5 @@
 import { userService } from '_services';
-import { actions, reducer } from '_state/auth';
+import { actions, reducer, initialState } from '_state/auth';
 import { types } from '_state/auth';
 import {
   fetchAsync,
@@ -47,14 +47,12 @@ describe('actions', () => {
 describe('reducer', () => {
   it('should return the initialState', () => {
     const state = reducer(undefined, {});
-    expect(state).toEqual({
-      model: null,
-      loading: true
-    });
+    expect(state).toEqual(initialState);
   });
 
   it('should handle SET_USER', () => {
     const prevState = {
+      ...initialState,
       model: null,
       loading: false
     };
@@ -68,6 +66,7 @@ describe('reducer', () => {
 
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
+      ...prevState,
       model: user,
       loading: false
     });
@@ -75,6 +74,7 @@ describe('reducer', () => {
 
   it('should handle UNSET_USER', () => {
     const prevState = {
+      ...initialState,
       model: { id: 1 },
       loading: false
     };
@@ -82,21 +82,56 @@ describe('reducer', () => {
     const action = { type: types.UNSET_USER };
     const nextState = reducer(prevState, action);
 
-    expect(nextState).toEqual({ model: null, loading: false });
+    expect(nextState).toEqual({ ...prevState, model: null, loading: false });
   });
 
   it('should handle IS_PENDING', () => {
-    const prevState = {
-      model: null,
-      loading: false
-    };
+    const prevState = { ...initialState };
 
     const action = { type: types.IS_PENDING, payload: true };
 
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
-      model: null,
+      ...prevState,
       loading: true
+    });
+  });
+
+  it('should handle LOGIN_REQUEST', () => {
+    const prevState = { ...initialState };
+
+    const action = { type: types.LOGIN_REQUEST };
+
+    const nextState = reducer(prevState, action);
+    expect(nextState).toEqual({
+      ...prevState,
+      loggingIn: true
+    });
+  });
+
+  it('should handle LOGIN_ERROR', () => {
+    const prevState = { ...initialState, loggingIn: true };
+
+    const action = { type: types.LOGIN_ERROR, payload: 'Some error' };
+
+    const nextState = reducer(prevState, action);
+    expect(nextState).toEqual({
+      ...prevState,
+      loggingIn: false,
+      error: 'Some error'
+    });
+  });
+
+  it('should handle LOGIN_SUCCESS', () => {
+    const prevState = { ...initialState, loggingIn: true };
+
+    const action = { type: types.LOGIN_SUCCESS, payload: 'User' };
+
+    const nextState = reducer(prevState, action);
+    expect(nextState).toEqual({
+      ...prevState,
+      model: 'User',
+      loggingIn: false
     });
   });
 });
@@ -106,11 +141,12 @@ describe('saga workers', () => {
     const user = { id: 1 };
     const action = actions.signIn('some@email.com', 'password');
     const generator = signInAsync(action);
+    expect(generator.next().value).toEqual(put({ type: types.LOGIN_REQUEST }));
     expect(generator.next().value).toEqual(
       call(userService.login, 'some@email.com', 'password')
     );
     expect(generator.next(user).value).toEqual(
-      put({ type: types.SET_USER, payload: user })
+      put({ type: types.LOGIN_SUCCESS, payload: user })
     );
     expect(generator.next().done).toBe(true);
   });

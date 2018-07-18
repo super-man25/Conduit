@@ -227,7 +227,7 @@ describe('reducer', () => {
   it('should unselect all event rows if SELECT_ALL_EVENT_ROWS is called with all rows already selected', () => {
     const prevState = {
       ...initialState,
-      rows: [{ id: 0 }, { id: 1 }, { id: 2 }],
+      allRows: [{ id: 0 }, { id: 1 }, { id: 2 }],
       selectedRowIds: [0, 1, 2]
     };
     const action = actions.selectAllEventRows();
