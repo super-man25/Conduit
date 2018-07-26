@@ -97,9 +97,9 @@ ShallowWrapper {
                               color="#2670AE"
                               size="22px"
                     >
-                              100
-                               / 
-                              1,000
+                              NaN
+                              / 
+                              NaN
                     </styled.p>
                     <styled.span
                               color="#2670AE"
@@ -228,9 +228,9 @@ ShallowWrapper {
                             color="#2670AE"
                             size="22px"
               >
-                            100
-                             / 
-                            1,000
+                            NaN
+                            / 
+                            NaN
               </styled.p>
               <styled.span
                             color="#2670AE"
@@ -337,9 +337,9 @@ ShallowWrapper {
                   color="#2670AE"
                   size="22px"
 >
-                  100
-                   / 
-                  1,000
+                  NaN
+                  / 
+                  NaN
 </styled.p>,
                 <styled.span
                   color="#2670AE"
@@ -369,18 +369,18 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    "100",
-                    " / ",
-                    "1,000",
+                    "NaN",
+                    "/ ",
+                    "NaN",
                   ],
                   "color": "#2670AE",
                   "size": "22px",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "100",
-                  " / ",
-                  "1,000",
+                  "NaN",
+                  "/ ",
+                  "NaN",
                 ],
                 "type": [Function],
               },
@@ -474,9 +474,9 @@ ShallowWrapper {
                                     color="#2670AE"
                                     size="22px"
                         >
-                                    100
-                                     / 
-                                    1,000
+                                    NaN
+                                    / 
+                                    NaN
                         </styled.p>
                         <styled.span
                                     color="#2670AE"
@@ -605,9 +605,9 @@ ShallowWrapper {
                                 color="#2670AE"
                                 size="22px"
                 >
-                                100
-                                 / 
-                                1,000
+                                NaN
+                                / 
+                                NaN
                 </styled.p>
                 <styled.span
                                 color="#2670AE"
@@ -714,9 +714,9 @@ ShallowWrapper {
                     color="#2670AE"
                     size="22px"
 >
-                    100
-                     / 
-                    1,000
+                    NaN
+                    / 
+                    NaN
 </styled.p>,
                   <styled.span
                     color="#2670AE"
@@ -746,18 +746,18 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": Array [
-                      "100",
-                      " / ",
-                      "1,000",
+                      "NaN",
+                      "/ ",
+                      "NaN",
                     ],
                     "color": "#2670AE",
                     "size": "22px",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "100",
-                    " / ",
-                    "1,000",
+                    "NaN",
+                    "/ ",
+                    "NaN",
                   ],
                   "type": [Function],
                 },
@@ -885,9 +885,9 @@ ShallowWrapper {
                               color="#2670AE"
                               size="22px"
                     >
-                              100
-                               / 
-                              1,000
+                              NaN
+                              / 
+                              NaN
                     </styled.p>
                     <styled.span
                               color="#2670AE"
@@ -1015,9 +1015,9 @@ ShallowWrapper {
                             color="#2670AE"
                             size="22px"
               >
-                            100
-                             / 
-                            1,000
+                            NaN
+                            / 
+                            NaN
               </styled.p>
               <styled.span
                             color="#2670AE"
@@ -1090,9 +1090,9 @@ ShallowWrapper {
                   color="#2670AE"
                   size="22px"
 >
-                  100
-                   / 
-                  1,000
+                  NaN
+                  / 
+                  NaN
 </styled.p>,
                 <styled.span
                   color="#2670AE"
@@ -1122,18 +1122,18 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": Array [
-                    "100",
-                    " / ",
-                    "1,000",
+                    "NaN",
+                    "/ ",
+                    "NaN",
                   ],
                   "color": "#2670AE",
                   "size": "22px",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "100",
-                  " / ",
-                  "1,000",
+                  "NaN",
+                  "/ ",
+                  "NaN",
                 ],
                 "type": [Function],
               },
@@ -1222,9 +1222,9 @@ ShallowWrapper {
                                     color="#2670AE"
                                     size="22px"
                         >
-                                    100
-                                     / 
-                                    1,000
+                                    NaN
+                                    / 
+                                    NaN
                         </styled.p>
                         <styled.span
                                     color="#2670AE"
@@ -1352,9 +1352,9 @@ ShallowWrapper {
                                 color="#2670AE"
                                 size="22px"
                 >
-                                100
-                                 / 
-                                1,000
+                                NaN
+                                / 
+                                NaN
                 </styled.p>
                 <styled.span
                                 color="#2670AE"
@@ -1427,9 +1427,9 @@ ShallowWrapper {
                     color="#2670AE"
                     size="22px"
 >
-                    100
-                     / 
-                    1,000
+                    NaN
+                    / 
+                    NaN
 </styled.p>,
                   <styled.span
                     color="#2670AE"
@@ -1459,18 +1459,18 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": Array [
-                      "100",
-                      " / ",
-                      "1,000",
+                      "NaN",
+                      "/ ",
+                      "NaN",
                     ],
                     "color": "#2670AE",
                     "size": "22px",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "100",
-                    " / ",
-                    "1,000",
+                    "NaN",
+                    "/ ",
+                    "NaN",
                   ],
                   "type": [Function],
                 },
