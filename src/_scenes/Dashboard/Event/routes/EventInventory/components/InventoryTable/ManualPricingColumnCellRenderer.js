@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Text, Flex, ClearIcon } from '_components';
+import { Text, Flex, ClearIcon, NumberInputField } from '_components';
 import { cssConstants } from '_constants';
 import { ManualPricingButton, ManualPricingInput } from './styled';
 import { connect } from 'react-redux';
@@ -91,13 +91,20 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
 
     return (
       <Flex align="center">
-        <ManualPricingInput
+        <NumberInputField
+          component={ManualPricingInput}
+          type="number"
+          value={overridePrice}
+          onChange={this.onOverridePriceChanged}
+          placeholder={inputPlaceholder}
+        />
+        {/* <ManualPricingInput
           type="text"
           pattern="[0-9]"
           placeholder={inputPlaceholder}
           value={overridePrice}
           onChange={this.onOverridePriceChanged}
-        />
+        /> */}
         <ManualPricingButton onClick={this.setPrice}>
           Set Price
         </ManualPricingButton>
@@ -126,7 +133,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setEditingManualPrice: () =>
     dispatch(actions.setEditingManualPrice(ownProps.rowData.id)),
   setManualPrice: (value) =>
-    dispatch(actions.setEventRowManualPrice(ownProps.rowData.id, value)),
+    dispatch(actions.setEventRowManualPrice(ownProps.rowData, value)),
   cancelEditingManualPrice: () => dispatch(actions.cancelEditingManualPrice())
 });
 

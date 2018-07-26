@@ -1,5 +1,5 @@
 // @flow
-import { get, put } from '_helpers/api';
+import { get, put, post } from '_helpers/api';
 import { getYear } from 'date-fns';
 import type { EDEvent, EDInventoryRow } from '_models';
 
@@ -41,8 +41,12 @@ function getInventory(eventId: number): EDInventoryRow[] {
   );
 }
 
-function setEventRowListed(id: number, isListed: boolean) {
-  return true;
+function updateEventSeats(payload: {
+  eventSeatIds: Array<number>,
+  overridePrice?: number,
+  isListed?: boolean
+}) {
+  return post('eventRows/_bulk', payload);
 }
 
 export const eventService = {
@@ -50,5 +54,5 @@ export const eventService = {
   getOne,
   toggleBroadcasting,
   getInventory,
-  setEventRowListed
+  updateEventSeats
 };

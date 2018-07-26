@@ -5,7 +5,7 @@ import { Button, Input, Flex, Box } from '_components';
 export const ManualPricingInput = Input.extend`
   box-sizing: border-box;
   margin: 0 0.5rem 0 0;
-  padding: 10px 16px;
+  padding: 10px 8px;
   max-height: 35px;
   max-width: 80px;
 `;

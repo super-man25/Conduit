@@ -11,7 +11,7 @@ import type { Option } from '_helpers/types';
 const DropdownContainer: ComponentType<{
   active: boolean
 }> = withClickAway(styled.div`
-  display: inline-block;
+  display: block;
   position: relative;
   min-width: 100px;
   cursor: pointer;

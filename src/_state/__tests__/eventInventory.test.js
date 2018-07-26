@@ -6,9 +6,14 @@ import {
   selectors
 } from '../eventInventory';
 import { cloneableGenerator } from 'redux-saga/utils';
-import { fetchEventInventory, setRowListed } from '../eventInventory/saga';
+import {
+  fetchEventInventory,
+  setRowListed,
+  setOverridePrice
+} from '../eventInventory/saga';
 import { call, put } from 'redux-saga/effects';
 import { eventService } from '_services';
+import { actions as alertActions } from '_state/alert';
 
 describe('actions', () => {
   it('should create an action to fetch an events inventory', () => {
@@ -35,22 +40,25 @@ describe('actions', () => {
   });
 
   it('should create an action to request an update the listed status of a row', () => {
-    const action = actions.setEventRowListed(10, true);
+    const action = actions.setEventRowListed({ id: 1, isListed: false }, true);
     expect(action).toEqual({
       type: types.SET_EVENT_ROW_LISTED_REQUEST,
       payload: {
-        id: 10,
+        row: { id: 1, isListed: false },
         value: true
       }
     });
   });
 
-  it('should create an action to the the manual price of an inventory row', () => {
-    const action = actions.setEventRowManualPrice(10, true);
+  it('should create an action to update the the manual price of an inventory row', () => {
+    const action = actions.setEventRowManualPrice(
+      { id: 1, overridePrice: null },
+      true
+    );
     expect(action).toEqual({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE,
+      type: types.SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
       payload: {
-        id: 10,
+        row: { id: 1, overridePrice: null },
         value: true
       }
     });
@@ -245,8 +253,8 @@ describe('reducer', () => {
       allRows: [{ id: 10, isListed: false }]
     };
     const action = {
-      type: types.SET_EVENT_ROW_LISTED_SUCCESS,
-      payload: { id: 10, value: true }
+      type: types.SET_EVENT_ROW_LISTED_REQUEST,
+      payload: { row: { id: 10, isListed: false }, value: true }
     };
 
     const nextState = reducer(prevState, action);
@@ -291,7 +299,10 @@ describe('reducer', () => {
       manualPriceEditId: 10,
       allRows: [{ id: 10, overridePrice: false }]
     };
-    const action = actions.setEventRowManualPrice(10, 100);
+    const action = actions.setEventRowManualPrice(
+      { id: 10, overridePrice: false },
+      100
+    );
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
@@ -436,23 +447,78 @@ describe('Saga workers', () => {
   });
 
   it('setRowListed should set a rows listed status', () => {
-    const action = actions.setEventRowListed(1, true);
+    const row = { id: 1, seats: [1, 2, 3], section: 1, row: 1 };
+    const action = actions.setEventRowListed(row, true);
     const generator = cloneableGenerator(setRowListed)(action);
 
+    const updateParams = {
+      eventSeatIds: action.payload.row.seats,
+      isListed: action.payload.value
+    };
+
     expect(generator.next().value).toEqual(
-      call(eventService.setEventRowListed, 1, true)
+      call(eventService.updateEventSeats, updateParams)
     );
 
     const fail = generator.clone();
     const error = new Error('API Error');
+
     expect(fail.throw(error).value).toEqual(
-      put({ type: types.SET_EVENT_ROW_LISTED_ERROR, payload: error })
+      put(
+        alertActions.error(
+          `Could not update section ${row.section} row ${row.row}.`
+        )
+      )
+    );
+
+    expect(fail.next().value).toEqual(
+      put({ type: types.SET_EVENT_ROW_LISTED_ERROR, payload: { error, row } })
     );
 
     expect(generator.next().value).toEqual(
       put({
         type: types.SET_EVENT_ROW_LISTED_SUCCESS,
-        payload: { id: 1, value: true }
+        payload: action.payload
+      })
+    );
+  });
+
+  it('setOverridePrice should set a rows listed status', () => {
+    const row = { id: 1, seats: [1, 2, 3], section: 1, row: 1 };
+    const action = actions.setEventRowManualPrice(row, '100');
+    const generator = cloneableGenerator(setOverridePrice)(action);
+
+    const updateParams = {
+      eventSeatIds: action.payload.row.seats,
+      overridePrice: action.payload.value
+    };
+
+    expect(generator.next().value).toEqual(
+      call(eventService.updateEventSeats, updateParams)
+    );
+
+    const fail = generator.clone();
+    const error = new Error('API Error');
+
+    expect(fail.throw(error).value).toEqual(
+      put(
+        alertActions.error(
+          `Could not update section ${row.section} row ${row.row}.`
+        )
+      )
+    );
+
+    expect(fail.next().value).toEqual(
+      put({
+        type: types.SET_EVENT_ROW_MANUAL_PRICE_ERROR,
+        payload: { error, row }
+      })
+    );
+
+    expect(generator.next().value).toEqual(
+      put({
+        type: types.SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
+        payload: action.payload
       })
     );
   });

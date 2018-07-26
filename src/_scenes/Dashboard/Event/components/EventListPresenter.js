@@ -2,12 +2,9 @@
 
 import {
   CalculateRemainingHeight,
-  DropdownButton,
-  Flex,
   H4,
   Input,
   ScrollableList,
-  SortableButton,
   Spacing
 } from '_components';
 import { cssConstants } from '_constants';
@@ -61,9 +58,6 @@ type Props = {
   +onClick: (event: EDEvent) => void,
   +loading: boolean,
   +events: Array<EDEvent>,
-  +onFilterSelect: (event: EDEvent) => void,
-  +onTimestampSortChange: (dir: string) => void,
-  +selectedFilter: number,
   +filter: string
 };
 
@@ -71,13 +65,8 @@ export function EventListPresenter(props: Props) {
   const {
     activeId,
     events,
-    filterOptions,
     loading,
     onClick,
-    onFilterSelect,
-    onTimestampSortChange,
-    selectedFilter,
-    timestampSort,
     title,
     onSearchInputChange,
     filter
@@ -99,21 +88,6 @@ export function EventListPresenter(props: Props) {
             value={filter}
             data-test-id="event-list-search"
           />
-          <Spacing height="4px" />
-          <Flex direction="row" justify="space-between">
-            <SortableButton
-              direction={timestampSort}
-              onClick={onTimestampSortChange}
-            >
-              Upcoming
-            </SortableButton>
-            <DropdownButton
-              options={filterOptions}
-              parseLabel={(o) => o.label}
-              selected={selectedFilter}
-              onSelect={onFilterSelect}
-            />
-          </Flex>
         </Spacing>
       </HeaderContainer>
 

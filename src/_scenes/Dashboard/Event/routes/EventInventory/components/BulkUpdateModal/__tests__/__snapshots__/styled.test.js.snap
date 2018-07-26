@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BulkUpdateModal styled components <Field /> renders correctly 1`] = `
+.c0 {
+  position: relative;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`BulkUpdateModal styled components <FieldErrorText /> renders correctly 1`] = `
+.c0 {
+  font-size: undefinedpx;
+  color: #070707;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+}
+
+<p
+  className="c0"
+>
+  Text
+</p>
+`;
+
+exports[`BulkUpdateModal styled components <Label /> renders correctly 1`] = `
+.c0 {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #070707;
+}
+
+<label
+  className="c0"
+>
+  Label
+</label>
+`;
+
+exports[`BulkUpdateModal styled components <ModalBody /> renders correctly 1`] = `
+.c0 {
+  padding: 1.5rem;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+<div
+  className="c0"
+>
+  Modal Body
+</div>
+`;
+
+exports[`BulkUpdateModal styled components <ModalContent /> renders correctly 1`] = `
+.c0 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 350px;
+  z-index: 9;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.27);
+  -webkit-animation: laneLq 200ms ease-out;
+  animation: laneLq 200ms ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+<div
+  className="c0"
+>
+  Modal Content
+</div>
+`;
+
+exports[`BulkUpdateModal styled components <ModalHeader /> renders correctly 1`] = `
+.c0 {
+  padding: 1.5rem;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #024A8F;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+<div
+  className="c0"
+>
+  Modal Header
+</div>
+`;
+
+exports[`BulkUpdateModal styled components <ModalOverlay /> renders correctly 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  background-color: #070707;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`BulkUpdateModal styled components <NumberInput /> renders correctly 1`] = `
+.c0 {
+  background-color: #FFFFFF;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  box-sizing: border-box;
+  height: 40px;
+  margin: 0;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+<input
+  className="c0"
+  placeholder="$ Manual Price"
+  type="number"
+/>
+`;
+
+exports[`BulkUpdateModal styled components <Title /> renders correctly 1`] = `
+.c0 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 0.25rem;
+  color: #070707;
+}
+
+<h4
+  className="c0"
+  color="#070707"
+>
+  Title
+</h4>
+`;

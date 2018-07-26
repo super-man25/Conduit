@@ -61,7 +61,10 @@ const columns = [
     label: '# of Seats',
     width: 0,
     dataKey: 'seats',
-    flexGrow: 10
+    flexGrow: 10,
+    cellDataGetter({ columnData, dataKey, rowData }) {
+      return rowData[dataKey].length;
+    }
   },
   {
     label: 'List Price',

@@ -1,5 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<GrayButton /> renders correctly 1`] = `
+.c0 {
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  background-color: #38A9DB;
+  color: #FFFFFF;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+  background-color: #D1D1D1;
+  color: #070707;
+  opacity: 0.8;
+}
+
+.c0:disabled {
+  opacity: 0.3;
+  background-color: #D1D1D1;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #024A8F;
+  cursor: pointer;
+}
+
+.c0:hover:not(:disabled) {
+  opacity: 1;
+  background-color: #D1D1D1;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`<PrimaryButton /> renders correctly 1`] = `
+.c0 {
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  background-color: #38A9DB;
+  color: #FFFFFF;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+}
+
+.c0:disabled {
+  opacity: 0.3;
+  background-color: #D1D1D1;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #024A8F;
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`<PrimaryButton /> renders when disabled 1`] = `
+.c0 {
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  background-color: #38A9DB;
+  color: #FFFFFF;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+}
+
+.c0:disabled {
+  opacity: 0.3;
+  background-color: #D1D1D1;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #024A8F;
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+  disabled={true}
+/>
+`;
+
+exports[`<PrimaryButton /> renders with a small prop 1`] = `
+.c0 {
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  background-color: #38A9DB;
+  color: #FFFFFF;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+}
+
+.c0:disabled {
+  opacity: 0.3;
+  background-color: #D1D1D1;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #024A8F;
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+  disabled={true}
+/>
+`;
+
+exports[`<SecondaryButton /> renders correctly 1`] = `
+.c0 {
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: 40px;
+  background-color: #38A9DB;
+  color: #FFFFFF;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+  background-color: #FFFFFF;
+  border: 1px solid #38A9DB;
+  color: #38A9DB;
+}
+
+.c0:disabled {
+  opacity: 0.3;
+  background-color: #D1D1D1;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #024A8F;
+  cursor: pointer;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #FFFFFF;
+  border: 1px solid #024A8F;
+  color: #024A8F;
+}
+
+<button
+  className="c0"
+/>
+`;
+
 exports[`renders correctly with collapse prop 1`] = `
 .c0 {
   display: block;
@@ -29,6 +188,12 @@ exports[`renders correctly with collapse prop 1`] = `
 
 .c0::before {
   content: ' 
+
+
+
+
+
+
 
 
 
