@@ -10,5 +10,7 @@ export type EDEvent = {
   seasonId: number,
   timestamp: Date,
   venueId: number,
-  isBroadcast: boolean
+  isBroadcast: boolean,
+  totalInventory: number,
+  unsoldInventory: number
 };

@@ -72,14 +72,7 @@ type Props = {
 };
 
 export function EventHeader(props: Props) {
-  const {
-    event,
-    availableInventory,
-    totalInventory,
-    toggleSidebar,
-    isSidebarOpen,
-    pathname
-  } = props;
+  const { event, toggleSidebar, isSidebarOpen, pathname } = props;
 
   const { timestamp, name, id } = event;
 
@@ -109,7 +102,8 @@ export function EventHeader(props: Props) {
         <FlexItem flex="0 0 auto">
           <P1 size="16px">Current Game Inventory</P1>
           <P1 size="22px" color={cssConstants.SECONDARY_BLUE}>
-            {formatNumber(availableInventory)} / {formatNumber(totalInventory)}
+            {formatNumber(event.unsoldInventory)}
+            / {formatNumber(event.totalInventory)}
           </P1>
           <ItalicS1 color={cssConstants.SECONDARY_BLUE}>
             Available / Total
