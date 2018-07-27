@@ -91,33 +91,6 @@ ShallowWrapper {
                               type="text"
                               value="Query"
                     />
-                    <styled.div
-                              height="4px"
-                    />
-                    <Flex
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <Unknown
-                                        direction="asc"
-                                        onClick={[Function]}
-                              >
-                                        Upcoming
-                              </Unknown>
-                              <DropdownButton
-                                        onSelect={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                        }
-                                        parseLabel={[Function]}
-                                        selected={0}
-                              />
-                    </Flex>
           </styled.div>
 </styled.div>,
         [Function],
@@ -146,33 +119,6 @@ ShallowWrapper {
                         type="text"
                         value="Query"
             />
-            <styled.div
-                        height="4px"
-            />
-            <Flex
-                        direction="row"
-                        justify="space-between"
-            >
-                        <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                        >
-                                    Upcoming
-                        </Unknown>
-                        <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                        />
-            </Flex>
 </styled.div>,
         },
         "ref": null,
@@ -195,33 +141,6 @@ ShallowWrapper {
                 type="text"
                 value="Query"
 />,
-              <styled.div
-                height="4px"
-/>,
-              <Flex
-                direction="row"
-                justify="space-between"
->
-                <Unknown
-                                direction="asc"
-                                onClick={[Function]}
-                >
-                                Upcoming
-                </Unknown>
-                <DropdownButton
-                                onSelect={[Function]}
-                                options={
-                                                Array [
-                                                                Object {
-                                                                  "id": 1,
-                                                                  "label": "one",
-                                                                },
-                                                              ]
-                                }
-                                parseLabel={[Function]}
-                                selected={0}
-                />
-</Flex>,
             ],
             "padding": "24px 40px",
           },
@@ -264,83 +183,6 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "4px",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Unknown
-                    direction="asc"
-                    onClick={[Function]}
->
-                    Upcoming
-</Unknown>,
-                  <DropdownButton
-                    onSelect={[Function]}
-                    options={
-                                        Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                    }
-                    parseLabel={[Function]}
-                    selected={0}
-/>,
-                ],
-                "direction": "row",
-                "justify": "space-between",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Upcoming",
-                    "direction": "asc",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Upcoming",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onSelect": [Function],
-                    "options": Array [
-                      Object {
-                        "id": 1,
-                        "label": "one",
-                      },
-                    ],
-                    "parseLabel": [Function],
-                    "selected": 0,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
           ],
           "type": [Function],
         },
@@ -374,33 +216,6 @@ ShallowWrapper {
                                     type="text"
                                     value="Query"
                         />
-                        <styled.div
-                                    height="4px"
-                        />
-                        <Flex
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <Unknown
-                                                direction="asc"
-                                                onClick={[Function]}
-                                    >
-                                                Upcoming
-                                    </Unknown>
-                                    <DropdownButton
-                                                onSelect={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                                }
-                                                parseLabel={[Function]}
-                                                selected={0}
-                                    />
-                        </Flex>
             </styled.div>
 </styled.div>,
           [Function],
@@ -429,33 +244,6 @@ ShallowWrapper {
                             type="text"
                             value="Query"
               />
-              <styled.div
-                            height="4px"
-              />
-              <Flex
-                            direction="row"
-                            justify="space-between"
-              >
-                            <Unknown
-                                          direction="asc"
-                                          onClick={[Function]}
-                            >
-                                          Upcoming
-                            </Unknown>
-                            <DropdownButton
-                                          onSelect={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "id": 1,
-                                                                        "label": "one",
-                                                                      },
-                                                                    ]
-                                          }
-                                          parseLabel={[Function]}
-                                          selected={0}
-                            />
-              </Flex>
 </styled.div>,
           },
           "ref": null,
@@ -478,33 +266,6 @@ ShallowWrapper {
                   type="text"
                   value="Query"
 />,
-                <styled.div
-                  height="4px"
-/>,
-                <Flex
-                  direction="row"
-                  justify="space-between"
->
-                  <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                  >
-                                    Upcoming
-                  </Unknown>
-                  <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                  />
-</Flex>,
               ],
               "padding": "24px 40px",
             },
@@ -545,83 +306,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "height": "4px",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Unknown
-                      direction="asc"
-                      onClick={[Function]}
->
-                      Upcoming
-</Unknown>,
-                    <DropdownButton
-                      onSelect={[Function]}
-                      options={
-                                            Array [
-                                                                  Object {
-                                                                    "id": 1,
-                                                                    "label": "one",
-                                                                  },
-                                                                ]
-                      }
-                      parseLabel={[Function]}
-                      selected={0}
-/>,
-                  ],
-                  "direction": "row",
-                  "justify": "space-between",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Upcoming",
-                      "direction": "asc",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Upcoming",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onSelect": [Function],
-                      "options": Array [
-                        Object {
-                          "id": 1,
-                          "label": "one",
-                        },
-                      ],
-                      "parseLabel": [Function],
-                      "selected": 0,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],
@@ -735,33 +419,6 @@ ShallowWrapper {
                               type="text"
                               value=""
                     />
-                    <styled.div
-                              height="4px"
-                    />
-                    <Flex
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <Unknown
-                                        direction="asc"
-                                        onClick={[Function]}
-                              >
-                                        Upcoming
-                              </Unknown>
-                              <DropdownButton
-                                        onSelect={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                        }
-                                        parseLabel={[Function]}
-                                        selected={0}
-                              />
-                    </Flex>
           </styled.div>
 </styled.div>,
         [Function],
@@ -790,33 +447,6 @@ ShallowWrapper {
                         type="text"
                         value=""
             />
-            <styled.div
-                        height="4px"
-            />
-            <Flex
-                        direction="row"
-                        justify="space-between"
-            >
-                        <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                        >
-                                    Upcoming
-                        </Unknown>
-                        <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                        />
-            </Flex>
 </styled.div>,
         },
         "ref": null,
@@ -839,33 +469,6 @@ ShallowWrapper {
                 type="text"
                 value=""
 />,
-              <styled.div
-                height="4px"
-/>,
-              <Flex
-                direction="row"
-                justify="space-between"
->
-                <Unknown
-                                direction="asc"
-                                onClick={[Function]}
-                >
-                                Upcoming
-                </Unknown>
-                <DropdownButton
-                                onSelect={[Function]}
-                                options={
-                                                Array [
-                                                                Object {
-                                                                  "id": 1,
-                                                                  "label": "one",
-                                                                },
-                                                              ]
-                                }
-                                parseLabel={[Function]}
-                                selected={0}
-                />
-</Flex>,
             ],
             "padding": "24px 40px",
           },
@@ -908,83 +511,6 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "4px",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Unknown
-                    direction="asc"
-                    onClick={[Function]}
->
-                    Upcoming
-</Unknown>,
-                  <DropdownButton
-                    onSelect={[Function]}
-                    options={
-                                        Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                    }
-                    parseLabel={[Function]}
-                    selected={0}
-/>,
-                ],
-                "direction": "row",
-                "justify": "space-between",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Upcoming",
-                    "direction": "asc",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Upcoming",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onSelect": [Function],
-                    "options": Array [
-                      Object {
-                        "id": 1,
-                        "label": "one",
-                      },
-                    ],
-                    "parseLabel": [Function],
-                    "selected": 0,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
           ],
           "type": [Function],
         },
@@ -1018,33 +544,6 @@ ShallowWrapper {
                                     type="text"
                                     value=""
                         />
-                        <styled.div
-                                    height="4px"
-                        />
-                        <Flex
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <Unknown
-                                                direction="asc"
-                                                onClick={[Function]}
-                                    >
-                                                Upcoming
-                                    </Unknown>
-                                    <DropdownButton
-                                                onSelect={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                                }
-                                                parseLabel={[Function]}
-                                                selected={0}
-                                    />
-                        </Flex>
             </styled.div>
 </styled.div>,
           [Function],
@@ -1073,33 +572,6 @@ ShallowWrapper {
                             type="text"
                             value=""
               />
-              <styled.div
-                            height="4px"
-              />
-              <Flex
-                            direction="row"
-                            justify="space-between"
-              >
-                            <Unknown
-                                          direction="asc"
-                                          onClick={[Function]}
-                            >
-                                          Upcoming
-                            </Unknown>
-                            <DropdownButton
-                                          onSelect={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "id": 1,
-                                                                        "label": "one",
-                                                                      },
-                                                                    ]
-                                          }
-                                          parseLabel={[Function]}
-                                          selected={0}
-                            />
-              </Flex>
 </styled.div>,
           },
           "ref": null,
@@ -1122,33 +594,6 @@ ShallowWrapper {
                   type="text"
                   value=""
 />,
-                <styled.div
-                  height="4px"
-/>,
-                <Flex
-                  direction="row"
-                  justify="space-between"
->
-                  <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                  >
-                                    Upcoming
-                  </Unknown>
-                  <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                  />
-</Flex>,
               ],
               "padding": "24px 40px",
             },
@@ -1189,83 +634,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "height": "4px",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Unknown
-                      direction="asc"
-                      onClick={[Function]}
->
-                      Upcoming
-</Unknown>,
-                    <DropdownButton
-                      onSelect={[Function]}
-                      options={
-                                            Array [
-                                                                  Object {
-                                                                    "id": 1,
-                                                                    "label": "one",
-                                                                  },
-                                                                ]
-                      }
-                      parseLabel={[Function]}
-                      selected={0}
-/>,
-                  ],
-                  "direction": "row",
-                  "justify": "space-between",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Upcoming",
-                      "direction": "asc",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Upcoming",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onSelect": [Function],
-                      "options": Array [
-                        Object {
-                          "id": 1,
-                          "label": "one",
-                        },
-                      ],
-                      "parseLabel": [Function],
-                      "selected": 0,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],
@@ -1343,33 +711,6 @@ ShallowWrapper {
                               type="text"
                               value=""
                     />
-                    <styled.div
-                              height="4px"
-                    />
-                    <Flex
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <Unknown
-                                        direction="asc"
-                                        onClick={[Function]}
-                              >
-                                        Upcoming
-                              </Unknown>
-                              <DropdownButton
-                                        onSelect={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                        }
-                                        parseLabel={[Function]}
-                                        selected={0}
-                              />
-                    </Flex>
           </styled.div>
 </styled.div>,
         [Function],
@@ -1398,33 +739,6 @@ ShallowWrapper {
                         type="text"
                         value=""
             />
-            <styled.div
-                        height="4px"
-            />
-            <Flex
-                        direction="row"
-                        justify="space-between"
-            >
-                        <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                        >
-                                    Upcoming
-                        </Unknown>
-                        <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                        />
-            </Flex>
 </styled.div>,
         },
         "ref": null,
@@ -1447,33 +761,6 @@ ShallowWrapper {
                 type="text"
                 value=""
 />,
-              <styled.div
-                height="4px"
-/>,
-              <Flex
-                direction="row"
-                justify="space-between"
->
-                <Unknown
-                                direction="asc"
-                                onClick={[Function]}
-                >
-                                Upcoming
-                </Unknown>
-                <DropdownButton
-                                onSelect={[Function]}
-                                options={
-                                                Array [
-                                                                Object {
-                                                                  "id": 1,
-                                                                  "label": "one",
-                                                                },
-                                                              ]
-                                }
-                                parseLabel={[Function]}
-                                selected={0}
-                />
-</Flex>,
             ],
             "padding": "24px 40px",
           },
@@ -1516,83 +803,6 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "4px",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Unknown
-                    direction="asc"
-                    onClick={[Function]}
->
-                    Upcoming
-</Unknown>,
-                  <DropdownButton
-                    onSelect={[Function]}
-                    options={
-                                        Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                    }
-                    parseLabel={[Function]}
-                    selected={0}
-/>,
-                ],
-                "direction": "row",
-                "justify": "space-between",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Upcoming",
-                    "direction": "asc",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Upcoming",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onSelect": [Function],
-                    "options": Array [
-                      Object {
-                        "id": 1,
-                        "label": "one",
-                      },
-                    ],
-                    "parseLabel": [Function],
-                    "selected": 0,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
           ],
           "type": [Function],
         },
@@ -1626,33 +836,6 @@ ShallowWrapper {
                                     type="text"
                                     value=""
                         />
-                        <styled.div
-                                    height="4px"
-                        />
-                        <Flex
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <Unknown
-                                                direction="asc"
-                                                onClick={[Function]}
-                                    >
-                                                Upcoming
-                                    </Unknown>
-                                    <DropdownButton
-                                                onSelect={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                                }
-                                                parseLabel={[Function]}
-                                                selected={0}
-                                    />
-                        </Flex>
             </styled.div>
 </styled.div>,
           [Function],
@@ -1681,33 +864,6 @@ ShallowWrapper {
                             type="text"
                             value=""
               />
-              <styled.div
-                            height="4px"
-              />
-              <Flex
-                            direction="row"
-                            justify="space-between"
-              >
-                            <Unknown
-                                          direction="asc"
-                                          onClick={[Function]}
-                            >
-                                          Upcoming
-                            </Unknown>
-                            <DropdownButton
-                                          onSelect={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "id": 1,
-                                                                        "label": "one",
-                                                                      },
-                                                                    ]
-                                          }
-                                          parseLabel={[Function]}
-                                          selected={0}
-                            />
-              </Flex>
 </styled.div>,
           },
           "ref": null,
@@ -1730,33 +886,6 @@ ShallowWrapper {
                   type="text"
                   value=""
 />,
-                <styled.div
-                  height="4px"
-/>,
-                <Flex
-                  direction="row"
-                  justify="space-between"
->
-                  <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                  >
-                                    Upcoming
-                  </Unknown>
-                  <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                  />
-</Flex>,
               ],
               "padding": "24px 40px",
             },
@@ -1797,83 +926,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "height": "4px",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Unknown
-                      direction="asc"
-                      onClick={[Function]}
->
-                      Upcoming
-</Unknown>,
-                    <DropdownButton
-                      onSelect={[Function]}
-                      options={
-                                            Array [
-                                                                  Object {
-                                                                    "id": 1,
-                                                                    "label": "one",
-                                                                  },
-                                                                ]
-                      }
-                      parseLabel={[Function]}
-                      selected={0}
-/>,
-                  ],
-                  "direction": "row",
-                  "justify": "space-between",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Upcoming",
-                      "direction": "asc",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Upcoming",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onSelect": [Function],
-                      "options": Array [
-                        Object {
-                          "id": 1,
-                          "label": "one",
-                        },
-                      ],
-                      "parseLabel": [Function],
-                      "selected": 0,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],
@@ -1987,33 +1039,6 @@ ShallowWrapper {
                               type="text"
                               value=""
                     />
-                    <styled.div
-                              height="4px"
-                    />
-                    <Flex
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <Unknown
-                                        direction="asc"
-                                        onClick={[Function]}
-                              >
-                                        Upcoming
-                              </Unknown>
-                              <DropdownButton
-                                        onSelect={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                        }
-                                        parseLabel={[Function]}
-                                        selected={0}
-                              />
-                    </Flex>
           </styled.div>
 </styled.div>,
         [Function],
@@ -2042,33 +1067,6 @@ ShallowWrapper {
                         type="text"
                         value=""
             />
-            <styled.div
-                        height="4px"
-            />
-            <Flex
-                        direction="row"
-                        justify="space-between"
-            >
-                        <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                        >
-                                    Upcoming
-                        </Unknown>
-                        <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                        />
-            </Flex>
 </styled.div>,
         },
         "ref": null,
@@ -2091,33 +1089,6 @@ ShallowWrapper {
                 type="text"
                 value=""
 />,
-              <styled.div
-                height="4px"
-/>,
-              <Flex
-                direction="row"
-                justify="space-between"
->
-                <Unknown
-                                direction="asc"
-                                onClick={[Function]}
-                >
-                                Upcoming
-                </Unknown>
-                <DropdownButton
-                                onSelect={[Function]}
-                                options={
-                                                Array [
-                                                                Object {
-                                                                  "id": 1,
-                                                                  "label": "one",
-                                                                },
-                                                              ]
-                                }
-                                parseLabel={[Function]}
-                                selected={0}
-                />
-</Flex>,
             ],
             "padding": "24px 40px",
           },
@@ -2160,83 +1131,6 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "4px",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Unknown
-                    direction="asc"
-                    onClick={[Function]}
->
-                    Upcoming
-</Unknown>,
-                  <DropdownButton
-                    onSelect={[Function]}
-                    options={
-                                        Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                    }
-                    parseLabel={[Function]}
-                    selected={0}
-/>,
-                ],
-                "direction": "row",
-                "justify": "space-between",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Upcoming",
-                    "direction": "asc",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Upcoming",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onSelect": [Function],
-                    "options": Array [
-                      Object {
-                        "id": 1,
-                        "label": "one",
-                      },
-                    ],
-                    "parseLabel": [Function],
-                    "selected": 0,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
           ],
           "type": [Function],
         },
@@ -2270,33 +1164,6 @@ ShallowWrapper {
                                     type="text"
                                     value=""
                         />
-                        <styled.div
-                                    height="4px"
-                        />
-                        <Flex
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <Unknown
-                                                direction="asc"
-                                                onClick={[Function]}
-                                    >
-                                                Upcoming
-                                    </Unknown>
-                                    <DropdownButton
-                                                onSelect={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                                }
-                                                parseLabel={[Function]}
-                                                selected={0}
-                                    />
-                        </Flex>
             </styled.div>
 </styled.div>,
           [Function],
@@ -2325,33 +1192,6 @@ ShallowWrapper {
                             type="text"
                             value=""
               />
-              <styled.div
-                            height="4px"
-              />
-              <Flex
-                            direction="row"
-                            justify="space-between"
-              >
-                            <Unknown
-                                          direction="asc"
-                                          onClick={[Function]}
-                            >
-                                          Upcoming
-                            </Unknown>
-                            <DropdownButton
-                                          onSelect={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "id": 1,
-                                                                        "label": "one",
-                                                                      },
-                                                                    ]
-                                          }
-                                          parseLabel={[Function]}
-                                          selected={0}
-                            />
-              </Flex>
 </styled.div>,
           },
           "ref": null,
@@ -2374,33 +1214,6 @@ ShallowWrapper {
                   type="text"
                   value=""
 />,
-                <styled.div
-                  height="4px"
-/>,
-                <Flex
-                  direction="row"
-                  justify="space-between"
->
-                  <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                  >
-                                    Upcoming
-                  </Unknown>
-                  <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                  />
-</Flex>,
               ],
               "padding": "24px 40px",
             },
@@ -2441,83 +1254,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "height": "4px",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Unknown
-                      direction="asc"
-                      onClick={[Function]}
->
-                      Upcoming
-</Unknown>,
-                    <DropdownButton
-                      onSelect={[Function]}
-                      options={
-                                            Array [
-                                                                  Object {
-                                                                    "id": 1,
-                                                                    "label": "one",
-                                                                  },
-                                                                ]
-                      }
-                      parseLabel={[Function]}
-                      selected={0}
-/>,
-                  ],
-                  "direction": "row",
-                  "justify": "space-between",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Upcoming",
-                      "direction": "asc",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Upcoming",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onSelect": [Function],
-                      "options": Array [
-                        Object {
-                          "id": 1,
-                          "label": "one",
-                        },
-                      ],
-                      "parseLabel": [Function],
-                      "selected": 0,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],
@@ -2631,33 +1367,6 @@ ShallowWrapper {
                               type="text"
                               value=""
                     />
-                    <styled.div
-                              height="4px"
-                    />
-                    <Flex
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <Unknown
-                                        direction="asc"
-                                        onClick={[Function]}
-                              >
-                                        Upcoming
-                              </Unknown>
-                              <DropdownButton
-                                        onSelect={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                        }
-                                        parseLabel={[Function]}
-                                        selected={0}
-                              />
-                    </Flex>
           </styled.div>
 </styled.div>,
         [Function],
@@ -2686,33 +1395,6 @@ ShallowWrapper {
                         type="text"
                         value=""
             />
-            <styled.div
-                        height="4px"
-            />
-            <Flex
-                        direction="row"
-                        justify="space-between"
-            >
-                        <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                        >
-                                    Upcoming
-                        </Unknown>
-                        <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                        />
-            </Flex>
 </styled.div>,
         },
         "ref": null,
@@ -2735,33 +1417,6 @@ ShallowWrapper {
                 type="text"
                 value=""
 />,
-              <styled.div
-                height="4px"
-/>,
-              <Flex
-                direction="row"
-                justify="space-between"
->
-                <Unknown
-                                direction="asc"
-                                onClick={[Function]}
-                >
-                                Upcoming
-                </Unknown>
-                <DropdownButton
-                                onSelect={[Function]}
-                                options={
-                                                Array [
-                                                                Object {
-                                                                  "id": 1,
-                                                                  "label": "one",
-                                                                },
-                                                              ]
-                                }
-                                parseLabel={[Function]}
-                                selected={0}
-                />
-</Flex>,
             ],
             "padding": "24px 40px",
           },
@@ -2804,83 +1459,6 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "4px",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Unknown
-                    direction="asc"
-                    onClick={[Function]}
->
-                    Upcoming
-</Unknown>,
-                  <DropdownButton
-                    onSelect={[Function]}
-                    options={
-                                        Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "label": "one",
-                                                            },
-                                                          ]
-                    }
-                    parseLabel={[Function]}
-                    selected={0}
-/>,
-                ],
-                "direction": "row",
-                "justify": "space-between",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Upcoming",
-                    "direction": "asc",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Upcoming",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onSelect": [Function],
-                    "options": Array [
-                      Object {
-                        "id": 1,
-                        "label": "one",
-                      },
-                    ],
-                    "parseLabel": [Function],
-                    "selected": 0,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
           ],
           "type": [Function],
         },
@@ -2914,33 +1492,6 @@ ShallowWrapper {
                                     type="text"
                                     value=""
                         />
-                        <styled.div
-                                    height="4px"
-                        />
-                        <Flex
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <Unknown
-                                                direction="asc"
-                                                onClick={[Function]}
-                                    >
-                                                Upcoming
-                                    </Unknown>
-                                    <DropdownButton
-                                                onSelect={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                                }
-                                                parseLabel={[Function]}
-                                                selected={0}
-                                    />
-                        </Flex>
             </styled.div>
 </styled.div>,
           [Function],
@@ -2969,33 +1520,6 @@ ShallowWrapper {
                             type="text"
                             value=""
               />
-              <styled.div
-                            height="4px"
-              />
-              <Flex
-                            direction="row"
-                            justify="space-between"
-              >
-                            <Unknown
-                                          direction="asc"
-                                          onClick={[Function]}
-                            >
-                                          Upcoming
-                            </Unknown>
-                            <DropdownButton
-                                          onSelect={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "id": 1,
-                                                                        "label": "one",
-                                                                      },
-                                                                    ]
-                                          }
-                                          parseLabel={[Function]}
-                                          selected={0}
-                            />
-              </Flex>
 </styled.div>,
           },
           "ref": null,
@@ -3018,33 +1542,6 @@ ShallowWrapper {
                   type="text"
                   value=""
 />,
-                <styled.div
-                  height="4px"
-/>,
-                <Flex
-                  direction="row"
-                  justify="space-between"
->
-                  <Unknown
-                                    direction="asc"
-                                    onClick={[Function]}
-                  >
-                                    Upcoming
-                  </Unknown>
-                  <DropdownButton
-                                    onSelect={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "id": 1,
-                                                                          "label": "one",
-                                                                        },
-                                                                      ]
-                                    }
-                                    parseLabel={[Function]}
-                                    selected={0}
-                  />
-</Flex>,
               ],
               "padding": "24px 40px",
             },
@@ -3085,83 +1582,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "height": "4px",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <Unknown
-                      direction="asc"
-                      onClick={[Function]}
->
-                      Upcoming
-</Unknown>,
-                    <DropdownButton
-                      onSelect={[Function]}
-                      options={
-                                            Array [
-                                                                  Object {
-                                                                    "id": 1,
-                                                                    "label": "one",
-                                                                  },
-                                                                ]
-                      }
-                      parseLabel={[Function]}
-                      selected={0}
-/>,
-                  ],
-                  "direction": "row",
-                  "justify": "space-between",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Upcoming",
-                      "direction": "asc",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Upcoming",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onSelect": [Function],
-                      "options": Array [
-                        Object {
-                          "id": 1,
-                          "label": "one",
-                        },
-                      ],
-                      "parseLabel": [Function],
-                      "selected": 0,
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],

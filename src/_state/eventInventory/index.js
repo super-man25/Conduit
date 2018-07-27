@@ -17,7 +17,12 @@ const SET_EVENT_ROW_LISTED_REQUEST =
 const SET_EVENT_ROW_LISTED_SUCCESS =
   'eventInventory/SET_EVENT_ROW_LISTED_SUCCESS';
 const SET_EVENT_ROW_LISTED_ERROR = 'eventInventory/SET_EVENT_ROW_LISTED_ERROR';
-const SET_EVENT_ROW_MANUAL_PRICE = 'eventInventory/SET_EVENT_ROW_MANUAL_PRICE';
+const SET_EVENT_ROW_MANUAL_PRICE_REQUEST =
+  'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_REQUEST';
+const SET_EVENT_ROW_MANUAL_PRICE_SUCCESS =
+  'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_SUCCESS';
+const SET_EVENT_ROW_MANUAL_PRICE_ERROR =
+  'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_ERROR';
 const SELECT_EVENT_ROW = 'eventInventory/SELECT_EVENT_ROW';
 const SELECT_ALL_EVENT_ROWS = 'eventInventory/SELECT_ALL_EVENT_ROWS';
 const SET_EDITING_MANUAL_PRICE = 'eventInventory/SET_EDITING_MANUAL_PRICE';
@@ -47,15 +52,27 @@ export type SetEventInventoryFilterAction = {
 };
 export type SetEventRowListedRequestAction = {
   type: 'eventInventory/SET_EVENT_ROW_LISTED_REQUEST',
-  payload: { id: number, value: boolean }
+  payload: { row: EDInventoryRow, value: boolean }
 };
 export type SetEventRowListedSuccessAction = {
   type: 'eventInventory/SET_EVENT_ROW_LISTED_SUCCESS',
-  payload: { id: number, value: boolean }
+  payload: { row: EDInventoryRow, value: boolean }
 };
-export type SetEventRowManualPriceAction = {
-  type: 'eventInventory/SET_EVENT_ROW_MANUAL_PRICE',
-  payload: { id: number, value: number }
+export type SetEventRowListedErrorAction = {
+  type: 'eventInventory/SET_EVENT_ROW_LISTED_ERROR',
+  payload: { row: EDInventoryRow, value: boolean }
+};
+export type SetEventRowManualPriceRequestAction = {
+  type: 'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_REQUEST',
+  payload: { row: EDInventoryRow, value: string }
+};
+export type SetEventRowManualPriceSuccessAction = {
+  type: 'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_SUCCESS',
+  payload: { row: EDInventoryRow }
+};
+export type SetEventRowManualPriceErrorAction = {
+  type: 'eventInventory/SET_EVENT_ROW_MANUAL_PRICE_ERROR',
+  payload: { row: EDInventoryRow, error: Error }
 };
 export type SelectEventRowAction = {
   type: 'eventInventory/SELECT_EVENT_ROW',
@@ -90,7 +107,9 @@ export type Action =
   | ResetEventInventoryAction
   | SetEventInventoryFilterAction
   | SetEventRowListedRequestAction
-  | SetEventRowManualPriceAction
+  | SetEventRowListedErrorAction
+  | SetEventRowManualPriceRequestAction
+  | SetEventRowManualPriceErrorAction
   | SelectEventRowAction
   | SelectAllEventRowsAction
   | SetEditingManualPriceAction
@@ -109,7 +128,9 @@ export const types = {
   SET_EVENT_ROW_LISTED_REQUEST,
   SET_EVENT_ROW_LISTED_SUCCESS,
   SET_EVENT_ROW_LISTED_ERROR,
-  SET_EVENT_ROW_MANUAL_PRICE,
+  SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
+  SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
+  SET_EVENT_ROW_MANUAL_PRICE_ERROR,
   SET_EDITING_MANUAL_PRICE,
   SELECT_EVENT_ROW,
   SELECT_ALL_EVENT_ROWS,
@@ -135,19 +156,19 @@ const setEventInventoryFilter = (
 });
 
 const setEventRowListed = (
-  id: number,
+  row: EDInventoryRow,
   value: boolean
 ): SetEventRowListedRequestAction => ({
   type: SET_EVENT_ROW_LISTED_REQUEST,
-  payload: { id, value }
+  payload: { row, value }
 });
 
 const setEventRowManualPrice = (
-  id: number,
-  value: number
-): SetEventRowManualPriceAction => ({
-  type: SET_EVENT_ROW_MANUAL_PRICE,
-  payload: { id, value }
+  row: EDInventoryRow,
+  value: string
+): SetEventRowManualPriceRequestAction => ({
+  type: SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
+  payload: { row, value }
 });
 
 const selectEventRow = (id: number): SelectEventRowAction => ({
@@ -286,8 +307,11 @@ export const reducer = (state: State = initialState, action: Action) => {
         selectedRowIds
       };
     }
-    case SET_EVENT_ROW_LISTED_SUCCESS: {
-      const { id, value } = action.payload;
+    case SET_EVENT_ROW_LISTED_REQUEST: {
+      const {
+        row: { id },
+        value
+      } = action.payload;
 
       const allRows: EDInventoryRow[] = state.allRows.map(
         (row) => (row.id === id ? { ...row, isListed: value } : row)
@@ -298,14 +322,27 @@ export const reducer = (state: State = initialState, action: Action) => {
         allRows
       };
     }
+    case SET_EVENT_ROW_LISTED_ERROR: {
+      const { row: fallbackRow } = action.payload;
+      const id = fallbackRow.id;
+
+      const allRows: EDInventoryRow[] = state.allRows.map(
+        (row) => (row.id === id ? { ...fallbackRow } : row)
+      );
+
+      return { ...state, allRows };
+    }
     case SET_EDITING_MANUAL_PRICE: {
       return { ...state, manualPriceEditId: action.payload };
     }
     case CANCEL_EDITING_MANUAL_PRICE: {
       return { ...state, manualPriceEditId: null };
     }
-    case SET_EVENT_ROW_MANUAL_PRICE: {
-      const { id, value } = action.payload;
+    case SET_EVENT_ROW_MANUAL_PRICE_REQUEST: {
+      const {
+        row: { id },
+        value
+      } = action.payload;
 
       const allRows: EDInventoryRow[] = state.allRows.map(
         (row) =>
@@ -319,6 +356,16 @@ export const reducer = (state: State = initialState, action: Action) => {
         allRows,
         manualPriceEditId: null
       };
+    }
+    case SET_EVENT_ROW_MANUAL_PRICE_ERROR: {
+      const { row: fallbackRow } = action.payload;
+      const id = fallbackRow.id;
+
+      const allRows: EDInventoryRow[] = state.allRows.map(
+        (row) => (row.id === id ? { ...fallbackRow } : row)
+      );
+
+      return { ...state, allRows };
     }
     case SET_SCALE_FILTERS: {
       return {
@@ -355,11 +402,25 @@ type Store = {
 
 const selectAllEventInventoryRows = (store: Store) =>
   store.eventInventory.allRows;
+
 const selectSelectedScaleFilters = (store: Store) =>
   store.eventInventory.selectedScaleFilters;
+
 const selectEventInventoryLoading = (store: Store) =>
   store.eventInventory.loading;
+
 const selectEventInventoryError = (store: Store) => store.eventInventory.error;
+
+const selectSelectedRowIds = (store: Store) =>
+  store.eventInventory.selectedRowIds;
+
+const selectSelectedRows = createSelector(
+  [selectAllEventInventoryRows, selectSelectedRowIds],
+  (rows, ids) => {
+    return ids.map((id) => rows.find((row) => row.id === id));
+  }
+);
+
 const selectEventInventoryFilter = (store: Store) => {
   const { eventInventory } = store;
   return {
@@ -367,6 +428,7 @@ const selectEventInventoryFilter = (store: Store) => {
     direction: eventInventory.filterDirection
   };
 };
+
 const selectEventInventoryRows = createSelector(
   [
     selectAllEventInventoryRows,
@@ -387,5 +449,7 @@ export const selectors = {
   selectEventInventoryRows,
   selectEventInventoryLoading,
   selectEventInventoryError,
-  selectEventInventoryFilter
+  selectEventInventoryFilter,
+  selectSelectedRowIds,
+  selectSelectedRows
 };

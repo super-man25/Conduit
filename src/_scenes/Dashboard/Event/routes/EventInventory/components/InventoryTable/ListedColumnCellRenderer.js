@@ -17,7 +17,7 @@ export const ListedColumnCellPresenter = ({ cellData, setListed }: Props) => (
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setListed: () =>
-    dispatch(actions.setEventRowListed(ownProps.rowData.id, !ownProps.cellData))
+    dispatch(actions.setEventRowListed(ownProps.rowData, !ownProps.cellData))
 });
 
 const ListedColumnCell = connect(null, mapDispatchToProps)(

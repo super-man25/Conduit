@@ -12,6 +12,51 @@ type Props = {
   small: boolean
 };
 
+export const PrimaryButton = styled.button`
+  min-width: 100px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 3px;
+  height: ${(props) => (props.small ? 30 : 40)}px;
+  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${cssConstants.PRIMARY_WHITE};
+  transition: opacity 100ms ease-out;
+  margin: ${(props) => props.margin};
+
+  &:disabled {
+    opacity: 0.3;
+    background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+  }
+
+  &:hover:not(:disabled) {
+    background-color: ${cssConstants.PRIMARY_DARK_BLUE};
+    cursor: pointer;
+  }
+`;
+
+export const SecondaryButton = PrimaryButton.extend`
+  background-color: ${cssConstants.PRIMARY_WHITE};
+  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+
+  &:hover:not(:disabled) {
+    background-color: ${cssConstants.PRIMARY_WHITE};
+    border: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+    color: ${cssConstants.PRIMARY_DARK_BLUE};
+  }
+`;
+
+export const GrayButton = PrimaryButton.extend`
+  background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  opacity: 0.8;
+
+  &:hover:not(:disabled) {
+    opacity: 1;
+    background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+  }
+`;
+
 export const Button: React.ComponentType<Props> = styled.button`
   display: ${(props) => (props.hidden ? 'none' : 'block')};
   color: ${(props) =>

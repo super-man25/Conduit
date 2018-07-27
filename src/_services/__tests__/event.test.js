@@ -87,3 +87,25 @@ describe('getInventory', () => {
     });
   });
 });
+
+describe('updateEventSeats', () => {
+  afterEach(fetchMock.restore);
+
+  it('should update eventSeats', () => {
+    const updateParams = {
+      eventSeats: [1, 2, 3],
+      isListed: true
+    };
+
+    const mock = fetchMock.post('end:eventRows/_bulk', {
+      msg: `${updateParams.eventSeats.length} seats updated`
+    });
+
+    return eventService.updateEventSeats().then((res) => {
+      expect(mock.called()).toBe(true);
+      expect(res).toEqual({ msg: '3 seats updated' });
+    });
+
+    const eventSeats = [1, 2, 3];
+  });
+});

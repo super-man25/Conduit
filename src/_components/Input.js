@@ -70,3 +70,47 @@ export const Input: React.ComponentType<Props> = styled.input.attrs({
     color: ${cssConstants.PRIMARY_GRAY};
   }
 `;
+
+type NumberInputProps = {
+  component: React.ComponentType<{}>
+};
+
+// delete, backspace, tab, escape, enter, decimal, period
+const allowedKeyCodes = [46, 8, 9, 27, 13, 110, 190];
+
+/**
+ * NumberInputField component wraps an input with a keydown event handler.
+ * The event handler will only allow numbers and some other special chars
+ * to be entered.
+ */
+export class NumberInputField extends React.Component<NumberInputProps> {
+  onKeyDown = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    const isCtrlOrMetaKey = e.ctrlKey || e.metaKey;
+
+    // Allow: allowedKeycodes, Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X, home, end, left, right
+    if (
+      allowedKeyCodes.indexOf(e.keyCode) !== -1 ||
+      (e.keyCode === 65 && isCtrlOrMetaKey) ||
+      (e.keyCode === 67 && isCtrlOrMetaKey) ||
+      (e.keyCode === 86 && isCtrlOrMetaKey) ||
+      (e.keyCode === 88 && isCtrlOrMetaKey) ||
+      (e.keyCode >= 35 && e.keyCode <= 39)
+    ) {
+      return;
+    }
+    // Prevent default if it is not a number (stops keypress event)
+    if (
+      (e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) &&
+      (e.keyCode < 96 || e.keyCode > 105)
+    ) {
+      e.preventDefault();
+    }
+  };
+
+  render() {
+    const { component, ...props } = this.props;
+
+    let InputComponent = component;
+    return <InputComponent onKeyDown={this.onKeyDown} {...props} />;
+  }
+}

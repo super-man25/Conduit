@@ -145,11 +145,11 @@ ShallowWrapper {
     "props": Object {
       "align": "center",
       "children": Array [
-        <styled.input
+        <NumberInputField
+          component={[Function]}
           onChange={[Function]}
-          pattern="[0-9]"
           placeholder="$12.00"
-          type="text"
+          type="number"
           value=""
 />,
         <styled.button
@@ -178,10 +178,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "component": [Function],
           "onChange": [Function],
-          "pattern": "[0-9]",
           "placeholder": "$12.00",
-          "type": "text",
+          "type": "number",
           "value": "",
         },
         "ref": null,
@@ -229,11 +229,11 @@ ShallowWrapper {
       "props": Object {
         "align": "center",
         "children": Array [
-          <styled.input
+          <NumberInputField
+            component={[Function]}
             onChange={[Function]}
-            pattern="[0-9]"
             placeholder="$12.00"
-            type="text"
+            type="number"
             value=""
 />,
           <styled.button
@@ -262,10 +262,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "component": [Function],
             "onChange": [Function],
-            "pattern": "[0-9]",
             "placeholder": "$12.00",
-            "type": "text",
+            "type": "number",
             "value": "",
           },
           "ref": null,

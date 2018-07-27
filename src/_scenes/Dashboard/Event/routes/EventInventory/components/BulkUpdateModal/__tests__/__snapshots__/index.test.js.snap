@@ -1,0 +1,4521 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BulkUpdateModal /> should render correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
+    cancelBulkUpdate={[Function]}
+    loading={false}
+    rows={
+        Array [
+            1,
+            2,
+            3,
+          ]
+    }
+    submitBulkUpdate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div>
+                    <styled.h4>
+                              Bulk Inventory Update
+                    </styled.h4>
+                    <styled.p
+                              size={14}
+                              weight={300}
+                    >
+                              Updating inventory for 
+                              3
+                               row(s).
+                    </styled.p>
+          </styled.div>
+          <styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Action
+                              </styled.label>
+                              <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "label": "Update Manual Price",
+                                                              "value": 0,
+                                                            },
+                                                            Object {
+                                                              "label": "Update Listed Status",
+                                                              "value": 1,
+                                                            },
+                                                          ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                  Object {
+                                                            "label": "Update Manual Price",
+                                                            "value": 0,
+                                                          }
+                                        }
+                              />
+                    </styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Manual Price
+                              </styled.label>
+                              <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value=""
+                              />
+                    </styled.div>
+                    <Flex
+                              justify="flex-end"
+                    >
+                              <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Cancel
+                              </styled.button>
+                              <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Submit
+                              </styled.button>
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        <styled.div
+          onClick={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <styled.h4>
+                            Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                            size={14}
+                            weight={300}
+              >
+                            Updating inventory for 
+                            3
+                             row(s).
+              </styled.p>
+</styled.div>,
+            <styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Action
+                            </styled.label>
+                            <SelectDropdown
+                                          full={true}
+                                          onChange={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      },
+                                                                      Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      },
+                                                                    ]
+                                          }
+                                          placeholder="Select"
+                                          selected={
+                                                        Object {
+                                                                      "label": "Update Manual Price",
+                                                                      "value": 0,
+                                                                    }
+                                          }
+                            />
+              </styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Manual Price
+                            </styled.label>
+                            <NumberInputField
+                                          component={[Function]}
+                                          id="manual-price"
+                                          name="price"
+                                          onBlur={[Function]}
+                                          onChange={[Function]}
+                                          placeholder="$ Manual Price"
+                                          type="number"
+                                          value=""
+                            />
+              </styled.div>
+              <Flex
+                            justify="flex-end"
+              >
+                            <styled.button
+                                          margin="0 1rem 0 0"
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Cancel
+                            </styled.button>
+                            <styled.button
+                                          disabled={false}
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Submit
+                            </styled.button>
+              </Flex>
+</styled.div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  Bulk Inventory Update
+</styled.h4>,
+                <styled.p
+                  size={14}
+                  weight={300}
+>
+                  Updating inventory for 
+                  3
+                   row(s).
+</styled.p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Bulk Inventory Update",
+                },
+                "ref": null,
+                "rendered": "Bulk Inventory Update",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "size": 14,
+                  "weight": 300,
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Updating inventory for ",
+                  3,
+                  " row(s).",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Action
+                  </styled.label>
+                  <SelectDropdown
+                                    full={true}
+                                    onChange={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                    }
+                                    placeholder="Select"
+                                    selected={
+                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                    }
+                  />
+</styled.div>,
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                                    component={[Function]}
+                                    id="manual-price"
+                                    name="price"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    placeholder="$ Manual Price"
+                                    type="number"
+                                    value=""
+                  />
+</styled.div>,
+                false,
+                <Flex
+                  justify="flex-end"
+>
+                  <styled.button
+                                    margin="0 1rem 0 0"
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Cancel
+                  </styled.button>
+                  <styled.button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Submit
+                  </styled.button>
+</Flex>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Action
+</styled.label>,
+                    <SelectDropdown
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "label": "Update Manual Price",
+                                                                    "value": 0,
+                                                                  },
+                                                                  Object {
+                                                                    "label": "Update Listed Status",
+                                                                    "value": 1,
+                                                                  },
+                                                                ]
+                      }
+                      placeholder="Select"
+                      selected={
+                                            Object {
+                                                                  "label": "Update Manual Price",
+                                                                  "value": 0,
+                                                                }
+                      }
+/>,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Action",
+                    },
+                    "ref": null,
+                    "rendered": "Action",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "full": true,
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Listed Status",
+                          "value": 1,
+                        },
+                      ],
+                      "placeholder": "Select",
+                      "selected": Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Manual Price
+</styled.label>,
+                    <NumberInputField
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value=""
+/>,
+                    undefined,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Manual Price",
+                    },
+                    "ref": null,
+                    "rendered": "Manual Price",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "id": "manual-price",
+                      "name": "price",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "placeholder": "$ Manual Price",
+                      "type": "number",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  undefined,
+                ],
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.button
+                      margin="0 1rem 0 0"
+                      onClick={[Function]}
+                      small={true}
+>
+                      Cancel
+</styled.button>,
+                    <styled.button
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
+>
+                      Submit
+</styled.button>,
+                  ],
+                  "justify": "flex-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "margin": "0 1rem 0 0",
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Submit",
+                      "disabled": false,
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div>
+                        <styled.h4>
+                                    Bulk Inventory Update
+                        </styled.h4>
+                        <styled.p
+                                    size={14}
+                                    weight={300}
+                        >
+                                    Updating inventory for 
+                                    3
+                                     row(s).
+                        </styled.p>
+            </styled.div>
+            <styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Action
+                                    </styled.label>
+                                    <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                            Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                                }
+                                    />
+                        </styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Manual Price
+                                    </styled.label>
+                                    <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value=""
+                                    />
+                        </styled.div>
+                        <Flex
+                                    justify="flex-end"
+                        >
+                                    <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Cancel
+                                    </styled.button>
+                                    <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Submit
+                                    </styled.button>
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          <styled.div
+            onClick={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <styled.h4>
+                                Bulk Inventory Update
+                </styled.h4>
+                <styled.p
+                                size={14}
+                                weight={300}
+                >
+                                Updating inventory for 
+                                3
+                                 row(s).
+                </styled.p>
+</styled.div>,
+              <styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Action
+                                </styled.label>
+                                <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                                Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                                Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                                }
+                                />
+                </styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Manual Price
+                                </styled.label>
+                                <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value=""
+                                />
+                </styled.div>
+                <Flex
+                                justify="flex-end"
+                >
+                                <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Cancel
+                                </styled.button>
+                                <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Submit
+                                </styled.button>
+                </Flex>
+</styled.div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h4>
+                    Bulk Inventory Update
+</styled.h4>,
+                  <styled.p
+                    size={14}
+                    weight={300}
+>
+                    Updating inventory for 
+                    3
+                     row(s).
+</styled.p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Bulk Inventory Update",
+                  },
+                  "ref": null,
+                  "rendered": "Bulk Inventory Update",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Updating inventory for ",
+                      3,
+                      " row(s).",
+                    ],
+                    "size": 14,
+                    "weight": 300,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Action
+                    </styled.label>
+                    <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                            Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                            Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                        }
+                    />
+</styled.div>,
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Manual Price
+                    </styled.label>
+                    <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value=""
+                    />
+</styled.div>,
+                  false,
+                  <Flex
+                    justify="flex-end"
+>
+                    <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Cancel
+                    </styled.button>
+                    <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Submit
+                    </styled.button>
+</Flex>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Action
+</styled.label>,
+                      <SelectDropdown
+                        full={true}
+                        onChange={[Function]}
+                        options={
+                                                Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                        }
+                        placeholder="Select"
+                        selected={
+                                                Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                        }
+/>,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Action",
+                      },
+                      "ref": null,
+                      "rendered": "Action",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "full": true,
+                        "onChange": [Function],
+                        "options": Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Listed Status",
+                            "value": 1,
+                          },
+                        ],
+                        "placeholder": "Select",
+                        "selected": Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Manual Price
+</styled.label>,
+                      <NumberInputField
+                        component={[Function]}
+                        id="manual-price"
+                        name="price"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        placeholder="$ Manual Price"
+                        type="number"
+                        value=""
+/>,
+                      undefined,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Manual Price",
+                      },
+                      "ref": null,
+                      "rendered": "Manual Price",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "id": "manual-price",
+                        "name": "price",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "placeholder": "$ Manual Price",
+                        "type": "number",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    undefined,
+                  ],
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.button
+                        margin="0 1rem 0 0"
+                        onClick={[Function]}
+                        small={true}
+>
+                        Cancel
+</styled.button>,
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+                        small={true}
+>
+                        Submit
+</styled.button>,
+                    ],
+                    "justify": "flex-end",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Cancel",
+                        "margin": "0 1rem 0 0",
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Cancel",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Submit",
+                        "disabled": false,
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Submit",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<BulkUpdateModal /> should render correctly when an invalid manual price is entered and blurred 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
+    cancelBulkUpdate={[Function]}
+    loading={false}
+    rows={
+        Array [
+            1,
+            2,
+            3,
+          ]
+    }
+    submitBulkUpdate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div>
+                    <styled.h4>
+                              Bulk Inventory Update
+                    </styled.h4>
+                    <styled.p
+                              size={14}
+                              weight={300}
+                    >
+                              Updating inventory for 
+                              3
+                               row(s).
+                    </styled.p>
+          </styled.div>
+          <styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Action
+                              </styled.label>
+                              <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "label": "Update Manual Price",
+                                                              "value": 0,
+                                                            },
+                                                            Object {
+                                                              "label": "Update Listed Status",
+                                                              "value": 1,
+                                                            },
+                                                          ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                  Object {
+                                                            "label": "Update Manual Price",
+                                                            "value": 0,
+                                                          }
+                                        }
+                              />
+                    </styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Manual Price
+                              </styled.label>
+                              <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value="12.222"
+                              />
+                              <styled.p
+                                        color="#DC0A0A"
+                                        marginTop="0.5rem"
+                                        size={12}
+                                        weight={300}
+                              >
+                                        Manual Price must be a valid dollar amount.
+                              </styled.p>
+                    </styled.div>
+                    <Flex
+                              justify="flex-end"
+                    >
+                              <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Cancel
+                              </styled.button>
+                              <styled.button
+                                        disabled={true}
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Submit
+                              </styled.button>
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        <styled.div
+          onClick={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <styled.h4>
+                            Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                            size={14}
+                            weight={300}
+              >
+                            Updating inventory for 
+                            3
+                             row(s).
+              </styled.p>
+</styled.div>,
+            <styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Action
+                            </styled.label>
+                            <SelectDropdown
+                                          full={true}
+                                          onChange={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      },
+                                                                      Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      },
+                                                                    ]
+                                          }
+                                          placeholder="Select"
+                                          selected={
+                                                        Object {
+                                                                      "label": "Update Manual Price",
+                                                                      "value": 0,
+                                                                    }
+                                          }
+                            />
+              </styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Manual Price
+                            </styled.label>
+                            <NumberInputField
+                                          component={[Function]}
+                                          id="manual-price"
+                                          name="price"
+                                          onBlur={[Function]}
+                                          onChange={[Function]}
+                                          placeholder="$ Manual Price"
+                                          type="number"
+                                          value="12.222"
+                            />
+                            <styled.p
+                                          color="#DC0A0A"
+                                          marginTop="0.5rem"
+                                          size={12}
+                                          weight={300}
+                            >
+                                          Manual Price must be a valid dollar amount.
+                            </styled.p>
+              </styled.div>
+              <Flex
+                            justify="flex-end"
+              >
+                            <styled.button
+                                          margin="0 1rem 0 0"
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Cancel
+                            </styled.button>
+                            <styled.button
+                                          disabled={true}
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Submit
+                            </styled.button>
+              </Flex>
+</styled.div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  Bulk Inventory Update
+</styled.h4>,
+                <styled.p
+                  size={14}
+                  weight={300}
+>
+                  Updating inventory for 
+                  3
+                   row(s).
+</styled.p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Bulk Inventory Update",
+                },
+                "ref": null,
+                "rendered": "Bulk Inventory Update",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "size": 14,
+                  "weight": 300,
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Updating inventory for ",
+                  3,
+                  " row(s).",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Action
+                  </styled.label>
+                  <SelectDropdown
+                                    full={true}
+                                    onChange={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                    }
+                                    placeholder="Select"
+                                    selected={
+                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                    }
+                  />
+</styled.div>,
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                                    component={[Function]}
+                                    id="manual-price"
+                                    name="price"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    placeholder="$ Manual Price"
+                                    type="number"
+                                    value="12.222"
+                  />
+                  <styled.p
+                                    color="#DC0A0A"
+                                    marginTop="0.5rem"
+                                    size={12}
+                                    weight={300}
+                  >
+                                    Manual Price must be a valid dollar amount.
+                  </styled.p>
+</styled.div>,
+                false,
+                <Flex
+                  justify="flex-end"
+>
+                  <styled.button
+                                    margin="0 1rem 0 0"
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Cancel
+                  </styled.button>
+                  <styled.button
+                                    disabled={true}
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Submit
+                  </styled.button>
+</Flex>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Action
+</styled.label>,
+                    <SelectDropdown
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "label": "Update Manual Price",
+                                                                    "value": 0,
+                                                                  },
+                                                                  Object {
+                                                                    "label": "Update Listed Status",
+                                                                    "value": 1,
+                                                                  },
+                                                                ]
+                      }
+                      placeholder="Select"
+                      selected={
+                                            Object {
+                                                                  "label": "Update Manual Price",
+                                                                  "value": 0,
+                                                                }
+                      }
+/>,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Action",
+                    },
+                    "ref": null,
+                    "rendered": "Action",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "full": true,
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Listed Status",
+                          "value": 1,
+                        },
+                      ],
+                      "placeholder": "Select",
+                      "selected": Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Manual Price
+</styled.label>,
+                    <NumberInputField
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value="12.222"
+/>,
+                    <styled.p
+                      color="#DC0A0A"
+                      marginTop="0.5rem"
+                      size={12}
+                      weight={300}
+>
+                      Manual Price must be a valid dollar amount.
+</styled.p>,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Manual Price",
+                    },
+                    "ref": null,
+                    "rendered": "Manual Price",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "id": "manual-price",
+                      "name": "price",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "placeholder": "$ Manual Price",
+                      "type": "number",
+                      "value": "12.222",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Manual Price must be a valid dollar amount.",
+                      "color": "#DC0A0A",
+                      "marginTop": "0.5rem",
+                      "size": 12,
+                      "weight": 300,
+                    },
+                    "ref": null,
+                    "rendered": "Manual Price must be a valid dollar amount.",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.button
+                      margin="0 1rem 0 0"
+                      onClick={[Function]}
+                      small={true}
+>
+                      Cancel
+</styled.button>,
+                    <styled.button
+                      disabled={true}
+                      onClick={[Function]}
+                      small={true}
+>
+                      Submit
+</styled.button>,
+                  ],
+                  "justify": "flex-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "margin": "0 1rem 0 0",
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Submit",
+                      "disabled": true,
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div>
+                        <styled.h4>
+                                    Bulk Inventory Update
+                        </styled.h4>
+                        <styled.p
+                                    size={14}
+                                    weight={300}
+                        >
+                                    Updating inventory for 
+                                    3
+                                     row(s).
+                        </styled.p>
+            </styled.div>
+            <styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Action
+                                    </styled.label>
+                                    <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                            Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                                }
+                                    />
+                        </styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Manual Price
+                                    </styled.label>
+                                    <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value="12.222"
+                                    />
+                                    <styled.p
+                                                color="#DC0A0A"
+                                                marginTop="0.5rem"
+                                                size={12}
+                                                weight={300}
+                                    >
+                                                Manual Price must be a valid dollar amount.
+                                    </styled.p>
+                        </styled.div>
+                        <Flex
+                                    justify="flex-end"
+                        >
+                                    <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Cancel
+                                    </styled.button>
+                                    <styled.button
+                                                disabled={true}
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Submit
+                                    </styled.button>
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          <styled.div
+            onClick={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <styled.h4>
+                                Bulk Inventory Update
+                </styled.h4>
+                <styled.p
+                                size={14}
+                                weight={300}
+                >
+                                Updating inventory for 
+                                3
+                                 row(s).
+                </styled.p>
+</styled.div>,
+              <styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Action
+                                </styled.label>
+                                <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                                Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                                Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                                }
+                                />
+                </styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Manual Price
+                                </styled.label>
+                                <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value="12.222"
+                                />
+                                <styled.p
+                                                color="#DC0A0A"
+                                                marginTop="0.5rem"
+                                                size={12}
+                                                weight={300}
+                                >
+                                                Manual Price must be a valid dollar amount.
+                                </styled.p>
+                </styled.div>
+                <Flex
+                                justify="flex-end"
+                >
+                                <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Cancel
+                                </styled.button>
+                                <styled.button
+                                                disabled={true}
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Submit
+                                </styled.button>
+                </Flex>
+</styled.div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h4>
+                    Bulk Inventory Update
+</styled.h4>,
+                  <styled.p
+                    size={14}
+                    weight={300}
+>
+                    Updating inventory for 
+                    3
+                     row(s).
+</styled.p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Bulk Inventory Update",
+                  },
+                  "ref": null,
+                  "rendered": "Bulk Inventory Update",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Updating inventory for ",
+                      3,
+                      " row(s).",
+                    ],
+                    "size": 14,
+                    "weight": 300,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Action
+                    </styled.label>
+                    <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                            Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                            Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                        }
+                    />
+</styled.div>,
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Manual Price
+                    </styled.label>
+                    <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value="12.222"
+                    />
+                    <styled.p
+                                        color="#DC0A0A"
+                                        marginTop="0.5rem"
+                                        size={12}
+                                        weight={300}
+                    >
+                                        Manual Price must be a valid dollar amount.
+                    </styled.p>
+</styled.div>,
+                  false,
+                  <Flex
+                    justify="flex-end"
+>
+                    <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Cancel
+                    </styled.button>
+                    <styled.button
+                                        disabled={true}
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Submit
+                    </styled.button>
+</Flex>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Action
+</styled.label>,
+                      <SelectDropdown
+                        full={true}
+                        onChange={[Function]}
+                        options={
+                                                Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                        }
+                        placeholder="Select"
+                        selected={
+                                                Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                        }
+/>,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Action",
+                      },
+                      "ref": null,
+                      "rendered": "Action",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "full": true,
+                        "onChange": [Function],
+                        "options": Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Listed Status",
+                            "value": 1,
+                          },
+                        ],
+                        "placeholder": "Select",
+                        "selected": Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Manual Price
+</styled.label>,
+                      <NumberInputField
+                        component={[Function]}
+                        id="manual-price"
+                        name="price"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        placeholder="$ Manual Price"
+                        type="number"
+                        value="12.222"
+/>,
+                      <styled.p
+                        color="#DC0A0A"
+                        marginTop="0.5rem"
+                        size={12}
+                        weight={300}
+>
+                        Manual Price must be a valid dollar amount.
+</styled.p>,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Manual Price",
+                      },
+                      "ref": null,
+                      "rendered": "Manual Price",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "id": "manual-price",
+                        "name": "price",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "placeholder": "$ Manual Price",
+                        "type": "number",
+                        "value": "12.222",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Manual Price must be a valid dollar amount.",
+                        "color": "#DC0A0A",
+                        "marginTop": "0.5rem",
+                        "size": 12,
+                        "weight": 300,
+                      },
+                      "ref": null,
+                      "rendered": "Manual Price must be a valid dollar amount.",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.button
+                        margin="0 1rem 0 0"
+                        onClick={[Function]}
+                        small={true}
+>
+                        Cancel
+</styled.button>,
+                      <styled.button
+                        disabled={true}
+                        onClick={[Function]}
+                        small={true}
+>
+                        Submit
+</styled.button>,
+                    ],
+                    "justify": "flex-end",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Cancel",
+                        "margin": "0 1rem 0 0",
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Cancel",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Submit",
+                        "disabled": true,
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Submit",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
+    cancelBulkUpdate={[Function]}
+    loading={true}
+    rows={
+        Array [
+            1,
+            2,
+            3,
+          ]
+    }
+    submitBulkUpdate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div>
+                    <styled.h4>
+                              Bulk Inventory Update
+                    </styled.h4>
+                    <styled.p
+                              size={14}
+                              weight={300}
+                    >
+                              Updating inventory for 
+                              3
+                               row(s).
+                    </styled.p>
+          </styled.div>
+          <styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Action
+                              </styled.label>
+                              <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "label": "Update Manual Price",
+                                                              "value": 0,
+                                                            },
+                                                            Object {
+                                                              "label": "Update Listed Status",
+                                                              "value": 1,
+                                                            },
+                                                          ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                  Object {
+                                                            "label": "Update Manual Price",
+                                                            "value": 0,
+                                                          }
+                                        }
+                              />
+                    </styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Manual Price
+                              </styled.label>
+                              <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value=""
+                              />
+                    </styled.div>
+                    <Flex
+                              justify="flex-end"
+                    >
+                              <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Cancel
+                              </styled.button>
+                              <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        <Unknown
+                                                  color="#FFFFFF"
+                                                  small={true}
+                                        />
+                              </styled.button>
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        <styled.div
+          onClick={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <styled.h4>
+                            Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                            size={14}
+                            weight={300}
+              >
+                            Updating inventory for 
+                            3
+                             row(s).
+              </styled.p>
+</styled.div>,
+            <styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Action
+                            </styled.label>
+                            <SelectDropdown
+                                          full={true}
+                                          onChange={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      },
+                                                                      Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      },
+                                                                    ]
+                                          }
+                                          placeholder="Select"
+                                          selected={
+                                                        Object {
+                                                                      "label": "Update Manual Price",
+                                                                      "value": 0,
+                                                                    }
+                                          }
+                            />
+              </styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Manual Price
+                            </styled.label>
+                            <NumberInputField
+                                          component={[Function]}
+                                          id="manual-price"
+                                          name="price"
+                                          onBlur={[Function]}
+                                          onChange={[Function]}
+                                          placeholder="$ Manual Price"
+                                          type="number"
+                                          value=""
+                            />
+              </styled.div>
+              <Flex
+                            justify="flex-end"
+              >
+                            <styled.button
+                                          margin="0 1rem 0 0"
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Cancel
+                            </styled.button>
+                            <styled.button
+                                          disabled={false}
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          <Unknown
+                                                        color="#FFFFFF"
+                                                        small={true}
+                                          />
+                            </styled.button>
+              </Flex>
+</styled.div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  Bulk Inventory Update
+</styled.h4>,
+                <styled.p
+                  size={14}
+                  weight={300}
+>
+                  Updating inventory for 
+                  3
+                   row(s).
+</styled.p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Bulk Inventory Update",
+                },
+                "ref": null,
+                "rendered": "Bulk Inventory Update",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "size": 14,
+                  "weight": 300,
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Updating inventory for ",
+                  3,
+                  " row(s).",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Action
+                  </styled.label>
+                  <SelectDropdown
+                                    full={true}
+                                    onChange={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                    }
+                                    placeholder="Select"
+                                    selected={
+                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                    }
+                  />
+</styled.div>,
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                                    component={[Function]}
+                                    id="manual-price"
+                                    name="price"
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    placeholder="$ Manual Price"
+                                    type="number"
+                                    value=""
+                  />
+</styled.div>,
+                false,
+                <Flex
+                  justify="flex-end"
+>
+                  <styled.button
+                                    margin="0 1rem 0 0"
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Cancel
+                  </styled.button>
+                  <styled.button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    <Unknown
+                                                      color="#FFFFFF"
+                                                      small={true}
+                                    />
+                  </styled.button>
+</Flex>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Action
+</styled.label>,
+                    <SelectDropdown
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "label": "Update Manual Price",
+                                                                    "value": 0,
+                                                                  },
+                                                                  Object {
+                                                                    "label": "Update Listed Status",
+                                                                    "value": 1,
+                                                                  },
+                                                                ]
+                      }
+                      placeholder="Select"
+                      selected={
+                                            Object {
+                                                                  "label": "Update Manual Price",
+                                                                  "value": 0,
+                                                                }
+                      }
+/>,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Action",
+                    },
+                    "ref": null,
+                    "rendered": "Action",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "full": true,
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Listed Status",
+                          "value": 1,
+                        },
+                      ],
+                      "placeholder": "Select",
+                      "selected": Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Manual Price
+</styled.label>,
+                    <NumberInputField
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value=""
+/>,
+                    undefined,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Manual Price",
+                    },
+                    "ref": null,
+                    "rendered": "Manual Price",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "id": "manual-price",
+                      "name": "price",
+                      "onBlur": [Function],
+                      "onChange": [Function],
+                      "placeholder": "$ Manual Price",
+                      "type": "number",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  undefined,
+                ],
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.button
+                      margin="0 1rem 0 0"
+                      onClick={[Function]}
+                      small={true}
+>
+                      Cancel
+</styled.button>,
+                    <styled.button
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
+>
+                      <Unknown
+                                            color="#FFFFFF"
+                                            small={true}
+                      />
+</styled.button>,
+                  ],
+                  "justify": "flex-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "margin": "0 1rem 0 0",
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Unknown
+                        color="#FFFFFF"
+                        small={true}
+/>,
+                      "disabled": false,
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "color": "#FFFFFF",
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div>
+                        <styled.h4>
+                                    Bulk Inventory Update
+                        </styled.h4>
+                        <styled.p
+                                    size={14}
+                                    weight={300}
+                        >
+                                    Updating inventory for 
+                                    3
+                                     row(s).
+                        </styled.p>
+            </styled.div>
+            <styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Action
+                                    </styled.label>
+                                    <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                            Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                                                }
+                                    />
+                        </styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Manual Price
+                                    </styled.label>
+                                    <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value=""
+                                    />
+                        </styled.div>
+                        <Flex
+                                    justify="flex-end"
+                        >
+                                    <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Cancel
+                                    </styled.button>
+                                    <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                <Unknown
+                                                            color="#FFFFFF"
+                                                            small={true}
+                                                />
+                                    </styled.button>
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          <styled.div
+            onClick={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <styled.h4>
+                                Bulk Inventory Update
+                </styled.h4>
+                <styled.p
+                                size={14}
+                                weight={300}
+                >
+                                Updating inventory for 
+                                3
+                                 row(s).
+                </styled.p>
+</styled.div>,
+              <styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Action
+                                </styled.label>
+                                <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                                Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                                Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                                }
+                                />
+                </styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Manual Price
+                                </styled.label>
+                                <NumberInputField
+                                                component={[Function]}
+                                                id="manual-price"
+                                                name="price"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                placeholder="$ Manual Price"
+                                                type="number"
+                                                value=""
+                                />
+                </styled.div>
+                <Flex
+                                justify="flex-end"
+                >
+                                <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Cancel
+                                </styled.button>
+                                <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                <Unknown
+                                                                color="#FFFFFF"
+                                                                small={true}
+                                                />
+                                </styled.button>
+                </Flex>
+</styled.div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h4>
+                    Bulk Inventory Update
+</styled.h4>,
+                  <styled.p
+                    size={14}
+                    weight={300}
+>
+                    Updating inventory for 
+                    3
+                     row(s).
+</styled.p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Bulk Inventory Update",
+                  },
+                  "ref": null,
+                  "rendered": "Bulk Inventory Update",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Updating inventory for ",
+                      3,
+                      " row(s).",
+                    ],
+                    "size": 14,
+                    "weight": 300,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Action
+                    </styled.label>
+                    <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                            Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                            Object {
+                                                                                "label": "Update Manual Price",
+                                                                                "value": 0,
+                                                                              }
+                                        }
+                    />
+</styled.div>,
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Manual Price
+                    </styled.label>
+                    <NumberInputField
+                                        component={[Function]}
+                                        id="manual-price"
+                                        name="price"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        placeholder="$ Manual Price"
+                                        type="number"
+                                        value=""
+                    />
+</styled.div>,
+                  false,
+                  <Flex
+                    justify="flex-end"
+>
+                    <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Cancel
+                    </styled.button>
+                    <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        <Unknown
+                                                            color="#FFFFFF"
+                                                            small={true}
+                                        />
+                    </styled.button>
+</Flex>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Action
+</styled.label>,
+                      <SelectDropdown
+                        full={true}
+                        onChange={[Function]}
+                        options={
+                                                Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                        }
+                        placeholder="Select"
+                        selected={
+                                                Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      }
+                        }
+/>,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Action",
+                      },
+                      "ref": null,
+                      "rendered": "Action",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "full": true,
+                        "onChange": [Function],
+                        "options": Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Listed Status",
+                            "value": 1,
+                          },
+                        ],
+                        "placeholder": "Select",
+                        "selected": Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Manual Price
+</styled.label>,
+                      <NumberInputField
+                        component={[Function]}
+                        id="manual-price"
+                        name="price"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        placeholder="$ Manual Price"
+                        type="number"
+                        value=""
+/>,
+                      undefined,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Manual Price",
+                      },
+                      "ref": null,
+                      "rendered": "Manual Price",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "id": "manual-price",
+                        "name": "price",
+                        "onBlur": [Function],
+                        "onChange": [Function],
+                        "placeholder": "$ Manual Price",
+                        "type": "number",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    undefined,
+                  ],
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.button
+                        margin="0 1rem 0 0"
+                        onClick={[Function]}
+                        small={true}
+>
+                        Cancel
+</styled.button>,
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+                        small={true}
+>
+                        <Unknown
+                                                color="#FFFFFF"
+                                                small={true}
+                        />
+</styled.button>,
+                    ],
+                    "justify": "flex-end",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Cancel",
+                        "margin": "0 1rem 0 0",
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Cancel",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Unknown
+                          color="#FFFFFF"
+                          small={true}
+/>,
+                        "disabled": false,
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "color": "#FFFFFF",
+                          "small": true,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<BulkUpdateModal /> should render correctly when the selectedAction is changed 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
+    cancelBulkUpdate={[Function]}
+    loading={true}
+    rows={
+        Array [
+            1,
+            2,
+            3,
+          ]
+    }
+    submitBulkUpdate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.div>
+          <styled.div>
+                    <styled.h4>
+                              Bulk Inventory Update
+                    </styled.h4>
+                    <styled.p
+                              size={14}
+                              weight={300}
+                    >
+                              Updating inventory for 
+                              3
+                               row(s).
+                    </styled.p>
+          </styled.div>
+          <styled.div>
+                    <styled.div
+                              marginBottom="2rem"
+                    >
+                              <styled.label>
+                                        Action
+                              </styled.label>
+                              <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                  Array [
+                                                            Object {
+                                                              "label": "Update Manual Price",
+                                                              "value": 0,
+                                                            },
+                                                            Object {
+                                                              "label": "Update Listed Status",
+                                                              "value": 1,
+                                                            },
+                                                          ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                  Object {
+                                                            "label": "Update Listed Status",
+                                                            "value": 1,
+                                                          }
+                                        }
+                              />
+                    </styled.div>
+                    <styled.div
+                              marginBottom="1.5rem"
+                    >
+                              <styled.label>
+                                        Listed
+                              </styled.label>
+                              <Toggle
+                                        isChecked=""
+                                        onChange={[Function]}
+                                        size="small"
+                              />
+                    </styled.div>
+                    <Flex
+                              justify="flex-end"
+                    >
+                              <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        Cancel
+                              </styled.button>
+                              <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                              >
+                                        <Unknown
+                                                  color="#FFFFFF"
+                                                  small={true}
+                                        />
+                              </styled.button>
+                    </Flex>
+          </styled.div>
+</styled.div>,
+        <styled.div
+          onClick={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <styled.h4>
+                            Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                            size={14}
+                            weight={300}
+              >
+                            Updating inventory for 
+                            3
+                             row(s).
+              </styled.p>
+</styled.div>,
+            <styled.div>
+              <styled.div
+                            marginBottom="2rem"
+              >
+                            <styled.label>
+                                          Action
+                            </styled.label>
+                            <SelectDropdown
+                                          full={true}
+                                          onChange={[Function]}
+                                          options={
+                                                        Array [
+                                                                      Object {
+                                                                        "label": "Update Manual Price",
+                                                                        "value": 0,
+                                                                      },
+                                                                      Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      },
+                                                                    ]
+                                          }
+                                          placeholder="Select"
+                                          selected={
+                                                        Object {
+                                                                      "label": "Update Listed Status",
+                                                                      "value": 1,
+                                                                    }
+                                          }
+                            />
+              </styled.div>
+              <styled.div
+                            marginBottom="1.5rem"
+              >
+                            <styled.label>
+                                          Listed
+                            </styled.label>
+                            <Toggle
+                                          isChecked=""
+                                          onChange={[Function]}
+                                          size="small"
+                            />
+              </styled.div>
+              <Flex
+                            justify="flex-end"
+              >
+                            <styled.button
+                                          margin="0 1rem 0 0"
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          Cancel
+                            </styled.button>
+                            <styled.button
+                                          disabled={false}
+                                          onClick={[Function]}
+                                          small={true}
+                            >
+                                          <Unknown
+                                                        color="#FFFFFF"
+                                                        small={true}
+                                          />
+                            </styled.button>
+              </Flex>
+</styled.div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.h4>
+                  Bulk Inventory Update
+</styled.h4>,
+                <styled.p
+                  size={14}
+                  weight={300}
+>
+                  Updating inventory for 
+                  3
+                   row(s).
+</styled.p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Bulk Inventory Update",
+                },
+                "ref": null,
+                "rendered": "Bulk Inventory Update",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "size": 14,
+                  "weight": 300,
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Updating inventory for ",
+                  3,
+                  " row(s).",
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.div
+                  marginBottom="2rem"
+>
+                  <styled.label>
+                                    Action
+                  </styled.label>
+                  <SelectDropdown
+                                    full={true}
+                                    onChange={[Function]}
+                                    options={
+                                                      Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                    }
+                                    placeholder="Select"
+                                    selected={
+                                                      Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      }
+                                    }
+                  />
+</styled.div>,
+                false,
+                <styled.div
+                  marginBottom="1.5rem"
+>
+                  <styled.label>
+                                    Listed
+                  </styled.label>
+                  <Toggle
+                                    isChecked=""
+                                    onChange={[Function]}
+                                    size="small"
+                  />
+</styled.div>,
+                <Flex
+                  justify="flex-end"
+>
+                  <styled.button
+                                    margin="0 1rem 0 0"
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    Cancel
+                  </styled.button>
+                  <styled.button
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    small={true}
+                  >
+                                    <Unknown
+                                                      color="#FFFFFF"
+                                                      small={true}
+                                    />
+                  </styled.button>
+</Flex>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Action
+</styled.label>,
+                    <SelectDropdown
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                                            Array [
+                                                                  Object {
+                                                                    "label": "Update Manual Price",
+                                                                    "value": 0,
+                                                                  },
+                                                                  Object {
+                                                                    "label": "Update Listed Status",
+                                                                    "value": 1,
+                                                                  },
+                                                                ]
+                      }
+                      placeholder="Select"
+                      selected={
+                                            Object {
+                                                                  "label": "Update Listed Status",
+                                                                  "value": 1,
+                                                                }
+                      }
+/>,
+                  ],
+                  "marginBottom": "2rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Action",
+                    },
+                    "ref": null,
+                    "rendered": "Action",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "full": true,
+                      "onChange": [Function],
+                      "options": Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Listed Status",
+                          "value": 1,
+                        },
+                      ],
+                      "placeholder": "Select",
+                      "selected": Object {
+                        "label": "Update Listed Status",
+                        "value": 1,
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.label>
+                      Listed
+</styled.label>,
+                    <Toggle
+                      isChecked=""
+                      onChange={[Function]}
+                      size="small"
+/>,
+                  ],
+                  "marginBottom": "1.5rem",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Listed",
+                    },
+                    "ref": null,
+                    "rendered": "Listed",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "isChecked": "",
+                      "onChange": [Function],
+                      "size": "small",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.button
+                      margin="0 1rem 0 0"
+                      onClick={[Function]}
+                      small={true}
+>
+                      Cancel
+</styled.button>,
+                    <styled.button
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
+>
+                      <Unknown
+                                            color="#FFFFFF"
+                                            small={true}
+                      />
+</styled.button>,
+                  ],
+                  "justify": "flex-end",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "margin": "0 1rem 0 0",
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Unknown
+                        color="#FFFFFF"
+                        small={true}
+/>,
+                      "disabled": false,
+                      "onClick": [Function],
+                      "small": true,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "color": "#FFFFFF",
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.div>
+                        <styled.h4>
+                                    Bulk Inventory Update
+                        </styled.h4>
+                        <styled.p
+                                    size={14}
+                                    weight={300}
+                        >
+                                    Updating inventory for 
+                                    3
+                                     row(s).
+                        </styled.p>
+            </styled.div>
+            <styled.div>
+                        <styled.div
+                                    marginBottom="2rem"
+                        >
+                                    <styled.label>
+                                                Action
+                                    </styled.label>
+                                    <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                            Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                            Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      }
+                                                }
+                                    />
+                        </styled.div>
+                        <styled.div
+                                    marginBottom="1.5rem"
+                        >
+                                    <styled.label>
+                                                Listed
+                                    </styled.label>
+                                    <Toggle
+                                                isChecked=""
+                                                onChange={[Function]}
+                                                size="small"
+                                    />
+                        </styled.div>
+                        <Flex
+                                    justify="flex-end"
+                        >
+                                    <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                Cancel
+                                    </styled.button>
+                                    <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                    >
+                                                <Unknown
+                                                            color="#FFFFFF"
+                                                            small={true}
+                                                />
+                                    </styled.button>
+                        </Flex>
+            </styled.div>
+</styled.div>,
+          <styled.div
+            onClick={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <styled.h4>
+                                Bulk Inventory Update
+                </styled.h4>
+                <styled.p
+                                size={14}
+                                weight={300}
+                >
+                                Updating inventory for 
+                                3
+                                 row(s).
+                </styled.p>
+</styled.div>,
+              <styled.div>
+                <styled.div
+                                marginBottom="2rem"
+                >
+                                <styled.label>
+                                                Action
+                                </styled.label>
+                                <SelectDropdown
+                                                full={true}
+                                                onChange={[Function]}
+                                                options={
+                                                                Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                                }
+                                                placeholder="Select"
+                                                selected={
+                                                                Object {
+                                                                                "label": "Update Listed Status",
+                                                                                "value": 1,
+                                                                              }
+                                                }
+                                />
+                </styled.div>
+                <styled.div
+                                marginBottom="1.5rem"
+                >
+                                <styled.label>
+                                                Listed
+                                </styled.label>
+                                <Toggle
+                                                isChecked=""
+                                                onChange={[Function]}
+                                                size="small"
+                                />
+                </styled.div>
+                <Flex
+                                justify="flex-end"
+                >
+                                <styled.button
+                                                margin="0 1rem 0 0"
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                Cancel
+                                </styled.button>
+                                <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                small={true}
+                                >
+                                                <Unknown
+                                                                color="#FFFFFF"
+                                                                small={true}
+                                                />
+                                </styled.button>
+                </Flex>
+</styled.div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.h4>
+                    Bulk Inventory Update
+</styled.h4>,
+                  <styled.p
+                    size={14}
+                    weight={300}
+>
+                    Updating inventory for 
+                    3
+                     row(s).
+</styled.p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Bulk Inventory Update",
+                  },
+                  "ref": null,
+                  "rendered": "Bulk Inventory Update",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Updating inventory for ",
+                      3,
+                      " row(s).",
+                    ],
+                    "size": 14,
+                    "weight": 300,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Updating inventory for ",
+                    3,
+                    " row(s).",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    marginBottom="2rem"
+>
+                    <styled.label>
+                                        Action
+                    </styled.label>
+                    <SelectDropdown
+                                        full={true}
+                                        onChange={[Function]}
+                                        options={
+                                                            Array [
+                                                                                Object {
+                                                                                  "label": "Update Manual Price",
+                                                                                  "value": 0,
+                                                                                },
+                                                                                Object {
+                                                                                  "label": "Update Listed Status",
+                                                                                  "value": 1,
+                                                                                },
+                                                                              ]
+                                        }
+                                        placeholder="Select"
+                                        selected={
+                                                            Object {
+                                                                                "label": "Update Listed Status",
+                                                                                "value": 1,
+                                                                              }
+                                        }
+                    />
+</styled.div>,
+                  false,
+                  <styled.div
+                    marginBottom="1.5rem"
+>
+                    <styled.label>
+                                        Listed
+                    </styled.label>
+                    <Toggle
+                                        isChecked=""
+                                        onChange={[Function]}
+                                        size="small"
+                    />
+</styled.div>,
+                  <Flex
+                    justify="flex-end"
+>
+                    <styled.button
+                                        margin="0 1rem 0 0"
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        Cancel
+                    </styled.button>
+                    <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                                        small={true}
+                    >
+                                        <Unknown
+                                                            color="#FFFFFF"
+                                                            small={true}
+                                        />
+                    </styled.button>
+</Flex>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Action
+</styled.label>,
+                      <SelectDropdown
+                        full={true}
+                        onChange={[Function]}
+                        options={
+                                                Array [
+                                                                        Object {
+                                                                          "label": "Update Manual Price",
+                                                                          "value": 0,
+                                                                        },
+                                                                        Object {
+                                                                          "label": "Update Listed Status",
+                                                                          "value": 1,
+                                                                        },
+                                                                      ]
+                        }
+                        placeholder="Select"
+                        selected={
+                                                Object {
+                                                                        "label": "Update Listed Status",
+                                                                        "value": 1,
+                                                                      }
+                        }
+/>,
+                    ],
+                    "marginBottom": "2rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Action",
+                      },
+                      "ref": null,
+                      "rendered": "Action",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "full": true,
+                        "onChange": [Function],
+                        "options": Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Listed Status",
+                            "value": 1,
+                          },
+                        ],
+                        "placeholder": "Select",
+                        "selected": Object {
+                          "label": "Update Listed Status",
+                          "value": 1,
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                false,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.label>
+                        Listed
+</styled.label>,
+                      <Toggle
+                        isChecked=""
+                        onChange={[Function]}
+                        size="small"
+/>,
+                    ],
+                    "marginBottom": "1.5rem",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Listed",
+                      },
+                      "ref": null,
+                      "rendered": "Listed",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "isChecked": "",
+                        "onChange": [Function],
+                        "size": "small",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <styled.button
+                        margin="0 1rem 0 0"
+                        onClick={[Function]}
+                        small={true}
+>
+                        Cancel
+</styled.button>,
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+                        small={true}
+>
+                        <Unknown
+                                                color="#FFFFFF"
+                                                small={true}
+                        />
+</styled.button>,
+                    ],
+                    "justify": "flex-end",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Cancel",
+                        "margin": "0 1rem 0 0",
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": "Cancel",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Unknown
+                          color="#FFFFFF"
+                          small={true}
+/>,
+                        "disabled": false,
+                        "onClick": [Function],
+                        "small": true,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "color": "#FFFFFF",
+                          "small": true,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
