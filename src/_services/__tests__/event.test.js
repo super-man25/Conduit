@@ -105,7 +105,5 @@ describe('updateEventSeats', () => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual({ msg: '3 seats updated' });
     });
-
-    const eventSeats = [1, 2, 3];
   });
 });

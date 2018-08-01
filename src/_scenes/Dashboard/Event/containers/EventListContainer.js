@@ -47,7 +47,11 @@ class EventListContainer extends React.Component<Props> {
   };
 
   handleOnClick = (event) => {
-    this.props.push(`/event/${event.id}`);
+    if (event.id !== this.props.activeEventId) {
+      this.props.push(`/event/${event.id}`);
+    } else {
+      this.props.push(`/season`);
+    }
   };
 
   get title() {

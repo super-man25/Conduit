@@ -39,9 +39,16 @@ export function calculateFilteredRows(
   filterName: string,
   selectedScaleFilters: any[] = []
 ) {
-  const rowsFilteredByScale = selectedScaleFilters.length
-    ? rows.filter((row) => selectedScaleFilters.includes(row.priceScaleId))
-    : rows;
+  let rowsFilteredByScale = rows;
+  const hasScaleFilters = selectedScaleFilters.length;
+
+  if (hasScaleFilters) {
+    const scaleMap = selectedScaleFilters.reduce(
+      (acc, v) => ({ ...acc, [v.integrationId]: true }),
+      {}
+    );
+    rowsFilteredByScale = rows.filter((row) => scaleMap[row.priceScaleId]);
+  }
 
   if (!filterName) return rowsFilteredByScale;
 

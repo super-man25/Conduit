@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { ScaleFilter } from './ScaleFilter';
 import { withClickAway } from '_hoc';
 import { cssConstants } from '_constants';
+import type { EDVenuePriceScale } from '_models';
 
 type Props = {
   isFiltered: boolean,
@@ -15,9 +16,9 @@ type Props = {
   setFilter: () => void,
   disableSort: boolean,
   label: string,
-  scaleFilters: number[],
-  selectedScaleFilters: number[],
-  setSelectedScaleFilters: (number[]) => void,
+  scaleFilters: EDVenuePriceScale[],
+  selectedScaleFilters: EDVenuePriceScale[],
+  setSelectedScaleFilters: (EDVenuePriceScale[]) => void,
   selectAllScaleFilters: () => void
 };
 
@@ -33,11 +34,13 @@ export class ScaleColumnHeaderPresenter extends React.Component<Props, State> {
   state = { scaleDropdownOpen: false };
   ref = React.createRef();
 
-  onScaleClicked = (scale: number) => {
+  onScaleClicked = (scale: EDVenuePriceScale) => {
     const { selectedScaleFilters, setSelectedScaleFilters } = this.props;
 
-    const updatedScaleFilters = selectedScaleFilters.includes(scale)
-      ? selectedScaleFilters.filter((s) => s !== scale)
+    const alreadyHasScale = selectedScaleFilters.find((s) => s.id === scale.id);
+
+    const updatedScaleFilters = alreadyHasScale
+      ? selectedScaleFilters.filter((s) => s.id !== scale.id)
       : selectedScaleFilters.concat(scale);
 
     setSelectedScaleFilters(updatedScaleFilters);

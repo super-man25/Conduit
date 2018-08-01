@@ -18,9 +18,14 @@ import {
 } from '_state/eventInventoryBulk';
 import { VirtualizedEventInventory } from './components/InventoryTable';
 import type { EDEvent } from '_models';
+import { EventInventorySeatMap } from './components/InventorySeatMap';
 import { Portal } from '_components/Portal';
 import { BulkUpdateModal } from './components/BulkUpdateModal';
 import { createStructuredSelector } from 'reselect';
+
+const EventInventoryTableContainer = FlexItem.extend`
+  min-height: 60%;
+`;
 
 type Props = {
   event: ?EDEvent,
@@ -40,6 +45,9 @@ export const EventInventory = ({
       <Flex direction="column" height="100%">
         <Box padding="1.5rem 2rem">
           <EventHeader availableInventory={15000} totalInventory={40000} />
+          <Box marginTop="1rem">
+            <EventInventorySeatMap />
+          </Box>
         </Box>
         <Spacing height="2rem" />
         <Box padding="0 1rem">
@@ -52,9 +60,9 @@ export const EventInventory = ({
             Bulk Update ({selectedEventIds.length} Rows)
           </GrayButton>
         </Box>
-        <FlexItem>
+        <EventInventoryTableContainer>
           <VirtualizedEventInventory event={event} />
-        </FlexItem>
+        </EventInventoryTableContainer>
       </Flex>
       <Portal>
         {isBulkUpdating && (

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InventorySeatMap styled components <EventInventoryVerticalRule /> should render correctly 1`] = `
+.c0 {
+  background-color: #979797;
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`InventorySeatMap styled components <SeatIcon /> should render correctly 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
+<img
+  className="c0"
+/>
+`;
+
+exports[`InventorySeatMap styled components <SeatMapLoader /> should render correctly 1`] = `
+.c0 {
+  cursor: pointer;
+}
+
+<img
+  className="c0"
+/>
+`;

@@ -1,14 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { DefaultColumnHeaderPresenter } from '../ColumnHeaderRenderer';
 import { SortIcon } from '../SortIcon';
-import {
-  ScaleColumnHeaderPresenter,
-  ScaleFilterWithClickAway
-} from '../ScaleColumnHeaderRenderer';
+import { ScaleColumnHeaderPresenter } from '../ScaleColumnHeaderRenderer';
 import { ScaleFilter } from '../ScaleFilter';
-import { FilterListIcon } from '_components';
-// import { ScaleFilter } from '../ScaleFilter';
 
 describe('<ScaleColumnHeaderRenderer />', () => {
   const props = {

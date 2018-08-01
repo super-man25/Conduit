@@ -224,7 +224,6 @@ describe('saga workers', () => {
   });
 
   it('should handle fetch', () => {
-    const action = actions.fetch();
     const generator = cloneableGenerator(fetchEventTimeStats)();
     const dateRange = {
       from: new Date(),
