@@ -1,10 +1,19 @@
 // @flow
 import { types, actions } from '.';
-import { fork, take, put, cancel, takeLatest, call } from 'redux-saga/effects';
-import { eventService } from '_services';
+import {
+  fork,
+  take,
+  put,
+  cancel,
+  takeLatest,
+  call,
+  select,
+  all
+} from 'redux-saga/effects';
+import { eventService, venueService } from '_services';
 import type { Saga } from 'redux-saga';
-import { findUniqueKeys } from './utils';
 import { actions as alertActions } from '_state/alert';
+import { selectors } from '../event';
 import type {
   FetchEventInventoryAction,
   SetEventRowListedRequestAction,
@@ -15,16 +24,18 @@ export function* fetchEventInventory(
   action: FetchEventInventoryAction
 ): Saga<void> {
   try {
-    const eventId = action.payload;
-    const eventInventory = yield call(eventService.getInventory, eventId);
-    const priceScales = findUniqueKeys('priceScaleId', eventInventory);
+    const { id, venueId } = yield select(selectors.selectEvent);
 
+    const [eventInventory, priceScales] = yield all([
+      call(eventService.getInventory, id),
+      call(venueService.getPriceScales, venueId)
+    ]);
+
+    yield put(actions.setScaleFilters(priceScales));
     yield put({
       type: types.FETCH_EVENT_INVENTORY_SUCCESS,
       payload: eventInventory
     });
-
-    yield put(actions.setScaleFilters(priceScales));
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_INVENTORY_ERROR, payload: err });
   }

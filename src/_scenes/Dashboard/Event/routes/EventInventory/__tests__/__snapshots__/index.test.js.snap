@@ -34,6 +34,11 @@ ShallowWrapper {
                               availableInventory={15000}
                               totalInventory={40000}
                     />
+                    <styled.div
+                              marginTop="1rem"
+                    >
+                              <EventInventorySeatMap />
+                    </styled.div>
           </styled.div>
           <styled.div
                     height="2rem"
@@ -52,13 +57,13 @@ ShallowWrapper {
                                Rows)
                     </styled.button>
           </styled.div>
-          <FlexItem
+          <styled.div
                     flex={1}
           >
                     <Connect(VirtualizedEventInventoryPresenter)
                               event={Object {}}
                     />
-          </FlexItem>
+          </styled.div>
 </Flex>,
         <Portal />,
       ],
@@ -78,6 +83,11 @@ ShallowWrapper {
                             availableInventory={15000}
                             totalInventory={40000}
               />
+              <styled.div
+                            marginTop="1rem"
+              >
+                            <EventInventorySeatMap />
+              </styled.div>
 </styled.div>,
             <styled.div
               height="2rem"
@@ -96,13 +106,13 @@ ShallowWrapper {
                              Rows)
               </styled.button>
 </styled.div>,
-            <FlexItem
+            <styled.div
               flex={1}
 >
               <Connect(VirtualizedEventInventoryPresenter)
                             event={Object {}}
               />
-</FlexItem>,
+</styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -114,25 +124,54 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Connect(withSidebarEventHeader)
-                availableInventory={15000}
-                totalInventory={40000}
+              "children": Array [
+                <Connect(withSidebarEventHeader)
+                  availableInventory={15000}
+                  totalInventory={40000}
 />,
+                <styled.div
+                  marginTop="1rem"
+>
+                  <EventInventorySeatMap />
+</styled.div>,
+              ],
               "padding": "1.5rem 2rem",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "availableInventory": 15000,
-                "totalInventory": 40000,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "availableInventory": 15000,
+                  "totalInventory": 40000,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <EventInventorySeatMap />,
+                  "marginTop": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           Object {
@@ -248,6 +287,11 @@ ShallowWrapper {
                                     availableInventory={15000}
                                     totalInventory={40000}
                         />
+                        <styled.div
+                                    marginTop="1rem"
+                        >
+                                    <EventInventorySeatMap />
+                        </styled.div>
             </styled.div>
             <styled.div
                         height="2rem"
@@ -266,13 +310,13 @@ ShallowWrapper {
                                      Rows)
                         </styled.button>
             </styled.div>
-            <FlexItem
+            <styled.div
                         flex={1}
             >
                         <Connect(VirtualizedEventInventoryPresenter)
                                     event={Object {}}
                         />
-            </FlexItem>
+            </styled.div>
 </Flex>,
           <Portal />,
         ],
@@ -292,6 +336,11 @@ ShallowWrapper {
                                 availableInventory={15000}
                                 totalInventory={40000}
                 />
+                <styled.div
+                                marginTop="1rem"
+                >
+                                <EventInventorySeatMap />
+                </styled.div>
 </styled.div>,
               <styled.div
                 height="2rem"
@@ -310,13 +359,13 @@ ShallowWrapper {
                                  Rows)
                 </styled.button>
 </styled.div>,
-              <FlexItem
+              <styled.div
                 flex={1}
 >
                 <Connect(VirtualizedEventInventoryPresenter)
                                 event={Object {}}
                 />
-</FlexItem>,
+</styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -328,25 +377,54 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Connect(withSidebarEventHeader)
-                  availableInventory={15000}
-                  totalInventory={40000}
+                "children": Array [
+                  <Connect(withSidebarEventHeader)
+                    availableInventory={15000}
+                    totalInventory={40000}
 />,
+                  <styled.div
+                    marginTop="1rem"
+>
+                    <EventInventorySeatMap />
+</styled.div>,
+                ],
                 "padding": "1.5rem 2rem",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "availableInventory": 15000,
-                  "totalInventory": 40000,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "availableInventory": 15000,
+                    "totalInventory": 40000,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <EventInventorySeatMap />,
+                    "marginTop": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             Object {
@@ -495,6 +573,11 @@ ShallowWrapper {
                               availableInventory={15000}
                               totalInventory={40000}
                     />
+                    <styled.div
+                              marginTop="1rem"
+                    >
+                              <EventInventorySeatMap />
+                    </styled.div>
           </styled.div>
           <styled.div
                     height="2rem"
@@ -513,13 +596,13 @@ ShallowWrapper {
                                Rows)
                     </styled.button>
           </styled.div>
-          <FlexItem
+          <styled.div
                     flex={1}
           >
                     <Connect(VirtualizedEventInventoryPresenter)
                               event={Object {}}
                     />
-          </FlexItem>
+          </styled.div>
 </Flex>,
         <Portal />,
       ],
@@ -539,6 +622,11 @@ ShallowWrapper {
                             availableInventory={15000}
                             totalInventory={40000}
               />
+              <styled.div
+                            marginTop="1rem"
+              >
+                            <EventInventorySeatMap />
+              </styled.div>
 </styled.div>,
             <styled.div
               height="2rem"
@@ -557,13 +645,13 @@ ShallowWrapper {
                              Rows)
               </styled.button>
 </styled.div>,
-            <FlexItem
+            <styled.div
               flex={1}
 >
               <Connect(VirtualizedEventInventoryPresenter)
                             event={Object {}}
               />
-</FlexItem>,
+</styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -575,25 +663,54 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Connect(withSidebarEventHeader)
-                availableInventory={15000}
-                totalInventory={40000}
+              "children": Array [
+                <Connect(withSidebarEventHeader)
+                  availableInventory={15000}
+                  totalInventory={40000}
 />,
+                <styled.div
+                  marginTop="1rem"
+>
+                  <EventInventorySeatMap />
+</styled.div>,
+              ],
               "padding": "1.5rem 2rem",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "availableInventory": 15000,
-                "totalInventory": 40000,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "availableInventory": 15000,
+                  "totalInventory": 40000,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <EventInventorySeatMap />,
+                  "marginTop": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           Object {
@@ -709,6 +826,11 @@ ShallowWrapper {
                                     availableInventory={15000}
                                     totalInventory={40000}
                         />
+                        <styled.div
+                                    marginTop="1rem"
+                        >
+                                    <EventInventorySeatMap />
+                        </styled.div>
             </styled.div>
             <styled.div
                         height="2rem"
@@ -727,13 +849,13 @@ ShallowWrapper {
                                      Rows)
                         </styled.button>
             </styled.div>
-            <FlexItem
+            <styled.div
                         flex={1}
             >
                         <Connect(VirtualizedEventInventoryPresenter)
                                     event={Object {}}
                         />
-            </FlexItem>
+            </styled.div>
 </Flex>,
           <Portal />,
         ],
@@ -753,6 +875,11 @@ ShallowWrapper {
                                 availableInventory={15000}
                                 totalInventory={40000}
                 />
+                <styled.div
+                                marginTop="1rem"
+                >
+                                <EventInventorySeatMap />
+                </styled.div>
 </styled.div>,
               <styled.div
                 height="2rem"
@@ -771,13 +898,13 @@ ShallowWrapper {
                                  Rows)
                 </styled.button>
 </styled.div>,
-              <FlexItem
+              <styled.div
                 flex={1}
 >
                 <Connect(VirtualizedEventInventoryPresenter)
                                 event={Object {}}
                 />
-</FlexItem>,
+</styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -789,25 +916,54 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Connect(withSidebarEventHeader)
-                  availableInventory={15000}
-                  totalInventory={40000}
+                "children": Array [
+                  <Connect(withSidebarEventHeader)
+                    availableInventory={15000}
+                    totalInventory={40000}
 />,
+                  <styled.div
+                    marginTop="1rem"
+>
+                    <EventInventorySeatMap />
+</styled.div>,
+                ],
                 "padding": "1.5rem 2rem",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "availableInventory": 15000,
-                  "totalInventory": 40000,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "availableInventory": 15000,
+                    "totalInventory": 40000,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <EventInventorySeatMap />,
+                    "marginTop": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             Object {
@@ -956,6 +1112,11 @@ ShallowWrapper {
                               availableInventory={15000}
                               totalInventory={40000}
                     />
+                    <styled.div
+                              marginTop="1rem"
+                    >
+                              <EventInventorySeatMap />
+                    </styled.div>
           </styled.div>
           <styled.div
                     height="2rem"
@@ -974,13 +1135,13 @@ ShallowWrapper {
                                Rows)
                     </styled.button>
           </styled.div>
-          <FlexItem
+          <styled.div
                     flex={1}
           >
                     <Connect(VirtualizedEventInventoryPresenter)
                               event={Object {}}
                     />
-          </FlexItem>
+          </styled.div>
 </Flex>,
         <Portal>
           <Connect(BulkUpdateModalPresenter)
@@ -1010,6 +1171,11 @@ ShallowWrapper {
                             availableInventory={15000}
                             totalInventory={40000}
               />
+              <styled.div
+                            marginTop="1rem"
+              >
+                            <EventInventorySeatMap />
+              </styled.div>
 </styled.div>,
             <styled.div
               height="2rem"
@@ -1028,13 +1194,13 @@ ShallowWrapper {
                              Rows)
               </styled.button>
 </styled.div>,
-            <FlexItem
+            <styled.div
               flex={1}
 >
               <Connect(VirtualizedEventInventoryPresenter)
                             event={Object {}}
               />
-</FlexItem>,
+</styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -1046,25 +1212,54 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Connect(withSidebarEventHeader)
-                availableInventory={15000}
-                totalInventory={40000}
+              "children": Array [
+                <Connect(withSidebarEventHeader)
+                  availableInventory={15000}
+                  totalInventory={40000}
 />,
+                <styled.div
+                  marginTop="1rem"
+>
+                  <EventInventorySeatMap />
+</styled.div>,
+              ],
               "padding": "1.5rem 2rem",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "availableInventory": 15000,
-                "totalInventory": 40000,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "availableInventory": 15000,
+                  "totalInventory": 40000,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <EventInventorySeatMap />,
+                  "marginTop": "1rem",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           Object {
@@ -1202,6 +1397,11 @@ ShallowWrapper {
                                     availableInventory={15000}
                                     totalInventory={40000}
                         />
+                        <styled.div
+                                    marginTop="1rem"
+                        >
+                                    <EventInventorySeatMap />
+                        </styled.div>
             </styled.div>
             <styled.div
                         height="2rem"
@@ -1220,13 +1420,13 @@ ShallowWrapper {
                                      Rows)
                         </styled.button>
             </styled.div>
-            <FlexItem
+            <styled.div
                         flex={1}
             >
                         <Connect(VirtualizedEventInventoryPresenter)
                                     event={Object {}}
                         />
-            </FlexItem>
+            </styled.div>
 </Flex>,
           <Portal>
             <Connect(BulkUpdateModalPresenter)
@@ -1256,6 +1456,11 @@ ShallowWrapper {
                                 availableInventory={15000}
                                 totalInventory={40000}
                 />
+                <styled.div
+                                marginTop="1rem"
+                >
+                                <EventInventorySeatMap />
+                </styled.div>
 </styled.div>,
               <styled.div
                 height="2rem"
@@ -1274,13 +1479,13 @@ ShallowWrapper {
                                  Rows)
                 </styled.button>
 </styled.div>,
-              <FlexItem
+              <styled.div
                 flex={1}
 >
                 <Connect(VirtualizedEventInventoryPresenter)
                                 event={Object {}}
                 />
-</FlexItem>,
+</styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -1292,25 +1497,54 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Connect(withSidebarEventHeader)
-                  availableInventory={15000}
-                  totalInventory={40000}
+                "children": Array [
+                  <Connect(withSidebarEventHeader)
+                    availableInventory={15000}
+                    totalInventory={40000}
 />,
+                  <styled.div
+                    marginTop="1rem"
+>
+                    <EventInventorySeatMap />
+</styled.div>,
+                ],
                 "padding": "1.5rem 2rem",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "availableInventory": 15000,
-                  "totalInventory": 40000,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "availableInventory": 15000,
+                    "totalInventory": 40000,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <EventInventorySeatMap />,
+                    "marginTop": "1rem",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             Object {

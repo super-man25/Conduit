@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventInventorySeatMap should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 2px;
+  height: 28px;
+  margin: 0 0.75rem;
+  background-color: #979797;
+  cursor: pointer;
+}
+
+<div
+  className=""
+>
+  <div
+    className="c0"
+  >
+    <svg
+      height={30}
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+      viewBox="0 0 24 24"
+      width={30}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        fill="#2670AE"
+      />
+    </svg>
+    <div
+      className="c1"
+      height="28px"
+      width="2px"
+    />
+    <svg
+      height={28}
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+      viewBox="0 0 25 17"
+      width={28}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="none"
+        fillRule="evenodd"
+        stroke="none"
+        strokeWidth="1"
+      >
+        <g
+          fill="#999999"
+          fillRule="nonzero"
+          transform="translate(-488.000000, -210.000000)"
+        >
+          <g
+            transform="translate(447.000000, 204.000000)"
+          >
+            <g
+              transform="translate(41.000000, 6.000000)"
+            >
+              <path
+                d="M0,6.47764391 L0,7.50362899 C0,7.71693065 0.173389892,7.88982587 0.387243282,7.88982587 L0.764238935,7.88982587 C0.550326987,7.88982587 0.376937095,8.06272108 0.376937095,8.27602274 L0.376937095,14.110667 C0.376937095,14.3239102 0.550326987,14.4969222 0.764238935,14.4969222 L0.931948713,14.4969222 L0.931948713,15.5397822 L0.811553705,15.5397822 C0.677748941,15.5397822 0.569241184,15.6480388 0.569241184,15.7815202 L0.569241184,16.1030201 L0.618546921,16.1030201 C0.485093505,16.1030201 0.376878537,16.2109263 0.376878537,16.3438822 L0.376878537,16.4251038 C0.376878537,16.5581765 0.485093505,16.6660828 0.618546921,16.6660828 L1.93773892,16.6660828 C2.07113377,16.6660828 2.17934874,16.5581765 2.17934874,16.4251038 L2.17934874,16.3438822 C2.17934874,16.2109263 2.07113377,16.1030201 1.93773892,16.1030201 L1.9869861,16.1030201 L1.9869861,15.7815202 C1.9869861,15.6480972 1.87847834,15.5397822 1.74467357,15.5397822 L1.62433712,15.5397822 L1.62433712,14.4969222 L1.7920469,14.4969222 C2.00590029,14.4969222 2.17929018,14.3238518 2.17929018,14.110667 L2.17929018,12.6317443 C2.17929018,13.142664 2.59469981,13.5567716 3.10708129,13.5567716 L10.670886,13.5567716 C11.1832674,13.5567716 11.5986771,13.142664 11.5986771,12.6317443 L11.5986771,14.110667 C11.5986771,14.3239102 11.772067,14.4969222 11.9859789,14.4969222 L12.1536887,14.4969222 L12.1536887,15.5397822 L12.0332937,15.5397822 C11.8994889,15.5397822 11.7909811,15.6480388 11.7909811,15.7815202 L11.7909811,16.1030201 L11.8402869,16.1030201 C11.7068335,16.1030201 11.5986185,16.2109263 11.5986185,16.3438822 L11.5986185,16.4251038 C11.5986185,16.5581765 11.7068335,16.6660828 11.8402869,16.6660828 L13.1594789,16.6660828 C13.2929323,16.6660828 13.4012058,16.5581765 13.4012058,16.4251038 L13.4012058,16.3438822 C13.4012058,16.2109263 13.2929323,16.1030201 13.1594789,16.1030201 L13.2088432,16.1030201 L13.2088432,15.7815202 C13.2088432,15.6480972 13.1002769,15.5397822 12.9664135,15.5397822 L12.8460771,15.5397822 L12.8460771,14.4969222 L13.0137869,14.4969222 C13.2276403,14.4969222 13.4010302,14.3238518 13.4010302,14.110667 L13.4010302,12.6323282 C13.4010302,13.1432479 13.8164398,13.5573555 14.3288213,13.5573555 L21.8926845,13.5573555 C22.405066,13.5573555 22.8204756,13.1431311 22.8204756,12.6322114 L22.8204756,14.1112509 C22.8204756,14.3244941 22.9938655,14.4973893 23.2077189,14.4973893 L23.3754286,14.4973893 L23.3754286,15.5404245 L23.2549751,15.5404245 C23.1211703,15.5404245 23.0127211,15.6485643 23.0127211,15.7819874 L23.0127211,16.1034872 L23.0620269,16.1034872 C22.9285734,16.1034872 22.8203585,16.2113935 22.8203585,16.3444661 L22.8203585,16.4256878 C22.8203585,16.5587604 22.9285734,16.6666667 23.0620269,16.6666667 L24.3814531,16.6666667 C24.5148479,16.6666667 24.6231215,16.5587604 24.6231215,16.4256878 L24.6231215,16.3444661 C24.6231215,16.2113935 24.5148479,16.1034872 24.3814531,16.1034872 L24.4307588,16.1034872 L24.4307588,15.7819874 C24.4307588,15.6485643 24.3221925,15.5404245 24.1883292,15.5404245 L24.0679927,15.5404245 L24.0679927,14.4973893 L24.2357611,14.4973893 C24.4496145,14.4973893 24.6230043,14.3244941 24.6230043,14.1112509 L24.6230043,8.27654826 C24.6230043,8.0632466 24.4496145,7.89035138 24.2357611,7.89035138 L24.6127567,7.89035138 C24.8266101,7.89035138 25,7.71745617 25,7.50415451 L25,6.47816942 C25,6.26486776 24.8266101,6.09197255 24.6127567,6.09197255 L22.8308403,6.09197255 C22.6168698,6.09197255 22.4434799,6.26486776 22.4434799,6.47816942 L22.4434799,7.50415451 C22.4434799,7.71745617 22.6168698,7.89035138 22.8308403,7.89035138 L23.207836,7.89035138 C22.9939826,7.89035138 22.8205927,8.0632466 22.8205927,8.27654826 L22.8205927,10.2361442 C22.8205927,9.90804614 22.5678569,9.63921481 22.2459056,9.61165434 L22.2459056,1.21832444 C22.2459056,0.545720595 21.6992092,0.000525517372 21.0247395,0.000525517372 L15.1971175,0.000525517372 C14.5226478,0.000525517372 13.9759514,0.545720595 13.9759514,1.21832444 L13.9759514,9.61165434 C13.6541173,9.63933159 13.4013229,9.90804614 13.4013229,10.2360274 L13.4013229,8.27602274 C13.4013229,8.06272108 13.227933,7.88982587 13.0140797,7.88982587 L13.3910753,7.88982587 C13.6049287,7.88982587 13.7783186,7.71693065 13.7783186,7.50362899 L13.7783186,6.47764391 C13.7783186,6.26434224 13.6049287,6.09144703 13.3910753,6.09144703 L11.6091589,6.09144703 C11.3953055,6.09144703 11.2218571,6.26434224 11.2218571,6.47764391 L11.2218571,7.50362899 C11.2218571,7.71693065 11.3953055,7.88982587 11.6091589,7.88982587 L11.9861546,7.88982587 C11.7722426,7.88982587 11.5988527,8.06272108 11.5988527,8.27602274 L11.5988527,10.2355602 C11.5988527,9.90746223 11.3461169,9.6386309 11.0242242,9.61118721 L11.0242242,1.21779892 C11.0242242,0.545253469 10.4774107,0 9.80294101,0 L3.97537758,0 C3.30090788,0 2.75415293,0.545253469 2.75415293,1.21779892 L2.75415293,9.61118721 C2.43226024,9.63868929 2.17952442,9.90746223 2.17952442,10.2355602 L2.17952442,8.27602274 C2.17952442,8.06272108 2.00613452,7.88982587 1.79228113,7.88982587 L2.16927679,7.88982587 C2.38318873,7.88982587 2.55657863,7.71693065 2.55657863,7.50362899 L2.55657863,6.47764391 C2.55657863,6.26434224 2.38318873,6.09144703 2.16927679,6.09144703 L0.387360398,6.09144703 C0.173389892,6.09138864 0,6.26434224 0,6.47764391 Z"
+                id="Shape"
+              />
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`EventInventorySeatMap should render correctly when showmap is true 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EventInventorySeatMap />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Flex
+          align="center"
+>
+          <MenuIcon
+                    fill="#999999"
+                    height={30}
+                    onClick={[Function]}
+                    styles={
+                              Object {
+                                        "cursor": "pointer",
+                                      }
+                    }
+                    width={30}
+          />
+          <styled.div
+                    height="28px"
+                    margin="0 0.75rem"
+                    width="2px"
+          />
+          <SeatIcon
+                    fill="#2670AE"
+                    height={28}
+                    onClick={[Function]}
+                    styles={
+                              Object {
+                                        "cursor": "pointer",
+                                      }
+                    }
+                    width={28}
+          />
+</Flex>,
+        <Flex
+          justify="center"
+>
+          <Connect(SeatMapPresenter) />
+</Flex>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            <MenuIcon
+              fill="#999999"
+              height={30}
+              onClick={[Function]}
+              styles={
+                            Object {
+                                          "cursor": "pointer",
+                                        }
+              }
+              width={30}
+/>,
+            <styled.div
+              height="28px"
+              margin="0 0.75rem"
+              width="2px"
+/>,
+            <SeatIcon
+              fill="#2670AE"
+              height={28}
+              onClick={[Function]}
+              styles={
+                            Object {
+                                          "cursor": "pointer",
+                                        }
+              }
+              width={28}
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "fill": "#999999",
+              "height": 30,
+              "onClick": [Function],
+              "styles": Object {
+                "cursor": "pointer",
+              },
+              "width": 30,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "height": "28px",
+              "margin": "0 0.75rem",
+              "width": "2px",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "fill": "#2670AE",
+              "height": 28,
+              "onClick": [Function],
+              "styles": Object {
+                "cursor": "pointer",
+              },
+              "width": 28,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Connect(SeatMapPresenter) />,
+          "justify": "center",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Flex
+            align="center"
+>
+            <MenuIcon
+                        fill="#999999"
+                        height={30}
+                        onClick={[Function]}
+                        styles={
+                                    Object {
+                                                "cursor": "pointer",
+                                              }
+                        }
+                        width={30}
+            />
+            <styled.div
+                        height="28px"
+                        margin="0 0.75rem"
+                        width="2px"
+            />
+            <SeatIcon
+                        fill="#2670AE"
+                        height={28}
+                        onClick={[Function]}
+                        styles={
+                                    Object {
+                                                "cursor": "pointer",
+                                              }
+                        }
+                        width={28}
+            />
+</Flex>,
+          <Flex
+            justify="center"
+>
+            <Connect(SeatMapPresenter) />
+</Flex>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": Array [
+              <MenuIcon
+                fill="#999999"
+                height={30}
+                onClick={[Function]}
+                styles={
+                                Object {
+                                                "cursor": "pointer",
+                                              }
+                }
+                width={30}
+/>,
+              <styled.div
+                height="28px"
+                margin="0 0.75rem"
+                width="2px"
+/>,
+              <SeatIcon
+                fill="#2670AE"
+                height={28}
+                onClick={[Function]}
+                styles={
+                                Object {
+                                                "cursor": "pointer",
+                                              }
+                }
+                width={28}
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "fill": "#999999",
+                "height": 30,
+                "onClick": [Function],
+                "styles": Object {
+                  "cursor": "pointer",
+                },
+                "width": 30,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "height": "28px",
+                "margin": "0 0.75rem",
+                "width": "2px",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "fill": "#2670AE",
+                "height": 28,
+                "onClick": [Function],
+                "styles": Object {
+                  "cursor": "pointer",
+                },
+                "width": 28,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Connect(SeatMapPresenter) />,
+            "justify": "center",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -19,7 +19,7 @@ import { selectableColumnCellRenderer } from './SelectableCellRenderer';
 import { defaultCellRenderer } from './CellRenderer';
 import { CenteredLoader, Flex, Text } from '_components';
 import { scaleColumnHeaderRenderer } from './ScaleColumnHeaderRenderer';
-import type { EDEvent, EDInventoryRow } from '_models';
+import type { EDEvent, EDInventoryRow, EDVenuePriceScale } from '_models';
 
 function combineColumnWithDefaults(column) {
   return {
@@ -43,7 +43,15 @@ const columns = [
     width: 0,
     dataKey: 'priceScaleId',
     flexGrow: 15,
-    headerRenderer: scaleColumnHeaderRenderer
+    headerRenderer: scaleColumnHeaderRenderer,
+    cellDataGetter({ columnData, dataKey, rowData }) {
+      const priceScale = columnData.priceScales.find(
+        (priceScale) => priceScale.integrationId === rowData[dataKey]
+      );
+
+      if (!priceScale) return '';
+      return priceScale.name;
+    }
   },
   {
     label: 'Section',
@@ -96,6 +104,7 @@ type Props = {
   event: EDEvent,
   allRows: EDInventoryRow[],
   rows: EDInventoryRow[],
+  priceScales: EDVenuePriceScale[],
   loading: boolean,
   error: ?Error,
   fetchInventory: (id: number) => void,
@@ -139,7 +148,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
   }
 
   render() {
-    const { allRows, rows, loading, error } = this.props;
+    const { allRows, rows, loading, error, priceScales } = this.props;
 
     if (loading) {
       return (
@@ -183,7 +192,13 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
               </NoTableRowsText>
             )}
           >
-            {columns.map((column) => <Column key={column.label} {...column} />)}
+            {columns.map((column) => (
+              <Column
+                key={column.label}
+                columnData={{ allRows, priceScales }}
+                {...column}
+              />
+            ))}
           </Table>
         )}
       </AutoSizer>
@@ -193,6 +208,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   allRows: selectors.selectAllEventInventoryRows,
+  priceScales: selectors.selectScaleFilters,
   rows: selectors.selectEventInventoryRows,
   loading: selectors.selectEventInventoryLoading,
   error: selectors.selectEventInventoryError

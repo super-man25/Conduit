@@ -32,12 +32,12 @@ export const ScaleFilter = ({
     <Box height="270px">
       <ScaleFilterList>
         {scales.map((scale) => (
-          <ScaleFilterListItem key={scale}>
+          <ScaleFilterListItem key={scale.id}>
             <Checkbox
               checked={selectedScales.includes(scale)}
               onChange={() => onItemClicked(scale)}
             />
-            <Text size={13}>{scale}</Text>
+            <Text size={13}>{scale.name}</Text>
           </ScaleFilterListItem>
         ))}
       </ScaleFilterList>

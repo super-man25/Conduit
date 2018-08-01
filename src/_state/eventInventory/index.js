@@ -403,6 +403,8 @@ type Store = {
 const selectAllEventInventoryRows = (store: Store) =>
   store.eventInventory.allRows;
 
+const selectScaleFilters = (store: Store) => store.eventInventory.scaleFilters;
+
 const selectSelectedScaleFilters = (store: Store) =>
   store.eventInventory.selectedScaleFilters;
 
@@ -450,6 +452,8 @@ export const selectors = {
   selectEventInventoryLoading,
   selectEventInventoryError,
   selectEventInventoryFilter,
+  selectScaleFilters,
+  selectSelectedScaleFilters,
   selectSelectedRowIds,
   selectSelectedRows
 };

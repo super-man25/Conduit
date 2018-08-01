@@ -1,21 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import { actions as authActions } from '_state/auth';
-import alertActions from '_state/alert/actions';
 
 import Login, { LoginPresenter } from '../index';
-
-const myAuth = {
-  model: null,
-  pending: false
-};
-
-const myAlert = {
-  show: false,
-  type: null,
-  message: ''
-};
 
 const props = {
   authState: {

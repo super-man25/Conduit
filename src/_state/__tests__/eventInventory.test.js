@@ -5,14 +5,15 @@ import {
   initialState,
   selectors
 } from '../eventInventory';
+import { selectors as eventSelectors } from '../event';
 import { cloneableGenerator } from 'redux-saga/utils';
 import {
   fetchEventInventory,
   setRowListed,
   setOverridePrice
 } from '../eventInventory/saga';
-import { call, put } from 'redux-saga/effects';
-import { eventService } from '_services';
+import { call, put, all, select } from 'redux-saga/effects';
+import { eventService, venueService } from '_services';
 import { actions as alertActions } from '_state/alert';
 
 describe('actions', () => {
@@ -420,14 +421,31 @@ describe('Selectors', () => {
       direction: 'desc'
     });
   });
+
+  it('selectScaleFilters should return the current scale filters', () => {
+    const state = {
+      eventInventory: {
+        scaleFilters: [1, 2, 3]
+      }
+    };
+
+    expect(selectors.selectScaleFilters(state)).toEqual([1, 2, 3]);
+  });
 });
 
 describe('Saga workers', () => {
-  it('fetchEventInventory should fetch events', () => {
+  it('fetchEventInventory should fetch events inventory', () => {
     const action = actions.fetchEventInventory(1);
     const generator = cloneableGenerator(fetchEventInventory)(action);
 
-    expect(generator.next().value).toEqual(call(eventService.getInventory, 1));
+    expect(generator.next().value).toEqual(select(eventSelectors.selectEvent));
+
+    expect(generator.next({ id: 1, venueId: 1 }).value).toEqual(
+      all([
+        call(eventService.getInventory, 1),
+        call(venueService.getPriceScales, 1)
+      ])
+    );
 
     const fail = generator.clone();
 
@@ -437,8 +455,13 @@ describe('Saga workers', () => {
     );
 
     const eventInventory = [1, 2, 3];
+    const priceScales = [{ id: 1, name: 'price scale 1' }];
 
-    expect(generator.next(eventInventory).value).toEqual(
+    expect(generator.next([eventInventory, priceScales]).value).toEqual(
+      put(actions.setScaleFilters(priceScales))
+    );
+
+    expect(generator.next([eventInventory, priceScales]).value).toEqual(
       put({
         type: types.FETCH_EVENT_INVENTORY_SUCCESS,
         payload: eventInventory
