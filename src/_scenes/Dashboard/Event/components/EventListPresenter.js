@@ -1,12 +1,5 @@
 // @flow
-
-import {
-  CalculateRemainingHeight,
-  H4,
-  Input,
-  ScrollableList,
-  Spacing
-} from '_components';
+import { H4, Input, ScrollableList, Spacing, Flex } from '_components';
 import { cssConstants } from '_constants';
 import React from 'react';
 import styled from 'styled-components';
@@ -14,8 +7,8 @@ import { EventListItem } from './EventListItem';
 import type { EDEvent } from '_models';
 
 const OverflowContent = styled.div`
-  height: ${(props) => `${props.height}px`};
   overflow-y: scroll;
+  flex: 1;
 `;
 
 const Heading = H4.extend`
@@ -76,7 +69,7 @@ export function EventListPresenter(props: Props) {
   const noResult = !loading && (!events || !events.length);
 
   return (
-    <CalculateRemainingHeight>
+    <Flex height="100%" direction="column">
       <HeaderContainer>
         <Spacing padding="24px 40px">
           <Heading>{title}</Heading>
@@ -91,34 +84,32 @@ export function EventListPresenter(props: Props) {
         </Spacing>
       </HeaderContainer>
 
-      {(height) => (
-        <OverflowContent height={height}>
-          {noResult && (
-            <NoContentWrap>
-              <Heading data-test-id="no-events-message">
-                No events matching query
-              </Heading>
-            </NoContentWrap>
-          )}
+      {noResult && (
+        <NoContentWrap>
+          <Heading data-test-id="no-events-message">
+            No events matching query
+          </Heading>
+        </NoContentWrap>
+      )}
 
-          {!noResult && (
-            <ScrollableList
-              data={events}
-              scrollIndex={getScrollIndex(events, activeId, filtered)}
-            >
-              {(event, key) => (
-                <EventListItem
-                  onClick={onClick}
-                  active={event.id === activeId}
-                  key={event.id}
-                  event={event}
-                />
-              )}
-            </ScrollableList>
-          )}
+      {!noResult && (
+        <OverflowContent>
+          <ScrollableList
+            data={events}
+            scrollIndex={getScrollIndex(events, activeId, filtered)}
+          >
+            {(event, key) => (
+              <EventListItem
+                onClick={onClick}
+                active={event.id === activeId}
+                key={event.id}
+                event={event}
+              />
+            )}
+          </ScrollableList>
         </OverflowContent>
       )}
-    </CalculateRemainingHeight>
+    </Flex>
   );
 }
 

@@ -85,8 +85,6 @@ exports[`renders correctly with props 1`] = `
 
 
 
-
-
 .c1 {;
 }
 
@@ -266,8 +264,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 .c6::before {
   content: ' 
-
-
 
 
 
