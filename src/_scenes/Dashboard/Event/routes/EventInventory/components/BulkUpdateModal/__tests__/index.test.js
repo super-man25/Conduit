@@ -5,7 +5,7 @@ import { SecondaryButton, PrimaryButton } from '_components';
 
 describe('<BulkUpdateModal />', () => {
   const props = {
-    rows: [1, 2, 3],
+    rows: [{ seats: [1, 2, 3] }, { seats: [4, 5, 6] }, { seats: [7, 8, 9] }],
     loading: false,
     cancelBulkUpdate: jest.fn(),
     submitBulkUpdate: jest.fn()

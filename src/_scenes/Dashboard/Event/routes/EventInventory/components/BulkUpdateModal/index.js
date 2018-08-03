@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cssConstants } from '_constants';
+import { cssConstants, ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
 import {
   Box,
   Toggle,
@@ -104,6 +104,13 @@ export class BulkUpdateModalPresenter extends React.Component {
     return isValidNumber && Number(value) >= 0;
   }
 
+  get showNetworkWarning() {
+    const { rows } = this.props;
+
+    const totalSeatIds = rows.reduce((acc, row) => acc + row.seats.length, 0);
+    return totalSeatIds > ROW_SEATS_NETWORK_CHUNK_SIZE;
+  }
+
   submitEnabled() {
     const { selectedAction } = this.state;
 
@@ -128,6 +135,15 @@ export class BulkUpdateModalPresenter extends React.Component {
             <Text weight={300} size={14}>
               Updating inventory for {rows.length} row(s).
             </Text>
+            {this.showNetworkWarning && (
+              <Text
+                color={cssConstants.SECONDARY_BLUE_BLACK}
+                marginTop="1rem"
+                size={12}
+              >
+                Note: This update will result in multiple network requests
+              </Text>
+            )}
           </ModalHeader>
           <ModalBody>
             <Box marginBottom="2rem">

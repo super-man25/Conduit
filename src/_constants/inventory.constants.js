@@ -1,0 +1,1 @@
+export const ROW_SEATS_NETWORK_CHUNK_SIZE = 10000;

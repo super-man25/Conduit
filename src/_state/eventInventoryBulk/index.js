@@ -96,7 +96,7 @@ type Store = {
 export const selectors = {
   isBulkUpdating: (store: Store) => store.eventInventoryBulk.isBulkUpdating,
   isLoading: (store: Store) => store.eventInventoryBulk.loading,
-  hasError: (store: Store) => store.eventInventoryBulk.error
+  getError: (store: Store) => store.eventInventoryBulk.error
 };
 
 export { default as saga } from './saga';

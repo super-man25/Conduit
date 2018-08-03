@@ -9,9 +9,27 @@ ShallowWrapper {
     loading={false}
     rows={
         Array [
-            1,
-            2,
-            3,
+            Object {
+              "seats": Array [
+                1,
+                2,
+                3,
+              ],
+            },
+            Object {
+              "seats": Array [
+                4,
+                5,
+                6,
+              ],
+            },
+            Object {
+              "seats": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           ]
     }
     submitBulkUpdate={[Function]}
@@ -225,6 +243,7 @@ ShallowWrapper {
                   3
                    row(s).
 </styled.p>,
+                false,
               ],
             },
             "ref": null,
@@ -261,6 +280,7 @@ ShallowWrapper {
                 ],
                 "type": [Function],
               },
+              false,
             ],
             "type": [Function],
           },
@@ -756,6 +776,7 @@ ShallowWrapper {
                     3
                      row(s).
 </styled.p>,
+                  false,
                 ],
               },
               "ref": null,
@@ -792,6 +813,7 @@ ShallowWrapper {
                   ],
                   "type": [Function],
                 },
+                false,
               ],
               "type": [Function],
             },
@@ -1104,9 +1126,27 @@ ShallowWrapper {
     loading={false}
     rows={
         Array [
-            1,
-            2,
-            3,
+            Object {
+              "seats": Array [
+                1,
+                2,
+                3,
+              ],
+            },
+            Object {
+              "seats": Array [
+                4,
+                5,
+                6,
+              ],
+            },
+            Object {
+              "seats": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           ]
     }
     submitBulkUpdate={[Function]}
@@ -1336,6 +1376,7 @@ ShallowWrapper {
                   3
                    row(s).
 </styled.p>,
+                false,
               ],
             },
             "ref": null,
@@ -1372,6 +1413,7 @@ ShallowWrapper {
                 ],
                 "type": [Function],
               },
+              false,
             ],
             "type": [Function],
           },
@@ -1912,6 +1954,7 @@ ShallowWrapper {
                     3
                      row(s).
 </styled.p>,
+                  false,
                 ],
               },
               "ref": null,
@@ -1948,6 +1991,7 @@ ShallowWrapper {
                   ],
                   "type": [Function],
                 },
+                false,
               ],
               "type": [Function],
             },
@@ -2289,9 +2333,27 @@ ShallowWrapper {
     loading={true}
     rows={
         Array [
-            1,
-            2,
-            3,
+            Object {
+              "seats": Array [
+                1,
+                2,
+                3,
+              ],
+            },
+            Object {
+              "seats": Array [
+                4,
+                5,
+                6,
+              ],
+            },
+            Object {
+              "seats": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           ]
     }
     submitBulkUpdate={[Function]}
@@ -2511,6 +2573,7 @@ ShallowWrapper {
                   3
                    row(s).
 </styled.p>,
+                false,
               ],
             },
             "ref": null,
@@ -2547,6 +2610,7 @@ ShallowWrapper {
                 ],
                 "type": [Function],
               },
+              false,
             ],
             "type": [Function],
           },
@@ -3068,6 +3132,7 @@ ShallowWrapper {
                     3
                      row(s).
 </styled.p>,
+                  false,
                 ],
               },
               "ref": null,
@@ -3104,6 +3169,7 @@ ShallowWrapper {
                   ],
                   "type": [Function],
                 },
+                false,
               ],
               "type": [Function],
             },
@@ -3436,9 +3502,27 @@ ShallowWrapper {
     loading={true}
     rows={
         Array [
-            1,
-            2,
-            3,
+            Object {
+              "seats": Array [
+                1,
+                2,
+                3,
+              ],
+            },
+            Object {
+              "seats": Array [
+                4,
+                5,
+                6,
+              ],
+            },
+            Object {
+              "seats": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           ]
     }
     submitBulkUpdate={[Function]}
@@ -3648,6 +3732,7 @@ ShallowWrapper {
                   3
                    row(s).
 </styled.p>,
+                false,
               ],
             },
             "ref": null,
@@ -3684,6 +3769,7 @@ ShallowWrapper {
                 ],
                 "type": [Function],
               },
+              false,
             ],
             "type": [Function],
           },
@@ -4178,6 +4264,7 @@ ShallowWrapper {
                     3
                      row(s).
 </styled.p>,
+                  false,
                 ],
               },
               "ref": null,
@@ -4214,6 +4301,7 @@ ShallowWrapper {
                   ],
                   "type": [Function],
                 },
+                false,
               ],
               "type": [Function],
             },
