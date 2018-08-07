@@ -1,55 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with login prop 1`] = `
-.c0 {
-  width: 300px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  float: left;
-  margin-left: 28px;
-  margin-top: 14px;
-  padding-left: 55px;
-  font-size: 24px;
-  color: #FFFFFF;
-  background: none;
-  background-image: url(eventdynamiclogo.svg);
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-}
-
-.c0::before {
-  content: 'Event Dynamic';
-}
-
-<div
-  className="c0"
-/>
-`;
-
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  width: 300px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  float: left;
-  margin-left: 28px;
-  margin-top: 14px;
-  padding-left: 55px;
-  font-size: 24px;
-  color: #FFFFFF;
-  background: none;
-  background-image: url(eventdynamiclogo.svg);
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
 }
 
-.c0::before {
-  content: 'Event Dynamic';
+.c1 {
+  height: 38px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.c2 {
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 1.5rem;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  word-break: break-all;
 }
 
 <div
   className="c0"
-/>
+  height="100%"
+  onClick={undefined}
+>
+  <img
+    className="c1"
+    src="eventdynamiclogonotext.svg"
+  />
+  <h1
+    className="c2"
+  >
+    EVENT DYNAMIC
+  </h1>
+</div>
 `;

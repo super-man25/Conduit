@@ -15,25 +15,29 @@ import {
 } from './';
 import { push } from 'connected-react-router';
 import { actions } from '_state/auth';
+import { Box } from './StyledTags';
+import { Flex } from './Flex';
 
 export const SiteHeaderDiv = styled.div`
+  display: flex;
   position: relative;
+  box-sizing: border-box;
   width: 100%;
   height: 70px;
   margin: 0;
-  padding: 0;
+  padding: 0 40px;
   background: ${cssConstants.PRIMARY_DARK_BLUE};
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const DropdownMenuWrapper = withClickAway(styled.div`
   width: 130px;
   position: absolute;
   z-index: ${zIndexes.BASE};
-  right: 0;
+  right: -12px;
   top: 75px;
   padding: 15px;
-  margin-right: 15px;
   background: ${cssConstants.SECONDARY_LIGHT_BLUE};
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.5);
   ::after,
@@ -72,6 +76,10 @@ type State = {
   showMenu: boolean
 };
 
+const PositionBox = Box.extend`
+  position: relative;
+`;
+
 export class SiteHeaderPresenter extends React.Component<Props, State> {
   state = { showMenu: false };
 
@@ -101,36 +109,40 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
-        <SprocketMenu
-          id="sprocket"
-          data-test-id="settings-icon"
-          onClick={this.showMenu}
-        />
-        <UserWelcome user={auth} data-test-id="user-name-text" />
-        {this.state.showMenu && (
-          <DropdownMenuWrapper onClickAway={this.closeMenu}>
-            <div>
-              <DropdownMenuItem
-                id="settings"
-                data-test-id="settings-button"
-                onClick={this.handleSettingsClick}
-              >
-                Settings
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                id="logout"
-                data-test-id="logout-button"
-                to="/logout"
-                onClick={this.handleLogoutClick}
-              >
-                Logout
-                <Spacing right padding="0 0 0 40px" display="inline-block">
-                  <Icon name="logout" size={24} color="white" />
-                </Spacing>
-              </DropdownMenuItem>
-            </div>
-          </DropdownMenuWrapper>
-        )}
+        <Flex>
+          <UserWelcome user={auth} data-test-id="user-name-text" />
+          <PositionBox>
+            <SprocketMenu
+              id="sprocket"
+              data-test-id="settings-icon"
+              onClick={this.showMenu}
+            />
+            {this.state.showMenu && (
+              <DropdownMenuWrapper onClickAway={this.closeMenu}>
+                <div>
+                  <DropdownMenuItem
+                    id="settings"
+                    data-test-id="settings-button"
+                    onClick={this.handleSettingsClick}
+                  >
+                    Settings
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    id="logout"
+                    data-test-id="logout-button"
+                    to="/logout"
+                    onClick={this.handleLogoutClick}
+                  >
+                    Logout
+                    <Spacing right padding="0 0 0 40px" display="inline-block">
+                      <Icon name="logout" size={24} color="white" />
+                    </Spacing>
+                  </DropdownMenuItem>
+                </div>
+              </DropdownMenuWrapper>
+            )}
+          </PositionBox>
+        </Flex>
       </SiteHeaderDiv>
     );
   }
