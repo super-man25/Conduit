@@ -2,7 +2,7 @@ import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
 
 export const initialState = {
   loading: false,
-  overview: null
+  allSeasons: []
 };
 
 export default function teamStatReducer(state = initialState, action) {
@@ -10,7 +10,7 @@ export default function teamStatReducer(state = initialState, action) {
     case FETCH_ASYNC:
       return { ...state, loading: true };
     case FETCH_SUCCESS:
-      return { ...state, loading: false, overview: action.payload };
+      return { ...state, loading: false, allSeasons: action.payload };
     case FETCH_ERROR:
       return { ...state, loading: false };
     case RESET:

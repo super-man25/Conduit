@@ -26,8 +26,19 @@ class Dashboard extends React.Component {
     this.props.teamStatActions.fetch();
   }
 
+  statsForSeason(allSeasonsStats, seasonId) {
+    var activeSeasonStats = null;
+    allSeasonsStats.forEach((stats) => {
+      if (stats.seasonId === seasonId) {
+        activeSeasonStats = stats;
+      }
+    });
+    return activeSeasonStats;
+  }
+
   render() {
     const {
+      activeSeasonState,
       teamStatState,
       uiActions: { toggleSidebar },
       sidebarIsOpen
@@ -42,7 +53,10 @@ class Dashboard extends React.Component {
             <SidebarHeader>
               <TeamOverview
                 onToggleSidebar={toggleSidebar}
-                stats={teamStatState.overview}
+                stats={this.statsForSeason(
+                  teamStatState.allSeasons,
+                  activeSeasonState
+                )}
               />
             </SidebarHeader>
             <SidebarContent>
@@ -63,12 +77,14 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
+  activeSeasonState: PropTypes.number,
   teamStatState: PropTypes.shape(),
   teamStatActions: PropTypes.shape()
 };
 
 function mapStateToProps(state) {
   return {
+    activeSeasonState: state.season.activeId,
     teamStatState: state.teamStat,
     sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state)
   };

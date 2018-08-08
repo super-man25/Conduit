@@ -54,30 +54,33 @@ describe('reducer', () => {
       loading: true
     };
 
-    const teamStat = {
-      id: 1,
-      createdAt: undefined,
-      modifiedAt: undefined,
-      clientId: 1,
-      wins: 10,
-      losses: 10,
-      gamesTotal: 50
-    };
+    const teamStats = [
+      {
+        id: 1,
+        createdAt: undefined,
+        modifiedAt: undefined,
+        clientId: 1,
+        wins: 10,
+        losses: 10,
+        gamesTotal: 50,
+        seasonId: 1
+      }
+    ];
 
-    const action = { type: FETCH_SUCCESS, payload: teamStat };
+    const action = { type: FETCH_SUCCESS, payload: teamStats };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      overview: teamStat
+      allSeasons: teamStats
     });
   });
 
   it('should handle FETCH_ERROR', () => {
     const prevState = {
       loading: true,
-      overview: null
+      allSeasons: null
     };
 
     const action = { type: FETCH_ERROR };
