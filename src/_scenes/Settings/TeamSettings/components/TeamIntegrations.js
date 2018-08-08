@@ -1,8 +1,11 @@
 // @flow
 
 import React from 'react';
-import { Flex, H5, HR, S1, Integration } from '_components';
+import { Flex, H5, HR, S1, Integration, Box } from '_components';
 import styled from 'styled-components';
+import { Portal } from '_components/Portal';
+import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
+import type { EDIntegration } from '_models';
 
 const TeamIntegrationsWrapper = Flex.extend`
   flex-direction: column;
@@ -34,48 +37,86 @@ type Props = {
   handleIntegrationToggle: (i: ClientIntegration, e: any) => void
 };
 
-export function TeamIntegrations(props: Props) {
-  return (
-    <TeamIntegrationsWrapper>
-      <H5 type="secondary">Integrations</H5>
-      {!!props.primary && (
-        <React.Fragment>
-          <S1 weight="300">
-            <i>Primary Integration</i>
-          </S1>
-          <HR />
-          <IntegrationsGridLayout>
-            {props.primary.map((i, index) => (
-              <Integration
-                key={index}
-                {...i}
-                onChange={(e) => props.handleIntegrationToggle(i, e)}
-              />
-            ))}
-          </IntegrationsGridLayout>
-        </React.Fragment>
-      )}
-      <br />
-      <br />
-      <br />
-      <br />
-      {!!props.secondary && (
-        <React.Fragment>
-          <S1 weight="300">
-            <i>Secondary Integrations</i>
-          </S1>
-          <HR />
-          <IntegrationsGridLayout>
-            {props.secondary.map((i, index) => (
-              <Integration
-                key={index}
-                {...i}
-                onChange={(e) => props.handleIntegrationToggle(i, e)}
-              />
-            ))}
-          </IntegrationsGridLayout>
-        </React.Fragment>
-      )}
-    </TeamIntegrationsWrapper>
-  );
+type State = {
+  toggledIntegration: ?EDIntegration
+};
+
+export class TeamIntegrations extends React.Component<Props, State> {
+  state = { toggledIntegration: null };
+
+  onIntegrationChanged = (integration: EDIntegration) => {
+    this.setState({
+      toggledIntegration: integration
+    });
+  };
+
+  onCancelToggleIntegration = () => {
+    this.setState({ toggledIntegration: null });
+  };
+
+  onConfirmToggleIntegration = () => {
+    if (!this.state.toggledIntegration) return;
+
+    this.props.handleIntegrationToggle(
+      this.state.toggledIntegration,
+      !this.state.toggledIntegration.isActive
+    );
+    this.setState({ toggledIntegration: null });
+  };
+
+  render() {
+    const { primary, secondary, handleIntegrationToggle } = this.props;
+    return (
+      <TeamIntegrationsWrapper>
+        <Box>
+          <H5 type="secondary">Integrations</H5>
+          {!!primary && (
+            <React.Fragment>
+              <S1 weight="300">
+                <i>Primary Integration</i>
+              </S1>
+              <HR />
+              <IntegrationsGridLayout>
+                {primary.map((i, index) => (
+                  <Integration
+                    key={index}
+                    {...i}
+                    onChange={(e) => handleIntegrationToggle(i, e)}
+                  />
+                ))}
+              </IntegrationsGridLayout>
+            </React.Fragment>
+          )}
+        </Box>
+        {!!secondary && (
+          <Box marginTop="4rem">
+            <React.Fragment>
+              <S1 weight="300">
+                <i>Secondary Integrations</i>
+              </S1>
+              <HR />
+              <IntegrationsGridLayout>
+                {secondary.map((i, index) => (
+                  <Integration
+                    key={index}
+                    {...i}
+                    onChange={(e) => this.onIntegrationChanged(i)}
+                  />
+                ))}
+              </IntegrationsGridLayout>
+            </React.Fragment>
+          </Box>
+        )}
+        {this.state.toggledIntegration && (
+          <Portal>
+            <IntegrationToggleAlertModal
+              onCancel={this.onCancelToggleIntegration}
+              onConfirm={this.onConfirmToggleIntegration}
+              integration={this.state.toggledIntegration}
+            />
+          </Portal>
+        )}
+      </TeamIntegrationsWrapper>
+    );
+  }
 }

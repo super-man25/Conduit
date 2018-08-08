@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { TeamIntegrations } from '../components/TeamIntegrations';
 import { Integration } from '_components';
+import { IntegrationToggleAlertModal } from '../components/IntegrationToggleAlertModal';
 
 describe('<TeamIntegrations />', () => {
   const props = {
@@ -27,13 +28,28 @@ describe('<TeamIntegrations />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('handles onChange on <Integration /> component', () => {
+  it('handles onChange on secondary integrations', () => {
     const wrapper = shallow(<TeamIntegrations {...props} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'onIntegrationChanged');
+    instance.forceUpdate();
+
     expect(wrapper.find(Integration)).toHaveLength(2);
     wrapper
       .find(Integration)
-      .first()
+      .at(1)
       .simulate('change');
-    expect(props.handleIntegrationToggle).toBeCalled();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should show the IntegrationToggleAlertModal when attempting to toggle an integration', () => {
+    const wrapper = shallow(<TeamIntegrations {...props} />);
+    wrapper
+      .find(Integration)
+      .at(1)
+      .simulate('change');
+
+    expect(wrapper.state().toggledIntegration).toBe(props.secondary[0]);
+    expect(wrapper.find(IntegrationToggleAlertModal)).toHaveLength(1);
   });
 });

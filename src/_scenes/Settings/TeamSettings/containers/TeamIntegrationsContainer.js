@@ -21,13 +21,7 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
     this.props.clientActions.fetchIntegrations();
   }
 
-  handleIntegrationToggle = (
-    { id }: { id: number },
-    e: SyntheticInputEvent<HTMLInputElement>
-  ) => {
-    const {
-      target: { checked: isActive }
-    } = e;
+  handleIntegrationToggle = ({ id }: { id: number }, isActive: boolean) => {
     this.props.clientActions.toggleIntegration({ id, isActive });
   };
 

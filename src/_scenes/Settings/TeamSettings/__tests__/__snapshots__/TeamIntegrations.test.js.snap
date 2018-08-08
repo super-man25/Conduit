@@ -38,51 +38,54 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <styled.h5
-          type="secondary"
+        <styled.div>
+          <styled.h5
+                    type="secondary"
+          >
+                    Integrations
+          </styled.h5>
+          <Unknown>
+                    <styled.span
+                              weight="300"
+                    >
+                              <i>
+                                        Primary Integration
+                              </i>
+                    </styled.span>
+                    <styled.hr />
+                    <styled.div>
+                              <Integration
+                                        isActive={true}
+                                        isPrimary={true}
+                                        name="tickets.com"
+                                        onChange={[Function]}
+                              />
+                    </styled.div>
+          </Unknown>
+</styled.div>,
+        <styled.div
+          marginTop="4rem"
 >
-          Integrations
-</styled.h5>,
-        <Unknown>
-          <styled.span
-                    weight="300"
-          >
-                    <i>
-                              Primary Integration
-                    </i>
-          </styled.span>
-          <styled.hr />
-          <styled.div>
-                    <Integration
-                              isActive={true}
-                              isPrimary={true}
-                              name="tickets.com"
-                              onChange={[Function]}
-                    />
-          </styled.div>
-</Unknown>,
-        <br />,
-        <br />,
-        <br />,
-        <br />,
-        <Unknown>
-          <styled.span
-                    weight="300"
-          >
-                    <i>
-                              Secondary Integrations
-                    </i>
-          </styled.span>
-          <styled.hr />
-          <styled.div>
-                    <Integration
-                              isActive={true}
-                              isPrimary={false}
-                              name="seatgeek.com"
-                              onChange={[Function]}
-                    />
-          </styled.div>
-</Unknown>,
+          <Unknown>
+                    <styled.span
+                              weight="300"
+                    >
+                              <i>
+                                        Secondary Integrations
+                              </i>
+                    </styled.span>
+                    <styled.hr />
+                    <styled.div>
+                              <Integration
+                                        isActive={true}
+                                        isPrimary={false}
+                                        name="seatgeek.com"
+                                        onChange={[Function]}
+                              />
+                    </styled.div>
+          </Unknown>
+</styled.div>,
+        null,
       ],
     },
     "ref": null,
@@ -92,277 +95,150 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "Integrations",
-          "type": "secondary",
+          "children": Array [
+            <styled.h5
+              type="secondary"
+>
+              Integrations
+</styled.h5>,
+            <Unknown>
+              <styled.span
+                            weight="300"
+              >
+                            <i>
+                                          Primary Integration
+                            </i>
+              </styled.span>
+              <styled.hr />
+              <styled.div>
+                            <Integration
+                                          isActive={true}
+                                          isPrimary={true}
+                                          name="tickets.com"
+                                          onChange={[Function]}
+                            />
+              </styled.div>
+</Unknown>,
+          ],
         },
         "ref": null,
-        "rendered": "Integrations",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Integrations",
+              "type": "secondary",
+            },
+            "ref": null,
+            "rendered": "Integrations",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <styled.span
+                  weight="300"
+>
+                  <i>
+                                    Primary Integration
+                  </i>
+</styled.span>,
+                <styled.hr />,
+                <styled.div>
+                  <Integration
+                                    isActive={true}
+                                    isPrimary={true}
+                                    name="tickets.com"
+                                    onChange={[Function]}
+                  />
+</styled.div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <i>
+                    Primary Integration
+</i>,
+                  "weight": "300",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Primary Integration",
+                  },
+                  "ref": null,
+                  "rendered": "Primary Integration",
+                  "type": "i",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Integration
+                      isActive={true}
+                      isPrimary={true}
+                      name="tickets.com"
+                      onChange={[Function]}
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "0",
+                    "nodeType": "function",
+                    "props": Object {
+                      "isActive": true,
+                      "isPrimary": true,
+                      "name": "tickets.com",
+                      "onChange": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+        ],
         "type": [Function],
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <styled.span
-              weight="300"
->
-              <i>
-                            Primary Integration
-              </i>
-</styled.span>,
-            <styled.hr />,
-            <styled.div>
-              <Integration
-                            isActive={true}
-                            isPrimary={true}
-                            name="tickets.com"
-                            onChange={[Function]}
-              />
-</styled.div>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <i>
-                Primary Integration
-</i>,
-              "weight": "300",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Primary Integration",
-              },
-              "ref": null,
-              "rendered": "Primary Integration",
-              "type": "i",
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Integration
-                  isActive={true}
-                  isPrimary={true}
-                  name="tickets.com"
-                  onChange={[Function]}
-/>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": "0",
-                "nodeType": "function",
-                "props": Object {
-                  "isActive": true,
-                  "isPrimary": true,
-                  "name": "tickets.com",
-                  "onChange": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": Symbol(react.fragment),
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "br",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "br",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "br",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "br",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": Array [
-            <styled.span
-              weight="300"
->
-              <i>
-                            Secondary Integrations
-              </i>
-</styled.span>,
-            <styled.hr />,
-            <styled.div>
-              <Integration
-                            isActive={true}
-                            isPrimary={false}
-                            name="seatgeek.com"
-                            onChange={[Function]}
-              />
-</styled.div>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <i>
-                Secondary Integrations
-</i>,
-              "weight": "300",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Secondary Integrations",
-              },
-              "ref": null,
-              "rendered": "Secondary Integrations",
-              "type": "i",
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Integration
-                  isActive={true}
-                  isPrimary={false}
-                  name="seatgeek.com"
-                  onChange={[Function]}
-/>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": "0",
-                "nodeType": "function",
-                "props": Object {
-                  "isActive": true,
-                  "isPrimary": false,
-                  "name": "seatgeek.com",
-                  "onChange": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": Symbol(react.fragment),
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <styled.h5
-            type="secondary"
->
-            Integrations
-</styled.h5>,
-          <Unknown>
-            <styled.span
-                        weight="300"
-            >
-                        <i>
-                                    Primary Integration
-                        </i>
-            </styled.span>
-            <styled.hr />
-            <styled.div>
-                        <Integration
-                                    isActive={true}
-                                    isPrimary={true}
-                                    name="tickets.com"
-                                    onChange={[Function]}
-                        />
-            </styled.div>
-</Unknown>,
-          <br />,
-          <br />,
-          <br />,
-          <br />,
-          <Unknown>
+          "children": <Unknown>
             <styled.span
                         weight="300"
             >
@@ -380,154 +256,10 @@ ShallowWrapper {
                         />
             </styled.div>
 </Unknown>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": "Integrations",
-            "type": "secondary",
-          },
-          "ref": null,
-          "rendered": "Integrations",
-          "type": [Function],
+          "marginTop": "4rem",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": Array [
-              <styled.span
-                weight="300"
->
-                <i>
-                                Primary Integration
-                </i>
-</styled.span>,
-              <styled.hr />,
-              <styled.div>
-                <Integration
-                                isActive={true}
-                                isPrimary={true}
-                                name="tickets.com"
-                                onChange={[Function]}
-                />
-</styled.div>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <i>
-                  Primary Integration
-</i>,
-                "weight": "300",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Primary Integration",
-                },
-                "ref": null,
-                "rendered": "Primary Integration",
-                "type": "i",
-              },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Integration
-                    isActive={true}
-                    isPrimary={true}
-                    name="tickets.com"
-                    onChange={[Function]}
-/>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": "0",
-                  "nodeType": "function",
-                  "props": Object {
-                    "isActive": true,
-                    "isPrimary": true,
-                    "name": "tickets.com",
-                    "onChange": [Function],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
-          ],
-          "type": Symbol(react.fragment),
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "br",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "br",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "br",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "br",
-        },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
@@ -622,6 +354,338 @@ ShallowWrapper {
           ],
           "type": Symbol(react.fragment),
         },
+        "type": [Function],
+      },
+      null,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            <styled.h5
+                        type="secondary"
+            >
+                        Integrations
+            </styled.h5>
+            <Unknown>
+                        <styled.span
+                                    weight="300"
+                        >
+                                    <i>
+                                                Primary Integration
+                                    </i>
+                        </styled.span>
+                        <styled.hr />
+                        <styled.div>
+                                    <Integration
+                                                isActive={true}
+                                                isPrimary={true}
+                                                name="tickets.com"
+                                                onChange={[Function]}
+                                    />
+                        </styled.div>
+            </Unknown>
+</styled.div>,
+          <styled.div
+            marginTop="4rem"
+>
+            <Unknown>
+                        <styled.span
+                                    weight="300"
+                        >
+                                    <i>
+                                                Secondary Integrations
+                                    </i>
+                        </styled.span>
+                        <styled.hr />
+                        <styled.div>
+                                    <Integration
+                                                isActive={true}
+                                                isPrimary={false}
+                                                name="seatgeek.com"
+                                                onChange={[Function]}
+                                    />
+                        </styled.div>
+            </Unknown>
+</styled.div>,
+          null,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <styled.h5
+                type="secondary"
+>
+                Integrations
+</styled.h5>,
+              <Unknown>
+                <styled.span
+                                weight="300"
+                >
+                                <i>
+                                                Primary Integration
+                                </i>
+                </styled.span>
+                <styled.hr />
+                <styled.div>
+                                <Integration
+                                                isActive={true}
+                                                isPrimary={true}
+                                                name="tickets.com"
+                                                onChange={[Function]}
+                                />
+                </styled.div>
+</Unknown>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Integrations",
+                "type": "secondary",
+              },
+              "ref": null,
+              "rendered": "Integrations",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <styled.span
+                    weight="300"
+>
+                    <i>
+                                        Primary Integration
+                    </i>
+</styled.span>,
+                  <styled.hr />,
+                  <styled.div>
+                    <Integration
+                                        isActive={true}
+                                        isPrimary={true}
+                                        name="tickets.com"
+                                        onChange={[Function]}
+                    />
+</styled.div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <i>
+                      Primary Integration
+</i>,
+                    "weight": "300",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Primary Integration",
+                    },
+                    "ref": null,
+                    "rendered": "Primary Integration",
+                    "type": "i",
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Integration
+                        isActive={true}
+                        isPrimary={true}
+                        name="tickets.com"
+                        onChange={[Function]}
+/>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "0",
+                      "nodeType": "function",
+                      "props": Object {
+                        "isActive": true,
+                        "isPrimary": true,
+                        "name": "tickets.com",
+                        "onChange": [Function],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown>
+              <styled.span
+                            weight="300"
+              >
+                            <i>
+                                          Secondary Integrations
+                            </i>
+              </styled.span>
+              <styled.hr />
+              <styled.div>
+                            <Integration
+                                          isActive={true}
+                                          isPrimary={false}
+                                          name="seatgeek.com"
+                                          onChange={[Function]}
+                            />
+              </styled.div>
+</Unknown>,
+            "marginTop": "4rem",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <styled.span
+                  weight="300"
+>
+                  <i>
+                                    Secondary Integrations
+                  </i>
+</styled.span>,
+                <styled.hr />,
+                <styled.div>
+                  <Integration
+                                    isActive={true}
+                                    isPrimary={false}
+                                    name="seatgeek.com"
+                                    onChange={[Function]}
+                  />
+</styled.div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <i>
+                    Secondary Integrations
+</i>,
+                  "weight": "300",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Secondary Integrations",
+                  },
+                  "ref": null,
+                  "rendered": "Secondary Integrations",
+                  "type": "i",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Integration
+                      isActive={true}
+                      isPrimary={false}
+                      name="seatgeek.com"
+                      onChange={[Function]}
+/>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "0",
+                    "nodeType": "function",
+                    "props": Object {
+                      "isActive": true,
+                      "isPrimary": false,
+                      "name": "seatgeek.com",
+                      "onChange": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+          "type": [Function],
+        },
+        null,
       ],
       "type": [Function],
     },
