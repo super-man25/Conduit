@@ -46,7 +46,7 @@ const columns = [
     headerRenderer: scaleColumnHeaderRenderer,
     cellDataGetter({ columnData, dataKey, rowData }) {
       const priceScale = columnData.priceScales.find(
-        (priceScale) => priceScale.integrationId === rowData[dataKey]
+        (priceScale) => priceScale.id === rowData[dataKey]
       );
 
       if (!priceScale) return '';

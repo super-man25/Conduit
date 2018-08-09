@@ -44,7 +44,7 @@ export function calculateFilteredRows(
 
   if (hasScaleFilters) {
     const scaleMap = selectedScaleFilters.reduce(
-      (acc, v) => ({ ...acc, [v.integrationId]: true }),
+      (acc, v) => ({ ...acc, [v.id]: true }),
       {}
     );
     rowsFilteredByScale = rows.filter((row) => scaleMap[row.priceScaleId]);
