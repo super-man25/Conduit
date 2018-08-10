@@ -10,7 +10,8 @@ import {
   Text,
   FlexItem,
   CenteredLoader,
-  Toggle
+  Toggle,
+  EDLink
 } from '_components';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
@@ -218,9 +219,7 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
                     <Text marginLeft="1.5rem">Toggling Broadcasting</Text>
                   )}
                 </Flex>
-                <Text marginLeft="2rem" size={12}>
-                  MANAGE ALL
-                </Text>
+                <EDLink to="/settings/team">MANAGE ALL</EDLink>
               </React.Fragment>
             )}
           </Flex>
