@@ -55,6 +55,8 @@ const signIn = (email, password) => ({
 const signOut = () => ({ type: SIGN_OUT_ASYNC });
 const forgotPass = (email) => ({ type: FORGOT_PASS_ASYNC, payload: { email } });
 const fetch = () => ({ type: FETCH_ASYNC });
+const setUser = (user) => ({ type: types.SET_USER, payload: user });
+const unsetUser = () => ({ type: types.UNSET_USER });
 
 // Exports
 export const types = {
@@ -73,7 +75,9 @@ export const actions = {
   signIn,
   signOut,
   forgotPass,
-  fetch
+  fetch,
+  setUser,
+  unsetUser
 };
 export const selectors = {
   selectUser,

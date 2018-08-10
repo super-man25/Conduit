@@ -42,6 +42,21 @@ describe('actions', () => {
       type: types.FETCH_ASYNC
     });
   });
+
+  it('should create an action set the user', () => {
+    const action = actions.setUser({ id: 1 });
+    expect(action).toEqual({
+      type: types.SET_USER,
+      payload: { id: 1 }
+    });
+  });
+
+  it('should create an action to unset the user', () => {
+    const action = actions.unsetUser();
+    expect(action).toEqual({
+      type: types.UNSET_USER
+    });
+  });
 });
 
 describe('reducer', () => {
@@ -146,6 +161,9 @@ describe('saga workers', () => {
       call(userService.login, 'some@email.com', 'password')
     );
     expect(generator.next(user).value).toEqual(
+      call(userService.setAuthInStorage, user)
+    );
+    expect(generator.next(user).value).toEqual(
       put({ type: types.LOGIN_SUCCESS, payload: user })
     );
     expect(generator.next().done).toBe(true);
@@ -155,6 +173,9 @@ describe('saga workers', () => {
     const action = actions.signOut();
     const generator = signOutAsync(action);
     expect(generator.next().value).toEqual(call(userService.logout));
+    expect(generator.next().value).toEqual(
+      call(userService.setAuthInStorage, null)
+    );
     expect(generator.next().value).toEqual(put({ type: types.UNSET_USER }));
     expect(generator.next().done).toBe(true);
   });
@@ -176,6 +197,9 @@ describe('saga workers', () => {
       put({ type: types.IS_PENDING, payload: true })
     );
     expect(generator.next().value).toEqual(call(userService.getMe));
+    expect(generator.next(user).value).toEqual(
+      call(userService.setAuthInStorage, user)
+    );
     expect(generator.next(user).value).toEqual(
       put({ type: types.SET_USER, payload: user })
     );

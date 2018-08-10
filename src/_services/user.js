@@ -45,6 +45,18 @@ function _delete(id) {
   return del(`users/${id}`);
 }
 
+function setAuthInStorage(user) {
+  localStorage.setItem('auth', JSON.stringify(user));
+}
+
+function getAuthFromStorage() {
+  try {
+    return JSON.parse(localStorage.getItem('auth'));
+  } catch (err) {
+    return null;
+  }
+}
+
 export const userService = {
   login,
   logout,
@@ -56,5 +68,7 @@ export const userService = {
   changePassword,
   forgotPass,
   updateEmail,
-  delete: _delete
+  delete: _delete,
+  setAuthInStorage,
+  getAuthFromStorage
 };
