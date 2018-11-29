@@ -19,7 +19,7 @@ Object.setPrototypeOf(ApiError, Error);
  *
  * @param {Object} response - Fetch response object
  */
-function handleResponse(response) {
+export function handleResponse(response) {
   const statusCode = response.status;
   if (statusCode < 400) {
     return response.json();

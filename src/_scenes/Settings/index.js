@@ -19,6 +19,7 @@ import {
 import { cssConstants } from '_constants';
 import { actions as authActions } from '_state/auth';
 import CreateUser from './CreateUser';
+import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import type { Node } from 'react';
@@ -42,6 +43,10 @@ const routes: Array<RouteConfig> = [
   {
     path: '/settings/create-user',
     main: admin(CreateUser)
+  },
+  {
+    path: '/settings/demo',
+    main: admin(Demo)
   }
 ];
 
@@ -94,6 +99,13 @@ export const Settings = ({ authState, authActions }: Props) => (
                 </EDLink>
               </Spacing>
             )}
+            {authState.model.isAdmin && (
+              <Spacing padding="2rem 0">
+                <EDLink weight="light" to="/settings/demo">
+                  Demo
+                </EDLink>
+              </Spacing>
+            )}
           </Flex>
         </Spacing>
       </LeftNav>
@@ -119,5 +131,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Settings)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Settings)
 );

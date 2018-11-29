@@ -2,7 +2,6 @@
 
 exports[`<Settings /> renders correctly 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     authActions={Object {}}
@@ -20,6 +19,7 @@ ShallowWrapper {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -97,6 +97,10 @@ ShallowWrapper {
                     <Route
                               component={[Function]}
                               path="/settings/create-user"
+                    />
+                    <Route
+                              component={[Function]}
+                              path="/settings/demo"
                     />
           </styled.div>
 </styled.div>,
@@ -183,6 +187,10 @@ ShallowWrapper {
               <Route
                             component={[Function]}
                             path="/settings/create-user"
+              />
+              <Route
+                            component={[Function]}
+                            path="/settings/demo"
               />
 </styled.div>,
           ],
@@ -334,6 +342,7 @@ ShallowWrapper {
                       </Styled(NavLink)>
 </styled.div>,
                     undefined,
+                    undefined,
                   ],
                   "direction": "column",
                 },
@@ -420,6 +429,7 @@ ShallowWrapper {
                     "type": [Function],
                   },
                   undefined,
+                  undefined,
                 ],
                 "type": [Function],
               },
@@ -444,6 +454,10 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   path="/settings/create-user"
+/>,
+                <Route
+                  component={[Function]}
+                  path="/settings/demo"
 />,
               ],
             },
@@ -480,6 +494,18 @@ ShallowWrapper {
                 "props": Object {
                   "component": [Function],
                   "path": "/settings/create-user",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "3",
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "path": "/settings/demo",
                 },
                 "ref": null,
                 "rendered": null,
@@ -570,6 +596,10 @@ ShallowWrapper {
                                     component={[Function]}
                                     path="/settings/create-user"
                         />
+                        <Route
+                                    component={[Function]}
+                                    path="/settings/demo"
+                        />
             </styled.div>
 </styled.div>,
         ],
@@ -655,6 +685,10 @@ ShallowWrapper {
                 <Route
                                 component={[Function]}
                                 path="/settings/create-user"
+                />
+                <Route
+                                component={[Function]}
+                                path="/settings/demo"
                 />
 </styled.div>,
             ],
@@ -806,6 +840,7 @@ ShallowWrapper {
                         </Styled(NavLink)>
 </styled.div>,
                       undefined,
+                      undefined,
                     ],
                     "direction": "column",
                   },
@@ -892,6 +927,7 @@ ShallowWrapper {
                       "type": [Function],
                     },
                     undefined,
+                    undefined,
                   ],
                   "type": [Function],
                 },
@@ -916,6 +952,10 @@ ShallowWrapper {
                   <Route
                     component={[Function]}
                     path="/settings/create-user"
+/>,
+                  <Route
+                    component={[Function]}
+                    path="/settings/demo"
 />,
                 ],
               },
@@ -957,6 +997,18 @@ ShallowWrapper {
                   "rendered": null,
                   "type": [Function],
                 },
+                Object {
+                  "instance": null,
+                  "key": "3",
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "path": "/settings/demo",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
               ],
               "type": [Function],
             },
@@ -971,6 +1023,16 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
