@@ -8,3 +8,4 @@ export * from './integrationStat';
 export * from './season';
 export * from './inventory';
 export * from './venue';
+export * from './demo';

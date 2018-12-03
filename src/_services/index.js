@@ -8,3 +8,4 @@ export * from './revenueStats';
 export * from './integrationStats';
 export * from './season';
 export * from './venue';
+export * from './demo';
