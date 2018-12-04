@@ -21,7 +21,7 @@ import {
   MONTHS,
   DAYS_OF_WEEK,
   WEATHER_CONDITIONS,
-  SECTIONS,
+  LIMITED_SECTIONS,
   OPPONENTS
 } from './constants';
 
@@ -72,8 +72,8 @@ const RowWrapper = Box.extend`
 const parseOption = (option) => option.title;
 const getSelectedOption = (options, key) => options.find((o) => o.key === key);
 const calculateExamples = () => {
-  return Object.keys(SECTIONS).reduce((examples, sec_num) => {
-    const section = SECTIONS[sec_num];
+  return Object.keys(LIMITED_SECTIONS).reduce((examples, sec_num) => {
+    const section = LIMITED_SECTIONS[sec_num];
     const section_rows = section.row_numbers.map((row) => ({
       section: sec_num,
       degrees: section.degrees,
