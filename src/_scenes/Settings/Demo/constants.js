@@ -101,12 +101,12 @@ export const OPPONENTS = [
 ];
 
 export const LIMITED_SECTIONS = {
-  '112 (behind home dugout)': {
+  '112 (lower infield)': {
     degrees: 288.5228169544724,
     distance: 96.06219583038117,
     row_numbers: [1, 5, 10, 15, 20, 25, 30]
   },
-  '122 (behind away dugout)': {
+  '122 (lower infield)': {
     degrees: 65.38252647335257,
     distance: 97.51717795332914,
     row_numbers: [1, 5, 10, 15, 20, 25, 30]
