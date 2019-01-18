@@ -124,6 +124,7 @@ const mapDispatchToProps = {
   setActiveSeasonId: actions.setActiveId
 };
 
-export const TeamOverview = connect(mapStateToProps, mapDispatchToProps)(
-  TeamOverviewPresenter
-);
+export const TeamOverview = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TeamOverviewPresenter);

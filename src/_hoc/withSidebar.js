@@ -8,9 +8,12 @@ export const withSidebar = (WrappedComponent) => {
     isSidebarOpen: selectors.selectIsSidebarOpen(state)
   });
 
-  const ComponentWithSidebar = connect(mapSidebarToProps, {
-    toggleSidebar: actions.toggleSidebar
-  })(WrappedComponent);
+  const ComponentWithSidebar = connect(
+    mapSidebarToProps,
+    {
+      toggleSidebar: actions.toggleSidebar
+    }
+  )(WrappedComponent);
   ComponentWithSidebar.displayName = `withSidebar${displayName}`;
 
   return ComponentWithSidebar;

@@ -52,6 +52,7 @@ function mapDispatchtoProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchtoProps)(
-  TeamIntegrationsContainer
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchtoProps
+)(TeamIntegrationsContainer);

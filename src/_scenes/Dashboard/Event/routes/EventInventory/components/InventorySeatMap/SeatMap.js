@@ -120,6 +120,7 @@ const mapDispatchToProps = {
   resetSeatMap: seatMapActions.resetSeatMap
 };
 
-export const SeatMap = connect(mapStateToProps, mapDispatchToProps)(
-  SeatMapPresenter
-);
+export const SeatMap = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SeatMapPresenter);

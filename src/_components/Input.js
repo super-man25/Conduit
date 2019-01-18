@@ -53,8 +53,8 @@ export const Input: React.ComponentType<Props> = styled.input.attrs({
       props.valid
         ? autofillOK(true)
         : props.inValid
-          ? autofillOK(false)
-          : 'none'};
+        ? autofillOK(false)
+        : 'none'};
     -webkit-animation-fill-mode: both;
   }
   font-size: 1rem;

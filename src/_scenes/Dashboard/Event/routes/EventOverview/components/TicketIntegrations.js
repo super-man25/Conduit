@@ -261,6 +261,7 @@ const mapDispatchToProps = {
   setBroadcasting: actions.setEventBroadcasting
 };
 
-export const TicketIntegrations = connect(mapStateToProps, mapDispatchToProps)(
-  TicketIntegrationsPresenter
-);
+export const TicketIntegrations = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TicketIntegrationsPresenter);

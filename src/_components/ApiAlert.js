@@ -86,4 +86,7 @@ function mapStateToProps(state) {
   };
 }
 
-export const ApiAlert = connect(mapStateToProps, null)(ApiAlertPresenter);
+export const ApiAlert = connect(
+  mapStateToProps,
+  null
+)(ApiAlertPresenter);

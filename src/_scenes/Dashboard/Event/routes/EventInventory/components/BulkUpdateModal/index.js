@@ -168,17 +168,16 @@ export class BulkUpdateModalPresenter extends React.Component {
                   onChange={this.updatePrice}
                   placeholder="$ Manual Price"
                 />
-                {this.state.touched.price &&
-                  !this.isValidManualPrice && (
-                    <FieldErrorText
-                      marginTop="0.5rem"
-                      size={12}
-                      weight={300}
-                      color={cssConstants.SECONDARY_RED}
-                    >
-                      Manual Price must be a valid dollar amount.
-                    </FieldErrorText>
-                  )}
+                {this.state.touched.price && !this.isValidManualPrice && (
+                  <FieldErrorText
+                    marginTop="0.5rem"
+                    size={12}
+                    weight={300}
+                    color={cssConstants.SECONDARY_RED}
+                  >
+                    Manual Price must be a valid dollar amount.
+                  </FieldErrorText>
+                )}
               </Field>
             )}
             {selectedAction.value === ACTIONS.updateListed && (
@@ -229,6 +228,7 @@ const mapDispatchToProps = {
   submitBulkUpdate: actions.submitBulkUpdate
 };
 
-export const BulkUpdateModal = connect(mapStateToProps, mapDispatchToProps)(
-  BulkUpdateModalPresenter
-);
+export const BulkUpdateModal = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BulkUpdateModalPresenter);

@@ -50,8 +50,8 @@ function generateFlexDirection(props: FlexProps): FlexDirection {
       ? 'column-reverse'
       : 'column'
     : reverse
-      ? 'row-reverse'
-      : 'row';
+    ? 'row-reverse'
+    : 'row';
 }
 
 export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`

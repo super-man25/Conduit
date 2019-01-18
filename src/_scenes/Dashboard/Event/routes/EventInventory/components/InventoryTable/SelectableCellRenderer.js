@@ -26,9 +26,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   select: () => dispatch(actions.selectEventRow(ownProps.rowData.id))
 });
 
-const SelectableColumnCell = connect(mapStateToProps, mapDispatchToProps)(
-  SelectableColumnCellPresenter
-);
+const SelectableColumnCell = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SelectableColumnCellPresenter);
 
 export const selectableColumnCellRenderer = (props: Props) => (
   <SelectableColumnCell {...props} />

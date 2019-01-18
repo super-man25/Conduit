@@ -14,14 +14,14 @@ const TYPES = new Map()
   .set('disabled', cssConstants.PRIMARY_DARK_GRAY)
   .set('danger', cssConstants.SECONDARY_RED);
 
-export const SettingBorderButton: React.ComponentType<
-  Props
-> = styled.button.attrs({
-  color: (props) =>
-    TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE,
-  bordercolor: (props) =>
-    TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE
-})`
+export const SettingBorderButton: React.ComponentType<Props> = styled.button.attrs(
+  {
+    color: (props) =>
+      TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE,
+    bordercolor: (props) =>
+      TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE
+  }
+)`
   text-transform: uppercase;
   width: 5.5rem;
   height: 2.875rem;

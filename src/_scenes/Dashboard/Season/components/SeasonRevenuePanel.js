@@ -266,4 +266,7 @@ function mapActionCreators(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapActionCreators)(SeasonRevenuePanel);
+export default connect(
+  mapStateToProps,
+  mapActionCreators
+)(SeasonRevenuePanel);

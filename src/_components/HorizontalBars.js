@@ -48,7 +48,7 @@ export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
         <HorizontalBar
           key={idx}
           backgroundColor={colors[idx]}
-          width={(value / sum * 100).toFixed(2)}
+          width={((value / sum) * 100).toFixed(2)}
         />
       ))}
     </BarContainer>

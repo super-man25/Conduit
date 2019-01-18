@@ -85,5 +85,8 @@ function mapDispatchtoProps(dispatch) {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchtoProps)(TeamSettings)
+  connect(
+    mapStateToProps,
+    mapDispatchtoProps
+  )(TeamSettings)
 );

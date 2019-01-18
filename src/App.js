@@ -61,4 +61,7 @@ const mapDispatchToProps = {
   fetch: authActions.fetch
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

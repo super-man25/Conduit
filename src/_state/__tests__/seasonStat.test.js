@@ -22,7 +22,6 @@ import {
   getSeasonStatDateLimits
 } from '../seasonStat/selectors';
 import { selectors } from '../season';
-import { subMonths } from 'date-fns';
 
 describe('actions', () => {
   it('should create an action to fetch seasonStats', () => {

@@ -98,7 +98,8 @@ ShallowWrapper {
                               size="22px"
                     >
                               NaN
-                              / 
+                              /
+                               
                               NaN
                     </styled.p>
                     <styled.span
@@ -229,7 +230,8 @@ ShallowWrapper {
                             size="22px"
               >
                             NaN
-                            / 
+                            /
+                             
                             NaN
               </styled.p>
               <styled.span
@@ -338,7 +340,8 @@ ShallowWrapper {
                   size="22px"
 >
                   NaN
-                  / 
+                  /
+                   
                   NaN
 </styled.p>,
                 <styled.span
@@ -370,7 +373,8 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     "NaN",
-                    "/ ",
+                    "/",
+                    " ",
                     "NaN",
                   ],
                   "color": "#2670AE",
@@ -379,7 +383,8 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": Array [
                   "NaN",
-                  "/ ",
+                  "/",
+                  " ",
                   "NaN",
                 ],
                 "type": [Function],
@@ -475,7 +480,8 @@ ShallowWrapper {
                                     size="22px"
                         >
                                     NaN
-                                    / 
+                                    /
+                                     
                                     NaN
                         </styled.p>
                         <styled.span
@@ -606,7 +612,8 @@ ShallowWrapper {
                                 size="22px"
                 >
                                 NaN
-                                / 
+                                /
+                                 
                                 NaN
                 </styled.p>
                 <styled.span
@@ -715,7 +722,8 @@ ShallowWrapper {
                     size="22px"
 >
                     NaN
-                    / 
+                    /
+                     
                     NaN
 </styled.p>,
                   <styled.span
@@ -747,7 +755,8 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       "NaN",
-                      "/ ",
+                      "/",
+                      " ",
                       "NaN",
                     ],
                     "color": "#2670AE",
@@ -756,7 +765,8 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": Array [
                     "NaN",
-                    "/ ",
+                    "/",
+                    " ",
                     "NaN",
                   ],
                   "type": [Function],
@@ -896,7 +906,8 @@ ShallowWrapper {
                               size="22px"
                     >
                               NaN
-                              / 
+                              /
+                               
                               NaN
                     </styled.p>
                     <styled.span
@@ -1026,7 +1037,8 @@ ShallowWrapper {
                             size="22px"
               >
                             NaN
-                            / 
+                            /
+                             
                             NaN
               </styled.p>
               <styled.span
@@ -1101,7 +1113,8 @@ ShallowWrapper {
                   size="22px"
 >
                   NaN
-                  / 
+                  /
+                   
                   NaN
 </styled.p>,
                 <styled.span
@@ -1133,7 +1146,8 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     "NaN",
-                    "/ ",
+                    "/",
+                    " ",
                     "NaN",
                   ],
                   "color": "#2670AE",
@@ -1142,7 +1156,8 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": Array [
                   "NaN",
-                  "/ ",
+                  "/",
+                  " ",
                   "NaN",
                 ],
                 "type": [Function],
@@ -1233,7 +1248,8 @@ ShallowWrapper {
                                     size="22px"
                         >
                                     NaN
-                                    / 
+                                    /
+                                     
                                     NaN
                         </styled.p>
                         <styled.span
@@ -1363,7 +1379,8 @@ ShallowWrapper {
                                 size="22px"
                 >
                                 NaN
-                                / 
+                                /
+                                 
                                 NaN
                 </styled.p>
                 <styled.span
@@ -1438,7 +1455,8 @@ ShallowWrapper {
                     size="22px"
 >
                     NaN
-                    / 
+                    /
+                     
                     NaN
 </styled.p>,
                   <styled.span
@@ -1470,7 +1488,8 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       "NaN",
-                      "/ ",
+                      "/",
+                      " ",
                       "NaN",
                     ],
                     "color": "#2670AE",
@@ -1479,7 +1498,8 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": Array [
                     "NaN",
-                    "/ ",
+                    "/",
+                    " ",
                     "NaN",
                   ],
                   "type": [Function],

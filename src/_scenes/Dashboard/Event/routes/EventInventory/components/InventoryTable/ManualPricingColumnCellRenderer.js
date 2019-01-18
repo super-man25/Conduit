@@ -137,9 +137,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   cancelEditingManualPrice: () => dispatch(actions.cancelEditingManualPrice())
 });
 
-const ManualPricingCell = connect(mapStateToProps, mapDispatchToProps)(
-  ManualPricingCellPresenter
-);
+const ManualPricingCell = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ManualPricingCellPresenter);
 
 export const manualPricingColumnCellRenderer = (props: any) => (
   <ManualPricingCell {...props} />

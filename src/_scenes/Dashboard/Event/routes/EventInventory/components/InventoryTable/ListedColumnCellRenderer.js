@@ -20,9 +20,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(actions.setEventRowListed(ownProps.rowData, !ownProps.cellData))
 });
 
-const ListedColumnCell = connect(null, mapDispatchToProps)(
-  ListedColumnCellPresenter
-);
+const ListedColumnCell = connect(
+  null,
+  mapDispatchToProps
+)(ListedColumnCellPresenter);
 
 export const listedColumnCellRenderer = (props: Props) => (
   <ListedColumnCell {...props} />

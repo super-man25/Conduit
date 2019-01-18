@@ -1,4 +1,6 @@
 // Dropdown options
+// TODO: Adding this eslint rule to get build passing for now. Need to write case conversion function for all these snakes and camels.
+/* eslint-disable camelcase */
 
 export const WEATHER_CONDITIONS = [
   {

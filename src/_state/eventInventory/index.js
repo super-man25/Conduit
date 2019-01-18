@@ -313,8 +313,8 @@ export const reducer = (state: State = initialState, action: Action) => {
         value
       } = action.payload;
 
-      const allRows: EDInventoryRow[] = state.allRows.map(
-        (row) => (row.id === id ? { ...row, isListed: value } : row)
+      const allRows: EDInventoryRow[] = state.allRows.map((row) =>
+        row.id === id ? { ...row, isListed: value } : row
       );
 
       return {
@@ -326,8 +326,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       const { row: fallbackRow } = action.payload;
       const id = fallbackRow.id;
 
-      const allRows: EDInventoryRow[] = state.allRows.map(
-        (row) => (row.id === id ? { ...fallbackRow } : row)
+      const allRows: EDInventoryRow[] = state.allRows.map((row) =>
+        row.id === id ? { ...fallbackRow } : row
       );
 
       return { ...state, allRows };
@@ -344,11 +344,10 @@ export const reducer = (state: State = initialState, action: Action) => {
         value
       } = action.payload;
 
-      const allRows: EDInventoryRow[] = state.allRows.map(
-        (row) =>
-          row.id === id
-            ? { ...row, overridePrice: value === '' ? null : Number(value) }
-            : row
+      const allRows: EDInventoryRow[] = state.allRows.map((row) =>
+        row.id === id
+          ? { ...row, overridePrice: value === '' ? null : Number(value) }
+          : row
       );
 
       return {
@@ -361,8 +360,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       const { row: fallbackRow } = action.payload;
       const id = fallbackRow.id;
 
-      const allRows: EDInventoryRow[] = state.allRows.map(
-        (row) => (row.id === id ? { ...fallbackRow } : row)
+      const allRows: EDInventoryRow[] = state.allRows.map((row) =>
+        row.id === id ? { ...fallbackRow } : row
       );
 
       return { ...state, allRows };

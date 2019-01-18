@@ -68,4 +68,7 @@ const mapDispatchToProps = {
   replace
 };
 
-export const Event = connect(mapStateToProps, mapDispatchToProps)(EventRoute);
+export const Event = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EventRoute);

@@ -33,9 +33,10 @@ const mapDispatchToProps = {
   selectAll: actions.selectAllEventRows
 };
 
-const SelectableHeader = connect(mapStateToProps, mapDispatchToProps)(
-  SelectableHeaderPresenter
-);
+const SelectableHeader = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SelectableHeaderPresenter);
 
 export const selectableColumnHeaderRenderer = (props: any) => (
   <SelectableHeader {...props} />

@@ -51,9 +51,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setFilter: () => dispatch(actions.setEventInventoryFilter(ownProps.dataKey))
 });
 
-const ColumnHeader = connect(mapStateToProps, mapDispatchToProps)(
-  DefaultColumnHeaderPresenter
-);
+const ColumnHeader = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DefaultColumnHeaderPresenter);
 
 export const defaultColumnHeaderRenderer = (props: any) => (
   <ColumnHeader {...props} />

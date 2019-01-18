@@ -155,9 +155,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   selectAllScaleFilters: () => dispatch(actions.clearSelectedScaleFilters())
 });
 
-const ScaleColumnHeader = connect(mapStateToProps, mapDispatchToProps)(
-  ScaleColumnHeaderPresenter
-);
+const ScaleColumnHeader = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ScaleColumnHeaderPresenter);
 
 export const scaleColumnHeaderRenderer = (props: any) => (
   <ScaleColumnHeader {...props} />

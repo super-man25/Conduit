@@ -154,6 +154,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = { push, signOut: actions.signOut };
 
-export const SiteHeader = connect(mapStateToProps, mapDispatchToProps)(
-  SiteHeaderPresenter
-);
+export const SiteHeader = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SiteHeaderPresenter);

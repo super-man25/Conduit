@@ -102,8 +102,8 @@ export function EventHeader(props: Props) {
         <FlexItem flex="0 0 auto">
           <P1 size="16px">Current Game Inventory</P1>
           <P1 size="22px" color={cssConstants.SECONDARY_BLUE}>
-            {formatNumber(event.unsoldInventory)}
-            / {formatNumber(event.totalInventory)}
+            {formatNumber(event.unsoldInventory)}/{' '}
+            {formatNumber(event.totalInventory)}
           </P1>
           <ItalicS1 color={cssConstants.SECONDARY_BLUE}>
             Available / Total
@@ -121,4 +121,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default compose(connect(mapStateToProps), withSidebar)(EventHeader);
+export default compose(
+  connect(mapStateToProps),
+  withSidebar
+)(EventHeader);

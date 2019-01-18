@@ -63,8 +63,8 @@ export const Button: React.ComponentType<Props> = styled.button`
     !props.secondary
       ? cssConstants.PRIMARY_WHITE
       : props.disabled
-        ? cssConstants.PRIMARY_WHITE
-        : cssConstants.PRIMARY_LIGHT_BLUE};
+      ? cssConstants.PRIMARY_WHITE
+      : cssConstants.PRIMARY_LIGHT_BLUE};
   font-size: ${(props) => (props.collapse || props.expand ? '16px' : '0.8em')};
   font-weight: 200;
   width: ${(props) => (props.collapse || props.expand ? '30px' : '100%')};
@@ -81,42 +81,42 @@ export const Button: React.ComponentType<Props> = styled.button`
     props.collapse || props.expand
       ? '0.3em'
       : props.small
-        ? '0.55em'
-        : '0.85em'};
+      ? '0.55em'
+      : '0.85em'};
   border: 2px solid;
   border-radius: 3px;
   border-color: ${(props) =>
     props.disabled
       ? cssConstants.PRIMARY_LIGHT_GRAY
       : props.secondary
-        ? cssConstants.PRIMARY_LIGHT_BLUE
-        : cssConstants.PRIMARY_LIGHT_BLUE};
+      ? cssConstants.PRIMARY_LIGHT_BLUE
+      : cssConstants.PRIMARY_LIGHT_BLUE};
   background-color: ${(props) =>
     props.disabled
       ? cssConstants.PRIMARY_LIGHT_GRAY
       : props.secondary
-        ? cssConstants.PRIMARY_WHITE
-        : cssConstants.PRIMARY_LIGHT_BLUE};
+      ? cssConstants.PRIMARY_WHITE
+      : cssConstants.PRIMARY_LIGHT_BLUE};
   &:hover {
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
     color: ${(props) =>
       props.disabled
         ? cssConstants.PRIMARY_WHITE
         : props.secondary
-          ? cssConstants.SECONDARY_BLUE
-          : cssConstants.PRIMARY_WHITE};
+        ? cssConstants.SECONDARY_BLUE
+        : cssConstants.PRIMARY_WHITE};
     background-color: ${(props) =>
       props.disabled
         ? cssConstants.PRIMARY_LIGHT_GRAY
         : props.secondary
-          ? cssConstants.PRIMARY_WHITE
-          : cssConstants.SECONDARY_BLUE};
+        ? cssConstants.PRIMARY_WHITE
+        : cssConstants.SECONDARY_BLUE};
     border-color: ${(props) =>
       props.disabled
         ? cssConstants.PRIMARY_LIGHT_GRAY
         : props.secondary
-          ? cssConstants.SECONDARY_BLUE
-          : cssConstants.SECONDARY_BLUE};
+        ? cssConstants.SECONDARY_BLUE
+        : cssConstants.SECONDARY_BLUE};
   }
   ::before {
     content: '${(props) => (props.collapse ? '<' : props.expand ? '>' : '')}';

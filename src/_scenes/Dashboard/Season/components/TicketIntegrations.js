@@ -220,6 +220,7 @@ const mapDispatchToProps = {
   fetchTicketIntegrations: actions.fetchTicketIntegrations
 };
 
-export const TicketIntegrations = connect(mapStateToProps, mapDispatchToProps)(
-  TicketIntegrationsPresenter
-);
+export const TicketIntegrations = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TicketIntegrationsPresenter);

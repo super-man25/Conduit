@@ -106,4 +106,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventListContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EventListContainer);

@@ -32,8 +32,8 @@ export class SVGChartElement {
     const color = selected
       ? selectedFill
       : highlighted
-        ? highlightFill
-        : originalFill;
+      ? highlightFill
+      : originalFill;
 
     this.setFill(color);
     this.dirty = false;
