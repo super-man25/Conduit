@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
-import edLogoTextless from '_images/eventdynamiclogonotext.svg';
+import edLogoWhite from '_images/eventdynamiclogooutline.svg';
 import { H1 } from './StyledTags';
 import { Flex } from './Flex';
 
@@ -30,7 +30,7 @@ export const LogoName = ({ onClick }) => (
     justify="space-between"
     onClick={onClick}
   >
-    <HeaderLogo src={edLogoTextless} />
+    <HeaderLogo src={edLogoWhite} />
     <HeaderTitle>EVENT DYNAMIC</HeaderTitle>
   </LogoContainer>
 );

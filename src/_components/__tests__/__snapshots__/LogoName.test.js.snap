@@ -45,7 +45,7 @@ exports[`renders correctly with no props 1`] = `
 >
   <img
     className="c1"
-    src="eventdynamiclogonotext.svg"
+    src="eventdynamiclogooutline.svg"
   />
   <h1
     className="c2"
