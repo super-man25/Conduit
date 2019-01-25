@@ -78,6 +78,10 @@ export function EventHeader(props: Props) {
 
   const isViewingInventory = pathname.split('/').includes('inventory');
 
+  const inventoryString = `${formatNumber(
+    event.unsoldInventory
+  )} / ${formatNumber(event.totalInventory)}`;
+
   return (
     <Box>
       <Flex align="center">
@@ -102,8 +106,7 @@ export function EventHeader(props: Props) {
         <FlexItem flex="0 0 auto">
           <P1 size="16px">Current Game Inventory</P1>
           <P1 size="22px" color={cssConstants.SECONDARY_BLUE}>
-            {formatNumber(event.unsoldInventory)}/{' '}
-            {formatNumber(event.totalInventory)}
+            {inventoryString}
           </P1>
           <ItalicS1 color={cssConstants.SECONDARY_BLUE}>
             Available / Total

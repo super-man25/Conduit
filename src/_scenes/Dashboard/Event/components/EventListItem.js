@@ -2,12 +2,13 @@
 
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
-import { Flex, FlexItem, H4, Icon, P1, Spacing } from '_components';
+import { Flex, FlexItem, H4, P1, Spacing } from '_components';
 import { isPast } from 'date-fns';
-import { orDash, readableDate, readableDuration } from '_helpers/string-utils';
+import { readableDate, readableDuration } from '_helpers/string-utils';
 import React from 'react';
 import styled from 'styled-components';
 import type { EDEvent } from '_models';
+import { formatNumber } from '_helpers/string-utils';
 
 const Heading = H4.extend`
   margin: 0;
@@ -60,6 +61,15 @@ type Props = {
 };
 
 export class EventListItem extends React.PureComponent<Props> {
+  get unsoldInventory() {
+    const { event } = this.props;
+    if (event.unsoldInventory === null || event.unsoldInventory === undefined) {
+      return '--';
+    }
+
+    return formatNumber(event.unsoldInventory);
+  }
+
   render() {
     const { event, active, onClick } = this.props;
     const past = isPast(event.timestamp);
@@ -71,43 +81,19 @@ export class EventListItem extends React.PureComponent<Props> {
         past={past}
         data-test-id="event-list-card"
       >
-        <FlexItem flex={4}>
-          <Flex direction="row" justify="space-between">
-            <P1 color={cssConstants.PRIMARY_GRAY} size="small">
-              GAME SCORE: {orDash(event.score)}
-            </P1>
+        <Flex direction="column" flex={1}>
+          <Flex direction="row" justify="space-between" align="center">
+            <Heading>{event.name}</Heading>
             <P1 color={cssConstants.PRIMARY_GRAY} size="small">
               Updated {readableDuration(event.modifiedAt)} ago
             </P1>
           </Flex>
-          <Spacing height="16px" />
-          <Heading>{event.name}</Heading>
-          <Spacing height="8px" />
-          <Flex direction="row" justify="space-between">
-            <P1 size="small">{readableDate(event.timestamp)}</P1>
-            <P1 size="small">
-              QUANTITY: {orDash(event.inventory)}/{orDash(event.capacity)}
-            </P1>
-          </Flex>
-        </FlexItem>
-        <Spacing width="16px" />
-        <Spacing width="60px">
-          {!!event.promotion && (
-            <Flex direction="column" align="center">
-              <P1 color={cssConstants.PRIMARY_GRAY}>promotion</P1>
-              <Spacing height="8px" />
-              <Icon
-                name="award"
-                size={28}
-                color={
-                  past
-                    ? cssConstants.PRIMARY_DARK_GRAY
-                    : cssConstants.PRIMARY_BLACK
-                }
-              />
-            </Flex>
-          )}
-        </Spacing>
+          <Spacing height="12px" />
+          <P1 size="small">{readableDate(event.timestamp)}</P1>
+          <FlexItem alignSelf="flex-end">
+            <P1 size="small">{this.unsoldInventory} Unsold</P1>
+          </FlexItem>
+        </Flex>
       </Container>
     );
   }
