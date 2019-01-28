@@ -61,15 +61,6 @@ type Props = {
 };
 
 export class EventListItem extends React.PureComponent<Props> {
-  get unsoldInventory() {
-    const { event } = this.props;
-    if (event.unsoldInventory === null || event.unsoldInventory === undefined) {
-      return '--';
-    }
-
-    return formatNumber(event.unsoldInventory);
-  }
-
   render() {
     const { event, active, onClick } = this.props;
     const past = isPast(event.timestamp);
@@ -91,7 +82,7 @@ export class EventListItem extends React.PureComponent<Props> {
           <Spacing height="12px" />
           <P1 size="small">{readableDate(event.timestamp)}</P1>
           <FlexItem alignSelf="flex-end">
-            <P1 size="small">{this.unsoldInventory} Unsold</P1>
+            <P1 size="small">{formatNumber(event.unsoldInventory)} Unsold</P1>
           </FlexItem>
         </Flex>
       </Container>

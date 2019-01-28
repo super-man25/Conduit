@@ -67,6 +67,10 @@ export function formatUSD(
  * Return a number formatted to include commas at the correct place values
  */
 export function formatNumber(value: number): string {
+  if (isNaN(value) || value === null) {
+    return '--';
+  }
+
   return Intl.NumberFormat('en').format(value);
 }
 

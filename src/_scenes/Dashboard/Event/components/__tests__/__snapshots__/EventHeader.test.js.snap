@@ -97,7 +97,7 @@ ShallowWrapper {
                               color="#2670AE"
                               size="22px"
                     >
-                              NaN / NaN
+                              -- / --
                     </styled.p>
                     <styled.span
                               color="#2670AE"
@@ -226,7 +226,7 @@ ShallowWrapper {
                             color="#2670AE"
                             size="22px"
               >
-                            NaN / NaN
+                            -- / --
               </styled.p>
               <styled.span
                             color="#2670AE"
@@ -333,7 +333,7 @@ ShallowWrapper {
                   color="#2670AE"
                   size="22px"
 >
-                  NaN / NaN
+                  -- / --
 </styled.p>,
                 <styled.span
                   color="#2670AE"
@@ -362,12 +362,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "NaN / NaN",
+                  "children": "-- / --",
                   "color": "#2670AE",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "NaN / NaN",
+                "rendered": "-- / --",
                 "type": [Function],
               },
               Object {
@@ -460,7 +460,7 @@ ShallowWrapper {
                                     color="#2670AE"
                                     size="22px"
                         >
-                                    NaN / NaN
+                                    -- / --
                         </styled.p>
                         <styled.span
                                     color="#2670AE"
@@ -589,7 +589,7 @@ ShallowWrapper {
                                 color="#2670AE"
                                 size="22px"
                 >
-                                NaN / NaN
+                                -- / --
                 </styled.p>
                 <styled.span
                                 color="#2670AE"
@@ -696,7 +696,7 @@ ShallowWrapper {
                     color="#2670AE"
                     size="22px"
 >
-                    NaN / NaN
+                    -- / --
 </styled.p>,
                   <styled.span
                     color="#2670AE"
@@ -725,12 +725,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "NaN / NaN",
+                    "children": "-- / --",
                     "color": "#2670AE",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "NaN / NaN",
+                  "rendered": "-- / --",
                   "type": [Function],
                 },
                 Object {
@@ -867,7 +867,7 @@ ShallowWrapper {
                               color="#2670AE"
                               size="22px"
                     >
-                              NaN / NaN
+                              -- / --
                     </styled.p>
                     <styled.span
                               color="#2670AE"
@@ -995,7 +995,7 @@ ShallowWrapper {
                             color="#2670AE"
                             size="22px"
               >
-                            NaN / NaN
+                            -- / --
               </styled.p>
               <styled.span
                             color="#2670AE"
@@ -1068,7 +1068,7 @@ ShallowWrapper {
                   color="#2670AE"
                   size="22px"
 >
-                  NaN / NaN
+                  -- / --
 </styled.p>,
                 <styled.span
                   color="#2670AE"
@@ -1097,12 +1097,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "NaN / NaN",
+                  "children": "-- / --",
                   "color": "#2670AE",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "NaN / NaN",
+                "rendered": "-- / --",
                 "type": [Function],
               },
               Object {
@@ -1190,7 +1190,7 @@ ShallowWrapper {
                                     color="#2670AE"
                                     size="22px"
                         >
-                                    NaN / NaN
+                                    -- / --
                         </styled.p>
                         <styled.span
                                     color="#2670AE"
@@ -1318,7 +1318,7 @@ ShallowWrapper {
                                 color="#2670AE"
                                 size="22px"
                 >
-                                NaN / NaN
+                                -- / --
                 </styled.p>
                 <styled.span
                                 color="#2670AE"
@@ -1391,7 +1391,7 @@ ShallowWrapper {
                     color="#2670AE"
                     size="22px"
 >
-                    NaN / NaN
+                    -- / --
 </styled.p>,
                   <styled.span
                     color="#2670AE"
@@ -1420,12 +1420,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "NaN / NaN",
+                    "children": "-- / --",
                     "color": "#2670AE",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "NaN / NaN",
+                  "rendered": "-- / --",
                   "type": [Function],
                 },
                 Object {

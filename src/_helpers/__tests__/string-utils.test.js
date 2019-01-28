@@ -100,6 +100,14 @@ describe('formatNumber', () => {
     expect(formatNumber(-1000)).toEqual('-1,000');
     expect(formatNumber(-1000000)).toEqual('-1,000,000');
   });
+
+  it('should return dashes for bad values', () => {
+    const bad = ['str', undefined, null];
+
+    for (const val of bad) {
+      expect(formatNumber(val)).toEqual('--');
+    }
+  });
 });
 
 describe('formatUSD', () => {

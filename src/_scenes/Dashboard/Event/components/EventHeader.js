@@ -78,9 +78,9 @@ export function EventHeader(props: Props) {
 
   const isViewingInventory = pathname.split('/').includes('inventory');
 
-  const inventoryString = `${formatNumber(
-    event.unsoldInventory
-  )} / ${formatNumber(event.totalInventory)}`;
+  const unsold = formatNumber(event.unsoldInventory);
+  const total = formatNumber(event.totalInventory);
+  const inventoryString = `${unsold} / ${total}`;
 
   return (
     <Box>
