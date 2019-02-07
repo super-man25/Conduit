@@ -67,11 +67,6 @@ ShallowWrapper {
                     >
                               15 Minutes
                     </styled.div>
-                    <styled.div>
-                              <styled.div
-                                        onClick={[Function]}
-                              />
-                    </styled.div>
           </Unknown>
 </withClickAway(styled.div)>,
       ],
@@ -177,11 +172,6 @@ ShallowWrapper {
               >
                             15 Minutes
               </styled.div>
-              <styled.div>
-                            <styled.div
-                                          onClick={[Function]}
-                            />
-              </styled.div>
 </Unknown>,
           ],
           "cols": 3,
@@ -207,59 +197,27 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <styled.div
-                  margin="1rem 0"
-                  size="large"
+              "children": <styled.div
+                margin="1rem 0"
+                size="large"
 >
-                  15 Minutes
+                15 Minutes
 </styled.div>,
-                <styled.div>
-                  <styled.div
-                                    onClick={[Function]}
-                  />
-</styled.div>,
-              ],
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "15 Minutes",
-                  "margin": "1rem 0",
-                  "size": "large",
-                },
-                "ref": null,
-                "rendered": "15 Minutes",
-                "type": [Function],
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "15 Minutes",
+                "margin": "1rem 0",
+                "size": "large",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <styled.div
-                    onClick={[Function]}
-/>,
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": [Function],
-              },
-            ],
+              "ref": null,
+              "rendered": "15 Minutes",
+              "type": [Function],
+            },
             "type": Symbol(react.fragment),
           },
         ],
@@ -316,11 +274,6 @@ ShallowWrapper {
                                     size="large"
                         >
                                     15 Minutes
-                        </styled.div>
-                        <styled.div>
-                                    <styled.div
-                                                onClick={[Function]}
-                                    />
                         </styled.div>
             </Unknown>
 </withClickAway(styled.div)>,
@@ -427,11 +380,6 @@ ShallowWrapper {
                 >
                                 15 Minutes
                 </styled.div>
-                <styled.div>
-                                <styled.div
-                                                onClick={[Function]}
-                                />
-                </styled.div>
 </Unknown>,
             ],
             "cols": 3,
@@ -457,59 +405,27 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": Array [
-                  <styled.div
-                    margin="1rem 0"
-                    size="large"
+                "children": <styled.div
+                  margin="1rem 0"
+                  size="large"
 >
-                    15 Minutes
+                  15 Minutes
 </styled.div>,
-                  <styled.div>
-                    <styled.div
-                                        onClick={[Function]}
-                    />
-</styled.div>,
-                ],
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "15 Minutes",
-                    "margin": "1rem 0",
-                    "size": "large",
-                  },
-                  "ref": null,
-                  "rendered": "15 Minutes",
-                  "type": [Function],
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "15 Minutes",
+                  "margin": "1rem 0",
+                  "size": "large",
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": <styled.div
-                      onClick={[Function]}
-/>,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": [Function],
-                },
-              ],
+                "ref": null,
+                "rendered": "15 Minutes",
+                "type": [Function],
+              },
               "type": Symbol(react.fragment),
             },
           ],

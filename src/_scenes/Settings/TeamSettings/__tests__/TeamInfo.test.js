@@ -25,14 +25,6 @@ describe('<TeamInfo />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('toggles isEditing', () => {
-    const wrapper = shallow(<TeamInfo {...props} />);
-    expect(wrapper.find(SettingEditButton)).toHaveLength(1);
-    wrapper.find(SettingEditButton).simulate('click');
-    expect(wrapper.state().isEditing).toBe(true);
-    expect(props.resetDirtyPricingInterval).toBeCalled();
-  });
-
   it('updates pricingInterval', () => {
     const wrapper = shallow(<TeamInfo {...props} />);
     wrapper.setState({ isEditing: true });

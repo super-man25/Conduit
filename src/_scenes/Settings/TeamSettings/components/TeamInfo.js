@@ -142,9 +142,6 @@ export class TeamInfo extends React.Component<Props, State> {
           ) : (
             <React.Fragment>
               <EDText {...textProps}>{this.pricingDescription}</EDText>
-              <SettingButtonGroup>
-                <SettingEditButton onClick={this.toggleEditButton} />
-              </SettingButtonGroup>
             </React.Fragment>
           )}
         </TeamSetting>
