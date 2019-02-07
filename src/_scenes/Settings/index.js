@@ -22,30 +22,48 @@ import CreateUser from './CreateUser';
 import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
+import BuyerTypeRules from './BuyerTypeRules';
 import type { Node } from 'react';
 import type { EDUser } from '_models/user';
 import { admin } from '_hoc/secured';
 
 type RouteConfig = {
   path: string,
+  linkText: string,
+  adminOnly: boolean,
   main: (...args: any) => Node
 };
 
 const routes: Array<RouteConfig> = [
   {
     path: '/settings/team',
+    linkText: 'Team Settings',
+    adminOnly: false,
     main: TeamSettings
   },
   {
     path: '/settings/user',
+    linkText: 'User Settings',
+    adminOnly: false,
     main: UserSettings
   },
   {
+    // TODO: this should only show up if the user has TDC as a primary
+    path: '/settings/buyer-type-rules',
+    linkText: 'Buyer Type Rules',
+    adminOnly: false,
+    main: BuyerTypeRules
+  },
+  {
     path: '/settings/create-user',
+    linkText: 'Create User',
+    adminOnly: true,
     main: admin(CreateUser)
   },
   {
     path: '/settings/demo',
+    linkText: 'Demo',
+    adminOnly: true,
     main: admin(Demo)
   }
 ];
@@ -67,45 +85,22 @@ export const Settings = ({ authState, authActions }: Props) => (
       <LeftNav>
         <Spacing padding="2rem">
           <Flex direction="column" align-items="center">
-            <Spacing padding="2rem 0">
-              <EDNavLink
-                weight="light"
-                to="/settings/team"
-                activeStyle={{
-                  color: cssConstants.PRIMARY_LIGHT_BLUE,
-                  textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
-                }}
-              >
-                Team Settings
-              </EDNavLink>
-            </Spacing>
-            <Spacing padding="2rem 0">
-              <EDNavLink
-                weight="light"
-                to="/settings/user"
-                activeStyle={{
-                  color: cssConstants.PRIMARY_LIGHT_BLUE,
-                  textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
-                }}
-                data-test-id="user-settings-button"
-              >
-                User Settings
-              </EDNavLink>
-            </Spacing>
-            {authState.model.isAdmin && (
-              <Spacing padding="2rem 0">
-                <EDLink weight="light" to="/settings/create-user">
-                  Create User
-                </EDLink>
-              </Spacing>
-            )}
-            {authState.model.isAdmin && (
-              <Spacing padding="2rem 0">
-                <EDLink weight="light" to="/settings/demo">
-                  Demo
-                </EDLink>
-              </Spacing>
-            )}
+            {routes
+              .filter((r) => !r.adminOnly || authState.model.isAdmin)
+              .map((r) => (
+                <Spacing padding="2rem 0" key={r.path}>
+                  <EDNavLink
+                    weight="light"
+                    to={r.path}
+                    activeStyle={{
+                      color: cssConstants.PRIMARY_LIGHT_BLUE,
+                      textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
+                    }}
+                  >
+                    {r.linkText}
+                  </EDNavLink>
+                </Spacing>
+              ))}
           </Flex>
         </Spacing>
       </LeftNav>
