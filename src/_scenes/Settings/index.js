@@ -6,7 +6,6 @@ import { Route, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import {
   ApiAlert,
-  EDLink,
   EDNavLink,
   Flex,
   FullContent,

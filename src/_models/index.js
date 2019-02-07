@@ -9,3 +9,4 @@ export * from './season';
 export * from './inventory';
 export * from './venue';
 export * from './demo';
+export * from './buyerType';

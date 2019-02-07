@@ -46,7 +46,7 @@ ShallowWrapper {
                                                   "title": "Dashboard",
                                                 },
                                                 Object {
-                                                  "path": "/settings",
+                                                  "path": "/settings/team",
                                                   "title": "Team Settings",
                                                 },
                                               ]
@@ -94,7 +94,7 @@ ShallowWrapper {
                                                     "title": "Dashboard",
                                                   },
                                                   Object {
-                                                    "path": "/settings",
+                                                    "path": "/settings/team",
                                                     "title": "Team Settings",
                                                   },
                                                 ]
@@ -142,7 +142,7 @@ ShallowWrapper {
                                                           "title": "Dashboard",
                                                         },
                                                         Object {
-                                                          "path": "/settings",
+                                                          "path": "/settings/team",
                                                           "title": "Team Settings",
                                                         },
                                                       ]
@@ -186,7 +186,7 @@ ShallowWrapper {
                                                   "title": "Dashboard",
                                                 },
                                                 Object {
-                                                  "path": "/settings",
+                                                  "path": "/settings/team",
                                                   "title": "Team Settings",
                                                 },
                                               ]
@@ -206,7 +206,7 @@ ShallowWrapper {
                     "title": "Dashboard",
                   },
                   Object {
-                    "path": "/settings",
+                    "path": "/settings/team",
                     "title": "Team Settings",
                   },
                 ],
@@ -305,7 +305,7 @@ ShallowWrapper {
                                                               "title": "Dashboard",
                                                             },
                                                             Object {
-                                                              "path": "/settings",
+                                                              "path": "/settings/team",
                                                               "title": "Team Settings",
                                                             },
                                                           ]
@@ -353,7 +353,7 @@ ShallowWrapper {
                                                               "title": "Dashboard",
                                                             },
                                                             Object {
-                                                              "path": "/settings",
+                                                              "path": "/settings/team",
                                                               "title": "Team Settings",
                                                             },
                                                           ]
@@ -401,7 +401,7 @@ ShallowWrapper {
                                                                   "title": "Dashboard",
                                                                 },
                                                                 Object {
-                                                                  "path": "/settings",
+                                                                  "path": "/settings/team",
                                                                   "title": "Team Settings",
                                                                 },
                                                               ]
@@ -445,7 +445,7 @@ ShallowWrapper {
                                                         "title": "Dashboard",
                                                       },
                                                       Object {
-                                                        "path": "/settings",
+                                                        "path": "/settings/team",
                                                         "title": "Team Settings",
                                                       },
                                                     ]
@@ -465,7 +465,7 @@ ShallowWrapper {
                       "title": "Dashboard",
                     },
                     Object {
-                      "path": "/settings",
+                      "path": "/settings/team",
                       "title": "Team Settings",
                     },
                   ],

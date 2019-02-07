@@ -39,7 +39,7 @@ const teamCrumb = [
   },
   {
     title: 'Team Settings',
-    path: '/settings'
+    path: '/settings/team'
   }
 ];
 
