@@ -79,7 +79,9 @@ const columns = [
     width: 0,
     dataKey: 'minimumPrice',
     flexGrow: 15,
-    disableSort: true
+    cellDataGetter({ columnData, dataKey, rowData }) {
+      return formatUSD(rowData[dataKey]);
+    }
   },
   {
     label: 'List Price',
