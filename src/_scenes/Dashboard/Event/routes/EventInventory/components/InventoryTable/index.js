@@ -75,6 +75,13 @@ const columns = [
     }
   },
   {
+    label: 'Season Ticket Cost',
+    width: 0,
+    dataKey: 'minimumPrice',
+    flexGrow: 15,
+    disableSort: true
+  },
+  {
     label: 'List Price',
     width: 0,
     dataKey: 'listedPrice',
@@ -94,7 +101,7 @@ const columns = [
     label: 'Manual Pricing',
     width: 0,
     dataKey: 'overridePrice',
-    flexGrow: 25,
+    flexGrow: 10,
     disableSort: true,
     cellRenderer: manualPricingColumnCellRenderer
   }
