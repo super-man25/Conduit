@@ -213,8 +213,8 @@ export class LoginPresenter extends React.Component<Props, State> {
           </FlexItem>
           <LoginFooter>
             If you do not already have an account please contact{' '}
-            <MailtoLink mailto="robert.smith@soldoutsports.com">
-              robert.smith@soldoutsports.com
+            <MailtoLink href="mailto:info@eventdynamic.com">
+              info@eventdynamic.com
             </MailtoLink>{' '}
             to begin setting up an account for your organization.
           </LoginFooter>

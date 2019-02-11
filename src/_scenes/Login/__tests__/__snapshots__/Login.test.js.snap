@@ -140,9 +140,9 @@ ShallowWrapper {
                 If you do not already have an account please contact
                  
                 <styled.a
-                        mailto="robert.smith@soldoutsports.com"
+                        href="mailto:info@eventdynamic.com"
                 >
-                        robert.smith@soldoutsports.com
+                        info@eventdynamic.com
                 </styled.a>
                  
                 to begin setting up an account for your organization.
@@ -266,9 +266,9 @@ ShallowWrapper {
             If you do not already have an account please contact
              
             <styled.a
-                        mailto="robert.smith@soldoutsports.com"
+                        href="mailto:info@eventdynamic.com"
             >
-                        robert.smith@soldoutsports.com
+                        info@eventdynamic.com
             </styled.a>
              
             to begin setting up an account for your organization.
@@ -898,9 +898,9 @@ ShallowWrapper {
               "If you do not already have an account please contact",
               " ",
               <styled.a
-                mailto="robert.smith@soldoutsports.com"
+                href="mailto:info@eventdynamic.com"
 >
-                robert.smith@soldoutsports.com
+                info@eventdynamic.com
 </styled.a>,
               " ",
               "to begin setting up an account for your organization.",
@@ -915,11 +915,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "robert.smith@soldoutsports.com",
-                "mailto": "robert.smith@soldoutsports.com",
+                "children": "info@eventdynamic.com",
+                "href": "mailto:info@eventdynamic.com",
               },
               "ref": null,
-              "rendered": "robert.smith@soldoutsports.com",
+              "rendered": "info@eventdynamic.com",
               "type": [Function],
             },
             " ",
@@ -1048,9 +1048,9 @@ ShallowWrapper {
                     If you do not already have an account please contact
                      
                     <styled.a
-                              mailto="robert.smith@soldoutsports.com"
+                              href="mailto:info@eventdynamic.com"
                     >
-                              robert.smith@soldoutsports.com
+                              info@eventdynamic.com
                     </styled.a>
                      
                     to begin setting up an account for your organization.
@@ -1174,9 +1174,9 @@ ShallowWrapper {
               If you do not already have an account please contact
                
               <styled.a
-                            mailto="robert.smith@soldoutsports.com"
+                            href="mailto:info@eventdynamic.com"
               >
-                            robert.smith@soldoutsports.com
+                            info@eventdynamic.com
               </styled.a>
                
               to begin setting up an account for your organization.
@@ -1806,9 +1806,9 @@ ShallowWrapper {
                 "If you do not already have an account please contact",
                 " ",
                 <styled.a
-                  mailto="robert.smith@soldoutsports.com"
+                  href="mailto:info@eventdynamic.com"
 >
-                  robert.smith@soldoutsports.com
+                  info@eventdynamic.com
 </styled.a>,
                 " ",
                 "to begin setting up an account for your organization.",
@@ -1823,11 +1823,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "robert.smith@soldoutsports.com",
-                  "mailto": "robert.smith@soldoutsports.com",
+                  "children": "info@eventdynamic.com",
+                  "href": "mailto:info@eventdynamic.com",
                 },
                 "ref": null,
-                "rendered": "robert.smith@soldoutsports.com",
+                "rendered": "info@eventdynamic.com",
                 "type": [Function],
               },
               " ",
@@ -2001,9 +2001,9 @@ ShallowWrapper {
                 If you do not already have an account please contact
                  
                 <styled.a
-                        mailto="robert.smith@soldoutsports.com"
+                        href="mailto:info@eventdynamic.com"
                 >
-                        robert.smith@soldoutsports.com
+                        info@eventdynamic.com
                 </styled.a>
                  
                 to begin setting up an account for your organization.
@@ -2127,9 +2127,9 @@ ShallowWrapper {
             If you do not already have an account please contact
              
             <styled.a
-                        mailto="robert.smith@soldoutsports.com"
+                        href="mailto:info@eventdynamic.com"
             >
-                        robert.smith@soldoutsports.com
+                        info@eventdynamic.com
             </styled.a>
              
             to begin setting up an account for your organization.
@@ -2759,9 +2759,9 @@ ShallowWrapper {
               "If you do not already have an account please contact",
               " ",
               <styled.a
-                mailto="robert.smith@soldoutsports.com"
+                href="mailto:info@eventdynamic.com"
 >
-                robert.smith@soldoutsports.com
+                info@eventdynamic.com
 </styled.a>,
               " ",
               "to begin setting up an account for your organization.",
@@ -2776,11 +2776,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "robert.smith@soldoutsports.com",
-                "mailto": "robert.smith@soldoutsports.com",
+                "children": "info@eventdynamic.com",
+                "href": "mailto:info@eventdynamic.com",
               },
               "ref": null,
-              "rendered": "robert.smith@soldoutsports.com",
+              "rendered": "info@eventdynamic.com",
               "type": [Function],
             },
             " ",
@@ -2909,9 +2909,9 @@ ShallowWrapper {
                     If you do not already have an account please contact
                      
                     <styled.a
-                              mailto="robert.smith@soldoutsports.com"
+                              href="mailto:info@eventdynamic.com"
                     >
-                              robert.smith@soldoutsports.com
+                              info@eventdynamic.com
                     </styled.a>
                      
                     to begin setting up an account for your organization.
@@ -3035,9 +3035,9 @@ ShallowWrapper {
               If you do not already have an account please contact
                
               <styled.a
-                            mailto="robert.smith@soldoutsports.com"
+                            href="mailto:info@eventdynamic.com"
               >
-                            robert.smith@soldoutsports.com
+                            info@eventdynamic.com
               </styled.a>
                
               to begin setting up an account for your organization.
@@ -3667,9 +3667,9 @@ ShallowWrapper {
                 "If you do not already have an account please contact",
                 " ",
                 <styled.a
-                  mailto="robert.smith@soldoutsports.com"
+                  href="mailto:info@eventdynamic.com"
 >
-                  robert.smith@soldoutsports.com
+                  info@eventdynamic.com
 </styled.a>,
                 " ",
                 "to begin setting up an account for your organization.",
@@ -3684,11 +3684,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "robert.smith@soldoutsports.com",
-                  "mailto": "robert.smith@soldoutsports.com",
+                  "children": "info@eventdynamic.com",
+                  "href": "mailto:info@eventdynamic.com",
                 },
                 "ref": null,
-                "rendered": "robert.smith@soldoutsports.com",
+                "rendered": "info@eventdynamic.com",
                 "type": [Function],
               },
               " ",

@@ -8,6 +8,8 @@ exports[`renders correctly 1`] = `
   line-height: 130%;
   color: #070707;
   cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 <a

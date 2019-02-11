@@ -8,4 +8,5 @@ export const MailtoLink = styled.a`
   line-height: 130%;
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
   cursor: pointer;
+  text-decoration: none;
 `;
