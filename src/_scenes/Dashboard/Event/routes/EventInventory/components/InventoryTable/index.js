@@ -75,7 +75,7 @@ const columns = [
     }
   },
   {
-    label: 'Season Ticket Cost',
+    label: 'Season Ticket Price',
     width: 0,
     dataKey: 'minimumPrice',
     flexGrow: 15,
