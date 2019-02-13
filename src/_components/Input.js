@@ -94,7 +94,8 @@ export class NumberInputField extends React.Component<NumberInputProps> {
       (e.keyCode === 67 && isCtrlOrMetaKey) ||
       (e.keyCode === 86 && isCtrlOrMetaKey) ||
       (e.keyCode === 88 && isCtrlOrMetaKey) ||
-      (e.keyCode >= 35 && e.keyCode <= 39)
+      (e.keyCode >= 35 && e.keyCode <= 39) ||
+      (e.keyCode === 61 || e.keyCode === 173)
     ) {
       return;
     }

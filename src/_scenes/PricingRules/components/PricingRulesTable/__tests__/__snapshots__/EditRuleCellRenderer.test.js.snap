@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditRuleCellRenderer /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <EditRuleCellPresenter
+    cancelEditingRule={[Function]}
+    editingAnyPriceRule={false}
+    isEditing={false}
+    saveEditedRule={[Function]}
+    startEditingRule={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "align": "center",
+      "children": <styled.p
+        color="#38A9DB"
+        onClick={[Function]}
+        size={14}
+        style={
+                Object {
+                        "cursor": "pointer",
+                      }
+        }
+>
+        EDIT RULE
+</styled.p>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": "EDIT RULE",
+        "color": "#38A9DB",
+        "onClick": [Function],
+        "size": 14,
+        "style": Object {
+          "cursor": "pointer",
+        },
+      },
+      "ref": null,
+      "rendered": "EDIT RULE",
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": <styled.p
+          color="#38A9DB"
+          onClick={[Function]}
+          size={14}
+          style={
+                    Object {
+                              "cursor": "pointer",
+                            }
+          }
+>
+          EDIT RULE
+</styled.p>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "EDIT RULE",
+          "color": "#38A9DB",
+          "onClick": [Function],
+          "size": 14,
+          "style": Object {
+            "cursor": "pointer",
+          },
+        },
+        "ref": null,
+        "rendered": "EDIT RULE",
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

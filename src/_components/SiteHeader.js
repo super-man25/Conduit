@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { cssConstants, zIndexes } from '_constants';
+import { cssConstants, zIndexes, integrationConstants } from '_constants';
 import { withClickAway } from '_hoc';
 import {
   DropdownMenuItem,
@@ -69,6 +69,7 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 type Props = {
   push: (path: string) => void,
   auth: {},
+  integrations: [],
   signOut: () => void
 };
 
@@ -95,6 +96,10 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
     this.props.push('/settings/team');
   };
 
+  handlePricingRulesClick = () => {
+    this.props.push('/pricing');
+  };
+
   handleLogoClick = () => {
     this.props.push('/');
   };
@@ -104,7 +109,12 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   };
 
   render() {
-    const { auth } = this.props;
+    const { auth, integrations } = this.props;
+
+    const hasTicketsDotComIntegration = integrations.some(
+      (integration) =>
+        integration.name === integrationConstants.ticketsDotCom.name
+    );
 
     return (
       <SiteHeaderDiv>
@@ -127,6 +137,15 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
                   >
                     Settings
                   </DropdownMenuItem>
+                  {hasTicketsDotComIntegration && (
+                    <DropdownMenuItem
+                      id="pricingRules"
+                      data-test-id="pricing-rules-button"
+                      onClick={this.handlePricingRulesClick}
+                    >
+                      Pricing Rules
+                    </DropdownMenuItem>
+                  )}
                   <DropdownMenuItem
                     id="logout"
                     data-test-id="logout-button"
@@ -149,7 +168,8 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (state) => ({
-  auth: state.auth.model
+  auth: state.auth.model,
+  integrations: state.client.integrations
 });
 
 const mapDispatchToProps = { push, signOut: actions.signOut };

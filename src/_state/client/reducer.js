@@ -98,11 +98,13 @@ export default function clientReducer(
     case FETCH_INTEGRATIONS_SUCCESS:
       return {
         ...state,
+        loading: false,
         integrations: action.payload
       };
     case FETCH_INTEGRATIONS_ERROR:
       return {
         ...state,
+        loading: false,
         error: action.payload
       };
     case UPDATE_INTEGRATION:

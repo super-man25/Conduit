@@ -35,6 +35,18 @@ import {
   saga as eventInventorySaga
 } from './eventInventory';
 import {
+  reducer as buyerTypeReducer,
+  saga as buyerTypeSaga
+} from './buyerType';
+import {
+  reducer as priceRuleReducer,
+  saga as priceRuleSaga
+} from './priceRule';
+import {
+  reducer as priceScaleReducer,
+  saga as priceScaleSaga
+} from './priceScale';
+import {
   reducer as eventInventoryBulkReducer,
   saga as eventInventoryBulkSaga
 } from './eventInventoryBulk';
@@ -55,6 +67,9 @@ export const reducers = {
   ticketIntegration: ticketIntegrationReducer,
   season: seasonReducer,
   eventList: eventListReducer,
+  buyerType: buyerTypeReducer,
+  priceRule: priceRuleReducer,
+  priceScale: priceScaleReducer,
   eventInventory: eventInventoryReducer,
   eventInventoryBulk: eventInventoryBulkReducer,
   seatMap: seatMapReducer,
@@ -90,6 +105,9 @@ const combineSagas = {
   eventList: eventListSaga,
   eventInventory: eventInventorySaga,
   eventInventoryBulk: eventInventoryBulkSaga,
+  buyerType: buyerTypeSaga,
+  priceRule: priceRuleSaga,
+  priceScale: priceScaleSaga,
   seatMap: seatMapSaga,
   demoPrice: demoPriceSaga
 };

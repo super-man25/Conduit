@@ -4,6 +4,7 @@ import { CenteredLoader } from '_components';
 import { history } from '_helpers';
 import { secured, unsecured } from '_hoc/secured';
 import { actions as authActions, selectors } from '_state/auth';
+import { actions as clientActions } from '_state/client';
 import React from 'react';
 import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
@@ -26,14 +27,21 @@ const Settings = Loadable({
   loading: CenteredLoader
 });
 
+const PricingRules = Loadable({
+  loader: () => import('_scenes/PricingRules'),
+  loading: CenteredLoader
+});
+
 type Props = {
-  fetch: () => void,
+  fetchUser: () => void,
+  fetchIntegrations: () => void,
   loading: boolean
 };
 
 class App extends React.Component<Props> {
   componentDidMount() {
-    this.props.fetch();
+    this.props.fetchUser();
+    this.props.fetchIntegrations();
   }
 
   render() {
@@ -46,6 +54,7 @@ class App extends React.Component<Props> {
         <Switch>
           <Route path="/login" component={unsecured(Login)} />
           <Route path="/settings" component={secured(Settings)} />
+          <Route path="/pricing" component={secured(PricingRules)} />
           <Route path="/" component={secured(Dashboard)} />
         </Switch>
       </ConnectedRouter>
@@ -58,7 +67,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = {
-  fetch: authActions.fetch
+  fetchUser: authActions.fetch,
+  fetchIntegrations: clientActions.fetchIntegrations
 };
 
 export default connect(

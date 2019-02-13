@@ -10,3 +10,5 @@ export * from './season';
 export * from './venue';
 export * from './demo';
 export * from './buyerType';
+export * from './priceRule';
+export * from './priceScale';
