@@ -56,18 +56,18 @@ export class PricingRules extends React.Component<Props> {
         <SiteHeader />
         <FullContent padding="2rem">
           <PricingWrapper>
-            <Spacing margin="2rem 0">
+            <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
+              <Flex direction="row" justify="space-between" align="baseline">
+                <H3 type="secondary">Pricing Rules</H3>
+                <PrimaryButton
+                  onClick={this.createNewPriceRule.bind(this)}
+                  disabled={this.props.editingAnyPriceRule}
+                >
+                  New Rule
+                </PrimaryButton>
+              </Flex>
             </Spacing>
-            <Flex direction="row" justify="space-between" align="baseline">
-              <H3 type="secondary">Pricing Rules</H3>
-              <PrimaryButton
-                onClick={this.createNewPriceRule.bind(this)}
-                disabled={this.props.editingAnyPriceRule}
-              >
-                New Rule
-              </PrimaryButton>
-            </Flex>
             <Spacing height="2rem" />
             <PricingRulesTableTableContainer>
               <VirtualizedPricingRules />

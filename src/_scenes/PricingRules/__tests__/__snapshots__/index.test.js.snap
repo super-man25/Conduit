@@ -27,7 +27,7 @@ ShallowWrapper {
 >
           <styled.div>
                     <styled.div
-                              margin="2rem 0"
+                              margin="1rem 0"
                     >
                               <Breadcrumbs
                                         crumbs={
@@ -43,24 +43,24 @@ ShallowWrapper {
                                                           ]
                                         }
                               />
+                              <Flex
+                                        align="baseline"
+                                        direction="row"
+                                        justify="space-between"
+                              >
+                                        <styled.h3
+                                                  type="secondary"
+                                        >
+                                                  Pricing Rules
+                                        </styled.h3>
+                                        <styled.button
+                                                  disabled={false}
+                                                  onClick={[Function]}
+                                        >
+                                                  New Rule
+                                        </styled.button>
+                              </Flex>
                     </styled.div>
-                    <Flex
-                              align="baseline"
-                              direction="row"
-                              justify="space-between"
-                    >
-                              <styled.h3
-                                        type="secondary"
-                              >
-                                        Pricing Rules
-                              </styled.h3>
-                              <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                              >
-                                        New Rule
-                              </styled.button>
-                    </Flex>
                     <styled.div
                               height="2rem"
                     />
@@ -91,7 +91,7 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div>
             <styled.div
-                        margin="2rem 0"
+                        margin="1rem 0"
             >
                         <Breadcrumbs
                                     crumbs={
@@ -107,24 +107,24 @@ ShallowWrapper {
                                                           ]
                                     }
                         />
+                        <Flex
+                                    align="baseline"
+                                    direction="row"
+                                    justify="space-between"
+                        >
+                                    <styled.h3
+                                                type="secondary"
+                                    >
+                                                Pricing Rules
+                                    </styled.h3>
+                                    <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                    >
+                                                New Rule
+                                    </styled.button>
+                        </Flex>
             </styled.div>
-            <Flex
-                        align="baseline"
-                        direction="row"
-                        justify="space-between"
-            >
-                        <styled.h3
-                                    type="secondary"
-                        >
-                                    Pricing Rules
-                        </styled.h3>
-                        <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                        >
-                                    New Rule
-                        </styled.button>
-            </Flex>
             <styled.div
                         height="2rem"
             />
@@ -144,7 +144,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <styled.div
-                margin="2rem 0"
+                margin="1rem 0"
 >
                 <Breadcrumbs
                                 crumbs={
@@ -160,24 +160,24 @@ ShallowWrapper {
                                                               ]
                                 }
                 />
+                <Flex
+                                align="baseline"
+                                direction="row"
+                                justify="space-between"
+                >
+                                <styled.h3
+                                                type="secondary"
+                                >
+                                                Pricing Rules
+                                </styled.h3>
+                                <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                                >
+                                                New Rule
+                                </styled.button>
+                </Flex>
 </styled.div>,
-              <Flex
-                align="baseline"
-                direction="row"
-                justify="space-between"
->
-                <styled.h3
-                                type="secondary"
-                >
-                                Pricing Rules
-                </styled.h3>
-                <styled.button
-                                disabled={false}
-                                onClick={[Function]}
-                >
-                                New Rule
-                </styled.button>
-</Flex>,
               <styled.div
                 height="2rem"
 />,
@@ -195,79 +195,61 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Breadcrumbs
-                  crumbs={
-                                    Array [
-                                                      Object {
-                                                        "path": "/dashboard",
-                                                        "title": "Dashboard",
-                                                      },
-                                                      Object {
-                                                        "path": "/pricing",
-                                                        "title": "Team Settings",
-                                                      },
-                                                    ]
-                  }
-/>,
-                "margin": "2rem 0",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "crumbs": Array [
-                    Object {
-                      "path": "/dashboard",
-                      "title": "Dashboard",
-                    },
-                    Object {
-                      "path": "/pricing",
-                      "title": "Team Settings",
-                    },
-                  ],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "align": "baseline",
                 "children": Array [
-                  <styled.h3
-                    type="secondary"
+                  <Breadcrumbs
+                    crumbs={
+                                        Array [
+                                                            Object {
+                                                              "path": "/dashboard",
+                                                              "title": "Dashboard",
+                                                            },
+                                                            Object {
+                                                              "path": "/pricing",
+                                                              "title": "Team Settings",
+                                                            },
+                                                          ]
+                    }
+/>,
+                  <Flex
+                    align="baseline"
+                    direction="row"
+                    justify="space-between"
 >
-                    Pricing Rules
-</styled.h3>,
-                  <styled.button
-                    disabled={false}
-                    onClick={[Function]}
->
-                    New Rule
-</styled.button>,
+                    <styled.h3
+                                        type="secondary"
+                    >
+                                        Pricing Rules
+                    </styled.h3>
+                    <styled.button
+                                        disabled={false}
+                                        onClick={[Function]}
+                    >
+                                        New Rule
+                    </styled.button>
+</Flex>,
                 ],
-                "direction": "row",
-                "justify": "space-between",
+                "margin": "1rem 0",
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "children": "Pricing Rules",
-                    "type": "secondary",
+                    "crumbs": Array [
+                      Object {
+                        "path": "/dashboard",
+                        "title": "Dashboard",
+                      },
+                      Object {
+                        "path": "/pricing",
+                        "title": "Team Settings",
+                      },
+                    ],
                   },
                   "ref": null,
-                  "rendered": "Pricing Rules",
+                  "rendered": null,
                   "type": [Function],
                 },
                 Object {
@@ -275,12 +257,51 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "New Rule",
-                    "disabled": false,
-                    "onClick": [Function],
+                    "align": "baseline",
+                    "children": Array [
+                      <styled.h3
+                        type="secondary"
+>
+                        Pricing Rules
+</styled.h3>,
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+>
+                        New Rule
+</styled.button>,
+                    ],
+                    "direction": "row",
+                    "justify": "space-between",
                   },
                   "ref": null,
-                  "rendered": "New Rule",
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Pricing Rules",
+                        "type": "secondary",
+                      },
+                      "ref": null,
+                      "rendered": "Pricing Rules",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "New Rule",
+                        "disabled": false,
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "New Rule",
+                      "type": [Function],
+                    },
+                  ],
                   "type": [Function],
                 },
               ],
@@ -338,7 +359,7 @@ ShallowWrapper {
 >
             <styled.div>
                         <styled.div
-                                    margin="2rem 0"
+                                    margin="1rem 0"
                         >
                                     <Breadcrumbs
                                                 crumbs={
@@ -354,24 +375,24 @@ ShallowWrapper {
                                                                       ]
                                                 }
                                     />
+                                    <Flex
+                                                align="baseline"
+                                                direction="row"
+                                                justify="space-between"
+                                    >
+                                                <styled.h3
+                                                            type="secondary"
+                                                >
+                                                            Pricing Rules
+                                                </styled.h3>
+                                                <styled.button
+                                                            disabled={false}
+                                                            onClick={[Function]}
+                                                >
+                                                            New Rule
+                                                </styled.button>
+                                    </Flex>
                         </styled.div>
-                        <Flex
-                                    align="baseline"
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <styled.h3
-                                                type="secondary"
-                                    >
-                                                Pricing Rules
-                                    </styled.h3>
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                    >
-                                                New Rule
-                                    </styled.button>
-                        </Flex>
                         <styled.div
                                     height="2rem"
                         />
@@ -402,7 +423,7 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div>
               <styled.div
-                            margin="2rem 0"
+                            margin="1rem 0"
               >
                             <Breadcrumbs
                                           crumbs={
@@ -418,24 +439,24 @@ ShallowWrapper {
                                                                     ]
                                           }
                             />
+                            <Flex
+                                          align="baseline"
+                                          direction="row"
+                                          justify="space-between"
+                            >
+                                          <styled.h3
+                                                        type="secondary"
+                                          >
+                                                        Pricing Rules
+                                          </styled.h3>
+                                          <styled.button
+                                                        disabled={false}
+                                                        onClick={[Function]}
+                                          >
+                                                        New Rule
+                                          </styled.button>
+                            </Flex>
               </styled.div>
-              <Flex
-                            align="baseline"
-                            direction="row"
-                            justify="space-between"
-              >
-                            <styled.h3
-                                          type="secondary"
-                            >
-                                          Pricing Rules
-                            </styled.h3>
-                            <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                            >
-                                          New Rule
-                            </styled.button>
-              </Flex>
               <styled.div
                             height="2rem"
               />
@@ -455,7 +476,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <styled.div
-                  margin="2rem 0"
+                  margin="1rem 0"
 >
                   <Breadcrumbs
                                     crumbs={
@@ -471,24 +492,24 @@ ShallowWrapper {
                                                                       ]
                                     }
                   />
+                  <Flex
+                                    align="baseline"
+                                    direction="row"
+                                    justify="space-between"
+                  >
+                                    <styled.h3
+                                                      type="secondary"
+                                    >
+                                                      Pricing Rules
+                                    </styled.h3>
+                                    <styled.button
+                                                      disabled={false}
+                                                      onClick={[Function]}
+                                    >
+                                                      New Rule
+                                    </styled.button>
+                  </Flex>
 </styled.div>,
-                <Flex
-                  align="baseline"
-                  direction="row"
-                  justify="space-between"
->
-                  <styled.h3
-                                    type="secondary"
-                  >
-                                    Pricing Rules
-                  </styled.h3>
-                  <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                  >
-                                    New Rule
-                  </styled.button>
-</Flex>,
                 <styled.div
                   height="2rem"
 />,
@@ -506,79 +527,61 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": <Breadcrumbs
-                    crumbs={
-                                        Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/pricing",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                    }
-/>,
-                  "margin": "2rem 0",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "crumbs": Array [
-                      Object {
-                        "path": "/dashboard",
-                        "title": "Dashboard",
-                      },
-                      Object {
-                        "path": "/pricing",
-                        "title": "Team Settings",
-                      },
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "align": "baseline",
                   "children": Array [
-                    <styled.h3
-                      type="secondary"
+                    <Breadcrumbs
+                      crumbs={
+                                            Array [
+                                                                  Object {
+                                                                    "path": "/dashboard",
+                                                                    "title": "Dashboard",
+                                                                  },
+                                                                  Object {
+                                                                    "path": "/pricing",
+                                                                    "title": "Team Settings",
+                                                                  },
+                                                                ]
+                      }
+/>,
+                    <Flex
+                      align="baseline"
+                      direction="row"
+                      justify="space-between"
 >
-                      Pricing Rules
-</styled.h3>,
-                    <styled.button
-                      disabled={false}
-                      onClick={[Function]}
->
-                      New Rule
-</styled.button>,
+                      <styled.h3
+                                            type="secondary"
+                      >
+                                            Pricing Rules
+                      </styled.h3>
+                      <styled.button
+                                            disabled={false}
+                                            onClick={[Function]}
+                      >
+                                            New Rule
+                      </styled.button>
+</Flex>,
                   ],
-                  "direction": "row",
-                  "justify": "space-between",
+                  "margin": "1rem 0",
                 },
                 "ref": null,
                 "rendered": Array [
                   Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
-                      "children": "Pricing Rules",
-                      "type": "secondary",
+                      "crumbs": Array [
+                        Object {
+                          "path": "/dashboard",
+                          "title": "Dashboard",
+                        },
+                        Object {
+                          "path": "/pricing",
+                          "title": "Team Settings",
+                        },
+                      ],
                     },
                     "ref": null,
-                    "rendered": "Pricing Rules",
+                    "rendered": null,
                     "type": [Function],
                   },
                   Object {
@@ -586,12 +589,51 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "New Rule",
-                      "disabled": false,
-                      "onClick": [Function],
+                      "align": "baseline",
+                      "children": Array [
+                        <styled.h3
+                          type="secondary"
+>
+                          Pricing Rules
+</styled.h3>,
+                        <styled.button
+                          disabled={false}
+                          onClick={[Function]}
+>
+                          New Rule
+</styled.button>,
+                      ],
+                      "direction": "row",
+                      "justify": "space-between",
                     },
                     "ref": null,
-                    "rendered": "New Rule",
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Pricing Rules",
+                          "type": "secondary",
+                        },
+                        "ref": null,
+                        "rendered": "Pricing Rules",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "New Rule",
+                          "disabled": false,
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "rendered": "New Rule",
+                        "type": [Function],
+                      },
+                    ],
                     "type": [Function],
                   },
                 ],
