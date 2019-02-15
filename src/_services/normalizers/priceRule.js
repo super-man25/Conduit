@@ -30,8 +30,8 @@ const priceRuleSchema = yup.object({
     .number()
     .integer()
     .nullable()
-    .moreThan(-100)
-    .lessThan(100)
+    .min(-100)
+    .max(100)
     .label('Percent change'),
   mirrorPriceScaleId: yup
     .number()

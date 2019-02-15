@@ -97,7 +97,9 @@ describe('denormalizer', () => {
     } catch (err) {
       error = err;
     }
-    expect(error.toString()).toEqual('Percent change must be less than 100');
+    expect(error.toString()).toEqual(
+      'Percent change must be less than or equal to 100'
+    );
 
     done();
   });
