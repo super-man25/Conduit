@@ -2,6 +2,7 @@ import { buyerTypeService } from '_services';
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
 import { fetchBuyerTypes } from '_state/buyerType/saga';
+import { actions as alertActions } from '_state/alert';
 import {
   selectors,
   actions,
@@ -98,6 +99,10 @@ describe('saga workers', () => {
     const error = new Error('some API error');
 
     expect(fail.throw(error).value).toEqual(
+      put(alertActions.error('Failed to Fetch Buyer Types'))
+    );
+
+    expect(fail.next().value).toEqual(
       put({ type: types.FETCH_BUYER_TYPES_ERROR, payload: error })
     );
   });

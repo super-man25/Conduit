@@ -51,9 +51,7 @@ ShallowWrapper {
       "children": <styled.p
         title=" name, name"
 >
-        2
-         
-        Price Scales
+        2 Price Scales
 </styled.p>,
     },
     "ref": null,
@@ -62,19 +60,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": Array [
-          2,
-          " ",
-          "Price Scales",
-        ],
+        "children": "2 Price Scales",
         "title": " name, name",
       },
       "ref": null,
-      "rendered": Array [
-        2,
-        " ",
-        "Price Scales",
-      ],
+      "rendered": "2 Price Scales",
       "type": [Function],
     },
     "type": [Function],
@@ -89,9 +79,7 @@ ShallowWrapper {
         "children": <styled.p
           title=" name, name"
 >
-          2
-           
-          Price Scales
+          2 Price Scales
 </styled.p>,
       },
       "ref": null,
@@ -100,19 +88,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            2,
-            " ",
-            "Price Scales",
-          ],
+          "children": "2 Price Scales",
           "title": " name, name",
         },
         "ref": null,
-        "rendered": Array [
-          2,
-          " ",
-          "Price Scales",
-        ],
+        "rendered": "2 Price Scales",
         "type": [Function],
       },
       "type": [Function],

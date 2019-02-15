@@ -1,7 +1,12 @@
 import { priceRuleService } from '_services';
-import { call, put } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
-import { fetchPriceRules } from '_state/priceRule/saga';
+import {
+  fetchPriceRules,
+  savePriceRule,
+  fetchOnePriceRule
+} from '_state/priceRule/saga';
+import { actions as alertActions } from '_state/alert';
 import {
   selectors,
   actions,
@@ -251,7 +256,6 @@ describe('reducer', () => {
   it('should handle RESET_PRICE_RULES', () => {
     const prevState = {
       ...initialState,
-      unsavedCount: 10,
       allRows: [{ id: 10 }]
     };
 
@@ -259,6 +263,138 @@ describe('reducer', () => {
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual(initialState);
+  });
+
+  it('should handle SAVE_PRICE_RULE', () => {
+    const prevState = {
+      ...initialState,
+      loading: false
+    };
+
+    const action = { type: types.SAVE_PRICE_RULE };
+
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      loading: true
+    });
+  });
+
+  it('should handle SAVE_PRICE_RULE_SUCCESS', () => {
+    const prevState = {
+      ...initialState,
+      editingRowId: 1,
+      editingRowState: { id: 1, constant: 2 },
+      loading: true,
+      allRows: [{ id: 0 }]
+    };
+
+    const action = { type: types.SAVE_PRICE_RULE_SUCCESS, payload: 1 };
+
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      loading: false
+    });
+  });
+
+  it('should handle SAVE_PRICE_RULE_ERROR', () => {
+    const prevState = {
+      ...initialState,
+      loading: true
+    };
+
+    const action = {
+      type: types.SAVE_PRICE_RULE_ERROR,
+      payload: 'Could Not Save Price Rule'
+    };
+
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      loading: false,
+      error: 'Could Not Save Price Rule'
+    });
+  });
+
+  it('should handle FETCH_PRICE_RULE', () => {
+    const prevState = initialState;
+
+    const priceRuleId = 1;
+    const action = { type: types.FETCH_PRICE_RULE, payload: priceRuleId };
+
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      loading: true
+    });
+  });
+
+  describe('should handle FETCH_PRICE_RULE_SUCCESS', () => {
+    let prevState;
+    beforeEach(() => {
+      prevState = {
+        ...initialState,
+        loading: true,
+        allRows: [{ id: 2 }, { id: 3 }, { id: 4 }]
+      };
+    });
+
+    it('when rule already exists', () => {
+      const fetchedPriceRule = { id: 3, percent: -30 };
+      const action = {
+        type: types.FETCH_PRICE_RULE_SUCCESS,
+        payload: fetchedPriceRule
+      };
+
+      const nextState = reducer(prevState, action);
+
+      expect(nextState).toEqual({
+        ...prevState,
+        loading: false,
+        allRows: [{ id: 2 }, { id: 3, percent: -30 }, { id: 4 }]
+      });
+    });
+
+    it('when rule is new', () => {
+      const fetchedPriceRule = { id: 7, percent: 10 };
+      const action = {
+        type: types.FETCH_PRICE_RULE_SUCCESS,
+        payload: fetchedPriceRule
+      };
+
+      const nextState = reducer(prevState, action);
+
+      expect(nextState).toEqual({
+        ...prevState,
+        loading: false,
+        allRows: [{ id: 2 }, { id: 3 }, { id: 7, percent: 10 }]
+      });
+    });
+  });
+
+  it('should handle FETCH_PRICE_RULE_ERROR', () => {
+    const prevState = {
+      ...initialState,
+      loading: true
+    };
+
+    const action = {
+      type: types.FETCH_PRICE_RULE_ERROR,
+      payload: 'Could Not Fetch Price Rule'
+    };
+
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...prevState,
+      loading: false,
+      error: 'Could Not Fetch Price Rule'
+    });
   });
 });
 
@@ -280,7 +416,67 @@ describe('saga workers', () => {
     const error = new Error('some API error');
 
     expect(fail.throw(error).value).toEqual(
+      put(alertActions.error('Failed to Fetch Price Rules'))
+    );
+
+    expect(fail.next().value).toEqual(
       put({ type: types.FETCH_PRICE_RULES_ERROR, payload: error })
+    );
+  });
+
+  it('should handle save', () => {
+    const action = actions.savePriceRule();
+    const generator = cloneableGenerator(savePriceRule)(action);
+    expect(generator.next().value).toEqual(
+      select(selectors.selectEditingPriceRule)
+    );
+
+    const success = generator.clone();
+    const priceRule = { id: 3 };
+
+    expect(success.next(priceRule).value).toEqual(
+      call(priceRuleService.update, priceRule)
+    );
+
+    expect(success.next(priceRule).value).toEqual(
+      put({ type: types.SAVE_PRICE_RULE_SUCCESS, payload: priceRule })
+    );
+
+    expect(success.next().value).toEqual(
+      put(alertActions.success('Successfully saved price rule'))
+    );
+    expect(success.next().done).toBe(true);
+
+    const fail = generator.clone();
+    const error = new Error('some API error');
+
+    expect(fail.throw(error).value).toEqual(
+      put({ type: types.SAVE_PRICE_RULE_ERROR, payload: error })
+    );
+  });
+
+  it('should handle fetch one', () => {
+    const action = actions.fetchPriceRule(1);
+    const generator = cloneableGenerator(fetchOnePriceRule)(action);
+
+    expect(generator.next().value).toEqual(call(priceRuleService.getOne, 1));
+
+    const success = generator.clone();
+
+    expect(success.next({ id: 1 }).value).toEqual(
+      put({
+        type: types.FETCH_PRICE_RULE_SUCCESS,
+        payload: { id: 1 }
+      })
+    );
+
+    expect(success.next().done).toBe(true);
+
+    const fail = generator.clone();
+    const error = new Error('some API error');
+
+    expect(fail.throw(error).value).toEqual(
+      put({ type: types.FETCH_PRICE_RULE_ERROR, payload: error })
     );
   });
 });
@@ -295,5 +491,20 @@ describe('selectors', () => {
     };
 
     expect(selectors.selectAllPriceRuleRows(store)).toEqual([1, 2, 3]);
+  });
+
+  it('should select all price rules', () => {
+    const store = {
+      priceRule: {
+        ...initialState,
+        allRows: [1, 2, 3],
+        editingRowState: { id: 1, constant: 2 }
+      }
+    };
+
+    expect(selectors.selectEditingPriceRule(store)).toEqual({
+      id: 1,
+      constant: 2
+    });
   });
 });

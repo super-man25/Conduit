@@ -9,7 +9,8 @@ import { PositionedBox } from './styled';
 import type { Option } from './MultiSelect';
 
 type State = {
-  dropDownOpen: boolean
+  dropDownOpen: boolean,
+  selectAllNext: boolean
 };
 
 type Props = {
@@ -24,8 +25,14 @@ type Props = {
 export const MultiSelectWithClickAway = withClickAway(MultiSelect);
 
 export class MultiSelectCellPresenter extends React.Component<Props, State> {
-  state = { dropDownOpen: false };
+  state = { dropDownOpen: false, selectAllNext: true };
   ref = React.createRef();
+
+  componentDidMount() {
+    if (this.items().length === this.props.rulePropertyValue.length) {
+      this.setState({ selectAllNext: false });
+    }
+  }
 
   toggleDropdown = () => {
     const { dropDownOpen } = this.state;
@@ -33,6 +40,18 @@ export class MultiSelectCellPresenter extends React.Component<Props, State> {
     this.setState({
       dropDownOpen: !dropDownOpen
     });
+  };
+
+  clipLabel = (label: string) => {
+    const length = this.props.columnData.labelLength || 13;
+    return label.length > length ? `${label.slice(0, length)}...` : label;
+  };
+
+  items = () => {
+    const { columnData } = this.props;
+    const { optionsKey } = columnData;
+
+    return columnData[optionsKey];
   };
 
   onItemClicked = (item: Option) => {
@@ -47,25 +66,43 @@ export class MultiSelectCellPresenter extends React.Component<Props, State> {
     updatePriceRuleProperty(newlySelectedItemIds);
   };
 
+  toggleSelectAll = () => {
+    const { updatePriceRuleProperty } = this.props;
+    const { selectAllNext } = this.state;
+
+    const selectedIds = selectAllNext ? this.items().map((i) => i.id) : [];
+    updatePriceRuleProperty(selectedIds);
+    this.setState({ selectAllNext: !selectAllNext });
+  };
+
   getPositionOfFilterIcon() {
     if (!this.ref.current) return {};
 
     const { left, top } = this.ref.current.getBoundingClientRect();
 
     return {
-      top: `calc(${Math.ceil(top)}px - 247px)`,
+      top: `calc(${Math.ceil(top)}px - 230px)`,
       left: `calc(${Math.ceil(left)}px - 121px)`
     };
   }
 
   render() {
-    const { columnData, rulePropertyValue } = this.props;
-    const { label, optionsKey, labelFn } = columnData;
-    const items = columnData[optionsKey];
+    const {
+      columnData: { label, labelFn },
+      rulePropertyValue
+    } = this.props;
 
     const { dropDownOpen } = this.state;
 
+    const items = this.items();
     const selectedNumber = rulePropertyValue.length;
+
+    const cellLabel =
+      selectedNumber === 1
+        ? this.clipLabel(
+            labelFn(items.find((i) => i.id === rulePropertyValue[0]))
+          )
+        : `${selectedNumber} ${label}`;
 
     // fetch selected options and concatenate their labels
     // to be used as a title on the multi select container
@@ -78,9 +115,7 @@ export class MultiSelectCellPresenter extends React.Component<Props, State> {
     if (!this.props.isEditing) {
       return (
         <Flex align="center">
-          <Text title={selectedTitles}>
-            {selectedNumber} {label}
-          </Text>
+          <Text title={selectedTitles}>{cellLabel}</Text>
         </Flex>
       );
     }
@@ -88,10 +123,19 @@ export class MultiSelectCellPresenter extends React.Component<Props, State> {
     return (
       <div>
         <PositionedBox position="relative">
-          <Flex align="center" onClick={this.toggleDropdown}>
-            {selectedNumber} {label}
+          <Flex
+            align="center"
+            justify="space-between"
+            onClick={this.toggleDropdown}
+          >
+            {cellLabel}
             <div
-              style={{ marginLeft: 7, height: 24, cursor: 'pointer' }}
+              style={{
+                marginLeft: 5,
+                marginRight: 15,
+                height: 24,
+                cursor: 'pointer'
+              }}
               ref={this.ref}
             >
               <Icon
@@ -117,6 +161,8 @@ export class MultiSelectCellPresenter extends React.Component<Props, State> {
             <MultiSelectWithClickAway
               onClickAway={this.toggleDropdown}
               onItemClicked={this.onItemClicked}
+              toggleSelectAll={this.toggleSelectAll}
+              selectAllNext={this.state.selectAllNext}
               items={items}
               labelFn={labelFn}
               selectedItems={rulePropertyValue}

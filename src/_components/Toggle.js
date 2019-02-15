@@ -65,13 +65,14 @@ const Label = styled.label`
 const Input = styled.input`
   display: none;
 
+  background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+
   :checked + ${Slider} {
     background-color: ${cssConstants.SECONDARY_BLUE};
   }
 
-  :checked,
   :disabled + ${Slider} {
-    background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    cursor: not-allowed;
   }
 `;
 

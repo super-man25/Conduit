@@ -4,6 +4,7 @@ import React from 'react';
 import {
   H3,
   PageWrapper,
+  ApiAlert,
   SiteHeader,
   FullContent,
   FlexItem,
@@ -55,6 +56,7 @@ export class PricingRules extends React.Component<Props> {
       <PageWrapper>
         <SiteHeader />
         <FullContent padding="2rem">
+          <ApiAlert />
           <PricingWrapper>
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
@@ -68,7 +70,6 @@ export class PricingRules extends React.Component<Props> {
                 </PrimaryButton>
               </Flex>
             </Spacing>
-            <Spacing height="2rem" />
             <PricingRulesTableTableContainer>
               <VirtualizedPricingRules />
             </PricingRulesTableTableContainer>

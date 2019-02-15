@@ -21,6 +21,10 @@ type DropdownOption = {
   id: string | number
 };
 
+const labelLength = 13;
+const clipLabel = (label) =>
+  label.length > labelLength ? `${label.slice(0, labelLength)}...` : label;
+
 export class DropDownCellPresenter extends React.Component<Props, State> {
   state = { selectedOption: null };
 
@@ -29,7 +33,7 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
       hasId ? o.id === item : o === item
     );
 
-    if (!selectedItem) return { name: 'None', id: null };
+    if (!selectedItem) return { name: '-', id: null };
 
     return {
       name: hasId ? selectedItem.name : selectedItem,
@@ -63,7 +67,7 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
     if (!this.props.isEditing) {
       return (
         <Flex align="center">
-          <Text>{withSelectedAsOption.name}</Text>
+          <Text>{clipLabel(withSelectedAsOption.name)}</Text>
         </Flex>
       );
     }

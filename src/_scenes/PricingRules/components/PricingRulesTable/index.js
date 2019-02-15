@@ -27,6 +27,7 @@ import {
 import { formatUSD } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
+import { Flex, Text } from '_components';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
@@ -34,6 +35,7 @@ import { ToggleCellPresenter } from './ToggleCellRenderer';
 import { EditRuleCell } from './EditRuleCellRenderer';
 import { DefaultCellPresenter } from './CellRenderer';
 import { withEditingProps } from './withEditingProps';
+import { withPricingRuleRowStyles } from './withPricingRuleRowStyles';
 
 import type { EDBuyerType } from '_models/buyerType';
 import type { EDPriceScale } from '_models/priceScale';
@@ -76,14 +78,14 @@ const columns = [
   {
     label: 'Mirrors',
     dataKey: 'mirrorPriceScaleId',
-    flexGrow: 12,
+    flexGrow: 8,
     columnData: { optionsKey: 'priceScales', hasId: true, hasNone: false },
     cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
   },
   {
     label: '% Change',
     dataKey: 'percent',
-    flexGrow: 8,
+    flexGrow: 6,
     columnData: {
       displayFn: (percent) => {
         if (!percent) return '-';
@@ -95,7 +97,7 @@ const columns = [
   {
     label: '$ Change',
     dataKey: 'constant',
-    flexGrow: 8,
+    flexGrow: 6,
     columnData: {
       displayFn: (dollars) => {
         if (!dollars) return '-';
@@ -107,9 +109,10 @@ const columns = [
   {
     label: 'Events',
     dataKey: 'eventIds',
-    flexGrow: 8,
+    flexGrow: 16,
     columnData: {
       optionsKey: 'events',
+      labelLength: 28,
       labelFn: (option) =>
         `${format(option.timestamp, 'M/D/YYYY')} - ${option.name}`
     },
@@ -143,25 +146,11 @@ const roundOptions = [
   { id: 'None', name: 'No Rounding' }
 ];
 
-const withAlternatingBackgroundColor = (rowRenderer) => {
-  function tableRowFn(props) {
-    const { index } = props;
-    let className = props.className;
-
-    if (index % 2) {
-      className += ' ReactVirtualized__Table__row--even';
-    }
-
-    return rowRenderer({
-      ...props,
-      className
-    });
-  }
-
-  return tableRowFn;
-};
-
-const rowRenderer = withAlternatingBackgroundColor(defaultTableRowRenderer);
+const NoTableRowsText = ({ children }) => (
+  <Flex justify="center" align="center" height="100%">
+    <Text size={16}>{children}</Text>
+  </Flex>
+);
 
 type Props = {
   fetchPriceScales: () => EDPriceScale[],
@@ -190,6 +179,11 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
   render() {
     const { rows, events, buyerTypes, priceScales } = this.props;
 
+    // if buyer types cannot be loaded do not display table
+    const rowCount = buyerTypes.length > 0 ? rows.length : 0;
+
+    const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
+
     return (
       <AutoSizer>
         {({ height, width }) => (
@@ -198,10 +192,15 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
             width={width}
             headerHeight={45}
             rowHeight={60}
-            rowCount={rows.length}
+            rowCount={rowCount}
             rowGetter={({ index }) => rows[index]}
             overscanRowCount={50}
             rowRenderer={rowRenderer}
+            noRowsRenderer={() => (
+              <NoTableRowsText>
+                No Pricing Rules Available To Display
+              </NoTableRowsText>
+            )}
           >
             {columns.map((column) => (
               <Column

@@ -11,6 +11,7 @@ type Props = {
   rowData: { [string]: any },
   cellData: any,
   isNewRule: boolean,
+  isLoading: boolean,
   editingAnyPriceRule: boolean,
   startEditingRule: () => void,
   cancelEditingRule: () => void,
@@ -19,8 +20,8 @@ type Props = {
 
 export class EditRuleCellPresenter extends React.Component<Props> {
   startEditingRule = () => {
-    const { startEditingRule, editingAnyPriceRule } = this.props;
-    if (editingAnyPriceRule) return;
+    const { startEditingRule, editingAnyPriceRule, isLoading } = this.props;
+    if (editingAnyPriceRule || isLoading) return;
     startEditingRule();
   };
 
@@ -35,7 +36,7 @@ export class EditRuleCellPresenter extends React.Component<Props> {
   };
 
   render() {
-    const { editingAnyPriceRule, isEditing, isNewRule } = this.props;
+    const { editingAnyPriceRule, isEditing, isNewRule, isLoading } = this.props;
 
     if (!isEditing) {
       return (
@@ -43,7 +44,7 @@ export class EditRuleCellPresenter extends React.Component<Props> {
           <Text
             size={14}
             color={
-              editingAnyPriceRule
+              editingAnyPriceRule || isLoading
                 ? cssConstants.PRIMARY_LIGHT_GRAY
                 : cssConstants.PRIMARY_LIGHT_BLUE
             }
@@ -60,10 +61,16 @@ export class EditRuleCellPresenter extends React.Component<Props> {
 
     return (
       <Flex justify="space-around">
-        <CancelEditingButton onClick={this.cancelEditingRule}>
+        <CancelEditingButton
+          onClick={this.cancelEditingRule}
+          disabled={isLoading}
+        >
           Cancel
         </CancelEditingButton>
-        <SavePricingRuleButton onClick={this.saveEditedRule}>
+        <SavePricingRuleButton
+          onClick={this.saveEditedRule}
+          disabled={isLoading}
+        >
           {isNewRule ? 'Create' : 'Save'}
         </SavePricingRuleButton>
       </Flex>
@@ -72,13 +79,14 @@ export class EditRuleCellPresenter extends React.Component<Props> {
 }
 
 const mapStateToProps = (
-  { priceRule: { allRows, editingRowId } },
+  { priceRule: { allRows, editingRowId, loading } },
   { rowData }
 ) => {
   const row = allRows.find((pr) => pr.id === rowData.id);
   return {
     editingAnyPriceRule: editingRowId !== null,
-    isNewRule: row.id === null
+    isNewRule: row.id === 0,
+    isLoading: loading
   };
 };
 
@@ -87,7 +95,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(actions.startEditingPriceRule(ownProps.rowData.id)),
   cancelEditingRule: () =>
     dispatch(actions.cancelEditingPriceRule(ownProps.rowData.id)),
-  saveEditedRule: () => dispatch(actions.saveEditedPriceRule(ownProps.rowIndex))
+  saveEditedRule: () => dispatch(actions.savePriceRule(ownProps.rowData.id))
 });
 
 export const EditRuleCell = connect(

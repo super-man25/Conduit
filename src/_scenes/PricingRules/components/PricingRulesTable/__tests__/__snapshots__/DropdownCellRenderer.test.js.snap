@@ -45,7 +45,7 @@ ShallowWrapper {
     "props": Object {
       "align": "center",
       "children": <styled.p>
-        None
+        -
 </styled.p>,
     },
     "ref": null,
@@ -54,10 +54,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": "None",
+        "children": "-",
       },
       "ref": null,
-      "rendered": "None",
+      "rendered": "-",
       "type": [Function],
     },
     "type": [Function],
@@ -70,7 +70,7 @@ ShallowWrapper {
       "props": Object {
         "align": "center",
         "children": <styled.p>
-          None
+          -
 </styled.p>,
       },
       "ref": null,
@@ -79,10 +79,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "None",
+          "children": "-",
         },
         "ref": null,
-        "rendered": "None",
+        "rendered": "-",
         "type": [Function],
       },
       "type": [Function],

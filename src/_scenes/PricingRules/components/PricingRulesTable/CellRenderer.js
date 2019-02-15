@@ -22,7 +22,10 @@ export class DefaultCellPresenter extends React.Component<Props, State> {
     const { value } = (e.currentTarget: HTMLInputElement);
     const { updatePriceRuleProperty } = this.props;
 
-    updatePriceRuleProperty(value);
+    // convert empty string values to null
+    const newPriceRuleProperty = value === '' ? null : value;
+
+    updatePriceRuleProperty(newPriceRuleProperty);
   };
 
   render() {

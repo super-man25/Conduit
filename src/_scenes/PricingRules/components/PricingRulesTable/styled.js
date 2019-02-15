@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
-import { PrimaryButton, Input, Box, SecondaryButton } from '_components';
+import {
+  PrimaryButton,
+  Input,
+  Box,
+  SecondaryButton,
+  Toggle
+} from '_components';
 
 export const EditPricingRuleInput = Input.extend`
   box-sizing: border-box;

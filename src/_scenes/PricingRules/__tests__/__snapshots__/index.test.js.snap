@@ -25,6 +25,7 @@ ShallowWrapper {
         <styled.div
           padding="2rem"
 >
+          <Connect(ApiAlertPresenter) />
           <styled.div>
                     <styled.div
                               margin="1rem 0"
@@ -62,9 +63,6 @@ ShallowWrapper {
                               </Flex>
                     </styled.div>
                     <styled.div
-                              height="2rem"
-                    />
-                    <styled.div
                               flex={1}
                     >
                               <Connect(VirtualizedPricingRulesPresenter) />
@@ -89,339 +87,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <styled.div>
-            <styled.div
-                        margin="1rem 0"
-            >
-                        <Breadcrumbs
-                                    crumbs={
-                                                Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/pricing",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                                    }
-                        />
-                        <Flex
-                                    align="baseline"
-                                    direction="row"
-                                    justify="space-between"
-                        >
-                                    <styled.h3
-                                                type="secondary"
-                                    >
-                                                Pricing Rules
-                                    </styled.h3>
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                    >
-                                                New Rule
-                                    </styled.button>
-                        </Flex>
-            </styled.div>
-            <styled.div
-                        height="2rem"
-            />
-            <styled.div
-                        flex={1}
-            >
-                        <Connect(VirtualizedPricingRulesPresenter) />
-            </styled.div>
-</styled.div>,
-          "padding": "2rem",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <styled.div
-                margin="1rem 0"
->
-                <Breadcrumbs
-                                crumbs={
-                                                Array [
-                                                                Object {
-                                                                  "path": "/dashboard",
-                                                                  "title": "Dashboard",
-                                                                },
-                                                                Object {
-                                                                  "path": "/pricing",
-                                                                  "title": "Team Settings",
-                                                                },
-                                                              ]
-                                }
-                />
-                <Flex
-                                align="baseline"
-                                direction="row"
-                                justify="space-between"
-                >
-                                <styled.h3
-                                                type="secondary"
-                                >
-                                                Pricing Rules
-                                </styled.h3>
-                                <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                >
-                                                New Rule
-                                </styled.button>
-                </Flex>
-</styled.div>,
-              <styled.div
-                height="2rem"
-/>,
-              <styled.div
-                flex={1}
->
-                <Connect(VirtualizedPricingRulesPresenter) />
-</styled.div>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Breadcrumbs
-                    crumbs={
-                                        Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/pricing",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                    }
-/>,
-                  <Flex
-                    align="baseline"
-                    direction="row"
-                    justify="space-between"
->
-                    <styled.h3
-                                        type="secondary"
-                    >
-                                        Pricing Rules
-                    </styled.h3>
-                    <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                    >
-                                        New Rule
-                    </styled.button>
-</Flex>,
-                ],
-                "margin": "1rem 0",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "crumbs": Array [
-                      Object {
-                        "path": "/dashboard",
-                        "title": "Dashboard",
-                      },
-                      Object {
-                        "path": "/pricing",
-                        "title": "Team Settings",
-                      },
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "align": "baseline",
-                    "children": Array [
-                      <styled.h3
-                        type="secondary"
->
-                        Pricing Rules
-</styled.h3>,
-                      <styled.button
-                        disabled={false}
-                        onClick={[Function]}
->
-                        New Rule
-</styled.button>,
-                    ],
-                    "direction": "row",
-                    "justify": "space-between",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": "Pricing Rules",
-                        "type": "secondary",
-                      },
-                      "ref": null,
-                      "rendered": "Pricing Rules",
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": "New Rule",
-                        "disabled": false,
-                        "onClick": [Function],
-                      },
-                      "ref": null,
-                      "rendered": "New Rule",
-                      "type": [Function],
-                    },
-                  ],
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "height": "2rem",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <Connect(VirtualizedPricingRulesPresenter) />,
-                "flex": 1,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <Connect(SiteHeaderPresenter) />,
-          <styled.div
-            padding="2rem"
->
+          "children": Array [
+            <Connect(ApiAlertPresenter) />,
             <styled.div>
-                        <styled.div
-                                    margin="1rem 0"
-                        >
-                                    <Breadcrumbs
-                                                crumbs={
-                                                            Array [
-                                                                        Object {
-                                                                          "path": "/dashboard",
-                                                                          "title": "Dashboard",
-                                                                        },
-                                                                        Object {
-                                                                          "path": "/pricing",
-                                                                          "title": "Team Settings",
-                                                                        },
-                                                                      ]
-                                                }
-                                    />
-                                    <Flex
-                                                align="baseline"
-                                                direction="row"
-                                                justify="space-between"
-                                    >
-                                                <styled.h3
-                                                            type="secondary"
-                                                >
-                                                            Pricing Rules
-                                                </styled.h3>
-                                                <styled.button
-                                                            disabled={false}
-                                                            onClick={[Function]}
-                                                >
-                                                            New Rule
-                                                </styled.button>
-                                    </Flex>
-                        </styled.div>
-                        <styled.div
-                                    height="2rem"
-                        />
-                        <styled.div
-                                    flex={1}
-                        >
-                                    <Connect(VirtualizedPricingRulesPresenter) />
-                        </styled.div>
-            </styled.div>
-</styled.div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <styled.div>
               <styled.div
                             margin="1rem 0"
               >
@@ -458,18 +126,26 @@ ShallowWrapper {
                             </Flex>
               </styled.div>
               <styled.div
-                            height="2rem"
-              />
-              <styled.div
                             flex={1}
               >
                             <Connect(VirtualizedPricingRulesPresenter) />
               </styled.div>
 </styled.div>,
-            "padding": "2rem",
+          ],
+          "padding": "2rem",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": Object {
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
@@ -510,9 +186,6 @@ ShallowWrapper {
                                     </styled.button>
                   </Flex>
 </styled.div>,
-                <styled.div
-                  height="2rem"
-/>,
                 <styled.div
                   flex={1}
 >
@@ -644,17 +317,6 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "height": "2rem",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
                   "children": <Connect(VirtualizedPricingRulesPresenter) />,
                   "flex": 1,
                 },
@@ -673,6 +335,334 @@ ShallowWrapper {
             ],
             "type": [Function],
           },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Connect(SiteHeaderPresenter) />,
+          <styled.div
+            padding="2rem"
+>
+            <Connect(ApiAlertPresenter) />
+            <styled.div>
+                        <styled.div
+                                    margin="1rem 0"
+                        >
+                                    <Breadcrumbs
+                                                crumbs={
+                                                            Array [
+                                                                        Object {
+                                                                          "path": "/dashboard",
+                                                                          "title": "Dashboard",
+                                                                        },
+                                                                        Object {
+                                                                          "path": "/pricing",
+                                                                          "title": "Team Settings",
+                                                                        },
+                                                                      ]
+                                                }
+                                    />
+                                    <Flex
+                                                align="baseline"
+                                                direction="row"
+                                                justify="space-between"
+                                    >
+                                                <styled.h3
+                                                            type="secondary"
+                                                >
+                                                            Pricing Rules
+                                                </styled.h3>
+                                                <styled.button
+                                                            disabled={false}
+                                                            onClick={[Function]}
+                                                >
+                                                            New Rule
+                                                </styled.button>
+                                    </Flex>
+                        </styled.div>
+                        <styled.div
+                                    flex={1}
+                        >
+                                    <Connect(VirtualizedPricingRulesPresenter) />
+                        </styled.div>
+            </styled.div>
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Connect(ApiAlertPresenter) />,
+              <styled.div>
+                <styled.div
+                                margin="1rem 0"
+                >
+                                <Breadcrumbs
+                                                crumbs={
+                                                                Array [
+                                                                                Object {
+                                                                                  "path": "/dashboard",
+                                                                                  "title": "Dashboard",
+                                                                                },
+                                                                                Object {
+                                                                                  "path": "/pricing",
+                                                                                  "title": "Team Settings",
+                                                                                },
+                                                                              ]
+                                                }
+                                />
+                                <Flex
+                                                align="baseline"
+                                                direction="row"
+                                                justify="space-between"
+                                >
+                                                <styled.h3
+                                                                type="secondary"
+                                                >
+                                                                Pricing Rules
+                                                </styled.h3>
+                                                <styled.button
+                                                                disabled={false}
+                                                                onClick={[Function]}
+                                                >
+                                                                New Rule
+                                                </styled.button>
+                                </Flex>
+                </styled.div>
+                <styled.div
+                                flex={1}
+                >
+                                <Connect(VirtualizedPricingRulesPresenter) />
+                </styled.div>
+</styled.div>,
+            ],
+            "padding": "2rem",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.div
+                    margin="1rem 0"
+>
+                    <Breadcrumbs
+                                        crumbs={
+                                                            Array [
+                                                                                Object {
+                                                                                  "path": "/dashboard",
+                                                                                  "title": "Dashboard",
+                                                                                },
+                                                                                Object {
+                                                                                  "path": "/pricing",
+                                                                                  "title": "Team Settings",
+                                                                                },
+                                                                              ]
+                                        }
+                    />
+                    <Flex
+                                        align="baseline"
+                                        direction="row"
+                                        justify="space-between"
+                    >
+                                        <styled.h3
+                                                            type="secondary"
+                                        >
+                                                            Pricing Rules
+                                        </styled.h3>
+                                        <styled.button
+                                                            disabled={false}
+                                                            onClick={[Function]}
+                                        >
+                                                            New Rule
+                                        </styled.button>
+                    </Flex>
+</styled.div>,
+                  <styled.div
+                    flex={1}
+>
+                    <Connect(VirtualizedPricingRulesPresenter) />
+</styled.div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Breadcrumbs
+                        crumbs={
+                                                Array [
+                                                                        Object {
+                                                                          "path": "/dashboard",
+                                                                          "title": "Dashboard",
+                                                                        },
+                                                                        Object {
+                                                                          "path": "/pricing",
+                                                                          "title": "Team Settings",
+                                                                        },
+                                                                      ]
+                        }
+/>,
+                      <Flex
+                        align="baseline"
+                        direction="row"
+                        justify="space-between"
+>
+                        <styled.h3
+                                                type="secondary"
+                        >
+                                                Pricing Rules
+                        </styled.h3>
+                        <styled.button
+                                                disabled={false}
+                                                onClick={[Function]}
+                        >
+                                                New Rule
+                        </styled.button>
+</Flex>,
+                    ],
+                    "margin": "1rem 0",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "crumbs": Array [
+                          Object {
+                            "path": "/dashboard",
+                            "title": "Dashboard",
+                          },
+                          Object {
+                            "path": "/pricing",
+                            "title": "Team Settings",
+                          },
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "align": "baseline",
+                        "children": Array [
+                          <styled.h3
+                            type="secondary"
+>
+                            Pricing Rules
+</styled.h3>,
+                          <styled.button
+                            disabled={false}
+                            onClick={[Function]}
+>
+                            New Rule
+</styled.button>,
+                        ],
+                        "direction": "row",
+                        "justify": "space-between",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": "Pricing Rules",
+                            "type": "secondary",
+                          },
+                          "ref": null,
+                          "rendered": "Pricing Rules",
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": "New Rule",
+                            "disabled": false,
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "rendered": "New Rule",
+                          "type": [Function],
+                        },
+                      ],
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <Connect(VirtualizedPricingRulesPresenter) />,
+                    "flex": 1,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],
