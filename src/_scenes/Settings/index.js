@@ -21,7 +21,6 @@ import CreateUser from './CreateUser';
 import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
-import BuyerTypeRules from './BuyerTypeRules';
 import type { Node } from 'react';
 import type { EDUser } from '_models/user';
 import { admin } from '_hoc/secured';
@@ -45,13 +44,6 @@ const routes: Array<RouteConfig> = [
     linkText: 'User Settings',
     adminOnly: false,
     main: UserSettings
-  },
-  {
-    // TODO: this should only show up if the user has TDC as a primary
-    path: '/settings/buyer-type-rules',
-    linkText: 'Buyer Type Rules',
-    adminOnly: false,
-    main: BuyerTypeRules
   },
   {
     path: '/settings/create-user',
