@@ -27,6 +27,14 @@ ShallowWrapper {
           }
     }
     isEditing={false}
+    parent={
+        Object {
+            "props": Object {
+              "headerHeight": "45",
+              "height": "180",
+            },
+          }
+    }
     selectedItemId={2}
     updatePriceRuleProperty={[Function]}
 />,

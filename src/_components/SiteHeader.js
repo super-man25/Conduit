@@ -69,8 +69,8 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 type Props = {
   push: (path: string) => void,
   auth: {},
-  integrations: [],
-  signOut: () => void
+  signOut: () => void,
+  hasTicketsDotComIntegration: boolean
 };
 
 type State = {
@@ -109,12 +109,7 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   };
 
   render() {
-    const { auth, integrations } = this.props;
-
-    const hasTicketsDotComIntegration = integrations.some(
-      (integration) =>
-        integration.name === integrationConstants.ticketsDotCom.name
-    );
+    const { auth, hasTicketsDotComIntegration } = this.props;
 
     return (
       <SiteHeaderDiv>
@@ -167,9 +162,12 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state) => ({
-  auth: state.auth.model,
-  integrations: state.client.integrations
+const mapStateToProps = ({ auth, client }) => ({
+  auth: auth.model,
+  hasTicketsDotComIntegration: client.integrations.some(
+    (integration) =>
+      integration.name === integrationConstants.ticketsDotCom.name
+  )
 });
 
 const mapDispatchToProps = { push, signOut: actions.signOut };

@@ -9,6 +9,12 @@ describe('<MultiSelectCellRenderer />', () => {
     isEditing: false,
     updatePriceRuleProperty: jest.fn(),
     rulePropertyValue: [2, 5],
+    parent: {
+      props: {
+        height: '180',
+        headerHeight: '45'
+      }
+    },
     columnData: {
       label: 'Price Scales',
       optionsKey: 'priceScales',

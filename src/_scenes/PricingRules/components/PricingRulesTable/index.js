@@ -121,20 +121,20 @@ const columns = [
   {
     label: 'Round',
     dataKey: 'round',
-    flexGrow: 9,
+    flexGrow: 6,
     columnData: { optionsKey: 'roundOptions', hasId: true, hasNone: true },
     cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
   },
   {
     label: 'Enabled',
     dataKey: 'isActive',
-    flexGrow: 5,
+    flexGrow: 6,
     cellRenderer: asNodeWithEditingProps(ToggleCellPresenter)
   },
   {
     label: '',
     dataKey: '',
-    flexGrow: 11,
+    flexGrow: 12,
     cellRenderer: asNodeWithEditingProps(EditRuleCell)
   }
 ].map(combineColumnWithDefaults);
@@ -178,17 +178,20 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
 
   render() {
     const { rows, events, buyerTypes, priceScales } = this.props;
+    const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
 
     // if buyer types cannot be loaded do not display table
     const rowCount = buyerTypes.length > 0 ? rows.length : 0;
 
-    const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
+    // add padding to the bottom of the table so the
+    // drop downs on the last rows do not get cut off
+    const tableHeightPadding = 200;
 
     return (
       <AutoSizer>
         {({ height, width }) => (
           <Table
-            height={height}
+            height={height + tableHeightPadding}
             width={width}
             headerHeight={45}
             rowHeight={60}

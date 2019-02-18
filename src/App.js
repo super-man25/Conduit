@@ -4,7 +4,6 @@ import { CenteredLoader } from '_components';
 import { history } from '_helpers';
 import { secured, unsecured } from '_hoc/secured';
 import { actions as authActions, selectors } from '_state/auth';
-import { actions as clientActions } from '_state/client';
 import React from 'react';
 import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
@@ -41,7 +40,6 @@ type Props = {
 class App extends React.Component<Props> {
   componentDidMount() {
     this.props.fetchUser();
-    this.props.fetchIntegrations();
   }
 
   render() {
@@ -67,8 +65,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = {
-  fetchUser: authActions.fetch,
-  fetchIntegrations: clientActions.fetchIntegrations
+  fetchUser: authActions.fetch
 };
 
 export default connect(

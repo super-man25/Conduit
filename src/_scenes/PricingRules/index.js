@@ -32,8 +32,8 @@ const pricingCrumb = [
 const PricingWrapper = Flex.extend`
   flex-direction: column;
   justify-content: center;
-  padding: 6rem;
-  min-width: 90%;
+  padding: 6rem 4rem;
+  width: 100%;
 `;
 
 const PricingRulesTableTableContainer = FlexItem.extend`

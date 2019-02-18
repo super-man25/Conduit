@@ -37,7 +37,7 @@ const DropdownMenu = styled.div`
       visibility: visible;
     `};
 `;
-DropdownContainer.displayName = 'DropdownMenu';
+DropdownMenu.displayName = 'DropdownMenu';
 
 export const Option = styled.div`
   padding: 12px 16px;
@@ -67,6 +67,7 @@ type Props = {
   options: any[],
   hasNone: boolean,
   noneSelected: string | React.Node,
+  gridProps: any,
   onChange: (newSelected: any, prevSelected: any, options: any[]) => void
 };
 
@@ -96,6 +97,17 @@ export class Dropdown extends React.Component<Props, State> {
     }
 
     onChange(newSelected, prevSelected, options);
+  };
+
+  getDropdownHeight = () => {
+    if (!this.ref.current) return {};
+
+    const { height, headerHeight } = this.props.gridProps;
+    const { bottom } = this.ref.current.getBoundingClientRect();
+
+    const getDropdownHeight = height + headerHeight - bottom;
+
+    return `${getDropdownHeight}px`;
   };
 
   render() {
@@ -135,12 +147,16 @@ export class Dropdown extends React.Component<Props, State> {
           />
         </Flex>
         <div
+          ref={this.ref}
           style={{
             position: 'fixed',
             zIndex: 9
           }}
         >
-          <DropdownMenu show={isOpen}>
+          <DropdownMenu
+            show={isOpen}
+            style={{ maxHeight: this.getDropdownHeight() }}
+          >
             {!hasNone && (
               <Option
                 isActive={!selected || !selected.id}

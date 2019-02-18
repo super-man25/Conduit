@@ -26,6 +26,14 @@ ShallowWrapper {
           }
     }
     isEditing={false}
+    parent={
+        Object {
+            "props": Object {
+              "headerHeight": "45",
+              "height": "180",
+            },
+          }
+    }
     rulePropertyValue={
         Array [
             2,

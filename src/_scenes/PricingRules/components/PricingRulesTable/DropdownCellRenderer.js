@@ -9,6 +9,7 @@ type Props = {
   cellData: any,
   columnData: any,
   rulePropertyValue: string | number,
+  parent: any,
   updatePriceRuleProperty: (option: number | string) => void
 };
 
@@ -82,6 +83,7 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
           parseOption={(option) => option.name}
           renderSelected={(option) => <Text>{option.name}</Text>}
           onChange={(option) => this.setSelectedOption(option)}
+          gridProps={this.props.parent.props}
         />
       </Flex>
     );

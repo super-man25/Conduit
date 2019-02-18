@@ -64,6 +64,10 @@ body {
   background-color: #070707;
 }
 
+.ReactVirtualized__Grid {
+  outline: none;
+}
+
 /* For some reason by default React virtualized thinks its good to force text-transform: uppercase... */
 .ReactVirtualized__Table__headerRow {
   border-bottom: 1px solid var(--PRIMARY_DARK_GRAY);

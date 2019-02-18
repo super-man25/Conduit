@@ -17,6 +17,7 @@ import Season from './Season';
 import { connect } from 'react-redux';
 import { actions as teamStatActions } from '_state/teamStat';
 import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
+import { actions as clientActions } from '_state/client';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
@@ -24,6 +25,7 @@ import { withRouter } from 'react-router-dom';
 class Dashboard extends React.Component {
   componentDidMount() {
     this.props.teamStatActions.fetch();
+    this.props.clientActions.fetchIntegrations();
   }
 
   statsForSeason(allSeasonsStats, seasonId) {
@@ -93,7 +95,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     teamStatActions: bindActionCreators(teamStatActions, dispatch),
-    uiActions: bindActionCreators(uiActions, dispatch)
+    uiActions: bindActionCreators(uiActions, dispatch),
+    clientActions: bindActionCreators(clientActions, dispatch)
   };
 }
 

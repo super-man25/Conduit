@@ -87,8 +87,8 @@ export class NumberInputField extends React.Component<NumberInputProps> {
   onKeyDown = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
     const isCtrlOrMetaKey = e.ctrlKey || e.metaKey;
     // Cross browser support for + and -
-    const isPlusKey = e.keyCode === 61 || 187;
-    const isMinusKey = e.keyCode === 173 || 189;
+    const isPlusKey = [61, 187].includes(e.keyCode);
+    const isMinusKey = [173, 189].includes(e.keyCode);
 
     // Allow: allowedKeycodes, Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X, home, end, left, right
     if (

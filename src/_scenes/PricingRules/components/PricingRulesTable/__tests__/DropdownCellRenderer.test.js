@@ -8,6 +8,12 @@ describe('<DropdownCellRenderer />', () => {
     isEditing: false,
     updatePriceRuleProperty: jest.fn(),
     cellData: { id: 2, name: 'DUGOUT' },
+    parent: {
+      props: {
+        height: '180',
+        headerHeight: '45'
+      }
+    },
     columnData: {
       optionsKey: 'priceScales',
       priceScales: [{ id: 2, name: 'DUGOUT' }, { id: 5, name: 'GOLD' }],
