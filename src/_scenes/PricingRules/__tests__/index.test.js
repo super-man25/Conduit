@@ -6,7 +6,9 @@ import { PrimaryButton } from '_components';
 describe('<PricingRules /> index route', () => {
   const props = {
     createPriceRule: jest.fn(),
-    editingAnyPriceRule: false
+    fetchBuyerTypes: jest.fn(),
+    editingAnyPriceRule: false,
+    buyerTypes: []
   };
 
   it('should render corectly', () => {

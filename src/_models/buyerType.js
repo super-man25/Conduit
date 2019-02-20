@@ -4,5 +4,6 @@ export type EDBuyerType = {
   id: string,
   code: string,
   publicDescription: string,
-  active: boolean
+  active: boolean,
+  disabled: boolean
 };

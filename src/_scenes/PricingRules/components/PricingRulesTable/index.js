@@ -16,10 +16,7 @@ import {
   actions as eventListActions,
   selectors as eventSelectors
 } from '_state/eventList';
-import {
-  selectors as buyerTypeSelectors,
-  actions as buyerTypeActions
-} from '_state/buyerType';
+import { selectors as buyerTypeSelectors } from '_state/buyerType';
 import {
   selectors as priceScaleSelectors,
   actions as priceScaleActions
@@ -167,7 +164,6 @@ type Props = {
 export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
   componentDidMount() {
     this.props.fetchPriceScales();
-    this.props.fetchBuyerTypes();
     this.props.fetchEventList();
     this.props.fetchPriceRules();
   }
@@ -238,7 +234,6 @@ const mapDispatchToProps = {
   fetchPriceRules: priceRuleActions.fetchPriceRules,
   fetchEventList: eventListActions.fetchEventList,
   reset: priceRuleActions.resetPriceRules,
-  fetchBuyerTypes: buyerTypeActions.fetchBuyerTypes,
   fetchPriceScales: priceScaleActions.fetchPriceScales
 };
 
