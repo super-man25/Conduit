@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { SelectBox, SettingBorderButton, SettingEditButton } from '_components';
+import { SelectBox, SettingBorderButton } from '_components';
 import { TeamInfo } from '../components/TeamInfo';
 
 describe('<TeamInfo />', () => {

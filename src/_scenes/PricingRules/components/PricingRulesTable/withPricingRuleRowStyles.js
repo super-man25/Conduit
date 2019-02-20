@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import get from 'lodash.get';
 
 export const withPricingRuleRowStyles = (RowRenderer) => {
   class PricingRuleRowPresenter extends React.Component {
@@ -17,7 +18,9 @@ export const withPricingRuleRowStyles = (RowRenderer) => {
   }
 
   const mapStateToRowProps = ({ priceRule: { error } }, { rowData }) => ({
-    rowIsConflicting: error && error.code === 409 && error.body === rowData.id
+    rowIsConflicting:
+      get(error, 'code') === 409 &&
+      get(error, 'body.proVenuePricingRules', []).includes(rowData.id)
   });
 
   const PriceRuleRowRenderer = connect(

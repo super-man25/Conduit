@@ -6,7 +6,6 @@ import {
   Flex,
   EDText,
   SelectBox,
-  SettingEditButton,
   SettingBorderButton
 } from '_components';
 import { toggleEditing } from '../stateChanges';
