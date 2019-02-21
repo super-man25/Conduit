@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import { cssConstants } from '_constants';
 import {
   Box,
   PrimaryButton,
@@ -15,6 +16,7 @@ import {
   ModalBody,
   ModalFooter,
   Title,
+  ErrorText,
   FilterBuyerTypesInput
 } from './styled';
 import { BuyerTypeRow } from './BuyerTypeRow';
@@ -23,7 +25,10 @@ import type { EDBuyerType } from '_models/buyerType';
 
 type Props = {
   buyerTypes: EDBuyerType[],
-  closeModal: () => void
+  closeModal: () => void,
+  updateBuyerTypes: (buyerTypes: any[]) => void,
+  isLoading: boolean,
+  error: ?Error
 };
 
 type State = {
@@ -69,6 +74,13 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
     });
   };
 
+  updateBuyerTypes = () => {
+    const { updateBuyerTypes } = this.props;
+    const editedBuyerTypeArray = Object.values(this.state.editedBuyerTypes);
+
+    updateBuyerTypes(editedBuyerTypeArray);
+  };
+
   onBuyerTypeToggle = ({ id, disabled, ...rest }: EDBuyerType) => {
     const { editedBuyerTypes } = this.state;
     this.setState({
@@ -80,7 +92,7 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
   };
 
   render() {
-    const { closeModal } = this.props;
+    const { closeModal, error, isLoading } = this.props;
     const { visibleBuyerTypes, editedBuyerTypes } = this.state;
     return (
       <Box>
@@ -107,10 +119,25 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
             </Flex>
           </ModalBody>
           <ModalFooter>
+            <ErrorText
+              margin="0 1rem 1rem 0"
+              size={12}
+              weight={300}
+              color={cssConstants.SECONDARY_RED}
+            >
+              {error && error.toString()}
+            </ErrorText>
             <Flex align="center" justify="flex-end">
-              <SecondaryButton onClick={closeModal}>Cancel</SecondaryButton>
+              <SecondaryButton disabled={isLoading} onClick={closeModal}>
+                Cancel
+              </SecondaryButton>
               <Spacing margin="1rem" />
-              <PrimaryButton onClick={closeModal}>Save</PrimaryButton>
+              <PrimaryButton
+                disabled={isLoading}
+                onClick={this.updateBuyerTypes.bind(this)}
+              >
+                Save
+              </PrimaryButton>
             </Flex>
           </ModalFooter>
         </ModalContent>

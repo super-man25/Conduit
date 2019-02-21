@@ -48,11 +48,18 @@ ShallowWrapper {
                     </Flex>
           </styled.div>
           <styled.div>
+                    <styled.p
+                              color="#DC0A0A"
+                              margin="0 1rem 1rem 0"
+                              size={12}
+                              weight={300}
+                    />
                     <Flex
                               align="center"
                               justify="flex-end"
                     >
                               <styled.button
+                                        disabled={undefined}
                                         onClick={[Function]}
                               >
                                         Cancel
@@ -61,6 +68,7 @@ ShallowWrapper {
                                         margin="1rem"
                               />
                               <styled.button
+                                        disabled={undefined}
                                         onClick={[Function]}
                               >
                                         Save
@@ -107,11 +115,18 @@ ShallowWrapper {
               </Flex>
 </styled.div>,
             <styled.div>
+              <styled.p
+                            color="#DC0A0A"
+                            margin="0 1rem 1rem 0"
+                            size={12}
+                            weight={300}
+              />
               <Flex
                             align="center"
                             justify="flex-end"
               >
                             <styled.button
+                                          disabled={undefined}
                                           onClick={[Function]}
                             >
                                           Cancel
@@ -120,6 +135,7 @@ ShallowWrapper {
                                           margin="1rem"
                             />
                             <styled.button
+                                          disabled={undefined}
                                           onClick={[Function]}
                             >
                                           Save
@@ -241,89 +257,120 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Flex
-                align="center"
-                justify="flex-end"
+              "children": Array [
+                <styled.p
+                  color="#DC0A0A"
+                  margin="0 1rem 1rem 0"
+                  size={12}
+                  weight={300}
+/>,
+                <Flex
+                  align="center"
+                  justify="flex-end"
 >
-                <styled.button
-                                onClick={[Function]}
-                >
-                                Cancel
-                </styled.button>
-                <styled.div
-                                margin="1rem"
-                />
-                <styled.button
-                                onClick={[Function]}
-                >
-                                Save
-                </styled.button>
+                  <styled.button
+                                    disabled={undefined}
+                                    onClick={[Function]}
+                  >
+                                    Cancel
+                  </styled.button>
+                  <styled.div
+                                    margin="1rem"
+                  />
+                  <styled.button
+                                    disabled={undefined}
+                                    onClick={[Function]}
+                  >
+                                    Save
+                  </styled.button>
 </Flex>,
+              ],
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "align": "center",
-                "children": Array [
-                  <styled.button
-                    onClick={[Function]}
->
-                    Cancel
-</styled.button>,
-                  <styled.div
-                    margin="1rem"
-/>,
-                  <styled.button
-                    onClick={[Function]}
->
-                    Save
-</styled.button>,
-                ],
-                "justify": "flex-end",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": undefined,
+                  "color": "#DC0A0A",
+                  "margin": "0 1rem 1rem 0",
+                  "size": 12,
+                  "weight": 300,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Cancel",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Cancel",
-                  "type": [Function],
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.button
+                      disabled={undefined}
+                      onClick={[Function]}
+>
+                      Cancel
+</styled.button>,
+                    <styled.div
+                      margin="1rem"
+/>,
+                    <styled.button
+                      disabled={undefined}
+                      onClick={[Function]}
+>
+                      Save
+</styled.button>,
+                  ],
+                  "justify": "flex-end",
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "margin": "1rem",
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Cancel",
+                      "disabled": undefined,
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Cancel",
+                    "type": [Function],
                   },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Save",
-                    "onClick": [Function],
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "margin": "1rem",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
                   },
-                  "ref": null,
-                  "rendered": "Save",
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Save",
+                      "disabled": undefined,
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Save",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
         ],
@@ -377,11 +424,18 @@ ShallowWrapper {
                         </Flex>
             </styled.div>
             <styled.div>
+                        <styled.p
+                                    color="#DC0A0A"
+                                    margin="0 1rem 1rem 0"
+                                    size={12}
+                                    weight={300}
+                        />
                         <Flex
                                     align="center"
                                     justify="flex-end"
                         >
                                     <styled.button
+                                                disabled={undefined}
                                                 onClick={[Function]}
                                     >
                                                 Cancel
@@ -390,6 +444,7 @@ ShallowWrapper {
                                                 margin="1rem"
                                     />
                                     <styled.button
+                                                disabled={undefined}
                                                 onClick={[Function]}
                                     >
                                                 Save
@@ -436,11 +491,18 @@ ShallowWrapper {
                 </Flex>
 </styled.div>,
               <styled.div>
+                <styled.p
+                                color="#DC0A0A"
+                                margin="0 1rem 1rem 0"
+                                size={12}
+                                weight={300}
+                />
                 <Flex
                                 align="center"
                                 justify="flex-end"
                 >
                                 <styled.button
+                                                disabled={undefined}
                                                 onClick={[Function]}
                                 >
                                                 Cancel
@@ -449,6 +511,7 @@ ShallowWrapper {
                                                 margin="1rem"
                                 />
                                 <styled.button
+                                                disabled={undefined}
                                                 onClick={[Function]}
                                 >
                                                 Save
@@ -570,89 +633,120 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Flex
-                  align="center"
-                  justify="flex-end"
+                "children": Array [
+                  <styled.p
+                    color="#DC0A0A"
+                    margin="0 1rem 1rem 0"
+                    size={12}
+                    weight={300}
+/>,
+                  <Flex
+                    align="center"
+                    justify="flex-end"
 >
-                  <styled.button
-                                    onClick={[Function]}
-                  >
-                                    Cancel
-                  </styled.button>
-                  <styled.div
-                                    margin="1rem"
-                  />
-                  <styled.button
-                                    onClick={[Function]}
-                  >
-                                    Save
-                  </styled.button>
+                    <styled.button
+                                        disabled={undefined}
+                                        onClick={[Function]}
+                    >
+                                        Cancel
+                    </styled.button>
+                    <styled.div
+                                        margin="1rem"
+                    />
+                    <styled.button
+                                        disabled={undefined}
+                                        onClick={[Function]}
+                    >
+                                        Save
+                    </styled.button>
 </Flex>,
+                ],
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "align": "center",
-                  "children": Array [
-                    <styled.button
-                      onClick={[Function]}
->
-                      Cancel
-</styled.button>,
-                    <styled.div
-                      margin="1rem"
-/>,
-                    <styled.button
-                      onClick={[Function]}
->
-                      Save
-</styled.button>,
-                  ],
-                  "justify": "flex-end",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": undefined,
+                    "color": "#DC0A0A",
+                    "margin": "0 1rem 1rem 0",
+                    "size": 12,
+                    "weight": 300,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Cancel",
-                      "onClick": [Function],
-                    },
-                    "ref": null,
-                    "rendered": "Cancel",
-                    "type": [Function],
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "align": "center",
+                    "children": Array [
+                      <styled.button
+                        disabled={undefined}
+                        onClick={[Function]}
+>
+                        Cancel
+</styled.button>,
+                      <styled.div
+                        margin="1rem"
+/>,
+                      <styled.button
+                        disabled={undefined}
+                        onClick={[Function]}
+>
+                        Save
+</styled.button>,
+                    ],
+                    "justify": "flex-end",
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "margin": "1rem",
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Cancel",
+                        "disabled": undefined,
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Cancel",
+                      "type": [Function],
                     },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Save",
-                      "onClick": [Function],
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "margin": "1rem",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
                     },
-                    "ref": null,
-                    "rendered": "Save",
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Save",
+                        "disabled": undefined,
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Save",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],

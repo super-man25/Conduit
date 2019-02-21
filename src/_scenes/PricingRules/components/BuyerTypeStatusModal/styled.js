@@ -37,7 +37,7 @@ export const ModalBody = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border-bottom: ${cssConstants.PRIMARY_DARK_BLUE};
+  border-bottom: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
 `;
 
 export const ModalFooter = styled.div`
@@ -63,6 +63,10 @@ export const BuyerTypeOption = Flex.extend`
 
 export const FlexText = Text.extend`
   flex-basis: ${(props) => props.basis || '10%'};
+`;
+
+export const ErrorText = Text.extend`
+  text-align: right;
 `;
 
 export const Title = H4.extend`

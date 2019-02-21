@@ -50,20 +50,20 @@ const PricingRuleFullContet = FullContent.extend`
   overflow: ${(props) => (props.scrollLocked ? 'hidden' : 'visible')};
 `;
 
-type State = {
-  isUpdatingBuyerTypeStatus: boolean
-};
-
 type Props = {
   createPriceRule: () => void,
   fetchBuyerTypes: () => EDBuyerType[],
   editingAnyPriceRule: true,
-  buyerTypes: EDBuyerType[]
+  buyerTypes: EDBuyerType[],
+  buyerTypesModalIsOpen: boolean,
+  buyerTypesLoading: boolean,
+  buyerTypesError: ?Error,
+  openBuyerTypesModal: () => void,
+  closeBuyerTypesModal: () => void,
+  updateBuyerTypes: (buyerTypes: EDBuyerType[]) => void
 };
 
-export class PricingRules extends React.Component<Props, State> {
-  state = { isUpdatingBuyerTypeStatus: false };
-
+export class PricingRules extends React.Component<Props> {
   componentDidMount() {
     this.props.fetchBuyerTypes();
   }
@@ -73,19 +73,21 @@ export class PricingRules extends React.Component<Props, State> {
     createPriceRule();
   }
 
-  toggleBuyerTypeStatusModal() {
-    const { isUpdatingBuyerTypeStatus } = this.state;
-    this.setState({ isUpdatingBuyerTypeStatus: !isUpdatingBuyerTypeStatus });
-  }
-
   render() {
-    const { isUpdatingBuyerTypeStatus } = this.state;
-    const { buyerTypes } = this.props;
+    const {
+      buyerTypes,
+      updateBuyerTypes,
+      buyerTypesError,
+      buyerTypesModalIsOpen,
+      buyerTypesLoading,
+      openBuyerTypesModal,
+      closeBuyerTypesModal
+    } = this.props;
 
     return (
       <PageWrapper>
         <SiteHeader />
-        <PricingRuleFullContet scrollLocked={isUpdatingBuyerTypeStatus}>
+        <PricingRuleFullContet scrollLocked={buyerTypesModalIsOpen}>
           <ApiAlert />
           <PricingWrapper>
             <Spacing margin="1rem 0">
@@ -94,7 +96,7 @@ export class PricingRules extends React.Component<Props, State> {
                 <H3 type="secondary">Pricing Rules</H3>
                 <div>
                   <SecondaryButton
-                    onClick={this.toggleBuyerTypeStatusModal.bind(this)}
+                    onClick={openBuyerTypesModal}
                     disabled={buyerTypes.length === 0}
                   >
                     Buyer Types
@@ -115,10 +117,13 @@ export class PricingRules extends React.Component<Props, State> {
           </PricingWrapper>
         </PricingRuleFullContet>
         <Portal>
-          {isUpdatingBuyerTypeStatus && (
+          {buyerTypesModalIsOpen && (
             <BuyerTypeStatusModal
               buyerTypes={buyerTypes}
-              closeModal={this.toggleBuyerTypeStatusModal.bind(this)}
+              closeModal={closeBuyerTypesModal}
+              updateBuyerTypes={updateBuyerTypes}
+              error={buyerTypesError}
+              isLoading={buyerTypesLoading}
             />
           )}
         </Portal>
@@ -129,15 +134,25 @@ export class PricingRules extends React.Component<Props, State> {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createPriceRule: () => dispatch(actions.createPriceRule()),
-  fetchBuyerTypes: () => dispatch(buyerTypeActions.fetchBuyerTypes())
+  fetchBuyerTypes: () => dispatch(buyerTypeActions.fetchBuyerTypes()),
+  openBuyerTypesModal: () => dispatch(buyerTypeActions.openBuyerTypesModal()),
+  closeBuyerTypesModal: () => dispatch(buyerTypeActions.closeBuyerTypesModal()),
+  updateBuyerTypes: (buyerTypes) =>
+    dispatch(buyerTypeActions.updateBuyerTypes(buyerTypes))
 });
 
 const mapStateToProps = (
-  { priceRule: { editingRowId }, buyerType: { buyerTypes } },
+  {
+    priceRule: { editingRowId },
+    buyerType: { buyerTypes, loading, error, modalIsOpen }
+  },
   ownProps
 ) => ({
   editingAnyPriceRule: editingRowId !== null,
-  buyerTypes
+  buyerTypes,
+  buyerTypesLoading: loading,
+  buyerTypesError: error,
+  buyerTypesModalIsOpen: modalIsOpen
 });
 
 export default connect(
