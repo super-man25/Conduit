@@ -80,7 +80,7 @@ const columns = [
     dataKey: 'minimumPrice',
     flexGrow: 15,
     cellDataGetter({ columnData, dataKey, rowData }) {
-      return formatUSD(rowData[dataKey]);
+      return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
     }
   },
   {
