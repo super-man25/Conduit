@@ -60,6 +60,73 @@ describe('update', () => {
       expect(res).toEqual({ id: prId });
     });
   });
+
+  it('should fail to update a price rule because there is a conflicting rule', () => {
+    const prId = priceRules[0].id;
+    const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
+      status: 409,
+      body: { proVenuePricingRules: [1, 2] }
+    });
+
+    const success = jest.fn();
+
+    return priceRuleService
+      .update(priceRules[0])
+      .then(success)
+      .catch((err) => {
+        expect(mock.called()).toBe(true);
+        expect(err.toString()).toEqual('Conflicts with existing price rule.');
+      })
+      .then(() => {
+        expect(success).not.toBeCalled();
+      });
+  });
+
+  it('should fail to update a price rule because there is a disbaled buyer type', () => {
+    const prId = priceRules[0].id;
+    const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
+      status: 409,
+      body: { excludedBuyerTypes: ['222'] }
+    });
+
+    const success = jest.fn();
+
+    return priceRuleService
+      .update(priceRules[0])
+      .then(success)
+      .catch((err) => {
+        expect(mock.called()).toBe(true);
+        expect(err.toString()).toEqual(
+          'Active rule cannot have disabled buyer types.'
+        );
+      })
+      .then(() => {
+        expect(success).not.toBeCalled();
+      });
+  });
+
+  it('should fail to update a price rule because there is a disbaled buyer type and conflicting price rule exists', () => {
+    const prId = priceRules[0].id;
+    const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
+      status: 409,
+      body: { excludedBuyerTypes: ['222'], proVenuePricingRules: [1, 2] }
+    });
+
+    const success = jest.fn();
+
+    return priceRuleService
+      .update(priceRules[0])
+      .then(success)
+      .catch((err) => {
+        expect(mock.called()).toBe(true);
+        expect(err.toString()).toEqual(
+          'Conflicts with existing price rule. Active rule cannot have disabled buyer types.'
+        );
+      })
+      .then(() => {
+        expect(success).not.toBeCalled();
+      });
+  });
 });
 
 describe('get one', () => {

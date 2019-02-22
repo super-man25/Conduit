@@ -5,6 +5,7 @@ import { FlexText } from './styled';
 export function BuyerTypeHeader() {
   return (
     <Flex align="center">
+      <Flex flexBasis="10%" />
       <FlexText basis="20%" weight={300}>
         Enabled
       </FlexText>

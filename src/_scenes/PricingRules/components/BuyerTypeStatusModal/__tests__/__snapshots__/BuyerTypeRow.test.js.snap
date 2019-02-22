@@ -12,6 +12,7 @@ ShallowWrapper {
     }
     editedBuyerTypes={Object {}}
     onBuyerTypeToggle={[Function]}
+    toggleDisabled={false}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -29,10 +30,20 @@ ShallowWrapper {
       "align": "center",
       "children": Array [
         <Flex
+          flexBasis="10%"
+          style={
+                    Object {
+                              "height": "25px",
+                            }
+          }
+          title="An active pricing rule is using this buyer type"
+/>,
+        <Flex
           flexBasis="20%"
 >
           <Toggle
                     isChecked={true}
+                    isDisabled={false}
                     onChange={[Function]}
                     size="small"
           />
@@ -52,8 +63,25 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "children": false,
+          "flexBasis": "10%",
+          "style": Object {
+            "height": "25px",
+          },
+          "title": "An active pricing rule is using this buyer type",
+        },
+        "ref": null,
+        "rendered": false,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
           "children": <Toggle
             isChecked={true}
+            isDisabled={false}
             onChange={[Function]}
             size="small"
 />,
@@ -66,6 +94,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "isChecked": true,
+            "isDisabled": false,
             "onChange": [Function],
             "size": "small",
           },
@@ -111,10 +140,20 @@ ShallowWrapper {
         "align": "center",
         "children": Array [
           <Flex
+            flexBasis="10%"
+            style={
+                        Object {
+                                    "height": "25px",
+                                  }
+            }
+            title="An active pricing rule is using this buyer type"
+/>,
+          <Flex
             flexBasis="20%"
 >
             <Toggle
                         isChecked={true}
+                        isDisabled={false}
                         onChange={[Function]}
                         size="small"
             />
@@ -134,8 +173,25 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "children": false,
+            "flexBasis": "10%",
+            "style": Object {
+              "height": "25px",
+            },
+            "title": "An active pricing rule is using this buyer type",
+          },
+          "ref": null,
+          "rendered": false,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "children": <Toggle
               isChecked={true}
+              isDisabled={false}
               onChange={[Function]}
               size="small"
 />,
@@ -148,6 +204,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "isChecked": true,
+              "isDisabled": false,
               "onChange": [Function],
               "size": "small",
             },

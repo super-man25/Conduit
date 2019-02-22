@@ -8,6 +8,7 @@ import {
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
+import { cssConstants } from '_constants';
 import {
   selectors as priceRuleSelectors,
   actions as priceRuleActions
@@ -25,6 +26,7 @@ import { formatUSD } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
 import { Flex, Text } from '_components';
+import { Icon } from '_components/Icon';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
@@ -62,7 +64,26 @@ const columns = [
     dataKey: 'externalBuyerTypeIds',
     columnData: {
       optionsKey: 'buyerTypes',
-      labelFn: (option) => `${option.code} - ${option.publicDescription}`
+      labelFn: (option) => {
+        const labelText = `${option.code} - ${option.publicDescription}`;
+        return (
+          <React.Fragment>
+            {option.disabled && (
+              <div
+                title="Pricing is disabled for this buyer type"
+                style={{ marginRight: '0.5rem', width: '22px' }}
+              >
+                <Icon
+                  name="api-error"
+                  color={cssConstants.SECONDARY_BURNT_ORANGE}
+                  size={22}
+                />
+              </div>
+            )}
+            <Text>{labelText}</Text>
+          </React.Fragment>
+        );
+      }
     },
     cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
   },

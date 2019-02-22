@@ -507,4 +507,45 @@ describe('selectors', () => {
       constant: 2
     });
   });
+
+  it('should select if a row is currently being edited', () => {
+    const store = {
+      priceRule: {
+        ...initialState,
+        editingRowId: 0
+      }
+    };
+
+    expect(selectors.selectIsEditingPriceRule(store)).toEqual(true);
+  });
+
+  it('should select price rules ids if they are active', () => {
+    const store = {
+      priceRule: {
+        allRows: [
+          {
+            id: 1,
+            externalBuyerTypeIds: ['3161', '1111'],
+            isActive: true
+          },
+          {
+            id: 2,
+            externalBuyerTypeIds: ['2222', '1111'],
+            isActive: true
+          },
+          {
+            id: 3,
+            externalBuyerTypeIds: ['5555', '9999'],
+            isActive: false
+          }
+        ]
+      }
+    };
+
+    expect(selectors.selectBuyerTypesInActivePriceRules(store)).toEqual([
+      '3161',
+      '1111',
+      '2222'
+    ]);
+  });
 });

@@ -334,8 +334,21 @@ export const reducer = (state: State = initialState, action: Action): State => {
 const selectAllPriceRuleRows = (store: Store) => store.priceRule.allRows;
 const selectEditingPriceRule = (store: Store) =>
   store.priceRule.editingRowState;
+const selectIsEditingPriceRule = (store: Store) =>
+  store.priceRule.editingRowId !== null;
+
+const selectBuyerTypesInActivePriceRules = (store: Store) =>
+  store.priceRule.allRows
+    .reduce(
+      (acc, priceRule) =>
+        priceRule.isActive ? acc.concat(priceRule.externalBuyerTypeIds) : acc,
+      []
+    )
+    .filter((id, index, arr) => arr.indexOf(id) === index);
 
 export const selectors = {
   selectAllPriceRuleRows,
-  selectEditingPriceRule
+  selectEditingPriceRule,
+  selectIsEditingPriceRule,
+  selectBuyerTypesInActivePriceRules
 };

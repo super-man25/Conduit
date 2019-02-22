@@ -1,11 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BuyerTypeStatusModal /> should render correctly 1`] = `
+exports[`<BuyerTypeStatusModalPresenter /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <BuyerTypeStatusModal
+  Symbol(enzyme.__unrendered__): <BuyerTypeStatusModalPresenter
+    buyerTypeActions={
+        Object {
+            "closeBuyerTypesModal": [Function],
+            "updateBuyerTypes": [Function],
+          }
+    }
     buyerTypes={Array []}
-    closeModal={[Function]}
+    buyerTypesInActivePriceRules={Array []}
+    error={null}
+    isLoading={false}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -59,7 +67,7 @@ ShallowWrapper {
                               justify="flex-end"
                     >
                               <styled.button
-                                        disabled={undefined}
+                                        disabled={false}
                                         onClick={[Function]}
                               >
                                         Cancel
@@ -68,7 +76,7 @@ ShallowWrapper {
                                         margin="1rem"
                               />
                               <styled.button
-                                        disabled={undefined}
+                                        disabled={true}
                                         onClick={[Function]}
                               >
                                         Save
@@ -126,7 +134,7 @@ ShallowWrapper {
                             justify="flex-end"
               >
                             <styled.button
-                                          disabled={undefined}
+                                          disabled={false}
                                           onClick={[Function]}
                             >
                                           Cancel
@@ -135,7 +143,7 @@ ShallowWrapper {
                                           margin="1rem"
                             />
                             <styled.button
-                                          disabled={undefined}
+                                          disabled={true}
                                           onClick={[Function]}
                             >
                                           Save
@@ -269,7 +277,7 @@ ShallowWrapper {
                   justify="flex-end"
 >
                   <styled.button
-                                    disabled={undefined}
+                                    disabled={false}
                                     onClick={[Function]}
                   >
                                     Cancel
@@ -278,7 +286,7 @@ ShallowWrapper {
                                     margin="1rem"
                   />
                   <styled.button
-                                    disabled={undefined}
+                                    disabled={true}
                                     onClick={[Function]}
                   >
                                     Save
@@ -293,7 +301,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
+                  "children": null,
                   "color": "#DC0A0A",
                   "margin": "0 1rem 1rem 0",
                   "size": 12,
@@ -311,7 +319,7 @@ ShallowWrapper {
                   "align": "center",
                   "children": Array [
                     <styled.button
-                      disabled={undefined}
+                      disabled={false}
                       onClick={[Function]}
 >
                       Cancel
@@ -320,7 +328,7 @@ ShallowWrapper {
                       margin="1rem"
 />,
                     <styled.button
-                      disabled={undefined}
+                      disabled={true}
                       onClick={[Function]}
 >
                       Save
@@ -336,7 +344,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": "Cancel",
-                      "disabled": undefined,
+                      "disabled": false,
                       "onClick": [Function],
                     },
                     "ref": null,
@@ -360,7 +368,7 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "children": "Save",
-                      "disabled": undefined,
+                      "disabled": true,
                       "onClick": [Function],
                     },
                     "ref": null,
@@ -435,7 +443,7 @@ ShallowWrapper {
                                     justify="flex-end"
                         >
                                     <styled.button
-                                                disabled={undefined}
+                                                disabled={false}
                                                 onClick={[Function]}
                                     >
                                                 Cancel
@@ -444,7 +452,7 @@ ShallowWrapper {
                                                 margin="1rem"
                                     />
                                     <styled.button
-                                                disabled={undefined}
+                                                disabled={true}
                                                 onClick={[Function]}
                                     >
                                                 Save
@@ -502,7 +510,7 @@ ShallowWrapper {
                                 justify="flex-end"
                 >
                                 <styled.button
-                                                disabled={undefined}
+                                                disabled={false}
                                                 onClick={[Function]}
                                 >
                                                 Cancel
@@ -511,7 +519,7 @@ ShallowWrapper {
                                                 margin="1rem"
                                 />
                                 <styled.button
-                                                disabled={undefined}
+                                                disabled={true}
                                                 onClick={[Function]}
                                 >
                                                 Save
@@ -645,7 +653,7 @@ ShallowWrapper {
                     justify="flex-end"
 >
                     <styled.button
-                                        disabled={undefined}
+                                        disabled={false}
                                         onClick={[Function]}
                     >
                                         Cancel
@@ -654,7 +662,7 @@ ShallowWrapper {
                                         margin="1rem"
                     />
                     <styled.button
-                                        disabled={undefined}
+                                        disabled={true}
                                         onClick={[Function]}
                     >
                                         Save
@@ -669,7 +677,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
+                    "children": null,
                     "color": "#DC0A0A",
                     "margin": "0 1rem 1rem 0",
                     "size": 12,
@@ -687,7 +695,7 @@ ShallowWrapper {
                     "align": "center",
                     "children": Array [
                       <styled.button
-                        disabled={undefined}
+                        disabled={false}
                         onClick={[Function]}
 >
                         Cancel
@@ -696,7 +704,7 @@ ShallowWrapper {
                         margin="1rem"
 />,
                       <styled.button
-                        disabled={undefined}
+                        disabled={true}
                         onClick={[Function]}
 >
                         Save
@@ -712,7 +720,7 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Cancel",
-                        "disabled": undefined,
+                        "disabled": false,
                         "onClick": [Function],
                       },
                       "ref": null,
@@ -736,7 +744,7 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Save",
-                        "disabled": undefined,
+                        "disabled": true,
                         "onClick": [Function],
                       },
                       "ref": null,

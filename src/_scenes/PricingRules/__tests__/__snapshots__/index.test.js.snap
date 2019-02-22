@@ -4,10 +4,19 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PricingRules
+    buyerTypeActions={
+        Object {
+            "fetchBuyerTypes": [Function],
+            "openBuyerTypesModal": [Function],
+          }
+    }
     buyerTypes={Array []}
-    createPriceRule={[Function]}
     editingAnyPriceRule={false}
-    fetchBuyerTypes={[Function]}
+    priceRuleActions={
+        Object {
+            "createPriceRule": [Function],
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -59,7 +68,7 @@ ShallowWrapper {
                                         <div>
                                                   <styled.button
                                                             disabled={true}
-                                                            onClick={undefined}
+                                                            onClick={[Function]}
                                                   >
                                                             Buyer Types
                                                   </styled.button>
@@ -136,7 +145,7 @@ ShallowWrapper {
                                           <div>
                                                         <styled.button
                                                                       disabled={true}
-                                                                      onClick={undefined}
+                                                                      onClick={[Function]}
                                                         >
                                                                       Buyer Types
                                                         </styled.button>
@@ -210,7 +219,7 @@ ShallowWrapper {
                                     <div>
                                                       <styled.button
                                                                         disabled={true}
-                                                                        onClick={undefined}
+                                                                        onClick={[Function]}
                                                       >
                                                                         Buyer Types
                                                       </styled.button>
@@ -270,7 +279,7 @@ ShallowWrapper {
                       <div>
                                             <styled.button
                                                                   disabled={true}
-                                                                  onClick={undefined}
+                                                                  onClick={[Function]}
                                             >
                                                                   Buyer Types
                                             </styled.button>
@@ -327,7 +336,7 @@ ShallowWrapper {
                         <div>
                           <styled.button
                                                     disabled={true}
-                                                    onClick={undefined}
+                                                    onClick={[Function]}
                           >
                                                     Buyer Types
                           </styled.button>
@@ -369,7 +378,7 @@ ShallowWrapper {
                           "children": Array [
                             <styled.button
                               disabled={true}
-                              onClick={undefined}
+                              onClick={[Function]}
 >
                               Buyer Types
 </styled.button>,
@@ -395,7 +404,7 @@ ShallowWrapper {
                             "props": Object {
                               "children": "Buyer Types",
                               "disabled": true,
-                              "onClick": undefined,
+                              "onClick": [Function],
                             },
                             "ref": null,
                             "rendered": "Buyer Types",
@@ -509,7 +518,7 @@ ShallowWrapper {
                                                 <div>
                                                             <styled.button
                                                                         disabled={true}
-                                                                        onClick={undefined}
+                                                                        onClick={[Function]}
                                                             >
                                                                         Buyer Types
                                                             </styled.button>
@@ -586,7 +595,7 @@ ShallowWrapper {
                                                 <div>
                                                                 <styled.button
                                                                                 disabled={true}
-                                                                                onClick={undefined}
+                                                                                onClick={[Function]}
                                                                 >
                                                                                 Buyer Types
                                                                 </styled.button>
@@ -660,7 +669,7 @@ ShallowWrapper {
                                         <div>
                                                             <styled.button
                                                                                 disabled={true}
-                                                                                onClick={undefined}
+                                                                                onClick={[Function]}
                                                             >
                                                                                 Buyer Types
                                                             </styled.button>
@@ -720,7 +729,7 @@ ShallowWrapper {
                         <div>
                                                 <styled.button
                                                                         disabled={true}
-                                                                        onClick={undefined}
+                                                                        onClick={[Function]}
                                                 >
                                                                         Buyer Types
                                                 </styled.button>
@@ -777,7 +786,7 @@ ShallowWrapper {
                           <div>
                             <styled.button
                                                         disabled={true}
-                                                        onClick={undefined}
+                                                        onClick={[Function]}
                             >
                                                         Buyer Types
                             </styled.button>
@@ -819,7 +828,7 @@ ShallowWrapper {
                             "children": Array [
                               <styled.button
                                 disabled={true}
-                                onClick={undefined}
+                                onClick={[Function]}
 >
                                 Buyer Types
 </styled.button>,
@@ -845,7 +854,7 @@ ShallowWrapper {
                               "props": Object {
                                 "children": "Buyer Types",
                                 "disabled": true,
-                                "onClick": undefined,
+                                "onClick": [Function],
                               },
                               "ref": null,
                               "rendered": "Buyer Types",

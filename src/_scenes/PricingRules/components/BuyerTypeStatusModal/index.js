@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import type { EDBuyerType } from '_models/buyerType';
 import { cssConstants } from '_constants';
 import {
   Box,
@@ -21,14 +22,21 @@ import {
 } from './styled';
 import { BuyerTypeRow } from './BuyerTypeRow';
 import { BuyerTypeHeader } from './BuyerTypeHeader';
-import type { EDBuyerType } from '_models/buyerType';
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { selectors as priceRuleSelectors } from '_state/priceRule';
+import {
+  actions as buyerTypeActions,
+  selectors as buyerTypeSelectors
+} from '_state/buyerType';
 
 type Props = {
   buyerTypes: EDBuyerType[],
-  closeModal: () => void,
-  updateBuyerTypes: (buyerTypes: any[]) => void,
+  buyerTypeActions: any,
   isLoading: boolean,
-  error: ?Error
+  error: ?Error,
+  buyerTypesInActivePriceRules: string[]
 };
 
 type State = {
@@ -36,7 +44,10 @@ type State = {
   editedBuyerTypes: any
 };
 
-export class BuyerTypeStatusModal extends React.Component<Props, State> {
+export class BuyerTypeStatusModalPresenter extends React.Component<
+  Props,
+  State
+> {
   state = { visibleBuyerTypes: [], editedBuyerTypes: {} };
   componentDidMount() {
     document.addEventListener('keydown', this.closeOnEscapePressed);
@@ -50,7 +61,7 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
 
   closeOnEscapePressed = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
-      this.props.closeModal();
+      this.props.buyerTypeActions.closeBuyerTypesModal();
     }
   };
 
@@ -75,7 +86,9 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
   };
 
   updateBuyerTypes = () => {
-    const { updateBuyerTypes } = this.props;
+    const {
+      buyerTypeActions: { updateBuyerTypes }
+    } = this.props;
     const editedBuyerTypeArray = Object.values(this.state.editedBuyerTypes);
 
     updateBuyerTypes(editedBuyerTypeArray);
@@ -92,7 +105,12 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
   };
 
   render() {
-    const { closeModal, error, isLoading } = this.props;
+    const {
+      buyerTypeActions: { closeBuyerTypesModal },
+      buyerTypesInActivePriceRules,
+      error,
+      isLoading
+    } = this.props;
     const { visibleBuyerTypes, editedBuyerTypes } = this.state;
     return (
       <Box>
@@ -113,6 +131,9 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
                 <BuyerTypeRow
                   buyerType={editedBuyerTypes[buyerType.id] || buyerType}
                   key={buyerType.id}
+                  toggleDisabled={buyerTypesInActivePriceRules.includes(
+                    buyerType.id
+                  )}
                   onBuyerTypeToggle={this.onBuyerTypeToggle.bind(this)}
                 />
               ))}
@@ -128,12 +149,17 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
               {error && error.toString()}
             </ErrorText>
             <Flex align="center" justify="flex-end">
-              <SecondaryButton disabled={isLoading} onClick={closeModal}>
+              <SecondaryButton
+                disabled={isLoading}
+                onClick={closeBuyerTypesModal}
+              >
                 Cancel
               </SecondaryButton>
               <Spacing margin="1rem" />
               <PrimaryButton
-                disabled={isLoading}
+                disabled={
+                  isLoading || Object.keys(editedBuyerTypes).length === 0
+                }
                 onClick={this.updateBuyerTypes.bind(this)}
               >
                 Save
@@ -141,8 +167,24 @@ export class BuyerTypeStatusModal extends React.Component<Props, State> {
             </Flex>
           </ModalFooter>
         </ModalContent>
-        <ModalOverlay onClick={closeModal} />
+        <ModalOverlay onClick={closeBuyerTypesModal} />
       </Box>
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  isLoading: buyerTypeSelectors.selectIsLoading,
+  error: buyerTypeSelectors.selectError,
+  buyerTypesInActivePriceRules:
+    priceRuleSelectors.selectBuyerTypesInActivePriceRules
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  buyerTypeActions: bindActionCreators(buyerTypeActions, dispatch)
+});
+
+export const BuyerTypeStatusModal = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BuyerTypeStatusModalPresenter);

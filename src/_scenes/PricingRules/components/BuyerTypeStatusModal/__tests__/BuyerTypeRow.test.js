@@ -7,7 +7,8 @@ describe('<BuyerTypeRow />', () => {
   const props = {
     buyerType: { id: '333', disabled: false },
     editedBuyerTypes: {},
-    onBuyerTypeToggle: jest.fn()
+    onBuyerTypeToggle: jest.fn(),
+    toggleDisabled: false
   };
 
   it('should render correctly', () => {
@@ -25,5 +26,13 @@ describe('<BuyerTypeRow />', () => {
       .simulate('change');
 
     expect(fn).toBeCalled();
+  });
+
+  it('should have a disabled toggle if toggleDisabled props is true', () => {
+    const wrapper = shallow(<BuyerTypeRow {...props} toggleDisabled={true} />);
+
+    const toggle = wrapper.find(Toggle).at(0);
+
+    expect(toggle.props().isDisabled).toBe(true);
   });
 });

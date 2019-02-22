@@ -1,26 +1,35 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { BuyerTypeStatusModal } from '../';
+import { BuyerTypeStatusModalPresenter } from '../';
 import { SecondaryButton, Input } from '_components';
 import { BuyerTypeRow } from '../BuyerTypeRow';
 import { ModalOverlay } from '../styled';
 
-describe('<BuyerTypeStatusModal />', () => {
+describe('<BuyerTypeStatusModalPresenter />', () => {
   const props = {
     buyerTypes: [],
-    closeModal: jest.fn()
+    isLoading: false,
+    error: null,
+    buyerTypesInActivePriceRules: [],
+    buyerTypeActions: {
+      closeBuyerTypesModal: jest.fn(),
+      updateBuyerTypes: jest.fn()
+    }
   };
 
   it('should render correctly', () => {
-    const wrapper = shallow(<BuyerTypeStatusModal {...props} />);
+    const wrapper = shallow(<BuyerTypeStatusModalPresenter {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('modal dismissal methods', () => {
     it('should dismiss when cancel is clicked', () => {
-      const fn = jest.fn();
+      const buyerTypeActions = { closeBuyerTypesModal: jest.fn() };
       const wrapper = shallow(
-        <BuyerTypeStatusModal {...props} closeModal={fn} />
+        <BuyerTypeStatusModalPresenter
+          {...props}
+          buyerTypeActions={buyerTypeActions}
+        />
       );
 
       wrapper
@@ -28,13 +37,16 @@ describe('<BuyerTypeStatusModal />', () => {
         .at(0)
         .simulate('click');
 
-      expect(fn).toBeCalled();
+      expect(buyerTypeActions.closeBuyerTypesModal).toBeCalled();
     });
 
     it('should dismiss with click away', () => {
-      const fn = jest.fn();
+      const buyerTypeActions = { closeBuyerTypesModal: jest.fn() };
       const wrapper = shallow(
-        <BuyerTypeStatusModal {...props} closeModal={fn} />
+        <BuyerTypeStatusModalPresenter
+          {...props}
+          buyerTypeActions={buyerTypeActions}
+        />
       );
 
       wrapper
@@ -42,7 +54,7 @@ describe('<BuyerTypeStatusModal />', () => {
         .at(0)
         .simulate('click');
 
-      expect(fn).toBeCalled();
+      expect(buyerTypeActions.closeBuyerTypesModal).toBeCalled();
     });
   });
 
@@ -53,7 +65,7 @@ describe('<BuyerTypeStatusModal />', () => {
       { id: 2, code: 'GROUP', publicDescription: 'Group purchase' }
     ];
     const wrapper = shallow(
-      <BuyerTypeStatusModal
+      <BuyerTypeStatusModalPresenter
         {...props}
         closeModal={fn}
         buyerTypes={buyerTypes}
@@ -75,7 +87,7 @@ describe('<BuyerTypeStatusModal />', () => {
     ];
 
     const wrapper = shallow(
-      <BuyerTypeStatusModal {...props} buyerTypes={buyerTypes} />
+      <BuyerTypeStatusModalPresenter {...props} buyerTypes={buyerTypes} />
     );
 
     wrapper

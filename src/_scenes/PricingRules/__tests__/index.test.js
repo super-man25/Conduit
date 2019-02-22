@@ -5,10 +5,13 @@ import { PrimaryButton } from '_components';
 
 describe('<PricingRules /> index route', () => {
   const props = {
-    createPriceRule: jest.fn(),
-    fetchBuyerTypes: jest.fn(),
+    priceRuleActions: { createPriceRule: jest.fn() },
     editingAnyPriceRule: false,
-    buyerTypes: []
+    buyerTypes: [],
+    buyerTypeActions: {
+      openBuyerTypesModal: jest.fn(),
+      fetchBuyerTypes: jest.fn()
+    }
   };
 
   it('should render corectly', () => {
@@ -17,14 +20,16 @@ describe('<PricingRules /> index route', () => {
   });
 
   it('should trigger createPriceRule when the button is clicked', () => {
-    const fn = jest.fn();
-    const wrapper = shallow(<PricingRules {...props} createPriceRule={fn} />);
+    const priceRuleActions = { createPriceRule: jest.fn() };
+    const wrapper = shallow(
+      <PricingRules {...props} priceRuleActions={priceRuleActions} />
+    );
 
     wrapper
       .find(PrimaryButton)
       .at(0)
       .simulate('click');
 
-    expect(fn).toBeCalled();
+    expect(priceRuleActions.createPriceRule).toBeCalled();
   });
 });

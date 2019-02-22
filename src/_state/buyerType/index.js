@@ -152,7 +152,13 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // selectors
 const selectAllBuyerTypes = (store: Store) => store.buyerType.buyerTypes;
+const selectIsLoading = (store: Store) => store.buyerType.loading;
+const selectError = (store: Store) => store.buyerType.error;
+const selectModalIsOpen = (store: Store) => store.buyerType.modalIsOpen;
 
 export const selectors = {
-  selectAllBuyerTypes
+  selectAllBuyerTypes,
+  selectIsLoading,
+  selectError,
+  selectModalIsOpen
 };

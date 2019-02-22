@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { EDBuyerType } from '_models/buyerType';
 
 import {
   H3,
@@ -19,10 +20,16 @@ import { VirtualizedPricingRules } from './components/PricingRulesTable';
 import { BuyerTypeStatusModal } from './components/BuyerTypeStatusModal';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { actions } from '_state/priceRule';
-import { actions as buyerTypeActions } from '_state/buyerType';
-
-import type { EDBuyerType } from '_models/buyerType';
+import { bindActionCreators } from 'redux';
+import {
+  actions as priceRuleActions,
+  selectors as priceRuleSelectors
+} from '_state/priceRule';
+import {
+  actions as buyerTypeActions,
+  selectors as buyerTypeSelectors
+} from '_state/buyerType';
+import { createStructuredSelector } from 'reselect';
 
 const pricingCrumb = [
   {
@@ -51,37 +58,30 @@ const PricingRuleFullContet = FullContent.extend`
 `;
 
 type Props = {
-  createPriceRule: () => void,
-  fetchBuyerTypes: () => EDBuyerType[],
+  buyerTypeActions: any,
+  priceRuleActions: any,
   editingAnyPriceRule: true,
   buyerTypes: EDBuyerType[],
-  buyerTypesModalIsOpen: boolean,
-  buyerTypesLoading: boolean,
-  buyerTypesError: ?Error,
-  openBuyerTypesModal: () => void,
-  closeBuyerTypesModal: () => void,
-  updateBuyerTypes: (buyerTypes: EDBuyerType[]) => void
+  buyerTypesModalIsOpen: boolean
 };
 
 export class PricingRules extends React.Component<Props> {
   componentDidMount() {
-    this.props.fetchBuyerTypes();
+    this.props.buyerTypeActions.fetchBuyerTypes();
   }
 
   createNewPriceRule() {
-    const { createPriceRule } = this.props;
+    const {
+      priceRuleActions: { createPriceRule }
+    } = this.props;
     createPriceRule();
   }
 
   render() {
     const {
       buyerTypes,
-      updateBuyerTypes,
-      buyerTypesError,
       buyerTypesModalIsOpen,
-      buyerTypesLoading,
-      openBuyerTypesModal,
-      closeBuyerTypesModal
+      buyerTypeActions: { openBuyerTypesModal }
     } = this.props;
 
     return (
@@ -118,13 +118,7 @@ export class PricingRules extends React.Component<Props> {
         </PricingRuleFullContet>
         <Portal>
           {buyerTypesModalIsOpen && (
-            <BuyerTypeStatusModal
-              buyerTypes={buyerTypes}
-              closeModal={closeBuyerTypesModal}
-              updateBuyerTypes={updateBuyerTypes}
-              error={buyerTypesError}
-              isLoading={buyerTypesLoading}
-            />
+            <BuyerTypeStatusModal buyerTypes={buyerTypes} />
           )}
         </Portal>
       </PageWrapper>
@@ -132,27 +126,15 @@ export class PricingRules extends React.Component<Props> {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  createPriceRule: () => dispatch(actions.createPriceRule()),
-  fetchBuyerTypes: () => dispatch(buyerTypeActions.fetchBuyerTypes()),
-  openBuyerTypesModal: () => dispatch(buyerTypeActions.openBuyerTypesModal()),
-  closeBuyerTypesModal: () => dispatch(buyerTypeActions.closeBuyerTypesModal()),
-  updateBuyerTypes: (buyerTypes) =>
-    dispatch(buyerTypeActions.updateBuyerTypes(buyerTypes))
+const mapDispatchToProps = (dispatch) => ({
+  priceRuleActions: bindActionCreators(priceRuleActions, dispatch),
+  buyerTypeActions: bindActionCreators(buyerTypeActions, dispatch)
 });
 
-const mapStateToProps = (
-  {
-    priceRule: { editingRowId },
-    buyerType: { buyerTypes, loading, error, modalIsOpen }
-  },
-  ownProps
-) => ({
-  editingAnyPriceRule: editingRowId !== null,
-  buyerTypes,
-  buyerTypesLoading: loading,
-  buyerTypesError: error,
-  buyerTypesModalIsOpen: modalIsOpen
+const mapStateToProps = createStructuredSelector({
+  editingAnyPriceRule: priceRuleSelectors.selectIsEditingPriceRule,
+  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
+  buyerTypesModalIsOpen: buyerTypeSelectors.selectModalIsOpen
 });
 
 export default connect(

@@ -247,4 +247,37 @@ describe('selectors', () => {
 
     expect(selectors.selectAllBuyerTypes(store)).toEqual([1, 2, 3]);
   });
+
+  it('should return boolean representing whether the buyer types are loading', () => {
+    const store = {
+      buyerType: {
+        ...initialState,
+        loading: true
+      }
+    };
+
+    expect(selectors.selectIsLoading(store)).toEqual(true);
+  });
+
+  it('should return boolean representing whether the buyer type modal is open', () => {
+    const store = {
+      buyerType: {
+        ...initialState
+      }
+    };
+
+    expect(selectors.selectModalIsOpen(store)).toEqual(false);
+  });
+
+  it('should select the buyer type error property if it is set', () => {
+    const error = new Error();
+    const store = {
+      buyerType: {
+        ...initialState,
+        error
+      }
+    };
+
+    expect(selectors.selectError(store)).toEqual(error);
+  });
 });
