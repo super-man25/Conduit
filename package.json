@@ -33,6 +33,7 @@
   "scripts": {
     "start": "env-cmd base,dev react-scripts start",
     "build-qa": "env-cmd base,qa react-scripts build",
+    "build-demo": "env-cmd base,demo react-scripts build",
     "build-prod": "env-cmd base,prod react-scripts build",
     "test": "env-cmd base,test react-scripts test --env=jsdom",
     "eject": "env-cmd base react-scripts eject",
