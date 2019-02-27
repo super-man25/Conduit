@@ -62,7 +62,9 @@ type Props = {
   selected: any,
   options: any[],
   noneSelected: string | React.Node,
-  onChange: (newSelected: any, prevSelected: any, options: any[]) => void
+  onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
+  containerStyle?: any,
+  arrowColor?: string
 };
 
 type State = {
@@ -98,7 +100,9 @@ export class Dropdown extends React.Component<Props, State> {
       options,
       parseOption,
       noneSelected,
-      renderSelected
+      renderSelected,
+      containerStyle,
+      arrowColor
     } = this.props;
     const { isOpen } = this.state;
 
@@ -108,6 +112,7 @@ export class Dropdown extends React.Component<Props, State> {
       <DropdownContainer
         onClick={this.toggleDropdownOpen}
         onClickAway={() => this.setState({ isOpen: false })}
+        style={containerStyle}
       >
         <Flex justify="space-between" align="center">
           {hasSelectedItem
@@ -117,7 +122,7 @@ export class Dropdown extends React.Component<Props, State> {
             : noneSelected}
           <Icon
             size={24}
-            color={cssConstants.PRIMARY_WHITE}
+            color={arrowColor ? arrowColor : cssConstants.PRIMARY_WHITE}
             name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
           />
         </Flex>

@@ -2,17 +2,9 @@
 // TODO: Adding this eslint rule to get build passing for now. Need to write case conversion function for all these snakes and camels.
 /* eslint-disable camelcase */
 import React from 'react';
-import {
-  Flex,
-  Box,
-  H3,
-  H4,
-  Label,
-  PageWrapper,
-  PrimaryContent,
-  S1,
-  Dropdown
-} from '_components';
+import AwesomeDebouncePromise from 'awesome-debounce-promise';
+
+import { Box, H3, H4, PageWrapper, PrimaryContent, S1 } from '_components';
 import { connect } from 'react-redux';
 import {
   actions as demoPriceActions,
@@ -26,6 +18,18 @@ import {
   LIMITED_SECTIONS,
   OPPONENTS
 } from './constants';
+import {
+  DemoWrapper,
+  DataWrapper,
+  SectionWrapper,
+  SectionData,
+  SectionText,
+  RowWrapper
+} from './styled';
+import { DateFeatureGroup } from './DateFeatureGroup';
+import { OpponentFeatureGroup } from './OpponentFeatureGroup';
+import { PerformanceFeatureGroup } from './PerformanceFeatureGroup';
+import { WeatherFeatureGroup } from './WeatherFeatureGroup';
 
 type State = {
   context: DemoPriceContext,
@@ -36,40 +40,6 @@ type Props = {
   demoState: DemoState,
   fetch: (context: DemoPriceContext, examples: Array<DemoPriceExample>) => void
 };
-
-const DemoWrapper = Flex.extend`
-  flex-direction: column;
-  justify-content: left;
-  min-width: 100%;
-`;
-
-const DataWrapper = Flex.extend`
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const InputWrapper = Box.extend`
-  margin: 1em;
-`;
-
-const SectionWrapper = Box.extend`
-  max-height: 75vh;
-  overflow-y: auto;
-`;
-
-const SectionData = Box.extend`
-  padding: 0.5em;
-`;
-
-const SectionText = S1.extend`
-  font-size: 1rem;
-  font-weight: bold;
-`;
-
-const RowWrapper = Box.extend`
-  padding: 0.5em;
-`;
 
 const parseOption = (option) => option.title;
 const getSelectedOption = (options, key) => options.find((o) => o.key === key);
@@ -116,24 +86,29 @@ class DemoRoute extends React.Component<Props, State> {
   onCheckboxChange = (feature) => (event) => {
     let context = { ...this.state.context };
     context[feature] = event.target.checked;
-    this.setState({ context }, this.fetchPrices);
+    this.setState({ context }, this.debounceFetchPrices);
   };
 
   onDropdownChange = (feature) => (option) => {
     let context = { ...this.state.context };
     context[feature] = option.key;
-    this.setState({ context }, this.fetchPrices);
+    this.setState({ context }, this.debounceFetchPrices);
   };
 
   onSliderChange = (feature) => (event) => {
     let context = { ...this.state.context };
     context[feature] = Number(event.target.value);
-    this.setState({ context }, this.fetchPrices);
+    this.setState({ context }, this.debounceFetchPrices);
   };
 
   fetchPrices = () => {
     this.props.fetch(this.state.context, this.state.examples);
   };
+
+  debounceFetchPrices = AwesomeDebouncePromise(
+    this.fetchPrices.bind(this),
+    500
+  );
 
   render() {
     const {
@@ -175,141 +150,67 @@ class DemoRoute extends React.Component<Props, State> {
 
     return (
       <PageWrapper>
-        <PrimaryContent padding="2rem">
+        <PrimaryContent padding="2rem" overflowY="visible">
           <DemoWrapper>
             <H3 type="secondary">Model Demo</H3>
             <S1 weight="300">
               <i>Pricing model demo.</i>
             </S1>
             <DataWrapper>
-              <Box width="50%">
-                <H4>Date</H4>
+              <Box width="48%">
+                <DateFeatureGroup
+                  selectedMonth={getSelectedOption(MONTHS, event_month)}
+                  selectedDay={getSelectedOption(
+                    DAYS_OF_WEEK,
+                    event_day_of_week
+                  )}
+                  optionsMonth={MONTHS}
+                  optionsDay={DAYS_OF_WEEK}
+                  onMonthDropdownChange={this.onDropdownChange('event_month')}
+                  onDayDropdownChange={this.onDropdownChange(
+                    'event_day_of_week'
+                  )}
+                  parseOption={parseOption}
+                  homeOpenerIsChecked={home_opener}
+                  onHomeOpenerChanged={this.onCheckboxChange('home_opener')}
+                  minutesBeforeValue={minutes_before}
+                  onMinutesBeforeChange={this.onSliderChange('minutes_before')}
+                />
 
-                <InputWrapper>
-                  <Label htmlFor="monthDrop">Month</Label>
-                  <Dropdown
-                    id="monthDrop"
-                    selected={getSelectedOption(MONTHS, event_month)}
-                    onChange={this.onDropdownChange('event_month')}
-                    options={MONTHS}
-                    parseOption={parseOption}
-                  />
-                </InputWrapper>
+                <OpponentFeatureGroup
+                  selectedOpponentType={getSelectedOption(
+                    OPPONENTS,
+                    opponent_heuristic
+                  )}
+                  onOpponentTypeChange={this.onDropdownChange(
+                    'opponent_heuristic'
+                  )}
+                  optionsOpponentType={OPPONENTS}
+                  parseOption={parseOption}
+                />
 
-                <InputWrapper>
-                  <Label htmlFor="dayDrop">Day of week</Label>
-                  <Dropdown
-                    id="dayDrop"
-                    selected={getSelectedOption(
-                      DAYS_OF_WEEK,
-                      event_day_of_week
-                    )}
-                    onChange={this.onDropdownChange('event_day_of_week')}
-                    options={DAYS_OF_WEEK}
-                    parseOption={parseOption}
-                  />
-                </InputWrapper>
+                <PerformanceFeatureGroup
+                  gamesAhead={games_ahead}
+                  onGamesAheadChange={this.onSliderChange('games_ahead')}
+                  winLossRatio={win_loss_ratio}
+                  onWinLossRatioChange={this.onSliderChange('win_loss_ratio')}
+                />
 
-                <InputWrapper>
-                  <Label htmlFor="homeOpener">Home Opener</Label>
-                  <input
-                    type="checkbox"
-                    name="homeOpener"
-                    value={home_opener}
-                    onChange={this.onCheckboxChange('home_opener')}
-                  />
-                </InputWrapper>
-
-                <InputWrapper>
-                  <Label htmlFor="minBefore">
-                    Minutes Before ({minutes_before})
-                  </Label>
-                  <input
-                    id="minBefore"
-                    type="range"
-                    min="0"
-                    max="10080"
-                    step="60"
-                    value={minutes_before}
-                    onChange={this.onSliderChange('minutes_before')}
-                  />
-                </InputWrapper>
-
-                <H4>Opponent</H4>
-
-                <InputWrapper>
-                  <Label htmlFor="oppType">Type</Label>
-                  <Dropdown
-                    id="oppType"
-                    selected={getSelectedOption(OPPONENTS, opponent_heuristic)}
-                    onChange={this.onDropdownChange('opponent_heuristic')}
-                    options={OPPONENTS}
-                    parseOption={parseOption}
-                  />
-                </InputWrapper>
-
-                <H4>Performance</H4>
-
-                <InputWrapper>
-                  <Label htmlFor="gamesAhead">
-                    Games Ahead ({games_ahead})
-                  </Label>
-                  <input
-                    id="gamesAhead"
-                    type="range"
-                    min="-20"
-                    max="10"
-                    step="1"
-                    value={games_ahead}
-                    onChange={this.onSliderChange('games_ahead')}
-                  />
-                </InputWrapper>
-
-                <InputWrapper>
-                  <Label htmlFor="winLoss">
-                    Win Loss Ratio ({win_loss_ratio})
-                  </Label>
-                  <input
-                    id="winLoss"
-                    type="range"
-                    min="0"
-                    max="1"
-                    step=".05"
-                    value={win_loss_ratio}
-                    onChange={this.onSliderChange('win_loss_ratio')}
-                  />
-                </InputWrapper>
-
-                <H4>Weather</H4>
-
-                <InputWrapper>
-                  <Label htmlFor="condDrop">Weather Condition</Label>
-                  <Dropdown
-                    id="condDrop"
-                    selected={getSelectedOption(
-                      WEATHER_CONDITIONS,
-                      weather_condition
-                    )}
-                    onChange={this.onDropdownChange('weather_condition')}
-                    options={WEATHER_CONDITIONS}
-                    parseOption={parseOption}
-                  />
-                </InputWrapper>
-
-                <InputWrapper>
-                  <Label htmlFor="temp">Temperature ({temp}&deg;F)</Label>
-                  <input
-                    id="temp"
-                    type="range"
-                    min="50"
-                    max="100"
-                    step="5"
-                    value={temp}
-                    onChange={this.onSliderChange('temp')}
-                  />
-                </InputWrapper>
+                <WeatherFeatureGroup
+                  selectedWeatherCondition={getSelectedOption(
+                    WEATHER_CONDITIONS,
+                    weather_condition
+                  )}
+                  onWeatherConditionChange={this.onDropdownChange(
+                    'weather_condition'
+                  )}
+                  optionsWeatherCondition={WEATHER_CONDITIONS}
+                  parseOption={parseOption}
+                  temp={temp}
+                  onTempChange={this.onSliderChange('temp')}
+                />
               </Box>
-              <Box width="50%">
+              <Box width="48%">
                 <H4>Ticket Prices</H4>
                 <SectionWrapper>
                   {Object.keys(sections).map((section) => (
