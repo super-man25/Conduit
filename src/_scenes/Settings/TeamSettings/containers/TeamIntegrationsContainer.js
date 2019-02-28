@@ -9,12 +9,7 @@ import { connect } from 'react-redux';
 type Props = {
   clientActions: {
     fetchIntegrations: () => void,
-    toggleIntegration: ({ id: number, isActive: boolean }) => void,
-    updateSecondaryPricingRule: ({
-      id: number,
-      percent: number,
-      constant: number
-    }) => void
+    toggleIntegration: ({ id: number, isActive: boolean }) => void
   },
   clientState: {
     integrations: Array<any>
@@ -30,14 +25,6 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
     this.props.clientActions.toggleIntegration({ id, isActive });
   };
 
-  handleSecondaryPriceRuleUpdate = (payload: {
-    id: number,
-    percent: number,
-    constant: number
-  }) => {
-    this.props.clientActions.updateSecondaryPricingRule(payload);
-  };
-
   render() {
     const { integrations } = this.props.clientState;
     const primary = integrations.filter((i) => i.isPrimary);
@@ -48,7 +35,6 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
         primary={primary}
         secondary={secondary}
         handleIntegrationToggle={this.handleIntegrationToggle}
-        handleSecondaryPriceRuleUpdate={this.handleSecondaryPriceRuleUpdate}
       />
     );
   }

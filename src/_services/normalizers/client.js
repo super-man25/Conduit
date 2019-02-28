@@ -22,3 +22,23 @@ const secondaryPriceRuleSchema = yup.object({
     .min(0)
     .label('Dollar change')
 });
+
+export function denormalize(body) {
+  return secondaryPriceRuleSchema.validate(body).catch(handleDenormalizeError);
+}
+
+function handleDenormalizeError(error) {
+  switch (error.type) {
+    case 'typeError':
+      error.toString = () => `${error.params.path} is invalid`;
+      break;
+    case 'max':
+    case 'min':
+    case 'integer':
+      error.toString = () => error.message;
+      break;
+    default:
+      error.toString = () => 'Error saving client integration';
+  }
+  throw error;
+}

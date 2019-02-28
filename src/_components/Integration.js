@@ -6,13 +6,12 @@ import { cssConstants } from '_constants';
 import { rgba } from 'polished';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
-import SecondaryPricingRule from '../_scenes/Settings/TeamSettings/components/SecondaryPricingRule';
+import { SecondaryPricingRule } from '../_scenes/Settings/TeamSettings/components/SecondaryPricingRule';
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${rgba(196, 210, 225, 0.5)};
-  height: 7.5rem;
   width: 20rem;
   box-shadow: 0 4px 4px 0 ${cssConstants.PRIMARY_LIGHT_GRAY};
   padding: 1rem 2rem;

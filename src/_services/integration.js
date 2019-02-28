@@ -1,4 +1,5 @@
 import { get, put } from '_helpers/api';
+import { denormalize } from './normalizers/client';
 
 function getIntegrations(clientId) {
   return get(`clientIntegrations`);
@@ -8,8 +9,21 @@ function toggleIntegration(clientIntegrationId, payload) {
   return put(`clientIntegrations/${clientIntegrationId}/toggle`, payload);
 }
 
-function updateSecondaryPricingRule(clientIntegrationId, payload) {
-  return put(`clientIntegrations/${clientIntegrationId}`, payload);
+function updateSecondaryPricingRule(clientIntegrationId, body) {
+  return denormalize(body).then((payload) => {
+    return put(`clientIntegrations/${clientIntegrationId}`, payload).catch(
+      handleResponseError
+    );
+  });
+}
+
+function handleResponseError(error) {
+  console.log(error);
+  switch (error.code) {
+    default:
+      error.toString = () => 'Error saving client integration';
+  }
+  throw error;
 }
 
 export const integrationService = {

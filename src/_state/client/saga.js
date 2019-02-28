@@ -12,9 +12,6 @@ import {
   FETCH_INTEGRATIONS_ASYNC,
   FETCH_INTEGRATIONS_SUCCESS,
   FETCH_INTEGRATIONS_ERROR,
-  UPDATE_SECONDARY_PRICING_RULE_ASYNC,
-  UPDATE_SECONDARY_PRICING_RULE_SUCCESS,
-  UPDATE_SECONDARY_PRICING_RULE_ERROR,
   TOGGLE_INTEGRATION,
   UPDATE_INTEGRATION
 } from './actions';
@@ -61,24 +58,6 @@ export function* toggleIntegrationAsync({ payload: { id, isActive } }) {
   yield put({ type: UPDATE_INTEGRATION, payload: { id, ...result } });
 }
 
-export function* updateSecondaryPricingRuleAsync({
-  payload: { id, percent, constant }
-}) {
-  try {
-    const result = yield call(
-      integrationService.updateSecondaryPricingRule,
-      id,
-      {
-        percent: parseInt(percent, 10),
-        constant: parseFloat(constant)
-      }
-    );
-    yield put({ type: UPDATE_SECONDARY_PRICING_RULE_SUCCESS, payload: result });
-  } catch (err) {
-    yield put({ type: UPDATE_SECONDARY_PRICING_RULE_ERROR, payload: err });
-  }
-}
-
 // Sagas
 function* watchGetClientAsync() {
   yield takeEvery(FETCH_ASYNC, getClientAsync);
@@ -96,17 +75,9 @@ function* watchToggleClientIntegrationAsync() {
   yield takeEvery(TOGGLE_INTEGRATION, toggleIntegrationAsync);
 }
 
-function* watchUpdateSecondaryPricingRuleAsync() {
-  yield takeEvery(
-    UPDATE_SECONDARY_PRICING_RULE_ASYNC,
-    updateSecondaryPricingRuleAsync
-  );
-}
-
 export default {
   watchGetClientAsync,
   watchUpdateClientAsync,
   watchGetClientIntegrationsAsync,
-  watchToggleClientIntegrationAsync,
-  watchUpdateSecondaryPricingRuleAsync
+  watchToggleClientIntegrationAsync
 };
