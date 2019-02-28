@@ -31,19 +31,21 @@ ShallowWrapper {
     "props": Object {
       "align": "center",
       "children": Array [
+        false,
         <styled.p
           color="#38A9DB"
+          cursor="pointer"
           onClick={[Function]}
           opacity={1}
           size={14}
 >
           SET PRICE
 </styled.p>,
-        null,
       ],
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -51,6 +53,7 @@ ShallowWrapper {
         "props": Object {
           "children": "SET PRICE",
           "color": "#38A9DB",
+          "cursor": "pointer",
           "onClick": [Function],
           "opacity": 1,
           "size": 14,
@@ -59,7 +62,6 @@ ShallowWrapper {
         "rendered": "SET PRICE",
         "type": [Function],
       },
-      null,
     ],
     "type": [Function],
   },
@@ -71,19 +73,21 @@ ShallowWrapper {
       "props": Object {
         "align": "center",
         "children": Array [
+          false,
           <styled.p
             color="#38A9DB"
+            cursor="pointer"
             onClick={[Function]}
             opacity={1}
             size={14}
 >
             SET PRICE
 </styled.p>,
-          null,
         ],
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -91,6 +95,7 @@ ShallowWrapper {
           "props": Object {
             "children": "SET PRICE",
             "color": "#38A9DB",
+            "cursor": "pointer",
             "onClick": [Function],
             "opacity": 1,
             "size": 14,
@@ -99,7 +104,6 @@ ShallowWrapper {
           "rendered": "SET PRICE",
           "type": [Function],
         },
-        null,
       ],
       "type": [Function],
     },
@@ -169,7 +173,7 @@ ShallowWrapper {
 </styled.button>,
         <ClearIcon
           fill="#000"
-          height={16}
+          height={64}
           onClick={[Function]}
           styles={
                     Object {
@@ -177,7 +181,7 @@ ShallowWrapper {
                               "marginLeft": 7,
                             }
           }
-          width={16}
+          width={64}
 />,
       ],
     },
@@ -216,13 +220,13 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "fill": "#000",
-          "height": 16,
+          "height": 64,
           "onClick": [Function],
           "styles": Object {
             "cursor": "pointer",
             "marginLeft": 7,
           },
-          "width": 16,
+          "width": 64,
         },
         "ref": null,
         "rendered": null,
@@ -253,7 +257,7 @@ ShallowWrapper {
 </styled.button>,
           <ClearIcon
             fill="#000"
-            height={16}
+            height={64}
             onClick={[Function]}
             styles={
                         Object {
@@ -261,7 +265,7 @@ ShallowWrapper {
                                     "marginLeft": 7,
                                   }
             }
-            width={16}
+            width={64}
 />,
         ],
       },
@@ -300,13 +304,13 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "fill": "#000",
-            "height": 16,
+            "height": 64,
             "onClick": [Function],
             "styles": Object {
               "cursor": "pointer",
               "marginLeft": 7,
             },
-            "width": 16,
+            "width": 64,
           },
           "ref": null,
           "rendered": null,
@@ -367,19 +371,21 @@ ShallowWrapper {
     "props": Object {
       "align": "center",
       "children": Array [
+        false,
         <styled.p
           color="#38A9DB"
+          cursor="pointer"
           onClick={[Function]}
           opacity={0.5}
           size={14}
 >
           SET PRICE
 </styled.p>,
-        null,
       ],
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -387,6 +393,7 @@ ShallowWrapper {
         "props": Object {
           "children": "SET PRICE",
           "color": "#38A9DB",
+          "cursor": "pointer",
           "onClick": [Function],
           "opacity": 0.5,
           "size": 14,
@@ -395,7 +402,6 @@ ShallowWrapper {
         "rendered": "SET PRICE",
         "type": [Function],
       },
-      null,
     ],
     "type": [Function],
   },
@@ -407,19 +413,21 @@ ShallowWrapper {
       "props": Object {
         "align": "center",
         "children": Array [
+          false,
           <styled.p
             color="#38A9DB"
+            cursor="pointer"
             onClick={[Function]}
             opacity={0.5}
             size={14}
 >
             SET PRICE
 </styled.p>,
-          null,
         ],
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -427,6 +435,7 @@ ShallowWrapper {
           "props": Object {
             "children": "SET PRICE",
             "color": "#38A9DB",
+            "cursor": "pointer",
             "onClick": [Function],
             "opacity": 0.5,
             "size": 14,
@@ -435,7 +444,6 @@ ShallowWrapper {
           "rendered": "SET PRICE",
           "type": [Function],
         },
-        null,
       ],
       "type": [Function],
     },
@@ -493,19 +501,14 @@ ShallowWrapper {
       "children": Array [
         <styled.p
           color="#38A9DB"
-          onClick={[Function]}
-          opacity={1}
-          size={14}
->
-          EDIT PRICE
-</styled.p>,
-        <styled.p
-          color="#070707"
+          cursor="pointer"
           marginLeft="1rem"
+          onClick={[Function]}
           size={14}
 >
           $12.00
 </styled.p>,
+        false,
       ],
     },
     "ref": null,
@@ -515,30 +518,18 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "EDIT PRICE",
-          "color": "#38A9DB",
-          "onClick": [Function],
-          "opacity": 1,
-          "size": 14,
-        },
-        "ref": null,
-        "rendered": "EDIT PRICE",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
           "children": "$12.00",
-          "color": "#070707",
+          "color": "#38A9DB",
+          "cursor": "pointer",
           "marginLeft": "1rem",
+          "onClick": [Function],
           "size": 14,
         },
         "ref": null,
         "rendered": "$12.00",
         "type": [Function],
       },
+      false,
     ],
     "type": [Function],
   },
@@ -552,19 +543,14 @@ ShallowWrapper {
         "children": Array [
           <styled.p
             color="#38A9DB"
-            onClick={[Function]}
-            opacity={1}
-            size={14}
->
-            EDIT PRICE
-</styled.p>,
-          <styled.p
-            color="#070707"
+            cursor="pointer"
             marginLeft="1rem"
+            onClick={[Function]}
             size={14}
 >
             $12.00
 </styled.p>,
+          false,
         ],
       },
       "ref": null,
@@ -574,30 +560,18 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "EDIT PRICE",
-            "color": "#38A9DB",
-            "onClick": [Function],
-            "opacity": 1,
-            "size": 14,
-          },
-          "ref": null,
-          "rendered": "EDIT PRICE",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
             "children": "$12.00",
-            "color": "#070707",
+            "color": "#38A9DB",
+            "cursor": "pointer",
             "marginLeft": "1rem",
+            "onClick": [Function],
             "size": 14,
           },
           "ref": null,
           "rendered": "$12.00",
           "type": [Function],
         },
+        false,
       ],
       "type": [Function],
     },

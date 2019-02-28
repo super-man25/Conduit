@@ -9,7 +9,7 @@ export const PageWrapper = styled.div`
 export const PrimaryContent = styled.div`
   display: flex;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  overflow-y: scroll;
+  overflow-y: ${(props) => props.overflowY || 'scroll'};
   flex: 1;
   padding: ${(props) => props.padding || 0};
   margin: ${(props) => props.margin || 0};

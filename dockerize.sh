@@ -5,9 +5,9 @@ set -e
 DOCKER_TAG_ENV=$2
 
 # Check for valid environments
-if [ "$DOCKER_TAG_ENV" != "qa" ] && [ "$DOCKER_TAG_ENV" != "prod" ]
+if [ "$DOCKER_TAG_ENV" != "qa" ] && [ "$DOCKER_TAG_ENV" != "prod" ] && [ "$DOCKER_TAG_ENV" != "demo" ]
 then
-	echo "Please provide 'qa' or 'prod' as the second argument"
+	echo "Please provide 'qa', 'prod', or 'demo' as the second argument"
 	exit
 fi
 

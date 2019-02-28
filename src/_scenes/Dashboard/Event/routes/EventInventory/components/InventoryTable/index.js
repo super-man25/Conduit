@@ -63,7 +63,7 @@ const columns = [
     label: 'Row',
     width: 0,
     dataKey: 'row',
-    flexGrow: 10
+    flexGrow: 5
   },
   {
     label: '# of Seats',
@@ -75,10 +75,10 @@ const columns = [
     }
   },
   {
-    label: 'Season Ticket Price',
+    label: 'Price Floor',
     width: 0,
     dataKey: 'minimumPrice',
-    flexGrow: 15,
+    flexGrow: 10,
     cellDataGetter({ columnData, dataKey, rowData }) {
       return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
     }
@@ -87,7 +87,7 @@ const columns = [
     label: 'List Price',
     width: 0,
     dataKey: 'listedPrice',
-    flexGrow: 15,
+    flexGrow: 10,
     cellDataGetter({ columnData, dataKey, rowData }) {
       return formatUSD(rowData[dataKey]);
     }
@@ -103,7 +103,7 @@ const columns = [
     label: 'Manual Pricing',
     width: 0,
     dataKey: 'overridePrice',
-    flexGrow: 10,
+    flexGrow: 15,
     disableSort: true,
     cellRenderer: manualPricingColumnCellRenderer
   }
@@ -194,6 +194,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
             rowCount={rows.length}
             rowGetter={({ index }) => rows[index]}
             overscanRowCount={50}
+            overscanColumnCount={6}
             rowRenderer={rowRenderer}
             noRowsRenderer={() => (
               <NoTableRowsText>

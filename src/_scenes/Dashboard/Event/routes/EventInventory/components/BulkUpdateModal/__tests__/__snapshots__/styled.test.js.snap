@@ -15,6 +15,7 @@ exports[`BulkUpdateModal styled components <FieldErrorText /> renders correctly 
   font-size: undefinedpx;
   color: #070707;
   margin: 0;
+  cursor: default;
   position: absolute;
   top: 100%;
 }
