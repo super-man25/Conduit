@@ -6,6 +6,7 @@ import { cssConstants } from '_constants';
 import { rgba } from 'polished';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
+import SecondaryPricingRule from '../_scenes/Settings/TeamSettings/components/SecondaryPricingRule';
 
 const Card = styled.div`
   display: flex;
@@ -40,7 +41,9 @@ type Props = {
   isActive: boolean,
   isPrimary: boolean,
   logoUrl: string,
-  name: string
+  name: string,
+  percent: number,
+  constant: number
 };
 
 export function Integration(props: Props) {
@@ -54,13 +57,14 @@ export function Integration(props: Props) {
       <Details>
         <Img src={logoUrl} alt={name} />
         <ToggleContainer>
-          <Toggle
-            isChecked={isActive}
-            isDisabled={isPrimary}
-            onChange={onChange}
-          />
+          <Toggle isChecked={isActive} isDisabled onChange={onChange} />
         </ToggleContainer>
       </Details>
+      {!isPrimary && (
+        <Flex>
+          <SecondaryPricingRule {...props} />
+        </Flex>
+      )}
     </Card>
   );
 }

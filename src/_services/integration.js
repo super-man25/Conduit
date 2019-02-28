@@ -8,7 +8,12 @@ function toggleIntegration(clientIntegrationId, payload) {
   return put(`clientIntegrations/${clientIntegrationId}/toggle`, payload);
 }
 
+function updateSecondaryPricingRule(clientIntegrationId, payload) {
+  return put(`clientIntegrations/${clientIntegrationId}`, payload);
+}
+
 export const integrationService = {
   getIntegrations,
-  toggleIntegration
+  toggleIntegration,
+  updateSecondaryPricingRule
 };

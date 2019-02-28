@@ -11,6 +11,9 @@ import {
   FETCH_INTEGRATIONS_SUCCESS,
   FETCH_INTEGRATIONS_ERROR,
   UPDATE_INTEGRATION,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+  UPDATE_SECONDARY_PRICING_RULE_SUCCESS,
+  UPDATE_SECONDARY_PRICING_RULE_ERROR,
   RESET_DIRTY_PRICING_INTERVAL,
   SET_PRICING_INTERVAL
 } from './actions';
@@ -32,7 +35,9 @@ type State = {
     +modifiedAt: Date,
     +isPrimary: boolean,
     +isActive: boolean,
-    +logoUrl: string
+    +logoUrl: string,
+    +percent: number,
+    +constant: number
   }>
 };
 
@@ -118,6 +123,22 @@ export default function clientReducer(
 
           return integration;
         })
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_ASYNC:
+      return {
+        ...state,
+        loading: true
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_SUCCESS:
+      return {
+        ...state,
+        loading: false
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false
       };
     default:
       return state;

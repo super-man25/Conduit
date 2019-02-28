@@ -13,6 +13,12 @@ export const FETCH_INTEGRATIONS_ASYNC = 'client/FETCH_INTEGRATIONS_ASYNC';
 export const FETCH_INTEGRATIONS_SUCCESS = 'client/FETCH_INTEGRATIONS_SUCCESS';
 export const FETCH_INTEGRATIONS_ERROR = 'client/FETCH_INTEGRATIONS_ERROR';
 export const TOGGLE_INTEGRATION = 'client/TOGGLE_INTEGRATION';
+export const UPDATE_SECONDARY_PRICING_RULE_ASYNC =
+  'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC';
+export const UPDATE_SECONDARY_PRICING_RULE_SUCCESS =
+  'client/UPDATE_SECONDARY_PRICING_RULE_SUCCESS';
+export const UPDATE_SECONDARY_PRICING_RULE_ERROR =
+  'client/UPDATE_SECONDARY_PRICING_RULE_ERROR';
 export const UPDATE_INTEGRATION = 'client/UPDATE_INTEGRATION';
 export const SET_PRICING_INTERVAL = 'client/SET_PRICING_INTERVAL';
 export const RESET_DIRTY_PRICING_INTERVAL =
@@ -33,6 +39,18 @@ export type Action =
   | {
       type: typeof TOGGLE_INTEGRATION,
       payload: { id: number, isActive: boolean }
+    }
+  | {
+      type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+      payload: boolean
+    }
+  | {
+      type: typeof UPDATE_SECONDARY_PRICING_RULE_SUCCESS,
+      payload: { id: number, percent: number, constant: number }
+    }
+  | {
+      type: typeof UPDATE_SECONDARY_PRICING_RULE_ERROR,
+      payload?: Error
     }
   | {
       type: typeof UPDATE_INTEGRATION,
@@ -67,6 +85,17 @@ function toggleIntegration(payload: { id: number, isActive: boolean }): Action {
   };
 }
 
+function updateSecondaryPricingRule(payload: {
+  id: number,
+  percent: number,
+  constant: number
+}): Action {
+  return {
+    type: UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+    payload
+  };
+}
+
 function setPricingInterval(pricingInterval: number): Action {
   return {
     type: SET_PRICING_INTERVAL,
@@ -85,6 +114,7 @@ export default {
   update,
   fetchIntegrations,
   toggleIntegration,
+  updateSecondaryPricingRule,
   setPricingInterval,
   resetDirtyPricingInterval
 };

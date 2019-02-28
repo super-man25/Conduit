@@ -78,7 +78,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchtoProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     clientActions: bindActionCreators(clientActions, dispatch)
   };
@@ -87,6 +87,6 @@ function mapDispatchtoProps(dispatch) {
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchtoProps
+    mapDispatchToProps
   )(TeamSettings)
 );

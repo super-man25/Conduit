@@ -28,13 +28,20 @@ type ClientIntegration = {
   createdAt: Date,
   modifiedAt: Date,
   isPrimary: boolean,
-  isActive: boolean
+  isActive: boolean,
+  percent: number,
+  constant: number
 };
 
 type Props = {
   primary: Array<ClientIntegration>,
   secondary: Array<ClientIntegration>,
-  handleIntegrationToggle: (i: ClientIntegration, e: any) => void
+  handleIntegrationToggle: (i: ClientIntegration, e: any) => void,
+  handleSecondaryPriceRuleUpdate: (payload: {
+    id: number,
+    percent: number,
+    constant: number
+  }) => void
 };
 
 type State = {
@@ -65,7 +72,12 @@ export class TeamIntegrations extends React.Component<Props, State> {
   };
 
   render() {
-    const { primary, secondary, handleIntegrationToggle } = this.props;
+    const {
+      primary,
+      secondary,
+      handleIntegrationToggle,
+      handleSecondaryPriceRuleUpdate
+    } = this.props;
     return (
       <TeamIntegrationsWrapper>
         <Box>
@@ -100,7 +112,7 @@ export class TeamIntegrations extends React.Component<Props, State> {
                   <Integration
                     key={index}
                     {...i}
-                    onChange={(e) => this.onIntegrationChanged(i)}
+                    onChange={handleSecondaryPriceRuleUpdate}
                   />
                 ))}
               </IntegrationsGridLayout>

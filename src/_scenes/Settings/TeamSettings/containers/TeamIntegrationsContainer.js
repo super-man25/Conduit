@@ -9,7 +9,12 @@ import { connect } from 'react-redux';
 type Props = {
   clientActions: {
     fetchIntegrations: () => void,
-    toggleIntegration: ({ id: number, isActive: boolean }) => void
+    toggleIntegration: ({ id: number, isActive: boolean }) => void,
+    updateSecondaryPricingRule: ({
+      id: number,
+      percent: number,
+      constant: number
+    }) => void
   },
   clientState: {
     integrations: Array<any>
@@ -25,6 +30,14 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
     this.props.clientActions.toggleIntegration({ id, isActive });
   };
 
+  handleSecondaryPriceRuleUpdate = (payload: {
+    id: number,
+    percent: number,
+    constant: number
+  }) => {
+    this.props.clientActions.updateSecondaryPricingRule(payload);
+  };
+
   render() {
     const { integrations } = this.props.clientState;
     const primary = integrations.filter((i) => i.isPrimary);
@@ -35,6 +48,7 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
         primary={primary}
         secondary={secondary}
         handleIntegrationToggle={this.handleIntegrationToggle}
+        handleSecondaryPriceRuleUpdate={this.handleSecondaryPriceRuleUpdate}
       />
     );
   }
@@ -46,7 +60,7 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchtoProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     clientActions: bindActionCreators(clientActions, dispatch)
   };
@@ -54,5 +68,5 @@ function mapDispatchtoProps(dispatch) {
 
 export default connect(
   mapStateToProps,
-  mapDispatchtoProps
+  mapDispatchToProps
 )(TeamIntegrationsContainer);
