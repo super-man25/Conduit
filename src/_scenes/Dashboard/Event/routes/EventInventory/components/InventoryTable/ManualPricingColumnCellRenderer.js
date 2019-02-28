@@ -61,7 +61,6 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
 
     if (!isEditing) {
       const textOpacity = manualPriceLocked ? 0.5 : 1;
-      const textToDisplay = cellData !== null ? 'EDIT' : 'SET PRICE';
 
       return (
         <Flex align="center">
@@ -84,7 +83,7 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
               opacity={textOpacity}
               cursor={'pointer'}
             >
-              {textToDisplay}
+              SET PRICE
             </Text>
           )}
         </Flex>
