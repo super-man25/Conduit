@@ -1,0 +1,597 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ManualPricingColumnCellRenderer /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
+    cancelEditingManualPrice={[Function]}
+    cellData={null}
+    isEditing={false}
+    manualPriceLocked={false}
+    rowData={
+        Object {
+            "listedPrice": 12,
+          }
+    }
+    setEditingManualPrice={[Function]}
+    setManualPrice={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "align": "center",
+      "children": Array [
+        false,
+        <styled.p
+          color="#38A9DB"
+          cursor="pointer"
+          onClick={[Function]}
+          opacity={1}
+          size={14}
+>
+          SET PRICE
+</styled.p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "SET PRICE",
+          "color": "#38A9DB",
+          "cursor": "pointer",
+          "onClick": [Function],
+          "opacity": 1,
+          "size": 14,
+        },
+        "ref": null,
+        "rendered": "SET PRICE",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": Array [
+          false,
+          <styled.p
+            color="#38A9DB"
+            cursor="pointer"
+            onClick={[Function]}
+            opacity={1}
+            size={14}
+>
+            SET PRICE
+</styled.p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "SET PRICE",
+            "color": "#38A9DB",
+            "cursor": "pointer",
+            "onClick": [Function],
+            "opacity": 1,
+            "size": 14,
+          },
+          "ref": null,
+          "rendered": "SET PRICE",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEditing is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
+    cancelEditingManualPrice={[Function]}
+    cellData={null}
+    isEditing={true}
+    manualPriceLocked={false}
+    rowData={
+        Object {
+            "listedPrice": 12,
+          }
+    }
+    setEditingManualPrice={[Function]}
+    setManualPrice={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "align": "center",
+      "children": Array [
+        <NumberInputField
+          component={[Function]}
+          onChange={[Function]}
+          placeholder="$12.00"
+          type="number"
+          value=""
+/>,
+        <styled.button
+          onClick={[Function]}
+>
+          Set Price
+</styled.button>,
+        <ClearIcon
+          fill="#000"
+          height={64}
+          onClick={[Function]}
+          styles={
+                    Object {
+                              "cursor": "pointer",
+                              "marginLeft": 7,
+                            }
+          }
+          width={64}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "onChange": [Function],
+          "placeholder": "$12.00",
+          "type": "number",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Set Price",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Set Price",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "fill": "#000",
+          "height": 64,
+          "onClick": [Function],
+          "styles": Object {
+            "cursor": "pointer",
+            "marginLeft": 7,
+          },
+          "width": 64,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": Array [
+          <NumberInputField
+            component={[Function]}
+            onChange={[Function]}
+            placeholder="$12.00"
+            type="number"
+            value=""
+/>,
+          <styled.button
+            onClick={[Function]}
+>
+            Set Price
+</styled.button>,
+          <ClearIcon
+            fill="#000"
+            height={64}
+            onClick={[Function]}
+            styles={
+                        Object {
+                                    "cursor": "pointer",
+                                    "marginLeft": 7,
+                                  }
+            }
+            width={64}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "onChange": [Function],
+            "placeholder": "$12.00",
+            "type": "number",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Set Price",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Set Price",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "fill": "#000",
+            "height": 64,
+            "onClick": [Function],
+            "styles": Object {
+              "cursor": "pointer",
+              "marginLeft": 7,
+            },
+            "width": 64,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<ManualPricingColumnCellRenderer /> should render correctly when manualPriceLocked is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
+    cancelEditingManualPrice={[Function]}
+    cellData={null}
+    isEditing={false}
+    manualPriceLocked={true}
+    rowData={
+        Object {
+            "listedPrice": 12,
+          }
+    }
+    setEditingManualPrice={[Function]}
+    setManualPrice={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "align": "center",
+      "children": Array [
+        false,
+        <styled.p
+          color="#38A9DB"
+          cursor="pointer"
+          onClick={[Function]}
+          opacity={0.5}
+          size={14}
+>
+          SET PRICE
+</styled.p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "SET PRICE",
+          "color": "#38A9DB",
+          "cursor": "pointer",
+          "onClick": [Function],
+          "opacity": 0.5,
+          "size": 14,
+        },
+        "ref": null,
+        "rendered": "SET PRICE",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": Array [
+          false,
+          <styled.p
+            color="#38A9DB"
+            cursor="pointer"
+            onClick={[Function]}
+            opacity={0.5}
+            size={14}
+>
+            SET PRICE
+</styled.p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "SET PRICE",
+            "color": "#38A9DB",
+            "cursor": "pointer",
+            "onClick": [Function],
+            "opacity": 0.5,
+            "size": 14,
+          },
+          "ref": null,
+          "rendered": "SET PRICE",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<ManualPricingColumnCellRenderer /> should render correctly when the cellData has a value 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
+    cancelEditingManualPrice={[Function]}
+    cellData={12}
+    isEditing={false}
+    manualPriceLocked={false}
+    rowData={
+        Object {
+            "listedPrice": 12,
+          }
+    }
+    setEditingManualPrice={[Function]}
+    setManualPrice={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "align": "center",
+      "children": Array [
+        <styled.p
+          color="#38A9DB"
+          cursor="pointer"
+          marginLeft="1rem"
+          onClick={[Function]}
+          size={14}
+>
+          $12.00
+</styled.p>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "$12.00",
+          "color": "#38A9DB",
+          "cursor": "pointer",
+          "marginLeft": "1rem",
+          "onClick": [Function],
+          "size": 14,
+        },
+        "ref": null,
+        "rendered": "$12.00",
+        "type": [Function],
+      },
+      false,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": Array [
+          <styled.p
+            color="#38A9DB"
+            cursor="pointer"
+            marginLeft="1rem"
+            onClick={[Function]}
+            size={14}
+>
+            $12.00
+</styled.p>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "$12.00",
+            "color": "#38A9DB",
+            "cursor": "pointer",
+            "marginLeft": "1rem",
+            "onClick": [Function],
+            "size": 14,
+          },
+          "ref": null,
+          "rendered": "$12.00",
+          "type": [Function],
+        },
+        false,
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
