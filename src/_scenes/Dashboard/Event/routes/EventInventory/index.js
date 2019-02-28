@@ -25,6 +25,7 @@ import { createStructuredSelector } from 'reselect';
 
 const EventInventoryTableContainer = FlexItem.extend`
   min-height: 60%;
+  min-width: 1000px;
 `;
 
 type Props = {

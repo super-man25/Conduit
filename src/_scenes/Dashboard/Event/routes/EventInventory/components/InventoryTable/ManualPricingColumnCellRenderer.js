@@ -61,25 +61,30 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
 
     if (!isEditing) {
       const textOpacity = manualPriceLocked ? 0.5 : 1;
-      const textToDisplay = cellData !== null ? 'EDIT PRICE' : 'SET PRICE';
+      const textToDisplay = cellData !== null ? 'EDIT' : 'SET PRICE';
 
       return (
         <Flex align="center">
-          <Text
-            size={14}
-            color={cssConstants.PRIMARY_LIGHT_BLUE}
-            onClick={this.startEditingPrice}
-            opacity={textOpacity}
-          >
-            {textToDisplay}
-          </Text>
-          {cellData && (
+          {cellData !== null && (
             <Text
               size={14}
-              color={cssConstants.PRIMARY_LIGHT_BLACK}
+              color={cssConstants.PRIMARY_LIGHT_BLUE}
+              onClick={this.startEditingPrice}
               marginLeft="1rem"
+              cursor={'pointer'}
             >
               {formatUSD(cellData)}
+            </Text>
+          )}
+          {cellData === null && (
+            <Text
+              size={14}
+              color={cssConstants.PRIMARY_LIGHT_BLUE}
+              onClick={this.startEditingPrice}
+              opacity={textOpacity}
+              cursor={'pointer'}
+            >
+              {textToDisplay}
             </Text>
           )}
         </Flex>
@@ -109,8 +114,8 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
           Set Price
         </ManualPricingButton>
         <ClearIcon
-          width={16}
-          height={16}
+          width={64}
+          height={64}
           styles={{ marginLeft: 7, cursor: 'pointer' }}
           onClick={this.cancelEditingPrice}
         />

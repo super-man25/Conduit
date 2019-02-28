@@ -111,4 +111,5 @@ export const Text = withBoxModelProps(styled.p`
   margin: ${(props) => props.margin || 0};
   text-align: ${(props) => (props.center ? 'center' : '')};
   opacity: ${(props) => props.opacity};
+  cursor: ${(props) => props.cursor || 'default'};
 `);
