@@ -75,9 +75,6 @@ export class EventListItem extends React.PureComponent<Props> {
         <Flex direction="column" flex={1}>
           <Flex direction="row" justify="space-between" align="center">
             <Heading>{event.name}</Heading>
-            <P1 color={cssConstants.PRIMARY_GRAY} size="small">
-              Updated {readableDuration(event.modifiedAt)} ago
-            </P1>
           </Flex>
           <Spacing height="12px" />
           <P1 size="small">{readableDate(event.timestamp)}</P1>
