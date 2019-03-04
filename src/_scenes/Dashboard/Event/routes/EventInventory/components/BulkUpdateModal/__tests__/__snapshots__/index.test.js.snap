@@ -78,7 +78,7 @@ ShallowWrapper {
                                                               "value": 0,
                                                             },
                                                             Object {
-                                                              "label": "Update Listed Status",
+                                                              "label": "Update Pricing Status",
                                                               "value": 1,
                                                             },
                                                           ]
@@ -172,7 +172,7 @@ ShallowWrapper {
                                                                         "value": 0,
                                                                       },
                                                                       Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       },
                                                                     ]
@@ -306,7 +306,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -379,7 +379,7 @@ ShallowWrapper {
                                                                     "value": 0,
                                                                   },
                                                                   Object {
-                                                                    "label": "Update Listed Status",
+                                                                    "label": "Update Pricing Status",
                                                                     "value": 1,
                                                                   },
                                                                 ]
@@ -421,7 +421,7 @@ ShallowWrapper {
                           "value": 0,
                         },
                         Object {
-                          "label": "Update Listed Status",
+                          "label": "Update Pricing Status",
                           "value": 1,
                         },
                       ],
@@ -611,7 +611,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -705,7 +705,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -839,7 +839,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -912,7 +912,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -954,7 +954,7 @@ ShallowWrapper {
                             "value": 0,
                           },
                           Object {
-                            "label": "Update Listed Status",
+                            "label": "Update Pricing Status",
                             "value": 1,
                           },
                         ],
@@ -1205,7 +1205,7 @@ ShallowWrapper {
                                                               "value": 0,
                                                             },
                                                             Object {
-                                                              "label": "Update Listed Status",
+                                                              "label": "Update Pricing Status",
                                                               "value": 1,
                                                             },
                                                           ]
@@ -1307,7 +1307,7 @@ ShallowWrapper {
                                                                         "value": 0,
                                                                       },
                                                                       Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       },
                                                                     ]
@@ -1449,7 +1449,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -1530,7 +1530,7 @@ ShallowWrapper {
                                                                     "value": 0,
                                                                   },
                                                                   Object {
-                                                                    "label": "Update Listed Status",
+                                                                    "label": "Update Pricing Status",
                                                                     "value": 1,
                                                                   },
                                                                 ]
@@ -1572,7 +1572,7 @@ ShallowWrapper {
                           "value": 0,
                         },
                         Object {
-                          "label": "Update Listed Status",
+                          "label": "Update Pricing Status",
                           "value": 1,
                         },
                       ],
@@ -1783,7 +1783,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -1885,7 +1885,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -2027,7 +2027,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -2108,7 +2108,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -2150,7 +2150,7 @@ ShallowWrapper {
                             "value": 0,
                           },
                           Object {
-                            "label": "Update Listed Status",
+                            "label": "Update Pricing Status",
                             "value": 1,
                           },
                         ],
@@ -2422,7 +2422,7 @@ ShallowWrapper {
                                                               "value": 0,
                                                             },
                                                             Object {
-                                                              "label": "Update Listed Status",
+                                                              "label": "Update Pricing Status",
                                                               "value": 1,
                                                             },
                                                           ]
@@ -2519,7 +2519,7 @@ ShallowWrapper {
                                                                         "value": 0,
                                                                       },
                                                                       Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       },
                                                                     ]
@@ -2656,7 +2656,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -2732,7 +2732,7 @@ ShallowWrapper {
                                                                     "value": 0,
                                                                   },
                                                                   Object {
-                                                                    "label": "Update Listed Status",
+                                                                    "label": "Update Pricing Status",
                                                                     "value": 1,
                                                                   },
                                                                 ]
@@ -2774,7 +2774,7 @@ ShallowWrapper {
                           "value": 0,
                         },
                         Object {
-                          "label": "Update Listed Status",
+                          "label": "Update Pricing Status",
                           "value": 1,
                         },
                       ],
@@ -2981,7 +2981,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -3078,7 +3078,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -3215,7 +3215,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -3291,7 +3291,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -3333,7 +3333,7 @@ ShallowWrapper {
                             "value": 0,
                           },
                           Object {
-                            "label": "Update Listed Status",
+                            "label": "Update Pricing Status",
                             "value": 1,
                           },
                         ],
@@ -3601,7 +3601,7 @@ ShallowWrapper {
                                                               "value": 0,
                                                             },
                                                             Object {
-                                                              "label": "Update Listed Status",
+                                                              "label": "Update Pricing Status",
                                                               "value": 1,
                                                             },
                                                           ]
@@ -3609,7 +3609,7 @@ ShallowWrapper {
                                         placeholder="Select"
                                         selected={
                                                   Object {
-                                                            "label": "Update Listed Status",
+                                                            "label": "Update Pricing Status",
                                                             "value": 1,
                                                           }
                                         }
@@ -3619,7 +3619,7 @@ ShallowWrapper {
                               marginBottom="1.5rem"
                     >
                               <styled.label>
-                                        Listed
+                                        Pricing
                               </styled.label>
                               <Toggle
                                         isChecked=""
@@ -3693,7 +3693,7 @@ ShallowWrapper {
                                                                         "value": 0,
                                                                       },
                                                                       Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       },
                                                                     ]
@@ -3701,7 +3701,7 @@ ShallowWrapper {
                                           placeholder="Select"
                                           selected={
                                                         Object {
-                                                                      "label": "Update Listed Status",
+                                                                      "label": "Update Pricing Status",
                                                                       "value": 1,
                                                                     }
                                           }
@@ -3711,7 +3711,7 @@ ShallowWrapper {
                             marginBottom="1.5rem"
               >
                             <styled.label>
-                                          Listed
+                                          Pricing
                             </styled.label>
                             <Toggle
                                           isChecked=""
@@ -3825,7 +3825,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -3833,7 +3833,7 @@ ShallowWrapper {
                                     placeholder="Select"
                                     selected={
                                                       Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       }
                                     }
@@ -3844,7 +3844,7 @@ ShallowWrapper {
                   marginBottom="1.5rem"
 >
                   <styled.label>
-                                    Listed
+                                    Pricing
                   </styled.label>
                   <Toggle
                                     isChecked=""
@@ -3896,7 +3896,7 @@ ShallowWrapper {
                                                                     "value": 0,
                                                                   },
                                                                   Object {
-                                                                    "label": "Update Listed Status",
+                                                                    "label": "Update Pricing Status",
                                                                     "value": 1,
                                                                   },
                                                                 ]
@@ -3904,7 +3904,7 @@ ShallowWrapper {
                       placeholder="Select"
                       selected={
                                             Object {
-                                                                  "label": "Update Listed Status",
+                                                                  "label": "Update Pricing Status",
                                                                   "value": 1,
                                                                 }
                       }
@@ -3938,13 +3938,13 @@ ShallowWrapper {
                           "value": 0,
                         },
                         Object {
-                          "label": "Update Listed Status",
+                          "label": "Update Pricing Status",
                           "value": 1,
                         },
                       ],
                       "placeholder": "Select",
                       "selected": Object {
-                        "label": "Update Listed Status",
+                        "label": "Update Pricing Status",
                         "value": 1,
                       },
                     },
@@ -3963,7 +3963,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": Array [
                     <styled.label>
-                      Listed
+                      Pricing
 </styled.label>,
                     <Toggle
                       isChecked=""
@@ -3980,10 +3980,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Listed",
+                      "children": "Pricing",
                     },
                     "ref": null,
-                    "rendered": "Listed",
+                    "rendered": "Pricing",
                     "type": [Function],
                   },
                   Object {
@@ -4133,7 +4133,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -4141,7 +4141,7 @@ ShallowWrapper {
                                                 placeholder="Select"
                                                 selected={
                                                             Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       }
                                                 }
@@ -4151,7 +4151,7 @@ ShallowWrapper {
                                     marginBottom="1.5rem"
                         >
                                     <styled.label>
-                                                Listed
+                                                Pricing
                                     </styled.label>
                                     <Toggle
                                                 isChecked=""
@@ -4225,7 +4225,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -4233,7 +4233,7 @@ ShallowWrapper {
                                                 placeholder="Select"
                                                 selected={
                                                                 Object {
-                                                                                "label": "Update Listed Status",
+                                                                                "label": "Update Pricing Status",
                                                                                 "value": 1,
                                                                               }
                                                 }
@@ -4243,7 +4243,7 @@ ShallowWrapper {
                                 marginBottom="1.5rem"
                 >
                                 <styled.label>
-                                                Listed
+                                                Pricing
                                 </styled.label>
                                 <Toggle
                                                 isChecked=""
@@ -4357,7 +4357,7 @@ ShallowWrapper {
                                                                                   "value": 0,
                                                                                 },
                                                                                 Object {
-                                                                                  "label": "Update Listed Status",
+                                                                                  "label": "Update Pricing Status",
                                                                                   "value": 1,
                                                                                 },
                                                                               ]
@@ -4365,7 +4365,7 @@ ShallowWrapper {
                                         placeholder="Select"
                                         selected={
                                                             Object {
-                                                                                "label": "Update Listed Status",
+                                                                                "label": "Update Pricing Status",
                                                                                 "value": 1,
                                                                               }
                                         }
@@ -4376,7 +4376,7 @@ ShallowWrapper {
                     marginBottom="1.5rem"
 >
                     <styled.label>
-                                        Listed
+                                        Pricing
                     </styled.label>
                     <Toggle
                                         isChecked=""
@@ -4428,7 +4428,7 @@ ShallowWrapper {
                                                                           "value": 0,
                                                                         },
                                                                         Object {
-                                                                          "label": "Update Listed Status",
+                                                                          "label": "Update Pricing Status",
                                                                           "value": 1,
                                                                         },
                                                                       ]
@@ -4436,7 +4436,7 @@ ShallowWrapper {
                         placeholder="Select"
                         selected={
                                                 Object {
-                                                                        "label": "Update Listed Status",
+                                                                        "label": "Update Pricing Status",
                                                                         "value": 1,
                                                                       }
                         }
@@ -4470,13 +4470,13 @@ ShallowWrapper {
                             "value": 0,
                           },
                           Object {
-                            "label": "Update Listed Status",
+                            "label": "Update Pricing Status",
                             "value": 1,
                           },
                         ],
                         "placeholder": "Select",
                         "selected": Object {
-                          "label": "Update Listed Status",
+                          "label": "Update Pricing Status",
                           "value": 1,
                         },
                       },
@@ -4495,7 +4495,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <styled.label>
-                        Listed
+                        Pricing
 </styled.label>,
                       <Toggle
                         isChecked=""
@@ -4512,10 +4512,10 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "Listed",
+                        "children": "Pricing",
                       },
                       "ref": null,
-                      "rendered": "Listed",
+                      "rendered": "Pricing",
                       "type": [Function],
                     },
                     Object {

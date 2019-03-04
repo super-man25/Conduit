@@ -93,7 +93,7 @@ const columns = [
     }
   },
   {
-    label: 'Listed',
+    label: 'Pricing',
     width: 0,
     dataKey: 'isListed',
     flexGrow: 10,

@@ -182,9 +182,15 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
       setBroadcasting,
       event: { id }
     } = this.props;
+
     const { checked } = e.target;
 
-    setBroadcasting(id, checked);
+    const verb = checked ? 'enable' : 'disable';
+    const msg = `Are you sure you want to ${verb} pricing for this event?`;
+
+    if (window.confirm(msg)) {
+      setBroadcasting(id, checked);
+    }
   };
 
   render() {
@@ -211,12 +217,12 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
                   <Toggle
                     isChecked={isBroadcast}
                     onChange={this.toggleIsBroadcasting}
-                    isDisabled={false}
+                    isDisabled={togglingBroadcasting}
                     size="small"
-                    title={`Toggle Integrations ${isBroadcast ? 'Off' : 'On'}`}
+                    title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
                   />
                   {togglingBroadcasting && (
-                    <Text marginLeft="1.5rem">Toggling Broadcasting</Text>
+                    <Text marginLeft="1.5rem">Saving...</Text>
                   )}
                 </Flex>
                 <EDLink to="/settings/team">MANAGE ALL</EDLink>

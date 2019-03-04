@@ -35,7 +35,7 @@ const ACTIONS = {
 
 export const selectActions = [
   { label: 'Update Manual Price', value: ACTIONS.updatePrice },
-  { label: 'Update Listed Status', value: ACTIONS.updateListed }
+  { label: 'Update Pricing Status', value: ACTIONS.updateListed }
 ];
 
 export class BulkUpdateModalPresenter extends React.Component {
@@ -182,7 +182,7 @@ export class BulkUpdateModalPresenter extends React.Component {
             )}
             {selectedAction.value === ACTIONS.updateListed && (
               <Field marginBottom="1.5rem">
-                <Label>Listed</Label>
+                <Label>Pricing</Label>
                 <Toggle
                   isChecked={value}
                   onChange={this.updateIsListed}
