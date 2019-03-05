@@ -36,7 +36,7 @@ export function WeatherFeatureGroup({
 
         <Spacing margin="1rem" />
 
-        <Flex direction="column" flexBasis={'50%'}>
+        <Flex direction="column" flexBasis={'50%'} style={{ display: 'none' }}>
           <FeatureInputLabel style={{ marginBottom: '23px' }}>
             Temperature
             <span
