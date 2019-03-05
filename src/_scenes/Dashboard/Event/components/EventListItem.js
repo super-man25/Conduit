@@ -13,11 +13,14 @@ import { formatNumber } from '_helpers/string-utils';
 const Heading = H4.extend`
   margin: 0;
   padding: 0;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: box;
   padding: 16px 16px 16px 40px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   background-color: ${(props) =>
@@ -74,7 +77,7 @@ export class EventListItem extends React.PureComponent<Props> {
       >
         <Flex direction="column" flex={1}>
           <Flex direction="row" justify="space-between" align="center">
-            <Heading>{event.name}</Heading>
+            <Heading title={event.name}>{event.name}</Heading>
           </Flex>
           <Spacing height="12px" />
           <P1 size="small">{readableDate(event.timestamp)}</P1>
