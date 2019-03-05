@@ -92,7 +92,7 @@ export function EventHeader(props: Props) {
       </Flex>
       <Spacing height="1.5rem" />
       <Flex justify="space-between" align="flex-start">
-        <FlexItem flex="0 0 auto" margin="0 auto 0 0">
+        <FlexItem flex="1" margin="0 20px 0 0">
           <EventTitle>{name}</EventTitle>
           <EventDate>{format(timestamp, DATE_FORMAT)}</EventDate>
           {!isViewingInventory && (

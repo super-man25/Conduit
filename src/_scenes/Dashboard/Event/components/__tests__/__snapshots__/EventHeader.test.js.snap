@@ -66,8 +66,8 @@ ShallowWrapper {
           justify="space-between"
 >
           <FlexItem
-                    flex="0 0 auto"
-                    margin="0 auto 0 0"
+                    flex="1"
+                    margin="0 20px 0 0"
           >
                     <styled.h1>
                               Some Event
@@ -195,8 +195,8 @@ ShallowWrapper {
           "align": "flex-start",
           "children": Array [
             <FlexItem
-              flex="0 0 auto"
-              margin="0 auto 0 0"
+              flex="1"
+              margin="0 20px 0 0"
 >
               <styled.h1>
                             Some Event
@@ -261,8 +261,8 @@ ShallowWrapper {
                   </styled.span>
 </Styled(Link)>,
               ],
-              "flex": "0 0 auto",
-              "margin": "0 auto 0 0",
+              "flex": "1",
+              "margin": "0 20px 0 0",
             },
             "ref": null,
             "rendered": Array [
@@ -429,8 +429,8 @@ ShallowWrapper {
             justify="space-between"
 >
             <FlexItem
-                        flex="0 0 auto"
-                        margin="0 auto 0 0"
+                        flex="1"
+                        margin="0 20px 0 0"
             >
                         <styled.h1>
                                     Some Event
@@ -558,8 +558,8 @@ ShallowWrapper {
             "align": "flex-start",
             "children": Array [
               <FlexItem
-                flex="0 0 auto"
-                margin="0 auto 0 0"
+                flex="1"
+                margin="0 20px 0 0"
 >
                 <styled.h1>
                                 Some Event
@@ -624,8 +624,8 @@ ShallowWrapper {
                     </styled.span>
 </Styled(Link)>,
                 ],
-                "flex": "0 0 auto",
-                "margin": "0 auto 0 0",
+                "flex": "1",
+                "margin": "0 20px 0 0",
               },
               "ref": null,
               "rendered": Array [
@@ -845,8 +845,8 @@ ShallowWrapper {
           justify="space-between"
 >
           <FlexItem
-                    flex="0 0 auto"
-                    margin="0 auto 0 0"
+                    flex="1"
+                    margin="0 20px 0 0"
           >
                     <styled.h1>
                               Some Event
@@ -973,8 +973,8 @@ ShallowWrapper {
           "align": "flex-start",
           "children": Array [
             <FlexItem
-              flex="0 0 auto"
-              margin="0 auto 0 0"
+              flex="1"
+              margin="0 20px 0 0"
 >
               <styled.h1>
                             Some Event
@@ -1022,8 +1022,8 @@ ShallowWrapper {
 </styled.h4>,
                 false,
               ],
-              "flex": "0 0 auto",
-              "margin": "0 auto 0 0",
+              "flex": "1",
+              "margin": "0 20px 0 0",
             },
             "ref": null,
             "rendered": Array [
@@ -1168,8 +1168,8 @@ ShallowWrapper {
             justify="space-between"
 >
             <FlexItem
-                        flex="0 0 auto"
-                        margin="0 auto 0 0"
+                        flex="1"
+                        margin="0 20px 0 0"
             >
                         <styled.h1>
                                     Some Event
@@ -1296,8 +1296,8 @@ ShallowWrapper {
             "align": "flex-start",
             "children": Array [
               <FlexItem
-                flex="0 0 auto"
-                margin="0 auto 0 0"
+                flex="1"
+                margin="0 20px 0 0"
 >
                 <styled.h1>
                                 Some Event
@@ -1345,8 +1345,8 @@ ShallowWrapper {
 </styled.h4>,
                   false,
                 ],
-                "flex": "0 0 auto",
-                "margin": "0 auto 0 0",
+                "flex": "1",
+                "margin": "0 20px 0 0",
               },
               "ref": null,
               "rendered": Array [
