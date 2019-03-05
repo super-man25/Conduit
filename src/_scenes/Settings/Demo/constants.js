@@ -10,18 +10,6 @@ export const WEATHER_CONDITIONS = [
   {
     title: 'Cloudy',
     key: 'clouds'
-  },
-  {
-    title: 'Heavy Clouds',
-    key: 'clouds_heavy'
-  },
-  {
-    title: 'Light Rain',
-    key: 'rain_light'
-  },
-  {
-    title: 'Rain',
-    key: 'rain'
   }
 ];
 
