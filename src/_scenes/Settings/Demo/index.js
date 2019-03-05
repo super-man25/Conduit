@@ -108,7 +108,7 @@ class DemoRoute extends React.Component<Props, State> {
   updateTemperature = (feature) => (event) => {
     let context = { ...this.state.context };
     context['temp'] = event.temperature;
-    this.setState({ context }, this.onDropdownChange('event_month')(event));
+    this.setState({ context }, () => this.onDropdownChange(feature)(event));
   };
 
   debounceFetchPrices = AwesomeDebouncePromise(
@@ -172,7 +172,7 @@ class DemoRoute extends React.Component<Props, State> {
                   )}
                   optionsMonth={MONTHS}
                   optionsDay={DAYS_OF_WEEK}
-                  onMonthDropdownChange={this.updateTemperature()}
+                  onMonthDropdownChange={this.updateTemperature('event_month')}
                   onDayDropdownChange={this.onDropdownChange(
                     'event_day_of_week'
                   )}
