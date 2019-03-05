@@ -12,14 +12,13 @@ const secondaryPriceRuleSchema = yup.object({
     .number()
     .integer()
     .nullable()
-    .min(0)
+    .min(-100)
     .max(100)
     .label('Percent change'),
   constant: yup
     .number()
     .money()
     .nullable()
-    .min(0)
     .label('Dollar change')
 });
 
