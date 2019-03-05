@@ -35,7 +35,9 @@ export class SeatMapPresenter extends React.Component {
           (item) => item.sectionRef === sectionRef
         );
         this.setSelectedScaleFilters(elMappedToSeatMap.priceScaleId);
-      }
+      },
+      // TODO: Add logic here to make SVG clickable by section rather than price scale
+      clickable: false
     });
   };
 
