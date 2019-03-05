@@ -59,11 +59,6 @@ export function Integration(props: Props) {
           <Toggle isChecked={isActive} isDisabled onChange={onChange} />
         </ToggleContainer>
       </Details>
-      {!isPrimary && (
-        <Flex>
-          <SecondaryPricingRule {...props} />
-        </Flex>
-      )}
     </Card>
   );
 }
