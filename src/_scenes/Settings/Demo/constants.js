@@ -16,27 +16,33 @@ export const WEATHER_CONDITIONS = [
 export const MONTHS = [
   {
     title: 'April',
-    key: 4
+    key: 4,
+    temperature: 58
   },
   {
     title: 'May',
-    key: 5
+    key: 5,
+    temperature: 68
   },
   {
     title: 'June',
-    key: 6
+    key: 6,
+    temperature: 77
   },
   {
     title: 'July',
-    key: 7
+    key: 7,
+    temperature: 83
   },
   {
     title: 'August',
-    key: 8
+    key: 8,
+    temperature: 81
   },
   {
     title: 'September',
-    key: 9
+    key: 9,
+    temperature: 74
   }
 ];
 
@@ -83,10 +89,6 @@ export const OPPONENTS = [
   {
     title: 'Average',
     key: 0
-  },
-  {
-    title: 'Boring',
-    key: -10
   }
 ];
 
