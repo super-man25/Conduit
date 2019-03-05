@@ -14,7 +14,8 @@ import {
  *    onInit: (chartInstance, svgChartElements, mapping) => void,
  *    onMouseover: (clickedElement, elementsInMapping, allElements, mapping) => void
  *    onMouseout: (clickedElement, elementsInMapping, allElements, mapping) => void,
- *    onClick: (clickedElement, elementsInMapping, allElements, mapping) => void
+ *    onClick: (clickedElement, elementsInMapping, allElements, mapping) => void,
+ *    clickable: boolean
  * }
  */
 export class SVGChart {
@@ -69,8 +70,12 @@ export class SVGChart {
   }
 
   elementMouseoverCallback = (el) => {
-    const { elements, mapping } = this;
+    const { elements, mapping, clickable } = this;
+
+    if (!clickable) return;
+
     const elementsInMapping = findElementsInMapping(el, elements, mapping);
+
     elementsInMapping.forEach((el) => el.highlight());
     if (this.onMouseover)
       this.onMouseover(el, elementsInMapping, elements, mapping);
@@ -79,7 +84,10 @@ export class SVGChart {
   };
 
   elementMouseoutCallback = (el) => {
-    const { elements, mapping } = this;
+    const { elements, mapping, clickable } = this;
+
+    if (!clickable) return;
+
     const elementsInMapping = findElementsInMapping(el, elements, mapping);
     elementsInMapping.forEach((el) => el.unhighlight());
     if (this.onMouseout)
@@ -89,7 +97,10 @@ export class SVGChart {
   };
 
   elementClickedCallback = (el, event) => {
-    const { elements, mapping } = this;
+    const { elements, mapping, clickable } = this;
+
+    if (!clickable) return;
+
     const elementsInMapping = findElementsInMapping(el, elements, mapping);
     if (this.onClick) this.onClick(el, elementsInMapping, elements, mapping);
 
