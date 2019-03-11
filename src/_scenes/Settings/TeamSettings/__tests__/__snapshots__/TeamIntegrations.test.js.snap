@@ -4,27 +4,27 @@ exports[`<TeamIntegrations /> render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TeamIntegrations
-    handleIntegrationToggle={[Function]}
-    handleSecondaryPriceRuleUpdate={[Function]}
+    handleIntegrationToggle={[MockFunction]}
+    handleSecondaryPriceRuleUpdate={[MockFunction]}
     primary={
-        Array [
-            Object {
-              "isActive": true,
-              "isPrimary": true,
-              "name": "tickets.com",
-            },
-          ]
+      Array [
+        Object {
+          "isActive": true,
+          "isPrimary": true,
+          "name": "tickets.com",
+        },
+      ]
     }
     secondary={
-        Array [
-            Object {
-              "isActive": true,
-              "isPrimary": false,
-              "name": "seatgeek.com",
-            },
-          ]
+      Array [
+        Object {
+          "isActive": true,
+          "isPrimary": false,
+          "name": "seatgeek.com",
+        },
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -42,51 +42,51 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.h5
-                    type="secondary"
+            type="secondary"
           >
-                    Integrations
+            Integrations
           </styled.h5>
-          <Unknown>
-                    <styled.span
-                              weight="300"
-                    >
-                              <i>
-                                        Primary Integration
-                              </i>
-                    </styled.span>
-                    <styled.hr />
-                    <styled.div>
-                              <Integration
-                                        isActive={true}
-                                        isPrimary={true}
-                                        name="tickets.com"
-                                        onChange={[Function]}
-                              />
-                    </styled.div>
-          </Unknown>
-</styled.div>,
+          <React.Fragment>
+            <styled.span
+              weight="300"
+            >
+              <i>
+                Primary Integration
+              </i>
+            </styled.span>
+            <styled.hr />
+            <styled.div>
+              <Integration
+                isActive={true}
+                isPrimary={true}
+                name="tickets.com"
+                onChange={[Function]}
+              />
+            </styled.div>
+          </React.Fragment>
+        </styled.div>,
         <styled.div
           marginTop="4rem"
->
-          <Unknown>
-                    <styled.span
-                              weight="300"
-                    >
-                              <i>
-                                        Secondary Integrations
-                              </i>
-                    </styled.span>
-                    <styled.hr />
-                    <styled.div>
-                              <Integration
-                                        isActive={true}
-                                        isPrimary={false}
-                                        name="seatgeek.com"
-                                        onChange={[Function]}
-                              />
-                    </styled.div>
-          </Unknown>
-</styled.div>,
+        >
+          <React.Fragment>
+            <styled.span
+              weight="300"
+            >
+              <i>
+                Secondary Integrations
+              </i>
+            </styled.span>
+            <styled.hr />
+            <styled.div>
+              <Integration
+                isActive={true}
+                isPrimary={false}
+                name="seatgeek.com"
+                onChange={[Function]}
+              />
+            </styled.div>
+          </React.Fragment>
+        </styled.div>,
         null,
       ],
     },
@@ -100,27 +100,27 @@ ShallowWrapper {
           "children": Array [
             <styled.h5
               type="secondary"
->
+            >
               Integrations
-</styled.h5>,
-            <Unknown>
+            </styled.h5>,
+            <React.Fragment>
               <styled.span
-                            weight="300"
+                weight="300"
               >
-                            <i>
-                                          Primary Integration
-                            </i>
+                <i>
+                  Primary Integration
+                </i>
               </styled.span>
               <styled.hr />
               <styled.div>
-                            <Integration
-                                          isActive={true}
-                                          isPrimary={true}
-                                          name="tickets.com"
-                                          onChange={[Function]}
-                            />
+                <Integration
+                  isActive={true}
+                  isPrimary={true}
+                  name="tickets.com"
+                  onChange={[Function]}
+                />
               </styled.div>
-</Unknown>,
+            </React.Fragment>,
           ],
         },
         "ref": null,
@@ -145,20 +145,20 @@ ShallowWrapper {
               "children": Array [
                 <styled.span
                   weight="300"
->
+                >
                   <i>
-                                    Primary Integration
+                    Primary Integration
                   </i>
-</styled.span>,
+                </styled.span>,
                 <styled.hr />,
                 <styled.div>
                   <Integration
-                                    isActive={true}
-                                    isPrimary={true}
-                                    name="tickets.com"
-                                    onChange={[Function]}
+                    isActive={true}
+                    isPrimary={true}
+                    name="tickets.com"
+                    onChange={[Function]}
                   />
-</styled.div>,
+                </styled.div>,
               ],
             },
             "ref": null,
@@ -170,7 +170,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <i>
                     Primary Integration
-</i>,
+                  </i>,
                   "weight": "300",
                 },
                 "ref": null,
@@ -207,7 +207,7 @@ ShallowWrapper {
                       isPrimary={true}
                       name="tickets.com"
                       onChange={[Function]}
-/>,
+                    />,
                   ],
                 },
                 "ref": null,
@@ -240,24 +240,24 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Unknown>
+          "children": <React.Fragment>
             <styled.span
-                        weight="300"
+              weight="300"
             >
-                        <i>
-                                    Secondary Integrations
-                        </i>
+              <i>
+                Secondary Integrations
+              </i>
             </styled.span>
             <styled.hr />
             <styled.div>
-                        <Integration
-                                    isActive={true}
-                                    isPrimary={false}
-                                    name="seatgeek.com"
-                                    onChange={[Function]}
-                        />
+              <Integration
+                isActive={true}
+                isPrimary={false}
+                name="seatgeek.com"
+                onChange={[Function]}
+              />
             </styled.div>
-</Unknown>,
+          </React.Fragment>,
           "marginTop": "4rem",
         },
         "ref": null,
@@ -269,20 +269,20 @@ ShallowWrapper {
             "children": Array [
               <styled.span
                 weight="300"
->
+              >
                 <i>
-                                Secondary Integrations
+                  Secondary Integrations
                 </i>
-</styled.span>,
+              </styled.span>,
               <styled.hr />,
               <styled.div>
                 <Integration
-                                isActive={true}
-                                isPrimary={false}
-                                name="seatgeek.com"
-                                onChange={[Function]}
+                  isActive={true}
+                  isPrimary={false}
+                  name="seatgeek.com"
+                  onChange={[Function]}
                 />
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -294,7 +294,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <i>
                   Secondary Integrations
-</i>,
+                </i>,
                 "weight": "300",
               },
               "ref": null,
@@ -331,7 +331,7 @@ ShallowWrapper {
                     isPrimary={false}
                     name="seatgeek.com"
                     onChange={[Function]}
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -371,51 +371,51 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.h5
-                        type="secondary"
+              type="secondary"
             >
-                        Integrations
+              Integrations
             </styled.h5>
-            <Unknown>
-                        <styled.span
-                                    weight="300"
-                        >
-                                    <i>
-                                                Primary Integration
-                                    </i>
-                        </styled.span>
-                        <styled.hr />
-                        <styled.div>
-                                    <Integration
-                                                isActive={true}
-                                                isPrimary={true}
-                                                name="tickets.com"
-                                                onChange={[Function]}
-                                    />
-                        </styled.div>
-            </Unknown>
-</styled.div>,
+            <React.Fragment>
+              <styled.span
+                weight="300"
+              >
+                <i>
+                  Primary Integration
+                </i>
+              </styled.span>
+              <styled.hr />
+              <styled.div>
+                <Integration
+                  isActive={true}
+                  isPrimary={true}
+                  name="tickets.com"
+                  onChange={[Function]}
+                />
+              </styled.div>
+            </React.Fragment>
+          </styled.div>,
           <styled.div
             marginTop="4rem"
->
-            <Unknown>
-                        <styled.span
-                                    weight="300"
-                        >
-                                    <i>
-                                                Secondary Integrations
-                                    </i>
-                        </styled.span>
-                        <styled.hr />
-                        <styled.div>
-                                    <Integration
-                                                isActive={true}
-                                                isPrimary={false}
-                                                name="seatgeek.com"
-                                                onChange={[Function]}
-                                    />
-                        </styled.div>
-            </Unknown>
-</styled.div>,
+          >
+            <React.Fragment>
+              <styled.span
+                weight="300"
+              >
+                <i>
+                  Secondary Integrations
+                </i>
+              </styled.span>
+              <styled.hr />
+              <styled.div>
+                <Integration
+                  isActive={true}
+                  isPrimary={false}
+                  name="seatgeek.com"
+                  onChange={[Function]}
+                />
+              </styled.div>
+            </React.Fragment>
+          </styled.div>,
           null,
         ],
       },
@@ -429,27 +429,27 @@ ShallowWrapper {
             "children": Array [
               <styled.h5
                 type="secondary"
->
+              >
                 Integrations
-</styled.h5>,
-              <Unknown>
+              </styled.h5>,
+              <React.Fragment>
                 <styled.span
-                                weight="300"
+                  weight="300"
                 >
-                                <i>
-                                                Primary Integration
-                                </i>
+                  <i>
+                    Primary Integration
+                  </i>
                 </styled.span>
                 <styled.hr />
                 <styled.div>
-                                <Integration
-                                                isActive={true}
-                                                isPrimary={true}
-                                                name="tickets.com"
-                                                onChange={[Function]}
-                                />
+                  <Integration
+                    isActive={true}
+                    isPrimary={true}
+                    name="tickets.com"
+                    onChange={[Function]}
+                  />
                 </styled.div>
-</Unknown>,
+              </React.Fragment>,
             ],
           },
           "ref": null,
@@ -474,20 +474,20 @@ ShallowWrapper {
                 "children": Array [
                   <styled.span
                     weight="300"
->
+                  >
                     <i>
-                                        Primary Integration
+                      Primary Integration
                     </i>
-</styled.span>,
+                  </styled.span>,
                   <styled.hr />,
                   <styled.div>
                     <Integration
-                                        isActive={true}
-                                        isPrimary={true}
-                                        name="tickets.com"
-                                        onChange={[Function]}
+                      isActive={true}
+                      isPrimary={true}
+                      name="tickets.com"
+                      onChange={[Function]}
                     />
-</styled.div>,
+                  </styled.div>,
                 ],
               },
               "ref": null,
@@ -499,7 +499,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <i>
                       Primary Integration
-</i>,
+                    </i>,
                     "weight": "300",
                   },
                   "ref": null,
@@ -536,7 +536,7 @@ ShallowWrapper {
                         isPrimary={true}
                         name="tickets.com"
                         onChange={[Function]}
-/>,
+                      />,
                     ],
                   },
                   "ref": null,
@@ -569,24 +569,24 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Unknown>
+            "children": <React.Fragment>
               <styled.span
-                            weight="300"
+                weight="300"
               >
-                            <i>
-                                          Secondary Integrations
-                            </i>
+                <i>
+                  Secondary Integrations
+                </i>
               </styled.span>
               <styled.hr />
               <styled.div>
-                            <Integration
-                                          isActive={true}
-                                          isPrimary={false}
-                                          name="seatgeek.com"
-                                          onChange={[Function]}
-                            />
+                <Integration
+                  isActive={true}
+                  isPrimary={false}
+                  name="seatgeek.com"
+                  onChange={[Function]}
+                />
               </styled.div>
-</Unknown>,
+            </React.Fragment>,
             "marginTop": "4rem",
           },
           "ref": null,
@@ -598,20 +598,20 @@ ShallowWrapper {
               "children": Array [
                 <styled.span
                   weight="300"
->
+                >
                   <i>
-                                    Secondary Integrations
+                    Secondary Integrations
                   </i>
-</styled.span>,
+                </styled.span>,
                 <styled.hr />,
                 <styled.div>
                   <Integration
-                                    isActive={true}
-                                    isPrimary={false}
-                                    name="seatgeek.com"
-                                    onChange={[Function]}
+                    isActive={true}
+                    isPrimary={false}
+                    name="seatgeek.com"
+                    onChange={[Function]}
                   />
-</styled.div>,
+                </styled.div>,
               ],
             },
             "ref": null,
@@ -623,7 +623,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <i>
                     Secondary Integrations
-</i>,
+                  </i>,
                   "weight": "300",
                 },
                 "ref": null,
@@ -660,7 +660,7 @@ ShallowWrapper {
                       isPrimary={false}
                       name="seatgeek.com"
                       onChange={[Function]}
-/>,
+                    />,
                   ],
                 },
                 "ref": null,

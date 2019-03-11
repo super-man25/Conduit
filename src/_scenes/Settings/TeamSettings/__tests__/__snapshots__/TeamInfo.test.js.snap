@@ -7,10 +7,10 @@ ShallowWrapper {
     id={1}
     name="New York Mets"
     pricingInterval={15}
-    resetDirtyPricingInterval={[Function]}
-    setPricingInterval={[Function]}
-    update={[Function]}
-/>,
+    resetDirtyPricingInterval={[MockFunction]}
+    setPricingInterval={[MockFunction]}
+    update={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -28,48 +28,48 @@ ShallowWrapper {
       "children": Array [
         <styled.h5
           type="secondary"
->
+        >
           Basic Settings
-</styled.h5>,
+        </styled.h5>,
         <styled.div
           cols={3}
->
+        >
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    Team
+            Team
           </styled.div>
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    New York Mets
+            New York Mets
           </styled.div>
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           />
-</styled.div>,
+        </styled.div>,
         <withClickAway(styled.div)
           cols={3}
           onClickAway={[Function]}
->
+        >
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    Generate pricing updates every
+            Generate pricing updates every
           </styled.div>
-          <Unknown>
-                    <styled.div
-                              margin="1rem 0"
-                              size="large"
-                    >
-                              15 Minutes
-                    </styled.div>
-          </Unknown>
-</withClickAway(styled.div)>,
+          <React.Fragment>
+            <styled.div
+              margin="1rem 0"
+              size="large"
+            >
+              15 Minutes
+            </styled.div>
+          </React.Fragment>
+        </withClickAway(styled.div)>,
       ],
     },
     "ref": null,
@@ -95,19 +95,19 @@ ShallowWrapper {
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               Team
-</styled.div>,
+            </styled.div>,
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               New York Mets
-</styled.div>,
+            </styled.div>,
             <styled.div
               margin="1rem 0"
               size="large"
-/>,
+            />,
           ],
           "cols": 3,
         },
@@ -163,17 +163,17 @@ ShallowWrapper {
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               Generate pricing updates every
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.div
-                            margin="1rem 0"
-                            size="large"
+                margin="1rem 0"
+                size="large"
               >
-                            15 Minutes
+                15 Minutes
               </styled.div>
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "onClickAway": [Function],
@@ -201,9 +201,9 @@ ShallowWrapper {
               "children": <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 15 Minutes
-</styled.div>,
+              </styled.div>,
             },
             "ref": null,
             "rendered": Object {
@@ -236,48 +236,48 @@ ShallowWrapper {
         "children": Array [
           <styled.h5
             type="secondary"
->
+          >
             Basic Settings
-</styled.h5>,
+          </styled.h5>,
           <styled.div
             cols={3}
->
+          >
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        Team
+              Team
             </styled.div>
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        New York Mets
+              New York Mets
             </styled.div>
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             />
-</styled.div>,
+          </styled.div>,
           <withClickAway(styled.div)
             cols={3}
             onClickAway={[Function]}
->
+          >
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        Generate pricing updates every
+              Generate pricing updates every
             </styled.div>
-            <Unknown>
-                        <styled.div
-                                    margin="1rem 0"
-                                    size="large"
-                        >
-                                    15 Minutes
-                        </styled.div>
-            </Unknown>
-</withClickAway(styled.div)>,
+            <React.Fragment>
+              <styled.div
+                margin="1rem 0"
+                size="large"
+              >
+                15 Minutes
+              </styled.div>
+            </React.Fragment>
+          </withClickAway(styled.div)>,
         ],
       },
       "ref": null,
@@ -303,19 +303,19 @@ ShallowWrapper {
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 Team
-</styled.div>,
+              </styled.div>,
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 New York Mets
-</styled.div>,
+              </styled.div>,
               <styled.div
                 margin="1rem 0"
                 size="large"
-/>,
+              />,
             ],
             "cols": 3,
           },
@@ -371,17 +371,17 @@ ShallowWrapper {
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 Generate pricing updates every
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.div
-                                margin="1rem 0"
-                                size="large"
+                  margin="1rem 0"
+                  size="large"
                 >
-                                15 Minutes
+                  15 Minutes
                 </styled.div>
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "onClickAway": [Function],
@@ -409,9 +409,9 @@ ShallowWrapper {
                 "children": <styled.div
                   margin="1rem 0"
                   size="large"
->
+                >
                   15 Minutes
-</styled.div>,
+                </styled.div>,
               },
               "ref": null,
               "rendered": Object {
@@ -468,10 +468,10 @@ ShallowWrapper {
     id={1}
     name="New York Mets"
     pricingInterval={15}
-    resetDirtyPricingInterval={[Function]}
-    setPricingInterval={[Function]}
-    update={[Function]}
-/>,
+    resetDirtyPricingInterval={[MockFunction]}
+    setPricingInterval={[MockFunction]}
+    update={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -489,81 +489,80 @@ ShallowWrapper {
       "children": Array [
         <styled.h5
           type="secondary"
->
+        >
           Basic Settings
-</styled.h5>,
+        </styled.h5>,
         <styled.div
           cols={3}
->
+        >
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    Team
+            Team
           </styled.div>
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    New York Mets
+            New York Mets
           </styled.div>
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           />
-</styled.div>,
+        </styled.div>,
         <withClickAway(styled.div)
           cols={3}
           onClickAway={[Function]}
->
+        >
           <styled.div
-                    margin="1rem 0"
-                    size="large"
+            margin="1rem 0"
+            size="large"
           >
-                    Generate pricing updates every
+            Generate pricing updates every
           </styled.div>
-          <Unknown>
-                    <styled.select
-                              noBg={true}
-                              onChange={[Function]}
-                              size="large"
-                              value={undefined}
-                    >
-                              <option
-                                        value={15}
-                              >
-                                        15 minutes
-                              </option>
-                              <option
-                                        value={30}
-                              >
-                                        30 minutes
-                              </option>
-                              <option
-                                        value={60}
-                              >
-                                        1 hour
-                              </option>
-                              <option
-                                        value={360}
-                              >
-                                        6 hours
-                              </option>
-                              <option
-                                        value={1440}
-                              >
-                                        Daily
-                              </option>
-                    </styled.select>
-                    <styled.div>
-                              <styled.button
-                                        onClick={[Function]}
-                              >
-                                        Save
-                              </styled.button>
-                    </styled.div>
-          </Unknown>
-</withClickAway(styled.div)>,
+          <React.Fragment>
+            <styled.select
+              noBg={true}
+              onChange={[Function]}
+              size="large"
+            >
+              <option
+                value={15}
+              >
+                15 minutes
+              </option>
+              <option
+                value={30}
+              >
+                30 minutes
+              </option>
+              <option
+                value={60}
+              >
+                1 hour
+              </option>
+              <option
+                value={360}
+              >
+                6 hours
+              </option>
+              <option
+                value={1440}
+              >
+                Daily
+              </option>
+            </styled.select>
+            <styled.div>
+              <styled.button
+                onClick={[Function]}
+              >
+                Save
+              </styled.button>
+            </styled.div>
+          </React.Fragment>
+        </withClickAway(styled.div)>,
       ],
     },
     "ref": null,
@@ -589,19 +588,19 @@ ShallowWrapper {
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               Team
-</styled.div>,
+            </styled.div>,
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               New York Mets
-</styled.div>,
+            </styled.div>,
             <styled.div
               margin="1rem 0"
               size="large"
-/>,
+            />,
           ],
           "cols": 3,
         },
@@ -657,50 +656,49 @@ ShallowWrapper {
             <styled.div
               margin="1rem 0"
               size="large"
->
+            >
               Generate pricing updates every
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.select
-                            noBg={true}
-                            onChange={[Function]}
-                            size="large"
-                            value={undefined}
+                noBg={true}
+                onChange={[Function]}
+                size="large"
               >
-                            <option
-                                          value={15}
-                            >
-                                          15 minutes
-                            </option>
-                            <option
-                                          value={30}
-                            >
-                                          30 minutes
-                            </option>
-                            <option
-                                          value={60}
-                            >
-                                          1 hour
-                            </option>
-                            <option
-                                          value={360}
-                            >
-                                          6 hours
-                            </option>
-                            <option
-                                          value={1440}
-                            >
-                                          Daily
-                            </option>
+                <option
+                  value={15}
+                >
+                  15 minutes
+                </option>
+                <option
+                  value={30}
+                >
+                  30 minutes
+                </option>
+                <option
+                  value={60}
+                >
+                  1 hour
+                </option>
+                <option
+                  value={360}
+                >
+                  6 hours
+                </option>
+                <option
+                  value={1440}
+                >
+                  Daily
+                </option>
               </styled.select>
               <styled.div>
-                            <styled.button
-                                          onClick={[Function]}
-                            >
-                                          Save
-                            </styled.button>
+                <styled.button
+                  onClick={[Function]}
+                >
+                  Save
+                </styled.button>
               </styled.div>
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "onClickAway": [Function],
@@ -730,41 +728,40 @@ ShallowWrapper {
                   noBg={true}
                   onChange={[Function]}
                   size="large"
-                  value={undefined}
->
+                >
                   <option
-                                    value={15}
+                    value={15}
                   >
-                                    15 minutes
+                    15 minutes
                   </option>
                   <option
-                                    value={30}
+                    value={30}
                   >
-                                    30 minutes
+                    30 minutes
                   </option>
                   <option
-                                    value={60}
+                    value={60}
                   >
-                                    1 hour
+                    1 hour
                   </option>
                   <option
-                                    value={360}
+                    value={360}
                   >
-                                    6 hours
+                    6 hours
                   </option>
                   <option
-                                    value={1440}
+                    value={1440}
                   >
-                                    Daily
+                    Daily
                   </option>
-</styled.select>,
+                </styled.select>,
                 <styled.div>
                   <styled.button
-                                    onClick={[Function]}
+                    onClick={[Function]}
                   >
-                                    Save
+                    Save
                   </styled.button>
-</styled.div>,
+                </styled.div>,
               ],
             },
             "ref": null,
@@ -777,29 +774,29 @@ ShallowWrapper {
                   "children": Array [
                     <option
                       value={15}
->
+                    >
                       15 minutes
-</option>,
+                    </option>,
                     <option
                       value={30}
->
+                    >
                       30 minutes
-</option>,
+                    </option>,
                     <option
                       value={60}
->
+                    >
                       1 hour
-</option>,
+                    </option>,
                     <option
                       value={360}
->
+                    >
                       6 hours
-</option>,
+                    </option>,
                     <option
                       value={1440}
->
+                    >
                       Daily
-</option>,
+                    </option>,
                   ],
                   "noBg": true,
                   "onChange": [Function],
@@ -878,9 +875,9 @@ ShallowWrapper {
                 "props": Object {
                   "children": <styled.button
                     onClick={[Function]}
->
+                  >
                     Save
-</styled.button>,
+                  </styled.button>,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -915,81 +912,80 @@ ShallowWrapper {
         "children": Array [
           <styled.h5
             type="secondary"
->
+          >
             Basic Settings
-</styled.h5>,
+          </styled.h5>,
           <styled.div
             cols={3}
->
+          >
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        Team
+              Team
             </styled.div>
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        New York Mets
+              New York Mets
             </styled.div>
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             />
-</styled.div>,
+          </styled.div>,
           <withClickAway(styled.div)
             cols={3}
             onClickAway={[Function]}
->
+          >
             <styled.div
-                        margin="1rem 0"
-                        size="large"
+              margin="1rem 0"
+              size="large"
             >
-                        Generate pricing updates every
+              Generate pricing updates every
             </styled.div>
-            <Unknown>
-                        <styled.select
-                                    noBg={true}
-                                    onChange={[Function]}
-                                    size="large"
-                                    value={undefined}
-                        >
-                                    <option
-                                                value={15}
-                                    >
-                                                15 minutes
-                                    </option>
-                                    <option
-                                                value={30}
-                                    >
-                                                30 minutes
-                                    </option>
-                                    <option
-                                                value={60}
-                                    >
-                                                1 hour
-                                    </option>
-                                    <option
-                                                value={360}
-                                    >
-                                                6 hours
-                                    </option>
-                                    <option
-                                                value={1440}
-                                    >
-                                                Daily
-                                    </option>
-                        </styled.select>
-                        <styled.div>
-                                    <styled.button
-                                                onClick={[Function]}
-                                    >
-                                                Save
-                                    </styled.button>
-                        </styled.div>
-            </Unknown>
-</withClickAway(styled.div)>,
+            <React.Fragment>
+              <styled.select
+                noBg={true}
+                onChange={[Function]}
+                size="large"
+              >
+                <option
+                  value={15}
+                >
+                  15 minutes
+                </option>
+                <option
+                  value={30}
+                >
+                  30 minutes
+                </option>
+                <option
+                  value={60}
+                >
+                  1 hour
+                </option>
+                <option
+                  value={360}
+                >
+                  6 hours
+                </option>
+                <option
+                  value={1440}
+                >
+                  Daily
+                </option>
+              </styled.select>
+              <styled.div>
+                <styled.button
+                  onClick={[Function]}
+                >
+                  Save
+                </styled.button>
+              </styled.div>
+            </React.Fragment>
+          </withClickAway(styled.div)>,
         ],
       },
       "ref": null,
@@ -1015,19 +1011,19 @@ ShallowWrapper {
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 Team
-</styled.div>,
+              </styled.div>,
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 New York Mets
-</styled.div>,
+              </styled.div>,
               <styled.div
                 margin="1rem 0"
                 size="large"
-/>,
+              />,
             ],
             "cols": 3,
           },
@@ -1083,50 +1079,49 @@ ShallowWrapper {
               <styled.div
                 margin="1rem 0"
                 size="large"
->
+              >
                 Generate pricing updates every
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.select
-                                noBg={true}
-                                onChange={[Function]}
-                                size="large"
-                                value={undefined}
+                  noBg={true}
+                  onChange={[Function]}
+                  size="large"
                 >
-                                <option
-                                                value={15}
-                                >
-                                                15 minutes
-                                </option>
-                                <option
-                                                value={30}
-                                >
-                                                30 minutes
-                                </option>
-                                <option
-                                                value={60}
-                                >
-                                                1 hour
-                                </option>
-                                <option
-                                                value={360}
-                                >
-                                                6 hours
-                                </option>
-                                <option
-                                                value={1440}
-                                >
-                                                Daily
-                                </option>
+                  <option
+                    value={15}
+                  >
+                    15 minutes
+                  </option>
+                  <option
+                    value={30}
+                  >
+                    30 minutes
+                  </option>
+                  <option
+                    value={60}
+                  >
+                    1 hour
+                  </option>
+                  <option
+                    value={360}
+                  >
+                    6 hours
+                  </option>
+                  <option
+                    value={1440}
+                  >
+                    Daily
+                  </option>
                 </styled.select>
                 <styled.div>
-                                <styled.button
-                                                onClick={[Function]}
-                                >
-                                                Save
-                                </styled.button>
+                  <styled.button
+                    onClick={[Function]}
+                  >
+                    Save
+                  </styled.button>
                 </styled.div>
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "onClickAway": [Function],
@@ -1156,41 +1151,40 @@ ShallowWrapper {
                     noBg={true}
                     onChange={[Function]}
                     size="large"
-                    value={undefined}
->
+                  >
                     <option
-                                        value={15}
+                      value={15}
                     >
-                                        15 minutes
+                      15 minutes
                     </option>
                     <option
-                                        value={30}
+                      value={30}
                     >
-                                        30 minutes
+                      30 minutes
                     </option>
                     <option
-                                        value={60}
+                      value={60}
                     >
-                                        1 hour
+                      1 hour
                     </option>
                     <option
-                                        value={360}
+                      value={360}
                     >
-                                        6 hours
+                      6 hours
                     </option>
                     <option
-                                        value={1440}
+                      value={1440}
                     >
-                                        Daily
+                      Daily
                     </option>
-</styled.select>,
+                  </styled.select>,
                   <styled.div>
                     <styled.button
-                                        onClick={[Function]}
+                      onClick={[Function]}
                     >
-                                        Save
+                      Save
                     </styled.button>
-</styled.div>,
+                  </styled.div>,
                 ],
               },
               "ref": null,
@@ -1203,29 +1197,29 @@ ShallowWrapper {
                     "children": Array [
                       <option
                         value={15}
->
+                      >
                         15 minutes
-</option>,
+                      </option>,
                       <option
                         value={30}
->
+                      >
                         30 minutes
-</option>,
+                      </option>,
                       <option
                         value={60}
->
+                      >
                         1 hour
-</option>,
+                      </option>,
                       <option
                         value={360}
->
+                      >
                         6 hours
-</option>,
+                      </option>,
                       <option
                         value={1440}
->
+                      >
                         Daily
-</option>,
+                      </option>,
                     ],
                     "noBg": true,
                     "onChange": [Function],
@@ -1304,9 +1298,9 @@ ShallowWrapper {
                   "props": Object {
                     "children": <styled.button
                       onClick={[Function]}
->
+                    >
                       Save
-</styled.button>,
+                    </styled.button>,
                   },
                   "ref": null,
                   "rendered": Object {

@@ -6,21 +6,21 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventHeader
     availableInventory={100}
     event={
-        Object {
-            "clientId": 1,
-            "createdAt": 1529336865706,
-            "id": 1,
-            "integrationId": 1,
-            "modifiedAt": 1529336865706,
-            "name": "Some Event",
-            "seasonId": 1,
-            "timestamp": 1529336865706,
-            "venueId": 1,
-          }
+      Object {
+        "clientId": 1,
+        "createdAt": 1529336865706,
+        "id": 1,
+        "integrationId": 1,
+        "modifiedAt": 1529336865706,
+        "name": "Some Event",
+        "seasonId": 1,
+        "timestamp": 1529336865706,
+        "venueId": 1,
+      }
     }
     pathname="/event/1/"
     totalInventory={1000}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -38,75 +38,74 @@ ShallowWrapper {
       "children": Array [
         <Flex
           align="center"
->
+        >
           <styled.button
-                    expand={true}
-                    onClick={undefined}
-                    small={true}
+            expand={true}
+            small={true}
           />
           <Breadcrumbs
-                    crumbs={
-                              Array [
-                                        Object {
-                                          "path": "/season",
-                                          "title": "Season Dashboard",
-                                        },
-                                        Object {
-                                          "path": "/event/1",
-                                          "title": "Some Event",
-                                        },
-                                      ]
-                    }
+            crumbs={
+              Array [
+                Object {
+                  "path": "/season",
+                  "title": "Season Dashboard",
+                },
+                Object {
+                  "path": "/event/1",
+                  "title": "Some Event",
+                },
+              ]
+            }
           />
-</Flex>,
+        </Flex>,
         <styled.div
           height="1.5rem"
-/>,
+        />,
         <Flex
           align="flex-start"
           justify="space-between"
->
+        >
           <FlexItem
-                    flex="1"
-                    margin="0 20px 0 0"
+            flex="1"
+            margin="0 20px 0 0"
           >
-                    <styled.h1>
-                              Some Event
-                    </styled.h1>
-                    <styled.h4>
-                              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-                    </styled.h4>
-                    <Styled(Link)
-                              to="/event/1/inventory"
-                    >
-                              <styled.span
-                                        color="#38A9DB"
-                              >
-                                        See Inventory List
-                              </styled.span>
-                    </Styled(Link)>
+            <styled.h1>
+              Some Event
+            </styled.h1>
+            <styled.h4>
+              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+            </styled.h4>
+            <Styled(Link)
+              to="/event/1/inventory"
+            >
+              <styled.span
+                color="#38A9DB"
+              >
+                See Inventory List
+              </styled.span>
+            </Styled(Link)>
           </FlexItem>
           <FlexItem
-                    flex="0 0 auto"
+            flex="0 0 auto"
           >
-                    <styled.p
-                              size="16px"
-                    >
-                              Current Game Inventory
-                    </styled.p>
-                    <styled.p
-                              color="#2670AE"
-                              size="22px"
-                    >
-                              -- / --
-                    </styled.p>
-                    <styled.span
-                              color="#2670AE"
-                    >
-                              Available / Total
-                    </styled.span>
+            <styled.p
+              size="16px"
+            >
+              Current Game Inventory
+            </styled.p>
+            <styled.p
+              color="#2670AE"
+              size="22px"
+            >
+              -- / --
+            </styled.p>
+            <styled.span
+              color="#2670AE"
+            >
+              Available / Total
+            </styled.span>
           </FlexItem>
-</Flex>,
+        </Flex>,
       ],
     },
     "ref": null,
@@ -120,23 +119,22 @@ ShallowWrapper {
           "children": Array [
             <styled.button
               expand={true}
-              onClick={undefined}
               small={true}
-/>,
+            />,
             <Breadcrumbs
               crumbs={
-                            Array [
-                                          Object {
-                                            "path": "/season",
-                                            "title": "Season Dashboard",
-                                          },
-                                          Object {
-                                            "path": "/event/1",
-                                            "title": "Some Event",
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                ]
               }
-/>,
+            />,
           ],
         },
         "ref": null,
@@ -198,43 +196,43 @@ ShallowWrapper {
             <FlexItem
               flex="1"
               margin="0 20px 0 0"
->
+            >
               <styled.h1>
-                            Some Event
+                Some Event
               </styled.h1>
               <styled.h4>
-                            2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
               </styled.h4>
               <Styled(Link)
-                            to="/event/1/inventory"
+                to="/event/1/inventory"
               >
-                            <styled.span
-                                          color="#38A9DB"
-                            >
-                                          See Inventory List
-                            </styled.span>
+                <styled.span
+                  color="#38A9DB"
+                >
+                  See Inventory List
+                </styled.span>
               </Styled(Link)>
-</FlexItem>,
+            </FlexItem>,
             <FlexItem
               flex="0 0 auto"
->
+            >
               <styled.p
-                            size="16px"
+                size="16px"
               >
-                            Current Game Inventory
+                Current Game Inventory
               </styled.p>
               <styled.p
-                            color="#2670AE"
-                            size="22px"
+                color="#2670AE"
+                size="22px"
               >
-                            -- / --
+                -- / --
               </styled.p>
               <styled.span
-                            color="#2670AE"
+                color="#2670AE"
               >
-                            Available / Total
+                Available / Total
               </styled.span>
-</FlexItem>,
+            </FlexItem>,
           ],
           "justify": "space-between",
         },
@@ -248,19 +246,19 @@ ShallowWrapper {
               "children": Array [
                 <styled.h1>
                   Some Event
-</styled.h1>,
+                </styled.h1>,
                 <styled.h4>
                   2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
+                </styled.h4>,
                 <Styled(Link)
                   to="/event/1/inventory"
->
+                >
                   <styled.span
-                                    color="#38A9DB"
+                    color="#38A9DB"
                   >
-                                    See Inventory List
+                    See Inventory List
                   </styled.span>
-</Styled(Link)>,
+                </Styled(Link)>,
               ],
               "flex": "1",
               "margin": "0 20px 0 0",
@@ -296,9 +294,9 @@ ShallowWrapper {
                 "props": Object {
                   "children": <styled.span
                     color="#38A9DB"
->
+                  >
                     See Inventory List
-</styled.span>,
+                  </styled.span>,
                   "to": "/event/1/inventory",
                 },
                 "ref": null,
@@ -327,20 +325,20 @@ ShallowWrapper {
               "children": Array [
                 <styled.p
                   size="16px"
->
+                >
                   Current Game Inventory
-</styled.p>,
+                </styled.p>,
                 <styled.p
                   color="#2670AE"
                   size="22px"
->
+                >
                   -- / --
-</styled.p>,
+                </styled.p>,
                 <styled.span
                   color="#2670AE"
->
+                >
                   Available / Total
-</styled.span>,
+                </styled.span>,
               ],
               "flex": "0 0 auto",
             },
@@ -401,75 +399,74 @@ ShallowWrapper {
         "children": Array [
           <Flex
             align="center"
->
+          >
             <styled.button
-                        expand={true}
-                        onClick={undefined}
-                        small={true}
+              expand={true}
+              small={true}
             />
             <Breadcrumbs
-                        crumbs={
-                                    Array [
-                                                Object {
-                                                  "path": "/season",
-                                                  "title": "Season Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/event/1",
-                                                  "title": "Some Event",
-                                                },
-                                              ]
-                        }
+              crumbs={
+                Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                ]
+              }
             />
-</Flex>,
+          </Flex>,
           <styled.div
             height="1.5rem"
-/>,
+          />,
           <Flex
             align="flex-start"
             justify="space-between"
->
+          >
             <FlexItem
-                        flex="1"
-                        margin="0 20px 0 0"
+              flex="1"
+              margin="0 20px 0 0"
             >
-                        <styled.h1>
-                                    Some Event
-                        </styled.h1>
-                        <styled.h4>
-                                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-                        </styled.h4>
-                        <Styled(Link)
-                                    to="/event/1/inventory"
-                        >
-                                    <styled.span
-                                                color="#38A9DB"
-                                    >
-                                                See Inventory List
-                                    </styled.span>
-                        </Styled(Link)>
+              <styled.h1>
+                Some Event
+              </styled.h1>
+              <styled.h4>
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              </styled.h4>
+              <Styled(Link)
+                to="/event/1/inventory"
+              >
+                <styled.span
+                  color="#38A9DB"
+                >
+                  See Inventory List
+                </styled.span>
+              </Styled(Link)>
             </FlexItem>
             <FlexItem
-                        flex="0 0 auto"
+              flex="0 0 auto"
             >
-                        <styled.p
-                                    size="16px"
-                        >
-                                    Current Game Inventory
-                        </styled.p>
-                        <styled.p
-                                    color="#2670AE"
-                                    size="22px"
-                        >
-                                    -- / --
-                        </styled.p>
-                        <styled.span
-                                    color="#2670AE"
-                        >
-                                    Available / Total
-                        </styled.span>
+              <styled.p
+                size="16px"
+              >
+                Current Game Inventory
+              </styled.p>
+              <styled.p
+                color="#2670AE"
+                size="22px"
+              >
+                -- / --
+              </styled.p>
+              <styled.span
+                color="#2670AE"
+              >
+                Available / Total
+              </styled.span>
             </FlexItem>
-</Flex>,
+          </Flex>,
         ],
       },
       "ref": null,
@@ -483,23 +480,22 @@ ShallowWrapper {
             "children": Array [
               <styled.button
                 expand={true}
-                onClick={undefined}
                 small={true}
-/>,
+              />,
               <Breadcrumbs
                 crumbs={
-                                Array [
-                                                Object {
-                                                  "path": "/season",
-                                                  "title": "Season Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/event/1",
-                                                  "title": "Some Event",
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "path": "/season",
+                      "title": "Season Dashboard",
+                    },
+                    Object {
+                      "path": "/event/1",
+                      "title": "Some Event",
+                    },
+                  ]
                 }
-/>,
+              />,
             ],
           },
           "ref": null,
@@ -561,43 +557,43 @@ ShallowWrapper {
               <FlexItem
                 flex="1"
                 margin="0 20px 0 0"
->
+              >
                 <styled.h1>
-                                Some Event
+                  Some Event
                 </styled.h1>
                 <styled.h4>
-                                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
                 </styled.h4>
                 <Styled(Link)
-                                to="/event/1/inventory"
+                  to="/event/1/inventory"
                 >
-                                <styled.span
-                                                color="#38A9DB"
-                                >
-                                                See Inventory List
-                                </styled.span>
+                  <styled.span
+                    color="#38A9DB"
+                  >
+                    See Inventory List
+                  </styled.span>
                 </Styled(Link)>
-</FlexItem>,
+              </FlexItem>,
               <FlexItem
                 flex="0 0 auto"
->
+              >
                 <styled.p
-                                size="16px"
+                  size="16px"
                 >
-                                Current Game Inventory
+                  Current Game Inventory
                 </styled.p>
                 <styled.p
-                                color="#2670AE"
-                                size="22px"
+                  color="#2670AE"
+                  size="22px"
                 >
-                                -- / --
+                  -- / --
                 </styled.p>
                 <styled.span
-                                color="#2670AE"
+                  color="#2670AE"
                 >
-                                Available / Total
+                  Available / Total
                 </styled.span>
-</FlexItem>,
+              </FlexItem>,
             ],
             "justify": "space-between",
           },
@@ -611,19 +607,19 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h1>
                     Some Event
-</styled.h1>,
+                  </styled.h1>,
                   <styled.h4>
                     2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
+                  </styled.h4>,
                   <Styled(Link)
                     to="/event/1/inventory"
->
+                  >
                     <styled.span
-                                        color="#38A9DB"
+                      color="#38A9DB"
                     >
-                                        See Inventory List
+                      See Inventory List
                     </styled.span>
-</Styled(Link)>,
+                  </Styled(Link)>,
                 ],
                 "flex": "1",
                 "margin": "0 20px 0 0",
@@ -659,9 +655,9 @@ ShallowWrapper {
                   "props": Object {
                     "children": <styled.span
                       color="#38A9DB"
->
+                    >
                       See Inventory List
-</styled.span>,
+                    </styled.span>,
                     "to": "/event/1/inventory",
                   },
                   "ref": null,
@@ -690,20 +686,20 @@ ShallowWrapper {
                 "children": Array [
                   <styled.p
                     size="16px"
->
+                  >
                     Current Game Inventory
-</styled.p>,
+                  </styled.p>,
                   <styled.p
                     color="#2670AE"
                     size="22px"
->
+                  >
                     -- / --
-</styled.p>,
+                  </styled.p>,
                   <styled.span
                     color="#2670AE"
->
+                  >
                     Available / Total
-</styled.span>,
+                  </styled.span>,
                 ],
                 "flex": "0 0 auto",
               },
@@ -786,21 +782,21 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventHeader
     availableInventory={100}
     event={
-        Object {
-            "clientId": 1,
-            "createdAt": 1529336865706,
-            "id": 1,
-            "integrationId": 1,
-            "modifiedAt": 1529336865706,
-            "name": "Some Event",
-            "seasonId": 1,
-            "timestamp": 1529336865706,
-            "venueId": 1,
-          }
+      Object {
+        "clientId": 1,
+        "createdAt": 1529336865706,
+        "id": 1,
+        "integrationId": 1,
+        "modifiedAt": 1529336865706,
+        "name": "Some Event",
+        "seasonId": 1,
+        "timestamp": 1529336865706,
+        "venueId": 1,
+      }
     }
     pathname="/event/1/inventory"
     totalInventory={1000}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -818,70 +814,69 @@ ShallowWrapper {
       "children": Array [
         <Flex
           align="center"
->
+        >
           <styled.button
-                    expand={true}
-                    onClick={undefined}
-                    small={true}
+            expand={true}
+            small={true}
           />
           <Breadcrumbs
-                    crumbs={
-                              Array [
-                                        Object {
-                                          "path": "/season",
-                                          "title": "Season Dashboard",
-                                        },
-                                        Object {
-                                          "path": "/event/1",
-                                          "title": "Some Event",
-                                        },
-                                        Object {
-                                          "path": "/event/1/inventory",
-                                          "title": "Inventory",
-                                        },
-                                      ]
-                    }
+            crumbs={
+              Array [
+                Object {
+                  "path": "/season",
+                  "title": "Season Dashboard",
+                },
+                Object {
+                  "path": "/event/1",
+                  "title": "Some Event",
+                },
+                Object {
+                  "path": "/event/1/inventory",
+                  "title": "Inventory",
+                },
+              ]
+            }
           />
-</Flex>,
+        </Flex>,
         <styled.div
           height="1.5rem"
-/>,
+        />,
         <Flex
           align="flex-start"
           justify="space-between"
->
+        >
           <FlexItem
-                    flex="1"
-                    margin="0 20px 0 0"
+            flex="1"
+            margin="0 20px 0 0"
           >
-                    <styled.h1>
-                              Some Event
-                    </styled.h1>
-                    <styled.h4>
-                              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-                    </styled.h4>
+            <styled.h1>
+              Some Event
+            </styled.h1>
+            <styled.h4>
+              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+            </styled.h4>
           </FlexItem>
           <FlexItem
-                    flex="0 0 auto"
+            flex="0 0 auto"
           >
-                    <styled.p
-                              size="16px"
-                    >
-                              Current Game Inventory
-                    </styled.p>
-                    <styled.p
-                              color="#2670AE"
-                              size="22px"
-                    >
-                              -- / --
-                    </styled.p>
-                    <styled.span
-                              color="#2670AE"
-                    >
-                              Available / Total
-                    </styled.span>
+            <styled.p
+              size="16px"
+            >
+              Current Game Inventory
+            </styled.p>
+            <styled.p
+              color="#2670AE"
+              size="22px"
+            >
+              -- / --
+            </styled.p>
+            <styled.span
+              color="#2670AE"
+            >
+              Available / Total
+            </styled.span>
           </FlexItem>
-</Flex>,
+        </Flex>,
       ],
     },
     "ref": null,
@@ -895,27 +890,26 @@ ShallowWrapper {
           "children": Array [
             <styled.button
               expand={true}
-              onClick={undefined}
               small={true}
-/>,
+            />,
             <Breadcrumbs
               crumbs={
-                            Array [
-                                          Object {
-                                            "path": "/season",
-                                            "title": "Season Dashboard",
-                                          },
-                                          Object {
-                                            "path": "/event/1",
-                                            "title": "Some Event",
-                                          },
-                                          Object {
-                                            "path": "/event/1/inventory",
-                                            "title": "Inventory",
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                  Object {
+                    "path": "/event/1/inventory",
+                    "title": "Inventory",
+                  },
+                ]
               }
-/>,
+            />,
           ],
         },
         "ref": null,
@@ -981,34 +975,34 @@ ShallowWrapper {
             <FlexItem
               flex="1"
               margin="0 20px 0 0"
->
+            >
               <styled.h1>
-                            Some Event
+                Some Event
               </styled.h1>
               <styled.h4>
-                            2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
               </styled.h4>
-</FlexItem>,
+            </FlexItem>,
             <FlexItem
               flex="0 0 auto"
->
+            >
               <styled.p
-                            size="16px"
+                size="16px"
               >
-                            Current Game Inventory
+                Current Game Inventory
               </styled.p>
               <styled.p
-                            color="#2670AE"
-                            size="22px"
+                color="#2670AE"
+                size="22px"
               >
-                            -- / --
+                -- / --
               </styled.p>
               <styled.span
-                            color="#2670AE"
+                color="#2670AE"
               >
-                            Available / Total
+                Available / Total
               </styled.span>
-</FlexItem>,
+            </FlexItem>,
           ],
           "justify": "space-between",
         },
@@ -1022,10 +1016,10 @@ ShallowWrapper {
               "children": Array [
                 <styled.h1>
                   Some Event
-</styled.h1>,
+                </styled.h1>,
                 <styled.h4>
                   2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
+                </styled.h4>,
                 false,
               ],
               "flex": "1",
@@ -1067,20 +1061,20 @@ ShallowWrapper {
               "children": Array [
                 <styled.p
                   size="16px"
->
+                >
                   Current Game Inventory
-</styled.p>,
+                </styled.p>,
                 <styled.p
                   color="#2670AE"
                   size="22px"
->
+                >
                   -- / --
-</styled.p>,
+                </styled.p>,
                 <styled.span
                   color="#2670AE"
->
+                >
                   Available / Total
-</styled.span>,
+                </styled.span>,
               ],
               "flex": "0 0 auto",
             },
@@ -1141,70 +1135,69 @@ ShallowWrapper {
         "children": Array [
           <Flex
             align="center"
->
+          >
             <styled.button
-                        expand={true}
-                        onClick={undefined}
-                        small={true}
+              expand={true}
+              small={true}
             />
             <Breadcrumbs
-                        crumbs={
-                                    Array [
-                                                Object {
-                                                  "path": "/season",
-                                                  "title": "Season Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/event/1",
-                                                  "title": "Some Event",
-                                                },
-                                                Object {
-                                                  "path": "/event/1/inventory",
-                                                  "title": "Inventory",
-                                                },
-                                              ]
-                        }
+              crumbs={
+                Array [
+                  Object {
+                    "path": "/season",
+                    "title": "Season Dashboard",
+                  },
+                  Object {
+                    "path": "/event/1",
+                    "title": "Some Event",
+                  },
+                  Object {
+                    "path": "/event/1/inventory",
+                    "title": "Inventory",
+                  },
+                ]
+              }
             />
-</Flex>,
+          </Flex>,
           <styled.div
             height="1.5rem"
-/>,
+          />,
           <Flex
             align="flex-start"
             justify="space-between"
->
+          >
             <FlexItem
-                        flex="1"
-                        margin="0 20px 0 0"
+              flex="1"
+              margin="0 20px 0 0"
             >
-                        <styled.h1>
-                                    Some Event
-                        </styled.h1>
-                        <styled.h4>
-                                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-                        </styled.h4>
+              <styled.h1>
+                Some Event
+              </styled.h1>
+              <styled.h4>
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              </styled.h4>
             </FlexItem>
             <FlexItem
-                        flex="0 0 auto"
+              flex="0 0 auto"
             >
-                        <styled.p
-                                    size="16px"
-                        >
-                                    Current Game Inventory
-                        </styled.p>
-                        <styled.p
-                                    color="#2670AE"
-                                    size="22px"
-                        >
-                                    -- / --
-                        </styled.p>
-                        <styled.span
-                                    color="#2670AE"
-                        >
-                                    Available / Total
-                        </styled.span>
+              <styled.p
+                size="16px"
+              >
+                Current Game Inventory
+              </styled.p>
+              <styled.p
+                color="#2670AE"
+                size="22px"
+              >
+                -- / --
+              </styled.p>
+              <styled.span
+                color="#2670AE"
+              >
+                Available / Total
+              </styled.span>
             </FlexItem>
-</Flex>,
+          </Flex>,
         ],
       },
       "ref": null,
@@ -1218,27 +1211,26 @@ ShallowWrapper {
             "children": Array [
               <styled.button
                 expand={true}
-                onClick={undefined}
                 small={true}
-/>,
+              />,
               <Breadcrumbs
                 crumbs={
-                                Array [
-                                                Object {
-                                                  "path": "/season",
-                                                  "title": "Season Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/event/1",
-                                                  "title": "Some Event",
-                                                },
-                                                Object {
-                                                  "path": "/event/1/inventory",
-                                                  "title": "Inventory",
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "path": "/season",
+                      "title": "Season Dashboard",
+                    },
+                    Object {
+                      "path": "/event/1",
+                      "title": "Some Event",
+                    },
+                    Object {
+                      "path": "/event/1/inventory",
+                      "title": "Inventory",
+                    },
+                  ]
                 }
-/>,
+              />,
             ],
           },
           "ref": null,
@@ -1304,34 +1296,34 @@ ShallowWrapper {
               <FlexItem
                 flex="1"
                 margin="0 20px 0 0"
->
+              >
                 <styled.h1>
-                                Some Event
+                  Some Event
                 </styled.h1>
                 <styled.h4>
-                                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
                 </styled.h4>
-</FlexItem>,
+              </FlexItem>,
               <FlexItem
                 flex="0 0 auto"
->
+              >
                 <styled.p
-                                size="16px"
+                  size="16px"
                 >
-                                Current Game Inventory
+                  Current Game Inventory
                 </styled.p>
                 <styled.p
-                                color="#2670AE"
-                                size="22px"
+                  color="#2670AE"
+                  size="22px"
                 >
-                                -- / --
+                  -- / --
                 </styled.p>
                 <styled.span
-                                color="#2670AE"
+                  color="#2670AE"
                 >
-                                Available / Total
+                  Available / Total
                 </styled.span>
-</FlexItem>,
+              </FlexItem>,
             ],
             "justify": "space-between",
           },
@@ -1345,10 +1337,10 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h1>
                     Some Event
-</styled.h1>,
+                  </styled.h1>,
                   <styled.h4>
                     2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
-</styled.h4>,
+                  </styled.h4>,
                   false,
                 ],
                 "flex": "1",
@@ -1390,20 +1382,20 @@ ShallowWrapper {
                 "children": Array [
                   <styled.p
                     size="16px"
->
+                  >
                     Current Game Inventory
-</styled.p>,
+                  </styled.p>,
                   <styled.p
                     color="#2670AE"
                     size="22px"
->
+                  >
                     -- / --
-</styled.p>,
+                  </styled.p>,
                   <styled.span
                     color="#2670AE"
->
+                  >
                     Available / Total
-</styled.span>,
+                  </styled.span>,
                 ],
                 "flex": "0 0 auto",
               },

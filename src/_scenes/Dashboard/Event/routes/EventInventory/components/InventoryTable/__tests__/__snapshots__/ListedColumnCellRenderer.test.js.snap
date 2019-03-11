@@ -3,10 +3,10 @@
 exports[`<ListedColumnCellPresenter /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <ListedColumnCellPresenter
     cellData="Data"
-    setListed={[Function]}
-/>,
+    setListed={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -23,9 +23,9 @@ ShallowWrapper {
     "props": Object {
       "children": <Toggle
         isChecked="Data"
-        onChange={[Function]}
+        onChange={[MockFunction]}
         size="xsmall"
-/>,
+      />,
       "marginLeft": "1.25rem",
     },
     "ref": null,
@@ -35,7 +35,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "isChecked": "Data",
-        "onChange": [Function],
+        "onChange": [MockFunction],
         "size": "xsmall",
       },
       "ref": null,
@@ -52,9 +52,9 @@ ShallowWrapper {
       "props": Object {
         "children": <Toggle
           isChecked="Data"
-          onChange={[Function]}
+          onChange={[MockFunction]}
           size="xsmall"
-/>,
+        />,
         "marginLeft": "1.25rem",
       },
       "ref": null,
@@ -64,7 +64,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "isChecked": "Data",
-          "onChange": [Function],
+          "onChange": [MockFunction],
           "size": "xsmall",
         },
         "ref": null,

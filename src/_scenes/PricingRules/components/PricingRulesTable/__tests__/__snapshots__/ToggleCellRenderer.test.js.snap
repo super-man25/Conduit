@@ -6,8 +6,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ToggleCellPresenter
     isEditing={false}
     rulePropertyValue={false}
-    updatePriceRuleProperty={[Function]}
-/>,
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -28,7 +28,7 @@ ShallowWrapper {
         isDisabled={true}
         onChange={[Function]}
         size="small"
-/>,
+      />,
       "margin": "1rem",
     },
     "ref": null,
@@ -60,7 +60,7 @@ ShallowWrapper {
           isDisabled={true}
           onChange={[Function]}
           size="small"
-/>,
+        />,
         "margin": "1rem",
       },
       "ref": null,

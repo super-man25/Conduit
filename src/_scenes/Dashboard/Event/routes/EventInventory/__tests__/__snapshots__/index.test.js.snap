@@ -3,12 +3,12 @@
 exports[`<EventInventory /> index route should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <EventInventory
     event={Object {}}
     isBulkUpdating={false}
     selectedEventIds={Array []}
-    startBulkUpdate={[Function]}
-/>,
+    startBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -27,45 +27,45 @@ ShallowWrapper {
         <Flex
           direction="column"
           height="100%"
->
+        >
           <styled.div
-                    padding="1.5rem 2rem"
+            padding="1.5rem 2rem"
           >
-                    <Connect(withSidebarEventHeader)
-                              availableInventory={15000}
-                              totalInventory={40000}
-                    />
-                    <styled.div
-                              marginTop="1rem"
-                    >
-                              <EventInventorySeatMap />
-                    </styled.div>
+            <Connect(withSidebarEventHeader)
+              availableInventory={15000}
+              totalInventory={40000}
+            />
+            <styled.div
+              marginTop="1rem"
+            >
+              <EventInventorySeatMap />
+            </styled.div>
           </styled.div>
           <styled.div
-                    height="2rem"
+            height="2rem"
           />
           <styled.div
-                    padding="0 1rem"
+            padding="0 1rem"
           >
-                    <styled.button
-                              disabled={true}
-                              onClick={[Function]}
-                              small={true}
-                              title="Update Selected Items"
-                    >
-                              Bulk Update (
-                              0
-                               Rows)
-                    </styled.button>
+            <styled.button
+              disabled={true}
+              onClick={[MockFunction]}
+              small={true}
+              title="Update Selected Items"
+            >
+              Bulk Update (
+              0
+               Rows)
+            </styled.button>
           </styled.div>
           <styled.div
-                    flex={1}
+            flex={1}
           >
-                    <Connect(VirtualizedEventInventoryPresenter)
-                              event={Object {}}
-                    />
+            <Connect(VirtualizedEventInventoryPresenter)
+              event={Object {}}
+            />
           </styled.div>
-</Flex>,
+        </Flex>,
         <Portal />,
       ],
     },
@@ -79,41 +79,41 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               padding="1.5rem 2rem"
->
+            >
               <Connect(withSidebarEventHeader)
-                            availableInventory={15000}
-                            totalInventory={40000}
+                availableInventory={15000}
+                totalInventory={40000}
               />
               <styled.div
-                            marginTop="1rem"
+                marginTop="1rem"
               >
-                            <EventInventorySeatMap />
+                <EventInventorySeatMap />
               </styled.div>
-</styled.div>,
+            </styled.div>,
             <styled.div
               height="2rem"
-/>,
+            />,
             <styled.div
               padding="0 1rem"
->
+            >
               <styled.button
-                            disabled={true}
-                            onClick={[Function]}
-                            small={true}
-                            title="Update Selected Items"
+                disabled={true}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
               >
-                            Bulk Update (
-                            0
-                             Rows)
+                Bulk Update (
+                0
+                 Rows)
               </styled.button>
-</styled.div>,
+            </styled.div>,
             <styled.div
               flex={1}
->
+            >
               <Connect(VirtualizedEventInventoryPresenter)
-                            event={Object {}}
+                event={Object {}}
               />
-</styled.div>,
+            </styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -129,12 +129,12 @@ ShallowWrapper {
                 <Connect(withSidebarEventHeader)
                   availableInventory={15000}
                   totalInventory={40000}
-/>,
+                />,
                 <styled.div
                   marginTop="1rem"
->
+                >
                   <EventInventorySeatMap />
-</styled.div>,
+                </styled.div>,
               ],
               "padding": "1.5rem 2rem",
             },
@@ -193,14 +193,14 @@ ShallowWrapper {
             "props": Object {
               "children": <styled.button
                 disabled={true}
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 small={true}
                 title="Update Selected Items"
->
+              >
                 Bulk Update (
                 0
                  Rows)
-</styled.button>,
+              </styled.button>,
               "padding": "0 1rem",
             },
             "ref": null,
@@ -215,7 +215,7 @@ ShallowWrapper {
                   " Rows)",
                 ],
                 "disabled": true,
-                "onClick": [Function],
+                "onClick": [MockFunction],
                 "small": true,
                 "title": "Update Selected Items",
               },
@@ -236,7 +236,7 @@ ShallowWrapper {
             "props": Object {
               "children": <Connect(VirtualizedEventInventoryPresenter)
                 event={Object {}}
-/>,
+              />,
               "flex": 1,
             },
             "ref": null,
@@ -280,45 +280,45 @@ ShallowWrapper {
           <Flex
             direction="column"
             height="100%"
->
+          >
             <styled.div
-                        padding="1.5rem 2rem"
+              padding="1.5rem 2rem"
             >
-                        <Connect(withSidebarEventHeader)
-                                    availableInventory={15000}
-                                    totalInventory={40000}
-                        />
-                        <styled.div
-                                    marginTop="1rem"
-                        >
-                                    <EventInventorySeatMap />
-                        </styled.div>
+              <Connect(withSidebarEventHeader)
+                availableInventory={15000}
+                totalInventory={40000}
+              />
+              <styled.div
+                marginTop="1rem"
+              >
+                <EventInventorySeatMap />
+              </styled.div>
             </styled.div>
             <styled.div
-                        height="2rem"
+              height="2rem"
             />
             <styled.div
-                        padding="0 1rem"
+              padding="0 1rem"
             >
-                        <styled.button
-                                    disabled={true}
-                                    onClick={[Function]}
-                                    small={true}
-                                    title="Update Selected Items"
-                        >
-                                    Bulk Update (
-                                    0
-                                     Rows)
-                        </styled.button>
+              <styled.button
+                disabled={true}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
+              >
+                Bulk Update (
+                0
+                 Rows)
+              </styled.button>
             </styled.div>
             <styled.div
-                        flex={1}
+              flex={1}
             >
-                        <Connect(VirtualizedEventInventoryPresenter)
-                                    event={Object {}}
-                        />
+              <Connect(VirtualizedEventInventoryPresenter)
+                event={Object {}}
+              />
             </styled.div>
-</Flex>,
+          </Flex>,
           <Portal />,
         ],
       },
@@ -332,41 +332,41 @@ ShallowWrapper {
             "children": Array [
               <styled.div
                 padding="1.5rem 2rem"
->
+              >
                 <Connect(withSidebarEventHeader)
-                                availableInventory={15000}
-                                totalInventory={40000}
+                  availableInventory={15000}
+                  totalInventory={40000}
                 />
                 <styled.div
-                                marginTop="1rem"
+                  marginTop="1rem"
                 >
-                                <EventInventorySeatMap />
+                  <EventInventorySeatMap />
                 </styled.div>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 height="2rem"
-/>,
+              />,
               <styled.div
                 padding="0 1rem"
->
+              >
                 <styled.button
-                                disabled={true}
-                                onClick={[Function]}
-                                small={true}
-                                title="Update Selected Items"
+                  disabled={true}
+                  onClick={[MockFunction]}
+                  small={true}
+                  title="Update Selected Items"
                 >
-                                Bulk Update (
-                                0
-                                 Rows)
+                  Bulk Update (
+                  0
+                   Rows)
                 </styled.button>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 flex={1}
->
+              >
                 <Connect(VirtualizedEventInventoryPresenter)
-                                event={Object {}}
+                  event={Object {}}
                 />
-</styled.div>,
+              </styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -382,12 +382,12 @@ ShallowWrapper {
                   <Connect(withSidebarEventHeader)
                     availableInventory={15000}
                     totalInventory={40000}
-/>,
+                  />,
                   <styled.div
                     marginTop="1rem"
->
+                  >
                     <EventInventorySeatMap />
-</styled.div>,
+                  </styled.div>,
                 ],
                 "padding": "1.5rem 2rem",
               },
@@ -446,14 +446,14 @@ ShallowWrapper {
               "props": Object {
                 "children": <styled.button
                   disabled={true}
-                  onClick={[Function]}
+                  onClick={[MockFunction]}
                   small={true}
                   title="Update Selected Items"
->
+                >
                   Bulk Update (
                   0
                    Rows)
-</styled.button>,
+                </styled.button>,
                 "padding": "0 1rem",
               },
               "ref": null,
@@ -468,7 +468,7 @@ ShallowWrapper {
                     " Rows)",
                   ],
                   "disabled": true,
-                  "onClick": [Function],
+                  "onClick": [MockFunction],
                   "small": true,
                   "title": "Update Selected Items",
                 },
@@ -489,7 +489,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <Connect(VirtualizedEventInventoryPresenter)
                   event={Object {}}
-/>,
+                />,
                 "flex": 1,
               },
               "ref": null,
@@ -551,18 +551,18 @@ ShallowWrapper {
 exports[`<EventInventory /> index route should render correctly when there are selectedEventIds 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <EventInventory
     event={Object {}}
     isBulkUpdating={false}
     selectedEventIds={
-        Array [
-            1,
-            2,
-            3,
-          ]
+      Array [
+        1,
+        2,
+        3,
+      ]
     }
-    startBulkUpdate={[Function]}
-/>,
+    startBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -581,45 +581,45 @@ ShallowWrapper {
         <Flex
           direction="column"
           height="100%"
->
+        >
           <styled.div
-                    padding="1.5rem 2rem"
+            padding="1.5rem 2rem"
           >
-                    <Connect(withSidebarEventHeader)
-                              availableInventory={15000}
-                              totalInventory={40000}
-                    />
-                    <styled.div
-                              marginTop="1rem"
-                    >
-                              <EventInventorySeatMap />
-                    </styled.div>
+            <Connect(withSidebarEventHeader)
+              availableInventory={15000}
+              totalInventory={40000}
+            />
+            <styled.div
+              marginTop="1rem"
+            >
+              <EventInventorySeatMap />
+            </styled.div>
           </styled.div>
           <styled.div
-                    height="2rem"
+            height="2rem"
           />
           <styled.div
-                    padding="0 1rem"
+            padding="0 1rem"
           >
-                    <styled.button
-                              disabled={false}
-                              onClick={[Function]}
-                              small={true}
-                              title="Update Selected Items"
-                    >
-                              Bulk Update (
-                              3
-                               Rows)
-                    </styled.button>
+            <styled.button
+              disabled={false}
+              onClick={[MockFunction]}
+              small={true}
+              title="Update Selected Items"
+            >
+              Bulk Update (
+              3
+               Rows)
+            </styled.button>
           </styled.div>
           <styled.div
-                    flex={1}
+            flex={1}
           >
-                    <Connect(VirtualizedEventInventoryPresenter)
-                              event={Object {}}
-                    />
+            <Connect(VirtualizedEventInventoryPresenter)
+              event={Object {}}
+            />
           </styled.div>
-</Flex>,
+        </Flex>,
         <Portal />,
       ],
     },
@@ -633,41 +633,41 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               padding="1.5rem 2rem"
->
+            >
               <Connect(withSidebarEventHeader)
-                            availableInventory={15000}
-                            totalInventory={40000}
+                availableInventory={15000}
+                totalInventory={40000}
               />
               <styled.div
-                            marginTop="1rem"
+                marginTop="1rem"
               >
-                            <EventInventorySeatMap />
+                <EventInventorySeatMap />
               </styled.div>
-</styled.div>,
+            </styled.div>,
             <styled.div
               height="2rem"
-/>,
+            />,
             <styled.div
               padding="0 1rem"
->
+            >
               <styled.button
-                            disabled={false}
-                            onClick={[Function]}
-                            small={true}
-                            title="Update Selected Items"
+                disabled={false}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
               >
-                            Bulk Update (
-                            3
-                             Rows)
+                Bulk Update (
+                3
+                 Rows)
               </styled.button>
-</styled.div>,
+            </styled.div>,
             <styled.div
               flex={1}
->
+            >
               <Connect(VirtualizedEventInventoryPresenter)
-                            event={Object {}}
+                event={Object {}}
               />
-</styled.div>,
+            </styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -683,12 +683,12 @@ ShallowWrapper {
                 <Connect(withSidebarEventHeader)
                   availableInventory={15000}
                   totalInventory={40000}
-/>,
+                />,
                 <styled.div
                   marginTop="1rem"
->
+                >
                   <EventInventorySeatMap />
-</styled.div>,
+                </styled.div>,
               ],
               "padding": "1.5rem 2rem",
             },
@@ -747,14 +747,14 @@ ShallowWrapper {
             "props": Object {
               "children": <styled.button
                 disabled={false}
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 small={true}
                 title="Update Selected Items"
->
+              >
                 Bulk Update (
                 3
                  Rows)
-</styled.button>,
+              </styled.button>,
               "padding": "0 1rem",
             },
             "ref": null,
@@ -769,7 +769,7 @@ ShallowWrapper {
                   " Rows)",
                 ],
                 "disabled": false,
-                "onClick": [Function],
+                "onClick": [MockFunction],
                 "small": true,
                 "title": "Update Selected Items",
               },
@@ -790,7 +790,7 @@ ShallowWrapper {
             "props": Object {
               "children": <Connect(VirtualizedEventInventoryPresenter)
                 event={Object {}}
-/>,
+              />,
               "flex": 1,
             },
             "ref": null,
@@ -834,45 +834,45 @@ ShallowWrapper {
           <Flex
             direction="column"
             height="100%"
->
+          >
             <styled.div
-                        padding="1.5rem 2rem"
+              padding="1.5rem 2rem"
             >
-                        <Connect(withSidebarEventHeader)
-                                    availableInventory={15000}
-                                    totalInventory={40000}
-                        />
-                        <styled.div
-                                    marginTop="1rem"
-                        >
-                                    <EventInventorySeatMap />
-                        </styled.div>
+              <Connect(withSidebarEventHeader)
+                availableInventory={15000}
+                totalInventory={40000}
+              />
+              <styled.div
+                marginTop="1rem"
+              >
+                <EventInventorySeatMap />
+              </styled.div>
             </styled.div>
             <styled.div
-                        height="2rem"
+              height="2rem"
             />
             <styled.div
-                        padding="0 1rem"
+              padding="0 1rem"
             >
-                        <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    small={true}
-                                    title="Update Selected Items"
-                        >
-                                    Bulk Update (
-                                    3
-                                     Rows)
-                        </styled.button>
+              <styled.button
+                disabled={false}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
+              >
+                Bulk Update (
+                3
+                 Rows)
+              </styled.button>
             </styled.div>
             <styled.div
-                        flex={1}
+              flex={1}
             >
-                        <Connect(VirtualizedEventInventoryPresenter)
-                                    event={Object {}}
-                        />
+              <Connect(VirtualizedEventInventoryPresenter)
+                event={Object {}}
+              />
             </styled.div>
-</Flex>,
+          </Flex>,
           <Portal />,
         ],
       },
@@ -886,41 +886,41 @@ ShallowWrapper {
             "children": Array [
               <styled.div
                 padding="1.5rem 2rem"
->
+              >
                 <Connect(withSidebarEventHeader)
-                                availableInventory={15000}
-                                totalInventory={40000}
+                  availableInventory={15000}
+                  totalInventory={40000}
                 />
                 <styled.div
-                                marginTop="1rem"
+                  marginTop="1rem"
                 >
-                                <EventInventorySeatMap />
+                  <EventInventorySeatMap />
                 </styled.div>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 height="2rem"
-/>,
+              />,
               <styled.div
                 padding="0 1rem"
->
+              >
                 <styled.button
-                                disabled={false}
-                                onClick={[Function]}
-                                small={true}
-                                title="Update Selected Items"
+                  disabled={false}
+                  onClick={[MockFunction]}
+                  small={true}
+                  title="Update Selected Items"
                 >
-                                Bulk Update (
-                                3
-                                 Rows)
+                  Bulk Update (
+                  3
+                   Rows)
                 </styled.button>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 flex={1}
->
+              >
                 <Connect(VirtualizedEventInventoryPresenter)
-                                event={Object {}}
+                  event={Object {}}
                 />
-</styled.div>,
+              </styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -936,12 +936,12 @@ ShallowWrapper {
                   <Connect(withSidebarEventHeader)
                     availableInventory={15000}
                     totalInventory={40000}
-/>,
+                  />,
                   <styled.div
                     marginTop="1rem"
->
+                  >
                     <EventInventorySeatMap />
-</styled.div>,
+                  </styled.div>,
                 ],
                 "padding": "1.5rem 2rem",
               },
@@ -1000,14 +1000,14 @@ ShallowWrapper {
               "props": Object {
                 "children": <styled.button
                   disabled={false}
-                  onClick={[Function]}
+                  onClick={[MockFunction]}
                   small={true}
                   title="Update Selected Items"
->
+                >
                   Bulk Update (
                   3
                    Rows)
-</styled.button>,
+                </styled.button>,
                 "padding": "0 1rem",
               },
               "ref": null,
@@ -1022,7 +1022,7 @@ ShallowWrapper {
                     " Rows)",
                   ],
                   "disabled": false,
-                  "onClick": [Function],
+                  "onClick": [MockFunction],
                   "small": true,
                   "title": "Update Selected Items",
                 },
@@ -1043,7 +1043,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <Connect(VirtualizedEventInventoryPresenter)
                   event={Object {}}
-/>,
+                />,
                 "flex": 1,
               },
               "ref": null,
@@ -1105,18 +1105,18 @@ ShallowWrapper {
 exports[`<EventInventory /> index route should render correctly when there are selectedEventIds and isBulkUpdating is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <EventInventory
     event={Object {}}
     isBulkUpdating={true}
     selectedEventIds={
-        Array [
-            1,
-            2,
-            3,
-          ]
+      Array [
+        1,
+        2,
+        3,
+      ]
     }
-    startBulkUpdate={[Function]}
-/>,
+    startBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1135,56 +1135,56 @@ ShallowWrapper {
         <Flex
           direction="column"
           height="100%"
->
+        >
           <styled.div
-                    padding="1.5rem 2rem"
+            padding="1.5rem 2rem"
           >
-                    <Connect(withSidebarEventHeader)
-                              availableInventory={15000}
-                              totalInventory={40000}
-                    />
-                    <styled.div
-                              marginTop="1rem"
-                    >
-                              <EventInventorySeatMap />
-                    </styled.div>
+            <Connect(withSidebarEventHeader)
+              availableInventory={15000}
+              totalInventory={40000}
+            />
+            <styled.div
+              marginTop="1rem"
+            >
+              <EventInventorySeatMap />
+            </styled.div>
           </styled.div>
           <styled.div
-                    height="2rem"
+            height="2rem"
           />
           <styled.div
-                    padding="0 1rem"
+            padding="0 1rem"
           >
-                    <styled.button
-                              disabled={false}
-                              onClick={[Function]}
-                              small={true}
-                              title="Update Selected Items"
-                    >
-                              Bulk Update (
-                              3
-                               Rows)
-                    </styled.button>
+            <styled.button
+              disabled={false}
+              onClick={[MockFunction]}
+              small={true}
+              title="Update Selected Items"
+            >
+              Bulk Update (
+              3
+               Rows)
+            </styled.button>
           </styled.div>
           <styled.div
-                    flex={1}
+            flex={1}
           >
-                    <Connect(VirtualizedEventInventoryPresenter)
-                              event={Object {}}
-                    />
+            <Connect(VirtualizedEventInventoryPresenter)
+              event={Object {}}
+            />
           </styled.div>
-</Flex>,
+        </Flex>,
         <Portal>
           <Connect(BulkUpdateModalPresenter)
-                    selectedEventIds={
-                              Array [
-                                        1,
-                                        2,
-                                        3,
-                                      ]
-                    }
+            selectedEventIds={
+              Array [
+                1,
+                2,
+                3,
+              ]
+            }
           />
-</Portal>,
+        </Portal>,
       ],
     },
     "ref": null,
@@ -1197,41 +1197,41 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               padding="1.5rem 2rem"
->
+            >
               <Connect(withSidebarEventHeader)
-                            availableInventory={15000}
-                            totalInventory={40000}
+                availableInventory={15000}
+                totalInventory={40000}
               />
               <styled.div
-                            marginTop="1rem"
+                marginTop="1rem"
               >
-                            <EventInventorySeatMap />
+                <EventInventorySeatMap />
               </styled.div>
-</styled.div>,
+            </styled.div>,
             <styled.div
               height="2rem"
-/>,
+            />,
             <styled.div
               padding="0 1rem"
->
+            >
               <styled.button
-                            disabled={false}
-                            onClick={[Function]}
-                            small={true}
-                            title="Update Selected Items"
+                disabled={false}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
               >
-                            Bulk Update (
-                            3
-                             Rows)
+                Bulk Update (
+                3
+                 Rows)
               </styled.button>
-</styled.div>,
+            </styled.div>,
             <styled.div
               flex={1}
->
+            >
               <Connect(VirtualizedEventInventoryPresenter)
-                            event={Object {}}
+                event={Object {}}
               />
-</styled.div>,
+            </styled.div>,
           ],
           "direction": "column",
           "height": "100%",
@@ -1247,12 +1247,12 @@ ShallowWrapper {
                 <Connect(withSidebarEventHeader)
                   availableInventory={15000}
                   totalInventory={40000}
-/>,
+                />,
                 <styled.div
                   marginTop="1rem"
->
+                >
                   <EventInventorySeatMap />
-</styled.div>,
+                </styled.div>,
               ],
               "padding": "1.5rem 2rem",
             },
@@ -1311,14 +1311,14 @@ ShallowWrapper {
             "props": Object {
               "children": <styled.button
                 disabled={false}
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 small={true}
                 title="Update Selected Items"
->
+              >
                 Bulk Update (
                 3
                  Rows)
-</styled.button>,
+              </styled.button>,
               "padding": "0 1rem",
             },
             "ref": null,
@@ -1333,7 +1333,7 @@ ShallowWrapper {
                   " Rows)",
                 ],
                 "disabled": false,
-                "onClick": [Function],
+                "onClick": [MockFunction],
                 "small": true,
                 "title": "Update Selected Items",
               },
@@ -1354,7 +1354,7 @@ ShallowWrapper {
             "props": Object {
               "children": <Connect(VirtualizedEventInventoryPresenter)
                 event={Object {}}
-/>,
+              />,
               "flex": 1,
             },
             "ref": null,
@@ -1381,13 +1381,13 @@ ShallowWrapper {
         "props": Object {
           "children": <Connect(BulkUpdateModalPresenter)
             selectedEventIds={
-                        Array [
-                                    1,
-                                    2,
-                                    3,
-                                  ]
+              Array [
+                1,
+                2,
+                3,
+              ]
             }
-/>,
+          />,
         },
         "ref": null,
         "rendered": Object {
@@ -1420,56 +1420,56 @@ ShallowWrapper {
           <Flex
             direction="column"
             height="100%"
->
+          >
             <styled.div
-                        padding="1.5rem 2rem"
+              padding="1.5rem 2rem"
             >
-                        <Connect(withSidebarEventHeader)
-                                    availableInventory={15000}
-                                    totalInventory={40000}
-                        />
-                        <styled.div
-                                    marginTop="1rem"
-                        >
-                                    <EventInventorySeatMap />
-                        </styled.div>
+              <Connect(withSidebarEventHeader)
+                availableInventory={15000}
+                totalInventory={40000}
+              />
+              <styled.div
+                marginTop="1rem"
+              >
+                <EventInventorySeatMap />
+              </styled.div>
             </styled.div>
             <styled.div
-                        height="2rem"
+              height="2rem"
             />
             <styled.div
-                        padding="0 1rem"
+              padding="0 1rem"
             >
-                        <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    small={true}
-                                    title="Update Selected Items"
-                        >
-                                    Bulk Update (
-                                    3
-                                     Rows)
-                        </styled.button>
+              <styled.button
+                disabled={false}
+                onClick={[MockFunction]}
+                small={true}
+                title="Update Selected Items"
+              >
+                Bulk Update (
+                3
+                 Rows)
+              </styled.button>
             </styled.div>
             <styled.div
-                        flex={1}
+              flex={1}
             >
-                        <Connect(VirtualizedEventInventoryPresenter)
-                                    event={Object {}}
-                        />
+              <Connect(VirtualizedEventInventoryPresenter)
+                event={Object {}}
+              />
             </styled.div>
-</Flex>,
+          </Flex>,
           <Portal>
             <Connect(BulkUpdateModalPresenter)
-                        selectedEventIds={
-                                    Array [
-                                                1,
-                                                2,
-                                                3,
-                                              ]
-                        }
+              selectedEventIds={
+                Array [
+                  1,
+                  2,
+                  3,
+                ]
+              }
             />
-</Portal>,
+          </Portal>,
         ],
       },
       "ref": null,
@@ -1482,41 +1482,41 @@ ShallowWrapper {
             "children": Array [
               <styled.div
                 padding="1.5rem 2rem"
->
+              >
                 <Connect(withSidebarEventHeader)
-                                availableInventory={15000}
-                                totalInventory={40000}
+                  availableInventory={15000}
+                  totalInventory={40000}
                 />
                 <styled.div
-                                marginTop="1rem"
+                  marginTop="1rem"
                 >
-                                <EventInventorySeatMap />
+                  <EventInventorySeatMap />
                 </styled.div>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 height="2rem"
-/>,
+              />,
               <styled.div
                 padding="0 1rem"
->
+              >
                 <styled.button
-                                disabled={false}
-                                onClick={[Function]}
-                                small={true}
-                                title="Update Selected Items"
+                  disabled={false}
+                  onClick={[MockFunction]}
+                  small={true}
+                  title="Update Selected Items"
                 >
-                                Bulk Update (
-                                3
-                                 Rows)
+                  Bulk Update (
+                  3
+                   Rows)
                 </styled.button>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 flex={1}
->
+              >
                 <Connect(VirtualizedEventInventoryPresenter)
-                                event={Object {}}
+                  event={Object {}}
                 />
-</styled.div>,
+              </styled.div>,
             ],
             "direction": "column",
             "height": "100%",
@@ -1532,12 +1532,12 @@ ShallowWrapper {
                   <Connect(withSidebarEventHeader)
                     availableInventory={15000}
                     totalInventory={40000}
-/>,
+                  />,
                   <styled.div
                     marginTop="1rem"
->
+                  >
                     <EventInventorySeatMap />
-</styled.div>,
+                  </styled.div>,
                 ],
                 "padding": "1.5rem 2rem",
               },
@@ -1596,14 +1596,14 @@ ShallowWrapper {
               "props": Object {
                 "children": <styled.button
                   disabled={false}
-                  onClick={[Function]}
+                  onClick={[MockFunction]}
                   small={true}
                   title="Update Selected Items"
->
+                >
                   Bulk Update (
                   3
                    Rows)
-</styled.button>,
+                </styled.button>,
                 "padding": "0 1rem",
               },
               "ref": null,
@@ -1618,7 +1618,7 @@ ShallowWrapper {
                     " Rows)",
                   ],
                   "disabled": false,
-                  "onClick": [Function],
+                  "onClick": [MockFunction],
                   "small": true,
                   "title": "Update Selected Items",
                 },
@@ -1639,7 +1639,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <Connect(VirtualizedEventInventoryPresenter)
                   event={Object {}}
-/>,
+                />,
                 "flex": 1,
               },
               "ref": null,
@@ -1666,13 +1666,13 @@ ShallowWrapper {
           "props": Object {
             "children": <Connect(BulkUpdateModalPresenter)
               selectedEventIds={
-                            Array [
-                                          1,
-                                          2,
-                                          3,
-                                        ]
+                Array [
+                  1,
+                  2,
+                  3,
+                ]
               }
-/>,
+            />,
           },
           "ref": null,
           "rendered": Object {

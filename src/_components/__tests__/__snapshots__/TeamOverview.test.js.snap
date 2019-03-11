@@ -157,7 +157,6 @@ exports[`renders correctly with props 1`] = `
       <div
         className="c1 c2"
         onClick={[Function]}
-        style={undefined}
       >
         <div
           className=""
@@ -186,7 +185,7 @@ exports[`renders correctly with props 1`] = `
     </div>
     <button
       className="c6"
-      onClick={[Function]}
+      onClick={[MockFunction]}
     />
   </div>
   <div
@@ -205,7 +204,6 @@ exports[`renders correctly with props 1`] = `
       <p
         className=""
         color="#FFFFFF"
-        size={undefined}
       >
         <i>
           Win / Loss
@@ -224,7 +222,6 @@ exports[`renders correctly with props 1`] = `
       <p
         className=""
         color="#FFFFFF"
-        size={undefined}
       >
         <i>
           Games Remaining
@@ -392,7 +389,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
       <div
         className="c1 c2"
         onClick={[Function]}
-        style={undefined}
       >
         <div
           className=""
@@ -421,7 +417,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
     </div>
     <button
       className="c6"
-      onClick={[Function]}
+      onClick={[MockFunction]}
     />
   </div>
   <div
@@ -440,7 +436,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
       <p
         className=""
         color="#FFFFFF"
-        size={undefined}
       >
         <i>
           Win / Loss
@@ -459,7 +454,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
       <p
         className=""
         color="#FFFFFF"
-        size={undefined}
       >
         <i>
           Games Remaining

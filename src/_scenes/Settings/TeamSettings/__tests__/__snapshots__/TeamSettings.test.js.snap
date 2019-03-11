@@ -5,19 +5,29 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TeamSettings
     clientActions={
-        Object {
-            "fetch": [Function],
-            "update": [Function],
-          }
+      Object {
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "update": [MockFunction],
+      }
     }
     clientState={
-        Object {
-            "id": 1,
-            "name": "New York Mets",
-            "pricingInterval": 15,
-          }
+      Object {
+        "id": 1,
+        "name": "New York Mets",
+        "pricingInterval": 15,
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -34,48 +44,60 @@ ShallowWrapper {
     "props": Object {
       "children": <styled.div
         padding="2rem"
->
+      >
         <styled.div>
-                <styled.div
-                        margin="2rem 0"
-                >
-                        <Breadcrumbs
-                                crumbs={
-                                        Array [
-                                                Object {
-                                                  "path": "/dashboard",
-                                                  "title": "Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/settings/team",
-                                                  "title": "Team Settings",
-                                                },
-                                              ]
-                                }
-                        />
-                </styled.div>
-                <styled.h3
-                        type="secondary"
-                >
-                        Team Settings
-                </styled.h3>
-                <styled.span
-                        weight="300"
-                >
-                        <i>
-                                Team Information and settings
-                        </i>
-                </styled.span>
-                <TeamInfo
-                        fetch={[Function]}
-                        id={1}
-                        name="New York Mets"
-                        pricingInterval={15}
-                        update={[Function]}
-                />
-                <Connect(TeamIntegrationsContainer) />
+          <styled.div
+            margin="2rem 0"
+          >
+            <Breadcrumbs
+              crumbs={
+                Array [
+                  Object {
+                    "path": "/dashboard",
+                    "title": "Dashboard",
+                  },
+                  Object {
+                    "path": "/settings/team",
+                    "title": "Team Settings",
+                  },
+                ]
+              }
+            />
+          </styled.div>
+          <styled.h3
+            type="secondary"
+          >
+            Team Settings
+          </styled.h3>
+          <styled.span
+            weight="300"
+          >
+            <i>
+              Team Information and settings
+            </i>
+          </styled.span>
+          <TeamInfo
+            fetch={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            id={1}
+            name="New York Mets"
+            pricingInterval={15}
+            update={[MockFunction]}
+          />
+          <Connect(TeamIntegrationsContainer) />
         </styled.div>
-</styled.div>,
+      </styled.div>,
     },
     "ref": null,
     "rendered": Object {
@@ -85,44 +107,56 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.div>
           <styled.div
-                    margin="2rem 0"
+            margin="2rem 0"
           >
-                    <Breadcrumbs
-                              crumbs={
-                                        Array [
-                                                  Object {
-                                                    "path": "/dashboard",
-                                                    "title": "Dashboard",
-                                                  },
-                                                  Object {
-                                                    "path": "/settings/team",
-                                                    "title": "Team Settings",
-                                                  },
-                                                ]
-                              }
-                    />
+            <Breadcrumbs
+              crumbs={
+                Array [
+                  Object {
+                    "path": "/dashboard",
+                    "title": "Dashboard",
+                  },
+                  Object {
+                    "path": "/settings/team",
+                    "title": "Team Settings",
+                  },
+                ]
+              }
+            />
           </styled.div>
           <styled.h3
-                    type="secondary"
+            type="secondary"
           >
-                    Team Settings
+            Team Settings
           </styled.h3>
           <styled.span
-                    weight="300"
+            weight="300"
           >
-                    <i>
-                              Team Information and settings
-                    </i>
+            <i>
+              Team Information and settings
+            </i>
           </styled.span>
           <TeamInfo
-                    fetch={[Function]}
-                    id={1}
-                    name="New York Mets"
-                    pricingInterval={15}
-                    update={[Function]}
+            fetch={
+              [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+            id={1}
+            name="New York Mets"
+            pricingInterval={15}
+            update={[MockFunction]}
           />
           <Connect(TeamIntegrationsContainer) />
-</styled.div>,
+        </styled.div>,
         "padding": "2rem",
       },
       "ref": null,
@@ -134,41 +168,53 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               margin="2rem 0"
->
+            >
               <Breadcrumbs
-                            crumbs={
-                                          Array [
-                                                        Object {
-                                                          "path": "/dashboard",
-                                                          "title": "Dashboard",
-                                                        },
-                                                        Object {
-                                                          "path": "/settings/team",
-                                                          "title": "Team Settings",
-                                                        },
-                                                      ]
-                            }
+                crumbs={
+                  Array [
+                    Object {
+                      "path": "/dashboard",
+                      "title": "Dashboard",
+                    },
+                    Object {
+                      "path": "/settings/team",
+                      "title": "Team Settings",
+                    },
+                  ]
+                }
               />
-</styled.div>,
+            </styled.div>,
             <styled.h3
               type="secondary"
->
+            >
               Team Settings
-</styled.h3>,
+            </styled.h3>,
             <styled.span
               weight="300"
->
+            >
               <i>
-                            Team Information and settings
+                Team Information and settings
               </i>
-</styled.span>,
+            </styled.span>,
             <TeamInfo
-              fetch={[Function]}
+              fetch={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "isThrow": false,
+                      "value": undefined,
+                    },
+                  ],
+                }
+              }
               id={1}
               name="New York Mets"
               pricingInterval={15}
-              update={[Function]}
-/>,
+              update={[MockFunction]}
+            />,
             <Connect(TeamIntegrationsContainer) />,
           ],
         },
@@ -181,18 +227,18 @@ ShallowWrapper {
             "props": Object {
               "children": <Breadcrumbs
                 crumbs={
-                                Array [
-                                                Object {
-                                                  "path": "/dashboard",
-                                                  "title": "Dashboard",
-                                                },
-                                                Object {
-                                                  "path": "/settings/team",
-                                                  "title": "Team Settings",
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "path": "/dashboard",
+                      "title": "Dashboard",
+                    },
+                    Object {
+                      "path": "/settings/team",
+                      "title": "Team Settings",
+                    },
+                  ]
                 }
-/>,
+              />,
               "margin": "2rem 0",
             },
             "ref": null,
@@ -237,7 +283,7 @@ ShallowWrapper {
             "props": Object {
               "children": <i>
                 Team Information and settings
-</i>,
+              </i>,
               "weight": "300",
             },
             "ref": null,
@@ -259,11 +305,21 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "fetch": [Function],
+              "fetch": [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              },
               "id": 1,
               "name": "New York Mets",
               "pricingInterval": 15,
-              "update": [Function],
+              "update": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -293,48 +349,60 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.div
           padding="2rem"
->
+        >
           <styled.div>
-                    <styled.div
-                              margin="2rem 0"
-                    >
-                              <Breadcrumbs
-                                        crumbs={
-                                                  Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/settings/team",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                                        }
-                              />
-                    </styled.div>
-                    <styled.h3
-                              type="secondary"
-                    >
-                              Team Settings
-                    </styled.h3>
-                    <styled.span
-                              weight="300"
-                    >
-                              <i>
-                                        Team Information and settings
-                              </i>
-                    </styled.span>
-                    <TeamInfo
-                              fetch={[Function]}
-                              id={1}
-                              name="New York Mets"
-                              pricingInterval={15}
-                              update={[Function]}
-                    />
-                    <Connect(TeamIntegrationsContainer) />
+            <styled.div
+              margin="2rem 0"
+            >
+              <Breadcrumbs
+                crumbs={
+                  Array [
+                    Object {
+                      "path": "/dashboard",
+                      "title": "Dashboard",
+                    },
+                    Object {
+                      "path": "/settings/team",
+                      "title": "Team Settings",
+                    },
+                  ]
+                }
+              />
+            </styled.div>
+            <styled.h3
+              type="secondary"
+            >
+              Team Settings
+            </styled.h3>
+            <styled.span
+              weight="300"
+            >
+              <i>
+                Team Information and settings
+              </i>
+            </styled.span>
+            <TeamInfo
+              fetch={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "isThrow": false,
+                      "value": undefined,
+                    },
+                  ],
+                }
+              }
+              id={1}
+              name="New York Mets"
+              pricingInterval={15}
+              update={[MockFunction]}
+            />
+            <Connect(TeamIntegrationsContainer) />
           </styled.div>
-</styled.div>,
+        </styled.div>,
       },
       "ref": null,
       "rendered": Object {
@@ -344,44 +412,56 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div>
             <styled.div
-                        margin="2rem 0"
+              margin="2rem 0"
             >
-                        <Breadcrumbs
-                                    crumbs={
-                                                Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/settings/team",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                                    }
-                        />
+              <Breadcrumbs
+                crumbs={
+                  Array [
+                    Object {
+                      "path": "/dashboard",
+                      "title": "Dashboard",
+                    },
+                    Object {
+                      "path": "/settings/team",
+                      "title": "Team Settings",
+                    },
+                  ]
+                }
+              />
             </styled.div>
             <styled.h3
-                        type="secondary"
+              type="secondary"
             >
-                        Team Settings
+              Team Settings
             </styled.h3>
             <styled.span
-                        weight="300"
+              weight="300"
             >
-                        <i>
-                                    Team Information and settings
-                        </i>
+              <i>
+                Team Information and settings
+              </i>
             </styled.span>
             <TeamInfo
-                        fetch={[Function]}
-                        id={1}
-                        name="New York Mets"
-                        pricingInterval={15}
-                        update={[Function]}
+              fetch={
+                [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "isThrow": false,
+                      "value": undefined,
+                    },
+                  ],
+                }
+              }
+              id={1}
+              name="New York Mets"
+              pricingInterval={15}
+              update={[MockFunction]}
             />
             <Connect(TeamIntegrationsContainer) />
-</styled.div>,
+          </styled.div>,
           "padding": "2rem",
         },
         "ref": null,
@@ -393,41 +473,53 @@ ShallowWrapper {
             "children": Array [
               <styled.div
                 margin="2rem 0"
->
+              >
                 <Breadcrumbs
-                                crumbs={
-                                                Array [
-                                                                Object {
-                                                                  "path": "/dashboard",
-                                                                  "title": "Dashboard",
-                                                                },
-                                                                Object {
-                                                                  "path": "/settings/team",
-                                                                  "title": "Team Settings",
-                                                                },
-                                                              ]
-                                }
+                  crumbs={
+                    Array [
+                      Object {
+                        "path": "/dashboard",
+                        "title": "Dashboard",
+                      },
+                      Object {
+                        "path": "/settings/team",
+                        "title": "Team Settings",
+                      },
+                    ]
+                  }
                 />
-</styled.div>,
+              </styled.div>,
               <styled.h3
                 type="secondary"
->
+              >
                 Team Settings
-</styled.h3>,
+              </styled.h3>,
               <styled.span
                 weight="300"
->
+              >
                 <i>
-                                Team Information and settings
+                  Team Information and settings
                 </i>
-</styled.span>,
+              </styled.span>,
               <TeamInfo
-                fetch={[Function]}
+                fetch={
+                  [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "isThrow": false,
+                        "value": undefined,
+                      },
+                    ],
+                  }
+                }
                 id={1}
                 name="New York Mets"
                 pricingInterval={15}
-                update={[Function]}
-/>,
+                update={[MockFunction]}
+              />,
               <Connect(TeamIntegrationsContainer) />,
             ],
           },
@@ -440,18 +532,18 @@ ShallowWrapper {
               "props": Object {
                 "children": <Breadcrumbs
                   crumbs={
-                                    Array [
-                                                      Object {
-                                                        "path": "/dashboard",
-                                                        "title": "Dashboard",
-                                                      },
-                                                      Object {
-                                                        "path": "/settings/team",
-                                                        "title": "Team Settings",
-                                                      },
-                                                    ]
+                    Array [
+                      Object {
+                        "path": "/dashboard",
+                        "title": "Dashboard",
+                      },
+                      Object {
+                        "path": "/settings/team",
+                        "title": "Team Settings",
+                      },
+                    ]
                   }
-/>,
+                />,
                 "margin": "2rem 0",
               },
               "ref": null,
@@ -496,7 +588,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <i>
                   Team Information and settings
-</i>,
+                </i>,
                 "weight": "300",
               },
               "ref": null,
@@ -518,11 +610,21 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "fetch": [Function],
+                "fetch": [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "isThrow": false,
+                      "value": undefined,
+                    },
+                  ],
+                },
                 "id": 1,
                 "name": "New York Mets",
                 "pricingInterval": 15,
-                "update": [Function],
+                "update": [MockFunction],
               },
               "ref": null,
               "rendered": null,

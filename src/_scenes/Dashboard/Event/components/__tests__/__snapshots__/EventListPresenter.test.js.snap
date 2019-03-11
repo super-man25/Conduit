@@ -6,50 +6,50 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventListPresenter
     activeId={1}
     events={
-        Array [
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-          ]
+      Array [
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+      ]
     }
     filter="Query"
     filterOptions={
-        Array [
-            Object {
-              "id": 1,
-              "label": "one",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "label": "one",
+        },
+      ]
     }
     loading={false}
     onClick={[Function]}
@@ -59,7 +59,7 @@ ShallowWrapper {
     selectedFilter={0}
     timestampSort="asc"
     title="title"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -77,68 +77,68 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div
-                    padding="24px 40px"
+            padding="24px 40px"
           >
-                    <styled.h4>
-                              title
-                    </styled.h4>
-                    <styled.div
-                              height="4px"
-                    />
-                    <styled.input
-                              data-test-id="event-list-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value="Query"
-                    />
+            <styled.h4>
+              title
+            </styled.h4>
+            <styled.div
+              height="4px"
+            />
+            <styled.input
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value="Query"
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
         false,
         <styled.div>
           <ScrollableList
-                    data={
-                              Array [
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                      ]
-                    }
-                    scrollIndex={0}
+            data={
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
+            }
+            scrollIndex={0}
           >
-                    [Function]
+            [Function]
           </ScrollableList>
-</styled.div>,
+        </styled.div>,
       ],
       "direction": "column",
       "height": "100%",
@@ -152,21 +152,21 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div
             padding="24px 40px"
->
+          >
             <styled.h4>
-                        title
+              title
             </styled.h4>
             <styled.div
-                        height="4px"
+              height="4px"
             />
             <styled.input
-                        data-test-id="event-list-search"
-                        onChange={[Function]}
-                        placeholder="Search"
-                        type="text"
-                        value="Query"
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value="Query"
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -177,17 +177,17 @@ ShallowWrapper {
             "children": Array [
               <styled.h4>
                 title
-</styled.h4>,
+              </styled.h4>,
               <styled.div
                 height="4px"
-/>,
+              />,
               <styled.input
                 data-test-id="event-list-search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
                 value="Query"
-/>,
+              />,
             ],
             "padding": "24px 40px",
           },
@@ -243,46 +243,46 @@ ShallowWrapper {
         "props": Object {
           "children": <ScrollableList
             data={
-                        Array [
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
             }
             scrollIndex={0}
->
+          >
             [Function]
-</ScrollableList>,
+          </ScrollableList>,
         },
         "ref": null,
         "rendered": Object {
@@ -346,68 +346,68 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div
-                        padding="24px 40px"
+              padding="24px 40px"
             >
-                        <styled.h4>
-                                    title
-                        </styled.h4>
-                        <styled.div
-                                    height="4px"
-                        />
-                        <styled.input
-                                    data-test-id="event-list-search"
-                                    onChange={[Function]}
-                                    placeholder="Search"
-                                    type="text"
-                                    value="Query"
-                        />
+              <styled.h4>
+                title
+              </styled.h4>
+              <styled.div
+                height="4px"
+              />
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value="Query"
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
           false,
           <styled.div>
             <ScrollableList
-                        data={
-                                    Array [
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                              ]
-                        }
-                        scrollIndex={0}
+              data={
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
+              }
+              scrollIndex={0}
             >
-                        [Function]
+              [Function]
             </ScrollableList>
-</styled.div>,
+          </styled.div>,
         ],
         "direction": "column",
         "height": "100%",
@@ -421,21 +421,21 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div
               padding="24px 40px"
->
+            >
               <styled.h4>
-                            title
+                title
               </styled.h4>
               <styled.div
-                            height="4px"
+                height="4px"
               />
               <styled.input
-                            data-test-id="event-list-search"
-                            onChange={[Function]}
-                            placeholder="Search"
-                            type="text"
-                            value="Query"
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value="Query"
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -446,17 +446,17 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   title
-</styled.h4>,
+                </styled.h4>,
                 <styled.div
                   height="4px"
-/>,
+                />,
                 <styled.input
                   data-test-id="event-list-search"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                   value="Query"
-/>,
+                />,
               ],
               "padding": "24px 40px",
             },
@@ -512,46 +512,46 @@ ShallowWrapper {
           "props": Object {
             "children": <ScrollableList
               data={
-                            Array [
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
               }
               scrollIndex={0}
->
+            >
               [Function]
-</ScrollableList>,
+            </ScrollableList>,
           },
           "ref": null,
           "rendered": Object {
@@ -637,50 +637,50 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventListPresenter
     activeId={1}
     events={
-        Array [
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-          ]
+      Array [
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+      ]
     }
     filter=""
     filterOptions={
-        Array [
-            Object {
-              "id": 1,
-              "label": "one",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "label": "one",
+        },
+      ]
     }
     loading={true}
     onClick={[Function]}
@@ -690,7 +690,7 @@ ShallowWrapper {
     selectedFilter={0}
     timestampSort="asc"
     title="title"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -708,68 +708,68 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div
-                    padding="24px 40px"
+            padding="24px 40px"
           >
-                    <styled.h4>
-                              title
-                    </styled.h4>
-                    <styled.div
-                              height="4px"
-                    />
-                    <styled.input
-                              data-test-id="event-list-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                    />
+            <styled.h4>
+              title
+            </styled.h4>
+            <styled.div
+              height="4px"
+            />
+            <styled.input
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
         false,
         <styled.div>
           <ScrollableList
-                    data={
-                              Array [
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                      ]
-                    }
-                    scrollIndex={0}
+            data={
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
+            }
+            scrollIndex={0}
           >
-                    [Function]
+            [Function]
           </ScrollableList>
-</styled.div>,
+        </styled.div>,
       ],
       "direction": "column",
       "height": "100%",
@@ -783,21 +783,21 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div
             padding="24px 40px"
->
+          >
             <styled.h4>
-                        title
+              title
             </styled.h4>
             <styled.div
-                        height="4px"
+              height="4px"
             />
             <styled.input
-                        data-test-id="event-list-search"
-                        onChange={[Function]}
-                        placeholder="Search"
-                        type="text"
-                        value=""
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -808,17 +808,17 @@ ShallowWrapper {
             "children": Array [
               <styled.h4>
                 title
-</styled.h4>,
+              </styled.h4>,
               <styled.div
                 height="4px"
-/>,
+              />,
               <styled.input
                 data-test-id="event-list-search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
                 value=""
-/>,
+              />,
             ],
             "padding": "24px 40px",
           },
@@ -874,46 +874,46 @@ ShallowWrapper {
         "props": Object {
           "children": <ScrollableList
             data={
-                        Array [
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
             }
             scrollIndex={0}
->
+          >
             [Function]
-</ScrollableList>,
+          </ScrollableList>,
         },
         "ref": null,
         "rendered": Object {
@@ -977,68 +977,68 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div
-                        padding="24px 40px"
+              padding="24px 40px"
             >
-                        <styled.h4>
-                                    title
-                        </styled.h4>
-                        <styled.div
-                                    height="4px"
-                        />
-                        <styled.input
-                                    data-test-id="event-list-search"
-                                    onChange={[Function]}
-                                    placeholder="Search"
-                                    type="text"
-                                    value=""
-                        />
+              <styled.h4>
+                title
+              </styled.h4>
+              <styled.div
+                height="4px"
+              />
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
           false,
           <styled.div>
             <ScrollableList
-                        data={
-                                    Array [
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                              ]
-                        }
-                        scrollIndex={0}
+              data={
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
+              }
+              scrollIndex={0}
             >
-                        [Function]
+              [Function]
             </ScrollableList>
-</styled.div>,
+          </styled.div>,
         ],
         "direction": "column",
         "height": "100%",
@@ -1052,21 +1052,21 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div
               padding="24px 40px"
->
+            >
               <styled.h4>
-                            title
+                title
               </styled.h4>
               <styled.div
-                            height="4px"
+                height="4px"
               />
               <styled.input
-                            data-test-id="event-list-search"
-                            onChange={[Function]}
-                            placeholder="Search"
-                            type="text"
-                            value=""
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -1077,17 +1077,17 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   title
-</styled.h4>,
+                </styled.h4>,
                 <styled.div
                   height="4px"
-/>,
+                />,
                 <styled.input
                   data-test-id="event-list-search"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                   value=""
-/>,
+                />,
               ],
               "padding": "24px 40px",
             },
@@ -1143,46 +1143,46 @@ ShallowWrapper {
           "props": Object {
             "children": <ScrollableList
               data={
-                            Array [
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
               }
               scrollIndex={0}
->
+            >
               [Function]
-</ScrollableList>,
+            </ScrollableList>,
           },
           "ref": null,
           "rendered": Object {
@@ -1270,12 +1270,12 @@ ShallowWrapper {
     events={Array []}
     filter=""
     filterOptions={
-        Array [
-            Object {
-              "id": 1,
-              "label": "one",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "label": "one",
+        },
+      ]
     }
     loading={false}
     onClick={[Function]}
@@ -1285,7 +1285,7 @@ ShallowWrapper {
     selectedFilter={0}
     timestampSort="asc"
     title="title"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1303,30 +1303,30 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div
-                    padding="24px 40px"
+            padding="24px 40px"
           >
-                    <styled.h4>
-                              title
-                    </styled.h4>
-                    <styled.div
-                              height="4px"
-                    />
-                    <styled.input
-                              data-test-id="event-list-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                    />
+            <styled.h4>
+              title
+            </styled.h4>
+            <styled.div
+              height="4px"
+            />
+            <styled.input
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div>
           <styled.h4
-                    data-test-id="no-events-message"
+            data-test-id="no-events-message"
           >
-                    No events matching query
+            No events matching query
           </styled.h4>
-</styled.div>,
+        </styled.div>,
         false,
       ],
       "direction": "column",
@@ -1341,21 +1341,21 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div
             padding="24px 40px"
->
+          >
             <styled.h4>
-                        title
+              title
             </styled.h4>
             <styled.div
-                        height="4px"
+              height="4px"
             />
             <styled.input
-                        data-test-id="event-list-search"
-                        onChange={[Function]}
-                        placeholder="Search"
-                        type="text"
-                        value=""
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -1366,17 +1366,17 @@ ShallowWrapper {
             "children": Array [
               <styled.h4>
                 title
-</styled.h4>,
+              </styled.h4>,
               <styled.div
                 height="4px"
-/>,
+              />,
               <styled.input
                 data-test-id="event-list-search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
                 value=""
-/>,
+              />,
             ],
             "padding": "24px 40px",
           },
@@ -1431,9 +1431,9 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.h4
             data-test-id="no-events-message"
->
+          >
             No events matching query
-</styled.h4>,
+          </styled.h4>,
         },
         "ref": null,
         "rendered": Object {
@@ -1463,30 +1463,30 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div
-                        padding="24px 40px"
+              padding="24px 40px"
             >
-                        <styled.h4>
-                                    title
-                        </styled.h4>
-                        <styled.div
-                                    height="4px"
-                        />
-                        <styled.input
-                                    data-test-id="event-list-search"
-                                    onChange={[Function]}
-                                    placeholder="Search"
-                                    type="text"
-                                    value=""
-                        />
+              <styled.h4>
+                title
+              </styled.h4>
+              <styled.div
+                height="4px"
+              />
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div>
             <styled.h4
-                        data-test-id="no-events-message"
+              data-test-id="no-events-message"
             >
-                        No events matching query
+              No events matching query
             </styled.h4>
-</styled.div>,
+          </styled.div>,
           false,
         ],
         "direction": "column",
@@ -1501,21 +1501,21 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div
               padding="24px 40px"
->
+            >
               <styled.h4>
-                            title
+                title
               </styled.h4>
               <styled.div
-                            height="4px"
+                height="4px"
               />
               <styled.input
-                            data-test-id="event-list-search"
-                            onChange={[Function]}
-                            placeholder="Search"
-                            type="text"
-                            value=""
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -1526,17 +1526,17 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   title
-</styled.h4>,
+                </styled.h4>,
                 <styled.div
                   height="4px"
-/>,
+                />,
                 <styled.input
                   data-test-id="event-list-search"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                   value=""
-/>,
+                />,
               ],
               "padding": "24px 40px",
             },
@@ -1591,9 +1591,9 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.h4
               data-test-id="no-events-message"
->
+            >
               No events matching query
-</styled.h4>,
+            </styled.h4>,
           },
           "ref": null,
           "rendered": Object {
@@ -1645,50 +1645,50 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventListPresenter
     activeId={1}
     events={
-        Array [
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-          ]
+      Array [
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+      ]
     }
     filter=""
     filterOptions={
-        Array [
-            Object {
-              "id": 1,
-              "label": "one",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "label": "one",
+        },
+      ]
     }
     loading={false}
     onClick={[Function]}
@@ -1698,7 +1698,7 @@ ShallowWrapper {
     selectedFilter={0}
     timestampSort="asc"
     title="title"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1716,68 +1716,68 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div
-                    padding="24px 40px"
+            padding="24px 40px"
           >
-                    <styled.h4>
-                              title
-                    </styled.h4>
-                    <styled.div
-                              height="4px"
-                    />
-                    <styled.input
-                              data-test-id="event-list-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                    />
+            <styled.h4>
+              title
+            </styled.h4>
+            <styled.div
+              height="4px"
+            />
+            <styled.input
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
         false,
         <styled.div>
           <ScrollableList
-                    data={
-                              Array [
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                      ]
-                    }
-                    scrollIndex={0}
+            data={
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
+            }
+            scrollIndex={0}
           >
-                    [Function]
+            [Function]
           </ScrollableList>
-</styled.div>,
+        </styled.div>,
       ],
       "direction": "column",
       "height": "100%",
@@ -1791,21 +1791,21 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div
             padding="24px 40px"
->
+          >
             <styled.h4>
-                        title
+              title
             </styled.h4>
             <styled.div
-                        height="4px"
+              height="4px"
             />
             <styled.input
-                        data-test-id="event-list-search"
-                        onChange={[Function]}
-                        placeholder="Search"
-                        type="text"
-                        value=""
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -1816,17 +1816,17 @@ ShallowWrapper {
             "children": Array [
               <styled.h4>
                 title
-</styled.h4>,
+              </styled.h4>,
               <styled.div
                 height="4px"
-/>,
+              />,
               <styled.input
                 data-test-id="event-list-search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
                 value=""
-/>,
+              />,
             ],
             "padding": "24px 40px",
           },
@@ -1882,46 +1882,46 @@ ShallowWrapper {
         "props": Object {
           "children": <ScrollableList
             data={
-                        Array [
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
             }
             scrollIndex={0}
->
+          >
             [Function]
-</ScrollableList>,
+          </ScrollableList>,
         },
         "ref": null,
         "rendered": Object {
@@ -1985,68 +1985,68 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div
-                        padding="24px 40px"
+              padding="24px 40px"
             >
-                        <styled.h4>
-                                    title
-                        </styled.h4>
-                        <styled.div
-                                    height="4px"
-                        />
-                        <styled.input
-                                    data-test-id="event-list-search"
-                                    onChange={[Function]}
-                                    placeholder="Search"
-                                    type="text"
-                                    value=""
-                        />
+              <styled.h4>
+                title
+              </styled.h4>
+              <styled.div
+                height="4px"
+              />
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
           false,
           <styled.div>
             <ScrollableList
-                        data={
-                                    Array [
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                              ]
-                        }
-                        scrollIndex={0}
+              data={
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
+              }
+              scrollIndex={0}
             >
-                        [Function]
+              [Function]
             </ScrollableList>
-</styled.div>,
+          </styled.div>,
         ],
         "direction": "column",
         "height": "100%",
@@ -2060,21 +2060,21 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div
               padding="24px 40px"
->
+            >
               <styled.h4>
-                            title
+                title
               </styled.h4>
               <styled.div
-                            height="4px"
+                height="4px"
               />
               <styled.input
-                            data-test-id="event-list-search"
-                            onChange={[Function]}
-                            placeholder="Search"
-                            type="text"
-                            value=""
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -2085,17 +2085,17 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   title
-</styled.h4>,
+                </styled.h4>,
                 <styled.div
                   height="4px"
-/>,
+                />,
                 <styled.input
                   data-test-id="event-list-search"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                   value=""
-/>,
+                />,
               ],
               "padding": "24px 40px",
             },
@@ -2151,46 +2151,46 @@ ShallowWrapper {
           "props": Object {
             "children": <ScrollableList
               data={
-                            Array [
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
               }
               scrollIndex={0}
->
+            >
               [Function]
-</ScrollableList>,
+            </ScrollableList>,
           },
           "ref": null,
           "rendered": Object {
@@ -2276,50 +2276,50 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <EventListPresenter
     activeId={-1}
     events={
-        Array [
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-            Object {
-              "clientId": 1,
-              "createdAt": 1529336865706,
-              "id": 1,
-              "integrationId": 1,
-              "modifiedAt": 1529336865706,
-              "name": "Some Event",
-              "seasonId": 1,
-              "timestamp": 1529336865706,
-              "venueId": 1,
-            },
-          ]
+      Array [
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+        Object {
+          "clientId": 1,
+          "createdAt": 1529336865706,
+          "id": 1,
+          "integrationId": 1,
+          "modifiedAt": 1529336865706,
+          "name": "Some Event",
+          "seasonId": 1,
+          "timestamp": 1529336865706,
+          "venueId": 1,
+        },
+      ]
     }
     filter=""
     filterOptions={
-        Array [
-            Object {
-              "id": 1,
-              "label": "one",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "label": "one",
+        },
+      ]
     }
     loading={false}
     onClick={[Function]}
@@ -2329,7 +2329,7 @@ ShallowWrapper {
     selectedFilter={0}
     timestampSort="asc"
     title="title"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -2347,68 +2347,68 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div
-                    padding="24px 40px"
+            padding="24px 40px"
           >
-                    <styled.h4>
-                              title
-                    </styled.h4>
-                    <styled.div
-                              height="4px"
-                    />
-                    <styled.input
-                              data-test-id="event-list-search"
-                              onChange={[Function]}
-                              placeholder="Search"
-                              type="text"
-                              value=""
-                    />
+            <styled.h4>
+              title
+            </styled.h4>
+            <styled.div
+              height="4px"
+            />
+            <styled.input
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
         false,
         <styled.div>
           <ScrollableList
-                    data={
-                              Array [
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                        Object {
-                                          "clientId": 1,
-                                          "createdAt": 1529336865706,
-                                          "id": 1,
-                                          "integrationId": 1,
-                                          "modifiedAt": 1529336865706,
-                                          "name": "Some Event",
-                                          "seasonId": 1,
-                                          "timestamp": 1529336865706,
-                                          "venueId": 1,
-                                        },
-                                      ]
-                    }
-                    scrollIndex={-1}
+            data={
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
+            }
+            scrollIndex={-1}
           >
-                    [Function]
+            [Function]
           </ScrollableList>
-</styled.div>,
+        </styled.div>,
       ],
       "direction": "column",
       "height": "100%",
@@ -2422,21 +2422,21 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.div
             padding="24px 40px"
->
+          >
             <styled.h4>
-                        title
+              title
             </styled.h4>
             <styled.div
-                        height="4px"
+              height="4px"
             />
             <styled.input
-                        data-test-id="event-list-search"
-                        onChange={[Function]}
-                        placeholder="Search"
-                        type="text"
-                        value=""
+              data-test-id="event-list-search"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -2447,17 +2447,17 @@ ShallowWrapper {
             "children": Array [
               <styled.h4>
                 title
-</styled.h4>,
+              </styled.h4>,
               <styled.div
                 height="4px"
-/>,
+              />,
               <styled.input
                 data-test-id="event-list-search"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
                 value=""
-/>,
+              />,
             ],
             "padding": "24px 40px",
           },
@@ -2513,46 +2513,46 @@ ShallowWrapper {
         "props": Object {
           "children": <ScrollableList
             data={
-                        Array [
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                    Object {
-                                      "clientId": 1,
-                                      "createdAt": 1529336865706,
-                                      "id": 1,
-                                      "integrationId": 1,
-                                      "modifiedAt": 1529336865706,
-                                      "name": "Some Event",
-                                      "seasonId": 1,
-                                      "timestamp": 1529336865706,
-                                      "venueId": 1,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+                Object {
+                  "clientId": 1,
+                  "createdAt": 1529336865706,
+                  "id": 1,
+                  "integrationId": 1,
+                  "modifiedAt": 1529336865706,
+                  "name": "Some Event",
+                  "seasonId": 1,
+                  "timestamp": 1529336865706,
+                  "venueId": 1,
+                },
+              ]
             }
             scrollIndex={-1}
->
+          >
             [Function]
-</ScrollableList>,
+          </ScrollableList>,
         },
         "ref": null,
         "rendered": Object {
@@ -2616,68 +2616,68 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div
-                        padding="24px 40px"
+              padding="24px 40px"
             >
-                        <styled.h4>
-                                    title
-                        </styled.h4>
-                        <styled.div
-                                    height="4px"
-                        />
-                        <styled.input
-                                    data-test-id="event-list-search"
-                                    onChange={[Function]}
-                                    placeholder="Search"
-                                    type="text"
-                                    value=""
-                        />
+              <styled.h4>
+                title
+              </styled.h4>
+              <styled.div
+                height="4px"
+              />
+              <styled.input
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
           false,
           <styled.div>
             <ScrollableList
-                        data={
-                                    Array [
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                                Object {
-                                                  "clientId": 1,
-                                                  "createdAt": 1529336865706,
-                                                  "id": 1,
-                                                  "integrationId": 1,
-                                                  "modifiedAt": 1529336865706,
-                                                  "name": "Some Event",
-                                                  "seasonId": 1,
-                                                  "timestamp": 1529336865706,
-                                                  "venueId": 1,
-                                                },
-                                              ]
-                        }
-                        scrollIndex={-1}
+              data={
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
+              }
+              scrollIndex={-1}
             >
-                        [Function]
+              [Function]
             </ScrollableList>
-</styled.div>,
+          </styled.div>,
         ],
         "direction": "column",
         "height": "100%",
@@ -2691,21 +2691,21 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.div
               padding="24px 40px"
->
+            >
               <styled.h4>
-                            title
+                title
               </styled.h4>
               <styled.div
-                            height="4px"
+                height="4px"
               />
               <styled.input
-                            data-test-id="event-list-search"
-                            onChange={[Function]}
-                            placeholder="Search"
-                            type="text"
-                            value=""
+                data-test-id="event-list-search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -2716,17 +2716,17 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   title
-</styled.h4>,
+                </styled.h4>,
                 <styled.div
                   height="4px"
-/>,
+                />,
                 <styled.input
                   data-test-id="event-list-search"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                   value=""
-/>,
+                />,
               ],
               "padding": "24px 40px",
             },
@@ -2782,46 +2782,46 @@ ShallowWrapper {
           "props": Object {
             "children": <ScrollableList
               data={
-                            Array [
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                          Object {
-                                            "clientId": 1,
-                                            "createdAt": 1529336865706,
-                                            "id": 1,
-                                            "integrationId": 1,
-                                            "modifiedAt": 1529336865706,
-                                            "name": "Some Event",
-                                            "seasonId": 1,
-                                            "timestamp": 1529336865706,
-                                            "venueId": 1,
-                                          },
-                                        ]
+                Array [
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                  Object {
+                    "clientId": 1,
+                    "createdAt": 1529336865706,
+                    "id": 1,
+                    "integrationId": 1,
+                    "modifiedAt": 1529336865706,
+                    "name": "Some Event",
+                    "seasonId": 1,
+                    "timestamp": 1529336865706,
+                    "venueId": 1,
+                  },
+                ]
               }
               scrollIndex={-1}
->
+            >
               [Function]
-</ScrollableList>,
+            </ScrollableList>,
           },
           "ref": null,
           "rendered": Object {

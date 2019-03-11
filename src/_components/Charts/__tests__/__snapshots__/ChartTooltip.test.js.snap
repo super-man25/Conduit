@@ -3,10 +3,10 @@
 exports[`<ChartTooltip /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <ChartTooltip
     bodyComponent={<div />}
     headerComponent={<div />}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -24,10 +24,10 @@ ShallowWrapper {
       "children": Array [
         <styled.header>
           <div />
-</styled.header>,
+        </styled.header>,
         <styled.section>
           <div />
-</styled.section>,
+        </styled.section>,
       ],
     },
     "ref": null,
@@ -82,10 +82,10 @@ ShallowWrapper {
         "children": Array [
           <styled.header>
             <div />
-</styled.header>,
+          </styled.header>,
           <styled.section>
             <div />
-</styled.section>,
+          </styled.section>,
         ],
       },
       "ref": null,

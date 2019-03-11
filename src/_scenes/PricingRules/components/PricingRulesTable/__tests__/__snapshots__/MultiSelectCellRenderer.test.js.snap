@@ -5,43 +5,43 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MultiSelectCellPresenter
     columnData={
-        Object {
-            "label": "Price Scales",
-            "labelFn": [Function],
-            "optionsKey": "priceScales",
-            "priceScales": Array [
-              Object {
-                "id": 2,
-                "name": "DUGOUT",
-              },
-              Object {
-                "id": 10,
-                "name": "FIELD",
-              },
-              Object {
-                "id": 5,
-                "name": "GOLD",
-              },
-            ],
-          }
+      Object {
+        "label": "Price Scales",
+        "labelFn": [Function],
+        "optionsKey": "priceScales",
+        "priceScales": Array [
+          Object {
+            "id": 2,
+            "name": "DUGOUT",
+          },
+          Object {
+            "id": 10,
+            "name": "FIELD",
+          },
+          Object {
+            "id": 5,
+            "name": "GOLD",
+          },
+        ],
+      }
     }
     isEditing={false}
     parent={
-        Object {
-            "props": Object {
-              "headerHeight": "45",
-              "height": "180",
-            },
-          }
+      Object {
+        "props": Object {
+          "headerHeight": "45",
+          "height": "180",
+        },
+      }
     }
     rulePropertyValue={
-        Array [
-            2,
-            5,
-          ]
+      Array [
+        2,
+        5,
+      ]
     }
-    updatePriceRuleProperty={[Function]}
-/>,
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -59,9 +59,9 @@ ShallowWrapper {
       "align": "center",
       "children": <styled.p
         title=" DUGOUT, GOLD"
->
+      >
         2 Price Scales
-</styled.p>,
+      </styled.p>,
     },
     "ref": null,
     "rendered": Object {
@@ -87,9 +87,9 @@ ShallowWrapper {
         "align": "center",
         "children": <styled.p
           title=" DUGOUT, GOLD"
->
+        >
           2 Price Scales
-</styled.p>,
+        </styled.p>,
       },
       "ref": null,
       "rendered": Object {

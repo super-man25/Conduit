@@ -87,7 +87,6 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   <div
     className="c0"
     onClick={[Function]}
-    style={undefined}
   >
     <div
       className="c1"
@@ -196,7 +195,6 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   <div
     className="c0"
     onClick={[Function]}
-    style={undefined}
   >
     <div
       className="c1"

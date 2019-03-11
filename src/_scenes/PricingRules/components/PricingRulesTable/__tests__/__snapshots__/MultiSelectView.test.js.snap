@@ -4,26 +4,53 @@ exports[`<MultiSelectView /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MultiSelectView
-    labelFn={[Function]}
-    onItemClicked={[Function]}
-    options={
-        Array [
+    labelFn={
+      [MockFunction] {
+        "calls": Array [
+          Array [
             Object {
               "id": 2,
               "name": "Diamond Club",
             },
+          ],
+          Array [
             Object {
               "id": 15,
               "name": "Dugout Club",
             },
-          ]
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    onItemClicked={[MockFunction]}
+    options={
+      Array [
+        Object {
+          "id": 2,
+          "name": "Diamond Club",
+        },
+        Object {
+          "id": 15,
+          "name": "Dugout Club",
+        },
+      ]
     }
     selected={
-        Array [
-            2,
-          ]
+      Array [
+        2,
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -40,12 +67,12 @@ ShallowWrapper {
     "props": Object {
       "children": <Flex
         align="center"
->
+      >
         <styled.input
-                checked={true}
-                onChange={[Function]}
+          checked={true}
+          onChange={[Function]}
         />
-</Flex>,
+      </Flex>,
       "isActive": true,
       "onClick": [Function],
     },
@@ -60,7 +87,7 @@ ShallowWrapper {
           <styled.input
             checked={true}
             onChange={[Function]}
-/>,
+          />,
           undefined,
         ],
       },
@@ -92,12 +119,12 @@ ShallowWrapper {
       "props": Object {
         "children": <Flex
           align="center"
->
+        >
           <styled.input
-                    checked={true}
-                    onChange={[Function]}
+            checked={true}
+            onChange={[Function]}
           />
-</Flex>,
+        </Flex>,
         "isActive": true,
         "onClick": [Function],
       },
@@ -112,7 +139,7 @@ ShallowWrapper {
             <styled.input
               checked={true}
               onChange={[Function]}
-/>,
+            />,
             undefined,
           ],
         },
@@ -143,12 +170,12 @@ ShallowWrapper {
       "props": Object {
         "children": <Flex
           align="center"
->
+        >
           <styled.input
-                    checked={false}
-                    onChange={[Function]}
+            checked={false}
+            onChange={[Function]}
           />
-</Flex>,
+        </Flex>,
         "isActive": false,
         "onClick": [Function],
       },
@@ -163,7 +190,7 @@ ShallowWrapper {
             <styled.input
               checked={false}
               onChange={[Function]}
-/>,
+            />,
             undefined,
           ],
         },

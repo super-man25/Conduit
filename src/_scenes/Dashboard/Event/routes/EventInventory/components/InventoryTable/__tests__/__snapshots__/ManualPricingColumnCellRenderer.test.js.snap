@@ -4,18 +4,18 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
-    cancelEditingManualPrice={[Function]}
+    cancelEditingManualPrice={[MockFunction]}
     cellData={null}
     isEditing={false}
     manualPriceLocked={false}
     rowData={
-        Object {
-            "listedPrice": 12,
-          }
+      Object {
+        "listedPrice": 12,
+      }
     }
-    setEditingManualPrice={[Function]}
-    setManualPrice={[Function]}
-/>,
+    setEditingManualPrice={[MockFunction]}
+    setManualPrice={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -39,9 +39,9 @@ ShallowWrapper {
           onClick={[Function]}
           opacity={1}
           size={14}
->
+        >
           SET PRICE
-</styled.p>,
+        </styled.p>,
       ],
     },
     "ref": null,
@@ -81,9 +81,9 @@ ShallowWrapper {
             onClick={[Function]}
             opacity={1}
             size={14}
->
+          >
             SET PRICE
-</styled.p>,
+          </styled.p>,
         ],
       },
       "ref": null,
@@ -138,18 +138,18 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
-    cancelEditingManualPrice={[Function]}
+    cancelEditingManualPrice={[MockFunction]}
     cellData={null}
     isEditing={true}
     manualPriceLocked={false}
     rowData={
-        Object {
-            "listedPrice": 12,
-          }
+      Object {
+        "listedPrice": 12,
+      }
     }
-    setEditingManualPrice={[Function]}
-    setManualPrice={[Function]}
-/>,
+    setEditingManualPrice={[MockFunction]}
+    setManualPrice={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -172,24 +172,24 @@ ShallowWrapper {
           placeholder="$12.00"
           type="number"
           value=""
-/>,
+        />,
         <styled.button
           onClick={[Function]}
->
+        >
           Set Price
-</styled.button>,
+        </styled.button>,
         <ClearIcon
           fill="#000"
           height={64}
           onClick={[Function]}
           styles={
-                    Object {
-                              "cursor": "pointer",
-                              "marginLeft": 7,
-                            }
+            Object {
+              "cursor": "pointer",
+              "marginLeft": 7,
+            }
           }
           width={64}
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -256,24 +256,24 @@ ShallowWrapper {
             placeholder="$12.00"
             type="number"
             value=""
-/>,
+          />,
           <styled.button
             onClick={[Function]}
->
+          >
             Set Price
-</styled.button>,
+          </styled.button>,
           <ClearIcon
             fill="#000"
             height={64}
             onClick={[Function]}
             styles={
-                        Object {
-                                    "cursor": "pointer",
-                                    "marginLeft": 7,
-                                  }
+              Object {
+                "cursor": "pointer",
+                "marginLeft": 7,
+              }
             }
             width={64}
-/>,
+          />,
         ],
       },
       "ref": null,
@@ -356,18 +356,18 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when manual
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
-    cancelEditingManualPrice={[Function]}
+    cancelEditingManualPrice={[MockFunction]}
     cellData={null}
     isEditing={false}
     manualPriceLocked={true}
     rowData={
-        Object {
-            "listedPrice": 12,
-          }
+      Object {
+        "listedPrice": 12,
+      }
     }
-    setEditingManualPrice={[Function]}
-    setManualPrice={[Function]}
-/>,
+    setEditingManualPrice={[MockFunction]}
+    setManualPrice={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -391,9 +391,9 @@ ShallowWrapper {
           onClick={[Function]}
           opacity={0.5}
           size={14}
->
+        >
           SET PRICE
-</styled.p>,
+        </styled.p>,
       ],
     },
     "ref": null,
@@ -433,9 +433,9 @@ ShallowWrapper {
             onClick={[Function]}
             opacity={0.5}
             size={14}
->
+          >
             SET PRICE
-</styled.p>,
+          </styled.p>,
         ],
       },
       "ref": null,
@@ -490,18 +490,18 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when the ce
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ManualPricingCellPresenter
-    cancelEditingManualPrice={[Function]}
+    cancelEditingManualPrice={[MockFunction]}
     cellData={12}
     isEditing={false}
     manualPriceLocked={false}
     rowData={
-        Object {
-            "listedPrice": 12,
-          }
+      Object {
+        "listedPrice": 12,
+      }
     }
-    setEditingManualPrice={[Function]}
-    setManualPrice={[Function]}
-/>,
+    setEditingManualPrice={[MockFunction]}
+    setManualPrice={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -524,9 +524,9 @@ ShallowWrapper {
           marginLeft="1rem"
           onClick={[Function]}
           size={14}
->
+        >
           $12.00
-</styled.p>,
+        </styled.p>,
         false,
       ],
     },
@@ -566,9 +566,9 @@ ShallowWrapper {
             marginLeft="1rem"
             onClick={[Function]}
             size={14}
->
+          >
             $12.00
-</styled.p>,
+          </styled.p>,
           false,
         ],
       },

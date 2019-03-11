@@ -4,29 +4,45 @@ exports[`<TicketIntegrations /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={[Function]}
+    fetchTicketIntegrations={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "seasonId": undefined,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     loading={false}
     ticketIntegrations={
-        Array [
-            Object {
-              "id": 1,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-            Object {
-              "id": 2,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+        Object {
+          "id": 2,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -44,82 +60,82 @@ ShallowWrapper {
       "children": Array [
         <PanelHeader>
           <Flex
-                    align="center"
-                    height="100%"
+            align="center"
+            height="100%"
           >
-                    <styled.h4>
-                              Ticket Integrations
-                    </styled.h4>
+            <styled.h4>
+              Ticket Integrations
+            </styled.h4>
           </Flex>
-</PanelHeader>,
+        </PanelHeader>,
         <styled.section>
           <styled.div>
-                    <Unknown
-                              integration={
-                                        Object {
-                                                  "id": 1,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                }
-                              }
-                              integrations={
-                                        Array [
-                                                  Object {
-                                                    "id": 1,
-                                                    "isActive": true,
-                                                    "logoUrl": "#",
-                                                    "name": "Some Name",
-                                                    "sold": 1000,
-                                                    "total": 1000,
-                                                  },
-                                                  Object {
-                                                    "id": 2,
-                                                    "isActive": true,
-                                                    "logoUrl": "#",
-                                                    "name": "Some Name",
-                                                    "sold": 1000,
-                                                    "total": 1000,
-                                                  },
-                                                ]
-                              }
-                    />
-                    <Unknown
-                              integration={
-                                        Object {
-                                                  "id": 2,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                }
-                              }
-                              integrations={
-                                        Array [
-                                                  Object {
-                                                    "id": 1,
-                                                    "isActive": true,
-                                                    "logoUrl": "#",
-                                                    "name": "Some Name",
-                                                    "sold": 1000,
-                                                    "total": 1000,
-                                                  },
-                                                  Object {
-                                                    "id": 2,
-                                                    "isActive": true,
-                                                    "logoUrl": "#",
-                                                    "name": "Some Name",
-                                                    "sold": 1000,
-                                                    "total": 1000,
-                                                  },
-                                                ]
-                              }
-                    />
+            <TicketIntegrationListItem
+              integration={
+                Object {
+                  "id": 1,
+                  "isActive": true,
+                  "logoUrl": "#",
+                  "name": "Some Name",
+                  "sold": 1000,
+                  "total": 1000,
+                }
+              }
+              integrations={
+                Array [
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                ]
+              }
+            />
+            <TicketIntegrationListItem
+              integration={
+                Object {
+                  "id": 2,
+                  "isActive": true,
+                  "logoUrl": "#",
+                  "name": "Some Name",
+                  "sold": 1000,
+                  "total": 1000,
+                }
+              }
+              integrations={
+                Array [
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                ]
+              }
+            />
           </styled.div>
-</styled.section>,
+        </styled.section>,
       ],
     },
     "ref": null,
@@ -132,11 +148,11 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
->
+          >
             <styled.h4>
-                        Ticket Integrations
+              Ticket Integrations
             </styled.h4>
-</Flex>,
+          </Flex>,
         },
         "ref": null,
         "rendered": Object {
@@ -147,7 +163,7 @@ ShallowWrapper {
             "align": "center",
             "children": <styled.h4>
               Ticket Integrations
-</styled.h4>,
+            </styled.h4>,
             "height": "100%",
           },
           "ref": null,
@@ -172,71 +188,71 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <styled.div>
-            <Unknown
-                        integration={
-                                    Object {
-                                                "id": 1,
-                                                "isActive": true,
-                                                "logoUrl": "#",
-                                                "name": "Some Name",
-                                                "sold": 1000,
-                                                "total": 1000,
-                                              }
-                        }
-                        integrations={
-                                    Array [
-                                                Object {
-                                                  "id": 1,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                                Object {
-                                                  "id": 2,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                              ]
-                        }
+            <TicketIntegrationListItem
+              integration={
+                Object {
+                  "id": 1,
+                  "isActive": true,
+                  "logoUrl": "#",
+                  "name": "Some Name",
+                  "sold": 1000,
+                  "total": 1000,
+                }
+              }
+              integrations={
+                Array [
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                ]
+              }
             />
-            <Unknown
-                        integration={
-                                    Object {
-                                                "id": 2,
-                                                "isActive": true,
-                                                "logoUrl": "#",
-                                                "name": "Some Name",
-                                                "sold": 1000,
-                                                "total": 1000,
-                                              }
-                        }
-                        integrations={
-                                    Array [
-                                                Object {
-                                                  "id": 1,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                                Object {
-                                                  "id": 2,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                              ]
-                        }
+            <TicketIntegrationListItem
+              integration={
+                Object {
+                  "id": 2,
+                  "isActive": true,
+                  "logoUrl": "#",
+                  "name": "Some Name",
+                  "sold": 1000,
+                  "total": 1000,
+                }
+              }
+              integrations={
+                Array [
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  },
+                ]
+              }
             />
-</styled.div>,
+          </styled.div>,
         },
         "ref": null,
         "rendered": Object {
@@ -245,70 +261,70 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Unknown
+              <TicketIntegrationListItem
                 integration={
-                                Object {
-                                                "id": 1,
-                                                "isActive": true,
-                                                "logoUrl": "#",
-                                                "name": "Some Name",
-                                                "sold": 1000,
-                                                "total": 1000,
-                                              }
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
                 }
                 integrations={
-                                Array [
-                                                Object {
-                                                  "id": 1,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                                Object {
-                                                  "id": 2,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
                 }
-/>,
-              <Unknown
+              />,
+              <TicketIntegrationListItem
                 integration={
-                                Object {
-                                                "id": 2,
-                                                "isActive": true,
-                                                "logoUrl": "#",
-                                                "name": "Some Name",
-                                                "sold": 1000,
-                                                "total": 1000,
-                                              }
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
                 }
                 integrations={
-                                Array [
-                                                Object {
-                                                  "id": 1,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                                Object {
-                                                  "id": 2,
-                                                  "isActive": true,
-                                                  "logoUrl": "#",
-                                                  "name": "Some Name",
-                                                  "sold": 1000,
-                                                  "total": 1000,
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
                 }
-/>,
+              />,
             ],
           },
           "ref": null,
@@ -402,82 +418,82 @@ ShallowWrapper {
         "children": Array [
           <PanelHeader>
             <Flex
-                        align="center"
-                        height="100%"
+              align="center"
+              height="100%"
             >
-                        <styled.h4>
-                                    Ticket Integrations
-                        </styled.h4>
+              <styled.h4>
+                Ticket Integrations
+              </styled.h4>
             </Flex>
-</PanelHeader>,
+          </PanelHeader>,
           <styled.section>
             <styled.div>
-                        <Unknown
-                                    integration={
-                                                Object {
-                                                            "id": 1,
-                                                            "isActive": true,
-                                                            "logoUrl": "#",
-                                                            "name": "Some Name",
-                                                            "sold": 1000,
-                                                            "total": 1000,
-                                                          }
-                                    }
-                                    integrations={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "isActive": true,
-                                                              "logoUrl": "#",
-                                                              "name": "Some Name",
-                                                              "sold": 1000,
-                                                              "total": 1000,
-                                                            },
-                                                            Object {
-                                                              "id": 2,
-                                                              "isActive": true,
-                                                              "logoUrl": "#",
-                                                              "name": "Some Name",
-                                                              "sold": 1000,
-                                                              "total": 1000,
-                                                            },
-                                                          ]
-                                    }
-                        />
-                        <Unknown
-                                    integration={
-                                                Object {
-                                                            "id": 2,
-                                                            "isActive": true,
-                                                            "logoUrl": "#",
-                                                            "name": "Some Name",
-                                                            "sold": 1000,
-                                                            "total": 1000,
-                                                          }
-                                    }
-                                    integrations={
-                                                Array [
-                                                            Object {
-                                                              "id": 1,
-                                                              "isActive": true,
-                                                              "logoUrl": "#",
-                                                              "name": "Some Name",
-                                                              "sold": 1000,
-                                                              "total": 1000,
-                                                            },
-                                                            Object {
-                                                              "id": 2,
-                                                              "isActive": true,
-                                                              "logoUrl": "#",
-                                                              "name": "Some Name",
-                                                              "sold": 1000,
-                                                              "total": 1000,
-                                                            },
-                                                          ]
-                                    }
-                        />
+              <TicketIntegrationListItem
+                integration={
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
+                }
+                integrations={
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
+                }
+              />
+              <TicketIntegrationListItem
+                integration={
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
+                }
+                integrations={
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
+                }
+              />
             </styled.div>
-</styled.section>,
+          </styled.section>,
         ],
       },
       "ref": null,
@@ -490,11 +506,11 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
->
+            >
               <styled.h4>
-                            Ticket Integrations
+                Ticket Integrations
               </styled.h4>
-</Flex>,
+            </Flex>,
           },
           "ref": null,
           "rendered": Object {
@@ -505,7 +521,7 @@ ShallowWrapper {
               "align": "center",
               "children": <styled.h4>
                 Ticket Integrations
-</styled.h4>,
+              </styled.h4>,
               "height": "100%",
             },
             "ref": null,
@@ -530,71 +546,71 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <styled.div>
-              <Unknown
-                            integration={
-                                          Object {
-                                                        "id": 1,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      }
-                            }
-                            integrations={
-                                          Array [
-                                                        Object {
-                                                          "id": 1,
-                                                          "isActive": true,
-                                                          "logoUrl": "#",
-                                                          "name": "Some Name",
-                                                          "sold": 1000,
-                                                          "total": 1000,
-                                                        },
-                                                        Object {
-                                                          "id": 2,
-                                                          "isActive": true,
-                                                          "logoUrl": "#",
-                                                          "name": "Some Name",
-                                                          "sold": 1000,
-                                                          "total": 1000,
-                                                        },
-                                                      ]
-                            }
+              <TicketIntegrationListItem
+                integration={
+                  Object {
+                    "id": 1,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
+                }
+                integrations={
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
+                }
               />
-              <Unknown
-                            integration={
-                                          Object {
-                                                        "id": 2,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      }
-                            }
-                            integrations={
-                                          Array [
-                                                        Object {
-                                                          "id": 1,
-                                                          "isActive": true,
-                                                          "logoUrl": "#",
-                                                          "name": "Some Name",
-                                                          "sold": 1000,
-                                                          "total": 1000,
-                                                        },
-                                                        Object {
-                                                          "id": 2,
-                                                          "isActive": true,
-                                                          "logoUrl": "#",
-                                                          "name": "Some Name",
-                                                          "sold": 1000,
-                                                          "total": 1000,
-                                                        },
-                                                      ]
-                            }
+              <TicketIntegrationListItem
+                integration={
+                  Object {
+                    "id": 2,
+                    "isActive": true,
+                    "logoUrl": "#",
+                    "name": "Some Name",
+                    "sold": 1000,
+                    "total": 1000,
+                  }
+                }
+                integrations={
+                  Array [
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    },
+                  ]
+                }
               />
-</styled.div>,
+            </styled.div>,
           },
           "ref": null,
           "rendered": Object {
@@ -603,70 +619,70 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <Unknown
+                <TicketIntegrationListItem
                   integration={
-                                    Object {
-                                                      "id": 1,
-                                                      "isActive": true,
-                                                      "logoUrl": "#",
-                                                      "name": "Some Name",
-                                                      "sold": 1000,
-                                                      "total": 1000,
-                                                    }
+                    Object {
+                      "id": 1,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    }
                   }
                   integrations={
-                                    Array [
-                                                      Object {
-                                                        "id": 1,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      },
-                                                      Object {
-                                                        "id": 2,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      },
-                                                    ]
+                    Array [
+                      Object {
+                        "id": 1,
+                        "isActive": true,
+                        "logoUrl": "#",
+                        "name": "Some Name",
+                        "sold": 1000,
+                        "total": 1000,
+                      },
+                      Object {
+                        "id": 2,
+                        "isActive": true,
+                        "logoUrl": "#",
+                        "name": "Some Name",
+                        "sold": 1000,
+                        "total": 1000,
+                      },
+                    ]
                   }
-/>,
-                <Unknown
+                />,
+                <TicketIntegrationListItem
                   integration={
-                                    Object {
-                                                      "id": 2,
-                                                      "isActive": true,
-                                                      "logoUrl": "#",
-                                                      "name": "Some Name",
-                                                      "sold": 1000,
-                                                      "total": 1000,
-                                                    }
+                    Object {
+                      "id": 2,
+                      "isActive": true,
+                      "logoUrl": "#",
+                      "name": "Some Name",
+                      "sold": 1000,
+                      "total": 1000,
+                    }
                   }
                   integrations={
-                                    Array [
-                                                      Object {
-                                                        "id": 1,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      },
-                                                      Object {
-                                                        "id": 2,
-                                                        "isActive": true,
-                                                        "logoUrl": "#",
-                                                        "name": "Some Name",
-                                                        "sold": 1000,
-                                                        "total": 1000,
-                                                      },
-                                                    ]
+                    Array [
+                      Object {
+                        "id": 1,
+                        "isActive": true,
+                        "logoUrl": "#",
+                        "name": "Some Name",
+                        "sold": 1000,
+                        "total": 1000,
+                      },
+                      Object {
+                        "id": 2,
+                        "isActive": true,
+                        "logoUrl": "#",
+                        "name": "Some Name",
+                        "sold": 1000,
+                        "total": 1000,
+                      },
+                    ]
                   }
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -782,29 +798,45 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
     error="Error"
-    fetchTicketIntegrations={[Function]}
+    fetchTicketIntegrations={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "seasonId": undefined,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     loading={false}
     ticketIntegrations={
-        Array [
-            Object {
-              "id": 1,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-            Object {
-              "id": 2,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+        Object {
+          "id": 2,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -822,17 +854,17 @@ ShallowWrapper {
       "children": Array [
         <PanelHeader>
           <Flex
-                    align="center"
-                    height="100%"
+            align="center"
+            height="100%"
           >
-                    <styled.h4>
-                              Ticket Integrations
-                    </styled.h4>
+            <styled.h4>
+              Ticket Integrations
+            </styled.h4>
           </Flex>
-</PanelHeader>,
+        </PanelHeader>,
         <styled.section>
           <RenderError />
-</styled.section>,
+        </styled.section>,
       ],
     },
     "ref": null,
@@ -845,11 +877,11 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
->
+          >
             <styled.h4>
-                        Ticket Integrations
+              Ticket Integrations
             </styled.h4>
-</Flex>,
+          </Flex>,
         },
         "ref": null,
         "rendered": Object {
@@ -860,7 +892,7 @@ ShallowWrapper {
             "align": "center",
             "children": <styled.h4>
               Ticket Integrations
-</styled.h4>,
+            </styled.h4>,
             "height": "100%",
           },
           "ref": null,
@@ -910,17 +942,17 @@ ShallowWrapper {
         "children": Array [
           <PanelHeader>
             <Flex
-                        align="center"
-                        height="100%"
+              align="center"
+              height="100%"
             >
-                        <styled.h4>
-                                    Ticket Integrations
-                        </styled.h4>
+              <styled.h4>
+                Ticket Integrations
+              </styled.h4>
             </Flex>
-</PanelHeader>,
+          </PanelHeader>,
           <styled.section>
             <RenderError />
-</styled.section>,
+          </styled.section>,
         ],
       },
       "ref": null,
@@ -933,11 +965,11 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
->
+            >
               <styled.h4>
-                            Ticket Integrations
+                Ticket Integrations
               </styled.h4>
-</Flex>,
+            </Flex>,
           },
           "ref": null,
           "rendered": Object {
@@ -948,7 +980,7 @@ ShallowWrapper {
               "align": "center",
               "children": <styled.h4>
                 Ticket Integrations
-</styled.h4>,
+              </styled.h4>,
               "height": "100%",
             },
             "ref": null,
@@ -1019,29 +1051,45 @@ exports[`<TicketIntegrations /> should render correctly when loading is true 1`]
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={[Function]}
+    fetchTicketIntegrations={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "seasonId": undefined,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     loading={true}
     ticketIntegrations={
-        Array [
-            Object {
-              "id": 1,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-            Object {
-              "id": 2,
-              "isActive": true,
-              "logoUrl": "#",
-              "name": "Some Name",
-              "sold": 1000,
-              "total": 1000,
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+        Object {
+          "id": 2,
+          "isActive": true,
+          "logoUrl": "#",
+          "name": "Some Name",
+          "sold": 1000,
+          "total": 1000,
+        },
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1059,17 +1107,17 @@ ShallowWrapper {
       "children": Array [
         <PanelHeader>
           <Flex
-                    align="center"
-                    height="100%"
+            align="center"
+            height="100%"
           >
-                    <styled.h4>
-                              Ticket Integrations
-                    </styled.h4>
+            <styled.h4>
+              Ticket Integrations
+            </styled.h4>
           </Flex>
-</PanelHeader>,
+        </PanelHeader>,
         <styled.section>
           <Loader />
-</styled.section>,
+        </styled.section>,
       ],
     },
     "ref": null,
@@ -1082,11 +1130,11 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
->
+          >
             <styled.h4>
-                        Ticket Integrations
+              Ticket Integrations
             </styled.h4>
-</Flex>,
+          </Flex>,
         },
         "ref": null,
         "rendered": Object {
@@ -1097,7 +1145,7 @@ ShallowWrapper {
             "align": "center",
             "children": <styled.h4>
               Ticket Integrations
-</styled.h4>,
+            </styled.h4>,
             "height": "100%",
           },
           "ref": null,
@@ -1147,17 +1195,17 @@ ShallowWrapper {
         "children": Array [
           <PanelHeader>
             <Flex
-                        align="center"
-                        height="100%"
+              align="center"
+              height="100%"
             >
-                        <styled.h4>
-                                    Ticket Integrations
-                        </styled.h4>
+              <styled.h4>
+                Ticket Integrations
+              </styled.h4>
             </Flex>
-</PanelHeader>,
+          </PanelHeader>,
           <styled.section>
             <Loader />
-</styled.section>,
+          </styled.section>,
         ],
       },
       "ref": null,
@@ -1170,11 +1218,11 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
->
+            >
               <styled.h4>
-                            Ticket Integrations
+                Ticket Integrations
               </styled.h4>
-</Flex>,
+            </Flex>,
           },
           "ref": null,
           "rendered": Object {
@@ -1185,7 +1233,7 @@ ShallowWrapper {
               "align": "center",
               "children": <styled.h4>
                 Ticket Integrations
-</styled.h4>,
+              </styled.h4>,
               "height": "100%",
             },
             "ref": null,
@@ -1256,10 +1304,26 @@ exports[`<TicketIntegrations /> should render correctly when no data is found 1`
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={[Function]}
+    fetchTicketIntegrations={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "seasonId": undefined,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     loading={false}
     ticketIntegrations={Array []}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1277,17 +1341,17 @@ ShallowWrapper {
       "children": Array [
         <PanelHeader>
           <Flex
-                    align="center"
-                    height="100%"
+            align="center"
+            height="100%"
           >
-                    <styled.h4>
-                              Ticket Integrations
-                    </styled.h4>
+            <styled.h4>
+              Ticket Integrations
+            </styled.h4>
           </Flex>
-</PanelHeader>,
+        </PanelHeader>,
         <styled.section>
           <NoData />
-</styled.section>,
+        </styled.section>,
       ],
     },
     "ref": null,
@@ -1300,11 +1364,11 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
->
+          >
             <styled.h4>
-                        Ticket Integrations
+              Ticket Integrations
             </styled.h4>
-</Flex>,
+          </Flex>,
         },
         "ref": null,
         "rendered": Object {
@@ -1315,7 +1379,7 @@ ShallowWrapper {
             "align": "center",
             "children": <styled.h4>
               Ticket Integrations
-</styled.h4>,
+            </styled.h4>,
             "height": "100%",
           },
           "ref": null,
@@ -1365,17 +1429,17 @@ ShallowWrapper {
         "children": Array [
           <PanelHeader>
             <Flex
-                        align="center"
-                        height="100%"
+              align="center"
+              height="100%"
             >
-                        <styled.h4>
-                                    Ticket Integrations
-                        </styled.h4>
+              <styled.h4>
+                Ticket Integrations
+              </styled.h4>
             </Flex>
-</PanelHeader>,
+          </PanelHeader>,
           <styled.section>
             <NoData />
-</styled.section>,
+          </styled.section>,
         ],
       },
       "ref": null,
@@ -1388,11 +1452,11 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
->
+            >
               <styled.h4>
-                            Ticket Integrations
+                Ticket Integrations
               </styled.h4>
-</Flex>,
+            </Flex>,
           },
           "ref": null,
           "rendered": Object {
@@ -1403,7 +1467,7 @@ ShallowWrapper {
               "align": "center",
               "children": <styled.h4>
                 Ticket Integrations
-</styled.h4>,
+              </styled.h4>,
               "height": "100%",
             },
             "ref": null,

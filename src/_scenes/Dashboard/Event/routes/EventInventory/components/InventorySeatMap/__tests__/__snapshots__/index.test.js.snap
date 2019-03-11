@@ -118,40 +118,40 @@ ShallowWrapper {
       "children": Array [
         <Flex
           align="center"
->
+        >
           <MenuIcon
-                    fill="#999999"
-                    height={30}
-                    onClick={[Function]}
-                    styles={
-                              Object {
-                                        "cursor": "pointer",
-                                      }
-                    }
-                    width={30}
+            fill="#999999"
+            height={30}
+            onClick={[Function]}
+            styles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            width={30}
           />
           <styled.div
-                    height="28px"
-                    margin="0 0.75rem"
-                    width="2px"
+            height="28px"
+            margin="0 0.75rem"
+            width="2px"
           />
           <SeatIcon
-                    fill="#2670AE"
-                    height={28}
-                    onClick={[Function]}
-                    styles={
-                              Object {
-                                        "cursor": "pointer",
-                                      }
-                    }
-                    width={28}
+            fill="#2670AE"
+            height={28}
+            onClick={[Function]}
+            styles={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            width={28}
           />
-</Flex>,
+        </Flex>,
         <Flex
           justify="center"
->
+        >
           <Connect(SeatMapPresenter) />
-</Flex>,
+        </Flex>,
       ],
     },
     "ref": null,
@@ -168,28 +168,28 @@ ShallowWrapper {
               height={30}
               onClick={[Function]}
               styles={
-                            Object {
-                                          "cursor": "pointer",
-                                        }
+                Object {
+                  "cursor": "pointer",
+                }
               }
               width={30}
-/>,
+            />,
             <styled.div
               height="28px"
               margin="0 0.75rem"
               width="2px"
-/>,
+            />,
             <SeatIcon
               fill="#2670AE"
               height={28}
               onClick={[Function]}
               styles={
-                            Object {
-                                          "cursor": "pointer",
-                                        }
+                Object {
+                  "cursor": "pointer",
+                }
               }
               width={28}
-/>,
+            />,
           ],
         },
         "ref": null,
@@ -276,40 +276,40 @@ ShallowWrapper {
         "children": Array [
           <Flex
             align="center"
->
+          >
             <MenuIcon
-                        fill="#999999"
-                        height={30}
-                        onClick={[Function]}
-                        styles={
-                                    Object {
-                                                "cursor": "pointer",
-                                              }
-                        }
-                        width={30}
+              fill="#999999"
+              height={30}
+              onClick={[Function]}
+              styles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              width={30}
             />
             <styled.div
-                        height="28px"
-                        margin="0 0.75rem"
-                        width="2px"
+              height="28px"
+              margin="0 0.75rem"
+              width="2px"
             />
             <SeatIcon
-                        fill="#2670AE"
-                        height={28}
-                        onClick={[Function]}
-                        styles={
-                                    Object {
-                                                "cursor": "pointer",
-                                              }
-                        }
-                        width={28}
+              fill="#2670AE"
+              height={28}
+              onClick={[Function]}
+              styles={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+              width={28}
             />
-</Flex>,
+          </Flex>,
           <Flex
             justify="center"
->
+          >
             <Connect(SeatMapPresenter) />
-</Flex>,
+          </Flex>,
         ],
       },
       "ref": null,
@@ -326,28 +326,28 @@ ShallowWrapper {
                 height={30}
                 onClick={[Function]}
                 styles={
-                                Object {
-                                                "cursor": "pointer",
-                                              }
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
                 width={30}
-/>,
+              />,
               <styled.div
                 height="28px"
                 margin="0 0.75rem"
                 width="2px"
-/>,
+              />,
               <SeatIcon
                 fill="#2670AE"
                 height={28}
                 onClick={[Function]}
                 styles={
-                                Object {
-                                                "cursor": "pointer",
-                                              }
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
                 width={28}
-/>,
+              />,
             ],
           },
           "ref": null,

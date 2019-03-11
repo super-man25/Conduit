@@ -5,27 +5,27 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ContactInfo
     authState={
-        Object {
-            "model": Object {
-              "clientId": 1,
-              "createdAt": null,
-              "email": "test@eventdynamic.com",
-              "firstName": "First",
-              "id": 1,
-              "lastName": "Last",
-              "modifiedAt": null,
-              "phoneNumber": "",
-            },
-          }
+      Object {
+        "model": Object {
+          "clientId": 1,
+          "createdAt": null,
+          "email": "test@eventdynamic.com",
+          "firstName": "First",
+          "id": 1,
+          "lastName": "Last",
+          "modifiedAt": null,
+          "phoneNumber": "",
+        },
+      }
     }
     userActions={
-        Object {
-            "changePassword": [Function],
-            "update": [Function],
-            "updateEmail": [Function],
-          }
+      Object {
+        "changePassword": [MockFunction],
+        "update": [MockFunction],
+        "updateEmail": [MockFunction],
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -43,93 +43,95 @@ ShallowWrapper {
       "children": Array [
         <styled.h5
           type="secondary"
->
+        >
           Basic Settings
-</styled.h5>,
+        </styled.h5>,
         <br />,
         <styled.div
           cols={3}
           id="editName"
->
+        >
           <styled.div>
-                    Name
+            Name
           </styled.div>
-          <Unknown>
-                    <styled.div>
-                              <styled.div
-                                        data-test-id="full-name-text"
-                              >
-                                        First Last
-                              </styled.div>
-                    </styled.div>
-                    <styled.div
-                              data-test-id="edit-name-button"
-                              onClick={[Function]}
-                    />
-          </Unknown>
-</styled.div>,
+          <React.Fragment>
+            <styled.div>
+              <styled.div
+                data-test-id="full-name-text"
+              >
+                First Last
+              </styled.div>
+            </styled.div>
+            <styled.div
+              data-test-id="edit-name-button"
+              onClick={[Function]}
+            />
+          </React.Fragment>
+        </styled.div>,
         <styled.div
           margin="1rem 0"
-/>,
+        />,
         <styled.div
           cols={3}
           id="editEmail"
->
+        >
           <styled.div>
-                    Contact Email
+            Contact Email
           </styled.div>
-          <Unknown>
-                    <styled.div>
-                              test@eventdynamic.com
-                    </styled.div>
-                    <styled.div
-                              onClick={[Function]}
-                    />
-          </Unknown>
-</styled.div>,
+          <React.Fragment>
+            <styled.div>
+              test@eventdynamic.com
+            </styled.div>
+            <styled.div
+              onClick={[Function]}
+            />
+          </React.Fragment>
+        </styled.div>,
         <styled.div
           margin="1rem 0"
-/>,
+        />,
         <styled.div
           cols={3}
           id="editPhoneNumber"
->
+        >
           <styled.div
-                    data-test-id="phone-number-text"
+            data-test-id="phone-number-text"
           >
-                    Phone Number
+            Phone Number
           </styled.div>
-          <Unknown>
-                    <styled.div>
-                              <styled.div />
-                    </styled.div>
-                    <styled.div
-                              data-test-id="edit-phone-number-button"
-                              onClick={[Function]}
-                    />
-          </Unknown>
-</styled.div>,
+          <React.Fragment>
+            <styled.div>
+              <styled.div>
+                
+              </styled.div>
+            </styled.div>
+            <styled.div
+              data-test-id="edit-phone-number-button"
+              onClick={[Function]}
+            />
+          </React.Fragment>
+        </styled.div>,
         <styled.div
           margin="1rem 0"
-/>,
+        />,
         <styled.div
           cols={3}
           id="editPassword"
->
+        >
           <styled.div>
-                    Change Password
+            Change Password
           </styled.div>
-          <Unknown>
-                    <styled.div>
-                              <styled.div>
-                                        xxxxxxxxxx
-                              </styled.div>
-                    </styled.div>
-                    <styled.div
-                              onClick={[Function]}
-                    />
-          </Unknown>
-</styled.div>,
+          <React.Fragment>
+            <styled.div>
+              <styled.div>
+                xxxxxxxxxx
+              </styled.div>
+            </styled.div>
+            <styled.div
+              onClick={[Function]}
+            />
+          </React.Fragment>
+        </styled.div>,
       ],
       "onClickAway": [Function],
     },
@@ -164,20 +166,20 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               Name
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.div>
-                            <styled.div
-                                          data-test-id="full-name-text"
-                            >
-                                          First Last
-                            </styled.div>
+                <styled.div
+                  data-test-id="full-name-text"
+                >
+                  First Last
+                </styled.div>
               </styled.div>
               <styled.div
-                            data-test-id="edit-name-button"
-                            onClick={[Function]}
+                data-test-id="edit-name-button"
+                onClick={[Function]}
               />
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "id": "editName",
@@ -203,15 +205,15 @@ ShallowWrapper {
               "children": Array [
                 <styled.div>
                   <styled.div
-                                    data-test-id="full-name-text"
+                    data-test-id="full-name-text"
                   >
-                                    First Last
+                    First Last
                   </styled.div>
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   data-test-id="edit-name-button"
                   onClick={[Function]}
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -223,9 +225,9 @@ ShallowWrapper {
                 "props": Object {
                   "children": <styled.div
                     data-test-id="full-name-text"
->
+                  >
                     First Last
-</styled.div>,
+                  </styled.div>,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -279,15 +281,15 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               Contact Email
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.div>
-                            test@eventdynamic.com
+                test@eventdynamic.com
               </styled.div>
               <styled.div
-                            onClick={[Function]}
+                onClick={[Function]}
               />
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "id": "editEmail",
@@ -313,10 +315,10 @@ ShallowWrapper {
               "children": Array [
                 <styled.div>
                   test@eventdynamic.com
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   onClick={[Function]}
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -368,18 +370,20 @@ ShallowWrapper {
           "children": Array [
             <styled.div
               data-test-id="phone-number-text"
->
+            >
               Phone Number
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.div>
-                            <styled.div />
+                <styled.div>
+                  
+                </styled.div>
               </styled.div>
               <styled.div
-                            data-test-id="edit-phone-number-button"
-                            onClick={[Function]}
+                data-test-id="edit-phone-number-button"
+                onClick={[Function]}
               />
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "id": "editPhoneNumber",
@@ -405,12 +409,14 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <styled.div>
-                  <styled.div />
-</styled.div>,
+                  <styled.div>
+                    
+                  </styled.div>
+                </styled.div>,
                 <styled.div
                   data-test-id="edit-phone-number-button"
                   onClick={[Function]}
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -420,7 +426,9 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": <styled.div />,
+                  "children": <styled.div>
+                    
+                  </styled.div>,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -473,17 +481,17 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               Change Password
-</styled.div>,
-            <Unknown>
+            </styled.div>,
+            <React.Fragment>
               <styled.div>
-                            <styled.div>
-                                          xxxxxxxxxx
-                            </styled.div>
+                <styled.div>
+                  xxxxxxxxxx
+                </styled.div>
               </styled.div>
               <styled.div
-                            onClick={[Function]}
+                onClick={[Function]}
               />
-</Unknown>,
+            </React.Fragment>,
           ],
           "cols": 3,
           "id": "editPassword",
@@ -509,12 +517,12 @@ ShallowWrapper {
               "children": Array [
                 <styled.div>
                   <styled.div>
-                                    xxxxxxxxxx
+                    xxxxxxxxxx
                   </styled.div>
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   onClick={[Function]}
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -526,7 +534,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": <styled.div>
                     xxxxxxxxxx
-</styled.div>,
+                  </styled.div>,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -571,93 +579,95 @@ ShallowWrapper {
         "children": Array [
           <styled.h5
             type="secondary"
->
+          >
             Basic Settings
-</styled.h5>,
+          </styled.h5>,
           <br />,
           <styled.div
             cols={3}
             id="editName"
->
+          >
             <styled.div>
-                        Name
+              Name
             </styled.div>
-            <Unknown>
-                        <styled.div>
-                                    <styled.div
-                                                data-test-id="full-name-text"
-                                    >
-                                                First Last
-                                    </styled.div>
-                        </styled.div>
-                        <styled.div
-                                    data-test-id="edit-name-button"
-                                    onClick={[Function]}
-                        />
-            </Unknown>
-</styled.div>,
+            <React.Fragment>
+              <styled.div>
+                <styled.div
+                  data-test-id="full-name-text"
+                >
+                  First Last
+                </styled.div>
+              </styled.div>
+              <styled.div
+                data-test-id="edit-name-button"
+                onClick={[Function]}
+              />
+            </React.Fragment>
+          </styled.div>,
           <styled.div
             margin="1rem 0"
-/>,
+          />,
           <styled.div
             cols={3}
             id="editEmail"
->
+          >
             <styled.div>
-                        Contact Email
+              Contact Email
             </styled.div>
-            <Unknown>
-                        <styled.div>
-                                    test@eventdynamic.com
-                        </styled.div>
-                        <styled.div
-                                    onClick={[Function]}
-                        />
-            </Unknown>
-</styled.div>,
+            <React.Fragment>
+              <styled.div>
+                test@eventdynamic.com
+              </styled.div>
+              <styled.div
+                onClick={[Function]}
+              />
+            </React.Fragment>
+          </styled.div>,
           <styled.div
             margin="1rem 0"
-/>,
+          />,
           <styled.div
             cols={3}
             id="editPhoneNumber"
->
+          >
             <styled.div
-                        data-test-id="phone-number-text"
+              data-test-id="phone-number-text"
             >
-                        Phone Number
+              Phone Number
             </styled.div>
-            <Unknown>
-                        <styled.div>
-                                    <styled.div />
-                        </styled.div>
-                        <styled.div
-                                    data-test-id="edit-phone-number-button"
-                                    onClick={[Function]}
-                        />
-            </Unknown>
-</styled.div>,
+            <React.Fragment>
+              <styled.div>
+                <styled.div>
+                  
+                </styled.div>
+              </styled.div>
+              <styled.div
+                data-test-id="edit-phone-number-button"
+                onClick={[Function]}
+              />
+            </React.Fragment>
+          </styled.div>,
           <styled.div
             margin="1rem 0"
-/>,
+          />,
           <styled.div
             cols={3}
             id="editPassword"
->
+          >
             <styled.div>
-                        Change Password
+              Change Password
             </styled.div>
-            <Unknown>
-                        <styled.div>
-                                    <styled.div>
-                                                xxxxxxxxxx
-                                    </styled.div>
-                        </styled.div>
-                        <styled.div
-                                    onClick={[Function]}
-                        />
-            </Unknown>
-</styled.div>,
+            <React.Fragment>
+              <styled.div>
+                <styled.div>
+                  xxxxxxxxxx
+                </styled.div>
+              </styled.div>
+              <styled.div
+                onClick={[Function]}
+              />
+            </React.Fragment>
+          </styled.div>,
         ],
         "onClickAway": [Function],
       },
@@ -692,20 +702,20 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 Name
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.div>
-                                <styled.div
-                                                data-test-id="full-name-text"
-                                >
-                                                First Last
-                                </styled.div>
+                  <styled.div
+                    data-test-id="full-name-text"
+                  >
+                    First Last
+                  </styled.div>
                 </styled.div>
                 <styled.div
-                                data-test-id="edit-name-button"
-                                onClick={[Function]}
+                  data-test-id="edit-name-button"
+                  onClick={[Function]}
                 />
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "id": "editName",
@@ -731,15 +741,15 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div>
                     <styled.div
-                                        data-test-id="full-name-text"
+                      data-test-id="full-name-text"
                     >
-                                        First Last
+                      First Last
                     </styled.div>
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     data-test-id="edit-name-button"
                     onClick={[Function]}
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -751,9 +761,9 @@ ShallowWrapper {
                   "props": Object {
                     "children": <styled.div
                       data-test-id="full-name-text"
->
+                    >
                       First Last
-</styled.div>,
+                    </styled.div>,
                   },
                   "ref": null,
                   "rendered": Object {
@@ -807,15 +817,15 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 Contact Email
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.div>
-                                test@eventdynamic.com
+                  test@eventdynamic.com
                 </styled.div>
                 <styled.div
-                                onClick={[Function]}
+                  onClick={[Function]}
                 />
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "id": "editEmail",
@@ -841,10 +851,10 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div>
                     test@eventdynamic.com
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     onClick={[Function]}
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -896,18 +906,20 @@ ShallowWrapper {
             "children": Array [
               <styled.div
                 data-test-id="phone-number-text"
->
+              >
                 Phone Number
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.div>
-                                <styled.div />
+                  <styled.div>
+                    
+                  </styled.div>
                 </styled.div>
                 <styled.div
-                                data-test-id="edit-phone-number-button"
-                                onClick={[Function]}
+                  data-test-id="edit-phone-number-button"
+                  onClick={[Function]}
                 />
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "id": "editPhoneNumber",
@@ -933,12 +945,14 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <styled.div>
-                    <styled.div />
-</styled.div>,
+                    <styled.div>
+                      
+                    </styled.div>
+                  </styled.div>,
                   <styled.div
                     data-test-id="edit-phone-number-button"
                     onClick={[Function]}
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -948,7 +962,9 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": <styled.div />,
+                    "children": <styled.div>
+                      
+                    </styled.div>,
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1001,17 +1017,17 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 Change Password
-</styled.div>,
-              <Unknown>
+              </styled.div>,
+              <React.Fragment>
                 <styled.div>
-                                <styled.div>
-                                                xxxxxxxxxx
-                                </styled.div>
+                  <styled.div>
+                    xxxxxxxxxx
+                  </styled.div>
                 </styled.div>
                 <styled.div
-                                onClick={[Function]}
+                  onClick={[Function]}
                 />
-</Unknown>,
+              </React.Fragment>,
             ],
             "cols": 3,
             "id": "editPassword",
@@ -1037,12 +1053,12 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div>
                     <styled.div>
-                                        xxxxxxxxxx
+                      xxxxxxxxxx
                     </styled.div>
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     onClick={[Function]}
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -1054,7 +1070,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": <styled.div>
                       xxxxxxxxxx
-</styled.div>,
+                    </styled.div>,
                   },
                   "ref": null,
                   "rendered": Object {

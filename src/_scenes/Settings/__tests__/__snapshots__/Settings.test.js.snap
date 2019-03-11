@@ -3,18 +3,18 @@
 exports[`<Settings /> renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <Settings
     authActions={Object {}}
     authState={
-        Object {
-            "model": Object {
-              "firstName": "groot",
-              "id": 1,
-              "lastName": "groot",
-            },
-          }
+      Object {
+        "model": Object {
+          "firstName": "groot",
+          "id": 1,
+          "lastName": "groot",
+        },
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -32,78 +32,78 @@ ShallowWrapper {
       "children": Array [
         <Connect(SiteHeaderPresenter)
           auth={
-                    Object {
-                              "firstName": "groot",
-                              "id": 1,
-                              "lastName": "groot",
-                            }
+            Object {
+              "firstName": "groot",
+              "id": 1,
+              "lastName": "groot",
+            }
           }
           authActions={Object {}}
-/>,
+        />,
         <styled.div>
           <Connect(ApiAlertPresenter) />
           <styled.div>
-                    <styled.div
-                              padding="2rem"
-                    >
-                              <Flex
-                                        align-items="center"
-                                        direction="column"
-                              >
-                                        <styled.div
-                                                  padding="2rem 0"
-                                        >
-                                                  <Styled(NavLink)
-                                                            activeStyle={
-                                                                      Object {
-                                                                                "color": "#38A9DB",
-                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                              }
-                                                            }
-                                                            to="/settings/team"
-                                                            weight="light"
-                                                  >
-                                                            Team Settings
-                                                  </Styled(NavLink)>
-                                        </styled.div>
-                                        <styled.div
-                                                  padding="2rem 0"
-                                        >
-                                                  <Styled(NavLink)
-                                                            activeStyle={
-                                                                      Object {
-                                                                                "color": "#38A9DB",
-                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                              }
-                                                            }
-                                                            to="/settings/user"
-                                                            weight="light"
-                                                  >
-                                                            User Settings
-                                                  </Styled(NavLink)>
-                                        </styled.div>
-                              </Flex>
-                    </styled.div>
+            <styled.div
+              padding="2rem"
+            >
+              <Flex
+                align-items="center"
+                direction="column"
+              >
+                <styled.div
+                  padding="2rem 0"
+                >
+                  <Styled(NavLink)
+                    activeStyle={
+                      Object {
+                        "color": "#38A9DB",
+                        "textShadow": "0 0 .1px #38A9DB",
+                      }
+                    }
+                    to="/settings/team"
+                    weight="light"
+                  >
+                    Team Settings
+                  </Styled(NavLink)>
+                </styled.div>
+                <styled.div
+                  padding="2rem 0"
+                >
+                  <Styled(NavLink)
+                    activeStyle={
+                      Object {
+                        "color": "#38A9DB",
+                        "textShadow": "0 0 .1px #38A9DB",
+                      }
+                    }
+                    to="/settings/user"
+                    weight="light"
+                  >
+                    User Settings
+                  </Styled(NavLink)>
+                </styled.div>
+              </Flex>
+            </styled.div>
           </styled.div>
           <styled.div>
-                    <Route
-                              component={[Function]}
-                              path="/settings/team"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/settings/user"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/settings/create-user"
-                    />
-                    <Route
-                              component={[Function]}
-                              path="/settings/demo"
-                    />
+            <Route
+              component={[Function]}
+              path="/settings/team"
+            />
+            <Route
+              component={[Function]}
+              path="/settings/user"
+            />
+            <Route
+              component={[Function]}
+              path="/settings/create-user"
+            />
+            <Route
+              component={[Function]}
+              path="/settings/demo"
+            />
           </styled.div>
-</styled.div>,
+        </styled.div>,
       ],
     },
     "ref": null,
@@ -133,65 +133,65 @@ ShallowWrapper {
             <Connect(ApiAlertPresenter) />,
             <styled.div>
               <styled.div
-                            padding="2rem"
+                padding="2rem"
               >
-                            <Flex
-                                          align-items="center"
-                                          direction="column"
-                            >
-                                          <styled.div
-                                                        padding="2rem 0"
-                                          >
-                                                        <Styled(NavLink)
-                                                                      activeStyle={
-                                                                                    Object {
-                                                                                                  "color": "#38A9DB",
-                                                                                                  "textShadow": "0 0 .1px #38A9DB",
-                                                                                                }
-                                                                      }
-                                                                      to="/settings/team"
-                                                                      weight="light"
-                                                        >
-                                                                      Team Settings
-                                                        </Styled(NavLink)>
-                                          </styled.div>
-                                          <styled.div
-                                                        padding="2rem 0"
-                                          >
-                                                        <Styled(NavLink)
-                                                                      activeStyle={
-                                                                                    Object {
-                                                                                                  "color": "#38A9DB",
-                                                                                                  "textShadow": "0 0 .1px #38A9DB",
-                                                                                                }
-                                                                      }
-                                                                      to="/settings/user"
-                                                                      weight="light"
-                                                        >
-                                                                      User Settings
-                                                        </Styled(NavLink)>
-                                          </styled.div>
-                            </Flex>
+                <Flex
+                  align-items="center"
+                  direction="column"
+                >
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/team"
+                      weight="light"
+                    >
+                      Team Settings
+                    </Styled(NavLink)>
+                  </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/user"
+                      weight="light"
+                    >
+                      User Settings
+                    </Styled(NavLink)>
+                  </styled.div>
+                </Flex>
               </styled.div>
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <Route
-                            component={[Function]}
-                            path="/settings/team"
+                component={[Function]}
+                path="/settings/team"
               />
               <Route
-                            component={[Function]}
-                            path="/settings/user"
+                component={[Function]}
+                path="/settings/user"
               />
               <Route
-                            component={[Function]}
-                            path="/settings/create-user"
+                component={[Function]}
+                path="/settings/create-user"
               />
               <Route
-                            component={[Function]}
-                            path="/settings/demo"
+                component={[Function]}
+                path="/settings/demo"
               />
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -212,45 +212,45 @@ ShallowWrapper {
             "props": Object {
               "children": <styled.div
                 padding="2rem"
->
+              >
                 <Flex
-                                align-items="center"
-                                direction="column"
+                  align-items="center"
+                  direction="column"
                 >
-                                <styled.div
-                                                padding="2rem 0"
-                                >
-                                                <Styled(NavLink)
-                                                                activeStyle={
-                                                                                Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                                }
-                                                                to="/settings/team"
-                                                                weight="light"
-                                                >
-                                                                Team Settings
-                                                </Styled(NavLink)>
-                                </styled.div>
-                                <styled.div
-                                                padding="2rem 0"
-                                >
-                                                <Styled(NavLink)
-                                                                activeStyle={
-                                                                                Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                                }
-                                                                to="/settings/user"
-                                                                weight="light"
-                                                >
-                                                                User Settings
-                                                </Styled(NavLink)>
-                                </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/team"
+                      weight="light"
+                    >
+                      Team Settings
+                    </Styled(NavLink)>
+                  </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/user"
+                      weight="light"
+                    >
+                      User Settings
+                    </Styled(NavLink)>
+                  </styled.div>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             },
             "ref": null,
             "rendered": Object {
@@ -261,40 +261,40 @@ ShallowWrapper {
                 "children": <Flex
                   align-items="center"
                   direction="column"
->
+                >
                   <styled.div
-                                    padding="2rem 0"
+                    padding="2rem 0"
                   >
-                                    <Styled(NavLink)
-                                                      activeStyle={
-                                                                        Object {
-                                                                                          "color": "#38A9DB",
-                                                                                          "textShadow": "0 0 .1px #38A9DB",
-                                                                                        }
-                                                      }
-                                                      to="/settings/team"
-                                                      weight="light"
-                                    >
-                                                      Team Settings
-                                    </Styled(NavLink)>
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/team"
+                      weight="light"
+                    >
+                      Team Settings
+                    </Styled(NavLink)>
                   </styled.div>
                   <styled.div
-                                    padding="2rem 0"
+                    padding="2rem 0"
                   >
-                                    <Styled(NavLink)
-                                                      activeStyle={
-                                                                        Object {
-                                                                                          "color": "#38A9DB",
-                                                                                          "textShadow": "0 0 .1px #38A9DB",
-                                                                                        }
-                                                      }
-                                                      to="/settings/user"
-                                                      weight="light"
-                                    >
-                                                      User Settings
-                                    </Styled(NavLink)>
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/user"
+                      weight="light"
+                    >
+                      User Settings
+                    </Styled(NavLink)>
                   </styled.div>
-</Flex>,
+                </Flex>,
                 "padding": "2rem",
               },
               "ref": null,
@@ -307,36 +307,36 @@ ShallowWrapper {
                   "children": Array [
                     <styled.div
                       padding="2rem 0"
->
+                    >
                       <Styled(NavLink)
-                                            activeStyle={
-                                                                  Object {
-                                                                                        "color": "#38A9DB",
-                                                                                        "textShadow": "0 0 .1px #38A9DB",
-                                                                                      }
-                                            }
-                                            to="/settings/team"
-                                            weight="light"
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/team"
+                        weight="light"
                       >
-                                            Team Settings
+                        Team Settings
                       </Styled(NavLink)>
-</styled.div>,
+                    </styled.div>,
                     <styled.div
                       padding="2rem 0"
->
+                    >
                       <Styled(NavLink)
-                                            activeStyle={
-                                                                  Object {
-                                                                                        "color": "#38A9DB",
-                                                                                        "textShadow": "0 0 .1px #38A9DB",
-                                                                                      }
-                                            }
-                                            to="/settings/user"
-                                            weight="light"
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/user"
+                        weight="light"
                       >
-                                            User Settings
+                        User Settings
                       </Styled(NavLink)>
-</styled.div>,
+                    </styled.div>,
                   ],
                   "direction": "column",
                 },
@@ -349,16 +349,16 @@ ShallowWrapper {
                     "props": Object {
                       "children": <Styled(NavLink)
                         activeStyle={
-                                                Object {
-                                                                        "color": "#38A9DB",
-                                                                        "textShadow": "0 0 .1px #38A9DB",
-                                                                      }
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
                         }
                         to="/settings/team"
                         weight="light"
->
+                      >
                         Team Settings
-</Styled(NavLink)>,
+                      </Styled(NavLink)>,
                       "padding": "2rem 0",
                     },
                     "ref": null,
@@ -388,16 +388,16 @@ ShallowWrapper {
                     "props": Object {
                       "children": <Styled(NavLink)
                         activeStyle={
-                                                Object {
-                                                                        "color": "#38A9DB",
-                                                                        "textShadow": "0 0 .1px #38A9DB",
-                                                                      }
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
                         }
                         to="/settings/user"
                         weight="light"
->
+                      >
                         User Settings
-</Styled(NavLink)>,
+                      </Styled(NavLink)>,
                       "padding": "2rem 0",
                     },
                     "ref": null,
@@ -436,19 +436,19 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   path="/settings/team"
-/>,
+                />,
                 <Route
                   component={[Function]}
                   path="/settings/user"
-/>,
+                />,
                 <Route
                   component={[Function]}
                   path="/settings/create-user"
-/>,
+                />,
                 <Route
                   component={[Function]}
                   path="/settings/demo"
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -519,78 +519,78 @@ ShallowWrapper {
         "children": Array [
           <Connect(SiteHeaderPresenter)
             auth={
-                        Object {
-                                    "firstName": "groot",
-                                    "id": 1,
-                                    "lastName": "groot",
-                                  }
+              Object {
+                "firstName": "groot",
+                "id": 1,
+                "lastName": "groot",
+              }
             }
             authActions={Object {}}
-/>,
+          />,
           <styled.div>
             <Connect(ApiAlertPresenter) />
             <styled.div>
-                        <styled.div
-                                    padding="2rem"
-                        >
-                                    <Flex
-                                                align-items="center"
-                                                direction="column"
-                                    >
-                                                <styled.div
-                                                            padding="2rem 0"
-                                                >
-                                                            <Styled(NavLink)
-                                                                        activeStyle={
-                                                                                    Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                                        }
-                                                                        to="/settings/team"
-                                                                        weight="light"
-                                                            >
-                                                                        Team Settings
-                                                            </Styled(NavLink)>
-                                                </styled.div>
-                                                <styled.div
-                                                            padding="2rem 0"
-                                                >
-                                                            <Styled(NavLink)
-                                                                        activeStyle={
-                                                                                    Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                                        }
-                                                                        to="/settings/user"
-                                                                        weight="light"
-                                                            >
-                                                                        User Settings
-                                                            </Styled(NavLink)>
-                                                </styled.div>
-                                    </Flex>
-                        </styled.div>
+              <styled.div
+                padding="2rem"
+              >
+                <Flex
+                  align-items="center"
+                  direction="column"
+                >
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/team"
+                      weight="light"
+                    >
+                      Team Settings
+                    </Styled(NavLink)>
+                  </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/user"
+                      weight="light"
+                    >
+                      User Settings
+                    </Styled(NavLink)>
+                  </styled.div>
+                </Flex>
+              </styled.div>
             </styled.div>
             <styled.div>
-                        <Route
-                                    component={[Function]}
-                                    path="/settings/team"
-                        />
-                        <Route
-                                    component={[Function]}
-                                    path="/settings/user"
-                        />
-                        <Route
-                                    component={[Function]}
-                                    path="/settings/create-user"
-                        />
-                        <Route
-                                    component={[Function]}
-                                    path="/settings/demo"
-                        />
+              <Route
+                component={[Function]}
+                path="/settings/team"
+              />
+              <Route
+                component={[Function]}
+                path="/settings/user"
+              />
+              <Route
+                component={[Function]}
+                path="/settings/create-user"
+              />
+              <Route
+                component={[Function]}
+                path="/settings/demo"
+              />
             </styled.div>
-</styled.div>,
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -620,65 +620,65 @@ ShallowWrapper {
               <Connect(ApiAlertPresenter) />,
               <styled.div>
                 <styled.div
-                                padding="2rem"
+                  padding="2rem"
                 >
-                                <Flex
-                                                align-items="center"
-                                                direction="column"
-                                >
-                                                <styled.div
-                                                                padding="2rem 0"
-                                                >
-                                                                <Styled(NavLink)
-                                                                                activeStyle={
-                                                                                                Object {
-                                                                                                                "color": "#38A9DB",
-                                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                                              }
-                                                                                }
-                                                                                to="/settings/team"
-                                                                                weight="light"
-                                                                >
-                                                                                Team Settings
-                                                                </Styled(NavLink)>
-                                                </styled.div>
-                                                <styled.div
-                                                                padding="2rem 0"
-                                                >
-                                                                <Styled(NavLink)
-                                                                                activeStyle={
-                                                                                                Object {
-                                                                                                                "color": "#38A9DB",
-                                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                                              }
-                                                                                }
-                                                                                to="/settings/user"
-                                                                                weight="light"
-                                                                >
-                                                                                User Settings
-                                                                </Styled(NavLink)>
-                                                </styled.div>
-                                </Flex>
+                  <Flex
+                    align-items="center"
+                    direction="column"
+                  >
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/team"
+                        weight="light"
+                      >
+                        Team Settings
+                      </Styled(NavLink)>
+                    </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/user"
+                        weight="light"
+                      >
+                        User Settings
+                      </Styled(NavLink)>
+                    </styled.div>
+                  </Flex>
                 </styled.div>
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <Route
-                                component={[Function]}
-                                path="/settings/team"
+                  component={[Function]}
+                  path="/settings/team"
                 />
                 <Route
-                                component={[Function]}
-                                path="/settings/user"
+                  component={[Function]}
+                  path="/settings/user"
                 />
                 <Route
-                                component={[Function]}
-                                path="/settings/create-user"
+                  component={[Function]}
+                  path="/settings/create-user"
                 />
                 <Route
-                                component={[Function]}
-                                path="/settings/demo"
+                  component={[Function]}
+                  path="/settings/demo"
                 />
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -699,45 +699,45 @@ ShallowWrapper {
               "props": Object {
                 "children": <styled.div
                   padding="2rem"
->
+                >
                   <Flex
-                                    align-items="center"
-                                    direction="column"
+                    align-items="center"
+                    direction="column"
                   >
-                                    <styled.div
-                                                      padding="2rem 0"
-                                    >
-                                                      <Styled(NavLink)
-                                                                        activeStyle={
-                                                                                          Object {
-                                                                                                            "color": "#38A9DB",
-                                                                                                            "textShadow": "0 0 .1px #38A9DB",
-                                                                                                          }
-                                                                        }
-                                                                        to="/settings/team"
-                                                                        weight="light"
-                                                      >
-                                                                        Team Settings
-                                                      </Styled(NavLink)>
-                                    </styled.div>
-                                    <styled.div
-                                                      padding="2rem 0"
-                                    >
-                                                      <Styled(NavLink)
-                                                                        activeStyle={
-                                                                                          Object {
-                                                                                                            "color": "#38A9DB",
-                                                                                                            "textShadow": "0 0 .1px #38A9DB",
-                                                                                                          }
-                                                                        }
-                                                                        to="/settings/user"
-                                                                        weight="light"
-                                                      >
-                                                                        User Settings
-                                                      </Styled(NavLink)>
-                                    </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/team"
+                        weight="light"
+                      >
+                        Team Settings
+                      </Styled(NavLink)>
+                    </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/user"
+                        weight="light"
+                      >
+                        User Settings
+                      </Styled(NavLink)>
+                    </styled.div>
                   </Flex>
-</styled.div>,
+                </styled.div>,
               },
               "ref": null,
               "rendered": Object {
@@ -748,40 +748,40 @@ ShallowWrapper {
                   "children": <Flex
                     align-items="center"
                     direction="column"
->
+                  >
                     <styled.div
-                                        padding="2rem 0"
+                      padding="2rem 0"
                     >
-                                        <Styled(NavLink)
-                                                            activeStyle={
-                                                                                Object {
-                                                                                                    "color": "#38A9DB",
-                                                                                                    "textShadow": "0 0 .1px #38A9DB",
-                                                                                                  }
-                                                            }
-                                                            to="/settings/team"
-                                                            weight="light"
-                                        >
-                                                            Team Settings
-                                        </Styled(NavLink)>
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/team"
+                        weight="light"
+                      >
+                        Team Settings
+                      </Styled(NavLink)>
                     </styled.div>
                     <styled.div
-                                        padding="2rem 0"
+                      padding="2rem 0"
                     >
-                                        <Styled(NavLink)
-                                                            activeStyle={
-                                                                                Object {
-                                                                                                    "color": "#38A9DB",
-                                                                                                    "textShadow": "0 0 .1px #38A9DB",
-                                                                                                  }
-                                                            }
-                                                            to="/settings/user"
-                                                            weight="light"
-                                        >
-                                                            User Settings
-                                        </Styled(NavLink)>
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/user"
+                        weight="light"
+                      >
+                        User Settings
+                      </Styled(NavLink)>
                     </styled.div>
-</Flex>,
+                  </Flex>,
                   "padding": "2rem",
                 },
                 "ref": null,
@@ -794,36 +794,36 @@ ShallowWrapper {
                     "children": Array [
                       <styled.div
                         padding="2rem 0"
->
+                      >
                         <Styled(NavLink)
-                                                activeStyle={
-                                                                        Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                }
-                                                to="/settings/team"
-                                                weight="light"
+                          activeStyle={
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
+                          }
+                          to="/settings/team"
+                          weight="light"
                         >
-                                                Team Settings
+                          Team Settings
                         </Styled(NavLink)>
-</styled.div>,
+                      </styled.div>,
                       <styled.div
                         padding="2rem 0"
->
+                      >
                         <Styled(NavLink)
-                                                activeStyle={
-                                                                        Object {
-                                                                                                "color": "#38A9DB",
-                                                                                                "textShadow": "0 0 .1px #38A9DB",
-                                                                                              }
-                                                }
-                                                to="/settings/user"
-                                                weight="light"
+                          activeStyle={
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
+                          }
+                          to="/settings/user"
+                          weight="light"
                         >
-                                                User Settings
+                          User Settings
                         </Styled(NavLink)>
-</styled.div>,
+                      </styled.div>,
                     ],
                     "direction": "column",
                   },
@@ -836,16 +836,16 @@ ShallowWrapper {
                       "props": Object {
                         "children": <Styled(NavLink)
                           activeStyle={
-                                                    Object {
-                                                                              "color": "#38A9DB",
-                                                                              "textShadow": "0 0 .1px #38A9DB",
-                                                                            }
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
                           }
                           to="/settings/team"
                           weight="light"
->
+                        >
                           Team Settings
-</Styled(NavLink)>,
+                        </Styled(NavLink)>,
                         "padding": "2rem 0",
                       },
                       "ref": null,
@@ -875,16 +875,16 @@ ShallowWrapper {
                       "props": Object {
                         "children": <Styled(NavLink)
                           activeStyle={
-                                                    Object {
-                                                                              "color": "#38A9DB",
-                                                                              "textShadow": "0 0 .1px #38A9DB",
-                                                                            }
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
                           }
                           to="/settings/user"
                           weight="light"
->
+                        >
                           User Settings
-</Styled(NavLink)>,
+                        </Styled(NavLink)>,
                         "padding": "2rem 0",
                       },
                       "ref": null,
@@ -923,19 +923,19 @@ ShallowWrapper {
                   <Route
                     component={[Function]}
                     path="/settings/team"
-/>,
+                  />,
                   <Route
                     component={[Function]}
                     path="/settings/user"
-/>,
+                  />,
                   <Route
                     component={[Function]}
                     path="/settings/create-user"
-/>,
+                  />,
                   <Route
                     component={[Function]}
                     path="/settings/demo"
-/>,
+                  />,
                 ],
               },
               "ref": null,

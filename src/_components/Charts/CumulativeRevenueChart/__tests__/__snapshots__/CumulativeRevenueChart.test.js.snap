@@ -5,23 +5,23 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CumulativeRevenueChart
     data={
-        Array [
-            Object {
-              "eventId": 1,
-              "id": 1,
-              "inventory": 100,
-              "isProjected": false,
-              "periodicInventory": 100,
-              "periodicRevenue": 100,
-              "revenue": 100,
-              "timestamp": 1529336865706,
-            },
-          ]
+      Array [
+        Object {
+          "eventId": 1,
+          "id": 1,
+          "inventory": 100,
+          "isProjected": false,
+          "periodicInventory": 100,
+          "periodicRevenue": 100,
+          "revenue": 100,
+          "timestamp": 1529336865706,
+        },
+      ]
     }
     dateFormat="MMM DD, YYYY"
     height={400}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -40,226 +40,226 @@ ShallowWrapper {
         debounce={0}
         height={400}
         width="100%"
->
+      >
         <LineChart
-                barCategoryGap="10%"
-                barGap={4}
-                data={
-                        Array [
-                                Object {
-                                  "isProjected": false,
-                                  "revenue": 100,
-                                  "timestamp": 1529336865706,
-                                },
-                              ]
-                }
-                layout="horizontal"
-                margin={
-                        Object {
-                                "bottom": 5,
-                                "left": 5,
-                                "right": 5,
-                                "top": 5,
-                              }
-                }
-                reverseStackOrder={false}
-                stackOffset="none"
+          barCategoryGap="10%"
+          barGap={4}
+          data={
+            Array [
+              Object {
+                "isProjected": false,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
+          }
+          layout="horizontal"
+          margin={
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
+          }
+          reverseStackOrder={false}
+          stackOffset="none"
         >
-                <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                Array [
-                                        0,
-                                        "auto",
-                                      ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
-                >
-                        <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Date"
-                        />
-                </XAxis>
-                <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
-                >
-                        <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Revenue"
-                        />
-                </YAxis>
-                <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
-                />
-                <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="revenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="actual"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="projectedRevenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="projected"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeDasharray="5 5"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Tooltip
-                        active={false}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        content={
-                                <CumulativeRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                                />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                        }
-                        cursor={
-                                Object {
-                                        "opacity": 0.5,
-                                        "stroke": "#38A9DB",
-                                        "strokeWidth": 2,
-                                      }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                        }
-                        wrapperStyle={Object {}}
-                />
+          <XAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
+          >
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
+          </XAxis>
+          <YAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
+          >
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
+          </YAxis>
+          <CartesianGrid
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
+          />
+          <Line
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="revenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="actual"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Line
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="projectedRevenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="projected"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeDasharray="5 5"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Tooltip
+            active={false}
+            animationDuration={400}
+            animationEasing="ease"
+            content={
+              <CumulativeRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "opacity": 0.5,
+                "stroke": "#38A9DB",
+                "strokeWidth": 2,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
+          />
         </LineChart>
-</ResponsiveContainer>,
+      </ResponsiveContainer>,
     },
     "ref": null,
     "rendered": Object {
@@ -271,220 +271,220 @@ ShallowWrapper {
           barCategoryGap="10%"
           barGap={4}
           data={
-                    Array [
-                              Object {
-                                "isProjected": false,
-                                "revenue": 100,
-                                "timestamp": 1529336865706,
-                              },
-                            ]
+            Array [
+              Object {
+                "isProjected": false,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
           }
           layout="horizontal"
           margin={
-                    Object {
-                              "bottom": 5,
-                              "left": 5,
-                              "right": 5,
-                              "top": 5,
-                            }
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
           }
           reverseStackOrder={false}
           stackOffset="none"
->
+        >
           <XAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    dataKey="timestamp"
-                    domain={
-                              Array [
-                                        0,
-                                        "auto",
-                                      ]
-                    }
-                    height={30}
-                    hide={false}
-                    mirror={false}
-                    orientation="bottom"
-                    padding={
-                              Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={5}
-                    tickFormatter={[Function]}
-                    type="category"
-                    width={0}
-                    xAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
           >
-                    <Label
-                              offset={-5}
-                              position="insideBottom"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Date"
-                    />
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
           </XAxis>
           <YAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    axisLine={false}
-                    domain={
-                              Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                    }
-                    height={0}
-                    hide={false}
-                    mirror={false}
-                    orientation="left"
-                    padding={
-                              Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={10}
-                    tickFormatter={[Function]}
-                    tickLine={false}
-                    type="number"
-                    width={60}
-                    yAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
           >
-                    <Label
-                              angle={-90}
-                              offset={5}
-                              position="insideLeft"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Revenue"
-                    />
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
           </YAxis>
           <CartesianGrid
-                    fill="none"
-                    horizontal={true}
-                    horizontalFill={Array []}
-                    horizontalPoints={Array []}
-                    stroke="#ccc"
-                    vertical={false}
-                    verticalFill={Array []}
-                    verticalPoints={Array []}
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
           />
           <Line
-                    activeDot={true}
-                    animateNewValues={true}
-                    animationBegin={0}
-                    animationDuration={1000}
-                    animationEasing="ease"
-                    connectNulls={false}
-                    dataKey="revenue"
-                    dot={false}
-                    fill="#fff"
-                    hide={false}
-                    isAnimationActive={true}
-                    legendType="line"
-                    name="actual"
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    points={Array []}
-                    stroke="#38A9DB"
-                    strokeWidth={2}
-                    type="monotone"
-                    xAxisId={0}
-                    yAxisId={0}
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="revenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="actual"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Line
-                    activeDot={true}
-                    animateNewValues={true}
-                    animationBegin={0}
-                    animationDuration={1000}
-                    animationEasing="ease"
-                    connectNulls={false}
-                    dataKey="projectedRevenue"
-                    dot={false}
-                    fill="#fff"
-                    hide={false}
-                    isAnimationActive={true}
-                    legendType="line"
-                    name="projected"
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    points={Array []}
-                    stroke="#38A9DB"
-                    strokeDasharray="5 5"
-                    strokeWidth={2}
-                    type="monotone"
-                    xAxisId={0}
-                    yAxisId={0}
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="projectedRevenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="projected"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeDasharray="5 5"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Tooltip
-                    active={false}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    content={
-                              <CumulativeRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                              />
-                    }
-                    contentStyle={Object {}}
-                    coordinate={
-                              Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                    }
-                    cursor={
-                              Object {
-                                        "opacity": 0.5,
-                                        "stroke": "#38A9DB",
-                                        "strokeWidth": 2,
-                                      }
-                    }
-                    cursorStyle={Object {}}
-                    filterNull={true}
-                    isAnimationActive={true}
-                    itemSorter={[Function]}
-                    itemStyle={Object {}}
-                    labelStyle={Object {}}
-                    offset={10}
-                    separator=" : "
-                    useTranslate3d={false}
-                    viewBox={
-                              Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                    }
-                    wrapperStyle={Object {}}
+            active={false}
+            animationDuration={400}
+            animationEasing="ease"
+            content={
+              <CumulativeRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "opacity": 0.5,
+                "stroke": "#38A9DB",
+                "strokeWidth": 2,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
           />
-</LineChart>,
+        </LineChart>,
         "debounce": 0,
         "height": 400,
         "width": "100%",
@@ -504,73 +504,73 @@ ShallowWrapper {
               allowDuplicatedCategory={true}
               dataKey="timestamp"
               domain={
-                            Array [
-                                          0,
-                                          "auto",
-                                        ]
+                Array [
+                  0,
+                  "auto",
+                ]
               }
               height={30}
               hide={false}
               mirror={false}
               orientation="bottom"
               padding={
-                            Object {
-                                          "left": 0,
-                                          "right": 0,
-                                        }
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={5}
               tickFormatter={[Function]}
               type="category"
               width={0}
               xAxisId={0}
->
+            >
               <Label
-                            offset={-5}
-                            position="insideBottom"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Date"
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
               />
-</XAxis>,
+            </XAxis>,
             <YAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               axisLine={false}
               domain={
-                            Array [
-                                          "auto",
-                                          "auto",
-                                        ]
+                Array [
+                  "auto",
+                  "auto",
+                ]
               }
               height={0}
               hide={false}
               mirror={false}
               orientation="left"
               padding={
-                            Object {
-                                          "bottom": 0,
-                                          "top": 0,
-                                        }
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={10}
               tickFormatter={[Function]}
@@ -578,20 +578,20 @@ ShallowWrapper {
               type="number"
               width={60}
               yAxisId={0}
->
+            >
               <Label
-                            angle={-90}
-                            offset={5}
-                            position="insideLeft"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Revenue"
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
               />
-</YAxis>,
+            </YAxis>,
             <CartesianGrid
               fill="none"
               horizontal={true}
@@ -601,7 +601,7 @@ ShallowWrapper {
               vertical={false}
               verticalFill={Array []}
               verticalPoints={Array []}
-/>,
+            />,
             <Line
               activeDot={true}
               animateNewValues={true}
@@ -624,7 +624,7 @@ ShallowWrapper {
               type="monotone"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Line
               activeDot={true}
               animateNewValues={true}
@@ -648,29 +648,29 @@ ShallowWrapper {
               type="monotone"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Tooltip
               active={false}
               animationDuration={400}
               animationEasing="ease"
               content={
-                            <CumulativeRevenueTooltip
-                                          dateFormat="MMM DD, YYYY"
-                            />
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
               }
               contentStyle={Object {}}
               coordinate={
-                            Object {
-                                          "x": 0,
-                                          "y": 0,
-                                        }
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
               }
               cursor={
-                            Object {
-                                          "opacity": 0.5,
-                                          "stroke": "#38A9DB",
-                                          "strokeWidth": 2,
-                                        }
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
               }
               cursorStyle={Object {}}
               filterNull={true}
@@ -682,15 +682,15 @@ ShallowWrapper {
               separator=" : "
               useTranslate3d={false}
               viewBox={
-                            Object {
-                                          "x1": 0,
-                                          "x2": 0,
-                                          "y1": 0,
-                                          "y2": 0,
-                                        }
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
               }
               wrapperStyle={Object {}}
-/>,
+            />,
           ],
           "data": Array [
             Object {
@@ -723,13 +723,13 @@ ShallowWrapper {
                 offset={-5}
                 position="insideBottom"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Date"
-/>,
+              />,
               "dataKey": "timestamp",
               "domain": Array [
                 0,
@@ -788,13 +788,13 @@ ShallowWrapper {
                 offset={5}
                 position="insideLeft"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Revenue"
-/>,
+              />,
               "domain": Array [
                 "auto",
                 "auto",
@@ -931,7 +931,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "content": <CumulativeRevenueTooltip
                 dateFormat="MMM DD, YYYY"
-/>,
+              />,
               "contentStyle": Object {},
               "coordinate": Object {
                 "x": 0,
@@ -980,226 +980,226 @@ ShallowWrapper {
           debounce={0}
           height={400}
           width="100%"
->
+        >
           <LineChart
-                    barCategoryGap="10%"
-                    barGap={4}
-                    data={
-                              Array [
-                                        Object {
-                                          "isProjected": false,
-                                          "revenue": 100,
-                                          "timestamp": 1529336865706,
-                                        },
-                                      ]
-                    }
-                    layout="horizontal"
-                    margin={
-                              Object {
-                                        "bottom": 5,
-                                        "left": 5,
-                                        "right": 5,
-                                        "top": 5,
-                                      }
-                    }
-                    reverseStackOrder={false}
-                    stackOffset="none"
+            barCategoryGap="10%"
+            barGap={4}
+            data={
+              Array [
+                Object {
+                  "isProjected": false,
+                  "revenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
+            }
+            layout="horizontal"
+            margin={
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
+            }
+            reverseStackOrder={false}
+            stackOffset="none"
           >
-                    <XAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              dataKey="timestamp"
-                              domain={
-                                        Array [
-                                                  0,
-                                                  "auto",
-                                                ]
-                              }
-                              height={30}
-                              hide={false}
-                              mirror={false}
-                              orientation="bottom"
-                              padding={
-                                        Object {
-                                                  "left": 0,
-                                                  "right": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={5}
-                              tickFormatter={[Function]}
-                              type="category"
-                              width={0}
-                              xAxisId={0}
-                    >
-                              <Label
-                                        offset={-5}
-                                        position="insideBottom"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Date"
-                              />
-                    </XAxis>
-                    <YAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              axisLine={false}
-                              domain={
-                                        Array [
-                                                  "auto",
-                                                  "auto",
-                                                ]
-                              }
-                              height={0}
-                              hide={false}
-                              mirror={false}
-                              orientation="left"
-                              padding={
-                                        Object {
-                                                  "bottom": 0,
-                                                  "top": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={10}
-                              tickFormatter={[Function]}
-                              tickLine={false}
-                              type="number"
-                              width={60}
-                              yAxisId={0}
-                    >
-                              <Label
-                                        angle={-90}
-                                        offset={5}
-                                        position="insideLeft"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Revenue"
-                              />
-                    </YAxis>
-                    <CartesianGrid
-                              fill="none"
-                              horizontal={true}
-                              horizontalFill={Array []}
-                              horizontalPoints={Array []}
-                              stroke="#ccc"
-                              vertical={false}
-                              verticalFill={Array []}
-                              verticalPoints={Array []}
-                    />
-                    <Line
-                              activeDot={true}
-                              animateNewValues={true}
-                              animationBegin={0}
-                              animationDuration={1000}
-                              animationEasing="ease"
-                              connectNulls={false}
-                              dataKey="revenue"
-                              dot={false}
-                              fill="#fff"
-                              hide={false}
-                              isAnimationActive={true}
-                              legendType="line"
-                              name="actual"
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              points={Array []}
-                              stroke="#38A9DB"
-                              strokeWidth={2}
-                              type="monotone"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Line
-                              activeDot={true}
-                              animateNewValues={true}
-                              animationBegin={0}
-                              animationDuration={1000}
-                              animationEasing="ease"
-                              connectNulls={false}
-                              dataKey="projectedRevenue"
-                              dot={false}
-                              fill="#fff"
-                              hide={false}
-                              isAnimationActive={true}
-                              legendType="line"
-                              name="projected"
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              points={Array []}
-                              stroke="#38A9DB"
-                              strokeDasharray="5 5"
-                              strokeWidth={2}
-                              type="monotone"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Tooltip
-                              active={false}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              content={
-                                        <CumulativeRevenueTooltip
-                                                  dateFormat="MMM DD, YYYY"
-                                        />
-                              }
-                              contentStyle={Object {}}
-                              coordinate={
-                                        Object {
-                                                  "x": 0,
-                                                  "y": 0,
-                                                }
-                              }
-                              cursor={
-                                        Object {
-                                                  "opacity": 0.5,
-                                                  "stroke": "#38A9DB",
-                                                  "strokeWidth": 2,
-                                                }
-                              }
-                              cursorStyle={Object {}}
-                              filterNull={true}
-                              isAnimationActive={true}
-                              itemSorter={[Function]}
-                              itemStyle={Object {}}
-                              labelStyle={Object {}}
-                              offset={10}
-                              separator=" : "
-                              useTranslate3d={false}
-                              viewBox={
-                                        Object {
-                                                  "x1": 0,
-                                                  "x2": 0,
-                                                  "y1": 0,
-                                                  "y2": 0,
-                                                }
-                              }
-                              wrapperStyle={Object {}}
-                    />
+            <XAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
+            >
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
+            </XAxis>
+            <YAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
+            >
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
+            </YAxis>
+            <CartesianGrid
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
+            />
+            <Line
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="revenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="actual"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Line
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="projectedRevenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="projected"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeDasharray="5 5"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Tooltip
+              active={false}
+              animationDuration={400}
+              animationEasing="ease"
+              content={
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
+            />
           </LineChart>
-</ResponsiveContainer>,
+        </ResponsiveContainer>,
       },
       "ref": null,
       "rendered": Object {
@@ -1211,220 +1211,220 @@ ShallowWrapper {
             barCategoryGap="10%"
             barGap={4}
             data={
-                        Array [
-                                    Object {
-                                      "isProjected": false,
-                                      "revenue": 100,
-                                      "timestamp": 1529336865706,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "isProjected": false,
+                  "revenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
             }
             layout="horizontal"
             margin={
-                        Object {
-                                    "bottom": 5,
-                                    "left": 5,
-                                    "right": 5,
-                                    "top": 5,
-                                  }
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
             }
             reverseStackOrder={false}
             stackOffset="none"
->
+          >
             <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                    Array [
-                                                0,
-                                                "auto",
-                                              ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                    Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
             >
-                        <Label
-                                    offset={-5}
-                                    position="insideBottom"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Date"
-                        />
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
             </XAxis>
             <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                    Array [
-                                                "auto",
-                                                "auto",
-                                              ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                    Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
             >
-                        <Label
-                                    angle={-90}
-                                    offset={5}
-                                    position="insideLeft"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Revenue"
-                        />
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
             </YAxis>
             <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
             />
             <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="revenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="actual"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="revenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="actual"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="projectedRevenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="projected"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeDasharray="5 5"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="projectedRevenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="projected"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeDasharray="5 5"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Tooltip
-                        active={false}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        content={
-                                    <CumulativeRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                    />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                    Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
-                        }
-                        cursor={
-                                    Object {
-                                                "opacity": 0.5,
-                                                "stroke": "#38A9DB",
-                                                "strokeWidth": 2,
-                                              }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                    Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
-                        }
-                        wrapperStyle={Object {}}
+              active={false}
+              animationDuration={400}
+              animationEasing="ease"
+              content={
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
             />
-</LineChart>,
+          </LineChart>,
           "debounce": 0,
           "height": 400,
           "width": "100%",
@@ -1444,73 +1444,73 @@ ShallowWrapper {
                 allowDuplicatedCategory={true}
                 dataKey="timestamp"
                 domain={
-                                Array [
-                                                0,
-                                                "auto",
-                                              ]
+                  Array [
+                    0,
+                    "auto",
+                  ]
                 }
                 height={30}
                 hide={false}
                 mirror={false}
                 orientation="bottom"
                 padding={
-                                Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
+                  Object {
+                    "left": 0,
+                    "right": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={5}
                 tickFormatter={[Function]}
                 type="category"
                 width={0}
                 xAxisId={0}
->
+              >
                 <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Date"
+                  offset={-5}
+                  position="insideBottom"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Date"
                 />
-</XAxis>,
+              </XAxis>,
               <YAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 axisLine={false}
                 domain={
-                                Array [
-                                                "auto",
-                                                "auto",
-                                              ]
+                  Array [
+                    "auto",
+                    "auto",
+                  ]
                 }
                 height={0}
                 hide={false}
                 mirror={false}
                 orientation="left"
                 padding={
-                                Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
+                  Object {
+                    "bottom": 0,
+                    "top": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={10}
                 tickFormatter={[Function]}
@@ -1518,20 +1518,20 @@ ShallowWrapper {
                 type="number"
                 width={60}
                 yAxisId={0}
->
+              >
                 <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Revenue"
+                  angle={-90}
+                  offset={5}
+                  position="insideLeft"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Revenue"
                 />
-</YAxis>,
+              </YAxis>,
               <CartesianGrid
                 fill="none"
                 horizontal={true}
@@ -1541,7 +1541,7 @@ ShallowWrapper {
                 vertical={false}
                 verticalFill={Array []}
                 verticalPoints={Array []}
-/>,
+              />,
               <Line
                 activeDot={true}
                 animateNewValues={true}
@@ -1564,7 +1564,7 @@ ShallowWrapper {
                 type="monotone"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Line
                 activeDot={true}
                 animateNewValues={true}
@@ -1588,29 +1588,29 @@ ShallowWrapper {
                 type="monotone"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Tooltip
                 active={false}
                 animationDuration={400}
                 animationEasing="ease"
                 content={
-                                <CumulativeRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                />
+                  <CumulativeRevenueTooltip
+                    dateFormat="MMM DD, YYYY"
+                  />
                 }
                 contentStyle={Object {}}
                 coordinate={
-                                Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
                 }
                 cursor={
-                                Object {
-                                                "opacity": 0.5,
-                                                "stroke": "#38A9DB",
-                                                "strokeWidth": 2,
-                                              }
+                  Object {
+                    "opacity": 0.5,
+                    "stroke": "#38A9DB",
+                    "strokeWidth": 2,
+                  }
                 }
                 cursorStyle={Object {}}
                 filterNull={true}
@@ -1622,15 +1622,15 @@ ShallowWrapper {
                 separator=" : "
                 useTranslate3d={false}
                 viewBox={
-                                Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
+                  Object {
+                    "x1": 0,
+                    "x2": 0,
+                    "y1": 0,
+                    "y2": 0,
+                  }
                 }
                 wrapperStyle={Object {}}
-/>,
+              />,
             ],
             "data": Array [
               Object {
@@ -1663,13 +1663,13 @@ ShallowWrapper {
                   offset={-5}
                   position="insideBottom"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Date"
-/>,
+                />,
                 "dataKey": "timestamp",
                 "domain": Array [
                   0,
@@ -1728,13 +1728,13 @@ ShallowWrapper {
                   offset={5}
                   position="insideLeft"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Revenue"
-/>,
+                />,
                 "domain": Array [
                   "auto",
                   "auto",
@@ -1871,7 +1871,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "content": <CumulativeRevenueTooltip
                   dateFormat="MMM DD, YYYY"
-/>,
+                />,
                 "contentStyle": Object {},
                 "coordinate": Object {
                   "x": 0,
@@ -1940,23 +1940,23 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CumulativeRevenueChart
     data={
-        Array [
-            Object {
-              "eventId": 1,
-              "id": 1,
-              "inventory": 100,
-              "isProjected": false,
-              "periodicInventory": 100,
-              "periodicRevenue": 100,
-              "revenue": 100,
-              "timestamp": 1529336865706,
-            },
-          ]
+      Array [
+        Object {
+          "eventId": 1,
+          "id": 1,
+          "inventory": 100,
+          "isProjected": false,
+          "periodicInventory": 100,
+          "periodicRevenue": 100,
+          "revenue": 100,
+          "timestamp": 1529336865706,
+        },
+      ]
     }
     dateFormat="MMM DD, YYYY"
     height={300}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1975,226 +1975,226 @@ ShallowWrapper {
         debounce={0}
         height={300}
         width="100%"
->
+      >
         <LineChart
-                barCategoryGap="10%"
-                barGap={4}
-                data={
-                        Array [
-                                Object {
-                                  "isProjected": false,
-                                  "revenue": 100,
-                                  "timestamp": 1529336865706,
-                                },
-                              ]
-                }
-                layout="horizontal"
-                margin={
-                        Object {
-                                "bottom": 5,
-                                "left": 5,
-                                "right": 5,
-                                "top": 5,
-                              }
-                }
-                reverseStackOrder={false}
-                stackOffset="none"
+          barCategoryGap="10%"
+          barGap={4}
+          data={
+            Array [
+              Object {
+                "isProjected": false,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
+          }
+          layout="horizontal"
+          margin={
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
+          }
+          reverseStackOrder={false}
+          stackOffset="none"
         >
-                <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                Array [
-                                        0,
-                                        "auto",
-                                      ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
-                >
-                        <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Date"
-                        />
-                </XAxis>
-                <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
-                >
-                        <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Revenue"
-                        />
-                </YAxis>
-                <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
-                />
-                <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="revenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="actual"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="projectedRevenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="projected"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeDasharray="5 5"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Tooltip
-                        active={false}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        content={
-                                <CumulativeRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                                />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                        }
-                        cursor={
-                                Object {
-                                        "opacity": 0.5,
-                                        "stroke": "#38A9DB",
-                                        "strokeWidth": 2,
-                                      }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                        }
-                        wrapperStyle={Object {}}
-                />
+          <XAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
+          >
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
+          </XAxis>
+          <YAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
+          >
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
+          </YAxis>
+          <CartesianGrid
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
+          />
+          <Line
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="revenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="actual"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Line
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="projectedRevenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="projected"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeDasharray="5 5"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Tooltip
+            active={false}
+            animationDuration={400}
+            animationEasing="ease"
+            content={
+              <CumulativeRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "opacity": 0.5,
+                "stroke": "#38A9DB",
+                "strokeWidth": 2,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
+          />
         </LineChart>
-</ResponsiveContainer>,
+      </ResponsiveContainer>,
     },
     "ref": null,
     "rendered": Object {
@@ -2206,220 +2206,220 @@ ShallowWrapper {
           barCategoryGap="10%"
           barGap={4}
           data={
-                    Array [
-                              Object {
-                                "isProjected": false,
-                                "revenue": 100,
-                                "timestamp": 1529336865706,
-                              },
-                            ]
+            Array [
+              Object {
+                "isProjected": false,
+                "revenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
           }
           layout="horizontal"
           margin={
-                    Object {
-                              "bottom": 5,
-                              "left": 5,
-                              "right": 5,
-                              "top": 5,
-                            }
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
           }
           reverseStackOrder={false}
           stackOffset="none"
->
+        >
           <XAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    dataKey="timestamp"
-                    domain={
-                              Array [
-                                        0,
-                                        "auto",
-                                      ]
-                    }
-                    height={30}
-                    hide={false}
-                    mirror={false}
-                    orientation="bottom"
-                    padding={
-                              Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={5}
-                    tickFormatter={[Function]}
-                    type="category"
-                    width={0}
-                    xAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
           >
-                    <Label
-                              offset={-5}
-                              position="insideBottom"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Date"
-                    />
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
           </XAxis>
           <YAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    axisLine={false}
-                    domain={
-                              Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                    }
-                    height={0}
-                    hide={false}
-                    mirror={false}
-                    orientation="left"
-                    padding={
-                              Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={10}
-                    tickFormatter={[Function]}
-                    tickLine={false}
-                    type="number"
-                    width={60}
-                    yAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
           >
-                    <Label
-                              angle={-90}
-                              offset={5}
-                              position="insideLeft"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Revenue"
-                    />
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
           </YAxis>
           <CartesianGrid
-                    fill="none"
-                    horizontal={true}
-                    horizontalFill={Array []}
-                    horizontalPoints={Array []}
-                    stroke="#ccc"
-                    vertical={false}
-                    verticalFill={Array []}
-                    verticalPoints={Array []}
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
           />
           <Line
-                    activeDot={true}
-                    animateNewValues={true}
-                    animationBegin={0}
-                    animationDuration={1000}
-                    animationEasing="ease"
-                    connectNulls={false}
-                    dataKey="revenue"
-                    dot={false}
-                    fill="#fff"
-                    hide={false}
-                    isAnimationActive={true}
-                    legendType="line"
-                    name="actual"
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    points={Array []}
-                    stroke="#38A9DB"
-                    strokeWidth={2}
-                    type="monotone"
-                    xAxisId={0}
-                    yAxisId={0}
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="revenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="actual"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Line
-                    activeDot={true}
-                    animateNewValues={true}
-                    animationBegin={0}
-                    animationDuration={1000}
-                    animationEasing="ease"
-                    connectNulls={false}
-                    dataKey="projectedRevenue"
-                    dot={false}
-                    fill="#fff"
-                    hide={false}
-                    isAnimationActive={true}
-                    legendType="line"
-                    name="projected"
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    points={Array []}
-                    stroke="#38A9DB"
-                    strokeDasharray="5 5"
-                    strokeWidth={2}
-                    type="monotone"
-                    xAxisId={0}
-                    yAxisId={0}
+            activeDot={true}
+            animateNewValues={true}
+            animationBegin={0}
+            animationDuration={1000}
+            animationEasing="ease"
+            connectNulls={false}
+            dataKey="projectedRevenue"
+            dot={false}
+            fill="#fff"
+            hide={false}
+            isAnimationActive={true}
+            legendType="line"
+            name="projected"
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            points={Array []}
+            stroke="#38A9DB"
+            strokeDasharray="5 5"
+            strokeWidth={2}
+            type="monotone"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Tooltip
-                    active={false}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    content={
-                              <CumulativeRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                              />
-                    }
-                    contentStyle={Object {}}
-                    coordinate={
-                              Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                    }
-                    cursor={
-                              Object {
-                                        "opacity": 0.5,
-                                        "stroke": "#38A9DB",
-                                        "strokeWidth": 2,
-                                      }
-                    }
-                    cursorStyle={Object {}}
-                    filterNull={true}
-                    isAnimationActive={true}
-                    itemSorter={[Function]}
-                    itemStyle={Object {}}
-                    labelStyle={Object {}}
-                    offset={10}
-                    separator=" : "
-                    useTranslate3d={false}
-                    viewBox={
-                              Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                    }
-                    wrapperStyle={Object {}}
+            active={false}
+            animationDuration={400}
+            animationEasing="ease"
+            content={
+              <CumulativeRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "opacity": 0.5,
+                "stroke": "#38A9DB",
+                "strokeWidth": 2,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
           />
-</LineChart>,
+        </LineChart>,
         "debounce": 0,
         "height": 300,
         "width": "100%",
@@ -2439,73 +2439,73 @@ ShallowWrapper {
               allowDuplicatedCategory={true}
               dataKey="timestamp"
               domain={
-                            Array [
-                                          0,
-                                          "auto",
-                                        ]
+                Array [
+                  0,
+                  "auto",
+                ]
               }
               height={30}
               hide={false}
               mirror={false}
               orientation="bottom"
               padding={
-                            Object {
-                                          "left": 0,
-                                          "right": 0,
-                                        }
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={5}
               tickFormatter={[Function]}
               type="category"
               width={0}
               xAxisId={0}
->
+            >
               <Label
-                            offset={-5}
-                            position="insideBottom"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Date"
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
               />
-</XAxis>,
+            </XAxis>,
             <YAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               axisLine={false}
               domain={
-                            Array [
-                                          "auto",
-                                          "auto",
-                                        ]
+                Array [
+                  "auto",
+                  "auto",
+                ]
               }
               height={0}
               hide={false}
               mirror={false}
               orientation="left"
               padding={
-                            Object {
-                                          "bottom": 0,
-                                          "top": 0,
-                                        }
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={10}
               tickFormatter={[Function]}
@@ -2513,20 +2513,20 @@ ShallowWrapper {
               type="number"
               width={60}
               yAxisId={0}
->
+            >
               <Label
-                            angle={-90}
-                            offset={5}
-                            position="insideLeft"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Revenue"
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
               />
-</YAxis>,
+            </YAxis>,
             <CartesianGrid
               fill="none"
               horizontal={true}
@@ -2536,7 +2536,7 @@ ShallowWrapper {
               vertical={false}
               verticalFill={Array []}
               verticalPoints={Array []}
-/>,
+            />,
             <Line
               activeDot={true}
               animateNewValues={true}
@@ -2559,7 +2559,7 @@ ShallowWrapper {
               type="monotone"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Line
               activeDot={true}
               animateNewValues={true}
@@ -2583,29 +2583,29 @@ ShallowWrapper {
               type="monotone"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Tooltip
               active={false}
               animationDuration={400}
               animationEasing="ease"
               content={
-                            <CumulativeRevenueTooltip
-                                          dateFormat="MMM DD, YYYY"
-                            />
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
               }
               contentStyle={Object {}}
               coordinate={
-                            Object {
-                                          "x": 0,
-                                          "y": 0,
-                                        }
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
               }
               cursor={
-                            Object {
-                                          "opacity": 0.5,
-                                          "stroke": "#38A9DB",
-                                          "strokeWidth": 2,
-                                        }
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
               }
               cursorStyle={Object {}}
               filterNull={true}
@@ -2617,15 +2617,15 @@ ShallowWrapper {
               separator=" : "
               useTranslate3d={false}
               viewBox={
-                            Object {
-                                          "x1": 0,
-                                          "x2": 0,
-                                          "y1": 0,
-                                          "y2": 0,
-                                        }
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
               }
               wrapperStyle={Object {}}
-/>,
+            />,
           ],
           "data": Array [
             Object {
@@ -2658,13 +2658,13 @@ ShallowWrapper {
                 offset={-5}
                 position="insideBottom"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Date"
-/>,
+              />,
               "dataKey": "timestamp",
               "domain": Array [
                 0,
@@ -2723,13 +2723,13 @@ ShallowWrapper {
                 offset={5}
                 position="insideLeft"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Revenue"
-/>,
+              />,
               "domain": Array [
                 "auto",
                 "auto",
@@ -2866,7 +2866,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "content": <CumulativeRevenueTooltip
                 dateFormat="MMM DD, YYYY"
-/>,
+              />,
               "contentStyle": Object {},
               "coordinate": Object {
                 "x": 0,
@@ -2915,226 +2915,226 @@ ShallowWrapper {
           debounce={0}
           height={300}
           width="100%"
->
+        >
           <LineChart
-                    barCategoryGap="10%"
-                    barGap={4}
-                    data={
-                              Array [
-                                        Object {
-                                          "isProjected": false,
-                                          "revenue": 100,
-                                          "timestamp": 1529336865706,
-                                        },
-                                      ]
-                    }
-                    layout="horizontal"
-                    margin={
-                              Object {
-                                        "bottom": 5,
-                                        "left": 5,
-                                        "right": 5,
-                                        "top": 5,
-                                      }
-                    }
-                    reverseStackOrder={false}
-                    stackOffset="none"
+            barCategoryGap="10%"
+            barGap={4}
+            data={
+              Array [
+                Object {
+                  "isProjected": false,
+                  "revenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
+            }
+            layout="horizontal"
+            margin={
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
+            }
+            reverseStackOrder={false}
+            stackOffset="none"
           >
-                    <XAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              dataKey="timestamp"
-                              domain={
-                                        Array [
-                                                  0,
-                                                  "auto",
-                                                ]
-                              }
-                              height={30}
-                              hide={false}
-                              mirror={false}
-                              orientation="bottom"
-                              padding={
-                                        Object {
-                                                  "left": 0,
-                                                  "right": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={5}
-                              tickFormatter={[Function]}
-                              type="category"
-                              width={0}
-                              xAxisId={0}
-                    >
-                              <Label
-                                        offset={-5}
-                                        position="insideBottom"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Date"
-                              />
-                    </XAxis>
-                    <YAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              axisLine={false}
-                              domain={
-                                        Array [
-                                                  "auto",
-                                                  "auto",
-                                                ]
-                              }
-                              height={0}
-                              hide={false}
-                              mirror={false}
-                              orientation="left"
-                              padding={
-                                        Object {
-                                                  "bottom": 0,
-                                                  "top": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={10}
-                              tickFormatter={[Function]}
-                              tickLine={false}
-                              type="number"
-                              width={60}
-                              yAxisId={0}
-                    >
-                              <Label
-                                        angle={-90}
-                                        offset={5}
-                                        position="insideLeft"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Revenue"
-                              />
-                    </YAxis>
-                    <CartesianGrid
-                              fill="none"
-                              horizontal={true}
-                              horizontalFill={Array []}
-                              horizontalPoints={Array []}
-                              stroke="#ccc"
-                              vertical={false}
-                              verticalFill={Array []}
-                              verticalPoints={Array []}
-                    />
-                    <Line
-                              activeDot={true}
-                              animateNewValues={true}
-                              animationBegin={0}
-                              animationDuration={1000}
-                              animationEasing="ease"
-                              connectNulls={false}
-                              dataKey="revenue"
-                              dot={false}
-                              fill="#fff"
-                              hide={false}
-                              isAnimationActive={true}
-                              legendType="line"
-                              name="actual"
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              points={Array []}
-                              stroke="#38A9DB"
-                              strokeWidth={2}
-                              type="monotone"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Line
-                              activeDot={true}
-                              animateNewValues={true}
-                              animationBegin={0}
-                              animationDuration={1000}
-                              animationEasing="ease"
-                              connectNulls={false}
-                              dataKey="projectedRevenue"
-                              dot={false}
-                              fill="#fff"
-                              hide={false}
-                              isAnimationActive={true}
-                              legendType="line"
-                              name="projected"
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              points={Array []}
-                              stroke="#38A9DB"
-                              strokeDasharray="5 5"
-                              strokeWidth={2}
-                              type="monotone"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Tooltip
-                              active={false}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              content={
-                                        <CumulativeRevenueTooltip
-                                                  dateFormat="MMM DD, YYYY"
-                                        />
-                              }
-                              contentStyle={Object {}}
-                              coordinate={
-                                        Object {
-                                                  "x": 0,
-                                                  "y": 0,
-                                                }
-                              }
-                              cursor={
-                                        Object {
-                                                  "opacity": 0.5,
-                                                  "stroke": "#38A9DB",
-                                                  "strokeWidth": 2,
-                                                }
-                              }
-                              cursorStyle={Object {}}
-                              filterNull={true}
-                              isAnimationActive={true}
-                              itemSorter={[Function]}
-                              itemStyle={Object {}}
-                              labelStyle={Object {}}
-                              offset={10}
-                              separator=" : "
-                              useTranslate3d={false}
-                              viewBox={
-                                        Object {
-                                                  "x1": 0,
-                                                  "x2": 0,
-                                                  "y1": 0,
-                                                  "y2": 0,
-                                                }
-                              }
-                              wrapperStyle={Object {}}
-                    />
+            <XAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
+            >
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
+            </XAxis>
+            <YAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
+            >
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
+            </YAxis>
+            <CartesianGrid
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
+            />
+            <Line
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="revenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="actual"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Line
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="projectedRevenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="projected"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeDasharray="5 5"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Tooltip
+              active={false}
+              animationDuration={400}
+              animationEasing="ease"
+              content={
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
+            />
           </LineChart>
-</ResponsiveContainer>,
+        </ResponsiveContainer>,
       },
       "ref": null,
       "rendered": Object {
@@ -3146,220 +3146,220 @@ ShallowWrapper {
             barCategoryGap="10%"
             barGap={4}
             data={
-                        Array [
-                                    Object {
-                                      "isProjected": false,
-                                      "revenue": 100,
-                                      "timestamp": 1529336865706,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "isProjected": false,
+                  "revenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
             }
             layout="horizontal"
             margin={
-                        Object {
-                                    "bottom": 5,
-                                    "left": 5,
-                                    "right": 5,
-                                    "top": 5,
-                                  }
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
             }
             reverseStackOrder={false}
             stackOffset="none"
->
+          >
             <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                    Array [
-                                                0,
-                                                "auto",
-                                              ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                    Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
             >
-                        <Label
-                                    offset={-5}
-                                    position="insideBottom"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Date"
-                        />
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
             </XAxis>
             <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                    Array [
-                                                "auto",
-                                                "auto",
-                                              ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                    Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
             >
-                        <Label
-                                    angle={-90}
-                                    offset={5}
-                                    position="insideLeft"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Revenue"
-                        />
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
             </YAxis>
             <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
             />
             <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="revenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="actual"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="revenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="actual"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Line
-                        activeDot={true}
-                        animateNewValues={true}
-                        animationBegin={0}
-                        animationDuration={1000}
-                        animationEasing="ease"
-                        connectNulls={false}
-                        dataKey="projectedRevenue"
-                        dot={false}
-                        fill="#fff"
-                        hide={false}
-                        isAnimationActive={true}
-                        legendType="line"
-                        name="projected"
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        points={Array []}
-                        stroke="#38A9DB"
-                        strokeDasharray="5 5"
-                        strokeWidth={2}
-                        type="monotone"
-                        xAxisId={0}
-                        yAxisId={0}
+              activeDot={true}
+              animateNewValues={true}
+              animationBegin={0}
+              animationDuration={1000}
+              animationEasing="ease"
+              connectNulls={false}
+              dataKey="projectedRevenue"
+              dot={false}
+              fill="#fff"
+              hide={false}
+              isAnimationActive={true}
+              legendType="line"
+              name="projected"
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              points={Array []}
+              stroke="#38A9DB"
+              strokeDasharray="5 5"
+              strokeWidth={2}
+              type="monotone"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Tooltip
-                        active={false}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        content={
-                                    <CumulativeRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                    />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                    Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
-                        }
-                        cursor={
-                                    Object {
-                                                "opacity": 0.5,
-                                                "stroke": "#38A9DB",
-                                                "strokeWidth": 2,
-                                              }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                    Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
-                        }
-                        wrapperStyle={Object {}}
+              active={false}
+              animationDuration={400}
+              animationEasing="ease"
+              content={
+                <CumulativeRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "opacity": 0.5,
+                  "stroke": "#38A9DB",
+                  "strokeWidth": 2,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
             />
-</LineChart>,
+          </LineChart>,
           "debounce": 0,
           "height": 300,
           "width": "100%",
@@ -3379,73 +3379,73 @@ ShallowWrapper {
                 allowDuplicatedCategory={true}
                 dataKey="timestamp"
                 domain={
-                                Array [
-                                                0,
-                                                "auto",
-                                              ]
+                  Array [
+                    0,
+                    "auto",
+                  ]
                 }
                 height={30}
                 hide={false}
                 mirror={false}
                 orientation="bottom"
                 padding={
-                                Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
+                  Object {
+                    "left": 0,
+                    "right": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={5}
                 tickFormatter={[Function]}
                 type="category"
                 width={0}
                 xAxisId={0}
->
+              >
                 <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Date"
+                  offset={-5}
+                  position="insideBottom"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Date"
                 />
-</XAxis>,
+              </XAxis>,
               <YAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 axisLine={false}
                 domain={
-                                Array [
-                                                "auto",
-                                                "auto",
-                                              ]
+                  Array [
+                    "auto",
+                    "auto",
+                  ]
                 }
                 height={0}
                 hide={false}
                 mirror={false}
                 orientation="left"
                 padding={
-                                Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
+                  Object {
+                    "bottom": 0,
+                    "top": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={10}
                 tickFormatter={[Function]}
@@ -3453,20 +3453,20 @@ ShallowWrapper {
                 type="number"
                 width={60}
                 yAxisId={0}
->
+              >
                 <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Revenue"
+                  angle={-90}
+                  offset={5}
+                  position="insideLeft"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Revenue"
                 />
-</YAxis>,
+              </YAxis>,
               <CartesianGrid
                 fill="none"
                 horizontal={true}
@@ -3476,7 +3476,7 @@ ShallowWrapper {
                 vertical={false}
                 verticalFill={Array []}
                 verticalPoints={Array []}
-/>,
+              />,
               <Line
                 activeDot={true}
                 animateNewValues={true}
@@ -3499,7 +3499,7 @@ ShallowWrapper {
                 type="monotone"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Line
                 activeDot={true}
                 animateNewValues={true}
@@ -3523,29 +3523,29 @@ ShallowWrapper {
                 type="monotone"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Tooltip
                 active={false}
                 animationDuration={400}
                 animationEasing="ease"
                 content={
-                                <CumulativeRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                />
+                  <CumulativeRevenueTooltip
+                    dateFormat="MMM DD, YYYY"
+                  />
                 }
                 contentStyle={Object {}}
                 coordinate={
-                                Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
                 }
                 cursor={
-                                Object {
-                                                "opacity": 0.5,
-                                                "stroke": "#38A9DB",
-                                                "strokeWidth": 2,
-                                              }
+                  Object {
+                    "opacity": 0.5,
+                    "stroke": "#38A9DB",
+                    "strokeWidth": 2,
+                  }
                 }
                 cursorStyle={Object {}}
                 filterNull={true}
@@ -3557,15 +3557,15 @@ ShallowWrapper {
                 separator=" : "
                 useTranslate3d={false}
                 viewBox={
-                                Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
+                  Object {
+                    "x1": 0,
+                    "x2": 0,
+                    "y1": 0,
+                    "y2": 0,
+                  }
                 }
                 wrapperStyle={Object {}}
-/>,
+              />,
             ],
             "data": Array [
               Object {
@@ -3598,13 +3598,13 @@ ShallowWrapper {
                   offset={-5}
                   position="insideBottom"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Date"
-/>,
+                />,
                 "dataKey": "timestamp",
                 "domain": Array [
                   0,
@@ -3663,13 +3663,13 @@ ShallowWrapper {
                   offset={5}
                   position="insideLeft"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Revenue"
-/>,
+                />,
                 "domain": Array [
                   "auto",
                   "auto",
@@ -3806,7 +3806,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "content": <CumulativeRevenueTooltip
                   dateFormat="MMM DD, YYYY"
-/>,
+                />,
                 "contentStyle": Object {},
                 "coordinate": Object {
                   "x": 0,
@@ -3878,7 +3878,7 @@ ShallowWrapper {
     dateFormat="MMM DD, YYYY"
     height={400}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

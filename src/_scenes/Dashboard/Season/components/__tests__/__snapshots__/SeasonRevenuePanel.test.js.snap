@@ -5,29 +5,43 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SeasonRevenuePanel
     seasonStatActions={
-        Object {
-            "fetch": [Function],
-            "setDateRange": [Function],
-            "setGroupFilter": [Function],
-          }
+      Object {
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "seasonId": undefined,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "setDateRange": [MockFunction],
+        "setGroupFilter": [MockFunction],
+      }
     }
     seasonStatState={
-        Object {
-            "dateRange": Object {
-              "from": null,
-              "to": null,
-            },
-            "eventDateLimits": Object {
-              "from": null,
-              "to": null,
-            },
-            "groupFilters": Array [],
-            "loading": true,
-            "seasonStats": Array [],
-            "selectedGroupFilter": null,
-          }
+      Object {
+        "dateRange": Object {
+          "from": null,
+          "to": null,
+        },
+        "eventDateLimits": Object {
+          "from": null,
+          "to": null,
+        },
+        "groupFilters": Array [],
+        "loading": true,
+        "seasonStats": Array [],
+        "selectedGroupFilter": null,
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

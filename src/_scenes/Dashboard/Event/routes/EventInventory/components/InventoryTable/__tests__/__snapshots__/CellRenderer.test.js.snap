@@ -6,9 +6,9 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Flex
     align="center"
     marginLeft="1.25rem"
->
+  >
     10
-</Flex>,
+  </Flex>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

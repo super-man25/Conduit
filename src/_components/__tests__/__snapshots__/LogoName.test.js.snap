@@ -41,7 +41,6 @@ exports[`renders correctly with no props 1`] = `
 <div
   className="c0"
   height="100%"
-  onClick={undefined}
 >
   <img
     className="c1"

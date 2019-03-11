@@ -59,7 +59,6 @@ exports[`<SelectDropdown /> renders correctly 1`] = `
       >
         <svg
           className="c3"
-          color={undefined}
           viewBox="0 0 24 24"
           width="24px"
         >

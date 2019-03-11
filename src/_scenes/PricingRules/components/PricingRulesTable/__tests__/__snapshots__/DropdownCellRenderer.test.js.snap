@@ -5,39 +5,39 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <DropDownCellPresenter
     cellData={
-        Object {
-            "id": 2,
-            "name": "DUGOUT",
-          }
+      Object {
+        "id": 2,
+        "name": "DUGOUT",
+      }
     }
     columnData={
-        Object {
-            "hasId": true,
-            "optionsKey": "priceScales",
-            "priceScales": Array [
-              Object {
-                "id": 2,
-                "name": "DUGOUT",
-              },
-              Object {
-                "id": 1,
-                "name": "GOLD",
-              },
-            ],
-          }
+      Object {
+        "hasId": true,
+        "optionsKey": "priceScales",
+        "priceScales": Array [
+          Object {
+            "id": 2,
+            "name": "DUGOUT",
+          },
+          Object {
+            "id": 1,
+            "name": "GOLD",
+          },
+        ],
+      }
     }
     isEditing={false}
     parent={
-        Object {
-            "props": Object {
-              "headerHeight": "45",
-              "height": "180",
-            },
-          }
+      Object {
+        "props": Object {
+          "headerHeight": "45",
+          "height": "180",
+        },
+      }
     }
     selectedItemId={2}
-    updatePriceRuleProperty={[Function]}
-/>,
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -55,7 +55,7 @@ ShallowWrapper {
       "align": "center",
       "children": <styled.p>
         -
-</styled.p>,
+      </styled.p>,
     },
     "ref": null,
     "rendered": Object {
@@ -80,7 +80,7 @@ ShallowWrapper {
         "align": "center",
         "children": <styled.p>
           -
-</styled.p>,
+        </styled.p>,
       },
       "ref": null,
       "rendered": Object {

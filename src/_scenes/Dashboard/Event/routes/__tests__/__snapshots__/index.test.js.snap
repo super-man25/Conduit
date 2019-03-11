@@ -5,24 +5,38 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EventRoute
     eventState={
-        Object {
-            "error": null,
-            "event": Object {
-              "id": 1,
-            },
-            "loading": false,
-          }
+      Object {
+        "error": null,
+        "event": Object {
+          "id": 1,
+        },
+        "loading": false,
+      }
     }
-    fetchEvent={[Function]}
+    fetchEvent={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     match={
-        Object {
-            "params": Object {
-              "id": 1,
-            },
-          }
+      Object {
+        "params": Object {
+          "id": 1,
+        },
+      }
     }
-    replace={[Function]}
-/>,
+    replace={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -41,15 +55,15 @@ ShallowWrapper {
         <Route
           component={[Function]}
           path="/event/:id/inventory"
-/>,
+        />,
         <Route
           component={[Function]}
           path="/event/:id"
-/>,
+        />,
         <Redirect
           push={false}
           to="/season"
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -103,15 +117,15 @@ ShallowWrapper {
           <Route
             component={[Function]}
             path="/event/:id/inventory"
-/>,
+          />,
           <Route
             component={[Function]}
             path="/event/:id"
-/>,
+          />,
           <Redirect
             push={false}
             to="/season"
-/>,
+          />,
         ],
       },
       "ref": null,
@@ -186,24 +200,38 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EventRoute
     eventState={
-        Object {
-            "error": null,
-            "event": Object {
-              "id": 1,
-            },
-            "loading": true,
-          }
+      Object {
+        "error": null,
+        "event": Object {
+          "id": 1,
+        },
+        "loading": true,
+      }
     }
-    fetchEvent={[Function]}
+    fetchEvent={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
     match={
-        Object {
-            "params": Object {
-              "id": 1,
-            },
-          }
+      Object {
+        "params": Object {
+          "id": 1,
+        },
+      }
     }
-    replace={[Function]}
-/>,
+    replace={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

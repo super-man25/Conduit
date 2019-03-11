@@ -5,19 +5,29 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PricingRules
     buyerTypeActions={
-        Object {
-            "fetchBuyerTypes": [Function],
-            "openBuyerTypesModal": [Function],
-          }
+      Object {
+        "fetchBuyerTypes": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "openBuyerTypesModal": [MockFunction],
+      }
     }
     buyerTypes={Array []}
     editingAnyPriceRule={false}
     priceRuleActions={
-        Object {
-            "createPriceRule": [Function],
-          }
+      Object {
+        "createPriceRule": [MockFunction],
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -34,66 +44,64 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(SiteHeaderPresenter) />,
-        <styled.div
-          scrollLocked={undefined}
->
+        <styled.div>
           <Connect(ApiAlertPresenter) />
           <styled.div>
-                    <styled.div
-                              margin="1rem 0"
-                    >
-                              <Breadcrumbs
-                                        crumbs={
-                                                  Array [
-                                                            Object {
-                                                              "path": "/dashboard",
-                                                              "title": "Dashboard",
-                                                            },
-                                                            Object {
-                                                              "path": "/pricing",
-                                                              "title": "Team Settings",
-                                                            },
-                                                          ]
-                                        }
-                              />
-                              <Flex
-                                        align="baseline"
-                                        direction="row"
-                                        justify="space-between"
-                              >
-                                        <styled.h3
-                                                  type="secondary"
-                                        >
-                                                  Pricing Rules
-                                        </styled.h3>
-                                        <div>
-                                                  <styled.button
-                                                            disabled={true}
-                                                            onClick={[Function]}
-                                                  >
-                                                            Buyer Types
-                                                  </styled.button>
-                                                  <styled.button
-                                                            disabled={false}
-                                                            onClick={[Function]}
-                                                            style={
-                                                                      Object {
-                                                                                "marginLeft": "2rem",
-                                                                              }
-                                                            }
-                                                  >
-                                                            New Rule
-                                                  </styled.button>
-                                        </div>
-                              </Flex>
-                    </styled.div>
-                    <styled.div
-                              flex={1}
-                    >
-                              <Connect(VirtualizedPricingRulesPresenter) />
-                    </styled.div>
+            <styled.div
+              margin="1rem 0"
+            >
+              <Breadcrumbs
+                crumbs={
+                  Array [
+                    Object {
+                      "path": "/dashboard",
+                      "title": "Dashboard",
+                    },
+                    Object {
+                      "path": "/pricing",
+                      "title": "Team Settings",
+                    },
+                  ]
+                }
+              />
+              <Flex
+                align="baseline"
+                direction="row"
+                justify="space-between"
+              >
+                <styled.h3
+                  type="secondary"
+                >
+                  Pricing Rules
+                </styled.h3>
+                <div>
+                  <styled.button
+                    disabled={true}
+                    onClick={[MockFunction]}
+                  >
+                    Buyer Types
+                  </styled.button>
+                  <styled.button
+                    disabled={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "marginLeft": "2rem",
+                      }
+                    }
+                  >
+                    New Rule
+                  </styled.button>
+                </div>
+              </Flex>
+            </styled.div>
+            <styled.div
+              flex={1}
+            >
+              <Connect(VirtualizedPricingRulesPresenter) />
+            </styled.div>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <Portal />,
       ],
     },
@@ -117,59 +125,59 @@ ShallowWrapper {
             <Connect(ApiAlertPresenter) />,
             <styled.div>
               <styled.div
-                            margin="1rem 0"
+                margin="1rem 0"
               >
-                            <Breadcrumbs
-                                          crumbs={
-                                                        Array [
-                                                                      Object {
-                                                                        "path": "/dashboard",
-                                                                        "title": "Dashboard",
-                                                                      },
-                                                                      Object {
-                                                                        "path": "/pricing",
-                                                                        "title": "Team Settings",
-                                                                      },
-                                                                    ]
-                                          }
-                            />
-                            <Flex
-                                          align="baseline"
-                                          direction="row"
-                                          justify="space-between"
-                            >
-                                          <styled.h3
-                                                        type="secondary"
-                                          >
-                                                        Pricing Rules
-                                          </styled.h3>
-                                          <div>
-                                                        <styled.button
-                                                                      disabled={true}
-                                                                      onClick={[Function]}
-                                                        >
-                                                                      Buyer Types
-                                                        </styled.button>
-                                                        <styled.button
-                                                                      disabled={false}
-                                                                      onClick={[Function]}
-                                                                      style={
-                                                                                    Object {
-                                                                                                  "marginLeft": "2rem",
-                                                                                                }
-                                                                      }
-                                                        >
-                                                                      New Rule
-                                                        </styled.button>
-                                          </div>
-                            </Flex>
+                <Breadcrumbs
+                  crumbs={
+                    Array [
+                      Object {
+                        "path": "/dashboard",
+                        "title": "Dashboard",
+                      },
+                      Object {
+                        "path": "/pricing",
+                        "title": "Team Settings",
+                      },
+                    ]
+                  }
+                />
+                <Flex
+                  align="baseline"
+                  direction="row"
+                  justify="space-between"
+                >
+                  <styled.h3
+                    type="secondary"
+                  >
+                    Pricing Rules
+                  </styled.h3>
+                  <div>
+                    <styled.button
+                      disabled={true}
+                      onClick={[MockFunction]}
+                    >
+                      Buyer Types
+                    </styled.button>
+                    <styled.button
+                      disabled={false}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "marginLeft": "2rem",
+                        }
+                      }
+                    >
+                      New Rule
+                    </styled.button>
+                  </div>
+                </Flex>
               </styled.div>
               <styled.div
-                            flex={1}
+                flex={1}
               >
-                            <Connect(VirtualizedPricingRulesPresenter) />
+                <Connect(VirtualizedPricingRulesPresenter) />
               </styled.div>
-</styled.div>,
+            </styled.div>,
           ],
           "scrollLocked": undefined,
         },
@@ -192,57 +200,57 @@ ShallowWrapper {
               "children": Array [
                 <styled.div
                   margin="1rem 0"
->
+                >
                   <Breadcrumbs
-                                    crumbs={
-                                                      Array [
-                                                                        Object {
-                                                                          "path": "/dashboard",
-                                                                          "title": "Dashboard",
-                                                                        },
-                                                                        Object {
-                                                                          "path": "/pricing",
-                                                                          "title": "Team Settings",
-                                                                        },
-                                                                      ]
-                                    }
+                    crumbs={
+                      Array [
+                        Object {
+                          "path": "/dashboard",
+                          "title": "Dashboard",
+                        },
+                        Object {
+                          "path": "/pricing",
+                          "title": "Team Settings",
+                        },
+                      ]
+                    }
                   />
                   <Flex
-                                    align="baseline"
-                                    direction="row"
-                                    justify="space-between"
+                    align="baseline"
+                    direction="row"
+                    justify="space-between"
                   >
-                                    <styled.h3
-                                                      type="secondary"
-                                    >
-                                                      Pricing Rules
-                                    </styled.h3>
-                                    <div>
-                                                      <styled.button
-                                                                        disabled={true}
-                                                                        onClick={[Function]}
-                                                      >
-                                                                        Buyer Types
-                                                      </styled.button>
-                                                      <styled.button
-                                                                        disabled={false}
-                                                                        onClick={[Function]}
-                                                                        style={
-                                                                                          Object {
-                                                                                                            "marginLeft": "2rem",
-                                                                                                          }
-                                                                        }
-                                                      >
-                                                                        New Rule
-                                                      </styled.button>
-                                    </div>
+                    <styled.h3
+                      type="secondary"
+                    >
+                      Pricing Rules
+                    </styled.h3>
+                    <div>
+                      <styled.button
+                        disabled={true}
+                        onClick={[MockFunction]}
+                      >
+                        Buyer Types
+                      </styled.button>
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "marginLeft": "2rem",
+                          }
+                        }
+                      >
+                        New Rule
+                      </styled.button>
+                    </div>
                   </Flex>
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   flex={1}
->
+                >
                   <Connect(VirtualizedPricingRulesPresenter) />
-</styled.div>,
+                </styled.div>,
               ],
             },
             "ref": null,
@@ -255,48 +263,48 @@ ShallowWrapper {
                   "children": Array [
                     <Breadcrumbs
                       crumbs={
-                                            Array [
-                                                                  Object {
-                                                                    "path": "/dashboard",
-                                                                    "title": "Dashboard",
-                                                                  },
-                                                                  Object {
-                                                                    "path": "/pricing",
-                                                                    "title": "Team Settings",
-                                                                  },
-                                                                ]
+                        Array [
+                          Object {
+                            "path": "/dashboard",
+                            "title": "Dashboard",
+                          },
+                          Object {
+                            "path": "/pricing",
+                            "title": "Team Settings",
+                          },
+                        ]
                       }
-/>,
+                    />,
                     <Flex
                       align="baseline"
                       direction="row"
                       justify="space-between"
->
+                    >
                       <styled.h3
-                                            type="secondary"
+                        type="secondary"
                       >
-                                            Pricing Rules
+                        Pricing Rules
                       </styled.h3>
                       <div>
-                                            <styled.button
-                                                                  disabled={true}
-                                                                  onClick={[Function]}
-                                            >
-                                                                  Buyer Types
-                                            </styled.button>
-                                            <styled.button
-                                                                  disabled={false}
-                                                                  onClick={[Function]}
-                                                                  style={
-                                                                                        Object {
-                                                                                                              "marginLeft": "2rem",
-                                                                                                            }
-                                                                  }
-                                            >
-                                                                  New Rule
-                                            </styled.button>
+                        <styled.button
+                          disabled={true}
+                          onClick={[MockFunction]}
+                        >
+                          Buyer Types
+                        </styled.button>
+                        <styled.button
+                          disabled={false}
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "marginLeft": "2rem",
+                            }
+                          }
+                        >
+                          New Rule
+                        </styled.button>
                       </div>
-</Flex>,
+                    </Flex>,
                   ],
                   "margin": "1rem 0",
                 },
@@ -331,28 +339,28 @@ ShallowWrapper {
                       "children": Array [
                         <styled.h3
                           type="secondary"
->
+                        >
                           Pricing Rules
-</styled.h3>,
+                        </styled.h3>,
                         <div>
                           <styled.button
-                                                    disabled={true}
-                                                    onClick={[Function]}
+                            disabled={true}
+                            onClick={[MockFunction]}
                           >
-                                                    Buyer Types
+                            Buyer Types
                           </styled.button>
                           <styled.button
-                                                    disabled={false}
-                                                    onClick={[Function]}
-                                                    style={
-                                                                              Object {
-                                                                                                        "marginLeft": "2rem",
-                                                                                                      }
-                                                    }
+                            disabled={false}
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "marginLeft": "2rem",
+                              }
+                            }
                           >
-                                                    New Rule
+                            New Rule
                           </styled.button>
-</div>,
+                        </div>,
                       ],
                       "direction": "row",
                       "justify": "space-between",
@@ -379,21 +387,21 @@ ShallowWrapper {
                           "children": Array [
                             <styled.button
                               disabled={true}
-                              onClick={[Function]}
->
+                              onClick={[MockFunction]}
+                            >
                               Buyer Types
-</styled.button>,
+                            </styled.button>,
                             <styled.button
                               disabled={false}
                               onClick={[Function]}
                               style={
-                                                            Object {
-                                                                                          "marginLeft": "2rem",
-                                                                                        }
+                                Object {
+                                  "marginLeft": "2rem",
+                                }
                               }
->
+                            >
                               New Rule
-</styled.button>,
+                            </styled.button>,
                           ],
                         },
                         "ref": null,
@@ -405,7 +413,7 @@ ShallowWrapper {
                             "props": Object {
                               "children": "Buyer Types",
                               "disabled": true,
-                              "onClick": [Function],
+                              "onClick": [MockFunction],
                             },
                             "ref": null,
                             "rendered": "Buyer Types",
@@ -484,66 +492,64 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(SiteHeaderPresenter) />,
-          <styled.div
-            scrollLocked={undefined}
->
+          <styled.div>
             <Connect(ApiAlertPresenter) />
             <styled.div>
-                        <styled.div
-                                    margin="1rem 0"
-                        >
-                                    <Breadcrumbs
-                                                crumbs={
-                                                            Array [
-                                                                        Object {
-                                                                          "path": "/dashboard",
-                                                                          "title": "Dashboard",
-                                                                        },
-                                                                        Object {
-                                                                          "path": "/pricing",
-                                                                          "title": "Team Settings",
-                                                                        },
-                                                                      ]
-                                                }
-                                    />
-                                    <Flex
-                                                align="baseline"
-                                                direction="row"
-                                                justify="space-between"
-                                    >
-                                                <styled.h3
-                                                            type="secondary"
-                                                >
-                                                            Pricing Rules
-                                                </styled.h3>
-                                                <div>
-                                                            <styled.button
-                                                                        disabled={true}
-                                                                        onClick={[Function]}
-                                                            >
-                                                                        Buyer Types
-                                                            </styled.button>
-                                                            <styled.button
-                                                                        disabled={false}
-                                                                        onClick={[Function]}
-                                                                        style={
-                                                                                    Object {
-                                                                                                "marginLeft": "2rem",
-                                                                                              }
-                                                                        }
-                                                            >
-                                                                        New Rule
-                                                            </styled.button>
-                                                </div>
-                                    </Flex>
-                        </styled.div>
-                        <styled.div
-                                    flex={1}
-                        >
-                                    <Connect(VirtualizedPricingRulesPresenter) />
-                        </styled.div>
+              <styled.div
+                margin="1rem 0"
+              >
+                <Breadcrumbs
+                  crumbs={
+                    Array [
+                      Object {
+                        "path": "/dashboard",
+                        "title": "Dashboard",
+                      },
+                      Object {
+                        "path": "/pricing",
+                        "title": "Team Settings",
+                      },
+                    ]
+                  }
+                />
+                <Flex
+                  align="baseline"
+                  direction="row"
+                  justify="space-between"
+                >
+                  <styled.h3
+                    type="secondary"
+                  >
+                    Pricing Rules
+                  </styled.h3>
+                  <div>
+                    <styled.button
+                      disabled={true}
+                      onClick={[MockFunction]}
+                    >
+                      Buyer Types
+                    </styled.button>
+                    <styled.button
+                      disabled={false}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "marginLeft": "2rem",
+                        }
+                      }
+                    >
+                      New Rule
+                    </styled.button>
+                  </div>
+                </Flex>
+              </styled.div>
+              <styled.div
+                flex={1}
+              >
+                <Connect(VirtualizedPricingRulesPresenter) />
+              </styled.div>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <Portal />,
         ],
       },
@@ -567,59 +573,59 @@ ShallowWrapper {
               <Connect(ApiAlertPresenter) />,
               <styled.div>
                 <styled.div
-                                margin="1rem 0"
+                  margin="1rem 0"
                 >
-                                <Breadcrumbs
-                                                crumbs={
-                                                                Array [
-                                                                                Object {
-                                                                                  "path": "/dashboard",
-                                                                                  "title": "Dashboard",
-                                                                                },
-                                                                                Object {
-                                                                                  "path": "/pricing",
-                                                                                  "title": "Team Settings",
-                                                                                },
-                                                                              ]
-                                                }
-                                />
-                                <Flex
-                                                align="baseline"
-                                                direction="row"
-                                                justify="space-between"
-                                >
-                                                <styled.h3
-                                                                type="secondary"
-                                                >
-                                                                Pricing Rules
-                                                </styled.h3>
-                                                <div>
-                                                                <styled.button
-                                                                                disabled={true}
-                                                                                onClick={[Function]}
-                                                                >
-                                                                                Buyer Types
-                                                                </styled.button>
-                                                                <styled.button
-                                                                                disabled={false}
-                                                                                onClick={[Function]}
-                                                                                style={
-                                                                                                Object {
-                                                                                                                "marginLeft": "2rem",
-                                                                                                              }
-                                                                                }
-                                                                >
-                                                                                New Rule
-                                                                </styled.button>
-                                                </div>
-                                </Flex>
+                  <Breadcrumbs
+                    crumbs={
+                      Array [
+                        Object {
+                          "path": "/dashboard",
+                          "title": "Dashboard",
+                        },
+                        Object {
+                          "path": "/pricing",
+                          "title": "Team Settings",
+                        },
+                      ]
+                    }
+                  />
+                  <Flex
+                    align="baseline"
+                    direction="row"
+                    justify="space-between"
+                  >
+                    <styled.h3
+                      type="secondary"
+                    >
+                      Pricing Rules
+                    </styled.h3>
+                    <div>
+                      <styled.button
+                        disabled={true}
+                        onClick={[MockFunction]}
+                      >
+                        Buyer Types
+                      </styled.button>
+                      <styled.button
+                        disabled={false}
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "marginLeft": "2rem",
+                          }
+                        }
+                      >
+                        New Rule
+                      </styled.button>
+                    </div>
+                  </Flex>
                 </styled.div>
                 <styled.div
-                                flex={1}
+                  flex={1}
                 >
-                                <Connect(VirtualizedPricingRulesPresenter) />
+                  <Connect(VirtualizedPricingRulesPresenter) />
                 </styled.div>
-</styled.div>,
+              </styled.div>,
             ],
             "scrollLocked": undefined,
           },
@@ -642,57 +648,57 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div
                     margin="1rem 0"
->
+                  >
                     <Breadcrumbs
-                                        crumbs={
-                                                            Array [
-                                                                                Object {
-                                                                                  "path": "/dashboard",
-                                                                                  "title": "Dashboard",
-                                                                                },
-                                                                                Object {
-                                                                                  "path": "/pricing",
-                                                                                  "title": "Team Settings",
-                                                                                },
-                                                                              ]
-                                        }
+                      crumbs={
+                        Array [
+                          Object {
+                            "path": "/dashboard",
+                            "title": "Dashboard",
+                          },
+                          Object {
+                            "path": "/pricing",
+                            "title": "Team Settings",
+                          },
+                        ]
+                      }
                     />
                     <Flex
-                                        align="baseline"
-                                        direction="row"
-                                        justify="space-between"
+                      align="baseline"
+                      direction="row"
+                      justify="space-between"
                     >
-                                        <styled.h3
-                                                            type="secondary"
-                                        >
-                                                            Pricing Rules
-                                        </styled.h3>
-                                        <div>
-                                                            <styled.button
-                                                                                disabled={true}
-                                                                                onClick={[Function]}
-                                                            >
-                                                                                Buyer Types
-                                                            </styled.button>
-                                                            <styled.button
-                                                                                disabled={false}
-                                                                                onClick={[Function]}
-                                                                                style={
-                                                                                                    Object {
-                                                                                                                        "marginLeft": "2rem",
-                                                                                                                      }
-                                                                                }
-                                                            >
-                                                                                New Rule
-                                                            </styled.button>
-                                        </div>
+                      <styled.h3
+                        type="secondary"
+                      >
+                        Pricing Rules
+                      </styled.h3>
+                      <div>
+                        <styled.button
+                          disabled={true}
+                          onClick={[MockFunction]}
+                        >
+                          Buyer Types
+                        </styled.button>
+                        <styled.button
+                          disabled={false}
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "marginLeft": "2rem",
+                            }
+                          }
+                        >
+                          New Rule
+                        </styled.button>
+                      </div>
                     </Flex>
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     flex={1}
->
+                  >
                     <Connect(VirtualizedPricingRulesPresenter) />
-</styled.div>,
+                  </styled.div>,
                 ],
               },
               "ref": null,
@@ -705,48 +711,48 @@ ShallowWrapper {
                     "children": Array [
                       <Breadcrumbs
                         crumbs={
-                                                Array [
-                                                                        Object {
-                                                                          "path": "/dashboard",
-                                                                          "title": "Dashboard",
-                                                                        },
-                                                                        Object {
-                                                                          "path": "/pricing",
-                                                                          "title": "Team Settings",
-                                                                        },
-                                                                      ]
+                          Array [
+                            Object {
+                              "path": "/dashboard",
+                              "title": "Dashboard",
+                            },
+                            Object {
+                              "path": "/pricing",
+                              "title": "Team Settings",
+                            },
+                          ]
                         }
-/>,
+                      />,
                       <Flex
                         align="baseline"
                         direction="row"
                         justify="space-between"
->
+                      >
                         <styled.h3
-                                                type="secondary"
+                          type="secondary"
                         >
-                                                Pricing Rules
+                          Pricing Rules
                         </styled.h3>
                         <div>
-                                                <styled.button
-                                                                        disabled={true}
-                                                                        onClick={[Function]}
-                                                >
-                                                                        Buyer Types
-                                                </styled.button>
-                                                <styled.button
-                                                                        disabled={false}
-                                                                        onClick={[Function]}
-                                                                        style={
-                                                                                                Object {
-                                                                                                                        "marginLeft": "2rem",
-                                                                                                                      }
-                                                                        }
-                                                >
-                                                                        New Rule
-                                                </styled.button>
+                          <styled.button
+                            disabled={true}
+                            onClick={[MockFunction]}
+                          >
+                            Buyer Types
+                          </styled.button>
+                          <styled.button
+                            disabled={false}
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "marginLeft": "2rem",
+                              }
+                            }
+                          >
+                            New Rule
+                          </styled.button>
                         </div>
-</Flex>,
+                      </Flex>,
                     ],
                     "margin": "1rem 0",
                   },
@@ -781,28 +787,28 @@ ShallowWrapper {
                         "children": Array [
                           <styled.h3
                             type="secondary"
->
+                          >
                             Pricing Rules
-</styled.h3>,
+                          </styled.h3>,
                           <div>
                             <styled.button
-                                                        disabled={true}
-                                                        onClick={[Function]}
+                              disabled={true}
+                              onClick={[MockFunction]}
                             >
-                                                        Buyer Types
+                              Buyer Types
                             </styled.button>
                             <styled.button
-                                                        disabled={false}
-                                                        onClick={[Function]}
-                                                        style={
-                                                                                    Object {
-                                                                                                                "marginLeft": "2rem",
-                                                                                                              }
-                                                        }
+                              disabled={false}
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "marginLeft": "2rem",
+                                }
+                              }
                             >
-                                                        New Rule
+                              New Rule
                             </styled.button>
-</div>,
+                          </div>,
                         ],
                         "direction": "row",
                         "justify": "space-between",
@@ -829,21 +835,21 @@ ShallowWrapper {
                             "children": Array [
                               <styled.button
                                 disabled={true}
-                                onClick={[Function]}
->
+                                onClick={[MockFunction]}
+                              >
                                 Buyer Types
-</styled.button>,
+                              </styled.button>,
                               <styled.button
                                 disabled={false}
                                 onClick={[Function]}
                                 style={
-                                                                Object {
-                                                                                                "marginLeft": "2rem",
-                                                                                              }
+                                  Object {
+                                    "marginLeft": "2rem",
+                                  }
                                 }
->
+                              >
                                 New Rule
-</styled.button>,
+                              </styled.button>,
                             ],
                           },
                           "ref": null,
@@ -855,7 +861,7 @@ ShallowWrapper {
                               "props": Object {
                                 "children": "Buyer Types",
                                 "disabled": true,
-                                "onClick": [Function],
+                                "onClick": [MockFunction],
                               },
                               "ref": null,
                               "rendered": "Buyer Types",

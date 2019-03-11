@@ -5,8 +5,8 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <GroupedSplitButton
     isGrouped={true}
-    selectGrouping={[Function]}
-/>,
+    selectGrouping={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -25,15 +25,15 @@ ShallowWrapper {
         <styled.span
           isActive={false}
           onClick={[Function]}
->
+        >
           Uncategorized
-</styled.span>,
+        </styled.span>,
         <styled.span
           isActive={true}
           onClick={[Function]}
->
+        >
           By Category
-</styled.span>,
+        </styled.span>,
       ],
     },
     "ref": null,
@@ -77,15 +77,15 @@ ShallowWrapper {
           <styled.span
             isActive={false}
             onClick={[Function]}
->
+          >
             Uncategorized
-</styled.span>,
+          </styled.span>,
           <styled.span
             isActive={true}
             onClick={[Function]}
->
+          >
             By Category
-</styled.span>,
+          </styled.span>,
         ],
       },
       "ref": null,
@@ -150,32 +150,32 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <MultiSelect
     isGroupable={false}
     label="Events"
-    labelFn={[Function]}
-    onItemClicked={[Function]}
+    labelFn={[MockFunction]}
+    onItemClicked={[MockFunction]}
     options={
-        Array [
-            Object {
-              "id": 2,
-              "name": "Braves at Zephyrs",
-            },
-            Object {
-              "id": 5,
-              "name": "Dogs at Cats",
-            },
-            Object {
-              "id": 17,
-              "name": "Mariners at Zephyrs",
-            },
-          ]
+      Array [
+        Object {
+          "id": 2,
+          "name": "Braves at Zephyrs",
+        },
+        Object {
+          "id": 5,
+          "name": "Dogs at Cats",
+        },
+        Object {
+          "id": 17,
+          "name": "Mariners at Zephyrs",
+        },
+      ]
     }
     selected={
-        Array [
-            17,
-          ]
+      Array [
+        17,
+      ]
     }
-    toggleSelectAll={[Function]}
-    updatePriceRuleProperty={[Function]}
-/>,
+    toggleSelectAll={[MockFunction]}
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -194,85 +194,85 @@ ShallowWrapper {
         <Flex
           align="center"
           justify="space-between"
->
-          <Unknown
-                    color="#070707"
-                    name="arrow-drop-down"
-                    size={24}
+        >
+          <Icon
+            color="#070707"
+            name="arrow-drop-down"
+            size={24}
           />
-</Flex>,
+        </Flex>,
         <div
           style={
-                    Object {
-                              "position": "fixed",
-                              "zIndex": 9,
-                            }
+            Object {
+              "position": "fixed",
+              "zIndex": 9,
+            }
           }
->
+        >
           <styled.div
-                    show={false}
-                    style={
-                              Object {
-                                        "maxHeight": Object {},
-                                      }
-                    }
+            show={false}
+            style={
+              Object {
+                "maxHeight": Object {},
+              }
+            }
           >
-                    <Flex
-                              align="center"
-                              flexWrap="wrap"
-                              justify="space-between"
-                              padding="1rem"
-                              style={
-                                        Object {
-                                                  "backgroundColor": "#FFFFFF",
-                                                }
-                              }
-                    >
-                              <styled.p
-                                        size={13}
-                                        weight={600}
-                              >
-                                        Events
-                              </styled.p>
-                              <styled.p
-                                        color="#38A9DB"
-                                        onClick={[Function]}
-                                        style={
-                                                  Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                        }
-                              >
-                                        Select All
-                              </styled.p>
-                    </Flex>
-                    <MultiSelectView
-                              labelFn={[Function]}
-                              onItemClicked={[Function]}
-                              options={
-                                        Array [
-                                                  Object {
-                                                    "id": 2,
-                                                    "name": "Braves at Zephyrs",
-                                                  },
-                                                  Object {
-                                                    "id": 5,
-                                                    "name": "Dogs at Cats",
-                                                  },
-                                                  Object {
-                                                    "id": 17,
-                                                    "name": "Mariners at Zephyrs",
-                                                  },
-                                                ]
-                              }
-                              selected={
-                                        Array [
-                                                  17,
-                                                ]
-                              }
-                    />
+            <Flex
+              align="center"
+              flexWrap="wrap"
+              justify="space-between"
+              padding="1rem"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
+            >
+              <styled.p
+                size={13}
+                weight={600}
+              >
+                Events
+              </styled.p>
+              <styled.p
+                color="#38A9DB"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
+            </Flex>
+            <MultiSelectView
+              labelFn={[MockFunction]}
+              onItemClicked={[MockFunction]}
+              options={
+                Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ]
+              }
+              selected={
+                Array [
+                  17,
+                ]
+              }
+            />
           </styled.div>
-</div>,
+        </div>,
       ],
       "onClick": [Function],
       "onClickAway": [Function],
@@ -287,11 +287,11 @@ ShallowWrapper {
           "align": "center",
           "children": Array [
             undefined,
-            <Unknown
+            <Icon
               color="#070707"
               name="arrow-drop-down"
               size={24}
-/>,
+            />,
           ],
           "justify": "space-between",
         },
@@ -322,66 +322,66 @@ ShallowWrapper {
           "children": <styled.div
             show={false}
             style={
-                        Object {
-                                    "maxHeight": Object {},
-                                  }
+              Object {
+                "maxHeight": Object {},
+              }
             }
->
+          >
             <Flex
-                        align="center"
-                        flexWrap="wrap"
-                        justify="space-between"
-                        padding="1rem"
-                        style={
-                                    Object {
-                                                "backgroundColor": "#FFFFFF",
-                                              }
-                        }
+              align="center"
+              flexWrap="wrap"
+              justify="space-between"
+              padding="1rem"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
-                        <styled.p
-                                    size={13}
-                                    weight={600}
-                        >
-                                    Events
-                        </styled.p>
-                        <styled.p
-                                    color="#38A9DB"
-                                    onClick={[Function]}
-                                    style={
-                                                Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                    }
-                        >
-                                    Select All
-                        </styled.p>
+              <styled.p
+                size={13}
+                weight={600}
+              >
+                Events
+              </styled.p>
+              <styled.p
+                color="#38A9DB"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
             </Flex>
             <MultiSelectView
-                        labelFn={[Function]}
-                        onItemClicked={[Function]}
-                        options={
-                                    Array [
-                                                Object {
-                                                  "id": 2,
-                                                  "name": "Braves at Zephyrs",
-                                                },
-                                                Object {
-                                                  "id": 5,
-                                                  "name": "Dogs at Cats",
-                                                },
-                                                Object {
-                                                  "id": 17,
-                                                  "name": "Mariners at Zephyrs",
-                                                },
-                                              ]
-                        }
-                        selected={
-                                    Array [
-                                                17,
-                                              ]
-                        }
+              labelFn={[MockFunction]}
+              onItemClicked={[MockFunction]}
+              options={
+                Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ]
+              }
+              selected={
+                Array [
+                  17,
+                ]
+              }
             />
-</styled.div>,
+          </styled.div>,
           "style": Object {
             "position": "fixed",
             "zIndex": 9,
@@ -402,54 +402,54 @@ ShallowWrapper {
                 justify="space-between"
                 padding="1rem"
                 style={
-                                Object {
-                                                "backgroundColor": "#FFFFFF",
-                                              }
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
                 }
->
+              >
                 <styled.p
-                                size={13}
-                                weight={600}
+                  size={13}
+                  weight={600}
                 >
-                                Events
+                  Events
                 </styled.p>
                 <styled.p
-                                color="#38A9DB"
-                                onClick={[Function]}
-                                style={
-                                                Object {
-                                                                "cursor": "pointer",
-                                                              }
-                                }
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
-                                Select All
+                  Select All
                 </styled.p>
-</Flex>,
+              </Flex>,
               <MultiSelectView
-                labelFn={[Function]}
-                onItemClicked={[Function]}
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
                 options={
-                                Array [
-                                                Object {
-                                                  "id": 2,
-                                                  "name": "Braves at Zephyrs",
-                                                },
-                                                Object {
-                                                  "id": 5,
-                                                  "name": "Dogs at Cats",
-                                                },
-                                                Object {
-                                                  "id": 17,
-                                                  "name": "Mariners at Zephyrs",
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
                 }
                 selected={
-                                Array [
-                                                17,
-                                              ]
+                  Array [
+                    17,
+                  ]
                 }
-/>,
+              />,
             ],
             "show": false,
             "style": Object {
@@ -468,20 +468,20 @@ ShallowWrapper {
                   <styled.p
                     size={13}
                     weight={600}
->
+                  >
                     Events
-</styled.p>,
+                  </styled.p>,
                   <styled.p
                     color="#38A9DB"
                     onClick={[Function]}
                     style={
-                                        Object {
-                                                            "cursor": "pointer",
-                                                          }
+                      Object {
+                        "cursor": "pointer",
+                      }
                     }
->
+                  >
                     Select All
-</styled.p>,
+                  </styled.p>,
                   false,
                 ],
                 "flexWrap": "wrap",
@@ -531,8 +531,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "labelFn": [Function],
-                "onItemClicked": [Function],
+                "labelFn": [MockFunction],
+                "onItemClicked": [MockFunction],
                 "options": Array [
                   Object {
                     "id": 2,
@@ -573,85 +573,85 @@ ShallowWrapper {
           <Flex
             align="center"
             justify="space-between"
->
-            <Unknown
-                        color="#070707"
-                        name="arrow-drop-down"
-                        size={24}
+          >
+            <Icon
+              color="#070707"
+              name="arrow-drop-down"
+              size={24}
             />
-</Flex>,
+          </Flex>,
           <div
             style={
-                        Object {
-                                    "position": "fixed",
-                                    "zIndex": 9,
-                                  }
+              Object {
+                "position": "fixed",
+                "zIndex": 9,
+              }
             }
->
+          >
             <styled.div
-                        show={false}
-                        style={
-                                    Object {
-                                                "maxHeight": Object {},
-                                              }
-                        }
+              show={false}
+              style={
+                Object {
+                  "maxHeight": Object {},
+                }
+              }
             >
-                        <Flex
-                                    align="center"
-                                    flexWrap="wrap"
-                                    justify="space-between"
-                                    padding="1rem"
-                                    style={
-                                                Object {
-                                                            "backgroundColor": "#FFFFFF",
-                                                          }
-                                    }
-                        >
-                                    <styled.p
-                                                size={13}
-                                                weight={600}
-                                    >
-                                                Events
-                                    </styled.p>
-                                    <styled.p
-                                                color="#38A9DB"
-                                                onClick={[Function]}
-                                                style={
-                                                            Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                                }
-                                    >
-                                                Select All
-                                    </styled.p>
-                        </Flex>
-                        <MultiSelectView
-                                    labelFn={[Function]}
-                                    onItemClicked={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 2,
-                                                              "name": "Braves at Zephyrs",
-                                                            },
-                                                            Object {
-                                                              "id": 5,
-                                                              "name": "Dogs at Cats",
-                                                            },
-                                                            Object {
-                                                              "id": 17,
-                                                              "name": "Mariners at Zephyrs",
-                                                            },
-                                                          ]
-                                    }
-                                    selected={
-                                                Array [
-                                                            17,
-                                                          ]
-                                    }
-                        />
+              <Flex
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
+                }
+              >
+                <styled.p
+                  size={13}
+                  weight={600}
+                >
+                  Events
+                </styled.p>
+                <styled.p
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
+              </Flex>
+              <MultiSelectView
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
+                options={
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
+                }
+                selected={
+                  Array [
+                    17,
+                  ]
+                }
+              />
             </styled.div>
-</div>,
+          </div>,
         ],
         "onClick": [Function],
         "onClickAway": [Function],
@@ -666,11 +666,11 @@ ShallowWrapper {
             "align": "center",
             "children": Array [
               undefined,
-              <Unknown
+              <Icon
                 color="#070707"
                 name="arrow-drop-down"
                 size={24}
-/>,
+              />,
             ],
             "justify": "space-between",
           },
@@ -701,66 +701,66 @@ ShallowWrapper {
             "children": <styled.div
               show={false}
               style={
-                            Object {
-                                          "maxHeight": Object {},
-                                        }
+                Object {
+                  "maxHeight": Object {},
+                }
               }
->
+            >
               <Flex
-                            align="center"
-                            flexWrap="wrap"
-                            justify="space-between"
-                            padding="1rem"
-                            style={
-                                          Object {
-                                                        "backgroundColor": "#FFFFFF",
-                                                      }
-                            }
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
+                }
               >
-                            <styled.p
-                                          size={13}
-                                          weight={600}
-                            >
-                                          Events
-                            </styled.p>
-                            <styled.p
-                                          color="#38A9DB"
-                                          onClick={[Function]}
-                                          style={
-                                                        Object {
-                                                                      "cursor": "pointer",
-                                                                    }
-                                          }
-                            >
-                                          Select All
-                            </styled.p>
+                <styled.p
+                  size={13}
+                  weight={600}
+                >
+                  Events
+                </styled.p>
+                <styled.p
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
               </Flex>
               <MultiSelectView
-                            labelFn={[Function]}
-                            onItemClicked={[Function]}
-                            options={
-                                          Array [
-                                                        Object {
-                                                          "id": 2,
-                                                          "name": "Braves at Zephyrs",
-                                                        },
-                                                        Object {
-                                                          "id": 5,
-                                                          "name": "Dogs at Cats",
-                                                        },
-                                                        Object {
-                                                          "id": 17,
-                                                          "name": "Mariners at Zephyrs",
-                                                        },
-                                                      ]
-                            }
-                            selected={
-                                          Array [
-                                                        17,
-                                                      ]
-                            }
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
+                options={
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
+                }
+                selected={
+                  Array [
+                    17,
+                  ]
+                }
               />
-</styled.div>,
+            </styled.div>,
             "style": Object {
               "position": "fixed",
               "zIndex": 9,
@@ -781,54 +781,54 @@ ShallowWrapper {
                   justify="space-between"
                   padding="1rem"
                   style={
-                                    Object {
-                                                      "backgroundColor": "#FFFFFF",
-                                                    }
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                    }
                   }
->
+                >
                   <styled.p
-                                    size={13}
-                                    weight={600}
+                    size={13}
+                    weight={600}
                   >
-                                    Events
+                    Events
                   </styled.p>
                   <styled.p
-                                    color="#38A9DB"
-                                    onClick={[Function]}
-                                    style={
-                                                      Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                    }
+                    color="#38A9DB"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
                   >
-                                    Select All
+                    Select All
                   </styled.p>
-</Flex>,
+                </Flex>,
                 <MultiSelectView
-                  labelFn={[Function]}
-                  onItemClicked={[Function]}
+                  labelFn={[MockFunction]}
+                  onItemClicked={[MockFunction]}
                   options={
-                                    Array [
-                                                      Object {
-                                                        "id": 2,
-                                                        "name": "Braves at Zephyrs",
-                                                      },
-                                                      Object {
-                                                        "id": 5,
-                                                        "name": "Dogs at Cats",
-                                                      },
-                                                      Object {
-                                                        "id": 17,
-                                                        "name": "Mariners at Zephyrs",
-                                                      },
-                                                    ]
+                    Array [
+                      Object {
+                        "id": 2,
+                        "name": "Braves at Zephyrs",
+                      },
+                      Object {
+                        "id": 5,
+                        "name": "Dogs at Cats",
+                      },
+                      Object {
+                        "id": 17,
+                        "name": "Mariners at Zephyrs",
+                      },
+                    ]
                   }
                   selected={
-                                    Array [
-                                                      17,
-                                                    ]
+                    Array [
+                      17,
+                    ]
                   }
-/>,
+                />,
               ],
               "show": false,
               "style": Object {
@@ -847,20 +847,20 @@ ShallowWrapper {
                     <styled.p
                       size={13}
                       weight={600}
->
+                    >
                       Events
-</styled.p>,
+                    </styled.p>,
                     <styled.p
                       color="#38A9DB"
                       onClick={[Function]}
                       style={
-                                            Object {
-                                                                  "cursor": "pointer",
-                                                                }
+                        Object {
+                          "cursor": "pointer",
+                        }
                       }
->
+                    >
                       Select All
-</styled.p>,
+                    </styled.p>,
                     false,
                   ],
                   "flexWrap": "wrap",
@@ -910,8 +910,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "labelFn": [Function],
-                  "onItemClicked": [Function],
+                  "labelFn": [MockFunction],
+                  "onItemClicked": [MockFunction],
                   "options": Array [
                     Object {
                       "id": 2,
@@ -974,32 +974,32 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <MultiSelect
     isGroupable={true}
     label="Events"
-    labelFn={[Function]}
-    onItemClicked={[Function]}
+    labelFn={[MockFunction]}
+    onItemClicked={[MockFunction]}
     options={
-        Array [
-            Object {
-              "id": 2,
-              "name": "Braves at Zephyrs",
-            },
-            Object {
-              "id": 5,
-              "name": "Dogs at Cats",
-            },
-            Object {
-              "id": 17,
-              "name": "Mariners at Zephyrs",
-            },
-          ]
+      Array [
+        Object {
+          "id": 2,
+          "name": "Braves at Zephyrs",
+        },
+        Object {
+          "id": 5,
+          "name": "Dogs at Cats",
+        },
+        Object {
+          "id": 17,
+          "name": "Mariners at Zephyrs",
+        },
+      ]
     }
     selected={
-        Array [
-            17,
-          ]
+      Array [
+        17,
+      ]
     }
-    toggleSelectAll={[Function]}
-    updatePriceRuleProperty={[Function]}
-/>,
+    toggleSelectAll={[MockFunction]}
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1018,89 +1018,89 @@ ShallowWrapper {
         <Flex
           align="center"
           justify="space-between"
->
-          <Unknown
-                    color="#070707"
-                    name="arrow-drop-down"
-                    size={24}
+        >
+          <Icon
+            color="#070707"
+            name="arrow-drop-down"
+            size={24}
           />
-</Flex>,
+        </Flex>,
         <div
           style={
-                    Object {
-                              "position": "fixed",
-                              "zIndex": 9,
-                            }
+            Object {
+              "position": "fixed",
+              "zIndex": 9,
+            }
           }
->
+        >
           <styled.div
-                    show={false}
-                    style={
-                              Object {
-                                        "maxHeight": Object {},
-                                      }
-                    }
+            show={false}
+            style={
+              Object {
+                "maxHeight": Object {},
+              }
+            }
           >
-                    <Flex
-                              align="center"
-                              flexWrap="wrap"
-                              justify="space-between"
-                              padding="1rem"
-                              style={
-                                        Object {
-                                                  "backgroundColor": "#FFFFFF",
-                                                }
-                              }
-                    >
-                              <styled.p
-                                        size={13}
-                                        weight={600}
-                              >
-                                        Events
-                              </styled.p>
-                              <styled.p
-                                        color="#38A9DB"
-                                        onClick={[Function]}
-                                        style={
-                                                  Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                        }
-                              >
-                                        Select All
-                              </styled.p>
-                              <GroupedSplitButton
-                                        isGrouped={false}
-                                        selectGrouping={[Function]}
-                              />
-                    </Flex>
-                    <MultiSelectView
-                              labelFn={[Function]}
-                              onItemClicked={[Function]}
-                              options={
-                                        Array [
-                                                  Object {
-                                                    "id": 2,
-                                                    "name": "Braves at Zephyrs",
-                                                  },
-                                                  Object {
-                                                    "id": 5,
-                                                    "name": "Dogs at Cats",
-                                                  },
-                                                  Object {
-                                                    "id": 17,
-                                                    "name": "Mariners at Zephyrs",
-                                                  },
-                                                ]
-                              }
-                              selected={
-                                        Array [
-                                                  17,
-                                                ]
-                              }
-                    />
+            <Flex
+              align="center"
+              flexWrap="wrap"
+              justify="space-between"
+              padding="1rem"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
+            >
+              <styled.p
+                size={13}
+                weight={600}
+              >
+                Events
+              </styled.p>
+              <styled.p
+                color="#38A9DB"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
+              <GroupedSplitButton
+                isGrouped={false}
+                selectGrouping={[Function]}
+              />
+            </Flex>
+            <MultiSelectView
+              labelFn={[MockFunction]}
+              onItemClicked={[MockFunction]}
+              options={
+                Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ]
+              }
+              selected={
+                Array [
+                  17,
+                ]
+              }
+            />
           </styled.div>
-</div>,
+        </div>,
       ],
       "onClick": [Function],
       "onClickAway": [Function],
@@ -1115,11 +1115,11 @@ ShallowWrapper {
           "align": "center",
           "children": Array [
             undefined,
-            <Unknown
+            <Icon
               color="#070707"
               name="arrow-drop-down"
               size={24}
-/>,
+            />,
           ],
           "justify": "space-between",
         },
@@ -1150,70 +1150,70 @@ ShallowWrapper {
           "children": <styled.div
             show={false}
             style={
-                        Object {
-                                    "maxHeight": Object {},
-                                  }
+              Object {
+                "maxHeight": Object {},
+              }
             }
->
+          >
             <Flex
-                        align="center"
-                        flexWrap="wrap"
-                        justify="space-between"
-                        padding="1rem"
-                        style={
-                                    Object {
-                                                "backgroundColor": "#FFFFFF",
-                                              }
-                        }
+              align="center"
+              flexWrap="wrap"
+              justify="space-between"
+              padding="1rem"
+              style={
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                }
+              }
             >
-                        <styled.p
-                                    size={13}
-                                    weight={600}
-                        >
-                                    Events
-                        </styled.p>
-                        <styled.p
-                                    color="#38A9DB"
-                                    onClick={[Function]}
-                                    style={
-                                                Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                    }
-                        >
-                                    Select All
-                        </styled.p>
-                        <GroupedSplitButton
-                                    isGrouped={false}
-                                    selectGrouping={[Function]}
-                        />
+              <styled.p
+                size={13}
+                weight={600}
+              >
+                Events
+              </styled.p>
+              <styled.p
+                color="#38A9DB"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
+              <GroupedSplitButton
+                isGrouped={false}
+                selectGrouping={[Function]}
+              />
             </Flex>
             <MultiSelectView
-                        labelFn={[Function]}
-                        onItemClicked={[Function]}
-                        options={
-                                    Array [
-                                                Object {
-                                                  "id": 2,
-                                                  "name": "Braves at Zephyrs",
-                                                },
-                                                Object {
-                                                  "id": 5,
-                                                  "name": "Dogs at Cats",
-                                                },
-                                                Object {
-                                                  "id": 17,
-                                                  "name": "Mariners at Zephyrs",
-                                                },
-                                              ]
-                        }
-                        selected={
-                                    Array [
-                                                17,
-                                              ]
-                        }
+              labelFn={[MockFunction]}
+              onItemClicked={[MockFunction]}
+              options={
+                Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ]
+              }
+              selected={
+                Array [
+                  17,
+                ]
+              }
             />
-</styled.div>,
+          </styled.div>,
           "style": Object {
             "position": "fixed",
             "zIndex": 9,
@@ -1234,58 +1234,58 @@ ShallowWrapper {
                 justify="space-between"
                 padding="1rem"
                 style={
-                                Object {
-                                                "backgroundColor": "#FFFFFF",
-                                              }
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
                 }
->
+              >
                 <styled.p
-                                size={13}
-                                weight={600}
+                  size={13}
+                  weight={600}
                 >
-                                Events
+                  Events
                 </styled.p>
                 <styled.p
-                                color="#38A9DB"
-                                onClick={[Function]}
-                                style={
-                                                Object {
-                                                                "cursor": "pointer",
-                                                              }
-                                }
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
-                                Select All
+                  Select All
                 </styled.p>
                 <GroupedSplitButton
-                                isGrouped={false}
-                                selectGrouping={[Function]}
+                  isGrouped={false}
+                  selectGrouping={[Function]}
                 />
-</Flex>,
+              </Flex>,
               <MultiSelectView
-                labelFn={[Function]}
-                onItemClicked={[Function]}
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
                 options={
-                                Array [
-                                                Object {
-                                                  "id": 2,
-                                                  "name": "Braves at Zephyrs",
-                                                },
-                                                Object {
-                                                  "id": 5,
-                                                  "name": "Dogs at Cats",
-                                                },
-                                                Object {
-                                                  "id": 17,
-                                                  "name": "Mariners at Zephyrs",
-                                                },
-                                              ]
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
                 }
                 selected={
-                                Array [
-                                                17,
-                                              ]
+                  Array [
+                    17,
+                  ]
                 }
-/>,
+              />,
             ],
             "show": false,
             "style": Object {
@@ -1304,24 +1304,24 @@ ShallowWrapper {
                   <styled.p
                     size={13}
                     weight={600}
->
+                  >
                     Events
-</styled.p>,
+                  </styled.p>,
                   <styled.p
                     color="#38A9DB"
                     onClick={[Function]}
                     style={
-                                        Object {
-                                                            "cursor": "pointer",
-                                                          }
+                      Object {
+                        "cursor": "pointer",
+                      }
                     }
->
+                  >
                     Select All
-</styled.p>,
+                  </styled.p>,
                   <GroupedSplitButton
                     isGrouped={false}
                     selectGrouping={[Function]}
-/>,
+                  />,
                 ],
                 "flexWrap": "wrap",
                 "justify": "space-between",
@@ -1381,8 +1381,8 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "labelFn": [Function],
-                "onItemClicked": [Function],
+                "labelFn": [MockFunction],
+                "onItemClicked": [MockFunction],
                 "options": Array [
                   Object {
                     "id": 2,
@@ -1423,89 +1423,89 @@ ShallowWrapper {
           <Flex
             align="center"
             justify="space-between"
->
-            <Unknown
-                        color="#070707"
-                        name="arrow-drop-down"
-                        size={24}
+          >
+            <Icon
+              color="#070707"
+              name="arrow-drop-down"
+              size={24}
             />
-</Flex>,
+          </Flex>,
           <div
             style={
-                        Object {
-                                    "position": "fixed",
-                                    "zIndex": 9,
-                                  }
+              Object {
+                "position": "fixed",
+                "zIndex": 9,
+              }
             }
->
+          >
             <styled.div
-                        show={false}
-                        style={
-                                    Object {
-                                                "maxHeight": Object {},
-                                              }
-                        }
+              show={false}
+              style={
+                Object {
+                  "maxHeight": Object {},
+                }
+              }
             >
-                        <Flex
-                                    align="center"
-                                    flexWrap="wrap"
-                                    justify="space-between"
-                                    padding="1rem"
-                                    style={
-                                                Object {
-                                                            "backgroundColor": "#FFFFFF",
-                                                          }
-                                    }
-                        >
-                                    <styled.p
-                                                size={13}
-                                                weight={600}
-                                    >
-                                                Events
-                                    </styled.p>
-                                    <styled.p
-                                                color="#38A9DB"
-                                                onClick={[Function]}
-                                                style={
-                                                            Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                                }
-                                    >
-                                                Select All
-                                    </styled.p>
-                                    <GroupedSplitButton
-                                                isGrouped={false}
-                                                selectGrouping={[Function]}
-                                    />
-                        </Flex>
-                        <MultiSelectView
-                                    labelFn={[Function]}
-                                    onItemClicked={[Function]}
-                                    options={
-                                                Array [
-                                                            Object {
-                                                              "id": 2,
-                                                              "name": "Braves at Zephyrs",
-                                                            },
-                                                            Object {
-                                                              "id": 5,
-                                                              "name": "Dogs at Cats",
-                                                            },
-                                                            Object {
-                                                              "id": 17,
-                                                              "name": "Mariners at Zephyrs",
-                                                            },
-                                                          ]
-                                    }
-                                    selected={
-                                                Array [
-                                                            17,
-                                                          ]
-                                    }
-                        />
+              <Flex
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
+                }
+              >
+                <styled.p
+                  size={13}
+                  weight={600}
+                >
+                  Events
+                </styled.p>
+                <styled.p
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
+                <GroupedSplitButton
+                  isGrouped={false}
+                  selectGrouping={[Function]}
+                />
+              </Flex>
+              <MultiSelectView
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
+                options={
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
+                }
+                selected={
+                  Array [
+                    17,
+                  ]
+                }
+              />
             </styled.div>
-</div>,
+          </div>,
         ],
         "onClick": [Function],
         "onClickAway": [Function],
@@ -1520,11 +1520,11 @@ ShallowWrapper {
             "align": "center",
             "children": Array [
               undefined,
-              <Unknown
+              <Icon
                 color="#070707"
                 name="arrow-drop-down"
                 size={24}
-/>,
+              />,
             ],
             "justify": "space-between",
           },
@@ -1555,70 +1555,70 @@ ShallowWrapper {
             "children": <styled.div
               show={false}
               style={
-                            Object {
-                                          "maxHeight": Object {},
-                                        }
+                Object {
+                  "maxHeight": Object {},
+                }
               }
->
+            >
               <Flex
-                            align="center"
-                            flexWrap="wrap"
-                            justify="space-between"
-                            padding="1rem"
-                            style={
-                                          Object {
-                                                        "backgroundColor": "#FFFFFF",
-                                                      }
-                            }
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  }
+                }
               >
-                            <styled.p
-                                          size={13}
-                                          weight={600}
-                            >
-                                          Events
-                            </styled.p>
-                            <styled.p
-                                          color="#38A9DB"
-                                          onClick={[Function]}
-                                          style={
-                                                        Object {
-                                                                      "cursor": "pointer",
-                                                                    }
-                                          }
-                            >
-                                          Select All
-                            </styled.p>
-                            <GroupedSplitButton
-                                          isGrouped={false}
-                                          selectGrouping={[Function]}
-                            />
+                <styled.p
+                  size={13}
+                  weight={600}
+                >
+                  Events
+                </styled.p>
+                <styled.p
+                  color="#38A9DB"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
+                <GroupedSplitButton
+                  isGrouped={false}
+                  selectGrouping={[Function]}
+                />
               </Flex>
               <MultiSelectView
-                            labelFn={[Function]}
-                            onItemClicked={[Function]}
-                            options={
-                                          Array [
-                                                        Object {
-                                                          "id": 2,
-                                                          "name": "Braves at Zephyrs",
-                                                        },
-                                                        Object {
-                                                          "id": 5,
-                                                          "name": "Dogs at Cats",
-                                                        },
-                                                        Object {
-                                                          "id": 17,
-                                                          "name": "Mariners at Zephyrs",
-                                                        },
-                                                      ]
-                            }
-                            selected={
-                                          Array [
-                                                        17,
-                                                      ]
-                            }
+                labelFn={[MockFunction]}
+                onItemClicked={[MockFunction]}
+                options={
+                  Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ]
+                }
+                selected={
+                  Array [
+                    17,
+                  ]
+                }
               />
-</styled.div>,
+            </styled.div>,
             "style": Object {
               "position": "fixed",
               "zIndex": 9,
@@ -1639,58 +1639,58 @@ ShallowWrapper {
                   justify="space-between"
                   padding="1rem"
                   style={
-                                    Object {
-                                                      "backgroundColor": "#FFFFFF",
-                                                    }
+                    Object {
+                      "backgroundColor": "#FFFFFF",
+                    }
                   }
->
+                >
                   <styled.p
-                                    size={13}
-                                    weight={600}
+                    size={13}
+                    weight={600}
                   >
-                                    Events
+                    Events
                   </styled.p>
                   <styled.p
-                                    color="#38A9DB"
-                                    onClick={[Function]}
-                                    style={
-                                                      Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                    }
+                    color="#38A9DB"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
                   >
-                                    Select All
+                    Select All
                   </styled.p>
                   <GroupedSplitButton
-                                    isGrouped={false}
-                                    selectGrouping={[Function]}
+                    isGrouped={false}
+                    selectGrouping={[Function]}
                   />
-</Flex>,
+                </Flex>,
                 <MultiSelectView
-                  labelFn={[Function]}
-                  onItemClicked={[Function]}
+                  labelFn={[MockFunction]}
+                  onItemClicked={[MockFunction]}
                   options={
-                                    Array [
-                                                      Object {
-                                                        "id": 2,
-                                                        "name": "Braves at Zephyrs",
-                                                      },
-                                                      Object {
-                                                        "id": 5,
-                                                        "name": "Dogs at Cats",
-                                                      },
-                                                      Object {
-                                                        "id": 17,
-                                                        "name": "Mariners at Zephyrs",
-                                                      },
-                                                    ]
+                    Array [
+                      Object {
+                        "id": 2,
+                        "name": "Braves at Zephyrs",
+                      },
+                      Object {
+                        "id": 5,
+                        "name": "Dogs at Cats",
+                      },
+                      Object {
+                        "id": 17,
+                        "name": "Mariners at Zephyrs",
+                      },
+                    ]
                   }
                   selected={
-                                    Array [
-                                                      17,
-                                                    ]
+                    Array [
+                      17,
+                    ]
                   }
-/>,
+                />,
               ],
               "show": false,
               "style": Object {
@@ -1709,24 +1709,24 @@ ShallowWrapper {
                     <styled.p
                       size={13}
                       weight={600}
->
+                    >
                       Events
-</styled.p>,
+                    </styled.p>,
                     <styled.p
                       color="#38A9DB"
                       onClick={[Function]}
                       style={
-                                            Object {
-                                                                  "cursor": "pointer",
-                                                                }
+                        Object {
+                          "cursor": "pointer",
+                        }
                       }
->
+                    >
                       Select All
-</styled.p>,
+                    </styled.p>,
                     <GroupedSplitButton
                       isGrouped={false}
                       selectGrouping={[Function]}
-/>,
+                    />,
                   ],
                   "flexWrap": "wrap",
                   "justify": "space-between",
@@ -1786,8 +1786,8 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "labelFn": [Function],
-                  "onItemClicked": [Function],
+                  "labelFn": [MockFunction],
+                  "onItemClicked": [MockFunction],
                   "options": Array [
                     Object {
                       "id": 2,

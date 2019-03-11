@@ -19,14 +19,14 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Unknown
+        <ChartLegendItem
           color="#621F95"
           label="Actual Inventory"
-/>,
-        <Unknown
+        />,
+        <ChartLegendItem
           color="#817CB8"
           label="Projected Inventory"
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -65,14 +65,14 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Unknown
+          <ChartLegendItem
             color="#621F95"
             label="Actual Inventory"
-/>,
-          <Unknown
+          />,
+          <ChartLegendItem
             color="#817CB8"
             label="Projected Inventory"
-/>,
+          />,
         ],
       },
       "ref": null,

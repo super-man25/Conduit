@@ -3,10 +3,10 @@
 exports[`<SelectableCellPresenter /> should render correctly when isSelected is false 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <SelectableColumnCellPresenter
     isSelected={false}
-    select={[Function]}
-/>,
+    select={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -24,9 +24,9 @@ ShallowWrapper {
       "align": "center",
       "children": <input
         checked={false}
-        onChange={[Function]}
+        onChange={[MockFunction]}
         type="checkbox"
-/>,
+      />,
       "justify": "center",
     },
     "ref": null,
@@ -36,7 +36,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "checked": false,
-        "onChange": [Function],
+        "onChange": [MockFunction],
         "type": "checkbox",
       },
       "ref": null,
@@ -54,9 +54,9 @@ ShallowWrapper {
         "align": "center",
         "children": <input
           checked={false}
-          onChange={[Function]}
+          onChange={[MockFunction]}
           type="checkbox"
-/>,
+        />,
         "justify": "center",
       },
       "ref": null,
@@ -66,7 +66,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "checked": false,
-          "onChange": [Function],
+          "onChange": [MockFunction],
           "type": "checkbox",
         },
         "ref": null,
@@ -103,10 +103,10 @@ ShallowWrapper {
 exports[`<SelectableCellPresenter /> should render correctly when isSelected is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <SelectableColumnCellPresenter
     isSelected={true}
-    select={[Function]}
-/>,
+    select={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -124,9 +124,9 @@ ShallowWrapper {
       "align": "center",
       "children": <input
         checked={true}
-        onChange={[Function]}
+        onChange={[MockFunction]}
         type="checkbox"
-/>,
+      />,
       "justify": "center",
     },
     "ref": null,
@@ -136,7 +136,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "checked": true,
-        "onChange": [Function],
+        "onChange": [MockFunction],
         "type": "checkbox",
       },
       "ref": null,
@@ -154,9 +154,9 @@ ShallowWrapper {
         "align": "center",
         "children": <input
           checked={true}
-          onChange={[Function]}
+          onChange={[MockFunction]}
           type="checkbox"
-/>,
+        />,
         "justify": "center",
       },
       "ref": null,
@@ -166,7 +166,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "checked": true,
-          "onChange": [Function],
+          "onChange": [MockFunction],
           "type": "checkbox",
         },
         "ref": null,

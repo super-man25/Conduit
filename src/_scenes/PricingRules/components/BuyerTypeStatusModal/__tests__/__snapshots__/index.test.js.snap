@@ -5,16 +5,16 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BuyerTypeStatusModalPresenter
     buyerTypeActions={
-        Object {
-            "closeBuyerTypesModal": [Function],
-            "updateBuyerTypes": [Function],
-          }
+      Object {
+        "closeBuyerTypesModal": [MockFunction],
+        "updateBuyerTypes": [MockFunction],
+      }
     }
     buyerTypes={Array []}
     buyerTypesInActivePriceRules={Array []}
     error={null}
     isLoading={false}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -32,62 +32,60 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div>
-                    <styled.h4
-                              type="secondary"
-                    >
-                              Buyer Types
-                    </styled.h4>
-                    <styled.input
-                              component={[Function]}
-                              onChange={[Function]}
-                              placeholder="Filter Buyer Types"
-                    />
+            <styled.h4
+              type="secondary"
+            >
+              Buyer Types
+            </styled.h4>
+            <styled.input
+              component={[Function]}
+              onChange={[Function]}
+              placeholder="Filter Buyer Types"
+            />
           </styled.div>
           <styled.div>
-                    <BuyerTypeHeader />
-                    <styled.div
-                              margin="1rem"
-                    />
-                    <Flex
-                              align="center"
-                              direction="column"
-                              justify="center"
-                    >
-                              
-                    </Flex>
+            <BuyerTypeHeader />
+            <styled.div
+              margin="1rem"
+            />
+            <Flex
+              align="center"
+              direction="column"
+              justify="center"
+            />
           </styled.div>
           <styled.div>
-                    <styled.p
-                              color="#DC0A0A"
-                              margin="0 1rem 1rem 0"
-                              size={12}
-                              weight={300}
-                    />
-                    <Flex
-                              align="center"
-                              justify="flex-end"
-                    >
-                              <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                              >
-                                        Cancel
-                              </styled.button>
-                              <styled.div
-                                        margin="1rem"
-                              />
-                              <styled.button
-                                        disabled={true}
-                                        onClick={[Function]}
-                              >
-                                        Save
-                              </styled.button>
-                    </Flex>
+            <styled.p
+              color="#DC0A0A"
+              margin="0 1rem 1rem 0"
+              size={12}
+              weight={300}
+            />
+            <Flex
+              align="center"
+              justify="flex-end"
+            >
+              <styled.button
+                disabled={false}
+                onClick={[MockFunction]}
+              >
+                Cancel
+              </styled.button>
+              <styled.div
+                margin="1rem"
+              />
+              <styled.button
+                disabled={true}
+                onClick={[Function]}
+              >
+                Save
+              </styled.button>
+            </Flex>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div
-          onClick={[Function]}
-/>,
+          onClick={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
@@ -100,57 +98,55 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.h4
-                            type="secondary"
+                type="secondary"
               >
-                            Buyer Types
+                Buyer Types
               </styled.h4>
               <styled.input
-                            component={[Function]}
-                            onChange={[Function]}
-                            placeholder="Filter Buyer Types"
+                component={[Function]}
+                onChange={[Function]}
+                placeholder="Filter Buyer Types"
               />
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <BuyerTypeHeader />
               <styled.div
-                            margin="1rem"
+                margin="1rem"
               />
               <Flex
-                            align="center"
-                            direction="column"
-                            justify="center"
-              >
-                            
-              </Flex>
-</styled.div>,
+                align="center"
+                direction="column"
+                justify="center"
+              />
+            </styled.div>,
             <styled.div>
               <styled.p
-                            color="#DC0A0A"
-                            margin="0 1rem 1rem 0"
-                            size={12}
-                            weight={300}
+                color="#DC0A0A"
+                margin="0 1rem 1rem 0"
+                size={12}
+                weight={300}
               />
               <Flex
-                            align="center"
-                            justify="flex-end"
+                align="center"
+                justify="flex-end"
               >
-                            <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                            >
-                                          Cancel
-                            </styled.button>
-                            <styled.div
-                                          margin="1rem"
-                            />
-                            <styled.button
-                                          disabled={true}
-                                          onClick={[Function]}
-                            >
-                                          Save
-                            </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[MockFunction]}
+                >
+                  Cancel
+                </styled.button>
+                <styled.div
+                  margin="1rem"
+                />
+                <styled.button
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  Save
+                </styled.button>
               </Flex>
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -163,14 +159,14 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4
                   type="secondary"
->
+                >
                   Buyer Types
-</styled.h4>,
+                </styled.h4>,
                 <styled.input
                   component={[Function]}
                   onChange={[Function]}
                   placeholder="Filter Buyer Types"
-/>,
+                />,
               ],
             },
             "ref": null,
@@ -212,14 +208,12 @@ ShallowWrapper {
                 <BuyerTypeHeader />,
                 <styled.div
                   margin="1rem"
-/>,
+                />,
                 <Flex
                   align="center"
                   direction="column"
                   justify="center"
->
-                  
-</Flex>,
+                />,
               ],
             },
             "ref": null,
@@ -272,27 +266,27 @@ ShallowWrapper {
                   margin="0 1rem 1rem 0"
                   size={12}
                   weight={300}
-/>,
+                />,
                 <Flex
                   align="center"
                   justify="flex-end"
->
+                >
                   <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
+                    disabled={false}
+                    onClick={[MockFunction]}
                   >
-                                    Cancel
+                    Cancel
                   </styled.button>
                   <styled.div
-                                    margin="1rem"
+                    margin="1rem"
                   />
                   <styled.button
-                                    disabled={true}
-                                    onClick={[Function]}
+                    disabled={true}
+                    onClick={[Function]}
                   >
-                                    Save
+                    Save
                   </styled.button>
-</Flex>,
+                </Flex>,
               ],
             },
             "ref": null,
@@ -321,19 +315,19 @@ ShallowWrapper {
                   "children": Array [
                     <styled.button
                       disabled={false}
-                      onClick={[Function]}
->
+                      onClick={[MockFunction]}
+                    >
                       Cancel
-</styled.button>,
+                    </styled.button>,
                     <styled.div
                       margin="1rem"
-/>,
+                    />,
                     <styled.button
                       disabled={true}
                       onClick={[Function]}
->
+                    >
                       Save
-</styled.button>,
+                    </styled.button>,
                   ],
                   "justify": "flex-end",
                 },
@@ -346,7 +340,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "disabled": false,
-                      "onClick": [Function],
+                      "onClick": [MockFunction],
                     },
                     "ref": null,
                     "rendered": "Cancel",
@@ -390,7 +384,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         "ref": null,
         "rendered": null,
@@ -408,62 +402,60 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div>
-                        <styled.h4
-                                    type="secondary"
-                        >
-                                    Buyer Types
-                        </styled.h4>
-                        <styled.input
-                                    component={[Function]}
-                                    onChange={[Function]}
-                                    placeholder="Filter Buyer Types"
-                        />
+              <styled.h4
+                type="secondary"
+              >
+                Buyer Types
+              </styled.h4>
+              <styled.input
+                component={[Function]}
+                onChange={[Function]}
+                placeholder="Filter Buyer Types"
+              />
             </styled.div>
             <styled.div>
-                        <BuyerTypeHeader />
-                        <styled.div
-                                    margin="1rem"
-                        />
-                        <Flex
-                                    align="center"
-                                    direction="column"
-                                    justify="center"
-                        >
-                                    
-                        </Flex>
+              <BuyerTypeHeader />
+              <styled.div
+                margin="1rem"
+              />
+              <Flex
+                align="center"
+                direction="column"
+                justify="center"
+              />
             </styled.div>
             <styled.div>
-                        <styled.p
-                                    color="#DC0A0A"
-                                    margin="0 1rem 1rem 0"
-                                    size={12}
-                                    weight={300}
-                        />
-                        <Flex
-                                    align="center"
-                                    justify="flex-end"
-                        >
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                    >
-                                                Cancel
-                                    </styled.button>
-                                    <styled.div
-                                                margin="1rem"
-                                    />
-                                    <styled.button
-                                                disabled={true}
-                                                onClick={[Function]}
-                                    >
-                                                Save
-                                    </styled.button>
-                        </Flex>
+              <styled.p
+                color="#DC0A0A"
+                margin="0 1rem 1rem 0"
+                size={12}
+                weight={300}
+              />
+              <Flex
+                align="center"
+                justify="flex-end"
+              >
+                <styled.button
+                  disabled={false}
+                  onClick={[MockFunction]}
+                >
+                  Cancel
+                </styled.button>
+                <styled.div
+                  margin="1rem"
+                />
+                <styled.button
+                  disabled={true}
+                  onClick={[Function]}
+                >
+                  Save
+                </styled.button>
+              </Flex>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
@@ -476,57 +468,55 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.h4
-                                type="secondary"
+                  type="secondary"
                 >
-                                Buyer Types
+                  Buyer Types
                 </styled.h4>
                 <styled.input
-                                component={[Function]}
-                                onChange={[Function]}
-                                placeholder="Filter Buyer Types"
+                  component={[Function]}
+                  onChange={[Function]}
+                  placeholder="Filter Buyer Types"
                 />
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <BuyerTypeHeader />
                 <styled.div
-                                margin="1rem"
+                  margin="1rem"
                 />
                 <Flex
-                                align="center"
-                                direction="column"
-                                justify="center"
-                >
-                                
-                </Flex>
-</styled.div>,
+                  align="center"
+                  direction="column"
+                  justify="center"
+                />
+              </styled.div>,
               <styled.div>
                 <styled.p
-                                color="#DC0A0A"
-                                margin="0 1rem 1rem 0"
-                                size={12}
-                                weight={300}
+                  color="#DC0A0A"
+                  margin="0 1rem 1rem 0"
+                  size={12}
+                  weight={300}
                 />
                 <Flex
-                                align="center"
-                                justify="flex-end"
+                  align="center"
+                  justify="flex-end"
                 >
-                                <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                >
-                                                Cancel
-                                </styled.button>
-                                <styled.div
-                                                margin="1rem"
-                                />
-                                <styled.button
-                                                disabled={true}
-                                                onClick={[Function]}
-                                >
-                                                Save
-                                </styled.button>
+                  <styled.button
+                    disabled={false}
+                    onClick={[MockFunction]}
+                  >
+                    Cancel
+                  </styled.button>
+                  <styled.div
+                    margin="1rem"
+                  />
+                  <styled.button
+                    disabled={true}
+                    onClick={[Function]}
+                  >
+                    Save
+                  </styled.button>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -539,14 +529,14 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h4
                     type="secondary"
->
+                  >
                     Buyer Types
-</styled.h4>,
+                  </styled.h4>,
                   <styled.input
                     component={[Function]}
                     onChange={[Function]}
                     placeholder="Filter Buyer Types"
-/>,
+                  />,
                 ],
               },
               "ref": null,
@@ -588,14 +578,12 @@ ShallowWrapper {
                   <BuyerTypeHeader />,
                   <styled.div
                     margin="1rem"
-/>,
+                  />,
                   <Flex
                     align="center"
                     direction="column"
                     justify="center"
->
-                    
-</Flex>,
+                  />,
                 ],
               },
               "ref": null,
@@ -648,27 +636,27 @@ ShallowWrapper {
                     margin="0 1rem 1rem 0"
                     size={12}
                     weight={300}
-/>,
+                  />,
                   <Flex
                     align="center"
                     justify="flex-end"
->
+                  >
                     <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
+                      disabled={false}
+                      onClick={[MockFunction]}
                     >
-                                        Cancel
+                      Cancel
                     </styled.button>
                     <styled.div
-                                        margin="1rem"
+                      margin="1rem"
                     />
                     <styled.button
-                                        disabled={true}
-                                        onClick={[Function]}
+                      disabled={true}
+                      onClick={[Function]}
                     >
-                                        Save
+                      Save
                     </styled.button>
-</Flex>,
+                  </Flex>,
                 ],
               },
               "ref": null,
@@ -697,19 +685,19 @@ ShallowWrapper {
                     "children": Array [
                       <styled.button
                         disabled={false}
-                        onClick={[Function]}
->
+                        onClick={[MockFunction]}
+                      >
                         Cancel
-</styled.button>,
+                      </styled.button>,
                       <styled.div
                         margin="1rem"
-/>,
+                      />,
                       <styled.button
                         disabled={true}
                         onClick={[Function]}
->
+                      >
                         Save
-</styled.button>,
+                      </styled.button>,
                     ],
                     "justify": "flex-end",
                   },
@@ -722,7 +710,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Cancel",
                         "disabled": false,
-                        "onClick": [Function],
+                        "onClick": [MockFunction],
                       },
                       "ref": null,
                       "rendered": "Cancel",
@@ -766,7 +754,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,

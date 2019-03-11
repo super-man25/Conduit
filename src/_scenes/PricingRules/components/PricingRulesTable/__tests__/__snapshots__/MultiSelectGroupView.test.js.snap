@@ -5,46 +5,46 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <MultiSelectGroupView
     categories={
-        Array [
-            Object {
-              "id": 2,
-              "name": "Value",
-            },
-            Object {
-              "id": 3,
-              "name": "Classic",
-            },
-          ]
+      Array [
+        Object {
+          "id": 2,
+          "name": "Value",
+        },
+        Object {
+          "id": 3,
+          "name": "Classic",
+        },
+      ]
     }
     grouped={
-        Object {
-            "2": Array [
-              Object {
-                "id": 6,
-                "name": "Braves at Zephyrs",
-              },
-              Object {
-                "id": 18,
-                "name": "Dogs FIGHT Cats",
-              },
-            ],
-            "3": Array [
-              Object {
-                "id": 23,
-                "name": "Cardinals at Zephyrs",
-              },
-            ],
-          }
+      Object {
+        "2": Array [
+          Object {
+            "id": 6,
+            "name": "Braves at Zephyrs",
+          },
+          Object {
+            "id": 18,
+            "name": "Dogs FIGHT Cats",
+          },
+        ],
+        "3": Array [
+          Object {
+            "id": 23,
+            "name": "Cardinals at Zephyrs",
+          },
+        ],
+      }
     }
     labelFn={[Function]}
-    onItemClicked={[Function]}
+    onItemClicked={[MockFunction]}
     selected={
-        Array [
-            18,
-          ]
+      Array [
+        18,
+      ]
     }
-    updatePriceRuleProperty={[Function]}
-/>,
+    updatePriceRuleProperty={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -60,90 +60,90 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Unknown>
+        <React.Fragment>
           <styled.div>
-                    <Flex
-                              align="center"
-                              justify="space-between"
-                    >
-                              Value
-                              <styled.p
-                                        color="#fff"
-                                        onClick={[Function]}
-                                        style={
-                                                  Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                        }
-                              >
-                                        Select All
-                              </styled.p>
-                    </Flex>
+            <Flex
+              align="center"
+              justify="space-between"
+            >
+              Value
+              <styled.p
+                color="#fff"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
+            </Flex>
           </styled.div>
           <styled.div
-                    isActive={false}
-                    onClick={[Function]}
+            isActive={false}
+            onClick={[Function]}
           >
-                    <Flex
-                              align="center"
-                    >
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              Braves at Zephyrs
-                    </Flex>
+            <Flex
+              align="center"
+            >
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              Braves at Zephyrs
+            </Flex>
           </styled.div>
           <styled.div
-                    isActive={true}
-                    onClick={[Function]}
+            isActive={true}
+            onClick={[Function]}
           >
-                    <Flex
-                              align="center"
-                    >
-                              <styled.input
-                                        checked={true}
-                                        onChange={[Function]}
-                              />
-                              Dogs FIGHT Cats
-                    </Flex>
+            <Flex
+              align="center"
+            >
+              <styled.input
+                checked={true}
+                onChange={[Function]}
+              />
+              Dogs FIGHT Cats
+            </Flex>
           </styled.div>
-</Unknown>,
-        <Unknown>
+        </React.Fragment>,
+        <React.Fragment>
           <styled.div>
-                    <Flex
-                              align="center"
-                              justify="space-between"
-                    >
-                              Classic
-                              <styled.p
-                                        color="#fff"
-                                        onClick={[Function]}
-                                        style={
-                                                  Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                        }
-                              >
-                                        Select All
-                              </styled.p>
-                    </Flex>
+            <Flex
+              align="center"
+              justify="space-between"
+            >
+              Classic
+              <styled.p
+                color="#fff"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Select All
+              </styled.p>
+            </Flex>
           </styled.div>
           <styled.div
-                    isActive={false}
-                    onClick={[Function]}
+            isActive={false}
+            onClick={[Function]}
           >
-                    <Flex
-                              align="center"
-                    >
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              Cardinals at Zephyrs
-                    </Flex>
+            <Flex
+              align="center"
+            >
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              Cardinals at Zephyrs
+            </Flex>
           </styled.div>
-</Unknown>,
+        </React.Fragment>,
       ],
     },
     "ref": null,
@@ -156,52 +156,52 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <Flex
-                            align="center"
-                            justify="space-between"
+                align="center"
+                justify="space-between"
               >
-                            Value
-                            <styled.p
-                                          color="#fff"
-                                          onClick={[Function]}
-                                          style={
-                                                        Object {
-                                                                      "cursor": "pointer",
-                                                                    }
-                                          }
-                            >
-                                          Select All
-                            </styled.p>
+                Value
+                <styled.p
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
               </Flex>
-</styled.div>,
+            </styled.div>,
             Array [
               <styled.div
                 isActive={false}
                 onClick={[Function]}
->
+              >
                 <Flex
-                                align="center"
+                  align="center"
                 >
-                                <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                />
-                                Braves at Zephyrs
+                  <styled.input
+                    checked={false}
+                    onChange={[Function]}
+                  />
+                  Braves at Zephyrs
                 </Flex>
-</styled.div>,
+              </styled.div>,
               <styled.div
                 isActive={true}
                 onClick={[Function]}
->
+              >
                 <Flex
-                                align="center"
+                  align="center"
                 >
-                                <styled.input
-                                                checked={true}
-                                                onChange={[Function]}
-                                />
-                                Dogs FIGHT Cats
+                  <styled.input
+                    checked={true}
+                    onChange={[Function]}
+                  />
+                  Dogs FIGHT Cats
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           ],
         },
@@ -215,20 +215,20 @@ ShallowWrapper {
               "children": <Flex
                 align="center"
                 justify="space-between"
->
+              >
                 Value
                 <styled.p
-                                color="#fff"
-                                onClick={[Function]}
-                                style={
-                                                Object {
-                                                                "cursor": "pointer",
-                                                              }
-                                }
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
-                                Select All
+                  Select All
                 </styled.p>
-</Flex>,
+              </Flex>,
             },
             "ref": null,
             "rendered": Object {
@@ -243,13 +243,13 @@ ShallowWrapper {
                     color="#fff"
                     onClick={[Function]}
                     style={
-                                        Object {
-                                                            "cursor": "pointer",
-                                                          }
+                      Object {
+                        "cursor": "pointer",
+                      }
                     }
->
+                  >
                     Select All
-</styled.p>,
+                  </styled.p>,
                 ],
                 "justify": "space-between",
               },
@@ -284,13 +284,13 @@ ShallowWrapper {
             "props": Object {
               "children": <Flex
                 align="center"
->
+              >
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 Braves at Zephyrs
-</Flex>,
+              </Flex>,
               "isActive": false,
               "onClick": [Function],
             },
@@ -305,7 +305,7 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   "Braves at Zephyrs",
                 ],
               },
@@ -336,13 +336,13 @@ ShallowWrapper {
             "props": Object {
               "children": <Flex
                 align="center"
->
+              >
                 <styled.input
-                                checked={true}
-                                onChange={[Function]}
+                  checked={true}
+                  onChange={[Function]}
                 />
                 Dogs FIGHT Cats
-</Flex>,
+              </Flex>,
               "isActive": true,
               "onClick": [Function],
             },
@@ -357,7 +357,7 @@ ShallowWrapper {
                   <styled.input
                     checked={true}
                     onChange={[Function]}
-/>,
+                  />,
                   "Dogs FIGHT Cats",
                 ],
               },
@@ -392,38 +392,38 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <Flex
-                            align="center"
-                            justify="space-between"
+                align="center"
+                justify="space-between"
               >
-                            Classic
-                            <styled.p
-                                          color="#fff"
-                                          onClick={[Function]}
-                                          style={
-                                                        Object {
-                                                                      "cursor": "pointer",
-                                                                    }
-                                          }
-                            >
-                                          Select All
-                            </styled.p>
+                Classic
+                <styled.p
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
               </Flex>
-</styled.div>,
+            </styled.div>,
             Array [
               <styled.div
                 isActive={false}
                 onClick={[Function]}
->
+              >
                 <Flex
-                                align="center"
+                  align="center"
                 >
-                                <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                />
-                                Cardinals at Zephyrs
+                  <styled.input
+                    checked={false}
+                    onChange={[Function]}
+                  />
+                  Cardinals at Zephyrs
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           ],
         },
@@ -437,20 +437,20 @@ ShallowWrapper {
               "children": <Flex
                 align="center"
                 justify="space-between"
->
+              >
                 Classic
                 <styled.p
-                                color="#fff"
-                                onClick={[Function]}
-                                style={
-                                                Object {
-                                                                "cursor": "pointer",
-                                                              }
-                                }
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
-                                Select All
+                  Select All
                 </styled.p>
-</Flex>,
+              </Flex>,
             },
             "ref": null,
             "rendered": Object {
@@ -465,13 +465,13 @@ ShallowWrapper {
                     color="#fff"
                     onClick={[Function]}
                     style={
-                                        Object {
-                                                            "cursor": "pointer",
-                                                          }
+                      Object {
+                        "cursor": "pointer",
+                      }
                     }
->
+                  >
                     Select All
-</styled.p>,
+                  </styled.p>,
                 ],
                 "justify": "space-between",
               },
@@ -506,13 +506,13 @@ ShallowWrapper {
             "props": Object {
               "children": <Flex
                 align="center"
->
+              >
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 Cardinals at Zephyrs
-</Flex>,
+              </Flex>,
               "isActive": false,
               "onClick": [Function],
             },
@@ -527,7 +527,7 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   "Cardinals at Zephyrs",
                 ],
               },
@@ -564,90 +564,90 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Unknown>
+          <React.Fragment>
             <styled.div>
-                        <Flex
-                                    align="center"
-                                    justify="space-between"
-                        >
-                                    Value
-                                    <styled.p
-                                                color="#fff"
-                                                onClick={[Function]}
-                                                style={
-                                                            Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                                }
-                                    >
-                                                Select All
-                                    </styled.p>
-                        </Flex>
+              <Flex
+                align="center"
+                justify="space-between"
+              >
+                Value
+                <styled.p
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
+              </Flex>
             </styled.div>
             <styled.div
-                        isActive={false}
-                        onClick={[Function]}
+              isActive={false}
+              onClick={[Function]}
             >
-                        <Flex
-                                    align="center"
-                        >
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    Braves at Zephyrs
-                        </Flex>
+              <Flex
+                align="center"
+              >
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                Braves at Zephyrs
+              </Flex>
             </styled.div>
             <styled.div
-                        isActive={true}
-                        onClick={[Function]}
+              isActive={true}
+              onClick={[Function]}
             >
-                        <Flex
-                                    align="center"
-                        >
-                                    <styled.input
-                                                checked={true}
-                                                onChange={[Function]}
-                                    />
-                                    Dogs FIGHT Cats
-                        </Flex>
+              <Flex
+                align="center"
+              >
+                <styled.input
+                  checked={true}
+                  onChange={[Function]}
+                />
+                Dogs FIGHT Cats
+              </Flex>
             </styled.div>
-</Unknown>,
-          <Unknown>
+          </React.Fragment>,
+          <React.Fragment>
             <styled.div>
-                        <Flex
-                                    align="center"
-                                    justify="space-between"
-                        >
-                                    Classic
-                                    <styled.p
-                                                color="#fff"
-                                                onClick={[Function]}
-                                                style={
-                                                            Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                                }
-                                    >
-                                                Select All
-                                    </styled.p>
-                        </Flex>
+              <Flex
+                align="center"
+                justify="space-between"
+              >
+                Classic
+                <styled.p
+                  color="#fff"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
+                >
+                  Select All
+                </styled.p>
+              </Flex>
             </styled.div>
             <styled.div
-                        isActive={false}
-                        onClick={[Function]}
+              isActive={false}
+              onClick={[Function]}
             >
-                        <Flex
-                                    align="center"
-                        >
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    Cardinals at Zephyrs
-                        </Flex>
+              <Flex
+                align="center"
+              >
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                Cardinals at Zephyrs
+              </Flex>
             </styled.div>
-</Unknown>,
+          </React.Fragment>,
         ],
       },
       "ref": null,
@@ -660,52 +660,52 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <Flex
-                                align="center"
-                                justify="space-between"
+                  align="center"
+                  justify="space-between"
                 >
-                                Value
-                                <styled.p
-                                                color="#fff"
-                                                onClick={[Function]}
-                                                style={
-                                                                Object {
-                                                                                "cursor": "pointer",
-                                                                              }
-                                                }
-                                >
-                                                Select All
-                                </styled.p>
+                  Value
+                  <styled.p
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                  >
+                    Select All
+                  </styled.p>
                 </Flex>
-</styled.div>,
+              </styled.div>,
               Array [
                 <styled.div
                   isActive={false}
                   onClick={[Function]}
->
+                >
                   <Flex
-                                    align="center"
+                    align="center"
                   >
-                                    <styled.input
-                                                      checked={false}
-                                                      onChange={[Function]}
-                                    />
-                                    Braves at Zephyrs
+                    <styled.input
+                      checked={false}
+                      onChange={[Function]}
+                    />
+                    Braves at Zephyrs
                   </Flex>
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   isActive={true}
                   onClick={[Function]}
->
+                >
                   <Flex
-                                    align="center"
+                    align="center"
                   >
-                                    <styled.input
-                                                      checked={true}
-                                                      onChange={[Function]}
-                                    />
-                                    Dogs FIGHT Cats
+                    <styled.input
+                      checked={true}
+                      onChange={[Function]}
+                    />
+                    Dogs FIGHT Cats
                   </Flex>
-</styled.div>,
+                </styled.div>,
               ],
             ],
           },
@@ -719,20 +719,20 @@ ShallowWrapper {
                 "children": <Flex
                   align="center"
                   justify="space-between"
->
+                >
                   Value
                   <styled.p
-                                    color="#fff"
-                                    onClick={[Function]}
-                                    style={
-                                                      Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                    }
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
                   >
-                                    Select All
+                    Select All
                   </styled.p>
-</Flex>,
+                </Flex>,
               },
               "ref": null,
               "rendered": Object {
@@ -747,13 +747,13 @@ ShallowWrapper {
                       color="#fff"
                       onClick={[Function]}
                       style={
-                                            Object {
-                                                                  "cursor": "pointer",
-                                                                }
+                        Object {
+                          "cursor": "pointer",
+                        }
                       }
->
+                    >
                       Select All
-</styled.p>,
+                    </styled.p>,
                   ],
                   "justify": "space-between",
                 },
@@ -788,13 +788,13 @@ ShallowWrapper {
               "props": Object {
                 "children": <Flex
                   align="center"
->
+                >
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   Braves at Zephyrs
-</Flex>,
+                </Flex>,
                 "isActive": false,
                 "onClick": [Function],
               },
@@ -809,7 +809,7 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     "Braves at Zephyrs",
                   ],
                 },
@@ -840,13 +840,13 @@ ShallowWrapper {
               "props": Object {
                 "children": <Flex
                   align="center"
->
+                >
                   <styled.input
-                                    checked={true}
-                                    onChange={[Function]}
+                    checked={true}
+                    onChange={[Function]}
                   />
                   Dogs FIGHT Cats
-</Flex>,
+                </Flex>,
                 "isActive": true,
                 "onClick": [Function],
               },
@@ -861,7 +861,7 @@ ShallowWrapper {
                     <styled.input
                       checked={true}
                       onChange={[Function]}
-/>,
+                    />,
                     "Dogs FIGHT Cats",
                   ],
                 },
@@ -896,38 +896,38 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <Flex
-                                align="center"
-                                justify="space-between"
+                  align="center"
+                  justify="space-between"
                 >
-                                Classic
-                                <styled.p
-                                                color="#fff"
-                                                onClick={[Function]}
-                                                style={
-                                                                Object {
-                                                                                "cursor": "pointer",
-                                                                              }
-                                                }
-                                >
-                                                Select All
-                                </styled.p>
+                  Classic
+                  <styled.p
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                  >
+                    Select All
+                  </styled.p>
                 </Flex>
-</styled.div>,
+              </styled.div>,
               Array [
                 <styled.div
                   isActive={false}
                   onClick={[Function]}
->
+                >
                   <Flex
-                                    align="center"
+                    align="center"
                   >
-                                    <styled.input
-                                                      checked={false}
-                                                      onChange={[Function]}
-                                    />
-                                    Cardinals at Zephyrs
+                    <styled.input
+                      checked={false}
+                      onChange={[Function]}
+                    />
+                    Cardinals at Zephyrs
                   </Flex>
-</styled.div>,
+                </styled.div>,
               ],
             ],
           },
@@ -941,20 +941,20 @@ ShallowWrapper {
                 "children": <Flex
                   align="center"
                   justify="space-between"
->
+                >
                   Classic
                   <styled.p
-                                    color="#fff"
-                                    onClick={[Function]}
-                                    style={
-                                                      Object {
-                                                                        "cursor": "pointer",
-                                                                      }
-                                    }
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
                   >
-                                    Select All
+                    Select All
                   </styled.p>
-</Flex>,
+                </Flex>,
               },
               "ref": null,
               "rendered": Object {
@@ -969,13 +969,13 @@ ShallowWrapper {
                       color="#fff"
                       onClick={[Function]}
                       style={
-                                            Object {
-                                                                  "cursor": "pointer",
-                                                                }
+                        Object {
+                          "cursor": "pointer",
+                        }
                       }
->
+                    >
                       Select All
-</styled.p>,
+                    </styled.p>,
                   ],
                   "justify": "space-between",
                 },
@@ -1010,13 +1010,13 @@ ShallowWrapper {
               "props": Object {
                 "children": <Flex
                   align="center"
->
+                >
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   Cardinals at Zephyrs
-</Flex>,
+                </Flex>,
                 "isActive": false,
                 "onClick": [Function],
               },
@@ -1031,7 +1031,7 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     "Cardinals at Zephyrs",
                   ],
                 },

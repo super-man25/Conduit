@@ -3,11 +3,11 @@
 exports[`<ScaleFilter /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    onItemClicked={[Function]}
+  Symbol(enzyme.__unrendered__): <ScaleFilter
+    onItemClicked={[MockFunction]}
     scales={Array []}
     selectedScales={Array []}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -27,26 +27,22 @@ ShallowWrapper {
           align="center"
           justify="space-between"
           padding="1rem"
->
+        >
           <styled.p
-                    size={13}
-                    weight={600}
+            size={13}
+            weight={600}
           >
-                    Filter by Price Scale
+            Filter by Price Scale
           </styled.p>
-          <styled.button
-                    onClick={undefined}
-          >
-                    Clear
+          <styled.button>
+            Clear
           </styled.button>
-</Flex>,
+        </Flex>,
         <styled.div
           height="270px"
->
-          <styled.ul>
-                    
-          </styled.ul>
-</styled.div>,
+        >
+          <styled.ul />
+        </styled.div>,
       ],
     },
     "ref": null,
@@ -61,14 +57,12 @@ ShallowWrapper {
             <styled.p
               size={13}
               weight={600}
->
+            >
               Filter by Price Scale
-</styled.p>,
-            <styled.button
-              onClick={undefined}
->
+            </styled.p>,
+            <styled.button>
               Clear
-</styled.button>,
+            </styled.button>,
           ],
           "justify": "space-between",
           "padding": "1rem",
@@ -108,9 +102,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <styled.ul>
-            
-</styled.ul>,
+          "children": <styled.ul />,
           "height": "270px",
         },
         "ref": null,
@@ -141,26 +133,22 @@ ShallowWrapper {
             align="center"
             justify="space-between"
             padding="1rem"
->
+          >
             <styled.p
-                        size={13}
-                        weight={600}
+              size={13}
+              weight={600}
             >
-                        Filter by Price Scale
+              Filter by Price Scale
             </styled.p>
-            <styled.button
-                        onClick={undefined}
-            >
-                        Clear
+            <styled.button>
+              Clear
             </styled.button>
-</Flex>,
+          </Flex>,
           <styled.div
             height="270px"
->
-            <styled.ul>
-                        
-            </styled.ul>
-</styled.div>,
+          >
+            <styled.ul />
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -175,14 +163,12 @@ ShallowWrapper {
               <styled.p
                 size={13}
                 weight={600}
->
+              >
                 Filter by Price Scale
-</styled.p>,
-              <styled.button
-                onClick={undefined}
->
+              </styled.p>,
+              <styled.button>
                 Clear
-</styled.button>,
+              </styled.button>,
             ],
             "justify": "space-between",
             "padding": "1rem",
@@ -222,9 +208,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <styled.ul>
-              
-</styled.ul>,
+            "children": <styled.ul />,
             "height": "270px",
           },
           "ref": null,
@@ -272,34 +256,34 @@ ShallowWrapper {
 exports[`<ScaleFilter /> should render correctly with scales 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    onItemClicked={[Function]}
+  Symbol(enzyme.__unrendered__): <ScaleFilter
+    onItemClicked={[MockFunction]}
     scales={
-        Array [
-            Object {
-              "id": 1,
-              "name": "Some Scale 1",
-            },
-            Object {
-              "id": 2,
-              "name": "Some Scale 2",
-            },
-            Object {
-              "id": 3,
-              "name": "Some Scale 3",
-            },
-            Object {
-              "id": 4,
-              "name": "Some Scale 4",
-            },
-            Object {
-              "id": 5,
-              "name": "Some Scale 5",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "name": "Some Scale 1",
+        },
+        Object {
+          "id": 2,
+          "name": "Some Scale 2",
+        },
+        Object {
+          "id": 3,
+          "name": "Some Scale 3",
+        },
+        Object {
+          "id": 4,
+          "name": "Some Scale 4",
+        },
+        Object {
+          "id": 5,
+          "name": "Some Scale 5",
+        },
+      ]
     }
     selectedScales={Array []}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -319,80 +303,78 @@ ShallowWrapper {
           align="center"
           justify="space-between"
           padding="1rem"
->
+        >
           <styled.p
-                    size={13}
-                    weight={600}
+            size={13}
+            weight={600}
           >
-                    Filter by Price Scale
+            Filter by Price Scale
           </styled.p>
-          <styled.button
-                    onClick={undefined}
-          >
-                    Clear
+          <styled.button>
+            Clear
           </styled.button>
-</Flex>,
+        </Flex>,
         <styled.div
           height="270px"
->
+        >
           <styled.ul>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 1
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 2
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 3
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 4
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 5
-                              </styled.p>
-                    </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 1
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 2
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 3
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 4
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 5
+              </styled.p>
+            </styled.li>
           </styled.ul>
-</styled.div>,
+        </styled.div>,
       ],
     },
     "ref": null,
@@ -407,14 +389,12 @@ ShallowWrapper {
             <styled.p
               size={13}
               weight={600}
->
+            >
               Filter by Price Scale
-</styled.p>,
-            <styled.button
-              onClick={undefined}
->
+            </styled.p>,
+            <styled.button>
               Clear
-</styled.button>,
+            </styled.button>,
           ],
           "justify": "space-between",
           "padding": "1rem",
@@ -456,61 +436,61 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.ul>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 1
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 1
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 2
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 2
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 3
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 3
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 4
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 4
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 5
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 5
+              </styled.p>
             </styled.li>
-</styled.ul>,
+          </styled.ul>,
           "height": "270px",
         },
         "ref": null,
@@ -522,59 +502,59 @@ ShallowWrapper {
             "children": Array [
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 1
+                  Some Scale 1
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 2
+                  Some Scale 2
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 3
+                  Some Scale 3
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 4
+                  Some Scale 4
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 5
+                  Some Scale 5
                 </styled.p>
-</styled.li>,
+              </styled.li>,
             ],
           },
           "ref": null,
@@ -588,12 +568,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 1
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -634,12 +614,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 2
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -680,12 +660,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 3
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -726,12 +706,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 4
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -772,12 +752,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 5
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -828,80 +808,78 @@ ShallowWrapper {
             align="center"
             justify="space-between"
             padding="1rem"
->
+          >
             <styled.p
-                        size={13}
-                        weight={600}
+              size={13}
+              weight={600}
             >
-                        Filter by Price Scale
+              Filter by Price Scale
             </styled.p>
-            <styled.button
-                        onClick={undefined}
-            >
-                        Clear
+            <styled.button>
+              Clear
             </styled.button>
-</Flex>,
+          </Flex>,
           <styled.div
             height="270px"
->
+          >
             <styled.ul>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 1
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 2
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 3
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 4
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 5
-                                    </styled.p>
-                        </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 1
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 2
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 3
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 4
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 5
+                </styled.p>
+              </styled.li>
             </styled.ul>
-</styled.div>,
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -916,14 +894,12 @@ ShallowWrapper {
               <styled.p
                 size={13}
                 weight={600}
->
+              >
                 Filter by Price Scale
-</styled.p>,
-              <styled.button
-                onClick={undefined}
->
+              </styled.p>,
+              <styled.button>
                 Clear
-</styled.button>,
+              </styled.button>,
             ],
             "justify": "space-between",
             "padding": "1rem",
@@ -965,61 +941,61 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.ul>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 1
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 1
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 2
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 2
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 3
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 3
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 4
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 4
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 5
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 5
+                </styled.p>
               </styled.li>
-</styled.ul>,
+            </styled.ul>,
             "height": "270px",
           },
           "ref": null,
@@ -1031,59 +1007,59 @@ ShallowWrapper {
               "children": Array [
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 1
+                    Some Scale 1
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 2
+                    Some Scale 2
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 3
+                    Some Scale 3
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 4
+                    Some Scale 4
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 5
+                    Some Scale 5
                   </styled.p>
-</styled.li>,
+                </styled.li>,
               ],
             },
             "ref": null,
@@ -1097,12 +1073,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 1
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -1143,12 +1119,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 2
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -1189,12 +1165,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 3
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -1235,12 +1211,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 4
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -1281,12 +1257,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 5
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -1354,49 +1330,49 @@ ShallowWrapper {
 exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    onItemClicked={[Function]}
+  Symbol(enzyme.__unrendered__): <ScaleFilter
+    onItemClicked={[MockFunction]}
     scales={
-        Array [
-            Object {
-              "id": 1,
-              "name": "Some Scale 1",
-            },
-            Object {
-              "id": 2,
-              "name": "Some Scale 2",
-            },
-            Object {
-              "id": 3,
-              "name": "Some Scale 3",
-            },
-            Object {
-              "id": 4,
-              "name": "Some Scale 4",
-            },
-            Object {
-              "id": 5,
-              "name": "Some Scale 5",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "name": "Some Scale 1",
+        },
+        Object {
+          "id": 2,
+          "name": "Some Scale 2",
+        },
+        Object {
+          "id": 3,
+          "name": "Some Scale 3",
+        },
+        Object {
+          "id": 4,
+          "name": "Some Scale 4",
+        },
+        Object {
+          "id": 5,
+          "name": "Some Scale 5",
+        },
+      ]
     }
     selectedScales={
-        Array [
-            Object {
-              "id": 1,
-              "name": "Some Scale 1",
-            },
-            Object {
-              "id": 2,
-              "name": "Some Scale 2",
-            },
-            Object {
-              "id": 3,
-              "name": "Some Scale 3",
-            },
-          ]
+      Array [
+        Object {
+          "id": 1,
+          "name": "Some Scale 1",
+        },
+        Object {
+          "id": 2,
+          "name": "Some Scale 2",
+        },
+        Object {
+          "id": 3,
+          "name": "Some Scale 3",
+        },
+      ]
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1416,80 +1392,78 @@ ShallowWrapper {
           align="center"
           justify="space-between"
           padding="1rem"
->
+        >
           <styled.p
-                    size={13}
-                    weight={600}
+            size={13}
+            weight={600}
           >
-                    Filter by Price Scale
+            Filter by Price Scale
           </styled.p>
-          <styled.button
-                    onClick={undefined}
-          >
-                    Clear
+          <styled.button>
+            Clear
           </styled.button>
-</Flex>,
+        </Flex>,
         <styled.div
           height="270px"
->
+        >
           <styled.ul>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 1
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 2
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 3
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 4
-                              </styled.p>
-                    </styled.li>
-                    <styled.li>
-                              <styled.input
-                                        checked={false}
-                                        onChange={[Function]}
-                              />
-                              <styled.p
-                                        size={13}
-                              >
-                                        Some Scale 5
-                              </styled.p>
-                    </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 1
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 2
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 3
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 4
+              </styled.p>
+            </styled.li>
+            <styled.li>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 5
+              </styled.p>
+            </styled.li>
           </styled.ul>
-</styled.div>,
+        </styled.div>,
       ],
     },
     "ref": null,
@@ -1504,14 +1478,12 @@ ShallowWrapper {
             <styled.p
               size={13}
               weight={600}
->
+            >
               Filter by Price Scale
-</styled.p>,
-            <styled.button
-              onClick={undefined}
->
+            </styled.p>,
+            <styled.button>
               Clear
-</styled.button>,
+            </styled.button>,
           ],
           "justify": "space-between",
           "padding": "1rem",
@@ -1553,61 +1525,61 @@ ShallowWrapper {
         "props": Object {
           "children": <styled.ul>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 1
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 1
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 2
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 2
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 3
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 3
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 4
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 4
+              </styled.p>
             </styled.li>
             <styled.li>
-                        <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
-                        />
-                        <styled.p
-                                    size={13}
-                        >
-                                    Some Scale 5
-                        </styled.p>
+              <styled.input
+                checked={false}
+                onChange={[Function]}
+              />
+              <styled.p
+                size={13}
+              >
+                Some Scale 5
+              </styled.p>
             </styled.li>
-</styled.ul>,
+          </styled.ul>,
           "height": "270px",
         },
         "ref": null,
@@ -1619,59 +1591,59 @@ ShallowWrapper {
             "children": Array [
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 1
+                  Some Scale 1
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 2
+                  Some Scale 2
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 3
+                  Some Scale 3
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 4
+                  Some Scale 4
                 </styled.p>
-</styled.li>,
+              </styled.li>,
               <styled.li>
                 <styled.input
-                                checked={false}
-                                onChange={[Function]}
+                  checked={false}
+                  onChange={[Function]}
                 />
                 <styled.p
-                                size={13}
+                  size={13}
                 >
-                                Some Scale 5
+                  Some Scale 5
                 </styled.p>
-</styled.li>,
+              </styled.li>,
             ],
           },
           "ref": null,
@@ -1685,12 +1657,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 1
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -1731,12 +1703,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 2
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -1777,12 +1749,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 3
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -1823,12 +1795,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 4
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -1869,12 +1841,12 @@ ShallowWrapper {
                   <styled.input
                     checked={false}
                     onChange={[Function]}
-/>,
+                  />,
                   <styled.p
                     size={13}
->
+                  >
                     Some Scale 5
-</styled.p>,
+                  </styled.p>,
                 ],
               },
               "ref": null,
@@ -1925,80 +1897,78 @@ ShallowWrapper {
             align="center"
             justify="space-between"
             padding="1rem"
->
+          >
             <styled.p
-                        size={13}
-                        weight={600}
+              size={13}
+              weight={600}
             >
-                        Filter by Price Scale
+              Filter by Price Scale
             </styled.p>
-            <styled.button
-                        onClick={undefined}
-            >
-                        Clear
+            <styled.button>
+              Clear
             </styled.button>
-</Flex>,
+          </Flex>,
           <styled.div
             height="270px"
->
+          >
             <styled.ul>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 1
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 2
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 3
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 4
-                                    </styled.p>
-                        </styled.li>
-                        <styled.li>
-                                    <styled.input
-                                                checked={false}
-                                                onChange={[Function]}
-                                    />
-                                    <styled.p
-                                                size={13}
-                                    >
-                                                Some Scale 5
-                                    </styled.p>
-                        </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 1
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 2
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 3
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 4
+                </styled.p>
+              </styled.li>
+              <styled.li>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 5
+                </styled.p>
+              </styled.li>
             </styled.ul>
-</styled.div>,
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -2013,14 +1983,12 @@ ShallowWrapper {
               <styled.p
                 size={13}
                 weight={600}
->
+              >
                 Filter by Price Scale
-</styled.p>,
-              <styled.button
-                onClick={undefined}
->
+              </styled.p>,
+              <styled.button>
                 Clear
-</styled.button>,
+              </styled.button>,
             ],
             "justify": "space-between",
             "padding": "1rem",
@@ -2062,61 +2030,61 @@ ShallowWrapper {
           "props": Object {
             "children": <styled.ul>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 1
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 1
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 2
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 2
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 3
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 3
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 4
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 4
+                </styled.p>
               </styled.li>
               <styled.li>
-                            <styled.input
-                                          checked={false}
-                                          onChange={[Function]}
-                            />
-                            <styled.p
-                                          size={13}
-                            >
-                                          Some Scale 5
-                            </styled.p>
+                <styled.input
+                  checked={false}
+                  onChange={[Function]}
+                />
+                <styled.p
+                  size={13}
+                >
+                  Some Scale 5
+                </styled.p>
               </styled.li>
-</styled.ul>,
+            </styled.ul>,
             "height": "270px",
           },
           "ref": null,
@@ -2128,59 +2096,59 @@ ShallowWrapper {
               "children": Array [
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 1
+                    Some Scale 1
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 2
+                    Some Scale 2
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 3
+                    Some Scale 3
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 4
+                    Some Scale 4
                   </styled.p>
-</styled.li>,
+                </styled.li>,
                 <styled.li>
                   <styled.input
-                                    checked={false}
-                                    onChange={[Function]}
+                    checked={false}
+                    onChange={[Function]}
                   />
                   <styled.p
-                                    size={13}
+                    size={13}
                   >
-                                    Some Scale 5
+                    Some Scale 5
                   </styled.p>
-</styled.li>,
+                </styled.li>,
               ],
             },
             "ref": null,
@@ -2194,12 +2162,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 1
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -2240,12 +2208,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 2
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -2286,12 +2254,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 3
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -2332,12 +2300,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 4
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,
@@ -2378,12 +2346,12 @@ ShallowWrapper {
                     <styled.input
                       checked={false}
                       onChange={[Function]}
-/>,
+                    />,
                     <styled.p
                       size={13}
->
+                    >
                       Some Scale 5
-</styled.p>,
+                    </styled.p>,
                   ],
                 },
                 "ref": null,

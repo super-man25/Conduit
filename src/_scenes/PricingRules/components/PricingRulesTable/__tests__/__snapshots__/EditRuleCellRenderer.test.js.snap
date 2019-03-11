@@ -4,12 +4,12 @@ exports[`<EditRuleCellRenderer /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EditRuleCellPresenter
-    cancelEditingRule={[Function]}
+    cancelEditingRule={[MockFunction]}
     editingAnyPriceRule={false}
     isEditing={false}
-    saveEditedRule={[Function]}
-    startEditingRule={[Function]}
-/>,
+    saveEditedRule={[MockFunction]}
+    startEditingRule={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -30,13 +30,13 @@ ShallowWrapper {
         onClick={[Function]}
         size={14}
         style={
-                Object {
-                        "cursor": "pointer",
-                      }
+          Object {
+            "cursor": "pointer",
+          }
         }
->
+      >
         EDIT RULE
-</styled.p>,
+      </styled.p>,
     },
     "ref": null,
     "rendered": Object {
@@ -70,13 +70,13 @@ ShallowWrapper {
           onClick={[Function]}
           size={14}
           style={
-                    Object {
-                              "cursor": "pointer",
-                            }
+            Object {
+              "cursor": "pointer",
+            }
           }
->
+        >
           EDIT RULE
-</styled.p>,
+        </styled.p>,
       },
       "ref": null,
       "rendered": Object {

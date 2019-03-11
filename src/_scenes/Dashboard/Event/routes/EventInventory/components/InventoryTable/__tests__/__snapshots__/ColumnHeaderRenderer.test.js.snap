@@ -3,13 +3,13 @@
 exports[`<DefaultColumnHeaderPresenter /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DefaultColumnHeaderPresenter
     disableSort={false}
     filterDirection="asc"
     isFiltered={false}
     label="Label"
-    setFilter={[Function]}
-/>,
+    setFilter={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -27,19 +27,19 @@ ShallowWrapper {
       "active": false,
       "children": <styled.div
         position="relative"
->
-        <Unknown
-                filterDirection="asc"
-                isFiltered={false}
-                onClick={[Function]}
+      >
+        <SortIcon
+          filterDirection="asc"
+          isFiltered={false}
+          onClick={[MockFunction]}
         />
         <Flex
-                align="center"
-                marginLeft="1.25rem"
+          align="center"
+          marginLeft="1.25rem"
         >
-                Label
+          Label
         </Flex>
-</styled.div>,
+      </styled.div>,
       "sortable": true,
     },
     "ref": null,
@@ -49,17 +49,17 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Unknown
+          <SortIcon
             filterDirection="asc"
             isFiltered={false}
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
           <Flex
             align="center"
             marginLeft="1.25rem"
->
+          >
             Label
-</Flex>,
+          </Flex>,
         ],
         "position": "relative",
       },
@@ -72,7 +72,7 @@ ShallowWrapper {
           "props": Object {
             "filterDirection": "asc",
             "isFiltered": false,
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -105,19 +105,19 @@ ShallowWrapper {
         "active": false,
         "children": <styled.div
           position="relative"
->
-          <Unknown
-                    filterDirection="asc"
-                    isFiltered={false}
-                    onClick={[Function]}
+        >
+          <SortIcon
+            filterDirection="asc"
+            isFiltered={false}
+            onClick={[MockFunction]}
           />
           <Flex
-                    align="center"
-                    marginLeft="1.25rem"
+            align="center"
+            marginLeft="1.25rem"
           >
-                    Label
+            Label
           </Flex>
-</styled.div>,
+        </styled.div>,
         "sortable": true,
       },
       "ref": null,
@@ -127,17 +127,17 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Unknown
+            <SortIcon
               filterDirection="asc"
               isFiltered={false}
-              onClick={[Function]}
-/>,
+              onClick={[MockFunction]}
+            />,
             <Flex
               align="center"
               marginLeft="1.25rem"
->
+            >
               Label
-</Flex>,
+            </Flex>,
           ],
           "position": "relative",
         },
@@ -150,7 +150,7 @@ ShallowWrapper {
             "props": Object {
               "filterDirection": "asc",
               "isFiltered": false,
-              "onClick": [Function],
+              "onClick": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -202,13 +202,13 @@ ShallowWrapper {
 exports[`<DefaultColumnHeaderPresenter /> should render correctly when disableSort is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DefaultColumnHeaderPresenter
     disableSort={true}
     filterDirection="asc"
     isFiltered={false}
     label="Label"
-    setFilter={[Function]}
-/>,
+    setFilter={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -226,14 +226,14 @@ ShallowWrapper {
       "active": false,
       "children": <styled.div
         position="relative"
->
+      >
         <Flex
-                align="center"
-                marginLeft={false}
+          align="center"
+          marginLeft={false}
         >
-                Label
+          Label
         </Flex>
-</styled.div>,
+      </styled.div>,
       "sortable": false,
     },
     "ref": null,
@@ -247,9 +247,9 @@ ShallowWrapper {
           <Flex
             align="center"
             marginLeft={false}
->
+          >
             Label
-</Flex>,
+          </Flex>,
         ],
         "position": "relative",
       },
@@ -283,14 +283,14 @@ ShallowWrapper {
         "active": false,
         "children": <styled.div
           position="relative"
->
+        >
           <Flex
-                    align="center"
-                    marginLeft={false}
+            align="center"
+            marginLeft={false}
           >
-                    Label
+            Label
           </Flex>
-</styled.div>,
+        </styled.div>,
         "sortable": false,
       },
       "ref": null,
@@ -304,9 +304,9 @@ ShallowWrapper {
             <Flex
               align="center"
               marginLeft={false}
->
+            >
               Label
-</Flex>,
+            </Flex>,
           ],
           "position": "relative",
         },
@@ -359,13 +359,13 @@ ShallowWrapper {
 exports[`<DefaultColumnHeaderPresenter /> should render correctly when isFiltered is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DefaultColumnHeaderPresenter
     disableSort={false}
     filterDirection="asc"
     isFiltered={true}
     label="Label"
-    setFilter={[Function]}
-/>,
+    setFilter={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -383,19 +383,19 @@ ShallowWrapper {
       "active": true,
       "children": <styled.div
         position="relative"
->
-        <Unknown
-                filterDirection="asc"
-                isFiltered={true}
-                onClick={[Function]}
+      >
+        <SortIcon
+          filterDirection="asc"
+          isFiltered={true}
+          onClick={[MockFunction]}
         />
         <Flex
-                align="center"
-                marginLeft="1.25rem"
+          align="center"
+          marginLeft="1.25rem"
         >
-                Label
+          Label
         </Flex>
-</styled.div>,
+      </styled.div>,
       "sortable": true,
     },
     "ref": null,
@@ -405,17 +405,17 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Unknown
+          <SortIcon
             filterDirection="asc"
             isFiltered={true}
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
           <Flex
             align="center"
             marginLeft="1.25rem"
->
+          >
             Label
-</Flex>,
+          </Flex>,
         ],
         "position": "relative",
       },
@@ -428,7 +428,7 @@ ShallowWrapper {
           "props": Object {
             "filterDirection": "asc",
             "isFiltered": true,
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -461,19 +461,19 @@ ShallowWrapper {
         "active": true,
         "children": <styled.div
           position="relative"
->
-          <Unknown
-                    filterDirection="asc"
-                    isFiltered={true}
-                    onClick={[Function]}
+        >
+          <SortIcon
+            filterDirection="asc"
+            isFiltered={true}
+            onClick={[MockFunction]}
           />
           <Flex
-                    align="center"
-                    marginLeft="1.25rem"
+            align="center"
+            marginLeft="1.25rem"
           >
-                    Label
+            Label
           </Flex>
-</styled.div>,
+        </styled.div>,
         "sortable": true,
       },
       "ref": null,
@@ -483,17 +483,17 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Unknown
+            <SortIcon
               filterDirection="asc"
               isFiltered={true}
-              onClick={[Function]}
-/>,
+              onClick={[MockFunction]}
+            />,
             <Flex
               align="center"
               marginLeft="1.25rem"
->
+            >
               Label
-</Flex>,
+            </Flex>,
           ],
           "position": "relative",
         },
@@ -506,7 +506,7 @@ ShallowWrapper {
             "props": Object {
               "filterDirection": "asc",
               "isFiltered": true,
-              "onClick": [Function],
+              "onClick": [MockFunction],
             },
             "ref": null,
             "rendered": null,
@@ -558,13 +558,13 @@ ShallowWrapper {
 exports[`<DefaultColumnHeaderPresenter /> should render correctly when sort isFiltered is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DefaultColumnHeaderPresenter
     disableSort={false}
     filterDirection="asc"
     isFiltered={true}
     label="Label"
-    setFilter={[Function]}
-/>,
+    setFilter={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -582,19 +582,19 @@ ShallowWrapper {
       "active": true,
       "children": <styled.div
         position="relative"
->
-        <Unknown
-                filterDirection="asc"
-                isFiltered={true}
-                onClick={[Function]}
+      >
+        <SortIcon
+          filterDirection="asc"
+          isFiltered={true}
+          onClick={[MockFunction]}
         />
         <Flex
-                align="center"
-                marginLeft="1.25rem"
+          align="center"
+          marginLeft="1.25rem"
         >
-                Label
+          Label
         </Flex>
-</styled.div>,
+      </styled.div>,
       "sortable": true,
     },
     "ref": null,
@@ -604,17 +604,17 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Unknown
+          <SortIcon
             filterDirection="asc"
             isFiltered={true}
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
           <Flex
             align="center"
             marginLeft="1.25rem"
->
+          >
             Label
-</Flex>,
+          </Flex>,
         ],
         "position": "relative",
       },
@@ -627,7 +627,7 @@ ShallowWrapper {
           "props": Object {
             "filterDirection": "asc",
             "isFiltered": true,
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -660,19 +660,19 @@ ShallowWrapper {
         "active": true,
         "children": <styled.div
           position="relative"
->
-          <Unknown
-                    filterDirection="asc"
-                    isFiltered={true}
-                    onClick={[Function]}
+        >
+          <SortIcon
+            filterDirection="asc"
+            isFiltered={true}
+            onClick={[MockFunction]}
           />
           <Flex
-                    align="center"
-                    marginLeft="1.25rem"
+            align="center"
+            marginLeft="1.25rem"
           >
-                    Label
+            Label
           </Flex>
-</styled.div>,
+        </styled.div>,
         "sortable": true,
       },
       "ref": null,
@@ -682,17 +682,17 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Unknown
+            <SortIcon
               filterDirection="asc"
               isFiltered={true}
-              onClick={[Function]}
-/>,
+              onClick={[MockFunction]}
+            />,
             <Flex
               align="center"
               marginLeft="1.25rem"
->
+            >
               Label
-</Flex>,
+            </Flex>,
           ],
           "position": "relative",
         },
@@ -705,7 +705,7 @@ ShallowWrapper {
             "props": Object {
               "filterDirection": "asc",
               "isFiltered": true,
-              "onClick": [Function],
+              "onClick": [MockFunction],
             },
             "ref": null,
             "rendered": null,

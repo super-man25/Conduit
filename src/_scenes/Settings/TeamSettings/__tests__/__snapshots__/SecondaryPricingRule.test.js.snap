@@ -7,7 +7,7 @@ ShallowWrapper {
     constant={null}
     id={1}
     percent={10}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -25,15 +25,15 @@ ShallowWrapper {
       "children": Array [
         <ApiAlertPresenter
           alertState={
-                    Object {
-                              "message": null,
-                              "type": null,
-                            }
+            Object {
+              "message": null,
+              "type": null,
+            }
           }
-/>,
+        />,
         <styled.div
           onClick={[Function]}
-/>,
+        />,
         false,
       ],
     },
@@ -77,15 +77,15 @@ ShallowWrapper {
         "children": Array [
           <ApiAlertPresenter
             alertState={
-                        Object {
-                                    "message": null,
-                                    "type": null,
-                                  }
+              Object {
+                "message": null,
+                "type": null,
+              }
             }
-/>,
+          />,
           <styled.div
             onClick={[Function]}
-/>,
+          />,
           false,
         ],
       },

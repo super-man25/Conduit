@@ -5,15 +5,15 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BuyerTypeRow
     buyerType={
-        Object {
-            "disabled": false,
-            "id": "333",
-          }
+      Object {
+        "disabled": false,
+        "id": "333",
+      }
     }
     editedBuyerTypes={Object {}}
-    onBuyerTypeToggle={[Function]}
+    onBuyerTypeToggle={[MockFunction]}
     toggleDisabled={false}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -33,28 +33,28 @@ ShallowWrapper {
         <Flex
           flexBasis="10%"
           style={
-                    Object {
-                              "height": "25px",
-                            }
+            Object {
+              "height": "25px",
+            }
           }
           title="An active pricing rule is using this buyer type"
-/>,
+        />,
         <Flex
           flexBasis="20%"
->
+        >
           <Toggle
-                    isChecked={true}
-                    isDisabled={false}
-                    onChange={[Function]}
-                    size="small"
+            isChecked={true}
+            isDisabled={false}
+            onChange={[Function]}
+            size="small"
           />
-</Flex>,
+        </Flex>,
         <styled.p
           basis="20%"
-/>,
+        />,
         <styled.p
           basis="60%"
-/>,
+        />,
       ],
     },
     "ref": null,
@@ -85,7 +85,7 @@ ShallowWrapper {
             isDisabled={false}
             onChange={[Function]}
             size="small"
-/>,
+          />,
           "flexBasis": "20%",
         },
         "ref": null,
@@ -143,28 +143,28 @@ ShallowWrapper {
           <Flex
             flexBasis="10%"
             style={
-                        Object {
-                                    "height": "25px",
-                                  }
+              Object {
+                "height": "25px",
+              }
             }
             title="An active pricing rule is using this buyer type"
-/>,
+          />,
           <Flex
             flexBasis="20%"
->
+          >
             <Toggle
-                        isChecked={true}
-                        isDisabled={false}
-                        onChange={[Function]}
-                        size="small"
+              isChecked={true}
+              isDisabled={false}
+              onChange={[Function]}
+              size="small"
             />
-</Flex>,
+          </Flex>,
           <styled.p
             basis="20%"
-/>,
+          />,
           <styled.p
             basis="60%"
-/>,
+          />,
         ],
       },
       "ref": null,
@@ -195,7 +195,7 @@ ShallowWrapper {
               isDisabled={false}
               onChange={[Function]}
               size="small"
-/>,
+            />,
             "flexBasis": "20%",
           },
           "ref": null,

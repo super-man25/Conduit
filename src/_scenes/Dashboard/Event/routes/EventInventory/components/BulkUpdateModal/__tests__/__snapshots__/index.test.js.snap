@@ -4,35 +4,35 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
-    cancelBulkUpdate={[Function]}
+    cancelBulkUpdate={[MockFunction]}
     loading={false}
     rows={
-        Array [
-            Object {
-              "seats": Array [
-                1,
-                2,
-                3,
-              ],
-            },
-            Object {
-              "seats": Array [
-                4,
-                5,
-                6,
-              ],
-            },
-            Object {
-              "seats": Array [
-                7,
-                8,
-                9,
-              ],
-            },
-          ]
+      Array [
+        Object {
+          "seats": Array [
+            1,
+            2,
+            3,
+          ],
+        },
+        Object {
+          "seats": Array [
+            4,
+            5,
+            6,
+          ],
+        },
+        Object {
+          "seats": Array [
+            7,
+            8,
+            9,
+          ],
+        },
+      ]
     }
-    submitBulkUpdate={[Function]}
-/>,
+    submitBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -50,89 +50,89 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div>
-                    <styled.h4>
-                              Bulk Inventory Update
-                    </styled.h4>
-                    <styled.p
-                              size={14}
-                              weight={300}
-                    >
-                              Updating inventory for 
-                              3
-                               row(s).
-                    </styled.p>
+            <styled.h4>
+              Bulk Inventory Update
+            </styled.h4>
+            <styled.p
+              size={14}
+              weight={300}
+            >
+              Updating inventory for 
+              3
+               row(s).
+            </styled.p>
           </styled.div>
           <styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Action
-                              </styled.label>
-                              <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "label": "Update Manual Price",
-                                                              "value": 0,
-                                                            },
-                                                            Object {
-                                                              "label": "Update Pricing Status",
-                                                              "value": 1,
-                                                            },
-                                                          ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                  Object {
-                                                            "label": "Update Manual Price",
-                                                            "value": 0,
-                                                          }
-                                        }
-                              />
-                    </styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Manual Price
-                              </styled.label>
-                              <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value=""
-                              />
-                    </styled.div>
-                    <Flex
-                              justify="flex-end"
-                    >
-                              <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Cancel
-                              </styled.button>
-                              <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Submit
-                              </styled.button>
-                    </Flex>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Action
+              </styled.label>
+              <SelectDropdown
+                full={true}
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    },
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    },
+                  ]
+                }
+                placeholder="Select"
+                selected={
+                  Object {
+                    "label": "Update Manual Price",
+                    "value": 0,
+                  }
+                }
+              />
+            </styled.div>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Manual Price
+              </styled.label>
+              <NumberInputField
+                component={[Function]}
+                id="manual-price"
+                name="price"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="$ Manual Price"
+                type="number"
+                value=""
+              />
+            </styled.div>
+            <Flex
+              justify="flex-end"
+            >
+              <styled.button
+                margin="0 1rem 0 0"
+                onClick={[MockFunction]}
+                small={true}
+              >
+                Cancel
+              </styled.button>
+              <styled.button
+                disabled={false}
+                onClick={[Function]}
+                small={true}
+              >
+                Submit
+              </styled.button>
+            </Flex>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div
-          onClick={[Function]}
-/>,
+          onClick={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
@@ -145,84 +145,84 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.h4>
-                            Bulk Inventory Update
+                Bulk Inventory Update
               </styled.h4>
               <styled.p
-                            size={14}
-                            weight={300}
+                size={14}
+                weight={300}
               >
-                            Updating inventory for 
-                            3
-                             row(s).
+                Updating inventory for 
+                3
+                 row(s).
               </styled.p>
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Action
-                            </styled.label>
-                            <SelectDropdown
-                                          full={true}
-                                          onChange={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      },
-                                                                      Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      },
-                                                                    ]
-                                          }
-                                          placeholder="Select"
-                                          selected={
-                                                        Object {
-                                                                      "label": "Update Manual Price",
-                                                                      "value": 0,
-                                                                    }
-                                          }
-                            />
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
               </styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Manual Price
-                            </styled.label>
-                            <NumberInputField
-                                          component={[Function]}
-                                          id="manual-price"
-                                          name="price"
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          placeholder="$ Manual Price"
-                                          type="number"
-                                          value=""
-                            />
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value=""
+                />
               </styled.div>
               <Flex
-                            justify="flex-end"
+                justify="flex-end"
               >
-                            <styled.button
-                                          margin="0 1rem 0 0"
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Cancel
-                            </styled.button>
-                            <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Submit
-                            </styled.button>
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  Submit
+                </styled.button>
               </Flex>
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -235,15 +235,15 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   Bulk Inventory Update
-</styled.h4>,
+                </styled.h4>,
                 <styled.p
                   size={14}
                   weight={300}
->
+                >
                   Updating inventory for 
                   3
                    row(s).
-</styled.p>,
+                </styled.p>,
                 false,
               ],
             },
@@ -293,70 +293,70 @@ ShallowWrapper {
               "children": Array [
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Action
+                    Action
                   </styled.label>
                   <SelectDropdown
-                                    full={true}
-                                    onChange={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                    }
-                                    placeholder="Select"
-                                    selected={
-                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                    }
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
                   />
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Manual Price
+                    Manual Price
                   </styled.label>
                   <NumberInputField
-                                    component={[Function]}
-                                    id="manual-price"
-                                    name="price"
-                                    onBlur={[Function]}
-                                    onChange={[Function]}
-                                    placeholder="$ Manual Price"
-                                    type="number"
-                                    value=""
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value=""
                   />
-</styled.div>,
+                </styled.div>,
                 false,
                 <Flex
                   justify="flex-end"
->
+                >
                   <styled.button
-                                    margin="0 1rem 0 0"
-                                    onClick={[Function]}
-                                    small={true}
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
                   >
-                                    Cancel
+                    Cancel
                   </styled.button>
                   <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    small={true}
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
                   >
-                                    Submit
+                    Submit
                   </styled.button>
-</Flex>,
+                </Flex>,
               ],
             },
             "ref": null,
@@ -369,30 +369,30 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Action
-</styled.label>,
+                    </styled.label>,
                     <SelectDropdown
                       full={true}
                       onChange={[Function]}
                       options={
-                                            Array [
-                                                                  Object {
-                                                                    "label": "Update Manual Price",
-                                                                    "value": 0,
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Update Pricing Status",
-                                                                    "value": 1,
-                                                                  },
-                                                                ]
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
                       }
                       placeholder="Select"
                       selected={
-                                            Object {
-                                                                  "label": "Update Manual Price",
-                                                                  "value": 0,
-                                                                }
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
                       }
-/>,
+                    />,
                   ],
                   "marginBottom": "2rem",
                 },
@@ -447,7 +447,7 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Manual Price
-</styled.label>,
+                    </styled.label>,
                     <NumberInputField
                       component={[Function]}
                       id="manual-price"
@@ -457,7 +457,7 @@ ShallowWrapper {
                       placeholder="$ Manual Price"
                       type="number"
                       value=""
-/>,
+                    />,
                     undefined,
                   ],
                   "marginBottom": "2rem",
@@ -506,18 +506,18 @@ ShallowWrapper {
                   "children": Array [
                     <styled.button
                       margin="0 1rem 0 0"
-                      onClick={[Function]}
+                      onClick={[MockFunction]}
                       small={true}
->
+                    >
                       Cancel
-</styled.button>,
+                    </styled.button>,
                     <styled.button
                       disabled={false}
                       onClick={[Function]}
                       small={true}
->
+                    >
                       Submit
-</styled.button>,
+                    </styled.button>,
                   ],
                   "justify": "flex-end",
                 },
@@ -530,7 +530,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "margin": "0 1rem 0 0",
-                      "onClick": [Function],
+                      "onClick": [MockFunction],
                       "small": true,
                     },
                     "ref": null,
@@ -565,7 +565,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         "ref": null,
         "rendered": null,
@@ -583,89 +583,89 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div>
-                        <styled.h4>
-                                    Bulk Inventory Update
-                        </styled.h4>
-                        <styled.p
-                                    size={14}
-                                    weight={300}
-                        >
-                                    Updating inventory for 
-                                    3
-                                     row(s).
-                        </styled.p>
+              <styled.h4>
+                Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                size={14}
+                weight={300}
+              >
+                Updating inventory for 
+                3
+                 row(s).
+              </styled.p>
             </styled.div>
             <styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Action
-                                    </styled.label>
-                                    <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                            Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                                }
-                                    />
-                        </styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Manual Price
-                                    </styled.label>
-                                    <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value=""
-                                    />
-                        </styled.div>
-                        <Flex
-                                    justify="flex-end"
-                        >
-                                    <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Cancel
-                                    </styled.button>
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Submit
-                                    </styled.button>
-                        </Flex>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
+              </styled.div>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value=""
+                />
+              </styled.div>
+              <Flex
+                justify="flex-end"
+              >
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  Submit
+                </styled.button>
+              </Flex>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
@@ -678,84 +678,84 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.h4>
-                                Bulk Inventory Update
+                  Bulk Inventory Update
                 </styled.h4>
                 <styled.p
-                                size={14}
-                                weight={300}
+                  size={14}
+                  weight={300}
                 >
-                                Updating inventory for 
-                                3
-                                 row(s).
+                  Updating inventory for 
+                  3
+                   row(s).
                 </styled.p>
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Action
-                                </styled.label>
-                                <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                                Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                                Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                                }
-                                />
+                  <styled.label>
+                    Action
+                  </styled.label>
+                  <SelectDropdown
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
+                  />
                 </styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Manual Price
-                                </styled.label>
-                                <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value=""
-                                />
+                  <styled.label>
+                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value=""
+                  />
                 </styled.div>
                 <Flex
-                                justify="flex-end"
+                  justify="flex-end"
                 >
-                                <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Cancel
-                                </styled.button>
-                                <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Submit
-                                </styled.button>
+                  <styled.button
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
+                  >
+                    Cancel
+                  </styled.button>
+                  <styled.button
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
+                  >
+                    Submit
+                  </styled.button>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -768,15 +768,15 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h4>
                     Bulk Inventory Update
-</styled.h4>,
+                  </styled.h4>,
                   <styled.p
                     size={14}
                     weight={300}
->
+                  >
                     Updating inventory for 
                     3
                      row(s).
-</styled.p>,
+                  </styled.p>,
                   false,
                 ],
               },
@@ -826,70 +826,70 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Action
+                      Action
                     </styled.label>
                     <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                            Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                            Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                        }
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
+                      }
+                      placeholder="Select"
+                      selected={
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
+                      }
                     />
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Manual Price
+                      Manual Price
                     </styled.label>
                     <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value=""
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value=""
                     />
-</styled.div>,
+                  </styled.div>,
                   false,
                   <Flex
                     justify="flex-end"
->
+                  >
                     <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
+                      margin="0 1rem 0 0"
+                      onClick={[MockFunction]}
+                      small={true}
                     >
-                                        Cancel
+                      Cancel
                     </styled.button>
                     <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
                     >
-                                        Submit
+                      Submit
                     </styled.button>
-</Flex>,
+                  </Flex>,
                 ],
               },
               "ref": null,
@@ -902,30 +902,30 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Action
-</styled.label>,
+                      </styled.label>,
                       <SelectDropdown
                         full={true}
                         onChange={[Function]}
                         options={
-                                                Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
+                          Array [
+                            Object {
+                              "label": "Update Manual Price",
+                              "value": 0,
+                            },
+                            Object {
+                              "label": "Update Pricing Status",
+                              "value": 1,
+                            },
+                          ]
                         }
                         placeholder="Select"
                         selected={
-                                                Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          }
                         }
-/>,
+                      />,
                     ],
                     "marginBottom": "2rem",
                   },
@@ -980,7 +980,7 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Manual Price
-</styled.label>,
+                      </styled.label>,
                       <NumberInputField
                         component={[Function]}
                         id="manual-price"
@@ -990,7 +990,7 @@ ShallowWrapper {
                         placeholder="$ Manual Price"
                         type="number"
                         value=""
-/>,
+                      />,
                       undefined,
                     ],
                     "marginBottom": "2rem",
@@ -1039,18 +1039,18 @@ ShallowWrapper {
                     "children": Array [
                       <styled.button
                         margin="0 1rem 0 0"
-                        onClick={[Function]}
+                        onClick={[MockFunction]}
                         small={true}
->
+                      >
                         Cancel
-</styled.button>,
+                      </styled.button>,
                       <styled.button
                         disabled={false}
                         onClick={[Function]}
                         small={true}
->
+                      >
                         Submit
-</styled.button>,
+                      </styled.button>,
                     ],
                     "justify": "flex-end",
                   },
@@ -1063,7 +1063,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Cancel",
                         "margin": "0 1rem 0 0",
-                        "onClick": [Function],
+                        "onClick": [MockFunction],
                         "small": true,
                       },
                       "ref": null,
@@ -1098,7 +1098,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -1137,35 +1137,35 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
-    cancelBulkUpdate={[Function]}
+    cancelBulkUpdate={[MockFunction]}
     loading={false}
     rows={
-        Array [
-            Object {
-              "seats": Array [
-                1,
-                2,
-                3,
-              ],
-            },
-            Object {
-              "seats": Array [
-                4,
-                5,
-                6,
-              ],
-            },
-            Object {
-              "seats": Array [
-                7,
-                8,
-                9,
-              ],
-            },
-          ]
+      Array [
+        Object {
+          "seats": Array [
+            1,
+            2,
+            3,
+          ],
+        },
+        Object {
+          "seats": Array [
+            4,
+            5,
+            6,
+          ],
+        },
+        Object {
+          "seats": Array [
+            7,
+            8,
+            9,
+          ],
+        },
+      ]
     }
-    submitBulkUpdate={[Function]}
-/>,
+    submitBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1183,97 +1183,97 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div>
-                    <styled.h4>
-                              Bulk Inventory Update
-                    </styled.h4>
-                    <styled.p
-                              size={14}
-                              weight={300}
-                    >
-                              Updating inventory for 
-                              3
-                               row(s).
-                    </styled.p>
+            <styled.h4>
+              Bulk Inventory Update
+            </styled.h4>
+            <styled.p
+              size={14}
+              weight={300}
+            >
+              Updating inventory for 
+              3
+               row(s).
+            </styled.p>
           </styled.div>
           <styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Action
-                              </styled.label>
-                              <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "label": "Update Manual Price",
-                                                              "value": 0,
-                                                            },
-                                                            Object {
-                                                              "label": "Update Pricing Status",
-                                                              "value": 1,
-                                                            },
-                                                          ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                  Object {
-                                                            "label": "Update Manual Price",
-                                                            "value": 0,
-                                                          }
-                                        }
-                              />
-                    </styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Manual Price
-                              </styled.label>
-                              <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value="12.222"
-                              />
-                              <styled.p
-                                        color="#DC0A0A"
-                                        marginTop="0.5rem"
-                                        size={12}
-                                        weight={300}
-                              >
-                                        Manual Price must be a valid dollar amount.
-                              </styled.p>
-                    </styled.div>
-                    <Flex
-                              justify="flex-end"
-                    >
-                              <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Cancel
-                              </styled.button>
-                              <styled.button
-                                        disabled={true}
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Submit
-                              </styled.button>
-                    </Flex>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Action
+              </styled.label>
+              <SelectDropdown
+                full={true}
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    },
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    },
+                  ]
+                }
+                placeholder="Select"
+                selected={
+                  Object {
+                    "label": "Update Manual Price",
+                    "value": 0,
+                  }
+                }
+              />
+            </styled.div>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Manual Price
+              </styled.label>
+              <NumberInputField
+                component={[Function]}
+                id="manual-price"
+                name="price"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="$ Manual Price"
+                type="number"
+                value="12.222"
+              />
+              <styled.p
+                color="#DC0A0A"
+                marginTop="0.5rem"
+                size={12}
+                weight={300}
+              >
+                Manual Price must be a valid dollar amount.
+              </styled.p>
+            </styled.div>
+            <Flex
+              justify="flex-end"
+            >
+              <styled.button
+                margin="0 1rem 0 0"
+                onClick={[MockFunction]}
+                small={true}
+              >
+                Cancel
+              </styled.button>
+              <styled.button
+                disabled={true}
+                onClick={[Function]}
+                small={true}
+              >
+                Submit
+              </styled.button>
+            </Flex>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div
-          onClick={[Function]}
-/>,
+          onClick={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
@@ -1286,92 +1286,92 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.h4>
-                            Bulk Inventory Update
+                Bulk Inventory Update
               </styled.h4>
               <styled.p
-                            size={14}
-                            weight={300}
+                size={14}
+                weight={300}
               >
-                            Updating inventory for 
-                            3
-                             row(s).
+                Updating inventory for 
+                3
+                 row(s).
               </styled.p>
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Action
-                            </styled.label>
-                            <SelectDropdown
-                                          full={true}
-                                          onChange={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      },
-                                                                      Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      },
-                                                                    ]
-                                          }
-                                          placeholder="Select"
-                                          selected={
-                                                        Object {
-                                                                      "label": "Update Manual Price",
-                                                                      "value": 0,
-                                                                    }
-                                          }
-                            />
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
               </styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Manual Price
-                            </styled.label>
-                            <NumberInputField
-                                          component={[Function]}
-                                          id="manual-price"
-                                          name="price"
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          placeholder="$ Manual Price"
-                                          type="number"
-                                          value="12.222"
-                            />
-                            <styled.p
-                                          color="#DC0A0A"
-                                          marginTop="0.5rem"
-                                          size={12}
-                                          weight={300}
-                            >
-                                          Manual Price must be a valid dollar amount.
-                            </styled.p>
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value="12.222"
+                />
+                <styled.p
+                  color="#DC0A0A"
+                  marginTop="0.5rem"
+                  size={12}
+                  weight={300}
+                >
+                  Manual Price must be a valid dollar amount.
+                </styled.p>
               </styled.div>
               <Flex
-                            justify="flex-end"
+                justify="flex-end"
               >
-                            <styled.button
-                                          margin="0 1rem 0 0"
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Cancel
-                            </styled.button>
-                            <styled.button
-                                          disabled={true}
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Submit
-                            </styled.button>
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={true}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  Submit
+                </styled.button>
               </Flex>
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -1384,15 +1384,15 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   Bulk Inventory Update
-</styled.h4>,
+                </styled.h4>,
                 <styled.p
                   size={14}
                   weight={300}
->
+                >
                   Updating inventory for 
                   3
                    row(s).
-</styled.p>,
+                </styled.p>,
                 false,
               ],
             },
@@ -1442,78 +1442,78 @@ ShallowWrapper {
               "children": Array [
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Action
+                    Action
                   </styled.label>
                   <SelectDropdown
-                                    full={true}
-                                    onChange={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                    }
-                                    placeholder="Select"
-                                    selected={
-                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                    }
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
                   />
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Manual Price
+                    Manual Price
                   </styled.label>
                   <NumberInputField
-                                    component={[Function]}
-                                    id="manual-price"
-                                    name="price"
-                                    onBlur={[Function]}
-                                    onChange={[Function]}
-                                    placeholder="$ Manual Price"
-                                    type="number"
-                                    value="12.222"
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value="12.222"
                   />
                   <styled.p
-                                    color="#DC0A0A"
-                                    marginTop="0.5rem"
-                                    size={12}
-                                    weight={300}
+                    color="#DC0A0A"
+                    marginTop="0.5rem"
+                    size={12}
+                    weight={300}
                   >
-                                    Manual Price must be a valid dollar amount.
+                    Manual Price must be a valid dollar amount.
                   </styled.p>
-</styled.div>,
+                </styled.div>,
                 false,
                 <Flex
                   justify="flex-end"
->
+                >
                   <styled.button
-                                    margin="0 1rem 0 0"
-                                    onClick={[Function]}
-                                    small={true}
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
                   >
-                                    Cancel
+                    Cancel
                   </styled.button>
                   <styled.button
-                                    disabled={true}
-                                    onClick={[Function]}
-                                    small={true}
+                    disabled={true}
+                    onClick={[Function]}
+                    small={true}
                   >
-                                    Submit
+                    Submit
                   </styled.button>
-</Flex>,
+                </Flex>,
               ],
             },
             "ref": null,
@@ -1526,30 +1526,30 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Action
-</styled.label>,
+                    </styled.label>,
                     <SelectDropdown
                       full={true}
                       onChange={[Function]}
                       options={
-                                            Array [
-                                                                  Object {
-                                                                    "label": "Update Manual Price",
-                                                                    "value": 0,
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Update Pricing Status",
-                                                                    "value": 1,
-                                                                  },
-                                                                ]
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
                       }
                       placeholder="Select"
                       selected={
-                                            Object {
-                                                                  "label": "Update Manual Price",
-                                                                  "value": 0,
-                                                                }
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
                       }
-/>,
+                    />,
                   ],
                   "marginBottom": "2rem",
                 },
@@ -1604,7 +1604,7 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Manual Price
-</styled.label>,
+                    </styled.label>,
                     <NumberInputField
                       component={[Function]}
                       id="manual-price"
@@ -1614,15 +1614,15 @@ ShallowWrapper {
                       placeholder="$ Manual Price"
                       type="number"
                       value="12.222"
-/>,
+                    />,
                     <styled.p
                       color="#DC0A0A"
                       marginTop="0.5rem"
                       size={12}
                       weight={300}
->
+                    >
                       Manual Price must be a valid dollar amount.
-</styled.p>,
+                    </styled.p>,
                   ],
                   "marginBottom": "2rem",
                 },
@@ -1684,18 +1684,18 @@ ShallowWrapper {
                   "children": Array [
                     <styled.button
                       margin="0 1rem 0 0"
-                      onClick={[Function]}
+                      onClick={[MockFunction]}
                       small={true}
->
+                    >
                       Cancel
-</styled.button>,
+                    </styled.button>,
                     <styled.button
                       disabled={true}
                       onClick={[Function]}
                       small={true}
->
+                    >
                       Submit
-</styled.button>,
+                    </styled.button>,
                   ],
                   "justify": "flex-end",
                 },
@@ -1708,7 +1708,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "margin": "0 1rem 0 0",
-                      "onClick": [Function],
+                      "onClick": [MockFunction],
                       "small": true,
                     },
                     "ref": null,
@@ -1743,7 +1743,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         "ref": null,
         "rendered": null,
@@ -1761,97 +1761,97 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div>
-                        <styled.h4>
-                                    Bulk Inventory Update
-                        </styled.h4>
-                        <styled.p
-                                    size={14}
-                                    weight={300}
-                        >
-                                    Updating inventory for 
-                                    3
-                                     row(s).
-                        </styled.p>
+              <styled.h4>
+                Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                size={14}
+                weight={300}
+              >
+                Updating inventory for 
+                3
+                 row(s).
+              </styled.p>
             </styled.div>
             <styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Action
-                                    </styled.label>
-                                    <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                            Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                                }
-                                    />
-                        </styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Manual Price
-                                    </styled.label>
-                                    <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value="12.222"
-                                    />
-                                    <styled.p
-                                                color="#DC0A0A"
-                                                marginTop="0.5rem"
-                                                size={12}
-                                                weight={300}
-                                    >
-                                                Manual Price must be a valid dollar amount.
-                                    </styled.p>
-                        </styled.div>
-                        <Flex
-                                    justify="flex-end"
-                        >
-                                    <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Cancel
-                                    </styled.button>
-                                    <styled.button
-                                                disabled={true}
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Submit
-                                    </styled.button>
-                        </Flex>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
+              </styled.div>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value="12.222"
+                />
+                <styled.p
+                  color="#DC0A0A"
+                  marginTop="0.5rem"
+                  size={12}
+                  weight={300}
+                >
+                  Manual Price must be a valid dollar amount.
+                </styled.p>
+              </styled.div>
+              <Flex
+                justify="flex-end"
+              >
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={true}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  Submit
+                </styled.button>
+              </Flex>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
@@ -1864,92 +1864,92 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.h4>
-                                Bulk Inventory Update
+                  Bulk Inventory Update
                 </styled.h4>
                 <styled.p
-                                size={14}
-                                weight={300}
+                  size={14}
+                  weight={300}
                 >
-                                Updating inventory for 
-                                3
-                                 row(s).
+                  Updating inventory for 
+                  3
+                   row(s).
                 </styled.p>
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Action
-                                </styled.label>
-                                <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                                Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                                Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                                }
-                                />
+                  <styled.label>
+                    Action
+                  </styled.label>
+                  <SelectDropdown
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
+                  />
                 </styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Manual Price
-                                </styled.label>
-                                <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value="12.222"
-                                />
-                                <styled.p
-                                                color="#DC0A0A"
-                                                marginTop="0.5rem"
-                                                size={12}
-                                                weight={300}
-                                >
-                                                Manual Price must be a valid dollar amount.
-                                </styled.p>
+                  <styled.label>
+                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value="12.222"
+                  />
+                  <styled.p
+                    color="#DC0A0A"
+                    marginTop="0.5rem"
+                    size={12}
+                    weight={300}
+                  >
+                    Manual Price must be a valid dollar amount.
+                  </styled.p>
                 </styled.div>
                 <Flex
-                                justify="flex-end"
+                  justify="flex-end"
                 >
-                                <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Cancel
-                                </styled.button>
-                                <styled.button
-                                                disabled={true}
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Submit
-                                </styled.button>
+                  <styled.button
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
+                  >
+                    Cancel
+                  </styled.button>
+                  <styled.button
+                    disabled={true}
+                    onClick={[Function]}
+                    small={true}
+                  >
+                    Submit
+                  </styled.button>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -1962,15 +1962,15 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h4>
                     Bulk Inventory Update
-</styled.h4>,
+                  </styled.h4>,
                   <styled.p
                     size={14}
                     weight={300}
->
+                  >
                     Updating inventory for 
                     3
                      row(s).
-</styled.p>,
+                  </styled.p>,
                   false,
                 ],
               },
@@ -2020,78 +2020,78 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Action
+                      Action
                     </styled.label>
                     <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                            Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                            Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                        }
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
+                      }
+                      placeholder="Select"
+                      selected={
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
+                      }
                     />
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Manual Price
+                      Manual Price
                     </styled.label>
                     <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value="12.222"
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value="12.222"
                     />
                     <styled.p
-                                        color="#DC0A0A"
-                                        marginTop="0.5rem"
-                                        size={12}
-                                        weight={300}
+                      color="#DC0A0A"
+                      marginTop="0.5rem"
+                      size={12}
+                      weight={300}
                     >
-                                        Manual Price must be a valid dollar amount.
+                      Manual Price must be a valid dollar amount.
                     </styled.p>
-</styled.div>,
+                  </styled.div>,
                   false,
                   <Flex
                     justify="flex-end"
->
+                  >
                     <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
+                      margin="0 1rem 0 0"
+                      onClick={[MockFunction]}
+                      small={true}
                     >
-                                        Cancel
+                      Cancel
                     </styled.button>
                     <styled.button
-                                        disabled={true}
-                                        onClick={[Function]}
-                                        small={true}
+                      disabled={true}
+                      onClick={[Function]}
+                      small={true}
                     >
-                                        Submit
+                      Submit
                     </styled.button>
-</Flex>,
+                  </Flex>,
                 ],
               },
               "ref": null,
@@ -2104,30 +2104,30 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Action
-</styled.label>,
+                      </styled.label>,
                       <SelectDropdown
                         full={true}
                         onChange={[Function]}
                         options={
-                                                Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
+                          Array [
+                            Object {
+                              "label": "Update Manual Price",
+                              "value": 0,
+                            },
+                            Object {
+                              "label": "Update Pricing Status",
+                              "value": 1,
+                            },
+                          ]
                         }
                         placeholder="Select"
                         selected={
-                                                Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          }
                         }
-/>,
+                      />,
                     ],
                     "marginBottom": "2rem",
                   },
@@ -2182,7 +2182,7 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Manual Price
-</styled.label>,
+                      </styled.label>,
                       <NumberInputField
                         component={[Function]}
                         id="manual-price"
@@ -2192,15 +2192,15 @@ ShallowWrapper {
                         placeholder="$ Manual Price"
                         type="number"
                         value="12.222"
-/>,
+                      />,
                       <styled.p
                         color="#DC0A0A"
                         marginTop="0.5rem"
                         size={12}
                         weight={300}
->
+                      >
                         Manual Price must be a valid dollar amount.
-</styled.p>,
+                      </styled.p>,
                     ],
                     "marginBottom": "2rem",
                   },
@@ -2262,18 +2262,18 @@ ShallowWrapper {
                     "children": Array [
                       <styled.button
                         margin="0 1rem 0 0"
-                        onClick={[Function]}
+                        onClick={[MockFunction]}
                         small={true}
->
+                      >
                         Cancel
-</styled.button>,
+                      </styled.button>,
                       <styled.button
                         disabled={true}
                         onClick={[Function]}
                         small={true}
->
+                      >
                         Submit
-</styled.button>,
+                      </styled.button>,
                     ],
                     "justify": "flex-end",
                   },
@@ -2286,7 +2286,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Cancel",
                         "margin": "0 1rem 0 0",
-                        "onClick": [Function],
+                        "onClick": [MockFunction],
                         "small": true,
                       },
                       "ref": null,
@@ -2321,7 +2321,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -2360,35 +2360,35 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
-    cancelBulkUpdate={[Function]}
+    cancelBulkUpdate={[MockFunction]}
     loading={true}
     rows={
-        Array [
-            Object {
-              "seats": Array [
-                1,
-                2,
-                3,
-              ],
-            },
-            Object {
-              "seats": Array [
-                4,
-                5,
-                6,
-              ],
-            },
-            Object {
-              "seats": Array [
-                7,
-                8,
-                9,
-              ],
-            },
-          ]
+      Array [
+        Object {
+          "seats": Array [
+            1,
+            2,
+            3,
+          ],
+        },
+        Object {
+          "seats": Array [
+            4,
+            5,
+            6,
+          ],
+        },
+        Object {
+          "seats": Array [
+            7,
+            8,
+            9,
+          ],
+        },
+      ]
     }
-    submitBulkUpdate={[Function]}
-/>,
+    submitBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -2406,92 +2406,92 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div>
-                    <styled.h4>
-                              Bulk Inventory Update
-                    </styled.h4>
-                    <styled.p
-                              size={14}
-                              weight={300}
-                    >
-                              Updating inventory for 
-                              3
-                               row(s).
-                    </styled.p>
+            <styled.h4>
+              Bulk Inventory Update
+            </styled.h4>
+            <styled.p
+              size={14}
+              weight={300}
+            >
+              Updating inventory for 
+              3
+               row(s).
+            </styled.p>
           </styled.div>
           <styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Action
-                              </styled.label>
-                              <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "label": "Update Manual Price",
-                                                              "value": 0,
-                                                            },
-                                                            Object {
-                                                              "label": "Update Pricing Status",
-                                                              "value": 1,
-                                                            },
-                                                          ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                  Object {
-                                                            "label": "Update Manual Price",
-                                                            "value": 0,
-                                                          }
-                                        }
-                              />
-                    </styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Manual Price
-                              </styled.label>
-                              <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value=""
-                              />
-                    </styled.div>
-                    <Flex
-                              justify="flex-end"
-                    >
-                              <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Cancel
-                              </styled.button>
-                              <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        <Unknown
-                                                  color="#FFFFFF"
-                                                  small={true}
-                                        />
-                              </styled.button>
-                    </Flex>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Action
+              </styled.label>
+              <SelectDropdown
+                full={true}
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    },
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    },
+                  ]
+                }
+                placeholder="Select"
+                selected={
+                  Object {
+                    "label": "Update Manual Price",
+                    "value": 0,
+                  }
+                }
+              />
+            </styled.div>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Manual Price
+              </styled.label>
+              <NumberInputField
+                component={[Function]}
+                id="manual-price"
+                name="price"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="$ Manual Price"
+                type="number"
+                value=""
+              />
+            </styled.div>
+            <Flex
+              justify="flex-end"
+            >
+              <styled.button
+                margin="0 1rem 0 0"
+                onClick={[MockFunction]}
+                small={true}
+              >
+                Cancel
+              </styled.button>
+              <styled.button
+                disabled={false}
+                onClick={[Function]}
+                small={true}
+              >
+                <Loader
+                  color="#FFFFFF"
+                  small={true}
+                />
+              </styled.button>
+            </Flex>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div
-          onClick={[Function]}
-/>,
+          onClick={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
@@ -2504,87 +2504,87 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.h4>
-                            Bulk Inventory Update
+                Bulk Inventory Update
               </styled.h4>
               <styled.p
-                            size={14}
-                            weight={300}
+                size={14}
+                weight={300}
               >
-                            Updating inventory for 
-                            3
-                             row(s).
+                Updating inventory for 
+                3
+                 row(s).
               </styled.p>
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Action
-                            </styled.label>
-                            <SelectDropdown
-                                          full={true}
-                                          onChange={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      },
-                                                                      Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      },
-                                                                    ]
-                                          }
-                                          placeholder="Select"
-                                          selected={
-                                                        Object {
-                                                                      "label": "Update Manual Price",
-                                                                      "value": 0,
-                                                                    }
-                                          }
-                            />
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
               </styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Manual Price
-                            </styled.label>
-                            <NumberInputField
-                                          component={[Function]}
-                                          id="manual-price"
-                                          name="price"
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          placeholder="$ Manual Price"
-                                          type="number"
-                                          value=""
-                            />
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value=""
+                />
               </styled.div>
               <Flex
-                            justify="flex-end"
+                justify="flex-end"
               >
-                            <styled.button
-                                          margin="0 1rem 0 0"
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Cancel
-                            </styled.button>
-                            <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          <Unknown
-                                                        color="#FFFFFF"
-                                                        small={true}
-                                          />
-                            </styled.button>
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  <Loader
+                    color="#FFFFFF"
+                    small={true}
+                  />
+                </styled.button>
               </Flex>
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -2597,15 +2597,15 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   Bulk Inventory Update
-</styled.h4>,
+                </styled.h4>,
                 <styled.p
                   size={14}
                   weight={300}
->
+                >
                   Updating inventory for 
                   3
                    row(s).
-</styled.p>,
+                </styled.p>,
                 false,
               ],
             },
@@ -2655,73 +2655,73 @@ ShallowWrapper {
               "children": Array [
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Action
+                    Action
                   </styled.label>
                   <SelectDropdown
-                                    full={true}
-                                    onChange={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                    }
-                                    placeholder="Select"
-                                    selected={
-                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                    }
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
                   />
-</styled.div>,
+                </styled.div>,
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Manual Price
+                    Manual Price
                   </styled.label>
                   <NumberInputField
-                                    component={[Function]}
-                                    id="manual-price"
-                                    name="price"
-                                    onBlur={[Function]}
-                                    onChange={[Function]}
-                                    placeholder="$ Manual Price"
-                                    type="number"
-                                    value=""
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value=""
                   />
-</styled.div>,
+                </styled.div>,
                 false,
                 <Flex
                   justify="flex-end"
->
+                >
                   <styled.button
-                                    margin="0 1rem 0 0"
-                                    onClick={[Function]}
-                                    small={true}
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
                   >
-                                    Cancel
+                    Cancel
                   </styled.button>
                   <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    small={true}
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
                   >
-                                    <Unknown
-                                                      color="#FFFFFF"
-                                                      small={true}
-                                    />
+                    <Loader
+                      color="#FFFFFF"
+                      small={true}
+                    />
                   </styled.button>
-</Flex>,
+                </Flex>,
               ],
             },
             "ref": null,
@@ -2734,30 +2734,30 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Action
-</styled.label>,
+                    </styled.label>,
                     <SelectDropdown
                       full={true}
                       onChange={[Function]}
                       options={
-                                            Array [
-                                                                  Object {
-                                                                    "label": "Update Manual Price",
-                                                                    "value": 0,
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Update Pricing Status",
-                                                                    "value": 1,
-                                                                  },
-                                                                ]
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
                       }
                       placeholder="Select"
                       selected={
-                                            Object {
-                                                                  "label": "Update Manual Price",
-                                                                  "value": 0,
-                                                                }
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
                       }
-/>,
+                    />,
                   ],
                   "marginBottom": "2rem",
                 },
@@ -2812,7 +2812,7 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Manual Price
-</styled.label>,
+                    </styled.label>,
                     <NumberInputField
                       component={[Function]}
                       id="manual-price"
@@ -2822,7 +2822,7 @@ ShallowWrapper {
                       placeholder="$ Manual Price"
                       type="number"
                       value=""
-/>,
+                    />,
                     undefined,
                   ],
                   "marginBottom": "2rem",
@@ -2871,21 +2871,21 @@ ShallowWrapper {
                   "children": Array [
                     <styled.button
                       margin="0 1rem 0 0"
-                      onClick={[Function]}
+                      onClick={[MockFunction]}
                       small={true}
->
+                    >
                       Cancel
-</styled.button>,
+                    </styled.button>,
                     <styled.button
                       disabled={false}
                       onClick={[Function]}
                       small={true}
->
-                      <Unknown
-                                            color="#FFFFFF"
-                                            small={true}
+                    >
+                      <Loader
+                        color="#FFFFFF"
+                        small={true}
                       />
-</styled.button>,
+                    </styled.button>,
                   ],
                   "justify": "flex-end",
                 },
@@ -2898,7 +2898,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "margin": "0 1rem 0 0",
-                      "onClick": [Function],
+                      "onClick": [MockFunction],
                       "small": true,
                     },
                     "ref": null,
@@ -2910,10 +2910,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": <Unknown
+                      "children": <Loader
                         color="#FFFFFF"
                         small={true}
-/>,
+                      />,
                       "disabled": false,
                       "onClick": [Function],
                       "small": true,
@@ -2947,7 +2947,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         "ref": null,
         "rendered": null,
@@ -2965,92 +2965,92 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div>
-                        <styled.h4>
-                                    Bulk Inventory Update
-                        </styled.h4>
-                        <styled.p
-                                    size={14}
-                                    weight={300}
-                        >
-                                    Updating inventory for 
-                                    3
-                                     row(s).
-                        </styled.p>
+              <styled.h4>
+                Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                size={14}
+                weight={300}
+              >
+                Updating inventory for 
+                3
+                 row(s).
+              </styled.p>
             </styled.div>
             <styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Action
-                                    </styled.label>
-                                    <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                            Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
-                                                }
-                                    />
-                        </styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Manual Price
-                                    </styled.label>
-                                    <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value=""
-                                    />
-                        </styled.div>
-                        <Flex
-                                    justify="flex-end"
-                        >
-                                    <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Cancel
-                                    </styled.button>
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                <Unknown
-                                                            color="#FFFFFF"
-                                                            small={true}
-                                                />
-                                    </styled.button>
-                        </Flex>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    }
+                  }
+                />
+              </styled.div>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Manual Price
+                </styled.label>
+                <NumberInputField
+                  component={[Function]}
+                  id="manual-price"
+                  name="price"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="$ Manual Price"
+                  type="number"
+                  value=""
+                />
+              </styled.div>
+              <Flex
+                justify="flex-end"
+              >
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  <Loader
+                    color="#FFFFFF"
+                    small={true}
+                  />
+                </styled.button>
+              </Flex>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
@@ -3063,87 +3063,87 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.h4>
-                                Bulk Inventory Update
+                  Bulk Inventory Update
                 </styled.h4>
                 <styled.p
-                                size={14}
-                                weight={300}
+                  size={14}
+                  weight={300}
                 >
-                                Updating inventory for 
-                                3
-                                 row(s).
+                  Updating inventory for 
+                  3
+                   row(s).
                 </styled.p>
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Action
-                                </styled.label>
-                                <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                                Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                                Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                                }
-                                />
+                  <styled.label>
+                    Action
+                  </styled.label>
+                  <SelectDropdown
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      }
+                    }
+                  />
                 </styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Manual Price
-                                </styled.label>
-                                <NumberInputField
-                                                component={[Function]}
-                                                id="manual-price"
-                                                name="price"
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                placeholder="$ Manual Price"
-                                                type="number"
-                                                value=""
-                                />
+                  <styled.label>
+                    Manual Price
+                  </styled.label>
+                  <NumberInputField
+                    component={[Function]}
+                    id="manual-price"
+                    name="price"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    placeholder="$ Manual Price"
+                    type="number"
+                    value=""
+                  />
                 </styled.div>
                 <Flex
-                                justify="flex-end"
+                  justify="flex-end"
                 >
-                                <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Cancel
-                                </styled.button>
-                                <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                <Unknown
-                                                                color="#FFFFFF"
-                                                                small={true}
-                                                />
-                                </styled.button>
+                  <styled.button
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
+                  >
+                    Cancel
+                  </styled.button>
+                  <styled.button
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
+                  >
+                    <Loader
+                      color="#FFFFFF"
+                      small={true}
+                    />
+                  </styled.button>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -3156,15 +3156,15 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h4>
                     Bulk Inventory Update
-</styled.h4>,
+                  </styled.h4>,
                   <styled.p
                     size={14}
                     weight={300}
->
+                  >
                     Updating inventory for 
                     3
                      row(s).
-</styled.p>,
+                  </styled.p>,
                   false,
                 ],
               },
@@ -3214,73 +3214,73 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Action
+                      Action
                     </styled.label>
                     <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                            Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                            Object {
-                                                                                "label": "Update Manual Price",
-                                                                                "value": 0,
-                                                                              }
-                                        }
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
+                      }
+                      placeholder="Select"
+                      selected={
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        }
+                      }
                     />
-</styled.div>,
+                  </styled.div>,
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Manual Price
+                      Manual Price
                     </styled.label>
                     <NumberInputField
-                                        component={[Function]}
-                                        id="manual-price"
-                                        name="price"
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        placeholder="$ Manual Price"
-                                        type="number"
-                                        value=""
+                      component={[Function]}
+                      id="manual-price"
+                      name="price"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      placeholder="$ Manual Price"
+                      type="number"
+                      value=""
                     />
-</styled.div>,
+                  </styled.div>,
                   false,
                   <Flex
                     justify="flex-end"
->
+                  >
                     <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
+                      margin="0 1rem 0 0"
+                      onClick={[MockFunction]}
+                      small={true}
                     >
-                                        Cancel
+                      Cancel
                     </styled.button>
                     <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
                     >
-                                        <Unknown
-                                                            color="#FFFFFF"
-                                                            small={true}
-                                        />
+                      <Loader
+                        color="#FFFFFF"
+                        small={true}
+                      />
                     </styled.button>
-</Flex>,
+                  </Flex>,
                 ],
               },
               "ref": null,
@@ -3293,30 +3293,30 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Action
-</styled.label>,
+                      </styled.label>,
                       <SelectDropdown
                         full={true}
                         onChange={[Function]}
                         options={
-                                                Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
+                          Array [
+                            Object {
+                              "label": "Update Manual Price",
+                              "value": 0,
+                            },
+                            Object {
+                              "label": "Update Pricing Status",
+                              "value": 1,
+                            },
+                          ]
                         }
                         placeholder="Select"
                         selected={
-                                                Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      }
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          }
                         }
-/>,
+                      />,
                     ],
                     "marginBottom": "2rem",
                   },
@@ -3371,7 +3371,7 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Manual Price
-</styled.label>,
+                      </styled.label>,
                       <NumberInputField
                         component={[Function]}
                         id="manual-price"
@@ -3381,7 +3381,7 @@ ShallowWrapper {
                         placeholder="$ Manual Price"
                         type="number"
                         value=""
-/>,
+                      />,
                       undefined,
                     ],
                     "marginBottom": "2rem",
@@ -3430,21 +3430,21 @@ ShallowWrapper {
                     "children": Array [
                       <styled.button
                         margin="0 1rem 0 0"
-                        onClick={[Function]}
+                        onClick={[MockFunction]}
                         small={true}
->
+                      >
                         Cancel
-</styled.button>,
+                      </styled.button>,
                       <styled.button
                         disabled={false}
                         onClick={[Function]}
                         small={true}
->
-                        <Unknown
-                                                color="#FFFFFF"
-                                                small={true}
+                      >
+                        <Loader
+                          color="#FFFFFF"
+                          small={true}
                         />
-</styled.button>,
+                      </styled.button>,
                     ],
                     "justify": "flex-end",
                   },
@@ -3457,7 +3457,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Cancel",
                         "margin": "0 1rem 0 0",
-                        "onClick": [Function],
+                        "onClick": [MockFunction],
                         "small": true,
                       },
                       "ref": null,
@@ -3469,10 +3469,10 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": <Unknown
+                        "children": <Loader
                           color="#FFFFFF"
                           small={true}
-/>,
+                        />,
                         "disabled": false,
                         "onClick": [Function],
                         "small": true,
@@ -3506,7 +3506,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,
@@ -3545,35 +3545,35 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <BulkUpdateModalPresenter
-    cancelBulkUpdate={[Function]}
+    cancelBulkUpdate={[MockFunction]}
     loading={true}
     rows={
-        Array [
-            Object {
-              "seats": Array [
-                1,
-                2,
-                3,
-              ],
-            },
-            Object {
-              "seats": Array [
-                4,
-                5,
-                6,
-              ],
-            },
-            Object {
-              "seats": Array [
-                7,
-                8,
-                9,
-              ],
-            },
-          ]
+      Array [
+        Object {
+          "seats": Array [
+            1,
+            2,
+            3,
+          ],
+        },
+        Object {
+          "seats": Array [
+            4,
+            5,
+            6,
+          ],
+        },
+        Object {
+          "seats": Array [
+            7,
+            8,
+            9,
+          ],
+        },
+      ]
     }
-    submitBulkUpdate={[Function]}
-/>,
+    submitBulkUpdate={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -3591,87 +3591,87 @@ ShallowWrapper {
       "children": Array [
         <styled.div>
           <styled.div>
-                    <styled.h4>
-                              Bulk Inventory Update
-                    </styled.h4>
-                    <styled.p
-                              size={14}
-                              weight={300}
-                    >
-                              Updating inventory for 
-                              3
-                               row(s).
-                    </styled.p>
+            <styled.h4>
+              Bulk Inventory Update
+            </styled.h4>
+            <styled.p
+              size={14}
+              weight={300}
+            >
+              Updating inventory for 
+              3
+               row(s).
+            </styled.p>
           </styled.div>
           <styled.div>
-                    <styled.div
-                              marginBottom="2rem"
-                    >
-                              <styled.label>
-                                        Action
-                              </styled.label>
-                              <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                  Array [
-                                                            Object {
-                                                              "label": "Update Manual Price",
-                                                              "value": 0,
-                                                            },
-                                                            Object {
-                                                              "label": "Update Pricing Status",
-                                                              "value": 1,
-                                                            },
-                                                          ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                  Object {
-                                                            "label": "Update Pricing Status",
-                                                            "value": 1,
-                                                          }
-                                        }
-                              />
-                    </styled.div>
-                    <styled.div
-                              marginBottom="1.5rem"
-                    >
-                              <styled.label>
-                                        Pricing
-                              </styled.label>
-                              <Toggle
-                                        isChecked=""
-                                        onChange={[Function]}
-                                        size="small"
-                              />
-                    </styled.div>
-                    <Flex
-                              justify="flex-end"
-                    >
-                              <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        Cancel
-                              </styled.button>
-                              <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
-                              >
-                                        <Unknown
-                                                  color="#FFFFFF"
-                                                  small={true}
-                                        />
-                              </styled.button>
-                    </Flex>
+            <styled.div
+              marginBottom="2rem"
+            >
+              <styled.label>
+                Action
+              </styled.label>
+              <SelectDropdown
+                full={true}
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "label": "Update Manual Price",
+                      "value": 0,
+                    },
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    },
+                  ]
+                }
+                placeholder="Select"
+                selected={
+                  Object {
+                    "label": "Update Pricing Status",
+                    "value": 1,
+                  }
+                }
+              />
+            </styled.div>
+            <styled.div
+              marginBottom="1.5rem"
+            >
+              <styled.label>
+                Pricing
+              </styled.label>
+              <Toggle
+                isChecked=""
+                onChange={[Function]}
+                size="small"
+              />
+            </styled.div>
+            <Flex
+              justify="flex-end"
+            >
+              <styled.button
+                margin="0 1rem 0 0"
+                onClick={[MockFunction]}
+                small={true}
+              >
+                Cancel
+              </styled.button>
+              <styled.button
+                disabled={false}
+                onClick={[Function]}
+                small={true}
+              >
+                <Loader
+                  color="#FFFFFF"
+                  small={true}
+                />
+              </styled.button>
+            </Flex>
           </styled.div>
-</styled.div>,
+        </styled.div>,
         <styled.div
-          onClick={[Function]}
-/>,
+          onClick={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
@@ -3684,82 +3684,82 @@ ShallowWrapper {
           "children": Array [
             <styled.div>
               <styled.h4>
-                            Bulk Inventory Update
+                Bulk Inventory Update
               </styled.h4>
               <styled.p
-                            size={14}
-                            weight={300}
+                size={14}
+                weight={300}
               >
-                            Updating inventory for 
-                            3
-                             row(s).
+                Updating inventory for 
+                3
+                 row(s).
               </styled.p>
-</styled.div>,
+            </styled.div>,
             <styled.div>
               <styled.div
-                            marginBottom="2rem"
+                marginBottom="2rem"
               >
-                            <styled.label>
-                                          Action
-                            </styled.label>
-                            <SelectDropdown
-                                          full={true}
-                                          onChange={[Function]}
-                                          options={
-                                                        Array [
-                                                                      Object {
-                                                                        "label": "Update Manual Price",
-                                                                        "value": 0,
-                                                                      },
-                                                                      Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      },
-                                                                    ]
-                                          }
-                                          placeholder="Select"
-                                          selected={
-                                                        Object {
-                                                                      "label": "Update Pricing Status",
-                                                                      "value": 1,
-                                                                    }
-                                          }
-                            />
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    }
+                  }
+                />
               </styled.div>
               <styled.div
-                            marginBottom="1.5rem"
+                marginBottom="1.5rem"
               >
-                            <styled.label>
-                                          Pricing
-                            </styled.label>
-                            <Toggle
-                                          isChecked=""
-                                          onChange={[Function]}
-                                          size="small"
-                            />
+                <styled.label>
+                  Pricing
+                </styled.label>
+                <Toggle
+                  isChecked=""
+                  onChange={[Function]}
+                  size="small"
+                />
               </styled.div>
               <Flex
-                            justify="flex-end"
+                justify="flex-end"
               >
-                            <styled.button
-                                          margin="0 1rem 0 0"
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          Cancel
-                            </styled.button>
-                            <styled.button
-                                          disabled={false}
-                                          onClick={[Function]}
-                                          small={true}
-                            >
-                                          <Unknown
-                                                        color="#FFFFFF"
-                                                        small={true}
-                                          />
-                            </styled.button>
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  <Loader
+                    color="#FFFFFF"
+                    small={true}
+                  />
+                </styled.button>
               </Flex>
-</styled.div>,
+            </styled.div>,
           ],
         },
         "ref": null,
@@ -3772,15 +3772,15 @@ ShallowWrapper {
               "children": Array [
                 <styled.h4>
                   Bulk Inventory Update
-</styled.h4>,
+                </styled.h4>,
                 <styled.p
                   size={14}
                   weight={300}
->
+                >
                   Updating inventory for 
                   3
                    row(s).
-</styled.p>,
+                </styled.p>,
                 false,
               ],
             },
@@ -3830,68 +3830,68 @@ ShallowWrapper {
               "children": Array [
                 <styled.div
                   marginBottom="2rem"
->
+                >
                   <styled.label>
-                                    Action
+                    Action
                   </styled.label>
                   <SelectDropdown
-                                    full={true}
-                                    onChange={[Function]}
-                                    options={
-                                                      Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                    }
-                                    placeholder="Select"
-                                    selected={
-                                                      Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      }
-                                    }
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      }
+                    }
                   />
-</styled.div>,
+                </styled.div>,
                 false,
                 <styled.div
                   marginBottom="1.5rem"
->
+                >
                   <styled.label>
-                                    Pricing
+                    Pricing
                   </styled.label>
                   <Toggle
-                                    isChecked=""
-                                    onChange={[Function]}
-                                    size="small"
+                    isChecked=""
+                    onChange={[Function]}
+                    size="small"
                   />
-</styled.div>,
+                </styled.div>,
                 <Flex
                   justify="flex-end"
->
+                >
                   <styled.button
-                                    margin="0 1rem 0 0"
-                                    onClick={[Function]}
-                                    small={true}
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
                   >
-                                    Cancel
+                    Cancel
                   </styled.button>
                   <styled.button
-                                    disabled={false}
-                                    onClick={[Function]}
-                                    small={true}
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
                   >
-                                    <Unknown
-                                                      color="#FFFFFF"
-                                                      small={true}
-                                    />
+                    <Loader
+                      color="#FFFFFF"
+                      small={true}
+                    />
                   </styled.button>
-</Flex>,
+                </Flex>,
               ],
             },
             "ref": null,
@@ -3904,30 +3904,30 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Action
-</styled.label>,
+                    </styled.label>,
                     <SelectDropdown
                       full={true}
                       onChange={[Function]}
                       options={
-                                            Array [
-                                                                  Object {
-                                                                    "label": "Update Manual Price",
-                                                                    "value": 0,
-                                                                  },
-                                                                  Object {
-                                                                    "label": "Update Pricing Status",
-                                                                    "value": 1,
-                                                                  },
-                                                                ]
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
                       }
                       placeholder="Select"
                       selected={
-                                            Object {
-                                                                  "label": "Update Pricing Status",
-                                                                  "value": 1,
-                                                                }
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        }
                       }
-/>,
+                    />,
                   ],
                   "marginBottom": "2rem",
                 },
@@ -3983,12 +3983,12 @@ ShallowWrapper {
                   "children": Array [
                     <styled.label>
                       Pricing
-</styled.label>,
+                    </styled.label>,
                     <Toggle
                       isChecked=""
                       onChange={[Function]}
                       size="small"
-/>,
+                    />,
                   ],
                   "marginBottom": "1.5rem",
                 },
@@ -4029,21 +4029,21 @@ ShallowWrapper {
                   "children": Array [
                     <styled.button
                       margin="0 1rem 0 0"
-                      onClick={[Function]}
+                      onClick={[MockFunction]}
                       small={true}
->
+                    >
                       Cancel
-</styled.button>,
+                    </styled.button>,
                     <styled.button
                       disabled={false}
                       onClick={[Function]}
                       small={true}
->
-                      <Unknown
-                                            color="#FFFFFF"
-                                            small={true}
+                    >
+                      <Loader
+                        color="#FFFFFF"
+                        small={true}
                       />
-</styled.button>,
+                    </styled.button>,
                   ],
                   "justify": "flex-end",
                 },
@@ -4056,7 +4056,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Cancel",
                       "margin": "0 1rem 0 0",
-                      "onClick": [Function],
+                      "onClick": [MockFunction],
                       "small": true,
                     },
                     "ref": null,
@@ -4068,10 +4068,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": <Unknown
+                      "children": <Loader
                         color="#FFFFFF"
                         small={true}
-/>,
+                      />,
                       "disabled": false,
                       "onClick": [Function],
                       "small": true,
@@ -4105,7 +4105,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "onClick": [Function],
+          "onClick": [MockFunction],
         },
         "ref": null,
         "rendered": null,
@@ -4123,87 +4123,87 @@ ShallowWrapper {
         "children": Array [
           <styled.div>
             <styled.div>
-                        <styled.h4>
-                                    Bulk Inventory Update
-                        </styled.h4>
-                        <styled.p
-                                    size={14}
-                                    weight={300}
-                        >
-                                    Updating inventory for 
-                                    3
-                                     row(s).
-                        </styled.p>
+              <styled.h4>
+                Bulk Inventory Update
+              </styled.h4>
+              <styled.p
+                size={14}
+                weight={300}
+              >
+                Updating inventory for 
+                3
+                 row(s).
+              </styled.p>
             </styled.div>
             <styled.div>
-                        <styled.div
-                                    marginBottom="2rem"
-                        >
-                                    <styled.label>
-                                                Action
-                                    </styled.label>
-                                    <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                            Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                            Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      }
-                                                }
-                                    />
-                        </styled.div>
-                        <styled.div
-                                    marginBottom="1.5rem"
-                        >
-                                    <styled.label>
-                                                Pricing
-                                    </styled.label>
-                                    <Toggle
-                                                isChecked=""
-                                                onChange={[Function]}
-                                                size="small"
-                                    />
-                        </styled.div>
-                        <Flex
-                                    justify="flex-end"
-                        >
-                                    <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                Cancel
-                                    </styled.button>
-                                    <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                    >
-                                                <Unknown
-                                                            color="#FFFFFF"
-                                                            small={true}
-                                                />
-                                    </styled.button>
-                        </Flex>
+              <styled.div
+                marginBottom="2rem"
+              >
+                <styled.label>
+                  Action
+                </styled.label>
+                <SelectDropdown
+                  full={true}
+                  onChange={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "Update Manual Price",
+                        "value": 0,
+                      },
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      },
+                    ]
+                  }
+                  placeholder="Select"
+                  selected={
+                    Object {
+                      "label": "Update Pricing Status",
+                      "value": 1,
+                    }
+                  }
+                />
+              </styled.div>
+              <styled.div
+                marginBottom="1.5rem"
+              >
+                <styled.label>
+                  Pricing
+                </styled.label>
+                <Toggle
+                  isChecked=""
+                  onChange={[Function]}
+                  size="small"
+                />
+              </styled.div>
+              <Flex
+                justify="flex-end"
+              >
+                <styled.button
+                  margin="0 1rem 0 0"
+                  onClick={[MockFunction]}
+                  small={true}
+                >
+                  Cancel
+                </styled.button>
+                <styled.button
+                  disabled={false}
+                  onClick={[Function]}
+                  small={true}
+                >
+                  <Loader
+                    color="#FFFFFF"
+                    small={true}
+                  />
+                </styled.button>
+              </Flex>
             </styled.div>
-</styled.div>,
+          </styled.div>,
           <styled.div
-            onClick={[Function]}
-/>,
+            onClick={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
@@ -4216,82 +4216,82 @@ ShallowWrapper {
             "children": Array [
               <styled.div>
                 <styled.h4>
-                                Bulk Inventory Update
+                  Bulk Inventory Update
                 </styled.h4>
                 <styled.p
-                                size={14}
-                                weight={300}
+                  size={14}
+                  weight={300}
                 >
-                                Updating inventory for 
-                                3
-                                 row(s).
+                  Updating inventory for 
+                  3
+                   row(s).
                 </styled.p>
-</styled.div>,
+              </styled.div>,
               <styled.div>
                 <styled.div
-                                marginBottom="2rem"
+                  marginBottom="2rem"
                 >
-                                <styled.label>
-                                                Action
-                                </styled.label>
-                                <SelectDropdown
-                                                full={true}
-                                                onChange={[Function]}
-                                                options={
-                                                                Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                                }
-                                                placeholder="Select"
-                                                selected={
-                                                                Object {
-                                                                                "label": "Update Pricing Status",
-                                                                                "value": 1,
-                                                                              }
-                                                }
-                                />
+                  <styled.label>
+                    Action
+                  </styled.label>
+                  <SelectDropdown
+                    full={true}
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "label": "Update Manual Price",
+                          "value": 0,
+                        },
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        },
+                      ]
+                    }
+                    placeholder="Select"
+                    selected={
+                      Object {
+                        "label": "Update Pricing Status",
+                        "value": 1,
+                      }
+                    }
+                  />
                 </styled.div>
                 <styled.div
-                                marginBottom="1.5rem"
+                  marginBottom="1.5rem"
                 >
-                                <styled.label>
-                                                Pricing
-                                </styled.label>
-                                <Toggle
-                                                isChecked=""
-                                                onChange={[Function]}
-                                                size="small"
-                                />
+                  <styled.label>
+                    Pricing
+                  </styled.label>
+                  <Toggle
+                    isChecked=""
+                    onChange={[Function]}
+                    size="small"
+                  />
                 </styled.div>
                 <Flex
-                                justify="flex-end"
+                  justify="flex-end"
                 >
-                                <styled.button
-                                                margin="0 1rem 0 0"
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                Cancel
-                                </styled.button>
-                                <styled.button
-                                                disabled={false}
-                                                onClick={[Function]}
-                                                small={true}
-                                >
-                                                <Unknown
-                                                                color="#FFFFFF"
-                                                                small={true}
-                                                />
-                                </styled.button>
+                  <styled.button
+                    margin="0 1rem 0 0"
+                    onClick={[MockFunction]}
+                    small={true}
+                  >
+                    Cancel
+                  </styled.button>
+                  <styled.button
+                    disabled={false}
+                    onClick={[Function]}
+                    small={true}
+                  >
+                    <Loader
+                      color="#FFFFFF"
+                      small={true}
+                    />
+                  </styled.button>
                 </Flex>
-</styled.div>,
+              </styled.div>,
             ],
           },
           "ref": null,
@@ -4304,15 +4304,15 @@ ShallowWrapper {
                 "children": Array [
                   <styled.h4>
                     Bulk Inventory Update
-</styled.h4>,
+                  </styled.h4>,
                   <styled.p
                     size={14}
                     weight={300}
->
+                  >
                     Updating inventory for 
                     3
                      row(s).
-</styled.p>,
+                  </styled.p>,
                   false,
                 ],
               },
@@ -4362,68 +4362,68 @@ ShallowWrapper {
                 "children": Array [
                   <styled.div
                     marginBottom="2rem"
->
+                  >
                     <styled.label>
-                                        Action
+                      Action
                     </styled.label>
                     <SelectDropdown
-                                        full={true}
-                                        onChange={[Function]}
-                                        options={
-                                                            Array [
-                                                                                Object {
-                                                                                  "label": "Update Manual Price",
-                                                                                  "value": 0,
-                                                                                },
-                                                                                Object {
-                                                                                  "label": "Update Pricing Status",
-                                                                                  "value": 1,
-                                                                                },
-                                                                              ]
-                                        }
-                                        placeholder="Select"
-                                        selected={
-                                                            Object {
-                                                                                "label": "Update Pricing Status",
-                                                                                "value": 1,
-                                                                              }
-                                        }
+                      full={true}
+                      onChange={[Function]}
+                      options={
+                        Array [
+                          Object {
+                            "label": "Update Manual Price",
+                            "value": 0,
+                          },
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          },
+                        ]
+                      }
+                      placeholder="Select"
+                      selected={
+                        Object {
+                          "label": "Update Pricing Status",
+                          "value": 1,
+                        }
+                      }
                     />
-</styled.div>,
+                  </styled.div>,
                   false,
                   <styled.div
                     marginBottom="1.5rem"
->
+                  >
                     <styled.label>
-                                        Pricing
+                      Pricing
                     </styled.label>
                     <Toggle
-                                        isChecked=""
-                                        onChange={[Function]}
-                                        size="small"
+                      isChecked=""
+                      onChange={[Function]}
+                      size="small"
                     />
-</styled.div>,
+                  </styled.div>,
                   <Flex
                     justify="flex-end"
->
+                  >
                     <styled.button
-                                        margin="0 1rem 0 0"
-                                        onClick={[Function]}
-                                        small={true}
+                      margin="0 1rem 0 0"
+                      onClick={[MockFunction]}
+                      small={true}
                     >
-                                        Cancel
+                      Cancel
                     </styled.button>
                     <styled.button
-                                        disabled={false}
-                                        onClick={[Function]}
-                                        small={true}
+                      disabled={false}
+                      onClick={[Function]}
+                      small={true}
                     >
-                                        <Unknown
-                                                            color="#FFFFFF"
-                                                            small={true}
-                                        />
+                      <Loader
+                        color="#FFFFFF"
+                        small={true}
+                      />
                     </styled.button>
-</Flex>,
+                  </Flex>,
                 ],
               },
               "ref": null,
@@ -4436,30 +4436,30 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Action
-</styled.label>,
+                      </styled.label>,
                       <SelectDropdown
                         full={true}
                         onChange={[Function]}
                         options={
-                                                Array [
-                                                                        Object {
-                                                                          "label": "Update Manual Price",
-                                                                          "value": 0,
-                                                                        },
-                                                                        Object {
-                                                                          "label": "Update Pricing Status",
-                                                                          "value": 1,
-                                                                        },
-                                                                      ]
+                          Array [
+                            Object {
+                              "label": "Update Manual Price",
+                              "value": 0,
+                            },
+                            Object {
+                              "label": "Update Pricing Status",
+                              "value": 1,
+                            },
+                          ]
                         }
                         placeholder="Select"
                         selected={
-                                                Object {
-                                                                        "label": "Update Pricing Status",
-                                                                        "value": 1,
-                                                                      }
+                          Object {
+                            "label": "Update Pricing Status",
+                            "value": 1,
+                          }
                         }
-/>,
+                      />,
                     ],
                     "marginBottom": "2rem",
                   },
@@ -4515,12 +4515,12 @@ ShallowWrapper {
                     "children": Array [
                       <styled.label>
                         Pricing
-</styled.label>,
+                      </styled.label>,
                       <Toggle
                         isChecked=""
                         onChange={[Function]}
                         size="small"
-/>,
+                      />,
                     ],
                     "marginBottom": "1.5rem",
                   },
@@ -4561,21 +4561,21 @@ ShallowWrapper {
                     "children": Array [
                       <styled.button
                         margin="0 1rem 0 0"
-                        onClick={[Function]}
+                        onClick={[MockFunction]}
                         small={true}
->
+                      >
                         Cancel
-</styled.button>,
+                      </styled.button>,
                       <styled.button
                         disabled={false}
                         onClick={[Function]}
                         small={true}
->
-                        <Unknown
-                                                color="#FFFFFF"
-                                                small={true}
+                      >
+                        <Loader
+                          color="#FFFFFF"
+                          small={true}
                         />
-</styled.button>,
+                      </styled.button>,
                     ],
                     "justify": "flex-end",
                   },
@@ -4588,7 +4588,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "Cancel",
                         "margin": "0 1rem 0 0",
-                        "onClick": [Function],
+                        "onClick": [MockFunction],
                         "small": true,
                       },
                       "ref": null,
@@ -4600,10 +4600,10 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": <Unknown
+                        "children": <Loader
                           color="#FFFFFF"
                           small={true}
-/>,
+                        />,
                         "disabled": false,
                         "onClick": [Function],
                         "small": true,
@@ -4637,7 +4637,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "onClick": [Function],
+            "onClick": [MockFunction],
           },
           "ref": null,
           "rendered": null,

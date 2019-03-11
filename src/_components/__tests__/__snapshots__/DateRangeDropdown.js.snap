@@ -86,7 +86,6 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
         >
           <svg
             className="c5"
-            color={undefined}
             viewBox="0 0 24 24"
             width="24px"
           >
@@ -112,7 +111,6 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
         >
           <svg
             className="c5"
-            color={undefined}
             viewBox="0 0 24 24"
             width="24px"
           >

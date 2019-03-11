@@ -410,7 +410,6 @@ exports[`P1 renders correctly with no props 1`] = `
 
 <p
   className="c0"
-  size={undefined}
 />
 `;
 

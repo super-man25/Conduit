@@ -87,7 +87,6 @@ exports[`renders correctly 1`] = `
       <p
         className="c2"
         onClick={[Function]}
-        size={undefined}
       >
         dog
       </p>

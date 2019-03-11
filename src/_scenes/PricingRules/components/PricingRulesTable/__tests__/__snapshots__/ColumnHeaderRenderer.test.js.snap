@@ -3,9 +3,9 @@
 exports[`<DefaultColumnHeaderPresenter /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DefaultColumnHeaderPresenter
     label="Label"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -23,18 +23,18 @@ ShallowWrapper {
       "active": undefined,
       "children": <styled.div
         position="relative"
->
+      >
         <Flex
-                align="left"
+          align="left"
         >
-                <styled.p
-                        weight={600}
-                >
-                        Label
-                </styled.p>
-                 
+          <styled.p
+            weight={600}
+          >
+            Label
+          </styled.p>
+           
         </Flex>
-</styled.div>,
+      </styled.div>,
     },
     "ref": null,
     "rendered": Object {
@@ -44,14 +44,14 @@ ShallowWrapper {
       "props": Object {
         "children": <Flex
           align="left"
->
+        >
           <styled.p
-                    weight={600}
+            weight={600}
           >
-                    Label
+            Label
           </styled.p>
            
-</Flex>,
+        </Flex>,
         "position": "relative",
       },
       "ref": null,
@@ -64,9 +64,9 @@ ShallowWrapper {
           "children": Array [
             <styled.p
               weight={600}
->
+            >
               Label
-</styled.p>,
+            </styled.p>,
             " ",
           ],
         },
@@ -101,18 +101,18 @@ ShallowWrapper {
         "active": undefined,
         "children": <styled.div
           position="relative"
->
+        >
           <Flex
-                    align="left"
+            align="left"
           >
-                    <styled.p
-                              weight={600}
-                    >
-                              Label
-                    </styled.p>
-                     
+            <styled.p
+              weight={600}
+            >
+              Label
+            </styled.p>
+             
           </Flex>
-</styled.div>,
+        </styled.div>,
       },
       "ref": null,
       "rendered": Object {
@@ -122,14 +122,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Flex
             align="left"
->
+          >
             <styled.p
-                        weight={600}
+              weight={600}
             >
-                        Label
+              Label
             </styled.p>
              
-</Flex>,
+          </Flex>,
           "position": "relative",
         },
         "ref": null,
@@ -142,9 +142,9 @@ ShallowWrapper {
             "children": Array [
               <styled.p
                 weight={600}
->
+              >
                 Label
-</styled.p>,
+              </styled.p>,
               " ",
             ],
           },

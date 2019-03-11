@@ -5,38 +5,52 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RevenueBreakdown
     revenueStatActions={
-        Object {
-            "fetch": [Function],
-            "reset": [Function],
-          }
-    }
-    revenueStatState={
-        Object {
-            "loading": false,
-            "ticketBreakdown": Array [
+      Object {
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [
               Object {
-                "id": 1,
-                "inventory": 10000,
-                "name": "Single Game",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 2,
-                "inventory": 5000,
-                "name": "Group Tickets",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 3,
-                "inventory": 7000,
-                "name": "Single Suites",
-                "revenue": 1000,
+                "seasonId": undefined,
               },
             ],
-          }
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "reset": [MockFunction],
+      }
+    }
+    revenueStatState={
+      Object {
+        "loading": false,
+        "ticketBreakdown": Array [
+          Object {
+            "id": 1,
+            "inventory": 10000,
+            "name": "Single Game",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 2,
+            "inventory": 5000,
+            "name": "Group Tickets",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 3,
+            "inventory": 7000,
+            "name": "Single Suites",
+            "revenue": 1000,
+          },
+        ],
+      }
     }
     type="revenue"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -54,67 +68,67 @@ ShallowWrapper {
       "children": Array [
         <styled.p>
           Revenue Breakdown
-</styled.p>,
+        </styled.p>,
         <styled.div
           height="0.75rem"
-/>,
-        <Unknown>
-          <Unknown
-                    colors={
-                              Array [
-                                        "#024A8F",
-                                        "#2670AE",
-                                        "#4B98CF",
-                                        "#7CBCDD",
-                                        "#C4D2E1",
-                                        "#817CB8",
-                                        "#621F95",
-                                      ]
-                    }
-                    data={
-                              Array [
-                                        1000,
-                                        1000,
-                                        1000,
-                                      ]
-                    }
+        />,
+        <React.Fragment>
+          <HorizontalBars
+            colors={
+              Array [
+                "#024A8F",
+                "#2670AE",
+                "#4B98CF",
+                "#7CBCDD",
+                "#C4D2E1",
+                "#817CB8",
+                "#621F95",
+              ]
+            }
+            data={
+              Array [
+                1000,
+                1000,
+                1000,
+              ]
+            }
           />
           <Flex
-                    flexWrap="wrap"
-                    margin="0 -1rem -1rem"
+            flexWrap="wrap"
+            margin="0 -1rem -1rem"
           >
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#024A8F"
-                                        label="Single Game"
-                                        value="$1,000"
-                              />
-                    </FlexItem>
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#2670AE"
-                                        label="Group Tickets"
-                                        value="$1,000"
-                              />
-                    </FlexItem>
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#4B98CF"
-                                        label="Single Suites"
-                                        value="$1,000"
-                              />
-                    </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#024A8F"
+                label="Single Game"
+                value="$1,000"
+              />
+            </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#2670AE"
+                label="Group Tickets"
+                value="$1,000"
+              />
+            </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#4B98CF"
+                label="Single Suites"
+                value="$1,000"
+              />
+            </FlexItem>
           </Flex>
-</Unknown>,
+        </React.Fragment>,
       ],
     },
     "ref": null,
@@ -147,61 +161,61 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": Array [
-            <Unknown
+            <HorizontalBars
               colors={
-                            Array [
-                                          "#024A8F",
-                                          "#2670AE",
-                                          "#4B98CF",
-                                          "#7CBCDD",
-                                          "#C4D2E1",
-                                          "#817CB8",
-                                          "#621F95",
-                                        ]
+                Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ]
               }
               data={
-                            Array [
-                                          1000,
-                                          1000,
-                                          1000,
-                                        ]
+                Array [
+                  1000,
+                  1000,
+                  1000,
+                ]
               }
-/>,
+            />,
             <Flex
               flexWrap="wrap"
               margin="0 -1rem -1rem"
->
+            >
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#024A8F"
-                                          label="Single Game"
-                                          value="$1,000"
-                            />
+                <LegendItem
+                  color="#024A8F"
+                  label="Single Game"
+                  value="$1,000"
+                />
               </FlexItem>
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#2670AE"
-                                          label="Group Tickets"
-                                          value="$1,000"
-                            />
+                <LegendItem
+                  color="#2670AE"
+                  label="Group Tickets"
+                  value="$1,000"
+                />
               </FlexItem>
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#4B98CF"
-                                          label="Single Suites"
-                                          value="$1,000"
-                            />
+                <LegendItem
+                  color="#4B98CF"
+                  label="Single Suites"
+                  value="$1,000"
+                />
               </FlexItem>
-</Flex>,
+            </Flex>,
           ],
         },
         "ref": null,
@@ -239,33 +253,33 @@ ShallowWrapper {
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#024A8F"
-                                    label="Single Game"
-                                    value="$1,000"
+                    color="#024A8F"
+                    label="Single Game"
+                    value="$1,000"
                   />
-</FlexItem>,
+                </FlexItem>,
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#2670AE"
-                                    label="Group Tickets"
-                                    value="$1,000"
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="$1,000"
                   />
-</FlexItem>,
+                </FlexItem>,
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#4B98CF"
-                                    label="Single Suites"
-                                    value="$1,000"
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="$1,000"
                   />
-</FlexItem>,
+                </FlexItem>,
               ],
               "flexWrap": "wrap",
               "margin": "0 -1rem -1rem",
@@ -281,7 +295,7 @@ ShallowWrapper {
                     color="#024A8F"
                     label="Single Game"
                     value="$1,000"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -310,7 +324,7 @@ ShallowWrapper {
                     color="#2670AE"
                     label="Group Tickets"
                     value="$1,000"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -339,7 +353,7 @@ ShallowWrapper {
                     color="#4B98CF"
                     label="Single Suites"
                     value="$1,000"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -377,67 +391,67 @@ ShallowWrapper {
         "children": Array [
           <styled.p>
             Revenue Breakdown
-</styled.p>,
+          </styled.p>,
           <styled.div
             height="0.75rem"
-/>,
-          <Unknown>
-            <Unknown
-                        colors={
-                                    Array [
-                                                "#024A8F",
-                                                "#2670AE",
-                                                "#4B98CF",
-                                                "#7CBCDD",
-                                                "#C4D2E1",
-                                                "#817CB8",
-                                                "#621F95",
-                                              ]
-                        }
-                        data={
-                                    Array [
-                                                1000,
-                                                1000,
-                                                1000,
-                                              ]
-                        }
+          />,
+          <React.Fragment>
+            <HorizontalBars
+              colors={
+                Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ]
+              }
+              data={
+                Array [
+                  1000,
+                  1000,
+                  1000,
+                ]
+              }
             />
             <Flex
-                        flexWrap="wrap"
-                        margin="0 -1rem -1rem"
+              flexWrap="wrap"
+              margin="0 -1rem -1rem"
             >
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#024A8F"
-                                                label="Single Game"
-                                                value="$1,000"
-                                    />
-                        </FlexItem>
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#2670AE"
-                                                label="Group Tickets"
-                                                value="$1,000"
-                                    />
-                        </FlexItem>
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#4B98CF"
-                                                label="Single Suites"
-                                                value="$1,000"
-                                    />
-                        </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#024A8F"
+                  label="Single Game"
+                  value="$1,000"
+                />
+              </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#2670AE"
+                  label="Group Tickets"
+                  value="$1,000"
+                />
+              </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#4B98CF"
+                  label="Single Suites"
+                  value="$1,000"
+                />
+              </FlexItem>
             </Flex>
-</Unknown>,
+          </React.Fragment>,
         ],
       },
       "ref": null,
@@ -470,61 +484,61 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <Unknown
+              <HorizontalBars
                 colors={
-                                Array [
-                                                "#024A8F",
-                                                "#2670AE",
-                                                "#4B98CF",
-                                                "#7CBCDD",
-                                                "#C4D2E1",
-                                                "#817CB8",
-                                                "#621F95",
-                                              ]
+                  Array [
+                    "#024A8F",
+                    "#2670AE",
+                    "#4B98CF",
+                    "#7CBCDD",
+                    "#C4D2E1",
+                    "#817CB8",
+                    "#621F95",
+                  ]
                 }
                 data={
-                                Array [
-                                                1000,
-                                                1000,
-                                                1000,
-                                              ]
+                  Array [
+                    1000,
+                    1000,
+                    1000,
+                  ]
                 }
-/>,
+              />,
               <Flex
                 flexWrap="wrap"
                 margin="0 -1rem -1rem"
->
+              >
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#024A8F"
-                                                label="Single Game"
-                                                value="$1,000"
-                                />
+                  <LegendItem
+                    color="#024A8F"
+                    label="Single Game"
+                    value="$1,000"
+                  />
                 </FlexItem>
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#2670AE"
-                                                label="Group Tickets"
-                                                value="$1,000"
-                                />
+                  <LegendItem
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="$1,000"
+                  />
                 </FlexItem>
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#4B98CF"
-                                                label="Single Suites"
-                                                value="$1,000"
-                                />
+                  <LegendItem
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="$1,000"
+                  />
                 </FlexItem>
-</Flex>,
+              </Flex>,
             ],
           },
           "ref": null,
@@ -562,33 +576,33 @@ ShallowWrapper {
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#024A8F"
-                                        label="Single Game"
-                                        value="$1,000"
+                      color="#024A8F"
+                      label="Single Game"
+                      value="$1,000"
                     />
-</FlexItem>,
+                  </FlexItem>,
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#2670AE"
-                                        label="Group Tickets"
-                                        value="$1,000"
+                      color="#2670AE"
+                      label="Group Tickets"
+                      value="$1,000"
                     />
-</FlexItem>,
+                  </FlexItem>,
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#4B98CF"
-                                        label="Single Suites"
-                                        value="$1,000"
+                      color="#4B98CF"
+                      label="Single Suites"
+                      value="$1,000"
                     />
-</FlexItem>,
+                  </FlexItem>,
                 ],
                 "flexWrap": "wrap",
                 "margin": "0 -1rem -1rem",
@@ -604,7 +618,7 @@ ShallowWrapper {
                       color="#024A8F"
                       label="Single Game"
                       value="$1,000"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -633,7 +647,7 @@ ShallowWrapper {
                       color="#2670AE"
                       label="Group Tickets"
                       value="$1,000"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -662,7 +676,7 @@ ShallowWrapper {
                       color="#4B98CF"
                       label="Single Suites"
                       value="$1,000"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -722,38 +736,52 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RevenueBreakdown
     revenueStatActions={
-        Object {
-            "fetch": [Function],
-            "reset": [Function],
-          }
-    }
-    revenueStatState={
-        Object {
-            "loading": false,
-            "ticketBreakdown": Array [
+      Object {
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [
               Object {
-                "id": 1,
-                "inventory": 10000,
-                "name": "Single Game",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 2,
-                "inventory": 5000,
-                "name": "Group Tickets",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 3,
-                "inventory": 7000,
-                "name": "Single Suites",
-                "revenue": 1000,
+                "seasonId": undefined,
               },
             ],
-          }
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "reset": [MockFunction],
+      }
+    }
+    revenueStatState={
+      Object {
+        "loading": false,
+        "ticketBreakdown": Array [
+          Object {
+            "id": 1,
+            "inventory": 10000,
+            "name": "Single Game",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 2,
+            "inventory": 5000,
+            "name": "Group Tickets",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 3,
+            "inventory": 7000,
+            "name": "Single Suites",
+            "revenue": 1000,
+          },
+        ],
+      }
     }
     type="inventory"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -771,67 +799,67 @@ ShallowWrapper {
       "children": Array [
         <styled.p>
           Tickets Sold Breakdown
-</styled.p>,
+        </styled.p>,
         <styled.div
           height="0.75rem"
-/>,
-        <Unknown>
-          <Unknown
-                    colors={
-                              Array [
-                                        "#024A8F",
-                                        "#2670AE",
-                                        "#4B98CF",
-                                        "#7CBCDD",
-                                        "#C4D2E1",
-                                        "#817CB8",
-                                        "#621F95",
-                                      ]
-                    }
-                    data={
-                              Array [
-                                        undefined,
-                                        undefined,
-                                        undefined,
-                                      ]
-                    }
+        />,
+        <React.Fragment>
+          <HorizontalBars
+            colors={
+              Array [
+                "#024A8F",
+                "#2670AE",
+                "#4B98CF",
+                "#7CBCDD",
+                "#C4D2E1",
+                "#817CB8",
+                "#621F95",
+              ]
+            }
+            data={
+              Array [
+                undefined,
+                undefined,
+                undefined,
+              ]
+            }
           />
           <Flex
-                    flexWrap="wrap"
-                    margin="0 -1rem -1rem"
+            flexWrap="wrap"
+            margin="0 -1rem -1rem"
           >
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#024A8F"
-                                        label="Single Game"
-                                        value="--"
-                              />
-                    </FlexItem>
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#2670AE"
-                                        label="Group Tickets"
-                                        value="--"
-                              />
-                    </FlexItem>
-                    <FlexItem
-                              flex="0 0 auto"
-                              padding="1rem"
-                    >
-                              <LegendItem
-                                        color="#4B98CF"
-                                        label="Single Suites"
-                                        value="--"
-                              />
-                    </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#024A8F"
+                label="Single Game"
+                value="--"
+              />
+            </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#2670AE"
+                label="Group Tickets"
+                value="--"
+              />
+            </FlexItem>
+            <FlexItem
+              flex="0 0 auto"
+              padding="1rem"
+            >
+              <LegendItem
+                color="#4B98CF"
+                label="Single Suites"
+                value="--"
+              />
+            </FlexItem>
           </Flex>
-</Unknown>,
+        </React.Fragment>,
       ],
     },
     "ref": null,
@@ -864,61 +892,61 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": Array [
-            <Unknown
+            <HorizontalBars
               colors={
-                            Array [
-                                          "#024A8F",
-                                          "#2670AE",
-                                          "#4B98CF",
-                                          "#7CBCDD",
-                                          "#C4D2E1",
-                                          "#817CB8",
-                                          "#621F95",
-                                        ]
+                Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ]
               }
               data={
-                            Array [
-                                          undefined,
-                                          undefined,
-                                          undefined,
-                                        ]
+                Array [
+                  undefined,
+                  undefined,
+                  undefined,
+                ]
               }
-/>,
+            />,
             <Flex
               flexWrap="wrap"
               margin="0 -1rem -1rem"
->
+            >
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#024A8F"
-                                          label="Single Game"
-                                          value="--"
-                            />
+                <LegendItem
+                  color="#024A8F"
+                  label="Single Game"
+                  value="--"
+                />
               </FlexItem>
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#2670AE"
-                                          label="Group Tickets"
-                                          value="--"
-                            />
+                <LegendItem
+                  color="#2670AE"
+                  label="Group Tickets"
+                  value="--"
+                />
               </FlexItem>
               <FlexItem
-                            flex="0 0 auto"
-                            padding="1rem"
+                flex="0 0 auto"
+                padding="1rem"
               >
-                            <LegendItem
-                                          color="#4B98CF"
-                                          label="Single Suites"
-                                          value="--"
-                            />
+                <LegendItem
+                  color="#4B98CF"
+                  label="Single Suites"
+                  value="--"
+                />
               </FlexItem>
-</Flex>,
+            </Flex>,
           ],
         },
         "ref": null,
@@ -956,33 +984,33 @@ ShallowWrapper {
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#024A8F"
-                                    label="Single Game"
-                                    value="--"
+                    color="#024A8F"
+                    label="Single Game"
+                    value="--"
                   />
-</FlexItem>,
+                </FlexItem>,
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#2670AE"
-                                    label="Group Tickets"
-                                    value="--"
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="--"
                   />
-</FlexItem>,
+                </FlexItem>,
                 <FlexItem
                   flex="0 0 auto"
                   padding="1rem"
->
+                >
                   <LegendItem
-                                    color="#4B98CF"
-                                    label="Single Suites"
-                                    value="--"
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="--"
                   />
-</FlexItem>,
+                </FlexItem>,
               ],
               "flexWrap": "wrap",
               "margin": "0 -1rem -1rem",
@@ -998,7 +1026,7 @@ ShallowWrapper {
                     color="#024A8F"
                     label="Single Game"
                     value="--"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -1027,7 +1055,7 @@ ShallowWrapper {
                     color="#2670AE"
                     label="Group Tickets"
                     value="--"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -1056,7 +1084,7 @@ ShallowWrapper {
                     color="#4B98CF"
                     label="Single Suites"
                     value="--"
-/>,
+                  />,
                   "flex": "0 0 auto",
                   "padding": "1rem",
                 },
@@ -1094,67 +1122,67 @@ ShallowWrapper {
         "children": Array [
           <styled.p>
             Tickets Sold Breakdown
-</styled.p>,
+          </styled.p>,
           <styled.div
             height="0.75rem"
-/>,
-          <Unknown>
-            <Unknown
-                        colors={
-                                    Array [
-                                                "#024A8F",
-                                                "#2670AE",
-                                                "#4B98CF",
-                                                "#7CBCDD",
-                                                "#C4D2E1",
-                                                "#817CB8",
-                                                "#621F95",
-                                              ]
-                        }
-                        data={
-                                    Array [
-                                                undefined,
-                                                undefined,
-                                                undefined,
-                                              ]
-                        }
+          />,
+          <React.Fragment>
+            <HorizontalBars
+              colors={
+                Array [
+                  "#024A8F",
+                  "#2670AE",
+                  "#4B98CF",
+                  "#7CBCDD",
+                  "#C4D2E1",
+                  "#817CB8",
+                  "#621F95",
+                ]
+              }
+              data={
+                Array [
+                  undefined,
+                  undefined,
+                  undefined,
+                ]
+              }
             />
             <Flex
-                        flexWrap="wrap"
-                        margin="0 -1rem -1rem"
+              flexWrap="wrap"
+              margin="0 -1rem -1rem"
             >
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#024A8F"
-                                                label="Single Game"
-                                                value="--"
-                                    />
-                        </FlexItem>
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#2670AE"
-                                                label="Group Tickets"
-                                                value="--"
-                                    />
-                        </FlexItem>
-                        <FlexItem
-                                    flex="0 0 auto"
-                                    padding="1rem"
-                        >
-                                    <LegendItem
-                                                color="#4B98CF"
-                                                label="Single Suites"
-                                                value="--"
-                                    />
-                        </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#024A8F"
+                  label="Single Game"
+                  value="--"
+                />
+              </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#2670AE"
+                  label="Group Tickets"
+                  value="--"
+                />
+              </FlexItem>
+              <FlexItem
+                flex="0 0 auto"
+                padding="1rem"
+              >
+                <LegendItem
+                  color="#4B98CF"
+                  label="Single Suites"
+                  value="--"
+                />
+              </FlexItem>
             </Flex>
-</Unknown>,
+          </React.Fragment>,
         ],
       },
       "ref": null,
@@ -1187,61 +1215,61 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <Unknown
+              <HorizontalBars
                 colors={
-                                Array [
-                                                "#024A8F",
-                                                "#2670AE",
-                                                "#4B98CF",
-                                                "#7CBCDD",
-                                                "#C4D2E1",
-                                                "#817CB8",
-                                                "#621F95",
-                                              ]
+                  Array [
+                    "#024A8F",
+                    "#2670AE",
+                    "#4B98CF",
+                    "#7CBCDD",
+                    "#C4D2E1",
+                    "#817CB8",
+                    "#621F95",
+                  ]
                 }
                 data={
-                                Array [
-                                                undefined,
-                                                undefined,
-                                                undefined,
-                                              ]
+                  Array [
+                    undefined,
+                    undefined,
+                    undefined,
+                  ]
                 }
-/>,
+              />,
               <Flex
                 flexWrap="wrap"
                 margin="0 -1rem -1rem"
->
+              >
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#024A8F"
-                                                label="Single Game"
-                                                value="--"
-                                />
+                  <LegendItem
+                    color="#024A8F"
+                    label="Single Game"
+                    value="--"
+                  />
                 </FlexItem>
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#2670AE"
-                                                label="Group Tickets"
-                                                value="--"
-                                />
+                  <LegendItem
+                    color="#2670AE"
+                    label="Group Tickets"
+                    value="--"
+                  />
                 </FlexItem>
                 <FlexItem
-                                flex="0 0 auto"
-                                padding="1rem"
+                  flex="0 0 auto"
+                  padding="1rem"
                 >
-                                <LegendItem
-                                                color="#4B98CF"
-                                                label="Single Suites"
-                                                value="--"
-                                />
+                  <LegendItem
+                    color="#4B98CF"
+                    label="Single Suites"
+                    value="--"
+                  />
                 </FlexItem>
-</Flex>,
+              </Flex>,
             ],
           },
           "ref": null,
@@ -1279,33 +1307,33 @@ ShallowWrapper {
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#024A8F"
-                                        label="Single Game"
-                                        value="--"
+                      color="#024A8F"
+                      label="Single Game"
+                      value="--"
                     />
-</FlexItem>,
+                  </FlexItem>,
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#2670AE"
-                                        label="Group Tickets"
-                                        value="--"
+                      color="#2670AE"
+                      label="Group Tickets"
+                      value="--"
                     />
-</FlexItem>,
+                  </FlexItem>,
                   <FlexItem
                     flex="0 0 auto"
                     padding="1rem"
->
+                  >
                     <LegendItem
-                                        color="#4B98CF"
-                                        label="Single Suites"
-                                        value="--"
+                      color="#4B98CF"
+                      label="Single Suites"
+                      value="--"
                     />
-</FlexItem>,
+                  </FlexItem>,
                 ],
                 "flexWrap": "wrap",
                 "margin": "0 -1rem -1rem",
@@ -1321,7 +1349,7 @@ ShallowWrapper {
                       color="#024A8F"
                       label="Single Game"
                       value="--"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -1350,7 +1378,7 @@ ShallowWrapper {
                       color="#2670AE"
                       label="Group Tickets"
                       value="--"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -1379,7 +1407,7 @@ ShallowWrapper {
                       color="#4B98CF"
                       label="Single Suites"
                       value="--"
-/>,
+                    />,
                     "flex": "0 0 auto",
                     "padding": "1rem",
                   },
@@ -1439,38 +1467,52 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RevenueBreakdown
     revenueStatActions={
-        Object {
-            "fetch": [Function],
-            "reset": [Function],
-          }
-    }
-    revenueStatState={
-        Object {
-            "loading": true,
-            "ticketBreakdown": Array [
+      Object {
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [
               Object {
-                "id": 1,
-                "inventory": 10000,
-                "name": "Single Game",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 2,
-                "inventory": 5000,
-                "name": "Group Tickets",
-                "revenue": 1000,
-              },
-              Object {
-                "id": 3,
-                "inventory": 7000,
-                "name": "Single Suites",
-                "revenue": 1000,
+                "seasonId": undefined,
               },
             ],
-          }
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "reset": [MockFunction],
+      }
+    }
+    revenueStatState={
+      Object {
+        "loading": true,
+        "ticketBreakdown": Array [
+          Object {
+            "id": 1,
+            "inventory": 10000,
+            "name": "Single Game",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 2,
+            "inventory": 5000,
+            "name": "Group Tickets",
+            "revenue": 1000,
+          },
+          Object {
+            "id": 3,
+            "inventory": 7000,
+            "name": "Single Suites",
+            "revenue": 1000,
+          },
+        ],
+      }
     }
     type="revenue"
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

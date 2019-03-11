@@ -3,9 +3,9 @@
 exports[`<EventOverview /> index route should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <EventOverview
     event={Object {}}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -22,22 +22,22 @@ ShallowWrapper {
     "props": Object {
       "children": <styled.div
         padding="1.5rem 2rem"
->
+      >
         <Connect(withSidebarEventHeader)
-                availableInventory={15000}
-                totalInventory={40000}
+          availableInventory={15000}
+          totalInventory={40000}
         />
         <styled.div
-                height="1rem"
+          height="1rem"
         />
         <Connect(EventChart)
-                event={Object {}}
+          event={Object {}}
         />
         <styled.div
-                height="2rem"
+          height="2rem"
         />
         <Connect(TicketIntegrationsPresenter) />
-</styled.div>,
+      </styled.div>,
     },
     "ref": null,
     "rendered": Object {
@@ -49,16 +49,16 @@ ShallowWrapper {
           <Connect(withSidebarEventHeader)
             availableInventory={15000}
             totalInventory={40000}
-/>,
+          />,
           <styled.div
             height="1rem"
-/>,
+          />,
           <Connect(EventChart)
             event={Object {}}
-/>,
+          />,
           <styled.div
             height="2rem"
-/>,
+          />,
           <Connect(TicketIntegrationsPresenter) />,
         ],
         "padding": "1.5rem 2rem",
@@ -132,22 +132,22 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.div
           padding="1.5rem 2rem"
->
+        >
           <Connect(withSidebarEventHeader)
-                    availableInventory={15000}
-                    totalInventory={40000}
+            availableInventory={15000}
+            totalInventory={40000}
           />
           <styled.div
-                    height="1rem"
+            height="1rem"
           />
           <Connect(EventChart)
-                    event={Object {}}
+            event={Object {}}
           />
           <styled.div
-                    height="2rem"
+            height="2rem"
           />
           <Connect(TicketIntegrationsPresenter) />
-</styled.div>,
+        </styled.div>,
       },
       "ref": null,
       "rendered": Object {
@@ -159,16 +159,16 @@ ShallowWrapper {
             <Connect(withSidebarEventHeader)
               availableInventory={15000}
               totalInventory={40000}
-/>,
+            />,
             <styled.div
               height="1rem"
-/>,
+            />,
             <Connect(EventChart)
               event={Object {}}
-/>,
+            />,
             <styled.div
               height="2rem"
-/>,
+            />,
             <Connect(TicketIntegrationsPresenter) />,
           ],
           "padding": "1.5rem 2rem",

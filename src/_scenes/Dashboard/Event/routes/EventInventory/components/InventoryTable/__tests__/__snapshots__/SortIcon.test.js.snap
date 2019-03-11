@@ -3,11 +3,11 @@
 exports[`<SortIcon /> should render correctly when filtered asc 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <SortIcon
     filterDirection="asc"
     isFiltered={true}
-    onClick={[Function]}
-/>,
+    onClick={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -28,21 +28,21 @@ ShallowWrapper {
           fill="#38A9DB"
           height={14}
           styles={
-                    Object {
-                              "marginBottom": -4,
-                            }
+            Object {
+              "marginBottom": -4,
+            }
           }
           width={14}
-/>,
+        />,
         <ExpandMoreIcon
           fill="#323232"
           height={14}
           width={14}
-/>,
+        />,
       ],
       "direction": "column",
       "justify": "center",
-      "onClick": [Function],
+      "onClick": [MockFunction],
     },
     "ref": null,
     "rendered": Array [
@@ -90,21 +90,21 @@ ShallowWrapper {
             fill="#38A9DB"
             height={14}
             styles={
-                        Object {
-                                    "marginBottom": -4,
-                                  }
+              Object {
+                "marginBottom": -4,
+              }
             }
             width={14}
-/>,
+          />,
           <ExpandMoreIcon
             fill="#323232"
             height={14}
             width={14}
-/>,
+          />,
         ],
         "direction": "column",
         "justify": "center",
-        "onClick": [Function],
+        "onClick": [MockFunction],
       },
       "ref": null,
       "rendered": Array [
@@ -168,11 +168,11 @@ ShallowWrapper {
 exports[`<SortIcon /> should render correctly when filtered desc 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <SortIcon
     filterDirection="desc"
     isFiltered={true}
-    onClick={[Function]}
-/>,
+    onClick={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -193,21 +193,21 @@ ShallowWrapper {
           fill="#323232"
           height={14}
           styles={
-                    Object {
-                              "marginBottom": -4,
-                            }
+            Object {
+              "marginBottom": -4,
+            }
           }
           width={14}
-/>,
+        />,
         <ExpandMoreIcon
           fill="#38A9DB"
           height={14}
           width={14}
-/>,
+        />,
       ],
       "direction": "column",
       "justify": "center",
-      "onClick": [Function],
+      "onClick": [MockFunction],
     },
     "ref": null,
     "rendered": Array [
@@ -255,21 +255,21 @@ ShallowWrapper {
             fill="#323232"
             height={14}
             styles={
-                        Object {
-                                    "marginBottom": -4,
-                                  }
+              Object {
+                "marginBottom": -4,
+              }
             }
             width={14}
-/>,
+          />,
           <ExpandMoreIcon
             fill="#38A9DB"
             height={14}
             width={14}
-/>,
+          />,
         ],
         "direction": "column",
         "justify": "center",
-        "onClick": [Function],
+        "onClick": [MockFunction],
       },
       "ref": null,
       "rendered": Array [
@@ -333,11 +333,11 @@ ShallowWrapper {
 exports[`<SortIcon /> should render correctly when not filtered 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <SortIcon
     filterDirection="asc"
     isFiltered={false}
-    onClick={[Function]}
-/>,
+    onClick={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -358,21 +358,21 @@ ShallowWrapper {
           fill="#323232"
           height={14}
           styles={
-                    Object {
-                              "marginBottom": -4,
-                            }
+            Object {
+              "marginBottom": -4,
+            }
           }
           width={14}
-/>,
+        />,
         <ExpandMoreIcon
           fill="#323232"
           height={14}
           width={14}
-/>,
+        />,
       ],
       "direction": "column",
       "justify": "center",
-      "onClick": [Function],
+      "onClick": [MockFunction],
     },
     "ref": null,
     "rendered": Array [
@@ -420,21 +420,21 @@ ShallowWrapper {
             fill="#323232"
             height={14}
             styles={
-                        Object {
-                                    "marginBottom": -4,
-                                  }
+              Object {
+                "marginBottom": -4,
+              }
             }
             width={14}
-/>,
+          />,
           <ExpandMoreIcon
             fill="#323232"
             height={14}
             width={14}
-/>,
+          />,
         ],
         "direction": "column",
         "justify": "center",
-        "onClick": [Function],
+        "onClick": [MockFunction],
       },
       "ref": null,
       "rendered": Array [

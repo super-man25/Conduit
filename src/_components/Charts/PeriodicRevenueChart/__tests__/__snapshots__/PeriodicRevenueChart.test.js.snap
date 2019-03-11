@@ -3,25 +3,25 @@
 exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <PeriodicRevenueChart
     data={
-        Array [
-            Object {
-              "eventId": 1,
-              "id": 1,
-              "inventory": 100,
-              "isProjected": false,
-              "periodicInventory": 100,
-              "periodicRevenue": 100,
-              "revenue": 100,
-              "timestamp": 1529336865706,
-            },
-          ]
+      Array [
+        Object {
+          "eventId": 1,
+          "id": 1,
+          "inventory": 100,
+          "isProjected": false,
+          "periodicInventory": 100,
+          "periodicRevenue": 100,
+          "revenue": 100,
+          "timestamp": 1529336865706,
+        },
+      ]
     }
     dateFormat="MMM DD, YYYY"
     height={400}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -40,225 +40,225 @@ ShallowWrapper {
         debounce={100}
         height={400}
         width="100%"
->
+      >
         <BarChart
-                barCategoryGap="10%"
-                barGap={4}
-                data={
-                        Array [
-                                Object {
-                                  "isProjected": false,
-                                  "periodicRevenue": 100,
-                                  "timestamp": 1529336865706,
-                                },
-                              ]
-                }
-                layout="horizontal"
-                margin={
-                        Object {
-                                "bottom": 5,
-                                "left": 5,
-                                "right": 5,
-                                "top": 5,
-                              }
-                }
-                reverseStackOrder={false}
-                stackOffset="none"
+          barCategoryGap="10%"
+          barGap={4}
+          data={
+            Array [
+              Object {
+                "isProjected": false,
+                "periodicRevenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
+          }
+          layout="horizontal"
+          margin={
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
+          }
+          reverseStackOrder={false}
+          stackOffset="none"
         >
-                <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
-                />
-                <ReferenceLine
-                        fill="none"
-                        fillOpacity={1}
-                        ifOverflow="discard"
-                        isFront={false}
-                        stroke="#2670AE"
-                        strokeWidth={1}
-                        xAxisId={0}
-                        y={0}
-                        yAxisId={0}
-                />
-                <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                Array [
-                                        0,
-                                        "auto",
-                                      ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
-                >
-                        <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Date"
-                        />
-                </XAxis>
-                <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
-                >
-                        <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Revenue"
-                        />
-                </YAxis>
-                <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="periodicRevenue"
-                        fill="#024A8F"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="projectedPeriodicRevenue"
-                        fill="#38A9DB"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Tooltip
-                        active={false}
-                        animationDuration={500}
-                        animationEasing="ease"
-                        content={
-                                <PeriodicRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                                />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                        }
-                        cursor={
-                                Object {
-                                        "fill": "#4B98CF",
-                                        "opacity": 0.4,
-                                      }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                        }
-                        wrapperStyle={Object {}}
-                />
+          <CartesianGrid
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
+          />
+          <ReferenceLine
+            fill="none"
+            fillOpacity={1}
+            ifOverflow="discard"
+            isFront={false}
+            stroke="#2670AE"
+            strokeWidth={1}
+            xAxisId={0}
+            y={0}
+            yAxisId={0}
+          />
+          <XAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
+          >
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
+          </XAxis>
+          <YAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
+          >
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
+          </YAxis>
+          <Bar
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="periodicRevenue"
+            fill="#024A8F"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Bar
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="projectedPeriodicRevenue"
+            fill="#38A9DB"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Tooltip
+            active={false}
+            animationDuration={500}
+            animationEasing="ease"
+            content={
+              <PeriodicRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "fill": "#4B98CF",
+                "opacity": 0.4,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
+          />
         </BarChart>
-</ResponsiveContainer>,
+      </ResponsiveContainer>,
     },
     "ref": null,
     "rendered": Object {
@@ -270,219 +270,219 @@ ShallowWrapper {
           barCategoryGap="10%"
           barGap={4}
           data={
-                    Array [
-                              Object {
-                                "isProjected": false,
-                                "periodicRevenue": 100,
-                                "timestamp": 1529336865706,
-                              },
-                            ]
+            Array [
+              Object {
+                "isProjected": false,
+                "periodicRevenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
           }
           layout="horizontal"
           margin={
-                    Object {
-                              "bottom": 5,
-                              "left": 5,
-                              "right": 5,
-                              "top": 5,
-                            }
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
           }
           reverseStackOrder={false}
           stackOffset="none"
->
+        >
           <CartesianGrid
-                    fill="none"
-                    horizontal={true}
-                    horizontalFill={Array []}
-                    horizontalPoints={Array []}
-                    stroke="#ccc"
-                    vertical={false}
-                    verticalFill={Array []}
-                    verticalPoints={Array []}
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
           />
           <ReferenceLine
-                    fill="none"
-                    fillOpacity={1}
-                    ifOverflow="discard"
-                    isFront={false}
-                    stroke="#2670AE"
-                    strokeWidth={1}
-                    xAxisId={0}
-                    y={0}
-                    yAxisId={0}
+            fill="none"
+            fillOpacity={1}
+            ifOverflow="discard"
+            isFront={false}
+            stroke="#2670AE"
+            strokeWidth={1}
+            xAxisId={0}
+            y={0}
+            yAxisId={0}
           />
           <XAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    dataKey="timestamp"
-                    domain={
-                              Array [
-                                        0,
-                                        "auto",
-                                      ]
-                    }
-                    height={30}
-                    hide={false}
-                    mirror={false}
-                    orientation="bottom"
-                    padding={
-                              Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={5}
-                    tickFormatter={[Function]}
-                    type="category"
-                    width={0}
-                    xAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
           >
-                    <Label
-                              offset={-5}
-                              position="insideBottom"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Date"
-                    />
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
           </XAxis>
           <YAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    axisLine={false}
-                    domain={
-                              Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                    }
-                    height={0}
-                    hide={false}
-                    mirror={false}
-                    orientation="left"
-                    padding={
-                              Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={10}
-                    tickFormatter={[Function]}
-                    tickLine={false}
-                    type="number"
-                    width={60}
-                    yAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
           >
-                    <Label
-                              angle={-90}
-                              offset={5}
-                              position="insideLeft"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Revenue"
-                    />
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
           </YAxis>
           <Bar
-                    animationBegin={0}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    data={Array []}
-                    dataKey="periodicRevenue"
-                    fill="#024A8F"
-                    hide={false}
-                    isAnimationActive={true}
-                    layout="vertical"
-                    legendType="rect"
-                    minPointSize={0}
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    stackId="a"
-                    xAxisId={0}
-                    yAxisId={0}
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="periodicRevenue"
+            fill="#024A8F"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Bar
-                    animationBegin={0}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    data={Array []}
-                    dataKey="projectedPeriodicRevenue"
-                    fill="#38A9DB"
-                    hide={false}
-                    isAnimationActive={true}
-                    layout="vertical"
-                    legendType="rect"
-                    minPointSize={0}
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    stackId="a"
-                    xAxisId={0}
-                    yAxisId={0}
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="projectedPeriodicRevenue"
+            fill="#38A9DB"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Tooltip
-                    active={false}
-                    animationDuration={500}
-                    animationEasing="ease"
-                    content={
-                              <PeriodicRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                              />
-                    }
-                    contentStyle={Object {}}
-                    coordinate={
-                              Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                    }
-                    cursor={
-                              Object {
-                                        "fill": "#4B98CF",
-                                        "opacity": 0.4,
-                                      }
-                    }
-                    cursorStyle={Object {}}
-                    filterNull={true}
-                    isAnimationActive={true}
-                    itemSorter={[Function]}
-                    itemStyle={Object {}}
-                    labelStyle={Object {}}
-                    offset={10}
-                    separator=" : "
-                    useTranslate3d={false}
-                    viewBox={
-                              Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                    }
-                    wrapperStyle={Object {}}
+            active={false}
+            animationDuration={500}
+            animationEasing="ease"
+            content={
+              <PeriodicRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "fill": "#4B98CF",
+                "opacity": 0.4,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
           />
-</BarChart>,
+        </BarChart>,
         "debounce": 100,
         "height": 400,
         "width": "100%",
@@ -505,7 +505,7 @@ ShallowWrapper {
               vertical={false}
               verticalFill={Array []}
               verticalPoints={Array []}
-/>,
+            />,
             <ReferenceLine
               fill="none"
               fillOpacity={1}
@@ -516,80 +516,80 @@ ShallowWrapper {
               xAxisId={0}
               y={0}
               yAxisId={0}
-/>,
+            />,
             <XAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               dataKey="timestamp"
               domain={
-                            Array [
-                                          0,
-                                          "auto",
-                                        ]
+                Array [
+                  0,
+                  "auto",
+                ]
               }
               height={30}
               hide={false}
               mirror={false}
               orientation="bottom"
               padding={
-                            Object {
-                                          "left": 0,
-                                          "right": 0,
-                                        }
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={5}
               tickFormatter={[Function]}
               type="category"
               width={0}
               xAxisId={0}
->
+            >
               <Label
-                            offset={-5}
-                            position="insideBottom"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Date"
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
               />
-</XAxis>,
+            </XAxis>,
             <YAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               axisLine={false}
               domain={
-                            Array [
-                                          "auto",
-                                          "auto",
-                                        ]
+                Array [
+                  "auto",
+                  "auto",
+                ]
               }
               height={0}
               hide={false}
               mirror={false}
               orientation="left"
               padding={
-                            Object {
-                                          "bottom": 0,
-                                          "top": 0,
-                                        }
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={10}
               tickFormatter={[Function]}
@@ -597,20 +597,20 @@ ShallowWrapper {
               type="number"
               width={60}
               yAxisId={0}
->
+            >
               <Label
-                            angle={-90}
-                            offset={5}
-                            position="insideLeft"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Revenue"
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
               />
-</YAxis>,
+            </YAxis>,
             <Bar
               animationBegin={0}
               animationDuration={400}
@@ -628,7 +628,7 @@ ShallowWrapper {
               stackId="a"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Bar
               animationBegin={0}
               animationDuration={400}
@@ -646,28 +646,28 @@ ShallowWrapper {
               stackId="a"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Tooltip
               active={false}
               animationDuration={500}
               animationEasing="ease"
               content={
-                            <PeriodicRevenueTooltip
-                                          dateFormat="MMM DD, YYYY"
-                            />
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
               }
               contentStyle={Object {}}
               coordinate={
-                            Object {
-                                          "x": 0,
-                                          "y": 0,
-                                        }
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
               }
               cursor={
-                            Object {
-                                          "fill": "#4B98CF",
-                                          "opacity": 0.4,
-                                        }
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
               }
               cursorStyle={Object {}}
               filterNull={true}
@@ -679,15 +679,15 @@ ShallowWrapper {
               separator=" : "
               useTranslate3d={false}
               viewBox={
-                            Object {
-                                          "x1": 0,
-                                          "x2": 0,
-                                          "y1": 0,
-                                          "y2": 0,
-                                        }
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
               }
               wrapperStyle={Object {}}
-/>,
+            />,
           ],
           "data": Array [
             Object {
@@ -757,13 +757,13 @@ ShallowWrapper {
                 offset={-5}
                 position="insideBottom"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Date"
-/>,
+              />,
               "dataKey": "timestamp",
               "domain": Array [
                 0,
@@ -822,13 +822,13 @@ ShallowWrapper {
                 offset={5}
                 position="insideLeft"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Revenue"
-/>,
+              />,
               "domain": Array [
                 "auto",
                 "auto",
@@ -936,7 +936,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "content": <PeriodicRevenueTooltip
                 dateFormat="MMM DD, YYYY"
-/>,
+              />,
               "contentStyle": Object {},
               "coordinate": Object {
                 "x": 0,
@@ -984,225 +984,225 @@ ShallowWrapper {
           debounce={100}
           height={400}
           width="100%"
->
+        >
           <BarChart
-                    barCategoryGap="10%"
-                    barGap={4}
-                    data={
-                              Array [
-                                        Object {
-                                          "isProjected": false,
-                                          "periodicRevenue": 100,
-                                          "timestamp": 1529336865706,
-                                        },
-                                      ]
-                    }
-                    layout="horizontal"
-                    margin={
-                              Object {
-                                        "bottom": 5,
-                                        "left": 5,
-                                        "right": 5,
-                                        "top": 5,
-                                      }
-                    }
-                    reverseStackOrder={false}
-                    stackOffset="none"
+            barCategoryGap="10%"
+            barGap={4}
+            data={
+              Array [
+                Object {
+                  "isProjected": false,
+                  "periodicRevenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
+            }
+            layout="horizontal"
+            margin={
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
+            }
+            reverseStackOrder={false}
+            stackOffset="none"
           >
-                    <CartesianGrid
-                              fill="none"
-                              horizontal={true}
-                              horizontalFill={Array []}
-                              horizontalPoints={Array []}
-                              stroke="#ccc"
-                              vertical={false}
-                              verticalFill={Array []}
-                              verticalPoints={Array []}
-                    />
-                    <ReferenceLine
-                              fill="none"
-                              fillOpacity={1}
-                              ifOverflow="discard"
-                              isFront={false}
-                              stroke="#2670AE"
-                              strokeWidth={1}
-                              xAxisId={0}
-                              y={0}
-                              yAxisId={0}
-                    />
-                    <XAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              dataKey="timestamp"
-                              domain={
-                                        Array [
-                                                  0,
-                                                  "auto",
-                                                ]
-                              }
-                              height={30}
-                              hide={false}
-                              mirror={false}
-                              orientation="bottom"
-                              padding={
-                                        Object {
-                                                  "left": 0,
-                                                  "right": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={5}
-                              tickFormatter={[Function]}
-                              type="category"
-                              width={0}
-                              xAxisId={0}
-                    >
-                              <Label
-                                        offset={-5}
-                                        position="insideBottom"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Date"
-                              />
-                    </XAxis>
-                    <YAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              axisLine={false}
-                              domain={
-                                        Array [
-                                                  "auto",
-                                                  "auto",
-                                                ]
-                              }
-                              height={0}
-                              hide={false}
-                              mirror={false}
-                              orientation="left"
-                              padding={
-                                        Object {
-                                                  "bottom": 0,
-                                                  "top": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={10}
-                              tickFormatter={[Function]}
-                              tickLine={false}
-                              type="number"
-                              width={60}
-                              yAxisId={0}
-                    >
-                              <Label
-                                        angle={-90}
-                                        offset={5}
-                                        position="insideLeft"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Revenue"
-                              />
-                    </YAxis>
-                    <Bar
-                              animationBegin={0}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              data={Array []}
-                              dataKey="periodicRevenue"
-                              fill="#024A8F"
-                              hide={false}
-                              isAnimationActive={true}
-                              layout="vertical"
-                              legendType="rect"
-                              minPointSize={0}
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              stackId="a"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Bar
-                              animationBegin={0}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              data={Array []}
-                              dataKey="projectedPeriodicRevenue"
-                              fill="#38A9DB"
-                              hide={false}
-                              isAnimationActive={true}
-                              layout="vertical"
-                              legendType="rect"
-                              minPointSize={0}
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              stackId="a"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Tooltip
-                              active={false}
-                              animationDuration={500}
-                              animationEasing="ease"
-                              content={
-                                        <PeriodicRevenueTooltip
-                                                  dateFormat="MMM DD, YYYY"
-                                        />
-                              }
-                              contentStyle={Object {}}
-                              coordinate={
-                                        Object {
-                                                  "x": 0,
-                                                  "y": 0,
-                                                }
-                              }
-                              cursor={
-                                        Object {
-                                                  "fill": "#4B98CF",
-                                                  "opacity": 0.4,
-                                                }
-                              }
-                              cursorStyle={Object {}}
-                              filterNull={true}
-                              isAnimationActive={true}
-                              itemSorter={[Function]}
-                              itemStyle={Object {}}
-                              labelStyle={Object {}}
-                              offset={10}
-                              separator=" : "
-                              useTranslate3d={false}
-                              viewBox={
-                                        Object {
-                                                  "x1": 0,
-                                                  "x2": 0,
-                                                  "y1": 0,
-                                                  "y2": 0,
-                                                }
-                              }
-                              wrapperStyle={Object {}}
-                    />
+            <CartesianGrid
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
+            />
+            <ReferenceLine
+              fill="none"
+              fillOpacity={1}
+              ifOverflow="discard"
+              isFront={false}
+              stroke="#2670AE"
+              strokeWidth={1}
+              xAxisId={0}
+              y={0}
+              yAxisId={0}
+            />
+            <XAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
+            >
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
+            </XAxis>
+            <YAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
+            >
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
+            </YAxis>
+            <Bar
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="periodicRevenue"
+              fill="#024A8F"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Bar
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="projectedPeriodicRevenue"
+              fill="#38A9DB"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Tooltip
+              active={false}
+              animationDuration={500}
+              animationEasing="ease"
+              content={
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
+            />
           </BarChart>
-</ResponsiveContainer>,
+        </ResponsiveContainer>,
       },
       "ref": null,
       "rendered": Object {
@@ -1214,219 +1214,219 @@ ShallowWrapper {
             barCategoryGap="10%"
             barGap={4}
             data={
-                        Array [
-                                    Object {
-                                      "isProjected": false,
-                                      "periodicRevenue": 100,
-                                      "timestamp": 1529336865706,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "isProjected": false,
+                  "periodicRevenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
             }
             layout="horizontal"
             margin={
-                        Object {
-                                    "bottom": 5,
-                                    "left": 5,
-                                    "right": 5,
-                                    "top": 5,
-                                  }
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
             }
             reverseStackOrder={false}
             stackOffset="none"
->
+          >
             <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
             />
             <ReferenceLine
-                        fill="none"
-                        fillOpacity={1}
-                        ifOverflow="discard"
-                        isFront={false}
-                        stroke="#2670AE"
-                        strokeWidth={1}
-                        xAxisId={0}
-                        y={0}
-                        yAxisId={0}
+              fill="none"
+              fillOpacity={1}
+              ifOverflow="discard"
+              isFront={false}
+              stroke="#2670AE"
+              strokeWidth={1}
+              xAxisId={0}
+              y={0}
+              yAxisId={0}
             />
             <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                    Array [
-                                                0,
-                                                "auto",
-                                              ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                    Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
             >
-                        <Label
-                                    offset={-5}
-                                    position="insideBottom"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Date"
-                        />
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
             </XAxis>
             <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                    Array [
-                                                "auto",
-                                                "auto",
-                                              ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                    Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
             >
-                        <Label
-                                    angle={-90}
-                                    offset={5}
-                                    position="insideLeft"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Revenue"
-                        />
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
             </YAxis>
             <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="periodicRevenue"
-                        fill="#024A8F"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="periodicRevenue"
+              fill="#024A8F"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="projectedPeriodicRevenue"
-                        fill="#38A9DB"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="projectedPeriodicRevenue"
+              fill="#38A9DB"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Tooltip
-                        active={false}
-                        animationDuration={500}
-                        animationEasing="ease"
-                        content={
-                                    <PeriodicRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                    />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                    Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
-                        }
-                        cursor={
-                                    Object {
-                                                "fill": "#4B98CF",
-                                                "opacity": 0.4,
-                                              }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                    Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
-                        }
-                        wrapperStyle={Object {}}
+              active={false}
+              animationDuration={500}
+              animationEasing="ease"
+              content={
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
             />
-</BarChart>,
+          </BarChart>,
           "debounce": 100,
           "height": 400,
           "width": "100%",
@@ -1449,7 +1449,7 @@ ShallowWrapper {
                 vertical={false}
                 verticalFill={Array []}
                 verticalPoints={Array []}
-/>,
+              />,
               <ReferenceLine
                 fill="none"
                 fillOpacity={1}
@@ -1460,80 +1460,80 @@ ShallowWrapper {
                 xAxisId={0}
                 y={0}
                 yAxisId={0}
-/>,
+              />,
               <XAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 dataKey="timestamp"
                 domain={
-                                Array [
-                                                0,
-                                                "auto",
-                                              ]
+                  Array [
+                    0,
+                    "auto",
+                  ]
                 }
                 height={30}
                 hide={false}
                 mirror={false}
                 orientation="bottom"
                 padding={
-                                Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
+                  Object {
+                    "left": 0,
+                    "right": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={5}
                 tickFormatter={[Function]}
                 type="category"
                 width={0}
                 xAxisId={0}
->
+              >
                 <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Date"
+                  offset={-5}
+                  position="insideBottom"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Date"
                 />
-</XAxis>,
+              </XAxis>,
               <YAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 axisLine={false}
                 domain={
-                                Array [
-                                                "auto",
-                                                "auto",
-                                              ]
+                  Array [
+                    "auto",
+                    "auto",
+                  ]
                 }
                 height={0}
                 hide={false}
                 mirror={false}
                 orientation="left"
                 padding={
-                                Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
+                  Object {
+                    "bottom": 0,
+                    "top": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={10}
                 tickFormatter={[Function]}
@@ -1541,20 +1541,20 @@ ShallowWrapper {
                 type="number"
                 width={60}
                 yAxisId={0}
->
+              >
                 <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Revenue"
+                  angle={-90}
+                  offset={5}
+                  position="insideLeft"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Revenue"
                 />
-</YAxis>,
+              </YAxis>,
               <Bar
                 animationBegin={0}
                 animationDuration={400}
@@ -1572,7 +1572,7 @@ ShallowWrapper {
                 stackId="a"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Bar
                 animationBegin={0}
                 animationDuration={400}
@@ -1590,28 +1590,28 @@ ShallowWrapper {
                 stackId="a"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Tooltip
                 active={false}
                 animationDuration={500}
                 animationEasing="ease"
                 content={
-                                <PeriodicRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                />
+                  <PeriodicRevenueTooltip
+                    dateFormat="MMM DD, YYYY"
+                  />
                 }
                 contentStyle={Object {}}
                 coordinate={
-                                Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
                 }
                 cursor={
-                                Object {
-                                                "fill": "#4B98CF",
-                                                "opacity": 0.4,
-                                              }
+                  Object {
+                    "fill": "#4B98CF",
+                    "opacity": 0.4,
+                  }
                 }
                 cursorStyle={Object {}}
                 filterNull={true}
@@ -1623,15 +1623,15 @@ ShallowWrapper {
                 separator=" : "
                 useTranslate3d={false}
                 viewBox={
-                                Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
+                  Object {
+                    "x1": 0,
+                    "x2": 0,
+                    "y1": 0,
+                    "y2": 0,
+                  }
                 }
                 wrapperStyle={Object {}}
-/>,
+              />,
             ],
             "data": Array [
               Object {
@@ -1701,13 +1701,13 @@ ShallowWrapper {
                   offset={-5}
                   position="insideBottom"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Date"
-/>,
+                />,
                 "dataKey": "timestamp",
                 "domain": Array [
                   0,
@@ -1766,13 +1766,13 @@ ShallowWrapper {
                   offset={5}
                   position="insideLeft"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Revenue"
-/>,
+                />,
                 "domain": Array [
                   "auto",
                   "auto",
@@ -1880,7 +1880,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "content": <PeriodicRevenueTooltip
                   dateFormat="MMM DD, YYYY"
-/>,
+                />,
                 "contentStyle": Object {},
                 "coordinate": Object {
                   "x": 0,
@@ -1946,25 +1946,25 @@ ShallowWrapper {
 exports[`<PeriodicRevenueChart /> should render correctly with a different height 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <PeriodicRevenueChart
     data={
-        Array [
-            Object {
-              "eventId": 1,
-              "id": 1,
-              "inventory": 100,
-              "isProjected": false,
-              "periodicInventory": 100,
-              "periodicRevenue": 100,
-              "revenue": 100,
-              "timestamp": 1529336865706,
-            },
-          ]
+      Array [
+        Object {
+          "eventId": 1,
+          "id": 1,
+          "inventory": 100,
+          "isProjected": false,
+          "periodicInventory": 100,
+          "periodicRevenue": 100,
+          "revenue": 100,
+          "timestamp": 1529336865706,
+        },
+      ]
     }
     dateFormat="MMM DD, YYYY"
     height={300}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -1983,225 +1983,225 @@ ShallowWrapper {
         debounce={100}
         height={300}
         width="100%"
->
+      >
         <BarChart
-                barCategoryGap="10%"
-                barGap={4}
-                data={
-                        Array [
-                                Object {
-                                  "isProjected": false,
-                                  "periodicRevenue": 100,
-                                  "timestamp": 1529336865706,
-                                },
-                              ]
-                }
-                layout="horizontal"
-                margin={
-                        Object {
-                                "bottom": 5,
-                                "left": 5,
-                                "right": 5,
-                                "top": 5,
-                              }
-                }
-                reverseStackOrder={false}
-                stackOffset="none"
+          barCategoryGap="10%"
+          barGap={4}
+          data={
+            Array [
+              Object {
+                "isProjected": false,
+                "periodicRevenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
+          }
+          layout="horizontal"
+          margin={
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
+          }
+          reverseStackOrder={false}
+          stackOffset="none"
         >
-                <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
-                />
-                <ReferenceLine
-                        fill="none"
-                        fillOpacity={1}
-                        ifOverflow="discard"
-                        isFront={false}
-                        stroke="#2670AE"
-                        strokeWidth={1}
-                        xAxisId={0}
-                        y={0}
-                        yAxisId={0}
-                />
-                <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                Array [
-                                        0,
-                                        "auto",
-                                      ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
-                >
-                        <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Date"
-                        />
-                </XAxis>
-                <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                Object {
-                                        "fontSize": 10,
-                                      }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
-                >
-                        <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                        Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
-                                }
-                                value="Revenue"
-                        />
-                </YAxis>
-                <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="periodicRevenue"
-                        fill="#024A8F"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="projectedPeriodicRevenue"
-                        fill="#38A9DB"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
-                />
-                <Tooltip
-                        active={false}
-                        animationDuration={500}
-                        animationEasing="ease"
-                        content={
-                                <PeriodicRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                                />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                        }
-                        cursor={
-                                Object {
-                                        "fill": "#4B98CF",
-                                        "opacity": 0.4,
-                                      }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                        }
-                        wrapperStyle={Object {}}
-                />
+          <CartesianGrid
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
+          />
+          <ReferenceLine
+            fill="none"
+            fillOpacity={1}
+            ifOverflow="discard"
+            isFront={false}
+            stroke="#2670AE"
+            strokeWidth={1}
+            xAxisId={0}
+            y={0}
+            yAxisId={0}
+          />
+          <XAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
+          >
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
+          </XAxis>
+          <YAxis
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
+          >
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
+          </YAxis>
+          <Bar
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="periodicRevenue"
+            fill="#024A8F"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Bar
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="projectedPeriodicRevenue"
+            fill="#38A9DB"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
+          />
+          <Tooltip
+            active={false}
+            animationDuration={500}
+            animationEasing="ease"
+            content={
+              <PeriodicRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "fill": "#4B98CF",
+                "opacity": 0.4,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
+          />
         </BarChart>
-</ResponsiveContainer>,
+      </ResponsiveContainer>,
     },
     "ref": null,
     "rendered": Object {
@@ -2213,219 +2213,219 @@ ShallowWrapper {
           barCategoryGap="10%"
           barGap={4}
           data={
-                    Array [
-                              Object {
-                                "isProjected": false,
-                                "periodicRevenue": 100,
-                                "timestamp": 1529336865706,
-                              },
-                            ]
+            Array [
+              Object {
+                "isProjected": false,
+                "periodicRevenue": 100,
+                "timestamp": 1529336865706,
+              },
+            ]
           }
           layout="horizontal"
           margin={
-                    Object {
-                              "bottom": 5,
-                              "left": 5,
-                              "right": 5,
-                              "top": 5,
-                            }
+            Object {
+              "bottom": 5,
+              "left": 5,
+              "right": 5,
+              "top": 5,
+            }
           }
           reverseStackOrder={false}
           stackOffset="none"
->
+        >
           <CartesianGrid
-                    fill="none"
-                    horizontal={true}
-                    horizontalFill={Array []}
-                    horizontalPoints={Array []}
-                    stroke="#ccc"
-                    vertical={false}
-                    verticalFill={Array []}
-                    verticalPoints={Array []}
+            fill="none"
+            horizontal={true}
+            horizontalFill={Array []}
+            horizontalPoints={Array []}
+            stroke="#ccc"
+            vertical={false}
+            verticalFill={Array []}
+            verticalPoints={Array []}
           />
           <ReferenceLine
-                    fill="none"
-                    fillOpacity={1}
-                    ifOverflow="discard"
-                    isFront={false}
-                    stroke="#2670AE"
-                    strokeWidth={1}
-                    xAxisId={0}
-                    y={0}
-                    yAxisId={0}
+            fill="none"
+            fillOpacity={1}
+            ifOverflow="discard"
+            isFront={false}
+            stroke="#2670AE"
+            strokeWidth={1}
+            xAxisId={0}
+            y={0}
+            yAxisId={0}
           />
           <XAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    dataKey="timestamp"
-                    domain={
-                              Array [
-                                        0,
-                                        "auto",
-                                      ]
-                    }
-                    height={30}
-                    hide={false}
-                    mirror={false}
-                    orientation="bottom"
-                    padding={
-                              Object {
-                                        "left": 0,
-                                        "right": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={5}
-                    tickFormatter={[Function]}
-                    type="category"
-                    width={0}
-                    xAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            dataKey="timestamp"
+            domain={
+              Array [
+                0,
+                "auto",
+              ]
+            }
+            height={30}
+            hide={false}
+            mirror={false}
+            orientation="bottom"
+            padding={
+              Object {
+                "left": 0,
+                "right": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={5}
+            tickFormatter={[Function]}
+            type="category"
+            width={0}
+            xAxisId={0}
           >
-                    <Label
-                              offset={-5}
-                              position="insideBottom"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Date"
-                    />
+            <Label
+              offset={-5}
+              position="insideBottom"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Date"
+            />
           </XAxis>
           <YAxis
-                    allowDataOverflow={false}
-                    allowDecimals={true}
-                    allowDuplicatedCategory={true}
-                    axisLine={false}
-                    domain={
-                              Array [
-                                        "auto",
-                                        "auto",
-                                      ]
-                    }
-                    height={0}
-                    hide={false}
-                    mirror={false}
-                    orientation="left"
-                    padding={
-                              Object {
-                                        "bottom": 0,
-                                        "top": 0,
-                                      }
-                    }
-                    reversed={false}
-                    scale="auto"
-                    tick={
-                              Object {
-                                        "fontSize": 10,
-                                      }
-                    }
-                    tickCount={10}
-                    tickFormatter={[Function]}
-                    tickLine={false}
-                    type="number"
-                    width={60}
-                    yAxisId={0}
+            allowDataOverflow={false}
+            allowDecimals={true}
+            allowDuplicatedCategory={true}
+            axisLine={false}
+            domain={
+              Array [
+                "auto",
+                "auto",
+              ]
+            }
+            height={0}
+            hide={false}
+            mirror={false}
+            orientation="left"
+            padding={
+              Object {
+                "bottom": 0,
+                "top": 0,
+              }
+            }
+            reversed={false}
+            scale="auto"
+            tick={
+              Object {
+                "fontSize": 10,
+              }
+            }
+            tickCount={10}
+            tickFormatter={[Function]}
+            tickLine={false}
+            type="number"
+            width={60}
+            yAxisId={0}
           >
-                    <Label
-                              angle={-90}
-                              offset={5}
-                              position="insideLeft"
-                              style={
-                                        Object {
-                                                  "color": "#999999",
-                                                  "fontSize": 12,
-                                                }
-                              }
-                              value="Revenue"
-                    />
+            <Label
+              angle={-90}
+              offset={5}
+              position="insideLeft"
+              style={
+                Object {
+                  "color": "#999999",
+                  "fontSize": 12,
+                }
+              }
+              value="Revenue"
+            />
           </YAxis>
           <Bar
-                    animationBegin={0}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    data={Array []}
-                    dataKey="periodicRevenue"
-                    fill="#024A8F"
-                    hide={false}
-                    isAnimationActive={true}
-                    layout="vertical"
-                    legendType="rect"
-                    minPointSize={0}
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    stackId="a"
-                    xAxisId={0}
-                    yAxisId={0}
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="periodicRevenue"
+            fill="#024A8F"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Bar
-                    animationBegin={0}
-                    animationDuration={400}
-                    animationEasing="ease"
-                    data={Array []}
-                    dataKey="projectedPeriodicRevenue"
-                    fill="#38A9DB"
-                    hide={false}
-                    isAnimationActive={true}
-                    layout="vertical"
-                    legendType="rect"
-                    minPointSize={0}
-                    onAnimationEnd={[Function]}
-                    onAnimationStart={[Function]}
-                    stackId="a"
-                    xAxisId={0}
-                    yAxisId={0}
+            animationBegin={0}
+            animationDuration={400}
+            animationEasing="ease"
+            data={Array []}
+            dataKey="projectedPeriodicRevenue"
+            fill="#38A9DB"
+            hide={false}
+            isAnimationActive={true}
+            layout="vertical"
+            legendType="rect"
+            minPointSize={0}
+            onAnimationEnd={[Function]}
+            onAnimationStart={[Function]}
+            stackId="a"
+            xAxisId={0}
+            yAxisId={0}
           />
           <Tooltip
-                    active={false}
-                    animationDuration={500}
-                    animationEasing="ease"
-                    content={
-                              <PeriodicRevenueTooltip
-                                        dateFormat="MMM DD, YYYY"
-                              />
-                    }
-                    contentStyle={Object {}}
-                    coordinate={
-                              Object {
-                                        "x": 0,
-                                        "y": 0,
-                                      }
-                    }
-                    cursor={
-                              Object {
-                                        "fill": "#4B98CF",
-                                        "opacity": 0.4,
-                                      }
-                    }
-                    cursorStyle={Object {}}
-                    filterNull={true}
-                    isAnimationActive={true}
-                    itemSorter={[Function]}
-                    itemStyle={Object {}}
-                    labelStyle={Object {}}
-                    offset={10}
-                    separator=" : "
-                    useTranslate3d={false}
-                    viewBox={
-                              Object {
-                                        "x1": 0,
-                                        "x2": 0,
-                                        "y1": 0,
-                                        "y2": 0,
-                                      }
-                    }
-                    wrapperStyle={Object {}}
+            active={false}
+            animationDuration={500}
+            animationEasing="ease"
+            content={
+              <PeriodicRevenueTooltip
+                dateFormat="MMM DD, YYYY"
+              />
+            }
+            contentStyle={Object {}}
+            coordinate={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            cursor={
+              Object {
+                "fill": "#4B98CF",
+                "opacity": 0.4,
+              }
+            }
+            cursorStyle={Object {}}
+            filterNull={true}
+            isAnimationActive={true}
+            itemSorter={[Function]}
+            itemStyle={Object {}}
+            labelStyle={Object {}}
+            offset={10}
+            separator=" : "
+            useTranslate3d={false}
+            viewBox={
+              Object {
+                "x1": 0,
+                "x2": 0,
+                "y1": 0,
+                "y2": 0,
+              }
+            }
+            wrapperStyle={Object {}}
           />
-</BarChart>,
+        </BarChart>,
         "debounce": 100,
         "height": 300,
         "width": "100%",
@@ -2448,7 +2448,7 @@ ShallowWrapper {
               vertical={false}
               verticalFill={Array []}
               verticalPoints={Array []}
-/>,
+            />,
             <ReferenceLine
               fill="none"
               fillOpacity={1}
@@ -2459,80 +2459,80 @@ ShallowWrapper {
               xAxisId={0}
               y={0}
               yAxisId={0}
-/>,
+            />,
             <XAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               dataKey="timestamp"
               domain={
-                            Array [
-                                          0,
-                                          "auto",
-                                        ]
+                Array [
+                  0,
+                  "auto",
+                ]
               }
               height={30}
               hide={false}
               mirror={false}
               orientation="bottom"
               padding={
-                            Object {
-                                          "left": 0,
-                                          "right": 0,
-                                        }
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={5}
               tickFormatter={[Function]}
               type="category"
               width={0}
               xAxisId={0}
->
+            >
               <Label
-                            offset={-5}
-                            position="insideBottom"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Date"
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
               />
-</XAxis>,
+            </XAxis>,
             <YAxis
               allowDataOverflow={false}
               allowDecimals={true}
               allowDuplicatedCategory={true}
               axisLine={false}
               domain={
-                            Array [
-                                          "auto",
-                                          "auto",
-                                        ]
+                Array [
+                  "auto",
+                  "auto",
+                ]
               }
               height={0}
               hide={false}
               mirror={false}
               orientation="left"
               padding={
-                            Object {
-                                          "bottom": 0,
-                                          "top": 0,
-                                        }
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
               }
               reversed={false}
               scale="auto"
               tick={
-                            Object {
-                                          "fontSize": 10,
-                                        }
+                Object {
+                  "fontSize": 10,
+                }
               }
               tickCount={10}
               tickFormatter={[Function]}
@@ -2540,20 +2540,20 @@ ShallowWrapper {
               type="number"
               width={60}
               yAxisId={0}
->
+            >
               <Label
-                            angle={-90}
-                            offset={5}
-                            position="insideLeft"
-                            style={
-                                          Object {
-                                                        "color": "#999999",
-                                                        "fontSize": 12,
-                                                      }
-                            }
-                            value="Revenue"
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
               />
-</YAxis>,
+            </YAxis>,
             <Bar
               animationBegin={0}
               animationDuration={400}
@@ -2571,7 +2571,7 @@ ShallowWrapper {
               stackId="a"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Bar
               animationBegin={0}
               animationDuration={400}
@@ -2589,28 +2589,28 @@ ShallowWrapper {
               stackId="a"
               xAxisId={0}
               yAxisId={0}
-/>,
+            />,
             <Tooltip
               active={false}
               animationDuration={500}
               animationEasing="ease"
               content={
-                            <PeriodicRevenueTooltip
-                                          dateFormat="MMM DD, YYYY"
-                            />
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
               }
               contentStyle={Object {}}
               coordinate={
-                            Object {
-                                          "x": 0,
-                                          "y": 0,
-                                        }
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
               }
               cursor={
-                            Object {
-                                          "fill": "#4B98CF",
-                                          "opacity": 0.4,
-                                        }
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
               }
               cursorStyle={Object {}}
               filterNull={true}
@@ -2622,15 +2622,15 @@ ShallowWrapper {
               separator=" : "
               useTranslate3d={false}
               viewBox={
-                            Object {
-                                          "x1": 0,
-                                          "x2": 0,
-                                          "y1": 0,
-                                          "y2": 0,
-                                        }
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
               }
               wrapperStyle={Object {}}
-/>,
+            />,
           ],
           "data": Array [
             Object {
@@ -2700,13 +2700,13 @@ ShallowWrapper {
                 offset={-5}
                 position="insideBottom"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Date"
-/>,
+              />,
               "dataKey": "timestamp",
               "domain": Array [
                 0,
@@ -2765,13 +2765,13 @@ ShallowWrapper {
                 offset={5}
                 position="insideLeft"
                 style={
-                                Object {
-                                                "color": "#999999",
-                                                "fontSize": 12,
-                                              }
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
                 }
                 value="Revenue"
-/>,
+              />,
               "domain": Array [
                 "auto",
                 "auto",
@@ -2879,7 +2879,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "content": <PeriodicRevenueTooltip
                 dateFormat="MMM DD, YYYY"
-/>,
+              />,
               "contentStyle": Object {},
               "coordinate": Object {
                 "x": 0,
@@ -2927,225 +2927,225 @@ ShallowWrapper {
           debounce={100}
           height={300}
           width="100%"
->
+        >
           <BarChart
-                    barCategoryGap="10%"
-                    barGap={4}
-                    data={
-                              Array [
-                                        Object {
-                                          "isProjected": false,
-                                          "periodicRevenue": 100,
-                                          "timestamp": 1529336865706,
-                                        },
-                                      ]
-                    }
-                    layout="horizontal"
-                    margin={
-                              Object {
-                                        "bottom": 5,
-                                        "left": 5,
-                                        "right": 5,
-                                        "top": 5,
-                                      }
-                    }
-                    reverseStackOrder={false}
-                    stackOffset="none"
+            barCategoryGap="10%"
+            barGap={4}
+            data={
+              Array [
+                Object {
+                  "isProjected": false,
+                  "periodicRevenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
+            }
+            layout="horizontal"
+            margin={
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
+            }
+            reverseStackOrder={false}
+            stackOffset="none"
           >
-                    <CartesianGrid
-                              fill="none"
-                              horizontal={true}
-                              horizontalFill={Array []}
-                              horizontalPoints={Array []}
-                              stroke="#ccc"
-                              vertical={false}
-                              verticalFill={Array []}
-                              verticalPoints={Array []}
-                    />
-                    <ReferenceLine
-                              fill="none"
-                              fillOpacity={1}
-                              ifOverflow="discard"
-                              isFront={false}
-                              stroke="#2670AE"
-                              strokeWidth={1}
-                              xAxisId={0}
-                              y={0}
-                              yAxisId={0}
-                    />
-                    <XAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              dataKey="timestamp"
-                              domain={
-                                        Array [
-                                                  0,
-                                                  "auto",
-                                                ]
-                              }
-                              height={30}
-                              hide={false}
-                              mirror={false}
-                              orientation="bottom"
-                              padding={
-                                        Object {
-                                                  "left": 0,
-                                                  "right": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={5}
-                              tickFormatter={[Function]}
-                              type="category"
-                              width={0}
-                              xAxisId={0}
-                    >
-                              <Label
-                                        offset={-5}
-                                        position="insideBottom"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Date"
-                              />
-                    </XAxis>
-                    <YAxis
-                              allowDataOverflow={false}
-                              allowDecimals={true}
-                              allowDuplicatedCategory={true}
-                              axisLine={false}
-                              domain={
-                                        Array [
-                                                  "auto",
-                                                  "auto",
-                                                ]
-                              }
-                              height={0}
-                              hide={false}
-                              mirror={false}
-                              orientation="left"
-                              padding={
-                                        Object {
-                                                  "bottom": 0,
-                                                  "top": 0,
-                                                }
-                              }
-                              reversed={false}
-                              scale="auto"
-                              tick={
-                                        Object {
-                                                  "fontSize": 10,
-                                                }
-                              }
-                              tickCount={10}
-                              tickFormatter={[Function]}
-                              tickLine={false}
-                              type="number"
-                              width={60}
-                              yAxisId={0}
-                    >
-                              <Label
-                                        angle={-90}
-                                        offset={5}
-                                        position="insideLeft"
-                                        style={
-                                                  Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                        }
-                                        value="Revenue"
-                              />
-                    </YAxis>
-                    <Bar
-                              animationBegin={0}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              data={Array []}
-                              dataKey="periodicRevenue"
-                              fill="#024A8F"
-                              hide={false}
-                              isAnimationActive={true}
-                              layout="vertical"
-                              legendType="rect"
-                              minPointSize={0}
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              stackId="a"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Bar
-                              animationBegin={0}
-                              animationDuration={400}
-                              animationEasing="ease"
-                              data={Array []}
-                              dataKey="projectedPeriodicRevenue"
-                              fill="#38A9DB"
-                              hide={false}
-                              isAnimationActive={true}
-                              layout="vertical"
-                              legendType="rect"
-                              minPointSize={0}
-                              onAnimationEnd={[Function]}
-                              onAnimationStart={[Function]}
-                              stackId="a"
-                              xAxisId={0}
-                              yAxisId={0}
-                    />
-                    <Tooltip
-                              active={false}
-                              animationDuration={500}
-                              animationEasing="ease"
-                              content={
-                                        <PeriodicRevenueTooltip
-                                                  dateFormat="MMM DD, YYYY"
-                                        />
-                              }
-                              contentStyle={Object {}}
-                              coordinate={
-                                        Object {
-                                                  "x": 0,
-                                                  "y": 0,
-                                                }
-                              }
-                              cursor={
-                                        Object {
-                                                  "fill": "#4B98CF",
-                                                  "opacity": 0.4,
-                                                }
-                              }
-                              cursorStyle={Object {}}
-                              filterNull={true}
-                              isAnimationActive={true}
-                              itemSorter={[Function]}
-                              itemStyle={Object {}}
-                              labelStyle={Object {}}
-                              offset={10}
-                              separator=" : "
-                              useTranslate3d={false}
-                              viewBox={
-                                        Object {
-                                                  "x1": 0,
-                                                  "x2": 0,
-                                                  "y1": 0,
-                                                  "y2": 0,
-                                                }
-                              }
-                              wrapperStyle={Object {}}
-                    />
+            <CartesianGrid
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
+            />
+            <ReferenceLine
+              fill="none"
+              fillOpacity={1}
+              ifOverflow="discard"
+              isFront={false}
+              stroke="#2670AE"
+              strokeWidth={1}
+              xAxisId={0}
+              y={0}
+              yAxisId={0}
+            />
+            <XAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
+            >
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
+            </XAxis>
+            <YAxis
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
+            >
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
+            </YAxis>
+            <Bar
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="periodicRevenue"
+              fill="#024A8F"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Bar
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="projectedPeriodicRevenue"
+              fill="#38A9DB"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
+            />
+            <Tooltip
+              active={false}
+              animationDuration={500}
+              animationEasing="ease"
+              content={
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
+            />
           </BarChart>
-</ResponsiveContainer>,
+        </ResponsiveContainer>,
       },
       "ref": null,
       "rendered": Object {
@@ -3157,219 +3157,219 @@ ShallowWrapper {
             barCategoryGap="10%"
             barGap={4}
             data={
-                        Array [
-                                    Object {
-                                      "isProjected": false,
-                                      "periodicRevenue": 100,
-                                      "timestamp": 1529336865706,
-                                    },
-                                  ]
+              Array [
+                Object {
+                  "isProjected": false,
+                  "periodicRevenue": 100,
+                  "timestamp": 1529336865706,
+                },
+              ]
             }
             layout="horizontal"
             margin={
-                        Object {
-                                    "bottom": 5,
-                                    "left": 5,
-                                    "right": 5,
-                                    "top": 5,
-                                  }
+              Object {
+                "bottom": 5,
+                "left": 5,
+                "right": 5,
+                "top": 5,
+              }
             }
             reverseStackOrder={false}
             stackOffset="none"
->
+          >
             <CartesianGrid
-                        fill="none"
-                        horizontal={true}
-                        horizontalFill={Array []}
-                        horizontalPoints={Array []}
-                        stroke="#ccc"
-                        vertical={false}
-                        verticalFill={Array []}
-                        verticalPoints={Array []}
+              fill="none"
+              horizontal={true}
+              horizontalFill={Array []}
+              horizontalPoints={Array []}
+              stroke="#ccc"
+              vertical={false}
+              verticalFill={Array []}
+              verticalPoints={Array []}
             />
             <ReferenceLine
-                        fill="none"
-                        fillOpacity={1}
-                        ifOverflow="discard"
-                        isFront={false}
-                        stroke="#2670AE"
-                        strokeWidth={1}
-                        xAxisId={0}
-                        y={0}
-                        yAxisId={0}
+              fill="none"
+              fillOpacity={1}
+              ifOverflow="discard"
+              isFront={false}
+              stroke="#2670AE"
+              strokeWidth={1}
+              xAxisId={0}
+              y={0}
+              yAxisId={0}
             />
             <XAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        dataKey="timestamp"
-                        domain={
-                                    Array [
-                                                0,
-                                                "auto",
-                                              ]
-                        }
-                        height={30}
-                        hide={false}
-                        mirror={false}
-                        orientation="bottom"
-                        padding={
-                                    Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={5}
-                        tickFormatter={[Function]}
-                        type="category"
-                        width={0}
-                        xAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              dataKey="timestamp"
+              domain={
+                Array [
+                  0,
+                  "auto",
+                ]
+              }
+              height={30}
+              hide={false}
+              mirror={false}
+              orientation="bottom"
+              padding={
+                Object {
+                  "left": 0,
+                  "right": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={5}
+              tickFormatter={[Function]}
+              type="category"
+              width={0}
+              xAxisId={0}
             >
-                        <Label
-                                    offset={-5}
-                                    position="insideBottom"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Date"
-                        />
+              <Label
+                offset={-5}
+                position="insideBottom"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Date"
+              />
             </XAxis>
             <YAxis
-                        allowDataOverflow={false}
-                        allowDecimals={true}
-                        allowDuplicatedCategory={true}
-                        axisLine={false}
-                        domain={
-                                    Array [
-                                                "auto",
-                                                "auto",
-                                              ]
-                        }
-                        height={0}
-                        hide={false}
-                        mirror={false}
-                        orientation="left"
-                        padding={
-                                    Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
-                        }
-                        reversed={false}
-                        scale="auto"
-                        tick={
-                                    Object {
-                                                "fontSize": 10,
-                                              }
-                        }
-                        tickCount={10}
-                        tickFormatter={[Function]}
-                        tickLine={false}
-                        type="number"
-                        width={60}
-                        yAxisId={0}
+              allowDataOverflow={false}
+              allowDecimals={true}
+              allowDuplicatedCategory={true}
+              axisLine={false}
+              domain={
+                Array [
+                  "auto",
+                  "auto",
+                ]
+              }
+              height={0}
+              hide={false}
+              mirror={false}
+              orientation="left"
+              padding={
+                Object {
+                  "bottom": 0,
+                  "top": 0,
+                }
+              }
+              reversed={false}
+              scale="auto"
+              tick={
+                Object {
+                  "fontSize": 10,
+                }
+              }
+              tickCount={10}
+              tickFormatter={[Function]}
+              tickLine={false}
+              type="number"
+              width={60}
+              yAxisId={0}
             >
-                        <Label
-                                    angle={-90}
-                                    offset={5}
-                                    position="insideLeft"
-                                    style={
-                                                Object {
-                                                            "color": "#999999",
-                                                            "fontSize": 12,
-                                                          }
-                                    }
-                                    value="Revenue"
-                        />
+              <Label
+                angle={-90}
+                offset={5}
+                position="insideLeft"
+                style={
+                  Object {
+                    "color": "#999999",
+                    "fontSize": 12,
+                  }
+                }
+                value="Revenue"
+              />
             </YAxis>
             <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="periodicRevenue"
-                        fill="#024A8F"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="periodicRevenue"
+              fill="#024A8F"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Bar
-                        animationBegin={0}
-                        animationDuration={400}
-                        animationEasing="ease"
-                        data={Array []}
-                        dataKey="projectedPeriodicRevenue"
-                        fill="#38A9DB"
-                        hide={false}
-                        isAnimationActive={true}
-                        layout="vertical"
-                        legendType="rect"
-                        minPointSize={0}
-                        onAnimationEnd={[Function]}
-                        onAnimationStart={[Function]}
-                        stackId="a"
-                        xAxisId={0}
-                        yAxisId={0}
+              animationBegin={0}
+              animationDuration={400}
+              animationEasing="ease"
+              data={Array []}
+              dataKey="projectedPeriodicRevenue"
+              fill="#38A9DB"
+              hide={false}
+              isAnimationActive={true}
+              layout="vertical"
+              legendType="rect"
+              minPointSize={0}
+              onAnimationEnd={[Function]}
+              onAnimationStart={[Function]}
+              stackId="a"
+              xAxisId={0}
+              yAxisId={0}
             />
             <Tooltip
-                        active={false}
-                        animationDuration={500}
-                        animationEasing="ease"
-                        content={
-                                    <PeriodicRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                    />
-                        }
-                        contentStyle={Object {}}
-                        coordinate={
-                                    Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
-                        }
-                        cursor={
-                                    Object {
-                                                "fill": "#4B98CF",
-                                                "opacity": 0.4,
-                                              }
-                        }
-                        cursorStyle={Object {}}
-                        filterNull={true}
-                        isAnimationActive={true}
-                        itemSorter={[Function]}
-                        itemStyle={Object {}}
-                        labelStyle={Object {}}
-                        offset={10}
-                        separator=" : "
-                        useTranslate3d={false}
-                        viewBox={
-                                    Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
-                        }
-                        wrapperStyle={Object {}}
+              active={false}
+              animationDuration={500}
+              animationEasing="ease"
+              content={
+                <PeriodicRevenueTooltip
+                  dateFormat="MMM DD, YYYY"
+                />
+              }
+              contentStyle={Object {}}
+              coordinate={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              cursor={
+                Object {
+                  "fill": "#4B98CF",
+                  "opacity": 0.4,
+                }
+              }
+              cursorStyle={Object {}}
+              filterNull={true}
+              isAnimationActive={true}
+              itemSorter={[Function]}
+              itemStyle={Object {}}
+              labelStyle={Object {}}
+              offset={10}
+              separator=" : "
+              useTranslate3d={false}
+              viewBox={
+                Object {
+                  "x1": 0,
+                  "x2": 0,
+                  "y1": 0,
+                  "y2": 0,
+                }
+              }
+              wrapperStyle={Object {}}
             />
-</BarChart>,
+          </BarChart>,
           "debounce": 100,
           "height": 300,
           "width": "100%",
@@ -3392,7 +3392,7 @@ ShallowWrapper {
                 vertical={false}
                 verticalFill={Array []}
                 verticalPoints={Array []}
-/>,
+              />,
               <ReferenceLine
                 fill="none"
                 fillOpacity={1}
@@ -3403,80 +3403,80 @@ ShallowWrapper {
                 xAxisId={0}
                 y={0}
                 yAxisId={0}
-/>,
+              />,
               <XAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 dataKey="timestamp"
                 domain={
-                                Array [
-                                                0,
-                                                "auto",
-                                              ]
+                  Array [
+                    0,
+                    "auto",
+                  ]
                 }
                 height={30}
                 hide={false}
                 mirror={false}
                 orientation="bottom"
                 padding={
-                                Object {
-                                                "left": 0,
-                                                "right": 0,
-                                              }
+                  Object {
+                    "left": 0,
+                    "right": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={5}
                 tickFormatter={[Function]}
                 type="category"
                 width={0}
                 xAxisId={0}
->
+              >
                 <Label
-                                offset={-5}
-                                position="insideBottom"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Date"
+                  offset={-5}
+                  position="insideBottom"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Date"
                 />
-</XAxis>,
+              </XAxis>,
               <YAxis
                 allowDataOverflow={false}
                 allowDecimals={true}
                 allowDuplicatedCategory={true}
                 axisLine={false}
                 domain={
-                                Array [
-                                                "auto",
-                                                "auto",
-                                              ]
+                  Array [
+                    "auto",
+                    "auto",
+                  ]
                 }
                 height={0}
                 hide={false}
                 mirror={false}
                 orientation="left"
                 padding={
-                                Object {
-                                                "bottom": 0,
-                                                "top": 0,
-                                              }
+                  Object {
+                    "bottom": 0,
+                    "top": 0,
+                  }
                 }
                 reversed={false}
                 scale="auto"
                 tick={
-                                Object {
-                                                "fontSize": 10,
-                                              }
+                  Object {
+                    "fontSize": 10,
+                  }
                 }
                 tickCount={10}
                 tickFormatter={[Function]}
@@ -3484,20 +3484,20 @@ ShallowWrapper {
                 type="number"
                 width={60}
                 yAxisId={0}
->
+              >
                 <Label
-                                angle={-90}
-                                offset={5}
-                                position="insideLeft"
-                                style={
-                                                Object {
-                                                                "color": "#999999",
-                                                                "fontSize": 12,
-                                                              }
-                                }
-                                value="Revenue"
+                  angle={-90}
+                  offset={5}
+                  position="insideLeft"
+                  style={
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
+                  }
+                  value="Revenue"
                 />
-</YAxis>,
+              </YAxis>,
               <Bar
                 animationBegin={0}
                 animationDuration={400}
@@ -3515,7 +3515,7 @@ ShallowWrapper {
                 stackId="a"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Bar
                 animationBegin={0}
                 animationDuration={400}
@@ -3533,28 +3533,28 @@ ShallowWrapper {
                 stackId="a"
                 xAxisId={0}
                 yAxisId={0}
-/>,
+              />,
               <Tooltip
                 active={false}
                 animationDuration={500}
                 animationEasing="ease"
                 content={
-                                <PeriodicRevenueTooltip
-                                                dateFormat="MMM DD, YYYY"
-                                />
+                  <PeriodicRevenueTooltip
+                    dateFormat="MMM DD, YYYY"
+                  />
                 }
                 contentStyle={Object {}}
                 coordinate={
-                                Object {
-                                                "x": 0,
-                                                "y": 0,
-                                              }
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
                 }
                 cursor={
-                                Object {
-                                                "fill": "#4B98CF",
-                                                "opacity": 0.4,
-                                              }
+                  Object {
+                    "fill": "#4B98CF",
+                    "opacity": 0.4,
+                  }
                 }
                 cursorStyle={Object {}}
                 filterNull={true}
@@ -3566,15 +3566,15 @@ ShallowWrapper {
                 separator=" : "
                 useTranslate3d={false}
                 viewBox={
-                                Object {
-                                                "x1": 0,
-                                                "x2": 0,
-                                                "y1": 0,
-                                                "y2": 0,
-                                              }
+                  Object {
+                    "x1": 0,
+                    "x2": 0,
+                    "y1": 0,
+                    "y2": 0,
+                  }
                 }
                 wrapperStyle={Object {}}
-/>,
+              />,
             ],
             "data": Array [
               Object {
@@ -3644,13 +3644,13 @@ ShallowWrapper {
                   offset={-5}
                   position="insideBottom"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Date"
-/>,
+                />,
                 "dataKey": "timestamp",
                 "domain": Array [
                   0,
@@ -3709,13 +3709,13 @@ ShallowWrapper {
                   offset={5}
                   position="insideLeft"
                   style={
-                                    Object {
-                                                      "color": "#999999",
-                                                      "fontSize": 12,
-                                                    }
+                    Object {
+                      "color": "#999999",
+                      "fontSize": 12,
+                    }
                   }
                   value="Revenue"
-/>,
+                />,
                 "domain": Array [
                   "auto",
                   "auto",
@@ -3823,7 +3823,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "content": <PeriodicRevenueTooltip
                   dateFormat="MMM DD, YYYY"
-/>,
+                />,
                 "contentStyle": Object {},
                 "coordinate": Object {
                   "x": 0,
@@ -3889,12 +3889,12 @@ ShallowWrapper {
 exports[`<PeriodicRevenueChart /> should render correctly with no date 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <PeriodicRevenueChart
     data={Array []}
     dateFormat="MMM DD, YYYY"
     height={400}
     renderNoData={[Function]}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],

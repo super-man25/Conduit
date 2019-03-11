@@ -5,35 +5,45 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <EventChart
     activeEvent={
-        Object {
-            "id": 1,
-          }
+      Object {
+        "id": 1,
+      }
     }
     eventStatActions={
-        Object {
-            "clear": [Function],
-            "fetch": [Function],
-            "setDateRange": [Function],
-            "setGroupFilter": [Function],
-          }
+      Object {
+        "clear": [MockFunction],
+        "fetch": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+        "setDateRange": [MockFunction],
+        "setGroupFilter": [MockFunction],
+      }
     }
     eventStatState={
-        Object {
-            "dateRange": Object {
-              "from": null,
-              "to": null,
-            },
-            "eventDateLimits": Object {
-              "from": null,
-              "to": null,
-            },
-            "eventStats": Array [],
-            "groupFilters": Array [],
-            "loading": true,
-            "selectedGroupFilter": null,
-          }
+      Object {
+        "dateRange": Object {
+          "from": null,
+          "to": null,
+        },
+        "eventDateLimits": Object {
+          "from": null,
+          "to": null,
+        },
+        "eventStats": Array [],
+        "groupFilters": Array [],
+        "loading": true,
+        "selectedGroupFilter": null,
+      }
     }
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
