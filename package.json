@@ -20,7 +20,7 @@
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.1",
+    "react-scripts": "^2.0.0",
     "react-virtualized": "^9.20.0",
     "recharts": "^1.0.0-beta.10",
     "recompose": "^0.27.1",
@@ -53,19 +53,19 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "9.0.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "cross-env": "^5.1.4",
     "env-cmd": "^7.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
+    "eslint": "5.12.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-config-react-app": "^2.1.0",
+    "eslint-config-react-app": "^3.0.8",
     "eslint-plugin-flowtype": "^2.34.1",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jest": "^21.15.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-redux-saga": "^0.8.0",
@@ -79,5 +79,11 @@
     "prettier-eslint-cli": "^4.7.1",
     "react-test-renderer": "^16.3.2",
     "redux-mock-store": "^1.5.1"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
