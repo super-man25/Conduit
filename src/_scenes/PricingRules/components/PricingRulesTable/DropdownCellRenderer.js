@@ -29,6 +29,15 @@ const clipLabel = (label) =>
 export class DropDownCellPresenter extends React.Component<Props, State> {
   state = { selectedOption: null };
 
+  items = () => {
+    const { columnData } = this.props;
+    const { optionsKey, sortFn } = columnData;
+
+    return sortFn
+      ? [...columnData[optionsKey]].sort(sortFn)
+      : columnData[optionsKey];
+  };
+
   selectedItem(options: any[], item: string | number, hasId: boolean) {
     const selectedItem = options.find((o) =>
       hasId ? o.id === item : o === item
@@ -55,7 +64,7 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
 
   render() {
     const { columnData, rulePropertyValue } = this.props;
-    const options = columnData[columnData.optionsKey];
+    const options = this.items();
     const { hasId, hasNone } = columnData;
 
     const withSelectedAsOption = this.selectedItem(

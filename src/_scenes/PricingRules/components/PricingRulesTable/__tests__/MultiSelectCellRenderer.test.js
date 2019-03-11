@@ -20,10 +20,10 @@ describe('<MultiSelectCellRenderer />', () => {
       optionsKey: 'priceScales',
       priceScales: [
         { id: 2, name: 'DUGOUT' },
-        { id: 3, name: 'FIELD' },
+        { id: 10, name: 'FIELD' },
         { id: 5, name: 'GOLD' }
       ],
-      labelFn: jest.fn(() => 'name')
+      labelFn: (o) => o.name
     }
   };
 
@@ -54,6 +54,30 @@ describe('<MultiSelectCellRenderer />', () => {
       .simulate('change');
 
     expect(fn).toBeCalled();
+
+    wrapper.unmount();
+  });
+
+  it('should sort with the sort function correctly', () => {
+    const columnData = {
+      ...props.columnData,
+      sortFn: (first, second) => (first.id >= second.id ? 1 : -1)
+    };
+
+    const wrapper = mount(
+      <MultiSelectCellPresenter
+        {...props}
+        columnData={columnData}
+        isEditing={true}
+      />
+    );
+
+    expect(
+      wrapper
+        .instance()
+        .items()
+        .map((o) => o.name)
+    ).toEqual(['DUGOUT', 'GOLD', 'FIELD']);
 
     wrapper.unmount();
   });

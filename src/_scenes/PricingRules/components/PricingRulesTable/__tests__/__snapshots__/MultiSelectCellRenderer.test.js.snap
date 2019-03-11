@@ -15,7 +15,7 @@ ShallowWrapper {
                 "name": "DUGOUT",
               },
               Object {
-                "id": 3,
+                "id": 10,
                 "name": "FIELD",
               },
               Object {
@@ -44,6 +44,7 @@ ShallowWrapper {
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
@@ -57,7 +58,7 @@ ShallowWrapper {
     "props": Object {
       "align": "center",
       "children": <styled.p
-        title=" name, name"
+        title=" DUGOUT, GOLD"
 >
         2 Price Scales
 </styled.p>,
@@ -69,7 +70,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": "2 Price Scales",
-        "title": " name, name",
+        "title": " DUGOUT, GOLD",
       },
       "ref": null,
       "rendered": "2 Price Scales",
@@ -85,7 +86,7 @@ ShallowWrapper {
       "props": Object {
         "align": "center",
         "children": <styled.p
-          title=" name, name"
+          title=" DUGOUT, GOLD"
 >
           2 Price Scales
 </styled.p>,
@@ -97,7 +98,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": "2 Price Scales",
-          "title": " name, name",
+          "title": " DUGOUT, GOLD",
         },
         "ref": null,
         "rendered": "2 Price Scales",
@@ -110,9 +111,13 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
           },
           "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,
@@ -123,5 +128,6 @@ ShallowWrapper {
       },
     },
   },
+  Symbol(enzyme.__childContext__): null,
 }
 `;

@@ -1,0 +1,1088 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MultiSelectGroupView /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MultiSelectGroupView
+    categories={
+        Array [
+            Object {
+              "id": 2,
+              "name": "Value",
+            },
+            Object {
+              "id": 3,
+              "name": "Classic",
+            },
+          ]
+    }
+    grouped={
+        Object {
+            "2": Array [
+              Object {
+                "id": 6,
+                "name": "Braves at Zephyrs",
+              },
+              Object {
+                "id": 18,
+                "name": "Dogs FIGHT Cats",
+              },
+            ],
+            "3": Array [
+              Object {
+                "id": 23,
+                "name": "Cardinals at Zephyrs",
+              },
+            ],
+          }
+    }
+    labelFn={[Function]}
+    onItemClicked={[Function]}
+    selected={
+        Array [
+            18,
+          ]
+    }
+    updatePriceRuleProperty={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <Unknown>
+          <styled.div>
+                    <Flex
+                              align="center"
+                              justify="space-between"
+                    >
+                              Value
+                              <styled.p
+                                        color="#fff"
+                                        onClick={[Function]}
+                                        style={
+                                                  Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                        }
+                              >
+                                        Select All
+                              </styled.p>
+                    </Flex>
+          </styled.div>
+          <styled.div
+                    isActive={false}
+                    onClick={[Function]}
+          >
+                    <Flex
+                              align="center"
+                    >
+                              <styled.input
+                                        checked={false}
+                                        onChange={[Function]}
+                              />
+                              Braves at Zephyrs
+                    </Flex>
+          </styled.div>
+          <styled.div
+                    isActive={true}
+                    onClick={[Function]}
+          >
+                    <Flex
+                              align="center"
+                    >
+                              <styled.input
+                                        checked={true}
+                                        onChange={[Function]}
+                              />
+                              Dogs FIGHT Cats
+                    </Flex>
+          </styled.div>
+</Unknown>,
+        <Unknown>
+          <styled.div>
+                    <Flex
+                              align="center"
+                              justify="space-between"
+                    >
+                              Classic
+                              <styled.p
+                                        color="#fff"
+                                        onClick={[Function]}
+                                        style={
+                                                  Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                        }
+                              >
+                                        Select All
+                              </styled.p>
+                    </Flex>
+          </styled.div>
+          <styled.div
+                    isActive={false}
+                    onClick={[Function]}
+          >
+                    <Flex
+                              align="center"
+                    >
+                              <styled.input
+                                        checked={false}
+                                        onChange={[Function]}
+                              />
+                              Cardinals at Zephyrs
+                    </Flex>
+          </styled.div>
+</Unknown>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "category2",
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <Flex
+                            align="center"
+                            justify="space-between"
+              >
+                            Value
+                            <styled.p
+                                          color="#fff"
+                                          onClick={[Function]}
+                                          style={
+                                                        Object {
+                                                                      "cursor": "pointer",
+                                                                    }
+                                          }
+                            >
+                                          Select All
+                            </styled.p>
+              </Flex>
+</styled.div>,
+            Array [
+              <styled.div
+                isActive={false}
+                onClick={[Function]}
+>
+                <Flex
+                                align="center"
+                >
+                                <styled.input
+                                                checked={false}
+                                                onChange={[Function]}
+                                />
+                                Braves at Zephyrs
+                </Flex>
+</styled.div>,
+              <styled.div
+                isActive={true}
+                onClick={[Function]}
+>
+                <Flex
+                                align="center"
+                >
+                                <styled.input
+                                                checked={true}
+                                                onChange={[Function]}
+                                />
+                                Dogs FIGHT Cats
+                </Flex>
+</styled.div>,
+            ],
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <Flex
+                align="center"
+                justify="space-between"
+>
+                Value
+                <styled.p
+                                color="#fff"
+                                onClick={[Function]}
+                                style={
+                                                Object {
+                                                                "cursor": "pointer",
+                                                              }
+                                }
+                >
+                                Select All
+                </styled.p>
+</Flex>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  "Value",
+                  <styled.p
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                                        Object {
+                                                            "cursor": "pointer",
+                                                          }
+                    }
+>
+                    Select All
+</styled.p>,
+                ],
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Value",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Select All",
+                    "color": "#fff",
+                    "onClick": [Function],
+                    "style": Object {
+                      "cursor": "pointer",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Select All",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "6",
+            "nodeType": "class",
+            "props": Object {
+              "children": <Flex
+                align="center"
+>
+                <styled.input
+                                checked={false}
+                                onChange={[Function]}
+                />
+                Braves at Zephyrs
+</Flex>,
+              "isActive": false,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  <styled.input
+                    checked={false}
+                    onChange={[Function]}
+/>,
+                  "Braves at Zephyrs",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "Braves at Zephyrs",
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "18",
+            "nodeType": "class",
+            "props": Object {
+              "children": <Flex
+                align="center"
+>
+                <styled.input
+                                checked={true}
+                                onChange={[Function]}
+                />
+                Dogs FIGHT Cats
+</Flex>,
+              "isActive": true,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  <styled.input
+                    checked={true}
+                    onChange={[Function]}
+/>,
+                  "Dogs FIGHT Cats",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "checked": true,
+                    "onChange": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "Dogs FIGHT Cats",
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
+      },
+      Object {
+        "instance": null,
+        "key": "category3",
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <styled.div>
+              <Flex
+                            align="center"
+                            justify="space-between"
+              >
+                            Classic
+                            <styled.p
+                                          color="#fff"
+                                          onClick={[Function]}
+                                          style={
+                                                        Object {
+                                                                      "cursor": "pointer",
+                                                                    }
+                                          }
+                            >
+                                          Select All
+                            </styled.p>
+              </Flex>
+</styled.div>,
+            Array [
+              <styled.div
+                isActive={false}
+                onClick={[Function]}
+>
+                <Flex
+                                align="center"
+                >
+                                <styled.input
+                                                checked={false}
+                                                onChange={[Function]}
+                                />
+                                Cardinals at Zephyrs
+                </Flex>
+</styled.div>,
+            ],
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <Flex
+                align="center"
+                justify="space-between"
+>
+                Classic
+                <styled.p
+                                color="#fff"
+                                onClick={[Function]}
+                                style={
+                                                Object {
+                                                                "cursor": "pointer",
+                                                              }
+                                }
+                >
+                                Select All
+                </styled.p>
+</Flex>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  "Classic",
+                  <styled.p
+                    color="#fff"
+                    onClick={[Function]}
+                    style={
+                                        Object {
+                                                            "cursor": "pointer",
+                                                          }
+                    }
+>
+                    Select All
+</styled.p>,
+                ],
+                "justify": "space-between",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Classic",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Select All",
+                    "color": "#fff",
+                    "onClick": [Function],
+                    "style": Object {
+                      "cursor": "pointer",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Select All",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "23",
+            "nodeType": "class",
+            "props": Object {
+              "children": <Flex
+                align="center"
+>
+                <styled.input
+                                checked={false}
+                                onChange={[Function]}
+                />
+                Cardinals at Zephyrs
+</Flex>,
+              "isActive": false,
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  <styled.input
+                    checked={false}
+                    onChange={[Function]}
+/>,
+                  "Cardinals at Zephyrs",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "checked": false,
+                    "onChange": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "Cardinals at Zephyrs",
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": Symbol(react.fragment),
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Unknown>
+            <styled.div>
+                        <Flex
+                                    align="center"
+                                    justify="space-between"
+                        >
+                                    Value
+                                    <styled.p
+                                                color="#fff"
+                                                onClick={[Function]}
+                                                style={
+                                                            Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                                }
+                                    >
+                                                Select All
+                                    </styled.p>
+                        </Flex>
+            </styled.div>
+            <styled.div
+                        isActive={false}
+                        onClick={[Function]}
+            >
+                        <Flex
+                                    align="center"
+                        >
+                                    <styled.input
+                                                checked={false}
+                                                onChange={[Function]}
+                                    />
+                                    Braves at Zephyrs
+                        </Flex>
+            </styled.div>
+            <styled.div
+                        isActive={true}
+                        onClick={[Function]}
+            >
+                        <Flex
+                                    align="center"
+                        >
+                                    <styled.input
+                                                checked={true}
+                                                onChange={[Function]}
+                                    />
+                                    Dogs FIGHT Cats
+                        </Flex>
+            </styled.div>
+</Unknown>,
+          <Unknown>
+            <styled.div>
+                        <Flex
+                                    align="center"
+                                    justify="space-between"
+                        >
+                                    Classic
+                                    <styled.p
+                                                color="#fff"
+                                                onClick={[Function]}
+                                                style={
+                                                            Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                                }
+                                    >
+                                                Select All
+                                    </styled.p>
+                        </Flex>
+            </styled.div>
+            <styled.div
+                        isActive={false}
+                        onClick={[Function]}
+            >
+                        <Flex
+                                    align="center"
+                        >
+                                    <styled.input
+                                                checked={false}
+                                                onChange={[Function]}
+                                    />
+                                    Cardinals at Zephyrs
+                        </Flex>
+            </styled.div>
+</Unknown>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "category2",
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <Flex
+                                align="center"
+                                justify="space-between"
+                >
+                                Value
+                                <styled.p
+                                                color="#fff"
+                                                onClick={[Function]}
+                                                style={
+                                                                Object {
+                                                                                "cursor": "pointer",
+                                                                              }
+                                                }
+                                >
+                                                Select All
+                                </styled.p>
+                </Flex>
+</styled.div>,
+              Array [
+                <styled.div
+                  isActive={false}
+                  onClick={[Function]}
+>
+                  <Flex
+                                    align="center"
+                  >
+                                    <styled.input
+                                                      checked={false}
+                                                      onChange={[Function]}
+                                    />
+                                    Braves at Zephyrs
+                  </Flex>
+</styled.div>,
+                <styled.div
+                  isActive={true}
+                  onClick={[Function]}
+>
+                  <Flex
+                                    align="center"
+                  >
+                                    <styled.input
+                                                      checked={true}
+                                                      onChange={[Function]}
+                                    />
+                                    Dogs FIGHT Cats
+                  </Flex>
+</styled.div>,
+              ],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Flex
+                  align="center"
+                  justify="space-between"
+>
+                  Value
+                  <styled.p
+                                    color="#fff"
+                                    onClick={[Function]}
+                                    style={
+                                                      Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                    }
+                  >
+                                    Select All
+                  </styled.p>
+</Flex>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    "Value",
+                    <styled.p
+                      color="#fff"
+                      onClick={[Function]}
+                      style={
+                                            Object {
+                                                                  "cursor": "pointer",
+                                                                }
+                      }
+>
+                      Select All
+</styled.p>,
+                  ],
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Value",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Select All",
+                      "color": "#fff",
+                      "onClick": [Function],
+                      "style": Object {
+                        "cursor": "pointer",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "Select All",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "6",
+              "nodeType": "class",
+              "props": Object {
+                "children": <Flex
+                  align="center"
+>
+                  <styled.input
+                                    checked={false}
+                                    onChange={[Function]}
+                  />
+                  Braves at Zephyrs
+</Flex>,
+                "isActive": false,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.input
+                      checked={false}
+                      onChange={[Function]}
+/>,
+                    "Braves at Zephyrs",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "Braves at Zephyrs",
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "18",
+              "nodeType": "class",
+              "props": Object {
+                "children": <Flex
+                  align="center"
+>
+                  <styled.input
+                                    checked={true}
+                                    onChange={[Function]}
+                  />
+                  Dogs FIGHT Cats
+</Flex>,
+                "isActive": true,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.input
+                      checked={true}
+                      onChange={[Function]}
+/>,
+                    "Dogs FIGHT Cats",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "checked": true,
+                      "onChange": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "Dogs FIGHT Cats",
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+        Object {
+          "instance": null,
+          "key": "category3",
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <styled.div>
+                <Flex
+                                align="center"
+                                justify="space-between"
+                >
+                                Classic
+                                <styled.p
+                                                color="#fff"
+                                                onClick={[Function]}
+                                                style={
+                                                                Object {
+                                                                                "cursor": "pointer",
+                                                                              }
+                                                }
+                                >
+                                                Select All
+                                </styled.p>
+                </Flex>
+</styled.div>,
+              Array [
+                <styled.div
+                  isActive={false}
+                  onClick={[Function]}
+>
+                  <Flex
+                                    align="center"
+                  >
+                                    <styled.input
+                                                      checked={false}
+                                                      onChange={[Function]}
+                                    />
+                                    Cardinals at Zephyrs
+                  </Flex>
+</styled.div>,
+              ],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Flex
+                  align="center"
+                  justify="space-between"
+>
+                  Classic
+                  <styled.p
+                                    color="#fff"
+                                    onClick={[Function]}
+                                    style={
+                                                      Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                    }
+                  >
+                                    Select All
+                  </styled.p>
+</Flex>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    "Classic",
+                    <styled.p
+                      color="#fff"
+                      onClick={[Function]}
+                      style={
+                                            Object {
+                                                                  "cursor": "pointer",
+                                                                }
+                      }
+>
+                      Select All
+</styled.p>,
+                  ],
+                  "justify": "space-between",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Classic",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Select All",
+                      "color": "#fff",
+                      "onClick": [Function],
+                      "style": Object {
+                        "cursor": "pointer",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "Select All",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "23",
+              "nodeType": "class",
+              "props": Object {
+                "children": <Flex
+                  align="center"
+>
+                  <styled.input
+                                    checked={false}
+                                    onChange={[Function]}
+                  />
+                  Cardinals at Zephyrs
+</Flex>,
+                "isActive": false,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.input
+                      checked={false}
+                      onChange={[Function]}
+/>,
+                    "Cardinals at Zephyrs",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "checked": false,
+                      "onChange": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "Cardinals at Zephyrs",
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MultiSelectView /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MultiSelectView
+    labelFn={[Function]}
+    onItemClicked={[Function]}
+    options={
+        Array [
+            Object {
+              "id": 2,
+              "name": "Diamond Club",
+            },
+            Object {
+              "id": 15,
+              "name": "Dugout Club",
+            },
+          ]
+    }
+    selected={
+        Array [
+            2,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "0",
+    "nodeType": "class",
+    "props": Object {
+      "children": <Flex
+        align="center"
+>
+        <styled.input
+                checked={true}
+                onChange={[Function]}
+        />
+</Flex>,
+      "isActive": true,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "center",
+        "children": Array [
+          <styled.input
+            checked={true}
+            onChange={[Function]}
+/>,
+          undefined,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "checked": true,
+            "onChange": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        undefined,
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "0",
+      "nodeType": "class",
+      "props": Object {
+        "children": <Flex
+          align="center"
+>
+          <styled.input
+                    checked={true}
+                    onChange={[Function]}
+          />
+</Flex>,
+        "isActive": true,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            <styled.input
+              checked={true}
+              onChange={[Function]}
+/>,
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "checked": true,
+              "onChange": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          undefined,
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    Object {
+      "instance": null,
+      "key": "1",
+      "nodeType": "class",
+      "props": Object {
+        "children": <Flex
+          align="center"
+>
+          <styled.input
+                    checked={false}
+                    onChange={[Function]}
+          />
+</Flex>,
+        "isActive": false,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            <styled.input
+              checked={false}
+              onChange={[Function]}
+/>,
+            undefined,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "checked": false,
+              "onChange": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          undefined,
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -11,6 +11,7 @@ type Props = {
   columnData: any,
   rulePropertyValue: number[],
   parent: any,
+  isGroupable: boolean,
   updatePriceRuleProperty: (rulePropertyValue: number[]) => void
 };
 
@@ -22,9 +23,11 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
 
   items = () => {
     const { columnData } = this.props;
-    const { optionsKey } = columnData;
+    const { optionsKey, sortFn } = columnData;
 
-    return columnData[optionsKey];
+    return sortFn
+      ? [...columnData[optionsKey]].sort(sortFn)
+      : columnData[optionsKey];
   };
 
   onItemClicked = (item: Option) => {
@@ -48,8 +51,10 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
 
   render() {
     const {
-      columnData: { label, labelFn },
-      rulePropertyValue
+      columnData: { label, labelFn, isGroupable },
+      rulePropertyValue,
+      updatePriceRuleProperty,
+      columnData
     } = this.props;
 
     const items = this.items();
@@ -80,13 +85,16 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
 
     return (
       <MultiSelect
-        options={items}
+        isGroupable={isGroupable}
+        columnData={columnData}
         labelFn={labelFn}
+        options={items}
         selected={rulePropertyValue}
-        onItemClicked={this.onItemClicked}
         label={label}
         cellLabel={cellLabel}
         toggleSelectAll={this.toggleSelectAll}
+        updatePriceRuleProperty={updatePriceRuleProperty}
+        onItemClicked={this.onItemClicked.bind(this)}
         gridProps={this.props.parent.props}
       />
     );

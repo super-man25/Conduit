@@ -1,84 +1,71 @@
 // @flow
 import * as React from 'react';
 import { Text, Flex, Icon } from '_components';
-import styled, { css } from 'styled-components';
-import { darken } from 'polished';
 import { cssConstants } from '_constants';
-import { withClickAway } from '_hoc';
-import { Checkbox } from './styled';
+import {
+  MultiSelectContainer,
+  MultiSelectMenu,
+  SplitButtonContainer,
+  SplitButtonHalf
+} from './styled';
+
+import { MultiSelectGroupView } from './MultiSelectGroupView';
+import { MultiSelectView } from './MultiSelectView';
 
 export type Option = {
   id: number
 };
 
-const MultiSelectContainer = withClickAway(styled.div`
-  position: relative;
-  cursor: pointer;
-`);
-
-const MultiSelectMenu = styled.div`
-  position: absolute;
-  width: 250px;
-  top: calc(100% + 8px);
-  max-height: 350px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  z-index: 10;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
-
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  transform: translateY(20px);
-  visibility: hidden;
-
-  ${(props) =>
-    props.show &&
-    css`
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-    `}
-`;
-
-const MultiSelectOption = styled.div`
-  padding: 12px 16px;
-  background-color: ${(props) =>
-    props.isActive
-      ? darken(0.05, cssConstants.PRIMARY_WHITE)
-      : cssConstants.PRIMARY_WHITE};
-  transition: 0.1s ease-in-out all;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-  white-space: normal;
-
-  :not(:last-child) {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
-  }
-
-  :hover {
-    cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
-  }
-`;
-
 type State = {
   isOpen: boolean,
-  selectAllNext: boolean
+  selectAllNext: boolean,
+  isGrouped: boolean
 };
 
 type Props = {
   options: any[],
-  labelFn: (item: Option) => string,
   selected: any[],
-  onItemClicked: (item: Option) => void,
+  labelFn: (option: any) => string,
   toggleSelectAll: (selectAllNext: boolean) => void,
   label: string,
   cellLabel: string,
-  gridProps: any
+  gridProps: any,
+  rows?: any,
+  isGroupable: boolean,
+  columnData: any,
+  updatePriceRuleProperty: (option: any[]) => void,
+  onItemClicked: (option: any) => void
 };
 
+type GroupedSplitButtonProps = {
+  isGrouped: boolean,
+  selectGrouping: (grouped: boolean) => void
+};
+
+export function GroupedSplitButton({
+  isGrouped,
+  selectGrouping
+}: GroupedSplitButtonProps) {
+  return (
+    <SplitButtonContainer>
+      <SplitButtonHalf
+        isActive={!isGrouped}
+        onClick={() => selectGrouping(false)}
+      >
+        Uncategorized
+      </SplitButtonHalf>
+      <SplitButtonHalf
+        isActive={isGrouped}
+        onClick={() => selectGrouping(true)}
+      >
+        By Category
+      </SplitButtonHalf>
+    </SplitButtonContainer>
+  );
+}
+
 export class MultiSelect extends React.Component<Props, State> {
-  state = { isOpen: false, selectAllNext: true };
+  state = { isOpen: false, selectAllNext: true, isGrouped: false };
   ref = React.createRef();
 
   componentDidMount() {
@@ -115,16 +102,49 @@ export class MultiSelect extends React.Component<Props, State> {
     this.setState({ selectAllNext: !selectAllNext });
   };
 
+  selectGrouping = (isGrouped: boolean) => {
+    this.setState({ isGrouped });
+  };
+
   render() {
     const { isOpen, selectAllNext } = this.state;
     const {
-      options,
-      selected,
-      onItemClicked,
-      labelFn,
       cellLabel,
-      label
+      label,
+      selected,
+      options,
+      isGroupable,
+      columnData,
+      labelFn,
+      onItemClicked,
+      updatePriceRuleProperty
     } = this.props;
+
+    let OptionsView;
+    if (isGroupable && this.state.isGrouped) {
+      const {
+        grouping: { categoriesKey, groupedKey }
+      } = columnData;
+      OptionsView = (
+        <MultiSelectGroupView
+          categories={columnData[categoriesKey]}
+          grouped={columnData[groupedKey]}
+          selected={selected}
+          labelFn={labelFn}
+          updatePriceRuleProperty={updatePriceRuleProperty}
+          onItemClicked={onItemClicked}
+        />
+      );
+    } else {
+      OptionsView = (
+        <MultiSelectView
+          options={options}
+          selected={selected}
+          labelFn={labelFn}
+          onItemClicked={onItemClicked}
+        />
+      );
+    }
 
     return (
       <MultiSelectContainer
@@ -158,6 +178,7 @@ export class MultiSelect extends React.Component<Props, State> {
               align="center"
               justify="space-between"
               padding="1rem"
+              flexWrap="wrap"
               style={{ backgroundColor: cssConstants.PRIMARY_WHITE }}
             >
               <Text size={13} weight={600}>
@@ -170,22 +191,15 @@ export class MultiSelect extends React.Component<Props, State> {
               >
                 {selectAllNext ? 'Select All' : 'Select None'}
               </Text>
+
+              {isGroupable && (
+                <GroupedSplitButton
+                  isGrouped={this.state.isGrouped}
+                  selectGrouping={this.selectGrouping.bind(this)}
+                />
+              )}
             </Flex>
-            {options.map((option, idx) => (
-              <MultiSelectOption
-                isActive={selected.includes(option.id)}
-                key={idx}
-                onClick={() => onItemClicked(option)}
-              >
-                <Flex align="center">
-                  <Checkbox
-                    checked={selected.includes(option.id)}
-                    onChange={() => onItemClicked(option)}
-                  />
-                  {labelFn(option)}
-                </Flex>
-              </MultiSelectOption>
-            ))}
+            {OptionsView}
           </MultiSelectMenu>
         </div>
       </MultiSelectContainer>

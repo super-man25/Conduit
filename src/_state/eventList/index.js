@@ -150,10 +150,22 @@ const selectActiveEventListId = createSelector(
   }
 );
 
+const selectGroupedByCategoryId = createSelector(
+  [selectEventList],
+  (events) =>
+    events.reduce((acc, { eventCategoryId, ...rest }) => {
+      const ec = acc[eventCategoryId];
+      return ec
+        ? { ...acc, [eventCategoryId]: [...ec, rest] }
+        : { ...acc, [eventCategoryId]: [rest] };
+    }, {})
+);
+
 export const selectors = {
   selectEventList,
   selectVisibleEvents,
   selectEventListSearchFilter,
   selectCurrentFilterOption,
-  selectActiveEventListId
+  selectActiveEventListId,
+  selectGroupedByCategoryId
 };

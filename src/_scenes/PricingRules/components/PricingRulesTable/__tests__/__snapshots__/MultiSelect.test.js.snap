@@ -1,0 +1,1845 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroupedSplitButton /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GroupedSplitButton
+    isGrouped={true}
+    selectGrouping={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.span
+          isActive={false}
+          onClick={[Function]}
+>
+          Uncategorized
+</styled.span>,
+        <styled.span
+          isActive={true}
+          onClick={[Function]}
+>
+          By Category
+</styled.span>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Uncategorized",
+          "isActive": false,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Uncategorized",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "By Category",
+          "isActive": true,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "By Category",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.span
+            isActive={false}
+            onClick={[Function]}
+>
+            Uncategorized
+</styled.span>,
+          <styled.span
+            isActive={true}
+            onClick={[Function]}
+>
+            By Category
+</styled.span>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Uncategorized",
+            "isActive": false,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Uncategorized",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "By Category",
+            "isActive": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "By Category",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`<MultiSelect /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MultiSelect
+    isGroupable={false}
+    label="Events"
+    labelFn={[Function]}
+    onItemClicked={[Function]}
+    options={
+        Array [
+            Object {
+              "id": 2,
+              "name": "Braves at Zephyrs",
+            },
+            Object {
+              "id": 5,
+              "name": "Dogs at Cats",
+            },
+            Object {
+              "id": 17,
+              "name": "Mariners at Zephyrs",
+            },
+          ]
+    }
+    selected={
+        Array [
+            17,
+          ]
+    }
+    toggleSelectAll={[Function]}
+    updatePriceRuleProperty={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Flex
+          align="center"
+          justify="space-between"
+>
+          <Unknown
+                    color="#070707"
+                    name="arrow-drop-down"
+                    size={24}
+          />
+</Flex>,
+        <div
+          style={
+                    Object {
+                              "position": "fixed",
+                              "zIndex": 9,
+                            }
+          }
+>
+          <styled.div
+                    show={false}
+                    style={
+                              Object {
+                                        "maxHeight": Object {},
+                                      }
+                    }
+          >
+                    <Flex
+                              align="center"
+                              flexWrap="wrap"
+                              justify="space-between"
+                              padding="1rem"
+                              style={
+                                        Object {
+                                                  "backgroundColor": "#FFFFFF",
+                                                }
+                              }
+                    >
+                              <styled.p
+                                        size={13}
+                                        weight={600}
+                              >
+                                        Events
+                              </styled.p>
+                              <styled.p
+                                        color="#38A9DB"
+                                        onClick={[Function]}
+                                        style={
+                                                  Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                        }
+                              >
+                                        Select All
+                              </styled.p>
+                    </Flex>
+                    <MultiSelectView
+                              labelFn={[Function]}
+                              onItemClicked={[Function]}
+                              options={
+                                        Array [
+                                                  Object {
+                                                    "id": 2,
+                                                    "name": "Braves at Zephyrs",
+                                                  },
+                                                  Object {
+                                                    "id": 5,
+                                                    "name": "Dogs at Cats",
+                                                  },
+                                                  Object {
+                                                    "id": 17,
+                                                    "name": "Mariners at Zephyrs",
+                                                  },
+                                                ]
+                              }
+                              selected={
+                                        Array [
+                                                  17,
+                                                ]
+                              }
+                    />
+          </styled.div>
+</div>,
+      ],
+      "onClick": [Function],
+      "onClickAway": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            undefined,
+            <Unknown
+              color="#070707"
+              name="arrow-drop-down"
+              size={24}
+/>,
+          ],
+          "justify": "space-between",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#070707",
+              "name": "arrow-drop-down",
+              "size": 24,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <styled.div
+            show={false}
+            style={
+                        Object {
+                                    "maxHeight": Object {},
+                                  }
+            }
+>
+            <Flex
+                        align="center"
+                        flexWrap="wrap"
+                        justify="space-between"
+                        padding="1rem"
+                        style={
+                                    Object {
+                                                "backgroundColor": "#FFFFFF",
+                                              }
+                        }
+            >
+                        <styled.p
+                                    size={13}
+                                    weight={600}
+                        >
+                                    Events
+                        </styled.p>
+                        <styled.p
+                                    color="#38A9DB"
+                                    onClick={[Function]}
+                                    style={
+                                                Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                    }
+                        >
+                                    Select All
+                        </styled.p>
+            </Flex>
+            <MultiSelectView
+                        labelFn={[Function]}
+                        onItemClicked={[Function]}
+                        options={
+                                    Array [
+                                                Object {
+                                                  "id": 2,
+                                                  "name": "Braves at Zephyrs",
+                                                },
+                                                Object {
+                                                  "id": 5,
+                                                  "name": "Dogs at Cats",
+                                                },
+                                                Object {
+                                                  "id": 17,
+                                                  "name": "Mariners at Zephyrs",
+                                                },
+                                              ]
+                        }
+                        selected={
+                                    Array [
+                                                17,
+                                              ]
+                        }
+            />
+</styled.div>,
+          "style": Object {
+            "position": "fixed",
+            "zIndex": 9,
+          },
+        },
+        "ref": Object {
+          "current": null,
+        },
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Flex
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                                Object {
+                                                "backgroundColor": "#FFFFFF",
+                                              }
+                }
+>
+                <styled.p
+                                size={13}
+                                weight={600}
+                >
+                                Events
+                </styled.p>
+                <styled.p
+                                color="#38A9DB"
+                                onClick={[Function]}
+                                style={
+                                                Object {
+                                                                "cursor": "pointer",
+                                                              }
+                                }
+                >
+                                Select All
+                </styled.p>
+</Flex>,
+              <MultiSelectView
+                labelFn={[Function]}
+                onItemClicked={[Function]}
+                options={
+                                Array [
+                                                Object {
+                                                  "id": 2,
+                                                  "name": "Braves at Zephyrs",
+                                                },
+                                                Object {
+                                                  "id": 5,
+                                                  "name": "Dogs at Cats",
+                                                },
+                                                Object {
+                                                  "id": 17,
+                                                  "name": "Mariners at Zephyrs",
+                                                },
+                                              ]
+                }
+                selected={
+                                Array [
+                                                17,
+                                              ]
+                }
+/>,
+            ],
+            "show": false,
+            "style": Object {
+              "maxHeight": Object {},
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  <styled.p
+                    size={13}
+                    weight={600}
+>
+                    Events
+</styled.p>,
+                  <styled.p
+                    color="#38A9DB"
+                    onClick={[Function]}
+                    style={
+                                        Object {
+                                                            "cursor": "pointer",
+                                                          }
+                    }
+>
+                    Select All
+</styled.p>,
+                  false,
+                ],
+                "flexWrap": "wrap",
+                "justify": "space-between",
+                "padding": "1rem",
+                "style": Object {
+                  "backgroundColor": "#FFFFFF",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Events",
+                    "size": 13,
+                    "weight": 600,
+                  },
+                  "ref": null,
+                  "rendered": "Events",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Select All",
+                    "color": "#38A9DB",
+                    "onClick": [Function],
+                    "style": Object {
+                      "cursor": "pointer",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Select All",
+                  "type": [Function],
+                },
+                false,
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "labelFn": [Function],
+                "onItemClicked": [Function],
+                "options": Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ],
+                "selected": Array [
+                  17,
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Flex
+            align="center"
+            justify="space-between"
+>
+            <Unknown
+                        color="#070707"
+                        name="arrow-drop-down"
+                        size={24}
+            />
+</Flex>,
+          <div
+            style={
+                        Object {
+                                    "position": "fixed",
+                                    "zIndex": 9,
+                                  }
+            }
+>
+            <styled.div
+                        show={false}
+                        style={
+                                    Object {
+                                                "maxHeight": Object {},
+                                              }
+                        }
+            >
+                        <Flex
+                                    align="center"
+                                    flexWrap="wrap"
+                                    justify="space-between"
+                                    padding="1rem"
+                                    style={
+                                                Object {
+                                                            "backgroundColor": "#FFFFFF",
+                                                          }
+                                    }
+                        >
+                                    <styled.p
+                                                size={13}
+                                                weight={600}
+                                    >
+                                                Events
+                                    </styled.p>
+                                    <styled.p
+                                                color="#38A9DB"
+                                                onClick={[Function]}
+                                                style={
+                                                            Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                                }
+                                    >
+                                                Select All
+                                    </styled.p>
+                        </Flex>
+                        <MultiSelectView
+                                    labelFn={[Function]}
+                                    onItemClicked={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 2,
+                                                              "name": "Braves at Zephyrs",
+                                                            },
+                                                            Object {
+                                                              "id": 5,
+                                                              "name": "Dogs at Cats",
+                                                            },
+                                                            Object {
+                                                              "id": 17,
+                                                              "name": "Mariners at Zephyrs",
+                                                            },
+                                                          ]
+                                    }
+                                    selected={
+                                                Array [
+                                                            17,
+                                                          ]
+                                    }
+                        />
+            </styled.div>
+</div>,
+        ],
+        "onClick": [Function],
+        "onClickAway": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": Array [
+              undefined,
+              <Unknown
+                color="#070707"
+                name="arrow-drop-down"
+                size={24}
+/>,
+            ],
+            "justify": "space-between",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#070707",
+                "name": "arrow-drop-down",
+                "size": 24,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <styled.div
+              show={false}
+              style={
+                            Object {
+                                          "maxHeight": Object {},
+                                        }
+              }
+>
+              <Flex
+                            align="center"
+                            flexWrap="wrap"
+                            justify="space-between"
+                            padding="1rem"
+                            style={
+                                          Object {
+                                                        "backgroundColor": "#FFFFFF",
+                                                      }
+                            }
+              >
+                            <styled.p
+                                          size={13}
+                                          weight={600}
+                            >
+                                          Events
+                            </styled.p>
+                            <styled.p
+                                          color="#38A9DB"
+                                          onClick={[Function]}
+                                          style={
+                                                        Object {
+                                                                      "cursor": "pointer",
+                                                                    }
+                                          }
+                            >
+                                          Select All
+                            </styled.p>
+              </Flex>
+              <MultiSelectView
+                            labelFn={[Function]}
+                            onItemClicked={[Function]}
+                            options={
+                                          Array [
+                                                        Object {
+                                                          "id": 2,
+                                                          "name": "Braves at Zephyrs",
+                                                        },
+                                                        Object {
+                                                          "id": 5,
+                                                          "name": "Dogs at Cats",
+                                                        },
+                                                        Object {
+                                                          "id": 17,
+                                                          "name": "Mariners at Zephyrs",
+                                                        },
+                                                      ]
+                            }
+                            selected={
+                                          Array [
+                                                        17,
+                                                      ]
+                            }
+              />
+</styled.div>,
+            "style": Object {
+              "position": "fixed",
+              "zIndex": 9,
+            },
+          },
+          "ref": Object {
+            "current": null,
+          },
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Flex
+                  align="center"
+                  flexWrap="wrap"
+                  justify="space-between"
+                  padding="1rem"
+                  style={
+                                    Object {
+                                                      "backgroundColor": "#FFFFFF",
+                                                    }
+                  }
+>
+                  <styled.p
+                                    size={13}
+                                    weight={600}
+                  >
+                                    Events
+                  </styled.p>
+                  <styled.p
+                                    color="#38A9DB"
+                                    onClick={[Function]}
+                                    style={
+                                                      Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                    }
+                  >
+                                    Select All
+                  </styled.p>
+</Flex>,
+                <MultiSelectView
+                  labelFn={[Function]}
+                  onItemClicked={[Function]}
+                  options={
+                                    Array [
+                                                      Object {
+                                                        "id": 2,
+                                                        "name": "Braves at Zephyrs",
+                                                      },
+                                                      Object {
+                                                        "id": 5,
+                                                        "name": "Dogs at Cats",
+                                                      },
+                                                      Object {
+                                                        "id": 17,
+                                                        "name": "Mariners at Zephyrs",
+                                                      },
+                                                    ]
+                  }
+                  selected={
+                                    Array [
+                                                      17,
+                                                    ]
+                  }
+/>,
+              ],
+              "show": false,
+              "style": Object {
+                "maxHeight": Object {},
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.p
+                      size={13}
+                      weight={600}
+>
+                      Events
+</styled.p>,
+                    <styled.p
+                      color="#38A9DB"
+                      onClick={[Function]}
+                      style={
+                                            Object {
+                                                                  "cursor": "pointer",
+                                                                }
+                      }
+>
+                      Select All
+</styled.p>,
+                    false,
+                  ],
+                  "flexWrap": "wrap",
+                  "justify": "space-between",
+                  "padding": "1rem",
+                  "style": Object {
+                    "backgroundColor": "#FFFFFF",
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Events",
+                      "size": 13,
+                      "weight": 600,
+                    },
+                    "ref": null,
+                    "rendered": "Events",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Select All",
+                      "color": "#38A9DB",
+                      "onClick": [Function],
+                      "style": Object {
+                        "cursor": "pointer",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "Select All",
+                    "type": [Function],
+                  },
+                  false,
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "labelFn": [Function],
+                  "onItemClicked": [Function],
+                  "options": Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ],
+                  "selected": Array [
+                    17,
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`<MultiSelect /> should update the state if the grouped view is toggled 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MultiSelect
+    isGroupable={true}
+    label="Events"
+    labelFn={[Function]}
+    onItemClicked={[Function]}
+    options={
+        Array [
+            Object {
+              "id": 2,
+              "name": "Braves at Zephyrs",
+            },
+            Object {
+              "id": 5,
+              "name": "Dogs at Cats",
+            },
+            Object {
+              "id": 17,
+              "name": "Mariners at Zephyrs",
+            },
+          ]
+    }
+    selected={
+        Array [
+            17,
+          ]
+    }
+    toggleSelectAll={[Function]}
+    updatePriceRuleProperty={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Flex
+          align="center"
+          justify="space-between"
+>
+          <Unknown
+                    color="#070707"
+                    name="arrow-drop-down"
+                    size={24}
+          />
+</Flex>,
+        <div
+          style={
+                    Object {
+                              "position": "fixed",
+                              "zIndex": 9,
+                            }
+          }
+>
+          <styled.div
+                    show={false}
+                    style={
+                              Object {
+                                        "maxHeight": Object {},
+                                      }
+                    }
+          >
+                    <Flex
+                              align="center"
+                              flexWrap="wrap"
+                              justify="space-between"
+                              padding="1rem"
+                              style={
+                                        Object {
+                                                  "backgroundColor": "#FFFFFF",
+                                                }
+                              }
+                    >
+                              <styled.p
+                                        size={13}
+                                        weight={600}
+                              >
+                                        Events
+                              </styled.p>
+                              <styled.p
+                                        color="#38A9DB"
+                                        onClick={[Function]}
+                                        style={
+                                                  Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                        }
+                              >
+                                        Select All
+                              </styled.p>
+                              <GroupedSplitButton
+                                        isGrouped={false}
+                                        selectGrouping={[Function]}
+                              />
+                    </Flex>
+                    <MultiSelectView
+                              labelFn={[Function]}
+                              onItemClicked={[Function]}
+                              options={
+                                        Array [
+                                                  Object {
+                                                    "id": 2,
+                                                    "name": "Braves at Zephyrs",
+                                                  },
+                                                  Object {
+                                                    "id": 5,
+                                                    "name": "Dogs at Cats",
+                                                  },
+                                                  Object {
+                                                    "id": 17,
+                                                    "name": "Mariners at Zephyrs",
+                                                  },
+                                                ]
+                              }
+                              selected={
+                                        Array [
+                                                  17,
+                                                ]
+                              }
+                    />
+          </styled.div>
+</div>,
+      ],
+      "onClick": [Function],
+      "onClickAway": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "center",
+          "children": Array [
+            undefined,
+            <Unknown
+              color="#070707"
+              name="arrow-drop-down"
+              size={24}
+/>,
+          ],
+          "justify": "space-between",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "#070707",
+              "name": "arrow-drop-down",
+              "size": 24,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <styled.div
+            show={false}
+            style={
+                        Object {
+                                    "maxHeight": Object {},
+                                  }
+            }
+>
+            <Flex
+                        align="center"
+                        flexWrap="wrap"
+                        justify="space-between"
+                        padding="1rem"
+                        style={
+                                    Object {
+                                                "backgroundColor": "#FFFFFF",
+                                              }
+                        }
+            >
+                        <styled.p
+                                    size={13}
+                                    weight={600}
+                        >
+                                    Events
+                        </styled.p>
+                        <styled.p
+                                    color="#38A9DB"
+                                    onClick={[Function]}
+                                    style={
+                                                Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                    }
+                        >
+                                    Select All
+                        </styled.p>
+                        <GroupedSplitButton
+                                    isGrouped={false}
+                                    selectGrouping={[Function]}
+                        />
+            </Flex>
+            <MultiSelectView
+                        labelFn={[Function]}
+                        onItemClicked={[Function]}
+                        options={
+                                    Array [
+                                                Object {
+                                                  "id": 2,
+                                                  "name": "Braves at Zephyrs",
+                                                },
+                                                Object {
+                                                  "id": 5,
+                                                  "name": "Dogs at Cats",
+                                                },
+                                                Object {
+                                                  "id": 17,
+                                                  "name": "Mariners at Zephyrs",
+                                                },
+                                              ]
+                        }
+                        selected={
+                                    Array [
+                                                17,
+                                              ]
+                        }
+            />
+</styled.div>,
+          "style": Object {
+            "position": "fixed",
+            "zIndex": 9,
+          },
+        },
+        "ref": Object {
+          "current": null,
+        },
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Flex
+                align="center"
+                flexWrap="wrap"
+                justify="space-between"
+                padding="1rem"
+                style={
+                                Object {
+                                                "backgroundColor": "#FFFFFF",
+                                              }
+                }
+>
+                <styled.p
+                                size={13}
+                                weight={600}
+                >
+                                Events
+                </styled.p>
+                <styled.p
+                                color="#38A9DB"
+                                onClick={[Function]}
+                                style={
+                                                Object {
+                                                                "cursor": "pointer",
+                                                              }
+                                }
+                >
+                                Select All
+                </styled.p>
+                <GroupedSplitButton
+                                isGrouped={false}
+                                selectGrouping={[Function]}
+                />
+</Flex>,
+              <MultiSelectView
+                labelFn={[Function]}
+                onItemClicked={[Function]}
+                options={
+                                Array [
+                                                Object {
+                                                  "id": 2,
+                                                  "name": "Braves at Zephyrs",
+                                                },
+                                                Object {
+                                                  "id": 5,
+                                                  "name": "Dogs at Cats",
+                                                },
+                                                Object {
+                                                  "id": 17,
+                                                  "name": "Mariners at Zephyrs",
+                                                },
+                                              ]
+                }
+                selected={
+                                Array [
+                                                17,
+                                              ]
+                }
+/>,
+            ],
+            "show": false,
+            "style": Object {
+              "maxHeight": Object {},
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "align": "center",
+                "children": Array [
+                  <styled.p
+                    size={13}
+                    weight={600}
+>
+                    Events
+</styled.p>,
+                  <styled.p
+                    color="#38A9DB"
+                    onClick={[Function]}
+                    style={
+                                        Object {
+                                                            "cursor": "pointer",
+                                                          }
+                    }
+>
+                    Select All
+</styled.p>,
+                  <GroupedSplitButton
+                    isGrouped={false}
+                    selectGrouping={[Function]}
+/>,
+                ],
+                "flexWrap": "wrap",
+                "justify": "space-between",
+                "padding": "1rem",
+                "style": Object {
+                  "backgroundColor": "#FFFFFF",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Events",
+                    "size": 13,
+                    "weight": 600,
+                  },
+                  "ref": null,
+                  "rendered": "Events",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Select All",
+                    "color": "#38A9DB",
+                    "onClick": [Function],
+                    "style": Object {
+                      "cursor": "pointer",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Select All",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "isGrouped": false,
+                    "selectGrouping": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "labelFn": [Function],
+                "onItemClicked": [Function],
+                "options": Array [
+                  Object {
+                    "id": 2,
+                    "name": "Braves at Zephyrs",
+                  },
+                  Object {
+                    "id": 5,
+                    "name": "Dogs at Cats",
+                  },
+                  Object {
+                    "id": 17,
+                    "name": "Mariners at Zephyrs",
+                  },
+                ],
+                "selected": Array [
+                  17,
+                ],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Flex
+            align="center"
+            justify="space-between"
+>
+            <Unknown
+                        color="#070707"
+                        name="arrow-drop-down"
+                        size={24}
+            />
+</Flex>,
+          <div
+            style={
+                        Object {
+                                    "position": "fixed",
+                                    "zIndex": 9,
+                                  }
+            }
+>
+            <styled.div
+                        show={false}
+                        style={
+                                    Object {
+                                                "maxHeight": Object {},
+                                              }
+                        }
+            >
+                        <Flex
+                                    align="center"
+                                    flexWrap="wrap"
+                                    justify="space-between"
+                                    padding="1rem"
+                                    style={
+                                                Object {
+                                                            "backgroundColor": "#FFFFFF",
+                                                          }
+                                    }
+                        >
+                                    <styled.p
+                                                size={13}
+                                                weight={600}
+                                    >
+                                                Events
+                                    </styled.p>
+                                    <styled.p
+                                                color="#38A9DB"
+                                                onClick={[Function]}
+                                                style={
+                                                            Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                                }
+                                    >
+                                                Select All
+                                    </styled.p>
+                                    <GroupedSplitButton
+                                                isGrouped={false}
+                                                selectGrouping={[Function]}
+                                    />
+                        </Flex>
+                        <MultiSelectView
+                                    labelFn={[Function]}
+                                    onItemClicked={[Function]}
+                                    options={
+                                                Array [
+                                                            Object {
+                                                              "id": 2,
+                                                              "name": "Braves at Zephyrs",
+                                                            },
+                                                            Object {
+                                                              "id": 5,
+                                                              "name": "Dogs at Cats",
+                                                            },
+                                                            Object {
+                                                              "id": 17,
+                                                              "name": "Mariners at Zephyrs",
+                                                            },
+                                                          ]
+                                    }
+                                    selected={
+                                                Array [
+                                                            17,
+                                                          ]
+                                    }
+                        />
+            </styled.div>
+</div>,
+        ],
+        "onClick": [Function],
+        "onClickAway": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "align": "center",
+            "children": Array [
+              undefined,
+              <Unknown
+                color="#070707"
+                name="arrow-drop-down"
+                size={24}
+/>,
+            ],
+            "justify": "space-between",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "#070707",
+                "name": "arrow-drop-down",
+                "size": 24,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <styled.div
+              show={false}
+              style={
+                            Object {
+                                          "maxHeight": Object {},
+                                        }
+              }
+>
+              <Flex
+                            align="center"
+                            flexWrap="wrap"
+                            justify="space-between"
+                            padding="1rem"
+                            style={
+                                          Object {
+                                                        "backgroundColor": "#FFFFFF",
+                                                      }
+                            }
+              >
+                            <styled.p
+                                          size={13}
+                                          weight={600}
+                            >
+                                          Events
+                            </styled.p>
+                            <styled.p
+                                          color="#38A9DB"
+                                          onClick={[Function]}
+                                          style={
+                                                        Object {
+                                                                      "cursor": "pointer",
+                                                                    }
+                                          }
+                            >
+                                          Select All
+                            </styled.p>
+                            <GroupedSplitButton
+                                          isGrouped={false}
+                                          selectGrouping={[Function]}
+                            />
+              </Flex>
+              <MultiSelectView
+                            labelFn={[Function]}
+                            onItemClicked={[Function]}
+                            options={
+                                          Array [
+                                                        Object {
+                                                          "id": 2,
+                                                          "name": "Braves at Zephyrs",
+                                                        },
+                                                        Object {
+                                                          "id": 5,
+                                                          "name": "Dogs at Cats",
+                                                        },
+                                                        Object {
+                                                          "id": 17,
+                                                          "name": "Mariners at Zephyrs",
+                                                        },
+                                                      ]
+                            }
+                            selected={
+                                          Array [
+                                                        17,
+                                                      ]
+                            }
+              />
+</styled.div>,
+            "style": Object {
+              "position": "fixed",
+              "zIndex": 9,
+            },
+          },
+          "ref": Object {
+            "current": null,
+          },
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Flex
+                  align="center"
+                  flexWrap="wrap"
+                  justify="space-between"
+                  padding="1rem"
+                  style={
+                                    Object {
+                                                      "backgroundColor": "#FFFFFF",
+                                                    }
+                  }
+>
+                  <styled.p
+                                    size={13}
+                                    weight={600}
+                  >
+                                    Events
+                  </styled.p>
+                  <styled.p
+                                    color="#38A9DB"
+                                    onClick={[Function]}
+                                    style={
+                                                      Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                    }
+                  >
+                                    Select All
+                  </styled.p>
+                  <GroupedSplitButton
+                                    isGrouped={false}
+                                    selectGrouping={[Function]}
+                  />
+</Flex>,
+                <MultiSelectView
+                  labelFn={[Function]}
+                  onItemClicked={[Function]}
+                  options={
+                                    Array [
+                                                      Object {
+                                                        "id": 2,
+                                                        "name": "Braves at Zephyrs",
+                                                      },
+                                                      Object {
+                                                        "id": 5,
+                                                        "name": "Dogs at Cats",
+                                                      },
+                                                      Object {
+                                                        "id": 17,
+                                                        "name": "Mariners at Zephyrs",
+                                                      },
+                                                    ]
+                  }
+                  selected={
+                                    Array [
+                                                      17,
+                                                    ]
+                  }
+/>,
+              ],
+              "show": false,
+              "style": Object {
+                "maxHeight": Object {},
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "align": "center",
+                  "children": Array [
+                    <styled.p
+                      size={13}
+                      weight={600}
+>
+                      Events
+</styled.p>,
+                    <styled.p
+                      color="#38A9DB"
+                      onClick={[Function]}
+                      style={
+                                            Object {
+                                                                  "cursor": "pointer",
+                                                                }
+                      }
+>
+                      Select All
+</styled.p>,
+                    <GroupedSplitButton
+                      isGrouped={false}
+                      selectGrouping={[Function]}
+/>,
+                  ],
+                  "flexWrap": "wrap",
+                  "justify": "space-between",
+                  "padding": "1rem",
+                  "style": Object {
+                    "backgroundColor": "#FFFFFF",
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Events",
+                      "size": 13,
+                      "weight": 600,
+                    },
+                    "ref": null,
+                    "rendered": "Events",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Select All",
+                      "color": "#38A9DB",
+                      "onClick": [Function],
+                      "style": Object {
+                        "cursor": "pointer",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "Select All",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "isGrouped": false,
+                      "selectGrouping": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "labelFn": [Function],
+                  "onItemClicked": [Function],
+                  "options": Array [
+                    Object {
+                      "id": 2,
+                      "name": "Braves at Zephyrs",
+                    },
+                    Object {
+                      "id": 5,
+                      "name": "Dogs at Cats",
+                    },
+                    Object {
+                      "id": 17,
+                      "name": "Mariners at Zephyrs",
+                    },
+                  ],
+                  "selected": Array [
+                    17,
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": "div",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

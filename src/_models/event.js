@@ -3,6 +3,7 @@
 export type EDEvent = {
   clientId: number,
   createdAt: Date,
+  eventCategoryId: number,
   id: number,
   integrationId: number,
   modifiedAt: Date,

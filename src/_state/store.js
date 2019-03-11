@@ -35,6 +35,10 @@ import {
   saga as eventInventorySaga
 } from './eventInventory';
 import {
+  reducer as eventCategoryReducer,
+  saga as eventCategorySaga
+} from './eventCategory';
+import {
   reducer as buyerTypeReducer,
   saga as buyerTypeSaga
 } from './buyerType';
@@ -72,6 +76,7 @@ export const reducers = {
   priceScale: priceScaleReducer,
   eventInventory: eventInventoryReducer,
   eventInventoryBulk: eventInventoryBulkReducer,
+  eventCategory: eventCategoryReducer,
   seatMap: seatMapReducer,
   demoPrice: demoPriceReducer
 };
@@ -105,6 +110,7 @@ const combineSagas = {
   eventList: eventListSaga,
   eventInventory: eventInventorySaga,
   eventInventoryBulk: eventInventoryBulkSaga,
+  eventCategory: eventCategorySaga,
   buyerType: buyerTypeSaga,
   priceRule: priceRuleSaga,
   priceScale: priceScaleSaga,

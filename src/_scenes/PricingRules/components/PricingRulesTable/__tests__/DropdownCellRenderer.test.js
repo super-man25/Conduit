@@ -16,7 +16,7 @@ describe('<DropdownCellRenderer />', () => {
     },
     columnData: {
       optionsKey: 'priceScales',
-      priceScales: [{ id: 2, name: 'DUGOUT' }, { id: 5, name: 'GOLD' }],
+      priceScales: [{ id: 2, name: 'DUGOUT' }, { id: 1, name: 'GOLD' }],
       hasId: true
     },
     selectedItemId: 2
@@ -47,6 +47,29 @@ describe('<DropdownCellRenderer />', () => {
       .simulate('click');
 
     expect(fn).toBeCalled();
+
+    wrapper.unmount();
+  });
+
+  it('should sort with the sort function correctly', () => {
+    const columnData = {
+      ...props.columnData,
+      sortFn: (first, second) => (first.id >= second.id ? 1 : -1)
+    };
+
+    const wrapper = mount(
+      <DropDownCellPresenter
+        {...props}
+        columnData={columnData}
+        isEditing={true}
+      />
+    );
+
+    expect(wrapper.find(Option).map((o) => o.text())).toEqual([
+      'None',
+      'GOLD',
+      'DUGOUT'
+    ]);
 
     wrapper.unmount();
   });

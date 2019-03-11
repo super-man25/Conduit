@@ -22,6 +22,10 @@ import {
   selectors as priceScaleSelectors,
   actions as priceScaleActions
 } from '_state/priceScale';
+import {
+  actions as eventCategoryActions,
+  selectors as eventCategorySelectors
+} from '_state/eventCategory';
 import { formatUSD } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
@@ -40,6 +44,7 @@ import type { EDBuyerType } from '_models/buyerType';
 import type { EDPriceScale } from '_models/priceScale';
 import type { EDEvent } from '_models/event';
 import type { EDPriceRule } from '_models/priceRule';
+import type { EDEventCategory } from '_models/eventCategory';
 
 function combineColumnWithDefaults(column) {
   return {
@@ -64,6 +69,7 @@ const columns = [
     dataKey: 'externalBuyerTypeIds',
     columnData: {
       optionsKey: 'buyerTypes',
+      sortFn: (first, second) => (first.code >= second.code ? 1 : -1),
       labelFn: (option) => {
         const labelText = `${option.code} - ${option.publicDescription}`;
         return (
@@ -90,14 +96,23 @@ const columns = [
   {
     label: 'Price Scales',
     dataKey: 'priceScaleIds',
-    columnData: { optionsKey: 'priceScales', labelFn: (option) => option.name },
+    columnData: {
+      optionsKey: 'priceScales',
+      labelFn: (option) => option.name,
+      sortFn: (first, second) => (first.name >= second.name ? 1 : -1)
+    },
     cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
   },
   {
     label: 'Mirrors',
     dataKey: 'mirrorPriceScaleId',
     flexGrow: 8,
-    columnData: { optionsKey: 'priceScales', hasId: true, hasNone: false },
+    columnData: {
+      optionsKey: 'priceScales',
+      hasId: true,
+      hasNone: false,
+      sortFn: (first, second) => (first.name >= second.name ? 1 : -1)
+    },
     cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
   },
   {
@@ -132,7 +147,12 @@ const columns = [
       optionsKey: 'events',
       labelLength: 28,
       labelFn: (option) =>
-        `${format(option.timestamp, 'M/D/YYYY')} - ${option.name}`
+        `${format(option.timestamp, 'M/D/YYYY')} - ${option.name}`,
+      isGroupable: true,
+      grouping: {
+        categoriesKey: 'eventCategories',
+        groupedKey: 'eventsGroupedByCategoryId'
+      }
     },
     cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
   },
@@ -175,11 +195,15 @@ type Props = {
   fetchBuyerTypes: () => EDBuyerType[],
   fetchEventList: () => EDEvent[],
   fetchPriceRules: () => EDPriceRule[],
+  fetchEventCategories: () => EDEventCategory[],
   reset: () => void,
   rows: EDPriceRule[],
   events: EDEvent[],
   buyerTypes: EDBuyerType[],
-  priceScales: EDPriceScale[]
+  priceScales: EDPriceScale[],
+  eventCategoryMap: any,
+  eventCategories: EDEventCategory[],
+  eventsGroupedByCategoryId: any
 };
 
 export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
@@ -187,6 +211,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
     this.props.fetchPriceScales();
     this.props.fetchEventList();
     this.props.fetchPriceRules();
+    this.props.fetchEventCategories();
   }
 
   componentWillUnmount() {
@@ -194,7 +219,14 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
   }
 
   render() {
-    const { rows, events, buyerTypes, priceScales } = this.props;
+    const {
+      rows,
+      events,
+      buyerTypes,
+      priceScales,
+      eventCategories,
+      eventsGroupedByCategoryId
+    } = this.props;
     const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
 
     // if buyer types cannot be loaded do not display table
@@ -233,7 +265,9 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
                   events,
                   roundOptions,
                   priceScales,
-                  buyerTypes
+                  buyerTypes,
+                  eventCategories,
+                  eventsGroupedByCategoryId
                 }}
               />
             ))}
@@ -247,15 +281,18 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
 const mapStateToProps = createStructuredSelector({
   rows: priceRuleSelectors.selectAllPriceRuleRows,
   events: eventSelectors.selectEventList,
+  eventsGroupedByCategoryId: eventSelectors.selectGroupedByCategoryId,
   buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
-  priceScales: priceScaleSelectors.selectAllPriceScales
+  priceScales: priceScaleSelectors.selectAllPriceScales,
+  eventCategories: eventCategorySelectors.selectAllEventCategories
 });
 
 const mapDispatchToProps = {
   fetchPriceRules: priceRuleActions.fetchPriceRules,
   fetchEventList: eventListActions.fetchEventList,
   reset: priceRuleActions.resetPriceRules,
-  fetchPriceScales: priceScaleActions.fetchPriceScales
+  fetchPriceScales: priceScaleActions.fetchPriceScales,
+  fetchEventCategories: eventCategoryActions.fetchEventCategories
 };
 
 export const VirtualizedPricingRules = connect(
