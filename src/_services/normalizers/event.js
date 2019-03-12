@@ -4,7 +4,6 @@ const percentPriceModifierSchema = yup.object({
   percentPriceModifier: yup
     .number()
     .integer()
-    .nullable()
     .min(-50)
     .max(50)
     .label('Percent change')
