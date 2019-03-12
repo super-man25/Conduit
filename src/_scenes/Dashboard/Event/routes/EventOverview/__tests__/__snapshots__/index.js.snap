@@ -37,6 +37,12 @@ ShallowWrapper {
           height="2rem"
         />
         <Connect(TicketIntegrationsPresenter) />
+        <styled.div
+          height="2rem"
+        />
+        <EventPriceModifier
+          event={Object {}}
+        />
       </styled.div>,
     },
     "ref": null,
@@ -60,6 +66,12 @@ ShallowWrapper {
             height="2rem"
           />,
           <Connect(TicketIntegrationsPresenter) />,
+          <styled.div
+            height="2rem"
+          />,
+          <EventPriceModifier
+            event={Object {}}
+          />,
         ],
         "padding": "1.5rem 2rem",
       },
@@ -119,6 +131,28 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "height": "2rem",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "event": Object {},
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -147,6 +181,12 @@ ShallowWrapper {
             height="2rem"
           />
           <Connect(TicketIntegrationsPresenter) />
+          <styled.div
+            height="2rem"
+          />
+          <EventPriceModifier
+            event={Object {}}
+          />
         </styled.div>,
       },
       "ref": null,
@@ -170,6 +210,12 @@ ShallowWrapper {
               height="2rem"
             />,
             <Connect(TicketIntegrationsPresenter) />,
+            <styled.div
+              height="2rem"
+            />,
+            <EventPriceModifier
+              event={Object {}}
+            />,
           ],
           "padding": "1.5rem 2rem",
         },
@@ -225,6 +271,28 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "height": "2rem",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "event": Object {},
+            },
             "ref": null,
             "rendered": null,
             "type": [Function],

@@ -7,6 +7,7 @@ import EventChart from './components/EventChart';
 import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
 import { TicketIntegrations } from './components/TicketIntegrations';
+import { EventPriceModifier } from './components/EventPriceModifier';
 
 type Props = {
   event: ?EDEvent
@@ -21,6 +22,8 @@ export const EventOverview = ({ event }: Props) =>
         <EventChart event={event} />
         <Spacing height="2rem" />
         <TicketIntegrations />
+        <Spacing height="2rem" />
+        <EventPriceModifier event={event} />
       </Box>
     </PageWrapper>
   );
