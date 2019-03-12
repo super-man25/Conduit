@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
   Panel,
   PanelHeader,
@@ -9,10 +9,14 @@ import {
   Text,
   NumberInputField,
   Input,
+  Toggle,
   ApiAlertPresenter
 } from '_components';
+import { connect } from 'react-redux';
 import { cssConstants } from '_constants';
 import { eventService } from '../../../../../../_services/event';
+import { createStructuredSelector } from 'reselect';
+import { selectors, actions } from '_state/event';
 
 export const EDTextButton = EDText.extend`
   &:hover {
@@ -25,7 +29,7 @@ export const EDTextButton = EDText.extend`
   }
 `;
 
-export class EventPriceModifier extends Component {
+export class EventPriceModifierPresenter extends Component {
   state = {
     isEditing: false,
     event: this.props.event,
@@ -37,7 +41,7 @@ export class EventPriceModifier extends Component {
   };
 
   getWord = () => {
-    return this.state.event.percentPriceModifier > 0 ? 'increase' : 'decrease';
+    return this.state.event.percentPriceModifier >= 0 ? 'increase' : 'decrease';
   };
 
   getDisplayView = () => {
@@ -50,15 +54,33 @@ export class EventPriceModifier extends Component {
 
   getEditView = () => {
     return (
-      <NumberInputField
-        component={Input}
-        type="number"
-        value={this.state.event.percentPriceModifier || ''}
-        onChange={this.update}
-        placeholder="Percent Price Modifier"
-        inValid={this.state.percentPriceModifierInvalid}
-      />
+      <Fragment>
+        <Text marginBottom=".33rem" size={15}>
+          Price Modification (%)
+        </Text>
+        <NumberInputField
+          component={Input}
+          type="number"
+          value={this.state.event.percentPriceModifier}
+          onChange={this.update}
+          onBlur={this.onBlur}
+          placeholder="Percent Price Modifier"
+          inValid={this.state.percentPriceModifierInvalid}
+        />
+      </Fragment>
     );
+  };
+
+  onBlur = (event) => {
+    if (!event.target.value) {
+      this.setState({
+        percentPriceModifierInvalid: false,
+        event: {
+          ...this.state.event,
+          percentPriceModifier: '0'
+        }
+      });
+    }
   };
 
   update = (event) => {
@@ -66,7 +88,7 @@ export class EventPriceModifier extends Component {
       percentPriceModifierInvalid: false,
       event: {
         ...this.state.event,
-        percentPriceModifier: parseInt(event.target.value)
+        percentPriceModifier: event.target.value
       }
     });
   };
@@ -114,7 +136,28 @@ export class EventPriceModifier extends Component {
     });
   };
 
+  toggleIsBroadcasting = (e) => {
+    const {
+      setBroadcasting,
+      event: { id }
+    } = this.props;
+
+    const { checked } = e.target;
+
+    const verb = checked ? 'enable' : 'disable';
+    const msg = `Are you sure you want to ${verb} pricing for this event?`;
+
+    if (window.confirm(msg)) {
+      setBroadcasting(id, checked);
+    }
+  };
+
   render() {
+    const {
+      event: { isBroadcast },
+      togglingBroadcasting
+    } = this.props;
+
     return (
       <Panel>
         <ApiAlertPresenter alertState={this.state.alertState} />
@@ -123,8 +166,18 @@ export class EventPriceModifier extends Component {
             <React.Fragment>
               <Flex>
                 <H4 margin="0" marginRight="2.5rem">
-                  Price Modifier
+                  Pricing
                 </H4>
+                <Toggle
+                  isChecked={isBroadcast}
+                  onChange={this.toggleIsBroadcasting}
+                  isDisabled={togglingBroadcasting}
+                  size="small"
+                  title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
+                />
+                {togglingBroadcasting && (
+                  <Text marginLeft="1.5rem">Saving...</Text>
+                )}
               </Flex>
             </React.Fragment>
             {this.state.isEditing ? (
@@ -155,3 +208,16 @@ export class EventPriceModifier extends Component {
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  togglingBroadcasting: selectors.selectEventTogglingBroadcasting
+});
+
+const mapDispatchToProps = {
+  setBroadcasting: actions.setEventBroadcasting
+};
+
+export const EventPriceModifier = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EventPriceModifierPresenter);

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<EventPriceModifier /> renders correctly 1`] = `
+exports[`<EventPriceModifierPresenter /> renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <EventPriceModifier
+  Symbol(enzyme.__unrendered__): <EventPriceModifierPresenter
     event={
       Object {
         "id": 1,
@@ -46,8 +46,13 @@ ShallowWrapper {
                   margin="0"
                   marginRight="2.5rem"
                 >
-                  Price Modifier
+                  Pricing
                 </styled.h4>
+                <Toggle
+                  onChange={[Function]}
+                  size="small"
+                  title="Enable pricing"
+                />
               </Flex>
             </React.Fragment>
             <styled.div
@@ -103,8 +108,13 @@ ShallowWrapper {
                   margin="0"
                   marginRight="2.5rem"
                 >
-                  Price Modifier
+                  Pricing
                 </styled.h4>
+                <Toggle
+                  onChange={[Function]}
+                  size="small"
+                  title="Enable pricing"
+                />
               </Flex>
             </React.Fragment>
             <styled.div
@@ -131,8 +141,13 @@ ShallowWrapper {
                     margin="0"
                     marginRight="2.5rem"
                   >
-                    Price Modifier
+                    Pricing
                   </styled.h4>
+                  <Toggle
+                    onChange={[Function]}
+                    size="small"
+                    title="Enable pricing"
+                  />
                 </Flex>
               </React.Fragment>,
               <styled.div
@@ -159,8 +174,13 @@ ShallowWrapper {
                     margin="0"
                     marginRight="2.5rem"
                   >
-                    Price Modifier
+                    Pricing
                   </styled.h4>
+                  <Toggle
+                    onChange={[Function]}
+                    size="small"
+                    title="Enable pricing"
+                  />
                 </Flex>,
               },
               "ref": null,
@@ -169,27 +189,53 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": <styled.h4
-                    margin="0"
-                    marginRight="2.5rem"
-                  >
-                    Price Modifier
-                  </styled.h4>,
+                  "children": Array [
+                    <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Pricing
+                    </styled.h4>,
+                    <Toggle
+                      onChange={[Function]}
+                      size="small"
+                      title="Enable pricing"
+                    />,
+                    undefined,
+                  ],
                 },
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Price Modifier",
-                    "margin": "0",
-                    "marginRight": "2.5rem",
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Pricing",
+                      "margin": "0",
+                      "marginRight": "2.5rem",
+                    },
+                    "ref": null,
+                    "rendered": "Pricing",
+                    "type": [Function],
                   },
-                  "ref": null,
-                  "rendered": "Price Modifier",
-                  "type": [Function],
-                },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "isChecked": undefined,
+                      "isDisabled": undefined,
+                      "onChange": [Function],
+                      "size": "small",
+                      "title": "Enable pricing",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  undefined,
+                ],
                 "type": [Function],
               },
               "type": Symbol(react.fragment),
@@ -280,8 +326,13 @@ ShallowWrapper {
                     margin="0"
                     marginRight="2.5rem"
                   >
-                    Price Modifier
+                    Pricing
                   </styled.h4>
+                  <Toggle
+                    onChange={[Function]}
+                    size="small"
+                    title="Enable pricing"
+                  />
                 </Flex>
               </React.Fragment>
               <styled.div
@@ -337,8 +388,13 @@ ShallowWrapper {
                     margin="0"
                     marginRight="2.5rem"
                   >
-                    Price Modifier
+                    Pricing
                   </styled.h4>
+                  <Toggle
+                    onChange={[Function]}
+                    size="small"
+                    title="Enable pricing"
+                  />
                 </Flex>
               </React.Fragment>
               <styled.div
@@ -365,8 +421,13 @@ ShallowWrapper {
                       margin="0"
                       marginRight="2.5rem"
                     >
-                      Price Modifier
+                      Pricing
                     </styled.h4>
+                    <Toggle
+                      onChange={[Function]}
+                      size="small"
+                      title="Enable pricing"
+                    />
                   </Flex>
                 </React.Fragment>,
                 <styled.div
@@ -393,8 +454,13 @@ ShallowWrapper {
                       margin="0"
                       marginRight="2.5rem"
                     >
-                      Price Modifier
+                      Pricing
                     </styled.h4>
+                    <Toggle
+                      onChange={[Function]}
+                      size="small"
+                      title="Enable pricing"
+                    />
                   </Flex>,
                 },
                 "ref": null,
@@ -403,27 +469,53 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": <styled.h4
-                      margin="0"
-                      marginRight="2.5rem"
-                    >
-                      Price Modifier
-                    </styled.h4>,
+                    "children": Array [
+                      <styled.h4
+                        margin="0"
+                        marginRight="2.5rem"
+                      >
+                        Pricing
+                      </styled.h4>,
+                      <Toggle
+                        onChange={[Function]}
+                        size="small"
+                        title="Enable pricing"
+                      />,
+                      undefined,
+                    ],
                   },
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Price Modifier",
-                      "margin": "0",
-                      "marginRight": "2.5rem",
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Pricing",
+                        "margin": "0",
+                        "marginRight": "2.5rem",
+                      },
+                      "ref": null,
+                      "rendered": "Pricing",
+                      "type": [Function],
                     },
-                    "ref": null,
-                    "rendered": "Price Modifier",
-                    "type": [Function],
-                  },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "isChecked": undefined,
+                        "isDisabled": undefined,
+                        "onChange": [Function],
+                        "size": "small",
+                        "title": "Enable pricing",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    undefined,
+                  ],
                   "type": [Function],
                 },
                 "type": Symbol(react.fragment),

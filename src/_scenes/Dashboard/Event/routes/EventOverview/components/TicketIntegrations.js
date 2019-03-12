@@ -10,7 +10,6 @@ import {
   Text,
   FlexItem,
   CenteredLoader,
-  Toggle,
   EDLink
 } from '_components';
 import styled from 'styled-components';
@@ -194,13 +193,7 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
   };
 
   render() {
-    const {
-      ticketIntegrations,
-      loading,
-      error,
-      event: { isBroadcast },
-      togglingBroadcasting
-    } = this.props;
+    const { ticketIntegrations, loading, error } = this.props;
 
     const hasNoData = !ticketIntegrations.length;
 
@@ -214,16 +207,6 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
                   <H4 margin="0" marginRight="2.5rem">
                     Integrations
                   </H4>
-                  <Toggle
-                    isChecked={isBroadcast}
-                    onChange={this.toggleIsBroadcasting}
-                    isDisabled={togglingBroadcasting}
-                    size="small"
-                    title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
-                  />
-                  {togglingBroadcasting && (
-                    <Text marginLeft="1.5rem">Saving...</Text>
-                  )}
                 </Flex>
                 <EDLink to="/settings/team">MANAGE ALL</EDLink>
               </React.Fragment>
@@ -258,13 +241,11 @@ const mapStateToProps = createStructuredSelector({
   ticketIntegrations: ticketIntegrationSelectors.selectTicketIntegrations,
   loading: ticketIntegrationSelectors.selectTicketIntegrationsLoading,
   error: ticketIntegrationSelectors.selectTicketIntegrationsError,
-  event: selectors.selectEvent,
-  togglingBroadcasting: selectors.selectEventTogglingBroadcasting
+  event: selectors.selectEvent
 });
 
 const mapDispatchToProps = {
-  fetchTicketIntegrations: ticketIntegrationActions.fetchTicketIntegrations,
-  setBroadcasting: actions.setEventBroadcasting
+  fetchTicketIntegrations: ticketIntegrationActions.fetchTicketIntegrations
 };
 
 export const TicketIntegrations = connect(

@@ -1,9 +1,12 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { EDTextButton, EventPriceModifier } from '../EventPriceModifier';
+import {
+  EDTextButton,
+  EventPriceModifierPresenter
+} from '../EventPriceModifier';
 import { NumberInputField } from '_components';
 
-describe('<EventPriceModifier />', () => {
+describe('<EventPriceModifierPresenter />', () => {
   const defaultProps = {
     event: {
       id: 1,
@@ -19,7 +22,7 @@ describe('<EventPriceModifier />', () => {
   };
 
   it('renders correctly', () => {
-    const wrapper = shallow(<EventPriceModifier {...defaultProps} />);
+    const wrapper = shallow(<EventPriceModifierPresenter {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.state('isEditing')).toBe(false);
     expect(wrapper.state('percentPriceModifierInvalid')).toBe(false);
@@ -28,7 +31,7 @@ describe('<EventPriceModifier />', () => {
   });
 
   it('will run saveUpdate when save is clicked', () => {
-    const wrapper = mount(<EventPriceModifier {...defaultProps} />);
+    const wrapper = mount(<EventPriceModifierPresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'saveUpdate');
     wrapper.find(EDTextButton).simulate('click');
     wrapper.find(EDTextButton).simulate('click');
@@ -37,7 +40,7 @@ describe('<EventPriceModifier />', () => {
   });
 
   it('can update state values on change', () => {
-    const wrapper = mount(<EventPriceModifier {...defaultProps} />);
+    const wrapper = mount(<EventPriceModifierPresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'update');
     const event = { target: { value: 30 } };
     wrapper.find(EDTextButton).simulate('click');
@@ -51,11 +54,11 @@ describe('<EventPriceModifier />', () => {
   });
 
   it('gets the correct noun', () => {
-    let wrapper = mount(<EventPriceModifier {...defaultProps} />);
+    let wrapper = mount(<EventPriceModifierPresenter {...defaultProps} />);
     expect(wrapper.html()).toContain('increase');
     wrapper.unmount();
 
-    wrapper = mount(<EventPriceModifier {...negativeProps} />);
+    wrapper = mount(<EventPriceModifierPresenter {...negativeProps} />);
     expect(wrapper.html()).toContain('decrease');
     wrapper.unmount();
   });
