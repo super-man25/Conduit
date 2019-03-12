@@ -44,33 +44,6 @@ export class EventPriceModifierPresenter extends Component {
     return this.state.event.percentPriceModifier >= 0 ? 'increase' : 'decrease';
   };
 
-  getDisplayView = () => {
-    return (
-      <Text size={22}>
-        {this.state.event.percentPriceModifier}% {this.getWord()}
-      </Text>
-    );
-  };
-
-  getEditView = () => {
-    return (
-      <Fragment>
-        <Text marginBottom=".33rem" size={15}>
-          Price Modification (%)
-        </Text>
-        <NumberInputField
-          component={Input}
-          type="number"
-          value={this.state.event.percentPriceModifier}
-          onChange={this.update}
-          onBlur={this.onBlur}
-          placeholder="Percent Price Modifier"
-          inValid={this.state.percentPriceModifierInvalid}
-        />
-      </Fragment>
-    );
-  };
-
   onBlur = (event) => {
     if (!event.target.value) {
       this.setState({
@@ -202,7 +175,26 @@ export class EventPriceModifierPresenter extends Component {
           </Flex>
         </PanelHeader>
         <PanelContent>
-          {this.state.isEditing ? this.getEditView() : this.getDisplayView()}
+          {this.state.isEditing ? (
+            <Fragment>
+              <Text marginBottom=".33rem" size={15}>
+                Price Modification (%)
+              </Text>
+              <NumberInputField
+                component={Input}
+                type="number"
+                value={this.state.event.percentPriceModifier}
+                onChange={this.update}
+                onBlur={this.onBlur}
+                placeholder="Percent Price Modifier"
+                inValid={this.state.percentPriceModifierInvalid}
+              />
+            </Fragment>
+          ) : (
+            <Text size={22}>
+              {this.state.event.percentPriceModifier}% {this.getWord()}
+            </Text>
+          )}
         </PanelContent>
       </Panel>
     );
