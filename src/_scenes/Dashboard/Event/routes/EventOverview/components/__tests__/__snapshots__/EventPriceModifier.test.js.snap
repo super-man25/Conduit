@@ -40,21 +40,19 @@ ShallowWrapper {
             height="100%"
             justify="space-between"
           >
-            <React.Fragment>
-              <Flex>
-                <styled.h4
-                  margin="0"
-                  marginRight="2.5rem"
-                >
-                  Pricing
-                </styled.h4>
-                <Toggle
-                  onChange={[Function]}
-                  size="small"
-                  title="Enable pricing"
-                />
-              </Flex>
-            </React.Fragment>
+            <Flex>
+              <styled.h4
+                margin="0"
+                marginRight="2.5rem"
+              >
+                Pricing
+              </styled.h4>
+              <Toggle
+                onChange={[Function]}
+                size="small"
+                title="Enable pricing"
+              />
+            </Flex>
             <styled.div
               onClick={[Function]}
               size="medium"
@@ -102,21 +100,19 @@ ShallowWrapper {
             height="100%"
             justify="space-between"
           >
-            <React.Fragment>
-              <Flex>
-                <styled.h4
-                  margin="0"
-                  marginRight="2.5rem"
-                >
-                  Pricing
-                </styled.h4>
-                <Toggle
-                  onChange={[Function]}
-                  size="small"
-                  title="Enable pricing"
-                />
-              </Flex>
-            </React.Fragment>
+            <Flex>
+              <styled.h4
+                margin="0"
+                marginRight="2.5rem"
+              >
+                Pricing
+              </styled.h4>
+              <Toggle
+                onChange={[Function]}
+                size="small"
+                title="Enable pricing"
+              />
+            </Flex>
             <styled.div
               onClick={[Function]}
               size="medium"
@@ -135,21 +131,19 @@ ShallowWrapper {
           "props": Object {
             "align": "center",
             "children": Array [
-              <React.Fragment>
-                <Flex>
-                  <styled.h4
-                    margin="0"
-                    marginRight="2.5rem"
-                  >
-                    Pricing
-                  </styled.h4>
-                  <Toggle
-                    onChange={[Function]}
-                    size="small"
-                    title="Enable pricing"
-                  />
-                </Flex>
-              </React.Fragment>,
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Pricing
+                </styled.h4>
+                <Toggle
+                  onChange={[Function]}
+                  size="small"
+                  title="Enable pricing"
+                />
+              </Flex>,
               <styled.div
                 onClick={[Function]}
                 size="medium"
@@ -167,78 +161,56 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
               "props": Object {
-                "children": <Flex>
+                "children": Array [
                   <styled.h4
                     margin="0"
                     marginRight="2.5rem"
                   >
                     Pricing
-                  </styled.h4>
+                  </styled.h4>,
                   <Toggle
                     onChange={[Function]}
                     size="small"
                     title="Enable pricing"
-                  />
-                </Flex>,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <styled.h4
-                      margin="0"
-                      marginRight="2.5rem"
-                    >
-                      Pricing
-                    </styled.h4>,
-                    <Toggle
-                      onChange={[Function]}
-                      size="small"
-                      title="Enable pricing"
-                    />,
-                    undefined,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Pricing",
-                      "margin": "0",
-                      "marginRight": "2.5rem",
-                    },
-                    "ref": null,
-                    "rendered": "Pricing",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "isChecked": undefined,
-                      "isDisabled": undefined,
-                      "onChange": [Function],
-                      "size": "small",
-                      "title": "Enable pricing",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
+                  />,
                   undefined,
                 ],
-                "type": [Function],
               },
-              "type": Symbol(react.fragment),
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Pricing",
+                    "margin": "0",
+                    "marginRight": "2.5rem",
+                  },
+                  "ref": null,
+                  "rendered": "Pricing",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "isChecked": undefined,
+                    "isDisabled": undefined,
+                    "onChange": [Function],
+                    "size": "small",
+                    "title": "Enable pricing",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                undefined,
+              ],
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -320,21 +292,19 @@ ShallowWrapper {
               height="100%"
               justify="space-between"
             >
-              <React.Fragment>
-                <Flex>
-                  <styled.h4
-                    margin="0"
-                    marginRight="2.5rem"
-                  >
-                    Pricing
-                  </styled.h4>
-                  <Toggle
-                    onChange={[Function]}
-                    size="small"
-                    title="Enable pricing"
-                  />
-                </Flex>
-              </React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Pricing
+                </styled.h4>
+                <Toggle
+                  onChange={[Function]}
+                  size="small"
+                  title="Enable pricing"
+                />
+              </Flex>
               <styled.div
                 onClick={[Function]}
                 size="medium"
@@ -382,21 +352,19 @@ ShallowWrapper {
               height="100%"
               justify="space-between"
             >
-              <React.Fragment>
-                <Flex>
-                  <styled.h4
-                    margin="0"
-                    marginRight="2.5rem"
-                  >
-                    Pricing
-                  </styled.h4>
-                  <Toggle
-                    onChange={[Function]}
-                    size="small"
-                    title="Enable pricing"
-                  />
-                </Flex>
-              </React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Pricing
+                </styled.h4>
+                <Toggle
+                  onChange={[Function]}
+                  size="small"
+                  title="Enable pricing"
+                />
+              </Flex>
               <styled.div
                 onClick={[Function]}
                 size="medium"
@@ -415,21 +383,19 @@ ShallowWrapper {
             "props": Object {
               "align": "center",
               "children": Array [
-                <React.Fragment>
-                  <Flex>
-                    <styled.h4
-                      margin="0"
-                      marginRight="2.5rem"
-                    >
-                      Pricing
-                    </styled.h4>
-                    <Toggle
-                      onChange={[Function]}
-                      size="small"
-                      title="Enable pricing"
-                    />
-                  </Flex>
-                </React.Fragment>,
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Pricing
+                  </styled.h4>
+                  <Toggle
+                    onChange={[Function]}
+                    size="small"
+                    title="Enable pricing"
+                  />
+                </Flex>,
                 <styled.div
                   onClick={[Function]}
                   size="medium"
@@ -447,78 +413,56 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
                 "props": Object {
-                  "children": <Flex>
+                  "children": Array [
                     <styled.h4
                       margin="0"
                       marginRight="2.5rem"
                     >
                       Pricing
-                    </styled.h4>
+                    </styled.h4>,
                     <Toggle
                       onChange={[Function]}
                       size="small"
                       title="Enable pricing"
-                    />
-                  </Flex>,
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": Array [
-                      <styled.h4
-                        margin="0"
-                        marginRight="2.5rem"
-                      >
-                        Pricing
-                      </styled.h4>,
-                      <Toggle
-                        onChange={[Function]}
-                        size="small"
-                        title="Enable pricing"
-                      />,
-                      undefined,
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {
-                        "children": "Pricing",
-                        "margin": "0",
-                        "marginRight": "2.5rem",
-                      },
-                      "ref": null,
-                      "rendered": "Pricing",
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "function",
-                      "props": Object {
-                        "isChecked": undefined,
-                        "isDisabled": undefined,
-                        "onChange": [Function],
-                        "size": "small",
-                        "title": "Enable pricing",
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
+                    />,
                     undefined,
                   ],
-                  "type": [Function],
                 },
-                "type": Symbol(react.fragment),
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Pricing",
+                      "margin": "0",
+                      "marginRight": "2.5rem",
+                    },
+                    "ref": null,
+                    "rendered": "Pricing",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "isChecked": undefined,
+                      "isDisabled": undefined,
+                      "onChange": [Function],
+                      "size": "small",
+                      "title": "Enable pricing",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  undefined,
+                ],
+                "type": [Function],
               },
               Object {
                 "instance": null,

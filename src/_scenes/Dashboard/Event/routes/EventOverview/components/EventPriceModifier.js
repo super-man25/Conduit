@@ -136,23 +136,21 @@ export class EventPriceModifierPresenter extends Component {
         <ApiAlertPresenter alertState={this.state.alertState} />
         <PanelHeader>
           <Flex height="100%" align="center" justify="space-between">
-            <React.Fragment>
-              <Flex>
-                <H4 margin="0" marginRight="2.5rem">
-                  Pricing
-                </H4>
-                <Toggle
-                  isChecked={isBroadcast}
-                  onChange={this.toggleIsBroadcasting}
-                  isDisabled={togglingBroadcasting}
-                  size="small"
-                  title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
-                />
-                {togglingBroadcasting && (
-                  <Text marginLeft="1.5rem">Saving...</Text>
-                )}
-              </Flex>
-            </React.Fragment>
+            <Flex>
+              <H4 margin="0" marginRight="2.5rem">
+                Pricing
+              </H4>
+              <Toggle
+                isChecked={isBroadcast}
+                onChange={this.toggleIsBroadcasting}
+                isDisabled={togglingBroadcasting}
+                size="small"
+                title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
+              />
+              {togglingBroadcasting && (
+                <Text marginLeft="1.5rem">Saving...</Text>
+              )}
+            </Flex>
             {this.state.isEditing ? (
               <EDTextButton
                 type="primary"
