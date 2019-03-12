@@ -14,7 +14,7 @@ import {
 } from '_components';
 import { connect } from 'react-redux';
 import { cssConstants } from '_constants';
-import { eventService } from '../../../../../../_services/event';
+import { eventService } from '_services/event';
 import { createStructuredSelector } from 'reselect';
 import { selectors, actions } from '_state/event';
 

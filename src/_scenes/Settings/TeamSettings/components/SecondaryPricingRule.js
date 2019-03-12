@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { integrationService } from '../../../../_services/integration';
+import { integrationService } from '_services/integration';
 import {
   SettingEditButton,
   SettingSaveButton,
