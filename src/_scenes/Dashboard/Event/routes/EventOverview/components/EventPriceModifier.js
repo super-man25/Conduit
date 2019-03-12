@@ -76,31 +76,36 @@ export class EventPriceModifierPresenter extends Component {
       .updatePercentPriceModifier(id, percentPriceModifier)
       .then(this.handleSuccess)
       .catch(this.handleError);
-    setTimeout(this.resetState, 3000);
   };
 
   handleSuccess = (event) => {
-    this.setState({
-      event,
-      alertState: {
-        type: 'api-success',
-        message: 'Price Modifier Successfully Saved.'
-      }
-    });
+    this.setState(
+      {
+        event,
+        alertState: {
+          type: 'api-success',
+          message: 'Price Modifier Successfully Saved.'
+        }
+      },
+      () => setTimeout(this.resetAlertState, 3000)
+    );
     this.toggleEdit();
   };
 
   handleError = (error) => {
-    this.setState({
-      percentPriceModifierInvalid: true,
-      alertState: {
-        type: 'api-error',
-        message: error.message
-      }
-    });
+    this.setState(
+      {
+        percentPriceModifierInvalid: true,
+        alertState: {
+          type: 'api-error',
+          message: error.message
+        }
+      },
+      () => setTimeout(this.resetAlertState, 3000)
+    );
   };
 
-  resetState = () => {
+  resetAlertState = () => {
     this.setState({
       alertState: {
         type: null,
