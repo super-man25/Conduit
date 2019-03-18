@@ -40,6 +40,9 @@ ShallowWrapper {
         <styled.div
           height="2rem"
         />
+        <Connect(EventPriceModifierPresenter)
+          event={Object {}}
+        />
       </styled.div>,
     },
     "ref": null,
@@ -65,6 +68,9 @@ ShallowWrapper {
           <Connect(TicketIntegrationsPresenter) />,
           <styled.div
             height="2rem"
+          />,
+          <Connect(EventPriceModifierPresenter)
+            event={Object {}}
           />,
         ],
         "padding": "1.5rem 2rem",
@@ -136,6 +142,17 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "event": Object {},
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -167,6 +184,9 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />
+          <Connect(EventPriceModifierPresenter)
+            event={Object {}}
+          />
         </styled.div>,
       },
       "ref": null,
@@ -192,6 +212,9 @@ ShallowWrapper {
             <Connect(TicketIntegrationsPresenter) />,
             <styled.div
               height="2rem"
+            />,
+            <Connect(EventPriceModifierPresenter)
+              event={Object {}}
             />,
           ],
           "padding": "1.5rem 2rem",
@@ -258,6 +281,17 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "height": "2rem",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "event": Object {},
             },
             "ref": null,
             "rendered": null,
