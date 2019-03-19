@@ -23,6 +23,7 @@ export const EventOverview = ({ event }: Props) =>
         <Spacing height="2rem" />
         <TicketIntegrations />
         <Spacing height="2rem" />
+        <EventPriceModifier event={event} />
       </Box>
     </PageWrapper>
   );
