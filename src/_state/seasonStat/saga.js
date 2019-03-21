@@ -8,7 +8,7 @@ import actions, {
 import { eventStatService } from '_services';
 import { getSeasonStatFilterArguments } from './selectors';
 import { selectors } from '../season';
-import { subMonths } from 'date-fns';
+import { endOfDay, startOfDay, subMonths } from 'date-fns';
 
 // Workers
 export function* setDefaultDateRange() {
@@ -34,8 +34,8 @@ export function* fetchSeasonTimeStats(action) {
 
     const events = yield call(eventStatService.getAll, {
       seasonId,
-      start: from,
-      end: to
+      start: startOfDay(from),
+      end: endOfDay(to)
     });
     yield put({ type: FETCH_SUCCESS, payload: events });
   } catch (err) {
