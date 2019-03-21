@@ -84,6 +84,15 @@ const columns = [
     }
   },
   {
+    label: 'Price Ceiling',
+    width: 0,
+    dataKey: 'maximumPrice',
+    flexGrow: 10,
+    cellDataGetter({ columnData, dataKey, rowData }) {
+      return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
+    }
+  },
+  {
     label: 'List Price',
     width: 0,
     dataKey: 'listedPrice',
