@@ -7,13 +7,14 @@ import EventChart from './components/EventChart';
 import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
 import { TicketIntegrations } from './components/TicketIntegrations';
-import { EventPriceModifier } from './components/EventPriceModifier';
+import { EventPricing } from './components/EventPricing';
 
 type Props = {
-  event: ?EDEvent
+  event: ?EDEvent,
+  isAdmin: boolean
 };
 
-export const EventOverview = ({ event }: Props) =>
+export const EventOverview = ({ event, isAdmin }: Props) =>
   !!event && (
     <PageWrapper>
       <Box padding="1.5rem 2rem">
@@ -23,14 +24,15 @@ export const EventOverview = ({ event }: Props) =>
         <Spacing height="2rem" />
         <TicketIntegrations />
         <Spacing height="2rem" />
-        <EventPriceModifier event={event} />
+        <EventPricing event={event} isAdmin={isAdmin} />
       </Box>
     </PageWrapper>
   );
 
 function mapStateToProps(state) {
   return {
-    event: selectors.selectEvent(state)
+    event: selectors.selectEvent(state),
+    isAdmin: state.auth.model.isAdmin
   };
 }
 

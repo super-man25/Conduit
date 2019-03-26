@@ -40,7 +40,7 @@ ShallowWrapper {
         <styled.div
           height="2rem"
         />
-        <Connect(EventPriceModifierPresenter)
+        <Connect(EventPricingPresenter)
           event={Object {}}
         />
       </styled.div>,
@@ -69,7 +69,7 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />,
-          <Connect(EventPriceModifierPresenter)
+          <Connect(EventPricingPresenter)
             event={Object {}}
           />,
         ],
@@ -148,6 +148,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "event": Object {},
+            "isAdmin": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -184,7 +185,7 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />
-          <Connect(EventPriceModifierPresenter)
+          <Connect(EventPricingPresenter)
             event={Object {}}
           />
         </styled.div>,
@@ -213,7 +214,7 @@ ShallowWrapper {
             <styled.div
               height="2rem"
             />,
-            <Connect(EventPriceModifierPresenter)
+            <Connect(EventPricingPresenter)
               event={Object {}}
             />,
           ],
@@ -292,6 +293,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "event": Object {},
+              "isAdmin": undefined,
             },
             "ref": null,
             "rendered": null,

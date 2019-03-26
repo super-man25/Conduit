@@ -2,8 +2,14 @@
 import { eventService } from '_services';
 import { call, put, takeLatest, take } from 'redux-saga/effects';
 import { types } from '.';
+import { types as eventListTypes } from '_state/eventList';
 import type { Saga } from 'redux-saga';
-import type { ToggleEventBroadcastingAction, FetchEventAction } from '.';
+import type {
+  ToggleEventBroadcastingAction,
+  FetchEventAction,
+  SaveAdminModifiersAction
+} from '.';
+import alertActions from '../alert/actions';
 
 // Workers
 export function* fetchEvent(action: FetchEventAction): Saga {
@@ -37,6 +43,39 @@ export function* toggleBroadcasting(
   }
 }
 
+export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
+  const {
+    eventId,
+    eventScoreModifier,
+    springModifier,
+    seasonId,
+    callback
+  } = action.payload;
+  try {
+    const response = yield call(
+      eventService.updateAdminModifiers,
+      eventId,
+      eventScoreModifier,
+      springModifier
+    );
+
+    yield put({
+      type: types.SAVE_ADMIN_MODIFIERS_SUCCESS,
+      payload: { ...response, eventId }
+    });
+    yield put(alertActions.success('Successfully saved modifier'));
+    yield call(callback);
+    yield put({
+      type: eventListTypes.FETCH_EVENT_LIST,
+      payload: { seasonId }
+    });
+  } catch (err) {
+    yield put({ type: types.SAVE_ADMIN_MODIFIERS_ERROR, payload: err });
+    yield call(callback, err);
+    yield put(alertActions.error(err.toString() || 'Failed to save modifier'));
+  }
+}
+
 // Sagas
 function* watchFetchEvent(): Saga {
   yield takeLatest(types.FETCH_EVENT, fetchEvent);
@@ -51,4 +90,12 @@ function* watchToggleBroadcasting(): Saga {
   }
 }
 
-export default { watchFetchEvent, watchToggleBroadcasting };
+function* watchSaveAdminModifiers(): Saga {
+  yield takeLatest(types.SAVE_ADMIN_MODIFIERS, saveAdminModifiers);
+}
+
+export default {
+  watchFetchEvent,
+  watchToggleBroadcasting,
+  watchSaveAdminModifiers
+};

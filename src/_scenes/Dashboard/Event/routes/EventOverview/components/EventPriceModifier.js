@@ -1,35 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import {
-  Panel,
-  PanelHeader,
-  Flex,
-  H4,
-  PanelContent,
-  EDText,
-  Text,
   NumberInputField,
   Input,
-  Toggle,
-  ApiAlertPresenter
+  Text,
+  ApiAlertPresenter,
+  Flex,
+  EDTextButton
 } from '_components';
-import { connect } from 'react-redux';
-import { cssConstants } from '_constants';
 import { eventService } from '_services/event';
-import { createStructuredSelector } from 'reselect';
-import { selectors, actions } from '_state/event';
 
-export const EDTextButton = EDText.extend`
-  &:hover {
-    outline: 0;
-    text-decoration: none;
-    cursor: pointer;
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all 0.1s ease-in-out;
-    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
-  }
-`;
-
-export class EventPriceModifierPresenter extends Component {
+export class EventPriceModifier extends Component {
   state = {
     isEditing: false,
     event: this.props.event,
@@ -38,10 +18,6 @@ export class EventPriceModifierPresenter extends Component {
       message: null
     },
     percentPriceModifierInvalid: false
-  };
-
-  getWord = () => {
-    return this.state.event.percentPriceModifier >= 0 ? 'increase' : 'decrease';
   };
 
   onBlur = (event) => {
@@ -68,6 +44,10 @@ export class EventPriceModifierPresenter extends Component {
 
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing });
+  };
+
+  getWord = () => {
+    return this.state.event.percentPriceModifier >= 0 ? 'increase' : 'decrease';
   };
 
   saveUpdate = () => {
@@ -114,49 +94,16 @@ export class EventPriceModifierPresenter extends Component {
     });
   };
 
-  toggleIsBroadcasting = (e) => {
-    const {
-      setBroadcasting,
-      event: { id }
-    } = this.props;
-
-    const { checked } = e.target;
-
-    const verb = checked ? 'enable' : 'disable';
-    const msg = `Are you sure you want to ${verb} pricing for this event?`;
-
-    if (window.confirm(msg)) {
-      setBroadcasting(id, checked);
-    }
-  };
-
   render() {
-    const {
-      event: { isBroadcast },
-      togglingBroadcasting
-    } = this.props;
-
     return (
-      <Panel>
+      <Fragment>
         <ApiAlertPresenter alertState={this.state.alertState} />
-        <PanelHeader>
-          <Flex height="100%" align="center" justify="space-between">
-            <Flex>
-              <H4 margin="0" marginRight="2.5rem">
-                Pricing
-              </H4>
-              <Toggle
-                isChecked={isBroadcast}
-                onChange={this.toggleIsBroadcasting}
-                isDisabled={togglingBroadcasting}
-                size="small"
-                title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
-              />
-              {togglingBroadcasting && (
-                <Text marginLeft="1.5rem">Saving...</Text>
-              )}
-            </Flex>
-            {this.state.isEditing ? (
+        {this.state.isEditing ? (
+          <Fragment>
+            <Flex justify="space-between">
+              <Text marginBottom=".33rem" size={15}>
+                Price Modification (%)
+              </Text>
               <EDTextButton
                 type="primary"
                 size="medium"
@@ -165,54 +112,34 @@ export class EventPriceModifierPresenter extends Component {
               >
                 SAVE
               </EDTextButton>
-            ) : (
-              <EDTextButton
-                type="primary"
-                size="medium"
-                weight="normal"
-                onClick={this.toggleEdit}
-              >
-                EDIT
-              </EDTextButton>
-            )}
-          </Flex>
-        </PanelHeader>
-        <PanelContent>
-          {this.state.isEditing ? (
-            <Fragment>
-              <Text marginBottom=".33rem" size={15}>
-                Price Modification (%)
-              </Text>
-              <NumberInputField
-                component={Input}
-                type="number"
-                value={this.state.event.percentPriceModifier}
-                onChange={this.update}
-                onBlur={this.onBlur}
-                placeholder="Percent Price Modifier"
-                inValid={this.state.percentPriceModifierInvalid}
-              />
-            </Fragment>
-          ) : (
-            <Text size={22}>
-              {this.state.event.percentPriceModifier}% {this.getWord()}
+            </Flex>
+            <NumberInputField
+              component={Input}
+              type="number"
+              value={this.state.event.percentPriceModifier}
+              onChange={this.update}
+              onBlur={this.onBlur}
+              placeholder="Percent Price Modifier"
+              inValid={this.state.percentPriceModifierInvalid}
+            />
+          </Fragment>
+        ) : (
+          <Flex justify="space-between">
+            <Text size={18}>
+              Price Modifier: {this.state.event.percentPriceModifier}%{' '}
+              {this.getWord()}
             </Text>
-          )}
-        </PanelContent>
-      </Panel>
+            <EDTextButton
+              type="primary"
+              size="medium"
+              weight="normal"
+              onClick={this.toggleEdit}
+            >
+              EDIT
+            </EDTextButton>
+          </Flex>
+        )}
+      </Fragment>
     );
   }
 }
-
-const mapStateToProps = createStructuredSelector({
-  togglingBroadcasting: selectors.selectEventTogglingBroadcasting
-});
-
-const mapDispatchToProps = {
-  setBroadcasting: actions.setEventBroadcasting
-};
-
-export const EventPriceModifier = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EventPriceModifierPresenter);

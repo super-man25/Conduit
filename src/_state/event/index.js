@@ -1,5 +1,5 @@
 // @flow
-import type { EDEvent } from '_models';
+import { EDEvent } from '_models';
 export { default as saga } from './saga';
 
 // Actions Types
@@ -9,6 +9,9 @@ const FETCH_EVENT_ERROR = 'event/FETCH_ERROR';
 const TOGGLE_BROADCASTING = 'event/TOGGLE_BROADCASTING';
 const TOGGLE_BROADCASTING_SUCCESS = 'event/TOGGLE_BROADCASTING_SUCCESS';
 const TOGGLE_BROADCASTING_ERROR = 'event/TOGGLE_BROADCASTING_ERROR';
+const SAVE_ADMIN_MODIFIERS = 'event/SAVE_ADMIN_MODIFIERS';
+const SAVE_ADMIN_MODIFIERS_SUCCESS = 'event/SAVE_ADMIN_MODIFIERS_SUCCESS';
+const SAVE_ADMIN_MODIFIERS_ERROR = 'event/SAVE_ADMIN_MODIFIERS_ERROR';
 const RESET = 'event/RESET';
 
 export type FetchEventAction = {
@@ -35,6 +38,28 @@ export type ToggleEventBroadcastingErrorAction = {
   type: 'event/TOGGLE_BROADCASTING_ERROR',
   payload: Error
 };
+export type SaveAdminModifiersAction = {
+  type: 'event/SAVE_ADMIN_MODIFIERS',
+  payload: {
+    eventId: number,
+    eventScoreModifier: number,
+    springModifier: number,
+    seasonId: number,
+    callback: () => void
+  }
+};
+export type SaveAdminModifiersSuccessAction = {
+  type: 'event/SAVE_ADMIN_MODIFIERS_SUCCESS',
+  payload: {
+    eventId: number,
+    eventScoreModifier: number,
+    springModifier: number
+  }
+};
+export type SaveAdminModifiersErrorAction = {
+  type: 'event/SAVE_ADMIN_MODIFIERS_ERROR',
+  payload: Error
+};
 export type ResetEventAction = {
   type: 'event/RESET'
 };
@@ -43,6 +68,9 @@ export type Action =
   | FetchEventAction
   | FetchEventSuccessAction
   | FetchEventErrorAction
+  | SaveAdminModifiersAction
+  | SaveAdminModifiersSuccessAction
+  | SaveAdminModifiersErrorAction
   | ResetEventAction;
 
 export const types = {
@@ -52,6 +80,9 @@ export const types = {
   TOGGLE_BROADCASTING,
   TOGGLE_BROADCASTING_SUCCESS,
   TOGGLE_BROADCASTING_ERROR,
+  SAVE_ADMIN_MODIFIERS,
+  SAVE_ADMIN_MODIFIERS_SUCCESS,
+  SAVE_ADMIN_MODIFIERS_ERROR,
   RESET
 };
 
@@ -72,9 +103,29 @@ const setEventBroadcasting = (
   }
 });
 
+function saveAdminModifiers(
+  eventId: number,
+  eventScoreModifier: number,
+  springModifier: number,
+  seasonId: number,
+  callback: () => void
+): SaveAdminModifiersAction {
+  return {
+    type: SAVE_ADMIN_MODIFIERS,
+    payload: {
+      eventId,
+      eventScoreModifier,
+      springModifier,
+      seasonId,
+      callback
+    }
+  };
+}
+
 export const actions = {
   fetchEvent,
-  setEventBroadcasting
+  setEventBroadcasting,
+  saveAdminModifiers
 };
 
 // State/Reducer
@@ -102,6 +153,19 @@ export const reducer = (state: State = initialState, action: Action) => {
       return { ...state, loading: false, error: action.payload };
     case RESET:
       return initialState;
+    case SAVE_ADMIN_MODIFIERS:
+      return { ...state, savingAdminModifiers: true };
+    case SAVE_ADMIN_MODIFIERS_ERROR:
+      return { ...state, savingAdminModifiers: false };
+    case SAVE_ADMIN_MODIFIERS_SUCCESS: {
+      const { eventScoreModifier, springModifier } = action.payload;
+
+      return {
+        ...state,
+        savingAdminModifiers: false,
+        event: { ...state.event, eventScoreModifier, springModifier }
+      };
+    }
     case TOGGLE_BROADCASTING:
       return { ...state, isTogglingBroadcasting: true };
     case TOGGLE_BROADCASTING_SUCCESS:

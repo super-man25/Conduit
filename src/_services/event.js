@@ -2,7 +2,7 @@
 import { get, put, post } from '_helpers/api';
 import { getYear } from 'date-fns';
 import type { EDEvent, EDInventoryRow } from '_models';
-import { denormalize } from './normalizers/event';
+import { denormalize, denormalizeAdminModifiers } from './normalizers/event';
 
 type GetAllParams = { seasonId: number } | { year: Date };
 
@@ -39,6 +39,20 @@ function updatePercentPriceModifier(
   });
 }
 
+function updateAdminModifiers(
+  eventId: number,
+  eventScoreModifier: number,
+  springModifier: number
+) {
+  return denormalizeAdminModifiers({ eventScoreModifier, springModifier }).then(
+    (payload) => {
+      return put(`events/${eventId}/adminModifier`, payload).catch(
+        handleResponseError
+      );
+    }
+  );
+}
+
 // Since rows Ids are computed from the three properties eventId+section+row and aren't
 // returned from the server, we generate a computed id here instead of computing it.
 // Remove if an Id starts getting generated on the server
@@ -64,7 +78,7 @@ function updateEventSeats(payload: {
 function handleResponseError(error) {
   switch (error.code) {
     default:
-      error.toString = () => 'Error saving price modification';
+      error.toString = () => 'Error saving modifier';
   }
   throw error;
 }
@@ -75,5 +89,6 @@ export const eventService = {
   toggleBroadcasting,
   getInventory,
   updateEventSeats,
-  updatePercentPriceModifier
+  updatePercentPriceModifier,
+  updateAdminModifiers
 };
