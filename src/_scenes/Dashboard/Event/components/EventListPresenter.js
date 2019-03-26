@@ -51,7 +51,8 @@ type Props = {
   +onClick: (event: EDEvent) => void,
   +loading: boolean,
   +events: Array<EDEvent>,
-  +filter: string
+  +filter: string,
+  +isAdmin: boolean
 };
 
 export function EventListPresenter(props: Props) {
@@ -62,7 +63,8 @@ export function EventListPresenter(props: Props) {
     onClick,
     title,
     onSearchInputChange,
-    filter
+    filter,
+    isAdmin
   } = props;
 
   const filtered = !!filter;
@@ -104,6 +106,7 @@ export function EventListPresenter(props: Props) {
                 active={event.id === activeId}
                 key={event.id}
                 event={event}
+                isAdmin={isAdmin}
               />
             )}
           </ScrollableList>

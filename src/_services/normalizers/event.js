@@ -9,10 +9,27 @@ const percentPriceModifierSchema = yup.object({
     .label('Percent change')
 });
 
+const adminModifierSchema = yup.object({
+  eventScoreModifier: yup
+    .number()
+    .min(-100)
+    .max(100)
+    .label('Event Score Modifier'),
+  springModifier: yup
+    .number()
+    .min(-2)
+    .max(2)
+    .label('Spring Modifier')
+});
+
 export function denormalize(body) {
   return percentPriceModifierSchema
     .validate(body)
     .catch(handleDenormalizeError);
+}
+
+export function denormalizeAdminModifiers(body) {
+  return adminModifierSchema.validate(body).catch(handleDenormalizeError);
 }
 
 function handleDenormalizeError(error) {
@@ -26,7 +43,7 @@ function handleDenormalizeError(error) {
       error.toString = () => error.message;
       break;
     default:
-      error.toString = () => 'Error saving price modifier';
+      error.toString = () => `Error saving ${error.path || 'modifier'}`;
   }
   throw error;
 }

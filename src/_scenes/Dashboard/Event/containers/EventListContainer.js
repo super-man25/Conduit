@@ -13,7 +13,8 @@ type Props = {
   eventListState: EventListState,
   activeEventId: number,
   activeSeasonId: number,
-  push: (path: string) => void
+  push: (path: string) => void,
+  isAdmin: boolean
 };
 
 class EventListContainer extends React.Component<Props> {
@@ -68,6 +69,7 @@ class EventListContainer extends React.Component<Props> {
         selectedFilter,
         filter
       },
+      isAdmin,
       activeEventId
     } = this.props;
 
@@ -85,6 +87,7 @@ class EventListContainer extends React.Component<Props> {
         onTimestampSortChange={this.handleTimestampSortChange}
         onSearchInputChange={this.handleSearchInput}
         filter={filter}
+        isAdmin={isAdmin}
       />
     );
   }
@@ -95,7 +98,8 @@ function mapStateToProps(state) {
     eventListState: state.eventList,
     activeEventId: selectors.selectActiveEventListId(state),
     activeSeasonId: seasonSelectors.selectActiveSeasonId(state),
-    loading: state.eventList.loading || state.season.loading
+    loading: state.eventList.loading || state.season.loading,
+    isAdmin: state.auth.model.isAdmin
   };
 }
 

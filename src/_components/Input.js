@@ -58,7 +58,7 @@ export const Input: React.ComponentType<Props> = styled.input.attrs({
     -webkit-animation-fill-mode: both;
   }
   font-size: 1rem;
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : '100%')};
   padding-left: 3%;
   border: 2px solid;
   border-radius: 3px;

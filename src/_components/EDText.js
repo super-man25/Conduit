@@ -3,6 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
+import { withBoxModelProps } from '_helpers/style-utils';
 
 const TYPES = new Map()
   .set('primary', cssConstants.PRIMARY_DARKEST_GRAY)
@@ -27,11 +28,22 @@ type Props = {
   types: 'primary' | 'secondary' | 'tertiary'
 };
 
-export const EDText: React.ComponentType<Props> = styled.div`
+export const EDText: React.ComponentType<Props> = withBoxModelProps(styled.div`
   font-size: ${(props) => SIZES.get(props.size) || '1rem'};
   color: ${(props) =>
     TYPES.get(props.type) || cssConstants.PRIMARY_DARKEST_GRAY};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
   margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || 0};
+`);
+
+export const EDTextButton = styled(EDText)`
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    transition: all 0.1s ease-in-out;
+    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
+  }
 `;

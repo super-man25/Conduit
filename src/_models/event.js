@@ -13,5 +13,10 @@ export type EDEvent = {
   venueId: number,
   isBroadcast: boolean,
   totalInventory: number,
-  unsoldInventory: number
+  unsoldInventory: number,
+  percentPriceModifier: number,
+  eventScore: number,
+  eventScoreModifier: number,
+  spring: number,
+  springModifier: number
 };
