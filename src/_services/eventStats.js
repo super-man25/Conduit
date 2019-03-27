@@ -1,14 +1,13 @@
 // @flow
 
 import { get } from '_helpers/api';
-import { toScalaDate } from '_helpers';
 
 type DateRange = { start?: Date, end: Date };
 
 function formatDateParams({ start, end, ...rest }) {
   const res = { ...rest };
-  if (start) res.startTime = toScalaDate(start);
-  if (end) res.endTime = toScalaDate(end);
+  if (start) res.startTime = start.toISOString();
+  if (end) res.endTime = end.toISOString();
 
   return res;
 }

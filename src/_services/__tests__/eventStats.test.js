@@ -1,7 +1,6 @@
 import fetchMock from 'fetch-mock';
 import { eventStatService } from '../eventStats';
 import { stringify } from 'querystring';
-import { toScalaDate } from '_helpers';
 
 const eventStats = [
   {
@@ -30,7 +29,7 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      startTime: toScalaDate(start)
+      startTime: start.toISOString()
     };
 
     const mock = fetchMock.get(
@@ -50,7 +49,7 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      endTime: toScalaDate(end)
+      endTime: end.toISOString()
     };
 
     const mock = fetchMock.get(
@@ -71,8 +70,8 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      startTime: toScalaDate(start),
-      endTime: toScalaDate(end)
+      startTime: start.toISOString(),
+      endTime: end.toISOString()
     };
 
     const mock = fetchMock.get(
