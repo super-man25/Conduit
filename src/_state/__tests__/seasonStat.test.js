@@ -1,4 +1,3 @@
-import { endOfDay, startOfDay } from 'date-fns';
 import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
 import { eventStatService } from '_services';
@@ -231,8 +230,8 @@ describe('saga workers', () => {
     expect(generator.next(seasonId).value).toEqual(
       call(eventStatService.getAll, {
         seasonId,
-        start: startOfDay(dateRange.from),
-        end: endOfDay(dateRange.to)
+        start: dateRange.from,
+        end: dateRange.to
       })
     );
 

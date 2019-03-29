@@ -10,12 +10,22 @@ const eventStats = [
   }
 ];
 
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
 describe('get all', () => {
   afterEach(fetchMock.restore);
 
   it('should get get all eventStats', () => {
     const eventId = 1;
-    const mock = fetchMock.get(`end:timeStats?eventId=${eventId}`, eventStats);
+    const params = {
+      eventId,
+      timezone
+    };
+
+    const mock = fetchMock.get(
+      `end:timeStats?${stringify(params)}`,
+      eventStats
+    );
 
     return eventStatService.getAll({ eventId: 1 }).then((res) => {
       expect(mock.called()).toBe(true);
@@ -29,7 +39,8 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      startTime: start.toISOString()
+      startTime: start.toISOString(),
+      timezone
     };
 
     const mock = fetchMock.get(
@@ -49,7 +60,8 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      endTime: end.toISOString()
+      endTime: end.toISOString(),
+      timezone
     };
 
     const mock = fetchMock.get(
@@ -71,7 +83,8 @@ describe('get all', () => {
     const params = {
       eventId,
       startTime: start.toISOString(),
-      endTime: end.toISOString()
+      endTime: end.toISOString(),
+      timezone
     };
 
     const mock = fetchMock.get(
