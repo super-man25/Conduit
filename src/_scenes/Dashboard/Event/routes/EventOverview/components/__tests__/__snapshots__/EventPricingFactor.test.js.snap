@@ -7,7 +7,7 @@ ShallowWrapper {
     base={1}
     modifier={1.5}
     type="eventScoreModifier"
-    unit="$"
+    unit=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -31,7 +31,7 @@ ShallowWrapper {
           <styled.p
             size={18}
           >
-            Event Score: $2.50
+            Event Score: 2.500
           </styled.p>
           <Styled(styled.div)
             onClick={[Function]}
@@ -64,7 +64,7 @@ ShallowWrapper {
             <styled.p
               size={18}
             >
-              Event Score: $2.50
+              Event Score: 2.500
             </styled.p>,
             <Styled(styled.div)
               onClick={[Function]}
@@ -84,11 +84,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": "Event Score: $2.50",
+              "children": "Event Score: 2.500",
               "size": 18,
             },
             "ref": null,
-            "rendered": "Event Score: $2.50",
+            "rendered": "Event Score: 2.500",
             "type": [Function],
           },
           Object {
@@ -126,7 +126,7 @@ ShallowWrapper {
             <styled.p
               size={18}
             >
-              Event Score: $2.50
+              Event Score: 2.500
             </styled.p>
             <Styled(styled.div)
               onClick={[Function]}
@@ -159,7 +159,7 @@ ShallowWrapper {
               <styled.p
                 size={18}
               >
-                Event Score: $2.50
+                Event Score: 2.500
               </styled.p>,
               <Styled(styled.div)
                 onClick={[Function]}
@@ -179,11 +179,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "Event Score: $2.50",
+                "children": "Event Score: 2.500",
                 "size": 18,
               },
               "ref": null,
-              "rendered": "Event Score: $2.50",
+              "rendered": "Event Score: 2.500",
               "type": [Function],
             },
             Object {

@@ -69,7 +69,6 @@ export function EventPricingPresenter(props) {
             <Spacing height="1rem" />
             <EventPricingFactor
               type="eventScoreModifier"
-              unit="$"
               base={eventScore}
               modifier={eventScoreModifier}
             />

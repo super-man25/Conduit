@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { EDTextButton, NumberInputField } from '_components';
 import { EventPricingFactorPresenter } from '../EventPricingFactor';
 import configureStore from 'redux-mock-store';
@@ -17,7 +17,7 @@ describe('<EventPricingFactor />', () => {
 
   const eventScoreProps = {
     type: 'eventScoreModifier',
-    unit: '$',
+    unit: '',
     base: 1,
     modifier: 1.5
   };

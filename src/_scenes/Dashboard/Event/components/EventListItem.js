@@ -69,7 +69,7 @@ export class EventListItem extends React.PureComponent<Props> {
   calculateEventScore = (event: EDEvent) => {
     const { eventScore, eventScoreModifier } = event;
     const result = parseFloat(eventScore || 0) + parseFloat(eventScoreModifier);
-    return formatUSD(result);
+    return result.toFixed(3);
   };
 
   calculateSpring = (event: EDEvent) => {

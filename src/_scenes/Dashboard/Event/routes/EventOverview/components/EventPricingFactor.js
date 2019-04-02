@@ -9,7 +9,6 @@ import {
 } from '_components';
 import { connect } from 'react-redux';
 import { actions } from '_state/event';
-import { formatUSD } from '_helpers/string-utils';
 
 export class EventPricingFactorPresenter extends Component {
   state = {
@@ -19,9 +18,9 @@ export class EventPricingFactorPresenter extends Component {
   };
 
   formatDisplayUnit = (unit, value) => {
-    return unit === '$'
-      ? `${formatUSD(value || 0)}`
-      : `${(value || 0).toFixed(2)}${unit}`;
+    const precision = unit === '%' ? 2 : 3;
+
+    return `${(value || 0).toFixed(precision)}${unit || ''}`;
   };
 
   getDisplayType = (type) => {
@@ -82,11 +81,13 @@ export class EventPricingFactorPresenter extends Component {
       type
     } = this.props;
 
+    const precision = type === 'eventScoreModifier' ? 3 : 2;
+
     const payload = {
       eventId: id,
       eventScoreModifier,
       springModifier,
-      [type]: parseFloat(this.state.modifier).toFixed(2)
+      [type]: parseFloat(this.state.modifier).toFixed(precision)
     };
     saveAdminModifiers(
       payload.eventId,
