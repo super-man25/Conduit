@@ -92,6 +92,12 @@ const Loader = () => (
   </div>
 );
 
+const getTicketShare = (integration) => {
+  if (!integration.total) return '--';
+
+  return percentFormatter.format(integration.sold / integration.total);
+};
+
 type ListItemProps = {
   integration: EDIntegrationStat,
   integrations: EDIntegrationStat[]
@@ -127,7 +133,7 @@ export const TicketIntegrationListItem = ({
         )}
         <Box>
           <Text marginBottom=".33rem" size={22} center>
-            {percentFormatter.format(integration.sold / integration.total)}
+            {getTicketShare(integration)}
           </Text>
           <Text size={12}>Ticket Share</Text>
         </Box>
