@@ -177,6 +177,7 @@ describe('saga workers', () => {
       call(userService.setAuthInStorage, null)
     );
     expect(generator.next().value).toEqual(put({ type: types.UNSET_USER }));
+    expect(generator.next().value).toEqual(put({ type: 'global/RESET' }));
     expect(generator.next().done).toBe(true);
   });
 

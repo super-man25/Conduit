@@ -6,7 +6,7 @@ const createActionType = (type) => `${reducerName}/${type}`;
 // Initial State / Reducer
 export const initialState = {
   model: null,
-  loading: true,
+  loading: false,
   loggingIn: false,
   error: null
 };

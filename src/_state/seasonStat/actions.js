@@ -27,10 +27,10 @@ export type Action =
     };
 
 // Action creators
-function fetch(seasonStatPrarams: SeasonStatParams): Action {
+function fetch(seasonStatParams: SeasonStatParams): Action {
   return {
     type: FETCH_ASYNC,
-    payload: seasonStatPrarams
+    payload: seasonStatParams
   };
 }
 

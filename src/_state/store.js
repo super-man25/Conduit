@@ -83,6 +83,12 @@ export const reducers = {
 
 // Build root reducer
 const reducer = combineReducers(reducers);
+const rootReducer = (state, action) => {
+  if (action.type === 'global/RESET') {
+    state = undefined;
+  }
+  return reducer(state, action);
+};
 
 // Setup enhancers
 const sagaMiddleware = createSagaMiddleware();
@@ -90,7 +96,7 @@ const middlewares = [routerMiddleware(history), sagaMiddleware];
 
 // Create store
 const store = createStore(
-  connectRouter(history)(reducer),
+  connectRouter(history)(rootReducer),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(...middlewares)
 );

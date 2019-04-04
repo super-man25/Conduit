@@ -35,6 +35,7 @@ export function* signOutAsync() {
     yield call(userService.logout);
     yield call(userService.setAuthInStorage, null);
     yield put(actions.unsetUser());
+    yield put({ type: 'global/RESET' });
   } catch (err) {
     console.warn(err);
   }
