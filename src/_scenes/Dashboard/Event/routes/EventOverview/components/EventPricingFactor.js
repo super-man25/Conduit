@@ -137,7 +137,6 @@ export class EventPricingFactorPresenter extends Component {
               </Text>
               <NumberInputField
                 component={Input}
-                type="number"
                 value={this.state.modifier}
                 width="40%"
                 onChange={this.update}

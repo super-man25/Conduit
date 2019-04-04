@@ -31,7 +31,7 @@ describe('denormalizer', () => {
       error = err;
     }
     expect(error.toString()).toEqual(
-      'Percent change must be less than or equal to 50'
+      'Percent Price Modifier must be less than or equal to 50'
     );
 
     done();
@@ -47,7 +47,7 @@ describe('denormalizer', () => {
       error = err;
     }
     expect(error.toString()).toEqual(
-      'Percent change must be greater than or equal to -50'
+      'Percent Price Modifier must be greater than or equal to -50'
     );
 
     done();
@@ -62,7 +62,9 @@ describe('denormalizer', () => {
     } catch (err) {
       error = err;
     }
-    expect(error.toString()).toEqual('Percent change must be an integer');
+    expect(error.toString()).toEqual(
+      'Percent Price Modifier must be an integer'
+    );
 
     done();
   });
@@ -76,7 +78,7 @@ describe('denormalizer', () => {
     } catch (err) {
       error = err;
     }
-    expect(error.toString()).toEqual('Percent change is invalid');
+    expect(error.toString()).toEqual('Percent Price Modifier is invalid');
 
     done();
   });

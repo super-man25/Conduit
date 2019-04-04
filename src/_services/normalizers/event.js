@@ -6,7 +6,7 @@ const percentPriceModifierSchema = yup.object({
     .integer()
     .min(-50)
     .max(50)
-    .label('Percent change')
+    .label('Percent Price Modifier')
 });
 
 const adminModifierSchema = yup.object({

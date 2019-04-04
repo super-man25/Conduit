@@ -9,7 +9,6 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import type { EDEvent } from '_models';
 import { formatNumber } from '_helpers/string-utils';
-import { formatUSD } from '_helpers/string-utils';
 
 const Heading = H4.extend`
   margin: 0;

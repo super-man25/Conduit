@@ -78,7 +78,7 @@ export class EventPriceModifier extends Component {
         percentPriceModifierInvalid: true,
         alertState: {
           type: 'api-error',
-          message: error.message
+          message: error.toString()
         }
       },
       () => setTimeout(this.resetAlertState, 3000)
@@ -115,7 +115,6 @@ export class EventPriceModifier extends Component {
             </Flex>
             <NumberInputField
               component={Input}
-              type="number"
               value={this.state.event.percentPriceModifier}
               onChange={this.update}
               onBlur={this.onBlur}
