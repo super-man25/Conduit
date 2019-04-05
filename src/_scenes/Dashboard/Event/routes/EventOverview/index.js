@@ -24,7 +24,7 @@ export const EventOverview = ({ event, isAdmin }: Props) =>
         <Spacing height="2rem" />
         <TicketIntegrations />
         <Spacing height="2rem" />
-        <EventPricing event={event} isAdmin={isAdmin} />
+        {isAdmin && <EventPricing event={event} isAdmin={isAdmin} />}
       </Box>
     </PageWrapper>
   );

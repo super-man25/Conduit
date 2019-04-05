@@ -40,9 +40,6 @@ ShallowWrapper {
         <styled.div
           height="2rem"
         />
-        <Connect(EventPricingPresenter)
-          event={Object {}}
-        />
       </styled.div>,
     },
     "ref": null,
@@ -69,9 +66,7 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />,
-          <Connect(EventPricingPresenter)
-            event={Object {}}
-          />,
+          undefined,
         ],
         "padding": "1.5rem 2rem",
       },
@@ -142,18 +137,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "event": Object {},
-            "isAdmin": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        undefined,
       ],
       "type": [Function],
     },
@@ -185,9 +169,6 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />
-          <Connect(EventPricingPresenter)
-            event={Object {}}
-          />
         </styled.div>,
       },
       "ref": null,
@@ -214,9 +195,7 @@ ShallowWrapper {
             <styled.div
               height="2rem"
             />,
-            <Connect(EventPricingPresenter)
-              event={Object {}}
-            />,
+            undefined,
           ],
           "padding": "1.5rem 2rem",
         },
@@ -287,18 +266,7 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "event": Object {},
-              "isAdmin": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          undefined,
         ],
         "type": [Function],
       },

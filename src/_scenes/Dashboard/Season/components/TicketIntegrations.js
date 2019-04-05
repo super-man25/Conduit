@@ -182,7 +182,7 @@ export class TicketIntegrationsPresenter extends React.Component<Props> {
       <Panel>
         <PanelHeader>
           <Flex height="100%" align="center">
-            <H4>Ticket Integrations</H4>
+            <H4>Integrations</H4>
           </Flex>
         </PanelHeader>
         <UnpaddedPanelContent>

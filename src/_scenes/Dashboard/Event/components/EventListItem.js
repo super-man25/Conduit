@@ -4,7 +4,7 @@ import { cssConstants } from '_constants';
 import { darken } from 'polished';
 import { Flex, FlexItem, H4, P1, Spacing, Text } from '_components';
 import { isPast } from 'date-fns';
-import { readableDate, readableDuration } from '_helpers/string-utils';
+import { readableDate } from '_helpers/string-utils';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import type { EDEvent } from '_models';
@@ -67,14 +67,20 @@ type Props = {
 export class EventListItem extends React.PureComponent<Props> {
   calculateEventScore = (event: EDEvent) => {
     const { eventScore, eventScoreModifier } = event;
-    const result = parseFloat(eventScore || 0) + parseFloat(eventScoreModifier);
-    return result.toFixed(3);
+    if (eventScore === undefined) {
+      return '--';
+    }
+
+    return (eventScore + eventScoreModifier).toFixed(3);
   };
 
   calculateSpring = (event: EDEvent) => {
     const { spring, springModifier } = event;
-    const result = parseFloat(spring || 0) + parseFloat(springModifier);
-    return result.toFixed(2);
+    if (spring === undefined) {
+      return '--';
+    }
+
+    return `${(spring + springModifier).toFixed(2)}%`;
   };
 
   render() {
@@ -90,18 +96,16 @@ export class EventListItem extends React.PureComponent<Props> {
         <Flex direction="column" flex={1}>
           <Flex direction="row" justify="space-between" align="center">
             <Heading title={event.name}>{event.name}</Heading>
-            {isAdmin && (
-              <Text size={12}>
-                Event Score: {this.calculateEventScore(event)}
-              </Text>
-            )}
+            <Text size={12}>
+              Event Score: {this.calculateEventScore(event)}
+            </Text>
           </Flex>
           <Spacing height="12px" />
           {isAdmin ? (
             <Fragment>
               <Flex direction="row" justify="space-between">
                 <P1 size="small">{readableDate(event.timestamp)}</P1>
-                <Text size={12}>Spring: {this.calculateSpring(event)}%</Text>
+                <Text size={12}>Spring: {this.calculateSpring(event)}</Text>
               </Flex>
               <FlexItem>
                 <P1 size="small">

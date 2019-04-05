@@ -4,6 +4,8 @@ import { getYear } from 'date-fns';
 import type { EDEvent, EDInventoryRow } from '_models';
 import { denormalize, denormalizeAdminModifiers } from './normalizers/event';
 
+import type { EDPricingPreview } from '_models/pricingPreview';
+
 type GetAllParams = { seasonId: number } | { year: Date };
 
 function getAll(
@@ -14,6 +16,14 @@ function getAll(
 
 function getOne(eventId: number): Promise<EDEvent> {
   return get(`events/${eventId}`);
+}
+
+function getPricingPreview(
+  id: number,
+  eventScore: number,
+  spring: number
+): Promise<EDPricingPreview> {
+  return get(`events/${id}/pricingPreview`, { eventScore, spring });
 }
 
 type ToggleBroadcastingResponse = {
@@ -85,10 +95,11 @@ function handleResponseError(error) {
 
 export const eventService = {
   getAll,
-  getOne,
-  toggleBroadcasting,
   getInventory,
+  getOne,
+  getPricingPreview,
+  toggleBroadcasting,
+  updateAdminModifiers,
   updateEventSeats,
-  updatePercentPriceModifier,
-  updateAdminModifiers
+  updatePercentPriceModifier
 };

@@ -1,5 +1,6 @@
 // @flow
 import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
+import { setOriginalNode } from 'typescript';
 
 /**
  * Return a date as a string
@@ -72,6 +73,17 @@ export function formatNumber(value: number): string {
   }
 
   return Intl.NumberFormat('en').format(value);
+}
+
+export function formatDecimal(
+  value: number,
+  decimalPoints: number = 2
+): string {
+  if (isNaN(value) || value === null) {
+    return '--';
+  }
+
+  return value.toFixed(decimalPoints);
 }
 
 /*

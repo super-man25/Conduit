@@ -56,6 +56,10 @@ import {
 } from './eventInventoryBulk';
 import { reducer as seatMapReducer, saga as seatMapSaga } from './seatMap';
 import { reducer as demoPriceReducer, saga as demoPriceSaga } from './demo';
+import {
+  reducer as pricingPreviewReducer,
+  saga as pricingPreviewSaga
+} from './pricingPreview';
 
 export const reducers = {
   alert: alertReducer,
@@ -78,7 +82,8 @@ export const reducers = {
   eventInventoryBulk: eventInventoryBulkReducer,
   eventCategory: eventCategoryReducer,
   seatMap: seatMapReducer,
-  demoPrice: demoPriceReducer
+  demoPrice: demoPriceReducer,
+  pricingPreview: pricingPreviewReducer
 };
 
 // Build root reducer
@@ -121,7 +126,8 @@ const combineSagas = {
   priceRule: priceRuleSaga,
   priceScale: priceScaleSaga,
   seatMap: seatMapSaga,
-  demoPrice: demoPriceSaga
+  demoPrice: demoPriceSaga,
+  pricingPreview: pricingPreviewSaga
 };
 
 export function* rootSaga() {
