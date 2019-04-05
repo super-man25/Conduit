@@ -97,7 +97,6 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
       <Flex align="center">
         <NumberInputField
           component={ManualPricingInput}
-          type="number"
           value={overridePrice}
           onChange={this.onOverridePriceChanged}
           placeholder={inputPlaceholder}
@@ -112,12 +111,14 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
         <ManualPricingButton onClick={this.setPrice}>
           Set Price
         </ManualPricingButton>
-        <ClearIcon
-          width={64}
-          height={64}
-          styles={{ marginLeft: 7, cursor: 'pointer' }}
-          onClick={this.cancelEditingPrice}
-        />
+        <Flex>
+          <ClearIcon
+            width="24px"
+            height="24px"
+            styles={{ marginLeft: 7, cursor: 'pointer' }}
+            onClick={this.cancelEditingPrice}
+          />
+        </Flex>
       </Flex>
     );
   }
