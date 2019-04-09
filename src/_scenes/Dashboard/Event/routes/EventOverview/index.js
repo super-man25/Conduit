@@ -6,7 +6,7 @@ import EventHeader from '../../components/EventHeader';
 import EventChart from './components/EventChart';
 import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
-import { TicketIntegrations } from './components/TicketIntegrations';
+import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 import { EventPricing } from './components/EventPricing';
 
 type Props = {
@@ -22,7 +22,7 @@ export const EventOverview = ({ event, isAdmin }: Props) =>
         <Spacing height="1rem" />
         <EventChart event={event} />
         <Spacing height="2rem" />
-        <TicketIntegrations />
+        <EventTicketIntegrations id={event.id} />
         <Spacing height="2rem" />
         {isAdmin && <EventPricing event={event} isAdmin={isAdmin} />}
       </Box>

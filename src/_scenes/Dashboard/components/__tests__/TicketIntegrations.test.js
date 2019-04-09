@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TicketIntegrationsPresenter } from '../TicketIntegrations';
+import { TicketIntegrations } from '../TicketIntegrations';
 
 describe('<TicketIntegrations />', () => {
   const createProps = () => ({
@@ -28,7 +28,7 @@ describe('<TicketIntegrations />', () => {
 
   it('should render correctly', () => {
     const props = createProps();
-    const wrapper = shallow(<TicketIntegrationsPresenter {...props} />);
+    const wrapper = shallow(<TicketIntegrations {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -36,7 +36,7 @@ describe('<TicketIntegrations />', () => {
     const props = createProps();
     props.loading = true;
 
-    const wrapper = shallow(<TicketIntegrationsPresenter {...props} />);
+    const wrapper = shallow(<TicketIntegrations {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -44,7 +44,7 @@ describe('<TicketIntegrations />', () => {
     const props = createProps();
     props.ticketIntegrations = [];
 
-    const wrapper = shallow(<TicketIntegrationsPresenter {...props} />);
+    const wrapper = shallow(<TicketIntegrations {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -52,13 +52,7 @@ describe('<TicketIntegrations />', () => {
     const props = createProps();
     props.error = 'Error';
 
-    const wrapper = shallow(<TicketIntegrationsPresenter {...props} />);
+    const wrapper = shallow(<TicketIntegrations {...props} />);
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should call fetch on componentDidMount', () => {
-    const props = createProps();
-    shallow(<TicketIntegrationsPresenter {...props} />);
-    expect(props.fetchTicketIntegrations).toHaveBeenCalled();
   });
 });

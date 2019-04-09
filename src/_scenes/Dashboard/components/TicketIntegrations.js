@@ -9,17 +9,15 @@ import {
   Box,
   Text,
   FlexItem,
-  CenteredLoader
+  CenteredLoader,
+  EDLink
 } from '_components';
+import edLogoWhite from '_images/eventdynamiclogooutline.svg';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
-import { connect } from 'react-redux';
 import type { EDIntegrationStat } from '_models';
-import { selectors, actions } from '_state/ticketIntegrations';
 import { formatNumber } from '_helpers/string-utils';
 import { sizes } from '_helpers/style-utils';
-import { selectors as seasonSelectors } from '_state/season';
-import { createStructuredSelector } from 'reselect';
 
 const percentFormatter = Intl.NumberFormat('en-US', {
   style: 'percent',
@@ -75,7 +73,16 @@ const TicketIntegrationLogo = ({
     marginBottom: large ? '0' : '1rem'
   };
 
-  return (
+  return integration.name === 'Skybox' ? (
+    <Flex direction="row" align="center" justify="space-between">
+      <Box {...boxProps}>
+        <LogoImg src={edLogoWhite} />
+      </Box>
+      <Text marginLeft="5px" weight="600">
+        Direct
+      </Text>
+    </Flex>
+  ) : (
     <Box {...boxProps}>
       <LogoImg src={integration.logoUrl} />
     </Box>
@@ -88,18 +95,14 @@ const Loader = () => (
   </div>
 );
 
+const getTicketShare = (sold: number, total: ?number): string => {
+  if (!total) return '--';
+  return percentFormatter.format(sold / total);
+};
+
 type ListItemProps = {
   integration: EDIntegrationStat,
   integrations: EDIntegrationStat[]
-};
-
-// To prevent division by zero
-const getTicketShare = (sold: number, total: number): string => {
-  if (total === 0) {
-    return '0%';
-  }
-
-  return percentFormatter.format(sold / total);
 };
 
 export const TicketIntegrationListItem = ({
@@ -157,70 +160,50 @@ type Props = {
   ticketIntegrations: EDIntegrationStat[],
   loading: boolean,
   error: ?Error,
-  seasonId: number,
-  fetchTicketIntegrations: ({ seasonId: number }) => void
+  id: number,
+  showSettings: boolean
 };
 
-export class TicketIntegrationsPresenter extends React.Component<Props> {
-  componentDidMount() {
-    const { seasonId } = this.props;
-    this.props.fetchTicketIntegrations({ seasonId });
-  }
+export const TicketIntegrations = (props: Props) => {
+  const { ticketIntegrations, loading, error, showSettings } = props;
 
-  componentDidUpdate(prevProps: Props) {
-    const { seasonId } = this.props;
-    if (seasonId !== prevProps.seasonId) {
-      this.props.fetchTicketIntegrations({ seasonId });
-    }
-  }
+  const hasNoData = !ticketIntegrations.length;
 
-  render() {
-    const { ticketIntegrations, loading, error } = this.props;
-    const hasNoData = !ticketIntegrations.length;
-
-    return (
-      <Panel>
-        <PanelHeader>
-          <Flex height="100%" align="center">
-            <H4>Integrations</H4>
-          </Flex>
-        </PanelHeader>
-        <UnpaddedPanelContent>
-          {error ? (
-            <RenderError />
-          ) : loading ? (
-            <Loader />
-          ) : hasNoData ? (
-            <NoData />
-          ) : (
-            <HorizontalList>
-              {ticketIntegrations.map((integration) => (
-                <TicketIntegrationListItem
-                  key={integration.id}
-                  integration={integration}
-                  integrations={ticketIntegrations}
-                />
-              ))}
-            </HorizontalList>
+  return (
+    <Panel>
+      <PanelHeader>
+        <Flex height="100%" align="center" justify="space-between">
+          {!loading && (
+            <React.Fragment>
+              <Flex>
+                <H4 margin="0" marginRight="2.5rem">
+                  Integrations
+                </H4>
+              </Flex>
+              {showSettings && <EDLink to="/settings/team">MANAGE ALL</EDLink>}
+            </React.Fragment>
           )}
-        </UnpaddedPanelContent>
-      </Panel>
-    );
-  }
-}
-
-const mapStateToProps = createStructuredSelector({
-  ticketIntegrations: selectors.selectTicketIntegrations,
-  loading: selectors.selectTicketIntegrationsLoading,
-  error: selectors.selectTicketIntegrationsError,
-  seasonId: seasonSelectors.selectActiveSeasonId
-});
-
-const mapDispatchToProps = {
-  fetchTicketIntegrations: actions.fetchTicketIntegrations
+        </Flex>
+      </PanelHeader>
+      <UnpaddedPanelContent>
+        {error ? (
+          <RenderError />
+        ) : loading ? (
+          <Loader />
+        ) : hasNoData ? (
+          <NoData />
+        ) : (
+          <HorizontalList>
+            {ticketIntegrations.map((integration) => (
+              <TicketIntegrationListItem
+                key={integration.id}
+                integration={integration}
+                integrations={ticketIntegrations}
+              />
+            ))}
+          </HorizontalList>
+        )}
+      </UnpaddedPanelContent>
+    </Panel>
+  );
 };
-
-export const TicketIntegrations = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TicketIntegrationsPresenter);

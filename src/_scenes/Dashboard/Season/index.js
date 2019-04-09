@@ -9,7 +9,7 @@ import {
 import SeasonRevenuePanel from './components/SeasonRevenuePanel';
 import React from 'react';
 import { withSidebar } from '_hoc';
-import { TicketIntegrations } from './components/TicketIntegrations';
+import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations';
 import { connect } from 'react-redux';
 import { selectors } from '_state/season';
 import { createStructuredSelector } from 'reselect';
@@ -54,7 +54,7 @@ const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
         </Flex>
         <SeasonRevenuePanel />
         <Spacing height="2rem" />
-        <TicketIntegrations />
+        <SeasonTicketIntegrations id={activeSeason.id} />
       </Spacing>
     </PageWrapper>
   );

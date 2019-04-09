@@ -36,7 +36,7 @@ ShallowWrapper {
         <styled.div
           height="2rem"
         />
-        <Connect(TicketIntegrationsPresenter) />
+        <Connect(EventTicketIntegrationsPresenter) />
         <styled.div
           height="2rem"
         />
@@ -62,7 +62,7 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />,
-          <Connect(TicketIntegrationsPresenter) />,
+          <Connect(EventTicketIntegrationsPresenter) />,
           <styled.div
             height="2rem"
           />,
@@ -121,7 +121,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "id": undefined,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -165,7 +167,7 @@ ShallowWrapper {
           <styled.div
             height="2rem"
           />
-          <Connect(TicketIntegrationsPresenter) />
+          <Connect(EventTicketIntegrationsPresenter) />
           <styled.div
             height="2rem"
           />
@@ -191,7 +193,7 @@ ShallowWrapper {
             <styled.div
               height="2rem"
             />,
-            <Connect(TicketIntegrationsPresenter) />,
+            <Connect(EventTicketIntegrationsPresenter) />,
             <styled.div
               height="2rem"
             />,
@@ -250,7 +252,9 @@ ShallowWrapper {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
-            "props": Object {},
+            "props": Object {
+              "id": undefined,
+            },
             "ref": null,
             "rendered": null,
             "type": [Function],

@@ -3,24 +3,8 @@
 exports[`<TicketIntegrations /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "seasonId": undefined,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+  Symbol(enzyme.__unrendered__): <TicketIntegrations
+    fetchTicketIntegrations={[MockFunction]}
     loading={false}
     ticketIntegrations={
       Array [
@@ -62,10 +46,18 @@ ShallowWrapper {
           <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>
         </PanelHeader>,
         <styled.section>
@@ -148,10 +140,18 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>,
         },
         "ref": null,
@@ -161,22 +161,70 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "align": "center",
-            "children": <styled.h4>
-              Integrations
-            </styled.h4>,
+            "children": <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>,
             "height": "100%",
+            "justify": "space-between",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "children": "Integrations",
+              "children": Array [
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>,
+                undefined,
+              ],
             },
             "ref": null,
-            "rendered": "Integrations",
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Integrations",
+                    "margin": "0",
+                    "marginRight": "2.5rem",
+                  },
+                  "ref": null,
+                  "rendered": "Integrations",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              undefined,
+            ],
+            "type": Symbol(react.fragment),
           },
           "type": [Function],
         },
@@ -420,10 +468,18 @@ ShallowWrapper {
             <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>
           </PanelHeader>,
           <styled.section>
@@ -506,10 +562,18 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>,
           },
           "ref": null,
@@ -519,22 +583,70 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "align": "center",
-              "children": <styled.h4>
-                Integrations
-              </styled.h4>,
+              "children": <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>,
               "height": "100%",
+              "justify": "space-between",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "children": "Integrations",
+                "children": Array [
+                  <Flex>
+                    <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>
+                  </Flex>,
+                  undefined,
+                ],
               },
               "ref": null,
-              "rendered": "Integrations",
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Integrations",
+                      "margin": "0",
+                      "marginRight": "2.5rem",
+                    },
+                    "ref": null,
+                    "rendered": "Integrations",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                undefined,
+              ],
+              "type": Symbol(react.fragment),
             },
             "type": [Function],
           },
@@ -789,32 +901,15 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
 
 exports[`<TicketIntegrations /> should render correctly when an error occurs 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
+  Symbol(enzyme.__unrendered__): <TicketIntegrations
     error="Error"
-    fetchTicketIntegrations={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "seasonId": undefined,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    fetchTicketIntegrations={[MockFunction]}
     loading={false}
     ticketIntegrations={
       Array [
@@ -856,10 +951,18 @@ ShallowWrapper {
           <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>
         </PanelHeader>,
         <styled.section>
@@ -877,10 +980,18 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>,
         },
         "ref": null,
@@ -890,22 +1001,70 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "align": "center",
-            "children": <styled.h4>
-              Integrations
-            </styled.h4>,
+            "children": <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>,
             "height": "100%",
+            "justify": "space-between",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "children": "Integrations",
+              "children": Array [
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>,
+                undefined,
+              ],
             },
             "ref": null,
-            "rendered": "Integrations",
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Integrations",
+                    "margin": "0",
+                    "marginRight": "2.5rem",
+                  },
+                  "ref": null,
+                  "rendered": "Integrations",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              undefined,
+            ],
+            "type": Symbol(react.fragment),
           },
           "type": [Function],
         },
@@ -944,10 +1103,18 @@ ShallowWrapper {
             <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>
           </PanelHeader>,
           <styled.section>
@@ -965,10 +1132,18 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>,
           },
           "ref": null,
@@ -978,22 +1153,70 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "align": "center",
-              "children": <styled.h4>
-                Integrations
-              </styled.h4>,
+              "children": <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>,
               "height": "100%",
+              "justify": "space-between",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "children": "Integrations",
+                "children": Array [
+                  <Flex>
+                    <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>
+                  </Flex>,
+                  undefined,
+                ],
               },
               "ref": null,
-              "rendered": "Integrations",
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Integrations",
+                      "margin": "0",
+                      "marginRight": "2.5rem",
+                    },
+                    "ref": null,
+                    "rendered": "Integrations",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                undefined,
+              ],
+              "type": Symbol(react.fragment),
             },
             "type": [Function],
           },
@@ -1043,31 +1266,14 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
 
 exports[`<TicketIntegrations /> should render correctly when loading is true 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "seasonId": undefined,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+  Symbol(enzyme.__unrendered__): <TicketIntegrations
+    fetchTicketIntegrations={[MockFunction]}
     loading={true}
     ticketIntegrations={
       Array [
@@ -1109,11 +1315,8 @@ ShallowWrapper {
           <Flex
             align="center"
             height="100%"
-          >
-            <styled.h4>
-              Integrations
-            </styled.h4>
-          </Flex>
+            justify="space-between"
+          />
         </PanelHeader>,
         <styled.section>
           <Loader />
@@ -1130,11 +1333,8 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
-          >
-            <styled.h4>
-              Integrations
-            </styled.h4>
-          </Flex>,
+            justify="space-between"
+          />,
         },
         "ref": null,
         "rendered": Object {
@@ -1143,23 +1343,12 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "align": "center",
-            "children": <styled.h4>
-              Integrations
-            </styled.h4>,
+            "children": false,
             "height": "100%",
+            "justify": "space-between",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": "Integrations",
-            },
-            "ref": null,
-            "rendered": "Integrations",
-            "type": [Function],
-          },
+          "rendered": false,
           "type": [Function],
         },
         "type": [Function],
@@ -1197,11 +1386,8 @@ ShallowWrapper {
             <Flex
               align="center"
               height="100%"
-            >
-              <styled.h4>
-                Integrations
-              </styled.h4>
-            </Flex>
+              justify="space-between"
+            />
           </PanelHeader>,
           <styled.section>
             <Loader />
@@ -1218,11 +1404,8 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
-            >
-              <styled.h4>
-                Integrations
-              </styled.h4>
-            </Flex>,
+              justify="space-between"
+            />,
           },
           "ref": null,
           "rendered": Object {
@@ -1231,23 +1414,12 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "align": "center",
-              "children": <styled.h4>
-                Integrations
-              </styled.h4>,
+              "children": false,
               "height": "100%",
+              "justify": "space-between",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Integrations",
-              },
-              "ref": null,
-              "rendered": "Integrations",
-              "type": [Function],
-            },
+            "rendered": false,
             "type": [Function],
           },
           "type": [Function],
@@ -1296,31 +1468,14 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
 
 exports[`<TicketIntegrations /> should render correctly when no data is found 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TicketIntegrationsPresenter
-    fetchTicketIntegrations={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "seasonId": undefined,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+  Symbol(enzyme.__unrendered__): <TicketIntegrations
+    fetchTicketIntegrations={[MockFunction]}
     loading={false}
     ticketIntegrations={Array []}
   />,
@@ -1343,10 +1498,18 @@ ShallowWrapper {
           <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>
         </PanelHeader>,
         <styled.section>
@@ -1364,10 +1527,18 @@ ShallowWrapper {
           "children": <Flex
             align="center"
             height="100%"
+            justify="space-between"
           >
-            <styled.h4>
-              Integrations
-            </styled.h4>
+            <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>
           </Flex>,
         },
         "ref": null,
@@ -1377,22 +1548,70 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "align": "center",
-            "children": <styled.h4>
-              Integrations
-            </styled.h4>,
+            "children": <React.Fragment>
+              <Flex>
+                <styled.h4
+                  margin="0"
+                  marginRight="2.5rem"
+                >
+                  Integrations
+                </styled.h4>
+              </Flex>
+            </React.Fragment>,
             "height": "100%",
+            "justify": "space-between",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "children": "Integrations",
+              "children": Array [
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>,
+                undefined,
+              ],
             },
             "ref": null,
-            "rendered": "Integrations",
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Integrations",
+                    "margin": "0",
+                    "marginRight": "2.5rem",
+                  },
+                  "ref": null,
+                  "rendered": "Integrations",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              undefined,
+            ],
+            "type": Symbol(react.fragment),
           },
           "type": [Function],
         },
@@ -1431,10 +1650,18 @@ ShallowWrapper {
             <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>
           </PanelHeader>,
           <styled.section>
@@ -1452,10 +1679,18 @@ ShallowWrapper {
             "children": <Flex
               align="center"
               height="100%"
+              justify="space-between"
             >
-              <styled.h4>
-                Integrations
-              </styled.h4>
+              <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>
             </Flex>,
           },
           "ref": null,
@@ -1465,22 +1700,70 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "align": "center",
-              "children": <styled.h4>
-                Integrations
-              </styled.h4>,
+              "children": <React.Fragment>
+                <Flex>
+                  <styled.h4
+                    margin="0"
+                    marginRight="2.5rem"
+                  >
+                    Integrations
+                  </styled.h4>
+                </Flex>
+              </React.Fragment>,
               "height": "100%",
+              "justify": "space-between",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "children": "Integrations",
+                "children": Array [
+                  <Flex>
+                    <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>
+                  </Flex>,
+                  undefined,
+                ],
               },
               "ref": null,
-              "rendered": "Integrations",
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <styled.h4
+                      margin="0"
+                      marginRight="2.5rem"
+                    >
+                      Integrations
+                    </styled.h4>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Integrations",
+                      "margin": "0",
+                      "marginRight": "2.5rem",
+                    },
+                    "ref": null,
+                    "rendered": "Integrations",
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                undefined,
+              ],
+              "type": Symbol(react.fragment),
             },
             "type": [Function],
           },
@@ -1530,6 +1813,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;
