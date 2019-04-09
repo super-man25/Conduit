@@ -23,7 +23,7 @@ import {
 import { formatNumber } from '_helpers/string-utils';
 import { sizes } from '_helpers/style-utils';
 import { createStructuredSelector } from 'reselect';
-import { selectors, actions } from '_state/event';
+import { selectors } from '_state/event';
 
 const percentFormatter = Intl.NumberFormat('en-US', {
   style: 'percent',

@@ -2,7 +2,11 @@
 import { get, put, post } from '_helpers/api';
 import { getYear } from 'date-fns';
 import type { EDEvent, EDInventoryRow } from '_models';
-import { denormalize, denormalizeAdminModifiers } from './normalizers/event';
+import {
+  validatePercentPriceModifier,
+  validateAdminModifiers,
+  validateOverridePrice
+} from './validators/event';
 
 import type { EDPricingPreview } from '_models/pricingPreview';
 
@@ -42,11 +46,13 @@ function updatePercentPriceModifier(
   eventId: number,
   percentPriceModifier: number
 ) {
-  return denormalize({ percentPriceModifier }).then((payload) => {
-    return put(`events/${eventId}/priceModifier`, payload).catch(
-      handleResponseError
-    );
-  });
+  return validatePercentPriceModifier({ percentPriceModifier }).then(
+    (payload) => {
+      return put(`events/${eventId}/priceModifier`, payload).catch(
+        handleResponseError
+      );
+    }
+  );
 }
 
 function updateAdminModifiers(
@@ -54,7 +60,7 @@ function updateAdminModifiers(
   eventScoreModifier: number,
   springModifier: number
 ) {
-  return denormalizeAdminModifiers({ eventScoreModifier, springModifier }).then(
+  return validateAdminModifiers({ eventScoreModifier, springModifier }).then(
     (payload) => {
       return put(`events/${eventId}/adminModifier`, payload).catch(
         handleResponseError
@@ -82,7 +88,9 @@ function updateEventSeats(payload: {
   overridePrice?: number,
   isListed?: boolean
 }) {
-  return post('eventRows/_bulk', payload);
+  return validateOverridePrice(payload).then((denormalizedPayload) => {
+    return post('eventRows/_bulk', denormalizedPayload);
+  });
 }
 
 function handleResponseError(error) {

@@ -22,17 +22,31 @@ const adminModifierSchema = yup.object({
     .label('Spring Modifier')
 });
 
-export function denormalize(body) {
-  return percentPriceModifierSchema
-    .validate(body)
-    .catch(handleDenormalizeError);
+const overridePriceSchema = yup.object({
+  overridePrice: yup
+    .number()
+    .min(0.01)
+    .nullable()
+    .label('Event Seat Override Price')
+});
+
+export function validatePercentPriceModifier(body) {
+  return validate(body, percentPriceModifierSchema);
 }
 
-export function denormalizeAdminModifiers(body) {
-  return adminModifierSchema.validate(body).catch(handleDenormalizeError);
+export function validateAdminModifiers(body) {
+  return validate(body, adminModifierSchema);
 }
 
-function handleDenormalizeError(error) {
+export function validateOverridePrice(body) {
+  return validate(body, overridePriceSchema);
+}
+
+function validate(body, schema) {
+  return schema.validate(body).catch(handleValidationError);
+}
+
+function handleValidationError(error) {
   switch (error.type) {
     case 'typeError':
       error.toString = () => `${error.params.path} is invalid`;

@@ -1,6 +1,5 @@
 // @flow
 import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
-import { setOriginalNode } from 'typescript';
 
 /**
  * Return a date as a string
