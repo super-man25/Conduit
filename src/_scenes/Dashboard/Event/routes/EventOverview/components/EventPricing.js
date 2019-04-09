@@ -6,7 +6,7 @@ import {
   Flex,
   H4,
   PanelContent,
-  ApiAlertPresenter,
+  ApiAlert,
   Text,
   Toggle
 } from '_components';
@@ -16,10 +16,10 @@ import {
   selectors as eventSelectors,
   actions as eventActions
 } from '_state/event';
+import { selectors as seasonSelectors } from '_state/season';
 import { actions as pricingPreviewActions } from '_state/pricingPreview';
 import { PricingForm } from './PricingForm';
 import { PricingPreview } from './PricingPreview';
-import { eventService } from '_services';
 
 import type { EDEvent } from '_models/event';
 import type { EDPricingPreview } from '_models/pricingPreview';
@@ -34,6 +34,8 @@ type Props = {
   setBroadcasting: Function,
   fetchPricingPreview: Function,
   pricingPreviewParamsChanged: Function,
+  saveAdminModifiers: Function,
+  seasonId: number,
   pricingPreview: {
     record: EDPricingPreview,
     loading: boolean
@@ -94,19 +96,23 @@ export class EventPricingPresenter extends React.Component<Props, State> {
     }, 3000);
   };
 
-  handleSubmit = (values: any) => {
-    const { id } = this.props.event;
+  handleSubmit = (values: any, onSuccess: Function, onError: Function) => {
+    const {
+      saveAdminModifiers,
+      seasonId,
+      event: { id }
+    } = this.props;
     const { eventScoreModifier, springModifier } = values;
-    return eventService
-      .updateAdminModifiers(id, eventScoreModifier, springModifier)
-      .catch((e) => {
-        this.showAlert({
-          type: 'api-error',
-          message: e.toString()
-        });
 
-        throw e;
-      });
+    saveAdminModifiers(
+      id,
+      eventScoreModifier,
+      springModifier,
+      seasonId,
+      (error) => {
+        error ? onError() : onSuccess();
+      }
+    );
   };
 
   toggleIsBroadcasting = (e: Object) => {
@@ -184,7 +190,7 @@ export class EventPricingPresenter extends React.Component<Props, State> {
             </Flex>
           </Flex>
         </UnpaddedPanelContent>
-        <ApiAlertPresenter alertState={this.state.alertState} />
+        <ApiAlert />
       </Panel>
     );
   }
@@ -192,11 +198,13 @@ export class EventPricingPresenter extends React.Component<Props, State> {
 
 const mapStateToProps = createStructuredSelector({
   togglingBroadcasting: eventSelectors.selectEventTogglingBroadcasting,
-  pricingPreview: (state) => state.pricingPreview
+  pricingPreview: (state) => state.pricingPreview,
+  seasonId: seasonSelectors.selectActiveSeasonId
 });
 
 const mapDispatchToProps = {
   setBroadcasting: eventActions.setEventBroadcasting,
+  saveAdminModifiers: eventActions.saveAdminModifiers,
   fetchPricingPreview: pricingPreviewActions.fetch,
   pricingPreviewParamsChanged: pricingPreviewActions.paramsChanged
 };

@@ -1,6 +1,13 @@
 // @flow
 import React from 'react';
-import { Flex, PrimaryButton, SecondaryButton, H4, Loader } from '_components';
+import {
+  Flex,
+  PrimaryButton,
+  SecondaryButton,
+  H4,
+  Loader,
+  NumberInputField
+} from '_components';
 
 import styled from 'styled-components';
 
@@ -61,7 +68,11 @@ type FormValues = {
 type Props = {
   initialValues: FormValues,
   onChange?: (formValues: FormValues) => any,
-  onSubmit: (formValues: FormValues) => any
+  onSubmit: (
+    formValues: FormValues,
+    onSuccess: () => void,
+    onError: () => void
+  ) => any
 };
 
 type State = {
@@ -131,20 +142,25 @@ export class PricingForm extends React.Component<Props, State> {
     this.setState({ editing: true });
   };
 
+  handleSuccess = () => {
+    this.setState({
+      submitting: false,
+      editing: false,
+      initialValues: this.state.values
+    });
+  };
+
+  handleError = () => {
+    this.setState({ submitting: false, editing: true });
+  };
+
   handleSave = () => {
     this.setState({ submitting: true });
-    this.props
-      .onSubmit(this.state.values)
-      .then(() => {
-        this.setState({
-          submitting: false,
-          editing: false,
-          initialValues: this.state.values
-        });
-      })
-      .catch((e) => {
-        this.setState({ submitting: false, editing: true });
-      });
+    this.props.onSubmit(
+      this.state.values,
+      this.handleSuccess,
+      this.handleError
+    );
   };
 
   render() {
@@ -172,8 +188,8 @@ export class PricingForm extends React.Component<Props, State> {
               <Row style={{ fontSize: '1.1rem' }}>
                 <Label>Modifier:</Label>
                 {editing ? (
-                  <Input
-                    type="number"
+                  <NumberInputField
+                    component={Input}
                     value={values.eventScoreModifier}
                     onChange={(e) =>
                       this.handleChange('eventScoreModifier', e.target.value)
@@ -217,8 +233,8 @@ export class PricingForm extends React.Component<Props, State> {
               <Row style={{ fontSize: '1.1rem' }}>
                 <Label>Modifier:</Label>
                 {editing ? (
-                  <Input
-                    type="number"
+                  <NumberInputField
+                    component={Input}
                     value={values.springModifier}
                     onChange={(e) =>
                       this.handleChange('springModifier', e.target.value)
