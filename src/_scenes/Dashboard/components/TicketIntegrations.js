@@ -78,9 +78,6 @@ const TicketIntegrationLogo = ({
       <Box {...boxProps}>
         <LogoImg src={edLogoWhite} />
       </Box>
-      <Text marginLeft="5px" weight="600">
-        Direct
-      </Text>
     </Flex>
   ) : (
     <Box {...boxProps}>
