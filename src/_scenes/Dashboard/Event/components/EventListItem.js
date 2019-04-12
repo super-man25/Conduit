@@ -2,25 +2,31 @@
 
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
-import { Flex, FlexItem, H4, P1, Spacing, Text } from '_components';
+import { Spacing, Flex, FlexItem, H4, P1, StatusIndicator } from '_components';
 import { isPast } from 'date-fns';
-import { readableDate } from '_helpers/string-utils';
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import type { EDEvent } from '_models';
-import { formatNumber } from '_helpers/string-utils';
+import type { EDEvent, EDScheduledJob } from '_models';
+import {
+  formatNumber,
+  readableDate,
+  readableTimeOrDate
+} from '_helpers/string-utils';
+import get from 'lodash.get';
 
 const Heading = H4.extend`
-  margin: 0;
+  margin: 0 0 2px 0;
   padding: 0;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
 `;
 
 const Container = styled.div`
-  display: box;
+  display: flex;
+  flex-direction: row;
   padding: 16px 16px 16px 40px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   background-color: ${(props) =>
@@ -57,11 +63,53 @@ const Container = styled.div`
   }
 `;
 
+const ItalicP1 = P1.extend`
+  font-style: italic;
+`;
+
+const I = styled.span`
+  font-style: italic;
+`;
+
 type Props = {
   event: EDEvent,
   active: boolean,
   onClick: (event: EDEvent) => void,
   isAdmin: boolean
+};
+
+const ScheduledJobStatusIndicator = ({
+  scheduledJob
+}: {
+  scheduledJob: EDScheduledJob
+}) => {
+  const { status, modifiedAt } = scheduledJob;
+
+  const map = {
+    Pending: {
+      status: 'warn'
+    },
+    Success: {
+      status: 'success'
+    },
+    Failure: {
+      status: 'error'
+    },
+    Running: {
+      status: 'success',
+      blink: true
+    }
+  };
+
+  const args = map[status];
+
+  return (
+    <StatusIndicator
+      {...args}
+      title={`${readableDate(modifiedAt)} - ${status}`}
+      text={readableTimeOrDate(modifiedAt)}
+    />
+  );
 };
 
 export class EventListItem extends React.PureComponent<Props> {
@@ -80,7 +128,7 @@ export class EventListItem extends React.PureComponent<Props> {
       return '--';
     }
 
-    return `${(spring + springModifier).toFixed(2)}%`;
+    return `${(spring + springModifier).toFixed(3)}%`;
   };
 
   render() {
@@ -93,32 +141,42 @@ export class EventListItem extends React.PureComponent<Props> {
         past={past}
         data-test-id="event-list-card"
       >
-        <Flex direction="column" flex={1}>
-          <Flex direction="row" justify="space-between" align="center">
-            <Heading title={event.name}>{event.name}</Heading>
-            <Text size={12}>
-              Event Score: {this.calculateEventScore(event)}
-            </Text>
-          </Flex>
-          <Spacing height="12px" />
-          {isAdmin ? (
-            <Fragment>
-              <Flex direction="row" justify="space-between">
-                <P1 size="small">{readableDate(event.timestamp)}</P1>
-                <Text size={12}>Spring: {this.calculateSpring(event)}</Text>
-              </Flex>
-              <FlexItem>
-                <P1 size="small">
-                  {formatNumber(event.unsoldInventory)} Unsold
-                </P1>
-              </FlexItem>
-            </Fragment>
-          ) : (
-            <Flex direction="row" justify="space-between">
-              <P1 size="small">{readableDate(event.timestamp)}</P1>
-              <P1 size="small">{formatNumber(event.unsoldInventory)} Unsold</P1>
-            </Flex>
-          )}
+        <Flex direction="column" flex={1} style={{ overflow: 'hidden' }}>
+          <Heading title={event.name}>{event.name}</Heading>
+          <ItalicP1 color={cssConstants.PRIMARY_DARK_GRAY} size="small" italic>
+            {readableDate(event.timestamp)}
+          </ItalicP1>
+          <Spacing padding="18px 0 0 0 ">
+            <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
+              {formatNumber(event.unsoldInventory)} /{' '}
+              {formatNumber(event.totalInventory)}
+            </P1>
+            <P1 size="small" color={cssConstants.PRIMARY_DARKEST_GRAY}>
+              <I>Unsold</I>
+              {' / '}
+              <I>Total</I>
+            </P1>
+          </Spacing>
+        </Flex>
+        <Flex direction="column" align="flex-end" justify="space-between">
+          <FlexItem flex={1} padding="2px 0 0 0">
+            {event.scheduledJob && (
+              <ScheduledJobStatusIndicator scheduledJob={event.scheduledJob} />
+            )}
+          </FlexItem>
+          <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
+            {this.calculateEventScore(event)}
+            {isAdmin && ` / ${this.calculateSpring(event)}`}
+          </P1>
+          <P1 size="small" color={cssConstants.PRIMARY_DARKEST_GRAY}>
+            <I>Score</I>
+            {isAdmin && (
+              <>
+                {' / '}
+                <I>Spring</I>
+              </>
+            )}
+          </P1>
         </Flex>
       </Container>
     );

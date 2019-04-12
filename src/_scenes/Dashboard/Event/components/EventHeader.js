@@ -109,7 +109,7 @@ export function EventHeader(props: Props) {
             {inventoryString}
           </P1>
           <ItalicS1 color={cssConstants.SECONDARY_BLUE}>
-            Available / Total
+            Unsold / Total
           </ItalicS1>
         </FlexItem>
       </Flex>

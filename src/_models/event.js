@@ -1,5 +1,7 @@
 // @flow
 
+import type { EDScheduledJob } from './scheduledJob';
+
 export type EDEvent = {
   clientId: number,
   createdAt: Date,
@@ -18,5 +20,6 @@ export type EDEvent = {
   eventScore: number,
   eventScoreModifier: number,
   spring: number,
-  springModifier: number
+  springModifier: number,
+  scheduledJob: EDScheduledJob
 };

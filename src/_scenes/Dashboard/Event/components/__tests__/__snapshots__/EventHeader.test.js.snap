@@ -102,7 +102,7 @@ ShallowWrapper {
             <styled.span
               color="#2670AE"
             >
-              Available / Total
+              Unsold / Total
             </styled.span>
           </FlexItem>
         </Flex>,
@@ -230,7 +230,7 @@ ShallowWrapper {
               <styled.span
                 color="#2670AE"
               >
-                Available / Total
+                Unsold / Total
               </styled.span>
             </FlexItem>,
           ],
@@ -337,7 +337,7 @@ ShallowWrapper {
                 <styled.span
                   color="#2670AE"
                 >
-                  Available / Total
+                  Unsold / Total
                 </styled.span>,
               ],
               "flex": "0 0 auto",
@@ -374,11 +374,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Available / Total",
+                  "children": "Unsold / Total",
                   "color": "#2670AE",
                 },
                 "ref": null,
-                "rendered": "Available / Total",
+                "rendered": "Unsold / Total",
                 "type": [Function],
               },
             ],
@@ -463,7 +463,7 @@ ShallowWrapper {
               <styled.span
                 color="#2670AE"
               >
-                Available / Total
+                Unsold / Total
               </styled.span>
             </FlexItem>
           </Flex>,
@@ -591,7 +591,7 @@ ShallowWrapper {
                 <styled.span
                   color="#2670AE"
                 >
-                  Available / Total
+                  Unsold / Total
                 </styled.span>
               </FlexItem>,
             ],
@@ -698,7 +698,7 @@ ShallowWrapper {
                   <styled.span
                     color="#2670AE"
                   >
-                    Available / Total
+                    Unsold / Total
                   </styled.span>,
                 ],
                 "flex": "0 0 auto",
@@ -735,11 +735,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Available / Total",
+                    "children": "Unsold / Total",
                     "color": "#2670AE",
                   },
                   "ref": null,
-                  "rendered": "Available / Total",
+                  "rendered": "Unsold / Total",
                   "type": [Function],
                 },
               ],
@@ -873,7 +873,7 @@ ShallowWrapper {
             <styled.span
               color="#2670AE"
             >
-              Available / Total
+              Unsold / Total
             </styled.span>
           </FlexItem>
         </Flex>,
@@ -1000,7 +1000,7 @@ ShallowWrapper {
               <styled.span
                 color="#2670AE"
               >
-                Available / Total
+                Unsold / Total
               </styled.span>
             </FlexItem>,
           ],
@@ -1073,7 +1073,7 @@ ShallowWrapper {
                 <styled.span
                   color="#2670AE"
                 >
-                  Available / Total
+                  Unsold / Total
                 </styled.span>,
               ],
               "flex": "0 0 auto",
@@ -1110,11 +1110,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Available / Total",
+                  "children": "Unsold / Total",
                   "color": "#2670AE",
                 },
                 "ref": null,
-                "rendered": "Available / Total",
+                "rendered": "Unsold / Total",
                 "type": [Function],
               },
             ],
@@ -1194,7 +1194,7 @@ ShallowWrapper {
               <styled.span
                 color="#2670AE"
               >
-                Available / Total
+                Unsold / Total
               </styled.span>
             </FlexItem>
           </Flex>,
@@ -1321,7 +1321,7 @@ ShallowWrapper {
                 <styled.span
                   color="#2670AE"
                 >
-                  Available / Total
+                  Unsold / Total
                 </styled.span>
               </FlexItem>,
             ],
@@ -1394,7 +1394,7 @@ ShallowWrapper {
                   <styled.span
                     color="#2670AE"
                   >
-                    Available / Total
+                    Unsold / Total
                   </styled.span>,
                 ],
                 "flex": "0 0 auto",
@@ -1431,11 +1431,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Available / Total",
+                    "children": "Unsold / Total",
                     "color": "#2670AE",
                   },
                   "ref": null,
-                  "rendered": "Available / Total",
+                  "rendered": "Unsold / Total",
                   "type": [Function],
                 },
               ],

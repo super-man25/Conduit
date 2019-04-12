@@ -1,5 +1,11 @@
 // @flow
-import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
+import {
+  format,
+  distanceInWords,
+  distanceInWordsToNow,
+  isToday,
+  isThisYear
+} from 'date-fns';
 
 /**
  * Return a date as a string
@@ -8,6 +14,23 @@ import { format, distanceInWords, distanceInWordsToNow } from 'date-fns';
  */
 export function readableDate(d: Date): string {
   return format(d, 'ddd, M/DD/YY @ h:mmA');
+}
+
+/**
+ * Format a past date with precision based on how long ago the date was
+ * *
+ * @param {*} d - date to format
+ */
+export function readableTimeOrDate(d: Date): string {
+  if (isToday(d)) {
+    return format(d, 'h:mmA');
+  }
+
+  if (isThisYear(d)) {
+    return format(d, 'MMM D');
+  }
+
+  return format(d, 'M/DD/YY');
 }
 
 /**
