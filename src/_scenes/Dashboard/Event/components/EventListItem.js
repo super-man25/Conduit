@@ -119,7 +119,7 @@ export class EventListItem extends React.PureComponent<Props> {
       return '--';
     }
 
-    return (eventScore + eventScoreModifier).toFixed(3);
+    return (eventScore + eventScoreModifier).toFixed(2);
   };
 
   calculateSpring = (event: EDEvent) => {
@@ -128,7 +128,7 @@ export class EventListItem extends React.PureComponent<Props> {
       return '--';
     }
 
-    return `${(spring + springModifier).toFixed(3)}%`;
+    return `${(spring + springModifier).toFixed(4)}%`;
   };
 
   render() {

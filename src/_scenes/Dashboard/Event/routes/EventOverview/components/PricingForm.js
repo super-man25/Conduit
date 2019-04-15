@@ -82,8 +82,8 @@ type State = {
   submitting: boolean
 };
 
-const SPRING_DECIMALS = 2;
-const SCORE_DECIMALS = 3;
+const SPRING_DECIMALS = 4;
+const SCORE_DECIMALS = 2;
 
 function safeAdd(a: any, b: any, fix: number) {
   const aVal = +a;
