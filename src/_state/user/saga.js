@@ -22,7 +22,7 @@ export function* createAsync(action) {
   try {
     yield call(userService.register, action.payload);
     yield put({ type: CREATE_SUCCESS });
-    yield put(alertActions.success('Successfully Crested User'));
+    yield put(alertActions.success('Successfully Created User'));
   } catch (err) {
     yield put({ type: CREATE_ERROR, payload: err });
     yield put(alertActions.error('User Could Not Be Created'));
