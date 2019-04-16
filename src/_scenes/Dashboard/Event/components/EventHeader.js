@@ -78,9 +78,10 @@ export function EventHeader(props: Props) {
 
   const isViewingInventory = pathname.split('/').includes('inventory');
 
+  const sold = formatNumber(event.soldInventory);
   const unsold = formatNumber(event.unsoldInventory);
   const total = formatNumber(event.totalInventory);
-  const inventoryString = `${unsold} / ${total}`;
+  const inventoryString = `${unsold} / ${sold}`;
 
   return (
     <Box>
@@ -108,9 +109,7 @@ export function EventHeader(props: Props) {
           <P1 size="22px" color={cssConstants.SECONDARY_BLUE}>
             {inventoryString}
           </P1>
-          <ItalicS1 color={cssConstants.SECONDARY_BLUE}>
-            Unsold / Total
-          </ItalicS1>
+          <ItalicS1 color={cssConstants.SECONDARY_BLUE}>Unsold / Sold</ItalicS1>
         </FlexItem>
       </Flex>
     </Box>

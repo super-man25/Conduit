@@ -149,12 +149,12 @@ export class EventListItem extends React.PureComponent<Props> {
           <Spacing padding="18px 0 0 0 ">
             <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
               {formatNumber(event.unsoldInventory)} /{' '}
-              {formatNumber(event.totalInventory)}
+              {formatNumber(event.soldInventory)}
             </P1>
             <P1 size="small" color={cssConstants.PRIMARY_DARKEST_GRAY}>
               <I>Unsold</I>
               {' / '}
-              <I>Total</I>
+              <I>Sold</I>
             </P1>
           </Spacing>
         </Flex>
