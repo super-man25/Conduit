@@ -20,6 +20,9 @@ const SAVE_PRICE_RULE_ERROR = 'priceRule/SAVE_PRICE_RULE_ERROR';
 const FETCH_PRICE_RULE = 'priceRule/FETCH_PRICE_RULE';
 const FETCH_PRICE_RULE_SUCCESS = 'priceRule/FETCH_PRICE_RULE_SUCCESS';
 const FETCH_PRICE_RULE_ERROR = 'priceRule/FETCH_PRICE_RULE_ERROR';
+const DELETE_PRICE_RULE = 'priceRule/DELETE_PRICE_RULE';
+const DELETE_PRICE_RULE_SUCCESS = 'priceRule/DELETE_PRICE_RULE_SUCCESS';
+const DELETE_PRICE_RULE_ERROR = 'priceRule/DELETE_PRICE_RULE_ERROR';
 
 // Action types
 export type FetchPriceRulesAction = {
@@ -97,6 +100,21 @@ export type FetchPriceRuleErrorAction = {
   payload: any
 };
 
+export type DeletePricingRuleAction = {
+  type: 'priceRule/DELETE_PRICE_RULE',
+  payload: number
+};
+
+export type DeletePricingRuleSuccessAction = {
+  type: 'priceRule/DELETE_PRICE_RULE_SUCCESS',
+  payload: any
+};
+
+export type DeletePricingRuleErrorAction = {
+  type: 'priceRule/DELETE_PRICE_RULE_ERROR',
+  payload: any
+};
+
 export type Action =
   | FetchPriceRulesAction
   | FetchPriceRulesSuccessAction
@@ -111,7 +129,10 @@ export type Action =
   | SavePriceRuleErrorAction
   | FetchPriceRuleAction
   | FetchPriceRuleSuccessAction
-  | FetchPriceRuleErrorAction;
+  | FetchPriceRuleErrorAction
+  | DeletePricingRuleAction
+  | DeletePricingRuleSuccessAction
+  | DeletePricingRuleErrorAction;
 
 export const types = {
   FETCH_PRICE_RULES,
@@ -128,7 +149,10 @@ export const types = {
   SAVE_PRICE_RULE_ERROR,
   FETCH_PRICE_RULE,
   FETCH_PRICE_RULE_SUCCESS,
-  FETCH_PRICE_RULE_ERROR
+  FETCH_PRICE_RULE_ERROR,
+  DELETE_PRICE_RULE,
+  DELETE_PRICE_RULE_SUCCESS,
+  DELETE_PRICE_RULE_ERROR
 };
 
 // Actions
@@ -189,6 +213,13 @@ const fetchPriceRule = (id: number): FetchPriceRuleAction => ({
   payload: id
 });
 
+const deletePriceRule = (id: number): DeletePricingRuleAction => {
+  return {
+    type: DELETE_PRICE_RULE,
+    payload: id
+  };
+};
+
 export const actions = {
   fetchPriceRules,
   startEditingPriceRule,
@@ -198,7 +229,8 @@ export const actions = {
   updatePriceRuleProperty,
   createPriceRule,
   fetchPriceRule,
-  savePriceRule
+  savePriceRule,
+  deletePriceRule
 };
 
 // State/Reducer
@@ -322,6 +354,23 @@ export const reducer = (state: State = initialState, action: Action): State => {
         loading: false,
         editingRowId: null,
         editingRowState: {},
+        error: action.payload
+      };
+    case DELETE_PRICE_RULE:
+      return {
+        ...state,
+        loading: true
+      };
+    case DELETE_PRICE_RULE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null
+      };
+    case DELETE_PRICE_RULE_ERROR:
+      return {
+        ...state,
+        loading: false,
         error: action.payload
       };
     case RESET_PRICE_RULES:

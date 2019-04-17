@@ -11,7 +11,8 @@ const mapStateToProps = (
     : allRows.find((pr) => pr.id === rowData.id) || {};
   return {
     isEditing,
-    rulePropertyValue: row[dataKey]
+    rulePropertyValue: row[dataKey],
+    ruleId: allRows.find((pr) => pr.id === rowData.id).id
   };
 };
 

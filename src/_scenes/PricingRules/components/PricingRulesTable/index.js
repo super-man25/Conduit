@@ -39,6 +39,7 @@ import { EditRuleCell } from './EditRuleCellRenderer';
 import { DefaultCellPresenter } from './CellRenderer';
 import { withEditingProps } from './withEditingProps';
 import { withPricingRuleRowStyles } from './withPricingRuleRowStyles';
+import { DeleteRuleCell } from './DeleteRuleCellRenderer';
 
 import type { EDBuyerType } from '_models/buyerType';
 import type { EDPriceScale } from '_models/priceScale';
@@ -174,6 +175,12 @@ const columns = [
     dataKey: '',
     flexGrow: 12,
     cellRenderer: asNodeWithEditingProps(EditRuleCell)
+  },
+  {
+    label: '',
+    dataKey: '',
+    flexGrow: 6,
+    cellRenderer: asNodeWithEditingProps(DeleteRuleCell)
   }
 ].map(combineColumnWithDefaults);
 

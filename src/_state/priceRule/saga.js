@@ -46,6 +46,21 @@ export function* fetchOnePriceRule(action) {
   }
 }
 
+export function* deletePriceRule(action) {
+  try {
+    const result = yield call(priceRuleService.deletePriceRule, action.payload);
+
+    yield put({ type: types.DELETE_PRICE_RULE_SUCCESS, payload: result });
+    yield put({ type: types.FETCH_PRICE_RULES });
+    yield put(alertActions.success('Price rule has been deleted'));
+  } catch (err) {
+    yield put({ type: types.DELETE_PRICE_RULE_ERROR, payload: err });
+    yield put(
+      alertActions.error(err.toString() || 'Error deleting price rule')
+    );
+  }
+}
+
 function* watchFetchPriceRules() {
   yield takeLatest(types.FETCH_PRICE_RULES, fetchPriceRules);
 }
@@ -58,6 +73,10 @@ function* watchFetchPriceRule() {
   yield takeEvery(types.FETCH_PRICE_RULE, fetchOnePriceRule);
 }
 
+function* watchDeletePriceRule() {
+  yield takeLatest(types.DELETE_PRICE_RULE, deletePriceRule);
+}
+
 // Fetch price rule whenever one is updated so it can be refreshed in the store
 function* watchSavePriceRuleSuccess(action) {
   yield takeEvery(types.SAVE_PRICE_RULE_SUCCESS, fetchPriceRuleAfterSave);
@@ -67,5 +86,6 @@ export default {
   watchFetchPriceRules,
   watchSavePriceRule,
   watchFetchPriceRule,
-  watchSavePriceRuleSuccess
+  watchSavePriceRuleSuccess,
+  watchDeletePriceRule
 };

@@ -1,4 +1,4 @@
-import { get, post, put } from '_helpers/api';
+import { get, post, put, del } from '_helpers/api';
 import { normalize, denormalize } from './normalizers/priceRule';
 import lodashGet from 'lodash.get';
 
@@ -18,6 +18,10 @@ function update(priceRule) {
   return denormalize(priceRule).then((payload) =>
     put(`${route}/${priceRule.id}`, payload).catch(handleResponseError)
   );
+}
+
+function deletePriceRule(id) {
+  return del(`${route}/${id}`).catch(handleResponseError);
 }
 
 function getOne(id) {
@@ -57,5 +61,6 @@ export const priceRuleService = {
   getAll,
   create,
   update,
-  getOne
+  getOne,
+  deletePriceRule
 };
