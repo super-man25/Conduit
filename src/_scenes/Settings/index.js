@@ -24,6 +24,7 @@ import UserSettings from './UserSettings';
 import type { Node } from 'react';
 import type { EDUser } from '_models/user';
 import { admin } from '_hoc/secured';
+import { Users } from './Users';
 
 type RouteConfig = {
   path: string,
@@ -44,6 +45,12 @@ const routes: Array<RouteConfig> = [
     linkText: 'User Settings',
     adminOnly: false,
     main: UserSettings
+  },
+  {
+    path: '/settings/users',
+    linkText: 'View Users',
+    adminOnly: false,
+    main: Users
   },
   {
     path: '/settings/create-user',

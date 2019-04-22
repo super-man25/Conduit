@@ -10,6 +10,7 @@ import {
 } from './eventStat';
 import { reducer as eventReducer, saga as eventSaga } from './event';
 import { reducer as userReducer, saga as userSaga } from './user';
+import { reducer as userListReducer, saga as userListSaga } from './userList';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
 import uiReducer from './ui';
 import {
@@ -66,6 +67,7 @@ export const reducers = {
   auth: authReducer,
   event: eventReducer,
   user: userReducer,
+  userList: userListReducer,
   client: clientReducer,
   seasonStat: seasonStatReducer,
   eventStat: eventStatReducer,
@@ -111,6 +113,7 @@ const combineSagas = {
   auth: authSaga,
   event: eventSaga,
   user: userSaga,
+  userList: userListSaga,
   client: clientSaga,
   eventStat: eventStatSaga,
   teamStat: teamStatSaga,

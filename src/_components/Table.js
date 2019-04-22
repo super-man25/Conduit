@@ -32,7 +32,7 @@ type Props = {
 function renderCells(columns, identifier, rowData) {
   return columns.map((c) => (
     <Td key={`${identifier}.${c}`}>
-      <Text fontSi>{rowData[c]}</Text>
+      <Text>{rowData[c]}</Text>
     </Td>
   ));
 }

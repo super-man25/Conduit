@@ -82,6 +82,22 @@ ShallowWrapper {
                     User Settings
                   </Styled(NavLink)>
                 </styled.div>
+                <styled.div
+                  padding="2rem 0"
+                >
+                  <Styled(NavLink)
+                    activeStyle={
+                      Object {
+                        "color": "#38A9DB",
+                        "textShadow": "0 0 .1px #38A9DB",
+                      }
+                    }
+                    to="/settings/users"
+                    weight="light"
+                  >
+                    View Users
+                  </Styled(NavLink)>
+                </styled.div>
               </Flex>
             </styled.div>
           </styled.div>
@@ -93,6 +109,10 @@ ShallowWrapper {
             <Route
               component={[Function]}
               path="/settings/user"
+            />
+            <Route
+              component={[Function]}
+              path="/settings/users"
             />
             <Route
               component={[Function]}
@@ -171,6 +191,22 @@ ShallowWrapper {
                       User Settings
                     </Styled(NavLink)>
                   </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/users"
+                      weight="light"
+                    >
+                      View Users
+                    </Styled(NavLink)>
+                  </styled.div>
                 </Flex>
               </styled.div>
             </styled.div>,
@@ -182,6 +218,10 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 path="/settings/user"
+              />
+              <Route
+                component={[Function]}
+                path="/settings/users"
               />
               <Route
                 component={[Function]}
@@ -249,6 +289,22 @@ ShallowWrapper {
                       User Settings
                     </Styled(NavLink)>
                   </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/users"
+                      weight="light"
+                    >
+                      View Users
+                    </Styled(NavLink)>
+                  </styled.div>
                 </Flex>
               </styled.div>,
             },
@@ -294,6 +350,22 @@ ShallowWrapper {
                       User Settings
                     </Styled(NavLink)>
                   </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/users"
+                      weight="light"
+                    >
+                      View Users
+                    </Styled(NavLink)>
+                  </styled.div>
                 </Flex>,
                 "padding": "2rem",
               },
@@ -335,6 +407,22 @@ ShallowWrapper {
                         weight="light"
                       >
                         User Settings
+                      </Styled(NavLink)>
+                    </styled.div>,
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/users"
+                        weight="light"
+                      >
+                        View Users
                       </Styled(NavLink)>
                     </styled.div>,
                   ],
@@ -420,6 +508,45 @@ ShallowWrapper {
                     },
                     "type": [Function],
                   },
+                  Object {
+                    "instance": null,
+                    "key": "/settings/users",
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/users"
+                        weight="light"
+                      >
+                        View Users
+                      </Styled(NavLink)>,
+                      "padding": "2rem 0",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "activeStyle": Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        },
+                        "children": "View Users",
+                        "to": "/settings/users",
+                        "weight": "light",
+                      },
+                      "ref": null,
+                      "rendered": "View Users",
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
                 ],
                 "type": [Function],
               },
@@ -440,6 +567,10 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   path="/settings/user"
+                />,
+                <Route
+                  component={[Function]}
+                  path="/settings/users"
                 />,
                 <Route
                   component={[Function]}
@@ -483,7 +614,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
-                  "path": "/settings/create-user",
+                  "path": "/settings/users",
                 },
                 "ref": null,
                 "rendered": null,
@@ -492,6 +623,18 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": "3",
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "path": "/settings/create-user",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "4",
                 "nodeType": "class",
                 "props": Object {
                   "component": [Function],
@@ -569,6 +712,22 @@ ShallowWrapper {
                       User Settings
                     </Styled(NavLink)>
                   </styled.div>
+                  <styled.div
+                    padding="2rem 0"
+                  >
+                    <Styled(NavLink)
+                      activeStyle={
+                        Object {
+                          "color": "#38A9DB",
+                          "textShadow": "0 0 .1px #38A9DB",
+                        }
+                      }
+                      to="/settings/users"
+                      weight="light"
+                    >
+                      View Users
+                    </Styled(NavLink)>
+                  </styled.div>
                 </Flex>
               </styled.div>
             </styled.div>
@@ -580,6 +739,10 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 path="/settings/user"
+              />
+              <Route
+                component={[Function]}
+                path="/settings/users"
               />
               <Route
                 component={[Function]}
@@ -658,6 +821,22 @@ ShallowWrapper {
                         User Settings
                       </Styled(NavLink)>
                     </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/users"
+                        weight="light"
+                      >
+                        View Users
+                      </Styled(NavLink)>
+                    </styled.div>
                   </Flex>
                 </styled.div>
               </styled.div>,
@@ -669,6 +848,10 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   path="/settings/user"
+                />
+                <Route
+                  component={[Function]}
+                  path="/settings/users"
                 />
                 <Route
                   component={[Function]}
@@ -736,6 +919,22 @@ ShallowWrapper {
                         User Settings
                       </Styled(NavLink)>
                     </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/users"
+                        weight="light"
+                      >
+                        View Users
+                      </Styled(NavLink)>
+                    </styled.div>
                   </Flex>
                 </styled.div>,
               },
@@ -781,6 +980,22 @@ ShallowWrapper {
                         User Settings
                       </Styled(NavLink)>
                     </styled.div>
+                    <styled.div
+                      padding="2rem 0"
+                    >
+                      <Styled(NavLink)
+                        activeStyle={
+                          Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          }
+                        }
+                        to="/settings/users"
+                        weight="light"
+                      >
+                        View Users
+                      </Styled(NavLink)>
+                    </styled.div>
                   </Flex>,
                   "padding": "2rem",
                 },
@@ -822,6 +1037,22 @@ ShallowWrapper {
                           weight="light"
                         >
                           User Settings
+                        </Styled(NavLink)>
+                      </styled.div>,
+                      <styled.div
+                        padding="2rem 0"
+                      >
+                        <Styled(NavLink)
+                          activeStyle={
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
+                          }
+                          to="/settings/users"
+                          weight="light"
+                        >
+                          View Users
                         </Styled(NavLink)>
                       </styled.div>,
                     ],
@@ -907,6 +1138,45 @@ ShallowWrapper {
                       },
                       "type": [Function],
                     },
+                    Object {
+                      "instance": null,
+                      "key": "/settings/users",
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Styled(NavLink)
+                          activeStyle={
+                            Object {
+                              "color": "#38A9DB",
+                              "textShadow": "0 0 .1px #38A9DB",
+                            }
+                          }
+                          to="/settings/users"
+                          weight="light"
+                        >
+                          View Users
+                        </Styled(NavLink)>,
+                        "padding": "2rem 0",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "activeStyle": Object {
+                            "color": "#38A9DB",
+                            "textShadow": "0 0 .1px #38A9DB",
+                          },
+                          "children": "View Users",
+                          "to": "/settings/users",
+                          "weight": "light",
+                        },
+                        "ref": null,
+                        "rendered": "View Users",
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
                   ],
                   "type": [Function],
                 },
@@ -927,6 +1197,10 @@ ShallowWrapper {
                   <Route
                     component={[Function]}
                     path="/settings/user"
+                  />,
+                  <Route
+                    component={[Function]}
+                    path="/settings/users"
                   />,
                   <Route
                     component={[Function]}
@@ -970,7 +1244,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
-                    "path": "/settings/create-user",
+                    "path": "/settings/users",
                   },
                   "ref": null,
                   "rendered": null,
@@ -979,6 +1253,18 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": "3",
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "path": "/settings/create-user",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "4",
                   "nodeType": "class",
                   "props": Object {
                     "component": [Function],
