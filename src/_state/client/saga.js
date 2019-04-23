@@ -1,5 +1,5 @@
 import { clientService, integrationService } from '_services';
-import { call, put, takeEvery, select } from 'redux-saga/effects';
+import { call, put, takeEvery, select, takeLatest } from 'redux-saga/effects';
 import { getClientId, getClient } from './selectors';
 import alertActions from '../alert/actions';
 import {
@@ -13,7 +13,10 @@ import {
   FETCH_INTEGRATIONS_SUCCESS,
   FETCH_INTEGRATIONS_ERROR,
   TOGGLE_INTEGRATION,
-  UPDATE_INTEGRATION
+  UPDATE_INTEGRATION,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR
 } from './actions';
 
 // Workers
@@ -58,6 +61,26 @@ export function* toggleIntegrationAsync({ payload: { id, isActive } }) {
   yield put({ type: UPDATE_INTEGRATION, payload: { id, ...result } });
 }
 
+export function* updateSecondaryPricingRuleAsync(body) {
+  const { onSuccess, onError, ...payload } = body.payload;
+  try {
+    yield call(integrationService.updateSecondaryPricingRule, payload);
+    yield put({ type: UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS });
+    yield put({ type: FETCH_INTEGRATIONS_ASYNC });
+    yield put(
+      alertActions.success('Successfully Updated Secondary Pricing Rule')
+    );
+    onSuccess();
+  } catch (err) {
+    yield put({
+      type: UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
+      payload: err
+    });
+    yield put(alertActions.error(err.toString()));
+    onError(err);
+  }
+}
+
 // Sagas
 function* watchGetClientAsync() {
   yield takeEvery(FETCH_ASYNC, getClientAsync);
@@ -75,9 +98,17 @@ function* watchToggleClientIntegrationAsync() {
   yield takeEvery(TOGGLE_INTEGRATION, toggleIntegrationAsync);
 }
 
+function* watchUpdateSecondaryPricingRuleAsync() {
+  yield takeLatest(
+    UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+    updateSecondaryPricingRuleAsync
+  );
+}
+
 export default {
   watchGetClientAsync,
   watchUpdateClientAsync,
   watchGetClientIntegrationsAsync,
-  watchToggleClientIntegrationAsync
+  watchToggleClientIntegrationAsync,
+  watchUpdateSecondaryPricingRuleAsync
 };

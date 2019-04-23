@@ -9,9 +9,10 @@ function toggleIntegration(clientIntegrationId, payload) {
   return put(`clientIntegrations/${clientIntegrationId}/toggle`, payload);
 }
 
-function updateSecondaryPricingRule(clientIntegrationId, body) {
-  return denormalize(body).then((payload) => {
-    return put(`clientIntegrations/${clientIntegrationId}`, payload).catch(
+function updateSecondaryPricingRule(body) {
+  const { id, ...payload } = body;
+  return denormalize(payload).then((validBody) => {
+    return put(`clientIntegrations/${id}`, validBody).catch(
       handleResponseError
     );
   });

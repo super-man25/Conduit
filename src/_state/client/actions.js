@@ -12,6 +12,12 @@ export const UPDATE_ERROR = 'client/UPDATE_ERROR';
 export const FETCH_INTEGRATIONS_ASYNC = 'client/FETCH_INTEGRATIONS_ASYNC';
 export const FETCH_INTEGRATIONS_SUCCESS = 'client/FETCH_INTEGRATIONS_SUCCESS';
 export const FETCH_INTEGRATIONS_ERROR = 'client/FETCH_INTEGRATIONS_ERROR';
+export const UPDATE_SECONDARY_PRICING_RULE_ASYNC =
+  'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC';
+export const UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS =
+  'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS';
+export const UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR =
+  'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR';
 export const TOGGLE_INTEGRATION = 'client/TOGGLE_INTEGRATION';
 export const UPDATE_INTEGRATION = 'client/UPDATE_INTEGRATION';
 export const SET_PRICING_INTERVAL = 'client/SET_PRICING_INTERVAL';
@@ -27,6 +33,12 @@ export type Action =
   | { type: typeof UPDATE_ASYNC, payload: { pricingInterval: number } }
   | { type: typeof UPDATE_SUCCESS, payload: EDClient }
   | { type: typeof UPDATE_ERROR, payload?: Error }
+  | {
+      type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+      payload: { clientId: number, percent: number, constant: number }
+    }
+  | { type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS, payload: null }
+  | { type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR, payload?: Error }
   | { type: typeof FETCH_INTEGRATIONS_ASYNC, payload: boolean }
   | { type: typeof FETCH_INTEGRATIONS_SUCCESS, payload: Array<EDIntegration> }
   | { type: typeof FETCH_INTEGRATIONS_ERROR, payload?: Error }
@@ -80,11 +92,25 @@ function resetDirtyPricingInterval(): Action {
   };
 }
 
+function updateSecondaryPricingRule(payload: {
+  id: number,
+  percent: number,
+  constant: number,
+  onSuccess: () => void,
+  onError: () => void
+}): Action {
+  return {
+    type: UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+    payload
+  };
+}
+
 export default {
   fetch,
   update,
   fetchIntegrations,
   toggleIntegration,
   setPricingInterval,
-  resetDirtyPricingInterval
+  resetDirtyPricingInterval,
+  updateSecondaryPricingRule
 };

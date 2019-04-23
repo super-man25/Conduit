@@ -53,7 +53,7 @@ const PricingRulesTableTableContainer = FlexItem.extend`
   min-height: 100%;
 `;
 
-const PricingRuleFullContet = FullContent.extend`
+const PricingRuleFullContent = FullContent.extend`
   overflow: ${(props) => (props.scrollLocked ? 'hidden' : 'visible')};
 `;
 
@@ -87,7 +87,7 @@ export class PricingRules extends React.Component<Props> {
     return (
       <PageWrapper>
         <SiteHeader />
-        <PricingRuleFullContet scrollLocked={buyerTypesModalIsOpen}>
+        <PricingRuleFullContent scrollLocked={buyerTypesModalIsOpen}>
           <ApiAlert />
           <PricingWrapper>
             <Spacing margin="1rem 0">
@@ -115,7 +115,7 @@ export class PricingRules extends React.Component<Props> {
               <VirtualizedPricingRules />
             </PricingRulesTableTableContainer>
           </PricingWrapper>
-        </PricingRuleFullContet>
+        </PricingRuleFullContent>
         <Portal>
           {buyerTypesModalIsOpen && (
             <BuyerTypeStatusModal buyerTypes={buyerTypes} />

@@ -6,6 +6,7 @@ import { cssConstants } from '_constants';
 import { rgba } from 'polished';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
+import { SecondaryPricingRule } from '_scenes/Settings/TeamSettings/components/SecondaryPricingRule';
 
 const Card = styled.div`
   display: flex;
@@ -45,7 +46,7 @@ type Props = {
 };
 
 export function Integration(props: Props) {
-  const { modifiedAt, isActive, onChange, logoUrl, name } = props;
+  const { modifiedAt, isActive, onChange, logoUrl, name, isPrimary } = props;
 
   return (
     <Card>
@@ -58,6 +59,7 @@ export function Integration(props: Props) {
           <Toggle isChecked={isActive} isDisabled onChange={onChange} />
         </ToggleContainer>
       </Details>
+      {!isPrimary && <SecondaryPricingRule {...props} />}
     </Card>
   );
 }

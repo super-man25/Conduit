@@ -10,6 +10,9 @@ import {
   FETCH_INTEGRATIONS_ASYNC,
   FETCH_INTEGRATIONS_SUCCESS,
   FETCH_INTEGRATIONS_ERROR,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
   UPDATE_INTEGRATION,
   RESET_DIRTY_PRICING_INTERVAL,
   SET_PRICING_INTERVAL
@@ -88,6 +91,22 @@ export default function clientReducer(
     case UPDATE_ERROR:
       return {
         ...state,
+        error: action.payload
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_ASYNC:
+      return {
+        ...state,
+        loading: true
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS:
+      return {
+        ...state,
+        loading: false
+      };
+    case UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR:
+      return {
+        ...state,
+        loading: false,
         error: action.payload
       };
     case FETCH_INTEGRATIONS_ASYNC:

@@ -1,28 +1,37 @@
 import React, { Component, Fragment } from 'react';
-import { integrationService } from '_services/integration';
+import { connect } from 'react-redux';
 import {
   SettingEditButton,
-  SettingSaveButton,
-  SettingCancelButton,
+  SettingBorderButton,
   NumberInputField,
   Flex,
   FlexItem,
-  Input,
-  ApiAlertPresenter
+  Input
 } from '_components';
+import { withClickAway } from '_hoc';
+import { actions } from '_state/client';
 
-export class SecondaryPricingRule extends Component {
+const ClickAwayDiv = withClickAway(Fragment);
+
+export class SecondaryPricingRulePresenter extends Component {
   state = {
     isEditing: false,
     id: this.props.id,
     percent: this.props.percent,
     constant: this.props.constant,
     percentInvalid: false,
-    constantInvalid: false,
-    alertState: {
-      type: null,
-      message: null
-    }
+    constantInvalid: false
+  };
+
+  reset = () => {
+    this.setState({
+      isEditing: false,
+      id: this.props.id,
+      percent: this.props.percent,
+      constant: this.props.constant,
+      percentInvalid: false,
+      constantInvalid: false
+    });
   };
 
   toggleEdit = () => {
@@ -30,22 +39,21 @@ export class SecondaryPricingRule extends Component {
   };
 
   saveSettings = () => {
-    const { isEditing, id, ...payload } = this.state;
-    integrationService
-      .updateSecondaryPricingRule(id, payload)
-      .then(this.handleSuccess)
-      .catch(this.handleError);
-    setTimeout(this.resetState, 3000);
+    const { id, percent, constant } = this.state;
+    const payload = {
+      id,
+      percent: percent !== '' ? percent : null,
+      constant: constant !== '' ? constant : null,
+      onSuccess: this.handleSuccess,
+      onError: this.handleError
+    };
+    this.props.updateSecondaryPricingRule(payload);
   };
 
-  handleSuccess = (res) => {
+  handleSuccess = () => {
     this.setState({
       percentInvalid: false,
-      constantInvalid: false,
-      alertState: {
-        type: 'api-success',
-        message: res.message
-      }
+      constantInvalid: false
     });
     this.toggleEdit();
   };
@@ -54,22 +62,6 @@ export class SecondaryPricingRule extends Component {
     error.path === 'percent'
       ? this.setState({ isEditing: true, percentInvalid: true })
       : this.setState({ isEditing: true, constantInvalid: true });
-
-    this.setState({
-      alertState: {
-        type: 'api-error',
-        message: error.message
-      }
-    });
-  };
-
-  resetState = () => {
-    this.setState({
-      alertState: {
-        type: null,
-        message: null
-      }
-    });
   };
 
   update = (event) => {
@@ -89,22 +81,13 @@ export class SecondaryPricingRule extends Component {
 
   render() {
     return (
-      <div>
-        <ApiAlertPresenter alertState={this.state.alertState} />
-        {!this.state.isEditing && (
-          <SettingEditButton onClick={this.toggleEdit} />
-        )}
-        {this.state.isEditing && (
+      <ClickAwayDiv onClickAway={this.reset}>
+        {this.state.isEditing ? (
           <Fragment>
-            <Flex justify>
-              <SettingSaveButton onClick={this.saveSettings} />
-              <SettingCancelButton onClick={this.toggleEdit} />
-            </Flex>
-            <Flex inline flex-direction="column">
-              <FlexItem width="40%">
+            <Flex inline direction="row" align="center" marginBottom="15px">
+              <FlexItem margin="0 10px 0 0">
                 <NumberInputField
                   component={Input}
-                  type="number"
                   name="percent"
                   value={this.state.percent || ''}
                   onChange={(e) => this.update(e)}
@@ -113,10 +96,9 @@ export class SecondaryPricingRule extends Component {
                   inValid={this.state.percentInvalid}
                 />
               </FlexItem>
-              <FlexItem width="40%">
+              <FlexItem margin="0 0 0 10px">
                 <NumberInputField
                   component={Input}
-                  type="number"
                   name="constant"
                   value={this.state.constant || ''}
                   onChange={(e) => this.update(e)}
@@ -126,9 +108,23 @@ export class SecondaryPricingRule extends Component {
                 />
               </FlexItem>
             </Flex>
+            <SettingBorderButton onClick={this.saveSettings}>
+              SAVE
+            </SettingBorderButton>
           </Fragment>
+        ) : (
+          <SettingEditButton onClick={this.toggleEdit} />
         )}
-      </div>
+      </ClickAwayDiv>
     );
   }
 }
+
+const mapDispatchToProps = {
+  updateSecondaryPricingRule: actions.updateSecondaryPricingRule
+};
+
+export const SecondaryPricingRule = connect(
+  null,
+  mapDispatchToProps
+)(SecondaryPricingRulePresenter);
