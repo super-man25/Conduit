@@ -191,3 +191,18 @@ export function truncateNumber(value: number): string {
     return `${fixToTwoDecimals(value)}`;
   }
 }
+
+/**
+ * Return a date as a string
+ *
+ * @param {string} a - primative comparison
+ * @param {string} b - primative comparison
+ */
+const collator = new Intl.Collator(undefined, {
+  numeric: true,
+  sensitivity: 'base'
+});
+
+export const sortAlphaNum = (a: any, b: any) => {
+  return collator.compare(a, b);
+};

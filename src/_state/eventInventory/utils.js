@@ -1,43 +1,13 @@
 // @flow
-import type { EDInventoryRow } from '_models';
-
-const createSorter = (prop, sortFunc) => {
-  return (a, b) => sortFunc(a[prop], b[prop]);
-};
-
-const compareByCharacter = (a: string, b: string) =>
-  a.toLowerCase().localeCompare(b.toLowerCase());
-
-const compareByIntegerValue = (a, b) => Number(a) - Number(b);
-
-// Characters are ranked higher than numbers. Doesn't handle mixed
-// values. I.E. A1, A10, B1, B10
-const alphaNumericSort = (a: string, b: string) => {
-  if (isNaN(a) && isNaN(b)) {
-    return compareByCharacter(a, b);
-  }
-
-  if (!isNaN(a) && !isNaN(b)) {
-    return compareByIntegerValue(a, b);
-  }
-
-  return isNaN(a) ? -1 : 1;
-};
-
-const sortFuncs = {
-  priceScaleId: createSorter('priceScaleId', compareByIntegerValue),
-  section: createSorter('section', alphaNumericSort),
-  row: createSorter('row', compareByCharacter),
-  seats: createSorter('seats', compareByIntegerValue),
-  listedPrice: createSorter('listedPrice', compareByIntegerValue),
-  isListed: createSorter('isListed', compareByIntegerValue)
-};
+import type { EDInventoryRow, EDVenuePriceScale } from '_models';
+import { sortAlphaNum } from '_helpers';
 
 export function calculateFilteredRows(
   rows: EDInventoryRow[],
   filterDirection: 'asc' | 'desc',
   filterName: string,
-  selectedScaleFilters: any[] = []
+  selectedScaleFilters: any[] = [],
+  scaleFilters: EDVenuePriceScale[]
 ) {
   let rowsFilteredByScale = rows;
   const hasScaleFilters = selectedScaleFilters.length;
@@ -52,9 +22,44 @@ export function calculateFilteredRows(
 
   if (!filterName) return rowsFilteredByScale;
 
-  let sorted: EDInventoryRow[] = [...rowsFilteredByScale].sort(
-    sortFuncs[filterName]
-  );
+  let sorted: EDInventoryRow[];
+  if (filterName === 'seats') {
+    sorted = ([...rowsFilteredByScale].sort((a, b) =>
+      sortAlphaNum(a[filterName].length, b[filterName].length)
+    ): EDInventoryRow[]);
+  } else if (filterName === 'priceScaleId') {
+    sorted = ([...rowsFilteredByScale].sort((a, b) => {
+      const { name: firstPriceScaleName } =
+        scaleFilters.find((scale: EDVenuePriceScale) => {
+          return scale.id === a[filterName];
+        }) || {};
+
+      const { name: secondPriceScaleName } =
+        scaleFilters.find((scale: EDVenuePriceScale) => {
+          return scale.id === b[filterName];
+        }) || {};
+
+      return sortAlphaNum(firstPriceScaleName, secondPriceScaleName);
+    }): EDInventoryRow[]);
+  } else {
+    sorted = ([...rowsFilteredByScale].sort(
+      (a: EDInventoryRow, b: EDInventoryRow) =>
+        sortAlphaNum(a[filterName], b[filterName])
+    ): EDInventoryRow[]);
+
+    //Sort letters before numbers, for alphanumeric columns
+    if (filterName === 'section' || filterName === 'row') {
+      const charIndex = sorted.findIndex((row) => {
+        return row[filterName].charAt(0).match(/[a-z]/i);
+      });
+      if (charIndex) {
+        sorted = [
+          ...sorted.slice(charIndex, sorted.length),
+          ...sorted.slice(0, charIndex)
+        ];
+      }
+    }
+  }
 
   if (filterDirection === 'desc') {
     sorted.reverse();

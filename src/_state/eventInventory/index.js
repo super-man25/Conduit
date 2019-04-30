@@ -294,7 +294,8 @@ export const reducer = (state: State = initialState, action: Action) => {
         state.allRows,
         state.filterDirection,
         state.filterName,
-        state.selectedScaleFilters
+        state.selectedScaleFilters,
+        state.scaleFilters
       );
 
       const selectedRowIds: number[] =
@@ -434,14 +435,16 @@ const selectEventInventoryRows = createSelector(
   [
     selectAllEventInventoryRows,
     selectEventInventoryFilter,
-    selectSelectedScaleFilters
+    selectSelectedScaleFilters,
+    selectScaleFilters
   ],
-  (rows, filters, selectedScaleFilters) =>
+  (rows, filters, selectedScaleFilters, scaleFilters) =>
     calculateFilteredRows(
       rows,
       filters.direction,
       filters.name,
-      selectedScaleFilters
+      selectedScaleFilters,
+      scaleFilters
     )
 );
 
