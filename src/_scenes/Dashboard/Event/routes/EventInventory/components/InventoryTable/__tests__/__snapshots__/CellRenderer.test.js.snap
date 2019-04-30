@@ -7,7 +7,12 @@ ShallowWrapper {
     align="center"
     marginLeft="1.25rem"
   >
-    10
+    <styled.p
+      overflow={true}
+      title="10"
+    >
+      10
+    </styled.p>
   </Flex>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,11 +28,28 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "10",
+      "children": <styled.p
+        overflow={true}
+        title="10"
+      >
+        10
+      </styled.p>,
       "className": "sc-hMqMXs jCrzlt",
     },
     "ref": null,
-    "rendered": "10",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": "10",
+        "overflow": true,
+        "title": "10",
+      },
+      "ref": null,
+      "rendered": "10",
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -36,11 +58,28 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "10",
+        "children": <styled.p
+          overflow={true}
+          title="10"
+        >
+          10
+        </styled.p>,
         "className": "sc-hMqMXs jCrzlt",
       },
       "ref": null,
-      "rendered": "10",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "10",
+          "overflow": true,
+          "title": "10",
+        },
+        "ref": null,
+        "rendered": "10",
+        "type": [Function],
+      },
       "type": "div",
     },
   ],

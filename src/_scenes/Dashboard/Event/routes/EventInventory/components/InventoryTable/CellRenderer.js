@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { isDefined } from '_helpers';
-import { Flex } from '_components';
+import { Flex, Text } from '_components';
 
 type Props = {
   cellData: any
@@ -13,7 +13,9 @@ export const defaultCellRenderer = (props: Props) => {
 
   return (
     <Flex align="center" marginLeft="1.25rem">
-      {value}
+      <Text overflow title={value}>
+        {value}
+      </Text>
     </Flex>
   );
 };

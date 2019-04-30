@@ -38,7 +38,9 @@ ShallowWrapper {
           cursor="pointer"
           onClick={[Function]}
           opacity={1}
+          overflow={true}
           size={14}
+          title="SET PRICE"
         >
           SET PRICE
         </styled.p>,
@@ -57,7 +59,9 @@ ShallowWrapper {
           "cursor": "pointer",
           "onClick": [Function],
           "opacity": 1,
+          "overflow": true,
           "size": 14,
+          "title": "SET PRICE",
         },
         "ref": null,
         "rendered": "SET PRICE",
@@ -80,7 +84,9 @@ ShallowWrapper {
             cursor="pointer"
             onClick={[Function]}
             opacity={1}
+            overflow={true}
             size={14}
+            title="SET PRICE"
           >
             SET PRICE
           </styled.p>,
@@ -99,7 +105,9 @@ ShallowWrapper {
             "cursor": "pointer",
             "onClick": [Function],
             "opacity": 1,
+            "overflow": true,
             "size": 14,
+            "title": "SET PRICE",
           },
           "ref": null,
           "rendered": "SET PRICE",
@@ -432,7 +440,9 @@ ShallowWrapper {
           cursor="pointer"
           onClick={[Function]}
           opacity={0.5}
+          overflow={true}
           size={14}
+          title="SET PRICE"
         >
           SET PRICE
         </styled.p>,
@@ -451,7 +461,9 @@ ShallowWrapper {
           "cursor": "pointer",
           "onClick": [Function],
           "opacity": 0.5,
+          "overflow": true,
           "size": 14,
+          "title": "SET PRICE",
         },
         "ref": null,
         "rendered": "SET PRICE",
@@ -474,7 +486,9 @@ ShallowWrapper {
             cursor="pointer"
             onClick={[Function]}
             opacity={0.5}
+            overflow={true}
             size={14}
+            title="SET PRICE"
           >
             SET PRICE
           </styled.p>,
@@ -493,7 +507,9 @@ ShallowWrapper {
             "cursor": "pointer",
             "onClick": [Function],
             "opacity": 0.5,
+            "overflow": true,
             "size": 14,
+            "title": "SET PRICE",
           },
           "ref": null,
           "rendered": "SET PRICE",

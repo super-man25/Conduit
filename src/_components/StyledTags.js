@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { cssConstants } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
@@ -7,6 +7,14 @@ const WEIGHTS = new Map()
   .set('heavy', '500')
   .set('light', '300')
   .set('lighter', '200');
+
+const overflow = (props) =>
+  props.overflow &&
+  css`
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  `;
 
 export const H1 = withBoxModelProps(styled.h1`
   color: ${(props) =>
@@ -112,4 +120,6 @@ export const Text = withBoxModelProps(styled.p`
   text-align: ${(props) => (props.center ? 'center' : '')};
   opacity: ${(props) => props.opacity};
   cursor: ${(props) => props.cursor || 'default'};
+
+  ${overflow};
 `);

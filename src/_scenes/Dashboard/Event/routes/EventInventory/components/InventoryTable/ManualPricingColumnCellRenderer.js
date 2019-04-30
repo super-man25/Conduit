@@ -82,6 +82,8 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
               onClick={this.startEditingPrice}
               opacity={textOpacity}
               cursor={'pointer'}
+              overflow
+              title="SET PRICE"
             >
               SET PRICE
             </Text>
