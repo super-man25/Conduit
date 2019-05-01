@@ -165,13 +165,18 @@ describe('<LoginPresenter />', () => {
       forgotPass: jest.fn(),
       signIn: jest.fn()
     };
+    const authState = {
+      forgot: true
+    };
     const wrapper = shallow(
-      <LoginPresenter {...props} authActions={authActions} />
+      <LoginPresenter
+        {...props}
+        authActions={authActions}
+        authState={authState}
+      />
     );
-    wrapper.setState({ forgot: true });
-
     wrapper.find('form').simulate('submit', { preventDefault: () => {} });
-    expect(wrapper.state().submitted).toEqual(true);
+    expect(wrapper.state().submitted).toEqual(false);
     expect(authActions.forgotPass).toBeCalled();
   });
 });

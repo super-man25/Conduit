@@ -1,6 +1,6 @@
 // @flow
 
-import { CenteredLoader } from '_components';
+import { CenteredLoader, ApiAlert } from '_components';
 import { history } from '_helpers';
 import { secured, unsecured } from '_hoc/secured';
 import { actions as authActions, selectors } from '_state/auth';
@@ -49,12 +49,15 @@ class App extends React.Component<Props> {
       <CenteredLoader />
     ) : (
       <ConnectedRouter history={history}>
-        <Switch>
-          <Route path="/login" component={unsecured(Login)} />
-          <Route path="/settings" component={secured(Settings)} />
-          <Route path="/pricing" component={secured(PricingRules)} />
-          <Route path="/" component={secured(Dashboard)} />
-        </Switch>
+        <>
+          <Switch>
+            <Route path="/login" component={unsecured(Login)} />
+            <Route path="/settings" component={secured(Settings)} />
+            <Route path="/pricing" component={secured(PricingRules)} />
+            <Route path="/" component={secured(Dashboard)} />
+          </Switch>
+          <ApiAlert />
+        </>
       </ConnectedRouter>
     );
   }

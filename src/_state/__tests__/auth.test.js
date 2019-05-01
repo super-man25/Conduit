@@ -1,5 +1,6 @@
 import { userService } from '_services';
 import { actions, reducer, initialState } from '_state/auth';
+import { actions as alertActions } from '_state/alert';
 import { types } from '_state/auth';
 import {
   fetchAsync,
@@ -185,7 +186,16 @@ describe('saga workers', () => {
     const action = actions.forgotPass('some@email.com');
     const generator = forgotPassAsync(action);
     expect(generator.next().value).toEqual(
+      put({ type: types.PASSWORD_RESET_REQUEST })
+    );
+    expect(generator.next().value).toEqual(
       call(userService.forgotPass, { email: 'some@email.com' })
+    );
+    expect(generator.next().value).toEqual(
+      put({ type: types.PASSWORD_RESET_SUCCESS })
+    );
+    expect(generator.next().value).toEqual(
+      put(alertActions.success('Password recovery email sent'))
     );
     expect(generator.next().done).toBe(true);
   });

@@ -1,6 +1,7 @@
 import { userService } from '_services';
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { types, actions } from '.';
+import { actions as alertActions } from '../alert';
 
 // Workers
 export function* fetchAsync() {
@@ -42,11 +43,16 @@ export function* signOutAsync() {
 }
 
 export function* forgotPassAsync(action) {
-  const { email } = action.payload;
   try {
+    const { email } = action.payload;
+    yield put({ type: types.PASSWORD_RESET_REQUEST });
     yield call(userService.forgotPass, { email: email });
+    yield put({ type: types.PASSWORD_RESET_SUCCESS });
+    yield put(alertActions.success('Password recovery email sent'));
   } catch (err) {
     console.warn(err);
+    yield put({ type: types.PASSWORD_RESET_ERROR, payload: err });
+    yield put(alertActions.error('Password recovery email could not be sent'));
   }
 }
 

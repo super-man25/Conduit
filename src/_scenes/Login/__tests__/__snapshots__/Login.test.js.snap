@@ -52,7 +52,7 @@ ShallowWrapper {
                   }
                 }
               >
-                Forgot Password
+                Log In
               </styled.h3>
               <form
                 name="form"
@@ -94,7 +94,7 @@ ShallowWrapper {
                   A valid Email is required
                 </styled.div>
                 <styled.div
-                  show={false}
+                  show={true}
                 >
                   <styled.label
                     htmlFor="password"
@@ -129,7 +129,7 @@ ShallowWrapper {
                 <styled.span
                   onClick={[Function]}
                 >
-                  back to Login
+                  Forgot Password?
                 </styled.span>
               </form>
             </styled.div>
@@ -176,7 +176,7 @@ ShallowWrapper {
                     }
                   }
                 >
-                  Forgot Password
+                  Log In
                 </styled.h3>
                 <form
                   name="form"
@@ -218,7 +218,7 @@ ShallowWrapper {
                     A valid Email is required
                   </styled.div>
                   <styled.div
-                    show={false}
+                    show={true}
                   >
                     <styled.label
                       htmlFor="password"
@@ -253,7 +253,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    back to Login
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -296,7 +296,7 @@ ShallowWrapper {
                     }
                   }
                 >
-                  Forgot Password
+                  Log In
                 </styled.h3>
                 <form
                   name="form"
@@ -338,7 +338,7 @@ ShallowWrapper {
                     A valid Email is required
                   </styled.div>
                   <styled.div
-                    show={false}
+                    show={true}
                   >
                     <styled.label
                       htmlFor="password"
@@ -373,7 +373,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    back to Login
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -400,7 +400,7 @@ ShallowWrapper {
                     }
                   }
                 >
-                  Forgot Password
+                  Log In
                 </styled.h3>
                 <form
                   name="form"
@@ -442,7 +442,7 @@ ShallowWrapper {
                     A valid Email is required
                   </styled.div>
                   <styled.div
-                    show={false}
+                    show={true}
                   >
                     <styled.label
                       htmlFor="password"
@@ -477,7 +477,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    back to Login
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>,
@@ -501,7 +501,7 @@ ShallowWrapper {
                       }
                     }
                   >
-                    Forgot Password
+                    Log In
                   </styled.h3>,
                   <form
                     name="form"
@@ -543,7 +543,7 @@ ShallowWrapper {
                       A valid Email is required
                     </styled.div>
                     <styled.div
-                      show={false}
+                      show={true}
                     >
                       <styled.label
                         htmlFor="password"
@@ -578,7 +578,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      back to Login
+                      Forgot Password?
                     </styled.span>
                   </form>,
                 ],
@@ -603,13 +603,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Forgot Password",
+                    "children": "Log In",
                     "style": Object {
                       "marginBottom": "5px",
                     },
                   },
                   "ref": null,
-                  "rendered": "Forgot Password",
+                  "rendered": "Log In",
                   "type": [Function],
                 },
                 Object {
@@ -654,7 +654,7 @@ ShallowWrapper {
                         A valid Email is required
                       </styled.div>,
                       <styled.div
-                        show={false}
+                        show={true}
                       >
                         <styled.label
                           htmlFor="password"
@@ -689,7 +689,7 @@ ShallowWrapper {
                       <styled.span
                         onClick={[Function]}
                       >
-                        back to Login
+                        Forgot Password?
                       </styled.span>,
                     ],
                     "name": "form",
@@ -789,7 +789,7 @@ ShallowWrapper {
                             Password is required
                           </styled.div>,
                         ],
-                        "show": false,
+                        "show": true,
                       },
                       "ref": null,
                       "rendered": Array [
@@ -860,11 +860,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "back to Login",
+                        "children": "Forgot Password?",
                         "onClick": [Function],
                       },
                       "ref": null,
-                      "rendered": "back to Login",
+                      "rendered": "Forgot Password?",
                       "type": [Function],
                     },
                   ],
@@ -947,7 +947,7 @@ ShallowWrapper {
                     }
                   }
                 >
-                  Forgot Password
+                  Log In
                 </styled.h3>
                 <form
                   name="form"
@@ -989,7 +989,7 @@ ShallowWrapper {
                     A valid Email is required
                   </styled.div>
                   <styled.div
-                    show={false}
+                    show={true}
                   >
                     <styled.label
                       htmlFor="password"
@@ -1024,7 +1024,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    back to Login
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -1071,7 +1071,7 @@ ShallowWrapper {
                       }
                     }
                   >
-                    Forgot Password
+                    Log In
                   </styled.h3>
                   <form
                     name="form"
@@ -1113,7 +1113,7 @@ ShallowWrapper {
                       A valid Email is required
                     </styled.div>
                     <styled.div
-                      show={false}
+                      show={true}
                     >
                       <styled.label
                         htmlFor="password"
@@ -1148,7 +1148,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      back to Login
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>
@@ -1191,7 +1191,7 @@ ShallowWrapper {
                       }
                     }
                   >
-                    Forgot Password
+                    Log In
                   </styled.h3>
                   <form
                     name="form"
@@ -1233,7 +1233,7 @@ ShallowWrapper {
                       A valid Email is required
                     </styled.div>
                     <styled.div
-                      show={false}
+                      show={true}
                     >
                       <styled.label
                         htmlFor="password"
@@ -1268,7 +1268,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      back to Login
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>
@@ -1295,7 +1295,7 @@ ShallowWrapper {
                       }
                     }
                   >
-                    Forgot Password
+                    Log In
                   </styled.h3>
                   <form
                     name="form"
@@ -1337,7 +1337,7 @@ ShallowWrapper {
                       A valid Email is required
                     </styled.div>
                     <styled.div
-                      show={false}
+                      show={true}
                     >
                       <styled.label
                         htmlFor="password"
@@ -1372,7 +1372,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      back to Login
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>,
@@ -1396,7 +1396,7 @@ ShallowWrapper {
                         }
                       }
                     >
-                      Forgot Password
+                      Log In
                     </styled.h3>,
                     <form
                       name="form"
@@ -1438,7 +1438,7 @@ ShallowWrapper {
                         A valid Email is required
                       </styled.div>
                       <styled.div
-                        show={false}
+                        show={true}
                       >
                         <styled.label
                           htmlFor="password"
@@ -1473,7 +1473,7 @@ ShallowWrapper {
                       <styled.span
                         onClick={[Function]}
                       >
-                        back to Login
+                        Forgot Password?
                       </styled.span>
                     </form>,
                   ],
@@ -1498,13 +1498,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Forgot Password",
+                      "children": "Log In",
                       "style": Object {
                         "marginBottom": "5px",
                       },
                     },
                     "ref": null,
-                    "rendered": "Forgot Password",
+                    "rendered": "Log In",
                     "type": [Function],
                   },
                   Object {
@@ -1549,7 +1549,7 @@ ShallowWrapper {
                           A valid Email is required
                         </styled.div>,
                         <styled.div
-                          show={false}
+                          show={true}
                         >
                           <styled.label
                             htmlFor="password"
@@ -1584,7 +1584,7 @@ ShallowWrapper {
                         <styled.span
                           onClick={[Function]}
                         >
-                          back to Login
+                          Forgot Password?
                         </styled.span>,
                       ],
                       "name": "form",
@@ -1684,7 +1684,7 @@ ShallowWrapper {
                               Password is required
                             </styled.div>,
                           ],
-                          "show": false,
+                          "show": true,
                         },
                         "ref": null,
                         "rendered": Array [
@@ -1755,11 +1755,11 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "children": "back to Login",
+                          "children": "Forgot Password?",
                           "onClick": [Function],
                         },
                         "ref": null,
-                        "rendered": "back to Login",
+                        "rendered": "Forgot Password?",
                         "type": [Function],
                       },
                     ],
@@ -1970,7 +1970,7 @@ ShallowWrapper {
                 <styled.span
                   onClick={[Function]}
                 >
-                  forgot password?
+                  Forgot Password?
                 </styled.span>
               </form>
             </styled.div>
@@ -2094,7 +2094,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    forgot password?
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -2214,7 +2214,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    forgot password?
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -2318,7 +2318,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    forgot password?
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>,
@@ -2419,7 +2419,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      forgot password?
+                      Forgot Password?
                     </styled.span>
                   </form>,
                 ],
@@ -2530,7 +2530,7 @@ ShallowWrapper {
                       <styled.span
                         onClick={[Function]}
                       >
-                        forgot password?
+                        Forgot Password?
                       </styled.span>,
                     ],
                     "name": "form",
@@ -2701,11 +2701,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
-                        "children": "forgot password?",
+                        "children": "Forgot Password?",
                         "onClick": [Function],
                       },
                       "ref": null,
-                      "rendered": "forgot password?",
+                      "rendered": "Forgot Password?",
                       "type": [Function],
                     },
                   ],
@@ -2865,7 +2865,7 @@ ShallowWrapper {
                   <styled.span
                     onClick={[Function]}
                   >
-                    forgot password?
+                    Forgot Password?
                   </styled.span>
                 </form>
               </styled.div>
@@ -2989,7 +2989,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      forgot password?
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>
@@ -3109,7 +3109,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      forgot password?
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>
@@ -3213,7 +3213,7 @@ ShallowWrapper {
                     <styled.span
                       onClick={[Function]}
                     >
-                      forgot password?
+                      Forgot Password?
                     </styled.span>
                   </form>
                 </styled.div>,
@@ -3314,7 +3314,7 @@ ShallowWrapper {
                       <styled.span
                         onClick={[Function]}
                       >
-                        forgot password?
+                        Forgot Password?
                       </styled.span>
                     </form>,
                   ],
@@ -3425,7 +3425,7 @@ ShallowWrapper {
                         <styled.span
                           onClick={[Function]}
                         >
-                          forgot password?
+                          Forgot Password?
                         </styled.span>,
                       ],
                       "name": "form",
@@ -3596,11 +3596,11 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
-                          "children": "forgot password?",
+                          "children": "Forgot Password?",
                           "onClick": [Function],
                         },
                         "ref": null,
-                        "rendered": "forgot password?",
+                        "rendered": "Forgot Password?",
                         "type": [Function],
                       },
                     ],

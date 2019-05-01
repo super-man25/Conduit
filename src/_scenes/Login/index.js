@@ -32,7 +32,9 @@ import { validateEmail } from '_helpers/string-utils';
 type Props = {
   authState: {
     error: ?Error,
-    loggingIn: boolean
+    loggingIn: boolean,
+    requestingPassword: boolean,
+    forgot: boolean
   },
   authActions: typeof authActions
 };
@@ -40,7 +42,6 @@ type Props = {
 type State = {
   email: string,
   password: string,
-  forgot: boolean,
   submitted: boolean,
   showAlert: boolean,
   touched: { [name: string]: boolean }
@@ -50,19 +51,19 @@ export class LoginPresenter extends React.Component<Props, State> {
   state = {
     email: '',
     password: '',
-    forgot: false,
     submitted: false,
     showAlert: false,
     touched: {}
   };
 
   submitEnabled() {
-    const { email, password, forgot } = this.state;
+    const { email, password } = this.state;
+    const { forgot, requestingPassword } = this.props.authState;
     const isValidPassword = !!password.length;
     const isValidEmail = validateEmail(email);
 
     if (forgot) {
-      return isValidEmail;
+      return isValidEmail && !requestingPassword;
     } else {
       return isValidPassword && isValidEmail;
     }
@@ -97,31 +98,36 @@ export class LoginPresenter extends React.Component<Props, State> {
 
   // handles submittal of Login / Forgot Password form
   handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+    const { forgot } = this.props.authState;
     e.preventDefault();
     this.setState({ submitted: true });
     const { email, password } = this.state;
-    if (this.state.forgot) {
+    if (forgot) {
       this.props.authActions.forgotPass(email);
+      this.setState({
+        password: '',
+        submitted: false,
+        touched: {
+          email: true,
+          password: false
+        }
+      });
     } else {
       this.props.authActions.signIn(email, password);
     }
   };
 
   handleForgotClick = () => {
-    this.setState({ forgot: !this.state.forgot });
+    const { forgot } = this.props.authState;
+    const { showForgotPass } = this.props.authActions;
+    showForgotPass(!forgot);
   };
 
   render() {
     const { authState } = this.props;
-    const {
-      email,
-      password,
-      forgot,
-      submitted,
-      showAlert,
-      touched
-    } = this.state;
+    const { email, password, submitted, showAlert, touched } = this.state;
 
+    const { forgot } = this.props.authState;
     const submitEnabled = this.submitEnabled();
     const validEmail = validateEmail(email);
 
@@ -198,14 +204,14 @@ export class LoginPresenter extends React.Component<Props, State> {
                     id="login"
                     data-test-id="login-button"
                   >
-                    {authState.loggingIn ? (
+                    {authState.loggingIn || authState.requestingPassword ? (
                       <Loader small color={cssConstants.PRIMARY_WHITE} />
                     ) : (
                       'Submit'
                     )}
                   </Button>
                   <ForgotLink onClick={this.handleForgotClick}>
-                    {forgot ? 'back to Login' : 'forgot password?'}
+                    {forgot ? 'Back to Log In' : 'Forgot Password?'}
                   </ForgotLink>
                 </form>
               </CenteredContainer>
