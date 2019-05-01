@@ -217,14 +217,14 @@ exports[`renders correctly with props 1`] = `
         className="c7"
         color="#024A8F"
       >
-        -10
+        --
       </h3>
       <p
         className=""
         color="#FFFFFF"
       >
         <i>
-          Games Remaining
+          Home Games Remaining
         </i>
       </p>
     </div>
@@ -449,14 +449,14 @@ exports[`renders correctly with toggledSidebar 1`] = `
         className="c7"
         color="#024A8F"
       >
-        -10
+        --
       </h3>
       <p
         className=""
         color="#FFFFFF"
       >
         <i>
-          Games Remaining
+          Home Games Remaining
         </i>
       </p>
     </div>

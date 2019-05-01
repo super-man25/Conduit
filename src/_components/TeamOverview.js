@@ -7,8 +7,9 @@ import { cssConstants } from '_constants';
 import { Dropdown } from './Dropdown';
 import { connect } from 'react-redux';
 import { selectors, actions } from '_state/season';
+import { selectors as eventListSelectors } from '_state/eventList';
 import { createStructuredSelector } from 'reselect';
-import type { EDSeason } from '_models';
+import type { EDSeason, EDEvent } from '_models';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;
@@ -44,7 +45,8 @@ type Props = {
   stats: Stats,
   seasons: EDSeason[],
   selectedSeason: EDSeason,
-  setActiveSeasonId: (id: number) => void
+  setActiveSeasonId: (id: number) => void,
+  eventList: EDEvent[]
 };
 
 export class TeamOverviewPresenter extends React.Component<Props> {
@@ -64,12 +66,14 @@ export class TeamOverviewPresenter extends React.Component<Props> {
     }
   };
 
-  showGamesRemaining = (stats: Stats) => {
-    if (stats === null) {
+  showGamesRemaining = (eventList: EDEvent[]) => {
+    if (eventList === null) {
       return '--';
     } else {
-      const total = stats.gamesTotal - stats.wins - stats.losses;
-      return total || '--';
+      const gamesRemaining = eventList.filter((event) => {
+        return new Date(event.timestamp).getTime() >= Date.now();
+      }).length;
+      return gamesRemaining || '--';
     }
   };
 
@@ -79,7 +83,8 @@ export class TeamOverviewPresenter extends React.Component<Props> {
       stats,
       seasons,
       selectedSeason,
-      setActiveSeasonId
+      setActiveSeasonId,
+      eventList
     } = this.props;
 
     return (
@@ -104,9 +109,9 @@ export class TeamOverviewPresenter extends React.Component<Props> {
             </P1>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>{this.showGamesRemaining(stats)}</StatLabel>
+            <StatLabel>{this.showGamesRemaining(eventList)}</StatLabel>
             <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
-              <i>Games Remaining</i>
+              <i>Home Games Remaining</i>
             </P1>
           </FlexItem>
         </Flex>
@@ -117,7 +122,8 @@ export class TeamOverviewPresenter extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   seasons: selectors.selectSeasons,
-  selectedSeason: selectors.selectActiveSeason
+  selectedSeason: selectors.selectActiveSeason,
+  eventList: eventListSelectors.selectEventList
 });
 
 const mapDispatchToProps = {

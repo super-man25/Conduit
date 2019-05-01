@@ -7,7 +7,8 @@ const createProps = () => ({
   onToggleSidebar: jest.fn(),
   seasons: [],
   selectedSeason: null,
-  setActiveSeasonId: jest.fn()
+  setActiveSeasonId: jest.fn(),
+  eventList: []
 });
 
 it('renders correctly with props', () => {
