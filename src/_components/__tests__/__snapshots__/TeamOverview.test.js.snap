@@ -32,8 +32,8 @@ exports[`renders correctly with props 1`] = `
 .c6:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c6::before {
@@ -264,8 +264,8 @@ exports[`renders correctly with toggledSidebar 1`] = `
 .c6:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c6::before {

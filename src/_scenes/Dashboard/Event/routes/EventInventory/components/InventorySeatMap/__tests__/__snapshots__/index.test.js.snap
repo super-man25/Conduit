@@ -47,7 +47,7 @@ exports[`EventInventorySeatMap should render correctly 1`] = `
       />
       <path
         d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-        fill="#2670AE"
+        fill="#1A4B8A"
       />
     </svg>
     <div
@@ -136,7 +136,7 @@ ShallowWrapper {
             width="2px"
           />
           <SeatIcon
-            fill="#2670AE"
+            fill="#1A4B8A"
             height={28}
             onClick={[Function]}
             styles={
@@ -180,7 +180,7 @@ ShallowWrapper {
               width="2px"
             />,
             <SeatIcon
-              fill="#2670AE"
+              fill="#1A4B8A"
               height={28}
               onClick={[Function]}
               styles={
@@ -229,7 +229,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "fill": "#2670AE",
+              "fill": "#1A4B8A",
               "height": 28,
               "onClick": [Function],
               "styles": Object {
@@ -294,7 +294,7 @@ ShallowWrapper {
               width="2px"
             />
             <SeatIcon
-              fill="#2670AE"
+              fill="#1A4B8A"
               height={28}
               onClick={[Function]}
               styles={
@@ -338,7 +338,7 @@ ShallowWrapper {
                 width="2px"
               />,
               <SeatIcon
-                fill="#2670AE"
+                fill="#1A4B8A"
                 height={28}
                 onClick={[Function]}
                 styles={
@@ -387,7 +387,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "fill": "#2670AE",
+                "fill": "#1A4B8A",
                 "height": 28,
                 "onClick": [Function],
                 "styles": Object {

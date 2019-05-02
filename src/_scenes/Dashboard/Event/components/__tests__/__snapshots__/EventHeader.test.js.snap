@@ -13,6 +13,7 @@ ShallowWrapper {
         "integrationId": 1,
         "modifiedAt": 1529336865706,
         "name": "Some Event",
+        "revenue": 739472,
         "seasonId": 1,
         "timestamp": 1529336865706,
         "venueId": 1,
@@ -85,24 +86,52 @@ ShallowWrapper {
               </styled.span>
             </Styled(Link)>
           </FlexItem>
+          <Flex
+            justify="flex-end"
+          >
+            <FlexItem
+              flex="0 0 auto"
+              margin="0 25px"
+            >
+              <styled.p
+                size="16px"
+              >
+                Inventory
+              </styled.p>
+              <styled.p
+                color="#1A4B8A"
+                size="22px"
+              >
+                -- / --
+              </styled.p>
+              <styled.span
+                align="right"
+                color="#1A4B8A"
+              >
+                Unsold / Sold
+              </styled.span>
+            </FlexItem>
+          </Flex>
           <FlexItem
             flex="0 0 auto"
+            margin="0 25px"
           >
             <styled.p
               size="16px"
             >
-              Current Game Inventory
+              Revenue
             </styled.p>
             <styled.p
-              color="#2670AE"
+              color="#1A4B8A"
               size="22px"
             >
-              -- / --
+              $739,472
             </styled.p>
             <styled.span
-              color="#2670AE"
+              align="right"
+              color="#1A4B8A"
             >
-              Unsold / Sold
+              as of date
             </styled.span>
           </FlexItem>
         </Flex>,
@@ -213,24 +242,52 @@ ShallowWrapper {
                 </styled.span>
               </Styled(Link)>
             </FlexItem>,
+            <Flex
+              justify="flex-end"
+            >
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>
+            </Flex>,
             <FlexItem
               flex="0 0 auto"
+              margin="0 25px"
             >
               <styled.p
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </styled.p>
               <styled.p
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </styled.p>
               <styled.span
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                as of date
               </styled.span>
             </FlexItem>,
           ],
@@ -322,25 +379,129 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "children": <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>,
+              "justify": "flex-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>,
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>,
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 25px",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Inventory",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "-- / --",
+                    "color": "#1A4B8A",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": "-- / --",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "align": "right",
+                    "children": "Unsold / Sold",
+                    "color": "#1A4B8A",
+                  },
+                  "ref": null,
+                  "rendered": "Unsold / Sold",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
               "children": Array [
                 <styled.p
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </styled.p>,
                 <styled.p
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </styled.p>,
                 <styled.span
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  as of date
                 </styled.span>,
               ],
               "flex": "0 0 auto",
+              "margin": "0 25px",
             },
             "ref": null,
             "rendered": Array [
@@ -349,11 +510,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Current Game Inventory",
+                  "children": "Revenue",
                   "size": "16px",
                 },
                 "ref": null,
-                "rendered": "Current Game Inventory",
+                "rendered": "Revenue",
                 "type": [Function],
               },
               Object {
@@ -361,12 +522,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "-- / --",
-                  "color": "#2670AE",
+                  "children": "$739,472",
+                  "color": "#1A4B8A",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "-- / --",
+                "rendered": "$739,472",
                 "type": [Function],
               },
               Object {
@@ -374,11 +535,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Unsold / Sold",
-                  "color": "#2670AE",
+                  "align": "right",
+                  "children": "as of date",
+                  "color": "#1A4B8A",
                 },
                 "ref": null,
-                "rendered": "Unsold / Sold",
+                "rendered": "as of date",
                 "type": [Function],
               },
             ],
@@ -446,24 +608,52 @@ ShallowWrapper {
                 </styled.span>
               </Styled(Link)>
             </FlexItem>
+            <Flex
+              justify="flex-end"
+            >
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>
+            </Flex>
             <FlexItem
               flex="0 0 auto"
+              margin="0 25px"
             >
               <styled.p
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </styled.p>
               <styled.p
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </styled.p>
               <styled.span
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                as of date
               </styled.span>
             </FlexItem>
           </Flex>,
@@ -574,24 +764,52 @@ ShallowWrapper {
                   </styled.span>
                 </Styled(Link)>
               </FlexItem>,
+              <Flex
+                justify="flex-end"
+              >
+                <FlexItem
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>
+                </FlexItem>
+              </Flex>,
               <FlexItem
                 flex="0 0 auto"
+                margin="0 25px"
               >
                 <styled.p
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </styled.p>
                 <styled.p
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </styled.p>
                 <styled.span
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  as of date
                 </styled.span>
               </FlexItem>,
             ],
@@ -683,25 +901,129 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "children": <FlexItem
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>
+                </FlexItem>,
+                "justify": "flex-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.p
+                      size="16px"
+                    >
+                      Inventory
+                    </styled.p>,
+                    <styled.p
+                      color="#1A4B8A"
+                      size="22px"
+                    >
+                      -- / --
+                    </styled.p>,
+                    <styled.span
+                      align="right"
+                      color="#1A4B8A"
+                    >
+                      Unsold / Sold
+                    </styled.span>,
+                  ],
+                  "flex": "0 0 auto",
+                  "margin": "0 25px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Inventory",
+                      "size": "16px",
+                    },
+                    "ref": null,
+                    "rendered": "Inventory",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "-- / --",
+                      "color": "#1A4B8A",
+                      "size": "22px",
+                    },
+                    "ref": null,
+                    "rendered": "-- / --",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "align": "right",
+                      "children": "Unsold / Sold",
+                      "color": "#1A4B8A",
+                    },
+                    "ref": null,
+                    "rendered": "Unsold / Sold",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
                 "children": Array [
                   <styled.p
                     size="16px"
                   >
-                    Current Game Inventory
+                    Revenue
                   </styled.p>,
                   <styled.p
-                    color="#2670AE"
+                    color="#1A4B8A"
                     size="22px"
                   >
-                    -- / --
+                    $739,472
                   </styled.p>,
                   <styled.span
-                    color="#2670AE"
+                    align="right"
+                    color="#1A4B8A"
                   >
-                    Unsold / Sold
+                    as of date
                   </styled.span>,
                 ],
                 "flex": "0 0 auto",
+                "margin": "0 25px",
               },
               "ref": null,
               "rendered": Array [
@@ -710,11 +1032,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Current Game Inventory",
+                    "children": "Revenue",
                     "size": "16px",
                   },
                   "ref": null,
-                  "rendered": "Current Game Inventory",
+                  "rendered": "Revenue",
                   "type": [Function],
                 },
                 Object {
@@ -722,12 +1044,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "-- / --",
-                    "color": "#2670AE",
+                    "children": "$739,472",
+                    "color": "#1A4B8A",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "-- / --",
+                  "rendered": "$739,472",
                   "type": [Function],
                 },
                 Object {
@@ -735,11 +1057,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Unsold / Sold",
-                    "color": "#2670AE",
+                    "align": "right",
+                    "children": "as of date",
+                    "color": "#1A4B8A",
                   },
                   "ref": null,
-                  "rendered": "Unsold / Sold",
+                  "rendered": "as of date",
                   "type": [Function],
                 },
               ],
@@ -789,6 +1112,7 @@ ShallowWrapper {
         "integrationId": 1,
         "modifiedAt": 1529336865706,
         "name": "Some Event",
+        "revenue": 739472,
         "seasonId": 1,
         "timestamp": 1529336865706,
         "venueId": 1,
@@ -856,24 +1180,52 @@ ShallowWrapper {
               2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
             </styled.h4>
           </FlexItem>
+          <Flex
+            justify="flex-end"
+          >
+            <FlexItem
+              flex="0 0 auto"
+              margin="0 25px"
+            >
+              <styled.p
+                size="16px"
+              >
+                Inventory
+              </styled.p>
+              <styled.p
+                color="#1A4B8A"
+                size="22px"
+              >
+                -- / --
+              </styled.p>
+              <styled.span
+                align="right"
+                color="#1A4B8A"
+              >
+                Unsold / Sold
+              </styled.span>
+            </FlexItem>
+          </Flex>
           <FlexItem
             flex="0 0 auto"
+            margin="0 25px"
           >
             <styled.p
               size="16px"
             >
-              Current Game Inventory
+              Revenue
             </styled.p>
             <styled.p
-              color="#2670AE"
+              color="#1A4B8A"
               size="22px"
             >
-              -- / --
+              $739,472
             </styled.p>
             <styled.span
-              color="#2670AE"
+              align="right"
+              color="#1A4B8A"
             >
-              Unsold / Sold
+              as of date
             </styled.span>
           </FlexItem>
         </Flex>,
@@ -983,24 +1335,52 @@ ShallowWrapper {
                 2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
               </styled.h4>
             </FlexItem>,
+            <Flex
+              justify="flex-end"
+            >
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>
+            </Flex>,
             <FlexItem
               flex="0 0 auto"
+              margin="0 25px"
             >
               <styled.p
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </styled.p>
               <styled.p
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </styled.p>
               <styled.span
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                as of date
               </styled.span>
             </FlexItem>,
           ],
@@ -1058,25 +1438,129 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "children": <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>,
+              "justify": "flex-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>,
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>,
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 25px",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Inventory",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "-- / --",
+                    "color": "#1A4B8A",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": "-- / --",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "align": "right",
+                    "children": "Unsold / Sold",
+                    "color": "#1A4B8A",
+                  },
+                  "ref": null,
+                  "rendered": "Unsold / Sold",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
               "children": Array [
                 <styled.p
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </styled.p>,
                 <styled.p
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </styled.p>,
                 <styled.span
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  as of date
                 </styled.span>,
               ],
               "flex": "0 0 auto",
+              "margin": "0 25px",
             },
             "ref": null,
             "rendered": Array [
@@ -1085,11 +1569,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Current Game Inventory",
+                  "children": "Revenue",
                   "size": "16px",
                 },
                 "ref": null,
-                "rendered": "Current Game Inventory",
+                "rendered": "Revenue",
                 "type": [Function],
               },
               Object {
@@ -1097,12 +1581,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "-- / --",
-                  "color": "#2670AE",
+                  "children": "$739,472",
+                  "color": "#1A4B8A",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "-- / --",
+                "rendered": "$739,472",
                 "type": [Function],
               },
               Object {
@@ -1110,11 +1594,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "Unsold / Sold",
-                  "color": "#2670AE",
+                  "align": "right",
+                  "children": "as of date",
+                  "color": "#1A4B8A",
                 },
                 "ref": null,
-                "rendered": "Unsold / Sold",
+                "rendered": "as of date",
                 "type": [Function],
               },
             ],
@@ -1177,24 +1662,52 @@ ShallowWrapper {
                 2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
               </styled.h4>
             </FlexItem>
+            <Flex
+              justify="flex-end"
+            >
+              <FlexItem
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <styled.p
+                  size="16px"
+                >
+                  Inventory
+                </styled.p>
+                <styled.p
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </styled.p>
+                <styled.span
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </styled.span>
+              </FlexItem>
+            </Flex>
             <FlexItem
               flex="0 0 auto"
+              margin="0 25px"
             >
               <styled.p
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </styled.p>
               <styled.p
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </styled.p>
               <styled.span
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                as of date
               </styled.span>
             </FlexItem>
           </Flex>,
@@ -1304,24 +1817,52 @@ ShallowWrapper {
                   2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
                 </styled.h4>
               </FlexItem>,
+              <Flex
+                justify="flex-end"
+              >
+                <FlexItem
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>
+                </FlexItem>
+              </Flex>,
               <FlexItem
                 flex="0 0 auto"
+                margin="0 25px"
               >
                 <styled.p
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </styled.p>
                 <styled.p
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </styled.p>
                 <styled.span
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  as of date
                 </styled.span>
               </FlexItem>,
             ],
@@ -1379,25 +1920,129 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "children": <FlexItem
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <styled.p
+                    size="16px"
+                  >
+                    Inventory
+                  </styled.p>
+                  <styled.p
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </styled.p>
+                  <styled.span
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </styled.span>
+                </FlexItem>,
+                "justify": "flex-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <styled.p
+                      size="16px"
+                    >
+                      Inventory
+                    </styled.p>,
+                    <styled.p
+                      color="#1A4B8A"
+                      size="22px"
+                    >
+                      -- / --
+                    </styled.p>,
+                    <styled.span
+                      align="right"
+                      color="#1A4B8A"
+                    >
+                      Unsold / Sold
+                    </styled.span>,
+                  ],
+                  "flex": "0 0 auto",
+                  "margin": "0 25px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Inventory",
+                      "size": "16px",
+                    },
+                    "ref": null,
+                    "rendered": "Inventory",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "-- / --",
+                      "color": "#1A4B8A",
+                      "size": "22px",
+                    },
+                    "ref": null,
+                    "rendered": "-- / --",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "align": "right",
+                      "children": "Unsold / Sold",
+                      "color": "#1A4B8A",
+                    },
+                    "ref": null,
+                    "rendered": "Unsold / Sold",
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
                 "children": Array [
                   <styled.p
                     size="16px"
                   >
-                    Current Game Inventory
+                    Revenue
                   </styled.p>,
                   <styled.p
-                    color="#2670AE"
+                    color="#1A4B8A"
                     size="22px"
                   >
-                    -- / --
+                    $739,472
                   </styled.p>,
                   <styled.span
-                    color="#2670AE"
+                    align="right"
+                    color="#1A4B8A"
                   >
-                    Unsold / Sold
+                    as of date
                   </styled.span>,
                 ],
                 "flex": "0 0 auto",
+                "margin": "0 25px",
               },
               "ref": null,
               "rendered": Array [
@@ -1406,11 +2051,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Current Game Inventory",
+                    "children": "Revenue",
                     "size": "16px",
                   },
                   "ref": null,
-                  "rendered": "Current Game Inventory",
+                  "rendered": "Revenue",
                   "type": [Function],
                 },
                 Object {
@@ -1418,12 +2063,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "-- / --",
-                    "color": "#2670AE",
+                    "children": "$739,472",
+                    "color": "#1A4B8A",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "-- / --",
+                  "rendered": "$739,472",
                   "type": [Function],
                 },
                 Object {
@@ -1431,11 +2076,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Unsold / Sold",
-                    "color": "#2670AE",
+                    "align": "right",
+                    "children": "as of date",
+                    "color": "#1A4B8A",
                   },
                   "ref": null,
-                  "rendered": "Unsold / Sold",
+                  "rendered": "as of date",
                   "type": [Function],
                 },
               ],

@@ -182,8 +182,8 @@ exports[`renders correctly with collapse prop 1`] = `
 .c0:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c0::before {
@@ -337,8 +337,8 @@ exports[`renders correctly with hidden prop 1`] = `
 .c0:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c0::before {
@@ -374,8 +374,8 @@ exports[`renders correctly with no props 1`] = `
 .c0:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c0::before {
@@ -409,9 +409,9 @@ exports[`renders correctly with secondary prop 1`] = `
 
 .c0:hover {
   cursor: pointer;
-  color: #2670AE;
+  color: #1A4B8A;
   background-color: #FFFFFF;
-  border-color: #2670AE;
+  border-color: #1A4B8A;
 }
 
 .c0::before {
@@ -446,8 +446,8 @@ exports[`renders correctly with small prop 1`] = `
 .c0:hover {
   cursor: pointer;
   color: #FFFFFF;
-  background-color: #2670AE;
-  border-color: #2670AE;
+  background-color: #1A4B8A;
+  border-color: #1A4B8A;
 }
 
 .c0::before {

@@ -11,7 +11,7 @@ exports[`renders correctly with no props 1`] = `
   height: 90px;
   background-color: #FFFFFF;
   border: 1px solid;
-  border-color: #399E5A;
+  border-color: #2F6450;
   box-shadow: 1px 2px 4px 1px #aaaaaa;
   visibility: hidden;
 }
@@ -32,7 +32,7 @@ exports[`renders correctly with show = true & no type prop 1`] = `
   height: 90px;
   background-color: #FFFFFF;
   border: 1px solid;
-  border-color: #399E5A;
+  border-color: #2F6450;
   box-shadow: 1px 2px 4px 1px #aaaaaa;
   visibility: visible;
 }
@@ -75,7 +75,7 @@ exports[`renders correctly with show = true & type = api-success 1`] = `
   height: 90px;
   background-color: #FFFFFF;
   border: 1px solid;
-  border-color: #399E5A;
+  border-color: #2F6450;
   box-shadow: 1px 2px 4px 1px #aaaaaa;
   visibility: visible;
 }

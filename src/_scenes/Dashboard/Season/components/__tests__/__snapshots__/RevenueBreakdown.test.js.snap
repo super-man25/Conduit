@@ -77,12 +77,12 @@ ShallowWrapper {
             colors={
               Array [
                 "#024A8F",
-                "#2670AE",
+                "#1A4B8A",
                 "#4B98CF",
                 "#7CBCDD",
                 "#C4D2E1",
                 "#817CB8",
-                "#621F95",
+                "#5A288F",
               ]
             }
             data={
@@ -112,7 +112,7 @@ ShallowWrapper {
               padding="1rem"
             >
               <LegendItem
-                color="#2670AE"
+                color="#1A4B8A"
                 label="Group Tickets"
                 value="$1,000"
               />
@@ -165,12 +165,12 @@ ShallowWrapper {
               colors={
                 Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ]
               }
               data={
@@ -200,7 +200,7 @@ ShallowWrapper {
                 padding="1rem"
               >
                 <LegendItem
-                  color="#2670AE"
+                  color="#1A4B8A"
                   label="Group Tickets"
                   value="$1,000"
                 />
@@ -227,12 +227,12 @@ ShallowWrapper {
             "props": Object {
               "colors": Array [
                 "#024A8F",
-                "#2670AE",
+                "#1A4B8A",
                 "#4B98CF",
                 "#7CBCDD",
                 "#C4D2E1",
                 "#817CB8",
-                "#621F95",
+                "#5A288F",
               ],
               "data": Array [
                 1000,
@@ -265,7 +265,7 @@ ShallowWrapper {
                   padding="1rem"
                 >
                   <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="$1,000"
                   />
@@ -321,7 +321,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="$1,000"
                   />,
@@ -334,7 +334,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "color": "#2670AE",
+                    "color": "#1A4B8A",
                     "label": "Group Tickets",
                     "value": "$1,000",
                   },
@@ -400,12 +400,12 @@ ShallowWrapper {
               colors={
                 Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ]
               }
               data={
@@ -435,7 +435,7 @@ ShallowWrapper {
                 padding="1rem"
               >
                 <LegendItem
-                  color="#2670AE"
+                  color="#1A4B8A"
                   label="Group Tickets"
                   value="$1,000"
                 />
@@ -488,12 +488,12 @@ ShallowWrapper {
                 colors={
                   Array [
                     "#024A8F",
-                    "#2670AE",
+                    "#1A4B8A",
                     "#4B98CF",
                     "#7CBCDD",
                     "#C4D2E1",
                     "#817CB8",
-                    "#621F95",
+                    "#5A288F",
                   ]
                 }
                 data={
@@ -523,7 +523,7 @@ ShallowWrapper {
                   padding="1rem"
                 >
                   <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="$1,000"
                   />
@@ -550,12 +550,12 @@ ShallowWrapper {
               "props": Object {
                 "colors": Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ],
                 "data": Array [
                   1000,
@@ -588,7 +588,7 @@ ShallowWrapper {
                     padding="1rem"
                   >
                     <LegendItem
-                      color="#2670AE"
+                      color="#1A4B8A"
                       label="Group Tickets"
                       value="$1,000"
                     />
@@ -644,7 +644,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": <LegendItem
-                      color="#2670AE"
+                      color="#1A4B8A"
                       label="Group Tickets"
                       value="$1,000"
                     />,
@@ -657,7 +657,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "function",
                     "props": Object {
-                      "color": "#2670AE",
+                      "color": "#1A4B8A",
                       "label": "Group Tickets",
                       "value": "$1,000",
                     },
@@ -808,12 +808,12 @@ ShallowWrapper {
             colors={
               Array [
                 "#024A8F",
-                "#2670AE",
+                "#1A4B8A",
                 "#4B98CF",
                 "#7CBCDD",
                 "#C4D2E1",
                 "#817CB8",
-                "#621F95",
+                "#5A288F",
               ]
             }
             data={
@@ -843,7 +843,7 @@ ShallowWrapper {
               padding="1rem"
             >
               <LegendItem
-                color="#2670AE"
+                color="#1A4B8A"
                 label="Group Tickets"
                 value="--"
               />
@@ -896,12 +896,12 @@ ShallowWrapper {
               colors={
                 Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ]
               }
               data={
@@ -931,7 +931,7 @@ ShallowWrapper {
                 padding="1rem"
               >
                 <LegendItem
-                  color="#2670AE"
+                  color="#1A4B8A"
                   label="Group Tickets"
                   value="--"
                 />
@@ -958,12 +958,12 @@ ShallowWrapper {
             "props": Object {
               "colors": Array [
                 "#024A8F",
-                "#2670AE",
+                "#1A4B8A",
                 "#4B98CF",
                 "#7CBCDD",
                 "#C4D2E1",
                 "#817CB8",
-                "#621F95",
+                "#5A288F",
               ],
               "data": Array [
                 undefined,
@@ -996,7 +996,7 @@ ShallowWrapper {
                   padding="1rem"
                 >
                   <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="--"
                   />
@@ -1052,7 +1052,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "children": <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="--"
                   />,
@@ -1065,7 +1065,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "color": "#2670AE",
+                    "color": "#1A4B8A",
                     "label": "Group Tickets",
                     "value": "--",
                   },
@@ -1131,12 +1131,12 @@ ShallowWrapper {
               colors={
                 Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ]
               }
               data={
@@ -1166,7 +1166,7 @@ ShallowWrapper {
                 padding="1rem"
               >
                 <LegendItem
-                  color="#2670AE"
+                  color="#1A4B8A"
                   label="Group Tickets"
                   value="--"
                 />
@@ -1219,12 +1219,12 @@ ShallowWrapper {
                 colors={
                   Array [
                     "#024A8F",
-                    "#2670AE",
+                    "#1A4B8A",
                     "#4B98CF",
                     "#7CBCDD",
                     "#C4D2E1",
                     "#817CB8",
-                    "#621F95",
+                    "#5A288F",
                   ]
                 }
                 data={
@@ -1254,7 +1254,7 @@ ShallowWrapper {
                   padding="1rem"
                 >
                   <LegendItem
-                    color="#2670AE"
+                    color="#1A4B8A"
                     label="Group Tickets"
                     value="--"
                   />
@@ -1281,12 +1281,12 @@ ShallowWrapper {
               "props": Object {
                 "colors": Array [
                   "#024A8F",
-                  "#2670AE",
+                  "#1A4B8A",
                   "#4B98CF",
                   "#7CBCDD",
                   "#C4D2E1",
                   "#817CB8",
-                  "#621F95",
+                  "#5A288F",
                 ],
                 "data": Array [
                   undefined,
@@ -1319,7 +1319,7 @@ ShallowWrapper {
                     padding="1rem"
                   >
                     <LegendItem
-                      color="#2670AE"
+                      color="#1A4B8A"
                       label="Group Tickets"
                       value="--"
                     />
@@ -1375,7 +1375,7 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "children": <LegendItem
-                      color="#2670AE"
+                      color="#1A4B8A"
                       label="Group Tickets"
                       value="--"
                     />,
@@ -1388,7 +1388,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "function",
                     "props": Object {
-                      "color": "#2670AE",
+                      "color": "#1A4B8A",
                       "label": "Group Tickets",
                       "value": "--",
                     },
