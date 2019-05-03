@@ -16,7 +16,7 @@ import {
 import { cssConstants } from '_constants';
 import { format } from 'date-fns';
 import { EDEvent } from '_models';
-import { formatNumber, formatUSD } from '_helpers/string-utils';
+import { formatNumber } from '_helpers/string-utils';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
@@ -45,14 +45,8 @@ const InventoryLink = S1.extend`
   text-decoration: underline;
 `;
 
-const RightP1 = P1.extend`
-  text-align: right;
-`;
-
 const ItalicS1 = S1.extend`
   font-style: italic;
-  display: block;
-  text-align: ${(props) => props.align};
 `;
 
 const createCrumbs = (event: EDEvent, isViewingInventory: boolean) => {
@@ -86,10 +80,7 @@ export function EventHeader(props: Props) {
 
   const sold = formatNumber(event.soldInventory);
   const unsold = formatNumber(event.unsoldInventory);
-  const revenue = formatUSD(event.revenue, {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  });
+  const total = formatNumber(event.totalInventory);
   const inventoryString = `${unsold} / ${sold}`;
 
   return (
@@ -113,25 +104,12 @@ export function EventHeader(props: Props) {
             </EDLink>
           )}
         </FlexItem>
-        <Flex justify="flex-end">
-          <FlexItem flex="0 0 auto" margin="0 25px">
-            <RightP1 size="16px">Inventory</RightP1>
-            <RightP1 size="22px" color={cssConstants.SECONDARY_BLUE}>
-              {inventoryString}
-            </RightP1>
-            <ItalicS1 color={cssConstants.SECONDARY_BLUE} align="right">
-              Unsold / Sold
-            </ItalicS1>
-          </FlexItem>
-        </Flex>
-        <FlexItem flex="0 0 auto" margin="0 25px">
-          <RightP1 size="16px">Revenue</RightP1>
-          <RightP1 size="22px" color={cssConstants.SECONDARY_BLUE}>
-            {revenue}
-          </RightP1>
-          <ItalicS1 color={cssConstants.SECONDARY_BLUE} align="right">
-            as of date
-          </ItalicS1>
+        <FlexItem flex="0 0 auto">
+          <P1 size="16px">Current Game Inventory</P1>
+          <P1 size="22px" color={cssConstants.SECONDARY_BLUE}>
+            {inventoryString}
+          </P1>
+          <ItalicS1 color={cssConstants.SECONDARY_BLUE}>Unsold / Sold</ItalicS1>
         </FlexItem>
       </Flex>
     </Box>

@@ -163,7 +163,7 @@ exports[`renders correctly with valid prop 1`] = `
   padding-left: 3%;
   border: 2px solid;
   border-radius: 3px;
-  border-color: #2F6450;
+  border-color: #399E5A;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
 }
@@ -192,7 +192,7 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 <input
-  bordercolor="#2F6450"
+  bordercolor="#399E5A"
   className="c0"
 />
 `;

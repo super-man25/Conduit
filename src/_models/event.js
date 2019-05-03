@@ -17,7 +17,6 @@ export type EDEvent = {
   totalInventory: number,
   soldInventory: number,
   unsoldInventory: number,
-  revenue: number,
   percentPriceModifier: number,
   eventScore: number,
   eventScoreModifier: number,

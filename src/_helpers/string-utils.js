@@ -17,21 +17,20 @@ export function readableDate(d: Date): string {
 }
 
 /**
- * Return a date as a string with full day name
- *
- * @param {Date} d - date to format
- */
-export function readableDateAndFullDay(d: Date): string {
-  return format(d, 'dddd, M/DD/YY');
-}
-
-/**
- * Format time
+ * Format a past date with precision based on how long ago the date was
  * *
  * @param {*} d - date to format
  */
-export function readableTime(d: Date): string {
-  return format(d, 'h:mmA');
+export function readableTimeOrDate(d: Date): string {
+  if (isToday(d)) {
+    return format(d, 'h:mmA');
+  }
+
+  if (isThisYear(d)) {
+    return format(d, 'MMM D');
+  }
+
+  return format(d, 'M/DD/YY');
 }
 
 /**

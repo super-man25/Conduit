@@ -17,8 +17,7 @@ const createProps = () => ({
     name: 'Some Event',
     seasonId: 1,
     timestamp: 1529336865706,
-    venueId: 1,
-    revenue: 739472
+    venueId: 1
   },
   availableInventory: 100,
   totalInventory: 1000,

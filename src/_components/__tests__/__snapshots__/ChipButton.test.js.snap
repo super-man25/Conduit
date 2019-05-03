@@ -27,7 +27,7 @@ exports[`ChipButton renders correctly 1`] = `
 
 exports[`ChipButton renders correctly with an active prop 1`] = `
 .c0 {
-  background-color: #1A4B8A;
+  background-color: #2670AE;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
@@ -52,7 +52,7 @@ exports[`ChipButton renders correctly with an active prop 1`] = `
 
 exports[`ChipButtonGroup renders correctly 1`] = `
 .c2 {
-  background-color: #1A4B8A;
+  background-color: #2670AE;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
@@ -119,7 +119,7 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c2 {
-  background-color: #1A4B8A;
+  background-color: #2670AE;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
