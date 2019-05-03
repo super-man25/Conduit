@@ -50,7 +50,6 @@ class Dashboard extends React.Component {
       <PageWrapper>
         <SiteHeader />
         <FullContent>
-          <ApiAlert />
           <Sidebar collapsed={!sidebarIsOpen}>
             <SidebarHeader>
               <TeamOverview

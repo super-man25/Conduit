@@ -190,7 +190,6 @@ export class EventPricingPresenter extends React.Component<Props, State> {
             </Flex>
           </Flex>
         </UnpaddedPanelContent>
-        <ApiAlert />
       </Panel>
     );
   }

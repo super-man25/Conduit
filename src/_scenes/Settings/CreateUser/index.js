@@ -142,7 +142,6 @@ class CreateUser extends React.Component<Props, State> {
     } = this.state;
     return (
       <CreateUserWrapper>
-        <ApiAlert />
         <form
           name="form"
           onSubmit={this.handleSubmit}

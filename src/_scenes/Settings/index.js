@@ -79,7 +79,6 @@ export const Settings = ({ authState, authActions }: Props) => (
   <PageWrapper>
     <SiteHeader auth={authState.model} authActions={authActions} />
     <FullContent>
-      <ApiAlert />
       <LeftNav>
         <Spacing padding="2rem">
           <Flex direction="column" align-items="center">

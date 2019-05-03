@@ -88,7 +88,6 @@ export class PricingRules extends React.Component<Props> {
       <PageWrapper>
         <SiteHeader />
         <PricingRuleFullContent scrollLocked={buyerTypesModalIsOpen}>
-          <ApiAlert />
           <PricingWrapper>
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />

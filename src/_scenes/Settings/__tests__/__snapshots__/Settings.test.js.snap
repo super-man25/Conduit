@@ -41,7 +41,6 @@ ShallowWrapper {
           authActions={Object {}}
         />,
         <styled.div>
-          <Connect(ApiAlertPresenter) />
           <styled.div>
             <styled.div
               padding="2rem"
@@ -150,7 +149,6 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Connect(ApiAlertPresenter) />,
             <styled.div>
               <styled.div
                 padding="2rem"
@@ -236,15 +234,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -671,7 +660,6 @@ ShallowWrapper {
             authActions={Object {}}
           />,
           <styled.div>
-            <Connect(ApiAlertPresenter) />
             <styled.div>
               <styled.div
                 padding="2rem"
@@ -780,7 +768,6 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Connect(ApiAlertPresenter) />,
               <styled.div>
                 <styled.div
                   padding="2rem"
@@ -866,15 +853,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
             Object {
               "instance": null,
               "key": undefined,
