@@ -53,11 +53,7 @@ ShallowWrapper {
     }
     loading={false}
     onClick={[Function]}
-    onFilterSelect={[Function]}
     onSearchInputChange={[Function]}
-    onTimestampSortChange={[Function]}
-    selectedFilter={0}
-    timestampSort="asc"
     title="title"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -684,11 +680,7 @@ ShallowWrapper {
     }
     loading={true}
     onClick={[Function]}
-    onFilterSelect={[Function]}
     onSearchInputChange={[Function]}
-    onTimestampSortChange={[Function]}
-    selectedFilter={0}
-    timestampSort="asc"
     title="title"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -1279,11 +1271,7 @@ ShallowWrapper {
     }
     loading={false}
     onClick={[Function]}
-    onFilterSelect={[Function]}
     onSearchInputChange={[Function]}
-    onTimestampSortChange={[Function]}
-    selectedFilter={0}
-    timestampSort="asc"
     title="title"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -1692,11 +1680,7 @@ ShallowWrapper {
     }
     loading={false}
     onClick={[Function]}
-    onFilterSelect={[Function]}
     onSearchInputChange={[Function]}
-    onTimestampSortChange={[Function]}
-    selectedFilter={0}
-    timestampSort="asc"
     title="title"
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -2323,11 +2307,7 @@ ShallowWrapper {
     }
     loading={false}
     onClick={[Function]}
-    onFilterSelect={[Function]}
     onSearchInputChange={[Function]}
-    onTimestampSortChange={[Function]}
-    selectedFilter={0}
-    timestampSort="asc"
     title="title"
   />,
   Symbol(enzyme.__renderer__): Object {

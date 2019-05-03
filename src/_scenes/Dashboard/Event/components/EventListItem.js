@@ -12,7 +12,6 @@ import {
   readableDate,
   readableTimeOrDate
 } from '_helpers/string-utils';
-import get from 'lodash.get';
 
 const Heading = H4.extend`
   margin: 0 0 2px 0;

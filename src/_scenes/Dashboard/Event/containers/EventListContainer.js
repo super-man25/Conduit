@@ -39,14 +39,6 @@ class EventListContainer extends React.Component<Props> {
     this.props.eventListActions.searchEventList(value);
   };
 
-  handleSelectedFilter = (event) => {
-    console.log('selected filter', event);
-  };
-
-  handleTimestampSortChange = (event) => {
-    console.log('timestamp sort direction', event);
-  };
-
   handleOnClick = (event) => {
     if (event.id !== this.props.activeEventId) {
       this.props.push(`/event/${event.id}`);
@@ -66,7 +58,6 @@ class EventListContainer extends React.Component<Props> {
         sortDir,
         loading,
         visibleEvents,
-        selectedFilter,
         filter
       },
       isAdmin,
@@ -75,19 +66,16 @@ class EventListContainer extends React.Component<Props> {
 
     return (
       <EventListPresenter
-        onClick={this.handleOnClick}
         activeId={activeEventId}
         events={visibleEvents}
-        loading={loading}
-        title={this.title}
-        filterOptions={filterOptions}
-        onFilterSelect={this.handleSelectedFilter}
-        selectedFilter={selectedFilter}
-        timestampSort={sortDir}
-        onTimestampSortChange={this.handleTimestampSortChange}
-        onSearchInputChange={this.handleSearchInput}
         filter={filter}
+        filterOptions={filterOptions}
         isAdmin={isAdmin}
+        loading={loading}
+        onClick={this.handleOnClick}
+        onSearchInputChange={this.handleSearchInput}
+        timestampSort={sortDir}
+        title={this.title}
       />
     );
   }

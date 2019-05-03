@@ -5,7 +5,6 @@ import { EventListPresenter } from '../EventListPresenter';
 const defaultProps = {
   filterOptions: [{ id: 1, label: 'one' }],
   activeId: 1,
-  timestampSort: 'asc',
   title: 'title',
   onSearchInputChange: () => {},
   onClick: () => {},
@@ -45,9 +44,6 @@ const defaultProps = {
       venueId: 1
     }
   ],
-  onFilterSelect: () => {},
-  onTimestampSortChange: () => {},
-  selectedFilter: 0,
   filter: ''
 };
 

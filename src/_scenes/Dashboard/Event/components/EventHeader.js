@@ -80,7 +80,6 @@ export function EventHeader(props: Props) {
 
   const sold = formatNumber(event.soldInventory);
   const unsold = formatNumber(event.unsoldInventory);
-  const total = formatNumber(event.totalInventory);
   const inventoryString = `${unsold} / ${sold}`;
 
   return (

@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { EventListItem } from './EventListItem';
 import type { EDEvent } from '_models';
+import { isAfter } from 'date-fns';
 
 const OverflowContent = styled.div`
   overflow-y: scroll;
@@ -39,20 +40,23 @@ function getScrollIndex(events, activeId, filtered) {
     return events.findIndex((e) => e.id === activeId);
   }
 
-  return events.findIndex((e) => e.timestamp > new Date());
+  const index = events.findIndex((e) => {
+    return isAfter(e.timestamp, new Date());
+  });
+
+  return index;
 }
 
 type Props = {
-  +filterOptions: Array<{ +id: number, +label: string }>,
-  +activeId: number,
-  +timestampSort: string,
-  +title: string,
-  +onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
-  +onClick: (event: EDEvent) => void,
-  +loading: boolean,
-  +events: Array<EDEvent>,
-  +filter: string,
-  +isAdmin: boolean
+  activeId: number,
+  events: Array<EDEvent>,
+  filter: string,
+  filterOptions: Array<{ +id: number, +label: string }>,
+  isAdmin: boolean,
+  loading: boolean,
+  onClick: (event: EDEvent) => void,
+  onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
+  title: string
 };
 
 export function EventListPresenter(props: Props) {
