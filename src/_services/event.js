@@ -10,11 +10,9 @@ import {
 
 import type { EDPricingPreview } from '_models/pricingPreview';
 
-type GetAllParams = { seasonId: number } | { year: Date };
+type GetAllParams = { seasonId: number };
 
-function getAll(
-  params: GetAllParams = { year: getYear(new Date()) }
-): Promise<EDEvent[]> {
+function getAll(params: GetAllParams): Promise<EDEvent[]> {
   return get('events', params);
 }
 

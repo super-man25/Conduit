@@ -6,24 +6,60 @@ import {
   isToday,
   isThisYear
 } from 'date-fns';
-
+import { formatToTimeZone } from 'date-fns-timezone';
 /**
  * Return a date as a string
  *
  * @param {Date} d - date to format
+ * @param {*} timeZone - timeZone override, default system timezone
  */
-export function readableDate(d: Date): string {
-  return format(d, 'ddd, M/DD/YY @ h:mmA');
+export function readableDate(d: Date, timeZone: ?string): string {
+  if (!timeZone) return format(d, 'ddd, M/DD/YY @ h:mmA');
+  return formatToTimeZone(d, 'ddd, M/DD/YY @ h:mmA z', { timeZone });
+}
+
+/**
+ * Return a date as a string with full day name
+ *
+ * @param {Date} d - date to format
+ */
+export function readableDateAndFullDay(d: Date): string {
+  return format(d, 'dddd, M/DD/YY');
+}
+
+/**
+ * Format date and time
+ * *
+ * @param {*} d - date to format
+ * @param {*} timeZone - timeZone override, default system timezone
+ */
+export function readableDateAndTime(d: Date, timeZone: ?string) {
+  if (!timeZone) return format(d, 'dddd, MMMM Do, YYYY @ h:mmA');
+  return formatToTimeZone(d, 'dddd, MMMM Do, YYYY @ h:mmA z', { timeZone });
+}
+
+/**
+ * Format a time with timezone
+ * *
+ * @param {*} d - date to format
+ * @param {*} timeZone - timeZone override, default system timezone
+ */
+
+export function readableTime(d: Date, timeZone: ?string): string {
+  if (!timeZone) return format(d, 'h:mmA');
+  return formatToTimeZone(d, 'h:mmA z', { timeZone });
 }
 
 /**
  * Format a past date with precision based on how long ago the date was
  * *
  * @param {*} d - date to format
+ * @param {*} timeZone - timeZone override, default system timezone
  */
-export function readableTimeOrDate(d: Date): string {
+export function readableTimeOrDate(d: Date, timeZone: ?string): string {
   if (isToday(d)) {
-    return format(d, 'h:mmA');
+    if (!timeZone) return format(d, 'h:mmA');
+    return formatToTimeZone(d, 'h:mmA', { timeZone });
   }
 
   if (isThisYear(d)) {

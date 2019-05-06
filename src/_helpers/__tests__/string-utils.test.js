@@ -2,6 +2,9 @@ import { addHours } from 'date-fns';
 
 import {
   readableDate,
+  readableDateAndTime,
+  readableTime,
+  readableTimeOrDate,
   readableDuration,
   orDash,
   titleCase,
@@ -21,6 +24,31 @@ describe('readableDate', () => {
     // test that works across timezones because the date-fns format uses the system
     // timezone
     // expect(readable).toBe('Tue, 4/17/18 @ 2:28PM');
+  });
+
+  it('should format the date to the correct format given a timeZone', () => {
+    const date = new Date('2019-05-16T00:35:00Z');
+    const timeZone = 'America/New_York';
+    const readable = readableDate(date, timeZone);
+    expect(readable).toBe('Wed, 5/15/19 @ 8:35PM EDT');
+  });
+});
+
+describe('readableDateAndTime', () => {
+  it('should format the date to the correct format given a timeZone', () => {
+    const date = new Date('2019-05-16T00:35:00Z');
+    const timeZone = 'America/New_York';
+    const readable = readableDateAndTime(date, timeZone);
+    expect(readable).toBe('Wednesday, May 15th, 2019 @ 8:35PM EDT');
+  });
+});
+
+describe('readableTime', () => {
+  it('should format the date to the correct format given a timeZone', () => {
+    const date = new Date('2019-05-16T00:35:00Z');
+    const timeZone = 'America/New_York';
+    const readable = readableTime(date, timeZone);
+    expect(readable).toBe('8:35PM EDT');
   });
 });
 

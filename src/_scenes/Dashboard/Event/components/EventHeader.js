@@ -14,15 +14,13 @@ import {
   Box
 } from '_components';
 import { cssConstants } from '_constants';
-import { format } from 'date-fns';
+import { readableDateAndTime } from '_helpers/string-utils';
 import { EDEvent } from '_models';
 import { formatNumber } from '_helpers/string-utils';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
 import { selectors } from '_state/event';
-
-const DATE_FORMAT = 'dddd, MMMM Do, YYYY @ h:mmA';
 
 const ToggleButton = Button.extend`
   margin: 0;
@@ -74,7 +72,7 @@ type Props = {
 export function EventHeader(props: Props) {
   const { event, toggleSidebar, isSidebarOpen, pathname } = props;
 
-  const { timestamp, name, id } = event;
+  const { timestamp, name, id, timeZone } = event;
 
   const isViewingInventory = pathname.split('/').includes('inventory');
 
@@ -94,7 +92,7 @@ export function EventHeader(props: Props) {
       <Flex justify="space-between" align="flex-start">
         <FlexItem flex="1" margin="0 20px 0 0">
           <EventTitle>{name}</EventTitle>
-          <EventDate>{format(timestamp, DATE_FORMAT)}</EventDate>
+          <EventDate>{readableDateAndTime(timestamp, timeZone)}</EventDate>
           {!isViewingInventory && (
             <EDLink to={`/event/${id}/inventory`}>
               <InventoryLink color={cssConstants.PRIMARY_LIGHT_BLUE}>

@@ -22,5 +22,6 @@ export type EDEvent = {
   eventScoreModifier: number,
   spring: number,
   springModifier: number,
+  timeZone: string,
   scheduledJob: EDScheduledJob
 };

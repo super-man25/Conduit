@@ -78,9 +78,11 @@ type Props = {
 };
 
 const ScheduledJobStatusIndicator = ({
-  scheduledJob
+  scheduledJob,
+  timeZone
 }: {
-  scheduledJob: EDScheduledJob
+  scheduledJob: EDScheduledJob,
+  timeZone: string
 }) => {
   const { status, modifiedAt } = scheduledJob;
 
@@ -105,8 +107,8 @@ const ScheduledJobStatusIndicator = ({
   return (
     <StatusIndicator
       {...args}
-      title={`${readableDate(modifiedAt)} - ${status}`}
-      text={readableTimeOrDate(modifiedAt)}
+      title={`${readableDate(modifiedAt, timeZone)} - ${status}`}
+      text={readableTimeOrDate(modifiedAt, timeZone)}
     />
   );
 };
@@ -143,7 +145,7 @@ export class EventListItem extends React.PureComponent<Props> {
         <Flex direction="column" flex={1} style={{ overflow: 'hidden' }}>
           <Heading title={event.name}>{event.name}</Heading>
           <ItalicP1 color={cssConstants.PRIMARY_DARK_GRAY} size="small" italic>
-            {readableDate(event.timestamp)}
+            {readableDate(event.timestamp, event.timeZone)}
           </ItalicP1>
           <Spacing padding="18px 0 0 0 ">
             <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
@@ -160,7 +162,10 @@ export class EventListItem extends React.PureComponent<Props> {
         <Flex direction="column" align="flex-end" justify="space-between">
           <FlexItem flex={1} padding="2px 0 0 0">
             {event.scheduledJob && (
-              <ScheduledJobStatusIndicator scheduledJob={event.scheduledJob} />
+              <ScheduledJobStatusIndicator
+                scheduledJob={event.scheduledJob}
+                timeZone={event.timeZone}
+              />
             )}
           </FlexItem>
           <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
