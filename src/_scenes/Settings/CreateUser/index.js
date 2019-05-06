@@ -1,14 +1,6 @@
 // @flow
 
-import {
-  ApiAlert,
-  Button,
-  HelpBlockDiv,
-  Input,
-  Label,
-  Flex,
-  H3
-} from '_components';
+import { Button, HelpBlockDiv, Input, Label, Flex, H3 } from '_components';
 import { actions as usersActions } from '_state/user';
 import React from 'react';
 import { connect } from 'react-redux';
