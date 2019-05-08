@@ -21,7 +21,11 @@ export function BuyerTypeRow({
   return (
     <BuyerTypeOption align="center">
       <Flex
-        title="An active pricing rule is using this buyer type"
+        title={
+          toggleDisabled
+            ? 'An active pricing rule is using this buyer type'
+            : null
+        }
         style={{ height: '25px' }}
         flexBasis="10%"
       >

@@ -80,7 +80,8 @@ export class PricingRules extends React.Component<Props> {
     const {
       buyerTypes,
       buyerTypesModalIsOpen,
-      buyerTypeActions: { openBuyerTypesModal }
+      buyerTypeActions: { openBuyerTypesModal },
+      editingAnyPriceRule
     } = this.props;
 
     return (
@@ -101,8 +102,11 @@ export class PricingRules extends React.Component<Props> {
                   </SecondaryButton>
                   <PrimaryButton
                     onClick={this.createNewPriceRule.bind(this)}
-                    disabled={this.props.editingAnyPriceRule}
-                    style={{ marginLeft: '2rem' }}
+                    disabled={editingAnyPriceRule}
+                    style={{
+                      marginLeft: '2rem',
+                      cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer'
+                    }}
                   >
                     New Rule
                   </PrimaryButton>

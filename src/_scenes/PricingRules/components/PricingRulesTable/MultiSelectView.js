@@ -7,7 +7,7 @@ type Props = {
   options: any,
   selected: any[],
   onItemClicked: (option: any) => void,
-  labelFn: (option: any) => string
+  labelFn: (option: any, truncate: boolean) => string
 };
 
 export function MultiSelectView({
@@ -27,7 +27,7 @@ export function MultiSelectView({
           checked={selected.includes(option.id)}
           onChange={() => onItemClicked(option)}
         />
-        {labelFn(option)}
+        {labelFn(option, false)}
       </Flex>
     </MultiSelectOption>
   ));

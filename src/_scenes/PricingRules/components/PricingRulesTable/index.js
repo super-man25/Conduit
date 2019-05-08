@@ -29,7 +29,7 @@ import {
 import { formatUSD } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
-import { Flex, Text } from '_components';
+import { Flex, FlexItem, Text } from '_components';
 import { Icon } from '_components/Icon';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
@@ -71,23 +71,26 @@ const columns = [
     columnData: {
       optionsKey: 'buyerTypes',
       sortFn: (first, second) => (first.code >= second.code ? 1 : -1),
-      labelFn: (option) => {
+      labelFn: (option, truncate = true) => {
         const labelText = `${option.code} - ${option.publicDescription}`;
         return (
           <React.Fragment>
-            {option.disabled && (
-              <div
-                title="Pricing is disabled for this buyer type"
-                style={{ marginRight: '0.5rem', width: '22px' }}
-              >
-                <Icon
-                  name="api-error"
-                  color={cssConstants.SECONDARY_BURNT_ORANGE}
-                  size={22}
-                />
-              </div>
-            )}
-            <Text>{labelText}</Text>
+            <Flex align="center" width="100%">
+              {option.disabled && (
+                <FlexItem
+                  title="Pricing is disabled for this buyer type"
+                  margin="0 0.5rem 0 0"
+                  flex="0"
+                >
+                  <Icon
+                    name="api-error"
+                    color={cssConstants.SECONDARY_BURNT_ORANGE}
+                    size={22}
+                  />
+                </FlexItem>
+              )}
+              <Text overflow={truncate}>{labelText}</Text>
+            </Flex>
           </React.Fragment>
         );
       }

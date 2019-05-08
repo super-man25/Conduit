@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Text, Flex } from '_components';
+import { Text } from '_components';
 import { MultiSelect } from './MultiSelect';
 import type { Option } from './MultiSelect';
 
@@ -71,16 +71,17 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
     // to be used as a title on the multi select container
     const selectedTitles = items
       .filter((item) => rulePropertyValue.includes(item.id))
-      .map((option) => labelFn(option))
+      .map((option) => {
+        if (label.toLowerCase() === 'buyer types') {
+          return `${option.code} - ${option.publicDescription}`;
+        }
+        return labelFn(option);
+      })
       .reduce((acc, description) => `${acc} ${description},`, '')
       .slice(0, -1);
 
     if (!this.props.isEditing) {
-      return (
-        <Flex align="center">
-          <Text title={selectedTitles}>{cellLabel}</Text>
-        </Flex>
-      );
+      return <Text title={selectedTitles}>{cellLabel}</Text>;
     }
 
     return (

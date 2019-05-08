@@ -37,7 +37,7 @@ ShallowWrapper {
               "height": "25px",
             }
           }
-          title="An active pricing rule is using this buyer type"
+          title={null}
         />,
         <Flex
           flexBasis="20%"
@@ -69,7 +69,7 @@ ShallowWrapper {
           "style": Object {
             "height": "25px",
           },
-          "title": "An active pricing rule is using this buyer type",
+          "title": null,
         },
         "ref": null,
         "rendered": false,
@@ -147,7 +147,7 @@ ShallowWrapper {
                 "height": "25px",
               }
             }
-            title="An active pricing rule is using this buyer type"
+            title={null}
           />,
           <Flex
             flexBasis="20%"
@@ -179,7 +179,7 @@ ShallowWrapper {
             "style": Object {
               "height": "25px",
             },
-            "title": "An active pricing rule is using this buyer type",
+            "title": null,
           },
           "ref": null,
           "rendered": false,

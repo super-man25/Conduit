@@ -85,6 +85,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     style={
                       Object {
+                        "cursor": "pointer",
                         "marginLeft": "2rem",
                       }
                     }
@@ -160,6 +161,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     style={
                       Object {
+                        "cursor": "pointer",
                         "marginLeft": "2rem",
                       }
                     }
@@ -223,6 +225,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       style={
                         Object {
+                          "cursor": "pointer",
                           "marginLeft": "2rem",
                         }
                       }
@@ -283,6 +286,7 @@ ShallowWrapper {
                         onClick={[Function]}
                         style={
                           Object {
+                            "cursor": "pointer",
                             "marginLeft": "2rem",
                           }
                         }
@@ -340,6 +344,7 @@ ShallowWrapper {
                           onClick={[Function]}
                           style={
                             Object {
+                              "cursor": "pointer",
                               "marginLeft": "2rem",
                             }
                           }
@@ -382,6 +387,7 @@ ShallowWrapper {
                             onClick={[Function]}
                             style={
                               Object {
+                                "cursor": "pointer",
                                 "marginLeft": "2rem",
                               }
                             }
@@ -414,6 +420,7 @@ ShallowWrapper {
                             "disabled": false,
                             "onClick": [Function],
                             "style": Object {
+                              "cursor": "pointer",
                               "marginLeft": "2rem",
                             },
                           },
@@ -518,6 +525,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       style={
                         Object {
+                          "cursor": "pointer",
                           "marginLeft": "2rem",
                         }
                       }
@@ -593,6 +601,7 @@ ShallowWrapper {
                       onClick={[Function]}
                       style={
                         Object {
+                          "cursor": "pointer",
                           "marginLeft": "2rem",
                         }
                       }
@@ -656,6 +665,7 @@ ShallowWrapper {
                         onClick={[Function]}
                         style={
                           Object {
+                            "cursor": "pointer",
                             "marginLeft": "2rem",
                           }
                         }
@@ -716,6 +726,7 @@ ShallowWrapper {
                           onClick={[Function]}
                           style={
                             Object {
+                              "cursor": "pointer",
                               "marginLeft": "2rem",
                             }
                           }
@@ -773,6 +784,7 @@ ShallowWrapper {
                             onClick={[Function]}
                             style={
                               Object {
+                                "cursor": "pointer",
                                 "marginLeft": "2rem",
                               }
                             }
@@ -815,6 +827,7 @@ ShallowWrapper {
                               onClick={[Function]}
                               style={
                                 Object {
+                                  "cursor": "pointer",
                                   "marginLeft": "2rem",
                                 }
                               }
@@ -847,6 +860,7 @@ ShallowWrapper {
                               "disabled": false,
                               "onClick": [Function],
                               "style": Object {
+                                "cursor": "pointer",
                                 "marginLeft": "2rem",
                               },
                             },

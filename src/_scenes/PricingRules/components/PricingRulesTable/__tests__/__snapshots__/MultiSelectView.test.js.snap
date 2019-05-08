@@ -12,12 +12,14 @@ ShallowWrapper {
               "id": 2,
               "name": "Diamond Club",
             },
+            false,
           ],
           Array [
             Object {
               "id": 15,
               "name": "Dugout Club",
             },
+            false,
           ],
         ],
         "results": Array [
