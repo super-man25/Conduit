@@ -13,6 +13,7 @@ ShallowWrapper {
         "integrationId": 1,
         "modifiedAt": 1529336865706,
         "name": "Some Event",
+        "revenue": 739472,
         "seasonId": 1,
         "timestamp": 1529336865706,
         "venueId": 1,
@@ -73,7 +74,7 @@ ShallowWrapper {
               Some Event
             </ForwardRef>
             <ForwardRef>
-              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
             </ForwardRef>
             <ForwardRef
               to="/event/1/inventory"
@@ -86,23 +87,51 @@ ShallowWrapper {
             </ForwardRef>
           </ForwardRef>
           <ForwardRef
+            justify="flex-end"
+          >
+            <ForwardRef
+              flex="0 0 auto"
+              margin="0 25px"
+            >
+              <ForwardRef
+                size="16px"
+              >
+                Inventory
+              </ForwardRef>
+              <ForwardRef
+                color="#1A4B8A"
+                size="22px"
+              >
+                -- / --
+              </ForwardRef>
+              <ForwardRef
+                align="right"
+                color="#1A4B8A"
+              >
+                Unsold / Sold
+              </ForwardRef>
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
             flex="0 0 auto"
+            margin="0 25px"
           >
             <ForwardRef
               size="16px"
             >
-              Current Game Inventory
+              Revenue
             </ForwardRef>
             <ForwardRef
-              color="#2670AE"
+              color="#1A4B8A"
               size="22px"
             >
-              -- / --
+              $739,472
             </ForwardRef>
             <ForwardRef
-              color="#2670AE"
+              align="right"
+              color="#1A4B8A"
             >
-              Unsold / Sold
+              to date
             </ForwardRef>
           </ForwardRef>
         </ForwardRef>,
@@ -156,7 +185,7 @@ ShallowWrapper {
                 [Function],
               ],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-cbkKFq",
+                "componentId": "sc-lkqHmb",
                 "isStatic": false,
                 "rules": Array [
                   "
@@ -232,7 +261,7 @@ ShallowWrapper {
                 "sc-dnqmqq",
               ],
               "render": [Function],
-              "styledComponentId": "sc-cbkKFq",
+              "styledComponentId": "sc-lkqHmb",
               "target": "button",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -434,7 +463,7 @@ ShallowWrapper {
                 Some Event
               </ForwardRef>
               <ForwardRef>
-                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
               </ForwardRef>
               <ForwardRef
                 to="/event/1/inventory"
@@ -447,23 +476,51 @@ ShallowWrapper {
               </ForwardRef>
             </ForwardRef>,
             <ForwardRef
+              justify="flex-end"
+            >
+              <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
+              </ForwardRef>
+            </ForwardRef>,
+            <ForwardRef
               flex="0 0 auto"
+              margin="0 25px"
             >
               <ForwardRef
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                to date
               </ForwardRef>
             </ForwardRef>,
           ],
@@ -481,7 +538,7 @@ ShallowWrapper {
                   Some Event
                 </ForwardRef>,
                 <ForwardRef>
-                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
                 </ForwardRef>,
                 <ForwardRef
                   to="/event/1/inventory"
@@ -511,7 +568,7 @@ ShallowWrapper {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-krvtoX",
+                    "componentId": "sc-eLExRp",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -586,7 +643,7 @@ ShallowWrapper {
                     "sc-gqjmRU",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-krvtoX",
+                  "styledComponentId": "sc-eLExRp",
                   "target": "h1",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -598,17 +655,17 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                 },
                 "ref": null,
-                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-fYiAbW",
+                    "componentId": "sc-cbkKFq",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -673,7 +730,7 @@ ShallowWrapper {
   ",
                       "
   color: ",
-                      "#2670AE",
+                      "#1A4B8A",
                       ";
   margin: 0;
   margin-bottom: 0.15rem;
@@ -686,7 +743,7 @@ ShallowWrapper {
                     "sc-jzJRlG",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-fYiAbW",
+                  "styledComponentId": "sc-cbkKFq",
                   "target": "h4",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -720,7 +777,7 @@ ShallowWrapper {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-fOKMvo",
+                      "componentId": "sc-krvtoX",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -747,7 +804,7 @@ ShallowWrapper {
                       "sc-chPdSV",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-fOKMvo",
+                    "styledComponentId": "sc-krvtoX",
                     "target": "span",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -856,25 +913,390 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "children": <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
+              </ForwardRef>,
+              "justify": "flex-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>,
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>,
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 25px",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Inventory",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fYiAbW",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  margin: 0;
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  text-align: right;
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fYiAbW",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "-- / --",
+                    "color": "#1A4B8A",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": "-- / --",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fYiAbW",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  margin: 0;
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  text-align: right;
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fYiAbW",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "align": "right",
+                    "children": "Unsold / Sold",
+                    "color": "#1A4B8A",
+                  },
+                  "ref": null,
+                  "rendered": "Unsold / Sold",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fOKMvo",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  font-style: italic;
+  display: block;
+  text-align: ",
+                        [Function],
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.span)",
+                    "foldedComponentIds": Array [
+                      "sc-chPdSV",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fOKMvo",
+                    "target": "span",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+              ],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-kEYyzF",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  flex: ",
+                    [Function],
+                    ";
+  height: ",
+                    [Function],
+                    ";
+  width: ",
+                    [Function],
+                    ";
+  align-self: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "defaultProps": Object {
+                  "flex": 1,
+                },
+                "displayName": "FlexItem",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-kEYyzF",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-hMqMXs",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  display: ",
+                  [Function],
+                  ";
+  flex: ",
+                  [Function],
+                  ";
+  flex-direction: ",
+                  [Function],
+                  "
+  flex-grow: ",
+                  [Function],
+                  ";
+  flex-shrink: ",
+                  [Function],
+                  ";
+  flex-basis: ",
+                  [Function],
+                  ";
+  flex-wrap: ",
+                  [Function],
+                  ";
+  order: ",
+                  [Function],
+                  ";
+  justify-content: ",
+                  [Function],
+                  ";
+  align-items: ",
+                  [Function],
+                  ";
+  align-content: ",
+                  [Function],
+                  ";
+  align-self: ",
+                  [Function],
+                  ";
+  height: ",
+                  [Function],
+                  ";
+  width: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Flex",
+              "foldedComponentIds": Array [
+                "sc-eNQAEJ",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-hMqMXs",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
               "children": Array [
                 <ForwardRef
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </ForwardRef>,
                 <ForwardRef
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </ForwardRef>,
                 <ForwardRef
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  to date
                 </ForwardRef>,
               ],
               "flex": "0 0 auto",
+              "margin": "0 25px",
             },
             "ref": null,
             "rendered": Array [
@@ -883,18 +1305,18 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Current Game Inventory",
+                  "children": "Revenue",
                   "size": "16px",
                 },
                 "ref": null,
-                "rendered": "Current Game Inventory",
+                "rendered": "Revenue",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-kAzzGY",
+                    "componentId": "sc-fYiAbW",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -909,12 +1331,17 @@ ShallowWrapper {
                       [Function],
                       ";
 ",
+                      "
+  text-align: right;
+",
                     ],
                   },
-                  "displayName": "styled.p",
-                  "foldedComponentIds": Array [],
+                  "displayName": "Styled(styled.p)",
+                  "foldedComponentIds": Array [
+                    "sc-kAzzGY",
+                  ],
                   "render": [Function],
-                  "styledComponentId": "sc-kAzzGY",
+                  "styledComponentId": "sc-fYiAbW",
                   "target": "p",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -926,19 +1353,19 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "-- / --",
-                  "color": "#2670AE",
+                  "children": "$739,472",
+                  "color": "#1A4B8A",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "-- / --",
+                "rendered": "$739,472",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-kAzzGY",
+                    "componentId": "sc-fYiAbW",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -953,12 +1380,17 @@ ShallowWrapper {
                       [Function],
                       ";
 ",
+                      "
+  text-align: right;
+",
                     ],
                   },
-                  "displayName": "styled.p",
-                  "foldedComponentIds": Array [],
+                  "displayName": "Styled(styled.p)",
+                  "foldedComponentIds": Array [
+                    "sc-kAzzGY",
+                  ],
                   "render": [Function],
-                  "styledComponentId": "sc-kAzzGY",
+                  "styledComponentId": "sc-fYiAbW",
                   "target": "p",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -970,16 +1402,17 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Unsold / Sold",
-                  "color": "#2670AE",
+                  "align": "right",
+                  "children": "to date",
+                  "color": "#1A4B8A",
                 },
                 "ref": null,
-                "rendered": "Unsold / Sold",
+                "rendered": "to date",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-dUjcNx",
+                    "componentId": "sc-fOKMvo",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -995,6 +1428,10 @@ ShallowWrapper {
 ",
                       "
   font-style: italic;
+  display: block;
+  text-align: ",
+                      [Function],
+                      ";
 ",
                     ],
                   },
@@ -1003,7 +1440,7 @@ ShallowWrapper {
                     "sc-chPdSV",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-dUjcNx",
+                  "styledComponentId": "sc-fOKMvo",
                   "target": "span",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -1291,7 +1728,7 @@ ShallowWrapper {
                 Some Event
               </ForwardRef>
               <ForwardRef>
-                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
               </ForwardRef>
               <ForwardRef
                 to="/event/1/inventory"
@@ -1304,23 +1741,51 @@ ShallowWrapper {
               </ForwardRef>
             </ForwardRef>
             <ForwardRef
+              justify="flex-end"
+            >
+              <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
+              </ForwardRef>
+            </ForwardRef>
+            <ForwardRef
               flex="0 0 auto"
+              margin="0 25px"
             >
               <ForwardRef
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                to date
               </ForwardRef>
             </ForwardRef>
           </ForwardRef>,
@@ -1374,7 +1839,7 @@ ShallowWrapper {
                   [Function],
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-cbkKFq",
+                  "componentId": "sc-lkqHmb",
                   "isStatic": false,
                   "rules": Array [
                     "
@@ -1450,7 +1915,7 @@ ShallowWrapper {
                   "sc-dnqmqq",
                 ],
                 "render": [Function],
-                "styledComponentId": "sc-cbkKFq",
+                "styledComponentId": "sc-lkqHmb",
                 "target": "button",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -1652,7 +2117,7 @@ ShallowWrapper {
                   Some Event
                 </ForwardRef>
                 <ForwardRef>
-                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
                 </ForwardRef>
                 <ForwardRef
                   to="/event/1/inventory"
@@ -1665,23 +2130,51 @@ ShallowWrapper {
                 </ForwardRef>
               </ForwardRef>,
               <ForwardRef
+                justify="flex-end"
+              >
+                <ForwardRef
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>
+                </ForwardRef>
+              </ForwardRef>,
+              <ForwardRef
                 flex="0 0 auto"
+                margin="0 25px"
               >
                 <ForwardRef
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </ForwardRef>
                 <ForwardRef
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </ForwardRef>
                 <ForwardRef
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  to date
                 </ForwardRef>
               </ForwardRef>,
             ],
@@ -1699,7 +2192,7 @@ ShallowWrapper {
                     Some Event
                   </ForwardRef>,
                   <ForwardRef>
-                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
                   </ForwardRef>,
                   <ForwardRef
                     to="/event/1/inventory"
@@ -1729,7 +2222,7 @@ ShallowWrapper {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-krvtoX",
+                      "componentId": "sc-eLExRp",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -1804,7 +2297,7 @@ ShallowWrapper {
                       "sc-gqjmRU",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-krvtoX",
+                    "styledComponentId": "sc-eLExRp",
                     "target": "h1",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -1816,17 +2309,17 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                   },
                   "ref": null,
-                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-fYiAbW",
+                      "componentId": "sc-cbkKFq",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -1891,7 +2384,7 @@ ShallowWrapper {
   ",
                         "
   color: ",
-                        "#2670AE",
+                        "#1A4B8A",
                         ";
   margin: 0;
   margin-bottom: 0.15rem;
@@ -1904,7 +2397,7 @@ ShallowWrapper {
                       "sc-jzJRlG",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-fYiAbW",
+                    "styledComponentId": "sc-cbkKFq",
                     "target": "h4",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -1938,7 +2431,7 @@ ShallowWrapper {
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-fOKMvo",
+                        "componentId": "sc-krvtoX",
                         "isStatic": false,
                         "rules": Array [
                           "
@@ -1965,7 +2458,7 @@ ShallowWrapper {
                         "sc-chPdSV",
                       ],
                       "render": [Function],
-                      "styledComponentId": "sc-fOKMvo",
+                      "styledComponentId": "sc-krvtoX",
                       "target": "span",
                       "toString": [Function],
                       "warnTooManyClasses": [Function],
@@ -2074,25 +2567,390 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "children": <ForwardRef
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>
+                </ForwardRef>,
+                "justify": "flex-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <ForwardRef
+                      size="16px"
+                    >
+                      Inventory
+                    </ForwardRef>,
+                    <ForwardRef
+                      color="#1A4B8A"
+                      size="22px"
+                    >
+                      -- / --
+                    </ForwardRef>,
+                    <ForwardRef
+                      align="right"
+                      color="#1A4B8A"
+                    >
+                      Unsold / Sold
+                    </ForwardRef>,
+                  ],
+                  "flex": "0 0 auto",
+                  "margin": "0 25px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Inventory",
+                      "size": "16px",
+                    },
+                    "ref": null,
+                    "rendered": "Inventory",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [
+                        [Function],
+                      ],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fYiAbW",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  margin: 0;
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  text-align: right;
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.p)",
+                      "foldedComponentIds": Array [
+                        "sc-kAzzGY",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fYiAbW",
+                      "target": "p",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "-- / --",
+                      "color": "#1A4B8A",
+                      "size": "22px",
+                    },
+                    "ref": null,
+                    "rendered": "-- / --",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [
+                        [Function],
+                      ],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fYiAbW",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  margin: 0;
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  text-align: right;
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.p)",
+                      "foldedComponentIds": Array [
+                        "sc-kAzzGY",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fYiAbW",
+                      "target": "p",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "align": "right",
+                      "children": "Unsold / Sold",
+                      "color": "#1A4B8A",
+                    },
+                    "ref": null,
+                    "rendered": "Unsold / Sold",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fOKMvo",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  font-style: italic;
+  display: block;
+  text-align: ",
+                          [Function],
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.span)",
+                      "foldedComponentIds": Array [
+                        "sc-chPdSV",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fOKMvo",
+                      "target": "span",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                ],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kEYyzF",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  flex: ",
+                      [Function],
+                      ";
+  height: ",
+                      [Function],
+                      ";
+  width: ",
+                      [Function],
+                      ";
+  align-self: ",
+                      [Function],
+                      ";
+  margin: ",
+                      [Function],
+                      ";
+  padding: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "defaultProps": Object {
+                    "flex": 1,
+                  },
+                  "displayName": "FlexItem",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kEYyzF",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
+              },
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-hMqMXs",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  display: ",
+                    [Function],
+                    ";
+  flex: ",
+                    [Function],
+                    ";
+  flex-direction: ",
+                    [Function],
+                    "
+  flex-grow: ",
+                    [Function],
+                    ";
+  flex-shrink: ",
+                    [Function],
+                    ";
+  flex-basis: ",
+                    [Function],
+                    ";
+  flex-wrap: ",
+                    [Function],
+                    ";
+  order: ",
+                    [Function],
+                    ";
+  justify-content: ",
+                    [Function],
+                    ";
+  align-items: ",
+                    [Function],
+                    ";
+  align-content: ",
+                    [Function],
+                    ";
+  align-self: ",
+                    [Function],
+                    ";
+  height: ",
+                    [Function],
+                    ";
+  width: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Flex",
+                "foldedComponentIds": Array [
+                  "sc-eNQAEJ",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-hMqMXs",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
                 "children": Array [
                   <ForwardRef
                     size="16px"
                   >
-                    Current Game Inventory
+                    Revenue
                   </ForwardRef>,
                   <ForwardRef
-                    color="#2670AE"
+                    color="#1A4B8A"
                     size="22px"
                   >
-                    -- / --
+                    $739,472
                   </ForwardRef>,
                   <ForwardRef
-                    color="#2670AE"
+                    align="right"
+                    color="#1A4B8A"
                   >
-                    Unsold / Sold
+                    to date
                   </ForwardRef>,
                 ],
                 "flex": "0 0 auto",
+                "margin": "0 25px",
               },
               "ref": null,
               "rendered": Array [
@@ -2101,18 +2959,18 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "Current Game Inventory",
+                    "children": "Revenue",
                     "size": "16px",
                   },
                   "ref": null,
-                  "rendered": "Current Game Inventory",
+                  "rendered": "Revenue",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-kAzzGY",
+                      "componentId": "sc-fYiAbW",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -2127,12 +2985,17 @@ ShallowWrapper {
                         [Function],
                         ";
 ",
+                        "
+  text-align: right;
+",
                       ],
                     },
-                    "displayName": "styled.p",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-kAzzGY",
+                    "styledComponentId": "sc-fYiAbW",
                     "target": "p",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -2144,19 +3007,19 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "-- / --",
-                    "color": "#2670AE",
+                    "children": "$739,472",
+                    "color": "#1A4B8A",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "-- / --",
+                  "rendered": "$739,472",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-kAzzGY",
+                      "componentId": "sc-fYiAbW",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -2171,12 +3034,17 @@ ShallowWrapper {
                         [Function],
                         ";
 ",
+                        "
+  text-align: right;
+",
                       ],
                     },
-                    "displayName": "styled.p",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-kAzzGY",
+                    "styledComponentId": "sc-fYiAbW",
                     "target": "p",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -2188,16 +3056,17 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "Unsold / Sold",
-                    "color": "#2670AE",
+                    "align": "right",
+                    "children": "to date",
+                    "color": "#1A4B8A",
                   },
                   "ref": null,
-                  "rendered": "Unsold / Sold",
+                  "rendered": "to date",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-dUjcNx",
+                      "componentId": "sc-fOKMvo",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -2213,6 +3082,10 @@ ShallowWrapper {
 ",
                         "
   font-style: italic;
+  display: block;
+  text-align: ",
+                        [Function],
+                        ";
 ",
                       ],
                     },
@@ -2221,7 +3094,7 @@ ShallowWrapper {
                       "sc-chPdSV",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-dUjcNx",
+                    "styledComponentId": "sc-fOKMvo",
                     "target": "span",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -2503,6 +3376,7 @@ ShallowWrapper {
         "integrationId": 1,
         "modifiedAt": 1529336865706,
         "name": "Some Event",
+        "revenue": 739472,
         "seasonId": 1,
         "timestamp": 1529336865706,
         "venueId": 1,
@@ -2567,27 +3441,55 @@ ShallowWrapper {
               Some Event
             </ForwardRef>
             <ForwardRef>
-              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+              2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+            </ForwardRef>
+          </ForwardRef>
+          <ForwardRef
+            justify="flex-end"
+          >
+            <ForwardRef
+              flex="0 0 auto"
+              margin="0 25px"
+            >
+              <ForwardRef
+                size="16px"
+              >
+                Inventory
+              </ForwardRef>
+              <ForwardRef
+                color="#1A4B8A"
+                size="22px"
+              >
+                -- / --
+              </ForwardRef>
+              <ForwardRef
+                align="right"
+                color="#1A4B8A"
+              >
+                Unsold / Sold
+              </ForwardRef>
             </ForwardRef>
           </ForwardRef>
           <ForwardRef
             flex="0 0 auto"
+            margin="0 25px"
           >
             <ForwardRef
               size="16px"
             >
-              Current Game Inventory
+              Revenue
             </ForwardRef>
             <ForwardRef
-              color="#2670AE"
+              color="#1A4B8A"
               size="22px"
             >
-              -- / --
+              $739,472
             </ForwardRef>
             <ForwardRef
-              color="#2670AE"
+              align="right"
+              color="#1A4B8A"
             >
-              Unsold / Sold
+              to date
             </ForwardRef>
           </ForwardRef>
         </ForwardRef>,
@@ -2645,7 +3547,7 @@ ShallowWrapper {
                 [Function],
               ],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-cbkKFq",
+                "componentId": "sc-lkqHmb",
                 "isStatic": false,
                 "rules": Array [
                   "
@@ -2721,7 +3623,7 @@ ShallowWrapper {
                 "sc-dnqmqq",
               ],
               "render": [Function],
-              "styledComponentId": "sc-cbkKFq",
+              "styledComponentId": "sc-lkqHmb",
               "target": "button",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -2927,27 +3829,55 @@ ShallowWrapper {
                 Some Event
               </ForwardRef>
               <ForwardRef>
-                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+              </ForwardRef>
+            </ForwardRef>,
+            <ForwardRef
+              justify="flex-end"
+            >
+              <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
               </ForwardRef>
             </ForwardRef>,
             <ForwardRef
               flex="0 0 auto"
+              margin="0 25px"
             >
               <ForwardRef
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                to date
               </ForwardRef>
             </ForwardRef>,
           ],
@@ -2965,7 +3895,7 @@ ShallowWrapper {
                   Some Event
                 </ForwardRef>,
                 <ForwardRef>
-                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
                 </ForwardRef>,
                 false,
               ],
@@ -2987,7 +3917,7 @@ ShallowWrapper {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-krvtoX",
+                    "componentId": "sc-eLExRp",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -3062,7 +3992,7 @@ ShallowWrapper {
                     "sc-gqjmRU",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-krvtoX",
+                  "styledComponentId": "sc-eLExRp",
                   "target": "h1",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -3074,17 +4004,17 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                 },
                 "ref": null,
-                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-fYiAbW",
+                    "componentId": "sc-cbkKFq",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -3149,7 +4079,7 @@ ShallowWrapper {
   ",
                       "
   color: ",
-                      "#2670AE",
+                      "#1A4B8A",
                       ";
   margin: 0;
   margin-bottom: 0.15rem;
@@ -3162,7 +4092,7 @@ ShallowWrapper {
                     "sc-jzJRlG",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-fYiAbW",
+                  "styledComponentId": "sc-cbkKFq",
                   "target": "h4",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -3218,25 +4148,390 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "children": <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
+              </ForwardRef>,
+              "justify": "flex-end",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>,
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>,
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>,
+                ],
+                "flex": "0 0 auto",
+                "margin": "0 25px",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Inventory",
+                    "size": "16px",
+                  },
+                  "ref": null,
+                  "rendered": "Inventory",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fYiAbW",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  margin: 0;
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  text-align: right;
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fYiAbW",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "-- / --",
+                    "color": "#1A4B8A",
+                    "size": "22px",
+                  },
+                  "ref": null,
+                  "rendered": "-- / --",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fYiAbW",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  margin: 0;
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  text-align: right;
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fYiAbW",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "align": "right",
+                    "children": "Unsold / Sold",
+                    "color": "#1A4B8A",
+                  },
+                  "ref": null,
+                  "rendered": "Unsold / Sold",
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-fOKMvo",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                        "
+  font-style: italic;
+  display: block;
+  text-align: ",
+                        [Function],
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "Styled(styled.span)",
+                    "foldedComponentIds": Array [
+                      "sc-chPdSV",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-fOKMvo",
+                    "target": "span",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                },
+              ],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-kEYyzF",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  flex: ",
+                    [Function],
+                    ";
+  height: ",
+                    [Function],
+                    ";
+  width: ",
+                    [Function],
+                    ";
+  align-self: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "defaultProps": Object {
+                  "flex": 1,
+                },
+                "displayName": "FlexItem",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-kEYyzF",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
+            },
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-hMqMXs",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  display: ",
+                  [Function],
+                  ";
+  flex: ",
+                  [Function],
+                  ";
+  flex-direction: ",
+                  [Function],
+                  "
+  flex-grow: ",
+                  [Function],
+                  ";
+  flex-shrink: ",
+                  [Function],
+                  ";
+  flex-basis: ",
+                  [Function],
+                  ";
+  flex-wrap: ",
+                  [Function],
+                  ";
+  order: ",
+                  [Function],
+                  ";
+  justify-content: ",
+                  [Function],
+                  ";
+  align-items: ",
+                  [Function],
+                  ";
+  align-content: ",
+                  [Function],
+                  ";
+  align-self: ",
+                  [Function],
+                  ";
+  height: ",
+                  [Function],
+                  ";
+  width: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Flex",
+              "foldedComponentIds": Array [
+                "sc-eNQAEJ",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-hMqMXs",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
               "children": Array [
                 <ForwardRef
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </ForwardRef>,
                 <ForwardRef
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </ForwardRef>,
                 <ForwardRef
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  to date
                 </ForwardRef>,
               ],
               "flex": "0 0 auto",
+              "margin": "0 25px",
             },
             "ref": null,
             "rendered": Array [
@@ -3245,18 +4540,18 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Current Game Inventory",
+                  "children": "Revenue",
                   "size": "16px",
                 },
                 "ref": null,
-                "rendered": "Current Game Inventory",
+                "rendered": "Revenue",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-kAzzGY",
+                    "componentId": "sc-fYiAbW",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -3271,12 +4566,17 @@ ShallowWrapper {
                       [Function],
                       ";
 ",
+                      "
+  text-align: right;
+",
                     ],
                   },
-                  "displayName": "styled.p",
-                  "foldedComponentIds": Array [],
+                  "displayName": "Styled(styled.p)",
+                  "foldedComponentIds": Array [
+                    "sc-kAzzGY",
+                  ],
                   "render": [Function],
-                  "styledComponentId": "sc-kAzzGY",
+                  "styledComponentId": "sc-fYiAbW",
                   "target": "p",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -3288,19 +4588,19 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "-- / --",
-                  "color": "#2670AE",
+                  "children": "$739,472",
+                  "color": "#1A4B8A",
                   "size": "22px",
                 },
                 "ref": null,
-                "rendered": "-- / --",
+                "rendered": "$739,472",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [
                     [Function],
                   ],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-kAzzGY",
+                    "componentId": "sc-fYiAbW",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -3315,12 +4615,17 @@ ShallowWrapper {
                       [Function],
                       ";
 ",
+                      "
+  text-align: right;
+",
                     ],
                   },
-                  "displayName": "styled.p",
-                  "foldedComponentIds": Array [],
+                  "displayName": "Styled(styled.p)",
+                  "foldedComponentIds": Array [
+                    "sc-kAzzGY",
+                  ],
                   "render": [Function],
-                  "styledComponentId": "sc-kAzzGY",
+                  "styledComponentId": "sc-fYiAbW",
                   "target": "p",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -3332,16 +4637,17 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Unsold / Sold",
-                  "color": "#2670AE",
+                  "align": "right",
+                  "children": "to date",
+                  "color": "#1A4B8A",
                 },
                 "ref": null,
-                "rendered": "Unsold / Sold",
+                "rendered": "to date",
                 "type": Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "sc-dUjcNx",
+                    "componentId": "sc-fOKMvo",
                     "isStatic": false,
                     "rules": Array [
                       "
@@ -3357,6 +4663,10 @@ ShallowWrapper {
 ",
                       "
   font-style: italic;
+  display: block;
+  text-align: ",
+                      [Function],
+                      ";
 ",
                     ],
                   },
@@ -3365,7 +4675,7 @@ ShallowWrapper {
                     "sc-chPdSV",
                   ],
                   "render": [Function],
-                  "styledComponentId": "sc-dUjcNx",
+                  "styledComponentId": "sc-fOKMvo",
                   "target": "span",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -3657,27 +4967,55 @@ ShallowWrapper {
                 Some Event
               </ForwardRef>
               <ForwardRef>
-                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+              </ForwardRef>
+            </ForwardRef>
+            <ForwardRef
+              justify="flex-end"
+            >
+              <ForwardRef
+                flex="0 0 auto"
+                margin="0 25px"
+              >
+                <ForwardRef
+                  size="16px"
+                >
+                  Inventory
+                </ForwardRef>
+                <ForwardRef
+                  color="#1A4B8A"
+                  size="22px"
+                >
+                  -- / --
+                </ForwardRef>
+                <ForwardRef
+                  align="right"
+                  color="#1A4B8A"
+                >
+                  Unsold / Sold
+                </ForwardRef>
               </ForwardRef>
             </ForwardRef>
             <ForwardRef
               flex="0 0 auto"
+              margin="0 25px"
             >
               <ForwardRef
                 size="16px"
               >
-                Current Game Inventory
+                Revenue
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                color="#1A4B8A"
                 size="22px"
               >
-                -- / --
+                $739,472
               </ForwardRef>
               <ForwardRef
-                color="#2670AE"
+                align="right"
+                color="#1A4B8A"
               >
-                Unsold / Sold
+                to date
               </ForwardRef>
             </ForwardRef>
           </ForwardRef>,
@@ -3735,7 +5073,7 @@ ShallowWrapper {
                   [Function],
                 ],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-cbkKFq",
+                  "componentId": "sc-lkqHmb",
                   "isStatic": false,
                   "rules": Array [
                     "
@@ -3811,7 +5149,7 @@ ShallowWrapper {
                   "sc-dnqmqq",
                 ],
                 "render": [Function],
-                "styledComponentId": "sc-cbkKFq",
+                "styledComponentId": "sc-lkqHmb",
                 "target": "button",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -4017,27 +5355,55 @@ ShallowWrapper {
                   Some Event
                 </ForwardRef>
                 <ForwardRef>
-                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                  2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+                </ForwardRef>
+              </ForwardRef>,
+              <ForwardRef
+                justify="flex-end"
+              >
+                <ForwardRef
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>
                 </ForwardRef>
               </ForwardRef>,
               <ForwardRef
                 flex="0 0 auto"
+                margin="0 25px"
               >
                 <ForwardRef
                   size="16px"
                 >
-                  Current Game Inventory
+                  Revenue
                 </ForwardRef>
                 <ForwardRef
-                  color="#2670AE"
+                  color="#1A4B8A"
                   size="22px"
                 >
-                  -- / --
+                  $739,472
                 </ForwardRef>
                 <ForwardRef
-                  color="#2670AE"
+                  align="right"
+                  color="#1A4B8A"
                 >
-                  Unsold / Sold
+                  to date
                 </ForwardRef>
               </ForwardRef>,
             ],
@@ -4055,7 +5421,7 @@ ShallowWrapper {
                     Some Event
                   </ForwardRef>,
                   <ForwardRef>
-                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA
+                    2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
                   </ForwardRef>,
                   false,
                 ],
@@ -4077,7 +5443,7 @@ ShallowWrapper {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-krvtoX",
+                      "componentId": "sc-eLExRp",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -4152,7 +5518,7 @@ ShallowWrapper {
                       "sc-gqjmRU",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-krvtoX",
+                    "styledComponentId": "sc-eLExRp",
                     "target": "h1",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -4164,17 +5530,17 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                    "children": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                   },
                   "ref": null,
-                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mmA",
+                  "rendered": "2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-fYiAbW",
+                      "componentId": "sc-cbkKFq",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -4239,7 +5605,7 @@ ShallowWrapper {
   ",
                         "
   color: ",
-                        "#2670AE",
+                        "#1A4B8A",
                         ";
   margin: 0;
   margin-bottom: 0.15rem;
@@ -4252,7 +5618,7 @@ ShallowWrapper {
                       "sc-jzJRlG",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-fYiAbW",
+                    "styledComponentId": "sc-cbkKFq",
                     "target": "h4",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -4308,25 +5674,390 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "children": <ForwardRef
+                  flex="0 0 auto"
+                  margin="0 25px"
+                >
+                  <ForwardRef
+                    size="16px"
+                  >
+                    Inventory
+                  </ForwardRef>
+                  <ForwardRef
+                    color="#1A4B8A"
+                    size="22px"
+                  >
+                    -- / --
+                  </ForwardRef>
+                  <ForwardRef
+                    align="right"
+                    color="#1A4B8A"
+                  >
+                    Unsold / Sold
+                  </ForwardRef>
+                </ForwardRef>,
+                "justify": "flex-end",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <ForwardRef
+                      size="16px"
+                    >
+                      Inventory
+                    </ForwardRef>,
+                    <ForwardRef
+                      color="#1A4B8A"
+                      size="22px"
+                    >
+                      -- / --
+                    </ForwardRef>,
+                    <ForwardRef
+                      align="right"
+                      color="#1A4B8A"
+                    >
+                      Unsold / Sold
+                    </ForwardRef>,
+                  ],
+                  "flex": "0 0 auto",
+                  "margin": "0 25px",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Inventory",
+                      "size": "16px",
+                    },
+                    "ref": null,
+                    "rendered": "Inventory",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [
+                        [Function],
+                      ],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fYiAbW",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  margin: 0;
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  text-align: right;
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.p)",
+                      "foldedComponentIds": Array [
+                        "sc-kAzzGY",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fYiAbW",
+                      "target": "p",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "-- / --",
+                      "color": "#1A4B8A",
+                      "size": "22px",
+                    },
+                    "ref": null,
+                    "rendered": "-- / --",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [
+                        [Function],
+                      ],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fYiAbW",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  margin: 0;
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  text-align: right;
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.p)",
+                      "foldedComponentIds": Array [
+                        "sc-kAzzGY",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fYiAbW",
+                      "target": "p",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "align": "right",
+                      "children": "Unsold / Sold",
+                      "color": "#1A4B8A",
+                    },
+                    "ref": null,
+                    "rendered": "Unsold / Sold",
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-fOKMvo",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  color: ",
+                          [Function],
+                          ";
+  font-size: ",
+                          [Function],
+                          ";
+  font-weight: ",
+                          [Function],
+                          ";
+",
+                          "
+  font-style: italic;
+  display: block;
+  text-align: ",
+                          [Function],
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "Styled(styled.span)",
+                      "foldedComponentIds": Array [
+                        "sc-chPdSV",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "sc-fOKMvo",
+                      "target": "span",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                ],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kEYyzF",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  flex: ",
+                      [Function],
+                      ";
+  height: ",
+                      [Function],
+                      ";
+  width: ",
+                      [Function],
+                      ";
+  align-self: ",
+                      [Function],
+                      ";
+  margin: ",
+                      [Function],
+                      ";
+  padding: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "defaultProps": Object {
+                    "flex": 1,
+                  },
+                  "displayName": "FlexItem",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kEYyzF",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
+              },
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-hMqMXs",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  display: ",
+                    [Function],
+                    ";
+  flex: ",
+                    [Function],
+                    ";
+  flex-direction: ",
+                    [Function],
+                    "
+  flex-grow: ",
+                    [Function],
+                    ";
+  flex-shrink: ",
+                    [Function],
+                    ";
+  flex-basis: ",
+                    [Function],
+                    ";
+  flex-wrap: ",
+                    [Function],
+                    ";
+  order: ",
+                    [Function],
+                    ";
+  justify-content: ",
+                    [Function],
+                    ";
+  align-items: ",
+                    [Function],
+                    ";
+  align-content: ",
+                    [Function],
+                    ";
+  align-self: ",
+                    [Function],
+                    ";
+  height: ",
+                    [Function],
+                    ";
+  width: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Flex",
+                "foldedComponentIds": Array [
+                  "sc-eNQAEJ",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-hMqMXs",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
                 "children": Array [
                   <ForwardRef
                     size="16px"
                   >
-                    Current Game Inventory
+                    Revenue
                   </ForwardRef>,
                   <ForwardRef
-                    color="#2670AE"
+                    color="#1A4B8A"
                     size="22px"
                   >
-                    -- / --
+                    $739,472
                   </ForwardRef>,
                   <ForwardRef
-                    color="#2670AE"
+                    align="right"
+                    color="#1A4B8A"
                   >
-                    Unsold / Sold
+                    to date
                   </ForwardRef>,
                 ],
                 "flex": "0 0 auto",
+                "margin": "0 25px",
               },
               "ref": null,
               "rendered": Array [
@@ -4335,18 +6066,18 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "Current Game Inventory",
+                    "children": "Revenue",
                     "size": "16px",
                   },
                   "ref": null,
-                  "rendered": "Current Game Inventory",
+                  "rendered": "Revenue",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-kAzzGY",
+                      "componentId": "sc-fYiAbW",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -4361,12 +6092,17 @@ ShallowWrapper {
                         [Function],
                         ";
 ",
+                        "
+  text-align: right;
+",
                       ],
                     },
-                    "displayName": "styled.p",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-kAzzGY",
+                    "styledComponentId": "sc-fYiAbW",
                     "target": "p",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -4378,19 +6114,19 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "-- / --",
-                    "color": "#2670AE",
+                    "children": "$739,472",
+                    "color": "#1A4B8A",
                     "size": "22px",
                   },
                   "ref": null,
-                  "rendered": "-- / --",
+                  "rendered": "$739,472",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [
                       [Function],
                     ],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-kAzzGY",
+                      "componentId": "sc-fYiAbW",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -4405,12 +6141,17 @@ ShallowWrapper {
                         [Function],
                         ";
 ",
+                        "
+  text-align: right;
+",
                       ],
                     },
-                    "displayName": "styled.p",
-                    "foldedComponentIds": Array [],
+                    "displayName": "Styled(styled.p)",
+                    "foldedComponentIds": Array [
+                      "sc-kAzzGY",
+                    ],
                     "render": [Function],
-                    "styledComponentId": "sc-kAzzGY",
+                    "styledComponentId": "sc-fYiAbW",
                     "target": "p",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],
@@ -4422,16 +6163,17 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": "Unsold / Sold",
-                    "color": "#2670AE",
+                    "align": "right",
+                    "children": "to date",
+                    "color": "#1A4B8A",
                   },
                   "ref": null,
-                  "rendered": "Unsold / Sold",
+                  "rendered": "to date",
                   "type": Object {
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-dUjcNx",
+                      "componentId": "sc-fOKMvo",
                       "isStatic": false,
                       "rules": Array [
                         "
@@ -4447,6 +6189,10 @@ ShallowWrapper {
 ",
                         "
   font-style: italic;
+  display: block;
+  text-align: ",
+                        [Function],
+                        ";
 ",
                       ],
                     },
@@ -4455,7 +6201,7 @@ ShallowWrapper {
                       "sc-chPdSV",
                     ],
                     "render": [Function],
-                    "styledComponentId": "sc-dUjcNx",
+                    "styledComponentId": "sc-fOKMvo",
                     "target": "span",
                     "toString": [Function],
                     "warnTooManyClasses": [Function],

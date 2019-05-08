@@ -299,7 +299,7 @@ ShallowWrapper {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-dUjcNx",
+          "componentId": "sc-fYiAbW",
           "isStatic": false,
           "rules": Array [
             "
@@ -387,7 +387,7 @@ ShallowWrapper {
           "sc-dxgOiQ",
         ],
         "render": [Function],
-        "styledComponentId": "sc-dUjcNx",
+        "styledComponentId": "sc-fYiAbW",
         "target": "div",
         "toString": [Function],
         "warnTooManyClasses": [Function],
@@ -398,7 +398,7 @@ ShallowWrapper {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-fOKMvo",
+        "componentId": "sc-krvtoX",
         "isStatic": false,
         "rules": Array [
           "
@@ -415,7 +415,7 @@ ShallowWrapper {
       "displayName": "styled.div",
       "foldedComponentIds": Array [],
       "render": [Function],
-      "styledComponentId": "sc-fOKMvo",
+      "styledComponentId": "sc-krvtoX",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],
@@ -707,7 +707,7 @@ ShallowWrapper {
           "$$typeof": Symbol(react.forward_ref),
           "attrs": Array [],
           "componentStyle": ComponentStyle {
-            "componentId": "sc-dUjcNx",
+            "componentId": "sc-fYiAbW",
             "isStatic": false,
             "rules": Array [
               "
@@ -795,7 +795,7 @@ ShallowWrapper {
             "sc-dxgOiQ",
           ],
           "render": [Function],
-          "styledComponentId": "sc-dUjcNx",
+          "styledComponentId": "sc-fYiAbW",
           "target": "div",
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -806,7 +806,7 @@ ShallowWrapper {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": Array [],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-fOKMvo",
+          "componentId": "sc-krvtoX",
           "isStatic": false,
           "rules": Array [
             "
@@ -823,7 +823,7 @@ ShallowWrapper {
         "displayName": "styled.div",
         "foldedComponentIds": Array [],
         "render": [Function],
-        "styledComponentId": "sc-fOKMvo",
+        "styledComponentId": "sc-krvtoX",
         "target": "div",
         "toString": [Function],
         "warnTooManyClasses": [Function],

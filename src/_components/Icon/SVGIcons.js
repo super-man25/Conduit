@@ -162,3 +162,16 @@ export const SeatIcon = ({
 );
 
 SeatIcon.defaultProps = defaultSVGProps;
+
+export const DotIcon = ({ width, height, fill, styles, ...rest }: SVGProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 20 20"
+  >
+    <circle cx={width / 2} cy={(height * 2) / 3} r={width / 2} fill={fill} />
+  </svg>
+);
+
+DotIcon.defaultProps = defaultSVGProps;

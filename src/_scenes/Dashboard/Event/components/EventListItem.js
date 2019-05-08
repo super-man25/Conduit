@@ -2,31 +2,44 @@
 
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
-import { Spacing, Flex, FlexItem, H4, P1, StatusIndicator } from '_components';
+import { Flex, FlexItem, H4, P1 } from '_components';
 import { isPast } from 'date-fns';
 import React from 'react';
 import styled from 'styled-components';
-import type { EDEvent, EDScheduledJob } from '_models';
+import type { EDEvent } from '_models';
 import {
   formatNumber,
-  readableDate,
-  readableTimeOrDate
+  formatUSD,
+  readableDateAndTime
 } from '_helpers/string-utils';
+import { ScheduledJobStatus } from './ScheduledJobStatus';
 
 const Heading = styled(H4)`
-  margin: 0 0 2px 0;
+  margin: 2px 0 20px 0;
   padding: 0;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  font-weight: 600;
+  color: ${(props) =>
+    props.past
+      ? cssConstants.PRIMARY_DARK_GRAY
+      : cssConstants.PRIMARY_DARKEST_GRAY};
+`;
+const SubHeading = styled(P1)`
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: ${(props) =>
+    props.past
+      ? cssConstants.PRIMARY_DARK_GRAY
+      : cssConstants.PRIMARY_DARKEST_GRAY};
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 16px 16px 16px 40px;
+  padding: 16px 16px 16px 30px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   background-color: ${(props) =>
     props.past
@@ -36,6 +49,12 @@ const Container = styled.div`
     props.past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK};
   transition: 0.15s ease-in-out all;
   position: relative;
+  ${(props) =>
+    props.active
+      ? `
+  box-shadow: 0px 6px 8px ${cssConstants.PRIMARY_LIGHT_GRAY};
+  z-index: 999;`
+      : ``}
 
   :hover {
     cursor: pointer;
@@ -54,63 +73,56 @@ const Container = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    width: 14px;
-    transform: scaleX(${(props) => (props.active ? 1 : 0)});
-    transform-origin: left;
+    right: 0;
+    height: 10px;
+    transform: scaleY(${(props) => (props.active ? 1 : 0)});
+    transform-origin: top;
     background-color: ${cssConstants.PRIMARY_DARK_BLUE};
   }
 `;
 
-const ItalicP1 = styled(P1)`
-  font-style: italic;
+const EventDetailsLabel = styled(P1)`
+  color: ${(props) =>
+    props.past
+      ? cssConstants.PRIMARY_DARK_GRAY
+      : cssConstants.PRIMARY_DARKEST_GRAY};
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
 `;
 
-const I = styled.span`
-  font-style: italic;
+const SubtextP1 = styled(P1)`
+  color: ${(props) =>
+    props.past
+      ? cssConstants.PRIMARY_DARK_GRAY
+      : cssConstants.PRIMARY_DARKEST_GRAY};
+  font-size: 14px;
 `;
+
+const EventDetails = ({
+  flex,
+  isPast,
+  title,
+  text
+}: {
+  flex: number,
+  isPast: boolean,
+  title: string,
+  text: string
+}) => {
+  return (
+    <FlexItem flex={flex} padding="2px 3px 0 3px" alignSelf="flex-end">
+      <EventDetailsLabel past={isPast}>{title}</EventDetailsLabel>
+      <SubtextP1 past={isPast}>{text}</SubtextP1>
+    </FlexItem>
+  );
+};
 
 type Props = {
   event: EDEvent,
   active: boolean,
   onClick: (event: EDEvent) => void,
   isAdmin: boolean
-};
-
-const ScheduledJobStatusIndicator = ({
-  scheduledJob,
-  timeZone
-}: {
-  scheduledJob: EDScheduledJob,
-  timeZone: string
-}) => {
-  const { status, modifiedAt } = scheduledJob;
-
-  const map = {
-    Pending: {
-      status: 'warn'
-    },
-    Success: {
-      status: 'success'
-    },
-    Failure: {
-      status: 'error'
-    },
-    Running: {
-      status: 'success',
-      blink: true
-    }
-  };
-
-  const args = map[status];
-
-  return (
-    <StatusIndicator
-      {...args}
-      title={`${readableDate(modifiedAt, timeZone)} - ${status}`}
-      text={readableTimeOrDate(modifiedAt, timeZone)}
-    />
-  );
 };
 
 export class EventListItem extends React.PureComponent<Props> {
@@ -129,7 +141,7 @@ export class EventListItem extends React.PureComponent<Props> {
       return '--';
     }
 
-    return `${(spring + springModifier).toFixed(4)}%`;
+    return `${(spring + springModifier).toFixed(2)}%`;
   };
 
   render() {
@@ -143,44 +155,47 @@ export class EventListItem extends React.PureComponent<Props> {
         data-test-id="event-list-card"
       >
         <Flex direction="column" flex={1} style={{ overflow: 'hidden' }}>
-          <Heading title={event.name}>{event.name}</Heading>
-          <ItalicP1 color={cssConstants.PRIMARY_DARK_GRAY} size="small" italic>
-            {readableDate(event.timestamp, event.timeZone)}
-          </ItalicP1>
-          <Spacing padding="18px 0 0 0 ">
-            <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
-              {formatNumber(event.unsoldInventory)} /{' '}
-              {formatNumber(event.soldInventory)}
-            </P1>
-            <P1 size="small" color={cssConstants.PRIMARY_DARKEST_GRAY}>
-              <I>Unsold</I>
-              {' / '}
-              <I>Sold</I>
-            </P1>
-          </Spacing>
-        </Flex>
-        <Flex direction="column" align="flex-end" justify="space-between">
-          <FlexItem flex={1} padding="2px 0 0 0">
-            {event.scheduledJob && (
-              <ScheduledJobStatusIndicator
-                scheduledJob={event.scheduledJob}
-                timeZone={event.timeZone}
-              />
-            )}
+          <FlexItem flex={1}>
+            <ScheduledJobStatus
+              past={past}
+              scheduledJob={event.scheduledJob}
+              timeZone={event.timeZone}
+            />
           </FlexItem>
-          <P1 color={cssConstants.PRIMARY_DARKEST_GRAY}>
-            {this.calculateEventScore(event)}
-            {isAdmin && ` / ${this.calculateSpring(event)}`}
-          </P1>
-          <P1 size="small" color={cssConstants.PRIMARY_DARKEST_GRAY}>
-            <I>Score</I>
-            {isAdmin && (
-              <>
-                {' / '}
-                <I>Spring</I>
-              </>
-            )}
-          </P1>
+          <Heading past={past} title={event.name}>
+            {event.name}
+            <SubHeading past={past}>
+              {readableDateAndTime(event.timestamp, event.timeZone)}
+            </SubHeading>
+          </Heading>
+          <Flex direction="row" flex={1}>
+            <EventDetails
+              flex={4}
+              isPast={past}
+              title={
+                formatNumber(event.unsoldInventory) +
+                ' / ' +
+                formatNumber(event.soldInventory)
+              }
+              text="Unsold / Sold"
+            />
+            <EventDetails
+              flex={4}
+              isPast={past}
+              title={formatUSD(event.revenue, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+              })}
+              text="Revenue to Date"
+            />
+            <EventDetails
+              flex={isAdmin ? 3 : 1}
+              isPast={past}
+              title={`${this.calculateEventScore(event)}
+                ${isAdmin ? ` / ${this.calculateSpring(event)}` : ''}`}
+              text={`Score${isAdmin ? ` / Spring` : ''}`}
+            />
+          </Flex>
         </Flex>
       </Container>
     );

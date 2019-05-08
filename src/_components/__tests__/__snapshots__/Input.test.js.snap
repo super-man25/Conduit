@@ -160,7 +160,7 @@ exports[`renders correctly with valid prop 1`] = `
   padding-left: 3%;
   border: 2px solid;
   border-radius: 3px;
-  border-color: #399E5A;
+  border-color: #2F6450;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
 }

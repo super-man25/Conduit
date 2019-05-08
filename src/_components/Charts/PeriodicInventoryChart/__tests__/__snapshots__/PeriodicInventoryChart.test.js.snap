@@ -80,7 +80,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -186,7 +186,7 @@ ShallowWrapper {
             animationEasing="ease"
             data={Array []}
             dataKey="periodicInventory"
-            fill="#621F95"
+            fill="#5A288F"
             hide={false}
             isAnimationActive={true}
             layout="vertical"
@@ -305,7 +305,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -411,7 +411,7 @@ ShallowWrapper {
             animationEasing="ease"
             data={Array []}
             dataKey="periodicInventory"
-            fill="#621F95"
+            fill="#5A288F"
             hide={false}
             isAnimationActive={true}
             layout="vertical"
@@ -511,7 +511,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -617,7 +617,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -735,7 +735,7 @@ ShallowWrapper {
               "fillOpacity": 1,
               "ifOverflow": "discard",
               "isFront": false,
-              "stroke": "#2670AE",
+              "stroke": "#1A4B8A",
               "strokeWidth": 1,
               "xAxisId": 0,
               "y": 0,
@@ -884,7 +884,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "data": Array [],
               "dataKey": "periodicInventory",
-              "fill": "#621F95",
+              "fill": "#5A288F",
               "hide": false,
               "isAnimationActive": true,
               "layout": "vertical",
@@ -1052,7 +1052,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -1158,7 +1158,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -1277,7 +1277,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -1383,7 +1383,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -1483,7 +1483,7 @@ ShallowWrapper {
                 fillOpacity={1}
                 ifOverflow="discard"
                 isFront={false}
-                stroke="#2670AE"
+                stroke="#1A4B8A"
                 strokeWidth={1}
                 xAxisId={0}
                 y={0}
@@ -1589,7 +1589,7 @@ ShallowWrapper {
                 animationEasing="ease"
                 data={Array []}
                 dataKey="periodicInventory"
-                fill="#621F95"
+                fill="#5A288F"
                 hide={false}
                 isAnimationActive={true}
                 layout="vertical"
@@ -1707,7 +1707,7 @@ ShallowWrapper {
                 "fillOpacity": 1,
                 "ifOverflow": "discard",
                 "isFront": false,
-                "stroke": "#2670AE",
+                "stroke": "#1A4B8A",
                 "strokeWidth": 1,
                 "xAxisId": 0,
                 "y": 0,
@@ -1856,7 +1856,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "data": Array [],
                 "dataKey": "periodicInventory",
-                "fill": "#621F95",
+                "fill": "#5A288F",
                 "hide": false,
                 "isAnimationActive": true,
                 "layout": "vertical",
@@ -2079,7 +2079,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -2185,7 +2185,7 @@ ShallowWrapper {
             animationEasing="ease"
             data={Array []}
             dataKey="periodicInventory"
-            fill="#621F95"
+            fill="#5A288F"
             hide={false}
             isAnimationActive={true}
             layout="vertical"
@@ -2304,7 +2304,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -2410,7 +2410,7 @@ ShallowWrapper {
             animationEasing="ease"
             data={Array []}
             dataKey="periodicInventory"
-            fill="#621F95"
+            fill="#5A288F"
             hide={false}
             isAnimationActive={true}
             layout="vertical"
@@ -2510,7 +2510,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -2616,7 +2616,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -2734,7 +2734,7 @@ ShallowWrapper {
               "fillOpacity": 1,
               "ifOverflow": "discard",
               "isFront": false,
-              "stroke": "#2670AE",
+              "stroke": "#1A4B8A",
               "strokeWidth": 1,
               "xAxisId": 0,
               "y": 0,
@@ -2883,7 +2883,7 @@ ShallowWrapper {
               "animationEasing": "ease",
               "data": Array [],
               "dataKey": "periodicInventory",
-              "fill": "#621F95",
+              "fill": "#5A288F",
               "hide": false,
               "isAnimationActive": true,
               "layout": "vertical",
@@ -3051,7 +3051,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -3157,7 +3157,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -3276,7 +3276,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -3382,7 +3382,7 @@ ShallowWrapper {
               animationEasing="ease"
               data={Array []}
               dataKey="periodicInventory"
-              fill="#621F95"
+              fill="#5A288F"
               hide={false}
               isAnimationActive={true}
               layout="vertical"
@@ -3482,7 +3482,7 @@ ShallowWrapper {
                 fillOpacity={1}
                 ifOverflow="discard"
                 isFront={false}
-                stroke="#2670AE"
+                stroke="#1A4B8A"
                 strokeWidth={1}
                 xAxisId={0}
                 y={0}
@@ -3588,7 +3588,7 @@ ShallowWrapper {
                 animationEasing="ease"
                 data={Array []}
                 dataKey="periodicInventory"
-                fill="#621F95"
+                fill="#5A288F"
                 hide={false}
                 isAnimationActive={true}
                 layout="vertical"
@@ -3706,7 +3706,7 @@ ShallowWrapper {
                 "fillOpacity": 1,
                 "ifOverflow": "discard",
                 "isFront": false,
-                "stroke": "#2670AE",
+                "stroke": "#1A4B8A",
                 "strokeWidth": 1,
                 "xAxisId": 0,
                 "y": 0,
@@ -3855,7 +3855,7 @@ ShallowWrapper {
                 "animationEasing": "ease",
                 "data": Array [],
                 "dataKey": "periodicInventory",
-                "fill": "#621F95",
+                "fill": "#5A288F",
                 "hide": false,
                 "isAnimationActive": true,
                 "layout": "vertical",

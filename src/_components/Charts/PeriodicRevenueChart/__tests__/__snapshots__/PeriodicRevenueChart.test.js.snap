@@ -80,7 +80,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -305,7 +305,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -511,7 +511,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -735,7 +735,7 @@ ShallowWrapper {
               "fillOpacity": 1,
               "ifOverflow": "discard",
               "isFront": false,
-              "stroke": "#2670AE",
+              "stroke": "#1A4B8A",
               "strokeWidth": 1,
               "xAxisId": 0,
               "y": 0,
@@ -1052,7 +1052,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -1277,7 +1277,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -1483,7 +1483,7 @@ ShallowWrapper {
                 fillOpacity={1}
                 ifOverflow="discard"
                 isFront={false}
-                stroke="#2670AE"
+                stroke="#1A4B8A"
                 strokeWidth={1}
                 xAxisId={0}
                 y={0}
@@ -1707,7 +1707,7 @@ ShallowWrapper {
                 "fillOpacity": 1,
                 "ifOverflow": "discard",
                 "isFront": false,
-                "stroke": "#2670AE",
+                "stroke": "#1A4B8A",
                 "strokeWidth": 1,
                 "xAxisId": 0,
                 "y": 0,
@@ -2079,7 +2079,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -2304,7 +2304,7 @@ ShallowWrapper {
             fillOpacity={1}
             ifOverflow="discard"
             isFront={false}
-            stroke="#2670AE"
+            stroke="#1A4B8A"
             strokeWidth={1}
             xAxisId={0}
             y={0}
@@ -2510,7 +2510,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -2734,7 +2734,7 @@ ShallowWrapper {
               "fillOpacity": 1,
               "ifOverflow": "discard",
               "isFront": false,
-              "stroke": "#2670AE",
+              "stroke": "#1A4B8A",
               "strokeWidth": 1,
               "xAxisId": 0,
               "y": 0,
@@ -3051,7 +3051,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -3276,7 +3276,7 @@ ShallowWrapper {
               fillOpacity={1}
               ifOverflow="discard"
               isFront={false}
-              stroke="#2670AE"
+              stroke="#1A4B8A"
               strokeWidth={1}
               xAxisId={0}
               y={0}
@@ -3482,7 +3482,7 @@ ShallowWrapper {
                 fillOpacity={1}
                 ifOverflow="discard"
                 isFront={false}
-                stroke="#2670AE"
+                stroke="#1A4B8A"
                 strokeWidth={1}
                 xAxisId={0}
                 y={0}
@@ -3706,7 +3706,7 @@ ShallowWrapper {
                 "fillOpacity": 1,
                 "ifOverflow": "discard",
                 "isFront": false,
-                "stroke": "#2670AE",
+                "stroke": "#1A4B8A",
                 "strokeWidth": 1,
                 "xAxisId": 0,
                 "y": 0,
