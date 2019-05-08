@@ -77,7 +77,7 @@ type State = {
   showMenu: boolean
 };
 
-const PositionBox = Box.extend`
+const PositionBox = styled(Box)`
   position: relative;
 `;
 

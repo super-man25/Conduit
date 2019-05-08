@@ -1,5 +1,6 @@
 // @flow
 
+import styled from 'styled-components';
 import {
   Breadcrumbs,
   Flex,
@@ -12,7 +13,7 @@ import {
 import React from 'react';
 import ContactInfoContainer from './containers/ContactInfoContainer';
 
-const UserWrapper = Flex.extend`
+const UserWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: left;
   min-width: 100%;

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with props 1`] = `
-.c4 {
+.c3 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c4 path {
+.c3 path {
   fill: #FFFFFF;
 }
 
-.c6 {
+.c5 {
   display: block;
   color: #FFFFFF;
   font-size: 16px;
@@ -29,14 +29,14 @@ exports[`renders correctly with props 1`] = `
   background-color: #38A9DB;
 }
 
-.c6:hover {
+.c5:hover {
   cursor: pointer;
   color: #FFFFFF;
   background-color: #2670AE;
   border-color: #2670AE;
 }
 
-.c6::before {
+.c5::before {
   content: ' 
 
 
@@ -91,17 +91,11 @@ exports[`renders correctly with props 1`] = `
 
 
 
-
-
-.c1 {;
-}
-
-.c2 {
-  position: relative;
+.c1{position:relative;
   cursor: pointer;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   width: 180px;
   top: calc(100% + 8px);
@@ -126,7 +120,7 @@ exports[`renders correctly with props 1`] = `
   background: 'none';
 }
 
-.c3 {
+.c2 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -136,7 +130,7 @@ exports[`renders correctly with props 1`] = `
   color: #FFFFFF;
 }
 
-.c7 {
+.c6 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -155,20 +149,20 @@ exports[`renders correctly with props 1`] = `
   >
     <div>
       <div
-        className="c1 c2"
+        className="c1"
         onClick={[Function]}
       >
         <div
           className=""
         >
           <h4
-            className="c3"
+            className="c2"
             color="#070707"
           >
             Select a Season
           </h4>
           <svg
-            className="c4"
+            className="c3"
             color="#FFFFFF"
             viewBox="0 0 24 24"
             width="24px"
@@ -179,12 +173,13 @@ exports[`renders correctly with props 1`] = `
           </svg>
         </div>
         <div
-          className="c5"
+          className="c4"
         />
       </div>
     </div>
     <button
-      className="c6"
+      className="c5"
+      direction="<"
       onClick={[MockFunction]}
     />
   </div>
@@ -196,7 +191,7 @@ exports[`renders correctly with props 1`] = `
       className=""
     >
       <h3
-        className="c7"
+        className="c6"
         color="#024A8F"
       >
         0.909
@@ -214,7 +209,7 @@ exports[`renders correctly with props 1`] = `
       className=""
     >
       <h3
-        className="c7"
+        className="c6"
         color="#024A8F"
       >
         --
@@ -233,16 +228,16 @@ exports[`renders correctly with props 1`] = `
 `;
 
 exports[`renders correctly with toggledSidebar 1`] = `
-.c4 {
+.c3 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c4 path {
+.c3 path {
   fill: #FFFFFF;
 }
 
-.c6 {
+.c5 {
   display: block;
   color: #FFFFFF;
   font-size: 16px;
@@ -261,14 +256,14 @@ exports[`renders correctly with toggledSidebar 1`] = `
   background-color: #38A9DB;
 }
 
-.c6:hover {
+.c5:hover {
   cursor: pointer;
   color: #FFFFFF;
   background-color: #2670AE;
   border-color: #2670AE;
 }
 
-.c6::before {
+.c5::before {
   content: ' 
 
 
@@ -323,17 +318,11 @@ exports[`renders correctly with toggledSidebar 1`] = `
 
 
 
-
-
-.c1 {;
-}
-
-.c2 {
-  position: relative;
+.c1{position:relative;
   cursor: pointer;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   width: 180px;
   top: calc(100% + 8px);
@@ -358,7 +347,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   background: 'none';
 }
 
-.c3 {
+.c2 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -368,7 +357,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   color: #FFFFFF;
 }
 
-.c7 {
+.c6 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -387,20 +376,20 @@ exports[`renders correctly with toggledSidebar 1`] = `
   >
     <div>
       <div
-        className="c1 c2"
+        className="c1"
         onClick={[Function]}
       >
         <div
           className=""
         >
           <h4
-            className="c3"
+            className="c2"
             color="#070707"
           >
             Select a Season
           </h4>
           <svg
-            className="c4"
+            className="c3"
             color="#FFFFFF"
             viewBox="0 0 24 24"
             width="24px"
@@ -411,12 +400,13 @@ exports[`renders correctly with toggledSidebar 1`] = `
           </svg>
         </div>
         <div
-          className="c5"
+          className="c4"
         />
       </div>
     </div>
     <button
-      className="c6"
+      className="c5"
+      direction="<"
       onClick={[MockFunction]}
     />
   </div>
@@ -428,7 +418,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className=""
     >
       <h3
-        className="c7"
+        className="c6"
         color="#024A8F"
       >
         0.909
@@ -446,7 +436,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       className=""
     >
       <h3
-        className="c7"
+        className="c6"
         color="#024A8F"
       >
         --

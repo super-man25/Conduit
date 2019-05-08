@@ -23,7 +23,7 @@ export const SettingButton: React.ComponentType<Props> = styled.div`
 `;
 
 // $FlowFixMe
-export const SettingEditButton = SettingButton.extend`
+export const SettingEditButton = styled(SettingButton)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   ::before {
     content: 'EDIT';
@@ -31,7 +31,7 @@ export const SettingEditButton = SettingButton.extend`
 `;
 
 // $FlowFixMe
-export const SettingSaveButton = SettingButton.extend`
+export const SettingSaveButton = styled(SettingButton)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   ::before {
     content: 'SAVE';
@@ -39,7 +39,7 @@ export const SettingSaveButton = SettingButton.extend`
 `;
 
 // $FlowFixMe
-export const SettingCancelButton = SettingButton.extend`
+export const SettingCancelButton = styled(SettingButton)`
   color: ${lighten(0.2, cssConstants.SECONDARY_RED)};
   ::before {
     content: 'CANCEL';

@@ -19,7 +19,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": <Toggle
         isChecked="Data"
@@ -42,13 +42,89 @@ ShallowWrapper {
       "rendered": null,
       "type": [Function],
     },
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-dxgOiQ",
+        "isStatic": false,
+        "rules": Array [
+          "
+  width: ",
+          [Function],
+          ";
+  height: ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+        ],
+      },
+      "displayName": "Styled(styled.div)",
+      "foldedComponentIds": Array [
+        "sc-kpOJdX",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-dxgOiQ",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <Toggle
           isChecked="Data"
@@ -71,7 +147,83 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-dxgOiQ",
+          "isStatic": false,
+          "rules": Array [
+            "
+  width: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+          ],
+        },
+        "displayName": "Styled(styled.div)",
+        "foldedComponentIds": Array [
+          "sc-kpOJdX",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-dxgOiQ",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

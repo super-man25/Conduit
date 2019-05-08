@@ -12,7 +12,7 @@ const OverflowContent = styled.div`
   flex: 1;
 `;
 
-const Heading = H4.extend`
+const Heading = styled(H4)`
   margin: 0;
   padding: 0;
 `;

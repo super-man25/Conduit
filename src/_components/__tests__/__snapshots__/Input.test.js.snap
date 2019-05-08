@@ -44,7 +44,6 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 <input
-  bordercolor="#767676"
   className="c0"
   disabled={true}
 />
@@ -94,7 +93,6 @@ exports[`renders correctly with inValid prop 1`] = `
 }
 
 <input
-  bordercolor="#DC0A0A"
   className="c0"
 />
 `;
@@ -143,7 +141,6 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <input
-  bordercolor="#767676"
   className="c0"
 />
 `;
@@ -192,7 +189,6 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 <input
-  bordercolor="#399E5A"
   className="c0"
 />
 `;

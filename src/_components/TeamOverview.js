@@ -20,14 +20,14 @@ const TeamOverviewContainer = styled.div`
   background: 'none';
 `;
 
-const Heading = H4.extend`
+const Heading = styled(H4)`
   margin: 0;
   padding: 0;
   vertical-align: top;
   color: ${cssConstants.PRIMARY_WHITE};
 `;
 
-const StatLabel = H3.extend`
+const StatLabel = styled(H3)`
   margin: 0;
   padding: 0;
   color: ${cssConstants.PRIMARY_WHITE};

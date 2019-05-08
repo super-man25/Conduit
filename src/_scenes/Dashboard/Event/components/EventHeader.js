@@ -1,4 +1,6 @@
 // @flow
+
+import styled from 'styled-components';
 import * as React from 'react';
 import {
   H1,
@@ -22,28 +24,28 @@ import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
 import { selectors } from '_state/event';
 
-const ToggleButton = Button.extend`
+const ToggleButton = styled(Button)`
   margin: 0;
   margin-right: 1rem;
 `;
 
-const EventTitle = H1.extend`
+const EventTitle = styled(H1)`
   margin: 0;
   margin-bottom: 0.15rem;
 `;
 
-const EventDate = H4.extend`
+const EventDate = styled(H4)`
   color: ${cssConstants.SECONDARY_BLUE};
   margin: 0;
   margin-bottom: 0.15rem;
 `;
 
-const InventoryLink = S1.extend`
+const InventoryLink = styled(S1)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   text-decoration: underline;
 `;
 
-const ItalicS1 = S1.extend`
+const ItalicS1 = styled(S1)`
   font-style: italic;
 `;
 

@@ -5,7 +5,7 @@ import edLogoWhite from '_images/eventdynamiclogooutline.svg';
 import { H1 } from './StyledTags';
 import { Flex } from './Flex';
 
-const LogoContainer = Flex.extend`
+const LogoContainer = styled(Flex)`
   cursor: pointer;
 `;
 
@@ -15,7 +15,7 @@ const HeaderLogo = styled.img`
   margin-right: 1rem;
 `;
 
-const HeaderTitle = H1.extend`
+const HeaderTitle = styled(H1)`
   color: ${cssConstants.PRIMARY_WHITE};
   margin: 0;
   font-size: 1.5rem;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { Button, Input, Flex, Box } from '_components';
 
-export const ManualPricingInput = Input.extend`
+export const ManualPricingInput = styled(Input)`
   box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
@@ -10,7 +10,7 @@ export const ManualPricingInput = Input.extend`
   max-width: 80px;
 `;
 
-export const ManualPricingButton = Button.extend`
+export const ManualPricingButton = styled(Button)`
   box-sizing: border-box;
   margin: 0;
   max-width: 80px;
@@ -23,7 +23,7 @@ export const TableHeaderCell = styled.div`
   font-weight: 500;
 `;
 
-export const IconContainer = Flex.extend`
+export const IconContainer = styled(Flex)`
   display: inline-flex;
   cursor: pointer;
   position: absolute;
@@ -33,7 +33,7 @@ export const IconContainer = Flex.extend`
   opacity: 0.667;
 `;
 
-export const PositionedBox = Box.extend`
+export const PositionedBox = styled(Box)`
   position: ${(props) => props.position};
   top: ${(props) => props.top};
   bottom: ${(props) => props.bottom};
@@ -42,7 +42,7 @@ export const PositionedBox = Box.extend`
   z-index: ${(props) => props.zIndex};
 `;
 
-export const ScaleFilterContainer = Box.extend`
+export const ScaleFilterContainer = styled(Box)`
   width: 280px;
   border: 1px solid ${cssConstants.SECONDARY_BLUE};
   background-color: ${cssConstants.PRIMARY_WHITE};
@@ -79,7 +79,7 @@ export const ScaleFilterListItem = styled.li`
   align-items: center;
 `;
 
-export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
   margin-right: 0.5rem;
 `;
 

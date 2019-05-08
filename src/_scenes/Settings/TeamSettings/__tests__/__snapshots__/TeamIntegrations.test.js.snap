@@ -37,56 +37,56 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <styled.div>
-          <styled.h5
+        <ForwardRef>
+          <ForwardRef
             type="secondary"
           >
             Integrations
-          </styled.h5>
+          </ForwardRef>
           <React.Fragment>
-            <styled.span
+            <ForwardRef
               weight="300"
             >
               <i>
                 Primary Integration
               </i>
-            </styled.span>
-            <styled.hr />
-            <styled.div>
+            </ForwardRef>
+            <ForwardRef />
+            <ForwardRef>
               <Integration
                 isActive={true}
                 isPrimary={true}
                 name="tickets.com"
                 onChange={[Function]}
               />
-            </styled.div>
+            </ForwardRef>
           </React.Fragment>
-        </styled.div>,
-        <styled.div
+        </ForwardRef>,
+        <ForwardRef
           marginTop="4rem"
         >
           <React.Fragment>
-            <styled.span
+            <ForwardRef
               weight="300"
             >
               <i>
                 Secondary Integrations
               </i>
-            </styled.span>
-            <styled.hr />
-            <styled.div>
+            </ForwardRef>
+            <ForwardRef />
+            <ForwardRef>
               <Integration
                 isActive={true}
                 isPrimary={false}
                 name="seatgeek.com"
                 onChange={[Function]}
               />
-            </styled.div>
+            </ForwardRef>
           </React.Fragment>
-        </styled.div>,
+        </ForwardRef>,
         null,
       ],
     },
@@ -95,31 +95,31 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": Array [
-            <styled.h5
+            <ForwardRef
               type="secondary"
             >
               Integrations
-            </styled.h5>,
+            </ForwardRef>,
             <React.Fragment>
-              <styled.span
+              <ForwardRef
                 weight="300"
               >
                 <i>
                   Primary Integration
                 </i>
-              </styled.span>
-              <styled.hr />
-              <styled.div>
+              </ForwardRef>
+              <ForwardRef />
+              <ForwardRef>
                 <Integration
                   isActive={true}
                   isPrimary={true}
                   name="tickets.com"
                   onChange={[Function]}
                 />
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>,
           ],
         },
@@ -128,14 +128,44 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "Integrations",
               "type": "secondary",
             },
             "ref": null,
             "rendered": "Integrations",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [
+                [Function],
+              ],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-cSHVUG",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  color: ",
+                  [Function],
+                  ";
+  font-size: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+",
+                ],
+              },
+              "displayName": "styled.h5",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-cSHVUG",
+              "target": "h5",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
@@ -143,22 +173,22 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                <styled.span
+                <ForwardRef
                   weight="300"
                 >
                   <i>
                     Primary Integration
                   </i>
-                </styled.span>,
-                <styled.hr />,
-                <styled.div>
+                </ForwardRef>,
+                <ForwardRef />,
+                <ForwardRef>
                   <Integration
                     isActive={true}
                     isPrimary={true}
                     name="tickets.com"
                     onChange={[Function]}
                   />
-                </styled.div>,
+                </ForwardRef>,
               ],
             },
             "ref": null,
@@ -166,7 +196,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": <i>
                     Primary Integration
@@ -185,21 +215,76 @@ ShallowWrapper {
                   "rendered": "Primary Integration",
                   "type": "i",
                 },
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-chPdSV",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  color: ",
+                      [Function],
+                      ";
+  font-size: ",
+                      [Function],
+                      ";
+  font-weight: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-chPdSV",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {},
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kGXeez",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  width: 100%;
+  opacity: 0.5;
+  margin: ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "displayName": "styled.hr",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kGXeez",
+                  "target": "hr",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": Array [
                     <Integration
@@ -227,36 +312,136 @@ ShallowWrapper {
                     "type": [Function],
                   },
                 ],
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-eilVRo",
+                    "isStatic": true,
+                    "rules": Array [
+                      "
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem 2rem;
+  width: 70%;
+  margin: 0.5rem 0;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-eilVRo",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
             ],
             "type": Symbol(react.fragment),
           },
         ],
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-dxgOiQ",
+            "isStatic": false,
+            "rules": Array [
+              "
+  width: ",
+              [Function],
+              ";
+  height: ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Styled(styled.div)",
+          "foldedComponentIds": Array [
+            "sc-kpOJdX",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-dxgOiQ",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": <React.Fragment>
-            <styled.span
+            <ForwardRef
               weight="300"
             >
               <i>
                 Secondary Integrations
               </i>
-            </styled.span>
-            <styled.hr />
-            <styled.div>
+            </ForwardRef>
+            <ForwardRef />
+            <ForwardRef>
               <Integration
                 isActive={true}
                 isPrimary={false}
                 name="seatgeek.com"
                 onChange={[Function]}
               />
-            </styled.div>
+            </ForwardRef>
           </React.Fragment>,
           "marginTop": "4rem",
         },
@@ -267,22 +452,22 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              <styled.span
+              <ForwardRef
                 weight="300"
               >
                 <i>
                   Secondary Integrations
                 </i>
-              </styled.span>,
-              <styled.hr />,
-              <styled.div>
+              </ForwardRef>,
+              <ForwardRef />,
+              <ForwardRef>
                 <Integration
                   isActive={true}
                   isPrimary={false}
                   name="seatgeek.com"
                   onChange={[Function]}
                 />
-              </styled.div>,
+              </ForwardRef>,
             ],
           },
           "ref": null,
@@ -290,7 +475,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": <i>
                   Secondary Integrations
@@ -309,21 +494,76 @@ ShallowWrapper {
                 "rendered": "Secondary Integrations",
                 "type": "i",
               },
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-chPdSV",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  color: ",
+                    [Function],
+                    ";
+  font-size: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "displayName": "styled.span",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-chPdSV",
+                "target": "span",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {},
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-kGXeez",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  width: 100%;
+  opacity: 0.5;
+  margin: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "displayName": "styled.hr",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-kGXeez",
+                "target": "hr",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": Array [
                   <Integration
@@ -351,71 +591,288 @@ ShallowWrapper {
                   "type": [Function],
                 },
               ],
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-eilVRo",
+                  "isStatic": true,
+                  "rules": Array [
+                    "
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem 2rem;
+  width: 70%;
+  margin: 0.5rem 0;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-eilVRo",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
           ],
           "type": Symbol(react.fragment),
         },
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-dxgOiQ",
+            "isStatic": false,
+            "rules": Array [
+              "
+  width: ",
+              [Function],
+              ";
+  height: ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Styled(styled.div)",
+          "foldedComponentIds": Array [
+            "sc-kpOJdX",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-dxgOiQ",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       null,
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-gHboQg",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: ",
+          [Function],
+          ";
+  flex: ",
+          [Function],
+          ";
+  flex-direction: ",
+          [Function],
+          "
+  flex-grow: ",
+          [Function],
+          ";
+  flex-shrink: ",
+          [Function],
+          ";
+  flex-basis: ",
+          [Function],
+          ";
+  flex-wrap: ",
+          [Function],
+          ";
+  order: ",
+          [Function],
+          ";
+  justify-content: ",
+          [Function],
+          ";
+  align-items: ",
+          [Function],
+          ";
+  align-content: ",
+          [Function],
+          ";
+  align-self: ",
+          [Function],
+          ";
+  height: ",
+          [Function],
+          ";
+  width: ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+          "
+  flex-direction: column;
+  justify-content: space-between;
+",
+        ],
+      },
+      "displayName": "Styled(Flex)",
+      "foldedComponentIds": Array [
+        "sc-eNQAEJ",
+        "sc-hMqMXs",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-gHboQg",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <styled.div>
-            <styled.h5
+          <ForwardRef>
+            <ForwardRef
               type="secondary"
             >
               Integrations
-            </styled.h5>
+            </ForwardRef>
             <React.Fragment>
-              <styled.span
+              <ForwardRef
                 weight="300"
               >
                 <i>
                   Primary Integration
                 </i>
-              </styled.span>
-              <styled.hr />
-              <styled.div>
+              </ForwardRef>
+              <ForwardRef />
+              <ForwardRef>
                 <Integration
                   isActive={true}
                   isPrimary={true}
                   name="tickets.com"
                   onChange={[Function]}
                 />
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>
-          </styled.div>,
-          <styled.div
+          </ForwardRef>,
+          <ForwardRef
             marginTop="4rem"
           >
             <React.Fragment>
-              <styled.span
+              <ForwardRef
                 weight="300"
               >
                 <i>
                   Secondary Integrations
                 </i>
-              </styled.span>
-              <styled.hr />
-              <styled.div>
+              </ForwardRef>
+              <ForwardRef />
+              <ForwardRef>
                 <Integration
                   isActive={true}
                   isPrimary={false}
                   name="seatgeek.com"
                   onChange={[Function]}
                 />
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>
-          </styled.div>,
+          </ForwardRef>,
           null,
         ],
       },
@@ -424,31 +881,31 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": Array [
-              <styled.h5
+              <ForwardRef
                 type="secondary"
               >
                 Integrations
-              </styled.h5>,
+              </ForwardRef>,
               <React.Fragment>
-                <styled.span
+                <ForwardRef
                   weight="300"
                 >
                   <i>
                     Primary Integration
                   </i>
-                </styled.span>
-                <styled.hr />
-                <styled.div>
+                </ForwardRef>
+                <ForwardRef />
+                <ForwardRef>
                   <Integration
                     isActive={true}
                     isPrimary={true}
                     name="tickets.com"
                     onChange={[Function]}
                   />
-                </styled.div>
+                </ForwardRef>
               </React.Fragment>,
             ],
           },
@@ -457,14 +914,44 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "Integrations",
                 "type": "secondary",
               },
               "ref": null,
               "rendered": "Integrations",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [
+                  [Function],
+                ],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-cSHVUG",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  color: ",
+                    [Function],
+                    ";
+  font-size: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+",
+                  ],
+                },
+                "displayName": "styled.h5",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-cSHVUG",
+                "target": "h5",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
@@ -472,22 +959,22 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": Array [
-                  <styled.span
+                  <ForwardRef
                     weight="300"
                   >
                     <i>
                       Primary Integration
                     </i>
-                  </styled.span>,
-                  <styled.hr />,
-                  <styled.div>
+                  </ForwardRef>,
+                  <ForwardRef />,
+                  <ForwardRef>
                     <Integration
                       isActive={true}
                       isPrimary={true}
                       name="tickets.com"
                       onChange={[Function]}
                     />
-                  </styled.div>,
+                  </ForwardRef>,
                 ],
               },
               "ref": null,
@@ -495,7 +982,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": <i>
                       Primary Integration
@@ -514,21 +1001,76 @@ ShallowWrapper {
                     "rendered": "Primary Integration",
                     "type": "i",
                   },
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-chPdSV",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  font-weight: ",
+                        [Function],
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "styled.span",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-chPdSV",
+                    "target": "span",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {},
                   "ref": null,
                   "rendered": null,
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-kGXeez",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  width: 100%;
+  opacity: 0.5;
+  margin: ",
+                        [Function],
+                        ";
+  color: ",
+                        [Function],
+                        ";
+",
+                      ],
+                    },
+                    "displayName": "styled.hr",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-kGXeez",
+                    "target": "hr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": Array [
                       <Integration
@@ -556,36 +1098,136 @@ ShallowWrapper {
                       "type": [Function],
                     },
                   ],
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-eilVRo",
+                      "isStatic": true,
+                      "rules": Array [
+                        "
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem 2rem;
+  width: 70%;
+  margin: 0.5rem 0;
+",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-eilVRo",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
               ],
               "type": Symbol(react.fragment),
             },
           ],
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-dxgOiQ",
+              "isStatic": false,
+              "rules": Array [
+                "
+  width: ",
+                [Function],
+                ";
+  height: ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+              ],
+            },
+            "displayName": "Styled(styled.div)",
+            "foldedComponentIds": Array [
+              "sc-kpOJdX",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-dxgOiQ",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": <React.Fragment>
-              <styled.span
+              <ForwardRef
                 weight="300"
               >
                 <i>
                   Secondary Integrations
                 </i>
-              </styled.span>
-              <styled.hr />
-              <styled.div>
+              </ForwardRef>
+              <ForwardRef />
+              <ForwardRef>
                 <Integration
                   isActive={true}
                   isPrimary={false}
                   name="seatgeek.com"
                   onChange={[Function]}
                 />
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>,
             "marginTop": "4rem",
           },
@@ -596,22 +1238,22 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                <styled.span
+                <ForwardRef
                   weight="300"
                 >
                   <i>
                     Secondary Integrations
                   </i>
-                </styled.span>,
-                <styled.hr />,
-                <styled.div>
+                </ForwardRef>,
+                <ForwardRef />,
+                <ForwardRef>
                   <Integration
                     isActive={true}
                     isPrimary={false}
                     name="seatgeek.com"
                     onChange={[Function]}
                   />
-                </styled.div>,
+                </ForwardRef>,
               ],
             },
             "ref": null,
@@ -619,7 +1261,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": <i>
                     Secondary Integrations
@@ -638,21 +1280,76 @@ ShallowWrapper {
                   "rendered": "Secondary Integrations",
                   "type": "i",
                 },
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-chPdSV",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  color: ",
+                      [Function],
+                      ";
+  font-size: ",
+                      [Function],
+                      ";
+  font-weight: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-chPdSV",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {},
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kGXeez",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  width: 100%;
+  opacity: 0.5;
+  margin: ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  },
+                  "displayName": "styled.hr",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kGXeez",
+                  "target": "hr",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": Array [
                     <Integration
@@ -680,16 +1377,233 @@ ShallowWrapper {
                     "type": [Function],
                   },
                 ],
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-eilVRo",
+                    "isStatic": true,
+                    "rules": Array [
+                      "
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem 2rem;
+  width: 70%;
+  margin: 0.5rem 0;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-eilVRo",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
             ],
             "type": Symbol(react.fragment),
           },
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-dxgOiQ",
+              "isStatic": false,
+              "rules": Array [
+                "
+  width: ",
+                [Function],
+                ";
+  height: ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+              ],
+            },
+            "displayName": "Styled(styled.div)",
+            "foldedComponentIds": Array [
+              "sc-kpOJdX",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-dxgOiQ",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         null,
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-gHboQg",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: ",
+            [Function],
+            ";
+  flex: ",
+            [Function],
+            ";
+  flex-direction: ",
+            [Function],
+            "
+  flex-grow: ",
+            [Function],
+            ";
+  flex-shrink: ",
+            [Function],
+            ";
+  flex-basis: ",
+            [Function],
+            ";
+  flex-wrap: ",
+            [Function],
+            ";
+  order: ",
+            [Function],
+            ";
+  justify-content: ",
+            [Function],
+            ";
+  align-items: ",
+            [Function],
+            ";
+  align-content: ",
+            [Function],
+            ";
+  align-self: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+  width: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+            "
+  flex-direction: column;
+  justify-content: space-between;
+",
+          ],
+        },
+        "displayName": "Styled(Flex)",
+        "foldedComponentIds": Array [
+          "sc-eNQAEJ",
+          "sc-hMqMXs",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-gHboQg",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

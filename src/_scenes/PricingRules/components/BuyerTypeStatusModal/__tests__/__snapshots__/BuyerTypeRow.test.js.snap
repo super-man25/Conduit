@@ -26,11 +26,11 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "align": "center",
       "children": Array [
-        <Flex
+        <ForwardRef
           flexBasis="10%"
           style={
             Object {
@@ -39,7 +39,7 @@ ShallowWrapper {
           }
           title={null}
         />,
-        <Flex
+        <ForwardRef
           flexBasis="20%"
         >
           <Toggle
@@ -48,11 +48,11 @@ ShallowWrapper {
             onChange={[Function]}
             size="small"
           />
-        </Flex>,
-        <styled.p
+        </ForwardRef>,
+        <ForwardRef
           basis="20%"
         />,
-        <styled.p
+        <ForwardRef
           basis="60%"
         />,
       ],
@@ -62,7 +62,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": false,
           "flexBasis": "10%",
@@ -73,12 +73,124 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": false,
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-hMqMXs",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: ",
+              [Function],
+              ";
+  flex: ",
+              [Function],
+              ";
+  flex-direction: ",
+              [Function],
+              "
+  flex-grow: ",
+              [Function],
+              ";
+  flex-shrink: ",
+              [Function],
+              ";
+  flex-basis: ",
+              [Function],
+              ";
+  flex-wrap: ",
+              [Function],
+              ";
+  order: ",
+              [Function],
+              ";
+  justify-content: ",
+              [Function],
+              ";
+  align-items: ",
+              [Function],
+              ";
+  align-content: ",
+              [Function],
+              ";
+  align-self: ",
+              [Function],
+              ";
+  height: ",
+              [Function],
+              ";
+  width: ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Flex",
+          "foldedComponentIds": Array [
+            "sc-eNQAEJ",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-hMqMXs",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": <Toggle
             isChecked={true}
@@ -103,44 +215,489 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-hMqMXs",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: ",
+              [Function],
+              ";
+  flex: ",
+              [Function],
+              ";
+  flex-direction: ",
+              [Function],
+              "
+  flex-grow: ",
+              [Function],
+              ";
+  flex-shrink: ",
+              [Function],
+              ";
+  flex-basis: ",
+              [Function],
+              ";
+  flex-wrap: ",
+              [Function],
+              ";
+  order: ",
+              [Function],
+              ";
+  justify-content: ",
+              [Function],
+              ";
+  align-items: ",
+              [Function],
+              ";
+  align-content: ",
+              [Function],
+              ";
+  align-self: ",
+              [Function],
+              ";
+  height: ",
+              [Function],
+              ";
+  width: ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Flex",
+          "foldedComponentIds": Array [
+            "sc-eNQAEJ",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-hMqMXs",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "basis": "20%",
           "children": undefined,
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-eilVRo",
+            "isStatic": false,
+            "rules": Array [
+              "
+  font-size: ",
+              [Function],
+              ";
+  font-weight: ",
+              [Function],
+              ";
+  color: ",
+              [Function],
+              ";
+  margin: ",
+              [Function],
+              ";
+  text-align: ",
+              [Function],
+              ";
+  opacity: ",
+              [Function],
+              ";
+  cursor: ",
+              [Function],
+              ";
+
+  ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+              "
+  flex-basis: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "Styled(Styled(styled.p))",
+          "foldedComponentIds": Array [
+            "sc-ckVGcZ",
+            "sc-jKJlTe",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-eilVRo",
+          "target": "p",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "basis": "60%",
           "children": undefined,
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-eilVRo",
+            "isStatic": false,
+            "rules": Array [
+              "
+  font-size: ",
+              [Function],
+              ";
+  font-weight: ",
+              [Function],
+              ";
+  color: ",
+              [Function],
+              ";
+  margin: ",
+              [Function],
+              ";
+  text-align: ",
+              [Function],
+              ";
+  opacity: ",
+              [Function],
+              ";
+  cursor: ",
+              [Function],
+              ";
+
+  ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+              "
+  flex-basis: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "Styled(Styled(styled.p))",
+          "foldedComponentIds": Array [
+            "sc-ckVGcZ",
+            "sc-jKJlTe",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-eilVRo",
+          "target": "p",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-gHboQg",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: ",
+          [Function],
+          ";
+  flex: ",
+          [Function],
+          ";
+  flex-direction: ",
+          [Function],
+          "
+  flex-grow: ",
+          [Function],
+          ";
+  flex-shrink: ",
+          [Function],
+          ";
+  flex-basis: ",
+          [Function],
+          ";
+  flex-wrap: ",
+          [Function],
+          ";
+  order: ",
+          [Function],
+          ";
+  justify-content: ",
+          [Function],
+          ";
+  align-items: ",
+          [Function],
+          ";
+  align-content: ",
+          [Function],
+          ";
+  align-self: ",
+          [Function],
+          ";
+  height: ",
+          [Function],
+          ";
+  width: ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+          "
+  padding: 0 2rem;
+  min-height: 45px;
+  width: 100%;
+  background-color: ",
+          "#F8F8F8",
+          ";
+
+  border-bottom: 1px solid ",
+          "#EEEEEE",
+          ";
+
+  :hover {
+    background-color: ",
+          "#f2f2f2",
+          ";
+  }
+",
+        ],
+      },
+      "displayName": "Styled(Flex)",
+      "foldedComponentIds": Array [
+        "sc-eNQAEJ",
+        "sc-hMqMXs",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-gHboQg",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "align": "center",
         "children": Array [
-          <Flex
+          <ForwardRef
             flexBasis="10%"
             style={
               Object {
@@ -149,7 +706,7 @@ ShallowWrapper {
             }
             title={null}
           />,
-          <Flex
+          <ForwardRef
             flexBasis="20%"
           >
             <Toggle
@@ -158,11 +715,11 @@ ShallowWrapper {
               onChange={[Function]}
               size="small"
             />
-          </Flex>,
-          <styled.p
+          </ForwardRef>,
+          <ForwardRef
             basis="20%"
           />,
-          <styled.p
+          <ForwardRef
             basis="60%"
           />,
         ],
@@ -172,7 +729,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": false,
             "flexBasis": "10%",
@@ -183,12 +740,124 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": false,
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-hMqMXs",
+              "isStatic": false,
+              "rules": Array [
+                "
+  display: ",
+                [Function],
+                ";
+  flex: ",
+                [Function],
+                ";
+  flex-direction: ",
+                [Function],
+                "
+  flex-grow: ",
+                [Function],
+                ";
+  flex-shrink: ",
+                [Function],
+                ";
+  flex-basis: ",
+                [Function],
+                ";
+  flex-wrap: ",
+                [Function],
+                ";
+  order: ",
+                [Function],
+                ";
+  justify-content: ",
+                [Function],
+                ";
+  align-items: ",
+                [Function],
+                ";
+  align-content: ",
+                [Function],
+                ";
+  align-self: ",
+                [Function],
+                ";
+  height: ",
+                [Function],
+                ";
+  width: ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+              ],
+            },
+            "displayName": "Flex",
+            "foldedComponentIds": Array [
+              "sc-eNQAEJ",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-hMqMXs",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": <Toggle
               isChecked={true}
@@ -213,34 +882,479 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-hMqMXs",
+              "isStatic": false,
+              "rules": Array [
+                "
+  display: ",
+                [Function],
+                ";
+  flex: ",
+                [Function],
+                ";
+  flex-direction: ",
+                [Function],
+                "
+  flex-grow: ",
+                [Function],
+                ";
+  flex-shrink: ",
+                [Function],
+                ";
+  flex-basis: ",
+                [Function],
+                ";
+  flex-wrap: ",
+                [Function],
+                ";
+  order: ",
+                [Function],
+                ";
+  justify-content: ",
+                [Function],
+                ";
+  align-items: ",
+                [Function],
+                ";
+  align-content: ",
+                [Function],
+                ";
+  align-self: ",
+                [Function],
+                ";
+  height: ",
+                [Function],
+                ";
+  width: ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+              ],
+            },
+            "displayName": "Flex",
+            "foldedComponentIds": Array [
+              "sc-eNQAEJ",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-hMqMXs",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "basis": "20%",
             "children": undefined,
           },
           "ref": null,
           "rendered": null,
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-eilVRo",
+              "isStatic": false,
+              "rules": Array [
+                "
+  font-size: ",
+                [Function],
+                ";
+  font-weight: ",
+                [Function],
+                ";
+  color: ",
+                [Function],
+                ";
+  margin: ",
+                [Function],
+                ";
+  text-align: ",
+                [Function],
+                ";
+  opacity: ",
+                [Function],
+                ";
+  cursor: ",
+                [Function],
+                ";
+
+  ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+                "
+  flex-basis: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "Styled(Styled(styled.p))",
+            "foldedComponentIds": Array [
+              "sc-ckVGcZ",
+              "sc-jKJlTe",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-eilVRo",
+            "target": "p",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "basis": "60%",
             "children": undefined,
           },
           "ref": null,
           "rendered": null,
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-eilVRo",
+              "isStatic": false,
+              "rules": Array [
+                "
+  font-size: ",
+                [Function],
+                ";
+  font-weight: ",
+                [Function],
+                ";
+  color: ",
+                [Function],
+                ";
+  margin: ",
+                [Function],
+                ";
+  text-align: ",
+                [Function],
+                ";
+  opacity: ",
+                [Function],
+                ";
+  cursor: ",
+                [Function],
+                ";
+
+  ",
+                [Function],
+                ";
+",
+                "
+    margin: ",
+                [Function],
+                ";
+    margin-top: ",
+                [Function],
+                ";
+    margin-bottom: ",
+                [Function],
+                ";
+    margin-left: ",
+                [Function],
+                ";
+    margin-right: ",
+                [Function],
+                ";
+
+    padding: ",
+                [Function],
+                ";
+    padding-top: ",
+                [Function],
+                ";
+    padding-bottom: ",
+                [Function],
+                ";
+    padding-left: ",
+                [Function],
+                ";
+    padding-right: ",
+                [Function],
+                ";
+
+    border: ",
+                [Function],
+                ";
+    border-top: ",
+                [Function],
+                ";
+    border-bottom: ",
+                [Function],
+                ";
+    border-left: ",
+                [Function],
+                ";
+    border-right: ",
+                [Function],
+                ";
+  ",
+                "
+  flex-basis: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "Styled(Styled(styled.p))",
+            "foldedComponentIds": Array [
+              "sc-ckVGcZ",
+              "sc-jKJlTe",
+            ],
+            "render": [Function],
+            "styledComponentId": "sc-eilVRo",
+            "target": "p",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-gHboQg",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: ",
+            [Function],
+            ";
+  flex: ",
+            [Function],
+            ";
+  flex-direction: ",
+            [Function],
+            "
+  flex-grow: ",
+            [Function],
+            ";
+  flex-shrink: ",
+            [Function],
+            ";
+  flex-basis: ",
+            [Function],
+            ";
+  flex-wrap: ",
+            [Function],
+            ";
+  order: ",
+            [Function],
+            ";
+  justify-content: ",
+            [Function],
+            ";
+  align-items: ",
+            [Function],
+            ";
+  align-content: ",
+            [Function],
+            ";
+  align-self: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+  width: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+            "
+  padding: 0 2rem;
+  min-height: 45px;
+  width: 100%;
+  background-color: ",
+            "#F8F8F8",
+            ";
+
+  border-bottom: 1px solid ",
+            "#EEEEEE",
+            ";
+
+  :hover {
+    background-color: ",
+            "#f2f2f2",
+            ";
+  }
+",
+          ],
+        },
+        "displayName": "Styled(Flex)",
+        "foldedComponentIds": Array [
+          "sc-eNQAEJ",
+          "sc-hMqMXs",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-gHboQg",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

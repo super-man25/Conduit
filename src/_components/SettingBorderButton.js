@@ -15,12 +15,10 @@ const TYPES = new Map()
   .set('danger', cssConstants.SECONDARY_RED);
 
 export const SettingBorderButton: React.ComponentType<Props> = styled.button.attrs(
-  {
-    color: (props) =>
-      TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE,
-    bordercolor: (props) =>
-      TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE
-  }
+  (props) => ({
+    color: TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE,
+    bordercolor: TYPES.get(props.type) || cssConstants.SECONDARY_LIGHTEST_BLUE
+  })
 )`
   text-transform: uppercase;
   width: 5.5rem;

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   H1,
   Spacing,
@@ -14,11 +15,11 @@ import { connect } from 'react-redux';
 import { selectors } from '_state/season';
 import { createStructuredSelector } from 'reselect';
 
-const SeasonOverviewTitle = H1.extend`
+const SeasonOverviewTitle = styled(H1)`
   margin: ${(props) => (props.sidebarIsOpen ? '0' : '0 0 0 1rem')};
 `;
 
-const ToggleButton = Button.extend`
+const ToggleButton = styled(Button)`
   margin: 0;
 `;
 

@@ -54,27 +54,217 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": "2 Price Scales",
       "title": " DUGOUT, GOLD",
     },
     "ref": null,
     "rendered": "2 Price Scales",
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-jKJlTe",
+        "isStatic": false,
+        "rules": Array [
+          "
+  font-size: ",
+          [Function],
+          ";
+  font-weight: ",
+          [Function],
+          ";
+  color: ",
+          [Function],
+          ";
+  margin: ",
+          [Function],
+          ";
+  text-align: ",
+          [Function],
+          ";
+  opacity: ",
+          [Function],
+          ";
+  cursor: ",
+          [Function],
+          ";
+
+  ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+        ],
+      },
+      "displayName": "Styled(styled.p)",
+      "foldedComponentIds": Array [
+        "sc-ckVGcZ",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-jKJlTe",
+      "target": "p",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": "2 Price Scales",
         "title": " DUGOUT, GOLD",
       },
       "ref": null,
       "rendered": "2 Price Scales",
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-jKJlTe",
+          "isStatic": false,
+          "rules": Array [
+            "
+  font-size: ",
+            [Function],
+            ";
+  font-weight: ",
+            [Function],
+            ";
+  color: ",
+            [Function],
+            ";
+  margin: ",
+            [Function],
+            ";
+  text-align: ",
+            [Function],
+            ";
+  opacity: ",
+            [Function],
+            ";
+  cursor: ",
+            [Function],
+            ";
+
+  ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+          ],
+        },
+        "displayName": "Styled(styled.p)",
+        "foldedComponentIds": Array [
+          "sc-ckVGcZ",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-jKJlTe",
+        "target": "p",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

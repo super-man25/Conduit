@@ -1,5 +1,6 @@
 // @flow
 
+import styled from 'styled-components';
 import {
   Breadcrumbs,
   Flex,
@@ -18,7 +19,7 @@ import { actions as clientActions } from '_state/client';
 import { bindActionCreators } from 'redux';
 import type { EDClient } from '_models';
 
-const TeamWrapper = Flex.extend`
+const TeamWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: left;
   min-width: 100%;

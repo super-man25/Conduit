@@ -1,4 +1,6 @@
 // @flow
+
+import styled from 'styled-components';
 import React from 'react';
 import {
   PageWrapper,
@@ -23,7 +25,7 @@ import { Portal } from '_components/Portal';
 import { BulkUpdateModal } from './components/BulkUpdateModal';
 import { createStructuredSelector } from 'reselect';
 
-const EventInventoryTableContainer = FlexItem.extend`
+const EventInventoryTableContainer = styled(FlexItem)`
   min-height: 60%;
   min-width: 1100px;
 `;

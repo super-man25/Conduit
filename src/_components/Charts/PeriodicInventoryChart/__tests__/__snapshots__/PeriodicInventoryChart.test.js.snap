@@ -34,7 +34,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": <ResponsiveContainer
         debounce={0}
@@ -972,13 +972,41 @@ ShallowWrapper {
       },
       "type": [Function],
     },
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-RefOD",
+        "isStatic": true,
+        "rules": Array [
+          "
+  background-color: ",
+          "#F8F8F8",
+          ";
+  border: 1px solid ",
+          "#D1D1D1",
+          ";
+  position: relative;
+  padding: 14px 14px;
+  overflow: hidden;
+",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-RefOD",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <ResponsiveContainer
           debounce={0}
@@ -1916,7 +1944,35 @@ ShallowWrapper {
         },
         "type": [Function],
       },
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-RefOD",
+          "isStatic": true,
+          "rules": Array [
+            "
+  background-color: ",
+            "#F8F8F8",
+            ";
+  border: 1px solid ",
+            "#D1D1D1",
+            ";
+  position: relative;
+  padding: 14px 14px;
+  overflow: hidden;
+",
+          ],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-RefOD",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -1977,7 +2033,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": <ResponsiveContainer
         debounce={0}
@@ -2915,13 +2971,41 @@ ShallowWrapper {
       },
       "type": [Function],
     },
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-RefOD",
+        "isStatic": true,
+        "rules": Array [
+          "
+  background-color: ",
+          "#F8F8F8",
+          ";
+  border: 1px solid ",
+          "#D1D1D1",
+          ";
+  position: relative;
+  padding: 14px 14px;
+  overflow: hidden;
+",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-RefOD",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <ResponsiveContainer
           debounce={0}
@@ -3859,7 +3943,35 @@ ShallowWrapper {
         },
         "type": [Function],
       },
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-RefOD",
+          "isStatic": true,
+          "rules": Array [
+            "
+  background-color: ",
+            "#F8F8F8",
+            ";
+  border: 1px solid ",
+            "#D1D1D1",
+            ";
+  position: relative;
+  padding: 14px 14px;
+  overflow: hidden;
+",
+          ],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-RefOD",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

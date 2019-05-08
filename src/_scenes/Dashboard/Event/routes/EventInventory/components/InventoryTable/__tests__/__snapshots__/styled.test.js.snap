@@ -76,6 +76,7 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 
 <button
   className="c0"
+  direction=""
 />
 `;
 
@@ -128,7 +129,6 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
 }
 
 <input
-  bordercolor="#767676"
   className="c0"
 />
 `;

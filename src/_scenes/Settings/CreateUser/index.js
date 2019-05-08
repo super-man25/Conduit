@@ -1,5 +1,6 @@
 // @flow
 
+import styled from 'styled-components';
 import { Button, HelpBlockDiv, Input, Label, Flex, H3 } from '_components';
 import { actions as usersActions } from '_state/user';
 import React from 'react';
@@ -7,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { EDUser } from '_models';
 
-const CreateUserWrapper = Flex.extend`
+const CreateUserWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: left;
   min-width: 100%;

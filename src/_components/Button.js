@@ -1,4 +1,5 @@
 // @flow
+
 import * as React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
@@ -17,7 +18,7 @@ export const PrimaryButton = styled.button`
   padding: 0 1rem;
   border: none;
   border-radius: 3px;
-  height: ${(props) => (props.small ? 30 : 40)}px;
+  height: ${(props) => (props.small ? '30px' : '40px')};
   background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   color: ${cssConstants.PRIMARY_WHITE};
   transition: opacity 100ms ease-out;
@@ -34,7 +35,7 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const SecondaryButton = PrimaryButton.extend`
+export const SecondaryButton = styled(PrimaryButton)`
   background-color: ${cssConstants.PRIMARY_WHITE};
   border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
@@ -46,7 +47,7 @@ export const SecondaryButton = PrimaryButton.extend`
   }
 `;
 
-export const GrayButton = PrimaryButton.extend`
+export const GrayButton = styled(PrimaryButton)`
   background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
   opacity: 0.8;
@@ -57,7 +58,18 @@ export const GrayButton = PrimaryButton.extend`
   }
 `;
 
-export const Button: React.ComponentType<Props> = styled.button`
+// FiXME: This needs to be cleaned up with attrs and avoid nested ternaries
+export const Button: React.ComponentType<Props> = styled.button.attrs(
+  (props) => {
+    let direction = '';
+    if (props.collapse) direction = '<';
+    else if (props.expand) direction = '>';
+
+    return {
+      direction
+    };
+  }
+)`
   display: ${(props) => (props.hidden ? 'none' : 'block')};
   color: ${(props) =>
     !props.secondary
@@ -71,7 +83,7 @@ export const Button: React.ComponentType<Props> = styled.button`
   margin: 0;
   margin-top: ${(props) =>
     props.collapse ? '20px' : props.expand ? '16px' : '10px'};
-  margin-bottom : ${(props) =>
+  margin-bottom: ${(props) =>
     props.collapse ? 'auto' : props.expand ? 'auto' : '10px'};
   margin-right: ${(props) => (props.collapse || props.expand ? '20px' : '0')};
   padding: ${(props) => (props.collapse || props.expand ? '0.4em' : '0.8em')};
@@ -118,7 +130,8 @@ export const Button: React.ComponentType<Props> = styled.button`
         ? cssConstants.SECONDARY_BLUE
         : cssConstants.SECONDARY_BLUE};
   }
-  ::before {
-    content: '${(props) => (props.collapse ? '<' : props.expand ? '>' : '')}';
+
+  &::before {
+    content: '${(props) => props.direction}';
   }
 `;

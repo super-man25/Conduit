@@ -13,7 +13,7 @@ import {
   readableTimeOrDate
 } from '_helpers/string-utils';
 
-const Heading = H4.extend`
+const Heading = styled(H4)`
   margin: 0 0 2px 0;
   padding: 0;
   display: inline-block;
@@ -62,7 +62,7 @@ const Container = styled.div`
   }
 `;
 
-const ItalicP1 = P1.extend`
+const ItalicP1 = styled(P1)`
   font-style: italic;
 `;
 

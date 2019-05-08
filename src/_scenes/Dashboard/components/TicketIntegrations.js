@@ -25,7 +25,7 @@ const percentFormatter = Intl.NumberFormat('en-US', {
   maximumFractionDigits: 0
 });
 
-const UnpaddedPanelContent = PanelContent.extend`
+const UnpaddedPanelContent = styled(PanelContent)`
   padding: 0 !important;
 `;
 
@@ -34,7 +34,7 @@ const LogoImg = styled.img`
   width: auto;
 `;
 
-const HorizontalList = Flex.extend`
+const HorizontalList = styled(Flex)`
   padding: 0;
   margin: 0;
   white-space: nowrap;
@@ -42,7 +42,7 @@ const HorizontalList = Flex.extend`
   flex-wrap: nowrap;
 `;
 
-const HorizontalListItem = FlexItem.extend`
+const HorizontalListItem = styled(FlexItem)`
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   box-sizing: border-box;
   flex: 1 0 auto;

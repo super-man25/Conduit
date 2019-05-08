@@ -8,10 +8,10 @@ const SMALL_HEIGHT = '10px';
 const LARGE_WIDTH = '68px';
 const SMALL_WIDTH = '46px';
 
-const Wrapper = styled.div.attrs({
-  height: (props) => (props.small ? SMALL_HEIGHT : LARGE_HEIGHT),
-  width: (props) => (props.small ? SMALL_WIDTH : LARGE_WIDTH)
-})`
+const Wrapper = styled.div.attrs((props) => ({
+  height: props.small ? SMALL_HEIGHT : LARGE_HEIGHT,
+  width: props.small ? SMALL_WIDTH : LARGE_WIDTH
+}))`
   display: flex;
   justify-content: space-between;
   margin: auto;

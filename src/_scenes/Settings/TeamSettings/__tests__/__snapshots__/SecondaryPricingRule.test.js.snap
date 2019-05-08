@@ -23,7 +23,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <styled.div
+      "children": <ForwardRef
         onClick={[Function]}
       />,
       "onClickAway": [Function],
@@ -32,13 +32,55 @@ ShallowWrapper {
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "onClick": [Function],
       },
       "ref": null,
       "rendered": null,
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-jhAzac",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: flex;
+  align-self: center;
+  position: relative;
+  margin: ",
+            [Function],
+            ";
+  padding: ",
+            [Function],
+            ";
+  font-size: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+",
+            "
+  color: ",
+            "#38A9DB",
+            ";
+  ::before {
+    content: 'EDIT';
+  }
+",
+          ],
+        },
+        "displayName": "Styled(styled.div)",
+        "foldedComponentIds": Array [
+          "sc-hzDkRC",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-jhAzac",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
     "type": [Function],
   },
@@ -48,7 +90,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <styled.div
+        "children": <ForwardRef
           onClick={[Function]}
         />,
         "onClickAway": [Function],
@@ -57,13 +99,55 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "onClick": [Function],
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-jhAzac",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: flex;
+  align-self: center;
+  position: relative;
+  margin: ",
+              [Function],
+              ";
+  padding: ",
+              [Function],
+              ";
+  font-size: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+",
+              "
+  color: ",
+              "#38A9DB",
+              ";
+  ::before {
+    content: 'EDIT';
+  }
+",
+            ],
+          },
+          "displayName": "Styled(styled.div)",
+          "foldedComponentIds": Array [
+            "sc-hzDkRC",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-jhAzac",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       "type": [Function],
     },

@@ -11,24 +11,19 @@ const WEIGHTS = new Map()
   .set('light', '300')
   .set('lighter', '200');
 
-const attrs = {
-  size: (props) => {
-    return (
-      (props.size === 'small' && '0.875rem') ||
-      (props.size === 'medium' && '1rem') ||
-      (props.size === 'large' && '1.2rem') ||
-      '1rem' // default
-    );
-  }
-};
+const attrs = (props) => ({
+  size:
+    (props.size === 'small' && '0.875rem') ||
+    (props.size === 'medium' && '1rem') ||
+    (props.size === 'large' && '1.2rem') ||
+    '1rem' // default
+});
 
 type Props = {
   size: 'small' | 'medium' | 'large',
   weight: 'normal' | 'heavy' | 'light' | 'lighter'
 };
-export const EDLink: React.ComponentType<Props> = styled(Link).attrs({
-  ...attrs
-})`
+export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
   color: ${cssConstants.PRIMARY_DARKEST_GRAY};
@@ -51,7 +46,7 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs({
   }
 `;
 
-export const EDNavLink = styled(NavLink).attrs({ ...attrs })`
+export const EDNavLink = styled(NavLink).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
   color: ${cssConstants.PRIMARY_DARKEST_GRAY};

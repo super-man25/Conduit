@@ -19,15 +19,15 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <styled.header>
+        <ForwardRef>
           <div />
-        </styled.header>,
-        <styled.section>
+        </ForwardRef>,
+        <ForwardRef>
           <div />
-        </styled.section>,
+        </ForwardRef>,
       ],
     },
     "ref": null,
@@ -35,7 +35,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": <div />,
         },
@@ -49,12 +49,42 @@ ShallowWrapper {
           "rendered": null,
           "type": "div",
         },
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bwzfXH",
+            "isStatic": true,
+            "rules": Array [
+              "
+  background-color: ",
+              "#024A8F",
+              ";
+  color: ",
+              "#FFFFFF",
+              ";
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+",
+            ],
+          },
+          "displayName": "styled.header",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bwzfXH",
+          "target": "header",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": <div />,
         },
@@ -68,24 +98,74 @@ ShallowWrapper {
           "rendered": null,
           "type": "div",
         },
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bxivhb",
+            "isStatic": true,
+            "rules": Array [
+              "
+  padding: 0.75rem 1rem;
+",
+            ],
+          },
+          "displayName": "styled.section",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bxivhb",
+          "target": "section",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": true,
+        "rules": Array [
+          "
+  border: 1px solid ",
+          "#D1D1D1",
+          ";
+  width: 175px;
+  font-size: 14px;
+  background-color: ",
+          "#FFFFFF",
+          ";
+  color: ",
+          "#070707",
+          ";
+",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <styled.header>
+          <ForwardRef>
             <div />
-          </styled.header>,
-          <styled.section>
+          </ForwardRef>,
+          <ForwardRef>
             <div />
-          </styled.section>,
+          </ForwardRef>,
         ],
       },
       "ref": null,
@@ -93,7 +173,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": <div />,
           },
@@ -107,12 +187,42 @@ ShallowWrapper {
             "rendered": null,
             "type": "div",
           },
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bwzfXH",
+              "isStatic": true,
+              "rules": Array [
+                "
+  background-color: ",
+                "#024A8F",
+                ";
+  color: ",
+                "#FFFFFF",
+                ";
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+",
+              ],
+            },
+            "displayName": "styled.header",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bwzfXH",
+            "target": "header",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": <div />,
           },
@@ -126,10 +236,60 @@ ShallowWrapper {
             "rendered": null,
             "type": "div",
           },
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bxivhb",
+              "isStatic": true,
+              "rules": Array [
+                "
+  padding: 0.75rem 1rem;
+",
+              ],
+            },
+            "displayName": "styled.section",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bxivhb",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": true,
+          "rules": Array [
+            "
+  border: 1px solid ",
+            "#D1D1D1",
+            ";
+  width: 175px;
+  font-size: 14px;
+  background-color: ",
+            "#FFFFFF",
+            ";
+  color: ",
+            "#070707",
+            ";
+",
+          ],
+        },
+        "displayName": "styled.div",
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -4,7 +4,7 @@ import { darken } from 'polished';
 import { withClickAway } from '_hoc';
 import { PrimaryButton, Input, Box, SecondaryButton } from '_components';
 
-export const EditPricingRuleInput = Input.extend`
+export const EditPricingRuleInput = styled(Input)`
   box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
@@ -12,7 +12,7 @@ export const EditPricingRuleInput = Input.extend`
   max-width: 80px;
 `;
 
-export const SavePricingRuleButton = PrimaryButton.extend`
+export const SavePricingRuleButton = styled(PrimaryButton)`
   box-sizing: border-box;
   margin: 0;
   min-width: 50px;
@@ -20,7 +20,7 @@ export const SavePricingRuleButton = PrimaryButton.extend`
   max-height: 35px;
 `;
 
-export const CancelEditingButton = SecondaryButton.extend`
+export const CancelEditingButton = styled(SecondaryButton)`
   box-sizing: border-box;
   margin: 0;
   min-width: 50px;
@@ -35,7 +35,7 @@ export const TableHeaderCell = styled.div`
   font-weight: 500;
 `;
 
-export const PositionedBox = Box.extend`
+export const PositionedBox = styled(Box)`
   position: ${(props) => props.position};
   top: ${(props) => props.top};
   bottom: ${(props) => props.bottom};
@@ -43,7 +43,7 @@ export const PositionedBox = Box.extend`
   right: ${(props) => props.right};
   z-index: ${(props) => props.zIndex};
 `;
-export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
   margin-right: 0.5rem;
 `;
 

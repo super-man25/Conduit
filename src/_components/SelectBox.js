@@ -18,16 +18,16 @@ type Props = {
   border: string,
   background: string
 };
-export const SelectBox: React.ComponentType<Props> = styled.select.attrs({
-  color: (props) =>
-    props.noBg
+export const SelectBox: React.ComponentType<Props> = styled.select.attrs(
+  (props) => ({
+    color: props.noBg
       ? cssConstants.PRIMARY_LIGHT_BLUE
       : cssConstants.PRIMARY_DARKEST_GRAY,
-  background: (props) =>
-    props.noBg ? 'transparent' : cssConstants.PRIMARY_WHITE,
-  border: (props) => (props.noBg ? 'none' : '1px solid'),
-  margin: (props) => (props.noBg ? '0 0 0 -10px' : 0)
-})`
+    background: props.noBg ? 'transparent' : cssConstants.PRIMARY_WHITE,
+    border: props.noBg ? 'none' : '1px solid',
+    margin: props.noBg ? '0 0 0 -10px' : 0
+  })
+)`
   position: relative;
   height: 3rem;
   width: 45%;

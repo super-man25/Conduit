@@ -1,4 +1,6 @@
 // @flow
+
+import styled from 'styled-components';
 import React from 'react';
 import {
   Panel,
@@ -23,7 +25,7 @@ import { PricingPreview } from './PricingPreview';
 import type { EDEvent } from '_models/event';
 import type { EDPricingPreview } from '_models/pricingPreview';
 
-const UnpaddedPanelContent = PanelContent.extend`
+const UnpaddedPanelContent = styled(PanelContent)`
   padding: 0 !important;
 `;
 

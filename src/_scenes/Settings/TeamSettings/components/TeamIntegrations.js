@@ -7,7 +7,7 @@ import { Portal } from '_components/Portal';
 import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
 import type { EDIntegration } from '_models';
 
-const TeamIntegrationsWrapper = Flex.extend`
+const TeamIntegrationsWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
 `;

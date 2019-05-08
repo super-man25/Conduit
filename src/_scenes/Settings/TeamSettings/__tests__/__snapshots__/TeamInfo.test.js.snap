@@ -23,53 +23,53 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <styled.h5
+        <ForwardRef
           type="secondary"
         >
           Basic Settings
-        </styled.h5>,
-        <styled.div
+        </ForwardRef>,
+        <ForwardRef
           cols={3}
         >
-          <styled.div
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             Team
-          </styled.div>
-          <styled.div
+          </ForwardRef>
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             New York Mets
-          </styled.div>
-          <styled.div
+          </ForwardRef>
+          <ForwardRef
             margin="1rem 0"
             size="large"
           />
-        </styled.div>,
-        <withClickAway(styled.div)
+        </ForwardRef>,
+        <withClickAway(Styled(styled.div))
           cols={3}
           onClickAway={[Function]}
         >
-          <styled.div
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             Generate pricing updates every
-          </styled.div>
+          </ForwardRef>
           <React.Fragment>
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               15 Minutes
-            </styled.div>
+            </ForwardRef>
           </React.Fragment>
-        </withClickAway(styled.div)>,
+        </withClickAway(Styled(styled.div))>,
       ],
     },
     "ref": null,
@@ -77,34 +77,64 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": "Basic Settings",
           "type": "secondary",
         },
         "ref": null,
         "rendered": "Basic Settings",
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [
+            [Function],
+          ],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-cSHVUG",
+            "isStatic": false,
+            "rules": Array [
+              "
+  color: ",
+              [Function],
+              ";
+  font-size: ",
+              [Function],
+              ";
+  font-weight: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.h5",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-cSHVUG",
+          "target": "h5",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": Array [
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Team
-            </styled.div>,
-            <styled.div
+            </ForwardRef>,
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               New York Mets
-            </styled.div>,
-            <styled.div
+            </ForwardRef>,
+            <ForwardRef
               margin="1rem 0"
               size="large"
             />,
@@ -116,7 +146,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "Team",
               "margin": "1rem 0",
@@ -124,12 +154,97 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Team",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "New York Mets",
               "margin": "1rem 0",
@@ -137,22 +252,223 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "New York Mets",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "margin": "1rem 0",
               "size": "large",
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
         ],
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [
+            [Function],
+          ],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bRBYWo",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: grid;
+  grid-template-columns: ",
+              [Function],
+              ";
+  width: ",
+              [Function],
+              ";
+  margin: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bRBYWo",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
@@ -160,19 +476,19 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Generate pricing updates every
-            </styled.div>,
+            </ForwardRef>,
             <React.Fragment>
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 15 Minutes
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>,
           ],
           "cols": 3,
@@ -183,7 +499,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "Generate pricing updates every",
               "margin": "1rem 0",
@@ -191,25 +507,110 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Generate pricing updates every",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <styled.div
+              "children": <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 15 Minutes
-              </styled.div>,
+              </ForwardRef>,
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "15 Minutes",
                 "margin": "1rem 0",
@@ -217,7 +618,92 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "15 Minutes",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             "type": Symbol(react.fragment),
           },
@@ -225,59 +711,178 @@ ShallowWrapper {
         "type": [Function],
       },
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-cbkKFq",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: ",
+          [Function],
+          ";
+  flex: ",
+          [Function],
+          ";
+  flex-direction: ",
+          [Function],
+          "
+  flex-grow: ",
+          [Function],
+          ";
+  flex-shrink: ",
+          [Function],
+          ";
+  flex-basis: ",
+          [Function],
+          ";
+  flex-wrap: ",
+          [Function],
+          ";
+  order: ",
+          [Function],
+          ";
+  justify-content: ",
+          [Function],
+          ";
+  align-items: ",
+          [Function],
+          ";
+  align-content: ",
+          [Function],
+          ";
+  align-self: ",
+          [Function],
+          ";
+  height: ",
+          [Function],
+          ";
+  width: ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+          "
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  width: 85%;
+",
+        ],
+      },
+      "displayName": "Styled(Flex)",
+      "foldedComponentIds": Array [
+        "sc-eNQAEJ",
+        "sc-hMqMXs",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-cbkKFq",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <styled.h5
+          <ForwardRef
             type="secondary"
           >
             Basic Settings
-          </styled.h5>,
-          <styled.div
+          </ForwardRef>,
+          <ForwardRef
             cols={3}
           >
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Team
-            </styled.div>
-            <styled.div
+            </ForwardRef>
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               New York Mets
-            </styled.div>
-            <styled.div
+            </ForwardRef>
+            <ForwardRef
               margin="1rem 0"
               size="large"
             />
-          </styled.div>,
-          <withClickAway(styled.div)
+          </ForwardRef>,
+          <withClickAway(Styled(styled.div))
             cols={3}
             onClickAway={[Function]}
           >
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Generate pricing updates every
-            </styled.div>
+            </ForwardRef>
             <React.Fragment>
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 15 Minutes
-              </styled.div>
+              </ForwardRef>
             </React.Fragment>
-          </withClickAway(styled.div)>,
+          </withClickAway(Styled(styled.div))>,
         ],
       },
       "ref": null,
@@ -285,34 +890,64 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": "Basic Settings",
             "type": "secondary",
           },
           "ref": null,
           "rendered": "Basic Settings",
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [
+              [Function],
+            ],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-cSHVUG",
+              "isStatic": false,
+              "rules": Array [
+                "
+  color: ",
+                [Function],
+                ";
+  font-size: ",
+                [Function],
+                ";
+  font-weight: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "styled.h5",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-cSHVUG",
+            "target": "h5",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": Array [
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 Team
-              </styled.div>,
-              <styled.div
+              </ForwardRef>,
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 New York Mets
-              </styled.div>,
-              <styled.div
+              </ForwardRef>,
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               />,
@@ -324,7 +959,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "Team",
                 "margin": "1rem 0",
@@ -332,12 +967,97 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Team",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "New York Mets",
                 "margin": "1rem 0",
@@ -345,22 +1065,223 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "New York Mets",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "margin": "1rem 0",
                 "size": "large",
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
           ],
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [
+              [Function],
+            ],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bRBYWo",
+              "isStatic": false,
+              "rules": Array [
+                "
+  display: grid;
+  grid-template-columns: ",
+                [Function],
+                ";
+  width: ",
+                [Function],
+                ";
+  margin: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bRBYWo",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
@@ -368,19 +1289,19 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 Generate pricing updates every
-              </styled.div>,
+              </ForwardRef>,
               <React.Fragment>
-                <styled.div
+                <ForwardRef
                   margin="1rem 0"
                   size="large"
                 >
                   15 Minutes
-                </styled.div>
+                </ForwardRef>
               </React.Fragment>,
             ],
             "cols": 3,
@@ -391,7 +1312,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "Generate pricing updates every",
                 "margin": "1rem 0",
@@ -399,25 +1320,110 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Generate pricing updates every",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <styled.div
+                "children": <ForwardRef
                   margin="1rem 0"
                   size="large"
                 >
                   15 Minutes
-                </styled.div>,
+                </ForwardRef>,
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": "15 Minutes",
                   "margin": "1rem 0",
@@ -425,7 +1431,92 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": "15 Minutes",
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bsbRJL",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  font-size: ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  font-weight: ",
+                      [Function],
+                      ";
+  margin: ",
+                      [Function],
+                      ";
+  padding: ",
+                      [Function],
+                      ";
+",
+                      "
+    margin: ",
+                      [Function],
+                      ";
+    margin-top: ",
+                      [Function],
+                      ";
+    margin-bottom: ",
+                      [Function],
+                      ";
+    margin-left: ",
+                      [Function],
+                      ";
+    margin-right: ",
+                      [Function],
+                      ";
+
+    padding: ",
+                      [Function],
+                      ";
+    padding-top: ",
+                      [Function],
+                      ";
+    padding-bottom: ",
+                      [Function],
+                      ";
+    padding-left: ",
+                      [Function],
+                      ";
+    padding-right: ",
+                      [Function],
+                      ";
+
+    border: ",
+                      [Function],
+                      ";
+    border-top: ",
+                      [Function],
+                      ";
+    border-bottom: ",
+                      [Function],
+                      ";
+    border-left: ",
+                      [Function],
+                      ";
+    border-right: ",
+                      [Function],
+                      ";
+  ",
+                    ],
+                  },
+                  "displayName": "Styled(styled.div)",
+                  "foldedComponentIds": Array [
+                    "sc-iQNlJl",
+                  ],
+                  "render": [Function],
+                  "styledComponentId": "sc-bsbRJL",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               "type": Symbol(react.fragment),
             },
@@ -433,7 +1524,126 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-cbkKFq",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: ",
+            [Function],
+            ";
+  flex: ",
+            [Function],
+            ";
+  flex-direction: ",
+            [Function],
+            "
+  flex-grow: ",
+            [Function],
+            ";
+  flex-shrink: ",
+            [Function],
+            ";
+  flex-basis: ",
+            [Function],
+            ";
+  flex-wrap: ",
+            [Function],
+            ";
+  order: ",
+            [Function],
+            ";
+  justify-content: ",
+            [Function],
+            ";
+  align-items: ",
+            [Function],
+            ";
+  align-content: ",
+            [Function],
+            ";
+  align-self: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+  width: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+            "
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  width: 85%;
+",
+          ],
+        },
+        "displayName": "Styled(Flex)",
+        "foldedComponentIds": Array [
+          "sc-eNQAEJ",
+          "sc-hMqMXs",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-cbkKFq",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -484,46 +1694,46 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <styled.h5
+        <ForwardRef
           type="secondary"
         >
           Basic Settings
-        </styled.h5>,
-        <styled.div
+        </ForwardRef>,
+        <ForwardRef
           cols={3}
         >
-          <styled.div
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             Team
-          </styled.div>
-          <styled.div
+          </ForwardRef>
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             New York Mets
-          </styled.div>
-          <styled.div
+          </ForwardRef>
+          <ForwardRef
             margin="1rem 0"
             size="large"
           />
-        </styled.div>,
-        <withClickAway(styled.div)
+        </ForwardRef>,
+        <withClickAway(Styled(styled.div))
           cols={3}
           onClickAway={[Function]}
         >
-          <styled.div
+          <ForwardRef
             margin="1rem 0"
             size="large"
           >
             Generate pricing updates every
-          </styled.div>
+          </ForwardRef>
           <React.Fragment>
-            <styled.select
+            <ForwardRef
               noBg={true}
               onChange={[Function]}
               size="large"
@@ -553,16 +1763,16 @@ ShallowWrapper {
               >
                 Daily
               </option>
-            </styled.select>
-            <styled.div>
-              <styled.button
+            </ForwardRef>
+            <ForwardRef>
+              <ForwardRef
                 onClick={[Function]}
               >
                 Save
-              </styled.button>
-            </styled.div>
+              </ForwardRef>
+            </ForwardRef>
           </React.Fragment>
-        </withClickAway(styled.div)>,
+        </withClickAway(Styled(styled.div))>,
       ],
     },
     "ref": null,
@@ -570,34 +1780,64 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": "Basic Settings",
           "type": "secondary",
         },
         "ref": null,
         "rendered": "Basic Settings",
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [
+            [Function],
+          ],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-cSHVUG",
+            "isStatic": false,
+            "rules": Array [
+              "
+  color: ",
+              [Function],
+              ";
+  font-size: ",
+              [Function],
+              ";
+  font-weight: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.h5",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-cSHVUG",
+          "target": "h5",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": Array [
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Team
-            </styled.div>,
-            <styled.div
+            </ForwardRef>,
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               New York Mets
-            </styled.div>,
-            <styled.div
+            </ForwardRef>,
+            <ForwardRef
               margin="1rem 0"
               size="large"
             />,
@@ -609,7 +1849,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "Team",
               "margin": "1rem 0",
@@ -617,12 +1857,97 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Team",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "New York Mets",
               "margin": "1rem 0",
@@ -630,22 +1955,223 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "New York Mets",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "margin": "1rem 0",
               "size": "large",
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
         ],
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [
+            [Function],
+          ],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bRBYWo",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: grid;
+  grid-template-columns: ",
+              [Function],
+              ";
+  width: ",
+              [Function],
+              ";
+  margin: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bRBYWo",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
       Object {
         "instance": null,
@@ -653,14 +2179,14 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Generate pricing updates every
-            </styled.div>,
+            </ForwardRef>,
             <React.Fragment>
-              <styled.select
+              <ForwardRef
                 noBg={true}
                 onChange={[Function]}
                 size="large"
@@ -690,14 +2216,14 @@ ShallowWrapper {
                 >
                   Daily
                 </option>
-              </styled.select>
-              <styled.div>
-                <styled.button
+              </ForwardRef>
+              <ForwardRef>
+                <ForwardRef
                   onClick={[Function]}
                 >
                   Save
-                </styled.button>
-              </styled.div>
+                </ForwardRef>
+              </ForwardRef>
             </React.Fragment>,
           ],
           "cols": 3,
@@ -708,7 +2234,7 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": "Generate pricing updates every",
               "margin": "1rem 0",
@@ -716,7 +2242,92 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Generate pricing updates every",
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bsbRJL",
+                "isStatic": false,
+                "rules": Array [
+                  "
+  font-size: ",
+                  [Function],
+                  ";
+  color: ",
+                  [Function],
+                  ";
+  font-weight: ",
+                  [Function],
+                  ";
+  margin: ",
+                  [Function],
+                  ";
+  padding: ",
+                  [Function],
+                  ";
+",
+                  "
+    margin: ",
+                  [Function],
+                  ";
+    margin-top: ",
+                  [Function],
+                  ";
+    margin-bottom: ",
+                  [Function],
+                  ";
+    margin-left: ",
+                  [Function],
+                  ";
+    margin-right: ",
+                  [Function],
+                  ";
+
+    padding: ",
+                  [Function],
+                  ";
+    padding-top: ",
+                  [Function],
+                  ";
+    padding-bottom: ",
+                  [Function],
+                  ";
+    padding-left: ",
+                  [Function],
+                  ";
+    padding-right: ",
+                  [Function],
+                  ";
+
+    border: ",
+                  [Function],
+                  ";
+    border-top: ",
+                  [Function],
+                  ";
+    border-bottom: ",
+                  [Function],
+                  ";
+    border-left: ",
+                  [Function],
+                  ";
+    border-right: ",
+                  [Function],
+                  ";
+  ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "foldedComponentIds": Array [
+                "sc-iQNlJl",
+              ],
+              "render": [Function],
+              "styledComponentId": "sc-bsbRJL",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           },
           Object {
             "instance": null,
@@ -724,7 +2335,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                <styled.select
+                <ForwardRef
                   noBg={true}
                   onChange={[Function]}
                   size="large"
@@ -754,14 +2365,14 @@ ShallowWrapper {
                   >
                     Daily
                   </option>
-                </styled.select>,
-                <styled.div>
-                  <styled.button
+                </ForwardRef>,
+                <ForwardRef>
+                  <ForwardRef
                     onClick={[Function]}
                   >
                     Save
-                  </styled.button>
-                </styled.div>,
+                  </ForwardRef>
+                </ForwardRef>,
               ],
             },
             "ref": null,
@@ -769,7 +2380,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
                   "children": Array [
                     <option
@@ -866,33 +2477,252 @@ ShallowWrapper {
                     "type": "option",
                   },
                 ],
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [
+                    [Function],
+                  ],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-Rmtcm",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  position: relative;
+  height: 3rem;
+  width: 45%;
+  border: ",
+                      [Function],
+                      ";
+  border-radius: 4px;
+  color: ",
+                      [Function],
+                      ";
+  font-size: ",
+                      [Function],
+                      ";
+  margin: ",
+                      [Function],
+                      ";
+  padding: ",
+                      [Function],
+                      ";
+  background: ",
+                      [Function],
+                      ";
+
+  &:focus {
+    outline: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.select",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-Rmtcm",
+                  "target": "select",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "children": <styled.button
+                  "children": <ForwardRef
                     onClick={[Function]}
                   >
                     Save
-                  </styled.button>,
+                  </ForwardRef>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": "Save",
                     "onClick": [Function],
                   },
                   "ref": null,
                   "rendered": "Save",
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-dVhcbM",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  text-transform: uppercase;
+  width: 5.5rem;
+  height: 2.875rem;
+  border: 2px solid ",
+                        "#7CBCDD",
+                        ";
+  border-radius: 3px;
+  color: ",
+                        [Function],
+                        ";
+  border-color: ",
+                        [Function],
+                        ";
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: ",
+                        "#FFFFFF",
+                        ";
+  cursor: pointer;
+  &:hover {
+    cursor: ",
+                        [Function],
+                        ";
+    color: ",
+                        [Function],
+                        ";
+    border-color: ",
+                        [Function],
+                        ";
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.button",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-dVhcbM",
+                    "target": "button",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-krvtoX",
+                    "isStatic": false,
+                    "rules": Array [
+                      "
+  display: ",
+                      [Function],
+                      ";
+  flex: ",
+                      [Function],
+                      ";
+  flex-direction: ",
+                      [Function],
+                      "
+  flex-grow: ",
+                      [Function],
+                      ";
+  flex-shrink: ",
+                      [Function],
+                      ";
+  flex-basis: ",
+                      [Function],
+                      ";
+  flex-wrap: ",
+                      [Function],
+                      ";
+  order: ",
+                      [Function],
+                      ";
+  justify-content: ",
+                      [Function],
+                      ";
+  align-items: ",
+                      [Function],
+                      ";
+  align-content: ",
+                      [Function],
+                      ";
+  align-self: ",
+                      [Function],
+                      ";
+  height: ",
+                      [Function],
+                      ";
+  width: ",
+                      [Function],
+                      ";
+",
+                      "
+    margin: ",
+                      [Function],
+                      ";
+    margin-top: ",
+                      [Function],
+                      ";
+    margin-bottom: ",
+                      [Function],
+                      ";
+    margin-left: ",
+                      [Function],
+                      ";
+    margin-right: ",
+                      [Function],
+                      ";
+
+    padding: ",
+                      [Function],
+                      ";
+    padding-top: ",
+                      [Function],
+                      ";
+    padding-bottom: ",
+                      [Function],
+                      ";
+    padding-left: ",
+                      [Function],
+                      ";
+    padding-right: ",
+                      [Function],
+                      ";
+
+    border: ",
+                      [Function],
+                      ";
+    border-top: ",
+                      [Function],
+                      ";
+    border-bottom: ",
+                      [Function],
+                      ";
+    border-left: ",
+                      [Function],
+                      ";
+    border-right: ",
+                      [Function],
+                      ";
+  ",
+                      "
+  justify-content: space-evenly;
+  align-items: center;
+",
+                    ],
+                  },
+                  "displayName": "Styled(Flex)",
+                  "foldedComponentIds": Array [
+                    "sc-eNQAEJ",
+                    "sc-hMqMXs",
+                  ],
+                  "render": [Function],
+                  "styledComponentId": "sc-krvtoX",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
               },
             ],
             "type": Symbol(react.fragment),
@@ -901,52 +2731,171 @@ ShallowWrapper {
         "type": [Function],
       },
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-cbkKFq",
+        "isStatic": false,
+        "rules": Array [
+          "
+  display: ",
+          [Function],
+          ";
+  flex: ",
+          [Function],
+          ";
+  flex-direction: ",
+          [Function],
+          "
+  flex-grow: ",
+          [Function],
+          ";
+  flex-shrink: ",
+          [Function],
+          ";
+  flex-basis: ",
+          [Function],
+          ";
+  flex-wrap: ",
+          [Function],
+          ";
+  order: ",
+          [Function],
+          ";
+  justify-content: ",
+          [Function],
+          ";
+  align-items: ",
+          [Function],
+          ";
+  align-content: ",
+          [Function],
+          ";
+  align-self: ",
+          [Function],
+          ";
+  height: ",
+          [Function],
+          ";
+  width: ",
+          [Function],
+          ";
+",
+          "
+    margin: ",
+          [Function],
+          ";
+    margin-top: ",
+          [Function],
+          ";
+    margin-bottom: ",
+          [Function],
+          ";
+    margin-left: ",
+          [Function],
+          ";
+    margin-right: ",
+          [Function],
+          ";
+
+    padding: ",
+          [Function],
+          ";
+    padding-top: ",
+          [Function],
+          ";
+    padding-bottom: ",
+          [Function],
+          ";
+    padding-left: ",
+          [Function],
+          ";
+    padding-right: ",
+          [Function],
+          ";
+
+    border: ",
+          [Function],
+          ";
+    border-top: ",
+          [Function],
+          ";
+    border-bottom: ",
+          [Function],
+          ";
+    border-left: ",
+          [Function],
+          ";
+    border-right: ",
+          [Function],
+          ";
+  ",
+          "
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  width: 85%;
+",
+        ],
+      },
+      "displayName": "Styled(Flex)",
+      "foldedComponentIds": Array [
+        "sc-eNQAEJ",
+        "sc-hMqMXs",
+      ],
+      "render": [Function],
+      "styledComponentId": "sc-cbkKFq",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <styled.h5
+          <ForwardRef
             type="secondary"
           >
             Basic Settings
-          </styled.h5>,
-          <styled.div
+          </ForwardRef>,
+          <ForwardRef
             cols={3}
           >
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Team
-            </styled.div>
-            <styled.div
+            </ForwardRef>
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               New York Mets
-            </styled.div>
-            <styled.div
+            </ForwardRef>
+            <ForwardRef
               margin="1rem 0"
               size="large"
             />
-          </styled.div>,
-          <withClickAway(styled.div)
+          </ForwardRef>,
+          <withClickAway(Styled(styled.div))
             cols={3}
             onClickAway={[Function]}
           >
-            <styled.div
+            <ForwardRef
               margin="1rem 0"
               size="large"
             >
               Generate pricing updates every
-            </styled.div>
+            </ForwardRef>
             <React.Fragment>
-              <styled.select
+              <ForwardRef
                 noBg={true}
                 onChange={[Function]}
                 size="large"
@@ -976,16 +2925,16 @@ ShallowWrapper {
                 >
                   Daily
                 </option>
-              </styled.select>
-              <styled.div>
-                <styled.button
+              </ForwardRef>
+              <ForwardRef>
+                <ForwardRef
                   onClick={[Function]}
                 >
                   Save
-                </styled.button>
-              </styled.div>
+                </ForwardRef>
+              </ForwardRef>
             </React.Fragment>
-          </withClickAway(styled.div)>,
+          </withClickAway(Styled(styled.div))>,
         ],
       },
       "ref": null,
@@ -993,34 +2942,64 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": "Basic Settings",
             "type": "secondary",
           },
           "ref": null,
           "rendered": "Basic Settings",
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [
+              [Function],
+            ],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-cSHVUG",
+              "isStatic": false,
+              "rules": Array [
+                "
+  color: ",
+                [Function],
+                ";
+  font-size: ",
+                [Function],
+                ";
+  font-weight: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "styled.h5",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-cSHVUG",
+            "target": "h5",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": Array [
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 Team
-              </styled.div>,
-              <styled.div
+              </ForwardRef>,
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 New York Mets
-              </styled.div>,
-              <styled.div
+              </ForwardRef>,
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               />,
@@ -1032,7 +3011,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "Team",
                 "margin": "1rem 0",
@@ -1040,12 +3019,97 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Team",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "New York Mets",
                 "margin": "1rem 0",
@@ -1053,22 +3117,223 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "New York Mets",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "margin": "1rem 0",
                 "size": "large",
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
           ],
-          "type": [Function],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [
+              [Function],
+            ],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bRBYWo",
+              "isStatic": false,
+              "rules": Array [
+                "
+  display: grid;
+  grid-template-columns: ",
+                [Function],
+                ";
+  width: ",
+                [Function],
+                ";
+  margin: ",
+                [Function],
+                ";
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bRBYWo",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         },
         Object {
           "instance": null,
@@ -1076,14 +3341,14 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <styled.div
+              <ForwardRef
                 margin="1rem 0"
                 size="large"
               >
                 Generate pricing updates every
-              </styled.div>,
+              </ForwardRef>,
               <React.Fragment>
-                <styled.select
+                <ForwardRef
                   noBg={true}
                   onChange={[Function]}
                   size="large"
@@ -1113,14 +3378,14 @@ ShallowWrapper {
                   >
                     Daily
                   </option>
-                </styled.select>
-                <styled.div>
-                  <styled.button
+                </ForwardRef>
+                <ForwardRef>
+                  <ForwardRef
                     onClick={[Function]}
                   >
                     Save
-                  </styled.button>
-                </styled.div>
+                  </ForwardRef>
+                </ForwardRef>
               </React.Fragment>,
             ],
             "cols": 3,
@@ -1131,7 +3396,7 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
                 "children": "Generate pricing updates every",
                 "margin": "1rem 0",
@@ -1139,7 +3404,92 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "Generate pricing updates every",
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bsbRJL",
+                  "isStatic": false,
+                  "rules": Array [
+                    "
+  font-size: ",
+                    [Function],
+                    ";
+  color: ",
+                    [Function],
+                    ";
+  font-weight: ",
+                    [Function],
+                    ";
+  margin: ",
+                    [Function],
+                    ";
+  padding: ",
+                    [Function],
+                    ";
+",
+                    "
+    margin: ",
+                    [Function],
+                    ";
+    margin-top: ",
+                    [Function],
+                    ";
+    margin-bottom: ",
+                    [Function],
+                    ";
+    margin-left: ",
+                    [Function],
+                    ";
+    margin-right: ",
+                    [Function],
+                    ";
+
+    padding: ",
+                    [Function],
+                    ";
+    padding-top: ",
+                    [Function],
+                    ";
+    padding-bottom: ",
+                    [Function],
+                    ";
+    padding-left: ",
+                    [Function],
+                    ";
+    padding-right: ",
+                    [Function],
+                    ";
+
+    border: ",
+                    [Function],
+                    ";
+    border-top: ",
+                    [Function],
+                    ";
+    border-bottom: ",
+                    [Function],
+                    ";
+    border-left: ",
+                    [Function],
+                    ";
+    border-right: ",
+                    [Function],
+                    ";
+  ",
+                  ],
+                },
+                "displayName": "Styled(styled.div)",
+                "foldedComponentIds": Array [
+                  "sc-iQNlJl",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bsbRJL",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
             },
             Object {
               "instance": null,
@@ -1147,7 +3497,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": Array [
-                  <styled.select
+                  <ForwardRef
                     noBg={true}
                     onChange={[Function]}
                     size="large"
@@ -1177,14 +3527,14 @@ ShallowWrapper {
                     >
                       Daily
                     </option>
-                  </styled.select>,
-                  <styled.div>
-                    <styled.button
+                  </ForwardRef>,
+                  <ForwardRef>
+                    <ForwardRef
                       onClick={[Function]}
                     >
                       Save
-                    </styled.button>
-                  </styled.div>,
+                    </ForwardRef>
+                  </ForwardRef>,
                 ],
               },
               "ref": null,
@@ -1192,7 +3542,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
                     "children": Array [
                       <option
@@ -1289,33 +3639,252 @@ ShallowWrapper {
                       "type": "option",
                     },
                   ],
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [
+                      [Function],
+                    ],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-Rmtcm",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  position: relative;
+  height: 3rem;
+  width: 45%;
+  border: ",
+                        [Function],
+                        ";
+  border-radius: 4px;
+  color: ",
+                        [Function],
+                        ";
+  font-size: ",
+                        [Function],
+                        ";
+  margin: ",
+                        [Function],
+                        ";
+  padding: ",
+                        [Function],
+                        ";
+  background: ",
+                        [Function],
+                        ";
+
+  &:focus {
+    outline: ",
+                        [Function],
+                        ";
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.select",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-Rmtcm",
+                    "target": "select",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "children": <styled.button
+                    "children": <ForwardRef
                       onClick={[Function]}
                     >
                       Save
-                    </styled.button>,
+                    </ForwardRef>,
                   },
                   "ref": null,
                   "rendered": Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "class",
+                    "nodeType": "function",
                     "props": Object {
                       "children": "Save",
                       "onClick": [Function],
                     },
                     "ref": null,
                     "rendered": "Save",
-                    "type": [Function],
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [
+                        [Function],
+                      ],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-dVhcbM",
+                        "isStatic": false,
+                        "rules": Array [
+                          "
+  text-transform: uppercase;
+  width: 5.5rem;
+  height: 2.875rem;
+  border: 2px solid ",
+                          "#7CBCDD",
+                          ";
+  border-radius: 3px;
+  color: ",
+                          [Function],
+                          ";
+  border-color: ",
+                          [Function],
+                          ";
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: ",
+                          "#FFFFFF",
+                          ";
+  cursor: pointer;
+  &:hover {
+    cursor: ",
+                          [Function],
+                          ";
+    color: ",
+                          [Function],
+                          ";
+    border-color: ",
+                          [Function],
+                          ";
+  }
+",
+                        ],
+                      },
+                      "displayName": "styled.button",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-dVhcbM",
+                      "target": "button",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
                   },
-                  "type": [Function],
+                  "type": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-krvtoX",
+                      "isStatic": false,
+                      "rules": Array [
+                        "
+  display: ",
+                        [Function],
+                        ";
+  flex: ",
+                        [Function],
+                        ";
+  flex-direction: ",
+                        [Function],
+                        "
+  flex-grow: ",
+                        [Function],
+                        ";
+  flex-shrink: ",
+                        [Function],
+                        ";
+  flex-basis: ",
+                        [Function],
+                        ";
+  flex-wrap: ",
+                        [Function],
+                        ";
+  order: ",
+                        [Function],
+                        ";
+  justify-content: ",
+                        [Function],
+                        ";
+  align-items: ",
+                        [Function],
+                        ";
+  align-content: ",
+                        [Function],
+                        ";
+  align-self: ",
+                        [Function],
+                        ";
+  height: ",
+                        [Function],
+                        ";
+  width: ",
+                        [Function],
+                        ";
+",
+                        "
+    margin: ",
+                        [Function],
+                        ";
+    margin-top: ",
+                        [Function],
+                        ";
+    margin-bottom: ",
+                        [Function],
+                        ";
+    margin-left: ",
+                        [Function],
+                        ";
+    margin-right: ",
+                        [Function],
+                        ";
+
+    padding: ",
+                        [Function],
+                        ";
+    padding-top: ",
+                        [Function],
+                        ";
+    padding-bottom: ",
+                        [Function],
+                        ";
+    padding-left: ",
+                        [Function],
+                        ";
+    padding-right: ",
+                        [Function],
+                        ";
+
+    border: ",
+                        [Function],
+                        ";
+    border-top: ",
+                        [Function],
+                        ";
+    border-bottom: ",
+                        [Function],
+                        ";
+    border-left: ",
+                        [Function],
+                        ";
+    border-right: ",
+                        [Function],
+                        ";
+  ",
+                        "
+  justify-content: space-evenly;
+  align-items: center;
+",
+                      ],
+                    },
+                    "displayName": "Styled(Flex)",
+                    "foldedComponentIds": Array [
+                      "sc-eNQAEJ",
+                      "sc-hMqMXs",
+                    ],
+                    "render": [Function],
+                    "styledComponentId": "sc-krvtoX",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
                 },
               ],
               "type": Symbol(react.fragment),
@@ -1324,7 +3893,126 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-cbkKFq",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: ",
+            [Function],
+            ";
+  flex: ",
+            [Function],
+            ";
+  flex-direction: ",
+            [Function],
+            "
+  flex-grow: ",
+            [Function],
+            ";
+  flex-shrink: ",
+            [Function],
+            ";
+  flex-basis: ",
+            [Function],
+            ";
+  flex-wrap: ",
+            [Function],
+            ";
+  order: ",
+            [Function],
+            ";
+  justify-content: ",
+            [Function],
+            ";
+  align-items: ",
+            [Function],
+            ";
+  align-content: ",
+            [Function],
+            ";
+  align-self: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+  width: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+            "
+  flex-direction: column;
+  justify-content: left;
+  margin: 0;
+  width: 85%;
+",
+          ],
+        },
+        "displayName": "Styled(Flex)",
+        "foldedComponentIds": Array [
+          "sc-eNQAEJ",
+          "sc-hMqMXs",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-cbkKFq",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

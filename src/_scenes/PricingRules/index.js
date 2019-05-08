@@ -1,4 +1,6 @@
 // @flow
+
+import styled from 'styled-components';
 import React from 'react';
 import type { EDBuyerType } from '_models/buyerType';
 
@@ -41,18 +43,18 @@ const pricingCrumb = [
   }
 ];
 
-const PricingWrapper = Flex.extend`
+const PricingWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: center;
   padding: 6rem 4rem;
   width: 100%;
 `;
 
-const PricingRulesTableTableContainer = FlexItem.extend`
+const PricingRulesTableTableContainer = styled(FlexItem)`
   min-height: 100%;
 `;
 
-const PricingRuleFullContent = FullContent.extend`
+const PricingRuleFullContent = styled(FullContent)`
   overflow: ${(props) => (props.scrollLocked ? 'hidden' : 'visible')};
 `;
 

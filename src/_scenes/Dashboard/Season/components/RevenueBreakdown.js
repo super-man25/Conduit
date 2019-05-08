@@ -1,4 +1,6 @@
 // @flow
+
+import styled from 'styled-components';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -31,7 +33,7 @@ const BREAKDOWN_COLORSET = [
   cssConstants.SECONDARY_PURPLE
 ];
 
-const CenteredText = P1.extend`
+const CenteredText = styled(P1)`
   text-align: center;
 `;
 

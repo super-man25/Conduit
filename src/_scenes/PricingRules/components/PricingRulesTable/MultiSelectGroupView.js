@@ -1,11 +1,12 @@
 // @flow
 
+import styled from 'styled-components';
 import * as React from 'react';
 import { Text, Flex } from '_components';
 import { Checkbox, MultiSelectOption } from './styled';
 import { cssConstants } from '_constants';
 
-const MultiSelectOptionHeader = MultiSelectOption.extend`
+const MultiSelectOptionHeader = styled(MultiSelectOption)`
   background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   color: #fff;
 

@@ -3,17 +3,17 @@
 exports[`defaultCellRenderer should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Flex
+  Symbol(enzyme.__unrendered__): <ForwardRef
     align="center"
     marginLeft="1.25rem"
   >
-    <styled.p
+    <ForwardRef
       overflow={true}
       title="10"
     >
       10
-    </styled.p>
-  </Flex>,
+    </ForwardRef>
+  </ForwardRef>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -26,21 +26,136 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": <styled.p
+      "align": "center",
+      "children": <ForwardRef
         overflow={true}
         title="10"
       >
         10
-      </styled.p>,
-      "className": "sc-hMqMXs jCrzlt",
+      </ForwardRef>,
+      "forwardedComponent": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-hMqMXs",
+          "isStatic": false,
+          "rules": Array [
+            "
+  display: ",
+            [Function],
+            ";
+  flex: ",
+            [Function],
+            ";
+  flex-direction: ",
+            [Function],
+            "
+  flex-grow: ",
+            [Function],
+            ";
+  flex-shrink: ",
+            [Function],
+            ";
+  flex-basis: ",
+            [Function],
+            ";
+  flex-wrap: ",
+            [Function],
+            ";
+  order: ",
+            [Function],
+            ";
+  justify-content: ",
+            [Function],
+            ";
+  align-items: ",
+            [Function],
+            ";
+  align-content: ",
+            [Function],
+            ";
+  align-self: ",
+            [Function],
+            ";
+  height: ",
+            [Function],
+            ";
+  width: ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+          ],
+        },
+        "displayName": "Flex",
+        "foldedComponentIds": Array [
+          "sc-eNQAEJ",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-hMqMXs",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
+      "forwardedRef": null,
+      "marginLeft": "1.25rem",
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": "10",
         "overflow": true,
@@ -48,29 +163,239 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": "10",
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-jKJlTe",
+          "isStatic": false,
+          "rules": Array [
+            "
+  font-size: ",
+            [Function],
+            ";
+  font-weight: ",
+            [Function],
+            ";
+  color: ",
+            [Function],
+            ";
+  margin: ",
+            [Function],
+            ";
+  text-align: ",
+            [Function],
+            ";
+  opacity: ",
+            [Function],
+            ";
+  cursor: ",
+            [Function],
+            ";
+
+  ",
+            [Function],
+            ";
+",
+            "
+    margin: ",
+            [Function],
+            ";
+    margin-top: ",
+            [Function],
+            ";
+    margin-bottom: ",
+            [Function],
+            ";
+    margin-left: ",
+            [Function],
+            ";
+    margin-right: ",
+            [Function],
+            ";
+
+    padding: ",
+            [Function],
+            ";
+    padding-top: ",
+            [Function],
+            ";
+    padding-bottom: ",
+            [Function],
+            ";
+    padding-left: ",
+            [Function],
+            ";
+    padding-right: ",
+            [Function],
+            ";
+
+    border: ",
+            [Function],
+            ";
+    border-top: ",
+            [Function],
+            ";
+    border-bottom: ",
+            [Function],
+            ";
+    border-left: ",
+            [Function],
+            ";
+    border-right: ",
+            [Function],
+            ";
+  ",
+          ],
+        },
+        "displayName": "Styled(styled.p)",
+        "foldedComponentIds": Array [
+          "sc-ckVGcZ",
+        ],
+        "render": [Function],
+        "styledComponentId": "sc-jKJlTe",
+        "target": "p",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": <styled.p
+        "align": "center",
+        "children": <ForwardRef
           overflow={true}
           title="10"
         >
           10
-        </styled.p>,
-        "className": "sc-hMqMXs jCrzlt",
+        </ForwardRef>,
+        "forwardedComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-hMqMXs",
+            "isStatic": false,
+            "rules": Array [
+              "
+  display: ",
+              [Function],
+              ";
+  flex: ",
+              [Function],
+              ";
+  flex-direction: ",
+              [Function],
+              "
+  flex-grow: ",
+              [Function],
+              ";
+  flex-shrink: ",
+              [Function],
+              ";
+  flex-basis: ",
+              [Function],
+              ";
+  flex-wrap: ",
+              [Function],
+              ";
+  order: ",
+              [Function],
+              ";
+  justify-content: ",
+              [Function],
+              ";
+  align-items: ",
+              [Function],
+              ";
+  align-content: ",
+              [Function],
+              ";
+  align-self: ",
+              [Function],
+              ";
+  height: ",
+              [Function],
+              ";
+  width: ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Flex",
+          "foldedComponentIds": Array [
+            "sc-eNQAEJ",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-hMqMXs",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
+        "forwardedRef": null,
+        "marginLeft": "1.25rem",
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": "10",
           "overflow": true,
@@ -78,9 +403,104 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": "10",
-        "type": [Function],
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-jKJlTe",
+            "isStatic": false,
+            "rules": Array [
+              "
+  font-size: ",
+              [Function],
+              ";
+  font-weight: ",
+              [Function],
+              ";
+  color: ",
+              [Function],
+              ";
+  margin: ",
+              [Function],
+              ";
+  text-align: ",
+              [Function],
+              ";
+  opacity: ",
+              [Function],
+              ";
+  cursor: ",
+              [Function],
+              ";
+
+  ",
+              [Function],
+              ";
+",
+              "
+    margin: ",
+              [Function],
+              ";
+    margin-top: ",
+              [Function],
+              ";
+    margin-bottom: ",
+              [Function],
+              ";
+    margin-left: ",
+              [Function],
+              ";
+    margin-right: ",
+              [Function],
+              ";
+
+    padding: ",
+              [Function],
+              ";
+    padding-top: ",
+              [Function],
+              ";
+    padding-bottom: ",
+              [Function],
+              ";
+    padding-left: ",
+              [Function],
+              ";
+    padding-right: ",
+              [Function],
+              ";
+
+    border: ",
+              [Function],
+              ";
+    border-top: ",
+              [Function],
+              ";
+    border-bottom: ",
+              [Function],
+              ";
+    border-left: ",
+              [Function],
+              ";
+    border-right: ",
+              [Function],
+              ";
+  ",
+            ],
+          },
+          "displayName": "Styled(styled.p)",
+          "foldedComponentIds": Array [
+            "sc-ckVGcZ",
+          ],
+          "render": [Function],
+          "styledComponentId": "sc-jKJlTe",
+          "target": "p",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       },
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -104,6 +524,5 @@ ShallowWrapper {
       },
     },
   },
-  Symbol(enzyme.__childContext__): null,
 }
 `;

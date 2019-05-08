@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, CenteredLoader } from '_components';
 import styled from 'styled-components';
 
-export const EventInventoryVerticalRule = Box.extend`
+export const EventInventoryVerticalRule = styled(Box)`
   background-color: #979797;
   cursor: pointer;
 `;

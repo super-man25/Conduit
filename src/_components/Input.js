@@ -28,12 +28,14 @@ type Props = {
   inValid?: boolean
 };
 
-export const Input: React.ComponentType<Props> = styled.input.attrs({
-  bordercolor: (props) =>
-    (props.valid && cssConstants.SECONDARY_GREEN) ||
-    (props.inValid && cssConstants.SECONDARY_RED) ||
-    cssConstants.PRIMARY_DARK_GRAY
-})`
+export const Input: React.ComponentType<Props> = styled.input.attrs(
+  (props) => ({
+    bordercolor:
+      (props.valid && cssConstants.SECONDARY_GREEN) ||
+      (props.inValid && cssConstants.SECONDARY_RED) ||
+      cssConstants.PRIMARY_DARK_GRAY
+  })
+)`
   box-sizing: border-box;
   display: block;
   margin-top: 10px;

@@ -17,7 +17,7 @@ const Card = styled.div`
   padding: 1rem 2rem;
 `;
 
-const Details = Flex.extend`
+const Details = styled(Flex)`
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0 0;

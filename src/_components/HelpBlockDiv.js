@@ -9,16 +9,15 @@ type Props = {
   show: 'visible' | 'hidden'
 };
 
-export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs({
-  color: (props) => {
-    return (
+export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
+  (props) => ({
+    color:
       (props.type === 'alert-danger' && cssConstants.SECONDARY_RED) ||
       (props.type === 'alert-success' && cssConstants.SECONDARY_GREEN) ||
       (props.type === 'hint' && cssConstants.SECONDARY_PURPLE) ||
       cssConstants.PRIMARY_LIGHT_BLACK
-    );
-  }
-})`
+  })
+)`
   color: ${(props) => props.color}
   font-size: 0.9em;
   font-weight: 200;

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 // Sizes based on common resolutions above 1024px (our min width)
 export const sizes = {
   large: 1440,
@@ -7,7 +8,7 @@ export const sizes = {
 };
 
 export const withBoxModelProps = (styledComponent) => {
-  return styledComponent.extend`
+  return styled(styledComponent)`
     margin: ${(props) => props.margin};
     margin-top: ${(props) => props.marginTop};
     margin-bottom: ${(props) => props.marginBottom};
@@ -19,7 +20,7 @@ export const withBoxModelProps = (styledComponent) => {
     padding-bottom: ${(props) => props.paddingBottom};
     padding-left: ${(props) => props.paddingLeft};
     padding-right: ${(props) => props.paddingRight};
-    
+
     border: ${(props) => props.border};
     border-top: ${(props) => props.borderTop};
     border-bottom: ${(props) => props.borderBottom};

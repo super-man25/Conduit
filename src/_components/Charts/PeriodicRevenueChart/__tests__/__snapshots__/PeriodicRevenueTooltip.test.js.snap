@@ -38,16 +38,16 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "bodyComponent": <React.Fragment>
-        <styled.h3>
+        <ForwardRef>
           Revenue
-        </styled.h3>
-        <styled.p>
+        </ForwardRef>
+        <ForwardRef>
           $100.00
-        </styled.p>
+        </ForwardRef>
       </React.Fragment>,
-      "headerComponent": <styled.p>
+      "headerComponent": <ForwardRef>
         2018-06-18T15:47:45.706Z @MMM DD, YYYY
-      </styled.p>,
+      </ForwardRef>,
     },
     "ref": null,
     "rendered": null,
@@ -60,16 +60,16 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "bodyComponent": <React.Fragment>
-          <styled.h3>
+          <ForwardRef>
             Revenue
-          </styled.h3>
-          <styled.p>
+          </ForwardRef>
+          <ForwardRef>
             $100.00
-          </styled.p>
+          </ForwardRef>
         </React.Fragment>,
-        "headerComponent": <styled.p>
+        "headerComponent": <ForwardRef>
           2018-06-18T15:47:45.706Z @MMM DD, YYYY
-        </styled.p>,
+        </ForwardRef>,
       },
       "ref": null,
       "rendered": null,
@@ -243,20 +243,20 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "bodyComponent": <React.Fragment>
-        <styled.h3>
+        <ForwardRef>
           Revenue
-        </styled.h3>
-        <styled.p>
+        </ForwardRef>
+        <ForwardRef>
           $100.00
-        </styled.p>
+        </ForwardRef>
       </React.Fragment>,
       "headerComponent": <React.Fragment>
-        <styled.p>
+        <ForwardRef>
           2018-06-18T15:47:45.706Z @MMM DD, YYYY
-        </styled.p>
-        <styled.p>
+        </ForwardRef>
+        <ForwardRef>
           2018-06-18T15:47:45.706Z @hh:mm a
-        </styled.p>
+        </ForwardRef>
       </React.Fragment>,
     },
     "ref": null,
@@ -270,20 +270,20 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "bodyComponent": <React.Fragment>
-          <styled.h3>
+          <ForwardRef>
             Revenue
-          </styled.h3>
-          <styled.p>
+          </ForwardRef>
+          <ForwardRef>
             $100.00
-          </styled.p>
+          </ForwardRef>
         </React.Fragment>,
         "headerComponent": <React.Fragment>
-          <styled.p>
+          <ForwardRef>
             2018-06-18T15:47:45.706Z @MMM DD, YYYY
-          </styled.p>
-          <styled.p>
+          </ForwardRef>
+          <ForwardRef>
             2018-06-18T15:47:45.706Z @hh:mm a
-          </styled.p>
+          </ForwardRef>
         </React.Fragment>,
       },
       "ref": null,

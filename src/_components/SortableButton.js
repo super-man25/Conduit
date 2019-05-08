@@ -14,7 +14,7 @@ const Container = styled.div`
   display: inline-block;
 `;
 
-const Label = P1.extend`
+const Label = styled(P1)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   transition: 0.2s ease-in-out all;
 

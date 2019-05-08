@@ -186,86 +186,6 @@ exports[`renders correctly with collapse prop 1`] = `
   border-color: #2670AE;
 }
 
-.c0::before {
-  content: ' 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@-webkit-keyframes dxgQlt{from{-webkit-transform:scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-}
-
 <button
   className="c0"
 />
@@ -304,13 +224,40 @@ exports[`renders correctly with disabled prop 1`] = `
 
 <button
   className="c0"
+  direction=""
   disabled={true}
 />
 `;
 
 exports[`renders correctly with expand prop 1`] = `
+.c0 {
+  display: block;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 200;
+  width: 30px;
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: auto;
+  margin-right: 20px;
+  padding: 0.4em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: #38A9DB;
+  background-color: #38A9DB;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #2670AE;
+  border-color: #2670AE;
+}
+
 <button
-  className=""
+  className="c0"
 />
 `;
 
@@ -347,6 +294,7 @@ exports[`renders correctly with hidden prop 1`] = `
 
 <button
   className="c0"
+  direction=""
   hidden={true}
 />
 `;
@@ -384,6 +332,7 @@ exports[`renders correctly with no props 1`] = `
 
 <button
   className="c0"
+  direction=""
 />
 `;
 
@@ -420,6 +369,7 @@ exports[`renders correctly with secondary prop 1`] = `
 
 <button
   className="c0"
+  direction=""
 />
 `;
 
@@ -456,5 +406,6 @@ exports[`renders correctly with small prop 1`] = `
 
 <button
   className="c0"
+  direction=""
 />
 `;

@@ -8,24 +8,17 @@ type Props = {
   disabled?: boolean
 };
 
-const attrs = {
-  hidden: (props) => {
-    return (props.hidden && 'none') || 'block';
-  },
-  floating: (props) => {
-    return (props.right && 'right') || (props.left && 'left') || 'none';
-  },
-  color: (props) => {
-    return (
-      (props.disabled && cssConstants.PRIMARY_DARK_GRAY) ||
-      cssConstants.PRIMARY_WHITE
-    );
-  }
-};
+const attrs = (props) => ({
+  hidden: (props.hidden && 'none') || 'block',
+  floating: (props.right && 'right') || (props.left && 'left') || 'none',
+  color:
+    (props.disabled && cssConstants.PRIMARY_DARK_GRAY) ||
+    cssConstants.PRIMARY_WHITE
+});
 
-export const DropdownMenuItem: React.ComponentType<Props> = styled.span.attrs({
-  ...attrs
-})`
+export const DropdownMenuItem: React.ComponentType<Props> = styled.span.attrs(
+  attrs
+)`
   display: ${(props) => props.hidden};
   position: relative;
   float: ${(props) => props.floating};

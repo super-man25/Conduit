@@ -1,5 +1,6 @@
 // @flow
 
+import styled from 'styled-components';
 import {
   Setting,
   H5,
@@ -13,19 +14,19 @@ import React from 'react';
 import { titleCase, orDash } from '_helpers/string-utils';
 import { withClickAway } from '_hoc';
 
-const TeamInfoWrapper = Flex.extend`
+const TeamInfoWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: left;
   margin: 0;
   width: 85%;
 `;
 
-const SettingButtonGroup = Flex.extend`
+const SettingButtonGroup = styled(Flex)`
   justify-content: space-evenly;
   align-items: center;
 `;
 
-const TeamSetting = withClickAway(Setting.extend``);
+const TeamSetting = withClickAway(styled(Setting)``);
 
 type Props = {
   name: string,

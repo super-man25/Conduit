@@ -1,6 +1,6 @@
 // @flow
+
 import { get, put, post } from '_helpers/api';
-import { getYear } from 'date-fns';
 import type { EDEvent, EDInventoryRow } from '_models';
 import {
   validatePercentPriceModifier,

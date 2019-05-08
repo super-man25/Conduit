@@ -34,15 +34,12 @@ export const H2 = styled.h2`
     props.weight ? props.weight : cssConstants.TITLE_WEIGHT_H2};
 `;
 
-export const H3 = styled.h3.attrs({
-  color: (props) => {
-    return (
-      (props.type === 'secondary' && cssConstants.SECONDARY_BLUE) ||
-      (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
-      cssConstants.PRIMARY_DARK_BLUE
-    );
-  }
-})`
+export const H3 = styled.h3.attrs((props) => ({
+  color:
+    (props.type === 'secondary' && cssConstants.SECONDARY_BLUE) ||
+    (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
+    cssConstants.PRIMARY_DARK_BLUE
+}))`
   color: ${(props) => props.color}
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H3};
   font-weight: ${(props) =>
@@ -50,36 +47,30 @@ export const H3 = styled.h3.attrs({
 `;
 
 export const H4 = withBoxModelProps(
-  styled.h4.attrs({
-    color: (props) => {
-      return (
-        (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
-        cssConstants.PRIMARY_LIGHT_BLACK
-      );
-    }
-  })`
+  styled.h4.attrs((props) => ({
+    color:
+      (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
+      cssConstants.PRIMARY_LIGHT_BLACK
+  }))`
     color: ${(props) => props.color};
     font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H4};
     font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H4};
   `
 );
 
-export const H5 = styled.h5.attrs({
-  color: (props) => {
-    return (
-      (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
-      cssConstants.PRIMARY_LIGHT_BLACK
-    );
-  }
-})`
+export const H5 = styled.h5.attrs((props) => ({
+  color:
+    (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
+    cssConstants.PRIMARY_LIGHT_BLACK
+}))`
   color: ${(props) => props.color};
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H5};
   font-weight: ${(props) => props.weight || cssConstants.TITLE_WEIGHT_H5};
 `;
 
-export const P1 = styled.p.attrs({
-  size: (props) => (props.size === 'small' ? '0.875rem' : props.size)
-})`
+export const P1 = styled.p.attrs((props) => ({
+  size: props.size === 'small' ? '0.875rem' : props.size
+}))`
   margin: 0;
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) => props.size || '1rem'};

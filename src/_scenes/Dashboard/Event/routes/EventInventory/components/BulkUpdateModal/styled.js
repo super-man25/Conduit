@@ -49,7 +49,7 @@ export const ModalBody = styled.div`
   border-bottom-right-radius: 3px;
 `;
 
-export const Title = H4.extend`
+export const Title = styled(H4)`
   margin: 0;
   margin-bottom: 0.25rem;
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
@@ -72,11 +72,11 @@ export const Label = styled.label`
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
 `;
 
-export const Field = Box.extend`
+export const Field = styled(Box)`
   position: relative;
 `;
 
-export const FieldErrorText = Text.extend`
+export const FieldErrorText = styled(Text)`
   position: absolute;
   top: 100%;
 `;

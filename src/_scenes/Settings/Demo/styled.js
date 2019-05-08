@@ -2,33 +2,33 @@ import { Flex, Box, S1, Text } from '_components';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 
-export const DemoWrapper = Flex.extend`
+export const DemoWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: left;
   min-width: 100%;
 `;
 
-export const DataWrapper = Flex.extend`
+export const DataWrapper = styled(Flex)`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 `;
 
-export const SectionWrapper = Box.extend`
+export const SectionWrapper = styled(Box)`
   max-height: 75vh;
   overflow-y: auto;
 `;
 
-export const SectionData = Box.extend`
+export const SectionData = styled(Box)`
   padding: 0.5em;
 `;
 
-export const SectionText = S1.extend`
+export const SectionText = styled(S1)`
   font-size: 1rem;
   font-weight: bold;
 `;
 
-export const RowWrapper = Box.extend`
+export const RowWrapper = styled(Box)`
   padding: 0.5em;
 `;
 
@@ -39,14 +39,14 @@ export const FeatureGroupWrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export const FeatureGroupTitle = Text.extend`
+export const FeatureGroupTitle = styled(Text)`
   font-size: ${cssConstants.TITLE_SIZE_H4};
   font-weight: ${cssConstants.TITLE_WEIGHT_H4};
   color: ${cssConstants.PRIMARY_DARKEST_GRAY};
   margin-bottom: 20px;
 `;
 
-export const FeatureInputLabel = Text.extend`
+export const FeatureInputLabel = styled(Text)`
   font-size: 12px;
   color: ${cssConstants.PRIMARY_GRAY};
   margin-bottom: 10px;

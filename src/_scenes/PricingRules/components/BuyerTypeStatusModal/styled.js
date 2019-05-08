@@ -48,7 +48,7 @@ export const ModalFooter = styled.div`
   border-bottom-right-radius: 3px;
 `;
 
-export const BuyerTypeOption = Flex.extend`
+export const BuyerTypeOption = styled(Flex)`
   padding: 0 2rem;
   min-height: 45px;
   width: 100%;
@@ -61,21 +61,21 @@ export const BuyerTypeOption = Flex.extend`
   }
 `;
 
-export const FlexText = Text.extend`
+export const FlexText = styled(Text)`
   flex-basis: ${(props) => props.basis || '10%'};
 `;
 
-export const ErrorText = Text.extend`
+export const ErrorText = styled(Text)`
   text-align: right;
 `;
 
-export const Title = H4.extend`
+export const Title = styled(H4)`
   margin: 0;
   margin-bottom: 2rem;
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
 `;
 
-export const FilterBuyerTypesInput = Input.extend`
+export const FilterBuyerTypesInput = styled(Input)`
   border-radius: 20px;
   height: 35px;
   width: 80px;

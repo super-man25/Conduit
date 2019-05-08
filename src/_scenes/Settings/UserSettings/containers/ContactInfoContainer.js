@@ -1,5 +1,6 @@
 // @flow
 
+import styled from 'styled-components';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -24,25 +25,25 @@ import type { EDUser } from '_models';
 import { titleCase } from '_helpers/string-utils';
 import { withClickAway } from '_hoc';
 
-const ContactInfoWrapper = withClickAway(Flex.extend`
+const ContactInfoWrapper = withClickAway(styled(Flex)`
   flex-direction: column;
   width: 100%;
   margin: 2rem 0;
   padding: 0;
 `);
 
-const SettingButtonGroup = Flex.extend`
+const SettingButtonGroup = styled(Flex)`
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
 `;
 
-const ContactSection = Flex.extend`
+const ContactSection = styled(Flex)`
   align-items: start;
   flex-direction: column;
 `;
 
-const ContactText = EDText.extend`
+const ContactText = styled(EDText)`
   font-size: 1.2rem;
   margin: '1rem 0';
 `;

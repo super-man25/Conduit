@@ -10,12 +10,14 @@ type Props = {
   columns: string // override for css grid-template-columns
 };
 
-export const Setting: React.ComponentType<Props> = styled.div.attrs({
-  columns: (props) => {
-    const cols = props.cols || 2;
-    return `repeat(${cols}, 1fr)`;
-  }
-})`
+export const Setting: React.ComponentType<Props> = styled.div.attrs(
+  (props) => ({
+    columns: (props) => {
+      const cols = props.cols || 2;
+      return `repeat(${cols}, 1fr)`;
+    }
+  })
+)`
   display: grid;
   grid-template-columns: ${(props) => props.columns};
   width: ${(props) => props.width || '100%'};

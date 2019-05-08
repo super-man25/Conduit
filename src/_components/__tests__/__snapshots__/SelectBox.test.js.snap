@@ -19,11 +19,8 @@ exports[`renders correctly with inValid prop 1`] = `
 }
 
 <select
-  background="#FFFFFF"
-  border="1px solid"
   className="c0"
   color="#323232"
-  margin={0}
 />
 `;
 
@@ -46,11 +43,8 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <select
-  background="#FFFFFF"
-  border="1px solid"
   className="c0"
   color="#323232"
-  margin={0}
 />
 `;
 
@@ -73,11 +67,8 @@ exports[`renders correctly with noBg prop 1`] = `
 }
 
 <select
-  background="transparent"
-  border="none"
   className="c0"
   color="#38A9DB"
-  margin="0 0 0 -10px"
 />
 `;
 
@@ -100,10 +91,7 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 <select
-  background="#FFFFFF"
-  border="1px solid"
   className="c0"
   color="#323232"
-  margin={0}
 />
 `;
