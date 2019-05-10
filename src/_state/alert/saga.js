@@ -1,19 +1,18 @@
-import { delay } from 'redux-saga';
-import { put, call, takeEvery } from 'redux-saga/effects';
+import { delay, put, takeEvery } from 'redux-saga/effects';
 import { SUCCESS_ASYNC, ERROR_ASYNC, SUCCESS, ERROR, CLEAR } from './actions';
 
 // Workers
 export function* successAlertAsync(action) {
   const message = action.payload;
   yield put({ type: SUCCESS, payload: message });
-  yield call(delay, 3000);
+  yield delay(3000);
   yield put({ type: CLEAR });
 }
 
 export function* errorAlertAsync(action) {
   const message = action.payload;
   yield put({ type: ERROR, payload: message });
-  yield call(delay, 3000);
+  yield delay(3000);
   yield put({ type: CLEAR });
 }
 

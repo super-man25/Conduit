@@ -66,7 +66,7 @@ export function GroupedSplitButton({
 
 export class MultiSelect extends React.Component<Props, State> {
   state = { isOpen: false, selectAllNext: true, isGrouped: false };
-  ref = React.createRef();
+  ref = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
     if (this.props.options.length === this.props.selected.length) {

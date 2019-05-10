@@ -1,9 +1,15 @@
 // @flow
 
 import { eventService } from '_services';
-import { delay } from 'redux-saga';
 import type { Saga } from 'redux-saga';
-import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import {
+  call,
+  delay,
+  put,
+  select,
+  takeEvery,
+  takeLatest
+} from 'redux-saga/effects';
 import { types, selectors, actions } from '.';
 import type { FetchEventListAction } from '.';
 import Fuse from 'fuse.js';
@@ -44,7 +50,7 @@ export function* fetchAsync(action: FetchEventListAction): Saga {
 }
 
 export function* handleSearchInput(): Saga {
-  yield call(delay, 500);
+  yield delay(500);
 
   const filter = yield select(selectors.selectEventListSearchFilter);
 

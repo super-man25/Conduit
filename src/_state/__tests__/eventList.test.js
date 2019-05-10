@@ -1,7 +1,6 @@
 import { eventService } from '_services';
-import { delay } from 'redux-saga';
-import { call, put, select } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { call, delay, put, select } from 'redux-saga/effects';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import {
   fetchAsync,
   handleSearchInput,
@@ -177,7 +176,7 @@ describe('saga workers', () => {
     const action = actions.searchEventList('Some Filter');
     const generator = cloneableGenerator(handleSearchInput)(action);
 
-    expect(generator.next().value).toEqual(call(delay, 500));
+    expect(generator.next().value).toEqual(delay(500));
     expect(generator.next().value).toEqual(
       select(selectors.selectEventListSearchFilter)
     );

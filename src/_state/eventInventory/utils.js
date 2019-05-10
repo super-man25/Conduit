@@ -9,7 +9,7 @@ export function calculateFilteredRows(
   selectedScaleFilters: any[] = [],
   scaleFilters: EDVenuePriceScale[]
 ) {
-  let rowsFilteredByScale = rows;
+  let rowsFilteredByScale: EDInventoryRow[] = rows;
   const hasScaleFilters = selectedScaleFilters.length;
 
   if (hasScaleFilters) {
@@ -17,7 +17,9 @@ export function calculateFilteredRows(
       (acc, v) => ({ ...acc, [v.id]: true }),
       {}
     );
-    rowsFilteredByScale = rows.filter((row) => scaleMap[row.priceScaleId]);
+    rowsFilteredByScale = rows.filter(
+      (row: EDInventoryRow) => scaleMap[row.priceScaleId]
+    );
   }
 
   if (!filterName) return rowsFilteredByScale;

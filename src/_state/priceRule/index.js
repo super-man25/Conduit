@@ -386,14 +386,14 @@ const selectEditingPriceRule = (store: Store) =>
 const selectIsEditingPriceRule = (store: Store) =>
   store.priceRule.editingRowId !== null;
 
-const selectBuyerTypesInActivePriceRules = (store: Store) =>
+const selectBuyerTypesInActivePriceRules = (store: Store): any[] =>
   store.priceRule.allRows
     .reduce(
       (acc, priceRule) =>
         priceRule.isActive ? acc.concat(priceRule.externalBuyerTypeIds) : acc,
       []
     )
-    .filter((id, index, arr) => arr.indexOf(id) === index);
+    .filter((id: string, index, arr) => arr.indexOf(id) === index);
 
 export const selectors = {
   selectAllPriceRuleRows,

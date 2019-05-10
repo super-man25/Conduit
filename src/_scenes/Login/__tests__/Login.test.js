@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
-import Login, { LoginPresenter } from '../index';
+import { LoginPresenter } from '../index';
 
 const props = {
   authState: {
@@ -95,21 +95,6 @@ describe('<LoginPresenter />', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(wrapper.state().submitted).toEqual(true);
     spy.mockClear();
-  });
-
-  it('renders LoginPresenter with authState prop from store.auth', () => {
-    const authTest = { pending: false };
-    // Stubbing out store. Would normally use a helper method. Did it inline for simplicity.
-    const store = {
-      getState: () => ({
-        auth: authTest
-      }),
-      dispatch: () => {},
-      subscribe: () => {}
-    };
-    const subject = shallow(<Login store={store} />).find(LoginPresenter);
-    const actual = subject.prop('authState');
-    expect(actual).toBe(authTest);
   });
 });
 

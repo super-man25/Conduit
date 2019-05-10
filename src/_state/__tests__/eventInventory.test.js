@@ -6,7 +6,7 @@ import {
   selectors
 } from '../eventInventory';
 import { selectors as eventSelectors } from '../event';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import {
   fetchEventInventory,
   setRowListed,

@@ -32,7 +32,7 @@ const SVGSideLength = 14;
 
 export class ScaleColumnHeaderPresenter extends React.Component<Props, State> {
   state = { scaleDropdownOpen: false };
-  ref = React.createRef();
+  ref = React.createRef<HTMLDivElement>();
 
   onScaleClicked = (scale: EDVenuePriceScale) => {
     const { selectedScaleFilters, setSelectedScaleFilters } = this.props;

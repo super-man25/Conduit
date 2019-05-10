@@ -8,8 +8,8 @@ const WEIGHTS = new Map()
   .set('light', '300')
   .set('lighter', '200');
 
-const overflow = (props) =>
-  props.overflow &&
+const ellipsis = (props) =>
+  props.ellipsis &&
   css`
     white-space: nowrap;
     overflow: hidden;
@@ -112,5 +112,5 @@ export const Text = withBoxModelProps(styled.p`
   opacity: ${(props) => props.opacity};
   cursor: ${(props) => props.cursor || 'default'};
 
-  ${overflow};
+  ${ellipsis};
 `);

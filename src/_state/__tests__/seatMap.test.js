@@ -1,5 +1,5 @@
 import { actions, types, reducer, initialState, selectors } from '../seatMap';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { fetchSeatMap, fetchImageAndCreateObjectUrl } from '../seatMap/saga';
 import { select, all, call, put } from 'redux-saga/effects';
 import { selectors as eventSelectors } from '../event';

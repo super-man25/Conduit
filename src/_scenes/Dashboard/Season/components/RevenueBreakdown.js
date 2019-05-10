@@ -51,7 +51,7 @@ function getBreakdownTitleFromType(type: BreakdownType) {
   return type === 'inventory' ? 'Tickets Sold Breakdown' : 'Revenue Breakdown';
 }
 
-const RevenueBreakdownError = ({ error, onRetry }) => (
+const RevenueBreakdownError = () => (
   <Box>
     <CenteredText>There was an issue fetching revenue stats.</CenteredText>
   </Box>
@@ -63,7 +63,9 @@ const BreakdownLoader = () => (
   </div>
 );
 
-const NoData = ({ type }) => <P1>No {type} breakdown data</P1>;
+const NoData = ({ type }: { type: string }) => (
+  <P1>No {type} breakdown data</P1>
+);
 
 type Props = {
   revenueStatState: {

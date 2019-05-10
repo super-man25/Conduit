@@ -7,9 +7,8 @@ import {
   ERROR_ASYNC
 } from '_state/alert/actions';
 import { successAlertAsync, errorAlertAsync } from '_state/alert/saga';
-import { delay } from 'redux-saga';
-import { cloneableGenerator } from 'redux-saga/utils';
-import { call, put } from 'redux-saga/effects';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
+import { delay, put } from 'redux-saga/effects';
 
 describe('actions', () => {
   it('should create an action for a success message', () => {
@@ -94,7 +93,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(
       put({ type: SUCCESS, payload: message })
     );
-    expect(generator.next().value).toEqual(call(delay, 3000));
+    expect(generator.next().value).toEqual(delay(3000));
     expect(generator.next().value).toEqual(put({ type: CLEAR }));
   });
 
@@ -105,7 +104,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(
       put({ type: ERROR, payload: message })
     );
-    expect(generator.next().value).toEqual(call(delay, 3000));
+    expect(generator.next().value).toEqual(delay(3000));
     expect(generator.next().value).toEqual(put({ type: CLEAR }));
   });
 });

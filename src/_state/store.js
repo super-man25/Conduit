@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { reducer as alertReducer, saga as alertSaga } from './alert';
@@ -89,7 +89,10 @@ export const reducers = {
 };
 
 // Build root reducer
-const reducer = combineReducers(reducers);
+const reducer = combineReducers({
+  router: connectRouter(history),
+  ...reducers
+});
 const rootReducer = (state, action) => {
   if (action.type === 'global/RESET') {
     state = undefined;
@@ -101,11 +104,13 @@ const rootReducer = (state, action) => {
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [routerMiddleware(history), sagaMiddleware];
 
+// Compose enhancers
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 // Create store
 const store = createStore(
-  connectRouter(history)(rootReducer),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middlewares)
+  rootReducer,
+  composeEnhancers(applyMiddleware(...middlewares))
 );
 
 const combineSagas = {

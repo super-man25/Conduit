@@ -1,5 +1,5 @@
 import { actions, types, reducer, initialState, selectors } from '../season';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { fetchSeasons } from '../season/saga';
 import { call, select, put } from 'redux-saga/effects';
 import { seasonService } from '_services';

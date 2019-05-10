@@ -89,6 +89,7 @@ const ChartLegend = ({
     return <CumulativeRevenueChartLegend />;
   else if (selectedGroupFilter === 1 && selectedTab === 1)
     return <CumulativeInventoryChartLegend />;
+  else return null;
 };
 
 export class SeasonRevenuePanel extends React.Component<Props> {

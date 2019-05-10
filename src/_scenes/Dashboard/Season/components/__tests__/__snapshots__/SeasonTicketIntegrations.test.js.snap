@@ -1,144 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SeasonTicketIntegrations /> should render correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SeasonTicketIntegrationsPresenter
-    fetchTicketIntegrations={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "seasonId": 1,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    id={1}
-    ticketIntegrations={
-      Array [
-        Object {
-          "id": 1,
-          "isActive": true,
-          "logoUrl": "#",
-          "name": "Some Name",
-          "sold": 1000,
-          "total": 1000,
-        },
-        Object {
-          "id": 2,
-          "isActive": true,
-          "logoUrl": "#",
-          "name": "Some Name",
-          "sold": 1000,
-          "total": 1000,
-        },
-      ]
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "error": undefined,
-      "id": 1,
-      "loading": undefined,
-      "showSettings": false,
-      "ticketIntegrations": Array [
-        Object {
-          "id": 1,
-          "isActive": true,
-          "logoUrl": "#",
-          "name": "Some Name",
-          "sold": 1000,
-          "total": 1000,
-        },
-        Object {
-          "id": 2,
-          "isActive": true,
-          "logoUrl": "#",
-          "name": "Some Name",
-          "sold": 1000,
-          "total": 1000,
-        },
-      ],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "error": undefined,
+<TicketIntegrations
+  id={1}
+  showSettings={false}
+  ticketIntegrations={
+    Array [
+      Object {
         "id": 1,
-        "loading": undefined,
-        "showSettings": false,
-        "ticketIntegrations": Array [
-          Object {
-            "id": 1,
-            "isActive": true,
-            "logoUrl": "#",
-            "name": "Some Name",
-            "sold": 1000,
-            "total": 1000,
-          },
-          Object {
-            "id": 2,
-            "isActive": true,
-            "logoUrl": "#",
-            "name": "Some Name",
-            "sold": 1000,
-            "total": 1000,
-          },
-        ],
+        "isActive": true,
+        "logoUrl": "#",
+        "name": "Some Name",
+        "sold": 1000,
+        "total": 1000,
       },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
+      Object {
+        "id": 2,
+        "isActive": true,
+        "logoUrl": "#",
+        "name": "Some Name",
+        "sold": 1000,
+        "total": 1000,
       },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+    ]
+  }
+/>
 `;

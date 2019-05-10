@@ -1,6 +1,6 @@
 import { eventCategoryService } from '_services';
 import { call, put } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { fetchEventCategories } from '_state/eventCategory/saga';
 import {
   selectors,

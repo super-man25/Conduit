@@ -47,15 +47,17 @@ export class EventRoute extends React.Component<Props> {
       this.props.replace('/season');
     }
 
-    return (
-      event && (
+    if (!!event) {
+      return (
         <Switch>
           <Route path="/event/:id/inventory" component={EventInventory} />
           <Route path="/event/:id" component={EventOverview} />
           <Redirect to="/season" />
         </Switch>
-      )
-    );
+      );
+    }
+
+    return null;
   }
 }
 

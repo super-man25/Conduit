@@ -19,7 +19,7 @@ import { cssConstants } from '_constants';
 import { readableDateAndTime } from '_helpers/string-utils';
 import { EDEvent } from '_models';
 import { formatNumber, formatUSD } from '_helpers/string-utils';
-import { compose } from 'recompose';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
 import { selectors } from '_state/event';

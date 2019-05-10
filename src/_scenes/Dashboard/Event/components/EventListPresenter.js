@@ -55,7 +55,7 @@ type Props = {
   isAdmin: boolean,
   loading: boolean,
   onClick: (event: EDEvent) => void,
-  onSearchInputChange: (event: SyntheticEvent<KeyboardEvent>) => void,
+  onSearchInputChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
   title: string
 };
 

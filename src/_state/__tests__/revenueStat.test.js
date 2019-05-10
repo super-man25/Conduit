@@ -1,6 +1,6 @@
 import { actions, reducer, initialState, types } from '_state/revenueStat';
 import { fetchRevenueBreakdown } from '../revenueStat/saga';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { revenueStatsService } from '_services';
 import { call, put } from 'redux-saga/effects';
 

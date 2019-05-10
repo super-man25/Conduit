@@ -1,5 +1,5 @@
 import { call, put, select } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { eventStatService } from '_services';
 import { actions, reducer } from '_state/seasonStat';
 import {

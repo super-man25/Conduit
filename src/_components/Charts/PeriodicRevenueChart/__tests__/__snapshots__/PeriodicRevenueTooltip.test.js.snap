@@ -1,316 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PeriodicRevenueTooltip /> should render correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PeriodicRevenueTooltip
-    active={true}
-    dateFormat="MMM DD, YYYY"
-    payload={
-      Array [
-        Object {
-          "payload": Object {
-            "eventId": 1,
-            "id": 1,
-            "inventory": 100,
-            "isProjected": false,
-            "periodicInventory": 100,
-            "periodicRevenue": 100,
-            "revenue": 100,
-            "timestamp": 1529336865706,
-          },
-        },
-      ]
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "bodyComponent": <React.Fragment>
-        <ForwardRef>
-          Revenue
-        </ForwardRef>
-        <ForwardRef>
-          $100.00
-        </ForwardRef>
-      </React.Fragment>,
-      "headerComponent": <ForwardRef>
-        2018-06-18T15:47:45.706Z @MMM DD, YYYY
-      </ForwardRef>,
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "bodyComponent": <React.Fragment>
-          <ForwardRef>
-            Revenue
-          </ForwardRef>
-          <ForwardRef>
-            $100.00
-          </ForwardRef>
-        </React.Fragment>,
-        "headerComponent": <ForwardRef>
-          2018-06-18T15:47:45.706Z @MMM DD, YYYY
-        </ForwardRef>,
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+<ChartTooltip
+  bodyComponent={
+    <React.Fragment>
+      <ForwardRef>
+        Revenue
+      </ForwardRef>
+      <ForwardRef>
+        $100.00
+      </ForwardRef>
+    </React.Fragment>
+  }
+  headerComponent={
+    <ForwardRef>
+      2018-06-18T15:47:45.706Z @MMM DD, YYYY
+    </ForwardRef>
+  }
+/>
 `;
 
-exports[`<PeriodicRevenueTooltip /> should render correctly when active is false 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PeriodicRevenueTooltip
-    active={false}
-    dateFormat="MMM DD, YYYY"
-    payload={
-      Array [
-        Object {
-          "payload": Object {
-            "eventId": 1,
-            "id": 1,
-            "inventory": 100,
-            "isProjected": false,
-            "periodicInventory": 100,
-            "periodicRevenue": 100,
-            "revenue": 100,
-            "timestamp": 1529336865706,
-          },
-        },
-      ]
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): null,
-  Symbol(enzyme.__nodes__): Array [
-    null,
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
+exports[`<PeriodicRevenueTooltip /> should render correctly when active is false 1`] = `""`;
 
-exports[`<PeriodicRevenueTooltip /> should render correctly when no payload is passed 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PeriodicRevenueTooltip
-    active={true}
-    dateFormat="MMM DD, YYYY"
-    payload={Array []}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): null,
-  Symbol(enzyme.__nodes__): Array [
-    null,
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
+exports[`<PeriodicRevenueTooltip /> should render correctly when no payload is passed 1`] = `""`;
 
 exports[`<PeriodicRevenueTooltip /> should render correctly with different dateformats  1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PeriodicRevenueTooltip
-    active={true}
-    dateFormat="hh:mm a"
-    payload={
-      Array [
-        Object {
-          "payload": Object {
-            "eventId": 1,
-            "id": 1,
-            "inventory": 100,
-            "isProjected": false,
-            "periodicInventory": 100,
-            "periodicRevenue": 100,
-            "revenue": 100,
-            "timestamp": 1529336865706,
-          },
-        },
-      ]
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "bodyComponent": <React.Fragment>
-        <ForwardRef>
-          Revenue
-        </ForwardRef>
-        <ForwardRef>
-          $100.00
-        </ForwardRef>
-      </React.Fragment>,
-      "headerComponent": <React.Fragment>
-        <ForwardRef>
-          2018-06-18T15:47:45.706Z @MMM DD, YYYY
-        </ForwardRef>
-        <ForwardRef>
-          2018-06-18T15:47:45.706Z @hh:mm a
-        </ForwardRef>
-      </React.Fragment>,
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "bodyComponent": <React.Fragment>
-          <ForwardRef>
-            Revenue
-          </ForwardRef>
-          <ForwardRef>
-            $100.00
-          </ForwardRef>
-        </React.Fragment>,
-        "headerComponent": <React.Fragment>
-          <ForwardRef>
-            2018-06-18T15:47:45.706Z @MMM DD, YYYY
-          </ForwardRef>
-          <ForwardRef>
-            2018-06-18T15:47:45.706Z @hh:mm a
-          </ForwardRef>
-        </React.Fragment>,
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+<ChartTooltip
+  bodyComponent={
+    <React.Fragment>
+      <ForwardRef>
+        Revenue
+      </ForwardRef>
+      <ForwardRef>
+        $100.00
+      </ForwardRef>
+    </React.Fragment>
+  }
+  headerComponent={
+    <React.Fragment>
+      <ForwardRef>
+        2018-06-18T15:47:45.706Z @MMM DD, YYYY
+      </ForwardRef>
+      <ForwardRef>
+        2018-06-18T15:47:45.706Z @hh:mm a
+      </ForwardRef>
+    </React.Fragment>
+  }
+/>
 `;

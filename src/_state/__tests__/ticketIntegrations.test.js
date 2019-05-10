@@ -5,7 +5,7 @@ import reducer, {
   initialState
 } from '../ticketIntegrations';
 import { fetchTicketIntegrations as fetchTicketIntegrationsSaga } from '../ticketIntegrations/saga';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { call, put } from 'redux-saga/effects';
 import { integrationStatService } from '_services';
 

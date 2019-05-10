@@ -5,7 +5,7 @@ import {
   initialState,
   selectors
 } from '../eventInventoryBulk';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { bulkUpdate } from '../eventInventoryBulk/saga';
 import { select, all, call, put } from 'redux-saga/effects';
 import {

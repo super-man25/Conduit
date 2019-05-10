@@ -1,6 +1,6 @@
 import { buyerTypeService } from '_services';
 import { call, put } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { fetchBuyerTypes, updateBuyerTypes } from '_state/buyerType/saga';
 import { actions as alertActions } from '_state/alert';
 import {

@@ -1,5 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { delay } from 'redux-saga';
+import { call, delay, put, takeLatest } from 'redux-saga/effects';
 import * as t from './actions';
 import { eventService } from '_services';
 

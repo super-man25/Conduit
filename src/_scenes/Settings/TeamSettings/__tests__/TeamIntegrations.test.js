@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TeamIntegrations } from '../components/TeamIntegrations';
-import { Integration } from '_components';
-import { IntegrationToggleAlertModal } from '../components/IntegrationToggleAlertModal';
 
 describe('<TeamIntegrations />', () => {
   const props = {

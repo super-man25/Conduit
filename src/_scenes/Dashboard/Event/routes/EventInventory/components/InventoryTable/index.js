@@ -149,7 +149,7 @@ const withAlternatingBackgroundColor = (rowRenderer) => {
 
 const rowRenderer = withAlternatingBackgroundColor(defaultTableRowRenderer);
 
-const NoTableRowsText = ({ children }) => (
+const NoTableRowsText = ({ children }: { children: React.Node }) => (
   <Flex justify="center" align="center" height="100%">
     <Text size={16}>{children}</Text>
   </Flex>

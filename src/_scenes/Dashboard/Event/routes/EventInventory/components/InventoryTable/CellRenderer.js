@@ -13,7 +13,7 @@ export const defaultCellRenderer = (props: Props) => {
 
   return (
     <Flex align="center" marginLeft="1.25rem">
-      <Text overflow title={value}>
+      <Text ellipsis title={value}>
         {value}
       </Text>
     </Flex>

@@ -1,6 +1,6 @@
 import { priceScaleService } from '_services';
 import { call, put } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { fetchPriceScales } from '_state/priceScale/saga';
 import {
   selectors,

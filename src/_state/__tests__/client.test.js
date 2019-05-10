@@ -15,7 +15,7 @@ import {
   toggleIntegrationAsync
 } from '_state/client/saga';
 import { call, put, select } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { initialState } from '_state/client/reducer';
 import { getClientId, getClient } from '_state/client/selectors';
 

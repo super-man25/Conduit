@@ -1,6 +1,6 @@
 import { teamStatService } from '_services';
 import { call, put } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { actions, reducer } from '_state/teamStat';
 import {
   FETCH_ASYNC,

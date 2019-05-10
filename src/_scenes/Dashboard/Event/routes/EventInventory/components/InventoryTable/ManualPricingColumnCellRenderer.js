@@ -82,7 +82,7 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
               onClick={this.startEditingPrice}
               opacity={textOpacity}
               cursor={'pointer'}
-              overflow
+              ellipsis
               title="SET PRICE"
             >
               SET PRICE

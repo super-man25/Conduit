@@ -23,7 +23,7 @@ import {
   updateEmailAsync
 } from '_state/user/saga';
 import { call, put } from 'redux-saga/effects';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 
 describe('actions', () => {
   it('should create an action for create a user', () => {

@@ -76,7 +76,7 @@ type State = {
 };
 
 export class Dropdown extends React.Component<Props, State> {
-  ref = React.createRef();
+  ref = React.createRef<HTMLDivElement>();
   static defaultProps = {
     noneSelected: 'Select an Item'
   };

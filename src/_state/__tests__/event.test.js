@@ -1,5 +1,5 @@
 import { actions, types, selectors, reducer, initialState } from '../event';
-import { cloneableGenerator } from 'redux-saga/utils';
+import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { toggleBroadcasting, fetchEvent } from '../event/saga';
 import { call, put } from 'redux-saga/effects';
 import { eventService } from '_services';
