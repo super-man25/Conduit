@@ -36,6 +36,10 @@ export function* fetchEventInventory(
       type: types.FETCH_EVENT_INVENTORY_SUCCESS,
       payload: eventInventory
     });
+    yield put({
+      type: types.SET_EVENT_INVENTORY_FILTER,
+      payload: 'priceScaleId'
+    });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_INVENTORY_ERROR, payload: err });
   }
