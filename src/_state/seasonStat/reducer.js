@@ -6,7 +6,10 @@ import {
   RESET,
   SET_GROUPING_FILTER,
   SET_FIRST_AND_LAST_DATE,
-  SET_DATE_RANGE
+  SET_DATE_RANGE,
+  DOWNLOAD_SEASON_REPORT,
+  DOWNLOAD_SEASON_REPORT_SUCCESS,
+  DOWNLOAD_SEASON_REPORT_ERROR
 } from './actions';
 import type { Action } from './actions';
 import type { EventStat } from '_models';
@@ -14,6 +17,7 @@ import type { Filter, DateRange } from '_helpers/types';
 
 export type SeasonStatState = {
   +loading: boolean,
+  +downloading: boolean,
   +seasonStats: EventStat[],
   +groupFilters: Filter[],
   +selectedGroupFilter: number,
@@ -26,6 +30,7 @@ export type SeasonStatState = {
 // When there is an endpoint to get first/last date, replace eventDateLimits
 export const initialState: SeasonStatState = {
   loading: false,
+  downloading: false,
   seasonStats: [],
   groupFilters: [
     { label: 'Periodic', value: 0 },
@@ -74,6 +79,12 @@ export default function eventStatReducer(
         dateLimits: { ...action.payload },
         dateRange: { ...action.payload }
       };
+    case DOWNLOAD_SEASON_REPORT:
+      return { ...state, downloading: true };
+    case DOWNLOAD_SEASON_REPORT_SUCCESS:
+      return { ...state, downloading: false };
+    case DOWNLOAD_SEASON_REPORT_ERROR:
+      return { ...state, downloading: false, error: action.payload };
     default:
       return state;
   }

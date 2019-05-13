@@ -8,7 +8,8 @@ import { withBoxModelProps } from '_helpers/style-utils';
 const TYPES = new Map()
   .set('primary', cssConstants.PRIMARY_DARKEST_GRAY)
   .set('secondary', cssConstants.PRIMARY_LIGHT_BLUE)
-  .set('tertiary', cssConstants.PRIMARY_DARK_GRAY);
+  .set('tertiary', cssConstants.PRIMARY_DARK_GRAY)
+  .set('disabled', cssConstants.PRIMARY_GRAY);
 
 const SIZES = new Map()
   .set('small', '0.875rem')

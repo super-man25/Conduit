@@ -11,3 +11,4 @@ export * from './venue';
 export * from './demo';
 export * from './buyerType';
 export * from './scheduledJob';
+export * from './report';

@@ -13,3 +13,4 @@ export * from './buyerType';
 export * from './priceRule';
 export * from './priceScale';
 export * from './eventCategory';
+export * from './transactionReport';

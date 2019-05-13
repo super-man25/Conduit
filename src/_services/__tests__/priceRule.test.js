@@ -82,7 +82,7 @@ describe('update', () => {
       });
   });
 
-  it('should fail to update a price rule because there is a disbaled buyer type', () => {
+  it('should fail to update a price rule because there is a disabled buyer type', () => {
     const prId = priceRules[0].id;
     const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
       status: 409,

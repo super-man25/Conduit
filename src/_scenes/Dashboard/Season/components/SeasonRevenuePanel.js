@@ -25,7 +25,9 @@ import {
   CumulativeRevenueChart,
   CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
-  CumulativeInventoryChartLegend
+  CumulativeInventoryChartLegend,
+  Icon,
+  EDText
 } from '_components';
 import {
   cssConstants,
@@ -56,6 +58,7 @@ const TabLink = styled.span`
 
 const DateFilterOptions = styled.div`
   display: flex;
+  align-items: center;
 
   > * + * {
     margin-left: 6px;
@@ -92,6 +95,31 @@ const ChartLegend = ({
   else return null;
 };
 
+export const DownloadButton = (props: {
+  onClick: () => void,
+  downloading: boolean
+}) => {
+  const { onClick, downloading } = props;
+  const cursor = downloading ? 'no-drop' : 'pointer';
+  const color = downloading
+    ? cssConstants.PRIMARY_GRAY
+    : cssConstants.PRIMARY_LIGHT_BLUE;
+  const type = downloading ? 'disabled' : 'secondary';
+  const text = downloading ? 'DOWNLOADING...' : 'DOWNLOAD TRANSACTIONS';
+  return (
+    <Flex
+      style={{ cursor }}
+      onClick={!downloading ? onClick : undefined}
+      direction="row"
+      height="24px"
+      align="center"
+    >
+      <Icon size={24} color={color} name="download" />
+      <EDText type={type}>{text}</EDText>
+    </Flex>
+  );
+};
+
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
     const { selectedSeasonId } = this.props;
@@ -110,10 +138,26 @@ export class SeasonRevenuePanel extends React.Component<Props> {
     }
   }
 
+  handleDownloadClick = () => {
+    const {
+      selectedSeasonId,
+      seasonStatState: {
+        dateRange: { from, to }
+      },
+      seasonStatActions: { downloadSeasonReport }
+    } = this.props;
+    downloadSeasonReport({
+      id: selectedSeasonId,
+      start: from ? from.toISOString() : null,
+      end: to ? to.toISOString() : null
+    });
+  };
+
   render() {
     const {
       seasonStatState: {
         loading,
+        downloading,
         groupFilters,
         dateRange: { from, to },
         dateLimits,
@@ -185,6 +229,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                           after: dateLimits.to
                         }}
                         onChange={setDateRange}
+                      />
+                      <DownloadButton
+                        onClick={this.handleDownloadClick}
+                        downloading={downloading}
                       />
                     </DateFilterOptions>
                   </FlexItem>

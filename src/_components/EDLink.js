@@ -26,7 +26,7 @@ type Props = {
 export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${(props) => props.color || cssConstants.PRIMARY_DARKEST_GRAY};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
 
   &:focus,

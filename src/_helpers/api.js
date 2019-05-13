@@ -20,8 +20,13 @@ Object.setPrototypeOf(ApiError, Error);
  * @param {Object} response - Fetch response object
  */
 export function handleResponse(response) {
+  const contentType = response.headers.get('content-type');
   const statusCode = response.status;
   if (statusCode < 400) {
+    // download csv endpoint returns content as 'text/plain' instead of 'text/csv'
+    if (contentType && contentType.includes('text')) {
+      return response.blob();
+    }
     return response.json();
   }
 

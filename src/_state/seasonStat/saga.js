@@ -3,12 +3,17 @@ import actions, {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
-  SET_DATE_RANGE
+  SET_DATE_RANGE,
+  DOWNLOAD_SEASON_REPORT,
+  DOWNLOAD_SEASON_REPORT_SUCCESS,
+  DOWNLOAD_SEASON_REPORT_ERROR
 } from './actions';
-import { eventStatService } from '_services';
+import { eventStatService, transactionReportService } from '_services';
 import { getSeasonStatFilterArguments } from './selectors';
 import { selectors } from '../season';
 import { subMonths } from 'date-fns';
+import alertActions from '_state/alert/actions';
+import { saveAs } from 'file-saver';
 
 // Workers
 export function* setDefaultDateRange() {
@@ -43,6 +48,19 @@ export function* fetchSeasonTimeStats(action) {
   }
 }
 
+export function* downloadSeasonReport(action) {
+  try {
+    const { payload } = action;
+    const blob = yield call(transactionReportService.downloadReport, payload);
+    yield call(saveAs, blob, 'TransactionReport.csv');
+    yield put({ type: DOWNLOAD_SEASON_REPORT_SUCCESS });
+    yield put(alertActions.success('Report successfully downloaded'));
+  } catch (err) {
+    yield put({ type: DOWNLOAD_SEASON_REPORT_ERROR, payload: err });
+    yield put(alertActions.error('Failed to download report'));
+  }
+}
+
 // Sagas
 
 // On initial fetch, set the default date range for this season this will trigger the
@@ -54,7 +72,13 @@ function* watchFetchEventStats() {
 function* watchSetDateRange() {
   yield takeLatest(SET_DATE_RANGE, fetchSeasonTimeStats);
 }
+
+function* watchDownloadSeasonReport() {
+  yield takeLatest(DOWNLOAD_SEASON_REPORT, downloadSeasonReport);
+}
+
 export default {
   watchFetchEventStats,
-  watchSetDateRange
+  watchSetDateRange,
+  watchDownloadSeasonReport
 };

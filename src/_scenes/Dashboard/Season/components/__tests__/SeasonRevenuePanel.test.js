@@ -5,7 +5,8 @@ import { SeasonRevenuePanel } from '../SeasonRevenuePanel';
 describe('<SeasonRevenuePanel />', () => {
   const props = {
     seasonStatState: {
-      loading: true,
+      loading: false,
+      downloading: false,
       groupFilters: [],
       dateRange: { from: null, to: null },
       eventDateLimits: { from: null, to: null },
@@ -15,7 +16,8 @@ describe('<SeasonRevenuePanel />', () => {
     seasonStatActions: {
       fetch: jest.fn(),
       setGroupFilter: jest.fn(),
-      setDateRange: jest.fn()
+      setDateRange: jest.fn(),
+      downloadSeasonReport: jest.fn()
     }
   };
 

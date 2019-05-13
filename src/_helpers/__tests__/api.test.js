@@ -39,7 +39,7 @@ describe('request', () => {
 
   it('should make a request with opts', () => {
     const headers = {
-      'Content-Type': 'applicaiton/json'
+      'Content-Type': 'application/json'
     };
     const mock = fetchMock.mock({
       matcher: `end:${path}`,
