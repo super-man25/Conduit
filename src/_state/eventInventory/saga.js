@@ -91,11 +91,12 @@ export function* setOverridePrice(
       payload: action.payload
     });
   } catch (error) {
-    yield put(
-      alertActions.error(
-        `Could not update section ${row.section} row ${row.row}.`
-      )
-    );
+    let msg =
+      error.name === 'ValidationError'
+        ? error.errors[0]
+        : `Could not update section ${row.section} row ${row.row}.`;
+
+    yield put(alertActions.error(msg));
     yield put({
       type: types.SET_EVENT_ROW_MANUAL_PRICE_ERROR,
       payload: {

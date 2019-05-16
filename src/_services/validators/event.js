@@ -25,9 +25,9 @@ const adminModifierSchema = yup.object({
 const overridePriceSchema = yup.object({
   overridePrice: yup
     .number()
-    .min(0.01)
+    .moreThan(0)
     .nullable()
-    .label('Event Seat Override Price')
+    .label('Price')
 });
 
 export function validatePercentPriceModifier(body) {
@@ -53,6 +53,7 @@ function handleValidationError(error) {
       break;
     case 'max':
     case 'min':
+    case 'moreThan':
     case 'integer':
       error.toString = () => error.message;
       break;

@@ -12,20 +12,12 @@ describe('validator for percentPriceModifier', () => {
     };
   });
 
-  it('should validate percentPriceModifier with valid payload', async (done) => {
-    let validatedPayload = {};
-    try {
-      validatedPayload = await validatePercentPriceModifier(payload);
-    } catch (err) {
-      console.log(err);
-    }
-
+  it('should validate percentPriceModifier with valid payload', async () => {
+    const validatedPayload = await validatePercentPriceModifier(payload);
     expect(validatedPayload).toEqual(payload);
-
-    done();
   });
 
-  it('should throw an error if percentPriceModifier > 50', async (done) => {
+  it('should throw an error if percentPriceModifier > 50', async () => {
     payload.percentPriceModifier = 100;
 
     let error;
@@ -37,11 +29,9 @@ describe('validator for percentPriceModifier', () => {
     expect(error.toString()).toEqual(
       'Percent Price Modifier must be less than or equal to 50'
     );
-
-    done();
   });
 
-  it('should throw an error if percentPriceModifier < -50', async (done) => {
+  it('should throw an error if percentPriceModifier < -50', async () => {
     payload.percentPriceModifier = -100;
 
     let error;
@@ -53,11 +43,9 @@ describe('validator for percentPriceModifier', () => {
     expect(error.toString()).toEqual(
       'Percent Price Modifier must be greater than or equal to -50'
     );
-
-    done();
   });
 
-  it('should throw an error if percentPriceModifier is not an integer', async (done) => {
+  it('should throw an error if percentPriceModifier is not an integer', async () => {
     payload.percentPriceModifier = 10.1;
 
     let error;
@@ -69,11 +57,9 @@ describe('validator for percentPriceModifier', () => {
     expect(error.toString()).toEqual(
       'Percent Price Modifier must be an integer'
     );
-
-    done();
   });
 
-  it('should throw an error if percentPriceModifier is null', async (done) => {
+  it('should throw an error if percentPriceModifier is null', async () => {
     payload.percentPriceModifier = null;
 
     let error;
@@ -83,8 +69,6 @@ describe('validator for percentPriceModifier', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Percent Price Modifier is invalid');
-
-    done();
   });
 });
 
@@ -97,20 +81,12 @@ describe('validator for eventScoreModifier and springModifier', () => {
     };
   });
 
-  it('should validate eventScoreModifier with valid payload', async (done) => {
-    let validatedPayload = {};
-    try {
-      validatedPayload = await validateAdminModifiers(payload);
-    } catch (err) {
-      console.log(err);
-    }
-
+  it('should validate eventScoreModifier with valid payload', async () => {
+    const validatedPayload = await validateAdminModifiers(payload);
     expect(validatedPayload).toEqual(payload);
-
-    done();
   });
 
-  it('should throw an error if eventScoreModifier > 100', async (done) => {
+  it('should throw an error if eventScoreModifier > 100', async () => {
     payload.eventScoreModifier = 200;
 
     let error;
@@ -122,11 +98,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
     expect(error.toString()).toEqual(
       'Event Score Modifier must be less than or equal to 100'
     );
-
-    done();
   });
 
-  it('should throw an error if eventScoreModifier < -100', async (done) => {
+  it('should throw an error if eventScoreModifier < -100', async () => {
     payload.eventScoreModifier = -200;
 
     let error;
@@ -138,11 +112,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
     expect(error.toString()).toEqual(
       'Event Score Modifier must be greater than or equal to -100'
     );
-
-    done();
   });
 
-  it('should throw an error if eventScoreModifier is not a number', async (done) => {
+  it('should throw an error if eventScoreModifier is not a number', async () => {
     payload.eventScoreModifier = 'a';
 
     let error;
@@ -152,11 +124,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Event Score Modifier is invalid');
-
-    done();
   });
 
-  it('should throw an error if eventScoreModifier is null', async (done) => {
+  it('should throw an error if eventScoreModifier is null', async () => {
     payload.eventScoreModifier = null;
 
     let error;
@@ -166,11 +136,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Event Score Modifier is invalid');
-
-    done();
   });
 
-  it('should throw an error if springModifier > 2', async (done) => {
+  it('should throw an error if springModifier > 2', async () => {
     payload.springModifier = 5;
 
     let error;
@@ -182,11 +150,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
     expect(error.toString()).toEqual(
       'Spring Modifier must be less than or equal to 2'
     );
-
-    done();
   });
 
-  it('should throw an error if springModifier < -2', async (done) => {
+  it('should throw an error if springModifier < -2', async () => {
     payload.springModifier = -5;
 
     let error;
@@ -198,11 +164,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
     expect(error.toString()).toEqual(
       'Spring Modifier must be greater than or equal to -2'
     );
-
-    done();
   });
 
-  it('should throw an error if springModifier is not a number', async (done) => {
+  it('should throw an error if springModifier is not a number', async () => {
     payload.springModifier = 'a';
 
     let error;
@@ -212,11 +176,9 @@ describe('validator for eventScoreModifier and springModifier', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Spring Modifier is invalid');
-
-    done();
   });
 
-  it('should throw an error if springModifier is null', async (done) => {
+  it('should throw an error if springModifier is null', async () => {
     payload.springModifier = null;
 
     let error;
@@ -226,8 +188,6 @@ describe('validator for eventScoreModifier and springModifier', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Spring Modifier is invalid');
-
-    done();
   });
 });
 
@@ -239,20 +199,30 @@ describe('validator for overridePrice', () => {
     };
   });
 
-  it('should validate overridePrice with valid payload', async (done) => {
-    let validatedPayload = {};
-    try {
-      validatedPayload = await validateOverridePrice(payload);
-    } catch (err) {
-      console.log(err);
-    }
-
+  it('should validate overridePrice with valid payload', async () => {
+    const validatedPayload = await validateOverridePrice(payload);
     expect(validatedPayload).toEqual(payload);
-
-    done();
   });
 
-  it('should throw an error if overridePrice is 0', async (done) => {
+  it('should allow an overridePrice of $0.01', async () => {
+    payload.overridePrice = 0.01;
+    const validatedPayload = await validateOverridePrice(payload);
+    expect(validatedPayload).toEqual(payload);
+  });
+
+  it('should throw an error if overridePrice < 0', async () => {
+    payload.overridePrice = -1;
+
+    let error;
+    try {
+      await validateOverridePrice(payload);
+    } catch (err) {
+      error = err;
+    }
+    expect(error.toString()).toEqual('Price must be greater than 0');
+  });
+
+  it('should throw an error if overridePrice = 0', async () => {
     payload.overridePrice = 0;
 
     let error;
@@ -261,30 +231,10 @@ describe('validator for overridePrice', () => {
     } catch (err) {
       error = err;
     }
-    expect(error.toString()).toEqual(
-      'Event Seat Override Price must be greater than or equal to 0.01'
-    );
-
-    done();
+    expect(error.toString()).toEqual('Price must be greater than 0');
   });
 
-  it('should throw an error if overridePrice < 0', async (done) => {
-    payload.overridePrice = -100;
-
-    let error;
-    try {
-      await validateOverridePrice(payload);
-    } catch (err) {
-      error = err;
-    }
-    expect(error.toString()).toEqual(
-      'Event Seat Override Price must be greater than or equal to 0.01'
-    );
-
-    done();
-  });
-
-  it('should throw an error if overridePrice is not a number', async (done) => {
+  it('should throw an error if overridePrice is not a number', async () => {
     payload.overridePrice = 'a';
 
     let error;
@@ -293,22 +243,12 @@ describe('validator for overridePrice', () => {
     } catch (err) {
       error = err;
     }
-    expect(error.toString()).toEqual('Event Seat Override Price is invalid');
-
-    done();
+    expect(error.toString()).toEqual('Price is invalid');
   });
 
-  it('should not throw an error if overridePrice is null', async (done) => {
-    let validatedPayload = {};
+  it('should not throw an error if overridePrice is null', async () => {
     payload.overridePrice = null;
-    try {
-      validatedPayload = await validateOverridePrice(payload);
-    } catch (err) {
-      console.log(err);
-    }
-
+    const validatedPayload = await validateOverridePrice(payload);
     expect(validatedPayload).toEqual(payload);
-
-    done();
   });
 });
