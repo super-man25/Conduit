@@ -17,7 +17,7 @@ describe('denormalize', () => {
     ];
   });
 
-  it('should denormalize a buyer type', async (done) => {
+  it('should denormalize a buyer type', async () => {
     let payload;
     try {
       payload = await denormalize(buyerTypesFromState);
@@ -33,11 +33,9 @@ describe('denormalize', () => {
         disabled: true
       })
     );
-
-    done();
   });
 
-  it('should throw an error if the id attribute is missing', async (done) => {
+  it('should throw an error if the id attribute is missing', async () => {
     delete buyerTypesFromState[0].id;
 
     let error;
@@ -48,6 +46,5 @@ describe('denormalize', () => {
     }
 
     expect(error.toString()).toEqual('Buyer type id is required');
-    done();
   });
 });

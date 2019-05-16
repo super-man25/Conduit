@@ -43,7 +43,6 @@
     "lint": "eslint src",
     "test-ci": "env-cmd -e test yarn lint && yarn test --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit",
     "test-staged": "env-cmd -e test yarn test --coverage --coverageReporters=cobertura ---reporters=default --reporters=jest-junit --onlyChanged --passWithNoTests",
-    "precommit": "flow && lint-staged",
     "prettier": "prettier-eslint --write '/src/**/*.{js|jsx}'",
     "prettier-dry-run": "prettier-eslint --write '/src/**/*.{js|jsx}' -l debug"
   },
@@ -90,6 +89,13 @@
     "not op_mini all"
   ],
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "flow && lint-staged"
+    }
   }
 }

@@ -38,7 +38,7 @@ describe('denormalizer', () => {
     };
   });
 
-  it('should denormalize valid price rule', async (done) => {
+  it('should denormalize valid price rule', async () => {
     let denormalizedPriceRule = {};
     try {
       denormalizedPriceRule = await denormalize(priceRuleFromState);
@@ -56,11 +56,9 @@ describe('denormalizer', () => {
       isActive: true,
       round: 'Floor'
     });
-
-    done();
   });
 
-  it('should throw an error if the wrong type is supplied', async (done) => {
+  it('should throw an error if the wrong type is supplied', async () => {
     priceRuleFromState.constant = 'INVALID';
 
     let error;
@@ -70,11 +68,9 @@ describe('denormalizer', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Dollar change is invalid');
-
-    done();
   });
 
-  it('should throw an error if a required field is missing or null', async (done) => {
+  it('should throw an error if a required field is missing or null', async () => {
     priceRuleFromState.priceScaleIds = [];
 
     let error;
@@ -84,11 +80,9 @@ describe('denormalizer', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Price scales is required');
-
-    done();
   });
 
-  it('should throw an error if value is greater than max', async (done) => {
+  it('should throw an error if value is greater than max', async () => {
     priceRuleFromState.percent = 555;
 
     let error;
@@ -100,11 +94,9 @@ describe('denormalizer', () => {
     expect(error.toString()).toEqual(
       'Percent change must be less than or equal to 100'
     );
-
-    done();
   });
 
-  it('should throw an error if percent change is not an integer', async (done) => {
+  it('should throw an error if percent change is not an integer', async () => {
     priceRuleFromState.percent = 55.5;
 
     let error;
@@ -114,7 +106,5 @@ describe('denormalizer', () => {
       error = err;
     }
     expect(error.toString()).toEqual('Percent change cannot have a decimal');
-
-    done();
   });
 });
