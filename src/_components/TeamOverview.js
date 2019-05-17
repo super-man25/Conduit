@@ -31,7 +31,6 @@ const StatLabel = styled(H3)`
   margin: 0;
   padding: 0;
   color: ${cssConstants.PRIMARY_WHITE};
-  weight: 300;
 `;
 
 type Stats = {

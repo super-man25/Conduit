@@ -48,7 +48,7 @@ const Slider = styled.span`
     left: 0;
     top: 50%;
     transform: translate(${getSliderTransformX}px, -50%);
-    border: 0.5px solid ${cssConstants.SECONDARY_BLUE}
+    border: 0.5px solid ${cssConstants.SECONDARY_BLUE};
     box-shadow: 0 1px 1px ${cssConstants.PRIMARY_DARK_GRAY};
     background-color: ${cssConstants.PRIMARY_WHITE};
     transition: 0.3s transform;

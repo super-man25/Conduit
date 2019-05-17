@@ -39,13 +39,12 @@ const DateRangeDropdownContainer: React.ComponentType<{}> = styled.div`
   text-align: left;
   font-size: 14px;
 
-  ${DateRangeInput}:first-child {
+  ${/* sc-selector */ DateRangeInput}:first-child {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     border-right: none;
   }
-
-  ${DateRangeInput}:last-child {
+  ${/* sc-selector */ DateRangeInput}:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }

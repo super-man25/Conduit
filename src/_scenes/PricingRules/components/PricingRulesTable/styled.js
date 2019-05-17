@@ -115,12 +115,12 @@ export const SplitButtonHalf = styled.span`
   color: ${(props) =>
     props.isActive
       ? cssConstants.PRIMARY_WHITE
-      : cssConstants.PRIMARY_DARK_BLUE}
+      : cssConstants.PRIMARY_DARK_BLUE};
 
   background-color: ${(props) =>
     props.isActive
       ? cssConstants.PRIMARY_DARK_BLUE
-      : cssConstants.PRIMARY_WHITE}
+      : cssConstants.PRIMARY_WHITE};
 
   :not(:last-child) {
     border-bottom-left-radius: 2px;

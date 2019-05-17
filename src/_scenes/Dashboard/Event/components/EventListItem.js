@@ -5,7 +5,7 @@ import { darken } from 'polished';
 import { Flex, FlexItem, H4, P1 } from '_components';
 import { isPast } from 'date-fns';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import type { EDEvent } from '_models';
 import {
   formatNumber,
@@ -36,6 +36,13 @@ const SubHeading = styled(P1)`
       : cssConstants.PRIMARY_DARKEST_GRAY};
 `;
 
+const boxShadow = (props) =>
+  props.active &&
+  css`
+    box-shadow: 0px 6px 8px ${cssConstants.PRIMARY_LIGHT_GRAY};
+    z-index: 999;
+  `;
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -49,12 +56,7 @@ const Container = styled.div`
     props.past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK};
   transition: 0.15s ease-in-out all;
   position: relative;
-  ${(props) =>
-    props.active
-      ? `
-  box-shadow: 0px 6px 8px ${cssConstants.PRIMARY_LIGHT_GRAY};
-  z-index: 999;`
-      : ``}
+  ${boxShadow};
 
   :hover {
     cursor: pointer;

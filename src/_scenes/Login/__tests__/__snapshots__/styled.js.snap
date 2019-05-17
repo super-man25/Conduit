@@ -64,7 +64,7 @@ exports[`Login styled components <LogoImg /> should render correctly 1`] = `
   display: block;
   margin: auto;
   padding: 40px;
-  paddingtop: 10px;
+  padding-top: 10px;
   width: 40%;
 }
 

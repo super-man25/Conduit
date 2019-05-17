@@ -4,7 +4,6 @@ exports[`renders correctly 1`] = `
 .c0 {
   font-size: 10px;
   font-weight: bold;
-  font-family: 'Roboto';
   line-height: 130%;
   color: #070707;
   cursor: pointer;

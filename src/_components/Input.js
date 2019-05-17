@@ -48,17 +48,17 @@ export const Input: React.ComponentType<Props> = styled.input.attrs(
     props.valid ? OK : props.inValid ? BAD : 'none'};
   background-repeat: no-repeat;
   background-position: right center;
-  &:-webkit-autofill,
-  -webkit-autofill:hover,
-  -webkit-autofill:focus {
-    -webkit-animation-name: ${(props) =>
+
+  &:-webkit-autofill {
+    animation-name: ${(props) =>
       props.valid
         ? autofillOK(true)
         : props.inValid
         ? autofillOK(false)
         : 'none'};
-    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
   }
+
   font-size: 1rem;
   width: ${(props) => (props.width ? props.width : '100%')};
   padding-left: 3%;

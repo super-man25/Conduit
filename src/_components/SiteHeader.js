@@ -17,6 +17,7 @@ import { push } from 'connected-react-router';
 import { actions } from '_state/auth';
 import { Box } from './StyledTags';
 import { Flex } from './Flex';
+import { titleCase } from '_helpers';
 
 export const SiteHeaderDiv = styled.div`
   display: flex;
@@ -68,7 +69,10 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 
 type Props = {
   push: (path: string) => void,
-  auth: {},
+  auth: {
+    firstName: string,
+    lastName: string
+  },
   signOut: () => void,
   hasTicketsDotComIntegration: boolean
 };
@@ -108,14 +112,22 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
     this.props.signOut();
   };
 
+  buildUsername = () => {
+    const firstName = titleCase(this.props.auth.firstName);
+    const lastName = titleCase(this.props.auth.lastName);
+    return this.props.auth ? `Welcome, ${firstName} ${lastName}` : '';
+  };
+
   render() {
-    const { auth, hasTicketsDotComIntegration } = this.props;
+    const { hasTicketsDotComIntegration } = this.props;
 
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
         <Flex>
-          <UserWelcome user={auth} data-test-id="user-name-text" />
+          <UserWelcome data-test-id="user-name-text">
+            {this.buildUsername()}
+          </UserWelcome>
           <PositionBox>
             <SprocketMenu
               id="sprocket"

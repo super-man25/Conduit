@@ -105,11 +105,11 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   max-width: 80px;
 }
 
-.c0:-webkit-autofill,
-.c0 -webkit-autofill:hover,
-.c0 -webkit-autofill:focus {
+.c0:-webkit-autofill {
   -webkit-animation-name: none;
+  animation-name: none;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {

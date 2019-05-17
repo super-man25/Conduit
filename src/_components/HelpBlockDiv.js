@@ -18,7 +18,7 @@ export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
       cssConstants.PRIMARY_LIGHT_BLACK
   })
 )`
-  color: ${(props) => props.color}
+  color: ${(props) => props.color};
   font-size: 0.9em;
   font-weight: 200;
   width: 100%;

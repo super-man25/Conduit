@@ -20,7 +20,7 @@ exports[`defaultCellRenderer should render correctly 1`] = `
           ";
   flex-direction: ",
           [Function],
-          "
+          ";
   flex-grow: ",
           [Function],
           ";

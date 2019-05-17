@@ -16,13 +16,11 @@ export const SettingButton: React.ComponentType<Props> = styled.div`
   position: relative;
   margin: ${(props) => props.margin};
   padding: ${(props) => props.padding};
-  font-size: 1rem;
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
 `;
 
-// $FlowFixMe
 export const SettingEditButton = styled(SettingButton)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   ::before {
@@ -30,7 +28,6 @@ export const SettingEditButton = styled(SettingButton)`
   }
 `;
 
-// $FlowFixMe
 export const SettingSaveButton = styled(SettingButton)`
   color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   ::before {
@@ -38,7 +35,6 @@ export const SettingSaveButton = styled(SettingButton)`
   }
 `;
 
-// $FlowFixMe
 export const SettingCancelButton = styled(SettingButton)`
   color: ${lighten(0.2, cssConstants.SECONDARY_RED)};
   ::before {

@@ -34,6 +34,6 @@ export const LogoImg = styled.img`
   display: block;
   margin: auto;
   padding: 40px;
-  paddingtop: 10px;
+  padding-top: 10px;
   width: 40%;
 `;

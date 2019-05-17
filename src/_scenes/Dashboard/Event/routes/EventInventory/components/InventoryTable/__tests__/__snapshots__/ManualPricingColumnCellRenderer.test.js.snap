@@ -46,14 +46,14 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
             ";
   background-repeat: no-repeat;
   background-position: right center;
-  &:-webkit-autofill,
-  -webkit-autofill:hover,
-  -webkit-autofill:focus {
-    -webkit-animation-name: ",
+
+  &:-webkit-autofill {
+    animation-name: ",
             [Function],
             ";
-    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
   }
+
   font-size: 1rem;
   width: ",
             [Function],

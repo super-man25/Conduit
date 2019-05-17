@@ -53,7 +53,7 @@ export const FeatureInputLabel = styled(Text)`
 `;
 
 export const SoupedUpSlider = styled.input`
-  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background: transparent;
 
@@ -74,9 +74,8 @@ export const SoupedUpSlider = styled.input`
   }
 
   ::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    appearance: none;
     margin-top: -5px;
-    border: none;
     height: 16px;
     width: 16px;
     border-radius: 50%;
@@ -86,7 +85,6 @@ export const SoupedUpSlider = styled.input`
 
   ::-moz-range-thumb {
     margin-top: -5px;
-    border: none;
     height: 16px;
     width: 16px;
     border-radius: 50%;

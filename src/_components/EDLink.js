@@ -35,13 +35,13 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
     text-decoration: none;
     cursor: pointer;
     color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all .1s ease-in-out;
-    text-shadow: 0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE};
+    transition: all 0.1s ease-in-out;
+    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
   }
 
   &:active,
   &:visited {
-    outline: 0
+    outline: 0;
     text-decoration: none;
   }
 `;
@@ -58,13 +58,13 @@ export const EDNavLink = styled(NavLink).attrs(attrs)`
     text-decoration: none;
     cursor: pointer;
     color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all .1s ease-in-out;
-    text-shadow: 0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE};
+    transition: all 0.1s ease-in-out;
+    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
   }
 
   &:active,
   &:visited {
-    outline: 0
+    outline: 0;
     text-decoration: none;
   }
 `;

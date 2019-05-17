@@ -87,7 +87,7 @@ export const ScaleFilterButton = styled.button`
   background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   border: none;
   border-radius: 2px;
-  color: ${cssConstants.PRIMARY_WHITE}
+  color: ${cssConstants.PRIMARY_WHITE};
   font-weight: 300;
   height: 25px;
   min-width: 60px;

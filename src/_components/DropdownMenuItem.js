@@ -8,16 +8,14 @@ type Props = {
   disabled?: boolean
 };
 
-const attrs = (props) => ({
-  hidden: (props.hidden && 'none') || 'block',
-  floating: (props.right && 'right') || (props.left && 'left') || 'none',
-  color:
-    (props.disabled && cssConstants.PRIMARY_DARK_GRAY) ||
-    cssConstants.PRIMARY_WHITE
-});
-
 export const DropdownMenuItem: React.ComponentType<Props> = styled.span.attrs(
-  attrs
+  (props) => ({
+    hidden: (props.hidden && 'none') || 'block',
+    floating: (props.right && 'right') || (props.left && 'left') || 'none',
+    color:
+      (props.disabled && cssConstants.PRIMARY_DARK_GRAY) ||
+      cssConstants.PRIMARY_WHITE
+  })
 )`
   display: ${(props) => props.hidden};
   position: relative;
@@ -28,10 +26,13 @@ export const DropdownMenuItem: React.ComponentType<Props> = styled.span.attrs(
   font-weight: lighter;
   line-height: 40px;
   color: ${(props) => props.color};
-  background: transparent; 
+  background: transparent;
+
   &:hover {
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
     color: ${(props) => props.color};
+  }
+
   ::before {
     content: '${(props) => props.content}';
   }

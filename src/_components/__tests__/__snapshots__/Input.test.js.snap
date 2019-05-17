@@ -20,11 +20,11 @@ exports[`renders correctly with disabled prop 1`] = `
   padding-bottom: 0.9em;
 }
 
-.c0:-webkit-autofill,
-.c0 -webkit-autofill:hover,
-.c0 -webkit-autofill:focus {
+.c0:-webkit-autofill {
   -webkit-animation-name: none;
+  animation-name: none;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -69,11 +69,11 @@ exports[`renders correctly with inValid prop 1`] = `
   padding-bottom: 0.9em;
 }
 
-.c0:-webkit-autofill,
-.c0 -webkit-autofill:hover,
-.c0 -webkit-autofill:focus {
+.c0:-webkit-autofill {
   -webkit-animation-name: beEagS;
+  animation-name: beEagS;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -117,11 +117,11 @@ exports[`renders correctly with no props 1`] = `
   padding-bottom: 0.9em;
 }
 
-.c0:-webkit-autofill,
-.c0 -webkit-autofill:hover,
-.c0 -webkit-autofill:focus {
+.c0:-webkit-autofill {
   -webkit-animation-name: none;
+  animation-name: none;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -165,11 +165,11 @@ exports[`renders correctly with valid prop 1`] = `
   padding-bottom: 0.9em;
 }
 
-.c0:-webkit-autofill,
-.c0 -webkit-autofill:hover,
-.c0 -webkit-autofill:focus {
+.c0:-webkit-autofill {
   -webkit-animation-name: fbmvYu;
+  animation-name: fbmvYu;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {

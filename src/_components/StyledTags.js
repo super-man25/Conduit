@@ -40,7 +40,7 @@ export const H3 = styled.h3.attrs((props) => ({
     (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
     cssConstants.PRIMARY_DARK_BLUE
 }))`
-  color: ${(props) => props.color}
+  color: ${(props) => props.color};
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H3};
   font-weight: ${(props) =>
     WEIGHTS.get(props.weight) || cssConstants.TITLE_WEIGHT_H3};

@@ -57,7 +57,7 @@ function generateFlexDirection(props: FlexProps): FlexDirection {
 export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`
   display: ${(props) => (props.inline ? 'inline-flex' : 'flex')};
   flex: ${(props) => props.flex};
-  flex-direction: ${generateFlexDirection}
+  flex-direction: ${generateFlexDirection};
   flex-grow: ${(props) => props.flexGrow};
   flex-shrink: ${(props) => props.flexShrink};
   flex-basis: ${(props) => props.flexBasis};
