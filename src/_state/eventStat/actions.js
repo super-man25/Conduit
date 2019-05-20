@@ -1,4 +1,6 @@
 // @flow
+import { EDReportPayload } from '_models';
+
 // Constants
 export const FETCH_ASYNC = 'eventStat/FETCH_ASYNC';
 export const FETCH_ERROR = 'eventStat/FETCH_ERROR';
@@ -7,6 +9,11 @@ export const RESET = 'eventStat/RESET';
 export const SET_GROUPING_FILTER = 'eventStat/SET_GROUPING_FILTER';
 export const SET_FIRST_AND_LAST_DATE = 'eventStat/SET_FIRST_AND_LAST_DATE';
 export const SET_DATE_RANGE = 'eventStat/SET_DATE_RANGE';
+export const DOWNLOAD_EVENT_REPORT = 'seasonStat/DOWNLOAD_EVENT_REPORT';
+export const DOWNLOAD_EVENT_REPORT_SUCCESS =
+  'seasonStat/DOWNLOAD_EVENT_REPORT_SUCCESS';
+export const DOWNLOAD_EVENT_REPORT_ERROR =
+  'seasonStat/DOWNLOAD_EVENT_REPORT_ERROR';
 
 type EventStatParams = {
   eventId: number,
@@ -24,13 +31,16 @@ export type Action =
   | {
       type: typeof SET_FIRST_AND_LAST_DATE,
       payload: { from: ?Date, to: ?Date }
-    };
+    }
+  | { type: typeof DOWNLOAD_EVENT_REPORT, payload: EDReportPayload }
+  | { type: typeof DOWNLOAD_EVENT_REPORT_SUCCESS, payload: any }
+  | { type: typeof DOWNLOAD_EVENT_REPORT_ERROR, payload?: Error };
 
 // Action creators
-function fetch(eventStatPrarams?: EventStatParams): Action {
+function fetch(eventStatParams?: EventStatParams): Action {
   return {
     type: FETCH_ASYNC,
-    payload: eventStatPrarams
+    payload: eventStatParams
   };
 }
 
@@ -54,9 +64,15 @@ function setDateRange(dateRange: { from: ?Date, to: ?Date }): Action {
   };
 }
 
+const downloadEventReport = (payload: EDReportPayload) => ({
+  type: DOWNLOAD_EVENT_REPORT,
+  payload
+});
+
 export default {
   fetch,
   clear,
   setGroupFilter,
-  setDateRange
+  setDateRange,
+  downloadEventReport
 };

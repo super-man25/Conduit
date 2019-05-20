@@ -1,6 +1,6 @@
 import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import { eventStatService } from '_services';
+import { eventStatService, transactionReportService } from '_services';
 import { actions, reducer } from '_state/eventStat';
 import {
   FETCH_ASYNC,
@@ -9,11 +9,15 @@ import {
   RESET,
   SET_FIRST_AND_LAST_DATE,
   SET_GROUPING_FILTER,
-  SET_DATE_RANGE
+  SET_DATE_RANGE,
+  DOWNLOAD_EVENT_REPORT,
+  DOWNLOAD_EVENT_REPORT_SUCCESS,
+  DOWNLOAD_EVENT_REPORT_ERROR
 } from '_state/eventStat/actions';
 import {
   setDefaultDateRange,
-  fetchEventTimeStats
+  fetchEventTimeStats,
+  downloadEventReport
 } from '_state/eventStat/saga';
 import { initialState } from '_state/eventStat/reducer';
 import {
@@ -23,6 +27,8 @@ import {
 } from '../eventStat/selectors';
 import { selectors } from '../event';
 import { selectors as seasonSelectors } from '../season';
+import alertActions from '_state/alert/actions';
+import { saveAs } from 'file-saver';
 
 describe('actions', () => {
   it('should create an action to fetch eventStats', () => {
@@ -39,7 +45,7 @@ describe('actions', () => {
     });
   });
 
-  it('should create an action to set the group gilter', () => {
+  it('should create an action to set the group filter', () => {
     const action = actions.setGroupFilter(1);
     expect(action).toEqual({
       type: SET_GROUPING_FILTER,
@@ -54,6 +60,19 @@ describe('actions', () => {
     expect(action).toEqual({
       type: SET_DATE_RANGE,
       payload: { to, from }
+    });
+  });
+
+  it('should create an action to download event report', () => {
+    const payload = {
+      id: 1,
+      start: '2018-10-01T00:00:00.00Z',
+      end: '2019-01-01T00:00:00.00Z'
+    };
+    const action = actions.downloadEventReport(payload);
+    expect(action).toEqual({
+      type: DOWNLOAD_EVENT_REPORT,
+      payload
     });
   });
 });
@@ -187,6 +206,53 @@ describe('reducer', () => {
       dateRange: { from, to }
     });
   });
+
+  it('should handle DOWNLOAD_EVENT_REPORT', () => {
+    const prevState = {
+      ...initialState,
+      downloading: false
+    };
+
+    const action = { type: DOWNLOAD_EVENT_REPORT };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...initialState,
+      downloading: true
+    });
+  });
+
+  it('should handle DOWNLOAD_EVENT_REPORT_SUCCESS', () => {
+    const prevState = {
+      ...initialState,
+      downloading: true
+    };
+
+    const action = { type: DOWNLOAD_EVENT_REPORT_SUCCESS };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...initialState,
+      downloading: false
+    });
+  });
+
+  it('should handle DOWNLOAD_EVENT_REPORT_ERROR', () => {
+    const error = new Error();
+    const prevState = {
+      ...initialState,
+      downloading: true
+    };
+
+    const action = { type: DOWNLOAD_EVENT_REPORT_ERROR, payload: error };
+    const nextState = reducer(prevState, action);
+
+    expect(nextState).toEqual({
+      ...initialState,
+      downloading: false,
+      error
+    });
+  });
 });
 
 describe('saga workers', () => {
@@ -262,6 +328,47 @@ describe('saga workers', () => {
     const error = new Error('EventStats service error');
     expect(failurePath.throw(error).value).toEqual(
       put({ type: FETCH_ERROR, payload: error })
+    );
+  });
+
+  it('should handle download event report', () => {
+    const payload = {
+      id: 1,
+      start: '2018-10-01T00:00:00.00Z',
+      end: '2019-01-01T00:00:00.00Z'
+    };
+    const csv = '"Header1", "Header2", "Header3", "Header4"';
+    const blob = new Blob([csv], {
+      encoding: 'UTF-8',
+      type: 'text/csv;charset=UTF-8'
+    });
+    const action = actions.downloadEventReport(payload);
+    const generator = cloneableGenerator(downloadEventReport)(action);
+    expect(generator.next().value).toEqual(
+      call(transactionReportService.downloadReport, payload)
+    );
+
+    // Download Success
+    const successPath = generator.clone();
+    expect(successPath.next(blob).value).toEqual(
+      call(saveAs, blob, 'TransactionReport.csv')
+    );
+    expect(successPath.next().value).toEqual(
+      put({ type: DOWNLOAD_EVENT_REPORT_SUCCESS })
+    );
+    expect(successPath.next().value).toEqual(
+      put(alertActions.success('Report successfully downloaded'))
+    );
+    expect(successPath.next().done).toBe(true);
+
+    // Download fail
+    const err = new Error();
+    const failurePath = generator.clone();
+    expect(failurePath.throw(err).value).toEqual(
+      put({ type: DOWNLOAD_EVENT_REPORT_ERROR, payload: err })
+    );
+    expect(failurePath.next(err).value).toEqual(
+      put(alertActions.error('Failed to download report'))
     );
   });
 });

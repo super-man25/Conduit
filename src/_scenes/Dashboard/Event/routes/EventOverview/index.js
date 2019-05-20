@@ -20,7 +20,7 @@ export const EventOverview = ({ event, isAdmin }: Props) =>
       <Box padding="1.5rem 2rem">
         <EventHeader availableInventory={15000} totalInventory={40000} />
         <Spacing height="1rem" />
-        <EventChart event={event} />
+        <EventChart />
         <Spacing height="2rem" />
         <EventTicketIntegrations id={event.id} />
         <Spacing height="2rem" />

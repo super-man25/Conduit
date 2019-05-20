@@ -6,7 +6,10 @@ import {
   RESET,
   SET_GROUPING_FILTER,
   SET_FIRST_AND_LAST_DATE,
-  SET_DATE_RANGE
+  SET_DATE_RANGE,
+  DOWNLOAD_EVENT_REPORT,
+  DOWNLOAD_EVENT_REPORT_SUCCESS,
+  DOWNLOAD_EVENT_REPORT_ERROR
 } from './actions';
 import type { Action } from './actions';
 import type { EventStat } from '_models';
@@ -14,16 +17,19 @@ import type { Filter, DateRange } from '_helpers/types';
 
 export type EventStatState = {
   +loading: boolean,
+  +downloading: boolean,
   +eventStats: EventStat[],
   +groupFilters: Filter[],
   +selectedGroupFilter: number,
   +eventDateLimits: DateRange,
-  +dateRange: DateRange
+  +dateRange: DateRange,
+  +error: ?Error
 };
 
 // When there is an endpoint to get first/last date, replace eventDateLimits
 export const initialState: EventStatState = {
   loading: false,
+  downloading: false,
   eventStats: [],
   groupFilters: [
     { label: 'Periodic', value: 0 },
@@ -37,7 +43,8 @@ export const initialState: EventStatState = {
   eventDateLimits: {
     from: null,
     to: null
-  }
+  },
+  error: null
 };
 
 export default function eventStatReducer(
@@ -63,6 +70,12 @@ export default function eventStatReducer(
         eventDateLimits: { ...action.payload },
         dateRange: { ...action.payload }
       };
+    case DOWNLOAD_EVENT_REPORT:
+      return { ...state, downloading: true };
+    case DOWNLOAD_EVENT_REPORT_SUCCESS:
+      return { ...state, downloading: false };
+    case DOWNLOAD_EVENT_REPORT_ERROR:
+      return { ...state, downloading: false, error: action.payload };
     default:
       return state;
   }

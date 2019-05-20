@@ -12,9 +12,7 @@ exports[`<EventOverview /> index route should render correctly 1`] = `
     <styled.div
       height="1rem"
     />
-    <Connect(EventChart)
-      event={Object {}}
-    />
+    <Connect(EventChart) />
     <styled.div
       height="2rem"
     />

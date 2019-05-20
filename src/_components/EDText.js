@@ -5,9 +5,11 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
+// Don't know how I feel about adding a 4th type like this.
+// Open to alternatives
 const TYPES = new Map()
   .set('primary', cssConstants.PRIMARY_DARKEST_GRAY)
-  .set('secondary', cssConstants.PRIMARY_LIGHT_BLUE)
+  .set('secondary', cssConstants.PRIMARY_DARK_BLUE)
   .set('tertiary', cssConstants.PRIMARY_DARK_GRAY)
   .set('disabled', cssConstants.PRIMARY_GRAY);
 

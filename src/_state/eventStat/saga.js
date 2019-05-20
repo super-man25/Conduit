@@ -3,13 +3,18 @@ import actions, {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
-  SET_DATE_RANGE
+  SET_DATE_RANGE,
+  DOWNLOAD_EVENT_REPORT,
+  DOWNLOAD_EVENT_REPORT_SUCCESS,
+  DOWNLOAD_EVENT_REPORT_ERROR
 } from './actions';
-import { eventStatService } from '_services';
+import { eventStatService, transactionReportService } from '_services';
 import { getEventStatFilterArguments } from './selectors';
 import { selectors as eventSelectors } from '../event';
 import { selectors as seasonSelectors } from '../season';
 import { subMonths } from 'date-fns';
+import alertActions from '_state/alert/actions';
+import { saveAs } from 'file-saver';
 
 // Workers
 export function* setDefaultDateRange() {
@@ -46,6 +51,19 @@ export function* fetchEventTimeStats() {
   }
 }
 
+export function* downloadEventReport(action) {
+  try {
+    const { payload } = action;
+    const blob = yield call(transactionReportService.downloadReport, payload);
+    yield call(saveAs, blob, 'TransactionReport.csv');
+    yield put({ type: DOWNLOAD_EVENT_REPORT_SUCCESS });
+    yield put(alertActions.success('Report successfully downloaded'));
+  } catch (err) {
+    yield put({ type: DOWNLOAD_EVENT_REPORT_ERROR, payload: err });
+    yield put(alertActions.error('Failed to download report'));
+  }
+}
+
 // Sagas
 
 // On initial fetch, set the default date range for this event this will trigger the
@@ -58,7 +76,12 @@ function* watchSetDateRange() {
   yield takeLatest(SET_DATE_RANGE, fetchEventTimeStats);
 }
 
+function* watchDownloadEventReport() {
+  yield takeLatest(DOWNLOAD_EVENT_REPORT, downloadEventReport);
+}
+
 export default {
   watchFetchEventStats,
-  watchSetDateRange
+  watchSetDateRange,
+  watchDownloadEventReport
 };

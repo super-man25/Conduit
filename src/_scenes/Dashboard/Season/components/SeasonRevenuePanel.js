@@ -26,8 +26,7 @@ import {
   CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend,
-  Icon,
-  EDText
+  ReportDownloadButton
 } from '_components';
 import {
   cssConstants,
@@ -95,31 +94,6 @@ const ChartLegend = ({
   else return null;
 };
 
-export const DownloadButton = (props: {
-  onClick: () => void,
-  downloading: boolean
-}) => {
-  const { onClick, downloading } = props;
-  const cursor = downloading ? 'no-drop' : 'pointer';
-  const color = downloading
-    ? cssConstants.PRIMARY_GRAY
-    : cssConstants.PRIMARY_LIGHT_BLUE;
-  const type = downloading ? 'disabled' : 'secondary';
-  const text = downloading ? 'DOWNLOADING...' : 'DOWNLOAD TRANSACTIONS';
-  return (
-    <Flex
-      style={{ cursor }}
-      onClick={!downloading ? onClick : undefined}
-      direction="row"
-      height="24px"
-      align="center"
-    >
-      <Icon size={24} color={color} name="download" />
-      <EDText type={type}>{text}</EDText>
-    </Flex>
-  );
-};
-
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
     const { selectedSeasonId } = this.props;
@@ -148,6 +122,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
     } = this.props;
     downloadSeasonReport({
       id: selectedSeasonId,
+      type: 'season',
       start: from ? from.toISOString() : null,
       end: to ? to.toISOString() : null
     });
@@ -230,7 +205,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         }}
                         onChange={setDateRange}
                       />
-                      <DownloadButton
+                      <ReportDownloadButton
                         onClick={this.handleDownloadClick}
                         downloading={downloading}
                       />

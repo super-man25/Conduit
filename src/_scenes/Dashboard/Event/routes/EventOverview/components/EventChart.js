@@ -24,7 +24,8 @@ import {
   CumulativeRevenueChart,
   CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
-  CumulativeInventoryChartLegend
+  CumulativeInventoryChartLegend,
+  ReportDownloadButton
 } from '_components';
 import {
   cssConstants,
@@ -56,6 +57,7 @@ const TabLink = styled.span`
 
 const DateFilterOptions = styled.div`
   display: flex;
+  align-items: center;
 
   > * + * {
     margin-left: 6px;
@@ -108,10 +110,27 @@ export class EventChart extends React.Component<Props> {
     }
   }
 
+  handleDownloadClick = () => {
+    const {
+      activeEvent: { id },
+      eventStatState: {
+        dateRange: { from, to }
+      },
+      eventStatActions: { downloadEventReport }
+    } = this.props;
+    downloadEventReport({
+      id: id,
+      type: 'event',
+      start: from ? from.toISOString() : null,
+      end: to ? to.toISOString() : null
+    });
+  };
+
   render() {
     const {
       eventStatState: {
         loading,
+        downloading,
         groupFilters,
         dateRange: { from, to },
         eventDateLimits,
@@ -183,6 +202,10 @@ export class EventChart extends React.Component<Props> {
                           after: eventDateLimits.to
                         }}
                         onChange={setDateRange}
+                      />
+                      <ReportDownloadButton
+                        onClick={this.handleDownloadClick}
+                        downloading={downloading}
                       />
                     </DateFilterOptions>
                   </FlexItem>

@@ -50,3 +50,4 @@ export * from './Charts';
 export * from './Dropdown';
 export * from './Icon/SVGIcons';
 export * from './Table';
+export * from './ReportDownloadButton';
