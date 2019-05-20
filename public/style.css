@@ -79,8 +79,8 @@ body {
 }
 
 .ReactVirtualized__Table__row--conflicting {
-  background-color:  rgba(255, 99, 71, 0.25) 
-};
+  background-color: rgba(255, 99, 71, 0.25);
+}
 
 .ReactVirtualized__Table__row:hover {
   box-shadow: inset 4px 0 0 var(--PRIMARY_LIGHT_BLUE);
