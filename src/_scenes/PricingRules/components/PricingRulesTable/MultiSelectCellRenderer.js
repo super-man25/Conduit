@@ -73,6 +73,9 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
       .filter((item) => rulePropertyValue.includes(item.id))
       .map((option) => {
         if (label.toLowerCase() === 'buyer types') {
+          if (!option) {
+            return 'Unknown';
+          }
           return `${option.code} - ${option.publicDescription}`;
         }
         return labelFn(option);

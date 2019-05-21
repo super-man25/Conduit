@@ -72,6 +72,9 @@ const columns = [
       optionsKey: 'buyerTypes',
       sortFn: (first, second) => (first.code >= second.code ? 1 : -1),
       labelFn: (option, truncate = true) => {
+        if (!option) {
+          return 'Unknown';
+        }
         const labelText = `${option.code} - ${option.publicDescription}`;
         return (
           <React.Fragment>
