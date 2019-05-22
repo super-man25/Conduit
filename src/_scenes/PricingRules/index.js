@@ -38,7 +38,7 @@ const pricingCrumb = [
     path: '/dashboard'
   },
   {
-    title: 'Team Settings',
+    title: 'Pricing Rules',
     path: '/pricing'
   }
 ];

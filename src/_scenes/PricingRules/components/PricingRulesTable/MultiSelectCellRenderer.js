@@ -42,10 +42,10 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
     updatePriceRuleProperty(newlySelectedItemIds);
   };
 
-  toggleSelectAll = (allSected: boolean) => {
+  toggleSelectAll = (allSelected: boolean) => {
     const { updatePriceRuleProperty } = this.props;
 
-    const selectedIds = allSected ? this.items().map((i) => i.id) : [];
+    const selectedIds = allSelected ? this.items().map((i) => i.id) : [];
     updatePriceRuleProperty(selectedIds);
   };
 
@@ -71,7 +71,15 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
     // to be used as a title on the multi select container
     const selectedTitles = items
       .filter((item) => rulePropertyValue.includes(item.id))
-      .map(labelFn)
+      .map((option) => {
+        // Override the passed in labelFn for the buyer type column to avoid [object Object] bug
+        if (label.toLowerCase() === 'buyer types') {
+          return !!option
+            ? `${option.code} - ${option.publicDescription}`
+            : 'Unknown';
+        }
+        return labelFn(option);
+      })
       .reduce((acc, description) => `${acc} ${description},`, '')
       .slice(0, -1);
 

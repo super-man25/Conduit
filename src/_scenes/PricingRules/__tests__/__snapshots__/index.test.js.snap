@@ -17,7 +17,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
               },
               Object {
                 "path": "/pricing",
-                "title": "Team Settings",
+                "title": "Pricing Rules",
               },
             ]
           }
