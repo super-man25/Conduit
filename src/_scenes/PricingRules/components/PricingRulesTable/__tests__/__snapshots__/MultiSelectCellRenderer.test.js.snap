@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<MultiSelectCellRenderer /> should render correctly 1`] = `
-<Styled(styled.p)
+<Styled(styled.div)
   title=" DUGOUT, GOLD"
 >
   2 Price Scales
-</Styled(styled.p)>
+</Styled(styled.div)>
 `;

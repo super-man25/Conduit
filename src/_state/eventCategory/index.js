@@ -84,7 +84,10 @@ const selectEventCategoryMap = (store: Store) =>
     return { ...acc, [id]: rest };
   }, {});
 
+const selectIsLoading = (store: Store) => store.eventCategory.loading;
+
 export const selectors = {
   selectAllEventCategories,
-  selectEventCategoryMap
+  selectEventCategoryMap,
+  selectIsLoading
 };

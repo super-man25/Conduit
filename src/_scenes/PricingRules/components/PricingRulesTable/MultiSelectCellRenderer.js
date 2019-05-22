@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Text } from '_components';
+import { Box } from '_components';
 import { MultiSelect } from './MultiSelect';
 import type { Option } from './MultiSelect';
 
@@ -76,7 +76,7 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
       .slice(0, -1);
 
     if (!this.props.isEditing) {
-      return <Text title={selectedTitles}>{cellLabel}</Text>;
+      return <Box title={selectedTitles}>{cellLabel}</Box>;
     }
 
     return (

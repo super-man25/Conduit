@@ -74,7 +74,9 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // selectors
 const selectAllPriceScales = (store: Store) => store.priceScale.priceScales;
+const selectIsLoading = (store: Store) => store.priceScale.loading;
 
 export const selectors = {
-  selectAllPriceScales
+  selectAllPriceScales,
+  selectIsLoading
 };

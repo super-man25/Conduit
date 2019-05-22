@@ -385,7 +385,7 @@ const selectEditingPriceRule = (store: Store) =>
   store.priceRule.editingRowState;
 const selectIsEditingPriceRule = (store: Store) =>
   store.priceRule.editingRowId !== null;
-
+const selectIsLoading = (store: Store) => store.priceRule.loading;
 const selectBuyerTypesInActivePriceRules = (store: Store): any[] =>
   store.priceRule.allRows
     .reduce(
@@ -399,5 +399,6 @@ export const selectors = {
   selectAllPriceRuleRows,
   selectEditingPriceRule,
   selectIsEditingPriceRule,
-  selectBuyerTypesInActivePriceRules
+  selectBuyerTypesInActivePriceRules,
+  selectIsLoading
 };

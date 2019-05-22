@@ -29,7 +29,7 @@ import {
 import { formatUSD } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
-import { Flex, FlexItem, Text } from '_components';
+import { CenteredLoader, Flex, FlexItem, Text } from '_components';
 import { Icon } from '_components/Icon';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
@@ -91,7 +91,7 @@ const columns = [
                   />
                 </FlexItem>
               )}
-              <Text overflow={truncate}>{labelText}</Text>
+              <Text ellipsis={truncate}>{labelText}</Text>
             </Flex>
           </React.Fragment>
         );
@@ -215,7 +215,12 @@ type Props = {
   priceScales: EDPriceScale[],
   eventCategoryMap: any,
   eventCategories: EDEventCategory[],
-  eventsGroupedByCategoryId: any
+  eventsGroupedByCategoryId: any,
+  buyerTypesLoading: boolean,
+  priceRulesLoading: boolean,
+  priceScalesLoading: boolean,
+  eventCategoriesLoading: boolean,
+  eventsLoading: boolean
 };
 
 export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
@@ -237,7 +242,12 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
       buyerTypes,
       priceScales,
       eventCategories,
-      eventsGroupedByCategoryId
+      eventsGroupedByCategoryId,
+      buyerTypesLoading,
+      priceScalesLoading,
+      priceRulesLoading,
+      eventCategoriesLoading,
+      eventsLoading
     } = this.props;
     const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
 
@@ -247,6 +257,20 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
     // add padding to the bottom of the table so the
     // drop downs on the last rows do not get cut off
     const tableHeightPadding = 200;
+
+    if (
+      buyerTypesLoading ||
+      priceScalesLoading ||
+      priceRulesLoading ||
+      eventCategoriesLoading ||
+      eventsLoading
+    ) {
+      return (
+        <div style={{ position: 'relative', height: '100%' }}>
+          <CenteredLoader />
+        </div>
+      );
+    }
 
     return (
       <AutoSizer>
@@ -260,11 +284,13 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
             rowGetter={({ index }) => rows[index]}
             overscanRowCount={50}
             rowRenderer={rowRenderer}
-            noRowsRenderer={() => (
-              <NoTableRowsText>
-                No Pricing Rules Available To Display
-              </NoTableRowsText>
-            )}
+            noRowsRenderer={() => {
+              return (
+                <NoTableRowsText>
+                  No Pricing Rules Available To Display
+                </NoTableRowsText>
+              );
+            }}
           >
             {columns.map((column) => (
               <Column
@@ -296,7 +322,12 @@ const mapStateToProps = createStructuredSelector({
   eventsGroupedByCategoryId: eventSelectors.selectGroupedByCategoryId,
   buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
   priceScales: priceScaleSelectors.selectAllPriceScales,
-  eventCategories: eventCategorySelectors.selectAllEventCategories
+  eventCategories: eventCategorySelectors.selectAllEventCategories,
+  buyerTypesLoading: buyerTypeSelectors.selectIsLoading,
+  priceScalesLoading: priceScaleSelectors.selectIsLoading,
+  priceRulesLoading: priceRuleSelectors.selectIsLoading,
+  eventCategoriesLoading: eventCategorySelectors.selectIsLoading,
+  eventsLoading: eventSelectors.selectIsLoading
 });
 
 const mapDispatchToProps = {

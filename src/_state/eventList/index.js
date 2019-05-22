@@ -149,7 +149,6 @@ const selectActiveEventListId = createSelector(
     return hasEvent ? routeIndex : -1;
   }
 );
-
 const selectGroupedByCategoryId = createSelector(
   [selectEventList],
   (events) =>
@@ -160,6 +159,7 @@ const selectGroupedByCategoryId = createSelector(
         : { ...acc, [eventCategoryId]: [rest] };
     }, {})
 );
+const selectIsLoading = (store: Store) => store.eventList.loading;
 
 export const selectors = {
   selectEventList,
@@ -167,5 +167,6 @@ export const selectors = {
   selectEventListSearchFilter,
   selectCurrentFilterOption,
   selectActiveEventListId,
-  selectGroupedByCategoryId
+  selectGroupedByCategoryId,
+  selectIsLoading
 };
