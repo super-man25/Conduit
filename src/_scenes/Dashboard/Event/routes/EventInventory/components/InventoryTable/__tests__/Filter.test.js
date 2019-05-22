@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ScaleFilter } from '../ScaleFilter';
-import { Checkbox, ScaleFilterButton } from '../styled';
+import { Filter } from '../Filter';
+import { Checkbox, FilterButton } from '../styled';
 
-describe('<ScaleFilter />', () => {
+describe('<Filter />', () => {
   const props = {
-    scales: [],
-    selectedScales: [],
+    filters: [],
+    selectedFilters: [],
     onItemClicked: jest.fn()
   };
 
   it('should render correctly', () => {
-    const wrapper = shallow(<ScaleFilter {...props} />);
+    const wrapper = shallow(<Filter {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -23,7 +23,7 @@ describe('<ScaleFilter />', () => {
       { id: 4, name: 'Some Scale 4' },
       { id: 5, name: 'Some Scale 5' }
     ];
-    const wrapper = shallow(<ScaleFilter {...props} scales={scales} />);
+    const wrapper = shallow(<Filter {...props} filters={scales} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -42,7 +42,7 @@ describe('<ScaleFilter />', () => {
       { id: 3, name: 'Some Scale 3' }
     ];
     const wrapper = shallow(
-      <ScaleFilter {...props} scales={scales} selectedScales={selectedScales} />
+      <Filter {...props} filters={scales} selectedFilters={selectedScales} />
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -64,10 +64,10 @@ describe('<ScaleFilter />', () => {
     const onItemClicked = jest.fn();
 
     const wrapper = shallow(
-      <ScaleFilter
+      <Filter
         {...props}
-        scales={scales}
-        selectedScales={selectedScales}
+        filters={scales}
+        selectedFilters={selectedScales}
         onItemClicked={onItemClicked}
       />
     );
@@ -80,7 +80,7 @@ describe('<ScaleFilter />', () => {
     expect(onItemClicked).toHaveBeenCalledWith(scales[0]);
   });
 
-  it('should call onSelectAllClicked when the select all button is clicked', () => {
+  it('should call onClearAllClicked when the select all button is clicked', () => {
     const scales = [
       { id: 1, name: 'Some Scale 1' },
       { id: 2, name: 'Some Scale 2' },
@@ -93,22 +93,22 @@ describe('<ScaleFilter />', () => {
       { id: 2, name: 'Some Scale 2' },
       { id: 3, name: 'Some Scale 3' }
     ];
-    const onSelectAllClicked = jest.fn();
+    const onClearAllClicked = jest.fn();
 
     const wrapper = shallow(
-      <ScaleFilter
+      <Filter
         {...props}
-        scales={scales}
-        selectedScales={selectedScales}
-        onSelectAllClicked={onSelectAllClicked}
+        filters={scales}
+        selectedFilters={selectedScales}
+        onClearAllClicked={onClearAllClicked}
       />
     );
 
     wrapper
-      .find(ScaleFilterButton)
+      .find(FilterButton)
       .at(0)
       .simulate('click');
 
-    expect(onSelectAllClicked).toHaveBeenCalled();
+    expect(onClearAllClicked).toHaveBeenCalled();
   });
 });

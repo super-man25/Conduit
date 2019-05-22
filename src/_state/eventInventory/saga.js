@@ -13,25 +13,39 @@ import {
 import { eventService, venueService } from '_services';
 import type { Saga } from 'redux-saga';
 import { actions as alertActions } from '_state/alert';
-import { selectors } from '../event';
+import { selectors as eventSelectors } from '../event';
 import type {
   FetchEventInventoryAction,
   SetEventRowListedRequestAction,
   SetEventRowManualPriceRequestAction
 } from '.';
+import {
+  alphaFirstSort,
+  findUniqueSections,
+  mapSectionsToPriceScales
+} from './utils';
 
 export function* fetchEventInventory(
   action: FetchEventInventoryAction
 ): Saga<void> {
   try {
-    const { id, venueId } = yield select(selectors.selectEvent);
+    const { id, venueId } = yield select(eventSelectors.selectEvent);
 
     const [eventInventory, priceScales] = yield all([
       call(eventService.getInventory, id),
       call(venueService.getPriceScales, venueId)
     ]);
+    yield put(
+      actions.setSectionsToPriceScaleAction(
+        yield call(mapSectionsToPriceScales, eventInventory)
+      )
+    );
+    const sortedPriceScales = alphaFirstSort(priceScales, 'name');
 
-    yield put(actions.setScaleFilters(priceScales));
+    yield put(actions.setScaleFilters(sortedPriceScales));
+    yield put(
+      actions.setSectionFilters(yield call(findUniqueSections, eventInventory))
+    );
     yield put({
       type: types.FETCH_EVENT_INVENTORY_SUCCESS,
       payload: eventInventory

@@ -42,7 +42,7 @@ export const PositionedBox = styled(Box)`
   z-index: ${(props) => props.zIndex};
 `;
 
-export const ScaleFilterContainer = styled(Box)`
+export const FilterContainer = styled(Box)`
   width: 280px;
   border: 1px solid ${cssConstants.SECONDARY_BLUE};
   background-color: ${cssConstants.PRIMARY_WHITE};
@@ -64,7 +64,7 @@ export const ScaleFilterContainer = styled(Box)`
   }
 `;
 
-export const ScaleFilterList = styled.ul`
+export const FilterList = styled.ul`
   margin: 0;
   height: 100%;
   list-style: none;
@@ -72,7 +72,7 @@ export const ScaleFilterList = styled.ul`
   overflow: auto;
 `;
 
-export const ScaleFilterListItem = styled.li`
+export const FilterListItem = styled.li`
   height: 35px;
   display: flex;
   padding: 0 1rem;
@@ -83,7 +83,7 @@ export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
   margin-right: 0.5rem;
 `;
 
-export const ScaleFilterButton = styled.button`
+export const FilterButton = styled.button`
   background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   border: none;
   border-radius: 2px;

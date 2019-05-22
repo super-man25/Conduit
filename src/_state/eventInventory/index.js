@@ -1,7 +1,16 @@
 // @flow
-import { calculateFilteredRows } from './utils';
+import {
+  calculateFilteredRows,
+  getSectionsByScaleFilter,
+  getScalesBySectionFilter
+} from './utils';
 import { createSelector } from 'reselect';
-import type { EDInventoryRow } from '_models';
+import type {
+  EDInventorySectionFilter,
+  EDInventoryRow,
+  EDVenuePriceScale,
+  EDSectionsToPriceScale
+} from '_models';
 export { default as saga } from './saga';
 
 // Action Types
@@ -32,6 +41,13 @@ const SET_SCALE_FILTERS = 'eventInventory/SET_SCALE_FILTERS';
 const CLEAR_SELECTED_SCALE_FILTERS =
   'eventInventory/CLEAR_SELECTED_SCALE_FILTERS';
 const SET_SELECTED_SCALE_FILTERS = 'eventInventory/SET_SELECTED_SCALE_FILTERS';
+const SET_SECTION_FILTERS = 'eventInventory/SET_SECTION_FILTERS';
+const SET_SELECTED_SECTION_FILTERS =
+  'eventInventory/SET_SELECTED_SECTION_FILTERS';
+const CLEAR_SELECTED_SECTION_FILTERS =
+  'eventInventory/CLEAR_SELECTED_SECTION_FILTERS';
+const SET_SECTIONS_TO_PRICE_SCALE =
+  'eventInventory/SET_SECTIONS_TO_PRICE_SCALE';
 
 export type FetchEventInventoryAction = {
   type: 'eventInventory/FETCH_EVENT_INVENTORY',
@@ -90,14 +106,29 @@ export type CancelEditingManualPriceAction = {
 };
 export type SetScaleFiltersAction = {
   type: 'eventInventory/SET_SCALE_FILTERS',
-  payload: any[]
+  payload: EDVenuePriceScale[]
 };
 export type ClearSelectedScaleFiltersAction = {
   type: 'eventInventory/CLEAR_SELECTED_SCALE_FILTERS'
 };
 export type SetSelectedScaleFiltersAction = {
   type: 'eventInventory/SET_SELECTED_SCALE_FILTERS',
-  payload: any[]
+  payload: EDVenuePriceScale[]
+};
+export type SetSectionFiltersAction = {
+  type: 'eventInventory/SET_SECTION_FILTERS',
+  payload: EDInventorySectionFilter[]
+};
+export type SetSelectedSectionFiltersAction = {
+  type: 'eventInventory/SET_SELECTED_SECTION_FILTERS',
+  payload: EDInventorySectionFilter[]
+};
+export type ClearSelectedSectionFiltersAction = {
+  type: 'eventInventory/CLEAR_SELECTED_SECTION_FILTERS'
+};
+export type SetSectionsToPriceScaleAction = {
+  type: 'eventInventory/SET_SECTIONS_TO_PRICE_SCALE',
+  payload: EDSectionsToPriceScale[]
 };
 
 export type Action =
@@ -117,7 +148,11 @@ export type Action =
   | CancelEditingManualPriceAction
   | SetSelectedScaleFiltersAction
   | ClearSelectedScaleFiltersAction
-  | SetScaleFiltersAction;
+  | SetScaleFiltersAction
+  | SetSectionFiltersAction
+  | SetSelectedSectionFiltersAction
+  | ClearSelectedSectionFiltersAction
+  | SetSectionsToPriceScaleAction;
 
 export const types = {
   FETCH_EVENT_INVENTORY,
@@ -137,7 +172,11 @@ export const types = {
   CANCEL_EDITING_MANUAL_PRICE,
   SET_SCALE_FILTERS,
   SET_SELECTED_SCALE_FILTERS,
-  CLEAR_SELECTED_SCALE_FILTERS
+  CLEAR_SELECTED_SCALE_FILTERS,
+  SET_SECTION_FILTERS,
+  SET_SELECTED_SECTION_FILTERS,
+  CLEAR_SELECTED_SECTION_FILTERS,
+  SET_SECTIONS_TO_PRICE_SCALE
 };
 
 // Actions
@@ -189,7 +228,9 @@ const cancelEditingManualPrice = (): CancelEditingManualPriceAction => ({
   type: CANCEL_EDITING_MANUAL_PRICE
 });
 
-const setScaleFilters = (filters: any[]): SetScaleFiltersAction => ({
+const setScaleFilters = (
+  filters: EDVenuePriceScale[]
+): SetScaleFiltersAction => ({
   type: SET_SCALE_FILTERS,
   payload: filters
 });
@@ -199,10 +240,35 @@ const clearSelectedScaleFilters = (): ClearSelectedScaleFiltersAction => ({
 });
 
 const setSelectedScaleFilters = (
-  filters: any[]
+  filters: EDVenuePriceScale[]
 ): SetSelectedScaleFiltersAction => ({
   type: SET_SELECTED_SCALE_FILTERS,
   payload: filters
+});
+
+const setSectionFilters = (
+  filters: EDInventorySectionFilter[]
+): SetSectionFiltersAction => ({
+  type: SET_SECTION_FILTERS,
+  payload: filters
+});
+
+const setSelectedSectionFilters = (
+  filters: EDInventorySectionFilter[]
+): SetSelectedSectionFiltersAction => ({
+  type: SET_SELECTED_SECTION_FILTERS,
+  payload: filters
+});
+
+const clearSelectedSectionFilters = (): ClearSelectedSectionFiltersAction => ({
+  type: CLEAR_SELECTED_SECTION_FILTERS
+});
+
+const setSectionsToPriceScaleAction = (
+  sectionsToPriceScale: EDSectionsToPriceScale
+): SetSectionsToPriceScaleAction => ({
+  type: SET_SECTIONS_TO_PRICE_SCALE,
+  payload: sectionsToPriceScale
 });
 
 export const actions = {
@@ -217,11 +283,15 @@ export const actions = {
   cancelEditingManualPrice,
   setScaleFilters,
   clearSelectedScaleFilters,
-  setSelectedScaleFilters
+  setSelectedScaleFilters,
+  setSectionFilters,
+  setSelectedSectionFilters,
+  clearSelectedSectionFilters,
+  setSectionsToPriceScaleAction
 };
 
 // State/Reducer
-type State = {
+export type State = {
   allRows: EDInventoryRow[],
   loading: boolean,
   error: ?Error,
@@ -230,7 +300,10 @@ type State = {
   manualPriceEditId: ?number,
   selectedRowIds: number[],
   scaleFilters: number[],
-  selectedScaleFilters: number[]
+  selectedScaleFilters: EDVenuePriceScale[],
+  sectionFilters: EDInventorySectionFilter[],
+  selectedSectionFilters: EDInventorySectionFilter[],
+  sectionsToPriceScale: EDSectionsToPriceScale[]
 };
 
 export const initialState: State = {
@@ -242,7 +315,10 @@ export const initialState: State = {
   manualPriceEditId: null,
   selectedRowIds: [],
   scaleFilters: [],
-  selectedScaleFilters: []
+  selectedScaleFilters: [],
+  sectionFilters: [],
+  selectedSectionFilters: [],
+  sectionsToPriceScale: []
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -294,8 +370,8 @@ export const reducer = (state: State = initialState, action: Action) => {
         state.allRows,
         state.filterDirection,
         state.filterName,
-        state.selectedScaleFilters,
-        state.scaleFilters
+        state.scaleFilters,
+        state.sectionFilters
       );
 
       const selectedRowIds: number[] =
@@ -378,6 +454,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         selectedScaleFilters: [],
+        selectedSectionFilters: getSectionsByScaleFilter(state, []),
         selectedRowIds: []
       };
     }
@@ -385,7 +462,37 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         selectedScaleFilters: action.payload,
+        selectedSectionFilters: getSectionsByScaleFilter(state, action.payload),
         selectedRowIds: []
+      };
+    }
+    case SET_SECTION_FILTERS: {
+      return {
+        ...state,
+        sectionFilters: action.payload,
+        selectedRowIds: []
+      };
+    }
+    case SET_SELECTED_SECTION_FILTERS: {
+      return {
+        ...state,
+        selectedSectionFilters: action.payload,
+        selectedScaleFilters: getScalesBySectionFilter(state, action.payload),
+        selectedRowIds: []
+      };
+    }
+    case CLEAR_SELECTED_SECTION_FILTERS: {
+      return {
+        ...state,
+        selectedSectionFilters: [],
+        selectedScaleFilters: [],
+        selectedRowIds: []
+      };
+    }
+    case SET_SECTIONS_TO_PRICE_SCALE: {
+      return {
+        ...state,
+        sectionsToPriceScale: action.payload
       };
     }
     case RESET:
@@ -404,6 +511,12 @@ const selectAllEventInventoryRows = (store: Store) =>
   store.eventInventory.allRows;
 
 const selectScaleFilters = (store: Store) => store.eventInventory.scaleFilters;
+
+const selectSectionFilters = (store: Store) =>
+  store.eventInventory.sectionFilters;
+
+const selectSelectedSectionFilters = (store: Store) =>
+  store.eventInventory.selectedSectionFilters;
 
 const selectSelectedScaleFilters = (store: Store) =>
   store.eventInventory.selectedScaleFilters;
@@ -435,16 +548,16 @@ const selectEventInventoryRows = createSelector(
   [
     selectAllEventInventoryRows,
     selectEventInventoryFilter,
-    selectSelectedScaleFilters,
-    selectScaleFilters
+    selectScaleFilters,
+    selectSelectedSectionFilters
   ],
-  (rows, filters, selectedScaleFilters, scaleFilters) =>
+  (rows, filters, scaleFilters, selectSelectedSectionFilters) =>
     calculateFilteredRows(
       rows,
       filters.direction,
       filters.name,
-      selectedScaleFilters,
-      scaleFilters
+      scaleFilters,
+      selectSelectedSectionFilters
     )
 );
 
@@ -457,5 +570,7 @@ export const selectors = {
   selectScaleFilters,
   selectSelectedScaleFilters,
   selectSelectedRowIds,
-  selectSelectedRows
+  selectSelectedRows,
+  selectSectionFilters,
+  selectSelectedSectionFilters
 };

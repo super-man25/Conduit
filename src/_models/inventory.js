@@ -9,3 +9,17 @@ export type EDInventoryRow = {
   overridePrice: ?number,
   id: string
 };
+
+export type EDInventorySectionFilter = {
+  name: string
+};
+
+export type EDSectionsToPriceScale = {
+  priceScaleId: string,
+  sections: number[]
+};
+
+export type EDInventorySort = {
+  name: string,
+  direction: string
+};

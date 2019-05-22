@@ -15,6 +15,10 @@ import {
 import { call, put, all, select } from 'redux-saga/effects';
 import { eventService, venueService } from '_services';
 import { actions as alertActions } from '_state/alert';
+import {
+  findUniqueSections,
+  mapSectionsToPriceScales
+} from '../eventInventory/utils';
 
 describe('actions', () => {
   it('should create an action to fetch an events inventory', () => {
@@ -458,7 +462,23 @@ describe('Saga workers', () => {
     const priceScales = [{ id: 1, name: 'price scale 1' }];
 
     expect(generator.next([eventInventory, priceScales]).value).toEqual(
+      call(mapSectionsToPriceScales, eventInventory)
+    );
+
+    expect(generator.next(eventInventory, priceScales).value).toEqual(
+      put(actions.setSectionsToPriceScaleAction(eventInventory))
+    );
+
+    expect(generator.next([eventInventory, priceScales]).value).toEqual(
       put(actions.setScaleFilters(priceScales))
+    );
+
+    expect(generator.next([eventInventory, priceScales]).value).toEqual(
+      call(findUniqueSections, eventInventory)
+    );
+
+    expect(generator.next(eventInventory, priceScales).value).toEqual(
+      put(actions.setSectionFilters(eventInventory))
     );
 
     expect(generator.next([eventInventory, priceScales]).value).toEqual(

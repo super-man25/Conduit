@@ -11,33 +11,29 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly 1`] = `
     <SortIcon
       filterDirection="asc"
       isFiltered={false}
-      onClick={[MockFunction]}
+      onClick={[Function]}
     />
     <Flex
       align="center"
       marginLeft="1.25rem"
     >
       Label
-      <div
-        style={
-          Object {
-            "height": 14,
-            "marginLeft": 7,
-          }
-        }
+      <Styled(styled.div)
+        height="14px"
+        marginLeft="7px"
       >
         <FilterListIcon
           fill="#070707"
           height={14}
           onClick={[Function]}
-          styles={
+          style={
             Object {
               "cursor": "pointer",
             }
           }
           width={14}
         />
-      </div>
+      </Styled(styled.div)>
     </Flex>
   </Styled(Styled(styled.div))>
 </styled.div>
@@ -56,26 +52,22 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when disableSort 
       marginLeft={false}
     >
       Label
-      <div
-        style={
-          Object {
-            "height": 14,
-            "marginLeft": 7,
-          }
-        }
+      <Styled(styled.div)
+        height="14px"
+        marginLeft="7px"
       >
         <FilterListIcon
           fill="#070707"
           height={14}
           onClick={[Function]}
-          styles={
+          style={
             Object {
               "cursor": "pointer",
             }
           }
           width={14}
         />
-      </div>
+      </Styled(styled.div)>
     </Flex>
   </Styled(Styled(styled.div))>
 </styled.div>
@@ -83,7 +75,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when disableSort 
 
 exports[`<ScaleColumnHeaderRenderer /> should render correctly when isFiltered is true 1`] = `
 <styled.div
-  active={true}
+  active={false}
   sortable={true}
 >
   <Styled(Styled(styled.div))
@@ -91,34 +83,30 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when isFiltered i
   >
     <SortIcon
       filterDirection="asc"
-      isFiltered={true}
-      onClick={[MockFunction]}
+      isFiltered={false}
+      onClick={[Function]}
     />
     <Flex
       align="center"
       marginLeft="1.25rem"
     >
       Label
-      <div
-        style={
-          Object {
-            "height": 14,
-            "marginLeft": 7,
-          }
-        }
+      <Styled(styled.div)
+        height="14px"
+        marginLeft="7px"
       >
         <FilterListIcon
           fill="#070707"
           height={14}
           onClick={[Function]}
-          styles={
+          style={
             Object {
               "cursor": "pointer",
             }
           }
           width={14}
         />
-      </div>
+      </Styled(styled.div)>
     </Flex>
   </Styled(Styled(styled.div))>
 </styled.div>
@@ -126,7 +114,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when isFiltered i
 
 exports[`<ScaleColumnHeaderRenderer /> should render correctly when sort isFiltered is true 1`] = `
 <styled.div
-  active={true}
+  active={false}
   sortable={true}
 >
   <Styled(Styled(styled.div))
@@ -134,34 +122,30 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when sort isFilte
   >
     <SortIcon
       filterDirection="asc"
-      isFiltered={true}
-      onClick={[MockFunction]}
+      isFiltered={false}
+      onClick={[Function]}
     />
     <Flex
       align="center"
       marginLeft="1.25rem"
     >
       Label
-      <div
-        style={
-          Object {
-            "height": 14,
-            "marginLeft": 7,
-          }
-        }
+      <Styled(styled.div)
+        height="14px"
+        marginLeft="7px"
       >
         <FilterListIcon
           fill="#070707"
           height={14}
           onClick={[Function]}
-          styles={
+          style={
             Object {
               "cursor": "pointer",
             }
           }
           width={14}
         />
-      </div>
+      </Styled(styled.div)>
     </Flex>
   </Styled(Styled(styled.div))>
 </styled.div>

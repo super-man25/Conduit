@@ -7,116 +7,13 @@ import {
   defaultTableRowRenderer
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
-import { formatUSD } from '_helpers/string-utils';
 import { createStructuredSelector } from 'reselect';
 import { selectors, actions } from '_state/eventInventory';
 import { connect } from 'react-redux';
-import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
-import { listedColumnCellRenderer } from './ListedColumnCellRenderer';
-import { manualPricingColumnCellRenderer } from './ManualPricingColumnCellRenderer';
-import { selectableColumnHeaderRenderer } from './SelectableHeaderRenderer';
-import { selectableColumnCellRenderer } from './SelectableCellRenderer';
-import { defaultCellRenderer } from './CellRenderer';
+
 import { CenteredLoader, Flex, Text } from '_components';
-import { scaleColumnHeaderRenderer } from './ScaleColumnHeaderRenderer';
 import type { EDEvent, EDInventoryRow, EDVenuePriceScale } from '_models';
-
-function combineColumnWithDefaults(column) {
-  return {
-    headerRenderer: defaultColumnHeaderRenderer,
-    cellRenderer: defaultCellRenderer,
-    ...column
-  };
-}
-
-const columns = [
-  {
-    label: 'Checkbox',
-    width: 5,
-    flexGrow: 2,
-    dataKey: '',
-    headerRenderer: selectableColumnHeaderRenderer,
-    cellRenderer: selectableColumnCellRenderer
-  },
-  {
-    label: 'Scale',
-    width: 0,
-    dataKey: 'priceScaleId',
-    flexGrow: 15,
-    headerRenderer: scaleColumnHeaderRenderer,
-    cellDataGetter({ columnData, dataKey, rowData }) {
-      const priceScale = columnData.priceScales.find(
-        (priceScale) => priceScale.id === rowData[dataKey]
-      );
-
-      if (!priceScale) return '';
-      return priceScale.name;
-    }
-  },
-  {
-    label: 'Section',
-    width: 0,
-    dataKey: 'section',
-    flexGrow: 10
-  },
-  {
-    label: 'Row',
-    width: 0,
-    dataKey: 'row',
-    flexGrow: 5
-  },
-  {
-    label: '# of Seats',
-    width: 0,
-    dataKey: 'seats',
-    flexGrow: 10,
-    cellDataGetter({ columnData, dataKey, rowData }) {
-      return rowData[dataKey].length;
-    }
-  },
-  {
-    label: 'Price Floor',
-    width: 0,
-    dataKey: 'minimumPrice',
-    flexGrow: 10,
-    cellDataGetter({ columnData, dataKey, rowData }) {
-      return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
-    }
-  },
-  {
-    label: 'Price Ceiling',
-    width: 0,
-    dataKey: 'maximumPrice',
-    flexGrow: 10,
-    cellDataGetter({ columnData, dataKey, rowData }) {
-      return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
-    }
-  },
-  {
-    label: 'List Price',
-    width: 0,
-    dataKey: 'listedPrice',
-    flexGrow: 10,
-    cellDataGetter({ columnData, dataKey, rowData }) {
-      return formatUSD(rowData[dataKey]);
-    }
-  },
-  {
-    label: 'Pricing',
-    width: 0,
-    dataKey: 'isListed',
-    flexGrow: 10,
-    cellRenderer: listedColumnCellRenderer
-  },
-  {
-    label: 'Manual Pricing',
-    width: 0,
-    dataKey: 'overridePrice',
-    flexGrow: 15,
-    disableSort: true,
-    cellRenderer: manualPricingColumnCellRenderer
-  }
-].map(combineColumnWithDefaults);
+import { getInventoryColumns } from './InventoryColumns';
 
 type Props = {
   event: EDEvent,
@@ -167,6 +64,7 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
 
   render() {
     const { allRows, rows, loading, error, priceScales } = this.props;
+    const columns = getInventoryColumns(this.props);
 
     if (loading) {
       return (
@@ -227,15 +125,24 @@ export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   allRows: selectors.selectAllEventInventoryRows,
+  error: selectors.selectEventInventoryError,
+  filter: selectors.selectEventInventoryFilter,
+  loading: selectors.selectEventInventoryLoading,
   priceScales: selectors.selectScaleFilters,
   rows: selectors.selectEventInventoryRows,
-  loading: selectors.selectEventInventoryLoading,
-  error: selectors.selectEventInventoryError
+  sections: selectors.selectSectionFilters,
+  selectedScaleFilters: selectors.selectSelectedScaleFilters,
+  selectedSectionFilters: selectors.selectSelectedSectionFilters
 });
 
 const mapDispatchToProps = {
+  clearScaleFilters: actions.clearSelectedScaleFilters,
+  clearSectionFilters: actions.clearSelectedSectionFilters,
   fetchInventory: actions.fetchEventInventory,
-  reset: actions.resetEventInventory
+  reset: actions.resetEventInventory,
+  setEventInventoryFilter: actions.setEventInventoryFilter,
+  setSelectedScaleFilters: actions.setSelectedScaleFilters,
+  setSelectedSectionFilters: actions.setSelectedSectionFilters
 };
 
 export const VirtualizedEventInventory = connect(

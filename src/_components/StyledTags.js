@@ -111,6 +111,7 @@ export const Text = withBoxModelProps(styled.p`
   text-align: ${(props) => (props.center ? 'center' : '')};
   opacity: ${(props) => props.opacity};
   cursor: ${(props) => props.cursor || 'default'};
+  font-style: ${(props) => `${props.fontStyle}`};
 
   ${ellipsis};
 `);

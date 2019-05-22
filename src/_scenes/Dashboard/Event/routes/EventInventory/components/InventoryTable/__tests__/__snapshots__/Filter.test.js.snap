@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ScaleFilter /> should render correctly 1`] = `
+exports[`<Filter /> should render correctly 1`] = `
 <Styled(Styled(styled.div))>
   <Flex
     align="center"
@@ -8,15 +8,23 @@ exports[`<ScaleFilter /> should render correctly 1`] = `
     padding="1rem"
   >
     <Styled(styled.p)
-      size={13}
       weight={600}
     >
-      Filter by Price Scale
+      Filter by undefined
     </Styled(styled.p)>
     <styled.button>
       Clear
     </styled.button>
   </Flex>
+  <Styled(styled.div)
+    padding="0rem 1rem 1rem 1rem"
+  >
+    <Styled(styled.p)
+      color="#D1D1D1"
+      fontStyle="italic"
+      size={12}
+    />
+  </Styled(styled.div)>
   <Styled(styled.div)
     height="270px"
   >
@@ -25,7 +33,7 @@ exports[`<ScaleFilter /> should render correctly 1`] = `
 </Styled(Styled(styled.div))>
 `;
 
-exports[`<ScaleFilter /> should render correctly with scales 1`] = `
+exports[`<Filter /> should render correctly with scales 1`] = `
 <Styled(Styled(styled.div))>
   <Flex
     align="center"
@@ -33,15 +41,23 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
     padding="1rem"
   >
     <Styled(styled.p)
-      size={13}
       weight={600}
     >
-      Filter by Price Scale
+      Filter by undefined
     </Styled(styled.p)>
     <styled.button>
       Clear
     </styled.button>
   </Flex>
+  <Styled(styled.div)
+    padding="0rem 1rem 1rem 1rem"
+  >
+    <Styled(styled.p)
+      color="#D1D1D1"
+      fontStyle="italic"
+      size={12}
+    />
+  </Styled(styled.div)>
   <Styled(styled.div)
     height="270px"
   >
@@ -54,7 +70,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 1
         </Styled(styled.p)>
@@ -67,7 +83,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 2
         </Styled(styled.p)>
@@ -80,7 +96,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 3
         </Styled(styled.p)>
@@ -93,7 +109,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 4
         </Styled(styled.p)>
@@ -106,7 +122,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 5
         </Styled(styled.p)>
@@ -116,7 +132,7 @@ exports[`<ScaleFilter /> should render correctly with scales 1`] = `
 </Styled(Styled(styled.div))>
 `;
 
-exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
+exports[`<Filter /> should render correctly with selected scales 1`] = `
 <Styled(Styled(styled.div))>
   <Flex
     align="center"
@@ -124,15 +140,23 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
     padding="1rem"
   >
     <Styled(styled.p)
-      size={13}
       weight={600}
     >
-      Filter by Price Scale
+      Filter by undefined
     </Styled(styled.p)>
     <styled.button>
       Clear
     </styled.button>
   </Flex>
+  <Styled(styled.div)
+    padding="0rem 1rem 1rem 1rem"
+  >
+    <Styled(styled.p)
+      color="#D1D1D1"
+      fontStyle="italic"
+      size={12}
+    />
+  </Styled(styled.div)>
   <Styled(styled.div)
     height="270px"
   >
@@ -145,7 +169,7 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 1
         </Styled(styled.p)>
@@ -158,7 +182,7 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 2
         </Styled(styled.p)>
@@ -171,7 +195,7 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 3
         </Styled(styled.p)>
@@ -184,7 +208,7 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 4
         </Styled(styled.p)>
@@ -197,7 +221,7 @@ exports[`<ScaleFilter /> should render correctly with selected scales 1`] = `
           onChange={[Function]}
         />
         <Styled(styled.p)
-          size={13}
+          size={14}
         >
           Some Scale 5
         </Styled(styled.p)>

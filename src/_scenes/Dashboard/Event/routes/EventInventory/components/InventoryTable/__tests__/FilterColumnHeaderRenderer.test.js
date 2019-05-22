@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { SortIcon } from '../SortIcon';
-import { ScaleColumnHeaderPresenter } from '../ScaleColumnHeaderRenderer';
-import { ScaleFilter } from '../ScaleFilter';
+import { FilterColumnHeader } from '../FilterColumnHeaderRenderer';
+import { Filter } from '../Filter';
 
 describe('<ScaleColumnHeaderRenderer />', () => {
   const props = {
@@ -11,49 +11,53 @@ describe('<ScaleColumnHeaderRenderer />', () => {
     setFilter: jest.fn(),
     disableSort: false,
     label: 'Label',
-    scaleFilters: [],
-    selectedScaleFilters: [],
-    setSelectedScaleFilters: jest.fn()
+    filter: {
+      name: 'priceScaleId',
+      direction: 'asc'
+    },
+    filters: [],
+    selectedFilters: [],
+    setSelectedFilters: jest.fn()
   };
 
   it('should render correctly', () => {
-    const wrapper = shallow(<ScaleColumnHeaderPresenter {...props} />);
+    const wrapper = shallow(<FilterColumnHeader {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when disableSort is true', () => {
     const wrapper = shallow(
-      <ScaleColumnHeaderPresenter {...props} disableSort={true} />
+      <FilterColumnHeader {...props} disableSort={true} />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when isFiltered is true', () => {
     const wrapper = shallow(
-      <ScaleColumnHeaderPresenter {...props} isFiltered={true} />
+      <FilterColumnHeader {...props} isFiltered={true} />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when sort isFiltered is true', () => {
     const wrapper = shallow(
-      <ScaleColumnHeaderPresenter {...props} isFiltered={true} />
+      <FilterColumnHeader {...props} isFiltered={true} />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call setFilter when <SortIcon /> onClick is fired', () => {
     const clonedProps = { ...props };
-    const wrapper = shallow(<ScaleColumnHeaderPresenter {...clonedProps} />);
+    const wrapper = shallow(<FilterColumnHeader {...clonedProps} />);
     wrapper.find(SortIcon).prop('onClick')();
     expect(clonedProps.setFilter).toHaveBeenCalled();
   });
 
-  it('should render <ScaleFilter /> when state scaleDropdownOpen is true', () => {
+  it('should render <Filter /> when state filterDropdownOpen is true', () => {
     const clonedProps = { ...props };
-    const wrapper = mount(<ScaleColumnHeaderPresenter {...clonedProps} />);
-    wrapper.setState({ scaleDropdownOpen: true });
+    const wrapper = mount(<FilterColumnHeader {...clonedProps} />);
+    wrapper.setState({ filterDropdownOpen: true });
 
-    expect(wrapper.find(ScaleFilter).length).toEqual(1);
+    expect(wrapper.find(Filter).length).toEqual(1);
   });
 });
