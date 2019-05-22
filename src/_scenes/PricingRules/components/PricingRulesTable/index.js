@@ -72,14 +72,13 @@ const columns = [
       optionsKey: 'buyerTypes',
       sortFn: (first, second) => (first.code >= second.code ? 1 : -1),
       labelFn: (option, truncate = true) => {
-        if (!option) {
-          return 'Unknown';
-        }
-        const labelText = `${option.code} - ${option.publicDescription}`;
+        const labelText = !!option
+          ? `${option.code} - ${option.publicDescription}`
+          : 'Unknown';
         return (
           <React.Fragment>
             <Flex align="center" width="100%">
-              {option.disabled && (
+              {option && option.disabled && (
                 <FlexItem
                   title="Pricing is disabled for this buyer type"
                   margin="0 0.5rem 0 0"

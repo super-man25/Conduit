@@ -71,15 +71,7 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
     // to be used as a title on the multi select container
     const selectedTitles = items
       .filter((item) => rulePropertyValue.includes(item.id))
-      .map((option) => {
-        if (label.toLowerCase() === 'buyer types') {
-          if (!option) {
-            return 'Unknown';
-          }
-          return `${option.code} - ${option.publicDescription}`;
-        }
-        return labelFn(option);
-      })
+      .map(labelFn)
       .reduce((acc, description) => `${acc} ${description},`, '')
       .slice(0, -1);
 
