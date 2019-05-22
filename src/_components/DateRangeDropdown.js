@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import DayPicker from 'react-day-picker';
-import { format, isSameDay } from 'date-fns';
+import { format, isSameDay, startOfDay, endOfDay } from 'date-fns';
 import 'react-day-picker/lib/style.css';
 import { withClickAway } from '_hoc';
 import { Icon } from '_components';
@@ -159,9 +159,9 @@ export class DateRangeDropdown extends React.Component<Props, State> {
     }
 
     if (isSameDay(fromDay, from)) {
-      onChange({ from: null, to: to });
+      onChange({ from: null, to: endOfDay(to) });
     } else {
-      onChange({ from: fromDay, to });
+      onChange({ from: startOfDay(fromDay), to: endOfDay(to) });
     }
   };
 
@@ -173,9 +173,9 @@ export class DateRangeDropdown extends React.Component<Props, State> {
     }
 
     if (isSameDay(toDay, to)) {
-      onChange({ from, to: null });
+      onChange({ from: startOfDay(from), to: null });
     } else {
-      onChange({ from, to: toDay });
+      onChange({ from: startOfDay(from), to: endOfDay(toDay) });
     }
   };
 
