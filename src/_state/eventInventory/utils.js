@@ -46,7 +46,15 @@ export function calculateFilteredRows(
       return sortAlphaNum(firstPriceScaleName, secondPriceScaleName);
     }): EDInventoryRow[]);
   } else {
-    sorted = alphaFirstSort(rowsFilteredBySection, filterName);
+    sorted = ([...rowsFilteredBySection].sort(
+      (a: EDInventoryRow, b: EDInventoryRow) =>
+        sortAlphaNum(a[filterName], b[filterName])
+    ): EDInventoryRow[]);
+
+    //Sort letters before numbers, for alphanumeric columns
+    if (filterName === 'section' || filterName === 'row') {
+      sorted = alphaFirstSort(sorted, filterName);
+    }
   }
 
   if (filterDirection === 'desc') {
@@ -149,7 +157,13 @@ export function alphaFirstSort(rows: EDInventoryRow, sortBy: string) {
   let sorted = [...rows];
   sorted.sort((a, b) => sortAlphaNum(a[sortBy], b[sortBy]));
   const charIndex = sorted.findIndex((row) => {
-    return row[sortBy].charAt(0).match(/[a-z]/i);
+    if (!row[sortBy]) {
+      return false;
+    }
+    return row[sortBy]
+      .toString()
+      .charAt(0)
+      .match(/[a-z]/i);
   });
 
   if (charIndex >= 0) {

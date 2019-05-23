@@ -99,7 +99,7 @@ export const getInventoryColumns = function(props) {
       dataKey: 'minimumPrice',
       flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
-        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
+        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       }
     },
     {
@@ -108,7 +108,7 @@ export const getInventoryColumns = function(props) {
       dataKey: 'maximumPrice',
       flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
-        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '---';
+        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       }
     },
     {
@@ -117,7 +117,7 @@ export const getInventoryColumns = function(props) {
       dataKey: 'listedPrice',
       flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
-        return formatUSD(rowData[dataKey]);
+        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       }
     },
     {
