@@ -22,7 +22,7 @@ import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import type { Node } from 'react';
 import type { EDUser } from '_models/user';
-import { admin } from '_hoc/secured';
+import { SecuredRoute } from '_components';
 import { Users } from './Users';
 
 type RouteConfig = {
@@ -55,13 +55,13 @@ const routes: Array<RouteConfig> = [
     path: '/settings/create-user',
     linkText: 'Create User',
     adminOnly: true,
-    main: admin(CreateUser)
+    main: CreateUser
   },
   {
     path: '/settings/demo',
     linkText: 'Demo',
     adminOnly: true,
-    main: admin(Demo)
+    main: Demo
   }
 ];
 
@@ -101,9 +101,18 @@ export const Settings = ({ authState, authActions }: Props) => (
         </Spacing>
       </LeftNav>
       <PrimaryContent>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} component={route.main} />
-        ))}
+        {routes.map((route, index) =>
+          route.adminOnly ? (
+            <SecuredRoute
+              key={index}
+              path={route.path}
+              authorized={!!authState.model && authState.model.isAdmin}
+              component={route.main}
+            />
+          ) : (
+            <Route key={index} path={route.path} component={route.main} />
+          )
+        )}
       </PrimaryContent>
     </FullContent>
   </PageWrapper>

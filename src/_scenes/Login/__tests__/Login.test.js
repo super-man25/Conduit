@@ -12,6 +12,13 @@ const props = {
   authActions: {
     forgotPass: jest.fn(),
     signIn: jest.fn()
+  },
+  location: {
+    state: {
+      from: {
+        pathname: ''
+      }
+    }
   }
 };
 

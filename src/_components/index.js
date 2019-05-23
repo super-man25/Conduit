@@ -51,3 +51,4 @@ export * from './Dropdown';
 export * from './Icon/SVGIcons';
 export * from './Table';
 export * from './ReportDownloadButton';
+export * from './SecuredRoute';

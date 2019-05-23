@@ -40,8 +40,7 @@ function forgotPass(data) {
   return post('users/forgot', data);
 }
 
-// prefixed function name with underscore because delete is a reserved word in javascript
-function _delete(id) {
+function deleteUser(id) {
   return del(`users/${id}`);
 }
 
@@ -68,7 +67,7 @@ export const userService = {
   changePassword,
   forgotPass,
   updateEmail,
-  delete: _delete,
+  delete: deleteUser,
   setAuthInStorage,
   getAuthFromStorage
 };

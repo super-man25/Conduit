@@ -9,6 +9,7 @@ import {
   forgotPassAsync
 } from '_state/auth/saga';
 import { call, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
 
 describe('actions', () => {
   it('should create an action to sign in', () => {
@@ -167,6 +168,7 @@ describe('saga workers', () => {
     expect(generator.next(user).value).toEqual(
       put({ type: types.LOGIN_SUCCESS, payload: user })
     );
+    expect(generator.next().value).toEqual(put(push('/')));
     expect(generator.next().done).toBe(true);
   });
 

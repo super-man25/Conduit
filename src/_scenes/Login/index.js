@@ -15,7 +15,6 @@ import {
 import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -28,15 +27,19 @@ import {
   HideMe
 } from './components/styled';
 import { validateEmail } from '_helpers/string-utils';
+import type { EDUser } from '_models/user';
+import { Redirect } from 'react-router-dom';
 
 type Props = {
   authState: {
     error: ?Error,
     loggingIn: boolean,
     requestingPassword: boolean,
-    forgot: boolean
+    forgot: boolean,
+    model: ?EDUser
   },
-  authActions: typeof authActions
+  authActions: typeof authActions,
+  location: { state: { from: { pathname: string } } }
 };
 
 type State = {
@@ -69,12 +72,13 @@ export class LoginPresenter extends React.Component<Props, State> {
     }
   }
 
-  static getDerivedStateFromProps(props: Props) {
-    if (props.authState.error) {
-      return { showAlert: true };
+  componentDidUpdate(prevProps: Props) {
+    if (
+      this.props.authState.error &&
+      this.props.authState.error !== prevProps.authState.error
+    ) {
+      this.setState({ showAlert: true });
     }
-
-    return null;
   }
 
   handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
@@ -98,10 +102,13 @@ export class LoginPresenter extends React.Component<Props, State> {
 
   // handles submittal of Login / Forgot Password form
   handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
-    const { forgot } = this.props.authState;
     e.preventDefault();
-    this.setState({ submitted: true });
+
+    const { forgot } = this.props.authState;
     const { email, password } = this.state;
+
+    this.setState({ submitted: true });
+
     if (forgot) {
       this.props.authActions.forgotPass(email);
       this.setState({
@@ -123,10 +130,18 @@ export class LoginPresenter extends React.Component<Props, State> {
     showForgotPass(!forgot);
   };
 
+  isLoggedIn() {
+    return !!this.props.authState.model;
+  }
+
   render() {
+    if (this.isLoggedIn()) {
+      const { from } = this.props.location.state || { from: { pathname: '/' } };
+      return <Redirect to={from} />;
+    }
+
     const { authState } = this.props;
     const { email, password, submitted, showAlert, touched } = this.state;
-
     const { forgot } = this.props.authState;
     const submitEnabled = this.submitEnabled();
     const validEmail = validateEmail(email);
@@ -230,13 +245,10 @@ export class LoginPresenter extends React.Component<Props, State> {
   }
 }
 
-LoginPresenter.propTypes = {
-  authState: PropTypes.shape()
-};
-
 function mapStateToProps(state) {
   return {
-    authState: state.auth
+    authState: state.auth,
+    location: state.router.location
   };
 }
 

@@ -2,6 +2,7 @@ import { userService } from '_services';
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { types, actions } from '.';
 import { actions as alertActions } from '../alert';
+import { push } from 'connected-react-router';
 
 // Workers
 export function* fetchAsync() {
@@ -25,6 +26,8 @@ export function* signInAsync(action) {
     const user = yield call(userService.login, email, password);
     yield call(userService.setAuthInStorage, user);
     yield put({ type: types.LOGIN_SUCCESS, payload: user });
+    // Redirect to home page
+    yield put(push('/'));
   } catch (err) {
     console.warn(err);
     yield put({ type: types.LOGIN_ERROR, payload: err });
