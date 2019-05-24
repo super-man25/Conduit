@@ -3,6 +3,7 @@ import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import { types, actions } from '.';
 import { actions as alertActions } from '../alert';
 import { push } from 'connected-react-router';
+import { actions as clientActions } from '_state/client';
 
 // Workers
 export function* fetchAsync() {
@@ -11,6 +12,7 @@ export function* fetchAsync() {
     const user = yield call(userService.getMe);
     yield call(userService.setAuthInStorage, user);
     yield put(actions.setUser(user));
+    yield put(clientActions.fetch());
     yield put({ type: types.IS_PENDING, payload: false });
   } catch (err) {
     yield put({ type: types.IS_PENDING, payload: false });
@@ -26,6 +28,7 @@ export function* signInAsync(action) {
     const user = yield call(userService.login, email, password);
     yield call(userService.setAuthInStorage, user);
     yield put({ type: types.LOGIN_SUCCESS, payload: user });
+    yield put(clientActions.fetch());
     // Redirect to home page
     yield put(push('/'));
   } catch (err) {

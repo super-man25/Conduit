@@ -37,6 +37,10 @@ import {
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import { selectors as seasonSelectors } from '_state/season';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
+import type { EDClient } from '_models';
+
+// temporary hotfix
+import { getClient } from '_state/client/selectors';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -65,6 +69,7 @@ const DateFilterOptions = styled.div`
 `;
 
 type Props = {
+  client: EDClient,
   seasonStatState: SeasonStatState,
   selectedSeasonId: number,
   seasonStatActions: SeasonStatActions
@@ -139,6 +144,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         selectedGroupFilter,
         seasonStats
       },
+      client: { id, name },
       seasonStatActions: { setDateRange, setGroupFilter }
     } = this.props;
 
@@ -205,10 +211,13 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         }}
                         onChange={setDateRange}
                       />
-                      <ReportDownloadButton
-                        onClick={this.handleDownloadClick}
-                        downloading={downloading}
-                      />
+                      {/* temporarily short circuiting button */}
+                      {id !== 5 && name !== 'Mets' && (
+                        <ReportDownloadButton
+                          onClick={this.handleDownloadClick}
+                          downloading={downloading}
+                        />
+                      )}
                     </DateFilterOptions>
                   </FlexItem>
                   <FlexItem flex={0}>
@@ -280,7 +289,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 function mapStateToProps(state) {
   return {
     seasonStatState: state.seasonStat,
-    selectedSeasonId: seasonSelectors.selectActiveSeasonId(state)
+    selectedSeasonId: seasonSelectors.selectActiveSeasonId(state),
+    //temporary
+    client: getClient(state)
   };
 }
 

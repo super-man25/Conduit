@@ -1,6 +1,7 @@
 import { userService } from '_services';
 import { actions, reducer, initialState } from '_state/auth';
 import { actions as alertActions } from '_state/alert';
+import { actions as clientActions } from '_state/client';
 import { types } from '_state/auth';
 import {
   fetchAsync,
@@ -168,6 +169,7 @@ describe('saga workers', () => {
     expect(generator.next(user).value).toEqual(
       put({ type: types.LOGIN_SUCCESS, payload: user })
     );
+    expect(generator.next().value).toEqual(put(clientActions.fetch()));
     expect(generator.next().value).toEqual(put(push('/')));
     expect(generator.next().done).toBe(true);
   });
@@ -216,6 +218,7 @@ describe('saga workers', () => {
     expect(generator.next(user).value).toEqual(
       put({ type: types.SET_USER, payload: user })
     );
+    expect(generator.next().value).toEqual(put(clientActions.fetch()));
     expect(generator.next().value).toEqual(
       put({ type: types.IS_PENDING, payload: false })
     );
