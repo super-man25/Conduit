@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { BulkUpdateModalPresenter, selectActions } from '..';
-import { SecondaryButton, PrimaryButton } from '_components';
+import { SecondaryButton, AsyncButton } from '_components';
 
 describe('<BulkUpdateModal />', () => {
   const props = {
@@ -79,7 +79,7 @@ describe('<BulkUpdateModal />', () => {
       value: '12.22'
     });
 
-    wrapper.find(PrimaryButton).simulate('click');
+    wrapper.find(AsyncButton).simulate('click');
     expect(fn).toBeCalled();
   });
 });

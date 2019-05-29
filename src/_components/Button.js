@@ -2,55 +2,86 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { cssConstants, shadows } from '_constants';
+import { withBoxModelProps } from '_helpers/style-utils';
 
 type Props = {
-  hidden: boolean,
-  secondary: boolean,
-  disabled: boolean,
-  collapse: boolean,
-  expand: boolean,
-  small: boolean
+  fontSize: string,
+  textAlign: string,
+  minWidth: string
 };
 
-export const PrimaryButton = styled.button`
-  min-width: 100px;
-  padding: 0 1rem;
+export const Button: React.ComponentType<Props> = withBoxModelProps(styled.button`
   border: none;
+  min-width: ${(props) => props.minWidth || '100px'};
+  padding: 1rem 2rem;
+  text-align: ${(props) => props.textAlign || 'center'};
   border-radius: 3px;
-  height: ${(props) => (props.small ? '30px' : '40px')};
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-  color: ${cssConstants.PRIMARY_WHITE};
-  transition: opacity 100ms ease-out;
-  margin: ${(props) => props.margin};
+  font-size: ${(props) => props.fontSize || '1rem'};
+  cursor: pointer;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
 
   &:disabled {
-    opacity: 0.3;
+    cursor: not-allowed;
+  }
+`);
+
+export const PrimaryButton = styled(Button)`
+  transition: opacity 100ms ease-out;
+  color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${cssConstants.PRIMARY_BLUE};
+
+  &:disabled {
+    color: ${cssConstants.PRIMARY_GRAY};
     background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+    opacity: 0.5;
+  }
+
+  &:active {
+    background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    box-shadow: ${shadows.ACTIVE_BUTTON};
   }
 
   &:hover:not(:disabled) {
-    background-color: ${cssConstants.PRIMARY_DARK_BLUE};
-    cursor: pointer;
+    background-color: ${cssConstants.SECONDARY_BACKGROUND_BLUE};
   }
 `;
 
-export const SecondaryButton = styled(PrimaryButton)`
+export const SecondaryButton = styled(Button)`
   background-color: ${cssConstants.PRIMARY_WHITE};
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
-  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  outline: 2px solid ${cssConstants.PRIMARY_BLUE};
+  color: ${cssConstants.PRIMARY_BLUE};
+  transition: outline linear;
+
+  &:disabled {
+    outline: 2px solid ${cssConstants.PRIMARY_GRAY};
+    color: ${cssConstants.PRIMARY_GRAY};
+    opacity: 0.5;
+  }
+
+  &:active {
+    background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
+    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    outline: 2px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+    box-shadow: ${shadows.ACTIVE_BUTTON};
+  }
 
   &:hover:not(:disabled) {
-    background-color: ${cssConstants.PRIMARY_WHITE};
-    border: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
-    color: ${cssConstants.PRIMARY_DARK_BLUE};
+    outline: 3px solid ${cssConstants.PRIMARY_BLUE};
+    background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
+    color: ${cssConstants.PRIMARY_BLUE};
   }
 `;
 
-export const GrayButton = styled(PrimaryButton)`
+export const TertiaryButton = styled(Button)`
   background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
   opacity: 0.8;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 
   &:hover:not(:disabled) {
     opacity: 1;
@@ -58,80 +89,16 @@ export const GrayButton = styled(PrimaryButton)`
   }
 `;
 
-// FiXME: This needs to be cleaned up with attrs and avoid nested ternaries
-export const Button: React.ComponentType<Props> = styled.button.attrs(
-  (props) => {
-    let direction = '';
-    if (props.collapse) direction = '<';
-    else if (props.expand) direction = '>';
+export const TextButton = styled(Button)`
+  color: ${cssConstants.PRIMARY_BLUE};
+  background-color: inherit;
 
-    return {
-      direction
-    };
-  }
-)`
-  display: ${(props) => (props.hidden ? 'none' : 'block')};
-  color: ${(props) =>
-    !props.secondary
-      ? cssConstants.PRIMARY_WHITE
-      : props.disabled
-      ? cssConstants.PRIMARY_WHITE
-      : cssConstants.PRIMARY_LIGHT_BLUE};
-  font-size: ${(props) => (props.collapse || props.expand ? '16px' : '0.8em')};
-  font-weight: 200;
-  width: ${(props) => (props.collapse || props.expand ? '30px' : '100%')};
-  margin: 0;
-  margin-top: ${(props) =>
-    props.collapse ? '20px' : props.expand ? '16px' : '10px'};
-  margin-bottom: ${(props) =>
-    props.collapse ? 'auto' : props.expand ? 'auto' : '10px'};
-  margin-right: ${(props) => (props.collapse || props.expand ? '20px' : '0')};
-  padding: ${(props) => (props.collapse || props.expand ? '0.4em' : '0.8em')};
-  padding-top: ${(props) =>
-    props.collapse || props.expand ? '0.3em' : props.small ? '0.6em' : '0.9em'};
-  padding-bottom: ${(props) =>
-    props.collapse || props.expand
-      ? '0.3em'
-      : props.small
-      ? '0.55em'
-      : '0.85em'};
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: ${(props) =>
-    props.disabled
-      ? cssConstants.PRIMARY_LIGHT_GRAY
-      : props.secondary
-      ? cssConstants.PRIMARY_LIGHT_BLUE
-      : cssConstants.PRIMARY_LIGHT_BLUE};
-  background-color: ${(props) =>
-    props.disabled
-      ? cssConstants.PRIMARY_LIGHT_GRAY
-      : props.secondary
-      ? cssConstants.PRIMARY_WHITE
-      : cssConstants.PRIMARY_LIGHT_BLUE};
-  &:hover {
-    cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-    color: ${(props) =>
-      props.disabled
-        ? cssConstants.PRIMARY_WHITE
-        : props.secondary
-        ? cssConstants.SECONDARY_BLUE
-        : cssConstants.PRIMARY_WHITE};
-    background-color: ${(props) =>
-      props.disabled
-        ? cssConstants.PRIMARY_LIGHT_GRAY
-        : props.secondary
-        ? cssConstants.PRIMARY_WHITE
-        : cssConstants.SECONDARY_BLUE};
-    border-color: ${(props) =>
-      props.disabled
-        ? cssConstants.PRIMARY_LIGHT_GRAY
-        : props.secondary
-        ? cssConstants.SECONDARY_BLUE
-        : cssConstants.SECONDARY_BLUE};
+  &:disabled {
+    color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+    opacity: 0.5;
   }
 
-  &::before {
-    content: '${(props) => props.direction}';
+  &:hover:not(:disabled) {
+    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
   }
 `;

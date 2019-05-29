@@ -5,11 +5,9 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
-// Don't know how I feel about adding a 4th type like this.
-// Open to alternatives
 const TYPES = new Map()
   .set('primary', cssConstants.PRIMARY_DARKEST_GRAY)
-  .set('secondary', cssConstants.PRIMARY_DARK_BLUE)
+  .set('secondary', cssConstants.PRIMARY_BLUE)
   .set('tertiary', cssConstants.PRIMARY_DARK_GRAY)
   .set('disabled', cssConstants.PRIMARY_GRAY);
 
@@ -39,14 +37,3 @@ export const EDText: React.ComponentType<Props> = withBoxModelProps(styled.div`
   margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || 0};
 `);
-
-export const EDTextButton = styled(EDText)`
-  &:hover {
-    outline: 0;
-    text-decoration: none;
-    cursor: pointer;
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all 0.1s ease-in-out;
-    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
-  }
-`;

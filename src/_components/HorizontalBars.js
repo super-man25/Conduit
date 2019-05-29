@@ -31,7 +31,7 @@ const HorizontalBar = styled.div`
 `;
 
 HorizontalBar.defaultProps = {
-  backgroundColor: cssConstants.PRIMARY_DARK_BLUE
+  backgroundColor: cssConstants.PRIMARY_BLUE
 };
 
 type HorizontalBarProps = {

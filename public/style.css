@@ -1,3 +1,11 @@
+:root {
+  --PRIMARY_LIGHT_BLUE: #38a9db;
+  --SECONDARY_BLUE: #2670ae;
+  --PRIMARY_LIGHT_GRAY: #d1d1d1;
+  --PRIMARY_LIGHTER_GRAY: #eeeeee;
+  --PRIMARY_DARK_GRAY: #767676;
+}
+
 html,
 body {
   margin: 0;
@@ -6,18 +14,7 @@ body {
   width: 100%;
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 14px;
-}
-
-body {
   background: #ffffff;
-}
-
-:root {
-  --PRIMARY_LIGHT_BLUE: #38a9db;
-  --SECONDARY_BLUE: #2670ae;
-  --PRIMARY_LIGHT_GRAY: #d1d1d1;
-  --PRIMARY_LIGHTER_GRAY: #eeeeee;
-  --PRIMARY_DARK_GRAY: #767676;
 }
 
 /*

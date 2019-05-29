@@ -8,7 +8,7 @@ import {
   Box,
   Flex,
   FlexItem,
-  GrayButton
+  TertiaryButton
 } from '_components';
 import { connect } from 'react-redux';
 import EventHeader from '../../components/EventHeader';
@@ -54,14 +54,14 @@ export const EventInventory = ({
         </Box>
         <Spacing height="2rem" />
         <Box padding="0 1rem">
-          <GrayButton
+          <TertiaryButton
             disabled={!selectedEventIds.length}
             title="Update Selected Items"
             onClick={startBulkUpdate}
             small
           >
             Bulk Update ({selectedEventIds.length} Rows)
-          </GrayButton>
+          </TertiaryButton>
         </Box>
         <EventInventoryTableContainer>
           <VirtualizedEventInventory event={event} />

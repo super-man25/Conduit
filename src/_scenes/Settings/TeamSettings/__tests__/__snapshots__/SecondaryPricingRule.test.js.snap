@@ -4,7 +4,7 @@ exports[`<SecondaryPricingRulePresenter /> renders correctly 1`] = `
 <withClickAway(undefined)
   onClickAway={[Function]}
 >
-  <Styled(styled.div)
+  <Styled(Styled(Styled(Styled(styled.button))))
     onClick={[Function]}
   />
 </withClickAway(undefined)>

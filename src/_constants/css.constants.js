@@ -1,6 +1,6 @@
 export const cssConstants = {
   PRIMARY_EVEN_LIGHTER_GRAY: '#F2F2F2',
-  PRIMARY_DARK_BLUE: '#024A8F',
+  PRIMARY_BLUE: '#024A8F',
   PRIMARY_LIGHT_BLUE: '#38A9DB',
   PRIMARY_LIGHTEST_GRAY: '#F8F8F8',
   PRIMARY_WHITE: '#FFFFFF',
@@ -14,6 +14,8 @@ export const cssConstants = {
   SECONDARY_BLUE: '#1A4B8A',
   SECONDARY_LIGHT_BLUE: '#4B98CF',
   SECONDARY_LIGHTEST_BLUE: '#7CBCDD',
+  SECONDARY_BACKGROUND_LIGHTEST_BLUE: '#F0F4F7',
+  SECONDARY_BACKGROUND_BLUE: '#2670AE',
   SECONDARY_BLUE_GRAY: '#C4D2E1',
   SECONDARY_PURPLE: '#5A288F',
   SECONDARY_LIGHT_PURPLE: '#817CB8',
@@ -44,7 +46,7 @@ export const cssConstants = {
 };
 
 export const shadows = {
-  SHADOW_PRIMARY: '0 1px 1px 0 #BBBBBB, 0 2px 4px 0 rgba(0,0,0,0.5);'
+  ACTIVE_BUTTON: '0 0 3px rgba(56, 169, 219, 100)'
 };
 
 export const zIndexes = {

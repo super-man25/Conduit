@@ -23,11 +23,13 @@ type Props = {
   size: 'small' | 'medium' | 'large',
   weight: 'normal' | 'heavy' | 'light' | 'lighter'
 };
+
 export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
   color: ${(props) => props.color || cssConstants.PRIMARY_DARKEST_GRAY};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
+  transition: all 0.1s ease-in-out;
 
   &:focus,
   &:hover {
@@ -35,8 +37,7 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
     text-decoration: none;
     cursor: pointer;
     color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all 0.1s ease-in-out;
-    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
+    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_LIGHT_BLUE};
   }
 
   &:active,
@@ -51,15 +52,15 @@ export const EDNavLink = styled(NavLink).attrs(attrs)`
   font-size: ${(props) => props.size};
   color: ${cssConstants.PRIMARY_DARKEST_GRAY};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
+  transition: all 0.1s ease-in-out;
 
   &:focus,
   &:hover {
     outline: 0;
     text-decoration: none;
     cursor: pointer;
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    transition: all 0.1s ease-in-out;
-    text-shadow: 0 0 0.1px ${cssConstants.PRIMARY_LIGHT_BLUE};
+    color: ${cssConstants.PRIMARY_BLUE};
+    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_BLUE};
   }
 
   &:active,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '_components/';
 import renderer from 'react-test-renderer';
-import { PrimaryButton, SecondaryButton, GrayButton } from '../Button';
+import { PrimaryButton, SecondaryButton, TertiaryButton } from '../Button';
 
 it('renders correctly with no props', () => {
   const tree = renderer.create(<Button />).toJSON();
@@ -48,19 +48,7 @@ it('<SecondaryButton /> renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('<GrayButton /> renders correctly', () => {
-  const tree = renderer.create(<GrayButton />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-// These are excluded due to a parsing issue with jest-styled-component and
-// dynamic before content
-xit('renders correctly with collapse prop', () => {
-  const tree = renderer.create(<Button collapse />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-xit('renders correctly with expand prop', () => {
-  const tree = renderer.create(<Button expand />).toJSON();
+it('<TertiaryButton /> renders correctly', () => {
+  const tree = renderer.create(<TertiaryButton />).toJSON();
   expect(tree).toMatchSnapshot();
 });

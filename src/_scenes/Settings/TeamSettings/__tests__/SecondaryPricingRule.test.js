@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { SecondaryPricingRulePresenter } from '../components/SecondaryPricingRule';
 import {
   SettingEditButton,
-  SettingBorderButton,
+  SecondaryButton,
   NumberInputField
 } from '_components';
 
@@ -44,7 +44,7 @@ describe('<SecondaryPricingRulePresenter />', () => {
     const wrapper = mount(<SecondaryPricingRulePresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'saveSettings');
     wrapper.find(SettingEditButton).simulate('click');
-    wrapper.find(SettingBorderButton).simulate('click');
+    wrapper.find(SecondaryButton).simulate('click');
     expect(spy).toHaveBeenCalled();
     wrapper.unmount();
   });

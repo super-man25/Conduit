@@ -10,7 +10,8 @@ import {
   EDLink,
   P1,
   S1,
-  Button,
+  TextButton,
+  Icon,
   Breadcrumbs,
   Spacing,
   Box
@@ -23,11 +24,6 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
 import { selectors } from '_state/event';
-
-const ToggleButton = styled(Button)`
-  margin: 0;
-  margin-right: 1rem;
-`;
 
 const EventTitle = styled(H1)`
   margin: 0;
@@ -96,7 +92,18 @@ export function EventHeader(props: Props) {
     <Box>
       <Flex align="center">
         {!isSidebarOpen && (
-          <ToggleButton small expand onClick={toggleSidebar} />
+          <TextButton
+            onClick={toggleSidebar}
+            padding="0"
+            textAlign="left"
+            minWidth="60px"
+          >
+            <Icon
+              name="arrow-right"
+              size={48}
+              color={cssConstants.PRIMARY_BLUE}
+            />
+          </TextButton>
         )}
         <Breadcrumbs crumbs={createCrumbs(event, isViewingInventory)} />
       </Flex>

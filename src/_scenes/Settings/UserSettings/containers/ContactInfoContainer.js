@@ -10,7 +10,7 @@ import {
   Input,
   Setting,
   SettingEditButton,
-  SettingBorderButton,
+  SecondaryButton,
   H5,
   HelpBlockDiv,
   Spacing
@@ -156,7 +156,7 @@ export class ContactInfo extends React.Component<Props, State> {
     return passwordsMatch;
   };
 
-  saveName = (e: SyntheticInputEvent<SettingBorderButton>) => {
+  saveName = (e: SyntheticInputEvent<SecondaryButton>) => {
     e.preventDefault();
 
     const { user } = this.state;
@@ -167,7 +167,7 @@ export class ContactInfo extends React.Component<Props, State> {
     }
   };
 
-  savePhoneNumber = (e: SyntheticInputEvent<SettingBorderButton>) => {
+  savePhoneNumber = (e: SyntheticInputEvent<SecondaryButton>) => {
     e.preventDefault();
 
     const { user } = this.state;
@@ -178,7 +178,7 @@ export class ContactInfo extends React.Component<Props, State> {
     }
   };
 
-  saveEmail = (e: SyntheticInputEvent<SettingBorderButton>) => {
+  saveEmail = (e: SyntheticInputEvent<SecondaryButton>) => {
     e.preventDefault();
 
     const { user, password } = this.state;
@@ -196,7 +196,7 @@ export class ContactInfo extends React.Component<Props, State> {
     }
   };
 
-  savePassword = (e: SyntheticInputEvent<SettingBorderButton>) => {
+  savePassword = (e: SyntheticInputEvent<SecondaryButton>) => {
     e.preventDefault();
 
     const {
@@ -265,12 +265,12 @@ export class ContactInfo extends React.Component<Props, State> {
                 />
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton
+                <SecondaryButton
                   onClick={this.saveName}
                   data-test-id="save-name-button"
                 >
                   Save
-                </SettingBorderButton>
+                </SecondaryButton>
               </SettingButtonGroup>
             </React.Fragment>
           ) : (
@@ -329,9 +329,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 </HelpBlockDiv>
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.saveEmail}>
-                  Save
-                </SettingBorderButton>
+                <SecondaryButton onClick={this.saveEmail}>Save</SecondaryButton>
               </SettingButtonGroup>
             </React.Fragment>
           ) : (
@@ -380,12 +378,12 @@ export class ContactInfo extends React.Component<Props, State> {
                 </HelpBlockDiv>
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton
+                <SecondaryButton
                   onClick={this.savePhoneNumber}
                   data-test-id="save-phone-number-button"
                 >
                   Save
-                </SettingBorderButton>
+                </SecondaryButton>
               </SettingButtonGroup>
             </React.Fragment>
           ) : (
@@ -466,9 +464,9 @@ export class ContactInfo extends React.Component<Props, State> {
                 </HelpBlockDiv>
               </ContactSection>
               <SettingButtonGroup>
-                <SettingBorderButton onClick={this.savePassword}>
+                <SecondaryButton onClick={this.savePassword}>
                   Save
-                </SettingBorderButton>
+                </SecondaryButton>
               </SettingButtonGroup>
             </React.Fragment>
           ) : (

@@ -33,13 +33,13 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
             Pricing Rules
           </styled.h3>
           <div>
-            <Styled(styled.button)
+            <Styled(Styled(styled.button))
               disabled={true}
               onClick={[MockFunction]}
             >
               Buyer Types
-            </Styled(styled.button)>
-            <styled.button
+            </Styled(Styled(styled.button))>
+            <Styled(Styled(styled.button))
               disabled={false}
               onClick={[Function]}
               style={
@@ -50,13 +50,11 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
               }
             >
               New Rule
-            </styled.button>
+            </Styled(Styled(styled.button))>
           </div>
         </Flex>
       </styled.div>
-      <Styled(FlexItem)
-        flex={1}
-      >
+      <Styled(FlexItem)>
         <Connect(VirtualizedPricingRulesPresenter) />
       </Styled(FlexItem)>
     </Styled(Flex)>

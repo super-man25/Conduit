@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import {
   SettingEditButton,
-  SettingBorderButton,
+  SecondaryButton,
   NumberInputField,
   Flex,
   FlexItem,
@@ -108,9 +108,7 @@ export class SecondaryPricingRulePresenter extends Component {
                 />
               </FlexItem>
             </Flex>
-            <SettingBorderButton onClick={this.saveSettings}>
-              SAVE
-            </SettingBorderButton>
+            <SecondaryButton onClick={this.saveSettings}>SAVE</SecondaryButton>
           </Fragment>
         ) : (
           <SettingEditButton onClick={this.toggleEdit} />

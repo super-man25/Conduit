@@ -26,7 +26,7 @@ export const ModalContent = styled.div`
 export const ModalHeader = styled.div`
   padding: 1.5rem;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border-bottom: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+  border-bottom: 1px solid ${cssConstants.PRIMARY_BLUE};
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 `;
@@ -37,13 +37,13 @@ export const ModalBody = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border-bottom: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+  border-bottom: 1px solid ${cssConstants.PRIMARY_BLUE};
 `;
 
 export const ModalFooter = styled.div`
   padding: 1.5rem;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border-bottom: ${cssConstants.PRIMARY_DARK_BLUE};
+  border-bottom: ${cssConstants.PRIMARY_BLUE};
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 `;

@@ -28,8 +28,8 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#38A9DB",
-                  "textShadow": "0 0 .1px #38A9DB",
+                  "color": "#024A8F",
+                  "textShadow": "0 0 0.5px #024A8F",
                 }
               }
               to="/settings/team"
@@ -45,8 +45,8 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#38A9DB",
-                  "textShadow": "0 0 .1px #38A9DB",
+                  "color": "#024A8F",
+                  "textShadow": "0 0 0.5px #024A8F",
                 }
               }
               to="/settings/user"
@@ -62,8 +62,8 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#38A9DB",
-                  "textShadow": "0 0 .1px #38A9DB",
+                  "color": "#024A8F",
+                  "textShadow": "0 0 0.5px #024A8F",
                 }
               }
               to="/settings/users"

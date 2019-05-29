@@ -4,7 +4,8 @@ import {
   Spacing,
   PageWrapper,
   Flex,
-  Button,
+  TextButton,
+  Icon,
   CenteredLoader
 } from '_components';
 import SeasonRevenuePanel from './components/SeasonRevenuePanel';
@@ -14,13 +15,10 @@ import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations'
 import { connect } from 'react-redux';
 import { selectors } from '_state/season';
 import { createStructuredSelector } from 'reselect';
+import { cssConstants } from '_constants';
 
 const SeasonOverviewTitle = styled(H1)`
   margin: ${(props) => (props.sidebarIsOpen ? '0' : '0 0 0 1rem')};
-`;
-
-const ToggleButton = styled(Button)`
-  margin: 0;
 `;
 
 const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
@@ -47,7 +45,13 @@ const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
       <Spacing padding="1.5rem 2rem">
         <Flex align="center" margin="0 0 1.5rem">
           {!isSidebarOpen && (
-            <ToggleButton small expand onClick={toggleSidebar} />
+            <TextButton onClick={toggleSidebar}>
+              <Icon
+                name="arrow-right"
+                size={48}
+                color={cssConstants.PRIMARY_BLUE}
+              />
+            </TextButton>
           )}
           <SeasonOverviewTitle weight="400" sidebarIsOpen={isSidebarOpen}>
             Season Overview - {activeSeason && activeSeason.name}

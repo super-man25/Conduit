@@ -7,7 +7,7 @@ export function PeriodicRevenueChartLegend() {
     <Fragment>
       <ChartLegendItem
         label="Actual Revenue"
-        color={cssConstants.PRIMARY_DARK_BLUE}
+        color={cssConstants.PRIMARY_BLUE}
       />
       <ChartLegendItem label="Projected Revenue" />
     </Fragment>

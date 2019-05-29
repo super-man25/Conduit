@@ -38,7 +38,7 @@ export const H3 = styled.h3.attrs((props) => ({
   color:
     (props.type === 'secondary' && cssConstants.SECONDARY_BLUE) ||
     (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
-    cssConstants.PRIMARY_DARK_BLUE
+    cssConstants.PRIMARY_BLUE
 }))`
   color: ${(props) => props.color};
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H3};
@@ -81,6 +81,8 @@ export const S1 = styled.span`
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) => props.size || cssConstants.SUBHEADING_SIZE_S1};
   font-weight: ${(props) => props.weight || cssConstants.SUBHEADING_WEIGHT_S1};
+
+  ${ellipsis};
 `;
 
 export const Label = styled.label`

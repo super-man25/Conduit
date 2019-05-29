@@ -2,11 +2,10 @@
 import React from 'react';
 import {
   Flex,
-  PrimaryButton,
   SecondaryButton,
   H4,
-  Loader,
-  NumberInputField
+  NumberInputField,
+  AsyncButton
 } from '_components';
 
 import styled from 'styled-components';
@@ -266,9 +265,13 @@ export class PricingForm extends React.Component<Props, State> {
               <SecondaryButton onClick={this.handleCancel}>
                 Cancel
               </SecondaryButton>
-              <PrimaryButton disabled={submitting} onClick={this.handleSave}>
-                {submitting ? <Loader small /> : 'Save'}
-              </PrimaryButton>
+              <AsyncButton
+                isLoading={submitting}
+                disabled={submitting}
+                onClick={this.handleSave}
+              >
+                Save
+              </AsyncButton>
             </>
           ) : (
             <SecondaryButton onClick={this.handleEdit}>Edit</SecondaryButton>

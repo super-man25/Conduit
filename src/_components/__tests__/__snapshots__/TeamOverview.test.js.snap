@@ -1,101 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with props 1`] = `
-.c3 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c3 path {
+.c4 path {
   fill: #FFFFFF;
 }
 
-.c5 {
-  display: block;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 200;
-  width: 30px;
-  margin: 0;
-  margin-top: 20px;
-  margin-bottom: auto;
-  margin-right: 20px;
-  padding: 0.4em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  border: 2px solid;
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
   border-radius: 3px;
-  border-color: #38A9DB;
-  background-color: #38A9DB;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #024A8F;
+  background-color: inherit;
 }
 
-.c5:hover {
-  cursor: pointer;
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c10 {
+  margin: 0;
   color: #FFFFFF;
-  background-color: #1A4B8A;
-  border-color: #1A4B8A;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
-.c5::before {
-  content: ' 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
 
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.c1{position:relative;
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   width: 180px;
   top: calc(100% + 8px);
@@ -120,7 +114,7 @@ exports[`renders correctly with props 1`] = `
   background: 'none';
 }
 
-.c2 {
+.c3 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -130,7 +124,7 @@ exports[`renders correctly with props 1`] = `
   color: #FFFFFF;
 }
 
-.c6 {
+.c9 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -143,25 +137,25 @@ exports[`renders correctly with props 1`] = `
   className="c0"
 >
   <div
-    className=""
+    className="c1"
     direction="row"
   >
     <div>
       <div
-        className="c1"
+        className="c2"
         onClick={[Function]}
       >
         <div
-          className=""
+          className="c1"
         >
           <h4
-            className="c2"
+            className="c3"
             color="#070707"
           >
             Select a Season
           </h4>
           <svg
-            className="c3"
+            className="c4"
             color="#FFFFFF"
             viewBox="0 0 24 24"
             width="24px"
@@ -172,31 +166,41 @@ exports[`renders correctly with props 1`] = `
           </svg>
         </div>
         <div
-          className="c4"
+          className="c5"
         />
       </div>
     </div>
     <button
-      className="c5"
-      direction="<"
+      className="c6"
       onClick={[MockFunction]}
-    />
+    >
+      <svg
+        className="c7"
+        color="white"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z,M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
   </div>
   <div
-    className=""
+    className="c1"
     direction="row"
   >
     <div
-      className=""
+      className="c8"
     >
       <h3
-        className="c6"
+        className="c9"
         color="#024A8F"
       >
         0.909
       </h3>
       <p
-        className=""
+        className="c10"
         color="#FFFFFF"
       >
         <i>
@@ -205,16 +209,16 @@ exports[`renders correctly with props 1`] = `
       </p>
     </div>
     <div
-      className=""
+      className="c11"
     >
       <h3
-        className="c6"
+        className="c9"
         color="#024A8F"
       >
         --
       </h3>
       <p
-        className=""
+        className="c10"
         color="#FFFFFF"
       >
         <i>
@@ -227,101 +231,95 @@ exports[`renders correctly with props 1`] = `
 `;
 
 exports[`renders correctly with toggledSidebar 1`] = `
-.c3 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c3 path {
+.c4 path {
   fill: #FFFFFF;
 }
 
-.c5 {
-  display: block;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 200;
-  width: 30px;
-  margin: 0;
-  margin-top: 20px;
-  margin-bottom: auto;
-  margin-right: 20px;
-  padding: 0.4em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  border: 2px solid;
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
   border-radius: 3px;
-  border-color: #38A9DB;
-  background-color: #38A9DB;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #024A8F;
+  background-color: inherit;
 }
 
-.c5:hover {
-  cursor: pointer;
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c10 {
+  margin: 0;
   color: #FFFFFF;
-  background-color: #1A4B8A;
-  border-color: #1A4B8A;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
-.c5::before {
-  content: ' 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
 
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.c1{position:relative;
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c4 {
+.c5 {
   position: absolute;
   width: 180px;
   top: calc(100% + 8px);
@@ -346,7 +344,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   background: 'none';
 }
 
-.c2 {
+.c3 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -356,7 +354,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   color: #FFFFFF;
 }
 
-.c6 {
+.c9 {
   color: #024A8F;
   font-size: 22px;
   font-weight: normal;
@@ -369,25 +367,25 @@ exports[`renders correctly with toggledSidebar 1`] = `
   className="c0"
 >
   <div
-    className=""
+    className="c1"
     direction="row"
   >
     <div>
       <div
-        className="c1"
+        className="c2"
         onClick={[Function]}
       >
         <div
-          className=""
+          className="c1"
         >
           <h4
-            className="c2"
+            className="c3"
             color="#070707"
           >
             Select a Season
           </h4>
           <svg
-            className="c3"
+            className="c4"
             color="#FFFFFF"
             viewBox="0 0 24 24"
             width="24px"
@@ -398,31 +396,41 @@ exports[`renders correctly with toggledSidebar 1`] = `
           </svg>
         </div>
         <div
-          className="c4"
+          className="c5"
         />
       </div>
     </div>
     <button
-      className="c5"
-      direction="<"
+      className="c6"
       onClick={[MockFunction]}
-    />
+    >
+      <svg
+        className="c7"
+        color="white"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z,M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
   </div>
   <div
-    className=""
+    className="c1"
     direction="row"
   >
     <div
-      className=""
+      className="c8"
     >
       <h3
-        className="c6"
+        className="c9"
         color="#024A8F"
       >
         0.909
       </h3>
       <p
-        className=""
+        className="c10"
         color="#FFFFFF"
       >
         <i>
@@ -431,16 +439,16 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </p>
     </div>
     <div
-      className=""
+      className="c11"
     >
       <h3
-        className="c6"
+        className="c9"
         color="#024A8F"
       >
         --
       </h3>
       <p
-        className=""
+        className="c10"
         color="#FFFFFF"
       >
         <i>

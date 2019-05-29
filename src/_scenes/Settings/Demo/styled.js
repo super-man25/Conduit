@@ -80,7 +80,7 @@ export const SoupedUpSlider = styled.input`
     width: 16px;
     border-radius: 50%;
     background: ${cssConstants.PRIMARY_WHITE};
-    border: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+    border: 1px solid ${cssConstants.PRIMARY_BLUE};
   }
 
   ::-moz-range-thumb {
@@ -89,7 +89,7 @@ export const SoupedUpSlider = styled.input`
     width: 16px;
     border-radius: 50%;
     background: ${cssConstants.PRIMARY_WHITE};
-    border: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+    border: 1px solid ${cssConstants.PRIMARY_BLUE};
   }
 
   :-moz-focusring {

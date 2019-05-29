@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { ContactInfo } from '../containers/ContactInfoContainer';
-import { SettingBorderButton } from '_components';
+import { SecondaryButton } from '_components';
 
 describe('<ContactInfo />', () => {
   const props = {
@@ -32,18 +32,14 @@ describe('<ContactInfo />', () => {
   it('updates name', () => {
     const wrapper = shallow(<ContactInfo {...props} />);
     wrapper.setState({ editName: true });
-    wrapper
-      .find(SettingBorderButton)
-      .simulate('click', { preventDefault() {} });
+    wrapper.find(SecondaryButton).simulate('click', { preventDefault() {} });
     expect(props.userActions.update).toBeCalled();
   });
 
   it('updates phone number', () => {
     const wrapper = shallow(<ContactInfo {...props} />);
     wrapper.setState({ editPhoneNumber: true });
-    wrapper
-      .find(SettingBorderButton)
-      .simulate('click', { preventDefault() {} });
+    wrapper.find(SecondaryButton).simulate('click', { preventDefault() {} });
     expect(props.userActions.update).toBeCalled();
   });
 });

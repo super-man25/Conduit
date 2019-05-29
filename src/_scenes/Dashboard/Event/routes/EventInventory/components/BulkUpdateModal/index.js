@@ -5,11 +5,10 @@ import {
   Toggle,
   Flex,
   Text,
-  PrimaryButton,
   SecondaryButton,
   SelectDropdown,
-  Loader,
-  NumberInputField
+  NumberInputField,
+  AsyncButton
 } from '_components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -198,17 +197,13 @@ export class BulkUpdateModalPresenter extends React.Component {
               >
                 Cancel
               </SecondaryButton>
-              <PrimaryButton
-                small
+              <AsyncButton
+                isLoading={this.props.loading}
                 disabled={!submitEnabled}
                 onClick={this.submit}
               >
-                {this.props.loading ? (
-                  <Loader small color={cssConstants.PRIMARY_WHITE} />
-                ) : (
-                  'Submit'
-                )}
-              </PrimaryButton>
+                Submit
+              </AsyncButton>
             </Flex>
           </ModalBody>
         </ModalContent>

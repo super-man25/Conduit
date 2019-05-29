@@ -37,7 +37,7 @@ export const ModalContent = styled.div`
 export const ModalHeader = styled.div`
   padding: 1.5rem;
   background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border-bottom: 1px solid ${cssConstants.PRIMARY_DARK_BLUE};
+  border-bottom: 1px solid ${cssConstants.PRIMARY_BLUE};
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 `;

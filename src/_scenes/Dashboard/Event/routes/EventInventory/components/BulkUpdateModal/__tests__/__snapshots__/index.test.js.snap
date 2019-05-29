@@ -100,20 +100,20 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
       <Flex
         justify="flex-end"
       >
-        <Styled(styled.button)
+        <Styled(Styled(styled.button))
           margin="0 1rem 0 0"
           onClick={[MockFunction]}
           small={true}
         >
           Cancel
-        </Styled(styled.button)>
-        <styled.button
+        </Styled(Styled(styled.button))>
+        <AsyncButton
           disabled={false}
+          isLoading={false}
           onClick={[Function]}
-          small={true}
         >
           Submit
-        </styled.button>
+        </AsyncButton>
       </Flex>
     </styled.div>
   </styled.div>
@@ -231,20 +231,20 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
       <Flex
         justify="flex-end"
       >
-        <Styled(styled.button)
+        <Styled(Styled(styled.button))
           margin="0 1rem 0 0"
           onClick={[MockFunction]}
           small={true}
         >
           Cancel
-        </Styled(styled.button)>
-        <styled.button
+        </Styled(Styled(styled.button))>
+        <AsyncButton
           disabled={true}
+          isLoading={false}
           onClick={[Function]}
-          small={true}
         >
           Submit
-        </styled.button>
+        </AsyncButton>
       </Flex>
     </styled.div>
   </styled.div>
@@ -354,23 +354,20 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
       <Flex
         justify="flex-end"
       >
-        <Styled(styled.button)
+        <Styled(Styled(styled.button))
           margin="0 1rem 0 0"
           onClick={[MockFunction]}
           small={true}
         >
           Cancel
-        </Styled(styled.button)>
-        <styled.button
+        </Styled(Styled(styled.button))>
+        <AsyncButton
           disabled={false}
+          isLoading={true}
           onClick={[Function]}
-          small={true}
         >
-          <Loader
-            color="#FFFFFF"
-            small={true}
-          />
-        </styled.button>
+          Submit
+        </AsyncButton>
       </Flex>
     </styled.div>
   </styled.div>
@@ -442,23 +439,20 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
       <Flex
         justify="flex-end"
       >
-        <Styled(styled.button)
+        <Styled(Styled(styled.button))
           margin="0 1rem 0 0"
           onClick={[MockFunction]}
           small={true}
         >
           Cancel
-        </Styled(styled.button)>
-        <styled.button
+        </Styled(Styled(styled.button))>
+        <AsyncButton
           disabled={false}
+          isLoading={true}
           onClick={[Function]}
-          small={true}
         >
-          <Loader
-            color="#FFFFFF"
-            small={true}
-          />
-        </styled.button>
+          Submit
+        </AsyncButton>
       </Flex>
     </styled.div>
   </styled.div>

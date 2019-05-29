@@ -1,18 +1,16 @@
 // @flow
 import {
-  Button,
   CenteredContainer,
-  FlexItem,
   H3,
   HelpBlockDiv,
   ImageLayout,
   Input,
   Label,
-  Loader,
   MailtoLink,
-  Spacing
+  Spacing,
+  Flex,
+  AsyncButton
 } from '_components';
-import { cssConstants } from '_constants';
 import stadiumImage from '_images/stadiumseats.jpg';
 import { actions as authActions } from '_state/auth';
 import React from 'react';
@@ -149,7 +147,7 @@ export class LoginPresenter extends React.Component<Props, State> {
     return (
       <ImageLayout imageSrc={`url(${stadiumImage})`}>
         <Content>
-          <FlexItem>
+          <Flex>
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
                 <LogoImg src={edLogoImage} alt="Event Dynamic Logo" />
@@ -214,24 +212,25 @@ export class LoginPresenter extends React.Component<Props, State> {
                       Password is required
                     </HelpBlockDiv>
                   </HideMe>
-                  <Button
-                    disabled={!submitEnabled}
-                    id="login"
-                    data-test-id="login-button"
-                  >
-                    {authState.loggingIn || authState.requestingPassword ? (
-                      <Loader small color={cssConstants.PRIMARY_WHITE} />
-                    ) : (
-                      'Submit'
-                    )}
-                  </Button>
-                  <ForgotLink onClick={this.handleForgotClick}>
-                    {forgot ? 'Back to Log In' : 'Forgot Password?'}
-                  </ForgotLink>
+                  <Flex justify="space-between" align="center">
+                    <AsyncButton
+                      id="login"
+                      data-test-id="login-button"
+                      disabled={!submitEnabled}
+                      isLoading={
+                        authState.loggingIn || authState.requestingPassword
+                      }
+                    >
+                      Submit
+                    </AsyncButton>
+                    <ForgotLink onClick={this.handleForgotClick}>
+                      {forgot ? 'Back to Log In' : 'Forgot Password?'}
+                    </ForgotLink>
+                  </Flex>
                 </form>
               </CenteredContainer>
             </Spacing>
-          </FlexItem>
+          </Flex>
           <LoginFooter>
             If you do not already have an account please contact{' '}
             <MailtoLink href="mailto:info@eventdynamic.com">

@@ -89,8 +89,8 @@ export const Settings = ({ authState, authActions }: Props) => (
                     weight="light"
                     to={r.path}
                     activeStyle={{
-                      color: cssConstants.PRIMARY_LIGHT_BLUE,
-                      textShadow: `0 0 .1px ${cssConstants.PRIMARY_LIGHT_BLUE}`
+                      color: cssConstants.PRIMARY_BLUE,
+                      textShadow: `0 0 0.5px ${cssConstants.PRIMARY_BLUE}`
                     }}
                   >
                     {r.linkText}

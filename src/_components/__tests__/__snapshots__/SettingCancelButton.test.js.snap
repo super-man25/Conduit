@@ -2,25 +2,52 @@
 
 exports[`renders correctly with disabled prop 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  position: relative;
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
   text-align: center;
+  border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background-color: #FFFFFF;
+  outline: 2px solid #024A8F;
+  color: #024A8F;
+  -webkit-transition: outline linear;
+  transition: outline linear;
   color: #f75555;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+}
+
+.c0:disabled {
+  outline: 2px solid #999999;
+  color: #999999;
+  opacity: 0.5;
+}
+
+.c0:active {
+  background-color: #F0F4F7;
+  color: #38A9DB;
+  outline: 2px solid #38A9DB;
+  box-shadow: 0 0 3px rgba(56,169,219,100);
+}
+
+.c0:hover:not(:disabled) {
+  outline: 3px solid #024A8F;
+  background-color: #F0F4F7;
+  color: #024A8F;
 }
 
 .c0::before {
   content: 'CANCEL';
 }
 
-<div
+<button
   className="c0"
   disabled={true}
 />
@@ -28,25 +55,52 @@ exports[`renders correctly with disabled prop 1`] = `
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  position: relative;
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
   text-align: center;
+  border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background-color: #FFFFFF;
+  outline: 2px solid #024A8F;
+  color: #024A8F;
+  -webkit-transition: outline linear;
+  transition: outline linear;
   color: #f75555;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+}
+
+.c0:disabled {
+  outline: 2px solid #999999;
+  color: #999999;
+  opacity: 0.5;
+}
+
+.c0:active {
+  background-color: #F0F4F7;
+  color: #38A9DB;
+  outline: 2px solid #38A9DB;
+  box-shadow: 0 0 3px rgba(56,169,219,100);
+}
+
+.c0:hover:not(:disabled) {
+  outline: 3px solid #024A8F;
+  background-color: #F0F4F7;
+  color: #024A8F;
 }
 
 .c0::before {
   content: 'CANCEL';
 }
 
-<div
+<button
   className="c0"
 />
 `;

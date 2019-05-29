@@ -25,7 +25,7 @@ exports[`<EventInventory /> index route should render correctly 1`] = `
     <Styled(styled.div)
       padding="0 1rem"
     >
-      <Styled(styled.button)
+      <Styled(Styled(styled.button))
         disabled={true}
         onClick={[MockFunction]}
         small={true}
@@ -34,11 +34,9 @@ exports[`<EventInventory /> index route should render correctly 1`] = `
         Bulk Update (
         0
          Rows)
-      </Styled(styled.button)>
+      </Styled(Styled(styled.button))>
     </Styled(styled.div)>
-    <Styled(FlexItem)
-      flex={1}
-    >
+    <Styled(FlexItem)>
       <Connect(VirtualizedEventInventoryPresenter)
         event={Object {}}
       />
@@ -73,7 +71,7 @@ exports[`<EventInventory /> index route should render correctly when there are s
     <Styled(styled.div)
       padding="0 1rem"
     >
-      <Styled(styled.button)
+      <Styled(Styled(styled.button))
         disabled={false}
         onClick={[MockFunction]}
         small={true}
@@ -82,11 +80,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
         Bulk Update (
         3
          Rows)
-      </Styled(styled.button)>
+      </Styled(Styled(styled.button))>
     </Styled(styled.div)>
-    <Styled(FlexItem)
-      flex={1}
-    >
+    <Styled(FlexItem)>
       <Connect(VirtualizedEventInventoryPresenter)
         event={Object {}}
       />
@@ -121,7 +117,7 @@ exports[`<EventInventory /> index route should render correctly when there are s
     <Styled(styled.div)
       padding="0 1rem"
     >
-      <Styled(styled.button)
+      <Styled(Styled(styled.button))
         disabled={false}
         onClick={[MockFunction]}
         small={true}
@@ -130,11 +126,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
         Bulk Update (
         3
          Rows)
-      </Styled(styled.button)>
+      </Styled(Styled(styled.button))>
     </Styled(styled.div)>
-    <Styled(FlexItem)
-      flex={1}
-    >
+    <Styled(FlexItem)>
       <Connect(VirtualizedEventInventoryPresenter)
         event={Object {}}
       />

@@ -97,7 +97,7 @@ export const PeriodicRevenueChart = ({
           <Bar
             dataKey={CHART_KEYS.actual}
             stackId="a"
-            fill={cssConstants.PRIMARY_DARK_BLUE}
+            fill={cssConstants.PRIMARY_BLUE}
           />
 
           <Bar

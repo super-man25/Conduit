@@ -40,6 +40,15 @@ type FlexProps = {
   alignSelf?: FlexAlignment
 };
 
+type FlexItemProps = {
+  flex: number,
+  width: string,
+  height: string,
+  alignSelf: FlexAlignment,
+  margin: string,
+  padding: string
+};
+
 function generateFlexDirection(props: FlexProps): FlexDirection {
   const { column, reverse, direction } = props;
 
@@ -71,28 +80,12 @@ export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`
   width: ${(props) => props.width};
 `);
 
-type FlexItemProps = {
-  flex: number,
-  width: string,
-  height: string,
-  alignSelf: FlexAlignment,
-  margin: string,
-  padding: string
-};
-
-export const FlexItem: ComponentType<FlexItemProps> = styled.div`
-  flex: ${(props) => props.flex};
+export const FlexItem: ComponentType<FlexItemProps> = withBoxModelProps(styled.div`
+  flex: ${(props) => props.flex || 1};
   height: ${(props) => props.height};
   width: ${(props) => props.width};
   align-self: ${(props) => props.alignSelf};
-  margin: ${(props) => props.margin};
-  padding: ${(props) => props.padding};
-`;
-
-// $FlowFixMe - FlexItem defaultProps
-FlexItem.defaultProps = {
-  flex: 1
-};
+`);
 
 Flex.displayName = 'Flex';
 FlexItem.displayName = 'FlexItem';

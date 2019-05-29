@@ -1,12 +1,21 @@
 // @flow
 
 import styled from 'styled-components';
-import { Button, HelpBlockDiv, Input, Label, Flex, H3 } from '_components';
+import {
+  PrimaryButton,
+  HelpBlockDiv,
+  Input,
+  Label,
+  Flex,
+  H3,
+  Loader
+} from '_components';
 import { actions as usersActions } from '_state/user';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { EDUser } from '_models';
+import { cssConstants } from '_constants';
 
 const CreateUserWrapper = styled(Flex)`
   flex-direction: column;
@@ -158,7 +167,6 @@ class CreateUser extends React.Component<Props, State> {
           >
             First Name is required
           </HelpBlockDiv>
-
           <Label htmlFor="lastName">Last Name</Label>
           <Input
             type="text"
@@ -176,7 +184,6 @@ class CreateUser extends React.Component<Props, State> {
           >
             Last Name is required
           </HelpBlockDiv>
-
           <Label htmlFor="email">Email</Label>
           <Input
             type="text"
@@ -195,7 +202,6 @@ class CreateUser extends React.Component<Props, State> {
           >
             A valid Email is required
           </HelpBlockDiv>
-
           <input
             type="checkbox"
             name="isAdmin"
@@ -208,14 +214,13 @@ class CreateUser extends React.Component<Props, State> {
           <br />
           <br />
           <br />
-
-          <Button disabled={!createEnabled}>Create</Button>
-          {userState.creating && (
-            <img
-              src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
-              alt="processing spinner"
-            />
-          )}
+          <PrimaryButton disabled={!createEnabled}>
+            {userState.creating ? (
+              <Loader small color={cssConstants.PRIMARY_WHITE} />
+            ) : (
+              'Create'
+            )}
+          </PrimaryButton>
         </form>
       </CreateUserWrapper>
     );

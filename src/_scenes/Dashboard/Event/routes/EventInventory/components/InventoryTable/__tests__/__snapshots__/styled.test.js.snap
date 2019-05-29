@@ -121,42 +121,28 @@ exports[`InventoryTable styled components <IconContainer /> should render correc
 
 exports[`InventoryTable styled components <ManualPricingButton /> should render correctly 1`] = `
 .c0 {
-  display: block;
-  color: #FFFFFF;
-  font-size: 0.8em;
-  font-weight: 200;
-  width: 100%;
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 0;
-  padding: 0.8em;
-  padding-top: 0.9em;
-  padding-bottom: 0.85em;
-  border: 2px solid;
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
   border-radius: 3px;
-  border-color: #38A9DB;
-  background-color: #38A9DB;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   box-sizing: border-box;
   margin: 0;
   max-width: 80px;
   max-height: 35px;
 }
 
-.c0:hover {
-  cursor: pointer;
-  color: #FFFFFF;
-  background-color: #1A4B8A;
-  border-color: #1A4B8A;
-}
-
-.c0::before {
-  content: '';
+.c0:disabled {
+  cursor: not-allowed;
 }
 
 <button
   className="c0"
-  direction=""
 />
 `;
 

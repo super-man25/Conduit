@@ -1,7 +1,8 @@
+// @flow
+
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { cssConstants } from '_constants';
-import PropTypes from 'prop-types';
 
 const LARGE_HEIGHT = '14px';
 const SMALL_HEIGHT = '10px';
@@ -47,15 +48,15 @@ const Dot = styled.div`
     `};
 `;
 
-export const Loader = (props) => (
+type Props = {
+  small: boolean,
+  color: string
+};
+
+export const Loader = (props: Props) => (
   <Wrapper {...props}>
     <Dot index={0} {...props} />
     <Dot index={1} {...props} />
     <Dot index={2} {...props} />
   </Wrapper>
 );
-
-Loader.propTypes = {
-  small: PropTypes.bool,
-  color: PropTypes.string
-};

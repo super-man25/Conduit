@@ -24,7 +24,7 @@ import { selectors as seasonSelectors } from '_state/season';
 type BreakdownType = 'revenue' | 'inventory';
 
 const BREAKDOWN_COLORSET = [
-  cssConstants.PRIMARY_DARK_BLUE,
+  cssConstants.PRIMARY_BLUE,
   cssConstants.SECONDARY_BLUE,
   cssConstants.SECONDARY_LIGHT_BLUE,
   cssConstants.SECONDARY_LIGHTEST_BLUE,

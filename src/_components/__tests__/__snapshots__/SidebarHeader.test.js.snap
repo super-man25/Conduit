@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 .c0 {
-  height: 116px;
+  height: 150px;
   width: auto;
   margin: 0;
   padding-left: 20px;

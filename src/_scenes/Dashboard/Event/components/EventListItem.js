@@ -79,7 +79,7 @@ const Container = styled.div`
     height: 10px;
     transform: scaleY(${(props) => (props.active ? 1 : 0)});
     transform-origin: top;
-    background-color: ${cssConstants.PRIMARY_DARK_BLUE};
+    background-color: ${cssConstants.PRIMARY_BLUE};
   }
 `;
 

@@ -13,7 +13,7 @@ const TooltipContainer: ComponentType<{}> = styled.div`
 `;
 
 const TooltipHeader: ComponentType<{}> = styled.header`
-  background-color: ${cssConstants.PRIMARY_DARK_BLUE};
+  background-color: ${cssConstants.PRIMARY_BLUE};
   color: ${cssConstants.PRIMARY_WHITE};
   font-weight: 300;
   padding: 0.5rem 1rem;

@@ -27,7 +27,7 @@ export const SiteHeaderDiv = styled.div`
   height: 70px;
   margin: 0;
   padding: 0 40px;
-  background: ${cssConstants.PRIMARY_DARK_BLUE};
+  background: ${cssConstants.PRIMARY_BLUE};
   justify-content: space-between;
   align-items: center;
 `;

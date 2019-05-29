@@ -5,9 +5,7 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
   imageSrc="url(stadiumseats.jpg)"
 >
   <styled.div>
-    <FlexItem
-      flex={1}
-    >
+    <Flex>
       <styled.div
         padding="20% 40px 40px"
       >
@@ -92,22 +90,27 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
                 Password is required
               </styled.div>
             </styled.div>
-            <styled.button
-              data-test-id="login-button"
-              disabled={true}
-              id="login"
+            <Flex
+              align="center"
+              justify="space-between"
             >
-              Submit
-            </styled.button>
-            <styled.span
-              onClick={[Function]}
-            >
-              Forgot Password?
-            </styled.span>
+              <AsyncButton
+                data-test-id="login-button"
+                disabled={true}
+                id="login"
+              >
+                Submit
+              </AsyncButton>
+              <styled.span
+                onClick={[Function]}
+              >
+                Forgot Password?
+              </styled.span>
+            </Flex>
           </form>
         </styled.div>
       </styled.div>
-    </FlexItem>
+    </Flex>
     <styled.div>
       If you do not already have an account please contact
        
@@ -128,9 +131,7 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
   imageSrc="url(stadiumseats.jpg)"
 >
   <styled.div>
-    <FlexItem
-      flex={1}
-    >
+    <Flex>
       <styled.div
         padding="20% 40px 40px"
       >
@@ -215,22 +216,27 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
                 Password is required
               </styled.div>
             </styled.div>
-            <styled.button
-              data-test-id="login-button"
-              disabled={true}
-              id="login"
+            <Flex
+              align="center"
+              justify="space-between"
             >
-              Submit
-            </styled.button>
-            <styled.span
-              onClick={[Function]}
-            >
-              Forgot Password?
-            </styled.span>
+              <AsyncButton
+                data-test-id="login-button"
+                disabled={true}
+                id="login"
+              >
+                Submit
+              </AsyncButton>
+              <styled.span
+                onClick={[Function]}
+              >
+                Forgot Password?
+              </styled.span>
+            </Flex>
           </form>
         </styled.div>
       </styled.div>
-    </FlexItem>
+    </Flex>
     <styled.div>
       If you do not already have an account please contact
        

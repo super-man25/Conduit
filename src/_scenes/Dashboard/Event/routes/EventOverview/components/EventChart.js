@@ -210,7 +210,7 @@ export class EventChart extends React.Component<Props> {
                     </DateFilterOptions>
                   </FlexItem>
                   <FlexItem flex={0}>
-                    <Flex>
+                    <Flex justify="flex-end">
                       <ChartLegend
                         selectedGroupFilter={selectedGroupFilter}
                         selectedTab={selectedTab}

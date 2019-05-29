@@ -84,7 +84,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-jWBwVP",
+          "sc-cMljjf",
         ],
         "render": [Function],
         "styledComponentId": "sc-lkqHmb",
@@ -98,11 +98,11 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
     placeholder="$12.00"
     value=""
   />
-  <Styled(styled.button)
+  <Styled(Styled(styled.button))
     onClick={[Function]}
   >
     Set Price
-  </Styled(styled.button)>
+  </Styled(Styled(styled.button))>
   <Flex>
     <ClearIcon
       fill="#000"

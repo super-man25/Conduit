@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import { Flex, FlexItem, H4, Button, H3, P1 } from '_components';
+import { Icon, Flex, FlexItem, H4, TextButton, H3, P1 } from '_components';
 import { cssConstants } from '_constants';
 import { Dropdown } from './Dropdown';
 import { connect } from 'react-redux';
@@ -97,7 +97,9 @@ export class TeamOverviewPresenter extends React.Component<Props> {
             onChange={(option) => setActiveSeasonId(option.id)}
             renderSelected={(option) => <Heading>{option.name}</Heading>}
           />
-          <Button small collapse onClick={onToggleSidebar} />
+          <TextButton small collapse onClick={onToggleSidebar}>
+            <Icon name="arrow-left" size={48} color="white" />
+          </TextButton>
         </Flex>
 
         <Flex direction="row" align="center" justify="space-between">

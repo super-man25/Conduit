@@ -75,7 +75,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-jWBwVP",
+          "sc-cMljjf",
         ],
         "render": [Function],
         "styledComponentId": "sc-lkqHmb",

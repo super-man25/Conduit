@@ -69,7 +69,7 @@ exports[`<BuyerTypeStatusModalPresenter /> should render correctly 1`] = `
             },
             "displayName": "Styled(styled.input)",
             "foldedComponentIds": Array [
-              "sc-jWBwVP",
+              "sc-cMljjf",
             ],
             "render": [Function],
             "styledComponentId": "sc-eerKOB",
@@ -105,21 +105,21 @@ exports[`<BuyerTypeStatusModalPresenter /> should render correctly 1`] = `
         align="center"
         justify="flex-end"
       >
-        <Styled(styled.button)
+        <Styled(Styled(styled.button))
           disabled={false}
           onClick={[MockFunction]}
         >
           Cancel
-        </Styled(styled.button)>
+        </Styled(Styled(styled.button))>
         <styled.div
           margin="1rem"
         />
-        <styled.button
+        <Styled(Styled(styled.button))
           disabled={true}
           onClick={[Function]}
         >
           Save
-        </styled.button>
+        </Styled(Styled(styled.button))>
       </Flex>
     </styled.div>
   </styled.div>

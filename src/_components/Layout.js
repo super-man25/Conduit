@@ -25,5 +25,5 @@ export const FullContent = styled.div`
 `;
 
 export const SidebarContent = styled.div`
-  height: calc(100% - 116px);
+  height: calc(100% - 150px);
 `;

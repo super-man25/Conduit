@@ -5,10 +5,17 @@ exports[`<EventHeader /> should render correctly 1`] = `
   <Flex
     align="center"
   >
-    <Styled(styled.button)
-      expand={true}
-      small={true}
-    />
+    <Styled(Styled(styled.button))
+      minWidth="60px"
+      padding="0"
+      textAlign="left"
+    >
+      <Icon
+        color="#024A8F"
+        name="arrow-right"
+        size={48}
+      />
+    </Styled(Styled(styled.button))>
     <Breadcrumbs
       crumbs={
         Array [
@@ -108,10 +115,17 @@ exports[`<EventHeader /> should render correctly when on the location route 1`] 
   <Flex
     align="center"
   >
-    <Styled(styled.button)
-      expand={true}
-      small={true}
-    />
+    <Styled(Styled(styled.button))
+      minWidth="60px"
+      padding="0"
+      textAlign="left"
+    >
+      <Icon
+        color="#024A8F"
+        name="arrow-right"
+        size={48}
+      />
+    </Styled(Styled(styled.button))>
     <Breadcrumbs
       crumbs={
         Array [
