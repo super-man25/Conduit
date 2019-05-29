@@ -18,8 +18,7 @@ describe('<SeasonRevenuePanel />', () => {
       setGroupFilter: jest.fn(),
       setDateRange: jest.fn(),
       downloadSeasonReport: jest.fn()
-    },
-    client: { id: 1, name: 'clientName' }
+    }
   };
 
   it('should render correctly', () => {
