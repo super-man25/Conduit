@@ -21,6 +21,7 @@ export const Content = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const LoginFooter = styled.div`
