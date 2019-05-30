@@ -52,3 +52,4 @@ export * from './Table';
 export * from './ReportDownloadButton';
 export * from './SecuredRoute';
 export * from './AsyncButton';
+export * from './DateRangeFilter';

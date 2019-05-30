@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  position: absolute;
+  top: calc(100% - 1px);
+  z-index: 1001;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`renders correctly with the show prop 1`] = `
+.c0 {
+  position: absolute;
+  top: calc(100% - 1px);
+  z-index: 1001;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  visibility: visible;
+}
+
+<div
+  className="c0"
+/>
+`;

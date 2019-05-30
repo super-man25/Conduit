@@ -1,3 +1,5 @@
+const BASE = 1000;
+
 export const cssConstants = {
   PRIMARY_EVEN_LIGHTER_GRAY: '#F2F2F2',
   PRIMARY_BLUE: '#024A8F',
@@ -46,9 +48,13 @@ export const cssConstants = {
 };
 
 export const shadows = {
-  ACTIVE_BUTTON: '0 0 3px rgba(56, 169, 219, 100)'
+  ACTIVE_BUTTON: '0 0 3px rgba(56, 169, 219, 100)',
+  SMALL: '0 1px 5px rgba(0, 0, 0, 0.1)',
+  MEDIUM: '0 1px 10px rgba(0, 0, 0, 0.15)',
+  LARGE: '0 1px 15px rgba(0, 0, 0, 0.15)'
 };
 
 export const zIndexes = {
-  BASE: '1000'
+  BASE,
+  DROPDOWN_FILTER: BASE + 1
 };

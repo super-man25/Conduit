@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
 import { actions as seasonStatActions } from '_state/seasonStat';
 import { differenceInCalendarDays } from 'date-fns';
 import styled from 'styled-components';
@@ -17,7 +18,7 @@ import {
   Loader,
   ChipButton,
   ChipButtonGroup,
-  DateRangeDropdown,
+  DateRangeFilter,
   PeriodicInventoryChart,
   PeriodicInventoryChartLegend,
   PeriodicRevenueChart,
@@ -26,7 +27,8 @@ import {
   CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend,
-  ReportDownloadButton
+  ReportDownloadButton,
+  Text
 } from '_components';
 import {
   cssConstants,
@@ -36,7 +38,9 @@ import {
 } from '_constants';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import { selectors as seasonSelectors } from '_state/season';
+import { getSeasonStatState } from '_state/seasonStat/selectors';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
+import type { EDSeason } from '_models';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -66,7 +70,7 @@ const DateFilterOptions = styled.div`
 
 type Props = {
   seasonStatState: SeasonStatState,
-  selectedSeasonId: number,
+  selectedSeason: EDSeason,
   seasonStatActions: SeasonStatActions
 };
 
@@ -96,8 +100,8 @@ const ChartLegend = ({
 
 export class SeasonRevenuePanel extends React.Component<Props> {
   componentDidMount() {
-    const { selectedSeasonId } = this.props;
-    this.props.seasonStatActions.fetch({ seasonId: selectedSeasonId });
+    const { selectedSeason } = this.props;
+    this.props.seasonStatActions.fetch({ seasonId: selectedSeason.id });
   }
 
   componentWillUnmount() {
@@ -105,23 +109,23 @@ export class SeasonRevenuePanel extends React.Component<Props> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    const { selectedSeasonId } = this.props;
-    if (this.props.selectedSeasonId !== prevProps.selectedSeasonId) {
+    const { selectedSeason } = this.props;
+    if (selectedSeason.id !== prevProps.selectedSeason.id) {
       this.props.seasonStatActions.clear();
-      this.props.seasonStatActions.fetch({ seasonId: selectedSeasonId });
+      this.props.seasonStatActions.fetch({ seasonId: selectedSeason.id });
     }
   }
 
   handleDownloadClick = () => {
     const {
-      selectedSeasonId,
+      selectedSeason,
       seasonStatState: {
         dateRange: { from, to }
       },
       seasonStatActions: { downloadSeasonReport }
     } = this.props;
     downloadSeasonReport({
-      id: selectedSeasonId,
+      id: selectedSeason.id,
       type: 'season',
       start: from ? from.toISOString() : null,
       end: to ? to.toISOString() : null
@@ -139,7 +143,8 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         selectedGroupFilter,
         seasonStats
       },
-      seasonStatActions: { setDateRange, setGroupFilter }
+      seasonStatActions: { setDateRange, setGroupFilter },
+      selectedSeason: { startTimestamp, endTimestamp }
     } = this.props;
 
     const tooltipDateFormat =
@@ -191,28 +196,30 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 
             {!loading && (
               <PanelContent>
+                <Text size={11} marginBottom="4px">
+                  Filter By
+                </Text>
                 <Flex align="center" justify="space-between">
-                  <FlexItem>
-                    <DateFilterOptions>
-                      <DateRangeDropdown
-                        startPlaceholder="Start Date"
-                        endPlaceholder="End Date"
-                        from={from}
-                        to={to}
-                        disabledDays={{
-                          before: dateLimits.from,
-                          after: dateLimits.to
-                        }}
-                        onChange={setDateRange}
-                      />
-                      <ReportDownloadButton
-                        onClick={this.handleDownloadClick}
-                        downloading={downloading}
-                      />
-                    </DateFilterOptions>
-                  </FlexItem>
+                  <DateFilterOptions>
+                    <DateRangeFilter
+                      dateRange={{ from, to }}
+                      allTimeDateRange={{
+                        from: startTimestamp,
+                        to: endTimestamp
+                      }}
+                      setDateRange={setDateRange}
+                      disabledDays={{
+                        before: dateLimits.from,
+                        after: dateLimits.to
+                      }}
+                    />
+                    <ReportDownloadButton
+                      onClick={this.handleDownloadClick}
+                      downloading={downloading}
+                    />
+                  </DateFilterOptions>
                   <FlexItem flex={0}>
-                    <Flex>
+                    <Flex justify="flex-end">
                       <ChartLegend
                         selectedGroupFilter={selectedGroupFilter}
                         selectedTab={selectedTab}
@@ -277,12 +284,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    seasonStatState: state.seasonStat,
-    selectedSeasonId: seasonSelectors.selectActiveSeasonId(state)
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  seasonStatState: getSeasonStatState,
+  selectedSeason: seasonSelectors.selectActiveSeason
+});
 
 function mapActionCreators(dispatch) {
   return {

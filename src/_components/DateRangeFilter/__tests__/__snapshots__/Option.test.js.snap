@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  padding: 12px 16px;
+  width: 164px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+  border-left: 1px solid #38A9DB;
+  border-right: 1px solid #38A9DB;
+}
+
+.c0:first-child {
+  border-top: 1px solid #38A9DB;
+  border-radius: 0 4px 0 0;
+}
+
+.c0:last-child {
+  border-bottom: 1px solid #38A9DB;
+  border-radius: 0 0 4px 4px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`renders correctly when active 1`] = `
+.c0 {
+  padding: 12px 16px;
+  width: 164px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+  border-left: 1px solid #38A9DB;
+  border-right: 1px solid #38A9DB;
+}
+
+.c0:first-child {
+  border-top: 1px solid #38A9DB;
+  border-radius: 0 4px 0 0;
+}
+
+.c0:last-child {
+  border-bottom: 1px solid #38A9DB;
+  border-radius: 0 0 4px 4px;
+}
+
+.c0:hover {
+  cursor: default;
+  background-color: #f2f2f2;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`renders correctly when dateRangePickerOpen is open 1`] = `
+.c0 {
+  padding: 12px 16px;
+  width: 164px;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  color: #070707;
+  border-left: 1px solid #38A9DB;
+  border-right: 1px solid #38A9DB;
+  border-right: 1px solid #999999;
+}
+
+.c0:first-child {
+  border-top: 1px solid #38A9DB;
+  border-radius: 0 4px 0 0;
+}
+
+.c0:last-child {
+  border-bottom: 1px solid #38A9DB;
+  border-radius: 0 0 4px 4px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.c0:first-child {
+  border-radius: 0;
+}
+
+.c0:last-child {
+  border-radius: 0 0 0 4px;
+}
+
+<div
+  className="c0"
+/>
+`;

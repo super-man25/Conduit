@@ -7,6 +7,7 @@ type State = {
 };
 
 export const getSeasonStats = (state: State) => state.seasonStat.seasonStats;
+export const getSeasonStatState = (state: State) => state.seasonStat;
 export const getSeasonStatFilterArguments = (state: State) =>
   state.seasonStat.dateRange;
 export const getSeasonStatDateLimits = (state: State): DateRange =>

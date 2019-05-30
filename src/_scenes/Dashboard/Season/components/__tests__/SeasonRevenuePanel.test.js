@@ -18,7 +18,8 @@ describe('<SeasonRevenuePanel />', () => {
       setGroupFilter: jest.fn(),
       setDateRange: jest.fn(),
       downloadSeasonReport: jest.fn()
-    }
+    },
+    selectedSeason: { startTimestamp: null, endTimestamp: null }
   };
 
   it('should render correctly', () => {

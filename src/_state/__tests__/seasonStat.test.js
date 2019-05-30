@@ -22,6 +22,7 @@ import {
 import { initialState } from '_state/seasonStat/reducer';
 import {
   getSeasonStats,
+  getSeasonStatState,
   getSeasonStatFilterArguments,
   getSeasonStatDateLimits
 } from '../seasonStat/selectors';
@@ -372,6 +373,17 @@ describe('selectors', () => {
     };
 
     expect(getSeasonStats(state)).toEqual([1, 2, 3]);
+  });
+
+  it('getSeasonStatState selector should return the entire seasonStat state', () => {
+    const state = {
+      seasonStat: {
+        ...initialState,
+        seasonStats: [1, 2, 3]
+      }
+    };
+
+    expect(getSeasonStatState(state)).toEqual(state.seasonStat);
   });
 
   it('getSeasonStatFilterArguments should return the current dateRange filter', () => {

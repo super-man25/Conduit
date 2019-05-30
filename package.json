@@ -17,7 +17,7 @@
     "prop-types": "^15.6.1",
     "querystring": "^0.2.0",
     "react": "^16.8.6",
-    "react-day-picker": "^7.1.8",
+    "react-day-picker": "^7.3.0",
     "react-dom": "^16.8.6",
     "react-loadable": "^5.4.0",
     "react-redux": "6.0.1",
