@@ -165,7 +165,7 @@ describe('saga workers', () => {
 
     expect(failPath.next().done).toEqual(true);
 
-    expect(generator.next([{ id: 1, svgUrl: 'url' }]).value).toEqual(
+    expect(generator.next({ id: 1, svgUrl: 'url' }).value).toEqual(
       call(fetchImageAndCreateObjectUrl, 'url')
     );
 

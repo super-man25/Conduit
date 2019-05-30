@@ -16,7 +16,7 @@ export function* fetchSeatMap() {
   try {
     const event = yield select(selectors.selectEvent);
 
-    const [venue] = yield call(venueService.getOne, event.venueId);
+    const venue = yield call(venueService.getOne, event.venueId);
 
     const objUrl = yield call(fetchImageAndCreateObjectUrl, venue.svgUrl);
     yield put(actions.fetchSeatMapSuccess({ venue, objUrl }));
