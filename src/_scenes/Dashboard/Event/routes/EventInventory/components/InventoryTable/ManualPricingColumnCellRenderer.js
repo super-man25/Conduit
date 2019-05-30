@@ -103,13 +103,6 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
           onChange={this.onOverridePriceChanged}
           placeholder={inputPlaceholder}
         />
-        {/* <ManualPricingInput
-          type="text"
-          pattern="[0-9]"
-          placeholder={inputPlaceholder}
-          value={overridePrice}
-          onChange={this.onOverridePriceChanged}
-        /> */}
         <ManualPricingButton onClick={this.setPrice}>
           Set Price
         </ManualPricingButton>

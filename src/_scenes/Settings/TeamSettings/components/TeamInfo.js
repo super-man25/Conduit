@@ -7,7 +7,7 @@ import {
   Flex,
   EDText,
   SelectBox,
-  SecondaryButton
+  PrimaryButton
 } from '_components';
 import { toggleEditing } from '../stateChanges';
 import React from 'react';
@@ -134,9 +134,9 @@ export class TeamInfo extends React.Component<Props, State> {
                 ))}
               </SelectBox>
               <SettingButtonGroup>
-                <SecondaryButton onClick={this.handlePricingIntervalSave}>
+                <PrimaryButton onClick={this.handlePricingIntervalSave}>
                   Save
-                </SecondaryButton>
+                </PrimaryButton>
               </SettingButtonGroup>
             </React.Fragment>
           ) : (

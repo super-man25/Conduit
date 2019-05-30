@@ -32,7 +32,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
           >
             Pricing Rules
           </styled.h3>
-          <div>
+          <Styled(styled.div)>
             <Styled(Styled(styled.button))
               disabled={true}
               onClick={[MockFunction]}
@@ -51,7 +51,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
             >
               New Rule
             </Styled(Styled(styled.button))>
-          </div>
+          </Styled(styled.div)>
         </Flex>
       </styled.div>
       <Styled(FlexItem)>

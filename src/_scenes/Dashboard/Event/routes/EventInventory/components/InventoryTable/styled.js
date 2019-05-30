@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
-import { Button, Input, Flex, Box } from '_components';
+import { PrimaryButton, Input, Flex, Box } from '_components';
 
 export const ManualPricingInput = styled(Input)`
   box-sizing: border-box;
@@ -10,11 +10,13 @@ export const ManualPricingInput = styled(Input)`
   max-width: 80px;
 `;
 
-export const ManualPricingButton = styled(Button)`
+export const ManualPricingButton = styled(PrimaryButton)`
   box-sizing: border-box;
   margin: 0;
-  max-width: 80px;
+  min-width: 50px;
+  width: 80px;
   max-height: 35px;
+  padding: 0.5rem;
 `;
 
 export const TableHeaderCell = styled.div`

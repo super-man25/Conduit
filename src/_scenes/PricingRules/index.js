@@ -14,7 +14,8 @@ import {
   PrimaryButton,
   SecondaryButton,
   Spacing,
-  Flex
+  Flex,
+  Box
 } from '_components';
 import { Portal } from '_components/Portal';
 import { VirtualizedPricingRules } from './components/PricingRulesTable';
@@ -95,7 +96,7 @@ export class PricingRules extends React.Component<Props> {
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
                 <H3 type="secondary">Pricing Rules</H3>
-                <div>
+                <Box>
                   <SecondaryButton
                     onClick={openBuyerTypesModal}
                     disabled={buyerTypes.length === 0}
@@ -112,7 +113,7 @@ export class PricingRules extends React.Component<Props> {
                   >
                     New Rule
                   </PrimaryButton>
-                </div>
+                </Box>
               </Flex>
             </Spacing>
             <PricingRulesTableTableContainer>

@@ -131,14 +131,35 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
   text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  -webkit-transition: opacity 100ms ease-out;
+  transition: opacity 100ms ease-out;
+  color: #FFFFFF;
+  background-color: #024A8F;
   box-sizing: border-box;
   margin: 0;
-  max-width: 80px;
+  min-width: 50px;
+  width: 80px;
   max-height: 35px;
+  padding: 0.5rem;
 }
 
 .c0:disabled {
   cursor: not-allowed;
+}
+
+.c0:disabled {
+  color: #999999;
+  background-color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c0:active {
+  background-color: #38A9DB;
+  box-shadow: 0 0 3px rgba(56,169,219,100);
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #2670AE;
 }
 
 <button

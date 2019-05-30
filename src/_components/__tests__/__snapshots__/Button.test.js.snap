@@ -141,10 +141,10 @@ exports[`<SecondaryButton /> renders correctly 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   background-color: #FFFFFF;
-  outline: 2px solid #024A8F;
+  border: 2px solid #024A8F;
   color: #024A8F;
-  -webkit-transition: outline linear;
-  transition: outline linear;
+  -webkit-transition: border linear;
+  transition: border linear;
 }
 
 .c0:disabled {
@@ -152,7 +152,7 @@ exports[`<SecondaryButton /> renders correctly 1`] = `
 }
 
 .c0:disabled {
-  outline: 2px solid #999999;
+  border: 2px solid #999999;
   color: #999999;
   opacity: 0.5;
 }
@@ -165,7 +165,7 @@ exports[`<SecondaryButton /> renders correctly 1`] = `
 }
 
 .c0:hover:not(:disabled) {
-  outline: 3px solid #024A8F;
+  border: 3px solid #024A8F;
   background-color: #F0F4F7;
   color: #024A8F;
 }

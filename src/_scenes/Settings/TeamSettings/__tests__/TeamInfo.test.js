@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { SelectBox, SecondaryButton } from '_components';
+import { SelectBox, PrimaryButton } from '_components';
 import { TeamInfo } from '../components/TeamInfo';
 
 describe('<TeamInfo />', () => {
@@ -28,8 +28,8 @@ describe('<TeamInfo />', () => {
   it('updates pricingInterval', () => {
     const wrapper = shallow(<TeamInfo {...props} />);
     wrapper.setState({ isEditing: true });
-    expect(wrapper.find(SecondaryButton)).toHaveLength(1);
-    wrapper.find(SecondaryButton).simulate('click');
+    expect(wrapper.find(PrimaryButton)).toHaveLength(1);
+    wrapper.find(PrimaryButton).simulate('click');
     expect(props.update).toBeCalled();
   });
 

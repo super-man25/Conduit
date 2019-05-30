@@ -58,7 +58,7 @@ export class EditRuleCellPresenter extends React.Component<Props> {
     }
 
     return (
-      <Flex justify="space-around">
+      <Flex justify="space-evenly" align="center" height="60px">
         <CancelEditingButton
           onClick={this.cancelEditingRule}
           disabled={isLoading}

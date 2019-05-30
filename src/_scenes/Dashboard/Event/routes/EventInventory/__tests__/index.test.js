@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { EventInventory } from '_scenes/Dashboard/Event/routes/EventInventory';
-import { TertiaryButton } from '_components';
+import { PrimaryButton } from '_components';
 
 describe('<EventInventory /> index route', () => {
   const props = {
@@ -46,7 +46,7 @@ describe('<EventInventory /> index route', () => {
     );
 
     wrapper
-      .find(TertiaryButton)
+      .find(PrimaryButton)
       .at(0)
       .simulate('click');
 

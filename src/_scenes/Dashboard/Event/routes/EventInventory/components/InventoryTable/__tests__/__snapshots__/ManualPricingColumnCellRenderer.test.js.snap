@@ -98,11 +98,11 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
     placeholder="$12.00"
     value=""
   />
-  <Styled(Styled(styled.button))
+  <Styled(Styled(Styled(styled.button)))
     onClick={[Function]}
   >
     Set Price
-  </Styled(Styled(styled.button))>
+  </Styled(Styled(Styled(styled.button)))>
   <Flex>
     <ClearIcon
       fill="#000"

@@ -50,12 +50,12 @@ export const PrimaryButton = styled(Button)`
 
 export const SecondaryButton = styled(Button)`
   background-color: ${cssConstants.PRIMARY_WHITE};
-  outline: 2px solid ${cssConstants.PRIMARY_BLUE};
+  border: 2px solid ${cssConstants.PRIMARY_BLUE};
   color: ${cssConstants.PRIMARY_BLUE};
-  transition: outline linear;
+  transition: border linear;
 
   &:disabled {
-    outline: 2px solid ${cssConstants.PRIMARY_GRAY};
+    border: 2px solid ${cssConstants.PRIMARY_GRAY};
     color: ${cssConstants.PRIMARY_GRAY};
     opacity: 0.5;
   }
@@ -68,7 +68,7 @@ export const SecondaryButton = styled(Button)`
   }
 
   &:hover:not(:disabled) {
-    outline: 3px solid ${cssConstants.PRIMARY_BLUE};
+    border: 3px solid ${cssConstants.PRIMARY_BLUE};
     background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
     color: ${cssConstants.PRIMARY_BLUE};
   }

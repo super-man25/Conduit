@@ -4,6 +4,15 @@ import { darken } from 'polished';
 import { withClickAway } from '_hoc';
 import { PrimaryButton, Input, Box, SecondaryButton } from '_components';
 
+const cellButton = css`
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 50px;
+  width: 80px;
+  max-height: 35px;
+  padding: 0.5rem 0.75rem;
+`;
+
 export const EditPricingRuleInput = styled(Input)`
   box-sizing: border-box;
   margin: 0 0.5rem 0 0;
@@ -13,20 +22,11 @@ export const EditPricingRuleInput = styled(Input)`
 `;
 
 export const SavePricingRuleButton = styled(PrimaryButton)`
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 50px;
-  max-width: 75px;
-  max-height: 35px;
+  ${cellButton}
 `;
 
 export const CancelEditingButton = styled(SecondaryButton)`
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 50px;
-  max-width: 75px;
-  max-height: 35px;
-  padding: 0 0.75rem;
+  ${cellButton}
 `;
 
 export const TableHeaderCell = styled.div`
