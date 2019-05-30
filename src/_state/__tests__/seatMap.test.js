@@ -154,7 +154,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(select(eventSelectors.selectEvent));
 
     expect(generator.next({ venueId: 1 }).value).toEqual(
-      all([call(venueService.getSvgMappings, 1), call(venueService.getOne, 1)])
+      call(venueService.getOne, 1)
     );
 
     const failPath = generator.clone();
@@ -165,14 +165,13 @@ describe('saga workers', () => {
 
     expect(failPath.next().done).toEqual(true);
 
-    expect(generator.next([[1, 2, 3], { id: 1, svgUrl: 'url' }]).value).toEqual(
+    expect(generator.next([{ id: 1, svgUrl: 'url' }]).value).toEqual(
       call(fetchImageAndCreateObjectUrl, 'url')
     );
 
     expect(generator.next('blob:url').value).toEqual(
       put(
         actions.fetchSeatMapSuccess({
-          mapping: [1, 2, 3],
           venue: { id: 1, svgUrl: 'url' },
           objUrl: 'blob:url'
         })

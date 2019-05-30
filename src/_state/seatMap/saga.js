@@ -1,6 +1,6 @@
 import { types, actions } from '.';
 import { venueService } from '_services';
-import { put, call, takeLatest, all, select } from 'redux-saga/effects';
+import { put, call, takeLatest, select } from 'redux-saga/effects';
 import { selectors } from '../event';
 
 // By default images/objects/embeds will not request for resources using a CORS policy
@@ -16,13 +16,10 @@ export function* fetchSeatMap() {
   try {
     const event = yield select(selectors.selectEvent);
 
-    const [mapping, venue] = yield all([
-      call(venueService.getSvgMappings, event.venueId),
-      call(venueService.getOne, event.venueId)
-    ]);
+    const [venue] = yield call(venueService.getOne, event.venueId);
 
     const objUrl = yield call(fetchImageAndCreateObjectUrl, venue.svgUrl);
-    yield put(actions.fetchSeatMapSuccess({ mapping, venue, objUrl }));
+    yield put(actions.fetchSeatMapSuccess({ venue, objUrl }));
   } catch (err) {
     yield put(actions.fetchSeatMapError(err));
   }

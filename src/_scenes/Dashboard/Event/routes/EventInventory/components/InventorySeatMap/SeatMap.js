@@ -26,43 +26,28 @@ export class SeatMapPresenter extends React.Component {
     const mapSvg = this.seatmap.current.contentDocument.querySelector('svg');
     this.chart = new SVGChart(mapSvg, this.props.seatMapping, {
       onInit: (chart) => {
-        chart.highlightSelectedScaleFilters(this.props.scaleFilters);
+        chart.highlightSelectedSectionFilters(this.props.sectionFilters);
       },
       onClick: (el) => {
-        const { seatMapping } = this.props;
-        const { sectionRef } = el;
-        const elMappedToSeatMap = seatMapping.find(
-          (item) => item.sectionRef === sectionRef
-        );
-        this.setSelectedScaleFilters(elMappedToSeatMap.priceScaleId);
+        const { associatedMapping } = el;
+        const { sectionFilters, setSelectedSectionFilters } = this.props;
+
+        if (!associatedMapping) return;
+
+        const updatedSectionFilters = sectionFilters.includes(associatedMapping)
+          ? sectionFilters.filter((f) => f !== associatedMapping)
+          : sectionFilters.concat(associatedMapping);
+
+        setSelectedSectionFilters(updatedSectionFilters);
       },
-      // TODO: Add logic here to make SVG clickable by section rather than price scale
-      clickable: false
+      clickable: true,
+      allSectionFilters: this.props.allSectionFilters
     });
   };
 
-  setSelectedScaleFilters(scaleFilterId) {
-    const { allScaleFilters, scaleFilters } = this.props;
-    let updatedScaleFilters;
-
-    const scaleFilterObject = allScaleFilters.find(
-      (item) => item.id === scaleFilterId
-    );
-
-    const includesScaleFilter = scaleFilters.find(
-      (item) => item.id === scaleFilterId
-    );
-
-    updatedScaleFilters = includesScaleFilter
-      ? scaleFilters.filter((s) => s.id !== includesScaleFilter.id)
-      : scaleFilters.concat(scaleFilterObject);
-
-    this.props.setSelectedScaleFilters(updatedScaleFilters);
-  }
-
   componentDidUpdate(prevProps) {
-    if (prevProps.scaleFilters !== this.props.scaleFilters && this.chart) {
-      this.chart.highlightSelectedScaleFilters(this.props.scaleFilters);
+    if (prevProps.sectionFilters !== this.props.sectionFilters && this.chart) {
+      this.chart.highlightSelectedSectionFilters(this.props.sectionFilters);
     }
   }
 
@@ -108,8 +93,10 @@ export class SeatMapPresenter extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   allScaleFilters: selectors.selectScaleFilters,
+  allSectionFilters: selectors.selectSectionFilters,
   scaleFilters: selectors.selectSelectedScaleFilters,
   seatMapping: seatMapSelectors.selectMapping,
+  sectionFilters: selectors.selectSelectedSectionFilters,
   loading: seatMapSelectors.selectLoading,
   error: seatMapSelectors.selectError,
   venue: seatMapSelectors.selectVenue,
@@ -118,6 +105,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = {
   setSelectedScaleFilters: actions.setSelectedScaleFilters,
+  setSelectedSectionFilters: actions.setSelectedSectionFilters,
   fetchSeatMap: seatMapActions.fetchSeatMap,
   resetSeatMap: seatMapActions.resetSeatMap
 };

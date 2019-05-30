@@ -1,8 +1,5 @@
 import { SVGChartElement } from './svgChartElement';
-import {
-  findElementsInMapping,
-  findElementsBySelectedScaleFilters
-} from './helpers';
+import { findElementsBySelectedSectionFilters } from './helpers';
 
 /**
  * SVGChart - Chart that manages the seatmap SVG's in event dynamic
@@ -21,13 +18,14 @@ import {
 export class SVGChart {
   constructor(svgRoot, mapping, options) {
     const elements = Array.from(svgRoot.querySelectorAll('[data-section-ref]'));
+    const { allSectionFilters } = options;
 
     this.mapping = mapping;
     this.elements = elements.map(
       (el) =>
         new SVGChartElement(
           el,
-          mapping.find((m) => m.sectionRef === el.dataset.sectionRef)
+          allSectionFilters.find((f) => f.name === el.dataset.sectionRef)
         )
     );
 
@@ -70,50 +68,46 @@ export class SVGChart {
   }
 
   elementMouseoverCallback = (el) => {
-    const { elements, mapping, clickable } = this;
+    const { elements, clickable } = this;
+    const { associatedMapping } = el;
 
-    if (!clickable) return;
+    if (!clickable || !associatedMapping) return;
 
-    const elementsInMapping = findElementsInMapping(el, elements, mapping);
+    el.highlight();
 
-    elementsInMapping.forEach((el) => el.highlight());
-    if (this.onMouseover)
-      this.onMouseover(el, elementsInMapping, elements, mapping);
+    if (this.onMouseover) this.onMouseover(el, elements);
 
     this.updateChartElements();
   };
 
   elementMouseoutCallback = (el) => {
-    const { elements, mapping, clickable } = this;
+    const { elements, clickable } = this;
 
     if (!clickable) return;
 
-    const elementsInMapping = findElementsInMapping(el, elements, mapping);
-    elementsInMapping.forEach((el) => el.unhighlight());
-    if (this.onMouseout)
-      this.onMouseout(el, elementsInMapping, elements, mapping);
+    el.unhighlight();
+
+    if (this.onMouseout) this.onMouseout(el, elements);
 
     this.updateChartElements();
   };
 
   elementClickedCallback = (el, event) => {
-    const { elements, mapping, clickable } = this;
+    const { elements, clickable } = this;
 
     if (!clickable) return;
 
-    const elementsInMapping = findElementsInMapping(el, elements, mapping);
-    if (this.onClick) this.onClick(el, elementsInMapping, elements, mapping);
+    if (this.onClick) this.onClick(el, elements);
 
     this.updateChartElements();
   };
 
-  highlightSelectedScaleFilters(scaleFilters) {
-    const { mapping, elements } = this;
+  highlightSelectedSectionFilters(sectionFilters) {
+    const { elements } = this;
 
-    const elementsToHighlight = findElementsBySelectedScaleFilters(
+    const elementsToHighlight = findElementsBySelectedSectionFilters(
       elements,
-      mapping,
-      scaleFilters
+      sectionFilters
     );
 
     elements.forEach((el) => el.unselect());

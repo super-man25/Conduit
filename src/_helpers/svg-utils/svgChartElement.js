@@ -3,11 +3,13 @@ import { cssConstants } from '_constants';
 export class SVGChartElement {
   constructor(svgElement, associatedMapping) {
     this.element = svgElement;
-    this.originalFill = svgElement.getAttribute('fill');
+    this.originalFill = cssConstants.SECONDARY_BLUE_GRAY;
     this.selectedFill = cssConstants.SECONDARY_BLUE;
     this.highlightFill = cssConstants.SECONDARY_LIGHTEST_BLUE;
+    this.unavailableFill = cssConstants.PRIMARY_LIGHT_GRAY;
     this.associatedMapping = associatedMapping;
     this.sectionRef = svgElement.dataset.sectionRef;
+    this.element.style.cursor = associatedMapping ? 'pointer' : null;
 
     this.selected = false;
     this.highlighted = false;
@@ -20,16 +22,20 @@ export class SVGChartElement {
 
   render() {
     const {
+      associatedMapping,
       selected,
       highlighted,
       originalFill,
       selectedFill,
       highlightFill,
+      unavailableFill,
       dirty
     } = this;
 
     if (!dirty) return;
-    const color = selected
+    const color = !associatedMapping
+      ? unavailableFill
+      : selected
       ? selectedFill
       : highlighted
       ? highlightFill

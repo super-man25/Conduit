@@ -8,35 +8,11 @@ export function appendSVGElement(el, tagname, properties) {
   el.appendChild(newElement);
 }
 
-export function findElementsInMapping(el, elements, mapping) {
-  const elMapping = mapping.find((item) => item.sectionRef === el.sectionRef);
-  if (!elMapping) return [];
-
-  const allPriceScales = mapping.filter(
-    (item) => item.priceScaleId === elMapping.priceScaleId
+export function findElementsBySelectedSectionFilters(elements, sectionFilters) {
+  const sectionFilterIds = sectionFilters.map((f) => f.name);
+  const matchingEls = elements.filter((el) =>
+    sectionFilterIds.includes(el.sectionRef)
   );
-
-  const allMatchingEls = allPriceScales
-    .map((item) => elements.find((el) => el.sectionRef === item.sectionRef))
-    .filter(Boolean);
-
-  return allMatchingEls;
-}
-
-export function findElementsBySelectedScaleFilters(
-  elements,
-  mapping,
-  scaleFilters
-) {
-  const priceScaleIds = scaleFilters.map((s) => s.id);
-
-  const mappingWithMatchingPriceScaleIds = mapping.filter((m) =>
-    priceScaleIds.includes(m.priceScaleId)
-  );
-
-  const matchingEls = mappingWithMatchingPriceScaleIds
-    .map((m) => elements.find((el) => el.sectionRef === m.sectionRef))
-    .filter(Boolean);
 
   return matchingEls;
 }

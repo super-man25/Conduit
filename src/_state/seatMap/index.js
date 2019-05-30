@@ -14,7 +14,6 @@ export type FetchSeatMapRequest = {
 export type FetchSeatMapSuccess = {
   type: 'seatmap/FETCH_SEAT_MAP_SUCCESS',
   payload: {
-    mapping: EDVenueSVGMapping,
     venue: EDVenue,
     objUrl: string
   }
@@ -39,7 +38,6 @@ export const actions = {
   }),
 
   fetchSeatMapSuccess: (payload: {
-    mapping: EDVenueSVGMapping,
     venue: EDVenue,
     objUrl: string
   }): FetchSeatMapSuccess => ({
