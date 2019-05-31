@@ -16,7 +16,6 @@ import {
   Loader,
   ChipButton,
   ChipButtonGroup,
-  DateRangeDropdown,
   PeriodicInventoryChart,
   PeriodicInventoryChartLegend,
   PeriodicRevenueChart,
@@ -25,7 +24,9 @@ import {
   CumulativeRevenueChartLegend,
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend,
-  ReportDownloadButton
+  ReportDownloadButton,
+  Text,
+  DateRangeFilter
 } from '_components';
 import {
   cssConstants,
@@ -35,7 +36,10 @@ import {
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
 import { selectors } from '_state/event';
-import { EDEvent } from '_models';
+import { selectors as seasonSelector } from '_state/season';
+import { getEventStatState } from '_state/eventStat/selectors';
+import { EDEvent, EDSeason } from '_models';
+import { createStructuredSelector } from 'reselect';
 import typeof EventStatActions from '_state/eventStat/actions';
 
 const TabLink = styled.span`
@@ -91,7 +95,8 @@ const ChartLegend = ({
 type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
-  activeEvent: EDEvent
+  activeEvent: EDEvent,
+  selectedSeason: EDSeason
 };
 
 export class EventChart extends React.Component<Props> {
@@ -137,7 +142,9 @@ export class EventChart extends React.Component<Props> {
         selectedGroupFilter,
         eventStats
       },
-      eventStatActions: { setDateRange, setGroupFilter }
+      eventStatActions: { setDateRange, setGroupFilter },
+      selectedSeason: { startTimestamp },
+      activeEvent: { timestamp }
     } = this.props;
 
     const tooltipDateFormat =
@@ -189,26 +196,28 @@ export class EventChart extends React.Component<Props> {
 
             {!loading && (
               <PanelContent>
+                <Text size={11} marginBottom="4px">
+                  Filter By
+                </Text>
                 <Flex align="center" justify="space-between">
-                  <FlexItem>
-                    <DateFilterOptions>
-                      <DateRangeDropdown
-                        startPlaceholder="Start Date"
-                        endPlaceholder="End Date"
-                        from={from}
-                        to={to}
-                        disabledDays={{
-                          before: eventDateLimits.from,
-                          after: eventDateLimits.to
-                        }}
-                        onChange={setDateRange}
-                      />
-                      <ReportDownloadButton
-                        onClick={this.handleDownloadClick}
-                        downloading={downloading}
-                      />
-                    </DateFilterOptions>
-                  </FlexItem>
+                  <DateFilterOptions>
+                    <DateRangeFilter
+                      dateRange={{ from, to }}
+                      allTimeDateRange={{
+                        from: startTimestamp,
+                        to: timestamp
+                      }}
+                      setDateRange={setDateRange}
+                      disabledDays={{
+                        before: eventDateLimits.from,
+                        after: eventDateLimits.to
+                      }}
+                    />
+                    <ReportDownloadButton
+                      onClick={this.handleDownloadClick}
+                      downloading={downloading}
+                    />
+                  </DateFilterOptions>
                   <FlexItem flex={0}>
                     <Flex justify="flex-end">
                       <ChartLegend
@@ -271,12 +280,11 @@ export class EventChart extends React.Component<Props> {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    eventStatState: state.eventStat,
-    activeEvent: selectors.selectEvent(state)
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  eventStatState: getEventStatState,
+  activeEvent: selectors.selectEvent,
+  selectedSeason: seasonSelector.selectActiveSeason
+});
 
 function mapDispatchToProps(dispatch) {
   return {

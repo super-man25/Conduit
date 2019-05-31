@@ -23,6 +23,7 @@ import { initialState } from '_state/eventStat/reducer';
 import {
   getEventStatFilterArguments,
   getEventStats,
+  getEventStatState,
   getEventStatDateLimits
 } from '../eventStat/selectors';
 import { selectors } from '../event';
@@ -383,6 +384,17 @@ describe('selectors', () => {
     };
 
     expect(getEventStats(state)).toEqual([1, 2, 3]);
+  });
+
+  it('getEventStatState selector should return eventStat state', () => {
+    const state = {
+      eventStat: {
+        ...initialState,
+        eventStats: [1, 2, 3]
+      }
+    };
+
+    expect(getEventStatState(state)).toEqual(state.eventStat);
   });
 
   it('getEventStatFilterArguments should return the current dateRange filter', () => {

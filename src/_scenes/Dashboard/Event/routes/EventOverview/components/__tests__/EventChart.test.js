@@ -17,7 +17,8 @@ const createProps = () => ({
     setDateRange: jest.fn(),
     clear: jest.fn()
   },
-  activeEvent: { id: 1 }
+  activeEvent: { id: 1 },
+  selectedSeason: { startTimestamp: null }
 });
 
 describe('<EventChart />', () => {

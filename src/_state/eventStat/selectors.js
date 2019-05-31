@@ -7,6 +7,7 @@ type State = {
 };
 
 export const getEventStats = (state: State) => state.eventStat.eventStats;
+export const getEventStatState = (state: State) => state.eventStat;
 export const getEventStatFilterArguments = (state: State) =>
   state.eventStat.dateRange;
 export const getEventStatDateLimits = (state: State): DateRange =>
