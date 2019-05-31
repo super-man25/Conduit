@@ -29,15 +29,4 @@ describe('venueService', () => {
       expect(res).toEqual(priceScales);
     });
   });
-
-  it('getSvgMappings should fetch the svgMappings for a venue', () => {
-    const svgMappings = [1, 2, 3];
-    const id = 1;
-    const mock = fetchMock.get(`end:venues/${id}/svgMappings?`, svgMappings);
-
-    return venueService.getSvgMappings(id).then((res) => {
-      expect(mock.called()).toBe(true);
-      expect(res).toEqual(svgMappings);
-    });
-  });
 });

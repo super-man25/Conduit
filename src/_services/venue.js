@@ -8,12 +8,7 @@ function getPriceScales(id) {
   return get(`venues/${id}/priceScales`);
 }
 
-function getSvgMappings(id) {
-  return get(`venues/${id}/svgMappings`);
-}
-
 export const venueService = {
   getOne,
-  getPriceScales,
-  getSvgMappings
+  getPriceScales
 };
