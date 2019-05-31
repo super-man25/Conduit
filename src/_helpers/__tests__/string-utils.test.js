@@ -26,9 +26,25 @@ describe('readableDate', () => {
 
   it('should format the date to the correct format given a timeZone', () => {
     const date = new Date('2019-05-16T00:35:00Z');
+    const timeZone = 'America/Chicago';
+    const readable = readableDate(date, timeZone);
+    expect(readable).toBe('Wed, 5/15/19 @ 7:35 PM CDT');
+  });
+
+  it('should format the date to the correct format given a timeZone', () => {
+    const date = new Date('2019-05-16T00:35:00Z');
     const timeZone = 'America/New_York';
     const readable = readableDate(date, timeZone);
-    expect(readable).toBe('Wed, 5/15/19 @ 8:35 PM EDT');
+    expect(readable).toBe('Wed, 5/15/19 @ 8:35 PM ET');
+  });
+});
+
+describe('readableDateAndTime', () => {
+  it('should format the date to the correct format given a timeZone', () => {
+    const date = new Date('2019-05-16T00:35:00Z');
+    const timeZone = 'America/Chicago';
+    const readable = readableDateAndTime(date, timeZone);
+    expect(readable).toBe('Wednesday, May 15th, 2019 @ 7:35 PM CDT');
   });
 });
 
@@ -37,7 +53,7 @@ describe('readableDateAndTime', () => {
     const date = new Date('2019-05-16T00:35:00Z');
     const timeZone = 'America/New_York';
     const readable = readableDateAndTime(date, timeZone);
-    expect(readable).toBe('Wednesday, May 15th, 2019 @ 8:35 PM EDT');
+    expect(readable).toBe('Wednesday, May 15th, 2019 @ 8:35 PM ET');
   });
 });
 

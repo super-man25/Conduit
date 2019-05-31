@@ -7,6 +7,14 @@ import {
   isThisYear
 } from 'date-fns';
 import { formatToTimeZone } from 'date-fns-timezone';
+
+const customTimeZoneFormats = [
+  {
+    name: 'america/new_york',
+    format: 'ET'
+  }
+];
+
 /**
  * Return a date as a string
  *
@@ -15,6 +23,13 @@ import { formatToTimeZone } from 'date-fns-timezone';
  */
 export function readableDate(d: Date, timeZone: ?string): string {
   if (!timeZone) return format(d, 'ddd, M/DD/YY @ h:mm A');
+  const customTimeZone = customTimeZoneFormats.find(
+    (tz) => timeZone && tz.name === timeZone.toLowerCase()
+  );
+  if (customTimeZone)
+    return `${formatToTimeZone(d, 'ddd, M/DD/YY @ h:mm A', { timeZone })} ${
+      customTimeZone.format
+    }`;
   return formatToTimeZone(d, 'ddd, M/DD/YY @ h:mm A z', { timeZone });
 }
 
@@ -26,6 +41,13 @@ export function readableDate(d: Date, timeZone: ?string): string {
  */
 export function readableDateAndTime(d: Date, timeZone: ?string) {
   if (!timeZone) return format(d, 'dddd, MMMM Do, YYYY @ h:mm A');
+  const customTimeZone = customTimeZoneFormats.find(
+    (tz) => timeZone && tz.name === timeZone.toLowerCase()
+  );
+  if (customTimeZone)
+    return `${formatToTimeZone(d, 'dddd, MMMM Do, YYYY @ h:mm A', {
+      timeZone
+    })} ${customTimeZone.format}`;
   return formatToTimeZone(d, 'dddd, MMMM Do, YYYY @ h:mm A z', { timeZone });
 }
 
