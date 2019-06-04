@@ -4,18 +4,18 @@ exports[`<PeriodicInventoryTooltip /> should render correctly 1`] = `
 <ChartTooltip
   bodyComponent={
     <React.Fragment>
-      <ForwardRef>
+      <ForwardRef(styled.h3)>
         Inventory
-      </ForwardRef>
-      <ForwardRef>
+      </ForwardRef(styled.h3)>
+      <ForwardRef(styled.p)>
         100
-      </ForwardRef>
+      </ForwardRef(styled.p)>
     </React.Fragment>
   }
   headerComponent={
-    <ForwardRef>
+    <ForwardRef(styled.p)>
       2018-06-18T15:47:45.706Z @MMM DD, YYYY
-    </ForwardRef>
+    </ForwardRef(styled.p)>
   }
 />
 `;
@@ -28,22 +28,22 @@ exports[`<PeriodicInventoryTooltip /> should render correctly with different dat
 <ChartTooltip
   bodyComponent={
     <React.Fragment>
-      <ForwardRef>
+      <ForwardRef(styled.h3)>
         Inventory
-      </ForwardRef>
-      <ForwardRef>
+      </ForwardRef(styled.h3)>
+      <ForwardRef(styled.p)>
         100
-      </ForwardRef>
+      </ForwardRef(styled.p)>
     </React.Fragment>
   }
   headerComponent={
     <React.Fragment>
-      <ForwardRef>
+      <ForwardRef(styled.p)>
         2018-06-18T15:47:45.706Z @MMM DD, YYYY
-      </ForwardRef>
-      <ForwardRef>
+      </ForwardRef(styled.p)>
+      <ForwardRef(styled.p)>
         2018-06-18T15:47:45.706Z @hh:mm a
-      </ForwardRef>
+      </ForwardRef(styled.p)>
     </React.Fragment>
   }
 />
