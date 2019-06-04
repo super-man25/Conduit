@@ -207,7 +207,6 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}
@@ -435,7 +434,6 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}

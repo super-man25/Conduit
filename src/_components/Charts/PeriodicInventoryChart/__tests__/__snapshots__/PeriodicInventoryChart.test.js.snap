@@ -207,7 +207,6 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}
@@ -435,7 +434,6 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}

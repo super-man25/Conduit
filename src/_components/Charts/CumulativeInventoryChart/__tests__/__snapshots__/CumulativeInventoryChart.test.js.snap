@@ -208,7 +208,6 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}
@@ -437,7 +436,6 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         cursorStyle={Object {}}
         filterNull={true}
         isAnimationActive={true}
-        itemSorter={[Function]}
         itemStyle={Object {}}
         labelStyle={Object {}}
         offset={10}
