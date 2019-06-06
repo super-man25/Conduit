@@ -17,7 +17,7 @@ export const SecuredRoute = ({
       {...rest}
       render={(props) =>
         authorized ? (
-          <Component {...rest} />
+          <Component {...props} />
         ) : (
           <Redirect
             to={{ pathname: '/login', state: { from: props.location } }}

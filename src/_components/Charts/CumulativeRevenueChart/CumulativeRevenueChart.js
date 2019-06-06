@@ -48,8 +48,7 @@ export function CumulativeRevenueChart({
   height,
   data,
   dateFormat,
-  renderNoData,
-  dataKeys
+  renderNoData
 }: Props) {
   if (!data.length) {
     return renderNoData();
