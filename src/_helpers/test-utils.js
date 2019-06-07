@@ -9,3 +9,13 @@
 export function mockDateFnsFormat(date, format) {
   return `${new Date(date).toISOString()} @${format}`;
 }
+
+/**
+ * return a boolean that checks if the timestamp is after today's date
+ *
+ * @param {Date|Number} timestamp
+ * @param {Date} today
+ */
+export function mockIsAfter(timestamp, today) {
+  return new Date(timestamp) > today;
+}

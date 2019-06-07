@@ -24,6 +24,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withSidebar } from '_hoc';
 import { selectors } from '_state/event';
+import { isAfter } from 'date-fns';
 
 const EventTitle = styled(H1)`
   margin: 0;
@@ -75,11 +76,8 @@ type Props = {
 
 export function EventHeader(props: Props) {
   const { event, toggleSidebar, isSidebarOpen, pathname } = props;
-
   const { timestamp, name, id, timeZone } = event;
-
   const isViewingInventory = pathname.split('/').includes('inventory');
-
   const sold = formatNumber(event.soldInventory);
   const unsold = formatNumber(event.unsoldInventory);
   const revenue = formatUSD(event.revenue, {
@@ -87,6 +85,7 @@ export function EventHeader(props: Props) {
     maximumFractionDigits: 0
   });
   const inventoryString = `${unsold} / ${sold}`;
+  const showInventoryLink = isAfter(timestamp, new Date());
 
   return (
     <Box>
@@ -112,7 +111,7 @@ export function EventHeader(props: Props) {
         <FlexItem flex="1" margin="0 20px 0 0">
           <EventTitle>{name}</EventTitle>
           <EventDate>{readableDateAndTime(timestamp, timeZone)}</EventDate>
-          {!isViewingInventory && (
+          {showInventoryLink && !isViewingInventory && (
             <EDLink to={`/event/${id}/inventory`}>
               <InventoryLink color={cssConstants.PRIMARY_LIGHT_BLUE}>
                 See Inventory List

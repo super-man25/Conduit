@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import {
   Table,
   Column,
@@ -10,18 +10,18 @@ import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
 import { selectors, actions } from '_state/eventInventory';
 import { connect } from 'react-redux';
-
 import { CenteredLoader, Flex, Text } from '_components';
-import type { EDEvent, EDInventoryRow, EDVenuePriceScale } from '_models';
 import { getInventoryColumns } from './InventoryColumns';
+import type { EDEvent, EDInventoryRow, EDVenuePriceScale } from '_models';
+import type { Node } from 'react';
 
 type Props = {
-  event: EDEvent,
   allRows: EDInventoryRow[],
-  rows: EDInventoryRow[],
-  priceScales: EDVenuePriceScale[],
-  loading: boolean,
+  event: EDEvent,
   error: ?Error,
+  loading: boolean,
+  priceScales: EDVenuePriceScale[],
+  rows: EDInventoryRow[],
   fetchInventory: (id: number) => void,
   reset: () => void
 };
@@ -46,82 +46,80 @@ const withAlternatingBackgroundColor = (rowRenderer) => {
 
 const rowRenderer = withAlternatingBackgroundColor(defaultTableRowRenderer);
 
-const NoTableRowsText = ({ children }: { children: React.Node }) => (
+const NoTableRowsText = ({ children }: { children: Node }) => (
   <Flex justify="center" align="center" height="100%">
     <Text size={16}>{children}</Text>
   </Flex>
 );
 
-export class VirtualizedEventInventoryPresenter extends React.Component<Props> {
-  componentDidMount() {
-    const { event } = this.props;
-    this.props.fetchInventory(event.id);
-  }
+export const VirtualizedEventInventoryPresenter = (props: Props) => {
+  const {
+    allRows,
+    error,
+    event,
+    fetchInventory,
+    loading,
+    priceScales,
+    reset,
+    rows
+  } = props;
+  const columns = getInventoryColumns(props);
 
-  componentWillUnmount() {
-    this.props.reset();
-  }
+  useEffect(() => {
+    fetchInventory(event.id);
 
-  render() {
-    const { allRows, rows, loading, error, priceScales } = this.props;
-    const columns = getInventoryColumns(this.props);
+    return () => {
+      reset();
+    };
+  }, [event, fetchInventory, reset]);
 
-    if (loading) {
-      return (
-        <div style={{ position: 'relative', height: '100%' }}>
-          <CenteredLoader />
-        </div>
-      );
-    }
-
-    if (error) {
-      return (
-        <NoTableRowsText>
-          There was an issue loading this events inventory.
-        </NoTableRowsText>
-      );
-    }
-
-    if (allRows.length === 0) {
-      return (
-        <NoTableRowsText>
-          There is no inventory data available for this event.
-        </NoTableRowsText>
-      );
-    }
-
+  if (loading) {
     return (
-      <AutoSizer>
-        {({ height, width }) => (
-          <Table
-            height={height}
-            width={width}
-            headerHeight={45}
-            rowHeight={60}
-            rowCount={rows.length}
-            rowGetter={({ index }) => rows[index]}
-            overscanRowCount={50}
-            overscanColumnCount={6}
-            rowRenderer={rowRenderer}
-            noRowsRenderer={() => (
-              <NoTableRowsText>
-                There is no data available for the selected filters
-              </NoTableRowsText>
-            )}
-          >
-            {columns.map((column) => (
-              <Column
-                key={column.label}
-                columnData={{ allRows, priceScales }}
-                {...column}
-              />
-            ))}
-          </Table>
-        )}
-      </AutoSizer>
+      <div style={{ position: 'relative', height: '100%' }}>
+        <CenteredLoader />
+      </div>
     );
   }
-}
+
+  if (error) {
+    return (
+      <NoTableRowsText>
+        There was an issue loading this events inventory.
+      </NoTableRowsText>
+    );
+  }
+
+  return (
+    <AutoSizer>
+      {({ height, width }) => (
+        <Table
+          height={height}
+          width={width}
+          headerHeight={45}
+          rowHeight={60}
+          rowCount={rows.length}
+          rowGetter={({ index }) => rows[index]}
+          overscanRowCount={50}
+          overscanColumnCount={6}
+          rowRenderer={rowRenderer}
+          noRowsRenderer={() => (
+            <NoTableRowsText>
+              There was no inventory data available
+            </NoTableRowsText>
+          )}
+        >
+          {columns.map((column) => (
+            <Column
+              key={column.label}
+              columnData={{ allRows, priceScales }}
+              {...column}
+            />
+          ))}
+        </Table>
+      )}
+    </AutoSizer>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   allRows: selectors.selectAllEventInventoryRows,

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VirtualizedEventInventoryPresenter /> should render empty inventory message 1`] = `
+<AutoSizer
+  disableHeight={false}
+  disableWidth={false}
+  onResize={[Function]}
+  style={Object {}}
+>
+  <Component />
+</AutoSizer>
+`;
+
+exports[`<VirtualizedEventInventoryPresenter /> should render inventory list 1`] = `
+<AutoSizer
+  disableHeight={false}
+  disableWidth={false}
+  onResize={[Function]}
+  style={Object {}}
+>
+  <Component />
+</AutoSizer>
+`;
+
+exports[`<VirtualizedEventInventoryPresenter /> should render loading state 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "position": "relative",
+    }
+  }
+>
+  <CenteredLoader />
+</div>
+`;

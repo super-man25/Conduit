@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { EventHeader } from '../EventHeader';
-import { mockDateFnsFormat } from '_helpers/test-utils';
+import { mockDateFnsFormat, mockIsAfter } from '_helpers/test-utils';
 
 jest.mock('date-fns', () => ({
-  format: (date, format) => mockDateFnsFormat(date, format)
+  format: (date, format) => mockDateFnsFormat(date, format),
+  isAfter: (timestamp, today) => mockIsAfter(timestamp, today)
 }));
 
 const createProps = () => ({
