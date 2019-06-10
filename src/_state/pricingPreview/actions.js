@@ -7,24 +7,25 @@ export const FETCH_ERROR = 'pricingPreview/FETCH_ERROR';
 export const RESET = 'pricingPreview/RESET';
 
 // Action Generators
-export function fetch(eventId, eventScore, spring) {
+export function fetch(eventId) {
   return {
     type: FETCH,
     payload: {
-      eventId,
-      eventScore,
-      spring
+      eventId
     }
   };
 }
 
-export function paramsChanged(eventId, eventScore, spring) {
+export function paramsChanged(eventId) {
   return {
     type: PARAMS_CHANGED,
     payload: {
-      eventId,
-      eventScore,
-      spring
+      eventId
     }
   };
 }
+
+export default {
+  fetch,
+  paramsChanged
+};

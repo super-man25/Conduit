@@ -9,7 +9,9 @@ import {
   sentenceCase,
   truncateNumber,
   formatNumber,
-  formatUSD
+  formatUSD,
+  safeAdd,
+  fixedOrDash
 } from '_helpers/string-utils';
 
 describe('readableDate', () => {
@@ -149,5 +151,29 @@ describe('formatUSD', () => {
     expect(formatUSD(1000)).toEqual('$1,000.00');
     expect(formatUSD(100.5)).toEqual('$100.50');
     expect(formatUSD(1000.5)).toEqual('$1,000.50');
+  });
+});
+
+describe('safeAdd', () => {
+  it('should safely add 2 string numbers', () => {
+    expect(safeAdd('2.1625', '-1.1500', 4)).toEqual('1.0125');
+  });
+
+  it('should safely add partial string numbers', () => {
+    expect(safeAdd('2.1625', '-1.', 4)).toEqual('1.1625');
+  });
+
+  it('should return -- for invalid inputs', () => {
+    expect(safeAdd('2.1625', '-..', 4)).toEqual('--');
+  });
+});
+
+describe('fixedOrDash', () => {
+  it('should round to given fixed decimal value', () => {
+    expect(fixedOrDash('-1.531', 2)).toEqual('-1.53');
+  });
+
+  it('should return -- for invalid numbers', () => {
+    expect(fixedOrDash('..', 2)).toEqual('--');
   });
 });

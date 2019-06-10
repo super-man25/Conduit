@@ -7,8 +7,10 @@ import type { Saga } from 'redux-saga';
 import type {
   ToggleEventBroadcastingAction,
   FetchEventAction,
-  SaveAdminModifiersAction
+  SaveAdminModifiersAction,
+  FetchAutomatedSpringValueAction
 } from '.';
+import { paramsChanged } from '_state/pricingPreview/actions';
 import alertActions from '../alert/actions';
 
 // Workers
@@ -48,8 +50,7 @@ export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
     eventId,
     eventScoreModifier,
     springModifier,
-    seasonId,
-    callback
+    seasonId
   } = action.payload;
   try {
     const response = yield call(
@@ -64,15 +65,34 @@ export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
       payload: { ...response, eventId }
     });
     yield put(alertActions.success('Successfully saved modifier'));
-    yield call(callback);
     yield put({
       type: eventListTypes.FETCH_EVENT_LIST,
       payload: { seasonId }
     });
   } catch (err) {
     yield put({ type: types.SAVE_ADMIN_MODIFIERS_ERROR, payload: err });
-    yield call(callback, err);
     yield put(alertActions.error(err.toString() || 'Failed to save modifier'));
+  }
+}
+
+export function* fetchAutomatedSpring(
+  action: FetchAutomatedSpringValueAction
+): Saga {
+  const { id, eventScore } = action.payload;
+  try {
+    const springValue = yield call(
+      eventService.getAutomatedSpringValue,
+      id,
+      eventScore
+    );
+    yield put({
+      type: types.FETCH_AUTOMATED_SPRING_VALUE_SUCCESS,
+      payload: springValue * 100
+    });
+    yield put(paramsChanged(id));
+  } catch (err) {
+    yield put({ type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR, payload: err });
+    yield put(paramsChanged(id));
   }
 }
 
@@ -94,8 +114,13 @@ function* watchSaveAdminModifiers(): Saga {
   yield takeLatest(types.SAVE_ADMIN_MODIFIERS, saveAdminModifiers);
 }
 
+function* watchFetchAutomatedSpring(): Saga {
+  yield takeLatest(types.FETCH_AUTOMATED_SPRING_VALUE, fetchAutomatedSpring);
+}
+
 export default {
   watchFetchEvent,
   watchToggleBroadcasting,
-  watchSaveAdminModifiers
+  watchSaveAdminModifiers,
+  watchFetchAutomatedSpring
 };

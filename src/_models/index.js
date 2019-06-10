@@ -12,3 +12,4 @@ export * from './demo';
 export * from './buyerType';
 export * from './scheduledJob';
 export * from './report';
+export * from './pendingFactors';

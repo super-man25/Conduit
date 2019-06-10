@@ -25,7 +25,14 @@ function getPricingPreview(
   eventScore: number,
   spring: number
 ): Promise<EDPricingPreview> {
-  return get(`events/${id}/pricingPreview`, { eventScore, spring });
+  return get(`events/${id}/pricingPreview`, {
+    eventScore: eventScore.toFixed(2),
+    spring: spring.toFixed(4)
+  });
+}
+
+function getAutomatedSpringValue(id: number, eventScore: number): Promise<any> {
+  return get(`events/${id}/spring`, { eventScore: eventScore.toFixed(2) });
 }
 
 type ToggleBroadcastingResponse = {
@@ -107,5 +114,6 @@ export const eventService = {
   toggleBroadcasting,
   updateAdminModifiers,
   updateEventSeats,
-  updatePercentPriceModifier
+  updatePercentPriceModifier,
+  getAutomatedSpringValue
 };

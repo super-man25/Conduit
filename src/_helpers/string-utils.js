@@ -243,3 +243,41 @@ const collator = new Intl.Collator(undefined, {
 export const sortAlphaNum = (a: any, b: any) => {
   return collator.compare(a, b);
 };
+
+/**
+ * Safely adds strings/numbers or returns '--'
+ *
+ * @param {string | number} a
+ * @param {string | number} b
+ * @param {string | number} fix: desired fixed decimal place
+ */
+export const safeAdd = (
+  a: string | number,
+  b: string | number,
+  fix: number
+) => {
+  const aVal = +a;
+  const bVal = +b;
+
+  if (isNaN(aVal) || isNaN(bVal)) {
+    return '--';
+  }
+
+  return (aVal + bVal).toFixed(fix);
+};
+
+/**
+ * returns a number fixed to the desired decimal length or returns dashes (--)
+ *
+ * @param {string | number} number
+ * @param {number} fix: desired fixed decimal place
+ */
+export const fixedOrDash = (number: string | number, fix: number) => {
+  const numberVal = +number;
+
+  if (isNaN(numberVal)) {
+    return '--';
+  }
+
+  return numberVal.toFixed(fix);
+};

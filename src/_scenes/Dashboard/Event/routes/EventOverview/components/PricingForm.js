@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import {
   Flex,
   SecondaryButton,
@@ -7,6 +7,8 @@ import {
   NumberInputField,
   AsyncButton
 } from '_components';
+import { PendingFactors } from '_models';
+import { fixedOrDash, safeAdd } from '_helpers/string-utils';
 
 import styled from 'styled-components';
 
@@ -57,227 +59,153 @@ const ButtonGroup = styled.div`
   }
 `;
 
-type FormValues = {
-  eventScore?: number,
-  eventScoreModifier?: number,
-  spring?: number,
-  springModifier?: number
-};
-
 type Props = {
-  initialValues: FormValues,
-  onChange?: (formValues: FormValues) => any,
-  onSubmit: (
-    formValues: FormValues,
-    onSuccess: () => void,
-    onError: () => void
-  ) => any
-};
-
-type State = {
-  values: FormValues,
-  initialValues: FormValues,
-  editing: boolean,
+  initialValues: PendingFactors,
+  pendingFactors: PendingFactors,
+  onChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
+  onSubmit: Function,
+  eventId: number,
+  fetchAutomatedSpring: (id: number, eventScore: ?number) => void,
+  onCancel: Function,
+  pricingError: ?Error,
   submitting: boolean
 };
 
 const SPRING_DECIMALS = 4;
 const SCORE_DECIMALS = 2;
 
-function safeAdd(a: any, b: any, fix: number) {
-  const aVal = +a;
-  const bVal = +b;
+export const PricingForm = (props: Props) => {
+  const {
+    onChange,
+    pendingFactors: { eventScore, eventScoreModifier, spring, springModifier },
+    onSubmit,
+    onCancel,
+    fetchAutomatedSpring,
+    eventId,
+    pricingError,
+    submitting
+  } = props;
 
-  if (isNaN(aVal) || isNaN(bVal)) {
-    return '--';
-  }
+  const [editing, setEditing] = useState(false);
+  const [timer, setTimer] = useState(null);
 
-  return (aVal + bVal).toFixed(fix);
-}
-
-function fixedOrDash(number: any, fix: number) {
-  const numberVal = +number;
-
-  if (isNaN(numberVal)) {
-    return '--';
-  }
-
-  return numberVal.toFixed(fix);
-}
-
-export class PricingForm extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      values: props.initialValues,
-      initialValues: props.initialValues,
-      editing: false,
-      submitting: false
-    };
-  }
-
-  handleChange = (field: string, value: any) => {
-    const oldValues = this.state.values;
-    const values = { ...oldValues, [field]: value };
-
-    this.setState({ values });
-    if (this.props.onChange) {
-      this.props.onChange(values);
-    }
+  // fires request only when user stops typing for 0.5 seconds to prevent over-firing
+  const waitUntilFinished = () => {
+    clearTimeout(timer);
+    setTimer(setTimeout(updateSpring, 500));
   };
 
-  handleCancel = () => {
-    if (this.props.onChange) {
-      this.props.onChange(this.state.initialValues);
-    }
-    this.setState({
-      values: this.state.initialValues,
-      editing: false
-    });
+  const updateSpring = () => {
+    const total = safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS);
+    fetchAutomatedSpring(eventId, total !== '--' ? Number(total) : eventScore);
   };
 
-  handleEdit = () => {
-    this.setState({ editing: true });
+  const handleCancel = () => {
+    onCancel();
+    setEditing(false);
   };
 
-  handleSuccess = () => {
-    this.setState({
-      submitting: false,
-      editing: false,
-      initialValues: this.state.values
-    });
-  };
+  useEffect(() => (pricingError ? setEditing(true) : setEditing(false)), [
+    pricingError
+  ]);
 
-  handleError = () => {
-    this.setState({ submitting: false, editing: true });
-  };
-
-  handleSave = () => {
-    this.setState({ submitting: true });
-    this.props.onSubmit(
-      this.state.values,
-      this.handleSuccess,
-      this.handleError
-    );
-  };
-
-  render() {
-    const { editing, submitting, values } = this.state;
-
-    return (
-      <>
-        <Flex direction="row" justify="space-around">
-          <Group>
-            <H4
-              style={{
-                alignSelf: 'flex-start',
-                padding: '0 4px',
-                margin: '0',
-                marginBottom: '12px'
-              }}
+  return (
+    <Fragment>
+      <Flex direction="row" justify="space-around">
+        <Group>
+          <H4
+            style={{
+              alignSelf: 'flex-start',
+              padding: '0 4px',
+              margin: '0',
+              marginBottom: '12px'
+            }}
+          >
+            Event Score
+          </H4>
+          <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
+            <Row style={{ fontSize: '1.1rem' }}>
+              <Label>Base:</Label>
+              <Text>{fixedOrDash(eventScore, SCORE_DECIMALS)}</Text>
+            </Row>
+            <Row style={{ fontSize: '1.1rem' }}>
+              <Label>Modifier:</Label>
+              {editing ? (
+                <NumberInputField
+                  component={Input}
+                  name="eventScoreModifier"
+                  value={eventScoreModifier}
+                  onKeyUp={waitUntilFinished}
+                  onChange={onChange}
+                />
+              ) : (
+                <Text>{fixedOrDash(eventScoreModifier, SCORE_DECIMALS)}</Text>
+              )}
+            </Row>
+            <Line />
+            <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
+              <Label>Final:</Label>
+              <Text>
+                {safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS)}
+              </Text>
+            </Row>
+          </div>
+        </Group>
+        <Group>
+          <H4
+            style={{
+              alignSelf: 'flex-start',
+              padding: '0 4px',
+              margin: '0',
+              marginBottom: '12px'
+            }}
+          >
+            Spring Value
+          </H4>
+          <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
+            <Row style={{ fontSize: '1.1rem' }}>
+              <Label>Base:</Label>
+              <Text>{fixedOrDash(spring, SPRING_DECIMALS)}</Text>
+            </Row>
+            <Row style={{ fontSize: '1.1rem' }}>
+              <Label>Modifier:</Label>
+              {editing ? (
+                <NumberInputField
+                  component={Input}
+                  name="springModifier"
+                  value={springModifier}
+                  onChange={onChange}
+                />
+              ) : (
+                <Text>{fixedOrDash(springModifier, SPRING_DECIMALS)}</Text>
+              )}
+            </Row>
+            <Line />
+            <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
+              <Label>Final:</Label>
+              <Text>{safeAdd(spring, springModifier, SPRING_DECIMALS)}</Text>
+            </Row>
+          </div>
+        </Group>
+      </Flex>
+      <ButtonGroup>
+        {editing ? (
+          <Fragment>
+            <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
+            <AsyncButton
+              isLoading={submitting}
+              disabled={submitting}
+              onClick={onSubmit}
             >
-              Event Score
-            </H4>
-            <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
-              <Row style={{ fontSize: '1.1rem' }}>
-                <Label>Base:</Label>
-                <Text>{fixedOrDash(values.eventScore, SCORE_DECIMALS)}</Text>
-              </Row>
-              <Row style={{ fontSize: '1.1rem' }}>
-                <Label>Modifier:</Label>
-                {editing ? (
-                  <NumberInputField
-                    component={Input}
-                    value={values.eventScoreModifier}
-                    onChange={(e) =>
-                      this.handleChange('eventScoreModifier', e.target.value)
-                    }
-                  />
-                ) : (
-                  <Text>
-                    {fixedOrDash(values.eventScoreModifier, SCORE_DECIMALS)}
-                  </Text>
-                )}
-              </Row>
-              <Line />
-              <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
-                <Label>Final:</Label>
-                <Text>
-                  {safeAdd(
-                    values.eventScore,
-                    values.eventScoreModifier,
-                    SCORE_DECIMALS
-                  )}
-                </Text>
-              </Row>
-            </div>
-          </Group>
-          <Group>
-            <H4
-              style={{
-                alignSelf: 'flex-start',
-                padding: '0 4px',
-                margin: '0',
-                marginBottom: '12px'
-              }}
-            >
-              Spring Value
-            </H4>
-            <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
-              <Row style={{ fontSize: '1.1rem' }}>
-                <Label>Base:</Label>
-                <Text>{fixedOrDash(values.spring, SPRING_DECIMALS)}</Text>
-              </Row>
-              <Row style={{ fontSize: '1.1rem' }}>
-                <Label>Modifier:</Label>
-                {editing ? (
-                  <NumberInputField
-                    component={Input}
-                    value={values.springModifier}
-                    onChange={(e) =>
-                      this.handleChange('springModifier', e.target.value)
-                    }
-                  />
-                ) : (
-                  <Text>
-                    {fixedOrDash(values.springModifier, SPRING_DECIMALS)}
-                  </Text>
-                )}
-              </Row>
-              <Line />
-              <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
-                <Label>Final:</Label>
-                <Text>
-                  {safeAdd(
-                    values.spring,
-                    values.springModifier,
-                    SPRING_DECIMALS
-                  )}
-                </Text>
-              </Row>
-            </div>
-          </Group>
-        </Flex>
-        <ButtonGroup>
-          {editing ? (
-            <>
-              <SecondaryButton onClick={this.handleCancel}>
-                Cancel
-              </SecondaryButton>
-              <AsyncButton
-                isLoading={submitting}
-                disabled={submitting}
-                onClick={this.handleSave}
-              >
-                Save
-              </AsyncButton>
-            </>
-          ) : (
-            <SecondaryButton onClick={this.handleEdit}>Edit</SecondaryButton>
-          )}
-        </ButtonGroup>
-      </>
-    );
-  }
-}
+              Save
+            </AsyncButton>
+          </Fragment>
+        ) : (
+          <SecondaryButton onClick={() => setEditing(true)}>
+            Edit
+          </SecondaryButton>
+        )}
+      </ButtonGroup>
+    </Fragment>
+  );
+};
