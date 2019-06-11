@@ -63,7 +63,7 @@
     "cross-env": "^5.1.4",
     "env-cmd": "^9.0.2",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.2",
+    "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "eslint-config-prettier": "^4.2.0",
     "eslint-config-react-app": "^4.0.1",
