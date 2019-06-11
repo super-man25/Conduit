@@ -27,7 +27,7 @@
     "react-virtualized": "^9.20.0",
     "recharts": "^1.6.2",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.2",
+    "redux-saga": "^1.0.3",
     "reselect": "^4.0.0",
     "styled-components": "^4.2.1",
     "vanilla-autofill-event": "^1.0.3",
