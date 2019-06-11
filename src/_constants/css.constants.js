@@ -56,5 +56,6 @@ export const shadows = {
 
 export const zIndexes = {
   BASE,
-  DROPDOWN_FILTER: BASE + 1
+  DROPDOWN_FILTER: BASE + 1,
+  POPOVER: BASE + 2
 };

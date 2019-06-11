@@ -2,13 +2,7 @@
 
 exports[`render correctly 1`] = `
 Array [
-  .c2 {
-  color: #070707;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-.c0 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -20,6 +14,12 @@ Array [
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+}
+
+.c2 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .c3 {

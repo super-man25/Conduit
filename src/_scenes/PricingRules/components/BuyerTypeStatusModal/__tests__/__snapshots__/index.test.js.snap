@@ -17,7 +17,7 @@ exports[`<BuyerTypeStatusModalPresenter /> should render correctly 1`] = `
               [Function],
             ],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-gFaPwZ",
+              "componentId": "sc-gJWqzi",
               "isStatic": false,
               "rules": Array [
                 "
@@ -69,10 +69,10 @@ exports[`<BuyerTypeStatusModalPresenter /> should render correctly 1`] = `
             },
             "displayName": "Styled(styled.input)",
             "foldedComponentIds": Array [
-              "sc-cMljjf",
+              "sc-hEsumM",
             ],
             "render": [Function],
-            "styledComponentId": "sc-gFaPwZ",
+            "styledComponentId": "sc-gJWqzi",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],

@@ -47,13 +47,6 @@ exports[`renders correctly with props 1`] = `
   color: #38A9DB;
 }
 
-.c10 {
-  margin: 0;
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 100;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -103,6 +96,13 @@ exports[`renders correctly with props 1`] = `
   -ms-transform: translateY(20px);
   transform: translateY(20px);
   visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 .c0 {
@@ -277,13 +277,6 @@ exports[`renders correctly with toggledSidebar 1`] = `
   color: #38A9DB;
 }
 
-.c10 {
-  margin: 0;
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 100;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -333,6 +326,13 @@ exports[`renders correctly with toggledSidebar 1`] = `
   -ms-transform: translateY(20px);
   transform: translateY(20px);
   visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 .c0 {

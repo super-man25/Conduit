@@ -30,7 +30,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-fOKMvo",
+          "componentId": "sc-eilVRo",
           "isStatic": false,
           "rules": Array [
             "
@@ -84,10 +84,10 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-cMljjf",
+          "sc-hEsumM",
         ],
         "render": [Function],
-        "styledComponentId": "sc-fOKMvo",
+        "styledComponentId": "sc-eilVRo",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

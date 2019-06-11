@@ -10,15 +10,6 @@ exports[`renders correctly 1`] = `
   fill: #DC0A0A;
 }
 
-.c2 {
-  font-size: 12px;
-  color: #DC0A0A;
-  margin: 0;
-  cursor: default;
-  font-style: undefined;
-  padding-left: 5px;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -33,6 +24,15 @@ exports[`renders correctly 1`] = `
   align-items: center;
   height: 20px;
   margin: 20px;
+}
+
+.c2 {
+  font-size: 12px;
+  color: #DC0A0A;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+  padding-left: 5px;
 }
 
 <div

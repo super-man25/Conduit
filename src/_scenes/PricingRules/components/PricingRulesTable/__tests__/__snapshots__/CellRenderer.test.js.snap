@@ -21,7 +21,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-fOKMvo",
+          "componentId": "sc-eilVRo",
           "isStatic": false,
           "rules": Array [
             "
@@ -75,10 +75,10 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-cMljjf",
+          "sc-hEsumM",
         ],
         "render": [Function],
-        "styledComponentId": "sc-fOKMvo",
+        "styledComponentId": "sc-eilVRo",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],
