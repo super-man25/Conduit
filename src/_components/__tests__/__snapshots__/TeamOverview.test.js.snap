@@ -181,7 +181,7 @@ exports[`renders correctly with props 1`] = `
         width="48px"
       >
         <path
-          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z,M0 0h24v24H0z"
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
         />
       </svg>
     </button>
@@ -411,7 +411,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
         width="48px"
       >
         <path
-          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z,M0 0h24v24H0z"
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
         />
       </svg>
     </button>

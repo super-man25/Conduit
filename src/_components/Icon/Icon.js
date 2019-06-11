@@ -17,21 +17,19 @@ type Props = {
   name: string,
 
   /** Raw path data that takes precedence over name */
-  data: string,
-
-  /** Raw path data that takes precedence over name */
   size: number,
 
   /** HTML color (HEX or color string) for the icon fill  */
   color: string
 };
 
-export const Icon = ({ name, size, color, data }: Props) => {
-  const path = data || paths[name];
-
+export const Icon = ({ name, size, color }: Props) => {
   return (
     <Svg color={color} width={`${size}px`} viewBox="0 0 24 24">
-      <path d={path} />
+      {paths[name] &&
+        paths[name].map((path, idx) => (
+          <path d={path} key={`${name}-${idx}`} />
+        ))}
     </Svg>
   );
 };

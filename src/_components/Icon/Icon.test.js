@@ -9,11 +9,3 @@ it('renders with a name', () => {
 
   expect(tree).toMatchSnapshot();
 });
-
-it('renders with a data', () => {
-  const tree = renderer
-    .create(<Icon data="some svg path" size={24} />)
-    .toJSON();
-
-  expect(tree).toMatchSnapshot();
-});
