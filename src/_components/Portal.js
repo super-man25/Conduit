@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 const modalRoot: ?HTMLElement = document.getElementById('modal-root');
 
 type Props = {
-  children: any
+  children: React.Node
 };
 
 export class Portal extends React.Component<Props> {

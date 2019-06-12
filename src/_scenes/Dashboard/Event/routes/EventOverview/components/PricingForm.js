@@ -61,8 +61,8 @@ export const PricingForm = (props: Props) => {
     submitting
   } = props;
 
-  const [editing, setEditing] = useState(false);
-  const [hasChanged, setHasChanged] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
   const [timer, setTimer] = useState(null);
 
   // fires request only when user stops typing for 0.5 seconds to prevent over-firing
@@ -77,17 +77,17 @@ export const PricingForm = (props: Props) => {
   };
 
   const handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
-    setHasChanged(true);
+    setIsDirty(true);
     onChange(e);
   };
 
   const handleCancel = () => {
     onCancel();
-    setHasChanged(false);
-    setEditing(false);
+    setIsDirty(false);
+    setIsEditing(false);
   };
 
-  useEffect(() => (pricingError ? setEditing(true) : setEditing(false)), [
+  useEffect(() => (pricingError ? setIsEditing(true) : setIsEditing(false)), [
     pricingError
   ]);
 
@@ -95,12 +95,12 @@ export const PricingForm = (props: Props) => {
     <Fragment>
       <Flex margin="0.5rem 0" alignContent="center" justify="space-between">
         <H4 margin="0">Modifiers</H4>
-        {!editing && (
+        {!isEditing && (
           <TextButton
             style={{ fontWeight: 600 }}
             minWidth="0"
             padding="0"
-            onClick={() => setEditing(true)}
+            onClick={() => setIsEditing(true)}
           >
             Edit
           </TextButton>
@@ -138,7 +138,7 @@ export const PricingForm = (props: Props) => {
             <Text color={cssConstants.PRIMARY_GRAY}>MODIFIER</Text>
           </Flex>
           <Flex width="33%" justify="flex-end">
-            {editing ? (
+            {isEditing ? (
               <NumberInputField
                 component={Input}
                 name="eventScoreModifier"
@@ -153,7 +153,7 @@ export const PricingForm = (props: Props) => {
             )}
           </Flex>
           <Flex width="33%" justify="flex-end">
-            {editing ? (
+            {isEditing ? (
               <NumberInputField
                 component={Input}
                 name="springModifier"
@@ -185,11 +185,11 @@ export const PricingForm = (props: Props) => {
         </Flex>
       </Box>
       <ButtonGroup>
-        {editing && (
+        {isEditing && (
           <Fragment>
             <AsyncButton
               isLoading={submitting}
-              disabled={submitting || !hasChanged}
+              disabled={submitting || !isDirty}
               onClick={onSubmit}
             >
               Save

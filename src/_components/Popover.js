@@ -23,12 +23,11 @@ type Props = {
     maxWidth?: string
   },
   isOpen: boolean,
-  hideCaret: boolean
+  hideCaret: boolean,
+  arrowOffset?: string
 };
 const ReferenceBox = styled.div`
-  display: flex;
-  align-items: center;
-  max-width: ${(props) => props.maxWidth || POPOVER_MAX_WIDTH};
+  display: inline-block;
 `;
 
 const PopperBox = styled.div.attrs((props) => {
@@ -69,7 +68,7 @@ const Arrow = styled.div.attrs((props) => {
     bottom: 0;
     height: 1rem;
     margin-bottom: -0.9rem;
-    margin-left: -0.75rem;
+    margin-left: ${(props) => props.arrowOffset};
 
     &::before {
       border-left: 0.5rem solid transparent;
@@ -82,7 +81,7 @@ const Arrow = styled.div.attrs((props) => {
     top: 0;
     height: 1rem;
     margin-top: -0.4rem;
-    margin-left: -0.75rem;
+    margin-left: ${(props) => props.arrowOffset};
 
     &::before {
       border-left: 0.5rem solid transparent;
@@ -95,7 +94,7 @@ const Arrow = styled.div.attrs((props) => {
     left: 0;
     height: 1rem;
     margin-left: -0.4rem;
-    margin-top: 0.75rem;
+    margin-top: ${(props) => props.arrowOffset};
 
     &::before {
       border-top: 0.5rem solid transparent;
@@ -108,7 +107,7 @@ const Arrow = styled.div.attrs((props) => {
     right: 0;
     height: 1rem;
     margin-right: 0.1rem;
-    margin-top: 0.75rem;
+    margin-top: ${(props) => props.arrowOffset};
 
     &::before {
       border-top: 0.5rem solid transparent;
@@ -126,7 +125,7 @@ export const Popover = ({
   style,
   isOpen,
   hideCaret,
-  ...rest
+  arrowOffset
 }: Props) => {
   // Sample modifiers for react-popper behavior
   const modifiers = {
@@ -143,7 +142,7 @@ export const Popover = ({
           </ReferenceBox>
         )}
       </Reference>
-      <Popper placement={placement} modifiers={modifiers} eventsEnabled={true}>
+      <Popper placement={placement} modifiers={modifiers}>
         {({ ref, style: popperStyle, arrowProps }) =>
           isOpen && (
             <PopperBox
@@ -159,6 +158,7 @@ export const Popover = ({
                   ref={arrowProps.ref}
                   theme={theme}
                   arrowStyle={arrowProps.style}
+                  arrowOffset={arrowOffset}
                   data-placement={placement}
                 />
               )}

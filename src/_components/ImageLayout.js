@@ -1,6 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+//@flow
+import * as React from 'react';
 import styled from 'styled-components';
+
+type Props = {
+  children: React.Node,
+  imageSrc: string
+};
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,7 +26,7 @@ const ImagePane = styled.div`
   background-size: cover;
 `;
 
-export const ImageLayout = (props) => {
+export const ImageLayout = (props: Props) => {
   const { imageSrc, children } = props;
 
   return (
@@ -30,12 +35,4 @@ export const ImageLayout = (props) => {
       <ImagePane src={imageSrc} />
     </Wrapper>
   );
-};
-
-ImageLayout.propTypes = {
-  /** Content to display */
-  children: PropTypes.node,
-
-  /** Background image source */
-  imageSrc: PropTypes.string.isRequired
 };

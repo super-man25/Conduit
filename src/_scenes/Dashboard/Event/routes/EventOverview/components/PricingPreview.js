@@ -1,11 +1,12 @@
 // @flow
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
-import { Box, Flex, H4, Icon, Loader, Popover, Text } from '_components';
+import { Box, Flex, H4, Icon, Popover, Text } from '_components';
 import { cssConstants } from '_constants';
 import { formatUSD } from '_helpers/string-utils';
 import { PricingTableHeader } from './PricingTableHeader';
 import type { EDPricingPreview } from '_models/pricingPreview';
+import type { Node } from 'react';
 
 const Row = styled(Flex)`
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
@@ -13,6 +14,17 @@ const Row = styled(Flex)`
     border-bottom: none;
   }
 `;
+const PricingPreviewText = ({
+  children,
+  color
+}: {
+  children: Node,
+  color?: string
+}) => (
+  <Flex align="center" justify="center" margin="auto">
+    <Text color={color}>{children}</Text>
+  </Flex>
+);
 
 type Props = {
   loading: boolean,
@@ -33,11 +45,19 @@ export const PricingPreview = (props: Props) => {
   };
 
   if (loading) {
-    return <Loader />;
+    return (
+      <PricingPreviewText color={cssConstants.PRIMARY_BLUE}>
+        Loading Price Preview...
+      </PricingPreviewText>
+    );
   }
 
   if (!pricingPreview || !pricingPreview.event || !pricingPreview.sections) {
-    return <Text>Nothing to preview</Text>;
+    return (
+      <PricingPreviewText color={cssConstants.PRIMARY_GRAY}>
+        No Price Preview
+      </PricingPreviewText>
+    );
   }
 
   const data = [
@@ -55,6 +75,7 @@ export const PricingPreview = (props: Props) => {
         <Popover
           placement="top"
           isOpen={isOpen}
+          arrowOffset="-0.9rem"
           target={
             <Box
               margin="0.5rem 0"
