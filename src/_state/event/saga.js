@@ -1,8 +1,10 @@
 // @flow
+import { call, put, take, takeLatest } from 'redux-saga/effects';
 import { eventService } from '_services';
-import { call, put, takeLatest, take } from 'redux-saga/effects';
-import { types } from '.';
 import { types as eventListTypes } from '_state/eventList';
+import { paramsChanged } from '_state/pricingPreview/actions';
+import { types } from '.';
+import alertActions from '../alert/actions';
 import type { Saga } from 'redux-saga';
 import type {
   ToggleEventBroadcastingAction,
@@ -10,8 +12,6 @@ import type {
   SaveAdminModifiersAction,
   FetchAutomatedSpringValueAction
 } from '.';
-import { paramsChanged } from '_state/pricingPreview/actions';
-import alertActions from '../alert/actions';
 
 // Workers
 export function* fetchEvent(action: FetchEventAction): Saga {
@@ -20,6 +20,13 @@ export function* fetchEvent(action: FetchEventAction): Saga {
 
     const event = yield call(eventService.getOne, eventId);
     yield put({ type: types.FETCH_EVENT_SUCCESS, payload: event });
+    yield put({
+      type: types.FETCH_AUTOMATED_SPRING_VALUE,
+      payload: {
+        id: eventId,
+        eventScore: event.eventScore + event.eventScoreModifier
+      }
+    });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_ERROR, payload: err });
   }
@@ -92,6 +99,7 @@ export function* fetchAutomatedSpring(
     yield put(paramsChanged(id));
   } catch (err) {
     yield put({ type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR, payload: err });
+    yield put(alertActions.error('Unable to fetch predicted spring value'));
     yield put(paramsChanged(id));
   }
 }

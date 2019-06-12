@@ -1,16 +1,16 @@
-import { actions, types, selectors, reducer, initialState } from '../event';
-import { types as eventListTypes } from '_state/eventList';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import {
-  toggleBroadcasting,
-  fetchEvent,
-  saveAdminModifiers,
-  fetchAutomatedSpring
-} from '../event/saga';
 import { call, put } from 'redux-saga/effects';
 import { eventService } from '_services';
 import alertActions from '_state/alert/actions';
+import { types as eventListTypes } from '_state/eventList';
 import { paramsChanged } from '_state/pricingPreview/actions';
+import { actions, initialState, reducer, selectors, types } from '../event';
+import {
+  fetchAutomatedSpring,
+  fetchEvent,
+  saveAdminModifiers,
+  toggleBroadcasting
+} from '../event/saga';
 
 describe('actions', () => {
   it('should create an action to fetch an event', () => {
@@ -351,13 +351,27 @@ describe('sagas', () => {
   it('should handle fetch an individual event', () => {
     const action = actions.fetchEvent(1);
     const generator = cloneableGenerator(fetchEvent)(action);
+    const mockEvent = { id: 1, eventScore: 5.0, eventScoreModifier: 0.21 };
     expect(generator.next().value).toEqual(call(eventService.getOne, 1));
 
     const fail = generator.clone();
     const error = new Error('Some API Error');
 
-    expect(generator.next({ id: 1 }).value).toEqual(
-      put({ type: types.FETCH_EVENT_SUCCESS, payload: { id: 1 } })
+    expect(generator.next(mockEvent).value).toEqual(
+      put({
+        type: types.FETCH_EVENT_SUCCESS,
+        payload: mockEvent
+      })
+    );
+
+    expect(generator.next().value).toEqual(
+      put({
+        type: types.FETCH_AUTOMATED_SPRING_VALUE,
+        payload: {
+          id: mockEvent.id,
+          eventScore: mockEvent.eventScore + mockEvent.eventScoreModifier
+        }
+      })
     );
 
     expect(fail.throw(error).value).toEqual(
@@ -485,6 +499,10 @@ describe('sagas', () => {
         type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR,
         payload: error
       })
+    );
+
+    expect(fail.next().value).toEqual(
+      put(alertActions.error('Unable to fetch predicted spring value'))
     );
 
     expect(fail.next().value).toEqual(put(paramsChanged(action.payload.id)));

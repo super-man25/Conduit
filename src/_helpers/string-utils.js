@@ -1,10 +1,10 @@
 // @flow
 import {
-  format,
   distanceInWords,
   distanceInWordsToNow,
-  isToday,
-  isThisYear
+  format,
+  isThisYear,
+  isToday
 } from 'date-fns';
 import { formatToTimeZone } from 'date-fns-timezone';
 

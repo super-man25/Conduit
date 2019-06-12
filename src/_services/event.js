@@ -1,12 +1,12 @@
 // @flow
 
-import { get, put, post } from '_helpers/api';
-import type { EDEvent, EDInventoryRow } from '_models';
+import { get, post, put } from '_helpers/api';
 import {
-  validatePercentPriceModifier,
   validateAdminModifiers,
-  validateOverridePrice
+  validateOverridePrice,
+  validatePercentPriceModifier
 } from './validators/event';
+import type { EDEvent, EDInventoryRow } from '_models';
 
 import type { EDPricingPreview } from '_models/pricingPreview';
 
@@ -32,7 +32,7 @@ function getPricingPreview(
 }
 
 function getAutomatedSpringValue(id: number, eventScore: number): Promise<any> {
-  return get(`events/${id}/spring`, { eventScore: eventScore.toFixed(2) });
+  return get(`events/${id}/spring`, { eventScore });
 }
 
 type ToggleBroadcastingResponse = {

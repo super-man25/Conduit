@@ -1,5 +1,5 @@
 // @flow
-import { EDEvent, PendingFactors } from '_models';
+import type { EDEvent, PendingFactors } from '_models';
 export { default as saga } from './saga';
 
 // Actions Types
