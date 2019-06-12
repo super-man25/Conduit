@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
+import { Manager, Popper, Reference } from 'react-popper';
 import styled from 'styled-components';
-import { zIndexes, cssConstants } from '_constants';
-import { Manager, Reference, Popper } from 'react-popper';
+import { cssConstants, zIndexes } from '_constants';
 
 const BACKGROUND = new Map()
   .set('primary', cssConstants.PRIMARY_BLUE)
@@ -25,6 +25,11 @@ type Props = {
   isOpen: boolean,
   hideCaret: boolean
 };
+const ReferenceBox = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: ${(props) => props.maxWidth || POPOVER_MAX_WIDTH};
+`;
 
 const PopperBox = styled.div.attrs((props) => {
   const backgroundColor = BACKGROUND.get(props.theme);
@@ -62,10 +67,9 @@ const Arrow = styled.div.attrs((props) => {
 
   &[data-placement*='top'] {
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     height: 1rem;
     margin-bottom: -0.9rem;
+    margin-left: -0.75rem;
 
     &::before {
       border-left: 0.5rem solid transparent;
@@ -76,10 +80,9 @@ const Arrow = styled.div.attrs((props) => {
 
   &[data-placement*='bottom'] {
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     height: 1rem;
     margin-top: -0.4rem;
+    margin-left: -0.75rem;
 
     &::before {
       border-left: 0.5rem solid transparent;
@@ -90,10 +93,9 @@ const Arrow = styled.div.attrs((props) => {
 
   &[data-placement*='right'] {
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
     height: 1rem;
     margin-left: -0.4rem;
+    margin-top: 0.75rem;
 
     &::before {
       border-top: 0.5rem solid transparent;
@@ -104,10 +106,9 @@ const Arrow = styled.div.attrs((props) => {
 
   &[data-placement*='left'] {
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
     height: 1rem;
     margin-right: 0.1rem;
+    margin-top: 0.75rem;
 
     &::before {
       border-top: 0.5rem solid transparent;
@@ -115,10 +116,6 @@ const Arrow = styled.div.attrs((props) => {
       border-left: 0.5rem solid ${(props) => props.arrowColor};
     }
   }
-`;
-
-const ReferenceBox = styled.div`
-  max-width: ${(props) => props.maxWidth || POPOVER_MAX_WIDTH};
 `;
 
 export const Popover = ({

@@ -206,7 +206,7 @@ export type State = {
   +error: ?Error,
   +loading: boolean,
   +isTogglingBroadcasting: boolean,
-  +savingAdminModifiers: false,
+  +savingAdminModifiers: boolean,
   +fetchingSpring: boolean,
   +pendingFactors: PendingFactors,
   +pricingError: ?Error

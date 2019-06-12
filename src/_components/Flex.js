@@ -78,6 +78,8 @@ export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`
   align-self: ${(props) => props.alignSelf};
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+  min-height: ${(props) => props.minHeight};
+  min-width: ${(props) => props.minWidth};
 `);
 
 export const FlexItem: ComponentType<FlexItemProps> = withBoxModelProps(styled.div`

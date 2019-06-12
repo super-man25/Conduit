@@ -1,32 +1,32 @@
 // @flow
 
-import styled from 'styled-components';
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 import {
-  Panel,
-  PanelHeader,
   Flex,
   H4,
+  Panel,
   PanelContent,
+  PanelHeader,
   Text,
   Toggle
 } from '_components';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import { cssConstants } from '_constants';
 import {
-  selectors as eventSelectors,
-  actions as eventActions
+  actions as eventActions,
+  selectors as eventSelectors
 } from '_state/event';
-import { selectors as seasonSelectors } from '_state/season';
 import { actions as pricingPreviewActions } from '_state/pricingPreview';
+import { selectors as seasonSelectors } from '_state/season';
 import { PricingForm } from './PricingForm';
 import { PricingPreview } from './PricingPreview';
-
 import type { EDEvent, PendingFactors } from '_models';
 import type { EDPricingPreview } from '_models/pricingPreview';
 
-const UnpaddedPanelContent = styled(PanelContent)`
-  padding: 0 !important;
+const PaddedPanelContent = styled(PanelContent)`
+  padding: 20px 0 !important;
 `;
 
 type Props = {
@@ -126,13 +126,15 @@ export const EventPricingPresenter = (props: Props) => {
           </Flex>
         </Flex>
       </PanelHeader>
-      <UnpaddedPanelContent>
+      <PaddedPanelContent>
         <Flex>
           <Flex
             flex={1}
             direction="column"
-            padding="20px"
-            style={{ borderRight: '1px solid #D1D1D1' }}
+            padding="0 20px"
+            style={{
+              borderRight: `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`
+            }}
           >
             <PricingForm
               pricingError={pricingError}
@@ -151,11 +153,13 @@ export const EventPricingPresenter = (props: Props) => {
               submitting={savingAdminModifiers}
             />
           </Flex>
-          <Flex flex={1} justify="center" padding="20px 0">
-            <PricingPreview pricingPreview={record} loading={loading} />
+          <Flex flex={1}>
+            <Flex direction="column" padding="0 20px" width="100%">
+              <PricingPreview pricingPreview={record} loading={loading} />
+            </Flex>
           </Flex>
         </Flex>
-      </UnpaddedPanelContent>
+      </PaddedPanelContent>
     </Panel>
   );
 };

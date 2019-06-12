@@ -97,6 +97,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
       <svg
         className="c2"
         color="#FFFFFF"
+        height="24px"
         viewBox="0 0 24 24"
         width="24px"
       >
@@ -203,6 +204,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
       <svg
         className="c2"
         color="#FFFFFF"
+        height="24px"
         viewBox="0 0 24 24"
         width="24px"
       >

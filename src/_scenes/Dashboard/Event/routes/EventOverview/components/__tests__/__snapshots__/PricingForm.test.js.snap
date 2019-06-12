@@ -2,28 +2,36 @@
 
 exports[`render correctly 1`] = `
 Array [
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
+  .c2 {
+  border: none;
+  min-width: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  padding: 0;
+  color: #024A8F;
+  background-color: inherit;
 }
 
-.c2 {
-  color: #070707;
-  font-size: 18px;
-  font-weight: normal;
+.c2:disabled {
+  cursor: not-allowed;
 }
 
-.c3 {
-  margin: 4px 0;
+.c2:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c2:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,270 +43,301 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  min-height: 24px;
-}
-
-.c4 {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-.c5 {
-  width: 60px;
-  margin-left: 16px;
-  display: inline-block;
-  text-align: right;
-  font-size: 1.125rem;
-}
-
-.c6 {
-  height: 1px;
-  width: 100%;
-  background-color: #aaa;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0.5rem 0;
 }
 
 .c1 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
 }
 
 <div
     className="c0"
-    direction="row"
   >
-    <div
+    <h4
       className="c1"
+      color="#070707"
     >
-      <h4
-        className="c2"
-        color="#070707"
-        style={
-          Object {
-            "alignSelf": "flex-start",
-            "margin": "0",
-            "marginBottom": "12px",
-            "padding": "0 4px",
-          }
+      Modifiers
+    </h4>
+    <button
+      className="c2"
+      onClick={[Function]}
+      style={
+        Object {
+          "fontWeight": 600,
         }
-      >
-        Event Score
-      </h4>
-      <div
-        style={
-          Object {
-            "maxWidth": "160px",
-            "paddingLeft": "20px",
-          }
-        }
-      >
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Base:
-          </label>
-          <span
-            className="c5"
-          >
-            1.00
-          </span>
-        </div>
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Modifier:
-          </label>
-          <span
-            className="c5"
-          >
-            1.00
-          </span>
-        </div>
-        <div
-          className="c6"
-        />
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-              "fontWeight": 600,
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Final:
-          </label>
-          <span
-            className="c5"
-          >
-            2.00
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c1"
+      }
     >
-      <h4
-        className="c2"
-        color="#070707"
-        style={
-          Object {
-            "alignSelf": "flex-start",
-            "margin": "0",
-            "marginBottom": "12px",
-            "padding": "0 4px",
-          }
-        }
-      >
-        Spring Value
-      </h4>
-      <div
-        style={
-          Object {
-            "maxWidth": "160px",
-            "paddingLeft": "20px",
-          }
-        }
-      >
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Base:
-          </label>
-          <span
-            className="c5"
-          >
-            1.0000
-          </span>
-        </div>
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Modifier:
-          </label>
-          <span
-            className="c5"
-          >
-            1.0000
-          </span>
-        </div>
-        <div
-          className="c6"
-        />
-        <div
-          className="c3"
-          style={
-            Object {
-              "fontSize": "1.1rem",
-              "fontWeight": 600,
-            }
-          }
-        >
-          <label
-            className="c4"
-          >
-            Final:
-          </label>
-          <span
-            className="c5"
-          >
-            2.0000
-          </span>
-        </div>
-      </div>
-    </div>
+      Edit
+    </button>
   </div>,
   .c1 {
-  border: none;
-  min-width: 100px;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-radius: 3px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  background-color: #FFFFFF;
-  border: 2px solid #024A8F;
-  color: #024A8F;
-  -webkit-transition: border linear;
-  transition: border linear;
-}
-
-.c1:disabled {
-  cursor: not-allowed;
-}
-
-.c1:disabled {
-  border: 2px solid #999999;
-  color: #999999;
-  opacity: 0.5;
-}
-
-.c1:active {
-  background-color: #F0F4F7;
-  color: #38A9DB;
-  outline: 2px solid #38A9DB;
-  box-shadow: 0 0 3px rgba(56,169,219,100);
-}
-
-.c1:hover:not(:disabled) {
-  border: 3px solid #024A8F;
-  background-color: #F0F4F7;
-  color: #024A8F;
-}
-
-.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 20px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-top: 0.25rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  padding: 14px 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 33%;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.c0 {
+  padding: 10px;
+}
+
+.c2 {
+  width: 33%;
+}
+
+.c3 {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c5 {
+  font-size: undefinedpx;
+  color: #999999;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c6 {
+  font-size: undefinedpx;
+  color: #070707;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c9 {
+  font-size: undefinedpx;
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c10 {
+  font-size: undefinedpx;
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c3"
+          color="#999999"
+          size={14}
+        >
+          EVENT SCORE
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c3"
+          color="#999999"
+          size={14}
+        >
+          SPRING VALUE
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c5"
+          color="#999999"
+        >
+          PREDICTED
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+        >
+          1.00
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+        >
+          1.0000
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+      style={
+        Object {
+          "borderBottom": "1px solid #EEEEEE",
+          "borderTop": "1px solid #EEEEEE",
+        }
+      }
+    >
+      <div
+        className="c7"
+        width="33%"
+      >
+        <p
+          className="c5"
+          color="#999999"
+        >
+          MODIFIER
+        </p>
+      </div>
+      <div
+        className="c8"
+        width="33%"
+      >
+        <p
+          className="c6"
+        >
+          1.00
+        </p>
+      </div>
+      <div
+        className="c8"
+        width="33%"
+      >
+        <p
+          className="c6"
+        >
+          1.0000
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c9"
+        >
+          FINAL
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c10"
+        >
+          2.00
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c10"
+        >
+          2.0000
+        </p>
+      </div>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c0 > *:not(:first-child) {
@@ -307,13 +346,6 @@ Array [
 
 <div
     className="c0"
-  >
-    <button
-      className="c1"
-      onClick={[Function]}
-    >
-      Edit
-    </button>
-  </div>,
+  />,
 ]
 `;

@@ -3,10 +3,10 @@ import { cssConstants } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
 const WEIGHTS = new Map()
-  .set('normal', '400')
-  .set('heavy', '500')
+  .set('lighter', '200')
   .set('light', '300')
-  .set('lighter', '200');
+  .set('normal', '400')
+  .set('heavy', '700');
 
 const ellipsis = (props) =>
   props.ellipsis &&
@@ -107,10 +107,10 @@ export const Box = withBoxModelProps(styled.div`
 
 export const Text = withBoxModelProps(styled.p`
   font-size: ${(props) => `${props.size}px`};
-  font-weight: ${(props) => props.weight};
+  font-weight: ${(props) => WEIGHTS.get(props.weight)};
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   margin: ${(props) => props.margin || 0};
-  text-align: ${(props) => (props.center ? 'center' : '')};
+  text-align: ${(props) => props.textAlign || ''};
   opacity: ${(props) => props.opacity};
   cursor: ${(props) => props.cursor || 'default'};
   font-style: ${(props) => `${props.fontStyle}`};

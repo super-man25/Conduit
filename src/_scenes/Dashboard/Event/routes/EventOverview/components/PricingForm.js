@@ -1,58 +1,33 @@
 // @flow
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import {
+  AsyncButton,
+  Box,
   Flex,
-  SecondaryButton,
   H4,
   NumberInputField,
-  AsyncButton
+  SecondaryButton,
+  Text,
+  TextButton
 } from '_components';
-import { PendingFactors } from '_models';
+import { cssConstants } from '_constants';
 import { fixedOrDash, safeAdd } from '_helpers/string-utils';
-
-import styled from 'styled-components';
-
-const Row = styled.div`
-  margin: 4px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-height: 24px;
-`;
-
-const Label = styled.label`
-  align-self: flex-start;
-`;
-
-const Text = styled.span`
-  width: 60px;
-  margin-left: 16px;
-  display: inline-block;
-  text-align: right;
-  font-size: 1.125rem;
-`;
+import { PendingFactors } from '_models';
+import { PricingTableHeader } from './PricingTableHeader';
 
 const Input = styled.input`
   box-sizing: border-box;
-  width: 60px;
+  width: 60%;
   margin-left: 16px;
-`;
-
-const Line = styled.div`
-  height: 1px;
-  width: 100%;
-  background-color: #aaa;
-`;
-
-const Group = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 0.5rem 1rem;
+  text-align: right;
+  border-radius: 3px;
+  border: 1px solid ${cssConstants.PRIMARY_GRAY};
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  padding-top: 20px;
 
   > *:not(:first-child) {
     margin-left: 8px;
@@ -87,6 +62,7 @@ export const PricingForm = (props: Props) => {
   } = props;
 
   const [editing, setEditing] = useState(false);
+  const [hasChanged, setHasChanged] = useState(false);
   const [timer, setTimer] = useState(null);
 
   // fires request only when user stops typing for 0.5 seconds to prevent over-firing
@@ -100,8 +76,14 @@ export const PricingForm = (props: Props) => {
     fetchAutomatedSpring(eventId, total !== '--' ? Number(total) : eventScore);
   };
 
+  const handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
+    setHasChanged(true);
+    onChange(e);
+  };
+
   const handleCancel = () => {
     onCancel();
+    setHasChanged(false);
     setEditing(false);
   };
 
@@ -111,99 +93,109 @@ export const PricingForm = (props: Props) => {
 
   return (
     <Fragment>
-      <Flex direction="row" justify="space-around">
-        <Group>
-          <H4
-            style={{
-              alignSelf: 'flex-start',
-              padding: '0 4px',
-              margin: '0',
-              marginBottom: '12px'
-            }}
+      <Flex margin="0.5rem 0" alignContent="center" justify="space-between">
+        <H4 margin="0">Modifiers</H4>
+        {!editing && (
+          <TextButton
+            style={{ fontWeight: 600 }}
+            minWidth="0"
+            padding="0"
+            onClick={() => setEditing(true)}
           >
-            Event Score
-          </H4>
-          <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
-            <Row style={{ fontSize: '1.1rem' }}>
-              <Label>Base:</Label>
-              <Text>{fixedOrDash(eventScore, SCORE_DECIMALS)}</Text>
-            </Row>
-            <Row style={{ fontSize: '1.1rem' }}>
-              <Label>Modifier:</Label>
-              {editing ? (
-                <NumberInputField
-                  component={Input}
-                  name="eventScoreModifier"
-                  value={eventScoreModifier}
-                  onKeyUp={waitUntilFinished}
-                  onChange={onChange}
-                />
-              ) : (
-                <Text>{fixedOrDash(eventScoreModifier, SCORE_DECIMALS)}</Text>
-              )}
-            </Row>
-            <Line />
-            <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
-              <Label>Final:</Label>
-              <Text>
-                {safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS)}
-              </Text>
-            </Row>
-          </div>
-        </Group>
-        <Group>
-          <H4
-            style={{
-              alignSelf: 'flex-start',
-              padding: '0 4px',
-              margin: '0',
-              marginBottom: '12px'
-            }}
-          >
-            Spring Value
-          </H4>
-          <div style={{ maxWidth: '160px', paddingLeft: '20px' }}>
-            <Row style={{ fontSize: '1.1rem' }}>
-              <Label>Base:</Label>
-              <Text>{fixedOrDash(spring, SPRING_DECIMALS)}</Text>
-            </Row>
-            <Row style={{ fontSize: '1.1rem' }}>
-              <Label>Modifier:</Label>
-              {editing ? (
-                <NumberInputField
-                  component={Input}
-                  name="springModifier"
-                  value={springModifier}
-                  onChange={onChange}
-                />
-              ) : (
-                <Text>{fixedOrDash(springModifier, SPRING_DECIMALS)}</Text>
-              )}
-            </Row>
-            <Line />
-            <Row style={{ fontSize: '1.1rem', fontWeight: 600 }}>
-              <Label>Final:</Label>
-              <Text>{safeAdd(spring, springModifier, SPRING_DECIMALS)}</Text>
-            </Row>
-          </div>
-        </Group>
+            Edit
+          </TextButton>
+        )}
       </Flex>
+      <Box padding="10px">
+        <PricingTableHeader headers={['EVENT SCORE', 'SPRING VALUE']} />
+        <Flex padding="14px 0" direction="row" minHeight="36px" align="center">
+          <Box width="33%">
+            <Text color={cssConstants.PRIMARY_GRAY}>PREDICTED</Text>
+          </Box>
+          <Box width="33%">
+            <Text textAlign="right">
+              {fixedOrDash(eventScore, SCORE_DECIMALS)}
+            </Text>
+          </Box>
+          <Box width="33%">
+            <Text textAlign="right">
+              {fixedOrDash(spring, SPRING_DECIMALS)}
+            </Text>
+          </Box>
+        </Flex>
+
+        <Flex
+          style={{
+            borderTop: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
+            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`
+          }}
+          padding="14px 0"
+          direction="row"
+          align="center"
+          minHeight="36px"
+        >
+          <Flex width="33%">
+            <Text color={cssConstants.PRIMARY_GRAY}>MODIFIER</Text>
+          </Flex>
+          <Flex width="33%" justify="flex-end">
+            {editing ? (
+              <NumberInputField
+                component={Input}
+                name="eventScoreModifier"
+                value={eventScoreModifier}
+                onKeyUp={waitUntilFinished}
+                onChange={handleChange}
+              />
+            ) : (
+              <Text textAlign="right">
+                {fixedOrDash(eventScoreModifier, SCORE_DECIMALS)}
+              </Text>
+            )}
+          </Flex>
+          <Flex width="33%" justify="flex-end">
+            {editing ? (
+              <NumberInputField
+                component={Input}
+                name="springModifier"
+                value={springModifier}
+                onChange={handleChange}
+              />
+            ) : (
+              <Text textAlign="right">
+                {fixedOrDash(springModifier, SPRING_DECIMALS)}
+              </Text>
+            )}
+          </Flex>
+        </Flex>
+
+        <Flex padding="14px 0" direction="row" align="center" minHeight="36px">
+          <Box width="33%">
+            <Text weight="heavy">FINAL</Text>
+          </Box>
+          <Box width="33%">
+            <Text weight="heavy" textAlign="right">
+              {safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS)}
+            </Text>
+          </Box>
+          <Box width="33%">
+            <Text weight="heavy" textAlign="right">
+              {safeAdd(spring, springModifier, SPRING_DECIMALS)}
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
       <ButtonGroup>
-        {editing ? (
+        {editing && (
           <Fragment>
-            <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
             <AsyncButton
               isLoading={submitting}
-              disabled={submitting}
+              disabled={submitting || !hasChanged}
               onClick={onSubmit}
             >
               Save
             </AsyncButton>
+            <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
           </Fragment>
-        ) : (
-          <SecondaryButton onClick={() => setEditing(true)}>
-            Edit
-          </SecondaryButton>
         )}
       </ButtonGroup>
     </Fragment>

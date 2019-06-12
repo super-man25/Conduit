@@ -157,6 +157,7 @@ exports[`renders correctly with props 1`] = `
           <svg
             className="c4"
             color="#FFFFFF"
+            height="24px"
             viewBox="0 0 24 24"
             width="24px"
           >
@@ -177,6 +178,7 @@ exports[`renders correctly with props 1`] = `
       <svg
         className="c7"
         color="white"
+        height="48px"
         viewBox="0 0 24 24"
         width="48px"
       >
@@ -387,6 +389,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
           <svg
             className="c4"
             color="#FFFFFF"
+            height="24px"
             viewBox="0 0 24 24"
             width="24px"
           >
@@ -407,6 +410,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
       <svg
         className="c7"
         color="white"
+        height="48px"
         viewBox="0 0 24 24"
         width="48px"
       >

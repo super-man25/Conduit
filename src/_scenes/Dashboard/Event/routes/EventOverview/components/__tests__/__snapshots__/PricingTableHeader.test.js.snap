@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-top: 0.25rem;
+}
+
+.c1 {
+  width: 33%;
+}
+
+.c2 {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+<div
+  className="c0"
+  direction="row"
+>
+  <div
+    className="c1"
+    width="33%"
+  >
+    <p
+      className="c2"
+      color="#999999"
+      size={14}
+    >
+      EVENT SCORE
+    </p>
+  </div>
+  <div
+    className="c1"
+    width="33%"
+  >
+    <p
+      className="c2"
+      color="#999999"
+      size={14}
+    >
+      SPRING VALUE
+    </p>
+  </div>
+</div>
+`;

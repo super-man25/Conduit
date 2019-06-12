@@ -47,6 +47,7 @@ exports[`renders correctly when downloading is false 1`] = `
   <svg
     className="c1"
     color="#024A8F"
+    height="24px"
     viewBox="0 0 24 24"
     width="24px"
   >
@@ -109,6 +110,7 @@ exports[`renders correctly when downloading is true 1`] = `
   <svg
     className="c1"
     color="#999999"
+    height="24px"
     viewBox="0 0 24 24"
     width="24px"
   >

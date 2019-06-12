@@ -93,6 +93,7 @@ exports[`renders correctly 1`] = `
       <svg
         className="c3"
         color="#000"
+        height="24px"
         viewBox="0 0 24 24"
         width="24px"
       >

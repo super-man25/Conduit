@@ -8,6 +8,7 @@ exports[`renders with a name 1`] = `
 
 <svg
   className="c0"
+  height="24px"
   viewBox="0 0 24 24"
   width="24px"
 >

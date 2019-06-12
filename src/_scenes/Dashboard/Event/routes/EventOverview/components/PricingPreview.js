@@ -1,27 +1,39 @@
 // @flow
-
-import React from 'react';
-import type { EDPricingPreview } from '_models/pricingPreview';
-import { Table, Text } from '_components';
+import React, { Fragment, useState } from 'react';
+import styled from 'styled-components';
+import { Box, Flex, H4, Icon, Loader, Popover, Text } from '_components';
+import { cssConstants } from '_constants';
 import { formatUSD } from '_helpers/string-utils';
+import { PricingTableHeader } from './PricingTableHeader';
+import type { EDPricingPreview } from '_models/pricingPreview';
+
+const Row = styled(Flex)`
+  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  :last-child {
+    border-bottom: none;
+  }
+`;
 
 type Props = {
   loading: boolean,
   pricingPreview?: EDPricingPreview
 };
 
-function formatStats(stats) {
-  return {
-    min: formatUSD(stats.min),
-    max: formatUSD(stats.max)
-  };
-}
-
 export const PricingPreview = (props: Props) => {
   const { loading, pricingPreview } = props;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const formatStats = (stats: { min: number, max: number }) => {
+    const { min, max } = stats;
+    return {
+      min: formatUSD(min),
+      max: formatUSD(max)
+    };
+  };
+
   if (loading) {
-    return <Text>Loading price preview...</Text>;
+    return <Loader />;
   }
 
   if (!pricingPreview || !pricingPreview.event || !pricingPreview.sections) {
@@ -29,22 +41,68 @@ export const PricingPreview = (props: Props) => {
   }
 
   const data = [
-    { label: 'Event', ...formatStats(pricingPreview.event) },
+    { label: 'EVENT', ...formatStats(pricingPreview.event) },
     ...Object.keys(pricingPreview.sections).map((section) => ({
-      label: `Section ${section}`,
+      label: `SECTION ${section}`,
       ...formatStats(pricingPreview.sections[section])
     }))
   ];
 
   return (
-    <Table
-      columns={['label', 'min', 'max']}
-      header={{
-        label: '',
-        min: 'Min Price',
-        max: 'Max Price'
-      }}
-      data={data}
-    />
+    <Fragment>
+      <Flex>
+        <H4 margin="0.5rem 0.5rem 0 0">Preview</H4>
+        <Popover
+          placement="top"
+          isOpen={isOpen}
+          target={
+            <Box
+              margin="0.5rem 0"
+              onMouseEnter={() => setIsOpen(true)}
+              onMouseLeave={() => setIsOpen(false)}
+            >
+              <Icon name="info" color={cssConstants.PRIMARY_BLUE} size={22} />
+            </Box>
+          }
+        >
+          The preview is calculated off the final values from Event Score and
+          Spring value in relation to modifiers that are entered.
+        </Popover>
+      </Flex>
+      <Box padding="10px">
+        <PricingTableHeader headers={['MIN PRICE', 'MAX PRICE']} />
+        {data.map((row, idx) => (
+          <Row
+            padding="14px 0"
+            direction="row"
+            minHeight="36px"
+            align="center"
+            key={idx}
+          >
+            <Box width="33%">
+              <Text color={cssConstants.PRIMARY_GRAY}>{row.label}</Text>
+            </Box>
+            <Box width="33%">
+              <Text
+                weight="heavy"
+                textAlign="right"
+                color={cssConstants.PRIMARY_BLUE}
+              >
+                {row.min}
+              </Text>
+            </Box>
+            <Box width="33%">
+              <Text
+                weight="heavy"
+                textAlign="right"
+                color={cssConstants.PRIMARY_BLUE}
+              >
+                {row.max}
+              </Text>
+            </Box>
+          </Row>
+        ))}
+      </Box>
+    </Fragment>
   );
 };

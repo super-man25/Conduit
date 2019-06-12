@@ -25,7 +25,12 @@ type Props = {
 
 export const Icon = ({ name, size, color }: Props) => {
   return (
-    <Svg color={color} width={`${size}px`} viewBox="0 0 24 24">
+    <Svg
+      color={color}
+      width={`${size}px`}
+      height={`${size}px`}
+      viewBox="0 0 24 24"
+    >
       {paths[name] &&
         paths[name].map((path, idx) => (
           <path d={path} key={`${name}-${idx}`} />

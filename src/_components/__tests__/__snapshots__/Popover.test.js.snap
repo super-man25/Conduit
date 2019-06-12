@@ -3,6 +3,14 @@
 exports[`Popover renders with caret hidden 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -44,6 +52,14 @@ Array [
 exports[`Popover renders with placement bottom 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -85,12 +101,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -101,12 +114,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -117,12 +127,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -133,12 +140,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {
@@ -165,6 +169,14 @@ Array [
 exports[`Popover renders with placement left 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -206,12 +218,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -222,12 +231,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -238,12 +244,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -254,12 +257,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {
@@ -286,6 +286,14 @@ Array [
 exports[`Popover renders with placement right 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -327,12 +335,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -343,12 +348,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -359,12 +361,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -375,12 +374,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {
@@ -407,6 +403,14 @@ Array [
 exports[`Popover renders with placement top 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -448,12 +452,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -464,12 +465,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -480,12 +478,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -496,12 +491,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {
@@ -528,6 +520,14 @@ Array [
 exports[`Popover renders with secondary theme 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -569,12 +569,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -585,12 +582,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -601,12 +595,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -617,12 +608,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {
@@ -649,6 +637,14 @@ Array [
 exports[`Popover renders with text align right 1`] = `
 Array [
   .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   max-width: 200px;
 }
 
@@ -690,12 +686,9 @@ Array [
 
 .c1[data-placement*='top'] {
   bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-bottom: -0.9rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='top']::before {
@@ -706,12 +699,9 @@ Array [
 
 .c1[data-placement*='bottom'] {
   top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   height: 1rem;
   margin-top: -0.4rem;
+  margin-left: -0.75rem;
 }
 
 .c1[data-placement*='bottom']::before {
@@ -722,12 +712,9 @@ Array [
 
 .c1[data-placement*='right'] {
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-left: -0.4rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='right']::before {
@@ -738,12 +725,9 @@ Array [
 
 .c1[data-placement*='left'] {
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 1rem;
   margin-right: 0.1rem;
+  margin-top: 0.75rem;
 }
 
 .c1[data-placement*='left']::before {

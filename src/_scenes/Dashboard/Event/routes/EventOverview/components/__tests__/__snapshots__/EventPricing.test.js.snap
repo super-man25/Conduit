@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c20 {
+.c14 {
   border: none;
-  min-width: 100px;
+  min-width: 0;
   padding: 1rem 2rem;
   text-align: center;
   border-radius: 3px;
@@ -12,34 +12,22 @@ exports[`renders correctly 1`] = `
   text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  background-color: #FFFFFF;
-  border: 2px solid #024A8F;
+  padding: 0;
   color: #024A8F;
-  -webkit-transition: border linear;
-  transition: border linear;
+  background-color: inherit;
 }
 
-.c20:disabled {
+.c14:disabled {
   cursor: not-allowed;
 }
 
-.c20:disabled {
-  border: 2px solid #999999;
-  color: #999999;
+.c14:disabled {
+  color: #D1D1D1;
   opacity: 0.5;
 }
 
-.c20:active {
-  background-color: #F0F4F7;
+.c14:hover:not(:disabled) {
   color: #38A9DB;
-  outline: 2px solid #38A9DB;
-  box-shadow: 0 0 3px rgba(56,169,219,100);
-}
-
-.c20:hover:not(:disabled) {
-  border: 3px solid #024A8F;
-  background-color: #F0F4F7;
-  color: #024A8F;
 }
 
 .c2 {
@@ -82,7 +70,7 @@ exports[`renders correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .c12 {
@@ -93,13 +81,74 @@ exports[`renders correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0.5rem 0;
 }
 
-.c21 {
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-top: 0.25rem;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  padding: 14px 0;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 33%;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,11 +159,18 @@ exports[`renders correctly 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 20px 0;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .c4 {
@@ -124,13 +180,67 @@ exports[`renders correctly 1`] = `
   margin: 0 2.5rem 0 0;
 }
 
-.c14 {
+.c13 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
+  margin: 0;
 }
 
-.c22 {
+.c15 {
+  padding: 10px;
+}
+
+.c17 {
+  width: 33%;
+}
+
+.c18 {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c20 {
+  font-size: undefinedpx;
+  color: #999999;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c21 {
+  font-size: undefinedpx;
+  color: #070707;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c24 {
+  font-size: undefinedpx;
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c25 {
+  font-size: undefinedpx;
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c29 {
   font-size: undefinedpx;
   color: #070707;
   margin: 0;
@@ -206,64 +316,14 @@ exports[`renders correctly 1`] = `
   cursor: not-allowed;
 }
 
-.c15 {
-  margin: 4px 0;
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  min-height: 24px;
 }
 
-.c16 {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-.c17 {
-  width: 60px;
-  margin-left: 16px;
-  display: inline-block;
-  text-align: right;
-  font-size: 1.125rem;
-}
-
-.c18 {
-  height: 1px;
-  width: 100%;
-  background-color: #aaa;
-}
-
-.c13 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 20px;
-}
-
-.c19 > *:not(:first-child) {
+.c26 > *:not(:first-child) {
   margin-left: 8px;
 }
 
@@ -271,7 +331,7 @@ exports[`renders correctly 1`] = `
   border: 1px solid #D1D1D1;
   border-top: none;
   padding: 18px 24px 30px;
-  padding: 0 !important;
+  padding: 20px 0 !important;
 }
 
 .c10 + .c9 {
@@ -343,204 +403,189 @@ exports[`renders correctly 1`] = `
       >
         <div
           className="c12"
-          direction="row"
         >
-          <div
+          <h4
             className="c13"
+            color="#070707"
           >
-            <h4
-              className="c14"
-              color="#070707"
-              style={
-                Object {
-                  "alignSelf": "flex-start",
-                  "margin": "0",
-                  "marginBottom": "12px",
-                  "padding": "0 4px",
-                }
-              }
-            >
-              Event Score
-            </h4>
-            <div
-              style={
-                Object {
-                  "maxWidth": "160px",
-                  "paddingLeft": "20px",
-                }
-              }
-            >
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Base:
-                </label>
-                <span
-                  className="c17"
-                >
-                  1.00
-                </span>
-              </div>
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Modifier:
-                </label>
-                <span
-                  className="c17"
-                >
-                  1.00
-                </span>
-              </div>
-              <div
-                className="c18"
-              />
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                    "fontWeight": 600,
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Final:
-                </label>
-                <span
-                  className="c17"
-                >
-                  2.00
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            className="c13"
-          >
-            <h4
-              className="c14"
-              color="#070707"
-              style={
-                Object {
-                  "alignSelf": "flex-start",
-                  "margin": "0",
-                  "marginBottom": "12px",
-                  "padding": "0 4px",
-                }
-              }
-            >
-              Spring Value
-            </h4>
-            <div
-              style={
-                Object {
-                  "maxWidth": "160px",
-                  "paddingLeft": "20px",
-                }
-              }
-            >
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Base:
-                </label>
-                <span
-                  className="c17"
-                >
-                  1.0000
-                </span>
-              </div>
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Modifier:
-                </label>
-                <span
-                  className="c17"
-                >
-                  1.0000
-                </span>
-              </div>
-              <div
-                className="c18"
-              />
-              <div
-                className="c15"
-                style={
-                  Object {
-                    "fontSize": "1.1rem",
-                    "fontWeight": 600,
-                  }
-                }
-              >
-                <label
-                  className="c16"
-                >
-                  Final:
-                </label>
-                <span
-                  className="c17"
-                >
-                  2.0000
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="c19"
-        >
+            Modifiers
+          </h4>
           <button
-            className="c20"
+            className="c14"
             onClick={[Function]}
+            style={
+              Object {
+                "fontWeight": 600,
+              }
+            }
           >
             Edit
           </button>
         </div>
+        <div
+          className="c15"
+        >
+          <div
+            className="c16"
+            direction="row"
+          >
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c18"
+                color="#999999"
+                size={14}
+              >
+                EVENT SCORE
+              </p>
+            </div>
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c18"
+                color="#999999"
+                size={14}
+              >
+                SPRING VALUE
+              </p>
+            </div>
+          </div>
+          <div
+            className="c19"
+            direction="row"
+          >
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c20"
+                color="#999999"
+              >
+                PREDICTED
+              </p>
+            </div>
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c21"
+              >
+                1.00
+              </p>
+            </div>
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c21"
+              >
+                1.0000
+              </p>
+            </div>
+          </div>
+          <div
+            className="c19"
+            direction="row"
+            style={
+              Object {
+                "borderBottom": "1px solid #EEEEEE",
+                "borderTop": "1px solid #EEEEEE",
+              }
+            }
+          >
+            <div
+              className="c22"
+              width="33%"
+            >
+              <p
+                className="c20"
+                color="#999999"
+              >
+                MODIFIER
+              </p>
+            </div>
+            <div
+              className="c23"
+              width="33%"
+            >
+              <p
+                className="c21"
+              >
+                1.00
+              </p>
+            </div>
+            <div
+              className="c23"
+              width="33%"
+            >
+              <p
+                className="c21"
+              >
+                1.0000
+              </p>
+            </div>
+          </div>
+          <div
+            className="c19"
+            direction="row"
+          >
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c24"
+              >
+                FINAL
+              </p>
+            </div>
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c25"
+              >
+                2.00
+              </p>
+            </div>
+            <div
+              className="c17"
+              width="33%"
+            >
+              <p
+                className="c25"
+              >
+                2.0000
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="c26"
+        />
       </div>
       <div
-        className="c21"
+        className="c27"
       >
-        <p
-          className="c22"
+        <div
+          className="c28"
+          direction="column"
+          width="100%"
         >
-          Nothing to preview
-        </p>
+          <p
+            className="c29"
+          >
+            Nothing to preview
+          </p>
+        </div>
       </div>
     </div>
   </section>

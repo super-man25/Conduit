@@ -79,6 +79,7 @@ exports[`should render correctly 1`] = `
         <svg
           className="c5"
           color="#808080"
+          height="24px"
           viewBox="0 0 24 24"
           width="24px"
         >
@@ -93,6 +94,7 @@ exports[`should render correctly 1`] = `
         <svg
           className="c5"
           color="#808080"
+          height="24px"
           viewBox="0 0 24 24"
           width="24px"
         >
@@ -196,6 +198,7 @@ exports[`should render correctly with optional props 1`] = `
         <svg
           className="c5"
           color="#000"
+          height="24px"
           viewBox="0 0 24 24"
           width="24px"
         >
@@ -210,6 +213,7 @@ exports[`should render correctly with optional props 1`] = `
         <svg
           className="c7"
           color="#808080"
+          height="24px"
           viewBox="0 0 24 24"
           width="24px"
         >
