@@ -94,7 +94,7 @@ export function* fetchAutomatedSpring(
     );
     yield put({
       type: types.FETCH_AUTOMATED_SPRING_VALUE_SUCCESS,
-      payload: springValue * 100
+      payload: springValue
     });
     yield put(paramsChanged(id));
   } catch (err) {

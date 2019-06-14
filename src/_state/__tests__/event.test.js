@@ -484,7 +484,7 @@ describe('sagas', () => {
 
     // success path
     const success = generator.clone();
-    expect(success.next(0.02).value).toEqual(
+    expect(success.next(2).value).toEqual(
       put({ type: types.FETCH_AUTOMATED_SPRING_VALUE_SUCCESS, payload: 2 })
     );
 
