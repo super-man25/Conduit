@@ -123,7 +123,9 @@ export class PricingRules extends React.Component<Props> {
         </PricingRuleFullContent>
         <Portal>
           {buyerTypesModalIsOpen && (
-            <BuyerTypeStatusModal buyerTypes={buyerTypes} />
+            <BuyerTypeStatusModal
+              buyerTypes={buyerTypes.filter((bt) => bt.isInPriceStructure)}
+            />
           )}
         </Portal>
       </PageWrapper>

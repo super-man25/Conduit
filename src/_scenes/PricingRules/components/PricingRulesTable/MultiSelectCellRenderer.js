@@ -22,12 +22,30 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
   };
 
   items = () => {
-    const { columnData } = this.props;
+    const { columnData, rulePropertyValue } = this.props;
     const { optionsKey, sortFn } = columnData;
 
-    return sortFn
-      ? [...columnData[optionsKey]].sort(sortFn)
-      : columnData[optionsKey];
+    const columnDataIds = columnData[optionsKey].map((option) => option.id);
+    const options =
+      optionsKey === 'buyerTypes'
+        ? columnData[optionsKey]
+            .filter(
+              (option) =>
+                option.isInPriceStructure ||
+                rulePropertyValue.includes(option.id)
+            )
+            .concat(
+              rulePropertyValue
+                .filter((rpv) => !columnDataIds.includes(rpv))
+                .map((rpv) => ({
+                  id: rpv,
+                  code: 'Unknown',
+                  publicDescription: rpv,
+                  isInPriceStructure: false
+                }))
+            )
+        : columnData[optionsKey];
+    return sortFn ? [...options].sort(sortFn) : options;
   };
 
   onItemClicked = (item: Option) => {
@@ -51,13 +69,27 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
 
   render() {
     const {
-      columnData: { label, labelFn, isGroupable },
+      columnData: { label, labelFn, isGroupable, optionsKey },
       rulePropertyValue,
       updatePriceRuleProperty,
       columnData
     } = this.props;
 
     const items = this.items();
+    const disabled =
+      optionsKey === 'buyerTypes'
+        ? columnData[optionsKey]
+            .filter((option) => !option.isInPriceStructure)
+            .map((option) => option.id)
+            .concat(
+              rulePropertyValue.filter(
+                (rpv) =>
+                  !columnData[optionsKey]
+                    .map((option) => option.id)
+                    .includes(rpv)
+              )
+            )
+        : [];
     const selectedNumber = rulePropertyValue.length;
 
     const cellLabel =
@@ -80,8 +112,8 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
         }
         return labelFn(option);
       })
-      .reduce((acc, description) => `${acc} ${description},`, '')
-      .slice(0, -1);
+      .reduce((acc, description) => `${acc} ${description},\n`, '')
+      .slice(0, -2);
 
     if (!this.props.isEditing) {
       return <Box title={selectedTitles}>{cellLabel}</Box>;
@@ -94,6 +126,7 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
         labelFn={labelFn}
         options={items}
         selected={rulePropertyValue}
+        disabled={disabled}
         label={label}
         cellLabel={cellLabel}
         toggleSelectAll={this.toggleSelectAll}

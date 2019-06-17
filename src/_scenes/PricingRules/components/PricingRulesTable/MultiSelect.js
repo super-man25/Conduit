@@ -25,6 +25,7 @@ type State = {
 type Props = {
   options: any[],
   selected: any[],
+  disabled: string[],
   labelFn: (option: any) => string,
   toggleSelectAll: (selectAllNext: boolean) => void,
   label: string,
@@ -112,6 +113,7 @@ export class MultiSelect extends React.Component<Props, State> {
       cellLabel,
       label,
       selected,
+      disabled,
       options,
       isGroupable,
       columnData,
@@ -140,6 +142,7 @@ export class MultiSelect extends React.Component<Props, State> {
         <MultiSelectView
           options={options}
           selected={selected}
+          disabled={disabled}
           labelFn={labelFn}
           onItemClicked={onItemClicked}
         />

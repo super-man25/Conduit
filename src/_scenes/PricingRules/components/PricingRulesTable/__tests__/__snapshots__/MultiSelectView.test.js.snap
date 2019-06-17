@@ -12,6 +12,7 @@ Array [
     >
       <styled.input
         checked={true}
+        disabled={false}
         onChange={[Function]}
       />
     </Flex>
@@ -26,6 +27,7 @@ Array [
     >
       <styled.input
         checked={false}
+        disabled={false}
         onChange={[Function]}
       />
     </Flex>

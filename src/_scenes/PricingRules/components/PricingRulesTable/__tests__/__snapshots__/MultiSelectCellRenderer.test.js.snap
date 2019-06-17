@@ -2,7 +2,8 @@
 
 exports[`<MultiSelectCellRenderer /> should render correctly 1`] = `
 <Styled(styled.div)
-  title=" DUGOUT, GOLD"
+  title=" DUGOUT,
+ GOLD"
 >
   2 Price Scales
 </Styled(styled.div)>

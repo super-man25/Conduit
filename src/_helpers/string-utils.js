@@ -244,6 +244,16 @@ export const sortAlphaNum = (a: any, b: any) => {
   return collator.compare(a, b);
 };
 
+export const compare = (a: string, b: string) => {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+};
+
 /**
  * Safely adds strings/numbers or returns '--'
  *

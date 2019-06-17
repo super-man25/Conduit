@@ -26,7 +26,7 @@ import {
   actions as eventCategoryActions,
   selectors as eventCategorySelectors
 } from '_state/eventCategory';
-import { formatUSD } from '_helpers/string-utils';
+import { formatUSD, compare } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
 import { CenteredLoader, Flex, FlexItem, Text } from '_components';
@@ -70,7 +70,23 @@ const columns = [
     dataKey: 'externalBuyerTypeIds',
     columnData: {
       optionsKey: 'buyerTypes',
-      sortFn: (first, second) => (first.code >= second.code ? 1 : -1),
+      sortFn: (first, second) => {
+        // Sort known codes first, then unknown
+        if (!first.isInPriceStructure && second.isInPriceStructure) {
+          return 1;
+        }
+        if (first.isInPriceStructure && !second.isInPriceStructure) {
+          return -1;
+        }
+
+        // Next, sort by code
+        if (first.code !== second.code) {
+          return compare(first.code, second.code);
+        }
+
+        // If codes are the same, then sort by public description
+        return compare(first.publicDescription, second.publicDescription);
+      },
       labelFn: (option, truncate = true) => {
         const labelText = !!option
           ? `${option.code} - ${option.publicDescription}`
