@@ -93,7 +93,7 @@ export type FetchAutomatedSpringValueErrorAction = {
   payload: Error
 };
 
-export type handleModifierChangeAction = {
+export type HandleModifierChangeAction = {
   type: 'event/HANDLE_MODIFIER_CHANGE',
   payload: { name: string, value: string }
 };
@@ -175,7 +175,7 @@ function fetchAutomatedSpringValue(
 function handleModifierChange(
   name: string,
   value: string
-): handleModifierChangeAction {
+): HandleModifierChangeAction {
   return {
     type: HANDLE_MODIFIER_CHANGE,
     payload: {
@@ -209,7 +209,8 @@ export type State = {
   +savingAdminModifiers: boolean,
   +fetchingSpring: boolean,
   +pendingFactors: PendingFactors,
-  +pricingError: ?Error
+  +pricingError: ?Error,
+  +springError: ?Error
 };
 
 export const initialState = {
@@ -225,7 +226,8 @@ export const initialState = {
     spring: null,
     springModifier: null
   },
-  pricingError: null
+  pricingError: null,
+  springError: null
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -314,7 +316,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         pendingFactors: { ...state.pendingFactors, spring: action.payload }
       };
     case FETCH_AUTOMATED_SPRING_VALUE_ERROR:
-      return { ...state, fetchingSpring: false };
+      return { ...state, fetchingSpring: false, springError: action.payload };
     case HANDLE_MODIFIER_CHANGE:
       const { name, value } = action.payload;
       return {

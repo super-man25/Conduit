@@ -13,7 +13,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding-top: 0.25rem;
 }
 
 .c1 {

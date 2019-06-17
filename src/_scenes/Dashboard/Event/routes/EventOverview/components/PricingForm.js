@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {
   AsyncButton,
@@ -43,6 +43,7 @@ type Props = {
   fetchAutomatedSpring: (id: number, eventScore: ?number) => void,
   onCancel: Function,
   pricingError: ?Error,
+  pricingPreviewError: ?Error,
   submitting: boolean
 };
 
@@ -58,11 +59,11 @@ export const PricingForm = (props: Props) => {
     fetchAutomatedSpring,
     eventId,
     pricingError,
+    pricingPreviewError,
     submitting
   } = props;
 
   const [isEditing, setIsEditing] = useState(false);
-  const [isDirty, setIsDirty] = useState(false);
   const [timer, setTimer] = useState(null);
 
   // fires request only when user stops typing for 0.5 seconds to prevent over-firing
@@ -77,14 +78,17 @@ export const PricingForm = (props: Props) => {
   };
 
   const handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
-    setIsDirty(true);
     onChange(e);
   };
 
   const handleCancel = () => {
     onCancel();
-    setIsDirty(false);
     setIsEditing(false);
+  };
+
+  const handleSubmit = () => {
+    setIsEditing(false);
+    onSubmit();
   };
 
   useEffect(() => (pricingError ? setIsEditing(true) : setIsEditing(false)), [
@@ -92,8 +96,8 @@ export const PricingForm = (props: Props) => {
   ]);
 
   return (
-    <Fragment>
-      <Flex margin="0.5rem 0" alignContent="center" justify="space-between">
+    <>
+      <Flex margin="0.5rem 0" align="center" justify="space-between">
         <H4 margin="0">Modifiers</H4>
         {!isEditing && (
           <TextButton
@@ -101,12 +105,13 @@ export const PricingForm = (props: Props) => {
             minWidth="0"
             padding="0"
             onClick={() => setIsEditing(true)}
+            disabled={pricingPreviewError}
           >
             Edit
           </TextButton>
         )}
       </Flex>
-      <Box padding="10px">
+      <Box padding="1.5rem">
         <PricingTableHeader headers={['EVENT SCORE', 'SPRING VALUE']} />
         <Flex padding="14px 0" direction="row" minHeight="36px" align="center">
           <Box width="33%">
@@ -186,18 +191,18 @@ export const PricingForm = (props: Props) => {
       </Box>
       <ButtonGroup>
         {isEditing && (
-          <Fragment>
+          <>
             <AsyncButton
               isLoading={submitting}
-              disabled={submitting || !isDirty}
-              onClick={onSubmit}
+              disabled={submitting}
+              onClick={handleSubmit}
             >
               Save
             </AsyncButton>
             <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
-          </Fragment>
+          </>
         )}
       </ButtonGroup>
-    </Fragment>
+    </>
   );
 };

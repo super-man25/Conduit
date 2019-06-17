@@ -5,14 +5,13 @@ exports[`renders correctly with no props 1`] = `
   position: absolute;
   right: 24px;
   top: 24px;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 18px;
   width: 357px;
   height: 90px;
   background-color: #FFFFFF;
-  border: 1px solid;
   border-color: #2F6450;
-  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   visibility: hidden;
 }
 
@@ -26,14 +25,13 @@ exports[`renders correctly with show = true & no type prop 1`] = `
   position: absolute;
   right: 24px;
   top: 24px;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 18px;
   width: 357px;
   height: 90px;
   background-color: #FFFFFF;
-  border: 1px solid;
   border-color: #2F6450;
-  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   visibility: visible;
 }
 
@@ -47,14 +45,13 @@ exports[`renders correctly with show = true & type = api-error 1`] = `
   position: absolute;
   right: 24px;
   top: 24px;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 18px;
   width: 357px;
   height: 90px;
   background-color: #FFFFFF;
-  border: 1px solid;
   border-color: #DC0A0A;
-  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   visibility: visible;
 }
 
@@ -69,14 +66,13 @@ exports[`renders correctly with show = true & type = api-success 1`] = `
   position: absolute;
   right: 24px;
   top: 24px;
-  z-index: 9999;
+  z-index: 1000;
   font-size: 18px;
   width: 357px;
   height: 90px;
   background-color: #FFFFFF;
-  border: 1px solid;
   border-color: #2F6450;
-  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   visibility: visible;
 }
 

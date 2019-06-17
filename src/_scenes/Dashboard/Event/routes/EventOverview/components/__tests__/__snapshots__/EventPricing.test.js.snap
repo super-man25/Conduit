@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c31 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c31 path {
+  fill: #024A8F;
+}
+
 .c14 {
   border: none;
   min-width: 0;
@@ -64,12 +73,10 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 100%;
   padding: 0 20px;
 }
 
@@ -85,9 +92,10 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0.5rem 0;
 }
 
@@ -103,7 +111,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding-top: 0.25rem;
 }
 
 .c19 {
@@ -153,27 +160,16 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.c28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.c29 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -206,12 +202,23 @@ exports[`renders correctly 1`] = `
   margin: 0;
 }
 
+.c28 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
 .c15 {
-  padding: 10px;
+  padding: 1.5rem;
 }
 
 .c17 {
   width: 33%;
+}
+
+.c30 {
+  margin: 0.5rem 0;
 }
 
 .c18 {
@@ -268,6 +275,10 @@ exports[`renders correctly 1`] = `
   border-radius: 6px 6px 0 0;
   padding: 0 24px;
   height: 56px;
+}
+
+.c29 {
+  display: inline-block;
 }
 
 .c8 {
@@ -342,7 +353,15 @@ exports[`renders correctly 1`] = `
   border: 1px solid #D1D1D1;
   border-top: none;
   padding: 18px 24px 30px;
-  padding: 20px 0 !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
 }
 
 .c10 + .c9 {
@@ -401,207 +420,231 @@ exports[`renders correctly 1`] = `
     className="c9 c10"
   >
     <div
-      className="c3"
+      className="c11"
+      direction="column"
+      style={
+        Object {
+          "borderRight": "1px solid #D1D1D1",
+        }
+      }
+      width="100%"
     >
       <div
-        className="c11"
-        direction="column"
-        style={
-          Object {
-            "borderRight": "1px solid #D1D1D1",
-          }
-        }
+        className="c12"
       >
-        <div
-          className="c12"
+        <h4
+          className="c13"
+          color="#070707"
         >
-          <h4
-            className="c13"
-            color="#070707"
-          >
-            Modifiers
-          </h4>
-          <button
-            className="c14"
-            onClick={[Function]}
-            style={
-              Object {
-                "fontWeight": 600,
-              }
+          Modifiers
+        </h4>
+        <button
+          className="c14"
+          onClick={[Function]}
+          style={
+            Object {
+              "fontWeight": 600,
             }
-          >
-            Edit
-          </button>
-        </div>
-        <div
-          className="c15"
+          }
         >
-          <div
-            className="c16"
-            direction="row"
-          >
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c18"
-                color="#999999"
-                size={14}
-              >
-                EVENT SCORE
-              </p>
-            </div>
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c18"
-                color="#999999"
-                size={14}
-              >
-                SPRING VALUE
-              </p>
-            </div>
-          </div>
-          <div
-            className="c19"
-            direction="row"
-          >
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c20"
-                color="#999999"
-              >
-                PREDICTED
-              </p>
-            </div>
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c21"
-              >
-                1.00
-              </p>
-            </div>
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c21"
-              >
-                1.0000
-              </p>
-            </div>
-          </div>
-          <div
-            className="c19"
-            direction="row"
-            style={
-              Object {
-                "borderBottom": "1px solid #EEEEEE",
-                "borderTop": "1px solid #EEEEEE",
-              }
-            }
-          >
-            <div
-              className="c22"
-              width="33%"
-            >
-              <p
-                className="c20"
-                color="#999999"
-              >
-                MODIFIER
-              </p>
-            </div>
-            <div
-              className="c23"
-              width="33%"
-            >
-              <p
-                className="c21"
-              >
-                1.00
-              </p>
-            </div>
-            <div
-              className="c23"
-              width="33%"
-            >
-              <p
-                className="c21"
-              >
-                1.0000
-              </p>
-            </div>
-          </div>
-          <div
-            className="c19"
-            direction="row"
-          >
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c24"
-              >
-                FINAL
-              </p>
-            </div>
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c25"
-              >
-                2.00
-              </p>
-            </div>
-            <div
-              className="c17"
-              width="33%"
-            >
-              <p
-                className="c25"
-              >
-                2.0000
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="c26"
-        />
+          Edit
+        </button>
       </div>
       <div
-        className="c27"
+        className="c15"
       >
         <div
-          className="c28"
-          direction="column"
-          width="100%"
+          className="c16"
+          direction="row"
         >
           <div
-            className="c29"
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c18"
+              color="#999999"
+              size={14}
+            >
+              EVENT SCORE
+            </p>
+          </div>
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c18"
+              color="#999999"
+              size={14}
+            >
+              SPRING VALUE
+            </p>
+          </div>
+        </div>
+        <div
+          className="c19"
+          direction="row"
+        >
+          <div
+            className="c17"
+            width="33%"
           >
             <p
               className="c20"
               color="#999999"
             >
-              No Price Preview
+              PREDICTED
+            </p>
+          </div>
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c21"
+            >
+              1.00
+            </p>
+          </div>
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c21"
+            >
+              1.0000
             </p>
           </div>
         </div>
+        <div
+          className="c19"
+          direction="row"
+          style={
+            Object {
+              "borderBottom": "1px solid #EEEEEE",
+              "borderTop": "1px solid #EEEEEE",
+            }
+          }
+        >
+          <div
+            className="c22"
+            width="33%"
+          >
+            <p
+              className="c20"
+              color="#999999"
+            >
+              MODIFIER
+            </p>
+          </div>
+          <div
+            className="c23"
+            width="33%"
+          >
+            <p
+              className="c21"
+            >
+              1.00
+            </p>
+          </div>
+          <div
+            className="c23"
+            width="33%"
+          >
+            <p
+              className="c21"
+            >
+              1.0000
+            </p>
+          </div>
+        </div>
+        <div
+          className="c19"
+          direction="row"
+        >
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c24"
+            >
+              FINAL
+            </p>
+          </div>
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c25"
+            >
+              2.00
+            </p>
+          </div>
+          <div
+            className="c17"
+            width="33%"
+          >
+            <p
+              className="c25"
+            >
+              2.0000
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c26"
+      />
+    </div>
+    <div
+      className="c11"
+      direction="column"
+      width="100%"
+    >
+      <div
+        className="c27"
+      >
+        <h4
+          className="c28"
+          color="#070707"
+        >
+          Preview
+        </h4>
+        <div
+          className="c29"
+        >
+          <div
+            className="c30"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              className="c31"
+              color="#024A8F"
+              height="22px"
+              viewBox="0 0 24 24"
+              width="22px"
+            >
+              <path
+                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c32"
+      >
+        <p
+          className="c20"
+          color="#999999"
+        >
+          No Price Preview
+        </p>
       </div>
     </div>
   </section>

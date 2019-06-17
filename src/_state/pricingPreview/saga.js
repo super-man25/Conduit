@@ -14,6 +14,7 @@ export function* fetchPricingPreview(action) {
 
   const newEventScore = eventScore + (+eventScoreModifier || 0);
   const newSpring = spring + (+springModifier || 0);
+
   yield put({ type: t.FETCH_ASYNC });
 
   // Make request

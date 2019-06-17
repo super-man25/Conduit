@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { cssConstants } from '_constants';
+import { cssConstants, shadows, zIndexes } from '_constants';
 import { Icon } from './Icon';
 
 type Props = {
@@ -17,17 +17,16 @@ export const ApiAlertDiv: React.ComponentType<{}> = styled.div`
   position: absolute;
   right: 24px;
   top: 24px;
-  z-index: 9999;
+  z-index: ${zIndexes.BASE};
   font-size: 18px;
   width: 357px;
   height: 90px;
   background-color: ${cssConstants.PRIMARY_WHITE};
-  border: 1px solid;
   border-color: ${(props) =>
     props.type === 'api-error'
       ? cssConstants.SECONDARY_RED
       : cssConstants.SECONDARY_GREEN};
-  box-shadow: 1px 2px 4px 1px #aaaaaa;
+  box-shadow: ${shadows.SMALL};
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
 `;
 

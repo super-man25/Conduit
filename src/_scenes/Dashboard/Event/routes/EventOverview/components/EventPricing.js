@@ -26,7 +26,9 @@ import type { EDEvent, PendingFactors } from '_models';
 import type { EDPricingPreview } from '_models/pricingPreview';
 
 const PaddedPanelContent = styled(PanelContent)`
-  padding: 20px 0 !important;
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-around;
 `;
 
 type Props = {
@@ -41,7 +43,8 @@ type Props = {
   pendingFactors: PendingFactors,
   pricingPreview: {
     record: EDPricingPreview,
-    loading: boolean
+    loading: boolean,
+    error: Error
   },
   handleModifierChange: Function,
   resetFactors: Function,
@@ -57,7 +60,8 @@ export const EventPricingPresenter = (props: Props) => {
       eventScore,
       eventScoreModifier,
       spring,
-      springModifier
+      springModifier,
+      springError
     },
     togglingBroadcasting,
     setBroadcasting,
@@ -69,7 +73,7 @@ export const EventPricingPresenter = (props: Props) => {
     pendingFactors,
     handleModifierChange,
     resetFactors,
-    pricingPreview: { record, loading },
+    pricingPreview,
     pricingError,
     savingAdminModifiers
   } = props;
@@ -127,37 +131,34 @@ export const EventPricingPresenter = (props: Props) => {
         </Flex>
       </PanelHeader>
       <PaddedPanelContent>
-        <Flex>
-          <Flex
-            flex={1}
-            direction="column"
-            padding="0 20px"
-            style={{
-              borderRight: `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`
+        <Flex
+          direction="column"
+          padding="0 20px"
+          width="100%"
+          style={{
+            borderRight: `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`
+          }}
+        >
+          <PricingForm
+            pricingError={pricingError}
+            pricingPreviewError={pricingPreview.error}
+            onChange={handleChange}
+            onCancel={handleCancel}
+            fetchAutomatedSpring={fetchAutomatedSpring}
+            onSubmit={handleSubmit}
+            initialValues={{
+              eventScore,
+              eventScoreModifier,
+              spring,
+              springModifier
             }}
-          >
-            <PricingForm
-              pricingError={pricingError}
-              onChange={handleChange}
-              onCancel={handleCancel}
-              fetchAutomatedSpring={fetchAutomatedSpring}
-              onSubmit={handleSubmit}
-              initialValues={{
-                eventScore,
-                eventScoreModifier,
-                spring,
-                springModifier
-              }}
-              pendingFactors={pendingFactors}
-              eventId={id}
-              submitting={savingAdminModifiers}
-            />
-          </Flex>
-          <Flex flex={1}>
-            <Flex direction="column" padding="0 20px" width="100%">
-              <PricingPreview pricingPreview={record} loading={loading} />
-            </Flex>
-          </Flex>
+            pendingFactors={pendingFactors}
+            eventId={id}
+            submitting={savingAdminModifiers}
+          />
+        </Flex>
+        <Flex direction="column" padding="0 20px" width="100%">
+          <PricingPreview {...pricingPreview} springError={springError} />
         </Flex>
       </PaddedPanelContent>
     </Panel>

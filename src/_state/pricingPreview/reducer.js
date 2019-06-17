@@ -2,8 +2,8 @@ import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
 
 export const initialState = {
   loading: false,
-  record: undefined,
-  error: undefined
+  record: null,
+  error: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -19,13 +19,14 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
+        error: null,
         record: action.payload
       };
     case FETCH_ERROR:
       return {
         ...state,
         loading: false,
-        error: undefined
+        error: action.payload
       };
     default:
       return state;

@@ -43,9 +43,10 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0.5rem 0;
 }
 
@@ -89,7 +90,6 @@ Array [
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding-top: 0.25rem;
 }
 
 .c4 {
@@ -135,7 +135,7 @@ Array [
 }
 
 .c0 {
-  padding: 10px;
+  padding: 1.5rem;
 }
 
 .c2 {

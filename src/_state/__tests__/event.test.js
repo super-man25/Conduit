@@ -308,17 +308,22 @@ describe('reducer', () => {
   it('should handle FETCH_AUTOMATED_SPRING_VALUE_ERROR', () => {
     const prevState = {
       ...initialState,
-      fetchingSpring: true
+      fetchingSpring: true,
+      springError: null
     };
 
+    const message = 'Unable to fetch automated spring value';
+
     const action = {
-      type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR
+      type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR,
+      payload: message
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      fetchingSpring: false
+      fetchingSpring: false,
+      springError: message
     });
   });
 
@@ -499,10 +504,6 @@ describe('sagas', () => {
         type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR,
         payload: error
       })
-    );
-
-    expect(fail.next().value).toEqual(
-      put(alertActions.error('Unable to fetch predicted spring value'))
     );
 
     expect(fail.next().value).toEqual(put(paramsChanged(action.payload.id)));

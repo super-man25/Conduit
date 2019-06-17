@@ -1,0 +1,473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  .c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #024A8F;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.c3 {
+  margin: 0.5rem 0;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+<div
+    className="c0"
+  >
+    <h4
+      className="c1"
+      color="#070707"
+    >
+      Preview
+    </h4>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          className="c4"
+          color="#024A8F"
+          height="22px"
+          viewBox="0 0 24 24"
+          width="22px"
+        >
+          <path
+            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 {
+  padding: 1.5rem;
+}
+
+.c2 {
+  width: 33%;
+}
+
+.c3 {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c5 {
+  font-size: undefinedpx;
+  color: #999999;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c6 {
+  font-size: undefinedpx;
+  font-weight: 700;
+  color: #024A8F;
+  margin: 0;
+  text-align: right;
+  cursor: default;
+  font-style: undefined;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  padding: 14px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.c4:last-child {
+  border-bottom: none;
+}
+
+<div
+    className="c0"
+  >
+    <div
+      className="c1"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c3"
+          color="#999999"
+          size={14}
+        >
+          MIN PRICE
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c3"
+          color="#999999"
+          size={14}
+        >
+          MAX PRICE
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c5"
+          color="#999999"
+        >
+          EVENT
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $NaN
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $NaN
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`renders the error preview 1`] = `
+Array [
+  .c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #024A8F;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.c3 {
+  margin: 0.5rem 0;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+<div
+    className="c0"
+  >
+    <h4
+      className="c1"
+      color="#070707"
+    >
+      Preview
+    </h4>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          className="c4"
+          color="#024A8F"
+          height="22px"
+          viewBox="0 0 24 24"
+          width="22px"
+        >
+          <path
+            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  .c1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c1 path {
+  fill: #DC0A0A;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.c2 {
+  font-size: undefinedpx;
+  color: #B80C09;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+<div
+    className="c0"
+    direction="column"
+    width="50%"
+  >
+    <svg
+      className="c1"
+      color="#DC0A0A"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+    >
+      <path
+        d="M11,15 L13,15 L13,17 L11,17 L11,15 Z M11,7 L13,7 L13,13 L11,13 L11,7 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 L11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 L12,20 Z"
+      />
+    </svg>
+    <p
+      className="c2"
+      color="#B80C09"
+    >
+      A server error has occured, please contact
+       
+      <a
+        href="mailto:support@eventdynamic.com"
+        style={
+          Object {
+            "color": "#B80C09",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        support@eventdynamic.com.
+      </a>
+    </p>
+  </div>,
+]
+`;
+
+exports[`renders the loading preview 1`] = `
+Array [
+  .c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #024A8F;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.c3 {
+  margin: 0.5rem 0;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+<div
+    className="c0"
+  >
+    <h4
+      className="c1"
+      color="#070707"
+    >
+      Preview
+    </h4>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          className="c4"
+          color="#024A8F"
+          height="22px"
+          viewBox="0 0 24 24"
+          width="22px"
+        >
+          <path
+            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: auto;
+}
+
+.c1 {
+  font-size: undefinedpx;
+  color: #024A8F;
+  margin: 0;
+  cursor: default;
+  font-style: undefined;
+}
+
+<div
+    className="c0"
+  >
+    <p
+      className="c1"
+      color="#024A8F"
+    >
+      Loading Price Preview...
+    </p>
+  </div>,
+]
+`;

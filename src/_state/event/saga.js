@@ -99,7 +99,6 @@ export function* fetchAutomatedSpring(
     yield put(paramsChanged(id));
   } catch (err) {
     yield put({ type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR, payload: err });
-    yield put(alertActions.error('Unable to fetch predicted spring value'));
     yield put(paramsChanged(id));
   }
 }
