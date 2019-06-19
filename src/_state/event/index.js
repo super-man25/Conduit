@@ -221,10 +221,10 @@ export const initialState = {
   savingAdminModifiers: false,
   fetchingSpring: false,
   pendingFactors: {
-    eventScore: null,
-    eventScoreModifier: null,
-    spring: null,
-    springModifier: null
+    eventScore: undefined,
+    eventScoreModifier: undefined,
+    spring: undefined,
+    springModifier: undefined
   },
   pricingError: null,
   springError: null
@@ -316,7 +316,13 @@ export const reducer = (state: State = initialState, action: Action) => {
         pendingFactors: { ...state.pendingFactors, spring: action.payload }
       };
     case FETCH_AUTOMATED_SPRING_VALUE_ERROR:
-      return { ...state, fetchingSpring: false, springError: action.payload };
+      const { pendingFactors } = state;
+      return {
+        ...state,
+        fetchingSpring: false,
+        springError: action.payload,
+        pendingFactors: { ...pendingFactors, spring: undefined }
+      };
     case HANDLE_MODIFIER_CHANGE:
       const { name, value } = action.payload;
       return {

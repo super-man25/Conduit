@@ -323,7 +323,11 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       fetchingSpring: false,
-      springError: message
+      springError: message,
+      pendingFactors: {
+        ...prevState.pendingFactors,
+        spring: undefined
+      }
     });
   });
 
