@@ -6,17 +6,15 @@ import {
   TooltipBodyTitle,
   TooltipBodyText
 } from '../ChartTooltip';
-import { format } from 'date-fns';
-import { DATE_FORMATS } from '_constants';
 
 type TooltipContentProps = {
   active?: boolean,
   payload?: any,
-  dateFormat: string
+  dateFormatter: (Date) => string
 };
 
 export function CumulativeInventoryTooltip(props: TooltipContentProps) {
-  const { payload, active, dateFormat } = props;
+  const { payload, active, dateFormatter } = props;
 
   if (!active || !payload || !payload.length) {
     return null;
@@ -28,21 +26,9 @@ export function CumulativeInventoryTooltip(props: TooltipContentProps) {
     ? dataPoint.projectedInventory
     : dataPoint.inventory;
 
-  const header =
-    dateFormat === DATE_FORMATS.day ? (
-      <TooltipHeaderText>
-        {format(dataPoint.timestamp, dateFormat)}
-      </TooltipHeaderText>
-    ) : (
-      <React.Fragment>
-        <TooltipHeaderText>
-          {format(dataPoint.timestamp, DATE_FORMATS.day)}
-        </TooltipHeaderText>
-        <TooltipHeaderText>
-          {format(dataPoint.timestamp, DATE_FORMATS.time)}
-        </TooltipHeaderText>
-      </React.Fragment>
-    );
+  const header = (
+    <TooltipHeaderText>{dateFormatter(dataPoint.timestamp)}</TooltipHeaderText>
+  );
 
   const body = (
     <React.Fragment>

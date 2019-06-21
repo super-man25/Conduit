@@ -17,7 +17,7 @@ const createProps = () => ({
       timestamp: 1529336865706
     }
   ],
-  dateFormat: DATE_FORMATS.day,
+  dateFormatter: (d) => d.toString,
   renderNoData: () => <div />
 });
 

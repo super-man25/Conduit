@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { actions as seasonStatActions } from '_state/seasonStat';
-import { differenceInCalendarDays } from 'date-fns';
 import styled from 'styled-components';
 import RevenueBreakdown from './RevenueBreakdown';
 import {
@@ -32,15 +31,17 @@ import {
 } from '_components';
 import {
   cssConstants,
-  DATE_FORMATS,
   CHART_HEIGHT,
-  GROUP_FILTERS
+  GROUP_FILTERS,
+  CONCISE_READABLE_DATETIME_FORMAT,
+  READABLE_DATE_FORMAT
 } from '_constants';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import { selectors as seasonSelectors } from '_state/season';
 import { getSeasonStatState } from '_state/seasonStat/selectors';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
 import type { EDSeason } from '_models';
+import { dateFormatter } from '_helpers';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -141,16 +142,24 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         dateRange: { from, to },
         dateLimits,
         selectedGroupFilter,
-        seasonStats
+        seasonStats,
+        seasonStatsMeta
       },
       seasonStatActions: { setDateRange, setGroupFilter },
       selectedSeason: { startTimestamp, endTimestamp }
     } = this.props;
 
-    const tooltipDateFormat =
-      from && to && differenceInCalendarDays(to, from) <= 7
-        ? DATE_FORMATS.datetime
-        : DATE_FORMATS.day;
+    const chartDateFormatter = (function() {
+      const { timeZone, interval } = seasonStatsMeta || {};
+      if (interval === 'Hours') {
+        return dateFormatter(CONCISE_READABLE_DATETIME_FORMAT, timeZone);
+      }
+      if (interval === 'Days') {
+        return dateFormatter(READABLE_DATE_FORMAT, timeZone);
+      }
+      // Fallback to Days
+      return dateFormatter(READABLE_DATE_FORMAT, timeZone);
+    })();
 
     return (
       <Tabbable>
@@ -234,7 +243,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <PeriodicRevenueChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -243,7 +252,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <CumulativeRevenueChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -255,7 +264,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <PeriodicInventoryChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -264,7 +273,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <CumulativeInventoryChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}

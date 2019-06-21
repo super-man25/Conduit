@@ -188,7 +188,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         content={
           <PeriodicInventoryTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}
@@ -415,7 +415,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         animationEasing="ease"
         content={
           <PeriodicInventoryTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}

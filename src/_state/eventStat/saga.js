@@ -40,12 +40,12 @@ export function* fetchEventTimeStats() {
     const { from, to } = yield select(getEventStatFilterArguments);
     const { id: eventId } = yield select(eventSelectors.selectEvent);
 
-    const events = yield call(eventStatService.getAll, {
+    const timeStatsResponse = yield call(eventStatService.getAll, {
       eventId,
       start: from,
       end: to
     });
-    yield put({ type: FETCH_SUCCESS, payload: events });
+    yield put({ type: FETCH_SUCCESS, payload: timeStatsResponse });
   } catch (err) {
     yield put({ type: FETCH_ERROR, payload: err });
   }

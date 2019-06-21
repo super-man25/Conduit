@@ -188,7 +188,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         animationEasing="ease"
         content={
           <PeriodicRevenueTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}
@@ -415,7 +415,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         animationEasing="ease"
         content={
           <PeriodicRevenueTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}

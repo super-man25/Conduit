@@ -6,8 +6,6 @@ import {
   TooltipBodyTitle,
   TooltipBodyText
 } from '../ChartTooltip';
-import { format } from 'date-fns';
-import { DATE_FORMATS } from '_constants';
 
 const CHART_KEYS = {
   actual: 'periodicInventory',
@@ -17,11 +15,11 @@ const CHART_KEYS = {
 type TooltipContentProps = {
   active?: boolean,
   payload?: any,
-  dateFormat: string
+  dateFormatter: (Date) => string
 };
 
 export function PeriodicInventoryTooltip(props: TooltipContentProps) {
-  const { payload, active, dateFormat } = props;
+  const { payload, active, dateFormatter } = props;
 
   if (!active || !payload || !payload.length) {
     return null;
@@ -33,21 +31,9 @@ export function PeriodicInventoryTooltip(props: TooltipContentProps) {
     ? dataPoint[CHART_KEYS.projected]
     : dataPoint[CHART_KEYS.actual];
 
-  const header =
-    dateFormat === DATE_FORMATS.day ? (
-      <TooltipHeaderText>
-        {format(dataPoint.timestamp, dateFormat)}
-      </TooltipHeaderText>
-    ) : (
-      <React.Fragment>
-        <TooltipHeaderText>
-          {format(dataPoint.timestamp, DATE_FORMATS.day)}
-        </TooltipHeaderText>
-        <TooltipHeaderText>
-          {format(dataPoint.timestamp, DATE_FORMATS.time)}
-        </TooltipHeaderText>
-      </React.Fragment>
-    );
+  const header = (
+    <TooltipHeaderText>{dateFormatter(dataPoint.timestamp)}</TooltipHeaderText>
+  );
 
   const body = (
     <React.Fragment>

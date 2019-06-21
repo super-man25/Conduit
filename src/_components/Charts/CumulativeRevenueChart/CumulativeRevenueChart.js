@@ -11,7 +11,6 @@ import {
   Tooltip
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
-import { format } from 'date-fns';
 import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
 import { CumulativeRevenueTooltip } from './CumulativeRevenueTooltip';
@@ -40,14 +39,14 @@ function formatCumulativeRevenueData(data: EventStat[]) {
 type Props = {
   height: number,
   data: EventStat[],
-  dateFormat: string,
+  dateFormatter: (Date) => string,
   renderNoData: () => React.Node
 };
 
 export function CumulativeRevenueChart({
   height,
   data,
-  dateFormat,
+  dateFormatter,
   renderNoData
 }: Props) {
   if (!data.length) {
@@ -60,7 +59,7 @@ export function CumulativeRevenueChart({
         <LineChart data={formatCumulativeRevenueData(data)}>
           <XAxis
             dataKey="timestamp"
-            tickFormatter={(tick) => format(tick, dateFormat)}
+            tickFormatter={dateFormatter}
             tick={{ fontSize: 10 }}
           >
             <Label
@@ -115,7 +114,7 @@ export function CumulativeRevenueChart({
               strokeWidth: 2,
               opacity: 0.5
             }}
-            content={<CumulativeRevenueTooltip dateFormat={dateFormat} />}
+            content={<CumulativeRevenueTooltip dateFormatter={dateFormatter} />}
           />
         </LineChart>
       </ResponsiveContainer>

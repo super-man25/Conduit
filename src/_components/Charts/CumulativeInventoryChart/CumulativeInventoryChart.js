@@ -40,14 +40,14 @@ function formatCumulativeInventoryData(data: EventStat[]) {
 type Props = {
   height: number,
   data: EventStat[],
-  dateFormat: string,
+  dateFormatter: (Date) => string,
   renderNoData: () => React.Node
 };
 
 export function CumulativeInventoryChart({
   height,
   data,
-  dateFormat,
+  dateFormatter,
   renderNoData
 }: Props) {
   if (!data.length) {
@@ -60,7 +60,7 @@ export function CumulativeInventoryChart({
         <LineChart data={formatCumulativeInventoryData(data)}>
           <XAxis
             dataKey="timestamp"
-            tickFormatter={(tick) => format(tick, dateFormat)}
+            tickFormatter={dateFormatter}
             tick={{ fontSize: 10 }}
           >
             <Label
@@ -115,7 +115,9 @@ export function CumulativeInventoryChart({
               strokeWidth: 2,
               opacity: 0.5
             }}
-            content={<CumulativeInventoryTooltip dateFormat={dateFormat} />}
+            content={
+              <CumulativeInventoryTooltip dateFormatter={dateFormatter} />
+            }
           />
         </LineChart>
       </ResponsiveContainer>

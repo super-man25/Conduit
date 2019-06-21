@@ -103,17 +103,27 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       loading: true,
-      seasonStats: []
+      seasonStats: [],
+      seasonStatsMeta: null
     };
 
     const seasonStats = [1, 2, 3];
-    const action = { type: FETCH_SUCCESS, payload: seasonStats };
+    const seasonStatsMeta = {
+      interval: 'Days',
+      timeZone: 'America/Chicago'
+    };
+    const seasonStatsResponse = {
+      data: seasonStats,
+      meta: seasonStatsMeta
+    };
+    const action = { type: FETCH_SUCCESS, payload: seasonStatsResponse };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      seasonStats
+      seasonStats,
+      seasonStatsMeta
     });
   });
 
@@ -139,6 +149,10 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       eventStats: [1, 2, 3],
+      seasonStatsMeta: {
+        interval: 'Days',
+        timeZone: 'America/Chicago'
+      },
       selectedGroupFilter: 1,
       selectedDateFilter: 1,
       dateFilter: {

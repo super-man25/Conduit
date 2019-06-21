@@ -45,14 +45,14 @@ type Props = {
   height: number,
   data: EventStat[],
   renderNoData?: () => React.Node,
-  dateFormat: string
+  dateFormatter: (Date) => string
 };
 
 export const PeriodicRevenueChart = ({
   height,
   data,
   renderNoData,
-  dateFormat
+  dateFormatter
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -67,7 +67,7 @@ export const PeriodicRevenueChart = ({
 
           <XAxis
             dataKey="timestamp"
-            tickFormatter={(tick) => format(tick, dateFormat)}
+            tickFormatter={dateFormatter}
             tick={{ fontSize: 10 }}
           >
             <Label
@@ -112,7 +112,7 @@ export const PeriodicRevenueChart = ({
               fill: cssConstants.SECONDARY_LIGHT_BLUE
             }}
             animationDuration={500}
-            content={<PeriodicRevenueTooltip dateFormat={dateFormat} />}
+            content={<PeriodicRevenueTooltip dateFormatter={dateFormatter} />}
           />
         </BarChart>
       </ResponsiveContainer>

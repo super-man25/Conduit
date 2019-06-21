@@ -7,53 +7,76 @@ import {
   isToday
 } from 'date-fns';
 import { formatToTimeZone } from 'date-fns-timezone';
+import { ISO_DATE_FORMAT } from '_constants';
 
-const customTimeZoneFormats = [
-  {
-    name: 'america/new_york',
-    format: 'ET'
-  }
-];
+/**
+ * Shorten time zone codes so 'EST' becomes 'ET' for example
+ *
+ * @param {string} dateString
+ */
+function shortenTimeZone(dateString: string): string {
+  const timeZoneRegex = /([A-Z])[SD](T)/;
+  return dateString.replace(timeZoneRegex, '$1$2');
+}
+
+/**
+ * Generic date format function that shortens time zones so 'EST' becomes 'ET' for example
+ *
+ * @param {Date} d date object to format
+ * @param {string} format date-fns-timezone compatible format string
+ * @param {string} timeZone time zone string like 'America/New_York'
+ */
+export function formatDate(d: Date, format: string, timeZone: string): string {
+  const str = formatToTimeZone(d, format, { timeZone });
+  return shortenTimeZone(str);
+}
+
+/**
+ * Higher order function to create a date formatter function that turns dates
+ * into string representations using the formatDate function
+ *
+ * @param {string} format date-fns-timezone compatible format string
+ * @param {string} timeZone canonical time zone string like 'America/New_York'
+ */
+export function dateFormatter(
+  format: string,
+  timeZone: string
+): (Date) => string {
+  return (d: Date) => formatDate(d, format, timeZone);
+}
 
 /**
  * Return a date as a string
  *
  * @param {Date} d - date to format
- * @param {*} timeZone - timeZone override, default system timezone
+ * @param {sring} timeZone - timeZone override, default system timezone
  */
-export function readableDate(d: Date, timeZone: ?string): string {
-  if (!timeZone) return format(d, 'ddd, M/DD/YY @ h:mm A');
-  const customTimeZone = customTimeZoneFormats.find(
-    (tz) => timeZone && tz.name === timeZone.toLowerCase()
-  );
-  if (customTimeZone)
-    return `${formatToTimeZone(d, 'ddd, M/DD/YY @ h:mm A', { timeZone })} ${
-      customTimeZone.format
-    }`;
-  return formatToTimeZone(d, 'ddd, M/DD/YY @ h:mm A z', { timeZone });
+export function readableDate(d: Date, timeZone: string): string {
+  return formatDate(d, 'ddd, M/DD/YY @ h:mm A z', timeZone);
 }
 
 /**
  * Format date and time
- * *
- * @param {*} d - date to format
- * @param {*} timeZone - timeZone override, default system timezone
+ *
+ * @param {Date} d - date to format
+ * @param {string} timeZone - timeZone override, default system timezone
  */
-export function readableDateAndTime(d: Date, timeZone: ?string) {
-  if (!timeZone) return format(d, 'dddd, MMMM Do, YYYY @ h:mm A');
-  const customTimeZone = customTimeZoneFormats.find(
-    (tz) => timeZone && tz.name === timeZone.toLowerCase()
-  );
-  if (customTimeZone)
-    return `${formatToTimeZone(d, 'dddd, MMMM Do, YYYY @ h:mm A', {
-      timeZone
-    })} ${customTimeZone.format}`;
-  return formatToTimeZone(d, 'dddd, MMMM Do, YYYY @ h:mm A z', { timeZone });
+export function readableDateAndTime(d: Date, timeZone: string) {
+  return formatDate(d, 'dddd, MMMM Do, YYYY @ h:mm A z', timeZone);
+}
+
+/**
+ * Format a JS date a san ISO date string, e.g. "2019-01-01"
+ *
+ * @param {Date} date JS date
+ */
+export function isoDateFormat(date: Date) {
+  return format(date, ISO_DATE_FORMAT);
 }
 
 /**
  * Format time
- * *
+ *
  * @param {*} d - date to format
  * @param {*} timeZone - timeZone override, default system timezone
  */
@@ -96,6 +119,7 @@ export function orDash(value: any): string {
 
 /**
  * Given a number, format it as USD. Limits value to cents
+ *
  * @param {number} value
  */
 type USDFormatOptions = {
@@ -145,7 +169,7 @@ export function formatDecimal(
   return value.toFixed(decimalPoints);
 }
 
-/*
+/**
  * Validate Email
  *
  * @param {any} email

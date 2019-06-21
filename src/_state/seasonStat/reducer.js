@@ -12,13 +12,14 @@ import {
   DOWNLOAD_SEASON_REPORT_ERROR
 } from './actions';
 import type { Action } from './actions';
-import type { EventStat } from '_models';
+import type { EventStat, EventStatsMeta } from '_models';
 import type { Filter, DateRange } from '_helpers/types';
 
 export type SeasonStatState = {
   +loading: boolean,
   +downloading: boolean,
   +seasonStats: EventStat[],
+  +seasonStatsMeta: ?EventStatsMeta,
   +groupFilters: Filter[],
   +selectedGroupFilter: number,
   +dateLimits: DateRange,
@@ -32,6 +33,7 @@ export const initialState: SeasonStatState = {
   loading: false,
   downloading: false,
   seasonStats: [],
+  seasonStatsMeta: null,
   groupFilters: [
     { label: 'Periodic', value: 0 },
     { label: 'Cumulative', value: 1 }
@@ -63,7 +65,8 @@ export default function eventStatReducer(
       return {
         ...state,
         loading: false,
-        seasonStats: action.payload
+        seasonStats: action.payload.data,
+        seasonStatsMeta: action.payload.meta
       };
     case FETCH_ERROR:
       return { ...state, loading: false };

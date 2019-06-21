@@ -188,7 +188,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         content={
           <CumulativeInventoryTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}
@@ -416,7 +416,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         animationEasing="ease"
         content={
           <CumulativeInventoryTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}

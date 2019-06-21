@@ -1,6 +1,7 @@
 import fetchMock from 'fetch-mock';
 import { eventStatService } from '../eventStats';
 import { stringify } from 'querystring';
+import { isoDateFormat } from '_helpers';
 
 const eventStats = [
   {
@@ -39,7 +40,7 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      startTime: start.toISOString(),
+      startTime: isoDateFormat(start),
       timezone
     };
 
@@ -60,7 +61,7 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      endTime: end.toISOString(),
+      endTime: isoDateFormat(end),
       timezone
     };
 
@@ -82,8 +83,8 @@ describe('get all', () => {
 
     const params = {
       eventId,
-      startTime: start.toISOString(),
-      endTime: end.toISOString(),
+      startTime: isoDateFormat(start),
+      endTime: isoDateFormat(end),
       timezone
     };
 

@@ -37,12 +37,12 @@ export function* fetchSeasonTimeStats(action) {
     let { from, to } = yield select(getSeasonStatFilterArguments);
     const seasonId = yield select(selectors.selectActiveSeasonId);
 
-    const events = yield call(eventStatService.getAll, {
+    const timeStatsResponse = yield call(eventStatService.getAll, {
       seasonId,
       start: from,
       end: to
     });
-    yield put({ type: FETCH_SUCCESS, payload: events });
+    yield put({ type: FETCH_SUCCESS, payload: timeStatsResponse });
   } catch (err) {
     yield put({ type: FETCH_ERROR, payload: err });
   }

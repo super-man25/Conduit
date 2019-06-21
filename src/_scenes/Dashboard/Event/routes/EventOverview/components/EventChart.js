@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
-import { differenceInCalendarDays } from 'date-fns';
 import { actions as eventStatActions } from '_state/eventStat';
 import {
   Spacing,
@@ -30,9 +29,10 @@ import {
 } from '_components';
 import {
   cssConstants,
-  DATE_FORMATS,
   CHART_HEIGHT,
-  GROUP_FILTERS
+  GROUP_FILTERS,
+  CONCISE_READABLE_DATETIME_FORMAT,
+  READABLE_DATE_FORMAT
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
 import { selectors } from '_state/event';
@@ -41,6 +41,7 @@ import { getEventStatState } from '_state/eventStat/selectors';
 import { EDEvent, EDSeason } from '_models';
 import { createStructuredSelector } from 'reselect';
 import typeof EventStatActions from '_state/eventStat/actions';
+import { dateFormatter } from '_helpers';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -140,17 +141,25 @@ export class EventChart extends React.Component<Props> {
         dateRange: { from, to },
         eventDateLimits,
         selectedGroupFilter,
-        eventStats
+        eventStats,
+        eventStatsMeta
       },
       eventStatActions: { setDateRange, setGroupFilter },
       selectedSeason: { startTimestamp },
       activeEvent: { timestamp }
     } = this.props;
 
-    const tooltipDateFormat =
-      from && to && differenceInCalendarDays(to, from) <= 7
-        ? DATE_FORMATS.datetime
-        : DATE_FORMATS.day;
+    const chartDateFormatter = (function() {
+      const { timeZone } = eventStatsMeta || {};
+      if (!!eventStatsMeta && eventStatsMeta.interval === 'Hours') {
+        return dateFormatter(CONCISE_READABLE_DATETIME_FORMAT, timeZone);
+      }
+      if (!!eventStatsMeta && eventStatsMeta.interval === 'Days') {
+        return dateFormatter(READABLE_DATE_FORMAT, timeZone);
+      }
+      // Fallback to Days
+      return dateFormatter(READABLE_DATE_FORMAT, timeZone);
+    })();
 
     return (
       <Tabbable>
@@ -234,7 +243,7 @@ export class EventChart extends React.Component<Props> {
                       <PeriodicRevenueChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -243,7 +252,7 @@ export class EventChart extends React.Component<Props> {
                       <CumulativeRevenueChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -255,7 +264,7 @@ export class EventChart extends React.Component<Props> {
                       <PeriodicInventoryChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -264,7 +273,7 @@ export class EventChart extends React.Component<Props> {
                       <CumulativeInventoryChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormat={tooltipDateFormat}
+                        dateFormatter={chartDateFormatter}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}

@@ -12,7 +12,6 @@ import {
   ReferenceLine
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
-import { format } from 'date-fns';
 import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicInventoryTooltip } from './PeriodicInventoryTooltip';
@@ -45,14 +44,14 @@ type Props = {
   height: number,
   data: EventStat[],
   renderNoData?: () => React.Node,
-  dateFormat: string
+  dateFormatter: (Date) => string
 };
 
 export const PeriodicInventoryChart = ({
   height,
   data,
   renderNoData,
-  dateFormat
+  dateFormatter
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -67,7 +66,7 @@ export const PeriodicInventoryChart = ({
 
           <XAxis
             dataKey="timestamp"
-            tickFormatter={(tick) => format(tick, dateFormat)}
+            tickFormatter={dateFormatter}
             tick={{ fontSize: 10 }}
           >
             <Label
@@ -111,7 +110,7 @@ export const PeriodicInventoryChart = ({
               opacity: 0.4
             }}
             animationDuration={500}
-            content={<PeriodicInventoryTooltip dateFormat={dateFormat} />}
+            content={<PeriodicInventoryTooltip dateFormatter={dateFormatter} />}
           />
         </BarChart>
       </ResponsiveContainer>

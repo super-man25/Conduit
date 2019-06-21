@@ -19,7 +19,8 @@ const createProps = () => ({
     seasonId: 1,
     timestamp: 1529336865706,
     venueId: 1,
-    revenue: 739472
+    revenue: 739472,
+    timeZone: 'America/Chicago'
   },
   availableInventory: 100,
   totalInventory: 1000,

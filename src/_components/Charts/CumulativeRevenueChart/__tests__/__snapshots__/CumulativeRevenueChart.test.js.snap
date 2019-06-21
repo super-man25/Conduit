@@ -188,7 +188,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         animationEasing="ease"
         content={
           <CumulativeRevenueTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}
@@ -416,7 +416,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         animationEasing="ease"
         content={
           <CumulativeRevenueTooltip
-            dateFormat="MMM DD, YYYY"
+            dateFormatter={[Function]}
           />
         }
         contentStyle={Object {}}

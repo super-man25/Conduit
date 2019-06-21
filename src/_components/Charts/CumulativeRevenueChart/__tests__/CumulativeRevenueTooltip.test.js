@@ -1,8 +1,9 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import { CumulativeRevenueTooltip } from '../CumulativeRevenueTooltip';
-import { DATE_FORMATS } from '_constants';
+import React from 'react';
+import { READABLE_DATETIME_FORMAT } from '_constants';
+import { dateFormatter } from '_helpers';
 import { mockDateFnsFormat } from '_helpers/test-utils';
+import { CumulativeRevenueTooltip } from '../CumulativeRevenueTooltip';
 
 jest.mock('date-fns', () => ({
   format: (date, format) => mockDateFnsFormat(date, format)
@@ -24,7 +25,7 @@ const createProps = () => ({
       }
     }
   ],
-  dateFormat: DATE_FORMATS.day
+  dateFormatter: (d) => d.toString
 });
 
 describe('<CumulativeRevenueTooltip />', () => {
@@ -46,7 +47,10 @@ describe('<CumulativeRevenueTooltip />', () => {
   });
 
   it('should render correctly with different dateformats ', () => {
-    const props = { ...createProps(), dateFormat: DATE_FORMATS.time };
+    const props = {
+      ...createProps(),
+      dateFormatter: dateFormatter(READABLE_DATETIME_FORMAT, 'America/New_York')
+    };
     const wrapper = shallow(<CumulativeRevenueTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

@@ -1,12 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { READABLE_DATETIME_FORMAT } from '_constants';
 import { CumulativeInventoryTooltip } from '../CumulativeInventoryTooltip';
-import { DATE_FORMATS } from '_constants';
-import { mockDateFnsFormat } from '_helpers/test-utils';
-
-jest.mock('date-fns', () => ({
-  format: (date, format) => mockDateFnsFormat(date, format)
-}));
+import { dateFormatter } from '_helpers';
 
 const createProps = () => ({
   active: true,
@@ -24,7 +20,7 @@ const createProps = () => ({
       }
     }
   ],
-  dateFormat: DATE_FORMATS.day
+  dateFormatter: (d) => d.toString
 });
 
 describe('<CumulativeInventoryTooltip />', () => {
@@ -46,7 +42,10 @@ describe('<CumulativeInventoryTooltip />', () => {
   });
 
   it('should render correctly with different dateformats ', () => {
-    const props = { ...createProps(), dateFormat: DATE_FORMATS.time };
+    const props = {
+      ...createProps(),
+      dateFormatter: dateFormatter(READABLE_DATETIME_FORMAT, 'America/New_York')
+    };
     const wrapper = shallow(<CumulativeInventoryTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

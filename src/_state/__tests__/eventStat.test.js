@@ -104,17 +104,27 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       loading: true,
-      eventStats: []
+      eventStats: [],
+      eventStatsMeta: null
     };
 
     const eventStats = [1, 2, 3];
-    const action = { type: FETCH_SUCCESS, payload: eventStats };
+    const eventStatsMeta = {
+      interval: 'So meta',
+      timeZone: 'America/New_York'
+    };
+    const eventStatsResponse = {
+      data: eventStats,
+      meta: eventStatsMeta
+    };
+    const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      eventStats
+      eventStats,
+      eventStatsMeta
     });
   });
 
@@ -140,6 +150,10 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       eventStats: [1, 2, 3],
+      eventStatsMeta: {
+        interval: 'So meta',
+        timeZone: 'America/New_York'
+      },
       selectedGroupFilter: 1,
       selectedDateFilter: 1,
       dateFilter: {

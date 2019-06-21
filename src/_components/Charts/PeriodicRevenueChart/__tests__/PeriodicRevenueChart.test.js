@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { PeriodicRevenueChart } from '../PeriodicRevenueChart';
-import { DATE_FORMATS } from '_constants';
 
 const createProps = () => ({
   height: 400,
@@ -17,7 +16,7 @@ const createProps = () => ({
       timestamp: 1529336865706
     }
   ],
-  dateFormat: DATE_FORMATS.day,
+  dateFormatter: (d) => d.toString(),
   renderNoData: () => <div />
 });
 

@@ -14,7 +14,7 @@ exports[`<PeriodicRevenueTooltip /> should render correctly 1`] = `
   }
   headerComponent={
     <ForwardRef(styled.p)>
-      2018-06-18T15:47:45.706Z @MMM DD, YYYY
+      1529336865706
     </ForwardRef(styled.p)>
   }
 />
@@ -37,14 +37,9 @@ exports[`<PeriodicRevenueTooltip /> should render correctly with different datef
     </React.Fragment>
   }
   headerComponent={
-    <React.Fragment>
-      <ForwardRef(styled.p)>
-        2018-06-18T15:47:45.706Z @MMM DD, YYYY
-      </ForwardRef(styled.p)>
-      <ForwardRef(styled.p)>
-        2018-06-18T15:47:45.706Z @hh:mm a
-      </ForwardRef(styled.p)>
-    </React.Fragment>
+    <ForwardRef(styled.p)>
+      Monday, June 18th, 2018 @ 11:47 AM ET
+    </ForwardRef(styled.p)>
   }
 />
 `;

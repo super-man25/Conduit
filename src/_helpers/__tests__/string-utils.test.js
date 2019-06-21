@@ -15,22 +15,11 @@ import {
 } from '_helpers/string-utils';
 
 describe('readableDate', () => {
-  it('should format the date to the correct format', () => {
-    const date = new Date('2018-04-17T19:28:43+00:00');
-    const readable = readableDate(date);
-    expect(typeof readable).toBe('string');
-
-    // Explicit check commented out because there's not a good way to write a resilient
-    // test that works across timezones because the date-fns format uses the system
-    // timezone
-    // expect(readable).toBe('Tue, 4/17/18 @ 2:28PM');
-  });
-
   it('should format the date to the correct format given a timeZone', () => {
     const date = new Date('2019-05-16T00:35:00Z');
     const timeZone = 'America/Chicago';
     const readable = readableDate(date, timeZone);
-    expect(readable).toBe('Wed, 5/15/19 @ 7:35 PM CDT');
+    expect(readable).toBe('Wed, 5/15/19 @ 7:35 PM CT');
   });
 
   it('should format the date to the correct format given a timeZone', () => {
@@ -46,11 +35,9 @@ describe('readableDateAndTime', () => {
     const date = new Date('2019-05-16T00:35:00Z');
     const timeZone = 'America/Chicago';
     const readable = readableDateAndTime(date, timeZone);
-    expect(readable).toBe('Wednesday, May 15th, 2019 @ 7:35 PM CDT');
+    expect(readable).toBe('Wednesday, May 15th, 2019 @ 7:35 PM CT');
   });
-});
 
-describe('readableDateAndTime', () => {
   it('should format the date to the correct format given a timeZone', () => {
     const date = new Date('2019-05-16T00:35:00Z');
     const timeZone = 'America/New_York';

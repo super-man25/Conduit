@@ -46,7 +46,7 @@ exports[`<EventHeader /> should render correctly 1`] = `
         Some Event
       </Styled(Styled(styled.h1))>
       <Styled(Styled(styled.h4))>
-        2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+        Monday, June 18th, 2018 @ 10:47 AM CT
       </Styled(Styled(styled.h4))>
     </FlexItem>
     <Flex
@@ -151,7 +151,7 @@ exports[`<EventHeader /> should render correctly when on the location route 1`] 
         Some Event
       </Styled(Styled(styled.h1))>
       <Styled(Styled(styled.h4))>
-        2018-06-18T15:47:45.706Z @dddd, MMMM Do, YYYY @ h:mm A
+        Monday, June 18th, 2018 @ 10:47 AM CT
       </Styled(Styled(styled.h4))>
     </FlexItem>
     <Flex

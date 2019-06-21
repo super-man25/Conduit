@@ -12,13 +12,14 @@ import {
   DOWNLOAD_EVENT_REPORT_ERROR
 } from './actions';
 import type { Action } from './actions';
-import type { EventStat } from '_models';
+import type { EventStat, EventStatsMeta } from '_models';
 import type { Filter, DateRange } from '_helpers/types';
 
 export type EventStatState = {
   +loading: boolean,
   +downloading: boolean,
   +eventStats: EventStat[],
+  +eventStatsMeta: ?EventStatsMeta,
   +groupFilters: Filter[],
   +selectedGroupFilter: number,
   +eventDateLimits: DateRange,
@@ -31,6 +32,7 @@ export const initialState: EventStatState = {
   loading: false,
   downloading: false,
   eventStats: [],
+  eventStatsMeta: null,
   groupFilters: [
     { label: 'Periodic', value: 0 },
     { label: 'Cumulative', value: 1 }
@@ -55,7 +57,12 @@ export default function eventStatReducer(
     case FETCH_ASYNC:
       return { ...state, loading: true };
     case FETCH_SUCCESS:
-      return { ...state, loading: false, eventStats: action.payload };
+      return {
+        ...state,
+        loading: false,
+        eventStats: action.payload.data,
+        eventStatsMeta: action.payload.meta
+      };
     case FETCH_ERROR:
       return { ...state, loading: false };
     case RESET:

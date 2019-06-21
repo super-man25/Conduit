@@ -10,3 +10,8 @@ export type EventStat = {
   isProjected: boolean,
   timestamp: number
 };
+
+export type EventStatsMeta = {
+  timeZone: String,
+  interval: 'Days' | 'Hours'
+};
