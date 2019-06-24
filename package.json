@@ -29,7 +29,7 @@
     "redux": "^4.0.1",
     "redux-saga": "^1.0.3",
     "reselect": "^4.0.0",
-    "styled-components": "^4.2.1",
+    "styled-components": "^4.3.2",
     "vanilla-autofill-event": "^1.0.3",
     "yup": "^0.27.0"
   },
