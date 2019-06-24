@@ -7,8 +7,8 @@ type DateRange = { start?: Date, end: Date };
 
 function formatDateParams({ start, end, ...rest }) {
   const res = { ...rest };
-  if (start) res.startTime = isoDateFormat(start);
-  if (end) res.endTime = isoDateFormat(end);
+  if (start) res.startDate = isoDateFormat(start);
+  if (end) res.endDate = isoDateFormat(end);
   res.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return res;

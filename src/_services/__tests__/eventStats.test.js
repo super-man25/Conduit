@@ -34,13 +34,13 @@ describe('get all', () => {
     });
   });
 
-  it('should get all with a startTime', () => {
+  it('should get all with a startDate', () => {
     const eventId = 1;
     const start = new Date();
 
     const params = {
       eventId,
-      startTime: isoDateFormat(start),
+      startDate: isoDateFormat(start),
       timezone
     };
 
@@ -55,13 +55,13 @@ describe('get all', () => {
     });
   });
 
-  it('should get all with a endTime', () => {
+  it('should get all with a endDate', () => {
     const eventId = 1;
     const end = new Date();
 
     const params = {
       eventId,
-      endTime: isoDateFormat(end),
+      endDate: isoDateFormat(end),
       timezone
     };
 
@@ -76,15 +76,15 @@ describe('get all', () => {
     });
   });
 
-  it('should get all with a startTime & endTime', () => {
+  it('should get all with a startDate & endDate', () => {
     const eventId = 1;
     const end = new Date();
     const start = new Date();
 
     const params = {
       eventId,
-      startTime: isoDateFormat(start),
-      endTime: isoDateFormat(end),
+      startDate: isoDateFormat(start),
+      endDate: isoDateFormat(end),
       timezone
     };
 
