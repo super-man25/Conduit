@@ -12,7 +12,6 @@ import {
   ReferenceLine
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
-import { format } from 'date-fns';
 import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicRevenueTooltip } from './PeriodicRevenueTooltip';

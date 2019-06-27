@@ -6,6 +6,7 @@ export { default as saga } from './saga';
 const FETCH_PRICE_SCALES = 'priceScale/FETCH_PRICE_SCALES';
 const FETCH_PRICE_SCALES_SUCCESS = 'priceScale/FETCH_PRICE_SCALES_SUCCESS';
 const FETCH_PRICE_SCALES_ERROR = 'priceScale/FETCH_PRICE_SCALES_ERROR';
+const RESET_PRICE_SCALES = 'priceScale/RESET_PRICE_SCALES';
 
 // Action types
 export type FetchPriceScaleAction = {
@@ -22,15 +23,21 @@ export type FetchPriceScaleErrorAction = {
   payload: Error
 };
 
+export type ResetPriceScaleAction = {
+  type: 'priceScale/RESET_PRICE_SCALES'
+};
+
 export type Action =
   | FetchPriceScaleAction
   | FetchPriceScaleSuccessAction
-  | FetchPriceScaleErrorAction;
+  | FetchPriceScaleErrorAction
+  | ResetPriceScaleAction;
 
 export const types = {
   FETCH_PRICE_SCALES,
   FETCH_PRICE_SCALES_SUCCESS,
-  FETCH_PRICE_SCALES_ERROR
+  FETCH_PRICE_SCALES_ERROR,
+  RESET_PRICE_SCALES
 };
 
 // Actions
@@ -38,8 +45,13 @@ const fetchPriceScales = (): FetchPriceScaleAction => ({
   type: FETCH_PRICE_SCALES
 });
 
+const resetPriceScales = (): ResetPriceScaleAction => ({
+  type: RESET_PRICE_SCALES
+});
+
 export const actions = {
-  fetchPriceScales
+  fetchPriceScales,
+  resetPriceScales
 };
 
 // State/reducer
@@ -67,6 +79,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       return { ...state, loading: false, priceScales: action.payload };
     case FETCH_PRICE_SCALES_ERROR:
       return { ...state, loading: false, error: action.payload };
+    case RESET_PRICE_SCALES:
+      return { ...initialState };
     default:
       return state;
   }

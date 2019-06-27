@@ -11,7 +11,7 @@ function fetch() {
   };
 }
 
-function clear() {
+function resetTeamStat() {
   return {
     type: RESET
   };
@@ -19,5 +19,5 @@ function clear() {
 
 export default {
   fetch,
-  clear
+  resetTeamStat
 };

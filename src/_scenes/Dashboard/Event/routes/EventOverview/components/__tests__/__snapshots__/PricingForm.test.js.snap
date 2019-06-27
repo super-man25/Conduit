@@ -147,16 +147,12 @@ Array [
   color: #999999;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c5 {
   font-size: undefinedpx;
   color: #999999;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c6 {
@@ -164,8 +160,6 @@ Array [
   color: #070707;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c9 {
@@ -173,8 +167,6 @@ Array [
   font-weight: 700;
   color: #070707;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c10 {
@@ -183,8 +175,6 @@ Array [
   color: #070707;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 <div

@@ -1,4 +1,5 @@
 const BASE = 1000;
+const OVERLAY = BASE + 100;
 
 export const cssConstants = {
   PRIMARY_EVEN_LIGHTER_GRAY: '#F2F2F2',
@@ -58,5 +59,7 @@ export const shadows = {
 export const zIndexes = {
   BASE,
   DROPDOWN_FILTER: BASE + 1,
-  POPOVER: BASE + 2
+  POPOVER: BASE + 2,
+  OVERLAY,
+  DROPDOWN_CLIENT_HEADER: OVERLAY + 1
 };

@@ -20,7 +20,7 @@ describe('actions', () => {
   });
 
   it('should create an action to clear teamStats', () => {
-    const action = actions.clear();
+    const action = actions.resetTeamStat();
     expect(action).toEqual({
       type: RESET
     });

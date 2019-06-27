@@ -61,7 +61,8 @@ export function readableDate(d: Date, timeZone: string): string {
  * @param {Date} d - date to format
  * @param {string} timeZone - timeZone override, default system timezone
  */
-export function readableDateAndTime(d: Date, timeZone: string) {
+export function readableDateAndTime(d: Date, timeZone?: string) {
+  if (!timeZone) return format(d, 'dddd, MMMM Do, YYYY @ h:mm A');
   return formatDate(d, 'dddd, MMMM Do, YYYY @ h:mm A z', timeZone);
 }
 

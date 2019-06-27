@@ -15,9 +15,11 @@ import {
 } from './';
 import { push } from 'connected-react-router';
 import { actions } from '_state/auth';
+import { actions as clientActions } from '_state/client';
 import { Box } from './StyledTags';
 import { Flex } from './Flex';
 import { titleCase } from '_helpers';
+import type { EDClient, EDClientList } from '_models';
 
 export const SiteHeaderDiv = styled.div`
   display: flex;
@@ -68,13 +70,16 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
 `);
 
 type Props = {
-  push: (path: string) => void,
   auth: {
     firstName: string,
     lastName: string
   },
+  client: EDClient,
+  clientList: EDClientList,
+  hasTicketsDotComIntegration: boolean,
+  push: (path: string) => void,
   signOut: () => void,
-  hasTicketsDotComIntegration: boolean
+  updateClient: () => void
 };
 
 type State = {
@@ -119,15 +124,25 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   };
 
   render() {
-    const { hasTicketsDotComIntegration } = this.props;
+    const {
+      auth,
+      client,
+      hasTicketsDotComIntegration,
+      clientList,
+      updateClient
+    } = this.props;
 
     return (
       <SiteHeaderDiv>
         <LogoName onClick={this.handleLogoClick} />
         <Flex>
-          <UserWelcome data-test-id="user-name-text">
-            {this.buildUsername()}
-          </UserWelcome>
+          <UserWelcome
+            firstName={auth.firstName}
+            lastName={auth.lastName}
+            client={client}
+            clientList={clientList}
+            updateClient={updateClient}
+          />
           <PositionBox>
             <SprocketMenu
               id="sprocket"
@@ -174,15 +189,21 @@ export class SiteHeaderPresenter extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ auth, client }) => ({
+const mapStateToProps = ({ auth, client, clientList }) => ({
   auth: auth.model,
+  client,
+  clientList,
   hasTicketsDotComIntegration: client.integrations.some(
     (integration) =>
       integration.name === integrationConstants.ticketsDotCom.name
   )
 });
 
-const mapDispatchToProps = { push, signOut: actions.signOut };
+const mapDispatchToProps = {
+  push,
+  signOut: actions.signOut,
+  updateClient: clientActions.update
+};
 
 export const SiteHeader = connect(
   mapStateToProps,

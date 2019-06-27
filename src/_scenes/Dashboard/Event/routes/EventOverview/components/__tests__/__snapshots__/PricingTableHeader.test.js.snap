@@ -24,8 +24,6 @@ exports[`renders correctly 1`] = `
   color: #999999;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 <div

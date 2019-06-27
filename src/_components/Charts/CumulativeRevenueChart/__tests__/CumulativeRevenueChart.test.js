@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { CumulativeRevenueChart } from '../CumulativeRevenueChart';
-import { DATE_FORMATS } from '_constants';
 
 const createProps = () => ({
   height: 400,

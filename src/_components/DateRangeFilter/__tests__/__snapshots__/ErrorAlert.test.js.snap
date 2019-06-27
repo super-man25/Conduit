@@ -30,8 +30,6 @@ exports[`renders correctly 1`] = `
   font-size: 12px;
   color: #DC0A0A;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
   padding-left: 5px;
 }
 

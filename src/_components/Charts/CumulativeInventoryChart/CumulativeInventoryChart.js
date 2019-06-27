@@ -11,7 +11,6 @@ import {
   Tooltip
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
-import { format } from 'date-fns';
 import { ChartContainer } from '_components';
 import { CumulativeInventoryTooltip } from './CumulativeInventoryTooltip';
 import { truncateNumber } from '_helpers/string-utils';

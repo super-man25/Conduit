@@ -191,13 +191,20 @@ function resetToInitialFactors(): ResetToInitialFactorsAction {
   };
 }
 
+function resetEvent(): ResetEventAction {
+  return {
+    type: RESET
+  };
+}
+
 export const actions = {
   fetchEvent,
   setEventBroadcasting,
   saveAdminModifiers,
   fetchAutomatedSpringValue,
   handleModifierChange,
-  resetToInitialFactors
+  resetToInitialFactors,
+  resetEvent
 };
 
 // State/Reducer

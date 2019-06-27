@@ -11,6 +11,7 @@ const UPDATE_BUYER_TYPES_SUCCESS = 'buyerType/UPDATE_BUYER_TYPES_SUCCESS';
 const UPDATE_BUYER_TYPES_ERROR = 'buyerType/UPDATE_BUYER_TYPES_ERROR';
 const OPEN_BUYER_TYPES_MODAL = 'buyerType/OPEN_BUYER_TYPES_MODAL';
 const CLOSE_BUYER_TYPES_MODAL = 'buyerType/CLOSE_BUYER_TYPES_MODAL';
+const RESET_BUYER_TYPES = 'buyerType/RESET_BUYER_TYPES';
 
 // Action types
 export type FetchBuyerTypesAction = {
@@ -68,7 +69,8 @@ export const types = {
   UPDATE_BUYER_TYPES_SUCCESS,
   UPDATE_BUYER_TYPES_ERROR,
   OPEN_BUYER_TYPES_MODAL,
-  CLOSE_BUYER_TYPES_MODAL
+  CLOSE_BUYER_TYPES_MODAL,
+  RESET_BUYER_TYPES
 };
 
 // Actions
@@ -91,11 +93,16 @@ const closeBuyerTypesModal = (): CloseBuyerTypesModalAction => ({
   type: CLOSE_BUYER_TYPES_MODAL
 });
 
+const resetBuyerTypes = () => ({
+  type: RESET_BUYER_TYPES
+});
+
 export const actions = {
   fetchBuyerTypes,
   updateBuyerTypes,
   openBuyerTypesModal,
-  closeBuyerTypesModal
+  closeBuyerTypesModal,
+  resetBuyerTypes
 };
 
 // State/reducer
@@ -145,6 +152,10 @@ export const reducer = (state: State = initialState, action: Action) => {
       return { ...state, modalIsOpen: true };
     case CLOSE_BUYER_TYPES_MODAL:
       return { ...state, modalIsOpen: false, error: null };
+    case RESET_BUYER_TYPES:
+      return {
+        ...initialState
+      };
     default:
       return state;
   }

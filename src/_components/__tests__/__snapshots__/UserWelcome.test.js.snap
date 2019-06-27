@@ -1,49 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with a valid user prop 1`] = `
-.c0 {
-  height: 70px;
-  line-height: 70px;
-  width: auto;
-  float: right;
-  margin: 0;
-  padding: 0;
-  padding-right: 15px;
-  font-size: 13px;
-  font-weight: lighter;
-  -webkit-letter-spacing: 0.05em;
-  -moz-letter-spacing: 0.05em;
-  -ms-letter-spacing: 0.05em;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  background: 'none';
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-<div
-  className="c0"
-/>
-`;
-
-exports[`renders correctly with no props 1`] = `
-.c0 {
-  height: 70px;
-  line-height: 70px;
-  width: auto;
-  float: right;
-  margin: 0;
-  padding: 0;
-  padding-right: 15px;
-  font-size: 13px;
-  font-weight: lighter;
-  -webkit-letter-spacing: 0.05em;
-  -moz-letter-spacing: 0.05em;
-  -ms-letter-spacing: 0.05em;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  background: 'none';
+.c7 path {
+  fill: #FFFFFF;
 }
 
-<div
-  className="c0"
-/>
+.c1 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  padding: 8px;
+  color: #024A8F;
+  background-color: inherit;
+}
+
+.c1:disabled {
+  cursor: not-allowed;
+}
+
+.c1:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c1:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 300px;
+}
+
+.c3 {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  overflow: hidden;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-size: 14px;
+  color: #FFFFFF;
+  margin: 0 0 4px 0;
+  text-align: right;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 4px 0;
+}
+
+.c5 {
+  font-size: 12px;
+  color: #4B98CF;
+  margin: 0;
+  text-align: right;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  position: relative;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <button
+      className="c1"
+      onClick={[Function]}
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+          overflow="hidden"
+        >
+          <p
+            className="c4"
+            color="#FFFFFF"
+            size="14"
+          >
+            Welcome, 
+            John
+             
+            Smith
+          </p>
+          <p
+            className="c5"
+            color="#4B98CF"
+            size="12"
+          >
+            Mets
+          </p>
+        </div>
+        <div
+          className="c6"
+        >
+          <svg
+            className="c7"
+            color="#FFFFFF"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
 `;

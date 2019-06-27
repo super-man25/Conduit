@@ -5,5 +5,10 @@ export type EDClient = {
   id: number,
   modifiedAt: Date,
   name: string,
-  pricingInterval: number
+  pricingInterval: number,
+  logoUrl: string
+};
+
+export type EDClientList = {
+  clients: EDClient[]
 };

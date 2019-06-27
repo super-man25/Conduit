@@ -21,7 +21,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-eilVRo",
+          "componentId": "sc-bnXvFD",
           "isStatic": false,
           "rules": Array [
             "
@@ -78,7 +78,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           "sc-hEsumM",
         ],
         "render": [Function],
-        "styledComponentId": "sc-eilVRo",
+        "styledComponentId": "sc-bnXvFD",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

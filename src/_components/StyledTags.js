@@ -112,8 +112,8 @@ export const Text = withBoxModelProps(styled.p`
   margin: ${(props) => props.margin || 0};
   text-align: ${(props) => props.textAlign};
   opacity: ${(props) => props.opacity};
-  cursor: ${(props) => props.cursor || 'default'};
-  font-style: ${(props) => `${props.fontStyle}`};
-
+  cursor: ${(props) => props.cursor};
+  font-style: ${(props) => props.fontStyle};
+  text-transform: ${(props) => props.textTransform};
   ${ellipsis};
 `);

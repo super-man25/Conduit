@@ -16,6 +16,7 @@ export const initialState = {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
+    case UPDATE_USER:
       return { ...state, model: action.payload, error: null };
     case UNSET_USER:
       return { ...state, model: null };
@@ -60,6 +61,7 @@ const FORGOT_PASSWORD = createActionType('FORGOT_PASSWORD');
 const PASSWORD_RESET_REQUEST = createActionType('PASSWORD_RESET_REQUEST');
 const PASSWORD_RESET_SUCCESS = createActionType('PASSWORD_RESET_SUCCESS');
 const PASSWORD_RESET_ERROR = createActionType('PASSWORD_RESET_ERROR');
+const UPDATE_USER = createActionType('UPDATE_USER');
 
 // Actions
 const signIn = (email, password) => ({
@@ -72,6 +74,7 @@ const showForgotPass = (val) => ({ type: types.FORGOT_PASSWORD, payload: val });
 const fetch = () => ({ type: FETCH_ASYNC });
 const setUser = (user) => ({ type: types.SET_USER, payload: user });
 const unsetUser = () => ({ type: types.UNSET_USER });
+const updateUser = (user) => ({ type: types.UPDATE_USER, payload: user });
 
 // Exports
 export const types = {
@@ -88,7 +91,8 @@ export const types = {
   LOGIN_ERROR,
   PASSWORD_RESET_REQUEST,
   PASSWORD_RESET_SUCCESS,
-  PASSWORD_RESET_ERROR
+  PASSWORD_RESET_ERROR,
+  UPDATE_USER
 };
 export const actions = {
   signIn,
@@ -97,7 +101,8 @@ export const actions = {
   showForgotPass,
   fetch,
   setUser,
-  unsetUser
+  unsetUser,
+  updateUser
 };
 export const selectors = {
   selectUser,

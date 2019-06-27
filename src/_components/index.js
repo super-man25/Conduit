@@ -32,6 +32,7 @@ export * from './Loader';
 export * from './LogoName';
 export * from './MailtoLink';
 export * from './MainContent';
+export * from './Overlay';
 export * from './Panel';
 export * from './Popover';
 export * from './ReportDownloadButton';

@@ -41,12 +41,17 @@ export const types = {
 
 // Actions
 const fetchSeasons = (): FetchAction => ({ type: FETCH });
+const resetSeasons = (): ResetAction => ({ type: RESET });
 const setActiveId = (id: number): SetActiveAction => ({
   type: SET_ACTIVE,
   payload: id
 });
 
-export const actions = { fetchSeasons, setActiveId };
+export const actions = {
+  fetchSeasons,
+  resetSeasons,
+  setActiveId
+};
 
 // Reducer/Initial State
 export type State = {

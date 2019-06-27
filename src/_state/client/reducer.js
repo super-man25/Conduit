@@ -83,7 +83,7 @@ export default function clientReducer(
       };
     case UPDATE_SUCCESS:
       return {
-        ...state,
+        ...initialState,
         ...action.payload,
         loading: false,
         dirtyPricingInterval: action.payload.pricingInterval

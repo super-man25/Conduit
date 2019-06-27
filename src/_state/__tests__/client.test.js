@@ -1,9 +1,12 @@
 import { clientService, integrationService } from '_services';
 import { actions, reducer } from '_state/client';
+import { actions as alertActions } from '_state/alert';
+
 import {
   FETCH_ERROR,
   FETCH_ASYNC,
   FETCH_SUCCESS,
+  FETCH_INTEGRATIONS_ASYNC,
   UPDATE_ASYNC,
   UPDATE_SUCCESS,
   UPDATE_ERROR,
@@ -14,10 +17,11 @@ import {
   updateClientAsync,
   toggleIntegrationAsync
 } from '_state/client/saga';
+import { types as authTypes } from '_state/auth';
 import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { initialState } from '_state/client/reducer';
-import { getClientId, getClient } from '_state/client/selectors';
+import { getClientId } from '_state/client/selectors';
 
 describe('actions', () => {
   it('should create an action to get a client', () => {
@@ -104,6 +108,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
+      integrations: [],
       loading: false,
       pricingInterval: 1440,
       dirtyPricingInterval: 1440
@@ -136,23 +141,32 @@ describe('saga workers', () => {
   });
 
   it('should handle update', () => {
-    const diff = { pricingInterval: 60 };
-    const action = actions.update(diff);
     const client = { id: 1, name: 'Mets', pricingInterval: 15 };
-    const updatedClient = { ...client, ...diff };
-
+    const action = actions.update(client);
     const generator = cloneableGenerator(updateClientAsync)(action);
-    expect(generator.next().value).toEqual(select(getClient));
-    expect(generator.next(client).value).toEqual(
-      call(clientService.updateClient, updatedClient)
+
+    expect(generator.next().value).toEqual(
+      call(clientService.setActiveClient, client.id)
     );
 
     const success = generator.clone();
-    expect(success.next(updatedClient).value).toEqual(
+    expect(success.next(client).value).toEqual(
+      put({ type: authTypes.UPDATE_USER, payload: client })
+    );
+
+    expect(success.next(client).value).toEqual(
       put({
         type: UPDATE_SUCCESS,
-        payload: updatedClient
+        payload: client
       })
+    );
+
+    expect(success.next().value).toEqual(
+      put({ type: FETCH_INTEGRATIONS_ASYNC })
+    );
+
+    expect(success.next().value).toEqual(
+      put(alertActions.success('Successfully Updated Team Information'))
     );
 
     const error = new Error('some API error');

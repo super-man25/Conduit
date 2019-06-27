@@ -1,9 +1,14 @@
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
+import { saga as appSaga } from './app';
 import { reducer as alertReducer, saga as alertSaga } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
 import { reducer as clientReducer, saga as clientSaga } from './client';
+import {
+  reducer as clientListReducer,
+  saga as clientListSaga
+} from './clientList';
 import {
   reducer as eventStatReducer,
   saga as eventStatSaga
@@ -69,6 +74,7 @@ export const reducers = {
   user: userReducer,
   userList: userListReducer,
   client: clientReducer,
+  clientList: clientListReducer,
   seasonStat: seasonStatReducer,
   eventStat: eventStatReducer,
   teamStat: teamStatReducer,
@@ -115,11 +121,13 @@ const store = createStore(
 
 const combineSagas = {
   alert: alertSaga,
+  app: appSaga,
   auth: authSaga,
   event: eventSaga,
   user: userSaga,
   userList: userListSaga,
   client: clientSaga,
+  clientList: clientListSaga,
   eventStat: eventStatSaga,
   teamStat: teamStatSaga,
   seasonStat: seasonStatSaga,

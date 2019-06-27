@@ -98,16 +98,12 @@ Array [
   color: #999999;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c5 {
   font-size: undefinedpx;
   color: #999999;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c6 {
@@ -116,8 +112,6 @@ Array [
   color: #024A8F;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c4 {
@@ -196,7 +190,7 @@ Array [
           className="c6"
           color="#024A8F"
         >
-          $NaN
+          $52.18
         </p>
       </div>
       <div
@@ -207,7 +201,83 @@ Array [
           className="c6"
           color="#024A8F"
         >
-          $NaN
+          $1,147.73
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c5"
+          color="#999999"
+        >
+          SECTION 14
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $421.36
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $1,120.58
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+      direction="row"
+    >
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c5"
+          color="#999999"
+        >
+          SECTION 114
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $285.06
+        </p>
+      </div>
+      <div
+        className="c2"
+        width="33%"
+      >
+        <p
+          className="c6"
+          color="#024A8F"
+        >
+          $856.69
         </p>
       </div>
     </div>
@@ -319,8 +389,6 @@ Array [
   font-size: undefinedpx;
   color: #B80C09;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 <div
@@ -455,8 +523,6 @@ Array [
   font-size: undefinedpx;
   color: #024A8F;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 <div

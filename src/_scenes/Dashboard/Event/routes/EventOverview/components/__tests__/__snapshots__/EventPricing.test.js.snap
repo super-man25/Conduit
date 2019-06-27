@@ -226,16 +226,12 @@ exports[`renders correctly 1`] = `
   color: #999999;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c20 {
   font-size: undefinedpx;
   color: #999999;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c21 {
@@ -243,8 +239,6 @@ exports[`renders correctly 1`] = `
   color: #070707;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c24 {
@@ -252,8 +246,6 @@ exports[`renders correctly 1`] = `
   font-weight: 700;
   color: #070707;
   margin: 0;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c25 {
@@ -262,8 +254,6 @@ exports[`renders correctly 1`] = `
   color: #070707;
   margin: 0;
   text-align: right;
-  cursor: default;
-  font-style: undefined;
 }
 
 .c0 {

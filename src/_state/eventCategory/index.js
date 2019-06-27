@@ -8,6 +8,7 @@ const FETCH_EVENT_CATEGORIES_SUCCESS =
   'eventCategory/FETCH_EVENT_CATEGORIES_SUCCESS';
 const FETCH_EVENT_CATEGORIES_ERROR =
   'eventCategory/FETCH_EVENT_CATEGORIES_ERROR';
+const RESET_EVENT_CATEGORIES = 'eventCategory/RESET_EVENT_CATEGORIES';
 
 // Action types
 export type FetchEventCategoryAction = {
@@ -24,15 +25,21 @@ export type FetchEventCategoryErrorAction = {
   payload: Error
 };
 
+export type ResetEventCategoryAction = {
+  type: 'eventCategory/RESET_EVENT_CATEGORIES'
+};
+
 export type Action =
   | FetchEventCategoryAction
   | FetchEventCategorySuccessAction
-  | FetchEventCategoryErrorAction;
+  | FetchEventCategoryErrorAction
+  | ResetEventCategoryAction;
 
 export const types = {
   FETCH_EVENT_CATEGORIES,
   FETCH_EVENT_CATEGORIES_SUCCESS,
-  FETCH_EVENT_CATEGORIES_ERROR
+  FETCH_EVENT_CATEGORIES_ERROR,
+  RESET_EVENT_CATEGORIES
 };
 
 // Actions
@@ -40,8 +47,13 @@ const fetchEventCategories = (): FetchEventCategoryAction => ({
   type: FETCH_EVENT_CATEGORIES
 });
 
+const resetEventCategories = (): ResetEventCategoryAction => ({
+  type: RESET_EVENT_CATEGORIES
+});
+
 export const actions = {
-  fetchEventCategories
+  fetchEventCategories,
+  resetEventCategories
 };
 
 // State/reducer
@@ -69,6 +81,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       return { ...state, loading: false, eventCategories: action.payload };
     case FETCH_EVENT_CATEGORIES_ERROR:
       return { ...state, loading: false, error: action.payload };
+    case RESET_EVENT_CATEGORIES:
+      return { ...initialState };
     default:
       return state;
   }

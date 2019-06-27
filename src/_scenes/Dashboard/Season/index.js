@@ -5,6 +5,7 @@ import {
   PageWrapper,
   Flex,
   TextButton,
+  Center,
   Icon,
   CenteredLoader
 } from '_components';
@@ -24,19 +25,17 @@ const SeasonOverviewTitle = styled(H1)`
 const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
   if (loading) {
     return (
-      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+      <PageWrapper style={{ position: 'relative' }}>
         <CenteredLoader />
-      </div>
+      </PageWrapper>
     );
   }
 
   if (!activeSeason) {
     return (
-      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
-        <Flex align="center" justify="center">
-          No Season Selected
-        </Flex>
-      </div>
+      <PageWrapper style={{ position: 'relative' }}>
+        <Center>No Season Selected</Center>
+      </PageWrapper>
     );
   }
 
