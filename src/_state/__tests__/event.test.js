@@ -1,5 +1,6 @@
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { call, put } from 'redux-saga/effects';
+import { ApiError } from '_helpers/api';
 import { eventService } from '_services';
 import alertActions from '_state/alert/actions';
 import { types as eventListTypes } from '_state/eventList';
@@ -469,7 +470,7 @@ describe('sagas', () => {
     );
     // fail path
     const fail = generator.clone();
-    const error = new Error('some api error');
+    const error = new ApiError(400, 'BadRequest', { message: 'Error' });
     expect(fail.throw(error).value).toEqual(
       put({ type: types.SAVE_ADMIN_MODIFIERS_ERROR, payload: error })
     );

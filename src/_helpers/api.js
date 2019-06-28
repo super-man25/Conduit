@@ -1,5 +1,5 @@
-import { baseURL } from '_constants';
 import { stringify } from 'querystring';
+import { baseURL } from '_constants';
 
 /**
  * API Error - compatible with instanceof

@@ -100,6 +100,9 @@ function updateEventSeats(payload: {
 
 function handleResponseError(error) {
   switch (error.code) {
+    case 400:
+      error.toString = () => error.body.message;
+      break;
     default:
       error.toString = () => 'Error saving modifier';
   }

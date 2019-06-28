@@ -1,8 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import { cssConstants, shadows, zIndexes } from '_constants';
 import { Icon } from './Icon';
 
@@ -52,6 +52,7 @@ const MsgText: React.ComponentType<{}> = styled.div`
   left: 93px;
   font-size: 0.7em;
   font-weight: 300;
+  margin-right: 24px;
   color: ${cssConstants.PRIMARY_BLACK};
 `;
 

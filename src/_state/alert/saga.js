@@ -1,5 +1,5 @@
 import { delay, put, takeEvery } from 'redux-saga/effects';
-import { SUCCESS_ASYNC, ERROR_ASYNC, SUCCESS, ERROR, CLEAR } from './actions';
+import { CLEAR, ERROR, ERROR_ASYNC, SUCCESS, SUCCESS_ASYNC } from './actions';
 
 // Workers
 export function* successAlertAsync(action) {
