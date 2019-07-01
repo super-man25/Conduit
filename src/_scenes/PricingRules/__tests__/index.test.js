@@ -9,7 +9,6 @@ describe('<PricingRules /> index route', () => {
     editingAnyPriceRule: false,
     buyerTypes: [],
     buyerTypeActions: {
-      openBuyerTypesModal: jest.fn(),
       fetchBuyerTypes: jest.fn()
     }
   };

@@ -8,7 +8,6 @@ import {
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
-import { cssConstants } from '_constants';
 import {
   selectors as priceRuleSelectors,
   actions as priceRuleActions
@@ -29,8 +28,7 @@ import {
 import { formatUSD, compare } from '_helpers/string-utils';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
-import { CenteredLoader, Flex, FlexItem, Text } from '_components';
-import { Icon } from '_components/Icon';
+import { CenteredLoader, Flex, Text } from '_components';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
@@ -91,26 +89,7 @@ const columns = [
         const labelText = !!option
           ? `${option.code} - ${option.publicDescription}`
           : 'Unknown';
-        return (
-          <React.Fragment>
-            <Flex align="center" width="100%">
-              {option && option.disabled && (
-                <FlexItem
-                  title="Pricing is disabled for this buyer type"
-                  margin="0 0.5rem 0 0"
-                  flex="0"
-                >
-                  <Icon
-                    name="api-error"
-                    color={cssConstants.SECONDARY_BURNT_ORANGE}
-                    size={22}
-                  />
-                </FlexItem>
-              )}
-              <Text ellipsis={truncate}>{labelText}</Text>
-            </Flex>
-          </React.Fragment>
-        );
+        return <Text ellipsis={truncate}>{labelText}</Text>;
       }
     },
     cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)

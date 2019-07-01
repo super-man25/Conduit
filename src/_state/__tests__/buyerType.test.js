@@ -22,16 +22,6 @@ describe('actions', () => {
     const action = actions.updateBuyerTypes(bts);
     expect(action).toEqual({ type: types.UPDATE_BUYER_TYPES, payload: bts });
   });
-
-  it('should create an action to open the buyer types modal', () => {
-    const action = actions.openBuyerTypesModal();
-    expect(action).toEqual({ type: types.OPEN_BUYER_TYPES_MODAL });
-  });
-
-  it('should create an action to close the buyer types modal', () => {
-    const action = actions.closeBuyerTypesModal();
-    expect(action).toEqual({ type: types.CLOSE_BUYER_TYPES_MODAL });
-  });
 });
 
 describe('reducer', () => {
@@ -128,8 +118,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: false,
-      modalIsOpen: false
+      loading: false
     });
   });
 
@@ -151,33 +140,6 @@ describe('reducer', () => {
       ...prevState,
       loading: false,
       error: err
-    });
-  });
-
-  it('should handle OPEN_BUYER_TYPES_MODAL', () => {
-    const prevState = { ...initialState };
-
-    const action = { type: types.OPEN_BUYER_TYPES_MODAL };
-
-    const nextState = reducer(prevState, action);
-
-    expect(nextState).toEqual({
-      ...prevState,
-      modalIsOpen: true
-    });
-  });
-
-  it('should handle CLOSE_BUYER_TYPES_MODAL', () => {
-    const prevState = { ...initialState, modalIsOpen: true, err: 'An error' };
-
-    const action = { type: types.CLOSE_BUYER_TYPES_MODAL };
-
-    const nextState = reducer(prevState, action);
-
-    expect(nextState).toEqual({
-      ...prevState,
-      modalIsOpen: false,
-      error: null
     });
   });
 });
@@ -257,16 +219,6 @@ describe('selectors', () => {
     };
 
     expect(selectors.selectIsLoading(store)).toEqual(true);
-  });
-
-  it('should return boolean representing whether the buyer type modal is open', () => {
-    const store = {
-      buyerType: {
-        ...initialState
-      }
-    };
-
-    expect(selectors.selectModalIsOpen(store)).toEqual(false);
   });
 
   it('should select the buyer type error property if it is set', () => {

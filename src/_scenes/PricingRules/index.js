@@ -2,7 +2,6 @@
 
 import styled from 'styled-components';
 import React from 'react';
-import type { EDBuyerType } from '_models/buyerType';
 
 import {
   H3,
@@ -12,14 +11,11 @@ import {
   FlexItem,
   Breadcrumbs,
   PrimaryButton,
-  SecondaryButton,
   Spacing,
   Flex,
   Box
 } from '_components';
-import { Portal } from '_components/Portal';
 import { VirtualizedPricingRules } from './components/PricingRulesTable';
-import { BuyerTypeStatusModal } from './components/BuyerTypeStatusModal';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -44,27 +40,14 @@ const pricingCrumb = [
   }
 ];
 
-const PricingWrapper = styled(Flex)`
-  flex-direction: column;
-  justify-content: center;
-  padding: 6rem 4rem;
-  width: 100%;
-`;
-
 const PricingRulesTableTableContainer = styled(FlexItem)`
   min-height: 100%;
-`;
-
-const PricingRuleFullContent = styled(FullContent)`
-  overflow: ${(props) => (props.scrollLocked ? 'hidden' : 'visible')};
 `;
 
 type Props = {
   buyerTypeActions: any,
   priceRuleActions: any,
-  editingAnyPriceRule: true,
-  buyerTypes: EDBuyerType[],
-  buyerTypesModalIsOpen: boolean
+  editingAnyPriceRule: true
 };
 
 export class PricingRules extends React.Component<Props> {
@@ -80,29 +63,23 @@ export class PricingRules extends React.Component<Props> {
   }
 
   render() {
-    const {
-      buyerTypes,
-      buyerTypesModalIsOpen,
-      buyerTypeActions: { openBuyerTypesModal },
-      editingAnyPriceRule
-    } = this.props;
+    const { editingAnyPriceRule } = this.props;
 
     return (
       <PageWrapper>
         <SiteHeader />
-        <PricingRuleFullContent scrollLocked={buyerTypesModalIsOpen}>
-          <PricingWrapper>
+        <FullContent>
+          <Flex
+            direction="column"
+            justify="center"
+            padding="6rem 4rem"
+            width="100%"
+          >
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
                 <H3 type="secondary">Pricing Rules</H3>
                 <Box>
-                  <SecondaryButton
-                    onClick={openBuyerTypesModal}
-                    disabled={buyerTypes.length === 0}
-                  >
-                    Buyer Types
-                  </SecondaryButton>
                   <PrimaryButton
                     onClick={this.createNewPriceRule.bind(this)}
                     disabled={editingAnyPriceRule}
@@ -119,15 +96,8 @@ export class PricingRules extends React.Component<Props> {
             <PricingRulesTableTableContainer>
               <VirtualizedPricingRules />
             </PricingRulesTableTableContainer>
-          </PricingWrapper>
-        </PricingRuleFullContent>
-        <Portal>
-          {buyerTypesModalIsOpen && (
-            <BuyerTypeStatusModal
-              buyerTypes={buyerTypes.filter((bt) => bt.isInPriceStructure)}
-            />
-          )}
-        </Portal>
+          </Flex>
+        </FullContent>
       </PageWrapper>
     );
   }
@@ -140,8 +110,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = createStructuredSelector({
   editingAnyPriceRule: priceRuleSelectors.selectIsEditingPriceRule,
-  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
-  buyerTypesModalIsOpen: buyerTypeSelectors.selectModalIsOpen
+  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes
 });
 
 export default connect(
