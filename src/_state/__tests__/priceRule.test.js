@@ -190,7 +190,7 @@ describe('reducer', () => {
         ...initialState,
         editingRowId: 0,
         editingRowState: { id: 0, percent: -20, mirroPriceScaleId: 2383 },
-        allRows: [{ id: 1 }, { id: 70 }, { id: 0 }]
+        allRows: [{ id: 0 }, { id: 1 }, { id: 70 }]
       };
 
       const action = { type: types.CANCEL_EDIT_PRICE_RULE, payload: 0 };
@@ -372,7 +372,7 @@ describe('reducer', () => {
       expect(nextState).toEqual({
         ...prevState,
         loading: false,
-        allRows: [{ id: 2 }, { id: 3 }, { id: 7, percent: 10 }]
+        allRows: [{ id: 3 }, { id: 4 }, { id: 7, percent: 10 }]
       });
     });
   });

@@ -286,7 +286,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
           editingRowId: null,
           editingRowState: {},
           error: null,
-          allRows: state.allRows.slice(0, -1)
+          allRows: state.allRows.slice(1)
         };
       }
       return {
@@ -310,7 +310,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
         ...state,
         editingRowId: 0,
         editingRowState: initialPriceRule,
-        allRows: [...state.allRows, initialPriceRule]
+        allRows: [initialPriceRule, ...state.allRows]
       };
     case SAVE_PRICE_RULE:
       return {
@@ -346,7 +346,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
         error: null,
         allRows: state.allRows.some((pr) => payload.id === pr.id)
           ? state.allRows.map((pr) => (pr.id === payload.id ? payload : pr))
-          : [...state.allRows.slice(0, -1), payload]
+          : [...state.allRows.slice(1), payload]
       };
     case FETCH_PRICE_RULE_ERROR:
       return {
