@@ -22,9 +22,7 @@ export const ChartLegendBar: React.ComponentType<{
   min-width: 8px;
   background: ${(props) =>
     props.dashed
-      ? `repeating-linear-gradient(to bottom, ${props.color}, ${
-          props.color
-        } 15%, transparent 15%, transparent 20%)`
+      ? `repeating-linear-gradient(to bottom, ${props.color}, ${props.color} 15%, transparent 15%, transparent 20%)`
       : props.color};
 `;
 

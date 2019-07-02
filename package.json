@@ -80,7 +80,7 @@
     "jest-junit": "^6.4.0",
     "jest-styled-components": "^6.3.3",
     "lint-staged": "^8.2.1",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.2",
     "prettier-eslint-cli": "^5.0.0",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.1",
