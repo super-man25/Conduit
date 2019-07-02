@@ -68,6 +68,7 @@ Array [
     </h4>
     <button
       className="c2"
+      disabled={false}
       onClick={[Function]}
       style={
         Object {

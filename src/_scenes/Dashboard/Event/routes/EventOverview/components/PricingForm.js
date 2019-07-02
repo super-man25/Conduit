@@ -43,7 +43,10 @@ type Props = {
   fetchAutomatedSpring: (id: number, eventScore: ?number) => void,
   onCancel: Function,
   pricingError: ?Error,
-  pricingPreviewError: ?Error,
+  pricingPreview: {
+    error: ?Error,
+    loading: boolean
+  },
   submitting: boolean
 };
 
@@ -59,7 +62,10 @@ export const PricingForm = (props: Props) => {
     fetchAutomatedSpring,
     eventId,
     pricingError,
-    pricingPreviewError,
+    pricingPreview: {
+      error: pricingPreviewError,
+      loading: pricingPreviewLoading
+    },
     submitting
   } = props;
 
@@ -105,7 +111,7 @@ export const PricingForm = (props: Props) => {
             minWidth="0"
             padding="0"
             onClick={() => setIsEditing(true)}
-            disabled={pricingPreviewError}
+            disabled={!!pricingPreviewError || pricingPreviewLoading}
           >
             Edit
           </TextButton>

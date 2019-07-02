@@ -44,7 +44,7 @@ type Props = {
   pricingPreview: {
     record: EDPricingPreview,
     loading: boolean,
-    error: Error
+    error: ?Error
   },
   handleModifierChange: Function,
   resetFactors: Function,
@@ -141,7 +141,7 @@ export const EventPricingPresenter = (props: Props) => {
         >
           <PricingForm
             pricingError={pricingError}
-            pricingPreviewError={pricingPreview.error}
+            pricingPreview={pricingPreview}
             onChange={handleChange}
             onCancel={handleCancel}
             fetchAutomatedSpring={fetchAutomatedSpring}

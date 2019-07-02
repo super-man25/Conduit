@@ -430,6 +430,7 @@ exports[`renders correctly 1`] = `
         </h4>
         <button
           className="c14"
+          disabled={false}
           onClick={[Function]}
           style={
             Object {

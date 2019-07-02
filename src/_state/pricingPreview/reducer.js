@@ -1,4 +1,4 @@
-import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
+import { FETCH_ASYNC, FETCH_ERROR, FETCH_SUCCESS, RESET } from './actions';
 
 export const initialState = {
   loading: false,

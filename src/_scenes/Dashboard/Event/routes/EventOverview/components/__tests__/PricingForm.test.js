@@ -19,7 +19,11 @@ const defaultProps = {
   onSubmit: jest.fn(),
   eventId: 1,
   fetchAutomatedSpring: jest.fn(),
-  onCancel: jest.fn()
+  onCancel: jest.fn(),
+  pricingPreview: {
+    error: null,
+    loading: false
+  }
 };
 
 it('render correctly', () => {
