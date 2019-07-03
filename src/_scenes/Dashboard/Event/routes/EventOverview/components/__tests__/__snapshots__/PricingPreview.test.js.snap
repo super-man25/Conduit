@@ -389,6 +389,7 @@ Array [
   font-size: undefinedpx;
   color: #B80C09;
   margin: 0;
+  text-align: center;
 }
 
 <div

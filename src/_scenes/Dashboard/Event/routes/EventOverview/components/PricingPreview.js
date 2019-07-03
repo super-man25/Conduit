@@ -64,7 +64,7 @@ export const PricingPreview = (props: Props) => {
         width="50%"
       >
         <Icon name="api-error" color={cssConstants.SECONDARY_RED} size={24} />
-        <Text color={cssConstants.PRIMARY_RED} align="center">
+        <Text color={cssConstants.PRIMARY_RED} textAlign="center">
           A server error has occurred, please contact{' '}
           <a
             style={{
