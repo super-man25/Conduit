@@ -2,14 +2,7 @@
 
 import { eventService } from '_services';
 import type { Saga } from 'redux-saga';
-import {
-  call,
-  delay,
-  put,
-  select,
-  takeEvery,
-  takeLatest
-} from 'redux-saga/effects';
+import { call, delay, put, select, takeLatest } from 'redux-saga/effects';
 import { types, selectors, actions } from '.';
 import type { FetchEventListAction } from '.';
 import Fuse from 'fuse.js';
@@ -68,7 +61,7 @@ export function* handleSearchInput(): Saga {
 
 // Sagas
 function* watchFetchEventsAsync(): Saga {
-  yield takeEvery(types.FETCH_EVENT_LIST, fetchAsync);
+  yield takeLatest(types.FETCH_EVENT_LIST, fetchAsync);
 }
 
 function* watchEventSearchInput(): Saga {

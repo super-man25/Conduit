@@ -81,6 +81,7 @@ export const Flex: ComponentType<FlexProps> = withBoxModelProps(styled.div`
   min-height: ${(props) => props.minHeight};
   min-width: ${(props) => props.minWidth};
   max-width: ${(props) => props.maxWidth};
+  position: ${(props) => props.position};
 `);
 
 export const FlexItem: ComponentType<FlexItemProps> = withBoxModelProps(styled.div`

@@ -21,6 +21,13 @@ export class ScrollableList extends React.Component<Props> {
     this.scrollTo(scrollIndex);
   }
 
+  componentDidUpdate(prevProps: Props) {
+    const { scrollIndex } = this.props;
+    if (prevProps.scrollIndex === -1) {
+      this.scrollTo(scrollIndex);
+    }
+  }
+
   scrollTo(index: number) {
     if (index === -1) {
       return;

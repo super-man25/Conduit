@@ -19,6 +19,7 @@ import {
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR
 } from './actions';
+import { RESET } from '../app/actions';
 
 // Workers
 export function* getClientAsync() {
@@ -36,6 +37,7 @@ export function* updateClientAsync({ payload: client }) {
     const authModel = yield call(clientService.setActiveClient, client.id);
     yield put(authActions.updateUser(authModel));
     yield put({ type: UPDATE_SUCCESS, payload: client });
+    yield put({ type: RESET });
     yield put({ type: FETCH_INTEGRATIONS_ASYNC });
     yield put(alertActions.success('Successfully Updated Team Information'));
   } catch (err) {

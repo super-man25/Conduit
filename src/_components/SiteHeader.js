@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { cssConstants, zIndexes, integrationConstants } from '_constants';
@@ -16,9 +16,9 @@ import {
 import { push } from 'connected-react-router';
 import { actions } from '_state/auth';
 import { actions as clientActions } from '_state/client';
+import { actions as clientListActions } from '_state/clientList';
 import { Box } from './StyledTags';
 import { Flex } from './Flex';
-import { titleCase } from '_helpers';
 import type { EDClient, EDClientList } from '_models';
 
 export const SiteHeaderDiv = styled.div`
@@ -76,118 +76,112 @@ type Props = {
   },
   client: EDClient,
   clientList: EDClientList,
+  fetchClientList: () => void,
   hasTicketsDotComIntegration: boolean,
   push: (path: string) => void,
   signOut: () => void,
   updateClient: () => void
 };
 
-type State = {
-  showMenu: boolean
-};
-
 const PositionBox = styled(Box)`
   position: relative;
 `;
 
-export class SiteHeaderPresenter extends React.Component<Props, State> {
-  state = { showMenu: false };
+export const SiteHeaderPresenter = (props: Props) => {
+  const {
+    auth,
+    client,
+    clientList,
+    fetchClientList,
+    hasTicketsDotComIntegration,
+    updateClient
+  } = props;
 
-  showMenu = () => {
-    this.setState({ showMenu: true });
+  const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    fetchClientList();
+  }, [fetchClientList]);
+
+  const openMenu = () => {
+    setShowMenu(true);
   };
 
-  closeMenu = () => {
-    this.setState({ showMenu: false });
+  const closeMenu = () => {
+    setShowMenu(false);
   };
 
-  handleSettingsClick = () => {
-    this.props.push('/settings/team');
+  const handleSettingsClick = () => {
+    props.push('/settings/team');
   };
 
-  handlePricingRulesClick = () => {
-    this.props.push('/pricing');
+  const handlePricingRulesClick = () => {
+    props.push('/pricing');
   };
 
-  handleLogoClick = () => {
-    this.props.push('/');
+  const handleLogoClick = () => {
+    props.push('/');
   };
 
-  handleLogoutClick = () => {
-    this.props.signOut();
+  const handleLogoutClick = () => {
+    props.signOut();
   };
 
-  buildUsername = () => {
-    const firstName = titleCase(this.props.auth.firstName);
-    const lastName = titleCase(this.props.auth.lastName);
-    return this.props.auth ? `Welcome, ${firstName} ${lastName}` : '';
-  };
-
-  render() {
-    const {
-      auth,
-      client,
-      hasTicketsDotComIntegration,
-      clientList,
-      updateClient
-    } = this.props;
-
-    return (
-      <SiteHeaderDiv>
-        <LogoName onClick={this.handleLogoClick} />
-        <Flex>
-          <UserWelcome
-            firstName={auth.firstName}
-            lastName={auth.lastName}
-            client={client}
-            clientList={clientList}
-            updateClient={updateClient}
+  return (
+    <SiteHeaderDiv>
+      <LogoName onClick={handleLogoClick} />
+      <Flex>
+        <UserWelcome
+          firstName={auth.firstName}
+          lastName={auth.lastName}
+          client={client}
+          clientList={clientList}
+          updateClient={updateClient}
+        />
+        <PositionBox>
+          <SprocketMenu
+            id="sprocket"
+            data-test-id="settings-icon"
+            onClick={openMenu}
           />
-          <PositionBox>
-            <SprocketMenu
-              id="sprocket"
-              data-test-id="settings-icon"
-              onClick={this.showMenu}
-            />
-            {this.state.showMenu && (
-              <DropdownMenuWrapper onClickAway={this.closeMenu}>
-                <div>
+          {showMenu && (
+            <DropdownMenuWrapper onClickAway={closeMenu}>
+              <div>
+                <DropdownMenuItem
+                  id="settings"
+                  data-test-id="settings-button"
+                  onClick={handleSettingsClick}
+                >
+                  Settings
+                </DropdownMenuItem>
+                {hasTicketsDotComIntegration && (
                   <DropdownMenuItem
-                    id="settings"
-                    data-test-id="settings-button"
-                    onClick={this.handleSettingsClick}
+                    id="pricingRules"
+                    data-test-id="pricing-rules-button"
+                    onClick={handlePricingRulesClick}
                   >
-                    Settings
+                    Pricing Rules
                   </DropdownMenuItem>
-                  {hasTicketsDotComIntegration && (
-                    <DropdownMenuItem
-                      id="pricingRules"
-                      data-test-id="pricing-rules-button"
-                      onClick={this.handlePricingRulesClick}
-                    >
-                      Pricing Rules
-                    </DropdownMenuItem>
-                  )}
-                  <DropdownMenuItem
-                    id="logout"
-                    data-test-id="logout-button"
-                    to="/logout"
-                    onClick={this.handleLogoutClick}
-                  >
-                    Logout
-                    <Spacing right padding="0 0 0 40px" display="inline-block">
-                      <Icon name="logout" size={24} color="white" />
-                    </Spacing>
-                  </DropdownMenuItem>
-                </div>
-              </DropdownMenuWrapper>
-            )}
-          </PositionBox>
-        </Flex>
-      </SiteHeaderDiv>
-    );
-  }
-}
+                )}
+                <DropdownMenuItem
+                  id="logout"
+                  data-test-id="logout-button"
+                  to="/logout"
+                  onClick={handleLogoutClick}
+                >
+                  Logout
+                  <Spacing right padding="0 0 0 40px" display="inline-block">
+                    <Icon name="logout" size={24} color="white" />
+                  </Spacing>
+                </DropdownMenuItem>
+              </div>
+            </DropdownMenuWrapper>
+          )}
+        </PositionBox>
+      </Flex>
+    </SiteHeaderDiv>
+  );
+};
 
 const mapStateToProps = ({ auth, client, clientList }) => ({
   auth: auth.model,
@@ -202,7 +196,8 @@ const mapStateToProps = ({ auth, client, clientList }) => ({
 const mapDispatchToProps = {
   push,
   signOut: actions.signOut,
-  updateClient: clientActions.update
+  updateClient: clientActions.update,
+  fetchClientList: clientListActions.fetchClientList
 };
 
 export const SiteHeader = connect(

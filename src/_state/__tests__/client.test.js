@@ -22,6 +22,7 @@ import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { initialState } from '_state/client/reducer';
 import { getClientId } from '_state/client/selectors';
+import { RESET } from '../app/actions';
 
 describe('actions', () => {
   it('should create an action to get a client', () => {
@@ -160,6 +161,8 @@ describe('saga workers', () => {
         payload: client
       })
     );
+
+    expect(success.next().value).toEqual(put({ type: RESET }));
 
     expect(success.next().value).toEqual(
       put({ type: FETCH_INTEGRATIONS_ASYNC })

@@ -4,6 +4,7 @@ exports[`<EventListPresenter /> when filtered 1`] = `
 <Flex
   direction="column"
   height="100%"
+  position="relative"
 >
   <styled.div>
     <styled.div
@@ -75,6 +76,7 @@ exports[`<EventListPresenter /> when loading 1`] = `
 <Flex
   direction="column"
   height="100%"
+  position="relative"
 >
   <styled.div>
     <styled.div
@@ -95,50 +97,7 @@ exports[`<EventListPresenter /> when loading 1`] = `
       />
     </styled.div>
   </styled.div>
-  <styled.div>
-    <ScrollableList
-      data={
-        Array [
-          Object {
-            "clientId": 1,
-            "createdAt": 1529336865706,
-            "id": 1,
-            "integrationId": 1,
-            "modifiedAt": 1529336865706,
-            "name": "Some Event",
-            "seasonId": 1,
-            "timestamp": 1529336865706,
-            "venueId": 1,
-          },
-          Object {
-            "clientId": 1,
-            "createdAt": 1529336865706,
-            "id": 1,
-            "integrationId": 1,
-            "modifiedAt": 1529336865706,
-            "name": "Some Event",
-            "seasonId": 1,
-            "timestamp": 1529336865706,
-            "venueId": 1,
-          },
-          Object {
-            "clientId": 1,
-            "createdAt": 1529336865706,
-            "id": 1,
-            "integrationId": 1,
-            "modifiedAt": 1529336865706,
-            "name": "Some Event",
-            "seasonId": 1,
-            "timestamp": 1529336865706,
-            "venueId": 1,
-          },
-        ]
-      }
-      scrollIndex={0}
-    >
-      <Component />
-    </ScrollableList>
-  </styled.div>
+  <CenteredLoader />
 </Flex>
 `;
 
@@ -146,6 +105,7 @@ exports[`<EventListPresenter /> when passed no events 1`] = `
 <Flex
   direction="column"
   height="100%"
+  position="relative"
 >
   <styled.div>
     <styled.div
@@ -180,6 +140,7 @@ exports[`<EventListPresenter /> with active event 1`] = `
 <Flex
   direction="column"
   height="100%"
+  position="relative"
 >
   <styled.div>
     <styled.div
@@ -251,6 +212,7 @@ exports[`<EventListPresenter /> with no active event 1`] = `
 <Flex
   direction="column"
   height="100%"
+  position="relative"
 >
   <styled.div>
     <styled.div

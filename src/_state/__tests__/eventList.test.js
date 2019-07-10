@@ -83,7 +83,6 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: false,
       events
     });
   });
@@ -115,6 +114,7 @@ describe('reducer', () => {
 
     const prevState = {
       ...initialState,
+      loading: false,
       visibleEvents: []
     };
 

@@ -107,11 +107,11 @@ export const reducer = (state: State = initialState, action: Action) => {
     case FETCH_EVENT_LIST:
       return { ...state, loading: true };
     case FETCH_EVENT_LIST_SUCCESS:
-      return { ...state, loading: false, events: action.payload };
+      return { ...state, events: action.payload };
     case FETCH_EVENT_LIST_ERROR:
       return { ...state, loading: false, error: action.payload };
     case SET_VISIBLE_EVENTS:
-      return { ...state, visibleEvents: action.payload };
+      return { ...state, loading: false, visibleEvents: action.payload };
     case SEARCH:
       return { ...state, filter: action.payload };
     case RESET:

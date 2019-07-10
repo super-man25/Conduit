@@ -14,7 +14,8 @@ type Props = {
   activeEventId: number,
   activeSeasonId: number,
   push: (path: string) => void,
-  isAdmin: boolean
+  isAdmin: boolean,
+  loading: boolean
 };
 
 class EventListContainer extends React.Component<Props> {
@@ -53,15 +54,10 @@ class EventListContainer extends React.Component<Props> {
 
   render() {
     const {
-      eventListState: {
-        filterOptions,
-        sortDir,
-        loading,
-        visibleEvents,
-        filter
-      },
+      eventListState: { filterOptions, sortDir, visibleEvents, filter },
       isAdmin,
-      activeEventId
+      activeEventId,
+      loading
     } = this.props;
 
     return (
@@ -86,7 +82,11 @@ function mapStateToProps(state) {
     eventListState: state.eventList,
     activeEventId: selectors.selectActiveEventListId(state),
     activeSeasonId: seasonSelectors.selectActiveSeasonId(state),
-    loading: state.eventList.loading || state.season.loading,
+    loading:
+      state.eventList.loading ||
+      state.season.loading ||
+      state.seasonStat.loading ||
+      state.teamStat.loading,
     isAdmin: state.auth.model.isAdmin
   };
 }

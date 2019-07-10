@@ -1,6 +1,5 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, take, call } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
-import { UPDATE_ASYNC, UPDATE_SUCCESS } from '_state/client/actions';
 import { actions as buyerTypeActions } from '_state/buyerType';
 import { actions as eventActions } from '_state/event';
 import { actions as eventCategoryActions } from '_state/eventCategory';
@@ -9,6 +8,7 @@ import { actions as priceRuleActions } from '_state/priceRule';
 import { actions as priceScaleActions } from '_state/priceScale';
 import { actions as seasonActions } from '_state/season';
 import { actions as teamStatActions } from '_state/teamStat';
+import { RESET } from './actions';
 
 // Workers
 function* globalReset() {
@@ -41,8 +41,11 @@ function* globalReInit() {
 
 // Sagas
 function* watchGlobalReset() {
-  yield takeEvery(UPDATE_ASYNC, globalReset);
-  yield takeEvery(UPDATE_SUCCESS, globalReInit);
+  while (true) {
+    yield take(RESET);
+    yield call(globalReset);
+    yield call(globalReInit);
+  }
 }
 
 export default {

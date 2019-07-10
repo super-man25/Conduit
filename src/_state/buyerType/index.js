@@ -9,6 +9,7 @@ const FETCH_BUYER_TYPES_ERROR = 'buyerType/FETCH_BUYER_TYPES_ERROR';
 const UPDATE_BUYER_TYPES = 'buyerType/UPDATE_BUYER_TYPES';
 const UPDATE_BUYER_TYPES_SUCCESS = 'buyerType/UPDATE_BUYER_TYPES_SUCCESS';
 const UPDATE_BUYER_TYPES_ERROR = 'buyerType/UPDATE_BUYER_TYPES_ERROR';
+const RESET = 'buyerType/RESET';
 
 // Action types
 export type FetchBuyerTypesAction = {
@@ -40,13 +41,18 @@ export type UpdateBuyerTypeErrorAction = {
   payload: Error
 };
 
+export type ResetBuyerTypesAction = {
+  type: 'buyerType/RESET'
+};
+
 export type Action =
   | FetchBuyerTypesAction
   | FetchBuyerTypesSuccessAction
   | FetchBuyerTypesErrorAction
   | UpdateBuyerTypesAction
   | UpdateBuyerTypesSuccessAction
-  | UpdateBuyerTypeErrorAction;
+  | UpdateBuyerTypeErrorAction
+  | ResetBuyerTypesAction;
 
 export const types = {
   FETCH_BUYER_TYPES,
@@ -54,7 +60,8 @@ export const types = {
   FETCH_BUYER_TYPES_ERROR,
   UPDATE_BUYER_TYPES,
   UPDATE_BUYER_TYPES_SUCCESS,
-  UPDATE_BUYER_TYPES_ERROR
+  UPDATE_BUYER_TYPES_ERROR,
+  RESET
 };
 
 // Actions
@@ -69,9 +76,12 @@ const updateBuyerTypes = (
   payload: buyerTypes
 });
 
+const resetBuyerTypes = (): ResetBuyerTypesAction => ({ type: RESET });
+
 export const actions = {
   fetchBuyerTypes,
-  updateBuyerTypes
+  updateBuyerTypes,
+  resetBuyerTypes
 };
 
 // State/reducer
@@ -114,6 +124,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       };
     case UPDATE_BUYER_TYPES_ERROR:
       return { ...state, error: action.payload, loading: false };
+    case RESET:
+      return initialState;
     default:
       return state;
   }

@@ -1,5 +1,12 @@
 // @flow
-import { H4, Input, ScrollableList, Spacing, Flex } from '_components';
+import {
+  H4,
+  Input,
+  ScrollableList,
+  Spacing,
+  Flex,
+  CenteredLoader
+} from '_components';
 import { cssConstants } from '_constants';
 import React from 'react';
 import styled from 'styled-components';
@@ -72,10 +79,40 @@ export function EventListPresenter(props: Props) {
   } = props;
 
   const filtered = !!filter;
-  const noResult = !loading && (!events || !events.length);
+  const noResult = !events || !events.length;
+
+  const renderContent = () => {
+    if (noResult) {
+      return (
+        <NoContentWrap>
+          <Heading data-test-id="no-events-message">
+            No events matching query
+          </Heading>
+        </NoContentWrap>
+      );
+    }
+    return (
+      <OverflowContent>
+        <ScrollableList
+          data={events}
+          scrollIndex={getScrollIndex(events, activeId, filtered)}
+        >
+          {(event, key) => (
+            <EventListItem
+              onClick={onClick}
+              active={event.id === activeId}
+              key={event.id}
+              event={event}
+              isAdmin={isAdmin}
+            />
+          )}
+        </ScrollableList>
+      </OverflowContent>
+    );
+  };
 
   return (
-    <Flex height="100%" direction="column">
+    <Flex height="100%" direction="column" position="relative">
       <HeaderContainer>
         <Spacing padding="24px 40px">
           <Heading>{title}</Heading>
@@ -90,32 +127,7 @@ export function EventListPresenter(props: Props) {
         </Spacing>
       </HeaderContainer>
 
-      {noResult && (
-        <NoContentWrap>
-          <Heading data-test-id="no-events-message">
-            No events matching query
-          </Heading>
-        </NoContentWrap>
-      )}
-
-      {!noResult && (
-        <OverflowContent>
-          <ScrollableList
-            data={events}
-            scrollIndex={getScrollIndex(events, activeId, filtered)}
-          >
-            {(event, key) => (
-              <EventListItem
-                onClick={onClick}
-                active={event.id === activeId}
-                key={event.id}
-                event={event}
-                isAdmin={isAdmin}
-              />
-            )}
-          </ScrollableList>
-        </OverflowContent>
-      )}
+      {loading ? <CenteredLoader /> : renderContent()}
     </Flex>
   );
 }

@@ -63,6 +63,9 @@ exports[`defaultCellRenderer should render correctly 1`] = `
   max-width: ",
           [Function],
           ";
+  position: ",
+          [Function],
+          ";
 ",
           "
     margin: ",
