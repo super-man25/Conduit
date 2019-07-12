@@ -12,7 +12,7 @@ exports[`renders correctly with disabled prop 1`] = `
   background-position: right center;
   font-size: 1rem;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: #767676;
@@ -61,7 +61,7 @@ exports[`renders correctly with inValid prop 1`] = `
   background-position: right center;
   font-size: 1rem;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: #DC0A0A;
@@ -109,7 +109,7 @@ exports[`renders correctly with no props 1`] = `
   background-position: right center;
   font-size: 1rem;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: #767676;
@@ -157,7 +157,7 @@ exports[`renders correctly with valid prop 1`] = `
   background-position: right center;
   font-size: 1rem;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: #2F6450;

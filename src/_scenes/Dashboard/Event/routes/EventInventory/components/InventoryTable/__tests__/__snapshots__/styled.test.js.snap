@@ -179,7 +179,7 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   background-position: right center;
   font-size: 1rem;
   width: 100%;
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: #767676;

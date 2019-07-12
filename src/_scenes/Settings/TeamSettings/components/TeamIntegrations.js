@@ -1,7 +1,7 @@
 // @flow
 
-import React from 'react';
-import { Flex, H5, HR, S1, Integration, Box } from '_components';
+import React, { useState } from 'react';
+import { Flex, FlexItem, H5, HR, S1, Integration, Box } from '_components';
 import styled from 'styled-components';
 import { Portal } from '_components/Portal';
 import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
@@ -10,14 +10,6 @@ import type { EDIntegration } from '_models';
 const TeamIntegrationsWrapper = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
-`;
-
-const IntegrationsGridLayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem 2rem;
-  width: 70%;
-  margin: 0.5rem 0;
 `;
 
 type ClientIntegration = {
@@ -37,86 +29,87 @@ type Props = {
   handleIntegrationToggle: (i: ClientIntegration, e: any) => void
 };
 
-type State = {
-  toggledIntegration: ?EDIntegration
-};
+export const TeamIntegrations = (props: Props) => {
+  const { primary, secondary, handleIntegrationToggle } = props;
+  const [toggledIntegration: ?EDIntegration, setToggledIntegration] = useState(
+    null
+  );
 
-export class TeamIntegrations extends React.Component<Props, State> {
-  state = { toggledIntegration: null };
-
-  onIntegrationChanged = (integration: EDIntegration) => {
-    this.setState({
-      toggledIntegration: integration
-    });
+  const onIntegrationChanged = (integration: EDIntegration) => {
+    setToggledIntegration(integration);
   };
 
-  onCancelToggleIntegration = () => {
-    this.setState({ toggledIntegration: null });
+  const onCancelToggleIntegration = () => {
+    setToggledIntegration(null);
   };
 
-  onConfirmToggleIntegration = () => {
-    if (!this.state.toggledIntegration) return;
+  const onConfirmToggleIntegration = () => {
+    if (!toggledIntegration) return;
 
-    this.props.handleIntegrationToggle(
-      this.state.toggledIntegration,
-      !this.state.toggledIntegration.isActive
+    props.handleIntegrationToggle(
+      toggledIntegration,
+      !toggledIntegration.isActive
     );
-    this.setState({ toggledIntegration: null });
+    setToggledIntegration(null);
   };
 
-  render() {
-    const { primary, secondary, handleIntegrationToggle } = this.props;
-    return (
-      <TeamIntegrationsWrapper>
-        <Box>
-          <H5 type="secondary">Integrations</H5>
-          {!!primary && (
-            <React.Fragment>
-              <S1 weight="300">
-                <i>Primary Integration</i>
-              </S1>
-              <HR />
-              <IntegrationsGridLayout>
-                {primary.map((i, index) => (
+  return (
+    <TeamIntegrationsWrapper>
+      <Box>
+        <H5 type="secondary">Integrations</H5>
+        {!!primary && (
+          <React.Fragment>
+            <S1 weight="300">
+              <i>Primary Integration</i>
+            </S1>
+            <HR />
+            <Flex flexWrap="wrap">
+              {primary.map((i, index) => (
+                <FlexItem flex="0 1 auto" margin="1rem" key={index}>
                   <Integration
-                    key={index}
                     {...i}
                     onChange={(e) => handleIntegrationToggle(i, e)}
                   />
-                ))}
-              </IntegrationsGridLayout>
-            </React.Fragment>
-          )}
-        </Box>
-        {!!secondary && (
-          <Box marginTop="4rem">
-            <React.Fragment>
-              <S1 weight="300">
-                <i>Secondary Integrations</i>
-              </S1>
-              <HR />
-              <IntegrationsGridLayout>
-                {secondary.map((i, index) => (
+                </FlexItem>
+              ))}
+            </Flex>
+          </React.Fragment>
+        )}
+      </Box>
+      {!!secondary && (
+        <Box marginTop="4rem">
+          <React.Fragment>
+            <S1 weight="300">
+              <i>Secondary Integrations</i>
+            </S1>
+            <HR />
+            <Flex flexWrap="wrap">
+              {secondary.map((i, index) => (
+                <FlexItem
+                  flex="0 1 auto"
+                  margin="1rem"
+                  height="245px"
+                  key={index}
+                >
                   <Integration
-                    key={index}
                     {...i}
-                    onChange={(e) => this.onIntegrationChanged(i)}
+                    onChange={(e) => onIntegrationChanged(i)}
                   />
-                ))}
-              </IntegrationsGridLayout>
-            </React.Fragment>
-          </Box>
-        )}
-        {this.state.toggledIntegration && (
-          <Portal>
-            <IntegrationToggleAlertModal
-              onCancel={this.onCancelToggleIntegration}
-              onConfirm={this.onConfirmToggleIntegration}
-              integration={this.state.toggledIntegration}
-            />
-          </Portal>
-        )}
-      </TeamIntegrationsWrapper>
-    );
-  }
-}
+                </FlexItem>
+              ))}
+            </Flex>
+          </React.Fragment>
+        </Box>
+      )}
+      {toggledIntegration && (
+        <Portal>
+          <IntegrationToggleAlertModal
+            onCancel={onCancelToggleIntegration}
+            onConfirm={onConfirmToggleIntegration}
+            integration={toggledIntegration}
+          />
+        </Portal>
+      )}
+    </TeamIntegrationsWrapper>
+  );
+};

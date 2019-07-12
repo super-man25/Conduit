@@ -61,7 +61,7 @@ export const Input: React.ComponentType<Props> = styled.input.attrs(
 
   font-size: 1rem;
   width: ${(props) => (props.width ? props.width : '100%')};
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: ${(props) => props.bordercolor};

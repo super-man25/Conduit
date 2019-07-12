@@ -33,23 +33,11 @@ exports[`<TeamSettings /> renders correctly 1`] = `
         weight="300"
       >
         <i>
-          Team Information and settings
+          Team Information and Settings
         </i>
       </styled.span>
       <TeamInfo
-        fetch={
-          [MockFunction] {
-            "calls": Array [
-              Array [],
-            ],
-            "results": Array [
-              Object {
-                "type": "return",
-                "value": undefined,
-              },
-            ],
-          }
-        }
+        fetch={[MockFunction]}
         id={1}
         name="New York Mets"
         pricingInterval={15}

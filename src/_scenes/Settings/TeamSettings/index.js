@@ -11,7 +11,7 @@ import {
   Spacing
 } from '_components';
 import { withRouter } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect } from 'react';
 import TeamInfo from './components/TeamInfo';
 import TeamIntegrationsContainer from './containers/TeamIntegrationsContainer';
 import { connect } from 'react-redux';
@@ -44,34 +44,31 @@ const teamCrumb = [
   }
 ];
 
-export class TeamSettings extends React.Component<Props> {
-  componentDidMount() {
-    this.props.clientActions.fetch();
-  }
+export const TeamSettings = (props: Props) => {
+  const { clientActions } = props;
 
-  render() {
-    return (
-      <PageWrapper>
-        <PrimaryContent padding="2rem">
-          <TeamWrapper>
-            <Spacing margin="2rem 0">
-              <Breadcrumbs crumbs={teamCrumb} />
-            </Spacing>
-            <H3 type="secondary">Team Settings</H3>
-            <S1 weight="300">
-              <i>Team Information and settings</i>
-            </S1>
-            <TeamInfo
-              {...this.props.clientState}
-              {...this.props.clientActions}
-            />
-            <TeamIntegrationsContainer />
-          </TeamWrapper>
-        </PrimaryContent>
-      </PageWrapper>
-    );
-  }
-}
+  useEffect(() => {
+    clientActions.fetch();
+  }, [clientActions]);
+
+  return (
+    <PageWrapper>
+      <PrimaryContent padding="2rem">
+        <TeamWrapper>
+          <Spacing margin="2rem 0">
+            <Breadcrumbs crumbs={teamCrumb} />
+          </Spacing>
+          <H3 type="secondary">Team Settings</H3>
+          <S1 weight="300">
+            <i>Team Information and Settings</i>
+          </S1>
+          <TeamInfo {...props.clientState} {...props.clientActions} />
+          <TeamIntegrationsContainer />
+        </TeamWrapper>
+      </PrimaryContent>
+    </PageWrapper>
+  );
+};
 
 function mapStateToProps(state) {
   return {

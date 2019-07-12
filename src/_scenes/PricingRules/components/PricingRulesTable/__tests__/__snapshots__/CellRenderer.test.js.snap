@@ -49,7 +49,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
   width: ",
             [Function],
             ";
-  padding-left: 3%;
+  padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
   border-color: ",

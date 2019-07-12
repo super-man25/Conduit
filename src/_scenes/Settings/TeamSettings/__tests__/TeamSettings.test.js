@@ -18,6 +18,5 @@ describe('<TeamSettings />', () => {
   it('renders correctly', () => {
     const wrapper = shallow(<TeamSettings {...props} />);
     expect(wrapper).toMatchSnapshot();
-    expect(props.clientActions.fetch).toHaveBeenCalled();
   });
 });

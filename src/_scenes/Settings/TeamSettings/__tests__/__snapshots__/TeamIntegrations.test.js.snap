@@ -16,15 +16,22 @@ exports[`<TeamIntegrations /> render correctly 1`] = `
       </i>
     </styled.span>
     <styled.hr />
-    <styled.div>
-      <Integration
-        isActive={true}
-        isPrimary={true}
+    <Flex
+      flexWrap="wrap"
+    >
+      <FlexItem
+        flex="0 1 auto"
         key="0"
-        name="tickets.com"
-        onChange={[Function]}
-      />
-    </styled.div>
+        margin="1rem"
+      >
+        <Integration
+          isActive={true}
+          isPrimary={true}
+          name="tickets.com"
+          onChange={[Function]}
+        />
+      </FlexItem>
+    </Flex>
   </Styled(styled.div)>
   <Styled(styled.div)
     marginTop="4rem"
@@ -37,15 +44,23 @@ exports[`<TeamIntegrations /> render correctly 1`] = `
       </i>
     </styled.span>
     <styled.hr />
-    <styled.div>
-      <Integration
-        isActive={true}
-        isPrimary={false}
+    <Flex
+      flexWrap="wrap"
+    >
+      <FlexItem
+        flex="0 1 auto"
+        height="245px"
         key="0"
-        name="seatgeek.com"
-        onChange={[Function]}
-      />
-    </styled.div>
+        margin="1rem"
+      >
+        <Integration
+          isActive={true}
+          isPrimary={false}
+          name="seatgeek.com"
+          onChange={[Function]}
+        />
+      </FlexItem>
+    </Flex>
   </Styled(styled.div)>
 </Styled(Flex)>
 `;
