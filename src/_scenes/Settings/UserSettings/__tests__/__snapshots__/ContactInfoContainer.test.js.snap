@@ -21,7 +21,9 @@ exports[`<ContactInfo /> renders correctly 1`] = `
       <Styled(Styled(styled.div))
         data-test-id="full-name-text"
       >
-        First Last
+        First
+         
+        Last
       </Styled(Styled(styled.div))>
     </Styled(Flex)>
     <Styled(Styled(Styled(Styled(styled.button))))

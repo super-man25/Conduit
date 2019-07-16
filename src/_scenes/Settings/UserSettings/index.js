@@ -40,7 +40,7 @@ function UserSettings() {
           </Spacing>
           <H3 type="secondary">User Settings</H3>
           <S1 weight="300">
-            <i>User Information and settings</i>
+            <i>User Information and Settings</i>
           </S1>
           <ContactInfoContainer />
         </UserWrapper>

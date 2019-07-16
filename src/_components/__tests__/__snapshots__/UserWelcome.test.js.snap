@@ -72,7 +72,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   color: #FFFFFF;
   margin: 0 0 4px 0;
   text-align: right;
-  text-transform: capitalize;
+  text-transform: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -129,7 +129,7 @@ export const UserWelcome = (props: Props) => {
               <Text
                 ellipsis
                 color={cssConstants.PRIMARY_WHITE}
-                textTransform="capitalize"
+                textTransform="none"
                 textAlign="right"
                 size="14"
                 margin="0 0 4px 0"

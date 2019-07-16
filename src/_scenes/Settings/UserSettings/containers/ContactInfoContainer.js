@@ -22,7 +22,6 @@ import {
 } from '_helpers/string-utils';
 import { actions as userActions } from '_state/user';
 import type { EDUser } from '_models';
-import { titleCase } from '_helpers/string-utils';
 import { withClickAway } from '_hoc';
 
 const ContactInfoWrapper = withClickAway(styled(Flex)`
@@ -275,7 +274,7 @@ export class ContactInfo extends React.Component<Props, State> {
             <React.Fragment>
               <ContactSection>
                 <ContactText data-test-id="full-name-text">
-                  {titleCase(`${user.firstName} ${user.lastName}`)}
+                  {user.firstName} {user.lastName}
                 </ContactText>
               </ContactSection>
               <SettingEditButton
