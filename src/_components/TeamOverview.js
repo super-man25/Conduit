@@ -8,8 +8,11 @@ import { Dropdown } from './Dropdown';
 import { connect } from 'react-redux';
 import { selectors, actions } from '_state/season';
 import { selectors as eventListSelectors } from '_state/eventList';
+import { selectors as clientSelectors } from '_state/client';
 import { createStructuredSelector } from 'reselect';
-import type { EDSeason, EDEvent } from '_models';
+import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
+import { pluralize } from '_helpers/string-utils';
+import { isAfter } from 'date-fns';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;
@@ -36,10 +39,12 @@ const StatLabel = styled(H3)`
 type Stats = {
   wins: number,
   losses: number,
+  ties?: number,
   gamesTotal: number
 };
 
 type Props = {
+  client: EDClient,
   onToggleSidebar: boolean,
   stats: Stats,
   seasons: EDSeason[],
@@ -48,8 +53,18 @@ type Props = {
   eventList: EDEvent[]
 };
 
-export class TeamOverviewPresenter extends React.Component<Props> {
-  calculateRecord = (wins: number, losses: number) => {
+export const TeamOverviewPresenter = (props: Props) => {
+  const {
+    client: { performanceType },
+    eventList,
+    onToggleSidebar,
+    seasons,
+    selectedSeason,
+    setActiveSeasonId,
+    stats
+  } = props;
+
+  const calculateMLBRecord = (wins: number, losses: number) => {
     const record = (wins / (wins + losses)).toFixed(3);
     if (isNaN(record)) {
       return '--';
@@ -57,74 +72,90 @@ export class TeamOverviewPresenter extends React.Component<Props> {
     return record;
   };
 
-  showRecord = (stats: Stats) => {
+  const calculateNFLRecord = (
+    wins: ?number,
+    losses: ?number,
+    ties: ?number
+  ) => {
+    return `${stats.wins || '0'} - ${stats.losses || '0'} - ${stats.ties ||
+      '0'}`;
+  };
+
+  const showRecord = (stats: Stats, performanceType: PerformanceType) => {
     if (stats === null) {
       return '--';
+    }
+    if (performanceType === 'MLB') {
+      return calculateMLBRecord(stats.wins, stats.losses);
     } else {
-      return this.calculateRecord(stats.wins, stats.losses);
+      return calculateNFLRecord(stats.wins, stats.losses, stats.ties);
     }
   };
 
-  showGamesRemaining = (eventList: EDEvent[]) => {
+  const calculateGamesRemaining = (eventList: EDEvent[]) => {
+    return eventList.filter((event) => {
+      return isAfter(new Date(event.timestamp).getTime(), Date.now());
+    }).length;
+  };
+
+  const showGamesRemaining = (eventList: EDEvent[]) => {
     if (eventList === null) {
       return '--';
     } else {
-      const gamesRemaining = eventList.filter((event) => {
-        return new Date(event.timestamp).getTime() >= Date.now();
-      }).length;
+      const gamesRemaining = calculateGamesRemaining(eventList);
       return gamesRemaining || '--';
     }
   };
 
-  render() {
-    const {
-      onToggleSidebar,
-      stats,
-      seasons,
-      selectedSeason,
-      setActiveSeasonId,
-      eventList
-    } = this.props;
+  return (
+    <TeamOverviewContainer>
+      <Flex direction="row" align="center" justify="space-between">
+        <Dropdown
+          options={seasons}
+          selected={selectedSeason}
+          noneSelected={<Heading>Select a Season</Heading>}
+          parseOption={(option) => option.name}
+          onChange={(option) => setActiveSeasonId(option.id)}
+          renderSelected={(option) => <Heading>{option.name}</Heading>}
+        />
+        <TextButton small collapse onClick={onToggleSidebar}>
+          <Icon name="arrow-left" size={48} color="white" />
+        </TextButton>
+      </Flex>
 
-    return (
-      <TeamOverviewContainer>
-        <Flex direction="row" align="center" justify="space-between">
-          <Dropdown
-            options={seasons}
-            selected={selectedSeason}
-            noneSelected={<Heading>Select a Season</Heading>}
-            parseOption={(option) => option.name}
-            onChange={(option) => setActiveSeasonId(option.id)}
-            renderSelected={(option) => <Heading>{option.name}</Heading>}
-          />
-          <TextButton small collapse onClick={onToggleSidebar}>
-            <Icon name="arrow-left" size={48} color="white" />
-          </TextButton>
-        </Flex>
-
+      {stats && (
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
-            <StatLabel>{this.showRecord(stats)}</StatLabel>
+            <StatLabel>{showRecord(stats, performanceType)}</StatLabel>
             <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
-              <i>Win / Loss</i>
+              <i>
+                {performanceType === 'MLB' ? 'Win / Loss' : 'Win - Loss - Tie'}
+              </i>
             </P1>
           </FlexItem>
           <FlexItem flex={2}>
-            <StatLabel>{this.showGamesRemaining(eventList)}</StatLabel>
+            <StatLabel>{showGamesRemaining(eventList)}</StatLabel>
             <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
-              <i>Home Games Remaining</i>
+              <i>
+                {`Home ${pluralize(
+                  calculateGamesRemaining(eventList),
+                  'Game',
+                  'Games'
+                )} Remaining`}
+              </i>
             </P1>
           </FlexItem>
         </Flex>
-      </TeamOverviewContainer>
-    );
-  }
-}
+      )}
+    </TeamOverviewContainer>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   seasons: selectors.selectSeasons,
   selectedSeason: selectors.selectActiveSeason,
-  eventList: eventListSelectors.selectEventList
+  eventList: eventListSelectors.selectEventList,
+  client: clientSelectors.getClient
 });
 
 const mapDispatchToProps = {

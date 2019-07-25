@@ -1,4 +1,5 @@
 // @flow
+export type PerformanceType = 'MLB' | 'NFL';
 
 export type EDClient = {
   createdAt: Date,
@@ -6,7 +7,8 @@ export type EDClient = {
   modifiedAt: Date,
   name: string,
   pricingInterval: number,
-  logoUrl: string
+  logoUrl: string,
+  performanceType: PerformanceType
 };
 
 export type EDClientList = {

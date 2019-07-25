@@ -319,3 +319,14 @@ export const fixedOrDash = (number: string | number, fix: number) => {
 
   return numberVal.toFixed(fix);
 };
+
+/**
+ * returns the singular or pluralized form of given strings
+ *
+ * @param {number} count
+ * @param {string} singular
+ * @param {string} plural
+ */
+export const pluralize = (count: number, singular: string, plural: string) => {
+  return count === 1 ? singular : plural;
+};
