@@ -52,9 +52,15 @@ export class SeatMapPresenter extends React.Component {
   }
 
   render() {
-    const { venue, loading, venueMapBlob, error } = this.props;
+    const {
+      venue,
+      loading,
+      loadingEventInventory,
+      venueMapBlob,
+      error
+    } = this.props;
 
-    if (loading) {
+    if (loading || loadingEventInventory) {
       return <SeatMapLoader />;
     }
 
@@ -100,7 +106,8 @@ const mapStateToProps = createStructuredSelector({
   loading: seatMapSelectors.selectLoading,
   error: seatMapSelectors.selectError,
   venue: seatMapSelectors.selectVenue,
-  venueMapBlob: seatMapSelectors.selectVenueMapBlob
+  venueMapBlob: seatMapSelectors.selectVenueMapBlob,
+  loadingEventInventory: selectors.selectEventInventoryLoading
 });
 
 const mapDispatchToProps = {

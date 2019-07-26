@@ -1,5 +1,8 @@
 import { SVGChartElement } from './svgChartElement';
-import { findElementsBySelectedSectionFilters } from './helpers';
+import {
+  findElementsBySelectedSectionFilters,
+  findElementsNotSelected
+} from './helpers';
 
 /**
  * SVGChart - Chart that manages the seatmap SVG's in event dynamic
@@ -110,8 +113,13 @@ export class SVGChart {
       sectionFilters
     );
 
+    const elementsToFade = findElementsNotSelected(elements, sectionFilters);
+
     elements.forEach((el) => el.unselect());
+    elements.forEach((el) => el.unfade());
+
     elementsToHighlight.forEach((el) => el.select());
+    elementsToFade.forEach((el) => el.fade());
 
     this.updateChartElements();
   }

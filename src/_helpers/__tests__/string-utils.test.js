@@ -83,11 +83,6 @@ describe('orDash', () => {
       const result = titleCase(original);
       expect(result).toEqual('John Malcolm');
     });
-    it('should return the string with hyphen in title case', () => {
-      const original = 'yu-chun lin';
-      const result = titleCase(original);
-      expect(result).toEqual('Yu-Chun Lin');
-    });
   });
 
   describe('sentenceCase', () => {

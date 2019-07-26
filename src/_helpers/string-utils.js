@@ -234,10 +234,7 @@ export function titleCase(str: string): string {
     .toLowerCase()
     .split(' ')
     .map((word) => word.replace(word[0], word[0].toUpperCase()))
-    .join(' ')
-    .split('-')
-    .map((word) => word.replace(word[0], word[0].toUpperCase()))
-    .join('-');
+    .join(' ');
 }
 
 // Helper for truncateNumber

@@ -16,3 +16,12 @@ export function findElementsBySelectedSectionFilters(elements, sectionFilters) {
 
   return matchingEls;
 }
+
+export function findElementsNotSelected(elements, sectionFilters) {
+  const sectionFilterIds = sectionFilters.map((f) => f.name);
+  if (sectionFilterIds.length) {
+    return elements.filter((el) => !sectionFilterIds.includes(el.sectionRef));
+  }
+
+  return [];
+}
