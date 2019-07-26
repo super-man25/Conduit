@@ -87,17 +87,41 @@ exports[`<Settings /> renders correctly 1`] = `
         path="/settings/user"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(UsersPresenter)",
+            "type": [Function],
+          }
+        }
         key="2"
         path="/settings/users"
       />
       <SecuredRoute
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(CreateUser)",
+            "type": [Function],
+          }
+        }
         key="3"
         path="/settings/create-user"
       />
       <SecuredRoute
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(DemoRoute)",
+            "type": [Function],
+          }
+        }
         key="4"
         path="/settings/demo"
       />

@@ -3,11 +3,27 @@
 exports[`<Event /> index route should render correctly 1`] = `
 <Switch>
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(EventInventory)",
+        "type": [Function],
+      }
+    }
     path="/event/:id/inventory"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(EventOverview)",
+        "type": [Function],
+      }
+    }
     path="/event/:id"
   />
   <Redirect
