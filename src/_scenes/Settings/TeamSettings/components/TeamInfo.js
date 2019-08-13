@@ -1,18 +1,18 @@
 // @flow
 
+import React from 'react';
 import styled from 'styled-components';
 import {
-  Setting,
-  H5,
-  Flex,
   EDText,
+  Flex,
+  H5,
+  PrimaryButton,
   SelectBox,
-  PrimaryButton
+  Setting
 } from '_components';
-import { toggleEditing } from '../stateChanges';
-import React from 'react';
-import { titleCase, orDash } from '_helpers/string-utils';
+import { orDash, titleCase } from '_helpers/string-utils';
 import { withClickAway } from '_hoc';
+import { toggleEditing } from '../stateChanges';
 
 const TeamInfoWrapper = styled(Flex)`
   flex-direction: column;
@@ -114,7 +114,7 @@ export class TeamInfo extends React.Component<Props, State> {
         <H5 type="secondary">Basic Settings</H5>
         <Setting cols={3}>
           <EDText {...textProps}>Team</EDText>
-          <EDText {...textProps}>{titleCase(orDash(name))}</EDText>
+          <EDText {...textProps}>{orDash(name)}</EDText>
           <EDText {...textProps} />
         </Setting>
         <TeamSetting cols={3} onClickAway={this.clickAway}>
