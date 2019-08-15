@@ -32,9 +32,10 @@ docker tag $DOCKER_ORG/$DOCKER_IMAGE:$DOCKER_TAG_HASH $DOCKER_ORG/$DOCKER_IMAGE:
 
 # Push docker images
 if [[ "$SHOULD_PUSH" != "" && "$SHOULD_PUSH" == true ]]; then
-	printf "\n> Pushing Docker Images to Docker Hub: $DOCKER_ORG/$DOCKER_IMAGE\n\n"
+	printf "\n> Pushing Docker Images to ECR: $DOCKER_ORG/$DOCKER_IMAGE\n\n"
+  eval $($AWS_CLI_LOCATION ecr get-login --region $REGION --no-include-email)
 	docker push $DOCKER_ORG/$DOCKER_IMAGE:$DOCKER_TAG_HASH
 	docker push $DOCKER_ORG/$DOCKER_IMAGE:$DOCKER_TAG_ENV
 else
-	printf "\n> NOT pushing Docker Images to Docker Hub\n\n"
+	printf "\n> NOT pushing Docker Images to ECR\n\n"
 fi
