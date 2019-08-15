@@ -18,7 +18,7 @@ BUILD_COMMAND="yarn build-$DOCKER_TAG_ENV"
 
 # Shared variables
 SHOULD_PUSH=$1
-DOCKER_ORG="dialexa"
+DOCKER_ORG="515200254182.dkr.ecr.us-east-1.amazonaws.com"
 DOCKER_TAG_HASH="$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
 
 # Build project assets
