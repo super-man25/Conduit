@@ -7,7 +7,7 @@ exports[`renders correctly when downloading is false 1`] = `
 }
 
 .c1 path {
-  fill: #024A8F;
+  fill: #0A169A;
 }
 
 .c0 {
@@ -26,9 +26,9 @@ exports[`renders correctly when downloading is false 1`] = `
 }
 
 .c2 {
-  font-size: 1rem;
-  color: #024A8F;
-  font-weight: normal;
+  font-size: 0.875rem;
+  color: #0A169A;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
@@ -46,7 +46,7 @@ exports[`renders correctly when downloading is false 1`] = `
 >
   <svg
     className="c1"
-    color="#024A8F"
+    color="#0A169A"
     height="24px"
     viewBox="0 0 24 24"
     width="24px"
@@ -57,6 +57,7 @@ exports[`renders correctly when downloading is false 1`] = `
   </svg>
   <div
     className="c2"
+    size="small"
     type="secondary"
   >
     DOWNLOAD TRANSACTIONS
@@ -90,9 +91,9 @@ exports[`renders correctly when downloading is true 1`] = `
 }
 
 .c2 {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #999999;
-  font-weight: normal;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
@@ -120,6 +121,7 @@ exports[`renders correctly when downloading is true 1`] = `
   </svg>
   <div
     className="c2"
+    size="small"
     type="disabled"
   >
     DOWNLOADING...

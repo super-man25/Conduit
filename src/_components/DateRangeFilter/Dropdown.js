@@ -7,7 +7,7 @@ export const Dropdown = styled.div`
   justify-content: space-between;
   position: relative;
   z-index: ${zIndexes.DROPDOWN_FILTER + 1};
-  border: 1px solid ${cssConstants.PRIMARY_GRAY};
+  border: 1px solid ${cssConstants.PRIMARY_BLUE};
   background-color: ${cssConstants.PRIMARY_WHITE};
   padding: 8px 12px;
   color: ${cssConstants.PRIMARY_DARKEST_GRAY};
@@ -16,9 +16,9 @@ export const Dropdown = styled.div`
   ${(props) =>
     props.isOpen &&
     css`
-      border-left: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
-      border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
-      border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+      border-left: 1px solid ${cssConstants.PRIMARY_BLUE};
+      border-top: 1px solid ${cssConstants.PRIMARY_BLUE};
+      border-right: 1px solid ${cssConstants.PRIMARY_BLUE};
       border-radius: 4px 4px 0 0;
     `};
 

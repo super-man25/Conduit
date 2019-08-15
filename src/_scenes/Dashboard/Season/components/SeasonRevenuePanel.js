@@ -46,12 +46,14 @@ import { dateFormatter } from '_helpers';
 const TabLink = styled.span`
   color: ${(props) =>
     props.isActive
-      ? cssConstants.PRIMARY_LIGHT_BLUE
+      ? cssConstants.SECONDARY_BLUE
       : cssConstants.PRIMARY_LIGHT_BLACK};
+
+  font-weight: ${(props) => (props.isActive ? 'bold' : 'normal')};
   font-size: 14px;
 
   &:hover {
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    color: ${cssConstants.PRIMARY_BLUE_HOVER};
     cursor: pointer;
   }
 
@@ -172,13 +174,13 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                     isActive={selectedTab === 0}
                     onClick={() => onTabChange(0)}
                   >
-                    Revenue
+                    REVENUE
                   </TabLink>
                   <TabLink
                     isActive={selectedTab === 1}
                     onClick={() => onTabChange(1)}
                   >
-                    Inventory
+                    INVENTORY
                   </TabLink>
                 </FlexItem>
                 <FlexItem flex="0" margin="0 0 0 auto">

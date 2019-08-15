@@ -149,7 +149,9 @@ class CreateUser extends React.Component<Props, State> {
           onSubmit={this.handleSubmit}
           style={{ width: '500px', padding: '50px', paddingTop: '0px' }}
         >
-          <H3 type="secondary">Create User</H3>
+          <H3 type="secondary" size="28px" weight="heavy">
+            Create User
+          </H3>
           <Label htmlFor="firstName">First Name</Label>
           <Input
             type="text"

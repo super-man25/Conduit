@@ -58,7 +58,9 @@ export const TeamSettings = (props: Props) => {
           <Spacing margin="2rem 0">
             <Breadcrumbs crumbs={teamCrumb} />
           </Spacing>
-          <H3 type="secondary">Team Settings</H3>
+          <H3 type="secondary" size="28px" weight="heavy">
+            Team Settings
+          </H3>
           <S1 weight="300">
             <i>Team Information and Settings</i>
           </S1>

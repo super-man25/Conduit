@@ -22,7 +22,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   padding: 8px;
-  color: #024A8F;
+  color: #0A169A;
   background-color: inherit;
 }
 
@@ -69,6 +69,7 @@ exports[`renders correctly with a valid user prop 1`] = `
 
 .c4 {
   font-size: 14px;
+  font-weight: 700;
   color: #FFFFFF;
   margin: 0 0 4px 0;
   text-align: right;
@@ -80,8 +81,7 @@ exports[`renders correctly with a valid user prop 1`] = `
 }
 
 .c5 {
-  font-size: 12px;
-  color: #4B98CF;
+  color: #FFFFFF;
   margin: 0;
   text-align: right;
   text-transform: capitalize;
@@ -121,8 +121,7 @@ exports[`renders correctly with a valid user prop 1`] = `
           </p>
           <p
             className="c5"
-            color="#4B98CF"
-            size="12"
+            color="#FFFFFF"
           >
             Mets
           </p>

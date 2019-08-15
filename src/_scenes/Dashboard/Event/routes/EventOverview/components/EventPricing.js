@@ -118,7 +118,9 @@ export const EventPricingPresenter = (props: Props) => {
       <PanelHeader>
         <Flex height="100%" align="center" justify="space-between">
           <Flex>
-            <H4 margin="0 2.5rem 0 0">Pricing</H4>
+            <H4 margin="0 2.5rem 0 0" weight="bold">
+              Pricing
+            </H4>
             <Toggle
               isChecked={isBroadcast}
               onChange={toggleIsBroadcasting}

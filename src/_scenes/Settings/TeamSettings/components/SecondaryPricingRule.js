@@ -111,7 +111,7 @@ export class SecondaryPricingRulePresenter extends Component {
             <PrimaryButton onClick={this.saveSettings}>SAVE</PrimaryButton>
           </Fragment>
         ) : (
-          <SettingEditButton onClick={this.toggleEdit} />
+          <SettingEditButton weight="bold" onClick={this.toggleEdit} />
         )}
       </ClickAwayDiv>
     );

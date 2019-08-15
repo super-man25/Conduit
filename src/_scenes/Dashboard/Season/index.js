@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {
   H1,
+  H4,
   Spacing,
   PageWrapper,
   Flex,
@@ -22,6 +23,14 @@ const SeasonOverviewTitle = styled(H1)`
   margin: ${(props) => (props.sidebarIsOpen ? '0' : '0 0 0 1rem')};
 `;
 
+const Heading = styled(H4)`
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.9px;
+`;
+
 const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
   if (loading) {
     return (
@@ -34,7 +43,9 @@ const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
   if (!activeSeason) {
     return (
       <PageWrapper style={{ position: 'relative' }}>
-        <Center>No Season Selected</Center>
+        <Center>
+          <Heading data-test-id="no-season-message">No Season Selected</Heading>
+        </Center>
       </PageWrapper>
     );
   }

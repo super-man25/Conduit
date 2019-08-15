@@ -136,7 +136,7 @@ export class BulkUpdateModalPresenter extends React.Component {
             </Text>
             {this.showNetworkWarning && (
               <Text
-                color={cssConstants.SECONDARY_BLUE_BLACK}
+                color={cssConstants.SECONDARY_BLUE_ACCENT}
                 marginTop="1rem"
                 size={12}
               >

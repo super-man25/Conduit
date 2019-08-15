@@ -1,5 +1,5 @@
 :root {
-  --PRIMARY_LIGHT_BLUE: #38a9db;
+  --PRIMARY_LIGHT_BLUE: #0A169A;
   --SECONDARY_BLUE: #2670ae;
   --PRIMARY_LIGHT_GRAY: #d1d1d1;
   --PRIMARY_LIGHTER_GRAY: #eeeeee;
@@ -12,7 +12,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: Proxima Nova, Roboto, Helvetica, sans-serif;
   font-size: 14px;
   background: #ffffff;
 }

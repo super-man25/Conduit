@@ -21,35 +21,13 @@ exports[`renders correctly with no props 1`] = `
   cursor: pointer;
 }
 
-.c1 {
-  height: 38px;
-  width: auto;
-  margin-right: 1rem;
-}
-
-.c2 {
-  color: #FFFFFF;
-  margin: 0;
-  font-size: 1.5rem;
-  -webkit-letter-spacing: 0.5px;
-  -moz-letter-spacing: 0.5px;
-  -ms-letter-spacing: 0.5px;
-  letter-spacing: 0.5px;
-  word-break: break-all;
-}
-
 <div
   className="c0"
   height="100%"
 >
   <img
-    className="c1"
-    src="eventdynamiclogooutline.svg"
+    alt="Event Dynamic"
+    src="logo.svg"
   />
-  <h1
-    className="c2"
-  >
-    EVENT DYNAMIC
-  </h1>
 </div>
 `;

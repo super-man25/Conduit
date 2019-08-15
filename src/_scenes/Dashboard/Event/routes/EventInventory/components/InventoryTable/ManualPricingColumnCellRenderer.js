@@ -67,7 +67,7 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
           {cellData !== null && (
             <Text
               size={14}
-              color={cssConstants.PRIMARY_LIGHT_BLUE}
+              color={cssConstants.PRIMARY_BLUE}
               onClick={this.startEditingPrice}
               marginLeft="1rem"
               cursor={'pointer'}
@@ -78,7 +78,7 @@ export class ManualPricingCellPresenter extends React.Component<Props, State> {
           {cellData === null && (
             <Text
               size={14}
-              color={cssConstants.PRIMARY_LIGHT_BLUE}
+              color={cssConstants.PRIMARY_BLUE}
               onClick={this.startEditingPrice}
               opacity={textOpacity}
               cursor={'pointer'}

@@ -11,7 +11,7 @@ exports[`<EventHeader /> should render correctly 1`] = `
       textAlign="left"
     >
       <Icon
-        color="#024A8F"
+        color="#0A169A"
         name="arrow-right"
         size={48}
       />
@@ -57,22 +57,25 @@ exports[`<EventHeader /> should render correctly 1`] = `
         margin="0 25px"
       >
         <Styled(styled.p)
-          size="16px"
+          size="16"
+          textAlign="right"
         >
           Inventory
         </Styled(styled.p)>
         <Styled(styled.p)
-          color="#1A4B8A"
-          size="22px"
+          size="22"
+          textAlign="right"
+          weight="heavy"
         >
           -- / --
         </Styled(styled.p)>
-        <Styled(styled.span)
-          align="right"
-          color="#1A4B8A"
+        <Styled(styled.p)
+          color="#0A169A"
+          size="12"
+          textAlign="right"
         >
           Unsold / Sold
-        </Styled(styled.span)>
+        </Styled(styled.p)>
       </FlexItem>
     </Flex>
     <FlexItem
@@ -80,22 +83,25 @@ exports[`<EventHeader /> should render correctly 1`] = `
       margin="0 25px"
     >
       <Styled(styled.p)
-        size="16px"
+        size="16"
+        textAlign="right"
       >
         Revenue
       </Styled(styled.p)>
       <Styled(styled.p)
-        color="#1A4B8A"
-        size="22px"
+        size="22"
+        textAlign="right"
+        weight="heavy"
       >
         $739,472
       </Styled(styled.p)>
-      <Styled(styled.span)
-        align="right"
-        color="#1A4B8A"
+      <Styled(styled.p)
+        color="#0A169A"
+        size="12"
+        textAlign="right"
       >
-        to date
-      </Styled(styled.span)>
+        as of date
+      </Styled(styled.p)>
     </FlexItem>
   </Flex>
 </Styled(styled.div)>
@@ -112,7 +118,7 @@ exports[`<EventHeader /> should render correctly when on the location route 1`] 
       textAlign="left"
     >
       <Icon
-        color="#024A8F"
+        color="#0A169A"
         name="arrow-right"
         size={48}
       />
@@ -162,22 +168,25 @@ exports[`<EventHeader /> should render correctly when on the location route 1`] 
         margin="0 25px"
       >
         <Styled(styled.p)
-          size="16px"
+          size="16"
+          textAlign="right"
         >
           Inventory
         </Styled(styled.p)>
         <Styled(styled.p)
-          color="#1A4B8A"
-          size="22px"
+          size="22"
+          textAlign="right"
+          weight="heavy"
         >
           -- / --
         </Styled(styled.p)>
-        <Styled(styled.span)
-          align="right"
-          color="#1A4B8A"
+        <Styled(styled.p)
+          color="#0A169A"
+          size="12"
+          textAlign="right"
         >
           Unsold / Sold
-        </Styled(styled.span)>
+        </Styled(styled.p)>
       </FlexItem>
     </Flex>
     <FlexItem
@@ -185,22 +194,25 @@ exports[`<EventHeader /> should render correctly when on the location route 1`] 
       margin="0 25px"
     >
       <Styled(styled.p)
-        size="16px"
+        size="16"
+        textAlign="right"
       >
         Revenue
       </Styled(styled.p)>
       <Styled(styled.p)
-        color="#1A4B8A"
-        size="22px"
+        size="22"
+        textAlign="right"
+        weight="heavy"
       >
         $739,472
       </Styled(styled.p)>
-      <Styled(styled.span)
-        align="right"
-        color="#1A4B8A"
+      <Styled(styled.p)
+        color="#0A169A"
+        size="12"
+        textAlign="right"
       >
-        to date
-      </Styled(styled.span)>
+        as of date
+      </Styled(styled.p)>
     </FlexItem>
   </Flex>
 </Styled(styled.div)>

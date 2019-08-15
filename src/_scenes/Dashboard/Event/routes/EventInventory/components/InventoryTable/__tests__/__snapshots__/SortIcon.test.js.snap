@@ -8,7 +8,7 @@ exports[`<SortIcon /> should render correctly when filtered asc 1`] = `
   onClick={[MockFunction]}
 >
   <ExpandLessIcon
-    fill="#38A9DB"
+    fill="#0A169A"
     height={14}
     styles={
       Object {
@@ -43,7 +43,7 @@ exports[`<SortIcon /> should render correctly when filtered desc 1`] = `
     width={14}
   />
   <ExpandMoreIcon
-    fill="#38A9DB"
+    fill="#0A169A"
     height={14}
     width={14}
   />

@@ -25,7 +25,9 @@ exports[`<TeamSettings /> renders correctly 1`] = `
         />
       </styled.div>
       <styled.h3
+        size="28px"
         type="secondary"
+        weight="heavy"
       >
         Team Settings
       </styled.h3>

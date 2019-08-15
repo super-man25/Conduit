@@ -14,7 +14,7 @@ exports[`ChipButton renders correctly 1`] = `
 }
 
 .c0:hover {
-  background-color: #4B98CF;
+  background-color: #848ACC;
   color: #FFFFFF;
 }
 
@@ -27,7 +27,7 @@ exports[`ChipButton renders correctly 1`] = `
 
 exports[`ChipButton renders correctly with an active prop 1`] = `
 .c0 {
-  background-color: #1A4B8A;
+  background-color: #1F49B6;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
@@ -39,7 +39,7 @@ exports[`ChipButton renders correctly with an active prop 1`] = `
 }
 
 .c0:hover {
-  background-color: #4B98CF;
+  background-color: #848ACC;
   color: #FFFFFF;
 }
 
@@ -52,7 +52,7 @@ exports[`ChipButton renders correctly with an active prop 1`] = `
 
 exports[`ChipButtonGroup renders correctly 1`] = `
 .c2 {
-  background-color: #1A4B8A;
+  background-color: #1F49B6;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
@@ -64,7 +64,7 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 }
 
 .c2:hover {
-  background-color: #4B98CF;
+  background-color: #848ACC;
   color: #FFFFFF;
 }
 
@@ -114,12 +114,12 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c3:hover {
-  background-color: #4B98CF;
+  background-color: #848ACC;
   color: #FFFFFF;
 }
 
 .c2 {
-  background-color: #1A4B8A;
+  background-color: #1F49B6;
   color: #FFFFFF;
   cursor: pointer;
   font-size: 12px;
@@ -131,7 +131,7 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c2:hover {
-  background-color: #4B98CF;
+  background-color: #848ACC;
   color: #FFFFFF;
 }
 

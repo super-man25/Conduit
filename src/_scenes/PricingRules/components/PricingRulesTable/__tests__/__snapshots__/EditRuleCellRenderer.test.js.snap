@@ -5,7 +5,7 @@ exports[`<EditRuleCellRenderer /> should render correctly 1`] = `
   align="center"
 >
   <Styled(styled.p)
-    color="#38A9DB"
+    color="#0A169A"
     onClick={[Function]}
     size={14}
     style={
@@ -13,6 +13,7 @@ exports[`<EditRuleCellRenderer /> should render correctly 1`] = `
         "cursor": "pointer",
       }
     }
+    weight="heavy"
   >
     EDIT RULE
   </Styled(styled.p)>

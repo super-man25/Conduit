@@ -22,7 +22,7 @@ exports[`should render default 1`] = `
   height: 14px;
   width: 14px;
   border-radius: 14px;
-  background-color: #38A9DB;
+  background-color: #0A169A;
   -webkit-animation: bFptHC 1.3s ease infinite;
   animation: bFptHC 1.3s ease infinite;
   -webkit-animation-delay: 0.1s;
@@ -33,7 +33,7 @@ exports[`should render default 1`] = `
   height: 14px;
   width: 14px;
   border-radius: 14px;
-  background-color: #38A9DB;
+  background-color: #0A169A;
   -webkit-animation: bFptHC 1.3s ease infinite;
   animation: bFptHC 1.3s ease infinite;
   -webkit-animation-delay: 0.30000000000000004s;
@@ -44,7 +44,7 @@ exports[`should render default 1`] = `
   height: 14px;
   width: 14px;
   border-radius: 14px;
-  background-color: #38A9DB;
+  background-color: #0A169A;
   -webkit-animation: bFptHC 1.3s ease infinite;
   animation: bFptHC 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;

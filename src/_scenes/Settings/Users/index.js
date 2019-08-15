@@ -24,7 +24,9 @@ export const UsersPresenter = (props) => {
         <Spacing margin="2rem 0">
           <Breadcrumbs crumbs={crumbs} />
         </Spacing>
-        <H3 type="secondary">View Users</H3>
+        <H3 type="secondary" size="28px" weight="heavy">
+          View Users
+        </H3>
         <UsersTable
           userList={userList}
           fetchUserList={fetchUserList}

@@ -12,7 +12,7 @@ import {
   CenteredLoader,
   EDLink
 } from '_components';
-import edLogoWhite from '_images/eventdynamiclogooutline.svg';
+import EdLogoDark from '_images/logo_dark.svg';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import type { EDIntegrationStat } from '_models';
@@ -30,7 +30,7 @@ const UnpaddedPanelContent = styled(PanelContent)`
 `;
 
 const LogoImg = styled.img`
-  height: 100%;
+  height: ${(props) => props.height || '100%'};
   width: auto;
 `;
 
@@ -76,7 +76,7 @@ const TicketIntegrationLogo = ({
   return integration.name === 'Skybox' ? (
     <Flex direction="row" align="center" justify="space-between">
       <Box {...boxProps}>
-        <LogoImg src={edLogoWhite} />
+        <LogoImg height="60%" src={EdLogoDark} />
       </Box>
     </Flex>
   ) : (
@@ -122,7 +122,7 @@ export const TicketIntegrationListItem = ({
           <TicketIntegrationLogo large integration={integration} />
         )}
         <Box>
-          <Text marginBottom=".33rem" size={22} align="center">
+          <Text marginBottom=".33rem" size={22} align="center" weight="heavy">
             {formatNumber(integration.sold)}
           </Text>
           <Text size={12}>Tickets Sold</Text>
@@ -131,7 +131,7 @@ export const TicketIntegrationListItem = ({
           <Box border={`1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`} />
         )}
         <Box>
-          <Text marginBottom=".33rem" size={22} align="center">
+          <Text marginBottom=".33rem" size={22} align="center" weight="heavy">
             {getTicketShare(integration.sold, integration.total)}
           </Text>
           <Text size={12}>Ticket Share</Text>
@@ -173,11 +173,15 @@ export const TicketIntegrations = (props: Props) => {
           {!loading && (
             <React.Fragment>
               <Flex>
-                <H4 margin="0" marginRight="2.5rem">
-                  Integrations
+                <H4 margin="0" marginRight="2.5rem" weight="bold">
+                  INTEGRATIONS
                 </H4>
               </Flex>
-              {showSettings && <EDLink to="/settings/team">MANAGE ALL</EDLink>}
+              {showSettings && (
+                <EDLink to="/settings/team" weight="heavy">
+                  MANAGE ALL
+                </EDLink>
+              )}
             </React.Fragment>
           )}
         </Flex>

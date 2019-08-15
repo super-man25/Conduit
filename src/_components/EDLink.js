@@ -27,7 +27,7 @@ type Props = {
 export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
-  color: ${(props) => props.color || cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${(props) => props.color || cssConstants.SECONDARY_BLUE};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
   transition: all 0.1s ease-in-out;
 
@@ -36,8 +36,8 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
     outline: 0;
     text-decoration: none;
     cursor: pointer;
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_LIGHT_BLUE};
+    color: ${cssConstants.PRIMARY_BLUE_HOVER};
+    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_BLUE_HOVER};
   }
 
   &:active,

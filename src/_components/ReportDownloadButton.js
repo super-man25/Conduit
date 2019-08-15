@@ -23,7 +23,9 @@ export const ReportDownloadButton = (props: {
       align="center"
     >
       <Icon size={24} color={color} name="download" />
-      <EDText type={type}>{text}</EDText>
+      <EDText type={type} weight="heavy" size="small">
+        {text}
+      </EDText>
     </Flex>
   );
 };

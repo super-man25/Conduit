@@ -14,14 +14,18 @@ type Props = {
 };
 
 function Crumb(props) {
-  const { title, path, onClick, maxWidth } = props;
+  const { title, path, onClick, maxWidth, index, length } = props;
 
   return (
     <EDLink to={path} key={path} onClick={onClick} title={title}>
       <Text
         ellipsis
         style={{ maxWidth }}
-        color={cssConstants.SECONDARY_BLUE}
+        color={
+          index + 1 !== length
+            ? cssConstants.PRIMARY_BLUE
+            : cssConstants.PRIMARY_DARKEST_GRAY
+        }
         size="1rem"
       >
         {title}
@@ -40,6 +44,7 @@ export function Breadcrumbs(props: Props) {
           <Crumb
             {...crumb}
             index={index}
+            length={crumbs.length}
             onClick={onClick}
             maxWidth={maxWidth}
           />

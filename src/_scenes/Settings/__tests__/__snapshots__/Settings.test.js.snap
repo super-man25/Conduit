@@ -28,12 +28,13 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#024A8F",
-                  "textShadow": "0 0 0.5px #024A8F",
+                  "color": "#0A169A",
+                  "textShadow": "0 0 0.5px #0A169A",
                 }
               }
+              size="large"
               to="/settings/team"
-              weight="light"
+              weight="heavy"
             >
               Team Settings
             </Styled(NavLink)>
@@ -45,12 +46,13 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#024A8F",
-                  "textShadow": "0 0 0.5px #024A8F",
+                  "color": "#0A169A",
+                  "textShadow": "0 0 0.5px #0A169A",
                 }
               }
+              size="large"
               to="/settings/user"
-              weight="light"
+              weight="heavy"
             >
               User Settings
             </Styled(NavLink)>
@@ -62,12 +64,13 @@ exports[`<Settings /> renders correctly 1`] = `
             <Styled(NavLink)
               activeStyle={
                 Object {
-                  "color": "#024A8F",
-                  "textShadow": "0 0 0.5px #024A8F",
+                  "color": "#0A169A",
+                  "textShadow": "0 0 0.5px #0A169A",
                 }
               }
+              size="large"
               to="/settings/users"
-              weight="light"
+              weight="heavy"
             >
               View Users
             </Styled(NavLink)>

@@ -16,7 +16,7 @@ import { actions as authActions } from '_state/auth';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import edLogoImage from '_images/eventdynamiclogo.svg';
+import EdLogoDark from '_images/logo_dark.svg';
 import {
   Content,
   LoginFooter,
@@ -150,7 +150,7 @@ export class LoginPresenter extends React.Component<Props, State> {
           <Flex>
             <Spacing padding="20% 40px 40px">
               <CenteredContainer maxWidth="400px">
-                <LogoImg src={edLogoImage} alt="Event Dynamic Logo" />
+                <LogoImg src={EdLogoDark} alt="Event Dynamic Logo" />
                 <H3 style={{ marginBottom: '5px' }}>
                   {forgot ? 'Forgot Password' : 'Log In'}
                 </H3>

@@ -14,7 +14,7 @@ Array [
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   padding: 0;
-  color: #024A8F;
+  color: #0A169A;
   background-color: inherit;
 }
 
@@ -151,27 +151,23 @@ Array [
 }
 
 .c5 {
-  font-size: undefinedpx;
   color: #999999;
   margin: 0;
 }
 
 .c6 {
-  font-size: undefinedpx;
   color: #070707;
   margin: 0;
   text-align: right;
 }
 
 .c9 {
-  font-size: undefinedpx;
   font-weight: 700;
   color: #070707;
   margin: 0;
 }
 
 .c10 {
-  font-size: undefinedpx;
   font-weight: 700;
   color: #070707;
   margin: 0;

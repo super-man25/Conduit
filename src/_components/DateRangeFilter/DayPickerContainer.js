@@ -6,7 +6,7 @@ export const DayPickerContainer = styled.div`
   align-items: center;
   align-content: space-between;
   flex-direction: column;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  border: 1px solid ${cssConstants.PRIMARY_BLUE};
   border-left: none;
   background: ${cssConstants.PRIMARY_WHITE};
   opacity: 0;

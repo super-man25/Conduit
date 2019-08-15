@@ -9,5 +9,5 @@ export const SidebarHeader = styled.div`
   margin: 0;
   padding-left: 20px;
   color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  background: ${cssConstants.SECONDARY_BLUE_BLACK};
+  background: ${cssConstants.SECONDARY_BLUE_ACCENT};
 `;

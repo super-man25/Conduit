@@ -152,7 +152,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#0A169A"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -175,7 +175,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#0A169A"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -201,7 +201,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": "#38A9DB",
+            "stroke": "#1F49B6",
             "strokeWidth": 2,
           }
         }
@@ -380,7 +380,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#0A169A"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -403,7 +403,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#0A169A"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -429,7 +429,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": "#38A9DB",
+            "stroke": "#1F49B6",
             "strokeWidth": 2,
           }
         }

@@ -8,7 +8,7 @@ import type { EDScheduledJob } from '_models';
 import { readableDate } from '_helpers/string-utils';
 
 const Container = styled(Flex)`
-  padding: 0 0 6px 0;
+  padding: 6px 0 0 0;
 `;
 
 const ScheduledJobStatusNotice = styled(P1)`

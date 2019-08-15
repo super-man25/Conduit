@@ -44,7 +44,7 @@ export const PrimaryButton = styled(Button)`
   }
 
   &:hover:not(:disabled) {
-    background-color: ${cssConstants.SECONDARY_BACKGROUND_BLUE};
+    background-color: ${cssConstants.PRIMARY_BLUE_HOVER};
   }
 `;
 

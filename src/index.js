@@ -7,6 +7,7 @@ import App from './App';
 import { actions } from '_state/ui';
 import { actions as authActions } from '_state/auth';
 import { userService } from '_services';
+import './fonts/fonts.css';
 
 render(
   <Provider store={store}>

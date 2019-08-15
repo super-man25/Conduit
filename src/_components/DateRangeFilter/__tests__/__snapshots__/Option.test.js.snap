@@ -8,17 +8,17 @@ exports[`renders correctly 1`] = `
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   color: #070707;
-  border-left: 1px solid #38A9DB;
-  border-right: 1px solid #38A9DB;
+  border-left: 1px solid #0A169A;
+  border-right: 1px solid #0A169A;
 }
 
 .c0:first-child {
-  border-top: 1px solid #38A9DB;
+  border-top: 1px solid #0A169A;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #38A9DB;
+  border-bottom: 1px solid #0A169A;
   border-radius: 0 0 4px 4px;
 }
 
@@ -40,17 +40,17 @@ exports[`renders correctly when active 1`] = `
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   color: #070707;
-  border-left: 1px solid #38A9DB;
-  border-right: 1px solid #38A9DB;
+  border-left: 1px solid #0A169A;
+  border-right: 1px solid #0A169A;
 }
 
 .c0:first-child {
-  border-top: 1px solid #38A9DB;
+  border-top: 1px solid #0A169A;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #38A9DB;
+  border-bottom: 1px solid #0A169A;
   border-radius: 0 0 4px 4px;
 }
 
@@ -72,18 +72,18 @@ exports[`renders correctly when dateRangePickerOpen is open 1`] = `
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   color: #070707;
-  border-left: 1px solid #38A9DB;
-  border-right: 1px solid #38A9DB;
+  border-left: 1px solid #0A169A;
+  border-right: 1px solid #0A169A;
   border-right: 1px solid #999999;
 }
 
 .c0:first-child {
-  border-top: 1px solid #38A9DB;
+  border-top: 1px solid #0A169A;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #38A9DB;
+  border-bottom: 1px solid #0A169A;
   border-radius: 0 0 4px 4px;
 }
 

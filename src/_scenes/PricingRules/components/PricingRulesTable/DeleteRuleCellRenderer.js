@@ -25,6 +25,7 @@ export const DeleteRuleCellRenderer = (props: Props) => {
     <Flex align="center">
       <Text
         size={14}
+        weight="heavy"
         color={
           editingAnyPriceRule
             ? cssConstants.PRIMARY_LIGHT_GRAY

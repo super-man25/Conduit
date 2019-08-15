@@ -19,7 +19,7 @@ exports[`<EventListPresenter /> when filtered 1`] = `
       <styled.input
         data-test-id="event-list-search"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Search..."
         type="text"
         value="Query"
       />
@@ -91,7 +91,7 @@ exports[`<EventListPresenter /> when loading 1`] = `
       <styled.input
         data-test-id="event-list-search"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Search..."
         type="text"
         value=""
       />
@@ -120,7 +120,7 @@ exports[`<EventListPresenter /> when passed no events 1`] = `
       <styled.input
         data-test-id="event-list-search"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Search..."
         type="text"
         value=""
       />
@@ -155,7 +155,7 @@ exports[`<EventListPresenter /> with active event 1`] = `
       <styled.input
         data-test-id="event-list-search"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Search..."
         type="text"
         value=""
       />
@@ -227,7 +227,7 @@ exports[`<EventListPresenter /> with no active event 1`] = `
       <styled.input
         data-test-id="event-list-search"
         onChange={[Function]}
-        placeholder="Search"
+        placeholder="Search..."
         type="text"
         value=""
       />

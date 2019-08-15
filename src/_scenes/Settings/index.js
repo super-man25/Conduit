@@ -86,7 +86,8 @@ export const Settings = ({ authState, authActions }: Props) => (
               .map((r) => (
                 <Spacing padding="2rem 0" key={r.path}>
                   <EDNavLink
-                    weight="light"
+                    size="large"
+                    weight="heavy"
                     to={r.path}
                     activeStyle={{
                       color: cssConstants.PRIMARY_BLUE,

@@ -15,7 +15,7 @@ exports[`renders correctly with disabled prop 1`] = `
   -webkit-transition: opacity 100ms ease-out;
   transition: opacity 100ms ease-out;
   color: #FFFFFF;
-  background-color: #024A8F;
+  background-color: #0A169A;
 }
 
 .c0:disabled {
@@ -34,7 +34,7 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 .c0:hover:not(:disabled) {
-  background-color: #2670AE;
+  background-color: #848ACC;
 }
 
 .c0::before {
@@ -62,7 +62,7 @@ exports[`renders correctly with no props 1`] = `
   -webkit-transition: opacity 100ms ease-out;
   transition: opacity 100ms ease-out;
   color: #FFFFFF;
-  background-color: #024A8F;
+  background-color: #0A169A;
 }
 
 .c0:disabled {
@@ -81,7 +81,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0:hover:not(:disabled) {
-  background-color: #2670AE;
+  background-color: #848ACC;
 }
 
 .c0::before {

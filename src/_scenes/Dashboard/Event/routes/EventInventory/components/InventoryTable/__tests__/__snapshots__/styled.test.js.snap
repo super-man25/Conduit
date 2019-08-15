@@ -13,7 +13,7 @@ exports[`InventoryTable styled components <Checkbox /> should render correctly 1
 
 exports[`InventoryTable styled components <FilterButton /> should render correctly 1`] = `
 .c0 {
-  background-color: #38A9DB;
+  background-color: #0A169A;
   border: none;
   border-radius: 2px;
   color: #FFFFFF;
@@ -31,7 +31,7 @@ exports[`InventoryTable styled components <FilterButton /> should render correct
 exports[`InventoryTable styled components <FilterContainer /> should render correctly 1`] = `
 .c0 {
   width: 280px;
-  border: 1px solid #1A4B8A;
+  border: 1px solid #1F49B6;
   background-color: #FFFFFF;
   position: relative;
   box-shadow: 0 2px 5px 0px rgba(0,0,0,0.43);
@@ -49,8 +49,8 @@ exports[`InventoryTable styled components <FilterContainer /> should render corr
   transform: rotate(45deg);
   z-index: 1;
   background-color: #FFFFFF;
-  border-top: 1px solid #1A4B8A;
-  border-left: 1px solid #1A4B8A;
+  border-top: 1px solid #1F49B6;
+  border-left: 1px solid #1F49B6;
 }
 
 <div
@@ -134,7 +134,7 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
   -webkit-transition: opacity 100ms ease-out;
   transition: opacity 100ms ease-out;
   color: #FFFFFF;
-  background-color: #024A8F;
+  background-color: #0A169A;
   box-sizing: border-box;
   margin: 0;
   min-width: 50px;
@@ -159,7 +159,7 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 }
 
 .c0:hover:not(:disabled) {
-  background-color: #2670AE;
+  background-color: #848ACC;
 }
 
 <button
@@ -182,7 +182,7 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   padding-left: 8px;
   border: 2px solid;
   border-radius: 3px;
-  border-color: #767676;
+  border-color: #0A169A;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   box-sizing: border-box;

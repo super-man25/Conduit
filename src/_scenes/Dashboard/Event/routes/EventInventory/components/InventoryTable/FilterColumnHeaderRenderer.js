@@ -103,7 +103,7 @@ export class FilterColumnHeader extends React.Component<Props, State> {
               <FilterListIcon
                 fill={
                   filterDropdownOpen || selectedFilters.length
-                    ? cssConstants.PRIMARY_LIGHT_BLUE
+                    ? cssConstants.PRIMARY_BLUE
                     : cssConstants.PRIMARY_LIGHT_BLACK
                 }
                 style={{ cursor: 'pointer' }}

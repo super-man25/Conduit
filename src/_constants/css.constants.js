@@ -3,7 +3,8 @@ const OVERLAY = BASE + 100;
 
 export const cssConstants = {
   PRIMARY_EVEN_LIGHTER_GRAY: '#F2F2F2',
-  PRIMARY_BLUE: '#024A8F',
+  PRIMARY_BLUE: '#0A169A',
+  PRIMARY_BLUE_HOVER: '#848ACC',
   PRIMARY_LIGHT_BLUE: '#38A9DB',
   PRIMARY_LIGHTEST_GRAY: '#F8F8F8',
   PRIMARY_WHITE: '#FFFFFF',
@@ -14,8 +15,8 @@ export const cssConstants = {
   PRIMARY_DARKEST_GRAY: '#323232',
   PRIMARY_LIGHT_BLACK: '#070707',
   PRIMARY_RED: '#B80C09',
-  SECONDARY_BLUE_BLACK: '#031E35',
-  SECONDARY_BLUE: '#1A4B8A',
+  SECONDARY_BLUE: '#1F49B6',
+  SECONDARY_BLUE_ACCENT: '#040B52',
   SECONDARY_LIGHT_BLUE: '#4B98CF',
   SECONDARY_LIGHTEST_BLUE: '#7CBCDD',
   SECONDARY_BACKGROUND_LIGHTEST_BLUE: '#F0F4F7',
@@ -29,6 +30,7 @@ export const cssConstants = {
   SECONDARY_RED: '#DC0A0A',
   SECONDARY_GREEN: '#2F6450',
   SECONDARY_LIGHT_GREEN: '#9BC53D',
+  CARD_PURPLE: '#E3E4EF',
   TITLE_SIZE_H1: '36px',
   TITLE_WEIGHT_H1: 'normal',
   TITLE_SIZE_H2: '28px',
@@ -62,4 +64,11 @@ export const zIndexes = {
   POPOVER: BASE + 2,
   OVERLAY,
   DROPDOWN_CLIENT_HEADER: OVERLAY + 1
+};
+
+const getFontFamily = (fontName) =>
+  `${fontName}, Roboto, Helvetica, sans-serif`;
+
+export const fonts = {
+  FUTURA: getFontFamily('FuturaPT')
 };

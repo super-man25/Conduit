@@ -8,7 +8,7 @@ Array [
 }
 
 .c4 path {
-  fill: #024A8F;
+  fill: #0A169A;
 }
 
 .c0 {
@@ -59,7 +59,7 @@ Array [
       >
         <svg
           className="c4"
-          color="#024A8F"
+          color="#0A169A"
           height="22px"
           viewBox="0 0 24 24"
           width="22px"
@@ -101,15 +101,13 @@ Array [
 }
 
 .c5 {
-  font-size: undefinedpx;
   color: #999999;
   margin: 0;
 }
 
 .c6 {
-  font-size: undefinedpx;
   font-weight: 700;
-  color: #024A8F;
+  color: #0A169A;
   margin: 0;
   text-align: right;
 }
@@ -188,7 +186,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $52.18
         </p>
@@ -199,7 +197,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $1,147.73
         </p>
@@ -226,7 +224,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $421.36
         </p>
@@ -237,7 +235,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $1,120.58
         </p>
@@ -264,7 +262,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $285.06
         </p>
@@ -275,7 +273,7 @@ Array [
       >
         <p
           className="c6"
-          color="#024A8F"
+          color="#0A169A"
         >
           $856.69
         </p>
@@ -293,7 +291,7 @@ Array [
 }
 
 .c4 path {
-  fill: #024A8F;
+  fill: #0A169A;
 }
 
 .c0 {
@@ -344,7 +342,7 @@ Array [
       >
         <svg
           className="c4"
-          color="#024A8F"
+          color="#0A169A"
           height="22px"
           viewBox="0 0 24 24"
           width="22px"
@@ -386,7 +384,6 @@ Array [
 }
 
 .c2 {
-  font-size: undefinedpx;
   color: #B80C09;
   margin: 0;
   text-align: center;
@@ -438,7 +435,7 @@ Array [
 }
 
 .c4 path {
-  fill: #024A8F;
+  fill: #0A169A;
 }
 
 .c0 {
@@ -489,7 +486,7 @@ Array [
       >
         <svg
           className="c4"
-          color="#024A8F"
+          color="#0A169A"
           height="22px"
           viewBox="0 0 24 24"
           width="22px"
@@ -521,8 +518,7 @@ Array [
 }
 
 .c1 {
-  font-size: undefinedpx;
-  color: #024A8F;
+  color: #0A169A;
   margin: 0;
 }
 
@@ -531,7 +527,7 @@ Array [
   >
     <p
       className="c1"
-      color="#024A8F"
+      color="#0A169A"
     >
       Loading Price Preview...
     </p>

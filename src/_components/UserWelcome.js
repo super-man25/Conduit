@@ -133,15 +133,15 @@ export const UserWelcome = (props: Props) => {
                 textAlign="right"
                 size="14"
                 margin="0 0 4px 0"
+                weight="heavy"
               >
                 Welcome, {firstName} {lastName}
               </Text>
               <Text
                 ellipsis
-                color={cssConstants.SECONDARY_LIGHT_BLUE}
+                color={cssConstants.PRIMARY_WHITE}
                 textTransform="capitalize"
                 textAlign="right"
-                size="12"
               >{`${team}`}</Text>
             </FlexItem>
             <FlexItem>

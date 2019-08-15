@@ -9,7 +9,7 @@ export function PeriodicRevenueChartLegend() {
         label="Actual Revenue"
         color={cssConstants.PRIMARY_BLUE}
       />
-      <ChartLegendItem label="Projected Revenue" />
+      {/* <ChartLegendItem label="Projected Revenue" /> */}
     </Fragment>
   );
 }

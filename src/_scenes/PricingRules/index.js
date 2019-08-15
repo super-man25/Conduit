@@ -78,7 +78,9 @@ export class PricingRules extends React.Component<Props> {
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
-                <H3 type="secondary">Pricing Rules</H3>
+                <H3 type="secondary" size="28px" weight="heavy">
+                  Pricing Rules
+                </H3>
                 <Box>
                   <PrimaryButton
                     onClick={this.createNewPriceRule.bind(this)}

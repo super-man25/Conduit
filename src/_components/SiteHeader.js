@@ -41,7 +41,7 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
   right: -12px;
   top: 75px;
   padding: 15px;
-  background: ${cssConstants.SECONDARY_LIGHT_BLUE};
+  background: ${cssConstants.SECONDARY_BLUE};
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.5);
   ::after,
   ::before {
@@ -55,14 +55,14 @@ export const DropdownMenuWrapper = withClickAway(styled.div`
   }
   ::after {
     border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: ${cssConstants.SECONDARY_LIGHT_BLUE};
+    border-bottom-color: ${cssConstants.SECONDARY_BLUE};
     border-width: 19px;
     left: 80%;
     margin-left: -19px;
   }
   ::before {
     border-color: rgba(113, 158, 206, 0);
-    border-bottom-color: ${cssConstants.SECONDARY_LIGHT_BLUE};
+    border-bottom-color: ${cssConstants.SECONDARY_BLUE};
     border-width: 20px;
     left: 80%;
     margin-left: -20px;

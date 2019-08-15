@@ -12,7 +12,6 @@ exports[`BulkUpdateModal styled components <Field /> renders correctly 1`] = `
 
 exports[`BulkUpdateModal styled components <FieldErrorText /> renders correctly 1`] = `
 .c0 {
-  font-size: undefinedpx;
   color: #070707;
   margin: 0;
   position: absolute;
@@ -83,7 +82,7 @@ exports[`BulkUpdateModal styled components <ModalHeader /> renders correctly 1`]
 .c0 {
   padding: 1.5rem;
   background-color: #F8F8F8;
-  border-bottom: 1px solid #024A8F;
+  border-bottom: 1px solid #0A169A;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }

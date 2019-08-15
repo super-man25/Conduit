@@ -158,7 +158,9 @@ class DemoRoute extends React.Component<Props, State> {
       <PageWrapper>
         <PrimaryContent padding="2rem" overflowY="visible">
           <DemoWrapper>
-            <H3 type="secondary">Model Demo</H3>
+            <H3 type="secondary" size="28px" weight="heavy">
+              Model Demo
+            </H3>
             <S1 weight="300">
               <i>Pricing model demo.</i>
             </S1>

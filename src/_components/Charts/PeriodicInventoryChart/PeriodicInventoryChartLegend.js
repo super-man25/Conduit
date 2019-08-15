@@ -9,10 +9,10 @@ export function PeriodicInventoryChartLegend() {
         color={cssConstants.SECONDARY_PURPLE}
         label="Actual Inventory"
       />
-      <ChartLegendItem
+      {/* <ChartLegendItem
         color={cssConstants.SECONDARY_LIGHT_PURPLE}
         label="Projected Inventory"
-      />
+      /> */}
     </Fragment>
   );
 }

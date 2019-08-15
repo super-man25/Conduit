@@ -11,8 +11,8 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
   <HorizontalBars
     colors={
       Array [
-        "#024A8F",
-        "#1A4B8A",
+        "#0A169A",
+        "#1F49B6",
         "#4B98CF",
         "#7CBCDD",
         "#C4D2E1",
@@ -38,7 +38,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#024A8F"
+        color="#0A169A"
         label="Single Game"
         value="$1,000"
       />
@@ -49,7 +49,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#1A4B8A"
+        color="#1F49B6"
         label="Group Tickets"
         value="$1,000"
       />
@@ -80,8 +80,8 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
   <HorizontalBars
     colors={
       Array [
-        "#024A8F",
-        "#1A4B8A",
+        "#0A169A",
+        "#1F49B6",
         "#4B98CF",
         "#7CBCDD",
         "#C4D2E1",
@@ -107,7 +107,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#024A8F"
+        color="#0A169A"
         label="Single Game"
         value="--"
       />
@@ -118,7 +118,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#1A4B8A"
+        color="#1F49B6"
         label="Group Tickets"
         value="--"
       />

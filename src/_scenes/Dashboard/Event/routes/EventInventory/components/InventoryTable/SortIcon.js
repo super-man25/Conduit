@@ -22,7 +22,7 @@ export const SortIcon = ({ isFiltered, filterDirection, onClick }: Props) => (
       height={14}
       fill={
         filterDirection === 'asc' && isFiltered
-          ? cssConstants.PRIMARY_LIGHT_BLUE
+          ? cssConstants.PRIMARY_BLUE
           : cssConstants.PRIMARY_DARKEST_GRAY
       }
       styles={{ marginBottom: -4 }}
@@ -32,7 +32,7 @@ export const SortIcon = ({ isFiltered, filterDirection, onClick }: Props) => (
       height={14}
       fill={
         filterDirection === 'desc' && isFiltered
-          ? cssConstants.PRIMARY_LIGHT_BLUE
+          ? cssConstants.PRIMARY_BLUE
           : cssConstants.PRIMARY_DARKEST_GRAY
       }
     />

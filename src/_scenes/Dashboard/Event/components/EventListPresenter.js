@@ -22,6 +22,9 @@ const OverflowContent = styled.div`
 const Heading = styled(H4)`
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.9px;
 `;
 
 const HeaderContainer = styled.div`
@@ -119,7 +122,7 @@ export function EventListPresenter(props: Props) {
           <Spacing height="4px" />
           <Input
             type="text"
-            placeholder="Search"
+            placeholder="Search..."
             onChange={onSearchInputChange}
             value={filter}
             data-test-id="event-list-search"

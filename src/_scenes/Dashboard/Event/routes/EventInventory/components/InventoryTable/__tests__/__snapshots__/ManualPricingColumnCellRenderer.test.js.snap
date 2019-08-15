@@ -5,7 +5,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly 1`] = `
   align="center"
 >
   <Styled(styled.p)
-    color="#38A9DB"
+    color="#0A169A"
     cursor="pointer"
     ellipsis={true}
     onClick={[Function]}
@@ -30,7 +30,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-bnXvFD",
+          "componentId": "sc-cpmLhU",
           "isStatic": false,
           "rules": Array [
             "
@@ -87,7 +87,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           "sc-hEsumM",
         ],
         "render": [Function],
-        "styledComponentId": "sc-bnXvFD",
+        "styledComponentId": "sc-cpmLhU",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],
@@ -125,7 +125,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when manual
   align="center"
 >
   <Styled(styled.p)
-    color="#38A9DB"
+    color="#0A169A"
     cursor="pointer"
     ellipsis={true}
     onClick={[Function]}
@@ -143,7 +143,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when the ce
   align="center"
 >
   <Styled(styled.p)
-    color="#38A9DB"
+    color="#0A169A"
     cursor="pointer"
     marginLeft="1rem"
     onClick={[Function]}

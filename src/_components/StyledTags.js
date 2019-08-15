@@ -75,6 +75,8 @@ export const P1 = styled.p.attrs((props) => ({
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.weight || 'normal'};
+  font-family: ${(props) => props.font};
+  letter-spacing: ${(props) => props.letterSpacing};
 `;
 
 export const S1 = styled.span`
@@ -106,7 +108,7 @@ export const Box = withBoxModelProps(styled.div`
 `);
 
 export const Text = withBoxModelProps(styled.p`
-  font-size: ${(props) => `${props.size}px`};
+  font-size: ${(props) => props.size && `${props.size}px`};
   font-weight: ${(props) => WEIGHTS.get(props.weight)};
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
   margin: ${(props) => props.margin || 0};

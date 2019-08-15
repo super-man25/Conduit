@@ -46,10 +46,11 @@ export class EditRuleCellPresenter extends React.Component<Props> {
             color={
               editingAnyPriceRule || isLoading
                 ? cssConstants.PRIMARY_LIGHT_GRAY
-                : cssConstants.PRIMARY_LIGHT_BLUE
+                : cssConstants.PRIMARY_BLUE
             }
             onClick={this.startEditingRule}
             style={{ cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer' }}
+            weight="heavy"
           >
             EDIT RULE
           </Text>

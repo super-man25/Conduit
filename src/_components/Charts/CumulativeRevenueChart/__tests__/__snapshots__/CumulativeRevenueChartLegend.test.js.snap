@@ -3,13 +3,8 @@
 exports[`<CumulativeRevenueChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
-    color="#38A9DB"
+    color="#0A169A"
     label="Actual Revenue"
-  />
-  <ChartLegendItem
-    color="#38A9DB"
-    dashed={true}
-    label="Projected Revenue"
   />
 </Fragment>
 `;

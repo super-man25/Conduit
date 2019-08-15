@@ -6,6 +6,7 @@ exports[`<SecondaryPricingRulePresenter /> renders correctly 1`] = `
 >
   <Styled(Styled(Styled(Styled(styled.button))))
     onClick={[Function]}
+    weight="bold"
   />
 </withClickAway(undefined)>
 `;

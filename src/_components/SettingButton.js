@@ -18,6 +18,7 @@ export const SettingButton: React.ComponentType<Props> = styled(TextButton)`
   margin: ${(props) => props.margin};
   padding: ${(props) => props.padding};
   max-width: 100px;
+  font-weight: ${(props) => props.weight};
 `;
 
 export const SettingEditButton = styled(SettingButton)`

@@ -34,8 +34,7 @@ const Dot = styled.div`
   height: ${LARGE_HEIGHT};
   width: ${LARGE_HEIGHT};
   border-radius: ${LARGE_HEIGHT};
-  background-color: ${(props) =>
-    props.color || cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${(props) => props.color || cssConstants.PRIMARY_BLUE};
   animation: ${dotAnimation} 1.3s ease infinite;
   animation-delay: ${(props) => `${0.1 + props.index * 0.2}s`};
 

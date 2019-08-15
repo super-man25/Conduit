@@ -12,8 +12,9 @@ exports[`<TicketIntegrations /> should render correctly 1`] = `
         <Styled(styled.h4)
           margin="0"
           marginRight="2.5rem"
+          weight="bold"
         >
-          Integrations
+          INTEGRATIONS
         </Styled(styled.h4)>
       </Flex>
     </Flex>
@@ -103,8 +104,9 @@ exports[`<TicketIntegrations /> should render correctly when an error occurs 1`]
         <Styled(styled.h4)
           margin="0"
           marginRight="2.5rem"
+          weight="bold"
         >
-          Integrations
+          INTEGRATIONS
         </Styled(styled.h4)>
       </Flex>
     </Flex>
@@ -142,8 +144,9 @@ exports[`<TicketIntegrations /> should render correctly when no data is found 1`
         <Styled(styled.h4)
           margin="0"
           marginRight="2.5rem"
+          weight="bold"
         >
-          Integrations
+          INTEGRATIONS
         </Styled(styled.h4)>
       </Flex>
     </Flex>

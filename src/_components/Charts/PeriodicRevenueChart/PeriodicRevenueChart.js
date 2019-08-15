@@ -108,7 +108,7 @@ export const PeriodicRevenueChart = ({
           <Tooltip
             cursor={{
               opacity: 0.4,
-              fill: cssConstants.SECONDARY_LIGHT_BLUE
+              fill: cssConstants.SECONDARY_BLUE
             }}
             animationDuration={500}
             content={<PeriodicRevenueTooltip dateFormatter={dateFormatter} />}

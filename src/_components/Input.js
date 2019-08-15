@@ -33,7 +33,7 @@ export const Input: React.ComponentType<Props> = styled.input.attrs(
     bordercolor:
       (props.valid && cssConstants.SECONDARY_GREEN) ||
       (props.inValid && cssConstants.SECONDARY_RED) ||
-      cssConstants.PRIMARY_DARK_GRAY
+      cssConstants.PRIMARY_BLUE
   })
 )`
   box-sizing: border-box;

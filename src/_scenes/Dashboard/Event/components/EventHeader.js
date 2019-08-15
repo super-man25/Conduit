@@ -8,13 +8,13 @@ import {
   Flex,
   FlexItem,
   EDLink,
-  P1,
   S1,
   TextButton,
   Icon,
   Breadcrumbs,
   Spacing,
-  Box
+  Box,
+  Text
 } from '_components';
 import { cssConstants } from '_constants';
 import { readableDateAndTime } from '_helpers/string-utils';
@@ -32,24 +32,16 @@ const EventTitle = styled(H1)`
 `;
 
 const EventDate = styled(H4)`
-  color: ${cssConstants.SECONDARY_BLUE};
   margin: 0;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.2px;
 `;
 
 const InventoryLink = styled(S1)`
-  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${cssConstants.SECONDARY_BLUE};
   text-decoration: underline;
-`;
-
-const RightP1 = styled(P1)`
-  text-align: right;
-`;
-
-const ItalicS1 = styled(S1)`
-  font-style: italic;
-  display: block;
-  text-align: ${(props) => props.align};
+  font-weight: bold;
+  letter-spacing: 0.5px;
 `;
 
 const createCrumbs = (event: EDEvent, isViewingInventory: boolean) => {
@@ -113,31 +105,33 @@ export function EventHeader(props: Props) {
           <EventDate>{readableDateAndTime(timestamp, timeZone)}</EventDate>
           {showInventoryLink && !isViewingInventory && (
             <EDLink to={`/event/${id}/inventory`}>
-              <InventoryLink color={cssConstants.PRIMARY_LIGHT_BLUE}>
-                See Inventory List
-              </InventoryLink>
+              <InventoryLink>SEE INVENTORY LIST</InventoryLink>
             </EDLink>
           )}
         </FlexItem>
         <Flex justify="flex-end">
           <FlexItem flex="0 0 auto" margin="0 25px">
-            <RightP1 size="16px">Inventory</RightP1>
-            <RightP1 size="22px" color={cssConstants.SECONDARY_BLUE}>
+            <Text size="16" textAlign="right">
+              Inventory
+            </Text>
+            <Text size="22" weight="heavy" textAlign="right">
               {inventoryString}
-            </RightP1>
-            <ItalicS1 color={cssConstants.SECONDARY_BLUE} align="right">
+            </Text>
+            <Text color={cssConstants.PRIMARY_BLUE} textAlign="right" size="12">
               Unsold / Sold
-            </ItalicS1>
+            </Text>
           </FlexItem>
         </Flex>
         <FlexItem flex="0 0 auto" margin="0 25px">
-          <RightP1 size="16px">Revenue</RightP1>
-          <RightP1 size="22px" color={cssConstants.SECONDARY_BLUE}>
+          <Text size="16" textAlign="right">
+            Revenue
+          </Text>
+          <Text size="22" weight="heavy" textAlign="right">
             {revenue}
-          </RightP1>
-          <ItalicS1 color={cssConstants.SECONDARY_BLUE} align="right">
-            to date
-          </ItalicS1>
+          </Text>
+          <Text color={cssConstants.PRIMARY_BLUE} textAlign="right" size="12">
+            as of date
+          </Text>
         </FlexItem>
       </Flex>
     </Box>

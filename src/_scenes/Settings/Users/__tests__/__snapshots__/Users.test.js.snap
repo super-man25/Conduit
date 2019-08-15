@@ -27,7 +27,9 @@ exports[`<Users /> renders correctly 1`] = `
       />
     </styled.div>
     <styled.h3
+      size="28px"
       type="secondary"
+      weight="heavy"
     >
       View Users
     </styled.h3>

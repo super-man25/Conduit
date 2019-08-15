@@ -86,7 +86,7 @@ export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
 `;
 
 export const FilterButton = styled.button`
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${cssConstants.PRIMARY_BLUE};
   border: none;
   border-radius: 2px;
   color: ${cssConstants.PRIMARY_WHITE};

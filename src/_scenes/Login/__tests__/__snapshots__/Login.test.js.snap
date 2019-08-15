@@ -14,7 +14,7 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
         >
           <styled.img
             alt="Event Dynamic Logo"
-            src="eventdynamiclogo.svg"
+            src="logo_dark.svg"
           />
           <styled.h3
             style={
@@ -140,7 +140,7 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
         >
           <styled.img
             alt="Event Dynamic Logo"
-            src="eventdynamiclogo.svg"
+            src="logo_dark.svg"
           />
           <styled.h3
             style={

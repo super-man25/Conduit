@@ -52,5 +52,5 @@ export const ChartLegendItem = ({ label, color, dashed }: Props) => {
 };
 
 ChartLegendItem.defaultProps = {
-  color: cssConstants.PRIMARY_LIGHT_BLUE
+  color: cssConstants.PRIMARY_BLUE
 };

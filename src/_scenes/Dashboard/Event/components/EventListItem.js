@@ -34,6 +34,7 @@ const SubHeading = styled(P1)`
     props.past
       ? cssConstants.PRIMARY_DARK_GRAY
       : cssConstants.PRIMARY_DARKEST_GRAY};
+  text-transform: uppercase;
 `;
 
 const boxShadow = (props) =>
@@ -157,13 +158,6 @@ export class EventListItem extends React.PureComponent<Props> {
         data-test-id="event-list-card"
       >
         <Flex direction="column" flex={1} style={{ overflow: 'hidden' }}>
-          <FlexItem flex={1}>
-            <ScheduledJobStatus
-              past={past}
-              scheduledJob={event.scheduledJob}
-              timeZone={event.timeZone}
-            />
-          </FlexItem>
           <Heading past={past} title={event.name}>
             {event.name}
             <SubHeading past={past}>
@@ -198,6 +192,13 @@ export class EventListItem extends React.PureComponent<Props> {
               text={`Score${isAdmin ? ` / Spring` : ''}`}
             />
           </Flex>
+          <FlexItem flex={1}>
+            <ScheduledJobStatus
+              past={past}
+              scheduledJob={event.scheduledJob}
+              timeZone={event.timeZone}
+            />
+          </FlexItem>
         </Flex>
       </Container>
     );

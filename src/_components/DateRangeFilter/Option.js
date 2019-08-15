@@ -8,15 +8,15 @@ export const Option = styled.div`
   background-color: ${cssConstants.PRIMARY_WHITE};
   transition: 0.1s ease-in-out all;
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-  border-left: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
-  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  border-left: 1px solid ${cssConstants.PRIMARY_BLUE};
+  border-right: 1px solid ${cssConstants.PRIMARY_BLUE};
 
   :first-child {
-    border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+    border-top: 1px solid ${cssConstants.PRIMARY_BLUE};
     border-radius: 0 4px 0 0;
   }
   :last-child {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+    border-bottom: 1px solid ${cssConstants.PRIMARY_BLUE};
     border-radius: 0 0 4px 4px;
   }
 

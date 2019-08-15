@@ -20,7 +20,7 @@ export const ChipButton = styled.button`
   border-radius: ${(props) => props.fontSize * 2 || '24px'};
 
   &:hover {
-    background-color: ${cssConstants.SECONDARY_LIGHT_BLUE};
+    background-color: ${cssConstants.PRIMARY_BLUE_HOVER};
     color: ${cssConstants.PRIMARY_WHITE};
   }
 `;

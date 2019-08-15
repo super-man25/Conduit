@@ -13,6 +13,7 @@ import { createStructuredSelector } from 'reselect';
 import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
 import { pluralize } from '_helpers/string-utils';
 import { isAfter } from 'date-fns';
+import { fonts } from '_constants';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;
@@ -28,12 +29,16 @@ const Heading = styled(H4)`
   padding: 0;
   vertical-align: top;
   color: ${cssConstants.PRIMARY_WHITE};
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 `;
 
 const StatLabel = styled(H3)`
   margin: 0;
   padding: 0;
   color: ${cssConstants.PRIMARY_WHITE};
+  font-weight: bold;
 `;
 
 type Stats = {
@@ -127,7 +132,13 @@ export const TeamOverviewPresenter = (props: Props) => {
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
             <StatLabel>{showRecord(stats, performanceType)}</StatLabel>
-            <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
+            <P1
+              color={cssConstants.PRIMARY_WHITE}
+              weight="100"
+              size="14px"
+              font={fonts.FUTURA}
+              letterSpacing="1px"
+            >
               <i>
                 {performanceType === 'MLB' ? 'Win / Loss' : 'Win - Loss - Tie'}
               </i>
@@ -135,7 +146,13 @@ export const TeamOverviewPresenter = (props: Props) => {
           </FlexItem>
           <FlexItem flex={2}>
             <StatLabel>{showGamesRemaining(eventList)}</StatLabel>
-            <P1 color={cssConstants.PRIMARY_WHITE} weight="100">
+            <P1
+              color={cssConstants.PRIMARY_WHITE}
+              weight="100"
+              size="14px"
+              font={fonts.FUTURA}
+              letterSpacing="1px"
+            >
               <i>
                 {`Home ${pluralize(
                   calculateGamesRemaining(eventList),

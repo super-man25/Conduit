@@ -6,10 +6,5 @@ exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `
     color="#817CB8"
     label="Actual Inventory"
   />
-  <ChartLegendItem
-    color="#817CB8"
-    dashed={true}
-    label="Projected Inventory"
-  />
 </Fragment>
 `;

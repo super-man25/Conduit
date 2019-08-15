@@ -13,6 +13,7 @@ exports[`<DeleteRuleCellRenderer /> should render correctly 1`] = `
         "cursor": "pointer",
       }
     }
+    weight="heavy"
   >
     DELETE
   </Styled(styled.p)>

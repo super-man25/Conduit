@@ -12,7 +12,7 @@ exports[`renders correctly with no props 1`] = `
   text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  color: #024A8F;
+  color: #0A169A;
   background-color: inherit;
   display: -webkit-box;
   display: -webkit-flex;
@@ -59,7 +59,7 @@ exports[`renders correctly with noEdit prop 1`] = `
   text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  color: #024A8F;
+  color: #0A169A;
   background-color: inherit;
   display: -webkit-box;
   display: -webkit-flex;

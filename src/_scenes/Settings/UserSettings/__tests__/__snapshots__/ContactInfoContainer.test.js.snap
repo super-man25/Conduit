@@ -29,6 +29,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     <Styled(Styled(Styled(Styled(styled.button))))
       data-test-id="edit-name-button"
       onClick={[Function]}
+      weight="bold"
     />
   </styled.div>
   <styled.div
@@ -46,6 +47,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     </Styled(Styled(styled.div))>
     <Styled(Styled(Styled(Styled(styled.button))))
       onClick={[Function]}
+      weight="bold"
     />
   </styled.div>
   <styled.div
@@ -66,6 +68,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     <Styled(Styled(Styled(Styled(styled.button))))
       data-test-id="edit-phone-number-button"
       onClick={[Function]}
+      weight="bold"
     />
   </styled.div>
   <styled.div
@@ -85,6 +88,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     </Styled(Flex)>
     <Styled(Styled(Styled(Styled(styled.button))))
       onClick={[Function]}
+      weight="bold"
     />
   </styled.div>
 </withClickAway(Styled(Flex))>

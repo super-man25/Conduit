@@ -43,7 +43,7 @@ const ContactSection = styled(Flex)`
 `;
 
 const ContactText = styled(EDText)`
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: '1rem 0';
 `;
 
@@ -278,6 +278,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 </ContactText>
               </ContactSection>
               <SettingEditButton
+                weight="bold"
                 onClick={() => this.handleEditClick('editName')}
                 data-test-id="edit-name-button"
               />
@@ -333,6 +334,7 @@ export class ContactInfo extends React.Component<Props, State> {
             <React.Fragment>
               <ContactText>{user.email}</ContactText>
               <SettingEditButton
+                weight="bold"
                 onClick={() => this.handleEditClick('editEmail')}
               />
             </React.Fragment>
@@ -387,6 +389,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 <ContactText>{orDash(user.phoneNumber)}</ContactText>
               </ContactSection>
               <SettingEditButton
+                weight="bold"
                 onClick={() => this.handleEditClick('editPhoneNumber')}
                 data-test-id="edit-phone-number-button"
               />
@@ -468,6 +471,7 @@ export class ContactInfo extends React.Component<Props, State> {
                 <ContactText>xxxxxxxxxx</ContactText>
               </ContactSection>
               <SettingEditButton
+                weight="bold"
                 onClick={() => this.handleEditClick('editPassword')}
               />
             </React.Fragment>
