@@ -371,7 +371,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         state.filterDirection,
         state.filterName,
         state.scaleFilters,
-        state.sectionFilters
+        state.selectedSectionFilters
       );
 
       const selectedRowIds: number[] =
