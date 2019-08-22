@@ -12,7 +12,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { EventListItem } from './EventListItem';
 import type { EDEvent } from '_models';
-import { isAfter } from 'date-fns';
+import { isFuture } from 'date-fns';
 
 const OverflowContent = styled.div`
   overflow-y: scroll;
@@ -51,7 +51,7 @@ function getScrollIndex(events, activeId, filtered) {
   }
 
   const index = events.findIndex((e) => {
-    return isAfter(e.timestamp, new Date());
+    return isFuture(e.timestamp);
   });
 
   return index;

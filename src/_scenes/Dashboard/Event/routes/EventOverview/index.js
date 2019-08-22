@@ -8,6 +8,7 @@ import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
 import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 import { EventPricing } from './components/EventPricing';
+import { isFuture } from 'date-fns';
 
 type Props = {
   event: ?EDEvent,
@@ -24,7 +25,9 @@ export const EventOverview = ({ event, isAdmin }: Props) =>
         <Spacing height="2rem" />
         <EventTicketIntegrations id={event.id} />
         <Spacing height="2rem" />
-        {isAdmin && <EventPricing event={event} isAdmin={isAdmin} />}
+        {isAdmin && isFuture(event.timestamp) && (
+          <EventPricing event={event} isAdmin={isAdmin} />
+        )}
       </Box>
     </PageWrapper>
   );
