@@ -18,7 +18,9 @@ type Props = {
 export class MultiSelectCellPresenter extends React.Component<Props> {
   clipLabel = (label: string) => {
     const length = this.props.columnData.labelLength || 13;
-    return label.length > length ? `${label.slice(0, length)}...` : label;
+    return label && label.length > length
+      ? `${label.slice(0, length)}...`
+      : label;
   };
 
   items = () => {

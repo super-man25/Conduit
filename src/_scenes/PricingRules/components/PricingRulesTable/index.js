@@ -148,7 +148,7 @@ const columns = [
       optionsKey: 'events',
       labelLength: 28,
       labelFn: (option) =>
-        `${format(option.timestamp, 'M/D/YYYY')} - ${option.name}`,
+        option && `${format(option.timestamp, 'M/D/YYYY')} - ${option.name}`,
       isGroupable: true,
       grouping: {
         categoriesKey: 'eventCategories',
