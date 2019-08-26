@@ -69,15 +69,7 @@ export const TeamOverviewPresenter = (props: Props) => {
     stats
   } = props;
 
-  const calculateMLBRecord = (wins: number, losses: number) => {
-    const record = (wins / (wins + losses)).toFixed(3);
-    if (isNaN(record)) {
-      return '--';
-    }
-    return record;
-  };
-
-  const calculateNFLRecord = (
+  const calculateRecordWithTie = (
     wins: ?number,
     losses: ?number,
     ties: ?number
@@ -86,14 +78,18 @@ export const TeamOverviewPresenter = (props: Props) => {
       '0'}`;
   };
 
+  const calculateRecord = (wins: ?number, losses: ?number) => {
+    return `${stats.wins || '0'} - ${stats.losses || '0'}`;
+  };
+
   const showRecord = (stats: Stats, performanceType: PerformanceType) => {
     if (stats === null) {
       return '--';
     }
-    if (performanceType === 'MLB') {
-      return calculateMLBRecord(stats.wins, stats.losses);
+    if (performanceType === 'NFL' || performanceType === 'MLS') {
+      return calculateRecordWithTie(stats.wins, stats.losses, stats.ties);
     } else {
-      return calculateNFLRecord(stats.wins, stats.losses, stats.ties);
+      return calculateRecord(stats.wins, stats.losses);
     }
   };
 
@@ -109,6 +105,14 @@ export const TeamOverviewPresenter = (props: Props) => {
     } else {
       const gamesRemaining = calculateGamesRemaining(eventList);
       return gamesRemaining || '--';
+    }
+  };
+
+  const showRecordLabel = (performanceType: PerformanceType) => {
+    if (performanceType === 'NFL' || performanceType === 'MLS') {
+      return 'Win - Loss - Tie';
+    } else {
+      return 'Win - Loss';
     }
   };
 
@@ -139,9 +143,7 @@ export const TeamOverviewPresenter = (props: Props) => {
               font={fonts.FUTURA}
               letterSpacing="1px"
             >
-              <i>
-                {performanceType === 'MLB' ? 'Win / Loss' : 'Win - Loss - Tie'}
-              </i>
+              <i>{showRecordLabel(performanceType)}</i>
             </P1>
           </FlexItem>
           <FlexItem flex={2}>

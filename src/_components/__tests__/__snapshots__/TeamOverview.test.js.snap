@@ -1,5 +1,997 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders correctly with MLB performance type 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #0A169A;
+  background-color: inherit;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: FuturaPT,Roboto,Helvetica,sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c3 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.c9 {
+  color: #0A169A;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div>
+      <div
+        className="c2"
+        onClick={[Function]}
+      >
+        <div
+          className="c1"
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <button
+      className="c6"
+      onClick={[MockFunction]}
+    >
+      <svg
+        className="c7"
+        color="white"
+        height="48px"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c8"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        10 - 1
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Win - Loss
+        </i>
+      </p>
+    </div>
+    <div
+      className="c11"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        --
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Home Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with MLS performance type 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #0A169A;
+  background-color: inherit;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: FuturaPT,Roboto,Helvetica,sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c3 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.c9 {
+  color: #0A169A;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div>
+      <div
+        className="c2"
+        onClick={[Function]}
+      >
+        <div
+          className="c1"
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <button
+      className="c6"
+      onClick={[MockFunction]}
+    >
+      <svg
+        className="c7"
+        color="white"
+        height="48px"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c8"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        10 - 1 - 3
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Win - Loss - Tie
+        </i>
+      </p>
+    </div>
+    <div
+      className="c11"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        --
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Home Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with NCAAB performance type 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #0A169A;
+  background-color: inherit;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: FuturaPT,Roboto,Helvetica,sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c3 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.c9 {
+  color: #0A169A;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div>
+      <div
+        className="c2"
+        onClick={[Function]}
+      >
+        <div
+          className="c1"
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <button
+      className="c6"
+      onClick={[MockFunction]}
+    >
+      <svg
+        className="c7"
+        color="white"
+        height="48px"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c8"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        10 - 1
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Win - Loss
+        </i>
+      </p>
+    </div>
+    <div
+      className="c11"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        --
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Home Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with NCAAF performance type 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c4 path {
+  fill: #FFFFFF;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: white;
+}
+
+.c6 {
+  border: none;
+  min-width: 100px;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: #0A169A;
+  background-color: inherit;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
+}
+
+.c6:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c6:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c8 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c11 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.c2 {
+  position: relative;
+  cursor: pointer;
+}
+
+.c5 {
+  position: absolute;
+  width: 180px;
+  top: calc(100% + 8px);
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.c10 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: FuturaPT,Roboto,Helvetica,sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  background: 'none';
+}
+
+.c3 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.c9 {
+  color: #0A169A;
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div>
+      <div
+        className="c2"
+        onClick={[Function]}
+      >
+        <div
+          className="c1"
+        >
+          <h4
+            className="c3"
+            color="#070707"
+          >
+            Select a Season
+          </h4>
+          <svg
+            className="c4"
+            color="#FFFFFF"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <button
+      className="c6"
+      onClick={[MockFunction]}
+    >
+      <svg
+        className="c7"
+        color="white"
+        height="48px"
+        viewBox="0 0 24 24"
+        width="48px"
+      >
+        <path
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c8"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        10 - 1
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Win - Loss
+        </i>
+      </p>
+    </div>
+    <div
+      className="c11"
+    >
+      <h3
+        className="c9"
+        color="#0A169A"
+      >
+        --
+      </h3>
+      <p
+        className="c10"
+        color="#FFFFFF"
+        letterSpacing="1px"
+        size="14px"
+      >
+        <i>
+          Home Games Remaining
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders correctly with NFL performance type 1`] = `
 .c4 {
   display: inline-block;
@@ -248,254 +1240,6 @@ exports[`renders correctly with NFL performance type 1`] = `
 </div>
 `;
 
-exports[`renders correctly with props 1`] = `
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c4 path {
-  fill: #FFFFFF;
-}
-
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c7 path {
-  fill: white;
-}
-
-.c6 {
-  border: none;
-  min-width: 100px;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-radius: 3px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  color: #0A169A;
-  background-color: inherit;
-}
-
-.c6:disabled {
-  cursor: not-allowed;
-}
-
-.c6:disabled {
-  color: #D1D1D1;
-  opacity: 0.5;
-}
-
-.c6:hover:not(:disabled) {
-  color: #38A9DB;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c8 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c11 {
-  -webkit-flex: 2;
-  -ms-flex: 2;
-  flex: 2;
-}
-
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c5 {
-  position: absolute;
-  width: 180px;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c10 {
-  margin: 0;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 100;
-  font-family: FuturaPT,Roboto,Helvetica,sans-serif;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-}
-
-.c0 {
-  height: 100%;
-  width: auto;
-  margin: 0;
-  padding-left: 20px;
-  color: #FFFFFF;
-  background: 'none';
-}
-
-.c3 {
-  color: #070707;
-  font-size: 18px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  vertical-align: top;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.5px;
-  -moz-letter-spacing: 0.5px;
-  -ms-letter-spacing: 0.5px;
-  letter-spacing: 0.5px;
-  font-weight: bold;
-}
-
-.c9 {
-  color: #0A169A;
-  font-size: 22px;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-    direction="row"
-  >
-    <div>
-      <div
-        className="c2"
-        onClick={[Function]}
-      >
-        <div
-          className="c1"
-        >
-          <h4
-            className="c3"
-            color="#070707"
-          >
-            Select a Season
-          </h4>
-          <svg
-            className="c4"
-            color="#FFFFFF"
-            height="24px"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
-        </div>
-        <div
-          className="c5"
-        />
-      </div>
-    </div>
-    <button
-      className="c6"
-      onClick={[MockFunction]}
-    >
-      <svg
-        className="c7"
-        color="white"
-        height="48px"
-        viewBox="0 0 24 24"
-        width="48px"
-      >
-        <path
-          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-        />
-      </svg>
-    </button>
-  </div>
-  <div
-    className="c1"
-    direction="row"
-  >
-    <div
-      className="c8"
-    >
-      <h3
-        className="c9"
-        color="#0A169A"
-      >
-        0.909
-      </h3>
-      <p
-        className="c10"
-        color="#FFFFFF"
-        letterSpacing="1px"
-        size="14px"
-      >
-        <i>
-          Win / Loss
-        </i>
-      </p>
-    </div>
-    <div
-      className="c11"
-    >
-      <h3
-        className="c9"
-        color="#0A169A"
-      >
-        --
-      </h3>
-      <p
-        className="c10"
-        color="#FFFFFF"
-        letterSpacing="1px"
-        size="14px"
-      >
-        <i>
-          Home Games Remaining
-        </i>
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`renders correctly with toggledSidebar 1`] = `
 .c4 {
   display: inline-block;
@@ -707,7 +1451,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
         className="c9"
         color="#0A169A"
       >
-        0.909
+        10 - 1
       </h3>
       <p
         className="c10"
@@ -716,7 +1460,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
         size="14px"
       >
         <i>
-          Win / Loss
+          Win - Loss
         </i>
       </p>
     </div>

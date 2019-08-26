@@ -1,5 +1,5 @@
 // @flow
-export type PerformanceType = 'MLB' | 'NFL';
+export type PerformanceType = 'MLB' | 'NFL' | 'MLS' | 'NCAAF' | 'NCAAB';
 
 export type EDClient = {
   createdAt: Date,
