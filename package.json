@@ -43,7 +43,7 @@
     "flow": "flow",
     "lint": "eslint src",
     "lint-css": "stylelint './src/**/*.js'",
-    "test-ci": "env-cmd -e test yarn lint && CI=true yarn test --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit",
+    "test-ci": "env-cmd -e test yarn lint && CI=true yarn test --maxWorkers=2 --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit",
     "test-staged": "env-cmd -e test yarn test --watchAll=false --coverage --coverageReporters=cobertura ---reporters=default --reporters=jest-junit --onlyChanged --passWithNoTests",
     "prettier": "prettier-eslint --write '/src/**/*.{js|jsx}'",
     "prettier-dry-run": "prettier-eslint --write '/src/**/*.{js|jsx}' -l debug"
