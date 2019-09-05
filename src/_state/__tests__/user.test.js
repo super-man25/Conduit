@@ -41,14 +41,15 @@ describe('reducer', () => {
     const state = reducer(undefined, {});
     expect(state).toEqual({
       model: null,
-      pending: false
+      saved: false,
+      loading: false
     });
   });
 
   it('should handle CREATE_ASYNC', () => {
     const prevState = {
       model: null,
-      pending: false
+      saved: false
     };
 
     const action = actions.create();
@@ -56,35 +57,37 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      pending: false,
-      creating: true
+      loading: true,
+      saved: false
     });
   });
 
   it('should handle CREATE_SUCCESS', () => {
     const prevState = {
-      pending: true
+      saved: false
     };
 
     const action = { type: CREATE_SUCCESS };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
-      pending: true,
-      creating: false
+      loading: false,
+      saved: true
     });
   });
 
   it('should handle CREATE_ERROR', () => {
     const prevState = {
-      creating: true
+      loading: true,
+      saved: false
     };
 
     const action = { type: CREATE_ERROR };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
-      creating: false
+      loading: false,
+      saved: false
     });
   });
 
@@ -112,7 +115,7 @@ describe('reducer', () => {
   it('should handle UPDATE_ASYNC', () => {
     const prevState = {
       model: null,
-      pending: false
+      loading: false
     };
 
     const user = {
@@ -124,15 +127,13 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: true,
-      pending: false
+      loading: true
     });
   });
 
   it('should handle UPDATE_SUCCESS', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -155,7 +156,6 @@ describe('reducer', () => {
   it('should handle UPDATE_ERROR', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -168,15 +168,13 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: false,
-      pending: false
+      loading: false
     });
   });
 
   it('should handle UPDATE_EMAIL_ASYNC', () => {
     const prevState = {
-      model: null,
-      pending: false
+      model: null
     };
 
     const user = {
@@ -191,15 +189,13 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: true,
-      pending: false
+      loading: true
     });
   });
 
   it('should handle UPDATE_EMAIL_SUCCESS', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -222,7 +218,6 @@ describe('reducer', () => {
   it('should handle UPDATE_EMAIL_ERROR', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -238,15 +233,13 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: false,
-      pending: false
+      loading: false
     });
   });
 
   it('should handle CHANGE_PASSWORD_ASYNC', () => {
     const prevState = {
-      model: null,
-      pending: false
+      model: null
     };
 
     const user = {
@@ -261,15 +254,13 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: true,
-      pending: false
+      loading: true
     });
   });
 
   it('should handle CHANGE_PASSWORD_SUCCESS', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -292,7 +283,6 @@ describe('reducer', () => {
   it('should handle CHANGE_PASSWORD_ERROR', () => {
     const prevState = {
       model: null,
-      pending: false,
       loading: true
     };
 
@@ -308,8 +298,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       model: null,
-      loading: false,
-      pending: false
+      loading: false
     });
   });
 });

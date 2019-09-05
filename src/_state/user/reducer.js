@@ -14,18 +14,19 @@ import {
 } from './actions';
 
 const initialState = {
-  pending: false,
+  loading: false,
+  saved: false,
   model: null
 };
 
 export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case CREATE_ASYNC:
-      return { ...state, creating: true };
+      return { ...state, loading: true, saved: false };
     case CREATE_SUCCESS:
-      return { ...state, creating: false };
+      return { ...state, loading: false, saved: true };
     case CREATE_ERROR:
-      return { ...state, creating: false };
+      return { ...state, loading: false, saved: false };
     case UPDATE_ASYNC:
       return { ...state, loading: true };
     case UPDATE_SUCCESS:

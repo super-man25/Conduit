@@ -1,6 +1,11 @@
 // @flow
 
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
+import { actions as usersActions } from '_state/user';
+import { selectors as clientListSelector } from '_state/clientList';
 import {
   PrimaryButton,
   HelpBlockDiv,
@@ -10,11 +15,8 @@ import {
   H3,
   Loader
 } from '_components';
-import { actions as usersActions } from '_state/user';
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { EDUser } from '_models';
+import { Dropdown } from '_components';
+import type { EDUser, EDClient } from '_models';
 import { cssConstants } from '_constants';
 
 const CreateUserWrapper = styled(Flex)`
@@ -28,11 +30,13 @@ type Props = {
     create: (user: EDUser) => void
   },
   userState: {
-    creating: boolean
+    loading: boolean,
+    saved: boolean
   },
   authState: {
     model: EDUser
-  }
+  },
+  clientList: [EDClient]
 };
 
 type State = {
@@ -74,10 +78,23 @@ class CreateUser extends React.Component<Props, State> {
     };
   }
 
+  componentDidMount() {
+    const { clientId: activeClientId } = this.props.authState.model;
+    this.setState({ user: { ...this.state.user, clientId: activeClientId } });
+  }
+
+  componentDidUpdate(prevProps) {
+    const { saved: currentSaved } = this.props.userState;
+    const { saved: prevSaved } = prevProps.userState;
+    if (currentSaved !== prevSaved && currentSaved) {
+      this.clearForm();
+    }
+  }
+
   handleChange = (event) => {
     const { name, value: rawValue } = event.target;
     const value = name === 'isAdmin' ? !!event.target.checked : rawValue;
-    const { user, validEmail } = this.state;
+    const { user } = this.state;
     this.setState({
       user: {
         ...user,
@@ -85,19 +102,29 @@ class CreateUser extends React.Component<Props, State> {
       }
     });
     this.setState({ submitted: false });
-    this.setState({
-      createEnabled:
-        validEmail && user.firstName.length > 0 && user.lastName.length > 0
-    });
     if (name === 'email' && !this.emailCheck(value)) {
       this.setState({ createEnabled: false });
     } else if (name === 'firstName' && value.length === 0) {
       this.setState({ createEnabled: false });
     } else if (name === 'lastName' && value.length === 0) {
       this.setState({ createEnabled: false });
-    } else {
-      this.setState({ createEnabled: true });
+    } else if (name !== 'isAdmin') {
+      this.setState({ createEnabled: !!this.state.user.clientId });
     }
+  };
+
+  clearForm = () => {
+    const { clientId: activeClientId } = this.props.authState.model;
+    this.setState({
+      user: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        isAdmin: false,
+        clientId: activeClientId
+      }
+    });
   };
 
   handleBlur = (e) => {
@@ -117,10 +144,13 @@ class CreateUser extends React.Component<Props, State> {
 
     this.setState({ submitted: true });
     const { user } = this.state;
-    user.clientId = this.props.authState.model.clientId;
     if (user.firstName && user.lastName && validEmail) {
       this.props.usersActions.create(user);
     }
+  };
+
+  handleClientChange = (newSelected, prevSelected, options) => {
+    this.setState({ user: { ...this.state.user, clientId: newSelected.id } });
   };
 
   emailCheck(email) {
@@ -131,7 +161,7 @@ class CreateUser extends React.Component<Props, State> {
   }
 
   render() {
-    const { userState } = this.props;
+    const { userState, clientList } = this.props;
 
     const {
       user,
@@ -142,6 +172,11 @@ class CreateUser extends React.Component<Props, State> {
       validEmail,
       createEnabled
     } = this.state;
+
+    if (!!clientList.length && !user.clientId) {
+      this.handleClientChange(clientList[0]);
+    }
+
     return (
       <CreateUserWrapper>
         <form
@@ -204,6 +239,33 @@ class CreateUser extends React.Component<Props, State> {
           >
             A valid Email is required
           </HelpBlockDiv>
+          <Label htmlFor="clients">Client</Label>
+          <Dropdown
+            name="clients"
+            parseOption={(client, clients) => client.name}
+            selected={clientList.find((client) => client.id === user.clientId)}
+            options={clientList}
+            noneSelected={'Select a client'}
+            onChange={this.handleClientChange}
+            arrowColor={cssConstants.PRIMARY_BLUE}
+            containerStyle={{
+              boxSizing: 'border-box',
+              display: 'block',
+              marginTop: '10px',
+              marginBottom: '37px',
+              background: `${cssConstants.PRIMARY_WHITE}`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right center',
+              fontSize: '1rem',
+              width: '100%',
+              paddingLeft: '8px',
+              border: '2px solid',
+              borderRadius: '3px',
+              borderColor: `${cssConstants.PRIMARY_BLUE}`,
+              paddingTop: '0.9em',
+              paddingBottom: '0.9em'
+            }}
+          />
           <input
             type="checkbox"
             name="isAdmin"
@@ -217,7 +279,7 @@ class CreateUser extends React.Component<Props, State> {
           <br />
           <br />
           <PrimaryButton disabled={!createEnabled}>
-            {userState.creating ? (
+            {userState.loading ? (
               <Loader small color={cssConstants.PRIMARY_WHITE} />
             ) : (
               'Create'
@@ -232,7 +294,8 @@ class CreateUser extends React.Component<Props, State> {
 function mapStateToProps(state) {
   return {
     userState: state.user,
-    authState: state.auth
+    authState: state.auth,
+    clientList: clientListSelector.getClients(state)
   };
 }
 

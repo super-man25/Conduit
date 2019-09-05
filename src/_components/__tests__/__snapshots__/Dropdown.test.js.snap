@@ -1,5 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
+<DropdownContainer
+  onClick={[Function]}
+  onClickAway={[Function]}
+>
+  <Flex
+    align="center"
+    justify="space-between"
+  >
+    None selected
+    <Icon
+      color="#FFFFFF"
+      name="arrow-drop-up"
+      size={24}
+    />
+  </Flex>
+  <DropdownMenu
+    show={true}
+  >
+    <Option
+      isActive={false}
+      key="0"
+      onClick={[Function]}
+    >
+      Option 1
+    </Option>
+    <Option
+      isActive={false}
+      key="1"
+      onClick={[Function]}
+    >
+      Option 2
+    </Option>
+  </DropdownMenu>
+</DropdownContainer>
+`;
+
+exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
+<DropdownContainer
+  onClick={[Function]}
+  onClickAway={[Function]}
+>
+  <Flex
+    align="center"
+    justify="space-between"
+  >
+    None selected
+    <Icon
+      color="#FFFFFF"
+      name="arrow-drop-down"
+      size={24}
+    />
+  </Flex>
+  <DropdownMenu
+    show={false}
+  >
+    <Option
+      isActive={false}
+      key="0"
+      onClick={[Function]}
+    >
+      Option 1
+    </Option>
+    <Option
+      isActive={false}
+      key="1"
+      onClick={[Function]}
+    >
+      Option 2
+    </Option>
+  </DropdownMenu>
+</DropdownContainer>
+`;
+
 exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 .c2 {
   display: inline-block;
@@ -33,9 +107,32 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   cursor: pointer;
 }
 
+.c0:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
+}
+
 .c3 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -159,9 +256,32 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   cursor: pointer;
 }
 
+.c0:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
+}
+
 .c3 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;

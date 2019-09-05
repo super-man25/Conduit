@@ -30,17 +30,17 @@ describe('<Dropdown />', () => {
     const wrapper = shallow(<Dropdown {...props} />);
 
     wrapper.simulate('click');
-    expect(wrapper.state().isOpen).toEqual(true);
+    expect(wrapper).toMatchSnapshot();
 
     wrapper.simulate('click');
-    expect(wrapper.state().isOpen).toEqual(false);
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('triggers onChange when an option is clicked', () => {
     const props = createProps();
     const wrapper = mount(<Dropdown {...props} />);
 
-    wrapper.setState({ isOpen: true });
+    wrapper.simulate('click');
     const firstOption = wrapper.find('Option').at(0);
     firstOption.simulate('click');
     expect(props.onChange).toHaveBeenCalledWith(
@@ -48,7 +48,5 @@ describe('<Dropdown />', () => {
       props.selected,
       props.options
     );
-
-    expect(wrapper.state().isOpen).toEqual(false);
   });
 });

@@ -1,5 +1,6 @@
 // @flow
-import * as React from 'react';
+import React, { useState } from 'react';
+import type { Node } from 'react';
 import styled, { css } from 'styled-components';
 import { withClickAway } from '_hoc';
 import { cssConstants } from '_constants';
@@ -10,12 +11,21 @@ import { Flex } from './Flex';
 const DropdownContainer = withClickAway(styled.div`
   position: relative;
   cursor: pointer;
+
+  &:-webkit-autofill {
+    animation-name: none;
+    animation-fill-mode: both;
+  }
+
+  ::placeholder {
+    color: ${cssConstants.PRIMARY_GRAY};
+  }
 `);
 DropdownContainer.displayName = 'DropdownContainer';
 
 const DropdownMenu = styled.div`
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
@@ -34,7 +44,7 @@ const DropdownMenu = styled.div`
       visibility: visible;
     `};
 `;
-DropdownContainer.displayName = 'DropdownMenu';
+DropdownMenu.displayName = 'DropdownMenu';
 
 const Option = styled.div`
   padding: 12px 16px;
@@ -58,34 +68,24 @@ Option.displayName = 'Option';
 
 type Props = {
   parseOption: (option: any, options: any[]) => string,
-  renderSelected: (selectedOption: any, options: any[]) => React.Node,
+  renderSelected: (selectedOption: any, options: any[]) => Node,
   selected: any,
   options: any[],
-  noneSelected: string | React.Node,
+  noneSelected: string | Node,
   onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
   containerStyle?: any,
   arrowColor?: string
 };
 
-type State = {
-  isOpen: boolean
-};
+export const Dropdown = (props: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export class Dropdown extends React.Component<Props, State> {
-  static defaultProps = {
-    noneSelected: 'Select an Item'
+  const toggleDropdownOpen = () => {
+    setIsOpen(!isOpen);
   };
 
-  state = {
-    isOpen: false
-  };
-
-  toggleDropdownOpen = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
-
-  itemClicked = (newSelected: any) => {
-    const { onChange, options, selected: prevSelected } = this.props;
+  const itemClicked = (newSelected: any) => {
+    const { onChange, options, selected: prevSelected } = props;
 
     if (prevSelected === newSelected) {
       return;
@@ -94,50 +94,47 @@ export class Dropdown extends React.Component<Props, State> {
     onChange(newSelected, prevSelected, options);
   };
 
-  render() {
-    const {
-      selected,
-      options,
-      parseOption,
-      noneSelected,
-      renderSelected,
-      containerStyle,
-      arrowColor
-    } = this.props;
-    const { isOpen } = this.state;
+  const {
+    selected,
+    options,
+    parseOption,
+    noneSelected,
+    renderSelected,
+    containerStyle,
+    arrowColor
+  } = props;
 
-    const hasSelectedItem = !!options.find((option) => option === selected);
+  const hasSelectedItem = !!options.find((option) => option === selected);
 
-    return (
-      <DropdownContainer
-        onClick={this.toggleDropdownOpen}
-        onClickAway={() => this.setState({ isOpen: false })}
-        style={containerStyle}
-      >
-        <Flex justify="space-between" align="center">
-          {hasSelectedItem
-            ? renderSelected
-              ? renderSelected(selected, options)
-              : parseOption(selected, options)
-            : noneSelected}
-          <Icon
-            size={24}
-            color={arrowColor ? arrowColor : cssConstants.PRIMARY_WHITE}
-            name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
-          />
-        </Flex>
-        <DropdownMenu show={isOpen}>
-          {options.map((option, idx) => (
-            <Option
-              isActive={option === selected}
-              key={idx}
-              onClick={() => this.itemClicked(option)}
-            >
-              {parseOption(option, options)}
-            </Option>
-          ))}
-        </DropdownMenu>
-      </DropdownContainer>
-    );
-  }
-}
+  return (
+    <DropdownContainer
+      onClick={() => toggleDropdownOpen()}
+      onClickAway={() => setIsOpen(false)}
+      style={containerStyle}
+    >
+      <Flex justify="space-between" align="center">
+        {hasSelectedItem
+          ? renderSelected
+            ? renderSelected(selected, options)
+            : parseOption(selected, options)
+          : noneSelected}
+        <Icon
+          size={24}
+          color={arrowColor ? arrowColor : cssConstants.PRIMARY_WHITE}
+          name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
+        />
+      </Flex>
+      <DropdownMenu show={isOpen}>
+        {options.map((option, idx) => (
+          <Option
+            isActive={option === selected}
+            key={idx}
+            onClick={() => itemClicked(option)}
+          >
+            {parseOption(option, options)}
+          </Option>
+        ))}
+      </DropdownMenu>
+    </DropdownContainer>
+  );
+};

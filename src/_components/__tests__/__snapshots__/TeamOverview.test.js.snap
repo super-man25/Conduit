@@ -82,9 +82,32 @@ exports[`renders correctly with MLB performance type 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -330,9 +353,32 @@ exports[`renders correctly with MLS performance type 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -578,9 +624,32 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -826,9 +895,32 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -1074,9 +1166,32 @@ exports[`renders correctly with NFL performance type 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
@@ -1322,9 +1437,32 @@ exports[`renders correctly with toggledSidebar 1`] = `
   cursor: pointer;
 }
 
+.c2:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c2::-moz-placeholder {
+  color: #999999;
+}
+
+.c2:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c2::placeholder {
+  color: #999999;
+}
+
 .c5 {
   position: absolute;
-  width: 180px;
+  width: 100%;
   top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
