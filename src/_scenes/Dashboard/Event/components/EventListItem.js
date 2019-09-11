@@ -3,15 +3,15 @@
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
 import { Flex, FlexItem, H4, P1 } from '_components';
-import { isPast } from 'date-fns';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import type { EDEvent } from '_models';
 import {
   formatNumber,
   formatUSD,
-  readableDateAndTime
-} from '_helpers/string-utils';
+  readableDateAndTime,
+  isPastEvent
+} from '_helpers';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
 
 const Heading = styled(H4)`
@@ -149,7 +149,7 @@ export class EventListItem extends React.PureComponent<Props> {
 
   render() {
     const { event, active, onClick, isAdmin } = this.props;
-    const past = isPast(event.timestamp);
+    const past = isPastEvent(event);
     return (
       <Container
         onClick={() => onClick(event)}
