@@ -1,17 +1,7 @@
 // @flow
-import * as React from 'react';
-import {
-  ChartTooltip,
-  TooltipHeaderText,
-  TooltipBodyTitle,
-  TooltipBodyText
-} from '../ChartTooltip';
-import { formatUSD } from '_helpers/string-utils';
-
-const CHART_KEYS = {
-  actual: 'periodicRevenue',
-  projected: 'projectedPeriodicRevenue'
-};
+import React from 'react';
+import { ChartTooltip } from '../ChartTooltip';
+import { formatUSD, formatNumber } from '_helpers/string-utils';
 
 type TooltipContentProps = {
   active?: boolean,
@@ -20,30 +10,19 @@ type TooltipContentProps = {
 };
 
 export function PeriodicRevenueTooltip(props: TooltipContentProps) {
-  const { payload, active, dateFormatter } = props;
-
+  const { active, dateFormatter, payload } = props;
   if (!active || !payload || !payload.length) {
     return null;
   }
+  const data = payload[0].payload;
+  const headerText = dateFormatter(data.timestamp);
+  const bodyJson = {
+    Revenue: formatUSD(data.periodicRevenue),
+    Inventory: formatNumber(data.periodicInventory),
+    'Avg. Ticket Price': formatUSD(
+      data.periodicRevenue / (data.periodicInventory * -1)
+    )
+  };
 
-  const dataPoint = payload.length && payload[0].payload;
-  const bodyTitle = dataPoint.isProjected ? 'Projected Revenue' : 'Revenue';
-  const bodyText = formatUSD(
-    dataPoint.isProjected
-      ? dataPoint[CHART_KEYS.projected]
-      : dataPoint[CHART_KEYS.actual]
-  );
-
-  const header = (
-    <TooltipHeaderText>{dateFormatter(dataPoint.timestamp)}</TooltipHeaderText>
-  );
-
-  const body = (
-    <React.Fragment>
-      <TooltipBodyTitle>{bodyTitle}</TooltipBodyTitle>
-      <TooltipBodyText>{bodyText}</TooltipBodyText>
-    </React.Fragment>
-  );
-
-  return <ChartTooltip headerComponent={header} bodyComponent={body} />;
+  return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;
 }

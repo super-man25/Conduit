@@ -2,21 +2,14 @@
 
 exports[`<PeriodicInventoryTooltip /> should render correctly 1`] = `
 <ChartTooltip
-  bodyComponent={
-    <React.Fragment>
-      <ForwardRef(styled.h3)>
-        Inventory
-      </ForwardRef(styled.h3)>
-      <ForwardRef(styled.p)>
-        100
-      </ForwardRef(styled.p)>
-    </React.Fragment>
+  bodyJson={
+    Object {
+      "Avg. Ticket Price": "-$1.00",
+      "Inventory": "100",
+      "Revenue": "$100.00",
+    }
   }
-  headerComponent={
-    <ForwardRef(styled.p)>
-      [Function]
-    </ForwardRef(styled.p)>
-  }
+  headerText={[Function]}
 />
 `;
 
@@ -26,20 +19,13 @@ exports[`<PeriodicInventoryTooltip /> should render correctly when no payload is
 
 exports[`<PeriodicInventoryTooltip /> should render correctly with different dateformats  1`] = `
 <ChartTooltip
-  bodyComponent={
-    <React.Fragment>
-      <ForwardRef(styled.h3)>
-        Inventory
-      </ForwardRef(styled.h3)>
-      <ForwardRef(styled.p)>
-        100
-      </ForwardRef(styled.p)>
-    </React.Fragment>
+  bodyJson={
+    Object {
+      "Avg. Ticket Price": "-$1.00",
+      "Inventory": "100",
+      "Revenue": "$100.00",
+    }
   }
-  headerComponent={
-    <ForwardRef(styled.p)>
-      Monday, June 18th, 2018 @ 11:47 AM ET
-    </ForwardRef(styled.p)>
-  }
+  headerText="Monday, June 18th, 2018 @ 11:47 AM ET"
 />
 `;

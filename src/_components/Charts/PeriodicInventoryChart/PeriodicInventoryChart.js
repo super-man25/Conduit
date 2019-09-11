@@ -17,29 +17,6 @@ import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicInventoryTooltip } from './PeriodicInventoryTooltip';
 import type { EventStat } from '_models/eventStat';
 
-const CHART_KEYS = {
-  actual: 'periodicInventory',
-  projected: 'projectedPeriodicInventory'
-};
-
-const CHART_INVENTORY_KEYS = {
-  actualInventory: 'periodicInventory',
-  projectedInventory: 'projectedPeriodicInventory'
-};
-
-function formatPeriodicInventoryData(data: EventStat[]) {
-  return data.map(
-    (d) => ({
-      timestamp: d.timestamp,
-      isProjected: d.isProjected,
-      [d.isProjected
-        ? CHART_INVENTORY_KEYS.projectedInventory
-        : CHART_INVENTORY_KEYS.actualInventory]: d.periodicInventory
-    }),
-    []
-  );
-}
-
 type Props = {
   height: number,
   data: EventStat[],
@@ -60,7 +37,7 @@ export const PeriodicInventoryChart = ({
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height}>
-        <BarChart data={formatPeriodicInventoryData(data)}>
+        <BarChart data={data}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
 
@@ -94,12 +71,12 @@ export const PeriodicInventoryChart = ({
           </YAxis>
 
           <Bar
-            dataKey={CHART_KEYS.actual}
+            dataKey="periodicInventory"
             stackId="a"
             fill={cssConstants.SECONDARY_PURPLE}
           />
           <Bar
-            dataKey={CHART_KEYS.projected}
+            dataKey="projectedPeriodicInventory"
             stackId="a"
             fill={cssConstants.SECONDARY_LIGHT_PURPLE}
           />

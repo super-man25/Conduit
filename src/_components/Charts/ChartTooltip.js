@@ -3,10 +3,11 @@ import * as React from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
+import { Flex } from '_components';
 
 const TooltipContainer: ComponentType<{}> = styled.div`
   border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  width: 175px;
+  min-width: 175px;
   font-size: 14px;
   background-color: ${cssConstants.PRIMARY_WHITE};
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
@@ -35,7 +36,7 @@ const TooltipBody: ComponentType<{}> = styled.section`
 `;
 
 export const TooltipBodyTitle: ComponentType<{}> = styled.h3`
-  margin: 0;
+  margin: 0 15px 0 0;
   padding: 0;
   font-size: 12px;
   font-weight: 400;
@@ -48,14 +49,31 @@ export const TooltipBodyText: ComponentType<{}> = styled.p`
   color: ${cssConstants.PRIMARY_LIGHT_BLACK};
 `;
 
+export const TooltipRow: ComponentType<{}> = styled((props) => (
+  <Flex {...props} />
+))`
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+`;
+
 type Props = {
-  headerComponent: React.Node,
-  bodyComponent: React.Node
+  headerText: string,
+  bodyJson: Object
 };
 
-export const ChartTooltip = ({ headerComponent, bodyComponent }: Props) => (
+export const ChartTooltip = ({ headerText, bodyJson }: Props) => (
   <TooltipContainer>
-    <TooltipHeader>{headerComponent}</TooltipHeader>
-    <TooltipBody>{bodyComponent}</TooltipBody>
+    <TooltipHeader>
+      <TooltipHeaderText>{headerText}</TooltipHeaderText>
+    </TooltipHeader>
+    <TooltipBody>
+      {Object.keys(bodyJson).map((key) => (
+        <TooltipRow key={key} justify="space-between" align="center">
+          <TooltipBodyTitle>{key}</TooltipBodyTitle>
+          <TooltipBodyText>{bodyJson[key]}</TooltipBodyText>
+        </TooltipRow>
+      ))}
+    </TooltipBody>
   </TooltipContainer>
 );

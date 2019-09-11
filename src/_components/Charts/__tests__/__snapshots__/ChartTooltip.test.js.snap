@@ -3,10 +3,23 @@
 exports[`<ChartTooltip /> should render correctly 1`] = `
 <styled.div>
   <styled.header>
-    <div />
+    <styled.p>
+      text
+    </styled.p>
   </styled.header>
   <styled.section>
-    <div />
+    <Styled(Component)
+      align="center"
+      justify="space-between"
+      key="key"
+    >
+      <styled.h3>
+        key
+      </styled.h3>
+      <styled.p>
+        value
+      </styled.p>
+    </Styled(Component)>
   </styled.section>
 </styled.div>
 `;

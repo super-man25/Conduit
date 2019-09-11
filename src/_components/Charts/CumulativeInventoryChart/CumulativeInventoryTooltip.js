@@ -1,11 +1,7 @@
 // @flow
-import * as React from 'react';
-import {
-  ChartTooltip,
-  TooltipHeaderText,
-  TooltipBodyTitle,
-  TooltipBodyText
-} from '../ChartTooltip';
+import React from 'react';
+import { ChartTooltip } from '../ChartTooltip';
+import { formatUSD, formatNumber } from '_helpers/string-utils';
 
 type TooltipContentProps = {
   active?: boolean,
@@ -14,28 +10,17 @@ type TooltipContentProps = {
 };
 
 export function CumulativeInventoryTooltip(props: TooltipContentProps) {
-  const { payload, active, dateFormatter } = props;
-
+  const { active, dateFormatter, payload } = props;
   if (!active || !payload || !payload.length) {
     return null;
   }
+  const data = payload[0].payload;
+  const headerText = dateFormatter(data.timestamp);
+  const bodyJson = {
+    'Remaining Inventory': formatNumber(data.inventory),
+    'Revenue To Date': formatUSD(data.revenue),
+    'Avg. Ticket Price To Date': formatUSD(data.revenue / data.inventory)
+  };
 
-  const dataPoint = payload.length && payload[0].payload;
-  const bodyTitle = dataPoint.isProjected ? 'Projected Inventory' : 'Inventory';
-  const bodyText = dataPoint.isProjected
-    ? dataPoint.projectedInventory
-    : dataPoint.inventory;
-
-  const header = (
-    <TooltipHeaderText>{dateFormatter(dataPoint.timestamp)}</TooltipHeaderText>
-  );
-
-  const body = (
-    <React.Fragment>
-      <TooltipBodyTitle>{bodyTitle}</TooltipBodyTitle>
-      <TooltipBodyText>{bodyText}</TooltipBodyText>
-    </React.Fragment>
-  );
-
-  return <ChartTooltip headerComponent={header} bodyComponent={body} />;
+  return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;
 }

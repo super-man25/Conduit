@@ -13,8 +13,13 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
       data={
         Array [
           Object {
+            "eventId": 1,
+            "id": 1,
+            "inventory": 100,
             "isProjected": false,
+            "periodicInventory": 100,
             "periodicRevenue": 100,
+            "revenue": 100,
             "timestamp": 1529336865706,
           },
         ]
@@ -241,8 +246,13 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
       data={
         Array [
           Object {
+            "eventId": 1,
+            "id": 1,
+            "inventory": 100,
             "isProjected": false,
+            "periodicInventory": 100,
             "periodicRevenue": 100,
+            "revenue": 100,
             "timestamp": 1529336865706,
           },
         ]

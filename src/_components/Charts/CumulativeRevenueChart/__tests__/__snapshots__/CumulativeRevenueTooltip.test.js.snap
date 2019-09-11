@@ -2,21 +2,14 @@
 
 exports[`<CumulativeRevenueTooltip /> should render correctly 1`] = `
 <ChartTooltip
-  bodyComponent={
-    <React.Fragment>
-      <ForwardRef(styled.h3)>
-        Revenue
-      </ForwardRef(styled.h3)>
-      <ForwardRef(styled.p)>
-        $100.00
-      </ForwardRef(styled.p)>
-    </React.Fragment>
+  bodyJson={
+    Object {
+      "Avg. Ticket Price To Date": "$1.00",
+      "Remaining Inventory": "100",
+      "Revenue To Date": "$100.00",
+    }
   }
-  headerComponent={
-    <ForwardRef(styled.p)>
-      [Function]
-    </ForwardRef(styled.p)>
-  }
+  headerText={[Function]}
 />
 `;
 
@@ -26,20 +19,13 @@ exports[`<CumulativeRevenueTooltip /> should render correctly when no payload is
 
 exports[`<CumulativeRevenueTooltip /> should render correctly with different dateformats  1`] = `
 <ChartTooltip
-  bodyComponent={
-    <React.Fragment>
-      <ForwardRef(styled.h3)>
-        Revenue
-      </ForwardRef(styled.h3)>
-      <ForwardRef(styled.p)>
-        $100.00
-      </ForwardRef(styled.p)>
-    </React.Fragment>
+  bodyJson={
+    Object {
+      "Avg. Ticket Price To Date": "$1.00",
+      "Remaining Inventory": "100",
+      "Revenue To Date": "$100.00",
+    }
   }
-  headerComponent={
-    <ForwardRef(styled.p)>
-      Monday, June 18th, 2018 @ 11:47 AM ET
-    </ForwardRef(styled.p)>
-  }
+  headerText="Monday, June 18th, 2018 @ 11:47 AM ET"
 />
 `;

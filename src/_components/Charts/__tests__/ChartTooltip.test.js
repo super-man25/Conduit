@@ -5,7 +5,7 @@ import { ChartTooltip } from '../ChartTooltip';
 describe('<ChartTooltip />', () => {
   it('should render correctly', () => {
     const wrapper = shallow(
-      <ChartTooltip bodyComponent={<div />} headerComponent={<div />} />
+      <ChartTooltip headerText="text" bodyJson={{ key: 'value' }} />
     );
     expect(wrapper).toMatchSnapshot();
   });

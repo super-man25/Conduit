@@ -18,24 +18,6 @@ import type { EventStat } from '_models/eventStat';
 
 const ANIMATION_DURATION = 1000;
 
-const CHART_INVENTORY_KEYS = {
-  actualInventory: 'inventory',
-  projectedInventory: 'projectedInventory'
-};
-
-function formatCumulativeInventoryData(data: EventStat[]) {
-  return data.map(
-    (d) => ({
-      timestamp: d.timestamp,
-      isProjected: d.isProjected,
-      [d.isProjected
-        ? CHART_INVENTORY_KEYS.projectedInventory
-        : CHART_INVENTORY_KEYS.actualInventory]: d.inventory
-    }),
-    []
-  );
-}
-
 type Props = {
   height: number,
   data: EventStat[],
@@ -56,7 +38,7 @@ export function CumulativeInventoryChart({
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height}>
-        <LineChart data={formatCumulativeInventoryData(data)}>
+        <LineChart data={data}>
           <XAxis
             dataKey="timestamp"
             tickFormatter={dateFormatter}

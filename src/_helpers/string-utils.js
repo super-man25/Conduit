@@ -135,6 +135,10 @@ export function formatUSD(
     maximumFractionDigits: 2
   }
 ): string {
+  if (isNaN(value) || value === null) {
+    return '--';
+  }
+
   const defaults = {
     style: 'currency',
     currency: 'USD'

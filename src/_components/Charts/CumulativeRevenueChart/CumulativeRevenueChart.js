@@ -18,24 +18,6 @@ import type { EventStat } from '_models/eventStat';
 
 const ANIMATION_DURATION = 1000;
 
-const CHART_REVENUE_KEYS = {
-  actualRevenue: 'revenue',
-  projectedRevenue: 'projectedRevenue'
-};
-
-function formatCumulativeRevenueData(data: EventStat[]) {
-  return data.map(
-    (d) => ({
-      timestamp: d.timestamp,
-      isProjected: d.isProjected,
-      [d.isProjected
-        ? CHART_REVENUE_KEYS.projectedRevenue
-        : CHART_REVENUE_KEYS.actualRevenue]: d.revenue
-    }),
-    []
-  );
-}
-
 type Props = {
   height: number,
   data: EventStat[],
@@ -56,7 +38,7 @@ export function CumulativeRevenueChart({
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height}>
-        <LineChart data={formatCumulativeRevenueData(data)}>
+        <LineChart data={data}>
           <XAxis
             dataKey="timestamp"
             tickFormatter={dateFormatter}

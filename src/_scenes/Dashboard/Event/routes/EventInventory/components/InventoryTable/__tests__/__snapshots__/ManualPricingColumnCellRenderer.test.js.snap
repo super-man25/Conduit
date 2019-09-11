@@ -30,7 +30,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-cpmLhU",
+          "componentId": "sc-dymIpo",
           "isStatic": false,
           "rules": Array [
             "
@@ -84,10 +84,10 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-hEsumM",
+          "sc-ktHwxA",
         ],
         "render": [Function],
-        "styledComponentId": "sc-cpmLhU",
+        "styledComponentId": "sc-dymIpo",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

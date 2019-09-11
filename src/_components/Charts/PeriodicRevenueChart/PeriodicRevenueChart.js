@@ -17,29 +17,6 @@ import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicRevenueTooltip } from './PeriodicRevenueTooltip';
 import type { EventStat } from '_models/eventStat';
 
-const CHART_KEYS = {
-  actual: 'periodicRevenue',
-  projected: 'projectedPeriodicRevenue'
-};
-
-const CHART_REVENUE_KEYS = {
-  actualRevenue: 'periodicRevenue',
-  projectedRevenue: 'projectedPeriodicRevenue'
-};
-
-function formatPeriodicRevenueData(data: EventStat[]) {
-  return data.map(
-    (d) => ({
-      timestamp: d.timestamp,
-      isProjected: d.isProjected,
-      [d.isProjected
-        ? CHART_REVENUE_KEYS.projectedRevenue
-        : CHART_REVENUE_KEYS.actualRevenue]: d.periodicRevenue
-    }),
-    []
-  );
-}
-
 type Props = {
   height: number,
   data: EventStat[],
@@ -60,7 +37,7 @@ export const PeriodicRevenueChart = ({
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height} debounce={100}>
-        <BarChart data={formatPeriodicRevenueData(data)}>
+        <BarChart data={data}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
 
@@ -94,13 +71,13 @@ export const PeriodicRevenueChart = ({
           </YAxis>
 
           <Bar
-            dataKey={CHART_KEYS.actual}
+            dataKey="periodicRevenue"
             stackId="a"
             fill={cssConstants.PRIMARY_BLUE}
           />
 
           <Bar
-            dataKey={CHART_KEYS.projected}
+            dataKey="projectedPeriodicRevenue"
             stackId="a"
             fill={cssConstants.PRIMARY_LIGHT_BLUE}
           />
