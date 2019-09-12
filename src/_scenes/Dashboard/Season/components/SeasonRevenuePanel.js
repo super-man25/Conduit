@@ -41,7 +41,11 @@ import { selectors as seasonSelectors } from '_state/season';
 import { getSeasonStatState } from '_state/seasonStat/selectors';
 import typeof SeasonStatActions from '_state/seasonStat/actions';
 import type { EDSeason } from '_models';
-import { dateFormatter } from '_helpers';
+import {
+  dateFormatter,
+  renderMinorXAxisTicks,
+  renderMajorXAxisTicks
+} from '_helpers';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -150,9 +154,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
       seasonStatActions: { setDateRange, setGroupFilter },
       selectedSeason: { startTimestamp, endTimestamp }
     } = this.props;
+    const { timeZone, interval } = seasonStatsMeta || {};
 
-    const chartDateFormatter = (function() {
-      const { timeZone, interval } = seasonStatsMeta || {};
+    const tooltipDateFormatter = (function() {
       if (interval === 'Hours') {
         return dateFormatter(CONCISE_READABLE_DATETIME_FORMAT, timeZone);
       }
@@ -162,6 +166,24 @@ export class SeasonRevenuePanel extends React.Component<Props> {
       // Fallback to Days
       return dateFormatter(READABLE_DATE_FORMAT, timeZone);
     })();
+
+    const minorXAxisTickRenderer = (tickProps) => {
+      return renderMinorXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: seasonStats.length
+      });
+    };
+
+    const majorXAxisTickRenderer = (tickProps) => {
+      return renderMajorXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: seasonStats.length
+      });
+    };
 
     return (
       <Tabbable>
@@ -245,7 +267,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <PeriodicRevenueChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -254,7 +278,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <CumulativeRevenueChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -266,7 +292,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <PeriodicInventoryChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -275,7 +303,9 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       <CumulativeInventoryChart
                         data={seasonStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}

@@ -75,7 +75,10 @@ export default function eventStatReducer(
     case SET_GROUPING_FILTER:
       return { ...state, selectedGroupFilter: action.payload };
     case SET_DATE_RANGE:
-      return { ...state, dateRange: action.payload };
+      return {
+        ...state,
+        dateRange: action.payload
+      };
     case SET_FIRST_AND_LAST_DATE:
       return {
         ...state,

@@ -8,7 +8,7 @@ import {
   endOfDay,
   startOfYesterday,
   endOfYesterday,
-  subWeeks,
+  subDays,
   startOfMonth,
   subMonths,
   endOfMonth,
@@ -145,6 +145,7 @@ export const DateRangeFilter = (props: Props) => {
     const { setDateRange, allTimeDateRange } = props;
     let from = null;
     let to = null;
+
     switch (option.title) {
       case 'Today':
         to = endOfDay(new Date());
@@ -158,7 +159,7 @@ export const DateRangeFilter = (props: Props) => {
         break;
       case 'Last 7 Days':
         to = endOfDay(new Date());
-        from = subWeeks(to, 1);
+        from = subDays(to, 6);
         setDateRange({ from, to });
         break;
       case 'Month to Date':

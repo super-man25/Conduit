@@ -49,6 +49,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         }
         height={30}
         hide={false}
+        interval={0}
         mirror={false}
         orientation="bottom"
         padding={
@@ -59,29 +60,43 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         }
         reversed={false}
         scale="auto"
-        tick={
-          Object {
-            "fontSize": 10,
-          }
-        }
         tickCount={5}
-        tickFormatter={[Function]}
+        tickLine={false}
         type="category"
         width={0}
         xAxisId={0}
-      >
-        <Label
-          offset={-5}
-          position="insideBottom"
-          style={
-            Object {
-              "color": "#999999",
-              "fontSize": 12,
-            }
+      />
+      <XAxis
+        allowDataOverflow={false}
+        allowDecimals={true}
+        allowDuplicatedCategory={true}
+        axisLine={false}
+        dataKey="timestamp"
+        domain={
+          Array [
+            0,
+            "auto",
+          ]
+        }
+        height={1}
+        hide={false}
+        interval={0}
+        mirror={false}
+        orientation="bottom"
+        padding={
+          Object {
+            "left": 0,
+            "right": 0,
           }
-          value="Date"
-        />
-      </XAxis>
+        }
+        reversed={false}
+        scale="auto"
+        tickCount={5}
+        tickLine={false}
+        type="category"
+        width={0}
+        xAxisId="majorXAxis"
+      />
       <YAxis
         allowDataOverflow={false}
         allowDecimals={true}
@@ -191,11 +206,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         active={false}
         animationDuration={400}
         animationEasing="ease"
-        content={
-          <CumulativeInventoryTooltip
-            dateFormatter={[Function]}
-          />
-        }
+        content={<CumulativeInventoryTooltip />}
         contentStyle={Object {}}
         coordinate={
           Object {
@@ -282,6 +293,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         }
         height={30}
         hide={false}
+        interval={0}
         mirror={false}
         orientation="bottom"
         padding={
@@ -292,29 +304,43 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         }
         reversed={false}
         scale="auto"
-        tick={
-          Object {
-            "fontSize": 10,
-          }
-        }
         tickCount={5}
-        tickFormatter={[Function]}
+        tickLine={false}
         type="category"
         width={0}
         xAxisId={0}
-      >
-        <Label
-          offset={-5}
-          position="insideBottom"
-          style={
-            Object {
-              "color": "#999999",
-              "fontSize": 12,
-            }
+      />
+      <XAxis
+        allowDataOverflow={false}
+        allowDecimals={true}
+        allowDuplicatedCategory={true}
+        axisLine={false}
+        dataKey="timestamp"
+        domain={
+          Array [
+            0,
+            "auto",
+          ]
+        }
+        height={1}
+        hide={false}
+        interval={0}
+        mirror={false}
+        orientation="bottom"
+        padding={
+          Object {
+            "left": 0,
+            "right": 0,
           }
-          value="Date"
-        />
-      </XAxis>
+        }
+        reversed={false}
+        scale="auto"
+        tickCount={5}
+        tickLine={false}
+        type="category"
+        width={0}
+        xAxisId="majorXAxis"
+      />
       <YAxis
         allowDataOverflow={false}
         allowDecimals={true}
@@ -424,11 +450,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         active={false}
         animationDuration={400}
         animationEasing="ease"
-        content={
-          <CumulativeInventoryTooltip
-            dateFormatter={[Function]}
-          />
-        }
+        content={<CumulativeInventoryTooltip />}
         contentStyle={Object {}}
         coordinate={
           Object {

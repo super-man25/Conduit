@@ -21,15 +21,19 @@ const ANIMATION_DURATION = 1000;
 type Props = {
   height: number,
   data: EventStat[],
-  dateFormatter: (Date) => string,
-  renderNoData: () => React.Node
+  tooltipDateFormatter: (Date) => string,
+  renderNoData: () => React.Node,
+  majorXAxisTickRenderer: () => HTMLElement,
+  minorXAxisTickRenderer: () => HTMLElement
 };
 
 export function CumulativeInventoryChart({
   height,
   data,
-  dateFormatter,
-  renderNoData
+  tooltipDateFormatter,
+  renderNoData,
+  majorXAxisTickRenderer,
+  minorXAxisTickRenderer
 }: Props) {
   if (!data.length) {
     return renderNoData();
@@ -41,16 +45,20 @@ export function CumulativeInventoryChart({
         <LineChart data={data}>
           <XAxis
             dataKey="timestamp"
-            tickFormatter={dateFormatter}
-            tick={{ fontSize: 10 }}
-          >
-            <Label
-              value="Date"
-              position="insideBottom"
-              style={chartLabelStyles}
-              offset={-5}
-            />
-          </XAxis>
+            tick={minorXAxisTickRenderer}
+            tickLine={false}
+            interval={0}
+            height={30}
+          />
+          <XAxis
+            dataKey="timestamp"
+            tick={majorXAxisTickRenderer}
+            xAxisId="majorXAxis"
+            axisLine={false}
+            tickLine={false}
+            interval={0}
+            height={1}
+          />
 
           <YAxis
             tickCount={10}
@@ -97,7 +105,9 @@ export function CumulativeInventoryChart({
               opacity: 0.5
             }}
             content={
-              <CumulativeInventoryTooltip dateFormatter={dateFormatter} />
+              <CumulativeInventoryTooltip
+                dateFormatter={tooltipDateFormatter}
+              />
             }
           />
         </LineChart>

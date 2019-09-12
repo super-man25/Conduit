@@ -27,7 +27,10 @@ export type Action =
   | { type: typeof FETCH_SUCCESS, payload: any }
   | { type: typeof RESET }
   | { type: typeof SET_GROUPING_FILTER, payload: number }
-  | { type: typeof SET_DATE_RANGE, payload: { from: ?Date, to: ?Date } }
+  | {
+      type: typeof SET_DATE_RANGE,
+      payload: { from: ?Date, to: ?Date }
+    }
   | {
       type: typeof SET_FIRST_AND_LAST_DATE,
       payload: { from: ?Date, to: ?Date }

@@ -1,5 +1,7 @@
 // @flow
 
+export type EventStatInterval = 'Days' | 'Hours';
+
 export type EventStat = {
   eventId: number,
   id: number,
@@ -13,5 +15,5 @@ export type EventStat = {
 
 export type EventStatsMeta = {
   timeZone: String,
-  interval: 'Days' | 'Hours'
+  interval: EventStatInterval
 };

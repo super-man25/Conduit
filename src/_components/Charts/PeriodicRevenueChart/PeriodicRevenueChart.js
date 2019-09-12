@@ -21,14 +21,18 @@ type Props = {
   height: number,
   data: EventStat[],
   renderNoData?: () => React.Node,
-  dateFormatter: (Date) => string
+  tooltipDateFormatter: (Date) => string,
+  majorXAxisTickRenderer: () => HTMLElement,
+  minorXAxisTickRenderer: () => HTMLElement
 };
 
 export const PeriodicRevenueChart = ({
   height,
   data,
   renderNoData,
-  dateFormatter
+  tooltipDateFormatter,
+  majorXAxisTickRenderer,
+  minorXAxisTickRenderer
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -40,24 +44,26 @@ export const PeriodicRevenueChart = ({
         <BarChart data={data}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
-
           <XAxis
             dataKey="timestamp"
-            tickFormatter={dateFormatter}
-            tick={{ fontSize: 10 }}
-          >
-            <Label
-              value="Date"
-              position="insideBottom"
-              style={chartLabelStyles}
-              offset={-5}
-            />
-          </XAxis>
+            tick={minorXAxisTickRenderer}
+            tickLine={false}
+            interval={0}
+            height={30}
+          />
+          <XAxis
+            dataKey="timestamp"
+            tick={majorXAxisTickRenderer}
+            xAxisId="majorXAxis"
+            axisLine={false}
+            tickLine={false}
+            interval={0}
+            height={1}
+          />
 
           <YAxis
             tickCount={10}
             tickFormatter={truncateNumber}
-            tickLine={false}
             axisLine={false}
             tick={{ fontSize: 10 }}
             domain={['auto', 'auto']}
@@ -88,7 +94,9 @@ export const PeriodicRevenueChart = ({
               fill: cssConstants.SECONDARY_BLUE
             }}
             animationDuration={500}
-            content={<PeriodicRevenueTooltip dateFormatter={dateFormatter} />}
+            content={
+              <PeriodicRevenueTooltip dateFormatter={tooltipDateFormatter} />
+            }
           />
         </BarChart>
       </ResponsiveContainer>

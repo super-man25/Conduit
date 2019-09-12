@@ -21,14 +21,18 @@ type Props = {
   height: number,
   data: EventStat[],
   renderNoData?: () => React.Node,
-  dateFormatter: (Date) => string
+  tooltipDateFormatter: (Date) => string,
+  majorXAxisTickRenderer: () => HTMLElement,
+  minorXAxisTickRenderer: () => HTMLElement
 };
 
 export const PeriodicInventoryChart = ({
   height,
   data,
   renderNoData,
-  dateFormatter
+  tooltipDateFormatter,
+  majorXAxisTickRenderer,
+  minorXAxisTickRenderer
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -40,19 +44,22 @@ export const PeriodicInventoryChart = ({
         <BarChart data={data}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
-
           <XAxis
             dataKey="timestamp"
-            tickFormatter={dateFormatter}
-            tick={{ fontSize: 10 }}
-          >
-            <Label
-              value="Date"
-              position="insideBottom"
-              style={chartLabelStyles}
-              offset={-5}
-            />
-          </XAxis>
+            tick={minorXAxisTickRenderer}
+            tickLine={false}
+            interval={0}
+            height={30}
+          />
+          <XAxis
+            dataKey="timestamp"
+            tick={majorXAxisTickRenderer}
+            xAxisId="majorXAxis"
+            axisLine={false}
+            tickLine={false}
+            interval={0}
+            height={1}
+          />
 
           <YAxis
             tickCount={10}
@@ -87,7 +94,9 @@ export const PeriodicInventoryChart = ({
               opacity: 0.4
             }}
             animationDuration={500}
-            content={<PeriodicInventoryTooltip dateFormatter={dateFormatter} />}
+            content={
+              <PeriodicInventoryTooltip dateFormatter={tooltipDateFormatter} />
+            }
           />
         </BarChart>
       </ResponsiveContainer>

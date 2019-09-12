@@ -41,7 +41,11 @@ import { getEventStatState } from '_state/eventStat/selectors';
 import { EDEvent, EDSeason } from '_models';
 import { createStructuredSelector } from 'reselect';
 import typeof EventStatActions from '_state/eventStat/actions';
-import { dateFormatter } from '_helpers';
+import {
+  dateFormatter,
+  renderMinorXAxisTicks,
+  renderMajorXAxisTicks
+} from '_helpers';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -150,9 +154,9 @@ export class EventChart extends React.Component<Props> {
       selectedSeason: { startTimestamp },
       activeEvent: { timestamp }
     } = this.props;
+    const { interval, timeZone } = eventStatsMeta || {};
 
-    const chartDateFormatter = (function() {
-      const { timeZone } = eventStatsMeta || {};
+    const tooltipDateFormatter = (function() {
       if (!!eventStatsMeta && eventStatsMeta.interval === 'Hours') {
         return dateFormatter(CONCISE_READABLE_DATETIME_FORMAT, timeZone);
       }
@@ -162,6 +166,24 @@ export class EventChart extends React.Component<Props> {
       // Fallback to Days
       return dateFormatter(READABLE_DATE_FORMAT, timeZone);
     })();
+
+    const minorXAxisTickRenderer = (tickProps) => {
+      return renderMinorXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: eventStats.length
+      });
+    };
+
+    const majorXAxisTickRenderer = (tickProps) => {
+      return renderMajorXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: eventStats.length
+      });
+    };
 
     return (
       <Tabbable>
@@ -245,7 +267,9 @@ export class EventChart extends React.Component<Props> {
                       <PeriodicRevenueChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -254,7 +278,9 @@ export class EventChart extends React.Component<Props> {
                       <CumulativeRevenueChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -266,7 +292,9 @@ export class EventChart extends React.Component<Props> {
                       <PeriodicInventoryChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -275,7 +303,9 @@ export class EventChart extends React.Component<Props> {
                       <CumulativeInventoryChart
                         data={eventStats}
                         height={CHART_HEIGHT}
-                        dateFormatter={chartDateFormatter}
+                        tooltipDateFormatter={tooltipDateFormatter}
+                        minorXAxisTickRenderer={minorXAxisTickRenderer}
+                        majorXAxisTickRenderer={majorXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
