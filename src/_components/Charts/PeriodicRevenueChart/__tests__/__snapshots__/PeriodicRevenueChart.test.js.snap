@@ -100,7 +100,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
             "auto",
           ]
         }
-        height={1}
+        height={10}
         hide={false}
         interval={0}
         mirror={false}
@@ -343,7 +343,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
             "auto",
           ]
         }
-        height={1}
+        height={10}
         hide={false}
         interval={0}
         mirror={false}

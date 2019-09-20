@@ -57,7 +57,7 @@ export function CumulativeInventoryChart({
             axisLine={false}
             tickLine={false}
             interval={0}
-            height={1}
+            height={10}
           />
 
           <YAxis
