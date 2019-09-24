@@ -85,7 +85,7 @@ export function CumulativeInventoryChart({
             name="actual"
             dot={false}
             strokeWidth={2}
-            stroke={cssConstants.SECONDARY_LIGHT_PURPLE}
+            stroke={cssConstants.SECONDARY_PURPLE}
           />
 
           <Line

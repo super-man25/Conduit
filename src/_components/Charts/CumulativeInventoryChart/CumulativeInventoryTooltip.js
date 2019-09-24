@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { ChartTooltip } from '../ChartTooltip';
-import { formatUSD, formatNumber } from '_helpers/string-utils';
+import { cumulativeTooltip } from '_helpers/chart-utils';
 
 type TooltipContentProps = {
   active?: boolean,
@@ -14,12 +14,13 @@ export function CumulativeInventoryTooltip(props: TooltipContentProps) {
   if (!active || !payload || !payload.length) {
     return null;
   }
-  const data = payload[0].payload;
-  const headerText = dateFormatter(data.timestamp);
+  const [{ payload: stat }] = payload;
+  const { inventory, revenue, avgTicketPrice } = cumulativeTooltip(stat);
+  const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {
-    'Remaining Inventory': formatNumber(data.inventory),
-    'Revenue To Date': formatUSD(data.revenue),
-    'Avg. Ticket Price To Date': formatUSD(data.revenue / data.inventory)
+    'Remaining Inventory': inventory,
+    'Revenue To Date': revenue,
+    'Avg. Ticket Price To Date': avgTicketPrice
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;

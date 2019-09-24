@@ -7,7 +7,7 @@ import {
   format,
   differenceInCalendarDays
 } from 'date-fns';
-import { formatDate } from './string-utils';
+import { formatDate, formatUSD, formatNumber } from './string-utils';
 import { MinorXAxisTick } from '_components/Charts/MinorXAxisTick';
 import {
   READABLE_TIME_FORMAT,
@@ -28,7 +28,7 @@ import {
   MajorXAxisTick,
   MajorXAxisTickLine
 } from '_components/Charts/MajorXAxisTick';
-import { EventStatInterval } from '_models';
+import { EventStat, EventStatInterval } from '_models';
 
 export type ChartPoint = { x: Date, y: number };
 
@@ -59,6 +59,40 @@ export function dayFormat(t: Date): string {
 
 export function dayTimeFormat(t: Date): string {
   return format(new Date(t), 'MM/DD HH:MM');
+}
+
+export function periodicTooltip(stat: EventStat) {
+  const periodicInventory = stat.isProjected
+    ? stat.projectedPeriodicInventory
+    : stat.periodicInventory;
+  const periodicRevenue = stat.isProjected
+    ? stat.projectedPeriodicRevenue
+    : stat.periodicRevenue;
+  const avgTicketPrice = stat.isProjected
+    ? stat.projectedPeriodicRevenue / (stat.projectedPeriodicInventory * -1)
+    : stat.periodicRevenue / (stat.periodicInventory * -1);
+
+  return {
+    periodicInventory: formatNumber(periodicInventory),
+    periodicRevenue: formatUSD(periodicRevenue),
+    avgTicketPrice: formatUSD(avgTicketPrice)
+  };
+}
+
+export function cumulativeTooltip(stat: EventStat) {
+  const inventory = stat.isProjected ? stat.projectedInventory : stat.inventory;
+  const revenue = stat.isProjected
+    ? stat.projectedPeriodicRevenue
+    : stat.revenue;
+  const avgTicketPrice = stat.isProjected
+    ? stat.projectedRevenue / stat.projectedInventory
+    : stat.revenue / stat.inventory;
+
+  return {
+    inventory: formatNumber(inventory),
+    revenue: formatUSD(revenue),
+    avgTicketPrice: formatUSD(avgTicketPrice)
+  };
 }
 
 export function getAxisTickOptions(dataset: DataSet = {}): TickProps {

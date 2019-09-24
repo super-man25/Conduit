@@ -19,7 +19,7 @@ import {
   fetchEventTimeStats,
   downloadEventReport
 } from '_state/eventStat/saga';
-import { initialState } from '_state/eventStat/reducer';
+import { initialState, serialize } from '_state/eventStat/reducer';
 import {
   getEventStatFilterArguments,
   getEventStats,
@@ -108,7 +108,24 @@ describe('reducer', () => {
       eventStatsMeta: null
     };
 
-    const eventStats = [1, 2, 3];
+    const eventStats = [
+      {
+        inventory: 2219,
+        isProjected: true,
+        periodicInventory: -201,
+        periodicRevenue: 6704.91,
+        revenue: 26184.1,
+        timestamp: '2019-09-25T04:00:00Z'
+      },
+      {
+        inventory: 2568,
+        isProjected: false,
+        periodicInventory: -2,
+        periodicRevenue: 170.5,
+        revenue: 13142.28,
+        timestamp: '2019-09-18T04:00:00Z'
+      }
+    ];
     const eventStatsMeta = {
       interval: 'So meta',
       timeZone: 'America/New_York'
@@ -119,13 +136,21 @@ describe('reducer', () => {
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
+    const serializedEventStats = serialize(eventStats);
 
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      eventStats,
+      eventStats: serializedEventStats,
       eventStatsMeta
     });
+
+    // Assert on projection keys
+    const projectedStat = serializedEventStats.find((e) => e.isProjected);
+    expect(projectedStat).toHaveProperty('projectedPeriodicRevenue');
+    expect(projectedStat).toHaveProperty('projectedPeriodicInventory');
+    expect(projectedStat).toHaveProperty('projectedRevenue');
+    expect(projectedStat).toHaveProperty('projectedInventory');
   });
 
   it('should handle FETCH_ERROR', () => {

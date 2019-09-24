@@ -195,7 +195,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#0A169A"
+        stroke="#38A9DB"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -439,7 +439,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#0A169A"
+        stroke="#38A9DB"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"

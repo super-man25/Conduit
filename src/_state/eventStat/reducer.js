@@ -49,6 +49,37 @@ export const initialState: EventStatState = {
   error: null
 };
 
+export function serialize(eventStats: EventStat[]) {
+  const eventStatsProjections = eventStats
+    .filter((e) => e.isProjected)
+    .map((e) => ({
+      timestamp: e.timestamp,
+      projectedInventory: e.inventory,
+      projectedRevenue: e.revenue,
+      projectedPeriodicRevenue: e.periodicRevenue,
+      projectedPeriodicInventory: e.periodicInventory,
+      isProjected: e.isProjected
+    }));
+
+  const eventStatsNoProjections = eventStats
+    .filter((e) => !e.isProjected)
+    .map((e) => ({
+      timestamp: e.timestamp,
+      inventory: e.inventory,
+      revenue: e.revenue,
+      periodicRevenue: e.periodicRevenue,
+      periodicInventory: e.periodicInventory,
+      isProjected: e.isProjected
+    }));
+
+  const serializedEventStats = [
+    ...eventStatsNoProjections,
+    ...eventStatsProjections
+  ];
+
+  return serializedEventStats;
+}
+
 export default function eventStatReducer(
   state: EventStatState = initialState,
   action: Action
@@ -60,7 +91,7 @@ export default function eventStatReducer(
       return {
         ...state,
         loading: false,
-        eventStats: action.payload.data,
+        eventStats: serialize(action.payload.data),
         eventStatsMeta: action.payload.meta
       };
     case FETCH_ERROR:

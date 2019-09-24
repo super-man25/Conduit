@@ -172,7 +172,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#817CB8"
+        stroke="#5A288F"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -416,7 +416,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#817CB8"
+        stroke="#5A288F"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}

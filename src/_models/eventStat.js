@@ -5,10 +5,14 @@ export type EventStatInterval = 'Days' | 'Hours';
 export type EventStat = {
   eventId: number,
   id: number,
-  inventory: number,
-  periodicInventory: number,
-  revenue: number,
-  periodicRevenue: number,
+  inventory: ?number,
+  projectedInventory: ?number,
+  periodicInventory: ?number,
+  projectedPeriodicInventory: ?number,
+  revenue: ?number,
+  projectedPeriodicRevenue: ?number,
+  periodicRevenue: ?number,
+  projectedPeriodicRevenue: ?number,
   isProjected: boolean,
   timestamp: number
 };

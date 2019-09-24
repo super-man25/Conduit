@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { ChartTooltip } from '../ChartTooltip';
-import { formatUSD, formatNumber } from '_helpers/string-utils';
+import { periodicTooltip } from '_helpers/chart-utils';
 
 type TooltipContentProps = {
   active?: boolean,
@@ -15,14 +15,18 @@ export function PeriodicInventoryTooltip(props: TooltipContentProps) {
   if (!active || !payload || !payload.length) {
     return null;
   }
-  const data = payload[0].payload;
-  const headerText = dateFormatter(data.timestamp);
+  const [{ payload: stat }] = payload;
+  const {
+    periodicInventory,
+    periodicRevenue,
+    avgTicketPrice
+  } = periodicTooltip(stat);
+
+  const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {
-    Inventory: formatNumber(data.periodicInventory),
-    Revenue: formatUSD(data.periodicRevenue),
-    'Avg. Ticket Price': formatUSD(
-      data.periodicRevenue / (data.periodicInventory * -1)
-    )
+    Inventory: periodicInventory,
+    Revenue: periodicRevenue,
+    'Avg. Ticket Price': avgTicketPrice
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;

@@ -96,7 +96,7 @@ export function CumulativeRevenueChart({
             dot={false}
             name="projected"
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_BLUE}
+            stroke={cssConstants.PRIMARY_LIGHT_BLUE}
           />
           <Tooltip
             cursor={{
