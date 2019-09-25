@@ -28,7 +28,9 @@ export class SVGChart {
       (el) =>
         new SVGChartElement(
           el,
-          allSectionFilters.find((f) => f.name === el.dataset.sectionRef)
+          allSectionFilters.find(
+            (f) => f.name.toLowerCase() === el.dataset.sectionRef.toLowerCase()
+          )
         )
     );
 
