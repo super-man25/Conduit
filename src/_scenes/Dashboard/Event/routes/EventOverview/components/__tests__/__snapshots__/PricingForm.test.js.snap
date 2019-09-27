@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render correctly 1`] = `
-Array [
-  .c2 {
+.c3 {
   border: none;
   min-width: 0;
   padding: 1rem 2rem;
@@ -18,20 +17,20 @@ Array [
   background-color: inherit;
 }
 
-.c2:disabled {
+.c3:disabled {
   cursor: not-allowed;
 }
 
-.c2:disabled {
+.c3:disabled {
   color: #D1D1D1;
   opacity: 0.5;
 }
 
-.c2:hover:not(:disabled) {
+.c3:hover:not(:disabled) {
   color: #38A9DB;
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,36 +49,7 @@ Array [
   margin: 0.5rem 0;
 }
 
-.c1 {
-  color: #070707;
-  font-size: 18px;
-  font-weight: normal;
-  margin: 0;
-}
-
-<div
-    className="c0"
-  >
-    <h4
-      className="c1"
-      color="#070707"
-    >
-      Modifiers
-    </h4>
-    <button
-      className="c2"
-      disabled={false}
-      onClick={[Function]}
-      style={
-        Object {
-          "fontWeight": 600,
-        }
-      }
-    >
-      Edit
-    </button>
-  </div>,
-  .c1 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +63,7 @@ Array [
   justify-content: flex-end;
 }
 
-.c4 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +79,7 @@ Array [
   padding: 14px 0;
 }
 
-.c7 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -120,7 +90,7 @@ Array [
   width: 33%;
 }
 
-.c8 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -135,58 +105,104 @@ Array [
   width: 33%;
 }
 
-.c0 {
+.c2 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c4 {
   padding: 1.5rem;
 }
 
-.c2 {
+.c6 {
   width: 33%;
 }
 
-.c3 {
+.c7 {
   font-size: 14px;
   color: #999999;
   margin: 0;
   text-align: right;
 }
 
-.c5 {
+.c9 {
   color: #999999;
   margin: 0;
 }
 
-.c6 {
-  color: #070707;
-  margin: 0;
-  text-align: right;
-}
-
-.c9 {
-  font-weight: 700;
-  color: #070707;
-  margin: 0;
-}
-
 .c10 {
+  color: #070707;
+  margin: 0;
+  text-align: right;
+}
+
+.c13 {
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+}
+
+.c14 {
   font-weight: 700;
   color: #070707;
   margin: 0;
   text-align: right;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-right: 1px solid #D1D1D1;
+  padding: 0 20px;
+  width: 100%;
 }
 
 <div
-    className="c0"
+  className="c0"
+  direction="column"
+>
+  <div
+    className="c1"
+  >
+    <h4
+      className="c2"
+      color="#070707"
+    >
+      Modifiers
+    </h4>
+    <button
+      className="c3"
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "fontWeight": 600,
+        }
+      }
+    >
+      Edit
+    </button>
+  </div>
+  <div
+    className="c4"
   >
     <div
-      className="c1"
+      className="c5"
       direction="row"
     >
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c3"
+          className="c7"
           color="#999999"
           size={14}
         >
@@ -194,11 +210,11 @@ Array [
         </p>
       </div>
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c3"
+          className="c7"
           color="#999999"
           size={14}
         >
@@ -207,43 +223,43 @@ Array [
       </div>
     </div>
     <div
-      className="c4"
+      className="c8"
       direction="row"
     >
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c5"
+          className="c9"
           color="#999999"
         >
           PREDICTED
         </p>
       </div>
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c6"
+          className="c10"
         >
           1.00
         </p>
       </div>
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c6"
+          className="c10"
         >
           1.0000
         </p>
       </div>
     </div>
     <div
-      className="c4"
+      className="c8"
       direction="row"
       style={
         Object {
@@ -253,86 +269,72 @@ Array [
       }
     >
       <div
-        className="c7"
+        className="c11"
         width="33%"
       >
         <p
-          className="c5"
+          className="c9"
           color="#999999"
         >
           MODIFIER
         </p>
       </div>
       <div
-        className="c8"
+        className="c12"
         width="33%"
       >
         <p
-          className="c6"
+          className="c10"
         >
           1.00
         </p>
       </div>
       <div
-        className="c8"
+        className="c12"
         width="33%"
       >
         <p
-          className="c6"
+          className="c10"
         >
           1.0000
         </p>
       </div>
     </div>
     <div
-      className="c4"
+      className="c8"
       direction="row"
     >
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c9"
+          className="c13"
         >
           FINAL
         </p>
       </div>
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c10"
+          className="c14"
         >
           2.00
         </p>
       </div>
       <div
-        className="c2"
+        className="c6"
         width="33%"
       >
         <p
-          className="c10"
+          className="c14"
         >
           2.0000
         </p>
       </div>
     </div>
-  </div>,
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0 > *:not(:first-child) {
-  margin-left: 8px;
-}
-
-<div
-    className="c0"
-  />,
-]
+  </div>
+</div>
 `;

@@ -2,7 +2,6 @@
 
 exports[`renders correctly with disabled prop 1`] = `
 .c0 {
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -51,7 +50,6 @@ exports[`renders correctly with disabled prop 1`] = `
 
 exports[`renders correctly with inValid prop 1`] = `
 .c0 {
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -99,7 +97,6 @@ exports[`renders correctly with inValid prop 1`] = `
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -147,7 +144,6 @@ exports[`renders correctly with no props 1`] = `
 
 exports[`renders correctly with valid prop 1`] = `
 .c0 {
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;

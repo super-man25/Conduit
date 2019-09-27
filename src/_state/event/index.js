@@ -51,7 +51,9 @@ export type SaveAdminModifiersAction = {
     eventId: number,
     eventScoreModifier: number,
     springModifier: number,
-    seasonId: number
+    seasonId: number,
+    reasonType: string,
+    reasonComments: string
   }
 };
 export type SaveAdminModifiersSuccessAction = {
@@ -142,19 +144,30 @@ const setEventBroadcasting = (
   }
 });
 
-function saveAdminModifiers(
+function saveAdminModifiers({
+  eventId,
+  eventScoreModifier,
+  springModifier,
+  seasonId,
+  reasonType,
+  reasonComments
+}: {
   eventId: number,
   eventScoreModifier: number,
   springModifier: number,
-  seasonId: number
-): SaveAdminModifiersAction {
+  seasonId: number,
+  reasonType: string,
+  reasonComments: string
+}): SaveAdminModifiersAction {
   return {
     type: SAVE_ADMIN_MODIFIERS,
     payload: {
       eventId,
       eventScoreModifier,
       springModifier,
-      seasonId
+      seasonId,
+      reasonType,
+      reasonComments
     }
   };
 }

@@ -135,7 +135,6 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
   transition: opacity 100ms ease-out;
   color: #FFFFFF;
   background-color: #0A169A;
-  box-sizing: border-box;
   margin: 0;
   min-width: 50px;
   width: 80px;
@@ -169,7 +168,6 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 
 exports[`InventoryTable styled components <ManualPricingInput /> should render correctly 1`] = `
 .c0 {
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -185,7 +183,6 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   border-color: #0A169A;
   padding-top: 0.9em;
   padding-bottom: 0.9em;
-  box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;

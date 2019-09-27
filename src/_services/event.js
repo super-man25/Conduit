@@ -60,18 +60,29 @@ function updatePercentPriceModifier(
   );
 }
 
-function updateAdminModifiers(
+function updateAdminModifiers({
+  eventId,
+  eventScoreModifier,
+  springModifier,
+  reasonType,
+  reasonComments
+}: {
   eventId: number,
   eventScoreModifier: number,
-  springModifier: number
-) {
-  return validateAdminModifiers({ eventScoreModifier, springModifier }).then(
-    (payload) => {
-      return put(`events/${eventId}/adminModifier`, payload).catch(
-        handleResponseError
-      );
-    }
-  );
+  springModifier: number,
+  reasonType: string,
+  reasonComments: string
+}) {
+  return validateAdminModifiers({
+    eventScoreModifier,
+    springModifier,
+    reasonType,
+    reasonComments
+  }).then((payload) => {
+    return put(`events/${eventId}/adminModifier`, payload).catch(
+      handleResponseError
+    );
+  });
 }
 
 // Since rows Ids are computed from the three properties eventId+section+row and aren't

@@ -3,7 +3,6 @@ import { cssConstants } from '_constants';
 import { PrimaryButton, Input, Flex, Box } from '_components';
 
 export const ManualPricingInput = styled(Input)`
-  box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;
@@ -11,7 +10,6 @@ export const ManualPricingInput = styled(Input)`
 `;
 
 export const ManualPricingButton = styled(PrimaryButton)`
-  box-sizing: border-box;
   margin: 0;
   min-width: 50px;
   width: 80px;

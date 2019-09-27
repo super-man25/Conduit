@@ -19,7 +19,9 @@ const adminModifierSchema = yup.object({
     .number()
     .min(-2)
     .max(2)
-    .label('Spring Modifier')
+    .label('Spring Modifier'),
+  reasonType: yup.string().nullable(),
+  reasonComments: yup.string().nullable()
 });
 
 const overridePriceSchema = yup.object({

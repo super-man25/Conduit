@@ -13,6 +13,8 @@ const Svg = styled.svg`
 `;
 
 type Props = {
+  className: string,
+
   /** The name of the icon as defined in icons.data.json */
   name: string,
 
@@ -23,9 +25,10 @@ type Props = {
   color: string
 };
 
-export const Icon = ({ name, size, color }: Props) => {
+export const Icon = ({ name, size, color, className }: Props) => {
   return (
     <Svg
+      className={className}
       color={color}
       width={`${size}px`}
       height={`${size}px`}

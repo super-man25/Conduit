@@ -1,19 +1,20 @@
 // @flow
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
 import {
+  AsyncButton,
   Flex,
   H4,
   Panel,
   PanelContent,
   PanelHeader,
+  SecondaryButton,
   Text,
   Toggle
 } from '_components';
-import { cssConstants } from '_constants';
 import {
   actions as eventActions,
   selectors as eventSelectors
@@ -22,13 +23,23 @@ import { actions as pricingPreviewActions } from '_state/pricingPreview';
 import { selectors as seasonSelectors } from '_state/season';
 import { PricingForm } from './PricingForm';
 import { PricingPreview } from './PricingPreview';
+import { PricingUpdateReason } from './PricingUpdateReason';
 import type { EDEvent, PendingFactors } from '_models';
 import type { EDPricingPreview } from '_models/pricingPreview';
 
 const PaddedPanelContent = styled(PanelContent)`
   display: flex;
+  flex-direction: column;
   padding: 20px 0;
   justify-content: space-around;
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+
+  > *:not(:first-child) {
+    margin-left: 8px;
+  }
 `;
 
 type Props = {
@@ -54,15 +65,7 @@ type Props = {
 
 export const EventPricingPresenter = (props: Props) => {
   const {
-    event: {
-      id,
-      isBroadcast,
-      eventScore,
-      eventScoreModifier,
-      spring,
-      springModifier,
-      springError
-    },
+    event: { id, isBroadcast, springError },
     togglingBroadcasting,
     setBroadcasting,
     fetchPricingPreview,
@@ -78,6 +81,10 @@ export const EventPricingPresenter = (props: Props) => {
     savingAdminModifiers
   } = props;
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [reasonType, setReasonType] = useState(null);
+  const [reasonComments, setReasonComments] = useState(null);
+
   useEffect(() => {
     fetchPricingPreview(id);
   }, [fetchPricingPreview, id]);
@@ -91,15 +98,33 @@ export const EventPricingPresenter = (props: Props) => {
     }
   };
 
+  const handleTypeChange = (reason) => {
+    if (reason === reasonType) {
+      return setReasonType(null);
+    }
+
+    setReasonType(reason);
+  };
+
   const handleCancel = () => {
+    setIsEditing(false);
+    setReasonType(null);
     resetFactors();
     pricingPreviewParamsChanged(id);
   };
 
   const handleSubmit = () => {
+    setIsEditing(false);
     const { eventScoreModifier, springModifier } = pendingFactors;
 
-    saveAdminModifiers(id, eventScoreModifier, springModifier, seasonId);
+    saveAdminModifiers({
+      eventId: id,
+      eventScoreModifier,
+      springModifier,
+      seasonId,
+      reasonType,
+      reasonComments
+    });
   };
 
   const toggleIsBroadcasting = (e: Object) => {
@@ -133,35 +158,41 @@ export const EventPricingPresenter = (props: Props) => {
         </Flex>
       </PanelHeader>
       <PaddedPanelContent>
-        <Flex
-          direction="column"
-          padding="0 20px"
-          width="100%"
-          style={{
-            borderRight: `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`
-          }}
-        >
+        <Flex width="100%">
           <PricingForm
             pricingError={pricingError}
             pricingPreview={pricingPreview}
-            onChange={handleChange}
-            onCancel={handleCancel}
+            handleChange={handleChange}
             fetchAutomatedSpring={fetchAutomatedSpring}
-            onSubmit={handleSubmit}
-            initialValues={{
-              eventScore,
-              eventScoreModifier,
-              spring,
-              springModifier
-            }}
             pendingFactors={pendingFactors}
             eventId={id}
-            submitting={savingAdminModifiers}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
           />
-        </Flex>
-        <Flex direction="column" padding="0 20px" width="100%">
           <PricingPreview {...pricingPreview} springError={springError} />
         </Flex>
+        {(isEditing || savingAdminModifiers) && (
+          <Flex direction="column" padding="0 20px">
+            <PricingUpdateReason
+              reasonType={reasonType}
+              handleTypeChange={handleTypeChange}
+              reasonComments={reasonComments}
+              handleCommentChange={setReasonComments}
+            />
+            <ButtonGroup>
+              <>
+                <AsyncButton
+                  isLoading={savingAdminModifiers}
+                  disabled={savingAdminModifiers}
+                  onClick={handleSubmit}
+                >
+                  Save
+                </AsyncButton>
+                <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
+              </>
+            </ButtonGroup>
+          </Flex>
+        )}
       </PaddedPanelContent>
     </Panel>
   );

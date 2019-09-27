@@ -1,16 +1,17 @@
 // @flow
 
-import { CenteredLoader, ApiAlert } from '_components';
+import React from 'react';
+import { connect } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { createStructuredSelector } from 'reselect';
+
+import type { EDUser } from '_models/user';
 import { history } from '_helpers';
 import { actions as authActions, selectors } from '_state/auth';
-import React from 'react';
-import Loadable from 'react-loadable';
-import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
-import { createStructuredSelector } from 'reselect';
-import { SecuredRoute } from '_components';
-import type { EDUser } from '_models/user';
+import { GlobalStyles } from './globalStyles';
+import { SecuredRoute, CenteredLoader, ApiAlert } from '_components';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
@@ -34,7 +35,6 @@ const PricingRules = Loadable({
 
 type Props = {
   fetchUser: () => void,
-  fetchIntegrations: () => void,
   loading: boolean,
   user: ?EDUser
 };
@@ -52,6 +52,7 @@ class App extends React.Component<Props> {
       <CenteredLoader />
     ) : (
       <ConnectedRouter history={history}>
+        <GlobalStyles />
         <Switch>
           <Route path="/login" component={Login} />
           <SecuredRoute

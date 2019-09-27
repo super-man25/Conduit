@@ -59,7 +59,6 @@ export const NumberInput = styled.input`
   background-color: ${cssConstants.PRIMARY_WHITE};
   border: 1px solid ${cssConstants.PRIMARY_GRAY};
   border-radius: 3px;
-  box-sizing: border-box;
   height: 40px;
   margin: 0;
   padding: 0 0.5rem;

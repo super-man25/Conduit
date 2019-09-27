@@ -24,7 +24,6 @@ import type { EDClient, EDClientList } from '_models';
 export const SiteHeaderDiv = styled.div`
   display: flex;
   position: relative;
-  box-sizing: border-box;
   width: 100%;
   height: 70px;
   margin: 0;

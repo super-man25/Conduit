@@ -115,7 +115,6 @@ exports[`BulkUpdateModal styled components <NumberInput /> renders correctly 1`]
   background-color: #FFFFFF;
   border: 1px solid #999999;
   border-radius: 3px;
-  box-sizing: border-box;
   height: 40px;
   margin: 0;
   padding: 0 0.5rem;

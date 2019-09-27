@@ -8,6 +8,7 @@ export * from './CenteredLoader';
 export * from './ChartContainer';
 export * from './ChartLegend';
 export * from './Charts';
+export * from './Checkbox';
 export * from './ChipButton';
 export * from './ContentWrapper';
 export * from './DateRangeDropdown';

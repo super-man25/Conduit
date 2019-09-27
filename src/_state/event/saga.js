@@ -57,15 +57,18 @@ export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
     eventId,
     eventScoreModifier,
     springModifier,
-    seasonId
+    seasonId,
+    reasonType,
+    reasonComments
   } = action.payload;
   try {
-    const response = yield call(
-      eventService.updateAdminModifiers,
+    const response = yield call(eventService.updateAdminModifiers, {
       eventId,
       eventScoreModifier,
-      springModifier
-    );
+      springModifier,
+      reasonType,
+      reasonComments
+    });
 
     yield put({
       type: types.SAVE_ADMIN_MODIFIERS_SUCCESS,

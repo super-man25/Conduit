@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c31 {
+.c32 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c31 path {
+.c32 path {
   fill: #0A169A;
 }
 
-.c14 {
+.c15 {
   border: none;
   min-width: 0;
   padding: 1rem 2rem;
@@ -26,16 +26,16 @@ exports[`renders correctly 1`] = `
   background-color: inherit;
 }
 
-.c14:disabled {
+.c15:disabled {
   cursor: not-allowed;
 }
 
-.c14:disabled {
+.c15:disabled {
   color: #D1D1D1;
   opacity: 0.5;
 }
 
-.c14:hover:not(:disabled) {
+.c15:hover:not(:disabled) {
   color: #38A9DB;
 }
 
@@ -73,14 +73,13 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   width: 100%;
-  padding: 0 20px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,7 +98,7 @@ exports[`renders correctly 1`] = `
   margin: 0.5rem 0;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -113,7 +112,7 @@ exports[`renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c19 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,7 +128,7 @@ exports[`renders correctly 1`] = `
   padding: 14px 0;
 }
 
-.c22 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -140,7 +139,7 @@ exports[`renders correctly 1`] = `
   width: 33%;
 }
 
-.c23 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -160,6 +159,18 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -169,7 +180,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c33 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -195,57 +206,57 @@ exports[`renders correctly 1`] = `
   margin: 0 2.5rem 0 0;
 }
 
-.c13 {
+.c14 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
 }
 
-.c28 {
+.c29 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c15 {
+.c16 {
   padding: 1.5rem;
 }
 
-.c17 {
+.c18 {
   width: 33%;
 }
 
-.c30 {
+.c31 {
   margin: 0.5rem 0;
 }
 
-.c18 {
+.c19 {
   font-size: 14px;
   color: #999999;
   margin: 0;
   text-align: right;
 }
 
-.c20 {
+.c21 {
   color: #999999;
   margin: 0;
 }
 
-.c21 {
+.c22 {
   color: #070707;
   margin: 0;
   text-align: right;
 }
 
-.c24 {
+.c25 {
   font-weight: 700;
   color: #070707;
   margin: 0;
 }
 
-.c25 {
+.c26 {
   font-weight: 700;
   color: #070707;
   margin: 0;
@@ -263,7 +274,7 @@ exports[`renders correctly 1`] = `
   height: 56px;
 }
 
-.c29 {
+.c30 {
   display: inline-block;
 }
 
@@ -324,15 +335,17 @@ exports[`renders correctly 1`] = `
   cursor: not-allowed;
 }
 
-.c26 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c26 > *:not(:first-child) {
-  margin-left: 8px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-right: 1px solid #D1D1D1;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .c10 {
@@ -343,6 +356,9 @@ exports[`renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 20px 0;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
@@ -407,231 +423,227 @@ exports[`renders correctly 1`] = `
   >
     <div
       className="c11"
-      direction="column"
-      style={
-        Object {
-          "borderRight": "1px solid #D1D1D1",
-        }
-      }
       width="100%"
     >
       <div
         className="c12"
+        direction="column"
       >
-        <h4
+        <div
           className="c13"
-          color="#070707"
         >
-          Modifiers
-        </h4>
-        <button
-          className="c14"
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "fontWeight": 600,
+          <h4
+            className="c14"
+            color="#070707"
+          >
+            Modifiers
+          </h4>
+          <button
+            className="c15"
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "fontWeight": 600,
+              }
             }
-          }
-        >
-          Edit
-        </button>
-      </div>
-      <div
-        className="c15"
-      >
+          >
+            Edit
+          </button>
+        </div>
         <div
           className="c16"
-          direction="row"
         >
           <div
             className="c17"
-            width="33%"
+            direction="row"
           >
-            <p
+            <div
               className="c18"
-              color="#999999"
-              size={14}
+              width="33%"
             >
-              EVENT SCORE
-            </p>
-          </div>
-          <div
-            className="c17"
-            width="33%"
-          >
-            <p
+              <p
+                className="c19"
+                color="#999999"
+                size={14}
+              >
+                EVENT SCORE
+              </p>
+            </div>
+            <div
               className="c18"
-              color="#999999"
-              size={14}
+              width="33%"
             >
-              SPRING VALUE
-            </p>
-          </div>
-        </div>
-        <div
-          className="c19"
-          direction="row"
-        >
-          <div
-            className="c17"
-            width="33%"
-          >
-            <p
-              className="c20"
-              color="#999999"
-            >
-              PREDICTED
-            </p>
+              <p
+                className="c19"
+                color="#999999"
+                size={14}
+              >
+                SPRING VALUE
+              </p>
+            </div>
           </div>
           <div
-            className="c17"
-            width="33%"
+            className="c20"
+            direction="row"
           >
-            <p
-              className="c21"
+            <div
+              className="c18"
+              width="33%"
             >
-              1.00
-            </p>
+              <p
+                className="c21"
+                color="#999999"
+              >
+                PREDICTED
+              </p>
+            </div>
+            <div
+              className="c18"
+              width="33%"
+            >
+              <p
+                className="c22"
+              >
+                1.00
+              </p>
+            </div>
+            <div
+              className="c18"
+              width="33%"
+            >
+              <p
+                className="c22"
+              >
+                1.0000
+              </p>
+            </div>
           </div>
           <div
-            className="c17"
-            width="33%"
-          >
-            <p
-              className="c21"
-            >
-              1.0000
-            </p>
-          </div>
-        </div>
-        <div
-          className="c19"
-          direction="row"
-          style={
-            Object {
-              "borderBottom": "1px solid #EEEEEE",
-              "borderTop": "1px solid #EEEEEE",
+            className="c20"
+            direction="row"
+            style={
+              Object {
+                "borderBottom": "1px solid #EEEEEE",
+                "borderTop": "1px solid #EEEEEE",
+              }
             }
-          }
-        >
-          <div
-            className="c22"
-            width="33%"
           >
-            <p
-              className="c20"
-              color="#999999"
+            <div
+              className="c23"
+              width="33%"
             >
-              MODIFIER
-            </p>
-          </div>
-          <div
-            className="c23"
-            width="33%"
-          >
-            <p
-              className="c21"
-            >
-              1.00
-            </p>
-          </div>
-          <div
-            className="c23"
-            width="33%"
-          >
-            <p
-              className="c21"
-            >
-              1.0000
-            </p>
-          </div>
-        </div>
-        <div
-          className="c19"
-          direction="row"
-        >
-          <div
-            className="c17"
-            width="33%"
-          >
-            <p
+              <p
+                className="c21"
+                color="#999999"
+              >
+                MODIFIER
+              </p>
+            </div>
+            <div
               className="c24"
+              width="33%"
             >
-              FINAL
-            </p>
+              <p
+                className="c22"
+              >
+                1.00
+              </p>
+            </div>
+            <div
+              className="c24"
+              width="33%"
+            >
+              <p
+                className="c22"
+              >
+                1.0000
+              </p>
+            </div>
           </div>
           <div
-            className="c17"
-            width="33%"
+            className="c20"
+            direction="row"
           >
-            <p
-              className="c25"
+            <div
+              className="c18"
+              width="33%"
             >
-              2.00
-            </p>
-          </div>
-          <div
-            className="c17"
-            width="33%"
-          >
-            <p
-              className="c25"
+              <p
+                className="c25"
+              >
+                FINAL
+              </p>
+            </div>
+            <div
+              className="c18"
+              width="33%"
             >
-              2.0000
-            </p>
+              <p
+                className="c26"
+              >
+                2.00
+              </p>
+            </div>
+            <div
+              className="c18"
+              width="33%"
+            >
+              <p
+                className="c26"
+              >
+                2.0000
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        className="c26"
-      />
-    </div>
-    <div
-      className="c11"
-      direction="column"
-      width="100%"
-    >
       <div
         className="c27"
+        direction="column"
+        width="100%"
       >
-        <h4
-          className="c28"
-          color="#070707"
-        >
-          Preview
-        </h4>
         <div
-          className="c29"
+          className="c28"
         >
+          <h4
+            className="c29"
+            color="#070707"
+          >
+            Preview
+          </h4>
           <div
             className="c30"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
-            <svg
+            <div
               className="c31"
-              color="#0A169A"
-              height="22px"
-              viewBox="0 0 24 24"
-              width="22px"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <path
-                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-              />
-            </svg>
+              <svg
+                className="c32"
+                color="#0A169A"
+                height="22px"
+                viewBox="0 0 24 24"
+                width="22px"
+              >
+                <path
+                  d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="c32"
-      >
-        <p
-          className="c20"
-          color="#999999"
+        <div
+          className="c33"
         >
-          No Price Preview
-        </p>
+          <p
+            className="c21"
+            color="#999999"
+          >
+            No Price Preview
+          </p>
+        </div>
       </div>
     </div>
   </section>

@@ -36,7 +36,6 @@ export const Input: React.ComponentType<Props> = styled.input.attrs(
       cssConstants.PRIMARY_BLUE
   })
 )`
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;

@@ -44,7 +44,6 @@ const HorizontalList = styled(Flex)`
 
 const HorizontalListItem = styled(FlexItem)`
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  box-sizing: border-box;
   flex: 1 0 auto;
   width: 50%;
 

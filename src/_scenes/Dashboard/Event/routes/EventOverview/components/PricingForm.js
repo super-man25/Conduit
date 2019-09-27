@@ -1,23 +1,19 @@
 // @flow
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {
-  AsyncButton,
-  Box,
-  Flex,
-  H4,
-  NumberInputField,
-  SecondaryButton,
-  Text,
-  TextButton
-} from '_components';
+import { Box, Flex, H4, NumberInputField, Text, TextButton } from '_components';
 import { cssConstants } from '_constants';
 import { fixedOrDash, safeAdd } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
 import { PricingTableHeader } from './PricingTableHeader';
 
+const StyledPricingForm = styled(Flex)`
+  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  padding: 0 20px;
+  width: 100%;
+`;
+
 const Input = styled.input`
-  box-sizing: border-box;
   width: 60%;
   margin-left: 16px;
   padding: 0.5rem 1rem;
@@ -26,28 +22,18 @@ const Input = styled.input`
   border: 1px solid ${cssConstants.PRIMARY_GRAY};
 `;
 
-const ButtonGroup = styled.div`
-  display: flex;
-
-  > *:not(:first-child) {
-    margin-left: 8px;
-  }
-`;
-
 type Props = {
-  initialValues: PendingFactors,
   pendingFactors: PendingFactors,
-  onChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
-  onSubmit: Function,
+  handleChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
   eventId: number,
   fetchAutomatedSpring: (id: number, eventScore: ?number) => void,
-  onCancel: Function,
   pricingError: ?Error,
   pricingPreview: {
     error: ?Error,
     loading: boolean
   },
-  submitting: boolean
+  isEditing: boolean,
+  setIsEditing: Function
 };
 
 const SPRING_DECIMALS = 4;
@@ -55,10 +41,8 @@ const SCORE_DECIMALS = 2;
 
 export const PricingForm = (props: Props) => {
   const {
-    onChange,
+    handleChange,
     pendingFactors: { eventScore, eventScoreModifier, spring, springModifier },
-    onSubmit,
-    onCancel,
     fetchAutomatedSpring,
     eventId,
     pricingError,
@@ -66,10 +50,10 @@ export const PricingForm = (props: Props) => {
       error: pricingPreviewError,
       loading: pricingPreviewLoading
     },
-    submitting
+    isEditing,
+    setIsEditing
   } = props;
 
-  const [isEditing, setIsEditing] = useState(false);
   const [timer, setTimer] = useState(null);
 
   // fires request only when user stops typing for 0.5 seconds to prevent over-firing
@@ -83,26 +67,13 @@ export const PricingForm = (props: Props) => {
     fetchAutomatedSpring(eventId, total !== '--' ? Number(total) : eventScore);
   };
 
-  const handleChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
-    onChange(e);
-  };
-
-  const handleCancel = () => {
-    onCancel();
-    setIsEditing(false);
-  };
-
-  const handleSubmit = () => {
-    setIsEditing(false);
-    onSubmit();
-  };
-
   useEffect(() => (pricingError ? setIsEditing(true) : setIsEditing(false)), [
-    pricingError
+    pricingError,
+    setIsEditing
   ]);
 
   return (
-    <>
+    <StyledPricingForm direction="column">
       <Flex margin="0.5rem 0" align="center" justify="space-between">
         <H4 margin="0">Modifiers</H4>
         {!isEditing && (
@@ -195,20 +166,6 @@ export const PricingForm = (props: Props) => {
           </Box>
         </Flex>
       </Box>
-      <ButtonGroup>
-        {isEditing && (
-          <>
-            <AsyncButton
-              isLoading={submitting}
-              disabled={submitting}
-              onClick={handleSubmit}
-            >
-              Save
-            </AsyncButton>
-            <SecondaryButton onClick={handleCancel}>Cancel</SecondaryButton>
-          </>
-        )}
-      </ButtonGroup>
-    </>
+    </StyledPricingForm>
   );
 };

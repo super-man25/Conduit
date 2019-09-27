@@ -21,11 +21,10 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-dymIpo",
+          "componentId": "sc-rBLzX",
           "isStatic": false,
           "rules": Array [
             "
-  box-sizing: border-box;
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -65,7 +64,6 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
   }
 ",
             "
-  box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;
@@ -75,10 +73,10 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
         },
         "displayName": "Styled(styled.input)",
         "foldedComponentIds": Array [
-          "sc-ktHwxA",
+          "sc-jwKygS",
         ],
         "render": [Function],
-        "styledComponentId": "sc-dymIpo",
+        "styledComponentId": "sc-rBLzX",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

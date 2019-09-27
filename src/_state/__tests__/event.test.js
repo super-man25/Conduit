@@ -34,14 +34,23 @@ describe('actions', () => {
   });
 
   it('should create an action to save admin modifiers', () => {
-    const action = actions.saveAdminModifiers(1, 1, 1, 1);
+    const action = actions.saveAdminModifiers({
+      eventId: 1,
+      eventScoreModifier: 1,
+      springModifier: 1,
+      seasonId: 1,
+      reasonType: 'reason type',
+      reasonComments: 'reason comments'
+    });
     expect(action).toEqual({
       type: types.SAVE_ADMIN_MODIFIERS,
       payload: {
         eventId: 1,
         eventScoreModifier: 1,
         springModifier: 1,
-        seasonId: 1
+        seasonId: 1,
+        reasonType: 'reason type',
+        reasonComments: 'reason comments'
       }
     });
   });
@@ -423,15 +432,23 @@ describe('sagas', () => {
   });
 
   it('should handle saving admin modifiers for an event', () => {
-    const action = actions.saveAdminModifiers(1, 1, 1, 1);
+    const action = actions.saveAdminModifiers({
+      eventId: 1,
+      eventScoreModifier: 1,
+      springModifier: 1,
+      seasonId: 1,
+      reasonType: 'reason type',
+      reasonComments: 'reason comments'
+    });
     const generator = cloneableGenerator(saveAdminModifiers)(action);
     expect(generator.next().value).toEqual(
-      call(
-        eventService.updateAdminModifiers,
-        action.payload.eventId,
-        action.payload.eventScoreModifier,
-        action.payload.springModifier
-      )
+      call(eventService.updateAdminModifiers, {
+        eventId: action.payload.eventId,
+        eventScoreModifier: action.payload.eventScoreModifier,
+        springModifier: action.payload.springModifier,
+        reasonType: action.payload.reasonType,
+        reasonComments: action.payload.reasonComments
+      })
     );
 
     // success path

@@ -5,7 +5,6 @@ import { withClickAway } from '_hoc';
 import { PrimaryButton, Input, Box, SecondaryButton } from '_components';
 
 const cellButton = css`
-  box-sizing: border-box;
   margin: 0;
   min-width: 50px;
   width: 80px;
@@ -14,7 +13,6 @@ const cellButton = css`
 `;
 
 export const EditPricingRuleInput = styled(Input)`
-  box-sizing: border-box;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;

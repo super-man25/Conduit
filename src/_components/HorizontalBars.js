@@ -17,7 +17,6 @@ const BarContainer = styled.div`
 
 const HorizontalBar = styled.div`
   background-color: ${(props) => props.backgroundColor};
-  box-sizing: border-box;
   display: inline-block;
   height: 25px;
   width: ${(props) => `${props.width}%` || 'auto'};
