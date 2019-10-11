@@ -19,7 +19,7 @@ import {
   setDefaultDateRange,
   downloadSeasonReport
 } from '_state/seasonStat/saga';
-import { initialState } from '_state/seasonStat/reducer';
+import { initialState, serialize } from '_state/seasonStat/reducer';
 import {
   getSeasonStats,
   getSeasonStatState,
@@ -107,7 +107,24 @@ describe('reducer', () => {
       seasonStatsMeta: null
     };
 
-    const seasonStats = [1, 2, 3];
+    const seasonStats = [
+      {
+        inventory: 2219,
+        isProjected: true,
+        periodicInventory: -201,
+        periodicRevenue: 6704.91,
+        revenue: 26184.1,
+        timestamp: '2019-09-25T04:00:00Z'
+      },
+      {
+        inventory: 2568,
+        isProjected: false,
+        periodicInventory: -2,
+        periodicRevenue: 170.5,
+        revenue: 13142.28,
+        timestamp: '2019-09-18T04:00:00Z'
+      }
+    ];
     const seasonStatsMeta = {
       interval: 'Days',
       timeZone: 'America/Chicago'
@@ -119,10 +136,13 @@ describe('reducer', () => {
     const action = { type: FETCH_SUCCESS, payload: seasonStatsResponse };
     const nextState = reducer(prevState, action);
 
+    // Assert on serialized season stats without projections
+    const serializedSeasonStats = serialize(seasonStats);
+
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      seasonStats,
+      seasonStats: serializedSeasonStats,
       seasonStatsMeta
     });
   });

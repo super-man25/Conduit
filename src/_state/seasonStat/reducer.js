@@ -54,7 +54,12 @@ export const initialState: SeasonStatState = {
   error: null
 };
 
-export default function eventStatReducer(
+export function serialize(seasonStats: EventStat[]): EventStat[] {
+  // Filter out projections for season stats and only display actuals
+  return seasonStats.filter((e) => !e.isProjected);
+}
+
+export default function seasonStatReducer(
   state: SeasonStatState = initialState,
   action: Action
 ): SeasonStatState {
@@ -65,7 +70,7 @@ export default function eventStatReducer(
       return {
         ...state,
         loading: false,
-        seasonStats: action.payload.data,
+        seasonStats: serialize(action.payload.data),
         seasonStatsMeta: action.payload.meta
       };
     case FETCH_ERROR:
