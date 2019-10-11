@@ -52,14 +52,20 @@ export const initialState: EventStatState = {
 export function serialize(eventStats: EventStat[]) {
   const eventStatsProjections = eventStats
     .filter((e) => e.isProjected)
-    .map((e) => ({
-      timestamp: e.timestamp,
-      projectedInventory: e.inventory,
-      projectedRevenue: e.revenue,
-      projectedPeriodicRevenue: e.periodicRevenue,
-      projectedPeriodicInventory: e.periodicInventory,
-      isProjected: e.isProjected
-    }));
+    .map((e) => {
+      const negativeInventoryProjected = !e.inventory || e.inventory < 0;
+      const projectedPeriodicInventory = negativeInventoryProjected
+        ? e.periodicInventory - e.inventory
+        : e.periodicInventory;
+      return {
+        timestamp: e.timestamp,
+        projectedInventory: negativeInventoryProjected ? 0 : e.inventory,
+        projectedRevenue: e.revenue,
+        projectedPeriodicRevenue: e.periodicRevenue,
+        projectedPeriodicInventory: projectedPeriodicInventory,
+        isProjected: e.isProjected
+      };
+    });
 
   const eventStatsNoProjections = eventStats
     .filter((e) => !e.isProjected)

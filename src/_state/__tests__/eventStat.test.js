@@ -153,6 +153,65 @@ describe('reducer', () => {
     expect(projectedStat).toHaveProperty('projectedInventory');
   });
 
+  it('should handle negative projections with FETCH_SUCCESS', () => {
+    const prevState = {
+      ...initialState,
+      loading: true,
+      eventStats: [],
+      eventStatsMeta: null
+    };
+
+    const eventStats = [
+      {
+        inventory: -10,
+        isProjected: true,
+        periodicInventory: -210,
+        periodicRevenue: 6704.91,
+        revenue: 26184.1,
+        timestamp: '2019-09-25T04:00:00Z'
+      },
+      {
+        inventory: 2568,
+        isProjected: false,
+        periodicInventory: -2,
+        periodicRevenue: 170.5,
+        revenue: 13142.28,
+        timestamp: '2019-09-18T04:00:00Z'
+      }
+    ];
+    const eventStatsMeta = {
+      interval: 'So meta',
+      timeZone: 'America/New_York'
+    };
+    const eventStatsResponse = {
+      data: eventStats,
+      meta: eventStatsMeta
+    };
+    const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
+    const nextState = reducer(prevState, action);
+    const serializedEventStats = serialize(eventStats);
+
+    expect(nextState).toEqual({
+      ...initialState,
+      loading: false,
+      eventStats: serializedEventStats,
+      eventStatsMeta
+    });
+
+    // Assert on projection keys
+    const projectedStat = serializedEventStats.find((e) => e.isProjected);
+    const negativeProjection = eventStats.find((e) => e.isProjected);
+
+    expect(projectedStat).toHaveProperty('projectedPeriodicRevenue');
+    expect(projectedStat).toHaveProperty('projectedPeriodicInventory');
+    expect(projectedStat).toHaveProperty('projectedRevenue');
+    expect(projectedStat).toHaveProperty('projectedInventory');
+    expect(projectedStat.projectedInventory).toBe(0);
+    expect(projectedStat.projectedPeriodicInventory).toBe(
+      negativeProjection.periodicInventory - negativeProjection.inventory
+    );
+  });
+
   it('should handle FETCH_ERROR', () => {
     const prevState = {
       ...initialState,
