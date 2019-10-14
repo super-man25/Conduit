@@ -1,4 +1,4 @@
-import { cssConstants } from '_constants';
+import { cssConstants, navigationHeight } from '_constants';
 import styled from 'styled-components';
 
 export const PageWrapper = styled.div`
@@ -18,7 +18,7 @@ export const PrimaryContent = styled.div`
 export const FullContent = styled.div`
   display: flex;
   position: absolute;
-  top: 5rem;
+  top: ${navigationHeight}px;
   bottom: 0;
   left: 0;
   right: 0;

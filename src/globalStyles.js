@@ -23,6 +23,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 14px;
     background: #ffffff;
   }
+
+  a {
+    text-decoration: none;
+  }
   
   /*
     react-day-picker styles

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
 export const withClickAway = (WrappedComponent) => {
   const displayName = WrappedComponent.displayName || WrappedComponent.name;
 
-  class Clickaway extends React.Component {
+  class Clickaway extends Component {
     static defaultProps = {
       onClickAway: () => {}
     };

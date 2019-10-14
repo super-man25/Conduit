@@ -1,205 +1,144 @@
 // @flow
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { cssConstants, zIndexes, integrationConstants } from '_constants';
-import { withClickAway } from '_hoc';
+
+import sprocketPng from '_images/sprocket.png';
+import logoSvg from '_images/logo.svg';
 import {
-  DropdownMenuItem,
-  Icon,
-  LogoName,
-  Spacing,
-  SprocketMenu,
-  UserWelcome
-} from './';
-import { push } from 'connected-react-router';
-import { actions } from '_state/auth';
+  cssConstants,
+  zIndexes,
+  integrationConstants,
+  navigationHeight
+} from '_constants';
+import { useClickAway } from '_hooks';
+import { actions as authActions } from '_state/auth';
 import { actions as clientActions } from '_state/client';
 import { actions as clientListActions } from '_state/clientList';
-import { Box } from './StyledTags';
-import { Flex } from './Flex';
-import type { EDClient, EDClientList } from '_models';
+import { Icon, Flex, UserWelcome } from './';
 
-export const SiteHeaderDiv = styled.div`
+export const StyledSiteHeader = styled.div`
   display: flex;
-  position: relative;
-  width: 100%;
-  height: 70px;
-  margin: 0;
-  padding: 0 40px;
-  background: ${cssConstants.PRIMARY_BLUE};
   justify-content: space-between;
   align-items: center;
-`;
-
-export const DropdownMenuWrapper = withClickAway(styled.div`
-  width: 130px;
-  position: absolute;
-  z-index: ${zIndexes.BASE};
-  right: -12px;
-  top: 75px;
-  padding: 15px;
-  background: ${cssConstants.SECONDARY_BLUE};
-  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.5);
-  ::after,
-  ::before {
-    bottom: 100%;
-    border: solid transparent;
-    content: ' ';
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-  }
-  ::after {
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: ${cssConstants.SECONDARY_BLUE};
-    border-width: 19px;
-    left: 80%;
-    margin-left: -19px;
-  }
-  ::before {
-    border-color: rgba(113, 158, 206, 0);
-    border-bottom-color: ${cssConstants.SECONDARY_BLUE};
-    border-width: 20px;
-    left: 80%;
-    margin-left: -20px;
-  }
-`);
-
-type Props = {
-  auth: {
-    firstName: string,
-    lastName: string
-  },
-  client: EDClient,
-  clientList: EDClientList,
-  fetchClientList: () => void,
-  hasTicketsDotComIntegration: boolean,
-  push: (path: string) => void,
-  signOut: () => void,
-  updateClient: () => void
-};
-
-const PositionBox = styled(Box)`
   position: relative;
+  width: 100%;
+  min-height: ${navigationHeight}px;
+  padding: 0 3%;
+  background: ${cssConstants.PRIMARY_BLUE};
 `;
 
-export const SiteHeaderPresenter = (props: Props) => {
-  const {
-    auth,
-    client,
-    clientList,
-    fetchClientList,
-    hasTicketsDotComIntegration,
-    updateClient
-  } = props;
+const caretWidth = 20;
+
+export const DropdownMenuWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: calc(100% + ${caretWidth / 2}px);
+  padding: 25px;
+  background: ${cssConstants.SECONDARY_BLUE};
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+
+  ::before,
+  ::after {
+    content: '';
+    width: ${caretWidth}px;
+    height: ${caretWidth}px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: calc(100% - ${caretWidth}px / 2);
+    right: ${caretWidth / 2}px;
+    background-color: ${cssConstants.SECONDARY_BLUE};
+  }
+
+  ::before {
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+`;
+
+const MenuIcon = styled.div`
+  width: 40px;
+  background-image: ${`url(${sprocketPng})`};
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: relative;
+  z-index: ${zIndexes.BASE};
+`;
+
+const MenuItem = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: white;
+
+  &:not(:last-of-type) {
+    margin-bottom: 25px;
+  }
+`;
+
+const LogoutIcon = styled(Icon)`
+  margin-left: 10px;
+`;
+
+export const SiteHeader = () => {
+  const dispatch = useDispatch();
+
+  const auth = useSelector(({ auth }) => auth.model);
+  const client = useSelector(({ client }) => client);
+  const clientList = useSelector(({ clientList }) => clientList);
+  const hasTicketsDotComIntegration = useSelector(({ client }) =>
+    client.integrations.some(
+      (integration) =>
+        integration.name === integrationConstants.ticketsDotCom.name
+    )
+  );
+
+  const dropdownRef = useRef();
 
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    fetchClientList();
-  }, [fetchClientList]);
+    dispatch(clientListActions.fetchClientList());
+  }, [dispatch]);
 
-  const openMenu = () => {
-    setShowMenu(true);
-  };
-
-  const closeMenu = () => {
-    setShowMenu(false);
-  };
-
-  const handleSettingsClick = () => {
-    props.push('/settings/team');
-  };
-
-  const handlePricingRulesClick = () => {
-    props.push('/pricing');
-  };
-
-  const handleLogoClick = () => {
-    props.push('/');
-  };
-
-  const handleLogoutClick = () => {
-    props.signOut();
-  };
+  useClickAway({
+    ref: dropdownRef,
+    handleClickAway: () => setShowMenu(false)
+  });
 
   return (
-    <SiteHeaderDiv>
-      <LogoName onClick={handleLogoClick} />
+    <StyledSiteHeader>
+      <Link to="/">
+        <img alt="logo" src={logoSvg} />
+      </Link>
       <Flex>
         <UserWelcome
           firstName={auth.firstName}
           lastName={auth.lastName}
           client={client}
           clientList={clientList}
-          updateClient={updateClient}
+          updateClient={(client) => dispatch(clientActions.update(client))}
         />
-        <PositionBox>
-          <SprocketMenu
-            id="sprocket"
-            data-test-id="settings-icon"
-            onClick={openMenu}
-          />
+        <MenuIcon onClick={() => setShowMenu(true)} ref={dropdownRef}>
           {showMenu && (
-            <DropdownMenuWrapper onClickAway={closeMenu}>
-              <div>
-                <DropdownMenuItem
-                  id="settings"
-                  data-test-id="settings-button"
-                  onClick={handleSettingsClick}
-                >
-                  Settings
-                </DropdownMenuItem>
-                {hasTicketsDotComIntegration && (
-                  <DropdownMenuItem
-                    id="pricingRules"
-                    data-test-id="pricing-rules-button"
-                    onClick={handlePricingRulesClick}
-                  >
-                    Pricing Rules
-                  </DropdownMenuItem>
-                )}
-                <DropdownMenuItem
-                  id="logout"
-                  data-test-id="logout-button"
-                  to="/logout"
-                  onClick={handleLogoutClick}
-                >
-                  Logout
-                  <Spacing right padding="0 0 0 40px" display="inline-block">
-                    <Icon name="logout" size={24} color="white" />
-                  </Spacing>
-                </DropdownMenuItem>
-              </div>
+            <DropdownMenuWrapper ref={dropdownRef}>
+              <MenuItem to="/settings/team">Settings</MenuItem>
+              {hasTicketsDotComIntegration && (
+                <MenuItem to="/pricing">Pricing Rules</MenuItem>
+              )}
+              <MenuItem
+                to="/login"
+                onClick={() => dispatch(authActions.signOut())}
+              >
+                Logout
+                <LogoutIcon name="logout" size={18} color="white" />
+              </MenuItem>
             </DropdownMenuWrapper>
           )}
-        </PositionBox>
+        </MenuIcon>
       </Flex>
-    </SiteHeaderDiv>
+    </StyledSiteHeader>
   );
 };
-
-const mapStateToProps = ({ auth, client, clientList }) => ({
-  auth: auth.model,
-  client,
-  clientList,
-  hasTicketsDotComIntegration: client.integrations.some(
-    (integration) =>
-      integration.name === integrationConstants.ticketsDotCom.name
-  )
-});
-
-const mapDispatchToProps = {
-  push,
-  signOut: actions.signOut,
-  updateClient: clientActions.update,
-  fetchClientList: clientListActions.fetchClientList
-};
-
-export const SiteHeader = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SiteHeaderPresenter);

@@ -2,7 +2,7 @@
 
 exports[`<Settings /> renders correctly 1`] = `
 <styled.div>
-  <Connect(SiteHeaderPresenter)
+  <SiteHeader
     auth={
       Object {
         "firstName": "groot",

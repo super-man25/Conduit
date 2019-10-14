@@ -72,3 +72,5 @@ const getFontFamily = (fontName) =>
 export const fonts = {
   FUTURA: getFontFamily('FuturaPT')
 };
+
+export const navigationHeight = 70;

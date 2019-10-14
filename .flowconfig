@@ -8,6 +8,7 @@
 module.name_mapper='_components' -> '<PROJECT_ROOT>/src/_components'
 module.name_mapper='_helpers' -> '<PROJECT_ROOT>/src/_helpers'
 module.name_mapper='_hoc' -> '<PROJECT_ROOT>/src/_hoc'
+module.name_mapper='_hooks' -> '<PROJECT_ROOT>/src/_hooks'
 module.name_mapper='_images' -> '<PROJECT_ROOT>/src/_images'
 module.name_mapper='_models' -> '<PROJECT_ROOT>/src/_models'
 module.name_mapper='_scenes' -> '<PROJECT_ROOT>/src/_scenes'

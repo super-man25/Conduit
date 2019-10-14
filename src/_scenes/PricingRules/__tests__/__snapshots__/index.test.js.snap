@@ -2,7 +2,7 @@
 
 exports[`<PricingRules /> index route should render corectly 1`] = `
 <styled.div>
-  <Connect(SiteHeaderPresenter) />
+  <SiteHeader />
   <styled.div>
     <Flex
       direction="column"
