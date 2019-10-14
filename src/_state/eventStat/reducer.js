@@ -72,6 +72,7 @@ export function serialize(eventStats: EventStat[]) {
     .map((e) => ({
       timestamp: e.timestamp,
       inventory: e.inventory,
+      soldInventory: e.soldInventory,
       revenue: e.revenue,
       periodicRevenue: e.periodicRevenue,
       periodicInventory: e.periodicInventory,

@@ -152,7 +152,7 @@ export class EventChart extends React.Component<Props> {
       },
       eventStatActions: { setDateRange, setGroupFilter },
       selectedSeason: { startTimestamp },
-      activeEvent: { timestamp }
+      activeEvent: { timestamp, totalInventory }
     } = this.props;
     const { interval, timeZone } = eventStatsMeta || {};
 
@@ -277,6 +277,7 @@ export class EventChart extends React.Component<Props> {
                     {selectedGroupFilter === GROUP_FILTERS.cumulative && (
                       <CumulativeRevenueChart
                         data={eventStats}
+                        totalInventory={totalInventory}
                         height={CHART_HEIGHT}
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
@@ -302,6 +303,7 @@ export class EventChart extends React.Component<Props> {
                     {selectedGroupFilter === GROUP_FILTERS.cumulative && (
                       <CumulativeInventoryChart
                         data={eventStats}
+                        totalInventory={totalInventory}
                         height={CHART_HEIGHT}
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}

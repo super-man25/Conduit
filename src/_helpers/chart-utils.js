@@ -79,14 +79,12 @@ export function periodicTooltip(stat: EventStat) {
   };
 }
 
-export function cumulativeTooltip(stat: EventStat) {
+export function cumulativeTooltip(stat: EventStat, totalInventory: number) {
   const inventory = stat.isProjected ? stat.projectedInventory : stat.inventory;
-  const revenue = stat.isProjected
-    ? stat.projectedPeriodicRevenue
-    : stat.revenue;
+  const revenue = stat.isProjected ? stat.projectedRevenue : stat.revenue;
   const avgTicketPrice = stat.isProjected
-    ? stat.projectedRevenue / stat.projectedInventory
-    : stat.revenue / stat.inventory;
+    ? stat.projectedRevenue / (totalInventory - stat.projectedInventory)
+    : stat.revenue / Math.abs(stat.soldInventory);
 
   return {
     inventory: formatNumber(inventory),

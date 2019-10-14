@@ -6,16 +6,20 @@ import { cumulativeTooltip } from '_helpers/chart-utils';
 type TooltipContentProps = {
   active?: boolean,
   payload?: any,
-  dateFormatter: (Date) => string
+  dateFormatter: (Date) => string,
+  totalInventory: number
 };
 
 export function CumulativeRevenueTooltip(props: TooltipContentProps) {
-  const { active, dateFormatter, payload } = props;
+  const { active, dateFormatter, payload, totalInventory } = props;
   if (!active || !payload || !payload.length) {
     return null;
   }
   const [{ payload: stat }] = payload;
-  const { inventory, revenue, avgTicketPrice } = cumulativeTooltip(stat);
+  const { inventory, revenue, avgTicketPrice } = cumulativeTooltip(
+    stat,
+    totalInventory
+  );
 
   const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {

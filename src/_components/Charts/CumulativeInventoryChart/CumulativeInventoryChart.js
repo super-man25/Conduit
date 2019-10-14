@@ -21,6 +21,7 @@ const ANIMATION_DURATION = 1000;
 type Props = {
   height: number,
   data: EventStat[],
+  totalInventory: number,
   tooltipDateFormatter: (Date) => string,
   renderNoData: () => React.Node,
   majorXAxisTickRenderer: () => HTMLElement,
@@ -30,6 +31,7 @@ type Props = {
 export function CumulativeInventoryChart({
   height,
   data,
+  totalInventory,
   tooltipDateFormatter,
   renderNoData,
   majorXAxisTickRenderer,
@@ -107,6 +109,7 @@ export function CumulativeInventoryChart({
             content={
               <CumulativeInventoryTooltip
                 dateFormatter={tooltipDateFormatter}
+                totalInventory={totalInventory}
               />
             }
           />

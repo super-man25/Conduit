@@ -17,6 +17,7 @@ const createProps = () => ({
         eventId: 1,
         id: 1,
         inventory: 100,
+        soldInventory: 50,
         periodicInventory: 100,
         revenue: 100,
         periodicRevenue: 100,

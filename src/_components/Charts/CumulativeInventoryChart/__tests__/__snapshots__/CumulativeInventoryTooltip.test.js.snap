@@ -4,7 +4,7 @@ exports[`<CumulativeInventoryTooltip /> should render correctly 1`] = `
 <ChartTooltip
   bodyJson={
     Object {
-      "Avg. Ticket Price To Date": "$1.00",
+      "Avg. Ticket Price To Date": "$2.00",
       "Remaining Inventory": "100",
       "Revenue To Date": "$100.00",
     }
@@ -21,7 +21,7 @@ exports[`<CumulativeInventoryTooltip /> should render correctly with different d
 <ChartTooltip
   bodyJson={
     Object {
-      "Avg. Ticket Price To Date": "$1.00",
+      "Avg. Ticket Price To Date": "$2.00",
       "Remaining Inventory": "100",
       "Revenue To Date": "$100.00",
     }

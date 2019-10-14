@@ -6,6 +6,7 @@ export type EventStat = {
   eventId: number,
   id: number,
   inventory: ?number,
+  soldInventory: ?number,
   projectedInventory: ?number,
   periodicInventory: ?number,
   projectedPeriodicInventory: ?number,

@@ -2,7 +2,8 @@ import {
   getAxisTickOptions,
   dayFormat,
   dayTimeFormat,
-  getChartRange
+  getChartRange,
+  cumulativeTooltip
 } from '../chart-utils';
 import { addDays, subDays, startOfDay, endOfDay, format } from 'date-fns';
 
@@ -124,5 +125,38 @@ describe('getChartRange', () => {
     };
 
     expect(getChartRange(dataset)).toEqual([-60, -10]);
+  });
+});
+
+describe('cumulativeTooltip', () => {
+  it('should create accurate values for actual data', () => {
+    const dataset = {
+      isProjected: false,
+      inventory: 50,
+      revenue: 2000,
+      soldInventory: 100
+    };
+
+    expect(cumulativeTooltip(dataset, undefined)).toEqual({
+      inventory: '50',
+      revenue: '$2,000.00',
+      avgTicketPrice: '$20.00'
+    });
+  });
+
+  it('should create accurate values for projected data', () => {
+    const dataset = {
+      isProjected: true,
+      projectedInventory: 50,
+      projectedRevenue: 2000
+    };
+
+    const totalInventory = 150;
+
+    expect(cumulativeTooltip(dataset, totalInventory)).toEqual({
+      inventory: '50',
+      revenue: '$2,000.00',
+      avgTicketPrice: '$20.00'
+    });
   });
 });
