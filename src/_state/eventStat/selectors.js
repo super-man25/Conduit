@@ -1,4 +1,5 @@
 // @flow
+
 import type { EventStatState } from './reducer';
 import type { DateRange } from '_helpers/types';
 
@@ -12,3 +13,5 @@ export const getEventStatFilterArguments = (state: State) =>
   state.eventStat.dateRange;
 export const getEventStatDateLimits = (state: State): DateRange =>
   state.eventStat.eventDateLimits;
+export const getHasProjected = (state: State) =>
+  !!state.eventStat.eventStats.find(({ isProjected }) => isProjected);

@@ -6,6 +6,15 @@ exports[`<PeriodicInventoryChartLegend /> should render correctly 1`] = `
     color="#5A288F"
     label="Actual Inventory"
   />
+</Fragment>
+`;
+
+exports[`<PeriodicInventoryChartLegend /> should render correctly when projections are present 1`] = `
+<Fragment>
+  <ChartLegendItem
+    color="#5A288F"
+    label="Actual Inventory"
+  />
   <ChartLegendItem
     color="#817CB8"
     label="Projected Inventory"

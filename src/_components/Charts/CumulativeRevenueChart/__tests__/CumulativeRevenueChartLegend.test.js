@@ -7,4 +7,11 @@ describe('<CumulativeRevenueChartLegend />', () => {
     const wrapper = shallow(<CumulativeRevenueChartLegend />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render correctly when projections are present', () => {
+    const wrapper = shallow(
+      <CumulativeRevenueChartLegend hasProjected={true} />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

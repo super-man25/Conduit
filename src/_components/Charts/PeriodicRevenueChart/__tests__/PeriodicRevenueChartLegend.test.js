@@ -7,4 +7,9 @@ describe('<PeriodicRevenueChartLegend />', () => {
     const wrapper = shallow(<PeriodicRevenueChartLegend />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should render correctly when projections are present', () => {
+    const wrapper = shallow(<PeriodicRevenueChartLegend hasProjected={true} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

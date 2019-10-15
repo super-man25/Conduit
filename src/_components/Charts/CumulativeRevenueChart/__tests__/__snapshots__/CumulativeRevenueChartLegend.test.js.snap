@@ -6,6 +6,15 @@ exports[`<CumulativeRevenueChartLegend /> should render correctly 1`] = `
     color="#0A169A"
     label="Actual Revenue"
   />
+</Fragment>
+`;
+
+exports[`<CumulativeRevenueChartLegend /> should render correctly when projections are present 1`] = `
+<Fragment>
+  <ChartLegendItem
+    color="#0A169A"
+    label="Actual Revenue"
+  />
   <ChartLegendItem
     color="#38A9DB"
     dashed={true}

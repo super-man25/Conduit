@@ -37,7 +37,7 @@ import {
 import type { EventStatState } from '_state/eventStat/reducer';
 import { selectors } from '_state/event';
 import { selectors as seasonSelector } from '_state/season';
-import { getEventStatState } from '_state/eventStat/selectors';
+import { getEventStatState, getHasProjected } from '_state/eventStat/selectors';
 import { EDEvent, EDSeason } from '_models';
 import { createStructuredSelector } from 'reselect';
 import typeof EventStatActions from '_state/eventStat/actions';
@@ -83,19 +83,21 @@ const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
 
 const ChartLegend = ({
   selectedGroupFilter,
-  selectedTab
+  selectedTab,
+  hasProjected
 }: {
   selectedGroupFilter: number,
-  selectedTab: number
+  selectedTab: number,
+  hasProjected: boolean
 }) => {
   if (selectedGroupFilter === 0 && selectedTab === 0)
-    return <PeriodicRevenueChartLegend />;
+    return <PeriodicRevenueChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 0 && selectedTab === 1)
-    return <PeriodicInventoryChartLegend />;
+    return <PeriodicInventoryChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 1 && selectedTab === 0)
-    return <CumulativeRevenueChartLegend />;
+    return <CumulativeRevenueChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 1 && selectedTab === 1)
-    return <CumulativeInventoryChartLegend />;
+    return <CumulativeInventoryChartLegend hasProjected={hasProjected} />;
   else return null;
 };
 
@@ -103,7 +105,8 @@ type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
   activeEvent: EDEvent,
-  selectedSeason: EDSeason
+  selectedSeason: EDSeason,
+  hasProjected: boolean
 };
 
 export class EventChart extends React.Component<Props> {
@@ -152,7 +155,8 @@ export class EventChart extends React.Component<Props> {
       },
       eventStatActions: { setDateRange, setGroupFilter },
       selectedSeason: { startTimestamp },
-      activeEvent: { timestamp, totalInventory }
+      activeEvent: { timestamp, totalInventory },
+      hasProjected
     } = this.props;
     const { interval, timeZone } = eventStatsMeta || {};
 
@@ -256,6 +260,7 @@ export class EventChart extends React.Component<Props> {
                       <ChartLegend
                         selectedGroupFilter={selectedGroupFilter}
                         selectedTab={selectedTab}
+                        hasProjected={hasProjected}
                       />
                     </Flex>
                   </FlexItem>
@@ -326,7 +331,8 @@ export class EventChart extends React.Component<Props> {
 const mapStateToProps = createStructuredSelector({
   eventStatState: getEventStatState,
   activeEvent: selectors.selectEvent,
-  selectedSeason: seasonSelector.selectActiveSeason
+  selectedSeason: seasonSelector.selectActiveSeason,
+  hasProjected: getHasProjected
 });
 
 function mapDispatchToProps(dispatch) {
