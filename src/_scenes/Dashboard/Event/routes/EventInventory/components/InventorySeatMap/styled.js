@@ -2,6 +2,11 @@ import React from 'react';
 import { Box, CenteredLoader } from '_components';
 import styled from 'styled-components';
 
+export const SeatMapObject = styled.object`
+  width: 100%;
+  max-width: 500px;
+`;
+
 export const EventInventoryVerticalRule = styled(Box)`
   background-color: #979797;
   cursor: pointer;

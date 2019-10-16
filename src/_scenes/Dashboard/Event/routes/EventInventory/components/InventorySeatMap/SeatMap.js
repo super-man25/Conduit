@@ -8,7 +8,7 @@ import {
   selectors as seatMapSelectors
 } from '_state/seatMap';
 import { Flex } from '_components';
-import { SeatMapLoader } from './styled';
+import { SeatMapLoader, SeatMapObject } from './styled';
 
 export class SeatMapPresenter extends React.Component {
   seatmap = React.createRef();
@@ -83,7 +83,7 @@ export class SeatMapPresenter extends React.Component {
     return (
       <React.Fragment>
         {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-        <object
+        <SeatMapObject
           role="search"
           ref={this.seatmap}
           onLoad={this.onSeatmapLoaded}
@@ -91,7 +91,7 @@ export class SeatMapPresenter extends React.Component {
           type="image/svg+xml"
         >
           Sorry this browser does not support svg.
-        </object>
+        </SeatMapObject>
       </React.Fragment>
     );
   }
