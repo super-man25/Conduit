@@ -2,6 +2,14 @@
 
 import type { EDScheduledJob } from './scheduledJob';
 
+type Factors = {
+  eventScore: ?number,
+  eventScoreModifier: number,
+  spring: ?number,
+  springModifier: number,
+  velocityFactor: number
+};
+
 export type EDEvent = {
   clientId: number,
   createdAt: Date,
@@ -19,10 +27,7 @@ export type EDEvent = {
   unsoldInventory: number,
   revenue: number,
   percentPriceModifier: number,
-  eventScore: number,
-  eventScoreModifier: number,
-  spring: number,
-  springModifier: number,
+  factors: Factors,
   timeZone: string,
   scheduledJob: EDScheduledJob
 };

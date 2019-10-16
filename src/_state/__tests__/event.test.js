@@ -107,10 +107,13 @@ describe('reducer', () => {
     const action = {
       type: types.FETCH_EVENT_SUCCESS,
       payload: {
-        eventScore: 1,
-        eventScoreModifier: 1,
-        spring: 1,
-        springModifier: 1
+        factors: {
+          eventScore: 1,
+          eventScoreModifier: 1,
+          spring: 1,
+          springModifier: 1,
+          velocityFactor: 1
+        }
       }
     };
     const nextState = reducer(prevState, action);
@@ -119,16 +122,20 @@ describe('reducer', () => {
       ...prevState,
       loading: false,
       event: {
-        eventScore: 1,
-        eventScoreModifier: 1,
-        spring: 1,
-        springModifier: 1
+        factors: {
+          eventScore: 1,
+          eventScoreModifier: 1,
+          spring: 1,
+          springModifier: 1,
+          velocityFactor: 1
+        }
       },
       pendingFactors: {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
-        springModifier: 1
+        springModifier: 1,
+        velocityFactor: 1
       }
     });
   });
@@ -370,7 +377,8 @@ describe('sagas', () => {
   it('should handle fetch an individual event', () => {
     const action = actions.fetchEvent(1);
     const generator = cloneableGenerator(fetchEvent)(action);
-    const mockEvent = { id: 1, eventScore: 5.0, eventScoreModifier: 0.21 };
+    const factors = { eventScore: 5.0, eventScoreModifier: 0.21 };
+    const mockEvent = { id: 1, factors };
     expect(generator.next().value).toEqual(call(eventService.getOne, 1));
 
     const fail = generator.clone();
@@ -388,7 +396,7 @@ describe('sagas', () => {
         type: types.FETCH_AUTOMATED_SPRING_VALUE,
         payload: {
           id: mockEvent.id,
-          eventScore: mockEvent.eventScore + mockEvent.eventScoreModifier
+          eventScore: factors.eventScore + factors.eventScoreModifier
         }
       })
     );

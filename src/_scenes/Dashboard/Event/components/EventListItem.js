@@ -130,7 +130,7 @@ type Props = {
 
 export class EventListItem extends React.PureComponent<Props> {
   calculateEventScore = (event: EDEvent) => {
-    const { eventScore, eventScoreModifier } = event;
+    const { eventScore, eventScoreModifier } = event.factors;
     if (eventScore === undefined) {
       return '--';
     }
@@ -139,7 +139,7 @@ export class EventListItem extends React.PureComponent<Props> {
   };
 
   calculateSpring = (event: EDEvent) => {
-    const { spring, springModifier } = event;
+    const { spring, springModifier } = event.factors;
     if (spring === undefined) {
       return '--';
     }

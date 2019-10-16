@@ -259,8 +259,9 @@ export const reducer = (state: State = initialState, action: Action) => {
         eventScore,
         eventScoreModifier,
         spring,
-        springModifier
-      } = action.payload;
+        springModifier,
+        velocityFactor
+      } = action.payload.factors;
       return {
         ...state,
         loading: false,
@@ -269,7 +270,8 @@ export const reducer = (state: State = initialState, action: Action) => {
           eventScore,
           eventScoreModifier,
           spring,
-          springModifier
+          springModifier,
+          velocityFactor
         }
       };
     case FETCH_EVENT_ERROR:

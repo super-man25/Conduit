@@ -19,12 +19,13 @@ export function* fetchEvent(action: FetchEventAction): Saga {
     const { payload: eventId } = action;
 
     const event = yield call(eventService.getOne, eventId);
+    const { factors } = event;
     yield put({ type: types.FETCH_EVENT_SUCCESS, payload: event });
     yield put({
       type: types.FETCH_AUTOMATED_SPRING_VALUE,
       payload: {
         id: eventId,
-        eventScore: event.eventScore + event.eventScoreModifier
+        eventScore: factors.eventScore + factors.eventScoreModifier
       }
     });
   } catch (err) {
