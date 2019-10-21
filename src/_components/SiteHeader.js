@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import sprocketPng from '_images/sprocket.png';
+import settingsIcon from '_images/settingsIcon.svg';
 import logoSvg from '_images/logo.svg';
 import {
   cssConstants,
@@ -19,7 +19,7 @@ import { actions as clientActions } from '_state/client';
 import { actions as clientListActions } from '_state/clientList';
 import { Icon, Flex, UserWelcome } from './';
 
-export const StyledSiteHeader = styled.div`
+const StyledSiteHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,11 +30,18 @@ export const StyledSiteHeader = styled.div`
   background: ${cssConstants.PRIMARY_BLUE};
 `;
 
+const DropdownContainer = styled.div`
+  position: relative;
+  z-index: ${zIndexes.BASE};
+  display: flex;
+  align-items: center;
+`;
+
 const caretWidth = 20;
 
-export const DropdownMenuWrapper = styled.div`
+const DropdownMenu = styled.div`
   position: absolute;
-  right: 0;
+  right: -10px;
   top: calc(100% + ${caretWidth / 2}px);
   padding: 25px;
   background: ${cssConstants.SECONDARY_BLUE};
@@ -58,14 +65,9 @@ export const DropdownMenuWrapper = styled.div`
   }
 `;
 
-const MenuIcon = styled.div`
-  width: 40px;
-  background-image: ${`url(${sprocketPng})`};
-  background-position: center center;
-  background-repeat: no-repeat;
+const MenuIcon = styled.img`
+  width: 20px;
   cursor: pointer;
-  position: relative;
-  z-index: ${zIndexes.BASE};
 `;
 
 const MenuItem = styled(Link)`
@@ -121,9 +123,10 @@ export const SiteHeader = () => {
           clientList={clientList}
           updateClient={(client) => dispatch(clientActions.update(client))}
         />
-        <MenuIcon onClick={() => setShowMenu(true)} ref={dropdownRef}>
+        <DropdownContainer ref={dropdownRef}>
+          <MenuIcon src={settingsIcon} onClick={() => setShowMenu(!showMenu)} />
           {showMenu && (
-            <DropdownMenuWrapper ref={dropdownRef}>
+            <DropdownMenu>
               <MenuItem to="/settings/team">Settings</MenuItem>
               {hasTicketsDotComIntegration && (
                 <MenuItem to="/pricing">Pricing Rules</MenuItem>
@@ -135,9 +138,9 @@ export const SiteHeader = () => {
                 Logout
                 <LogoutIcon name="logout" size={18} color="white" />
               </MenuItem>
-            </DropdownMenuWrapper>
+            </DropdownMenu>
           )}
-        </MenuIcon>
+        </DropdownContainer>
       </Flex>
     </StyledSiteHeader>
   );

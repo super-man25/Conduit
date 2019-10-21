@@ -59,7 +59,7 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-hGoxap",
+                "componentId": "sc-fjmCvl",
                 "isStatic": true,
                 "rules": Array [
                   "
@@ -80,7 +80,7 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
               "displayName": "styled.input",
               "foldedComponentIds": Array [],
               "render": [Function],
-              "styledComponentId": "sc-hGoxap",
+              "styledComponentId": "sc-fjmCvl",
               "target": "input",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -181,7 +181,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-hGoxap",
+                "componentId": "sc-fjmCvl",
                 "isStatic": true,
                 "rules": Array [
                   "
@@ -202,7 +202,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
               "displayName": "styled.input",
               "foldedComponentIds": Array [],
               "render": [Function],
-              "styledComponentId": "sc-hGoxap",
+              "styledComponentId": "sc-fjmCvl",
               "target": "input",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -311,7 +311,7 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "sc-hGoxap",
+                "componentId": "sc-fjmCvl",
                 "isStatic": true,
                 "rules": Array [
                   "
@@ -332,7 +332,7 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
               "displayName": "styled.input",
               "foldedComponentIds": Array [],
               "render": [Function],
-              "styledComponentId": "sc-hGoxap",
+              "styledComponentId": "sc-fjmCvl",
               "target": "input",
               "toString": [Function],
               "warnTooManyClasses": [Function],
