@@ -45,6 +45,7 @@ type Stats = {
   wins: number,
   losses: number,
   ties?: number,
+  overtimeLosses?: number,
   gamesTotal: number
 };
 
@@ -69,6 +70,15 @@ export const TeamOverviewPresenter = (props: Props) => {
     stats
   } = props;
 
+  const calculateRecordWithOvertimeLosses = (
+    wins: ?number,
+    losses: ?number,
+    overtimeLosses: ?number
+  ) => {
+    return `${stats.wins || '0'} - ${stats.losses ||
+      '0'} - ${stats.overtimeLosses || '0'}`;
+  };
+
   const calculateRecordWithTie = (
     wins: ?number,
     losses: ?number,
@@ -88,6 +98,12 @@ export const TeamOverviewPresenter = (props: Props) => {
     }
     if (performanceType === 'NFL' || performanceType === 'MLS') {
       return calculateRecordWithTie(stats.wins, stats.losses, stats.ties);
+    } else if (performanceType === 'NHL') {
+      return calculateRecordWithOvertimeLosses(
+        stats.wins,
+        stats.losses,
+        stats.overtimeLosses
+      );
     } else {
       return calculateRecord(stats.wins, stats.losses);
     }
@@ -111,6 +127,8 @@ export const TeamOverviewPresenter = (props: Props) => {
   const showRecordLabel = (performanceType: PerformanceType) => {
     if (performanceType === 'NFL' || performanceType === 'MLS') {
       return 'Win - Loss - Tie';
+    } else if (performanceType === 'NHL') {
+      return 'Win - Loss - OT Loss';
     } else {
       return 'Win - Loss';
     }
