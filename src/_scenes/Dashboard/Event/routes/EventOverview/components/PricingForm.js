@@ -3,9 +3,16 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Box, Flex, H4, NumberInputField, Text, TextButton } from '_components';
 import { cssConstants } from '_constants';
-import { fixedOrDash, safeAdd } from '_helpers/string-utils';
+import { fixedOrDash } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
 import { PricingTableHeader } from './PricingTableHeader';
+import {
+  velocityScore,
+  finalEventScore,
+  finalSpringValue,
+  SPRING_DECIMALS,
+  SCORE_DECIMALS
+} from '_helpers/pricing-utils';
 
 const StyledPricingForm = styled(Flex)`
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
@@ -36,13 +43,16 @@ type Props = {
   setIsEditing: Function
 };
 
-const SPRING_DECIMALS = 4;
-const SCORE_DECIMALS = 2;
-
 export const PricingForm = (props: Props) => {
   const {
     handleChange,
-    pendingFactors: { eventScore, eventScoreModifier, spring, springModifier },
+    pendingFactors: {
+      eventScore,
+      eventScoreModifier,
+      spring,
+      springModifier,
+      velocityFactor
+    },
     fetchAutomatedSpring,
     eventId,
     pricingError,
@@ -63,8 +73,12 @@ export const PricingForm = (props: Props) => {
   };
 
   const updateSpring = () => {
-    const total = safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS);
-    fetchAutomatedSpring(eventId, total !== '--' ? Number(total) : eventScore);
+    const total = +finalEventScore(
+      eventScore,
+      velocityFactor,
+      eventScoreModifier
+    );
+    fetchAutomatedSpring(eventId, total);
   };
 
   useEffect(() => (pricingError ? setIsEditing(true) : setIsEditing(false)), [
@@ -150,18 +164,41 @@ export const PricingForm = (props: Props) => {
           </Flex>
         </Flex>
 
+        <Flex
+          style={{
+            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`
+          }}
+          padding="14px 0"
+          direction="row"
+          align="center"
+          minHeight="36px"
+        >
+          <Flex width="33%">
+            <Text color={cssConstants.PRIMARY_GRAY}>VELOCITY</Text>
+          </Flex>
+          <Flex width="33%" justify="flex-end">
+            <Text textAlign="right">
+              {fixedOrDash(
+                velocityScore(eventScore, velocityFactor),
+                SCORE_DECIMALS
+              )}
+            </Text>
+          </Flex>
+          <Flex width="33%" justify="flex-end"></Flex>
+        </Flex>
+
         <Flex padding="14px 0" direction="row" align="center" minHeight="36px">
           <Box width="33%">
             <Text weight="heavy">FINAL</Text>
           </Box>
           <Box width="33%">
             <Text weight="heavy" textAlign="right">
-              {safeAdd(eventScore, eventScoreModifier, SCORE_DECIMALS)}
+              {finalEventScore(eventScore, velocityFactor, eventScoreModifier)}
             </Text>
           </Box>
           <Box width="33%">
             <Text weight="heavy" textAlign="right">
-              {safeAdd(spring, springModifier, SPRING_DECIMALS)}
+              {finalSpringValue(spring, springModifier)}
             </Text>
           </Box>
         </Flex>

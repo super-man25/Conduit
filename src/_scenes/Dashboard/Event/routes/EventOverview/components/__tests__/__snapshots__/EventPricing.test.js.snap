@@ -564,6 +564,41 @@ exports[`renders correctly 1`] = `
           <div
             className="c20"
             direction="row"
+            style={
+              Object {
+                "borderBottom": "1px solid #EEEEEE",
+              }
+            }
+          >
+            <div
+              className="c23"
+              width="33%"
+            >
+              <p
+                className="c21"
+                color="#999999"
+              >
+                VELOCITY
+              </p>
+            </div>
+            <div
+              className="c24"
+              width="33%"
+            >
+              <p
+                className="c22"
+              >
+                --
+              </p>
+            </div>
+            <div
+              className="c24"
+              width="33%"
+            />
+          </div>
+          <div
+            className="c20"
+            direction="row"
           >
             <div
               className="c18"
@@ -582,7 +617,7 @@ exports[`renders correctly 1`] = `
               <p
                 className="c26"
               >
-                2.00
+                --
               </p>
             </div>
             <div

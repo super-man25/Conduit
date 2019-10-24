@@ -99,7 +99,8 @@ describe('sagas', () => {
       eventScore: 1,
       eventScoreModifier: 1,
       spring: 1,
-      springModifier: 1
+      springModifier: 1,
+      velocityFactor: 1
     };
     const action = fetch(1);
     const generator = cloneableGenerator(fetchPricingPreview)(action);
@@ -114,6 +115,7 @@ describe('sagas', () => {
     expect(generator.next().value).toEqual(
       call(eventService.getPricingPreview, 1, 2, 2)
     );
+
     // success path
     const success = generator.clone();
     const pricingPreview = 'pricingPreview';

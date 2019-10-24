@@ -1,6 +1,7 @@
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { call, put } from 'redux-saga/effects';
 import { ApiError } from '_helpers/api';
+import { finalEventScore } from '_helpers/pricing-utils';
 import { eventService } from '_services';
 import alertActions from '_state/alert/actions';
 import { types as eventListTypes } from '_state/eventList';
@@ -377,7 +378,11 @@ describe('sagas', () => {
   it('should handle fetch an individual event', () => {
     const action = actions.fetchEvent(1);
     const generator = cloneableGenerator(fetchEvent)(action);
-    const factors = { eventScore: 5.0, eventScoreModifier: 0.21 };
+    const factors = {
+      eventScore: 5.0,
+      eventScoreModifier: 0.21,
+      velocityFactor: 1
+    };
     const mockEvent = { id: 1, factors };
     expect(generator.next().value).toEqual(call(eventService.getOne, 1));
 
@@ -396,7 +401,11 @@ describe('sagas', () => {
         type: types.FETCH_AUTOMATED_SPRING_VALUE,
         payload: {
           id: mockEvent.id,
-          eventScore: factors.eventScore + factors.eventScoreModifier
+          eventScore: +finalEventScore(
+            factors.eventScore,
+            factors.velocityFactor,
+            factors.eventScoreModifier
+          )
         }
       })
     );

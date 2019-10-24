@@ -10,7 +10,9 @@ import {
   formatNumber,
   formatUSD,
   readableDateAndTime,
-  isPastEvent
+  isPastEvent,
+  finalEventScore,
+  finalSpringValue
 } from '_helpers';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
 
@@ -130,12 +132,12 @@ type Props = {
 
 export class EventListItem extends React.PureComponent<Props> {
   calculateEventScore = (event: EDEvent) => {
-    const { eventScore, eventScoreModifier } = event.factors;
+    const { eventScore, eventScoreModifier, velocityFactor } = event.factors;
     if (eventScore === undefined) {
       return '--';
     }
 
-    return (eventScore + eventScoreModifier).toFixed(2);
+    return finalEventScore(eventScore, velocityFactor, eventScoreModifier);
   };
 
   calculateSpring = (event: EDEvent) => {
@@ -144,7 +146,7 @@ export class EventListItem extends React.PureComponent<Props> {
       return '--';
     }
 
-    return `${(spring + springModifier).toFixed(2)}%`;
+    return `${finalSpringValue(spring, springModifier, 2)}%`;
   };
 
   render() {

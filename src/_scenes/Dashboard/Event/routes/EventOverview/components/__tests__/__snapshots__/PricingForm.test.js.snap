@@ -303,6 +303,41 @@ exports[`render correctly 1`] = `
     <div
       className="c8"
       direction="row"
+      style={
+        Object {
+          "borderBottom": "1px solid #EEEEEE",
+        }
+      }
+    >
+      <div
+        className="c11"
+        width="33%"
+      >
+        <p
+          className="c9"
+          color="#999999"
+        >
+          VELOCITY
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      >
+        <p
+          className="c10"
+        >
+          --
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      />
+    </div>
+    <div
+      className="c8"
+      direction="row"
     >
       <div
         className="c6"
@@ -321,7 +356,7 @@ exports[`render correctly 1`] = `
         <p
           className="c14"
         >
-          2.00
+          --
         </p>
       </div>
       <div

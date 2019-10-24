@@ -12,6 +12,7 @@ import type {
   SaveAdminModifiersAction,
   FetchAutomatedSpringValueAction
 } from '.';
+import { finalEventScore } from '_helpers/pricing-utils';
 
 // Workers
 export function* fetchEvent(action: FetchEventAction): Saga {
@@ -19,13 +20,19 @@ export function* fetchEvent(action: FetchEventAction): Saga {
     const { payload: eventId } = action;
 
     const event = yield call(eventService.getOne, eventId);
-    const { factors } = event;
+    const {
+      factors: { eventScore, velocityFactor, eventScoreModifier }
+    } = event;
     yield put({ type: types.FETCH_EVENT_SUCCESS, payload: event });
     yield put({
       type: types.FETCH_AUTOMATED_SPRING_VALUE,
       payload: {
         id: eventId,
-        eventScore: factors.eventScore + factors.eventScoreModifier
+        eventScore: +finalEventScore(
+          eventScore,
+          velocityFactor,
+          eventScoreModifier
+        )
       }
     });
   } catch (err) {
