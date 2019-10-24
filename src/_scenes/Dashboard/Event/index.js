@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import { CenteredLoader } from '_components';
 import { connect } from 'react-redux';
 import { actions } from '_state/event';
@@ -8,12 +8,18 @@ import type { State as EventState } from '_state/event';
 import { replace } from 'connected-react-router';
 import EventInventory from './routes/EventInventory';
 import EventOverview from './routes/EventOverview';
+import { SecuredRoute } from '_components';
+
+import type { EDUser } from '_models/user';
 
 type Props = {
   match: { params: { id: string } },
   replace: typeof replace,
   fetchEvent: typeof actions.fetchEvent,
-  eventState: EventState
+  eventState: EventState,
+  authState: {
+    model: EDUser
+  }
 };
 
 export class EventRoute extends React.Component<Props> {
@@ -32,7 +38,8 @@ export class EventRoute extends React.Component<Props> {
 
   render() {
     const {
-      eventState: { event, error, loading }
+      eventState: { event, error, loading },
+      authState
     } = this.props;
 
     if (loading) {
@@ -50,8 +57,16 @@ export class EventRoute extends React.Component<Props> {
     if (!!event) {
       return (
         <Switch>
-          <Route path="/event/:id/inventory" component={EventInventory} />
-          <Route path="/event/:id" component={EventOverview} />
+          <SecuredRoute
+            path="/event/:id/inventory"
+            authorized={!!authState.model}
+            component={EventInventory}
+          />
+          <SecuredRoute
+            path="/event/:id"
+            authorized={!!authState.model}
+            component={EventOverview}
+          />
           <Redirect to="/season" />
         </Switch>
       );
@@ -62,7 +77,8 @@ export class EventRoute extends React.Component<Props> {
 }
 
 const mapStateToProps = (state) => ({
-  eventState: state.event
+  eventState: state.event,
+  authState: state.auth
 });
 
 const mapDispatchToProps = {
