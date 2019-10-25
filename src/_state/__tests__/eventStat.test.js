@@ -212,6 +212,73 @@ describe('reducer', () => {
     );
   });
 
+  it('should handle conflicting zero/nonzero projections with FETCH_SUCCESS', () => {
+    const prevState = {
+      ...initialState,
+      loading: true,
+      eventStats: [],
+      eventStatsMeta: null
+    };
+
+    const eventStats = [
+      {
+        inventory: 100,
+        isProjected: true,
+        periodicInventory: 0,
+        periodicRevenue: 6704.91,
+        revenue: 26184.1,
+        timestamp: '2019-09-25T04:00:00Z'
+      },
+      {
+        inventory: 2568,
+        isProjected: true,
+        periodicInventory: -2,
+        periodicRevenue: 0,
+        revenue: 13142.28,
+        timestamp: '2019-09-18T04:00:00Z'
+      }
+    ];
+    const eventStatsMeta = {
+      interval: 'So meta',
+      timeZone: 'America/New_York'
+    };
+    const eventStatsResponse = {
+      data: eventStats,
+      meta: eventStatsMeta
+    };
+    const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
+    const nextState = reducer(prevState, action);
+    const serializedEventStats = serialize(eventStats);
+
+    expect(nextState).toEqual({
+      ...initialState,
+      loading: false,
+      eventStats: serializedEventStats,
+      eventStatsMeta
+    });
+
+    // Assert on projection keys
+    const projectedStat = serializedEventStats.find((e) => e.isProjected);
+    const negativeProjection = eventStats.find((e) => e.isProjected);
+
+    const projectedStat1 = serializedEventStats[0];
+    const projectedStat2 = serializedEventStats[1];
+
+    expect(projectedStat1).toHaveProperty('projectedPeriodicRevenue');
+    expect(projectedStat1).toHaveProperty('projectedPeriodicInventory');
+    expect(projectedStat1).toHaveProperty('projectedRevenue');
+    expect(projectedStat1).toHaveProperty('projectedInventory');
+    expect(projectedStat1.projectedPeriodicInventory).toBe(0);
+    expect(projectedStat1.projectedPeriodicRevenue).toBe(0);
+
+    expect(projectedStat2).toHaveProperty('projectedPeriodicRevenue');
+    expect(projectedStat2).toHaveProperty('projectedPeriodicInventory');
+    expect(projectedStat2).toHaveProperty('projectedRevenue');
+    expect(projectedStat2).toHaveProperty('projectedInventory');
+    expect(projectedStat2.projectedPeriodicInventory).toBe(0);
+    expect(projectedStat2.projectedPeriodicRevenue).toBe(0);
+  });
+
   it('should handle FETCH_ERROR', () => {
     const prevState = {
       ...initialState,
