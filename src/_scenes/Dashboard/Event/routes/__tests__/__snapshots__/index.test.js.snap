@@ -2,7 +2,8 @@
 
 exports[`<Event /> index route should render correctly 1`] = `
 <Switch>
-  <Route
+  <SecuredRoute
+    authorized={true}
     component={
       Object {
         "$$typeof": Symbol(react.memo),
@@ -14,7 +15,8 @@ exports[`<Event /> index route should render correctly 1`] = `
     }
     path="/event/:id/inventory"
   />
-  <Route
+  <SecuredRoute
+    authorized={true}
     component={
       Object {
         "$$typeof": Symbol(react.memo),

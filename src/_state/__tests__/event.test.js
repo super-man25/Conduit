@@ -13,6 +13,7 @@ import {
   saveAdminModifiers,
   toggleBroadcasting
 } from '../event/saga';
+import { push } from 'connected-react-router';
 
 describe('actions', () => {
   it('should create an action to fetch an event', () => {
@@ -413,6 +414,8 @@ describe('sagas', () => {
     expect(fail.throw(error).value).toEqual(
       put({ type: types.FETCH_EVENT_ERROR, payload: error })
     );
+
+    expect(fail.next().value).toEqual(put(push('/season')));
   });
 
   it('should handle toggling broadcasting for an event', () => {

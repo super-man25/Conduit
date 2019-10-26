@@ -6,7 +6,10 @@ const createProps = () => ({
   match: { params: { id: 1 } },
   replace: jest.fn(),
   fetchEvent: jest.fn(),
-  eventState: { event: { id: 1 }, loading: false, error: null }
+  eventState: { event: { id: 1 }, loading: false, error: null },
+  authState: {
+    model: true
+  }
 });
 
 describe('<Event /> index route', () => {
@@ -21,14 +24,6 @@ describe('<Event /> index route', () => {
     props.eventState.loading = true;
     const wrapper = shallow(<EventRoute {...props} />);
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should replace the current route with the season route when there is an error fetching an event', () => {
-    const props = createProps();
-    props.eventState.error = 'Some Error';
-    shallow(<EventRoute {...props} />);
-
-    expect(props.replace).toBeCalled();
   });
 
   it('should fetch an event on mount', () => {
