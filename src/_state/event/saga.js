@@ -13,6 +13,7 @@ import type {
   FetchAutomatedSpringValueAction
 } from '.';
 import { finalEventScore } from '_helpers/pricing-utils';
+import { push } from 'connected-react-router';
 
 // Workers
 export function* fetchEvent(action: FetchEventAction): Saga {
@@ -37,6 +38,7 @@ export function* fetchEvent(action: FetchEventAction): Saga {
     });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_ERROR, payload: err });
+    yield put(push('/season'));
   }
 }
 

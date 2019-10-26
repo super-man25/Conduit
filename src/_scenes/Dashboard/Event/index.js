@@ -38,9 +38,11 @@ export class EventRoute extends React.Component<Props> {
 
   render() {
     const {
-      eventState: { event, error, loading },
+      eventState: { event, loading },
       authState
     } = this.props;
+
+    const isAuthorized = !!authState.model;
 
     if (loading) {
       return (
@@ -50,21 +52,17 @@ export class EventRoute extends React.Component<Props> {
       );
     }
 
-    if (error) {
-      this.props.replace('/season');
-    }
-
     if (!!event) {
       return (
         <Switch>
           <SecuredRoute
             path="/event/:id/inventory"
-            authorized={!!authState.model}
+            authorized={isAuthorized}
             component={EventInventory}
           />
           <SecuredRoute
             path="/event/:id"
-            authorized={!!authState.model}
+            authorized={isAuthorized}
             component={EventOverview}
           />
           <Redirect to="/season" />

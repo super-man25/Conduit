@@ -1,11 +1,21 @@
+// @flow
 import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR, RESET } from './actions';
+import type { Action } from './actions';
 
-export const initialState = {
+export type TeamStatState = {
+  +loading: boolean,
+  +allSeasons: Object[]
+};
+
+export const initialState: TeamStatState = {
   loading: false,
   allSeasons: []
 };
 
-export default function teamStatReducer(state = initialState, action) {
+export default function teamStatReducer(
+  state: TeamStatState = initialState,
+  action: Action
+) {
   switch (action.type) {
     case FETCH_ASYNC:
       return { ...state, loading: true };

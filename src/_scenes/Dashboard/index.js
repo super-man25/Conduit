@@ -1,7 +1,9 @@
+// @flow
 import {
   FullContent,
   PageWrapper,
   PrimaryContent,
+  SecuredRoute,
   Sidebar,
   SidebarContent,
   SidebarHeader,
@@ -9,7 +11,7 @@ import {
   TeamOverview
 } from '_components';
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import { Event } from './Event';
 import EventListContainer from './Event/containers/EventListContainer';
 import Season from './Season';
@@ -18,10 +20,23 @@ import { actions as teamStatActions } from '_state/teamStat';
 import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
 import { actions as clientActions } from '_state/client';
 import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import type { TeamStatState } from '_state/teamStat';
+import type { EDUser } from '_models/user';
 
-class Dashboard extends React.Component {
+type Props = {
+  teamStatActions: typeof teamStatActions,
+  clientActions: typeof clientActions,
+  activeSeasonState: number,
+  teamStatState: TeamStatState,
+  sidebarIsOpen: boolean,
+  uiActions: typeof uiActions,
+  authState: {
+    model: EDUser
+  }
+};
+
+class Dashboard extends React.Component<Props> {
   componentDidMount() {
     this.props.teamStatActions.fetch();
     this.props.clientActions.fetchIntegrations();
@@ -42,8 +57,11 @@ class Dashboard extends React.Component {
       activeSeasonState,
       sidebarIsOpen,
       teamStatState,
-      uiActions: { toggleSidebar }
+      uiActions: { toggleSidebar },
+      authState
     } = this.props;
+
+    const isAuthorized = !!authState.model;
 
     return (
       <PageWrapper>
@@ -65,8 +83,16 @@ class Dashboard extends React.Component {
           </Sidebar>
           <PrimaryContent>
             <Switch>
-              <Route path="/season" component={Season} />
-              <Route path="/event/:id" component={Event} />
+              <SecuredRoute
+                path="/season"
+                component={Season}
+                authorized={isAuthorized}
+              />
+              <SecuredRoute
+                path="/event/:id"
+                component={Event}
+                authorized={isAuthorized}
+              />
               <Redirect to="/season" />
             </Switch>
           </PrimaryContent>
@@ -76,17 +102,12 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
-  activeSeasonState: PropTypes.number,
-  teamStatState: PropTypes.shape(),
-  teamStatActions: PropTypes.shape()
-};
-
 function mapStateToProps(state) {
   return {
     activeSeasonState: state.season.activeId,
     sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state),
-    teamStatState: state.teamStat
+    teamStatState: state.teamStat,
+    authState: state.auth
   };
 }
 
