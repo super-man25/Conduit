@@ -27,6 +27,12 @@ exports[`renders correctly 1`] = `
   background-size: cover;
 }
 
+@media (max-width:1024px) {
+  .c2 {
+    display: none;
+  }
+}
+
 <div
   className="c0"
 >
@@ -65,6 +71,12 @@ exports[`renders correctly with children 1`] = `
   background-repeat: no-repeat;
   background-position: 80% 50%;
   background-size: cover;
+}
+
+@media (max-width:1024px) {
+  .c2 {
+    display: none;
+  }
 }
 
 <div

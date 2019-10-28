@@ -1,6 +1,16 @@
 // @flow
+
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router-dom';
+
+import { actions as authActions } from '_state/auth';
+import stadiumImage from '_images/stadiumseats.jpg';
+import EdLogoDark from '_images/logo_dark.svg';
+import { validateEmail } from '_helpers/string-utils';
+import type { EDUser } from '_models/user';
 import {
-  CenteredContainer,
   H3,
   HelpBlockDiv,
   ImageLayout,
@@ -11,22 +21,14 @@ import {
   Flex,
   AsyncButton
 } from '_components';
-import stadiumImage from '_images/stadiumseats.jpg';
-import { actions as authActions } from '_state/auth';
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import EdLogoDark from '_images/logo_dark.svg';
 import {
+  CenteredContainer,
   Content,
   LoginFooter,
   LogoImg,
   ForgotLink,
   HideMe
 } from './components/styled';
-import { validateEmail } from '_helpers/string-utils';
-import type { EDUser } from '_models/user';
-import { Redirect } from 'react-router-dom';
 
 type Props = {
   authState: {
@@ -148,88 +150,86 @@ export class LoginPresenter extends React.Component<Props, State> {
       <ImageLayout imageSrc={`url(${stadiumImage})`}>
         <Content>
           <Flex>
-            <Spacing padding="20% 40px 40px">
-              <CenteredContainer maxWidth="400px">
-                <LogoImg src={EdLogoDark} alt="Event Dynamic Logo" />
-                <H3 style={{ marginBottom: '5px' }}>
-                  {forgot ? 'Forgot Password' : 'Log In'}
-                </H3>
-                <form name="form" onSubmit={this.handleSubmit}>
-                  <HelpBlockDiv
-                    type={'alert-danger'}
-                    show={showAlert && submitted}
-                    style={{
-                      marginTop: showAlert && submitted ? '15px' : '0px',
-                      marginBottom: showAlert && submitted ? '10px' : '0px',
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    Incorrect Email Address or Password.
-                  </HelpBlockDiv>
-                  <Label htmlFor="email">Email Address</Label>
+            <CenteredContainer>
+              <LogoImg src={EdLogoDark} alt="Event Dynamic Logo" />
+              <H3 style={{ marginBottom: '5px' }}>
+                {forgot ? 'Forgot Password' : 'Log In'}
+              </H3>
+              <form name="form" onSubmit={this.handleSubmit}>
+                <HelpBlockDiv
+                  type={'alert-danger'}
+                  show={showAlert && submitted}
+                  style={{
+                    marginTop: showAlert && submitted ? '15px' : '0px',
+                    marginBottom: showAlert && submitted ? '10px' : '0px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  Incorrect Email Address or Password.
+                </HelpBlockDiv>
+                <Label htmlFor="email">Email Address</Label>
+                <Input
+                  type="text"
+                  name="email"
+                  id="email"
+                  data-test-id="email-input"
+                  autoComplete="new-email"
+                  value={email}
+                  valid={validEmail && !(showAlert && submitted)}
+                  inValid={
+                    (!validEmail && (submitted || touched.email)) ||
+                    (showAlert && submitted)
+                  }
+                  onChange={this.handleChange}
+                  onBlur={this.handleBlur}
+                />
+                <HelpBlockDiv
+                  type="alert-danger"
+                  show={!validEmail && (submitted || touched.email)}
+                >
+                  A valid Email is required
+                </HelpBlockDiv>
+                <HideMe show={!forgot}>
+                  <Label htmlFor="password">Password</Label>
                   <Input
-                    type="text"
-                    name="email"
-                    id="email"
-                    data-test-id="email-input"
-                    autoComplete="new-email"
-                    value={email}
-                    valid={validEmail && !(showAlert && submitted)}
+                    type="password"
+                    name="password"
+                    id="password"
+                    data-test-id="password-input"
+                    autoComplete="new-password"
+                    value={password}
                     inValid={
-                      (!validEmail && (submitted || touched.email)) ||
+                      (!password && (submitted || touched.password)) ||
                       (showAlert && submitted)
                     }
+                    valid={password && !(showAlert && submitted)}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
                   />
                   <HelpBlockDiv
                     type="alert-danger"
-                    show={!validEmail && (submitted || touched.email)}
+                    show={!password && (submitted || touched.password)}
                   >
-                    A valid Email is required
+                    Password is required
                   </HelpBlockDiv>
-                  <HideMe show={!forgot}>
-                    <Label htmlFor="password">Password</Label>
-                    <Input
-                      type="password"
-                      name="password"
-                      id="password"
-                      data-test-id="password-input"
-                      autoComplete="new-password"
-                      value={password}
-                      inValid={
-                        (!password && (submitted || touched.password)) ||
-                        (showAlert && submitted)
-                      }
-                      valid={password && !(showAlert && submitted)}
-                      onChange={this.handleChange}
-                      onBlur={this.handleBlur}
-                    />
-                    <HelpBlockDiv
-                      type="alert-danger"
-                      show={!password && (submitted || touched.password)}
-                    >
-                      Password is required
-                    </HelpBlockDiv>
-                  </HideMe>
-                  <Flex justify="space-between" align="center">
-                    <AsyncButton
-                      id="login"
-                      data-test-id="login-button"
-                      disabled={!submitEnabled}
-                      isLoading={
-                        authState.loggingIn || authState.requestingPassword
-                      }
-                    >
-                      Submit
-                    </AsyncButton>
-                    <ForgotLink onClick={this.handleForgotClick}>
-                      {forgot ? 'Back to Log In' : 'Forgot Password?'}
-                    </ForgotLink>
-                  </Flex>
-                </form>
-              </CenteredContainer>
-            </Spacing>
+                </HideMe>
+                <Flex justify="space-between" align="center">
+                  <AsyncButton
+                    id="login"
+                    data-test-id="login-button"
+                    disabled={!submitEnabled}
+                    isLoading={
+                      authState.loggingIn || authState.requestingPassword
+                    }
+                  >
+                    Submit
+                  </AsyncButton>
+                  <ForgotLink onClick={this.handleForgotClick}>
+                    {forgot ? 'Back to Log In' : 'Forgot Password?'}
+                  </ForgotLink>
+                </Flex>
+              </form>
+            </CenteredContainer>
           </Flex>
           <LoginFooter>
             If you do not already have an account please contact{' '}

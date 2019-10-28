@@ -6,109 +6,103 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
 >
   <styled.div>
     <Flex>
-      <styled.div
-        padding="20% 40px 40px"
-      >
-        <styled.div
-          maxWidth="400px"
+      <styled.div>
+        <styled.img
+          alt="Event Dynamic Logo"
+          src="logo_dark.svg"
+        />
+        <styled.h3
+          style={
+            Object {
+              "marginBottom": "5px",
+            }
+          }
         >
-          <styled.img
-            alt="Event Dynamic Logo"
-            src="logo_dark.svg"
-          />
-          <styled.h3
+          Log In
+        </styled.h3>
+        <form
+          name="form"
+          onSubmit={[Function]}
+        >
+          <styled.div
+            show={false}
             style={
               Object {
-                "marginBottom": "5px",
+                "fontWeight": "bold",
+                "marginBottom": "0px",
+                "marginTop": "0px",
               }
             }
+            type="alert-danger"
           >
-            Log In
-          </styled.h3>
-          <form
-            name="form"
-            onSubmit={[Function]}
+            Incorrect Email Address or Password.
+          </styled.div>
+          <styled.label
+            htmlFor="email"
           >
-            <styled.div
-              show={false}
-              style={
-                Object {
-                  "fontWeight": "bold",
-                  "marginBottom": "0px",
-                  "marginTop": "0px",
-                }
-              }
-              type="alert-danger"
-            >
-              Incorrect Email Address or Password.
-            </styled.div>
+            Email Address
+          </styled.label>
+          <styled.input
+            autoComplete="new-email"
+            data-test-id="email-input"
+            id="email"
+            inValid={false}
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            valid={false}
+            value=""
+          />
+          <styled.div
+            type="alert-danger"
+          >
+            A valid Email is required
+          </styled.div>
+          <styled.div
+            show={true}
+          >
             <styled.label
-              htmlFor="email"
+              htmlFor="password"
             >
-              Email Address
+              Password
             </styled.label>
             <styled.input
-              autoComplete="new-email"
-              data-test-id="email-input"
-              id="email"
+              autoComplete="new-password"
+              data-test-id="password-input"
+              id="password"
               inValid={false}
-              name="email"
+              name="password"
               onBlur={[Function]}
               onChange={[Function]}
-              type="text"
-              valid={false}
+              type="password"
+              valid=""
               value=""
             />
             <styled.div
               type="alert-danger"
             >
-              A valid Email is required
+              Password is required
             </styled.div>
-            <styled.div
-              show={true}
+          </styled.div>
+          <Flex
+            align="center"
+            justify="space-between"
+          >
+            <AsyncButton
+              data-test-id="login-button"
+              disabled={true}
+              id="login"
             >
-              <styled.label
-                htmlFor="password"
-              >
-                Password
-              </styled.label>
-              <styled.input
-                autoComplete="new-password"
-                data-test-id="password-input"
-                id="password"
-                inValid={false}
-                name="password"
-                onBlur={[Function]}
-                onChange={[Function]}
-                type="password"
-                valid=""
-                value=""
-              />
-              <styled.div
-                type="alert-danger"
-              >
-                Password is required
-              </styled.div>
-            </styled.div>
-            <Flex
-              align="center"
-              justify="space-between"
+              Submit
+            </AsyncButton>
+            <styled.span
+              onClick={[Function]}
             >
-              <AsyncButton
-                data-test-id="login-button"
-                disabled={true}
-                id="login"
-              >
-                Submit
-              </AsyncButton>
-              <styled.span
-                onClick={[Function]}
-              >
-                Forgot Password?
-              </styled.span>
-            </Flex>
-          </form>
-        </styled.div>
+              Forgot Password?
+            </styled.span>
+          </Flex>
+        </form>
       </styled.div>
     </Flex>
     <styled.div>
@@ -132,109 +126,103 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
 >
   <styled.div>
     <Flex>
-      <styled.div
-        padding="20% 40px 40px"
-      >
-        <styled.div
-          maxWidth="400px"
+      <styled.div>
+        <styled.img
+          alt="Event Dynamic Logo"
+          src="logo_dark.svg"
+        />
+        <styled.h3
+          style={
+            Object {
+              "marginBottom": "5px",
+            }
+          }
         >
-          <styled.img
-            alt="Event Dynamic Logo"
-            src="logo_dark.svg"
-          />
-          <styled.h3
+          Log In
+        </styled.h3>
+        <form
+          name="form"
+          onSubmit={[Function]}
+        >
+          <styled.div
+            show={false}
             style={
               Object {
-                "marginBottom": "5px",
+                "fontWeight": "bold",
+                "marginBottom": "0px",
+                "marginTop": "0px",
               }
             }
+            type="alert-danger"
           >
-            Log In
-          </styled.h3>
-          <form
-            name="form"
-            onSubmit={[Function]}
+            Incorrect Email Address or Password.
+          </styled.div>
+          <styled.label
+            htmlFor="email"
           >
-            <styled.div
-              show={false}
-              style={
-                Object {
-                  "fontWeight": "bold",
-                  "marginBottom": "0px",
-                  "marginTop": "0px",
-                }
-              }
-              type="alert-danger"
-            >
-              Incorrect Email Address or Password.
-            </styled.div>
+            Email Address
+          </styled.label>
+          <styled.input
+            autoComplete="new-email"
+            data-test-id="email-input"
+            id="email"
+            inValid={false}
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            valid={false}
+            value=""
+          />
+          <styled.div
+            type="alert-danger"
+          >
+            A valid Email is required
+          </styled.div>
+          <styled.div
+            show={true}
+          >
             <styled.label
-              htmlFor="email"
+              htmlFor="password"
             >
-              Email Address
+              Password
             </styled.label>
             <styled.input
-              autoComplete="new-email"
-              data-test-id="email-input"
-              id="email"
+              autoComplete="new-password"
+              data-test-id="password-input"
+              id="password"
               inValid={false}
-              name="email"
+              name="password"
               onBlur={[Function]}
               onChange={[Function]}
-              type="text"
-              valid={false}
+              type="password"
+              valid=""
               value=""
             />
             <styled.div
               type="alert-danger"
             >
-              A valid Email is required
+              Password is required
             </styled.div>
-            <styled.div
-              show={true}
+          </styled.div>
+          <Flex
+            align="center"
+            justify="space-between"
+          >
+            <AsyncButton
+              data-test-id="login-button"
+              disabled={true}
+              id="login"
             >
-              <styled.label
-                htmlFor="password"
-              >
-                Password
-              </styled.label>
-              <styled.input
-                autoComplete="new-password"
-                data-test-id="password-input"
-                id="password"
-                inValid={false}
-                name="password"
-                onBlur={[Function]}
-                onChange={[Function]}
-                type="password"
-                valid=""
-                value=""
-              />
-              <styled.div
-                type="alert-danger"
-              >
-                Password is required
-              </styled.div>
-            </styled.div>
-            <Flex
-              align="center"
-              justify="space-between"
+              Submit
+            </AsyncButton>
+            <styled.span
+              onClick={[Function]}
             >
-              <AsyncButton
-                data-test-id="login-button"
-                disabled={true}
-                id="login"
-              >
-                Submit
-              </AsyncButton>
-              <styled.span
-                onClick={[Function]}
-              >
-                Forgot Password?
-              </styled.span>
-            </Flex>
-          </form>
-        </styled.div>
+              Forgot Password?
+            </styled.span>
+          </Flex>
+        </form>
       </styled.div>
     </Flex>
     <styled.div>
