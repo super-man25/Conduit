@@ -1,4 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { cssConstants } from '_constants';
+import { selectors } from '_state/season';
 import {
   H1,
   H4,
@@ -11,16 +17,13 @@ import {
   CenteredLoader
 } from '_components';
 import SeasonRevenuePanel from './components/SeasonRevenuePanel';
-import React from 'react';
-import { withSidebar } from '_hoc';
 import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations';
-import { connect } from 'react-redux';
-import { selectors } from '_state/season';
-import { createStructuredSelector } from 'reselect';
-import { cssConstants } from '_constants';
+import { isMobileDevice } from '_helpers';
+import { useSidebar } from '_hooks';
 
 const SeasonOverviewTitle = styled(H1)`
-  margin: ${(props) => (props.sidebarIsOpen ? '0' : '0 0 0 1rem')};
+  margin: ${(props) =>
+    props.sidebarIsOpen || isMobileDevice ? '0' : '0 0 0 1rem'};
 `;
 
 const Heading = styled(H4)`
@@ -31,7 +34,9 @@ const Heading = styled(H4)`
   letter-spacing: 0.9px;
 `;
 
-const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
+const Season = ({ activeSeason, loading }) => {
+  const [isSidebarOpen, toggleSidebar] = useSidebar();
+
   if (loading) {
     return (
       <PageWrapper style={{ position: 'relative' }}>
@@ -52,9 +57,9 @@ const Season = ({ isSidebarOpen, toggleSidebar, activeSeason, loading }) => {
 
   return (
     <PageWrapper>
-      <Spacing padding="1.5rem 2rem">
+      <Spacing padding="3%">
         <Flex align="center" margin="0 0 1.5rem">
-          {!isSidebarOpen && (
+          {!isSidebarOpen && !isMobileDevice && (
             <TextButton onClick={toggleSidebar}>
               <Icon
                 name="arrow-right"
@@ -80,4 +85,4 @@ const mapStateToProps = createStructuredSelector({
   loading: selectors.selectLoading
 });
 
-export default connect(mapStateToProps)(withSidebar(Season));
+export default connect(mapStateToProps)(Season);

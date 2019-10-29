@@ -30,7 +30,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-gJWqzi",
+          "componentId": "sc-bMvGRv",
           "isStatic": false,
           "rules": Array [
             "
@@ -85,7 +85,7 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           "sc-iELTvK",
         ],
         "render": [Function],
-        "styledComponentId": "sc-gJWqzi",
+        "styledComponentId": "sc-bMvGRv",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

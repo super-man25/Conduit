@@ -2,18 +2,18 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import { Icon, Flex, FlexItem, H4, TextButton, H3, P1 } from '_components';
-import { cssConstants } from '_constants';
-import { Dropdown } from './Dropdown';
 import { connect } from 'react-redux';
-import { selectors, actions } from '_state/season';
-import { selectors as eventListSelectors } from '_state/eventList';
-import { selectors as clientSelectors } from '_state/client';
 import { createStructuredSelector } from 'reselect';
-import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
-import { pluralize } from '_helpers/string-utils';
 import { isAfter } from 'date-fns';
-import { fonts } from '_constants';
+
+import { pluralize } from '_helpers/string-utils';
+import { fonts, cssConstants } from '_constants';
+import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
+import { selectors, actions } from '_state/season';
+import { selectors as clientSelectors } from '_state/client';
+import { selectors as eventListSelectors } from '_state/eventList';
+import { Dropdown } from './Dropdown';
+import { Icon, Flex, FlexItem, H4, TextButton, H3, P1 } from '_components';
 
 const TeamOverviewContainer = styled.div`
   height: 100%;

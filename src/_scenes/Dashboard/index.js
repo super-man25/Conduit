@@ -1,3 +1,15 @@
+// @flow
+
+import React, { Component } from 'react';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import { actions as teamStatActions } from '_state/teamStat';
+import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
+import { actions as clientActions } from '_state/client';
 import {
   FullContent,
   PageWrapper,
@@ -8,20 +20,26 @@ import {
   SiteHeader,
   TeamOverview
 } from '_components';
-import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
-import { Event } from './Event';
 import EventListContainer from './Event/containers/EventListContainer';
+import { Event } from './Event';
 import Season from './Season';
-import { connect } from 'react-redux';
-import { actions as teamStatActions } from '_state/teamStat';
-import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
-import { actions as clientActions } from '_state/client';
-import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
-class Dashboard extends React.Component {
+type Props = {
+  teamStatActions: {
+    fetch: () => void
+  },
+  clientActions: {
+    fetchIntegrations: () => void
+  },
+  activeSeasonState: any,
+  sidebarIsOpen: boolean,
+  teamStatState: Object,
+  uiActions: {
+    toggleSidebar: () => void
+  }
+};
+
+class Dashboard extends Component<Props> {
   componentDidMount() {
     this.props.teamStatActions.fetch();
     this.props.clientActions.fetchIntegrations();

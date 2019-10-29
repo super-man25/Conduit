@@ -18,7 +18,7 @@ type Props = {
 export const EventOverview = ({ event, isAdmin }: Props) =>
   !!event && (
     <PageWrapper>
-      <Box padding="1.5rem 2rem">
+      <Box padding="3%">
         <EventHeader availableInventory={15000} totalInventory={40000} />
         <Spacing height="1rem" />
         <EventChart />

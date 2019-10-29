@@ -31,6 +31,11 @@ const HeaderContainer = styled.div`
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
 `;
 
+const SearchContainer = styled.div`
+  background-color: white;
+  padding: 24px 40px;
+`;
+
 const NoContentWrap = styled.div`
   padding: 10vh 0;
   text-align: center;
@@ -117,7 +122,7 @@ export function EventListPresenter(props: Props) {
   return (
     <Flex height="100%" direction="column" position="relative">
       <HeaderContainer>
-        <Spacing padding="24px 40px">
+        <SearchContainer>
           <Heading>{title}</Heading>
           <Spacing height="4px" />
           <Input
@@ -127,7 +132,7 @@ export function EventListPresenter(props: Props) {
             value={filter}
             data-test-id="event-list-search"
           />
-        </Spacing>
+        </SearchContainer>
       </HeaderContainer>
 
       {loading ? <CenteredLoader /> : renderContent()}

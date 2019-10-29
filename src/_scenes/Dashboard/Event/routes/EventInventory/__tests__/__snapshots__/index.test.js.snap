@@ -7,9 +7,9 @@ exports[`<EventInventory /> index route should render correctly 1`] = `
     height="100%"
   >
     <Styled(styled.div)
-      padding="1.5rem 2rem"
+      padding="3%"
     >
-      <Connect(withSidebarEventHeader)
+      <Connect(EventHeader)
         availableInventory={15000}
         totalInventory={40000}
       />
@@ -53,9 +53,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
     height="100%"
   >
     <Styled(styled.div)
-      padding="1.5rem 2rem"
+      padding="3%"
     >
-      <Connect(withSidebarEventHeader)
+      <Connect(EventHeader)
         availableInventory={15000}
         totalInventory={40000}
       />
@@ -99,9 +99,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
     height="100%"
   >
     <Styled(styled.div)
-      padding="1.5rem 2rem"
+      padding="3%"
     >
-      <Connect(withSidebarEventHeader)
+      <Connect(EventHeader)
         availableInventory={15000}
         totalInventory={40000}
       />

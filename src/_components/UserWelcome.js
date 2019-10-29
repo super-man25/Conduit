@@ -1,8 +1,11 @@
 // @flow
-import React, { useState } from 'react';
+
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+
 import { cssConstants, shadows, zIndexes } from '_constants';
-import { withClickAway } from '_hoc';
+import type { EDClient, EDClientList } from '_models';
+import { isMobileDevice } from '_helpers';
 import {
   Flex,
   FlexItem,
@@ -12,11 +15,11 @@ import {
   TextButton,
   Overlay
 } from '_components';
-import type { EDClient, EDClientList } from '_models';
+import { useClickAway } from '_hooks';
 
-const UserWelcomeDropdown = withClickAway(styled.div`
+const UserWelcomeDropdown = styled.div`
   position: relative;
-`);
+`;
 
 const ClientDropDown = styled.div`
   position: absolute;
@@ -40,6 +43,17 @@ const ClientMenuItem = styled.div`
     background: rgba(75, 152, 207, 0.2);
     cursor: pointer;
   }
+`;
+
+const ClientLogoContainer = styled.div`
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 const ClientLogo = styled.img`
@@ -71,6 +85,13 @@ export const UserWelcome = (props: Props) => {
   const team = name.replace(/primary|secondary/gi, '').trim();
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const dropdownRef = useRef();
+
+  useClickAway({
+    ref: dropdownRef,
+    handleClickAway: () => setIsOpen(false)
+  });
 
   const toggleDropdown = function() {
     setIsOpen(!isOpen);
@@ -118,32 +139,35 @@ export const UserWelcome = (props: Props) => {
 
   return (
     <>
-      <UserWelcomeDropdown
-        onClickAway={() => {
-          setIsOpen(false);
-        }}
-      >
+      <UserWelcomeDropdown ref={dropdownRef}>
         <TextButton onClick={toggleDropdown} padding="8px">
           <Flex align="center" maxWidth="300px">
-            <FlexItem flex="0 1 auto" overflow="hidden">
-              <Text
-                ellipsis
-                color={cssConstants.PRIMARY_WHITE}
-                textTransform="none"
-                textAlign="right"
-                size="14"
-                margin="0 0 4px 0"
-                weight="heavy"
-              >
-                Welcome, {firstName} {lastName}
-              </Text>
-              <Text
-                ellipsis
-                color={cssConstants.PRIMARY_WHITE}
-                textTransform="capitalize"
-                textAlign="right"
-              >{`${team}`}</Text>
-            </FlexItem>
+            {isMobileDevice ? (
+              <ClientLogoContainer>
+                <ClientLogo src={client.logoUrl} />
+              </ClientLogoContainer>
+            ) : (
+              <FlexItem flex="0 1 auto" overflow="hidden">
+                <Text
+                  ellipsis
+                  color={cssConstants.PRIMARY_WHITE}
+                  textTransform="none"
+                  textAlign="right"
+                  size="14"
+                  margin="0 0 4px 0"
+                  weight="heavy"
+                >
+                  Welcome, {firstName} {lastName}
+                </Text>
+                <Text
+                  ellipsis
+                  color={cssConstants.PRIMARY_WHITE}
+                  textTransform="capitalize"
+                  textAlign="right"
+                >{`${team}`}</Text>
+              </FlexItem>
+            )}
+
             <FlexItem>
               <Icon
                 size={24}

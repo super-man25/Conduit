@@ -15,7 +15,6 @@ exports[`renders correctly when closed 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  z-index: 1002;
   border: 1px solid #0A169A;
   background-color: #FFFFFF;
   padding: 8px 12px;
@@ -47,7 +46,6 @@ exports[`renders correctly when open 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  z-index: 1002;
   border: 1px solid #0A169A;
   background-color: #FFFFFF;
   padding: 8px 12px;

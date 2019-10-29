@@ -1,3 +1,6 @@
+// This component is DEPRECATED
+// Use useClickAway hook instead
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';

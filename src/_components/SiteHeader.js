@@ -5,19 +5,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { isMobileDevice } from '_helpers';
 import settingsIcon from '_images/settingsIcon.svg';
 import logoSvg from '_images/logo.svg';
 import {
   cssConstants,
   zIndexes,
   integrationConstants,
-  navigationHeight
+  navigationHeight,
+  mobileBreakpoint
 } from '_constants';
-import { useClickAway } from '_hooks';
+import { useClickAway, useSidebar } from '_hooks';
 import { actions as authActions } from '_state/auth';
 import { actions as clientActions } from '_state/client';
 import { actions as clientListActions } from '_state/clientList';
-import { Icon, Flex, UserWelcome } from './';
+import { Icon, Flex, UserWelcome, TextButton } from './';
 
 const StyledSiteHeader = styled.div`
   display: flex;
@@ -28,6 +30,14 @@ const StyledSiteHeader = styled.div`
   min-height: ${navigationHeight}px;
   padding: 0 3%;
   background: ${cssConstants.PRIMARY_BLUE};
+`;
+
+const Logo = styled.img`
+  display: block;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    max-width: 150px;
+  }
 `;
 
 const DropdownContainer = styled.div`
@@ -86,6 +96,7 @@ const LogoutIcon = styled(Icon)`
 
 export const SiteHeader = () => {
   const dispatch = useDispatch();
+  const [isSidebarOpen, toggleSidebar] = useSidebar();
 
   const auth = useSelector(({ auth }) => auth.model);
   const client = useSelector(({ client }) => client);
@@ -112,9 +123,25 @@ export const SiteHeader = () => {
 
   return (
     <StyledSiteHeader>
-      <Link to="/">
-        <img alt="logo" src={logoSvg} />
-      </Link>
+      <Flex align="center">
+        {!isSidebarOpen && isMobileDevice && (
+          <TextButton
+            onClick={toggleSidebar}
+            padding="0"
+            textAlign="left"
+            minWidth="60px"
+          >
+            <Icon
+              name="arrow-right"
+              size={48}
+              color={cssConstants.PRIMARY_WHITE}
+            />
+          </TextButton>
+        )}
+        <Link to="/">
+          <Logo alt="logo" src={logoSvg} />
+        </Link>
+      </Flex>
       <Flex>
         <UserWelcome
           firstName={auth.firstName}

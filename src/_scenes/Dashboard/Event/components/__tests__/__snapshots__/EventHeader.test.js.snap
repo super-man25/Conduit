@@ -1,219 +1,117 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<EventHeader /> should render correctly 1`] = `
-<Styled(styled.div)>
-  <Flex
-    align="center"
-  >
-    <Styled(Styled(styled.button))
-      minWidth="60px"
-      padding="0"
-      textAlign="left"
-    >
-      <Icon
-        color="#0A169A"
-        name="arrow-right"
-        size={48}
-      />
-    </Styled(Styled(styled.button))>
-    <Breadcrumbs
-      crumbs={
-        Array [
-          Object {
-            "path": "/season",
-            "title": "Season Dashboard",
-          },
-          Object {
-            "path": "/event/1",
-            "title": "Some Event",
-          },
-        ]
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <EventHeader
+    availableInventory={100}
+    event={
+      Object {
+        "clientId": 1,
+        "createdAt": 1529336865706,
+        "id": 1,
+        "integrationId": 1,
+        "modifiedAt": 1529336865706,
+        "name": "Some Event",
+        "revenue": 739472,
+        "seasonId": 1,
+        "timeZone": "America/Chicago",
+        "timestamp": 1529336865706,
+        "venueId": 1,
       }
-    />
-  </Flex>
-  <styled.div
-    height="1.5rem"
+    }
+    pathname="/event/1/"
+    totalInventory={1000}
   />
-  <Flex
-    align="flex-start"
-    justify="space-between"
-  >
-    <FlexItem
-      flex="1"
-      margin="0 20px 0 0"
-    >
-      <Styled(Styled(styled.h1))>
-        Some Event
-      </Styled(Styled(styled.h1))>
-      <Styled(Styled(styled.h4))>
-        Monday, June 18th, 2018 @ 10:47 AM CT
-      </Styled(Styled(styled.h4))>
-    </FlexItem>
-    <Flex
-      justify="flex-end"
-    >
-      <FlexItem
-        flex="0 0 auto"
-        margin="0 25px"
-      >
-        <Styled(styled.p)
-          size="16"
-          textAlign="right"
-        >
-          Inventory
-        </Styled(styled.p)>
-        <Styled(styled.p)
-          size="22"
-          textAlign="right"
-          weight="heavy"
-        >
-          -- / --
-        </Styled(styled.p)>
-        <Styled(styled.p)
-          color="#0A169A"
-          size="12"
-          textAlign="right"
-        >
-          Unsold / Sold
-        </Styled(styled.p)>
-      </FlexItem>
-    </Flex>
-    <FlexItem
-      flex="0 0 auto"
-      margin="0 25px"
-    >
-      <Styled(styled.p)
-        size="16"
-        textAlign="right"
-      >
-        Revenue
-      </Styled(styled.p)>
-      <Styled(styled.p)
-        size="22"
-        textAlign="right"
-        weight="heavy"
-      >
-        $739,472
-      </Styled(styled.p)>
-      <Styled(styled.p)
-        color="#0A169A"
-        size="12"
-        textAlign="right"
-      >
-        as of date
-      </Styled(styled.p)>
-    </FlexItem>
-  </Flex>
-</Styled(styled.div)>
+</ContextProvider>
 `;
 
 exports[`<EventHeader /> should render correctly when on the location route 1`] = `
-<Styled(styled.div)>
-  <Flex
-    align="center"
-  >
-    <Styled(Styled(styled.button))
-      minWidth="60px"
-      padding="0"
-      textAlign="left"
-    >
-      <Icon
-        color="#0A169A"
-        name="arrow-right"
-        size={48}
-      />
-    </Styled(Styled(styled.button))>
-    <Breadcrumbs
-      crumbs={
-        Array [
-          Object {
-            "path": "/season",
-            "title": "Season Dashboard",
-          },
-          Object {
-            "path": "/event/1",
-            "title": "Some Event",
-          },
-          Object {
-            "path": "/event/1/inventory",
-            "title": "Inventory",
-          },
-        ]
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <EventHeader
+    availableInventory={100}
+    event={
+      Object {
+        "clientId": 1,
+        "createdAt": 1529336865706,
+        "id": 1,
+        "integrationId": 1,
+        "modifiedAt": 1529336865706,
+        "name": "Some Event",
+        "revenue": 739472,
+        "seasonId": 1,
+        "timeZone": "America/Chicago",
+        "timestamp": 1529336865706,
+        "venueId": 1,
       }
-    />
-  </Flex>
-  <styled.div
-    height="1.5rem"
+    }
+    pathname="/event/1/inventory"
+    totalInventory={1000}
   />
-  <Flex
-    align="flex-start"
-    justify="space-between"
-  >
-    <FlexItem
-      flex="1"
-      margin="0 20px 0 0"
-    >
-      <Styled(Styled(styled.h1))>
-        Some Event
-      </Styled(Styled(styled.h1))>
-      <Styled(Styled(styled.h4))>
-        Monday, June 18th, 2018 @ 10:47 AM CT
-      </Styled(Styled(styled.h4))>
-    </FlexItem>
-    <Flex
-      justify="flex-end"
-    >
-      <FlexItem
-        flex="0 0 auto"
-        margin="0 25px"
-      >
-        <Styled(styled.p)
-          size="16"
-          textAlign="right"
-        >
-          Inventory
-        </Styled(styled.p)>
-        <Styled(styled.p)
-          size="22"
-          textAlign="right"
-          weight="heavy"
-        >
-          -- / --
-        </Styled(styled.p)>
-        <Styled(styled.p)
-          color="#0A169A"
-          size="12"
-          textAlign="right"
-        >
-          Unsold / Sold
-        </Styled(styled.p)>
-      </FlexItem>
-    </Flex>
-    <FlexItem
-      flex="0 0 auto"
-      margin="0 25px"
-    >
-      <Styled(styled.p)
-        size="16"
-        textAlign="right"
-      >
-        Revenue
-      </Styled(styled.p)>
-      <Styled(styled.p)
-        size="22"
-        textAlign="right"
-        weight="heavy"
-      >
-        $739,472
-      </Styled(styled.p)>
-      <Styled(styled.p)
-        color="#0A169A"
-        size="12"
-        textAlign="right"
-      >
-        as of date
-      </Styled(styled.p)>
-    </FlexItem>
-  </Flex>
-</Styled(styled.div)>
+</ContextProvider>
 `;

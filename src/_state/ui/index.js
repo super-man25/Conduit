@@ -1,5 +1,7 @@
 // @flow
 
+import { isMobileDevice } from '_helpers';
+
 // Action Types
 const SIDEBAR_TOGGLE = 'ui/SIDEBAR_TOGGLE';
 
@@ -15,7 +17,7 @@ type State = {
 };
 
 export const initialState: State = {
-  sidebarIsOpen: true
+  sidebarIsOpen: !isMobileDevice
 };
 
 type Store = {
