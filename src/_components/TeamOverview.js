@@ -174,10 +174,10 @@ export const TeamOverviewPresenter = (props: Props) => {
               letterSpacing="1px"
             >
               <i>
-                {`Home ${pluralize(
+                {`${pluralize(
                   calculateGamesRemaining(eventList),
-                  'Game',
-                  'Games'
+                  'Event',
+                  'Events'
                 )} Remaining`}
               </i>
             </P1>

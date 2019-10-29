@@ -263,7 +263,7 @@ exports[`renders correctly with MLB performance type 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
@@ -534,7 +534,7 @@ exports[`renders correctly with MLS performance type 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
@@ -805,7 +805,7 @@ exports[`renders correctly with NCAAB performance type 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
@@ -1076,7 +1076,7 @@ exports[`renders correctly with NCAAF performance type 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
@@ -1347,7 +1347,7 @@ exports[`renders correctly with NFL performance type 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
@@ -1618,7 +1618,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
         size="14px"
       >
         <i>
-          Home Games Remaining
+          Events Remaining
         </i>
       </p>
     </div>
