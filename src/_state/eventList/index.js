@@ -14,7 +14,7 @@ const SEARCH = 'eventList/SEARCH';
 
 export type FetchEventListAction = {
   type: 'eventList/FETCH',
-  payload: { year?: number, seasonId?: number }
+  payload: { seasonId?: number }
 };
 export type FetchEventListSuccessAction = {
   type: 'eventList/FETCH_SUCCESS',
@@ -53,7 +53,6 @@ export const types = {
 
 // Actions
 const fetchEventList = (payload: {
-  year?: number,
   seasonId?: number
 }): FetchEventListAction => ({ type: FETCH_EVENT_LIST, payload });
 const resetEventList = (): ResetEventListAction => ({ type: RESET });
