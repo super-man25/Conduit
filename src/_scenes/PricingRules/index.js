@@ -23,6 +23,7 @@ import {
   actions as priceRuleActions,
   selectors as priceRuleSelectors
 } from '_state/priceRule';
+import { selectors as seasonSelectors } from '_state/season';
 import {
   actions as buyerTypeActions,
   selectors as buyerTypeSelectors
@@ -47,7 +48,8 @@ const PricingRulesTableTableContainer = styled(FlexItem)`
 type Props = {
   buyerTypeActions: any,
   priceRuleActions: any,
-  editingAnyPriceRule: true
+  editingAnyPriceRule: boolean,
+  activeSeasonId: number
 };
 
 export class PricingRules extends React.Component<Props> {
@@ -63,7 +65,7 @@ export class PricingRules extends React.Component<Props> {
   }
 
   render() {
-    const { editingAnyPriceRule } = this.props;
+    const { editingAnyPriceRule, activeSeasonId } = this.props;
 
     return (
       <PageWrapper>
@@ -96,7 +98,7 @@ export class PricingRules extends React.Component<Props> {
               </Flex>
             </Spacing>
             <PricingRulesTableTableContainer>
-              <VirtualizedPricingRules />
+              <VirtualizedPricingRules activeSeasonId={activeSeasonId} />
             </PricingRulesTableTableContainer>
           </Flex>
         </FullContent>
@@ -112,7 +114,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = createStructuredSelector({
   editingAnyPriceRule: priceRuleSelectors.selectIsEditingPriceRule,
-  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes
+  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
+  activeSeasonId: seasonSelectors.selectActiveSeasonId
 });
 
 export default connect(

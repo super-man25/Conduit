@@ -200,7 +200,7 @@ const NoTableRowsText = ({ children }) => (
 type Props = {
   fetchPriceScales: () => EDPriceScale[],
   fetchBuyerTypes: () => EDBuyerType[],
-  fetchEventList: () => EDEvent[],
+  fetchEventList: (payload: { seasonId: number }) => EDEvent[],
   fetchPriceRules: () => EDPriceRule[],
   fetchEventCategories: () => EDEventCategory[],
   reset: () => void,
@@ -215,13 +215,15 @@ type Props = {
   priceRulesLoading: boolean,
   priceScalesLoading: boolean,
   eventCategoriesLoading: boolean,
-  eventsLoading: boolean
+  eventsLoading: boolean,
+  activeSeasonId: number
 };
 
 export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
   componentDidMount() {
+    const { activeSeasonId } = this.props;
     this.props.fetchPriceScales();
-    this.props.fetchEventList();
+    this.props.fetchEventList({ seasonId: activeSeasonId });
     this.props.fetchPriceRules();
     this.props.fetchEventCategories();
   }
