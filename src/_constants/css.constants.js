@@ -74,3 +74,5 @@ export const fonts = {
 };
 
 export const navigationHeight = 70;
+
+export const mobileBreakpoint = 1024;

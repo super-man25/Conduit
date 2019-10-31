@@ -57,12 +57,21 @@ export function serialize(eventStats: EventStat[]) {
       const projectedPeriodicInventory = negativeInventoryProjected
         ? e.periodicInventory - e.inventory
         : e.periodicInventory;
+
+      // if there is no projected inventory change, revenue must be zero
+      const computedProjectedPeriodicRevenue =
+        projectedPeriodicInventory === 0 ? 0 : e.periodicRevenue;
+
+      // if revenue is projected to be zero, inventory must be zero
+      const computedProjectedPeriodicInventory =
+        e.periodicRevenue === 0 ? 0 : projectedPeriodicInventory;
+
       return {
         timestamp: e.timestamp,
         projectedInventory: negativeInventoryProjected ? 0 : e.inventory,
         projectedRevenue: e.revenue,
-        projectedPeriodicRevenue: e.periodicRevenue,
-        projectedPeriodicInventory: projectedPeriodicInventory,
+        projectedPeriodicRevenue: computedProjectedPeriodicRevenue,
+        projectedPeriodicInventory: computedProjectedPeriodicInventory,
         isProjected: e.isProjected
       };
     });

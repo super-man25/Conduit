@@ -46,7 +46,7 @@ export const EventInventory = ({
   !!event && (
     <PageWrapper>
       <Flex direction="column" height="100%">
-        <Box padding="1.5rem 2rem">
+        <Box padding="3%">
           <EventHeader availableInventory={15000} totalInventory={40000} />
           <Box marginTop="1rem">
             <EventInventorySeatMap />

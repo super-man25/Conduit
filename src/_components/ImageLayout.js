@@ -2,6 +2,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { mobileBreakpoint } from '_constants';
+
 type Props = {
   children: React.Node,
   imageSrc: string
@@ -24,6 +26,10 @@ const ImagePane = styled.div`
   background-repeat: no-repeat;
   background-position: 80% 50%;
   background-size: cover;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    display: none;
+  }
 `;
 
 export const ImageLayout = (props: Props) => {

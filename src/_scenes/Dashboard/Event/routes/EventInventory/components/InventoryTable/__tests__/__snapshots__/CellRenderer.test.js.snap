@@ -8,7 +8,7 @@ exports[`defaultCellRenderer should render correctly 1`] = `
       "$$typeof": Symbol(react.forward_ref),
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bRBYWo",
+        "componentId": "sc-Rmtcm",
         "isStatic": false,
         "rules": Array [
           "
@@ -120,10 +120,10 @@ exports[`defaultCellRenderer should render correctly 1`] = `
       },
       "displayName": "Flex",
       "foldedComponentIds": Array [
-        "sc-Rmtcm",
+        "sc-csuQGl",
       ],
       "render": [Function],
-      "styledComponentId": "sc-bRBYWo",
+      "styledComponentId": "sc-Rmtcm",
       "target": "div",
       "toString": [Function],
       "warnTooManyClasses": [Function],

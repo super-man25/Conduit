@@ -7,9 +7,7 @@ exports[`<EventListPresenter /> when filtered 1`] = `
   position="relative"
 >
   <styled.div>
-    <styled.div
-      padding="24px 40px"
-    >
+    <styled.div>
       <Styled(Styled(styled.h4))>
         title
       </Styled(Styled(styled.h4))>
@@ -79,9 +77,7 @@ exports[`<EventListPresenter /> when loading 1`] = `
   position="relative"
 >
   <styled.div>
-    <styled.div
-      padding="24px 40px"
-    >
+    <styled.div>
       <Styled(Styled(styled.h4))>
         title
       </Styled(Styled(styled.h4))>
@@ -108,9 +104,7 @@ exports[`<EventListPresenter /> when passed no events 1`] = `
   position="relative"
 >
   <styled.div>
-    <styled.div
-      padding="24px 40px"
-    >
+    <styled.div>
       <Styled(Styled(styled.h4))>
         title
       </Styled(Styled(styled.h4))>
@@ -143,9 +137,7 @@ exports[`<EventListPresenter /> with active event 1`] = `
   position="relative"
 >
   <styled.div>
-    <styled.div
-      padding="24px 40px"
-    >
+    <styled.div>
       <Styled(Styled(styled.h4))>
         title
       </Styled(Styled(styled.h4))>
@@ -215,9 +207,7 @@ exports[`<EventListPresenter /> with no active event 1`] = `
   position="relative"
 >
   <styled.div>
-    <styled.div
-      padding="24px 40px"
-    >
+    <styled.div>
       <Styled(Styled(styled.h4))>
         title
       </Styled(Styled(styled.h4))>

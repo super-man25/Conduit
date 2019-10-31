@@ -3,7 +3,6 @@ export * from './AsyncButton';
 export * from './Breadcrumbs';
 export * from './Button';
 export * from './Center';
-export * from './CenteredContainer';
 export * from './CenteredLoader';
 export * from './ChartContainer';
 export * from './ChartLegend';

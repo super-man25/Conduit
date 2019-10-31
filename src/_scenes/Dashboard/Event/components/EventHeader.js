@@ -1,7 +1,20 @@
 // @flow
 
+import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import * as React from 'react';
+import { isAfter } from 'date-fns';
+
+import { cssConstants } from '_constants';
+import {
+  formatNumber,
+  formatUSD,
+  readableDateAndTime,
+  isMobileDevice
+} from '_helpers';
+import { EDEvent } from '_models';
+import { selectors } from '_state/event';
+import { useSidebar } from '_hooks';
 import {
   H1,
   H4,
@@ -16,15 +29,8 @@ import {
   Box,
   Text
 } from '_components';
-import { cssConstants } from '_constants';
-import { readableDateAndTime } from '_helpers/string-utils';
-import { EDEvent } from '_models';
-import { formatNumber, formatUSD } from '_helpers/string-utils';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withSidebar } from '_hoc';
-import { selectors } from '_state/event';
-import { isAfter } from 'date-fns';
+
+const EventDetails = styled.div``;
 
 const EventTitle = styled(H1)`
   margin: 0;
@@ -61,13 +67,13 @@ type Props = {
   event: EDEvent,
   availableInventory: number,
   totalInventory: number,
-  toggleSidebar: () => void,
-  isSidebarOpen: boolean,
   pathname: string
 };
 
 export function EventHeader(props: Props) {
-  const { event, toggleSidebar, isSidebarOpen, pathname } = props;
+  const [isSidebarOpen, toggleSidebar] = useSidebar();
+
+  const { event, pathname } = props;
   const { timestamp, name, id, timeZone } = event;
   const isViewingInventory = pathname.split('/').includes('inventory');
   const sold = formatNumber(event.soldInventory);
@@ -82,7 +88,7 @@ export function EventHeader(props: Props) {
   return (
     <Box>
       <Flex align="center">
-        {!isSidebarOpen && (
+        {!isSidebarOpen && !isMobileDevice && (
           <TextButton
             onClick={toggleSidebar}
             padding="0"
@@ -109,8 +115,8 @@ export function EventHeader(props: Props) {
             </EDLink>
           )}
         </FlexItem>
-        <Flex justify="flex-end">
-          <FlexItem flex="0 0 auto" margin="0 25px">
+        <Flex>
+          <EventDetails>
             <Text size="16" textAlign="right">
               Inventory
             </Text>
@@ -120,7 +126,7 @@ export function EventHeader(props: Props) {
             <Text color={cssConstants.PRIMARY_BLUE} textAlign="right" size="12">
               Unsold / Sold
             </Text>
-          </FlexItem>
+          </EventDetails>
         </Flex>
         <FlexItem flex="0 0 auto" margin="0 25px">
           <Text size="16" textAlign="right">
@@ -145,7 +151,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default compose(
-  connect(mapStateToProps),
-  withSidebar
-)(EventHeader);
+export default connect(mapStateToProps)(EventHeader);

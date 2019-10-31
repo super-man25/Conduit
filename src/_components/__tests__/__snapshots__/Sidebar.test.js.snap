@@ -20,6 +20,14 @@ exports[`renders correctly with collapsed prop 1`] = `
   overflow-x: hidden;
 }
 
+@media (max-width:1024px) {
+  .c0 {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+  }
+}
+
 <div
   className="c0"
 />
@@ -35,6 +43,14 @@ exports[`renders correctly with no props 1`] = `
   -webkit-transition: 0.1s ease-in-out -webkit-transform;
   -webkit-transition: 0.1s ease-in-out transform;
   transition: 0.1s ease-in-out transform;
+}
+
+@media (max-width:1024px) {
+  .c0 {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+  }
 }
 
 <div
