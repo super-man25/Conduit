@@ -1,19 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders with a name 1`] = `
-.c0 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-<svg
-  className="c0"
-  height="24px"
-  viewBox="0 0 24 24"
-  width="24px"
+<div
+  className=""
 >
-  <path
-    d="M7 14l5-5 5 5z"
-  />
-</svg>
+  <svg
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <path
+      d="M7 14l5-5 5 5z"
+    />
+  </svg>
+</div>
 `;

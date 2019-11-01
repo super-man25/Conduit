@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #808080;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -54,7 +45,7 @@ exports[`should render correctly 1`] = `
   top: -2px;
 }
 
-.c6 {
+.c5 {
   position: absolute;
   top: 4px;
 }
@@ -76,32 +67,38 @@ exports[`should render correctly 1`] = `
       <div
         className="c4"
       >
-        <svg
-          className="c5"
-          color="#808080"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
+        <div
+          className=""
         >
-          <path
-            d="M7 14l5-5 5 5z"
-          />
-        </svg>
+          <svg
+            fill="#808080"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 14l5-5 5 5z"
+            />
+          </svg>
+        </div>
       </div>
       <div
-        className="c6"
+        className="c5"
       >
-        <svg
-          className="c5"
-          color="#808080"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
+        <div
+          className=""
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+          <svg
+            fill="#808080"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -109,24 +106,6 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly with optional props 1`] = `
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c7 path {
-  fill: #808080;
-}
-
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #000;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -171,7 +150,7 @@ exports[`should render correctly with optional props 1`] = `
   top: -2px;
 }
 
-.c6 {
+.c5 {
   position: absolute;
   top: 4px;
 }
@@ -195,32 +174,38 @@ exports[`should render correctly with optional props 1`] = `
       <div
         className="c4"
       >
-        <svg
-          className="c5"
-          color="#000"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
+        <div
+          className=""
         >
-          <path
-            d="M7 14l5-5 5 5z"
-          />
-        </svg>
+          <svg
+            fill="#000"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 14l5-5 5 5z"
+            />
+          </svg>
+        </div>
       </div>
       <div
-        className="c6"
+        className="c5"
       >
-        <svg
-          className="c7"
-          color="#808080"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
+        <div
+          className=""
         >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+          <svg
+            fill="#808080"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-laTMn",
+          "componentId": "sc-fjmCvl",
           "isStatic": false,
           "rules": Array [
             "
@@ -76,7 +76,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           "sc-iELTvK",
         ],
         "render": [Function],
-        "styledComponentId": "sc-laTMn",
+        "styledComponentId": "sc-fjmCvl",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

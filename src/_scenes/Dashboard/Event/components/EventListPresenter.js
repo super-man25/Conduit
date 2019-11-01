@@ -7,7 +7,7 @@ import {
   Flex,
   CenteredLoader
 } from '_components';
-import { cssConstants } from '_constants';
+import { cssConstants, containerPadding } from '_constants';
 import React from 'react';
 import styled from 'styled-components';
 import { EventListItem } from './EventListItem';
@@ -32,8 +32,7 @@ const HeaderContainer = styled.div`
 `;
 
 const SearchContainer = styled.div`
-  background-color: white;
-  padding: 24px 40px;
+  padding: ${containerPadding}px;
 `;
 
 const NoContentWrap = styled.div`

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { cssConstants } from '_constants';
+import { cssConstants, containerPadding } from '_constants';
 import { selectors } from '_state/season';
 import {
   H1,
@@ -57,13 +57,13 @@ const Season = ({ activeSeason, loading }) => {
 
   return (
     <PageWrapper>
-      <Spacing padding="3%">
+      <Spacing padding={`${containerPadding}px`}>
         <Flex align="center" margin="0 0 1.5rem">
           {!isSidebarOpen && !isMobileDevice && (
             <TextButton onClick={toggleSidebar}>
               <Icon
                 name="arrow-right"
-                size={48}
+                size={24}
                 color={cssConstants.PRIMARY_BLUE}
               />
             </TextButton>

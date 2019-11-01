@@ -13,13 +13,14 @@ import {
   zIndexes,
   integrationConstants,
   navigationHeight,
-  mobileBreakpoint
+  mobileBreakpoint,
+  containerPadding
 } from '_constants';
 import { useClickAway, useSidebar } from '_hooks';
 import { actions as authActions } from '_state/auth';
 import { actions as clientActions } from '_state/client';
 import { actions as clientListActions } from '_state/clientList';
-import { Icon, Flex, UserWelcome, TextButton } from './';
+import { Icon, Flex, UserWelcome } from './';
 
 const StyledSiteHeader = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const StyledSiteHeader = styled.div`
   position: relative;
   width: 100%;
   min-height: ${navigationHeight}px;
-  padding: 0 3%;
+  padding: 0 ${containerPadding}px;
   background: ${cssConstants.PRIMARY_BLUE};
 `;
 
@@ -94,6 +95,10 @@ const LogoutIcon = styled(Icon)`
   margin-left: 10px;
 `;
 
+const SidebarToggle = styled(Icon)`
+  margin-right: 15px;
+`;
+
 export const SiteHeader = () => {
   const dispatch = useDispatch();
   const [isSidebarOpen, toggleSidebar] = useSidebar();
@@ -124,19 +129,13 @@ export const SiteHeader = () => {
   return (
     <StyledSiteHeader>
       <Flex align="center">
-        {!isSidebarOpen && isMobileDevice && (
-          <TextButton
+        {isMobileDevice && (
+          <SidebarToggle
             onClick={toggleSidebar}
-            padding="0"
-            textAlign="left"
-            minWidth="60px"
-          >
-            <Icon
-              name="arrow-right"
-              size={48}
-              color={cssConstants.PRIMARY_WHITE}
-            />
-          </TextButton>
+            name={isSidebarOpen ? 'arrow-left' : 'arrow-right'}
+            size={24}
+            color={cssConstants.PRIMARY_WHITE}
+          />
         )}
         <Link to="/">
           <Logo alt="logo" src={logoSvg} />

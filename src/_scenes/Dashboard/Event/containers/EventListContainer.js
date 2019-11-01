@@ -1,12 +1,15 @@
 // @flow
-import { actions as eventListActions, selectors } from '_state/eventList';
-import { selectors as seasonSelectors } from '_state/season';
-import type { State as EventListState } from '_state/eventList';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import EventListPresenter from '../components/EventListPresenter';
 import { push } from 'connected-react-router';
+
+import { actions as eventListActions, selectors } from '_state/eventList';
+import { selectors as seasonSelectors } from '_state/season';
+import { actions as uiActions } from '_state/ui';
+import type { State as EventListState } from '_state/eventList';
+import { isMobileDevice } from '_helpers';
+import EventListPresenter from '../components/EventListPresenter';
 
 type Props = {
   eventListActions: typeof eventListActions,
@@ -14,6 +17,7 @@ type Props = {
   activeEventId: number,
   activeSeasonId: number,
   push: (path: string) => void,
+  toggleSidebar: () => void,
   isAdmin: boolean,
   loading: boolean
 };
@@ -41,6 +45,8 @@ class EventListContainer extends React.Component<Props> {
   };
 
   handleOnClick = (event) => {
+    if (isMobileDevice) this.props.toggleSidebar();
+
     if (event.id !== this.props.activeEventId) {
       this.props.push(`/event/${event.id}`);
     } else {
@@ -94,7 +100,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     eventListActions: bindActionCreators(eventListActions, dispatch),
-    push: (path) => dispatch(push(path))
+    push: (path) => dispatch(push(path)),
+    toggleSidebar: bindActionCreators(uiActions.toggleSidebar, dispatch)
   };
 }
 

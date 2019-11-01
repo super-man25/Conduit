@@ -2,10 +2,6 @@
 
 exports[`renders correctly 1`] = `
 .c0 {
-  height: 150px;
-  width: auto;
-  margin: 0;
-  padding-left: 20px;
   color: #F8F8F8;
   background: #040B52;
 }

@@ -1,27 +1,24 @@
 // @flow
 
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { isAfter } from 'date-fns';
 
 import { pluralize } from '_helpers/string-utils';
-import { fonts, cssConstants } from '_constants';
+import { fonts, cssConstants, containerPadding } from '_constants';
 import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
 import { selectors, actions } from '_state/season';
 import { selectors as clientSelectors } from '_state/client';
 import { selectors as eventListSelectors } from '_state/eventList';
 import { Dropdown } from './Dropdown';
-import { Icon, Flex, FlexItem, H4, TextButton, H3, P1 } from '_components';
+import { Icon, Flex, FlexItem, H4, H3, P1 } from '_components';
+import { isMobileDevice } from '_helpers';
 
 const TeamOverviewContainer = styled.div`
-  height: 100%;
-  width: auto;
-  margin: 0;
-  padding-left: 20px;
+  padding: ${containerPadding}px;
   color: ${cssConstants.PRIMARY_WHITE};
-  background: 'none';
 `;
 
 const Heading = styled(H4)`
@@ -40,6 +37,8 @@ const StatLabel = styled(H3)`
   color: ${cssConstants.PRIMARY_WHITE};
   font-weight: bold;
 `;
+
+const SidebarControl = styled(Icon)``;
 
 type Stats = {
   wins: number,
@@ -136,7 +135,12 @@ export const TeamOverviewPresenter = (props: Props) => {
 
   return (
     <TeamOverviewContainer>
-      <Flex direction="row" align="center" justify="space-between">
+      <Flex
+        direction="row"
+        align="center"
+        justify="space-between"
+        marginBottom="15px"
+      >
         <Dropdown
           options={seasons}
           selected={selectedSeason}
@@ -145,9 +149,14 @@ export const TeamOverviewPresenter = (props: Props) => {
           onChange={(option) => setActiveSeasonId(option.id)}
           renderSelected={(option) => <Heading>{option.name}</Heading>}
         />
-        <TextButton small collapse onClick={onToggleSidebar}>
-          <Icon name="arrow-left" size={48} color="white" />
-        </TextButton>
+        {!isMobileDevice && (
+          <SidebarControl
+            name="arrow-left"
+            size={24}
+            color="white"
+            onClick={onToggleSidebar}
+          />
+        )}
       </Flex>
 
       {stats && (

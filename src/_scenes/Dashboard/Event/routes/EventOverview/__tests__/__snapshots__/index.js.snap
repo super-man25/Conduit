@@ -3,7 +3,7 @@
 exports[`<EventOverview /> index route should render correctly 1`] = `
 <styled.div>
   <Styled(styled.div)
-    padding="3%"
+    padding="25px"
   >
     <Connect(EventHeader)
       availableInventory={15000}

@@ -101,7 +101,7 @@ export function EventHeader(props: Props) {
           >
             <Icon
               name="arrow-right"
-              size={48}
+              size={24}
               color={cssConstants.PRIMARY_BLUE}
             />
           </TextButton>

@@ -1,14 +1,16 @@
 // @flow
 import React from 'react';
-import { PageWrapper, Spacing, Box } from '_components';
 import { connect } from 'react-redux';
-import EventHeader from '../../components/EventHeader';
-import EventChart from './components/EventChart';
+
+import { containerPadding } from '_constants';
+import { isPastEvent } from '_helpers';
 import type { EDEvent } from '_models';
 import { selectors } from '_state/event';
+import { PageWrapper, Spacing, Box } from '_components';
+import EventHeader from '../../components/EventHeader';
+import EventChart from './components/EventChart';
 import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 import { EventPricing } from './components/EventPricing';
-import { isPastEvent } from '_helpers';
 
 type Props = {
   event: ?EDEvent,
@@ -18,7 +20,7 @@ type Props = {
 export const EventOverview = ({ event, isAdmin }: Props) =>
   !!event && (
     <PageWrapper>
-      <Box padding="3%">
+      <Box padding={`${containerPadding}px`}>
         <EventHeader availableInventory={15000} totalInventory={40000} />
         <Spacing height="1rem" />
         <EventChart />

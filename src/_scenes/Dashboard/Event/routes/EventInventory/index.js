@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import { containerPadding } from '_constants';
 import { selectors as eventSelectors } from '_state/event';
 import { selectors as eventInventorySelectors } from '_state/eventInventory';
 import {
@@ -46,7 +47,7 @@ export const EventInventory = ({
   !!event && (
     <PageWrapper>
       <Flex direction="column" height="100%">
-        <Box padding="3%">
+        <Box padding={`${containerPadding}px`}>
           <EventHeader availableInventory={15000} totalInventory={40000} />
           <Box marginTop="1rem">
             <EventInventorySeatMap />

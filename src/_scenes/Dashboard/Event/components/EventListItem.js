@@ -1,6 +1,6 @@
 // @flow
 
-import { cssConstants } from '_constants';
+import { cssConstants, containerPadding } from '_constants';
 import { darken } from 'polished';
 import { Flex, FlexItem, H4, P1 } from '_components';
 import React from 'react';
@@ -49,7 +49,7 @@ const boxShadow = (props) =>
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 16px 16px 16px 30px;
+  padding: 15px ${containerPadding}px;
   border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   background-color: ${(props) =>
     props.past
