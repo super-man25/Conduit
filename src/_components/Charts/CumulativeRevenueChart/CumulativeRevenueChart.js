@@ -10,10 +10,12 @@ import {
   Label,
   Tooltip
 } from 'recharts';
+
 import { cssConstants, chartLabelStyles } from '_constants';
-import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
+import { ChartContainer } from '_components';
 import { CumulativeRevenueTooltip } from './CumulativeRevenueTooltip';
+import { isMobileDevice } from '_helpers';
 import type { EventStat } from '_models/eventStat';
 
 const ANIMATION_DURATION = 1000;
@@ -25,7 +27,8 @@ type Props = {
   tooltipDateFormatter: (Date) => string,
   renderNoData: () => React.Node,
   majorXAxisTickRenderer: () => HTMLElement,
-  minorXAxisTickRenderer: () => HTMLElement
+  minorXAxisTickRenderer: () => HTMLElement,
+  mobileXAxisTickRenderer: () => HTMLElement
 };
 
 export function CumulativeRevenueChart({
@@ -35,7 +38,8 @@ export function CumulativeRevenueChart({
   tooltipDateFormatter,
   renderNoData,
   majorXAxisTickRenderer,
-  minorXAxisTickRenderer
+  minorXAxisTickRenderer,
+  mobileXAxisTickRenderer
 }: Props) {
   if (!data.length) {
     return renderNoData();
@@ -45,22 +49,34 @@ export function CumulativeRevenueChart({
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height}>
         <LineChart data={data}>
-          <XAxis
-            dataKey="timestamp"
-            tick={minorXAxisTickRenderer}
-            tickLine={false}
-            interval={0}
-            height={30}
-          />
-          <XAxis
-            dataKey="timestamp"
-            tick={majorXAxisTickRenderer}
-            xAxisId="majorXAxis"
-            axisLine={false}
-            tickLine={false}
-            interval={0}
-            height={10}
-          />
+          {isMobileDevice ? (
+            <XAxis
+              dataKey="timestamp"
+              tick={mobileXAxisTickRenderer}
+              axisLine={false}
+              tickLine={false}
+              interval={0}
+            />
+          ) : (
+            <>
+              <XAxis
+                dataKey="timestamp"
+                tick={minorXAxisTickRenderer}
+                tickLine={false}
+                interval={0}
+                height={30}
+              />
+              <XAxis
+                dataKey="timestamp"
+                tick={majorXAxisTickRenderer}
+                xAxisId="majorXAxis"
+                axisLine={false}
+                tickLine={false}
+                interval={0}
+                height={10}
+              />
+            </>
+          )}
 
           <YAxis
             tickCount={10}

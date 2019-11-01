@@ -1,7 +1,17 @@
 // @flow
 
-import styled from 'styled-components';
 import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { selectors as eventSelectors } from '_state/event';
+import { selectors as eventInventorySelectors } from '_state/eventInventory';
+import {
+  actions as eventInventoryBulkActions,
+  selectors as eventInventoryBulkSelectors
+} from '_state/eventInventoryBulk';
+import type { EDEvent } from '_models';
 import {
   PageWrapper,
   Spacing,
@@ -10,20 +20,10 @@ import {
   FlexItem,
   PrimaryButton
 } from '_components';
-import { connect } from 'react-redux';
 import EventHeader from '../../components/EventHeader';
-import { selectors as eventSelectors } from '_state/event';
-import { selectors as eventInventorySelectors } from '_state/eventInventory';
-import {
-  actions as eventInventoryBulkActions,
-  selectors as eventInventoryBulkSelectors
-} from '_state/eventInventoryBulk';
 import { VirtualizedEventInventory } from './components/InventoryTable';
-import type { EDEvent } from '_models';
 import { EventInventorySeatMap } from './components/InventorySeatMap';
-import { Portal } from '_components/Portal';
 import { BulkUpdateModal } from './components/BulkUpdateModal';
-import { createStructuredSelector } from 'reselect';
 
 const EventInventoryTableContainer = styled(FlexItem)`
   min-height: 60%;
@@ -67,11 +67,9 @@ export const EventInventory = ({
           <VirtualizedEventInventory event={event} />
         </EventInventoryTableContainer>
       </Flex>
-      <Portal>
-        {isBulkUpdating && (
-          <BulkUpdateModal selectedEventIds={selectedEventIds} />
-        )}
-      </Portal>
+      {isBulkUpdating && (
+        <BulkUpdateModal selectedEventIds={selectedEventIds} />
+      )}
     </PageWrapper>
   );
 

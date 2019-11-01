@@ -26,6 +26,7 @@ import { PricingPreview } from './PricingPreview';
 import { PricingUpdateReason } from './PricingUpdateReason';
 import type { EDEvent, PendingFactors } from '_models';
 import type { EDPricingPreview } from '_models/pricingPreview';
+import { isMobileDevice } from '_helpers';
 
 const PaddedPanelContent = styled(PanelContent)`
   display: flex;
@@ -158,7 +159,7 @@ export const EventPricingPresenter = (props: Props) => {
         </Flex>
       </PanelHeader>
       <PaddedPanelContent>
-        <Flex width="100%">
+        <Flex width="100%" direction={isMobileDevice ? 'column' : 'row'}>
           <PricingForm
             pricingError={pricingError}
             pricingPreview={pricingPreview}

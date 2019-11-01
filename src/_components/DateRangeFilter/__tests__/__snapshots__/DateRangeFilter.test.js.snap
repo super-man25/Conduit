@@ -18,12 +18,10 @@ exports[`renders correctly 1`] = `
     show={false}
   >
     <Flex
-      width="180px"
+      align="stretch"
     >
       <Flex
         direction="column"
-        flex={1}
-        height="354px"
       >
         <Option
           dateRangePickerOpen={false}
@@ -32,7 +30,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             All Time
@@ -45,7 +42,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Today
@@ -58,7 +54,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Yesterday
@@ -71,7 +66,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Last 7 Days
@@ -84,7 +78,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Month to Date
@@ -97,7 +90,6 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Previous Month
@@ -110,32 +102,35 @@ exports[`renders correctly 1`] = `
           onClick={[Function]}
         >
           <Flex
-            height="20px"
             justify="space-between"
           >
             Year to Date
           </Flex>
         </Option>
-        <Option
-          dateRangePickerOpen={false}
-          isActive={false}
-          key="7"
-          onClick={[Function]}
-        >
-          <Flex
-            height="20px"
-            justify="space-between"
-          >
-            Select Date Range
-          </Flex>
-        </Option>
       </Flex>
-      <Flex
-        flex={1}
-        height="354px"
-      >
-        <DropdownMenu
-          show={false}
+      <Flex>
+        <DayPicker
+          dateRangePickerOpen={false}
+          disabledDays={
+            Object {
+              "after": null,
+              "before": null,
+            }
+          }
+          from={null}
+          fromError={false}
+          fromIsOpen={false}
+          handleFromChange={[Function]}
+          handleToChange={[Function]}
+          modifiers={
+            Object {
+              "from": null,
+              "to": null,
+            }
+          }
+          to={null}
+          toError={false}
+          toIsOpen={false}
         />
       </Flex>
     </Flex>

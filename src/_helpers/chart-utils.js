@@ -7,8 +7,7 @@ import {
   format,
   differenceInCalendarDays
 } from 'date-fns';
-import { formatDate, formatUSD, formatNumber } from './string-utils';
-import { MinorXAxisTick } from '_components/Charts/MinorXAxisTick';
+
 import {
   READABLE_TIME_FORMAT,
   READABLE_MONTH_FORMAT,
@@ -24,11 +23,13 @@ import {
   END_OF_MONTH,
   QUARTERLY
 } from '_constants';
+import { formatDate, formatUSD, formatNumber } from './string-utils';
+import { EventStat, EventStatInterval } from '_models';
+import { MinorXAxisTick } from '_components/Charts/MinorXAxisTick';
 import {
   MajorXAxisTick,
   MajorXAxisTickLine
 } from '_components/Charts/MajorXAxisTick';
-import { EventStat, EventStatInterval } from '_models';
 
 export type ChartPoint = { x: Date, y: number };
 
@@ -309,6 +310,78 @@ export function renderMajorXAxisTicks({
       ticksToRender = ['15']; // tick is placed in middle of month
       tickLinesToRender = ['1']; // tick line is placed at start of month
       formattedValue = formatDate(value, READABLE_MONTH_YEAR_FORMAT, timeZone);
+    }
+
+    const currentDay = formatDate(value, 'D', timeZone);
+
+    if (ticksToRender.includes(currentDay))
+      return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
+
+    if (tickLinesToRender.includes(currentDay))
+      return <MajorXAxisTickLine x={x} y={y} value={formattedValue} />;
+  }
+}
+
+/**
+ * renderMobileXAxisTicks() has custom logic on how to breakdown
+ * the ticks shown in the charts based on defined constants valuable to the
+ * business.
+ */
+export function renderMobileXAxisTicks({
+  interval,
+  tickProps,
+  dataLength,
+  timeZone
+}: RenderXAxisTicksProps) {
+  const {
+    x,
+    y,
+    payload: { value }
+  } = tickProps;
+  let ticksToRender = [];
+  let tickLinesToRender = [];
+  let formattedValue = '';
+
+  if (interval === 'Hours') {
+    const dayRange = Math.ceil(dataLength / END_OF_DAY);
+
+    if (dayRange <= BUSINESS_WEEK) {
+      ticksToRender = ['12']; // tick is placed in middle of day
+      tickLinesToRender = ['0']; // tick line is placed at start of day
+      formattedValue = formatDate(
+        value,
+        CONCISE_READABLE_DATE_FORMAT,
+        timeZone
+      );
+    } else {
+      ticksToRender = ['12']; // tick is placed in middle of day
+      tickLinesToRender = ['0']; // tick line is placed at start of day
+      formattedValue = formatDate(value, 'ddd', timeZone);
+    }
+
+    const currentHour = formatDate(value, 'H', timeZone);
+    if (ticksToRender.includes(currentHour))
+      return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
+
+    if (tickLinesToRender.includes(currentHour))
+      return <MajorXAxisTickLine x={x} y={y} value={formattedValue} />;
+  }
+
+  if (interval === 'Days') {
+    const monthRange = Math.ceil(dataLength / END_OF_MONTH);
+
+    if (monthRange === MONTHLY) {
+      ticksToRender = [`${Math.floor(dataLength / 2)}`]; // tick is placed in middle of days shown
+      tickLinesToRender = ['1']; // tick line is placed at start of month
+      formattedValue = formatDate(value, 'MMMM', timeZone);
+    } else if (monthRange <= QUARTERLY) {
+      ticksToRender = ['15']; // tick is placed in middle of month
+      tickLinesToRender = ['1']; // tick line is placed at start of month
+      formattedValue = formatDate(value, 'MMMM', timeZone);
+    } else {
+      ticksToRender = ['15']; // tick is placed in middle of month
+      tickLinesToRender = ['1']; // tick line is placed at start of month
+      formattedValue = formatDate(value, 'MMM', timeZone);
     }
 
     const currentDay = formatDate(value, 'D', timeZone);

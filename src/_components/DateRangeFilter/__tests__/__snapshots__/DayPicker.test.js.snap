@@ -53,13 +53,6 @@ exports[`renders correctly when showing 1`] = `
   visibility: hidden;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  visibility: visible;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  border-radius: 0 4px 4px 0;
 }
 
 <div

@@ -31,20 +31,10 @@ describe('BulkUpdateModal styled components', () => {
     const tree = renderer.create(<ModalBody>Modal Body</ModalBody>).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('<ModalContent /> renders correctly', () => {
-    const tree = renderer
-      .create(<ModalContent>Modal Content</ModalContent>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   it('<ModalHeader /> renders correctly', () => {
     const tree = renderer
       .create(<ModalHeader>Modal Header</ModalHeader>)
       .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('<ModalOverlay /> renders correctly', () => {
-    const tree = renderer.create(<ModalOverlay />).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('<NumberInput /> renders correctly', () => {

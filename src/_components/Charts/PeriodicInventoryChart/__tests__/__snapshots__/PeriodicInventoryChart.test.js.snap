@@ -62,6 +62,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         allowDataOverflow={false}
         allowDecimals={true}
         allowDuplicatedCategory={true}
+        axisLine={false}
         dataKey="timestamp"
         domain={
           Array [
@@ -87,37 +88,6 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         type="category"
         width={0}
         xAxisId={0}
-      />
-      <XAxis
-        allowDataOverflow={false}
-        allowDecimals={true}
-        allowDuplicatedCategory={true}
-        axisLine={false}
-        dataKey="timestamp"
-        domain={
-          Array [
-            0,
-            "auto",
-          ]
-        }
-        height={10}
-        hide={false}
-        interval={0}
-        mirror={false}
-        orientation="bottom"
-        padding={
-          Object {
-            "left": 0,
-            "right": 0,
-          }
-        }
-        reversed={false}
-        scale="auto"
-        tickCount={5}
-        tickLine={false}
-        type="category"
-        width={0}
-        xAxisId="majorXAxis"
       />
       <YAxis
         allowDataOverflow={false}
@@ -306,6 +276,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         allowDataOverflow={false}
         allowDecimals={true}
         allowDuplicatedCategory={true}
+        axisLine={false}
         dataKey="timestamp"
         domain={
           Array [
@@ -331,37 +302,6 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         type="category"
         width={0}
         xAxisId={0}
-      />
-      <XAxis
-        allowDataOverflow={false}
-        allowDecimals={true}
-        allowDuplicatedCategory={true}
-        axisLine={false}
-        dataKey="timestamp"
-        domain={
-          Array [
-            0,
-            "auto",
-          ]
-        }
-        height={10}
-        hide={false}
-        interval={0}
-        mirror={false}
-        orientation="bottom"
-        padding={
-          Object {
-            "left": 0,
-            "right": 0,
-          }
-        }
-        reversed={false}
-        scale="auto"
-        tickCount={5}
-        tickLine={false}
-        type="category"
-        width={0}
-        xAxisId="majorXAxis"
       />
       <YAxis
         allowDataOverflow={false}

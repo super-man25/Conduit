@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { isAfter } from 'date-fns';
 
-import { cssConstants } from '_constants';
+import { cssConstants, mobileBreakpoint } from '_constants';
 import {
   formatNumber,
   formatUSD,
@@ -41,6 +41,10 @@ const EventDate = styled(H4)`
   margin: 0;
   margin-bottom: 0.5rem;
   letter-spacing: -0.2px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    margin: 0;
+  }
 `;
 
 const InventoryLink = styled(S1)`
@@ -105,41 +109,63 @@ export function EventHeader(props: Props) {
         <Breadcrumbs crumbs={createCrumbs(event, isViewingInventory)} />
       </Flex>
       <Spacing height="1.5rem" />
-      <Flex justify="space-between" align="flex-start">
+      <Flex
+        justify="space-between"
+        align="flex-start"
+        direction={isMobileDevice ? 'column' : 'row'}
+      >
         <FlexItem flex="1" margin="0 20px 0 0">
           <EventTitle>{name}</EventTitle>
           <EventDate>{readableDateAndTime(timestamp, timeZone)}</EventDate>
-          {showInventoryLink && !isViewingInventory && (
-            <EDLink to={`/event/${id}/inventory`}>
-              <InventoryLink>SEE INVENTORY LIST</InventoryLink>
-            </EDLink>
-          )}
         </FlexItem>
-        <Flex>
-          <EventDetails>
-            <Text size="16" textAlign="right">
-              Inventory
+        <Flex margin={isMobileDevice ? '10px 0' : 0}>
+          <Flex>
+            <EventDetails>
+              <Text size="16" textAlign={isMobileDevice ? 'left' : 'right'}>
+                Inventory
+              </Text>
+              <Text
+                size="22"
+                weight="heavy"
+                textAlign={isMobileDevice ? 'left' : 'right'}
+              >
+                {inventoryString}
+              </Text>
+              <Text
+                color={cssConstants.PRIMARY_BLUE}
+                textAlign={isMobileDevice ? 'left' : 'right'}
+                size="12"
+              >
+                Unsold / Sold
+              </Text>
+            </EventDetails>
+          </Flex>
+          <FlexItem flex="0 0 auto" margin="0 25px">
+            <Text size="16" textAlign={isMobileDevice ? 'left' : 'right'}>
+              Revenue
             </Text>
-            <Text size="22" weight="heavy" textAlign="right">
-              {inventoryString}
+            <Text
+              size="22"
+              weight="heavy"
+              textAlign={isMobileDevice ? 'left' : 'right'}
+            >
+              {revenue}
             </Text>
-            <Text color={cssConstants.PRIMARY_BLUE} textAlign="right" size="12">
-              Unsold / Sold
+            <Text
+              color={cssConstants.PRIMARY_BLUE}
+              textAlign={isMobileDevice ? 'left' : 'right'}
+              size="12"
+            >
+              as of date
             </Text>
-          </EventDetails>
+          </FlexItem>
         </Flex>
-        <FlexItem flex="0 0 auto" margin="0 25px">
-          <Text size="16" textAlign="right">
-            Revenue
-          </Text>
-          <Text size="22" weight="heavy" textAlign="right">
-            {revenue}
-          </Text>
-          <Text color={cssConstants.PRIMARY_BLUE} textAlign="right" size="12">
-            as of date
-          </Text>
-        </FlexItem>
       </Flex>
+      {showInventoryLink && !isViewingInventory && (
+        <EDLink to={`/event/${id}/inventory`}>
+          <InventoryLink>SEE INVENTORY LIST</InventoryLink>
+        </EDLink>
+      )}
     </Box>
   );
 }

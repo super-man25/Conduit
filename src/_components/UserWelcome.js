@@ -12,10 +12,20 @@ import {
   Icon,
   CenteredLoader,
   Text,
-  TextButton,
-  Overlay
+  TextButton
 } from '_components';
 import { useClickAway } from '_hooks';
+
+const Overlay = styled.div`
+  background: #000;
+  height: 100vh;
+  opacity: 0.4;
+  position: fixed;
+  width: 100%;
+  z-index: ${zIndexes.OVERLAY};
+  top: ${(props) => props.top || 0};
+  left: 0;
+`;
 
 const UserWelcomeDropdown = styled.div`
   position: relative;

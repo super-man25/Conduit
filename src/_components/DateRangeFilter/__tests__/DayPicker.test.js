@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { DayPickerContainer } from '../DayPickerContainer';
+import { DayPicker } from '../DayPicker';
 
 it('renders correctly when not showing', () => {
-  const tree = renderer.create(<DayPickerContainer />).toJSON();
+  const tree = renderer.create(<DayPicker />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders correctly when showing', () => {
-  const tree = renderer.create(<DayPickerContainer show />).toJSON();
+  const tree = renderer.create(<DayPicker show />).toJSON();
   expect(tree).toMatchSnapshot();
 });

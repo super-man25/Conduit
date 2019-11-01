@@ -42,7 +42,6 @@ exports[`<EventInventory /> index route should render correctly 1`] = `
       />
     </Styled(FlexItem)>
   </Flex>
-  <Portal />
 </styled.div>
 `;
 
@@ -88,7 +87,6 @@ exports[`<EventInventory /> index route should render correctly when there are s
       />
     </Styled(FlexItem)>
   </Flex>
-  <Portal />
 </styled.div>
 `;
 
@@ -134,16 +132,14 @@ exports[`<EventInventory /> index route should render correctly when there are s
       />
     </Styled(FlexItem)>
   </Flex>
-  <Portal>
-    <Connect(BulkUpdateModalPresenter)
-      selectedEventIds={
-        Array [
-          1,
-          2,
-          3,
-        ]
-      }
-    />
-  </Portal>
+  <Connect(BulkUpdateModalPresenter)
+    selectedEventIds={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+  />
 </styled.div>
 `;

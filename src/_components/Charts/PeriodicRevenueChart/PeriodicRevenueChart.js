@@ -15,6 +15,7 @@ import { cssConstants, chartLabelStyles } from '_constants';
 import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicRevenueTooltip } from './PeriodicRevenueTooltip';
+import { isMobileDevice } from '_helpers';
 import type { EventStat } from '_models/eventStat';
 
 type Props = {
@@ -23,7 +24,8 @@ type Props = {
   renderNoData?: () => React.Node,
   tooltipDateFormatter: (Date) => string,
   majorXAxisTickRenderer: () => HTMLElement,
-  minorXAxisTickRenderer: () => HTMLElement
+  minorXAxisTickRenderer: () => HTMLElement,
+  mobileXAxisTickRenderer: () => HTMLElement
 };
 
 export const PeriodicRevenueChart = ({
@@ -32,7 +34,8 @@ export const PeriodicRevenueChart = ({
   renderNoData,
   tooltipDateFormatter,
   majorXAxisTickRenderer,
-  minorXAxisTickRenderer
+  minorXAxisTickRenderer,
+  mobileXAxisTickRenderer
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -44,22 +47,34 @@ export const PeriodicRevenueChart = ({
         <BarChart data={data}>
           <CartesianGrid vertical={false} />
           <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
-          <XAxis
-            dataKey="timestamp"
-            tick={minorXAxisTickRenderer}
-            tickLine={false}
-            interval={0}
-            height={30}
-          />
-          <XAxis
-            dataKey="timestamp"
-            tick={majorXAxisTickRenderer}
-            xAxisId="majorXAxis"
-            axisLine={false}
-            tickLine={false}
-            interval={0}
-            height={10}
-          />
+          {isMobileDevice ? (
+            <XAxis
+              dataKey="timestamp"
+              tick={mobileXAxisTickRenderer}
+              axisLine={false}
+              tickLine={false}
+              interval={0}
+            />
+          ) : (
+            <>
+              <XAxis
+                dataKey="timestamp"
+                tick={minorXAxisTickRenderer}
+                tickLine={false}
+                interval={0}
+                height={30}
+              />
+              <XAxis
+                dataKey="timestamp"
+                tick={majorXAxisTickRenderer}
+                xAxisId="majorXAxis"
+                axisLine={false}
+                tickLine={false}
+                interval={0}
+                height={10}
+              />
+            </>
+          )}
 
           <YAxis
             tickCount={10}

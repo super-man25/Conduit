@@ -1,4 +1,5 @@
 // @flow
+
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -34,7 +35,8 @@ import {
   CHART_HEIGHT,
   GROUP_FILTERS,
   CONCISE_READABLE_DATETIME_FORMAT,
-  READABLE_DATE_FORMAT
+  READABLE_DATE_FORMAT,
+  mobileBreakpoint
 } from '_constants';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import { selectors as seasonSelectors } from '_state/season';
@@ -44,7 +46,9 @@ import type { EDSeason } from '_models';
 import {
   dateFormatter,
   renderMinorXAxisTicks,
-  renderMajorXAxisTicks
+  renderMajorXAxisTicks,
+  renderMobileXAxisTicks,
+  isMobileDevice
 } from '_helpers';
 
 const TabLink = styled.span`
@@ -72,6 +76,16 @@ const DateFilterOptions = styled.div`
 
   > * + * {
     margin-left: 6px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    > * + * {
+      margin-left: 0;
+      margin-top: 10px;
+    }
   }
 `;
 
@@ -185,6 +199,15 @@ export class SeasonRevenuePanel extends React.Component<Props> {
       });
     };
 
+    const mobileXAxisTickRenderer = (tickProps) => {
+      return renderMobileXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: seasonStats.length
+      });
+    };
+
     return (
       <Tabbable>
         {(selectedTab, onTabChange) => (
@@ -232,7 +255,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                 <Text size={11} marginBottom="4px">
                   Filter By
                 </Text>
-                <Flex align="center" justify="space-between">
+                <Flex
+                  align={isMobileDevice ? 'flex-start' : 'center'}
+                  justify="space-between"
+                >
                   <DateFilterOptions>
                     <DateRangeFilter
                       dateRange={{ from, to }}
@@ -270,6 +296,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -281,6 +308,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -295,6 +323,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -306,6 +335,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}

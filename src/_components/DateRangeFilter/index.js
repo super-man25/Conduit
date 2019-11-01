@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import { Flex, Icon, Text } from '_components';
 import { cssConstants } from '_constants';
 import {
@@ -14,14 +14,12 @@ import {
   endOfMonth,
   startOfYear
 } from 'date-fns';
-import DayPicker from 'react-day-picker';
-import { filterOptions } from './constants';
+import { getFilterOptions } from './constants';
 import { Option } from './Option';
 import { DropdownContainer } from './DropdownContainer';
 import { Dropdown } from './Dropdown';
 import { DropdownMenu } from './DropdownMenu';
-import { DayPickerContainer } from './DayPickerContainer';
-import { ErrorAlert } from './ErrorAlert';
+import { DayPicker } from './DayPicker';
 
 type DropdownOption = {
   title: string,
@@ -136,6 +134,7 @@ export const reducer = (state: State, action: Action) => {
 
 export const DateRangeFilter = (props: Props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const filterOptions = getFilterOptions();
 
   const parseOption = (option: ?DropdownOption) => {
     return option ? option.title : 'Select Filter';
@@ -236,7 +235,7 @@ export const DateRangeFilter = (props: Props) => {
   const displayDateRangeOption = (from: ?Date, to: ?Date) => {
     const pattern = 'MMM DD[,] YYYY';
     return (
-      <Flex>
+      <Flex align="center">
         <Text
           color={
             !!from
@@ -294,24 +293,6 @@ export const DateRangeFilter = (props: Props) => {
     dispatch({ type: 'closeAll' });
   };
 
-  const generateDisabledStartDates = () => {
-    const { disabledDays } = props;
-    return {
-      ...disabledDays
-    };
-  };
-
-  const generateDisabledEndDates = () => {
-    const { disabledDays } = props;
-    const {
-      dateRange: { from }
-    } = props;
-    return {
-      ...disabledDays,
-      before: from
-    };
-  };
-
   const clickAway = () => {
     const {
       dateRange: { from, to }
@@ -328,7 +309,8 @@ export const DateRangeFilter = (props: Props) => {
 
   const {
     arrowColor,
-    dateRange: { from, to }
+    dateRange: { from, to },
+    disabledDays
   } = props;
   const {
     selected,
@@ -352,8 +334,8 @@ export const DateRangeFilter = (props: Props) => {
         />
       </Dropdown>
       <DropdownMenu show={isOpen}>
-        <Flex width="180px">
-          <Flex height="354px" flex={1} direction="column">
+        <Flex align="stretch">
+          <Flex direction="column">
             {filterOptions.map((option, idx) => (
               <Option
                 isActive={option === selected}
@@ -361,7 +343,7 @@ export const DateRangeFilter = (props: Props) => {
                 onClick={() => itemClicked(option)}
                 dateRangePickerOpen={dateRangePickerOpen}
               >
-                <Flex justify="space-between" height="20px">
+                <Flex justify="space-between">
                   {parseOption(option)}
                   {option === selected && (
                     <Icon
@@ -374,60 +356,20 @@ export const DateRangeFilter = (props: Props) => {
               </Option>
             ))}
           </Flex>
-          <Flex height="354px" flex={1}>
-            <DayPickerContainer show={dateRangePickerOpen}>
-              {fromIsOpen && (
-                <Fragment>
-                  <Flex height="40px" width="100%">
-                    {fromError ? (
-                      <ErrorAlert msg="Start Date Required" />
-                    ) : (
-                      <Text
-                        color={cssConstants.PRIMARY_GRAY}
-                        margin="20px"
-                        size={12}
-                        height="20px"
-                      >
-                        Start Date
-                      </Text>
-                    )}
-                  </Flex>
-                  <DayPicker
-                    month={from}
-                    disabledDays={generateDisabledStartDates()}
-                    modifiers={modifiers}
-                    onDayClick={handleFromChange}
-                    selectedDays={[from, { from, to }]}
-                  />
-                </Fragment>
-              )}
-
-              {toIsOpen && (
-                <Fragment>
-                  <Flex height="40px" width="100%">
-                    {toError ? (
-                      <ErrorAlert msg="End Date Required" />
-                    ) : (
-                      <Text
-                        color={cssConstants.PRIMARY_GRAY}
-                        margin="20px"
-                        size={12}
-                        height="20px"
-                      >
-                        End Date
-                      </Text>
-                    )}
-                  </Flex>
-                  <DayPicker
-                    month={from}
-                    disabledDays={generateDisabledEndDates()}
-                    modifiers={modifiers}
-                    onDayClick={handleToChange}
-                    selectedDays={[from, { from, to }]}
-                  />
-                </Fragment>
-              )}
-            </DayPickerContainer>
+          <Flex>
+            <DayPicker
+              dateRangePickerOpen={dateRangePickerOpen}
+              from={from}
+              to={to}
+              fromIsOpen={fromIsOpen}
+              toIsOpen={toIsOpen}
+              fromError={fromError}
+              toError={toError}
+              handleFromChange={handleFromChange}
+              handleToChange={handleToChange}
+              modifiers={modifiers}
+              disabledDays={disabledDays}
+            />
           </Flex>
         </Flex>
       </DropdownMenu>

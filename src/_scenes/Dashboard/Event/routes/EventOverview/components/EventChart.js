@@ -32,7 +32,8 @@ import {
   CHART_HEIGHT,
   GROUP_FILTERS,
   CONCISE_READABLE_DATETIME_FORMAT,
-  READABLE_DATE_FORMAT
+  READABLE_DATE_FORMAT,
+  mobileBreakpoint
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
 import { selectors } from '_state/event';
@@ -44,7 +45,9 @@ import typeof EventStatActions from '_state/eventStat/actions';
 import {
   dateFormatter,
   renderMinorXAxisTicks,
-  renderMajorXAxisTicks
+  renderMajorXAxisTicks,
+  renderMobileXAxisTicks,
+  isMobileDevice
 } from '_helpers';
 
 const TabLink = styled.span`
@@ -72,6 +75,16 @@ const DateFilterOptions = styled.div`
 
   > * + * {
     margin-left: 6px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    > * + * {
+      margin-left: 0;
+      margin-top: 10px;
+    }
   }
 `;
 
@@ -189,6 +202,15 @@ export class EventChart extends React.Component<Props> {
       });
     };
 
+    const mobileXAxisTickRenderer = (tickProps) => {
+      return renderMobileXAxisTicks({
+        tickProps,
+        interval,
+        timeZone,
+        dataLength: eventStats.length
+      });
+    };
+
     return (
       <Tabbable>
         {(selectedTab, onTabChange) => (
@@ -236,7 +258,10 @@ export class EventChart extends React.Component<Props> {
                 <Text size={11} marginBottom="4px">
                   Filter By
                 </Text>
-                <Flex align="center" justify="space-between">
+                <Flex
+                  align={isMobileDevice ? 'flex-start' : 'center'}
+                  justify="space-between"
+                >
                   <DateFilterOptions>
                     <DateRangeFilter
                       dateRange={{ from, to }}
@@ -275,6 +300,7 @@ export class EventChart extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -287,6 +313,7 @@ export class EventChart extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Revenue" />}
                       />
                     )}
@@ -301,6 +328,7 @@ export class EventChart extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}
@@ -313,6 +341,7 @@ export class EventChart extends React.Component<Props> {
                         tooltipDateFormatter={tooltipDateFormatter}
                         minorXAxisTickRenderer={minorXAxisTickRenderer}
                         majorXAxisTickRenderer={majorXAxisTickRenderer}
+                        mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                         renderNoData={() => <NoData type="Inventory" />}
                       />
                     )}

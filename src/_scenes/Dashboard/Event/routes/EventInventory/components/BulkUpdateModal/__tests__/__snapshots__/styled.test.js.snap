@@ -54,30 +54,6 @@ exports[`BulkUpdateModal styled components <ModalBody /> renders correctly 1`] =
 </div>
 `;
 
-exports[`BulkUpdateModal styled components <ModalContent /> renders correctly 1`] = `
-.c0 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 350px;
-  z-index: 9;
-  box-shadow: 0 1px 10px rgba(0,0,0,0.27);
-  -webkit-animation: laneLq 200ms ease-out;
-  animation: laneLq 200ms ease-out;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-<div
-  className="c0"
->
-  Modal Content
-</div>
-`;
-
 exports[`BulkUpdateModal styled components <ModalHeader /> renders correctly 1`] = `
 .c0 {
   padding: 1.5rem;
@@ -92,22 +68,6 @@ exports[`BulkUpdateModal styled components <ModalHeader /> renders correctly 1`]
 >
   Modal Header
 </div>
-`;
-
-exports[`BulkUpdateModal styled components <ModalOverlay /> renders correctly 1`] = `
-.c0 {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.3;
-  background-color: #070707;
-}
-
-<div
-  className="c0"
-/>
 `;
 
 exports[`BulkUpdateModal styled components <NumberInput /> renders correctly 1`] = `

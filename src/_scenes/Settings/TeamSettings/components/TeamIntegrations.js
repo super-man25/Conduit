@@ -1,11 +1,11 @@
 // @flow
 
 import React, { useState } from 'react';
-import { Flex, FlexItem, H5, HR, S1, Integration, Box } from '_components';
 import styled from 'styled-components';
-import { Portal } from '_components/Portal';
-import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
+
 import type { EDIntegration } from '_models';
+import { Flex, FlexItem, H5, HR, S1, Integration, Box } from '_components';
+import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
 
 const TeamIntegrationsWrapper = styled(Flex)`
   flex-direction: column;
@@ -39,9 +39,7 @@ export const TeamIntegrations = (props: Props) => {
     setToggledIntegration(integration);
   };
 
-  const onCancelToggleIntegration = () => {
-    setToggledIntegration(null);
-  };
+  const onCancel = () => setToggledIntegration(null);
 
   const onConfirmToggleIntegration = () => {
     if (!toggledIntegration) return;
@@ -102,13 +100,11 @@ export const TeamIntegrations = (props: Props) => {
         </Box>
       )}
       {toggledIntegration && (
-        <Portal>
-          <IntegrationToggleAlertModal
-            onCancel={onCancelToggleIntegration}
-            onConfirm={onConfirmToggleIntegration}
-            integration={toggledIntegration}
-          />
-        </Portal>
+        <IntegrationToggleAlertModal
+          onCancel={onCancel}
+          onConfirm={onConfirmToggleIntegration}
+          integration={toggledIntegration}
+        />
       )}
     </TeamIntegrationsWrapper>
   );

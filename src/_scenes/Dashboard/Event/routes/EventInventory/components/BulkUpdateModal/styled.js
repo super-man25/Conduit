@@ -1,38 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { Box, Text, H4 } from '_components';
-
-export const slideUpAnimation = keyframes`
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -20%);
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
-export const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.3;
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-`;
-
-export const ModalContent = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  z-index: 9;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.27);
-  animation: ${slideUpAnimation} 200ms ease-out;
-  animation-fill-mode: forwards;
-`;
 
 export const ModalHeader = styled.div`
   padding: 1.5rem;

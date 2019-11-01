@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { cssConstants, ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
 import {
   Box,
@@ -8,7 +8,8 @@ import {
   SecondaryButton,
   SelectDropdown,
   NumberInputField,
-  AsyncButton
+  AsyncButton,
+  Modal
 } from '_components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -16,15 +17,13 @@ import { selectors, actions } from '_state/eventInventoryBulk';
 import { selectors as eventInventorySelectors } from '_state/eventInventory';
 import { validateDecimal } from '_helpers';
 import {
-  ModalContent,
   ModalHeader,
   Title,
   ModalBody,
   Label,
   Field,
   NumberInput,
-  FieldErrorText,
-  ModalOverlay
+  FieldErrorText
 } from './styled';
 
 const ACTIONS = {
@@ -37,25 +36,11 @@ export const selectActions = [
   { label: 'Update Pricing Status', value: ACTIONS.updateListed }
 ];
 
-export class BulkUpdateModalPresenter extends React.Component {
+export class BulkUpdateModalPresenter extends Component {
   state = {
     touched: {},
     selectedAction: selectActions[0],
     value: ''
-  };
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.closeOnEscapePressed);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.closeOnEscapePressed);
-  }
-
-  closeOnEscapePressed = (e) => {
-    if (e.key === 'Escape') {
-      this.props.cancelBulkUpdate();
-    }
   };
 
   onBlur = (e) => {
@@ -127,88 +112,85 @@ export class BulkUpdateModalPresenter extends React.Component {
     const submitEnabled = this.submitEnabled();
 
     return (
-      <Box>
-        <ModalContent>
-          <ModalHeader>
-            <Title>Bulk Inventory Update</Title>
-            <Text weight={300} size={14}>
-              Updating inventory for {rows.length} row(s).
+      <Modal closeModal={cancelBulkUpdate}>
+        <ModalHeader>
+          <Title>Bulk Inventory Update</Title>
+          <Text weight={300} size={14}>
+            Updating inventory for {rows.length} row(s).
+          </Text>
+          {this.showNetworkWarning && (
+            <Text
+              color={cssConstants.SECONDARY_BLUE_ACCENT}
+              marginTop="1rem"
+              size={12}
+            >
+              Note: This update will result in multiple network requests
             </Text>
-            {this.showNetworkWarning && (
-              <Text
-                color={cssConstants.SECONDARY_BLUE_ACCENT}
-                marginTop="1rem"
-                size={12}
-              >
-                Note: This update will result in multiple network requests
-              </Text>
-            )}
-          </ModalHeader>
-          <ModalBody>
-            <Box marginBottom="2rem">
-              <Label>Action</Label>
-              <SelectDropdown
-                onChange={this.onActionChanged}
-                full
-                selected={selectedAction}
-                options={selectActions}
+          )}
+        </ModalHeader>
+        <ModalBody>
+          <Box marginBottom="2rem">
+            <Label>Action</Label>
+            <SelectDropdown
+              onChange={this.onActionChanged}
+              full
+              selected={selectedAction}
+              options={selectActions}
+            />
+          </Box>
+          {selectedAction.value === ACTIONS.updatePrice && (
+            <Field marginBottom="2rem">
+              <Label>Manual Price</Label>
+              <NumberInputField
+                component={NumberInput}
+                id="manual-price"
+                name="price"
+                type="number"
+                value={value}
+                onBlur={this.onBlur}
+                onChange={this.updatePrice}
+                placeholder="$ Manual Price"
               />
-            </Box>
-            {selectedAction.value === ACTIONS.updatePrice && (
-              <Field marginBottom="2rem">
-                <Label>Manual Price</Label>
-                <NumberInputField
-                  component={NumberInput}
-                  id="manual-price"
-                  name="price"
-                  type="number"
-                  value={value}
-                  onBlur={this.onBlur}
-                  onChange={this.updatePrice}
-                  placeholder="$ Manual Price"
-                />
-                {this.state.touched.price && !this.isValidManualPrice && (
-                  <FieldErrorText
-                    marginTop="0.5rem"
-                    size={12}
-                    weight={300}
-                    color={cssConstants.SECONDARY_RED}
-                  >
-                    Manual Price must be a valid dollar amount.
-                  </FieldErrorText>
-                )}
-              </Field>
-            )}
-            {selectedAction.value === ACTIONS.updateListed && (
-              <Field marginBottom="1.5rem">
-                <Label>Pricing</Label>
-                <Toggle
-                  isChecked={value}
-                  onChange={this.updateIsListed}
-                  size="small"
-                />
-              </Field>
-            )}
-            <Flex justify="flex-end">
-              <SecondaryButton
-                small
-                onClick={cancelBulkUpdate}
-                margin="0 1rem 0 0"
-              >
-                Cancel
-              </SecondaryButton>
-              <AsyncButton
-                isLoading={this.props.loading}
-                disabled={!submitEnabled}
-                onClick={this.submit}
-              >
-                Submit
-              </AsyncButton>
-            </Flex>
-          </ModalBody>
-        </ModalContent>
-        <ModalOverlay onClick={cancelBulkUpdate} />
-      </Box>
+              {this.state.touched.price && !this.isValidManualPrice && (
+                <FieldErrorText
+                  marginTop="0.5rem"
+                  size={12}
+                  weight={300}
+                  color={cssConstants.SECONDARY_RED}
+                >
+                  Manual Price must be a valid dollar amount.
+                </FieldErrorText>
+              )}
+            </Field>
+          )}
+          {selectedAction.value === ACTIONS.updateListed && (
+            <Field marginBottom="1.5rem">
+              <Label>Pricing</Label>
+              <Toggle
+                isChecked={value}
+                onChange={this.updateIsListed}
+                size="small"
+              />
+            </Field>
+          )}
+          <Flex justify="flex-end">
+            <SecondaryButton
+              small
+              onClick={cancelBulkUpdate}
+              margin="0 1rem 0 0"
+            >
+              Cancel
+            </SecondaryButton>
+            <AsyncButton
+              isLoading={this.props.loading}
+              disabled={!submitEnabled}
+              onClick={this.submit}
+            >
+              Submit
+            </AsyncButton>
+          </Flex>
+        </ModalBody>
+      </Modal>
     );
   }
 }

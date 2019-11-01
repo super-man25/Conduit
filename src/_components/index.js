@@ -30,7 +30,7 @@ export * from './LegendItem';
 export * from './Loader';
 export * from './MailtoLink';
 export * from './MainContent';
-export * from './Overlay';
+export * from './Modal';
 export * from './Panel';
 export * from './Popover';
 export * from './ReportDownloadButton';
