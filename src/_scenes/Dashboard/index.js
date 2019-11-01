@@ -1,10 +1,9 @@
 // @flow
 import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import { actions as teamStatActions } from '_state/teamStat';
 import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
