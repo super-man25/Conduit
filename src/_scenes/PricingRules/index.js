@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
+import { cssConstants } from '_constants';
 import {
   H3,
   PageWrapper,
@@ -13,7 +14,8 @@ import {
   PrimaryButton,
   Spacing,
   Flex,
-  Box
+  Box,
+  Dropdown
 } from '_components';
 import { VirtualizedPricingRules } from './components/PricingRulesTable';
 import { withRouter } from 'react-router-dom';
@@ -23,12 +25,16 @@ import {
   actions as priceRuleActions,
   selectors as priceRuleSelectors
 } from '_state/priceRule';
-import { selectors as seasonSelectors } from '_state/season';
 import {
   actions as buyerTypeActions,
   selectors as buyerTypeSelectors
 } from '_state/buyerType';
+import {
+  selectors as seasonSelectors,
+  actions as seasonActions
+} from '_state/season';
 import { createStructuredSelector } from 'reselect';
+import type { EDSeason } from '_models';
 
 const pricingCrumb = [
   {
@@ -49,12 +55,27 @@ type Props = {
   buyerTypeActions: any,
   priceRuleActions: any,
   editingAnyPriceRule: boolean,
-  activeSeasonId: number
+  activeSeasonId: number,
+  seasons: EDSeason[],
+  selectedSeason: EDSeason,
+  setActiveSeasonId: (id: number) => void,
+  cancelEditingRule: () => void
 };
 
 export class PricingRules extends React.Component<Props> {
   componentDidMount() {
-    this.props.buyerTypeActions.fetchBuyerTypes();
+    this.getBuyerTypes();
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { activeSeasonId, cancelEditingRule } = this.props;
+
+    if (prevProps.activeSeasonId !== activeSeasonId) {
+      this.getBuyerTypes();
+
+      // Cover case of switching seasons while editing/adding price rule
+      cancelEditingRule();
+    }
   }
 
   createNewPriceRule() {
@@ -64,8 +85,40 @@ export class PricingRules extends React.Component<Props> {
     createPriceRule();
   }
 
+  getBuyerTypes() {
+    const { activeSeasonId, buyerTypeActions } = this.props;
+
+    buyerTypeActions.fetchBuyerTypes({
+      seasonId: activeSeasonId
+    });
+  }
+
   render() {
-    const { editingAnyPriceRule, activeSeasonId } = this.props;
+    const {
+      editingAnyPriceRule,
+      activeSeasonId,
+      seasons,
+      selectedSeason,
+      setActiveSeasonId
+    } = this.props;
+
+    const seasonsWithPricingRuleName = seasons.map((season) => {
+      const startYear = new Date(season.startTimestamp).getFullYear();
+      const endYear = new Date(season.endTimestamp).getFullYear();
+
+      const newName =
+        startYear === endYear ? endYear : `${startYear} - ${endYear}`;
+
+      return {
+        ...season,
+        nameWithPricingRules: newName + ' Pricing Rules'
+      };
+    });
+
+    // If no selected season, display placeholder text
+    const selectedSeasonWithPricingRuleName = selectedSeason
+      ? seasonsWithPricingRuleName.find(({ id }) => id === selectedSeason.id)
+      : null;
 
     return (
       <PageWrapper>
@@ -80,9 +133,19 @@ export class PricingRules extends React.Component<Props> {
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
-                <H3 type="secondary" size="28px" weight="heavy">
-                  Pricing Rules
-                </H3>
+                <Dropdown
+                  arrowColor={cssConstants.SECONDARY_BLUE}
+                  options={seasonsWithPricingRuleName}
+                  selected={selectedSeasonWithPricingRuleName}
+                  noneSelected={<H3>Select a Season</H3>}
+                  parseOption={(option) => option.nameWithPricingRules}
+                  onChange={(option) => setActiveSeasonId(option.id)}
+                  renderSelected={(option) => (
+                    <H3 type="secondary" size="18px" weight="heavy">
+                      {option.nameWithPricingRules}
+                    </H3>
+                  )}
+                />
                 <Box>
                   <PrimaryButton
                     onClick={this.createNewPriceRule.bind(this)}
@@ -109,13 +172,20 @@ export class PricingRules extends React.Component<Props> {
 
 const mapDispatchToProps = (dispatch) => ({
   priceRuleActions: bindActionCreators(priceRuleActions, dispatch),
-  buyerTypeActions: bindActionCreators(buyerTypeActions, dispatch)
+  buyerTypeActions: bindActionCreators(buyerTypeActions, dispatch),
+  setActiveSeasonId: bindActionCreators(seasonActions.setActiveId, dispatch),
+  cancelEditingRule: bindActionCreators(
+    priceRuleActions.cancelEditingPriceRule,
+    dispatch
+  )
 });
 
 const mapStateToProps = createStructuredSelector({
   editingAnyPriceRule: priceRuleSelectors.selectIsEditingPriceRule,
   buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
-  activeSeasonId: seasonSelectors.selectActiveSeasonId
+  activeSeasonId: seasonSelectors.selectActiveSeasonId,
+  seasons: seasonSelectors.selectSeasons,
+  selectedSeason: seasonSelectors.selectActiveSeason
 });
 
 export default connect(

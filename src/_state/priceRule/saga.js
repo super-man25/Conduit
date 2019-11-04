@@ -3,9 +3,10 @@ import { priceRuleService } from '_services';
 import alertActions from '../alert/actions';
 import { types, selectors } from '.';
 
-export function* fetchPriceRules() {
+export function* fetchPriceRules(action) {
   try {
-    const priceRules = yield call(priceRuleService.getAll);
+    const { payload } = action;
+    const priceRules = yield call(priceRuleService.getAll, payload);
     yield put({ type: types.FETCH_PRICE_RULES_SUCCESS, payload: priceRules });
   } catch (err) {
     yield put(alertActions.error('Failed to Fetch Price Rules'));

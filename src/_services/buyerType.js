@@ -1,8 +1,8 @@
 import { get, put } from '_helpers/api';
 import { denormalize } from './normalizers/buyerType';
 
-function getAll() {
-  return get('buyerTypes');
+function getAll(params) {
+  return get('buyerTypes', params);
 }
 
 function updateMultiple(buyerTypes) {

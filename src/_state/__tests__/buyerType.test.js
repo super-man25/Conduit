@@ -146,9 +146,11 @@ describe('reducer', () => {
 
 describe('saga workers', () => {
   it('should handle fetch', () => {
-    const action = actions.fetchBuyerTypes();
+    const action = actions.fetchBuyerTypes({ seasonId: 1 });
     const generator = cloneableGenerator(fetchBuyerTypes)(action);
-    expect(generator.next().value).toEqual(call(buyerTypeService.getAll));
+    expect(generator.next().value).toEqual(
+      call(buyerTypeService.getAll, { seasonId: 1 })
+    );
 
     const success = generator.clone();
     const buyerTypes = [{ publicDescription: 'Adult' }];

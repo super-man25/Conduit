@@ -3,9 +3,10 @@ import { buyerTypeService } from '_services';
 import { types } from '.';
 import alertActions from '../alert/actions';
 
-export function* fetchBuyerTypes() {
+export function* fetchBuyerTypes(action) {
   try {
-    const buyerTypes = yield call(buyerTypeService.getAll);
+    const { payload } = action;
+    const buyerTypes = yield call(buyerTypeService.getAll, payload);
     yield put({ type: types.FETCH_BUYER_TYPES_SUCCESS, payload: buyerTypes });
   } catch (err) {
     yield put(alertActions.error('Failed to Fetch Buyer Types'));

@@ -32,13 +32,19 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
           direction="row"
           justify="space-between"
         >
-          <styled.h3
-            size="28px"
-            type="secondary"
-            weight="heavy"
-          >
-            Pricing Rules
-          </styled.h3>
+          <Dropdown
+            arrowColor="#1F49B6"
+            noneSelected={
+              <ForwardRef(styled.h3)>
+                Select a Season
+              </ForwardRef(styled.h3)>
+            }
+            onChange={[Function]}
+            options={Array []}
+            parseOption={[Function]}
+            renderSelected={[Function]}
+            selected={null}
+          />
           <Styled(styled.div)>
             <Styled(Styled(styled.button))
               disabled={false}

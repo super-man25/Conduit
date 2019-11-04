@@ -22,9 +22,9 @@ describe('get all', () => {
   afterEach(fetchMock.restore);
 
   it('should fetch all buyer types', () => {
-    const mock = fetchMock.get('end:buyerTypes?', buyerTypes);
+    const mock = fetchMock.get('end:buyerTypes?seasonId=1', buyerTypes);
 
-    return buyerTypeService.getAll().then((res) => {
+    return buyerTypeService.getAll({ seasonId: 1 }).then((res) => {
       expect(mock.called()).toBe(true);
       expect(res).toEqual(buyerTypes);
     });

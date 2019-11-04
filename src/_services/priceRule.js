@@ -4,8 +4,8 @@ import lodashGet from 'lodash.get';
 
 const route = 'proVenuePricingRules';
 
-function getAll() {
-  return get(route).then((pr) => pr.map(normalize));
+function getAll(params) {
+  return get(route, params).then((pr) => pr.map(normalize));
 }
 
 function create(priceRule) {

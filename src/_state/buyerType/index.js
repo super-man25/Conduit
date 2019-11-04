@@ -13,7 +13,8 @@ const RESET = 'buyerType/RESET';
 
 // Action types
 export type FetchBuyerTypesAction = {
-  type: 'buyerType/FETCH_BUYER_TYPES'
+  type: 'buyerType/FETCH_BUYER_TYPES',
+  payload: { seasonId: number }
 };
 
 export type FetchBuyerTypesSuccessAction = {
@@ -65,8 +66,11 @@ export const types = {
 };
 
 // Actions
-const fetchBuyerTypes = (): FetchBuyerTypesAction => ({
-  type: FETCH_BUYER_TYPES
+const fetchBuyerTypes = (payload: {
+  seasonId: number
+}): FetchBuyerTypesAction => ({
+  type: FETCH_BUYER_TYPES,
+  payload
 });
 
 const updateBuyerTypes = (

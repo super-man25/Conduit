@@ -27,7 +27,7 @@ const DELETE_PRICE_RULE_ERROR = 'priceRule/DELETE_PRICE_RULE_ERROR';
 // Action types
 export type FetchPriceRulesAction = {
   type: 'priceRule/FETCH_PRICE_RULES',
-  payload: null
+  payload: { seasonId: number }
 };
 
 export type FetchPriceRulesSuccessAction = {
@@ -156,9 +156,11 @@ export const types = {
 };
 
 // Actions
-const fetchPriceRules = (): FetchPriceRulesAction => ({
+const fetchPriceRules = (payload: {
+  seasonId: number
+}): FetchPriceRulesAction => ({
   type: FETCH_PRICE_RULES,
-  payload: null
+  payload
 });
 
 const startEditingPriceRule = (id: number): StartEditingPriceRuleAction => {
