@@ -1,4 +1,6 @@
 // @flow
+import { isSameDay } from 'date-fns';
+
 import {
   FETCH_ASYNC,
   FETCH_SUCCESS,
@@ -49,7 +51,22 @@ export const initialState: EventStatState = {
   error: null
 };
 
-export function serialize(eventStats: EventStat[]) {
+export function serialize(
+  eventStats: EventStat[],
+  eventStatState: EventStatState
+) {
+  const eventDay = eventStatState.dateRange.to;
+  const eventDayStat: EventStat = eventStats.find((eventStat) =>
+    isSameDay(eventStat.timestamp, eventDay)
+  );
+  const eventDayStatIsProjected = eventDayStat && eventDayStat.isProjected;
+  const eventDayStatProjectionIsNull =
+    eventDayStatIsProjected &&
+    eventDayStat.revenue === null &&
+    eventDayStat.inventory === null &&
+    eventDayStat.periodicRevenue === null &&
+    eventDayStat.periodicInventory === null;
+
   const eventStatsProjections = eventStats
     .filter((e) => e.isProjected)
     .map((e) => {
@@ -62,9 +79,21 @@ export function serialize(eventStats: EventStat[]) {
       const computedProjectedPeriodicRevenue =
         projectedPeriodicInventory === 0 ? 0 : e.periodicRevenue;
 
-      // if revenue is projected to be zero, inventory must be zero
+      // if there is no projected revenue, inventory change must be zero
       const computedProjectedPeriodicInventory =
         e.periodicRevenue === 0 ? 0 : projectedPeriodicInventory;
+
+      // if event day stat is projected and null, all projections should be null
+      if (eventDayStatProjectionIsNull) {
+        return {
+          timestamp: e.timestamp,
+          projectedInventory: null,
+          projectedRevenue: null,
+          projectedPeriodicRevenue: null,
+          projectedPeriodicInventory: null,
+          isProjected: e.isProjected
+        };
+      }
 
       return {
         timestamp: e.timestamp,
@@ -107,7 +136,7 @@ export default function eventStatReducer(
       return {
         ...state,
         loading: false,
-        eventStats: serialize(action.payload.data),
+        eventStats: serialize(action.payload.data, state),
         eventStatsMeta: action.payload.meta
       };
     case FETCH_ERROR:

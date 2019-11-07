@@ -136,7 +136,7 @@ describe('reducer', () => {
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
-    const serializedEventStats = serialize(eventStats);
+    const serializedEventStats = serialize(eventStats, initialState);
 
     expect(nextState).toEqual({
       ...initialState,
@@ -189,7 +189,7 @@ describe('reducer', () => {
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
-    const serializedEventStats = serialize(eventStats);
+    const serializedEventStats = serialize(eventStats, initialState);
 
     expect(nextState).toEqual({
       ...initialState,
@@ -248,7 +248,7 @@ describe('reducer', () => {
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
-    const serializedEventStats = serialize(eventStats);
+    const serializedEventStats = serialize(eventStats, initialState);
 
     expect(nextState).toEqual({
       ...initialState,
