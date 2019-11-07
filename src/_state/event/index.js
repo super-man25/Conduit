@@ -352,14 +352,15 @@ export const reducer = (state: State = initialState, action: Action) => {
         pendingFactors: { ...state.pendingFactors, [name]: value }
       };
     case RESET_TO_INITIAL_FACTORS:
-      const { event } = state;
+      const { factors } = state.event;
       return {
         ...state,
         pendingFactors: {
-          eventScore: event.eventScore,
-          eventScoreModifier: event.eventScoreModifier,
-          spring: event.spring,
-          springModifier: event.springModifier
+          eventScore: factors.eventScore,
+          eventScoreModifier: factors.eventScoreModifier,
+          spring: factors.spring,
+          springModifier: factors.springModifier,
+          velocityFactor: factors.velocityFactor
         }
       };
     default:
