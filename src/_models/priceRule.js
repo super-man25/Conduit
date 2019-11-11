@@ -8,7 +8,8 @@ export type EDPriceRule = {
   constant: ?number,
   isActive: boolean,
   round: 'Ceil' | 'Floor' | 'Round' | 'None',
-
+  priceFloor: number,
+  priceCeiling?: number,
   externalBuyerTypeIds: string[],
   priceScaleIds: number[],
   eventIds: number[]
@@ -22,7 +23,7 @@ export const emptyEDPriceRule = {
   constant: null,
   isActive: true,
   round: 'Ceil',
-
+  priceFloor: 0,
   externalBuyerTypeIds: [],
   priceScaleIds: [],
   eventIds: []

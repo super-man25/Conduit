@@ -41,6 +41,17 @@ const priceRuleSchema = yup.object({
     .string()
     .required()
     .label('Round option'),
+  priceFloor: yup
+    .number()
+    .money()
+    .required()
+    .min(0)
+    .label('Price Floor'),
+  priceCeiling: yup
+    .number()
+    .money()
+    .min(0)
+    .label('Price Ceiling'),
   externalBuyerTypeIds: yup
     .array(yup.string())
     .required()

@@ -34,6 +34,7 @@ describe('denormalizer', () => {
       constant: '-20',
       isActive: true,
       round: 'Floor',
+      priceFloor: 10.99,
       proVenuePricingRule: undefined
     };
   });
@@ -54,7 +55,8 @@ describe('denormalizer', () => {
       name: 'Twenty bucks off',
       constant: -20,
       isActive: true,
-      round: 'Floor'
+      round: 'Floor',
+      priceFloor: 10.99
     });
   });
 
