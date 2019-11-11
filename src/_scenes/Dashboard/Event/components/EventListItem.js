@@ -94,6 +94,7 @@ const EventDetailsLabel = styled(P1)`
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 2px 0;
+  white-space: nowrap;
 `;
 
 const SubtextP1 = styled(P1)`
@@ -102,6 +103,7 @@ const SubtextP1 = styled(P1)`
       ? cssConstants.PRIMARY_DARK_GRAY
       : cssConstants.PRIMARY_DARKEST_GRAY};
   font-size: 14px;
+  white-space: nowrap;
 `;
 
 const EventDetails = ({
