@@ -17,27 +17,27 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - v1-yarn-packages-{{ checksum "ed-web/yarn.lock" }}
+            - v1-yarn-packages-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install Dependencies
-          command: cd ed-web && yarn install --frozen-lockfile
+          command: yarn install --frozen-lockfile
 
       - save_cache:
           name: Save Yarn Package Cache
-          key: v1-yarn-packages-{{ checksum "ed-web/yarn.lock" }}
+          key: v1-yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-            - ed-web/node_modules
+            - node_modules
 
       - run:
           name: Run Tests
-          command: cd ed-web && yarn test-ci
+          command: yarn test-ci
           environment:
             JEST_JUNIT_OUTPUT: "test-results/junit/junit.xml"
 
       - store_test_results:
-          path: ed-web/test-results
+          path: test-results
 
   web-build:
     docker:
@@ -51,16 +51,15 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - v1-yarn-packages-{{ checksum "ed-web/yarn.lock" }}
+            - v1-yarn-packages-{{ checksum "yarn.lock" }}
             - v1-yarn-packages-
 
       - run:
           name: Build
           command: |
-            cd ed-web
             yarn build-${BUILD_ENV}
       - persist_to_workspace:
-          root: ed-web
+          root: /
           paths:
             - build/*
 
@@ -69,7 +68,7 @@ jobs:
       - image: circleci/node:10.16.2
 
     environment:
-      BUILD_DIR: ed-web/build
+      BUILD_DIR: build
 
     steps:
       - checkout
@@ -77,7 +76,7 @@ jobs:
       - set-build-env
 
       - attach_workspace:
-          at: ed-web
+          at: /
 
       - run:
           name: Deploy Web to S3
