@@ -58,10 +58,6 @@ jobs:
           name: Build
           command: |
             yarn build-${BUILD_ENV}
-      - persist_to_workspace:
-          root: /
-          paths:
-            - build/*
 
   web-deploy:
     docker:
@@ -74,9 +70,6 @@ jobs:
       - checkout
 
       - set-build-env
-
-      - attach_workspace:
-          at: /
 
       - run:
           name: Deploy Web to S3
