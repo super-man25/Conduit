@@ -32,6 +32,7 @@ const UnpaddedPanelContent = styled(PanelContent)`
 const LogoImg = styled.img`
   height: ${(props) => props.height || '100%'};
   width: auto;
+  max-height: 30px;
 `;
 
 const HorizontalList = styled(Flex)`
@@ -61,29 +62,15 @@ const HorizontalListItem = styled(FlexItem)`
 `;
 
 const TicketIntegrationLogo = ({
-  integration,
-  large
+  integration
 }: {
-  integration: EDIntegrationStat,
-  large?: boolean
-}) => {
-  const boxProps = {
-    height: large ? '50px' : '30px',
-    marginBottom: large ? '0' : '1rem'
-  };
-
-  return integration.name === 'Skybox' ? (
-    <Flex direction="row" align="center" justify="space-between">
-      <Box {...boxProps}>
-        <LogoImg height="60%" src={EdLogoDark} />
-      </Box>
-    </Flex>
+  integration: EDIntegrationStat
+}) =>
+  integration.name === 'Skybox' ? (
+    <LogoImg height="60%" src={EdLogoDark} />
   ) : (
-    <Box {...boxProps}>
-      <LogoImg src={integration.logoUrl} />
-    </Box>
+    <LogoImg src={integration.logoUrl} />
   );
-};
 
 const Loader = () => (
   <div style={{ position: 'relative', height: 100 }}>
@@ -111,14 +98,18 @@ export const TicketIntegrationListItem = ({
   >
     <Box padding="1rem 10%">
       {integrations.length > 1 && (
-        <TicketIntegrationLogo integration={integration} />
+        <Flex align="center" marginBottom="15px">
+          <TicketIntegrationLogo integration={integration} />
+        </Flex>
       )}
       <Flex
         justify="space-between"
         align={integrations.length === 1 ? 'center' : 'stretch'}
       >
         {integrations.length === 1 && (
-          <TicketIntegrationLogo large integration={integration} />
+          <Flex align="center">
+            <TicketIntegrationLogo integration={integration} />
+          </Flex>
         )}
         <Box>
           <Text marginBottom=".33rem" size={22} align="center" weight="heavy">
