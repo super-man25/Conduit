@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Box, Flex, H4, Icon, Popover, Text } from '_components';
 import { cssConstants } from '_constants';
 import { formatUSD } from '_helpers/string-utils';
+import { PendingFactors } from '_models';
 import { PricingTableHeader } from './PricingTableHeader';
 import type { EDPricingPreview } from '_models/pricingPreview';
 import type { Node } from 'react';
@@ -30,11 +31,18 @@ type Props = {
   loading: boolean,
   record: ?EDPricingPreview,
   error: ?Error,
-  springError: ?Error
+  springError: ?Error,
+  pendingFactors: PendingFactors
 };
 
 export const PricingPreview = (props: Props) => {
-  const { error, loading, record: pricingPreview, springError } = props;
+  const {
+    error,
+    loading,
+    record: pricingPreview,
+    springError,
+    pendingFactors: { eventScore }
+  } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,6 +61,13 @@ export const PricingPreview = (props: Props) => {
       <Flex align="center" justify="center" margin="auto">
         <Text color={cssConstants.PRIMARY_BLUE}>Loading Price Preview...</Text>
       </Flex>
+    );
+  } else if (!eventScore) {
+    preview = (
+      <PricingPreviewText color={cssConstants.PRIMARY_GRAY}>
+        The pricing preview section will be available once the event has an
+        event score
+      </PricingPreviewText>
     );
   } else if (springError || error) {
     preview = (

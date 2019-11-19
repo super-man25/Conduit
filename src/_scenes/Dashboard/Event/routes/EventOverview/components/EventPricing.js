@@ -170,7 +170,11 @@ export const EventPricingPresenter = (props: Props) => {
             isEditing={isEditing}
             setIsEditing={setIsEditing}
           />
-          <PricingPreview {...pricingPreview} springError={springError} />
+          <PricingPreview
+            {...pricingPreview}
+            springError={springError}
+            pendingFactors={pendingFactors}
+          />
         </Flex>
         {(isEditing || savingAdminModifiers) && (
           <Flex direction="column" padding="0 20px">

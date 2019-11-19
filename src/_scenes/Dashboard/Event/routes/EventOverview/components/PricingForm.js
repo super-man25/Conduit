@@ -96,7 +96,9 @@ export const PricingForm = (props: Props) => {
             minWidth="0"
             padding="0"
             onClick={() => setIsEditing(true)}
-            disabled={!!pricingPreviewError || pricingPreviewLoading}
+            disabled={
+              !eventScore || !!pricingPreviewError || pricingPreviewLoading
+            }
           >
             Edit
           </TextButton>

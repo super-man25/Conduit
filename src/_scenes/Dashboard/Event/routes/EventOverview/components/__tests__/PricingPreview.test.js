@@ -25,7 +25,10 @@ it('renders correctly', () => {
       }
     },
     error: null,
-    springError: null
+    springError: null,
+    pendingFactors: {
+      eventScore: 1
+    }
   };
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
@@ -39,7 +42,10 @@ it('renders the loading preview', () => {
       sections: []
     },
     error: null,
-    springError: null
+    springError: null,
+    pendingFactors: {
+      eventScore: null
+    }
   };
 
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();
@@ -54,7 +60,28 @@ it('renders the error preview', () => {
       sections: []
     },
     error: new Error('Error fetching pricing preview'),
-    springError: new Error('Error fetching spring value')
+    springError: new Error('Error fetching spring value'),
+    pendingFactors: {
+      eventScore: 1
+    }
+  };
+
+  const tree = renderer.create(<PricingPreview {...props} />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders the null eventScore message in pricing preview', () => {
+  const props = {
+    loading: false,
+    record: {
+      event: {},
+      sections: []
+    },
+    error: null,
+    springError: null,
+    pendingFactors: {
+      eventScore: null
+    }
   };
 
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();

@@ -558,3 +558,121 @@ exports[`renders the loading preview 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders the null eventScore message in pricing preview 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: auto;
+}
+
+.c2 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.c4 {
+  margin: 0.5rem 0;
+}
+
+.c6 {
+  color: #999999;
+  margin: 0;
+}
+
+.c3 {
+  display: inline-block;
+}
+
+<div
+  className="c0"
+  direction="column"
+  width="100%"
+>
+  <div
+    className="c1"
+  >
+    <h4
+      className="c2"
+      color="#070707"
+    >
+      Preview
+    </h4>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className=""
+        >
+          <svg
+            fill="#0A169A"
+            height="22px"
+            viewBox="0 0 24 24"
+            width="22px"
+          >
+            <path
+              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c5"
+  >
+    <p
+      className="c6"
+      color="#999999"
+    >
+      The pricing preview section will be available once the event has an event score
+    </p>
+  </div>
+</div>
+`;
