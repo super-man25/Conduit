@@ -62,7 +62,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - build/*
+            - project/build/*
 
   web-deploy:
     docker:
