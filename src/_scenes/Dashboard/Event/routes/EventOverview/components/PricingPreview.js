@@ -65,8 +65,8 @@ export const PricingPreview = (props: Props) => {
   } else if (!eventScore) {
     preview = (
       <PricingPreviewText color={cssConstants.PRIMARY_GRAY}>
-        The pricing preview section will be available once the event has an
-        event score
+        The pricing preview section will be available once the event has been
+        priced.
       </PricingPreviewText>
     );
   } else if (springError || error) {
