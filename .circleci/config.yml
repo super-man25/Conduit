@@ -59,6 +59,11 @@ jobs:
           command: |
             yarn build-${BUILD_ENV}
 
+      - persist_to_workspace:
+          root: web
+          paths:
+            - build/*
+
   web-deploy:
     docker:
       - image: circleci/node:10.16.2
@@ -69,7 +74,10 @@ jobs:
     steps:
       - checkout
 
-      - set-build-env
+      - set-build-env	
+
+      - attach_workspace:
+          at: web
 
       - run:
           name: Deploy Web to S3
