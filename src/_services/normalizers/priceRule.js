@@ -43,12 +43,13 @@ const priceRuleSchema = yup.object({
     .label('Round option'),
   priceFloor: yup
     .number()
+    .nullable()
     .money()
-    .required()
     .min(0)
     .label('Price Floor'),
   priceCeiling: yup
     .number()
+    .nullable()
     .money()
     .min(0)
     .label('Price Ceiling'),

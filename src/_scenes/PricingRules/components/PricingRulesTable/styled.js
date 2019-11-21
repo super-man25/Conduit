@@ -2,29 +2,13 @@ import styled, { css } from 'styled-components';
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
 import { withClickAway } from '_hoc';
-import { PrimaryButton, Input, Box, SecondaryButton } from '_components';
-
-const cellButton = css`
-  margin: 0;
-  min-width: 50px;
-  width: 80px;
-  max-height: 35px;
-  padding: 0.5rem 0.75rem;
-`;
+import { Input, Box } from '_components';
 
 export const EditPricingRuleInput = styled(Input)`
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;
   max-width: 80px;
-`;
-
-export const SavePricingRuleButton = styled(PrimaryButton)`
-  ${cellButton}
-`;
-
-export const CancelEditingButton = styled(SecondaryButton)`
-  ${cellButton}
 `;
 
 export const TableHeaderCell = styled.div`
