@@ -8,6 +8,9 @@ import {
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { format } from 'date-fns';
+
 import {
   selectors as priceRuleSelectors,
   actions as priceRuleActions
@@ -26,18 +29,15 @@ import {
   selectors as eventCategorySelectors
 } from '_state/eventCategory';
 import { formatUSD, compare } from '_helpers/string-utils';
-import { connect } from 'react-redux';
-import { format } from 'date-fns';
 import { CenteredLoader, Flex, Text } from '_components';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
 import { ToggleCellPresenter } from './ToggleCellRenderer';
-import { EditRuleCell } from './EditRuleCellRenderer';
 import { DefaultCellPresenter } from './CellRenderer';
 import { withEditingProps } from './withEditingProps';
 import { withPricingRuleRowStyles } from './withPricingRuleRowStyles';
-import { DeleteRuleCell } from './DeleteRuleCellRenderer';
+import { RuleControlsCell } from './RuleControlsCellRenderer';
 
 import type { EDBuyerType } from '_models/buyerType';
 import type { EDPriceScale } from '_models/priceScale';
@@ -107,7 +107,6 @@ const columns = [
   {
     label: 'Mirrors',
     dataKey: 'mirrorPriceScaleId',
-    flexGrow: 8,
     columnData: {
       optionsKey: 'priceScales',
       hasId: true,
@@ -119,7 +118,6 @@ const columns = [
   {
     label: '% Change',
     dataKey: 'percent',
-    flexGrow: 6,
     columnData: {
       displayFn: (percent) => {
         if (!percent) return '-';
@@ -131,7 +129,6 @@ const columns = [
   {
     label: '$ Change',
     dataKey: 'constant',
-    flexGrow: 6,
     columnData: {
       displayFn: (dollars) => {
         if (!dollars) return '-';
@@ -143,7 +140,6 @@ const columns = [
   {
     label: 'Events',
     dataKey: 'eventIds',
-    flexGrow: 16,
     columnData: {
       optionsKey: 'events',
       labelLength: 28,
@@ -160,27 +156,33 @@ const columns = [
   {
     label: 'Round',
     dataKey: 'round',
-    flexGrow: 6,
     columnData: { optionsKey: 'roundOptions', hasId: true, hasNone: true },
     cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
   },
   {
+    label: 'Price Floor',
+    dataKey: 'priceFloor',
+    columnData: {
+      displayFn: (value) => formatUSD(value)
+    }
+  },
+  {
+    label: 'Price Ceiling',
+    dataKey: 'priceCeiling',
+    columnData: {
+      displayFn: (value) => (value ? formatUSD(value) : '-')
+    }
+  },
+  {
     label: 'Enabled',
     dataKey: 'isActive',
-    flexGrow: 6,
     cellRenderer: asNodeWithEditingProps(ToggleCellPresenter)
   },
   {
     label: '',
     dataKey: '',
-    flexGrow: 12,
-    cellRenderer: asNodeWithEditingProps(EditRuleCell)
-  },
-  {
-    label: '',
-    dataKey: '',
-    flexGrow: 6,
-    cellRenderer: asNodeWithEditingProps(DeleteRuleCell)
+    minWidth: 125,
+    cellRenderer: asNodeWithEditingProps(RuleControlsCell)
   }
 ].map(combineColumnWithDefaults);
 
@@ -267,10 +269,6 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
     // if buyer types cannot be loaded do not display table
     const rowCount = buyerTypes.length > 0 ? rows.length : 0;
 
-    // add padding to the bottom of the table so the
-    // drop downs on the last rows do not get cut off
-    const tableHeightPadding = 200;
-
     if (
       buyerTypesLoading ||
       priceScalesLoading ||
@@ -289,7 +287,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
       <AutoSizer>
         {({ height, width }) => (
           <Table
-            height={height + tableHeightPadding}
+            height={height}
             width={width}
             headerHeight={45}
             rowHeight={60}
@@ -297,13 +295,11 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
             rowGetter={({ index }) => rows[index]}
             overscanRowCount={50}
             rowRenderer={rowRenderer}
-            noRowsRenderer={() => {
-              return (
-                <NoTableRowsText>
-                  No Pricing Rules Available To Display
-                </NoTableRowsText>
-              );
-            }}
+            noRowsRenderer={() => (
+              <NoTableRowsText>
+                No Pricing Rules Available To Display
+              </NoTableRowsText>
+            )}
           >
             {columns.map((column) => (
               <Column
