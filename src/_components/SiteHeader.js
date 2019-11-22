@@ -85,6 +85,7 @@ const MenuItem = styled(Link)`
   display: flex;
   align-items: center;
   color: white;
+  white-space: nowrap;
 
   &:not(:last-of-type) {
     margin-bottom: 25px;
