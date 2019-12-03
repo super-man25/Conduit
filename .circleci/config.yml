@@ -101,6 +101,7 @@ workflows:
               only:
                 - develop
                 - master
+                - demo
       - web-deploy:
           requires:
             - web-build
