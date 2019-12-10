@@ -1,5 +1,5 @@
 {
-  "name": "ed-web",
+  "name": "web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "expect": "^24.8.0",
     "express": "^4.17.1",
     "file-saver": "^2.0.2",
+    "formik": "^1.5.8",
     "fuse.js": "^3.4.5",
     "history": "^4.6.3",
     "lodash.get": "^4.4.2",

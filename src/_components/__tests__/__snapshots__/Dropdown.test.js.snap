@@ -9,30 +9,32 @@ exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
     align="center"
     justify="space-between"
   >
-    None selected
-    <Icon
+    <div>
+      Option 1
+    </div>
+    <Styled(Icon)
       color="#FFFFFF"
       name="arrow-drop-up"
-      size={24}
+      size={12}
     />
   </Flex>
   <DropdownMenu
     show={true}
   >
-    <Option
+    <DropdownMenuOption
       isActive={false}
       key="0"
       onClick={[Function]}
     >
       Option 1
-    </Option>
-    <Option
+    </DropdownMenuOption>
+    <DropdownMenuOption
       isActive={false}
       key="1"
       onClick={[Function]}
     >
       Option 2
-    </Option>
+    </DropdownMenuOption>
   </DropdownMenu>
 </DropdownContainer>
 `;
@@ -46,35 +48,46 @@ exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
     align="center"
     justify="space-between"
   >
-    None selected
-    <Icon
+    <div>
+      Option 1
+    </div>
+    <Styled(Icon)
       color="#FFFFFF"
       name="arrow-drop-down"
-      size={24}
+      size={12}
     />
   </Flex>
   <DropdownMenu
     show={false}
   >
-    <Option
+    <DropdownMenuOption
       isActive={false}
       key="0"
       onClick={[Function]}
     >
       Option 1
-    </Option>
-    <Option
+    </DropdownMenuOption>
+    <DropdownMenuOption
       isActive={false}
       key="1"
       onClick={[Function]}
     >
       Option 2
-    </Option>
+    </DropdownMenuOption>
   </DropdownMenu>
 </DropdownContainer>
 `;
 
 exports[`<Dropdown /> renders correctly with a selected item 1`] = `
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -95,14 +108,12 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 
 .c0 {
   position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
   cursor: pointer;
-}
-
-.c0:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -121,10 +132,11 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   color: #999999;
 }
 
-.c2 {
+.c4 {
   position: absolute;
+  top: calc(100%);
+  left: 0;
   width: 100%;
-  top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
   box-shadow: 0 20px 20px rgba(0,0,0,0.06);
@@ -135,9 +147,10 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   -ms-transform: translateY(20px);
   transform: translateY(20px);
   visibility: hidden;
+  margin-top: 5px;
 }
 
-.c4 {
+.c6 {
   padding: 12px 16px;
   background-color: #FFFFFF;
   -webkit-transition: 0.1s ease-in-out all;
@@ -145,16 +158,16 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   color: #070707;
 }
 
-.c4:not(:last-child) {
+.c6:not(:last-child) {
   border-bottom: 1px solid #EEEEEE;
 }
 
-.c4:hover {
+.c6:hover {
   cursor: pointer;
   background-color: #f2f2f2;
 }
 
-.c3 {
+.c5 {
   padding: 12px 16px;
   background-color: #f2f2f2;
   -webkit-transition: 0.1s ease-in-out all;
@@ -162,17 +175,25 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   color: #070707;
 }
 
-.c3:not(:last-child) {
+.c5:not(:last-child) {
   border-bottom: 1px solid #EEEEEE;
 }
 
-.c3:hover {
+.c5:hover {
   cursor: default;
   background-color: #f2f2f2;
 }
 
+.c2 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 <div>
   <div
+    autoComplete="off"
     className="c0"
     onClick={[Function]}
   >
@@ -182,32 +203,29 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
       <div>
         Option 1
       </div>
-      <div
-        className=""
+      <svg
+        className="c2 c3"
+        color="#FFFFFF"
+        height="12px"
+        viewBox="0 0 24 24"
+        width="12px"
       >
-        <svg
-          fill="#FFFFFF"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
+        <path
+          d="M0,6.5l12,12,12-12Z"
+        />
+      </svg>
     </div>
     <div
-      className="c2"
+      className="c4"
     >
       <div
-        className="c3"
+        className="c5"
         onClick={[Function]}
       >
         Option 1
       </div>
       <div
-        className="c4"
+        className="c6"
         onClick={[Function]}
       >
         Option 2
@@ -218,6 +236,15 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 `;
 
 exports[`<Dropdown /> renders correctly with none selected 1`] = `
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -238,14 +265,12 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
 
 .c0 {
   position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
   cursor: pointer;
-}
-
-.c0:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -264,10 +289,11 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   color: #999999;
 }
 
-.c2 {
+.c4 {
   position: absolute;
+  top: calc(100%);
+  left: 0;
   width: 100%;
-  top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid #EEEEEE;
   box-shadow: 0 20px 20px rgba(0,0,0,0.06);
@@ -278,9 +304,10 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   -ms-transform: translateY(20px);
   transform: translateY(20px);
   visibility: hidden;
+  margin-top: 5px;
 }
 
-.c3 {
+.c5 {
   padding: 12px 16px;
   background-color: #FFFFFF;
   -webkit-transition: 0.1s ease-in-out all;
@@ -288,50 +315,57 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   color: #070707;
 }
 
-.c3:not(:last-child) {
+.c5:not(:last-child) {
   border-bottom: 1px solid #EEEEEE;
 }
 
-.c3:hover {
+.c5:hover {
   cursor: pointer;
   background-color: #f2f2f2;
 }
 
+.c2 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 <div>
   <div
+    autoComplete="off"
     className="c0"
     onClick={[Function]}
   >
     <div
       className="c1"
     >
-      None selected
-      <div
-        className=""
-      >
-        <svg
-          fill="#FFFFFF"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
+      <div>
+        Option 1
       </div>
+      <svg
+        className="c2 c3"
+        color="#FFFFFF"
+        height="12px"
+        viewBox="0 0 24 24"
+        width="12px"
+      >
+        <path
+          d="M0,6.5l12,12,12-12Z"
+        />
+      </svg>
     </div>
     <div
-      className="c2"
+      className="c4"
     >
       <div
-        className="c3"
+        className="c5"
         onClick={[Function]}
       >
         Option 1
       </div>
       <div
-        className="c3"
+        className="c5"
         onClick={[Function]}
       >
         Option 2

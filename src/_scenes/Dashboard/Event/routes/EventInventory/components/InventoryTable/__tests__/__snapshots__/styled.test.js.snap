@@ -168,32 +168,22 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 
 exports[`InventoryTable styled components <ManualPricingInput /> should render correctly 1`] = `
 .c0 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
   background: #FFFFFF;
   background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
-  font-size: 1rem;
   width: 100%;
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: #0A169A;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
   margin: 0 0.5rem 0 0;
   padding: 10px 8px;
   max-height: 35px;
   max-width: 80px;
-}
-
-.c0:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -212,7 +202,15 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   color: #999999;
 }
 
+.c0:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 <input
+  autoComplete="off"
   className="c0"
 />
 `;

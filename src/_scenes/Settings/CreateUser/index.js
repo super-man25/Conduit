@@ -194,7 +194,7 @@ class CreateUser extends React.Component<Props, State> {
             id="firstName"
             value={user.firstName}
             valid={user.firstName}
-            inValid={!user.firstName && (submitted || firstNameHadFocus)}
+            invalid={!user.firstName && (submitted || firstNameHadFocus)}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
@@ -211,7 +211,7 @@ class CreateUser extends React.Component<Props, State> {
             id="lastName"
             value={user.lastName}
             valid={user.lastName}
-            inValid={!user.lastName && (submitted || lastNameHadFocus)}
+            invalid={!user.lastName && (submitted || lastNameHadFocus)}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
@@ -229,7 +229,7 @@ class CreateUser extends React.Component<Props, State> {
             autoComplete="new-email"
             value={user.email}
             valid={validEmail}
-            inValid={!validEmail && (submitted || emailHadFocus)}
+            invalid={!validEmail && (submitted || emailHadFocus)}
             onChange={this.handleChange}
             onBlur={this.handleBlur}
           />
@@ -248,23 +248,6 @@ class CreateUser extends React.Component<Props, State> {
             noneSelected={'Select a client'}
             onChange={this.handleClientChange}
             arrowColor={cssConstants.PRIMARY_BLUE}
-            containerStyle={{
-              boxSizing: 'border-box',
-              display: 'block',
-              marginTop: '10px',
-              marginBottom: '37px',
-              background: `${cssConstants.PRIMARY_WHITE}`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'right center',
-              fontSize: '1rem',
-              width: '100%',
-              paddingLeft: '8px',
-              border: '2px solid',
-              borderRadius: '3px',
-              borderColor: `${cssConstants.PRIMARY_BLUE}`,
-              paddingTop: '0.9em',
-              paddingBottom: '0.9em'
-            }}
           />
           <input
             type="checkbox"

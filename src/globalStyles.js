@@ -47,21 +47,29 @@ export const GlobalStyles = createGlobalStyle`
     background-color: rgba(56, 169, 219, 0.3) !important;
     color: #333333;
   }
+
   .DayPicker-Day {
     border-radius: 0 !important;
     padding: 0.7rem !important;
   }
+
   .DayPicker-Day--from:not(.DayPicker-Day--outside) {
     background-color: var(--PRIMARY_LIGHT_BLUE) !important;
     border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
     color: #ffffff;
   }
+
   .DayPicker-Day--to:not(.DayPicker-Day--outside) {
     background-color: var(--PRIMARY_LIGHT_BLUE) !important;
     border-top-right-radius: 50% !important;
     border-bottom-right-radius: 50% !important;
     color: #ffffff !important;
+  }
+
+  .DayPickerInput-Overlay.DayPickerInput-Overlay--AlignRight {
+    left: initial;
+    right: 0;
   }
   
   /*

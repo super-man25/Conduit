@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c3 path {
+  fill: #000;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -35,7 +44,7 @@ exports[`renders correctly 1`] = `
   color: #228ebe;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   width: 180px;
   top: calc(100% + 8px);
@@ -51,18 +60,18 @@ exports[`renders correctly 1`] = `
   visibility: hidden;
 }
 
-.c4 {
+.c5 {
   padding: 12px 16px;
   background-color: #FFFFFF;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 
-.c4:not(:last-child) {
+.c5:not(:last-child) {
   border-bottom: 1px solid #EEEEEE;
 }
 
-.c4:hover {
+.c5:hover {
   cursor: pointer;
   background-color: #f2f2f2;
 }
@@ -81,32 +90,29 @@ exports[`renders correctly 1`] = `
       >
         dog
       </p>
-      <div
-        className=""
+      <svg
+        className="c3"
+        color="#000"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
       >
-        <svg
-          fill="#000"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
+        <path
+          d="M0,6.5l12,12,12-12Z"
+        />
+      </svg>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
       <div
-        className="c4"
+        className="c5"
         onClick={[Function]}
       >
         dog
       </div>
       <div
-        className="c4"
+        className="c5"
         onClick={[Function]}
       >
         cat

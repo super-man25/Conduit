@@ -2,28 +2,18 @@
 
 exports[`renders correctly with disabled prop 1`] = `
 .c0 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #D1D1D1;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
   background: #D1D1D1;
   background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
-  font-size: 1rem;
   width: 100%;
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: #0A169A;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
-}
-
-.c0:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 .c0::-webkit-input-placeholder {
@@ -42,29 +32,51 @@ exports[`renders correctly with disabled prop 1`] = `
   color: #999999;
 }
 
+.c0:-webkit-autofill {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 <input
+  autoComplete="off"
   className="c0"
   disabled={true}
 />
 `;
 
-exports[`renders correctly with inValid prop 1`] = `
+exports[`renders correctly with invalid prop 1`] = `
 .c0 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-color: #DC0A0A;
+  border-radius: 3px;
+  background: #FFFFFF;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
   background: #FFFFFF;
   background-image: url(invalid.png);
   background-repeat: no-repeat;
   background-position: right center;
-  font-size: 1rem;
   width: 100%;
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: #DC0A0A;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c0::-moz-placeholder {
+  color: #999999;
+}
+
+.c0:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c0::placeholder {
+  color: #999999;
 }
 
 .c0:-webkit-autofill {
@@ -74,6 +86,28 @@ exports[`renders correctly with inValid prop 1`] = `
   animation-fill-mode: both;
 }
 
+<input
+  autoComplete="off"
+  className="c0"
+/>
+`;
+
+exports[`renders correctly with no props 1`] = `
+.c0 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  display: block;
+  background: #FFFFFF;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 100%;
+}
+
 .c0::-webkit-input-placeholder {
   color: #999999;
 }
@@ -88,30 +122,6 @@ exports[`renders correctly with inValid prop 1`] = `
 
 .c0::placeholder {
   color: #999999;
-}
-
-<input
-  className="c0"
-/>
-`;
-
-exports[`renders correctly with no props 1`] = `
-.c0 {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  background: #FFFFFF;
-  background-image: none;
-  background-repeat: no-repeat;
-  background-position: right center;
-  font-size: 1rem;
-  width: 100%;
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: #0A169A;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
 }
 
 .c0:-webkit-autofill {
@@ -121,6 +131,29 @@ exports[`renders correctly with no props 1`] = `
   animation-fill-mode: both;
 }
 
+<input
+  autoComplete="off"
+  className="c0"
+/>
+`;
+
+exports[`renders correctly with valid prop 1`] = `
+.c0 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-color: #2F6450;
+  border-radius: 3px;
+  background: #FFFFFF;
+  display: block;
+  background: #FFFFFF;
+  background-image: url(valid.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 100%;
+}
+
 .c0::-webkit-input-placeholder {
   color: #999999;
 }
@@ -135,30 +168,6 @@ exports[`renders correctly with no props 1`] = `
 
 .c0::placeholder {
   color: #999999;
-}
-
-<input
-  className="c0"
-/>
-`;
-
-exports[`renders correctly with valid prop 1`] = `
-.c0 {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  background: #FFFFFF;
-  background-image: url(valid.png);
-  background-repeat: no-repeat;
-  background-position: right center;
-  font-size: 1rem;
-  width: 100%;
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: #2F6450;
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
 }
 
 .c0:-webkit-autofill {
@@ -168,23 +177,8 @@ exports[`renders correctly with valid prop 1`] = `
   animation-fill-mode: both;
 }
 
-.c0::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c0::-moz-placeholder {
-  color: #999999;
-}
-
-.c0:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c0::placeholder {
-  color: #999999;
-}
-
 <input
+  autoComplete="off"
   className="c0"
 />
 `;
