@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with invalid prop 1`] = `
+exports[`renders correctly with inValid prop 1`] = `
 .c0 {
   position: relative;
   height: 3rem;

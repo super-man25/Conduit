@@ -1,4 +1,4 @@
-import { cssConstants } from './css.constants';
+import { cssConstants } from '.';
 
 export const chartLabelStyles = {
   fontSize: 12,

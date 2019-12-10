@@ -1,38 +1,44 @@
 // @flow
 import React, { useState } from 'react';
 import type { Node } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { withClickAway } from '_hoc';
 import { cssConstants } from '_constants';
 import { darken } from 'polished';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
-import { InputBase } from './Input';
 
-const DropdownContainer = withClickAway(styled(InputBase).attrs({
-  as: 'div'
-})`
+const DropdownContainer = withClickAway(styled.div`
+  position: relative;
   cursor: pointer;
+
+  &:-webkit-autofill {
+    animation-name: none;
+    animation-fill-mode: both;
+  }
+
+  ::placeholder {
+    color: ${cssConstants.PRIMARY_GRAY};
+  }
 `);
 DropdownContainer.displayName = 'DropdownContainer';
 
 const DropdownMenu = styled.div`
   position: absolute;
-  top: calc(100%);
-  left: 0;
   width: 100%;
+  top: calc(100% + 8px);
   z-index: 10;
   border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
+
   transition: 0.1s ease-in-out all;
   opacity: 0;
   transform: translateY(20px);
   visibility: hidden;
-  margin-top: 5px;
 
   ${(props) =>
     props.show &&
-    `
+    css`
       opacity: 1;
       transform: translateY(0);
       visibility: visible;
@@ -40,7 +46,7 @@ const DropdownMenu = styled.div`
 `;
 DropdownMenu.displayName = 'DropdownMenu';
 
-const DropdownMenuOption = styled.div`
+const Option = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
     props.isActive
@@ -58,29 +64,25 @@ const DropdownMenuOption = styled.div`
     background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
   }
 `;
-DropdownMenuOption.displayName = 'DropdownMenuOption';
-
-const DropdownArrow = styled(Icon)`
-  margin-left: 10px;
-  flex-shrink: 0;
-`;
+Option.displayName = 'Option';
 
 type Props = {
-  className?: string,
-  options: any[],
-  selected: any,
-  onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
-  onBlur: any,
   parseOption: (option: any, options: any[]) => string,
   renderSelected: (selectedOption: any, options: any[]) => Node,
+  selected: any,
+  options: any[],
   noneSelected: string | Node,
-  arrowColor?: string,
-  valid: boolean,
-  invalid: boolean
+  onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
+  containerStyle?: any,
+  arrowColor?: string
 };
 
 export const Dropdown = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdownOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   const itemClicked = (newSelected: any) => {
     const { onChange, options, selected: prevSelected } = props;
@@ -93,39 +95,22 @@ export const Dropdown = (props: Props) => {
   };
 
   const {
-    className,
     selected,
     options,
     parseOption,
     noneSelected,
     renderSelected,
-    arrowColor,
-    valid,
-    invalid,
-    onBlur
+    containerStyle,
+    arrowColor
   } = props;
 
-  const hasSelectedItem = !!options.find(
-    (option) => selected && option.value === selected.value
-  );
-
-  const getArrowColor = () => {
-    if (valid) return cssConstants.SECONDARY_GREEN;
-    if (invalid) return cssConstants.SECONDARY_RED;
-    if (arrowColor) return arrowColor;
-    return cssConstants.PRIMARY_WHITE;
-  };
+  const hasSelectedItem = !!options.find((option) => option === selected);
 
   return (
     <DropdownContainer
-      className={className}
-      onClick={() => setIsOpen(!isOpen)}
-      onClickAway={() => {
-        onBlur && onBlur();
-        setIsOpen(false);
-      }}
-      valid={valid}
-      invalid={invalid}
+      onClick={() => toggleDropdownOpen()}
+      onClickAway={() => setIsOpen(false)}
+      style={containerStyle}
     >
       <Flex justify="space-between" align="center">
         {hasSelectedItem
@@ -133,21 +118,21 @@ export const Dropdown = (props: Props) => {
             ? renderSelected(selected, options)
             : parseOption(selected, options)
           : noneSelected}
-        <DropdownArrow
-          size={12}
-          color={getArrowColor()}
+        <Icon
+          size={24}
+          color={arrowColor ? arrowColor : cssConstants.PRIMARY_WHITE}
           name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
         />
       </Flex>
       <DropdownMenu show={isOpen}>
-        {options.map((option, index) => (
-          <DropdownMenuOption
+        {options.map((option, idx) => (
+          <Option
             isActive={option === selected}
-            key={index}
+            key={idx}
             onClick={() => itemClicked(option)}
           >
             {parseOption(option, options)}
-          </DropdownMenuOption>
+          </Option>
         ))}
       </DropdownMenu>
     </DropdownContainer>

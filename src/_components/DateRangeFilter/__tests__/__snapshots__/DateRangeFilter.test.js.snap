@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DropdownContainer
+  onClickAway={[Function]}
+>
+  <Dropdown
+    isOpen={false}
+    onClick={[Function]}
+  >
+    All Time
+    <Icon
+      name="arrow-drop-down"
+      size={24}
+    />
+  </Dropdown>
+  <DropdownMenu
+    show={false}
+  >
+    <Flex
+      align="stretch"
+    >
+      <Flex
+        direction="column"
+      >
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="0"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            All Time
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="1"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Today
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="2"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Yesterday
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="3"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Last 7 Days
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="4"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Month to Date
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="5"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Previous Month
+          </Flex>
+        </Option>
+        <Option
+          dateRangePickerOpen={false}
+          isActive={false}
+          key="6"
+          onClick={[Function]}
+        >
+          <Flex
+            justify="space-between"
+          >
+            Year to Date
+          </Flex>
+        </Option>
+      </Flex>
+      <Flex>
+        <DayPicker
+          dateRangePickerOpen={false}
+          disabledDays={
+            Object {
+              "after": null,
+              "before": null,
+            }
+          }
+          from={null}
+          fromError={false}
+          fromIsOpen={false}
+          handleFromChange={[Function]}
+          handleToChange={[Function]}
+          modifiers={
+            Object {
+              "from": null,
+              "to": null,
+            }
+          }
+          to={null}
+          toError={false}
+          toIsOpen={false}
+        />
+      </Flex>
+    </Flex>
+  </DropdownMenu>
+</DropdownContainer>
+`;

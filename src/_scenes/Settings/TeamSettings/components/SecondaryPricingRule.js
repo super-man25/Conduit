@@ -93,7 +93,7 @@ export class SecondaryPricingRulePresenter extends Component {
                   onChange={(e) => this.update(e)}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Percent"
-                  invalid={this.state.percentInvalid}
+                  inValid={this.state.percentInvalid}
                 />
               </FlexItem>
               <FlexItem margin="0 0 0 10px">
@@ -104,7 +104,7 @@ export class SecondaryPricingRulePresenter extends Component {
                   onChange={(e) => this.update(e)}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Constant"
-                  invalid={this.state.constantInvalid}
+                  inValid={this.state.constantInvalid}
                 />
               </FlexItem>
             </Flex>

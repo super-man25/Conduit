@@ -3,16 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import paths from './icons.data';
 
-const Svg = styled.svg`
-  display: inline-block;
-  vertical-align: middle;
-  path {
-    fill: ${(props) => props.color};
-  }
+const StyledIcon = styled.div`
+  cursor: ${({ onClick }) => onClick && 'pointer'};
 `;
 
 type Props = {
-  className?: string,
+  className: string,
+
   /** The name of the icon as defined in icons.data.json */
   name: string,
 
@@ -23,19 +20,20 @@ type Props = {
   color: string
 };
 
-export const Icon = ({ className, name, size, color }: Props) => {
+export const Icon = ({ name, size, color, ...rest }: Props) => {
   return (
-    <Svg
-      className={className}
-      color={color}
-      width={`${size}px`}
-      height={`${size}px`}
-      viewBox="0 0 24 24"
-    >
-      {paths[name] &&
-        paths[name].map((path, idx) => (
-          <path d={path} key={`${name}-${idx}`} />
-        ))}
-    </Svg>
+    <StyledIcon {...rest}>
+      <svg
+        fill={color}
+        width={`${size}px`}
+        height={`${size}px`}
+        viewBox="0 0 24 24"
+      >
+        {paths[name] &&
+          paths[name].map((path, idx) => (
+            <path d={path} key={`${name}-${idx}`} />
+          ))}
+      </svg>
+    </StyledIcon>
   );
 };

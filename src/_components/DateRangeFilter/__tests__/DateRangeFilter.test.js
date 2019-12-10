@@ -9,6 +9,11 @@ const defaultProps = {
   disabledDays: { after: null, before: null }
 };
 
+it('renders correctly', () => {
+  const wrapper = shallow(<DateRangeFilter {...defaultProps} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
 describe('reducer tests', () => {
   it('should set selected', () => {
     const payload = { title: 'someTitle', key: 0 };

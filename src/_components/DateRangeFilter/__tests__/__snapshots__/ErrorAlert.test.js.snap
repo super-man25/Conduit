@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c1 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c1 path {
-  fill: #DC0A0A;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -26,7 +17,7 @@ exports[`renders correctly 1`] = `
   margin: 20px;
 }
 
-.c2 {
+.c1 {
   font-size: 12px;
   color: #DC0A0A;
   margin: 0;
@@ -37,19 +28,22 @@ exports[`renders correctly 1`] = `
   className="c0"
   height="20px"
 >
-  <svg
-    className="c1"
-    color="#DC0A0A"
-    height="16px"
-    viewBox="0 0 24 24"
-    width="16px"
+  <div
+    className=""
   >
-    <path
-      d="M11,15 L13,15 L13,17 L11,17 L11,15 Z M11,7 L13,7 L13,13 L11,13 L11,7 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 L11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 L12,20 Z"
-    />
-  </svg>
+    <svg
+      fill="#DC0A0A"
+      height="16px"
+      viewBox="0 0 24 24"
+      width="16px"
+    >
+      <path
+        d="M11,15 L13,15 L13,17 L11,17 L11,15 Z M11,7 L13,7 L13,13 L11,13 L11,7 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 L11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 L12,20 Z"
+      />
+    </svg>
+  </div>
   <p
-    className="c2"
+    className="c1"
     color="#DC0A0A"
     size={12}
   >

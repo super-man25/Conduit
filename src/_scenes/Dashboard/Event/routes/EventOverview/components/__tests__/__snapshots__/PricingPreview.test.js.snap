@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #0A169A;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -36,7 +27,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,27 +52,27 @@ exports[`renders correctly 1`] = `
   margin: 0.5rem 0;
 }
 
-.c6 {
+.c5 {
   padding: 1.5rem;
 }
 
-.c8 {
+.c7 {
   width: 33%;
 }
 
-.c9 {
+.c8 {
   font-size: 14px;
   color: #999999;
   margin: 0;
   text-align: right;
 }
 
-.c11 {
+.c10 {
   color: #999999;
   margin: 0;
 }
 
-.c12 {
+.c11 {
   font-weight: 700;
   color: #0A169A;
   margin: 0;
@@ -92,7 +83,7 @@ exports[`renders correctly 1`] = `
   display: inline-block;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,7 +100,7 @@ exports[`renders correctly 1`] = `
   border-bottom: 1px solid #EEEEEE;
 }
 
-.c10:last-child {
+.c9:last-child {
   border-bottom: none;
 }
 
@@ -135,33 +126,36 @@ exports[`renders correctly 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
+        <div
+          className=""
         >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+          <svg
+            fill="#0A169A"
+            height="22px"
+            viewBox="0 0 24 24"
+            width="22px"
+          >
+            <path
+              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="c5"
   >
     <div
-      className="c7"
+      className="c6"
       direction="row"
     >
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c9"
+          className="c8"
           color="#999999"
           size={14}
         >
@@ -169,11 +163,11 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c9"
+          className="c8"
           color="#999999"
           size={14}
         >
@@ -182,37 +176,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c9"
       direction="row"
     >
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c11"
+          className="c10"
           color="#999999"
         >
           EVENT
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $52.18
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $1,147.73
@@ -220,37 +214,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c9"
       direction="row"
     >
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c11"
+          className="c10"
           color="#999999"
         >
           SECTION 14
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $421.36
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $1,120.58
@@ -258,37 +252,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="c9"
       direction="row"
     >
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c11"
+          className="c10"
           color="#999999"
         >
           SECTION 114
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $285.06
         </p>
       </div>
       <div
-        className="c8"
+        className="c7"
         width="33%"
       >
         <p
-          className="c12"
+          className="c11"
           color="#0A169A"
         >
           $856.69
@@ -300,24 +294,6 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders the error preview 1`] = `
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #0A169A;
-}
-
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c7 path {
-  fill: #DC0A0A;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -344,7 +320,7 @@ exports[`renders the error preview 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -375,7 +351,7 @@ exports[`renders the error preview 1`] = `
   margin: 0.5rem 0;
 }
 
-.c8 {
+.c6 {
   color: #B80C09;
   margin: 0;
   text-align: center;
@@ -407,38 +383,44 @@ exports[`renders the error preview 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
+        <div
+          className=""
         >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+          <svg
+            fill="#0A169A"
+            height="22px"
+            viewBox="0 0 24 24"
+            width="22px"
+          >
+            <path
+              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="c5"
     direction="column"
     width="50%"
   >
-    <svg
-      className="c7"
-      color="#DC0A0A"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
+    <div
+      className=""
     >
-      <path
-        d="M11,15 L13,15 L13,17 L11,17 L11,15 Z M11,7 L13,7 L13,13 L11,13 L11,7 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 L11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 L12,20 Z"
-      />
-    </svg>
+      <svg
+        fill="#DC0A0A"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M11,15 L13,15 L13,17 L11,17 L11,15 Z M11,7 L13,7 L13,13 L11,13 L11,7 Z M11.99,2 C6.47,2 2,6.48 2,12 C2,17.52 6.47,22 11.99,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 11.99,2 L11.99,2 Z M12,20 C7.58,20 4,16.42 4,12 C4,7.58 7.58,4 12,4 C16.42,4 20,7.58 20,12 C20,16.42 16.42,20 12,20 L12,20 Z"
+        />
+      </svg>
+    </div>
     <p
-      className="c8"
+      className="c6"
       color="#B80C09"
     >
       A server error has occurred, please contact
@@ -460,15 +442,6 @@ exports[`renders the error preview 1`] = `
 `;
 
 exports[`renders the loading preview 1`] = `
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #0A169A;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -495,7 +468,7 @@ exports[`renders the loading preview 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -525,7 +498,7 @@ exports[`renders the loading preview 1`] = `
   margin: 0.5rem 0;
 }
 
-.c7 {
+.c6 {
   color: #0A169A;
   margin: 0;
 }
@@ -556,25 +529,28 @@ exports[`renders the loading preview 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
+        <div
+          className=""
         >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+          <svg
+            fill="#0A169A"
+            height="22px"
+            viewBox="0 0 24 24"
+            width="22px"
+          >
+            <path
+              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="c5"
   >
     <p
-      className="c7"
+      className="c6"
       color="#0A169A"
     >
       Loading Price Preview...
@@ -584,15 +560,6 @@ exports[`renders the loading preview 1`] = `
 `;
 
 exports[`renders the null eventScore message in pricing preview 1`] = `
-.c5 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c5 path {
-  fill: #0A169A;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -619,7 +586,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -649,7 +616,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   margin: 0.5rem 0;
 }
 
-.c7 {
+.c6 {
   color: #999999;
   margin: 0;
 }
@@ -680,25 +647,28 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
+        <div
+          className=""
         >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+          <svg
+            fill="#0A169A"
+            height="22px"
+            viewBox="0 0 24 24"
+            width="22px"
+          >
+            <path
+              d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="c5"
   >
     <p
-      className="c7"
+      className="c6"
       color="#999999"
     >
       The pricing preview section will be available once the event has been priced.

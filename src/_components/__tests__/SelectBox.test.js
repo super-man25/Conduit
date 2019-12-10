@@ -17,7 +17,7 @@ it('renders correctly with valid prop', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with invalid prop', () => {
-  const tree = renderer.create(<SelectBox invalid />).toJSON();
+it('renders correctly with inValid prop', () => {
+  const tree = renderer.create(<SelectBox inValid />).toJSON();
   expect(tree).toMatchSnapshot();
 });

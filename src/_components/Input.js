@@ -2,38 +2,12 @@
 
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-
 import { cssConstants } from '_constants';
 import okIcon from '_images/valid.png';
 import badIcon from '_images/invalid.png';
-import { Label } from './StyledTags';
 
-export const InputBase = styled.input.attrs((props) => ({
-  autoComplete: props.autoComplete || 'off'
-}))`
-  position: relative;
-  padding: 15px;
-  font-size: 14px;
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
-  border-color: ${({ valid, invalid }) =>
-    valid
-      ? cssConstants.SECONDARY_GREEN
-      : invalid
-      ? cssConstants.SECONDARY_RED
-      : null};
-  border-radius: 3px;
-  background: ${(props) =>
-    props.disabled
-      ? cssConstants.PRIMARY_LIGHT_GRAY
-      : cssConstants.PRIMARY_WHITE};
-  ::placeholder {
-    color: ${cssConstants.PRIMARY_GRAY};
-  }
-`;
-
-export const InputLabel = styled(Label)`
-  margin-bottom: 10px;
-`;
+const OK = `url(${okIcon})`;
+const BAD = `url(${badIcon})`;
 
 function autofillOK(valid) {
   const status = keyframes`
@@ -48,36 +22,54 @@ function autofillOK(valid) {
   return status;
 }
 
-type InputProps = {
+type Props = {
   disabled?: boolean,
   valid?: boolean,
-  invalid?: boolean
+  inValid?: boolean
 };
 
-export const Input: React.ComponentType<InputProps> = styled(InputBase)`
+export const Input: React.ComponentType<Props> = styled.input.attrs(
+  (props) => ({
+    bordercolor:
+      (props.valid && cssConstants.SECONDARY_GREEN) ||
+      (props.inValid && cssConstants.SECONDARY_RED) ||
+      cssConstants.PRIMARY_BLUE
+  })
+)`
   display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
   background: ${(props) =>
     props.disabled
       ? cssConstants.PRIMARY_LIGHT_GRAY
       : cssConstants.PRIMARY_WHITE};
   background-image: ${(props) =>
-    props.valid
-      ? `url(${okIcon})`
-      : props.invalid
-      ? `url(${badIcon})`
-      : 'none'};
+    props.valid ? OK : props.inValid ? BAD : 'none'};
   background-repeat: no-repeat;
   background-position: right center;
+
   &:-webkit-autofill {
     animation-name: ${(props) =>
       props.valid
         ? autofillOK(true)
-        : props.invalid
+        : props.inValid
         ? autofillOK(false)
         : 'none'};
     animation-fill-mode: both;
   }
+
+  font-size: 1rem;
   width: ${(props) => (props.width ? props.width : '100%')};
+  padding-left: 8px;
+  border: 2px solid;
+  border-radius: 3px;
+  border-color: ${(props) => props.bordercolor};
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+
+  ::placeholder {
+    color: ${cssConstants.PRIMARY_GRAY};
+  }
 `;
 
 type NumberInputProps = {

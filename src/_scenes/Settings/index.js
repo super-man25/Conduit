@@ -1,11 +1,9 @@
 // @flow
 
 import React from 'react';
-import type { ElementType } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-
 import {
   EDNavLink,
   Flex,
@@ -22,7 +20,7 @@ import CreateUser from './CreateUser';
 import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
-import Onboard from './Onboard';
+import type { Node } from 'react';
 import type { EDUser } from '_models/user';
 import { SecuredRoute } from '_components';
 import { Users } from './Users';
@@ -31,7 +29,7 @@ type RouteConfig = {
   path: string,
   linkText: string,
   adminOnly: boolean,
-  main: ElementType
+  main: (...args: any) => Node
 };
 
 const routes: Array<RouteConfig> = [
@@ -64,12 +62,6 @@ const routes: Array<RouteConfig> = [
     linkText: 'Demo',
     adminOnly: true,
     main: Demo
-  },
-  {
-    path: '/settings/onboard',
-    linkText: 'Onboard',
-    adminOnly: true,
-    main: Onboard
   }
 ];
 

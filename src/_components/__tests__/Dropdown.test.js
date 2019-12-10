@@ -6,11 +6,7 @@ import { Dropdown } from '../Dropdown';
 const createProps = () => ({
   parseOption: (option) => option.label,
   renderSelected: (option) => <div>{option.label}</div>,
-  options: [
-    { label: 'Option 1', value: 'Value 1' },
-    { label: 'Option 2', value: 'Value 2' }
-  ],
-  selected: { label: 'Option 1', value: 'Value 1' },
+  options: [{ id: 1, label: 'Option 1' }, { id: 2, label: 'Option 2' }],
   noneSelected: 'None selected',
   onChange: jest.fn()
 });
@@ -45,7 +41,7 @@ describe('<Dropdown />', () => {
     const wrapper = mount(<Dropdown {...props} />);
 
     wrapper.simulate('click');
-    const firstOption = wrapper.find('DropdownMenuOption').at(0);
+    const firstOption = wrapper.find('Option').at(0);
     firstOption.simulate('click');
     expect(props.onChange).toHaveBeenCalledWith(
       props.options[0],

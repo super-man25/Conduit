@@ -123,8 +123,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(actions.startEditingPriceRule(ownProps.rowData.id)),
   cancelEditingRule: () =>
     dispatch(actions.cancelEditingPriceRule(ownProps.rowData.id)),
-  saveEditedRule: () => dispatch(actions.savePriceRule(ownProps.rowData.id)),
-  deletePriceRule: (payload) => dispatch(actions.deletePriceRule(payload))
+  saveEditedRule: () => dispatch(actions.savePriceRule(ownProps.rowData.id))
 });
 
 export const RuleControlsCell = connect(
