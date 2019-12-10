@@ -42,11 +42,11 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
           >
             Email Address
           </styled.label>
-          <styled.input
+          <Styled(styled.input)
             autoComplete="new-email"
             data-test-id="email-input"
             id="email"
-            inValid={false}
+            invalid={false}
             name="email"
             onBlur={[Function]}
             onChange={[Function]}
@@ -67,11 +67,11 @@ exports[`<LoginPresenter /> renders correctly as forgot password form when forgo
             >
               Password
             </styled.label>
-            <styled.input
+            <Styled(styled.input)
               autoComplete="new-password"
               data-test-id="password-input"
               id="password"
-              inValid={false}
+              invalid={false}
               name="password"
               onBlur={[Function]}
               onChange={[Function]}
@@ -162,11 +162,11 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
           >
             Email Address
           </styled.label>
-          <styled.input
+          <Styled(styled.input)
             autoComplete="new-email"
             data-test-id="email-input"
             id="email"
-            inValid={false}
+            invalid={false}
             name="email"
             onBlur={[Function]}
             onChange={[Function]}
@@ -187,11 +187,11 @@ exports[`<LoginPresenter /> renders correctly as login form when forgot=false 1`
             >
               Password
             </styled.label>
-            <styled.input
+            <Styled(styled.input)
               autoComplete="new-password"
               data-test-id="password-input"
               id="password"
-              inValid={false}
+              invalid={false}
               name="password"
               onBlur={[Function]}
               onChange={[Function]}

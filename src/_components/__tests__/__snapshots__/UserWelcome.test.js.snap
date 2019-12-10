@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with a valid user prop 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   border: none;
   min-width: 100px;
@@ -80,6 +89,10 @@ exports[`renders correctly with a valid user prop 1`] = `
   height: 36px;
 }
 
+.c6 {
+  margin-left: 10px;
+}
+
 <div
   className="c0"
 >
@@ -101,20 +114,17 @@ exports[`renders correctly with a valid user prop 1`] = `
       <div
         className="c5"
       >
-        <div
-          className=""
+        <svg
+          className="c6 c7"
+          color="#FFFFFF"
+          height="12px"
+          viewBox="0 0 24 24"
+          width="12px"
         >
-          <svg
-            fill="#FFFFFF"
-            height="24px"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <path
-              d="M7 10l5 5 5-5z"
-            />
-          </svg>
-        </div>
+          <path
+            d="M0,6.5l12,12,12-12Z"
+          />
+        </svg>
       </div>
     </div>
   </button>

@@ -18,12 +18,12 @@ export const withClickAway = (WrappedComponent) => {
     };
 
     componentDidMount() {
-      document.addEventListener('mousedown', this.handleOutsideClick);
+      document.addEventListener('mouseup', this.handleOutsideClick);
       document.addEventListener('keyup', this.handleKey);
     }
 
     componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleOutsideClick);
+      document.removeEventListener('mouseup', this.handleOutsideClick);
       document.removeEventListener('keyup', this.handleKey);
     }
 

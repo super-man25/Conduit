@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Onboard /> renders correctly 1`] = `
+<styled.div>
+  <styled.div
+    padding="2rem"
+  >
+    <Styled(Flex)>
+      <styled.div
+        margin="2rem 0"
+      >
+        <Breadcrumbs
+          crumbs={
+            Array [
+              Object {
+                "path": "/dashboard",
+                "title": "Dashboard",
+              },
+              Object {
+                "path": "/settings/onboard",
+                "title": "Onboard",
+              },
+            ]
+          }
+        />
+      </styled.div>
+      <styled.h3
+        size="28px"
+        type="secondary"
+        weight="heavy"
+      >
+        Onboard New Client
+      </styled.h3>
+      <Form
+        handleSubmit={[Function]}
+        initialValues={
+          Object {
+            "accountId": "",
+            "apiKey": "",
+            "defaultVendorId": "",
+            "league": Object {
+              "label": "",
+              "value": "",
+            },
+            "logoUrl": "",
+            "seasonEnd": "",
+            "seasonName": "",
+            "seasonStart": "",
+            "skyBoxCustomers": Array [
+              Object {
+                "mapsTo": Object {
+                  "label": "",
+                  "value": "",
+                },
+                "skyBoxCustomer": "",
+              },
+            ],
+            "stadiumCapacity": "",
+            "stadiumMapUrl": "",
+            "stadiumName": "",
+            "stadiumTimezone": Object {
+              "label": "",
+              "value": "",
+            },
+            "stadiumZip": "",
+            "team": "",
+          }
+        }
+      >
+        <Component />
+      </Form>
+    </Styled(Flex)>
+  </styled.div>
+</styled.div>
+`;

@@ -1,5 +1,8 @@
 // @flow
 import React, { useReducer } from 'react';
+import DayPicker from 'react-day-picker';
+import styled from 'styled-components';
+
 import { Flex, Icon, Text } from '_components';
 import { cssConstants } from '_constants';
 import {
@@ -19,7 +22,6 @@ import { Option } from './Option';
 import { DropdownContainer } from './DropdownContainer';
 import { Dropdown } from './Dropdown';
 import { DropdownMenu } from './DropdownMenu';
-import { DayPicker } from './DayPicker';
 
 type DropdownOption = {
   title: string,
@@ -59,6 +61,10 @@ type State = {
   toError: boolean,
   fromError: boolean
 };
+
+const DropdownText = styled.span`
+  margin-right: 5px;
+`;
 
 export const initialState: State = {
   selected: null,
@@ -326,9 +332,9 @@ export const DateRangeFilter = (props: Props) => {
   return (
     <DropdownContainer onClickAway={clickAway}>
       <Dropdown onClick={toggleDropdownOpen} isOpen={isOpen}>
-        {displayDropdownText(selected, from, to)}
+        <DropdownText>{displayDropdownText(selected, from, to)}</DropdownText>
         <Icon
-          size={24}
+          size={10}
           color={arrowColor ? arrowColor : cssConstants.PRIMARY_DARK_BLUE}
           name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
         />
