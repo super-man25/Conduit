@@ -19,10 +19,9 @@ import { emptyEDPriceRule } from '_models/priceRule';
 
 describe('actions', () => {
   it('should create an action to fetch price rules', () => {
-    const action = actions.fetchPriceRules({ seasonId: 1 });
+    const action = actions.fetchPriceRules();
     expect(action).toEqual({
-      type: types.FETCH_PRICE_RULES,
-      payload: { seasonId: 1 }
+      type: types.FETCH_PRICE_RULES
     });
   });
 
@@ -400,10 +399,12 @@ describe('reducer', () => {
 
 describe('saga workers', () => {
   it('should handle fetch', () => {
-    const action = actions.fetchPriceRules({ seasonId: 1 });
+    const action = actions.fetchPriceRules();
     const generator = cloneableGenerator(fetchPriceRules)(action);
+    generator.next();
+    const state = reducer(undefined, {});
     expect(generator.next().value).toEqual(
-      call(priceRuleService.getAll, { seasonId: 1 })
+      call(priceRuleService.getAll, { seasonId: state.activeSeasonId })
     );
 
     const success = generator.clone();
