@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly when downloading is false 1`] = `
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c1 path {
+  fill: #0A169A;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,7 +25,7 @@ exports[`renders correctly when downloading is false 1`] = `
   height: 24px;
 }
 
-.c1 {
+.c2 {
   font-size: 0.875rem;
   color: #0A169A;
   font-weight: 500;
@@ -35,22 +44,19 @@ exports[`renders correctly when downloading is false 1`] = `
     }
   }
 >
-  <div
-    className=""
-  >
-    <svg
-      fill="#0A169A"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-    >
-      <path
-        d="M19,9 L15,9 L15,3 L9,3 L9,9 L5,9 L12,16 L19,9 Z M5,18 L5,20 L19,20 L19,18 L5,18 Z"
-      />
-    </svg>
-  </div>
-  <div
+  <svg
     className="c1"
+    color="#0A169A"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <path
+      d="M19,9 L15,9 L15,3 L9,3 L9,9 L5,9 L12,16 L19,9 Z M5,18 L5,20 L19,20 L19,18 L5,18 Z"
+    />
+  </svg>
+  <div
+    className="c2"
     size="small"
     type="secondary"
   >
@@ -60,6 +66,15 @@ exports[`renders correctly when downloading is false 1`] = `
 `;
 
 exports[`renders correctly when downloading is true 1`] = `
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c1 path {
+  fill: #999999;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -75,7 +90,7 @@ exports[`renders correctly when downloading is true 1`] = `
   height: 24px;
 }
 
-.c1 {
+.c2 {
   font-size: 0.875rem;
   color: #999999;
   font-weight: 500;
@@ -93,22 +108,19 @@ exports[`renders correctly when downloading is true 1`] = `
     }
   }
 >
-  <div
-    className=""
-  >
-    <svg
-      fill="#999999"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-    >
-      <path
-        d="M19,9 L15,9 L15,3 L9,3 L9,9 L5,9 L12,16 L19,9 Z M5,18 L5,20 L19,20 L19,18 L5,18 Z"
-      />
-    </svg>
-  </div>
-  <div
+  <svg
     className="c1"
+    color="#999999"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <path
+      d="M19,9 L15,9 L15,3 L9,3 L9,9 L5,9 L12,16 L19,9 Z M5,18 L5,20 L19,20 L19,18 L5,18 Z"
+    />
+  </svg>
+  <div
+    className="c2"
     size="small"
     type="disabled"
   >

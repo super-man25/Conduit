@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with MLB performance type 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -20,7 +29,7 @@ exports[`renders correctly with MLB performance type 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,63 +47,19 @@ exports[`renders correctly with MLB performance type 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -106,12 +71,63 @@ exports[`renders correctly with MLB performance type 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -127,7 +143,7 @@ exports[`renders correctly with MLB performance type 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -135,6 +151,12 @@ exports[`renders correctly with MLB performance type 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -146,54 +168,52 @@ exports[`renders correctly with MLB performance type 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -204,16 +224,16 @@ exports[`renders correctly with MLB performance type 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -228,6 +248,15 @@ exports[`renders correctly with MLB performance type 1`] = `
 `;
 
 exports[`renders correctly with MLS performance type 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -247,7 +276,7 @@ exports[`renders correctly with MLS performance type 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -265,63 +294,19 @@ exports[`renders correctly with MLS performance type 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -333,12 +318,63 @@ exports[`renders correctly with MLS performance type 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -354,7 +390,7 @@ exports[`renders correctly with MLS performance type 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -362,6 +398,12 @@ exports[`renders correctly with MLS performance type 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -373,54 +415,52 @@ exports[`renders correctly with MLS performance type 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1 - 3
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -431,16 +471,16 @@ exports[`renders correctly with MLS performance type 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -455,6 +495,15 @@ exports[`renders correctly with MLS performance type 1`] = `
 `;
 
 exports[`renders correctly with NCAAB performance type 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -474,7 +523,7 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -492,63 +541,19 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -560,12 +565,63 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -581,7 +637,7 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -589,6 +645,12 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -600,54 +662,52 @@ exports[`renders correctly with NCAAB performance type 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -658,16 +718,16 @@ exports[`renders correctly with NCAAB performance type 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -682,6 +742,15 @@ exports[`renders correctly with NCAAB performance type 1`] = `
 `;
 
 exports[`renders correctly with NCAAF performance type 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -701,7 +770,7 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -719,63 +788,19 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -787,12 +812,63 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -808,7 +884,7 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -816,6 +892,12 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -827,54 +909,52 @@ exports[`renders correctly with NCAAF performance type 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -885,16 +965,16 @@ exports[`renders correctly with NCAAF performance type 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -909,6 +989,15 @@ exports[`renders correctly with NCAAF performance type 1`] = `
 `;
 
 exports[`renders correctly with NFL performance type 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -928,7 +1017,7 @@ exports[`renders correctly with NFL performance type 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -946,63 +1035,19 @@ exports[`renders correctly with NFL performance type 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -1014,12 +1059,63 @@ exports[`renders correctly with NFL performance type 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -1035,7 +1131,7 @@ exports[`renders correctly with NFL performance type 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -1043,6 +1139,12 @@ exports[`renders correctly with NFL performance type 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -1054,54 +1156,52 @@ exports[`renders correctly with NFL performance type 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1 - 3
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -1112,16 +1212,16 @@ exports[`renders correctly with NFL performance type 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -1136,6 +1236,15 @@ exports[`renders correctly with NFL performance type 1`] = `
 `;
 
 exports[`renders correctly with toggledSidebar 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #FFFFFF;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1155,7 +1264,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   margin-bottom: 15px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1173,63 +1282,19 @@ exports[`renders correctly with toggledSidebar 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c9 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
 
-.c2 {
-  position: relative;
-  cursor: pointer;
-}
-
-.c2:-webkit-autofill {
-  -webkit-animation-name: none;
-  animation-name: none;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #999999;
-}
-
-.c2::-moz-placeholder {
-  color: #999999;
-}
-
-.c2:-ms-input-placeholder {
-  color: #999999;
-}
-
-.c2::placeholder {
-  color: #999999;
-}
-
-.c5 {
-  position: absolute;
-  width: 100%;
-  top: calc(100% + 8px);
-  z-index: 10;
-  border: 1px solid #EEEEEE;
-  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  -webkit-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  transform: translateY(20px);
-  visibility: hidden;
-}
-
-.c8 {
+.c11 {
   margin: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -1241,12 +1306,63 @@ exports[`renders correctly with toggledSidebar 1`] = `
   letter-spacing: 1px;
 }
 
+.c3 {
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid #0A169A;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.c3::-moz-placeholder {
+  color: #999999;
+}
+
+.c3:-ms-input-placeholder {
+  color: #999999;
+}
+
+.c3::placeholder {
+  color: #999999;
+}
+
+.c8 {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.06);
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.c6 {
+  margin-left: 10px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 .c0 {
   padding: 25px;
   color: #FFFFFF;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
@@ -1262,7 +1378,7 @@ exports[`renders correctly with toggledSidebar 1`] = `
   font-weight: bold;
 }
 
-.c7 {
+.c10 {
   color: #0A169A;
   font-size: 22px;
   font-weight: normal;
@@ -1270,6 +1386,12 @@ exports[`renders correctly with toggledSidebar 1`] = `
   padding: 0;
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.c2 {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 <div
@@ -1281,54 +1403,52 @@ exports[`renders correctly with toggledSidebar 1`] = `
   >
     <div>
       <div
-        className="c2"
+        autoComplete="off"
+        className="c2 c3"
         onClick={[Function]}
       >
         <div
-          className="c3"
+          className="c4"
         >
           <h4
-            className="c4"
+            className="c5"
             color="#070707"
           >
             Select a Season
           </h4>
-          <div
-            className=""
+          <svg
+            className="c6 c7"
+            color="#FFFFFF"
+            height="12px"
+            viewBox="0 0 24 24"
+            width="12px"
           >
-            <svg
-              fill="#FFFFFF"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </div>
         <div
-          className="c5"
+          className="c8"
         />
       </div>
     </div>
   </div>
   <div
-    className="c3"
+    className="c4"
     direction="row"
   >
     <div
-      className="c6"
+      className="c9"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         10 - 1
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"
@@ -1339,16 +1459,16 @@ exports[`renders correctly with toggledSidebar 1`] = `
       </p>
     </div>
     <div
-      className="c9"
+      className="c12"
     >
       <h3
-        className="c7"
+        className="c10"
         color="#0A169A"
       >
         --
       </h3>
       <p
-        className="c8"
+        className="c11"
         color="#FFFFFF"
         letterSpacing="1px"
         size="14px"

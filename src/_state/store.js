@@ -1,53 +1,45 @@
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
+import { routerMiddleware, connectRouter } from 'connected-react-router';
+
+import { history } from '_helpers';
+
 import { saga as appSaga } from './app';
 import { reducer as alertReducer, saga as alertSaga } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
+import {
+  reducer as buyerTypeReducer,
+  saga as buyerTypeSaga
+} from './buyerType';
 import { reducer as clientReducer, saga as clientSaga } from './client';
 import {
   reducer as clientListReducer,
   saga as clientListSaga
 } from './clientList';
-import {
-  reducer as eventStatReducer,
-  saga as eventStatSaga
-} from './eventStat';
+import { reducer as demoPriceReducer, saga as demoPriceSaga } from './demo';
 import { reducer as eventReducer, saga as eventSaga } from './event';
-import { reducer as userReducer, saga as userSaga } from './user';
-import { reducer as userListReducer, saga as userListSaga } from './userList';
-import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
-import uiReducer from './ui';
-import {
-  reducer as seasonStatReducer,
-  saga as seasonStatSaga
-} from './seasonStat';
-import { routerMiddleware, connectRouter } from 'connected-react-router';
-import { history } from '_helpers';
-import {
-  reducer as revenueStatReducer,
-  saga as revenueStatSaga
-} from './revenueStat';
-import ticketIntegrationReducer, {
-  saga as ticketIntegrationSaga
-} from './ticketIntegrations';
-import { reducer as seasonReducer, saga as seasonSaga } from './season';
-import {
-  reducer as eventListReducer,
-  saga as eventListSaga
-} from './eventList';
-import {
-  reducer as eventInventoryReducer,
-  saga as eventInventorySaga
-} from './eventInventory';
 import {
   reducer as eventCategoryReducer,
   saga as eventCategorySaga
 } from './eventCategory';
 import {
-  reducer as buyerTypeReducer,
-  saga as buyerTypeSaga
-} from './buyerType';
+  reducer as eventInventoryReducer,
+  saga as eventInventorySaga
+} from './eventInventory';
+import {
+  reducer as eventInventoryBulkReducer,
+  saga as eventInventoryBulkSaga
+} from './eventInventoryBulk';
+import {
+  reducer as eventListReducer,
+  saga as eventListSaga
+} from './eventList';
+import {
+  reducer as eventStatReducer,
+  saga as eventStatSaga
+} from './eventStat';
+import { reducer as onboardReducer, saga as onboardSaga } from './onboard';
 import {
   reducer as priceRuleReducer,
   saga as priceRuleSaga
@@ -57,41 +49,53 @@ import {
   saga as priceScaleSaga
 } from './priceScale';
 import {
-  reducer as eventInventoryBulkReducer,
-  saga as eventInventoryBulkSaga
-} from './eventInventoryBulk';
-import { reducer as seatMapReducer, saga as seatMapSaga } from './seatMap';
-import { reducer as demoPriceReducer, saga as demoPriceSaga } from './demo';
-import {
   reducer as pricingPreviewReducer,
   saga as pricingPreviewSaga
 } from './pricingPreview';
+import {
+  reducer as revenueStatReducer,
+  saga as revenueStatSaga
+} from './revenueStat';
+import { reducer as seasonReducer, saga as seasonSaga } from './season';
+import {
+  reducer as seasonStatReducer,
+  saga as seasonStatSaga
+} from './seasonStat';
+import { reducer as seatMapReducer, saga as seatMapSaga } from './seatMap';
+import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
+import ticketIntegrationReducer, {
+  saga as ticketIntegrationSaga
+} from './ticketIntegrations';
+import { reducer as userReducer, saga as userSaga } from './user';
+import { reducer as userListReducer, saga as userListSaga } from './userList';
+import uiReducer from './ui';
 
 export const reducers = {
   alert: alertReducer,
   auth: authReducer,
-  event: eventReducer,
-  user: userReducer,
-  userList: userListReducer,
+  buyerType: buyerTypeReducer,
   client: clientReducer,
   clientList: clientListReducer,
-  seasonStat: seasonStatReducer,
-  eventStat: eventStatReducer,
-  teamStat: teamStatReducer,
-  revenueStat: revenueStatReducer,
-  ui: uiReducer,
-  ticketIntegration: ticketIntegrationReducer,
-  season: seasonReducer,
-  eventList: eventListReducer,
-  buyerType: buyerTypeReducer,
-  priceRule: priceRuleReducer,
-  priceScale: priceScaleReducer,
+  demoPrice: demoPriceReducer,
+  event: eventReducer,
+  eventCategory: eventCategoryReducer,
   eventInventory: eventInventoryReducer,
   eventInventoryBulk: eventInventoryBulkReducer,
-  eventCategory: eventCategoryReducer,
+  eventList: eventListReducer,
+  eventStat: eventStatReducer,
+  onboard: onboardReducer,
+  priceRule: priceRuleReducer,
+  priceScale: priceScaleReducer,
+  pricingPreview: pricingPreviewReducer,
+  revenueStat: revenueStatReducer,
+  season: seasonReducer,
+  seasonStat: seasonStatReducer,
   seatMap: seatMapReducer,
-  demoPrice: demoPriceReducer,
-  pricingPreview: pricingPreviewReducer
+  teamStat: teamStatReducer,
+  ticketIntegration: ticketIntegrationReducer,
+  user: userReducer,
+  userList: userListReducer,
+  ui: uiReducer
 };
 
 // Build root reducer
@@ -123,27 +127,28 @@ const combineSagas = {
   alert: alertSaga,
   app: appSaga,
   auth: authSaga,
-  event: eventSaga,
-  user: userSaga,
-  userList: userListSaga,
+  buyerType: buyerTypeSaga,
   client: clientSaga,
   clientList: clientListSaga,
-  eventStat: eventStatSaga,
-  teamStat: teamStatSaga,
-  seasonStat: seasonStatSaga,
-  revenueStat: revenueStatSaga,
-  ticketIntegration: ticketIntegrationSaga,
-  season: seasonSaga,
-  eventList: eventListSaga,
+  demoPrice: demoPriceSaga,
+  event: eventSaga,
+  eventCategory: eventCategorySaga,
   eventInventory: eventInventorySaga,
   eventInventoryBulk: eventInventoryBulkSaga,
-  eventCategory: eventCategorySaga,
-  buyerType: buyerTypeSaga,
+  eventList: eventListSaga,
+  eventStat: eventStatSaga,
+  onboard: onboardSaga,
   priceRule: priceRuleSaga,
   priceScale: priceScaleSaga,
+  pricingPreview: pricingPreviewSaga,
+  revenueStat: revenueStatSaga,
+  season: seasonSaga,
+  seasonStat: seasonStatSaga,
   seatMap: seatMapSaga,
-  demoPrice: demoPriceSaga,
-  pricingPreview: pricingPreviewSaga
+  teamStat: teamStatSaga,
+  ticketIntegration: ticketIntegrationSaga,
+  user: userSaga,
+  userList: userListSaga
 };
 
 export function* rootSaga() {

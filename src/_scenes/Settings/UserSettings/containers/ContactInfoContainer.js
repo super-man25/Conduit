@@ -68,7 +68,7 @@ type State = {
   password: string,
   passwordsMatch: boolean,
   user: EDUser,
-  touchedFields: EDUser
+  touchedFields: Object
 };
 
 export class ContactInfo extends React.Component<Props, State> {
@@ -246,7 +246,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   placeholder="First Name"
                   value={user.firstName}
                   valid={user.firstName.length >= 1 && touchedFields.firstName}
-                  inValid={user.firstName.length < 1 && touchedFields.firstName}
+                  invalid={user.firstName.length < 1 && touchedFields.firstName}
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
                 />
@@ -258,7 +258,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   placeholder="Last Name"
                   value={user.lastName}
                   valid={user.lastName.length >= 1 && touchedFields.lastName}
-                  inValid={user.lastName.length < 1 && touchedFields.lastName}
+                  invalid={user.lastName.length < 1 && touchedFields.lastName}
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
                 />
@@ -299,7 +299,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   value={user.email}
                   onChange={this.handleChange}
                   valid={validateEmail(user.email) && touchedFields.email}
-                  inValid={!validateEmail(user.email) && touchedFields.email}
+                  invalid={!validateEmail(user.email) && touchedFields.email}
                   onBlur={this.handleBlur}
                 />
                 <HelpBlockDiv
@@ -316,7 +316,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   value={password}
                   onChange={this.handlePasswordChange}
                   valid={password.length >= 8}
-                  inValid={password.length < 8 && touchedFields.password}
+                  invalid={password.length < 8 && touchedFields.password}
                   onBlur={this.handleBlur}
                 />
                 <HelpBlockDiv
@@ -359,7 +359,7 @@ export class ContactInfo extends React.Component<Props, State> {
                     validatePhoneNumber(user.phoneNumber) &&
                     touchedFields.phoneNumber
                   }
-                  inValid={
+                  invalid={
                     !validatePhoneNumber(user.phoneNumber) &&
                     touchedFields.phoneNumber
                   }
@@ -410,7 +410,7 @@ export class ContactInfo extends React.Component<Props, State> {
                   value={password}
                   onChange={this.handlePasswordChange}
                   valid={password.length >= 8}
-                  inValid={password.length < 8 && touchedFields.password}
+                  invalid={password.length < 8 && touchedFields.password}
                   onBlur={this.handleBlur}
                 />
                 <HelpBlockDiv
@@ -431,7 +431,7 @@ export class ContactInfo extends React.Component<Props, State> {
                     newPassword !== '' &&
                     touchedFields.confirmPassword
                   }
-                  inValid={
+                  invalid={
                     (!passwordsMatch || newPassword === '') &&
                     touchedFields.confirmPassword
                   }
@@ -448,7 +448,7 @@ export class ContactInfo extends React.Component<Props, State> {
                     confirmPassword !== '' &&
                     touchedFields.confirmPassword
                   }
-                  inValid={
+                  invalid={
                     (!passwordsMatch || confirmPassword === '') &&
                     touchedFields.confirmPassword
                   }

@@ -1,12 +1,13 @@
 import { put, call, takeLatest, select, takeEvery } from 'redux-saga/effects';
 import { priceRuleService } from '_services';
 import alertActions from '../alert/actions';
+import { selectors as seasonSelectors } from '../season';
 import { types, selectors } from '.';
 
-export function* fetchPriceRules(action) {
+export function* fetchPriceRules() {
   try {
-    const { payload } = action;
-    const priceRules = yield call(priceRuleService.getAll, payload);
+    const seasonId = yield select(seasonSelectors.selectActiveSeasonId);
+    const priceRules = yield call(priceRuleService.getAll, { seasonId });
     yield put({ type: types.FETCH_PRICE_RULES_SUCCESS, payload: priceRules });
   } catch (err) {
     yield put(alertActions.error('Failed to Fetch Price Rules'));

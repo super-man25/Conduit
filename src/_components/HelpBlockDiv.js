@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
+
 import { cssConstants } from '_constants';
 
 type Props = {
@@ -19,13 +20,11 @@ export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
   })
 )`
   color: ${(props) => props.color};
-  font-size: 0.9em;
+  font-size: 12px;
   font-weight: 200;
   width: 100%;
   height: 16px;
-  margin: 0;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin: 5px 0;
   padding: 0;
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
 `;

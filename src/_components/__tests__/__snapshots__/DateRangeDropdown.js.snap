@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DateRangeDropdown /> renders correctly 1`] = `
+.c5 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .c2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -79,19 +84,16 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
         <span
           className="c4"
         >
-          <div
-            className=""
+          <svg
+            className="c5"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
           >
-            <svg
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -108,19 +110,16 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
         <span
           className="c4"
         >
-          <div
-            className=""
+          <svg
+            className="c5"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
           >
-            <svg
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
+            <path
+              d="M0,6.5l12,12,12-12Z"
+            />
+          </svg>
         </span>
       </div>
     </div>

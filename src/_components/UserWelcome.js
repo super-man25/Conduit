@@ -79,6 +79,10 @@ const EmptyLogo = styled.div`
   border-radius: 50%;
 `;
 
+const DropdownArrow = styled(Icon)`
+  margin-left: 10px;
+`;
+
 type Props = {
   firstName: string,
   lastName: string,
@@ -179,10 +183,10 @@ export const UserWelcome = (props: Props) => {
             )}
 
             <FlexItem>
-              <Icon
-                size={24}
-                color={cssConstants.PRIMARY_WHITE}
+              <DropdownArrow
+                size={12}
                 name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
+                color={cssConstants.PRIMARY_WHITE}
               />
             </FlexItem>
           </Flex>

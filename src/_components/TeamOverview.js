@@ -12,9 +12,9 @@ import type { PerformanceType, EDClient, EDSeason, EDEvent } from '_models';
 import { selectors, actions } from '_state/season';
 import { selectors as clientSelectors } from '_state/client';
 import { selectors as eventListSelectors } from '_state/eventList';
-import { Dropdown } from './Dropdown';
 import { Icon, Flex, FlexItem, H4, H3, P1 } from '_components';
 import { isMobileDevice } from '_helpers';
+import { Dropdown } from './Dropdown';
 
 const TeamOverviewContainer = styled.div`
   padding: ${containerPadding}px;
@@ -39,6 +39,13 @@ const StatLabel = styled(H3)`
 `;
 
 const SidebarControl = styled(Icon)``;
+
+const SeasonDropdown = styled(Dropdown)`
+  border: none;
+  padding: 0;
+  background: none;
+`;
+SeasonDropdown.displayName = 'SeasonDropdown';
 
 type Stats = {
   wins: number,
@@ -141,7 +148,7 @@ export const TeamOverviewPresenter = (props: Props) => {
         justify="space-between"
         marginBottom="15px"
       >
-        <Dropdown
+        <SeasonDropdown
           options={seasons}
           selected={selectedSeason}
           noneSelected={<Heading>Select a Season</Heading>}

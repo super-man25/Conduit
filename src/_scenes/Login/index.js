@@ -175,7 +175,7 @@ export class LoginPresenter extends React.Component<Props, State> {
                   autoComplete="new-email"
                   value={email}
                   valid={validEmail && !(showAlert && submitted)}
-                  inValid={
+                  invalid={
                     (!validEmail && (submitted || touched.email)) ||
                     (showAlert && submitted)
                   }
@@ -197,7 +197,7 @@ export class LoginPresenter extends React.Component<Props, State> {
                     data-test-id="password-input"
                     autoComplete="new-password"
                     value={password}
-                    inValid={
+                    invalid={
                       (!password && (submitted || touched.password)) ||
                       (showAlert && submitted)
                     }

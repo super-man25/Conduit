@@ -30,13 +30,31 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-fjmCvl",
+          "componentId": "sc-jVODtj",
           "isStatic": false,
           "rules": Array [
             "
+  position: relative;
+  padding: 15px;
+  font-size: 14px;
+  border: 2px solid ",
+            "#0A169A",
+            ";
+  border-color: ",
+            [Function],
+            ";
+  border-radius: 3px;
+  background: ",
+            [Function],
+            ";
+  ::placeholder {
+    color: ",
+            "#999999",
+            ";
+  }
+",
+            "
   display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
   background: ",
             [Function],
             ";
@@ -45,32 +63,15 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
             ";
   background-repeat: no-repeat;
   background-position: right center;
-
   &:-webkit-autofill {
     animation-name: ",
             [Function],
             ";
     animation-fill-mode: both;
   }
-
-  font-size: 1rem;
   width: ",
             [Function],
             ";
-  padding-left: 8px;
-  border: 2px solid;
-  border-radius: 3px;
-  border-color: ",
-            [Function],
-            ";
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
-
-  ::placeholder {
-    color: ",
-            "#999999",
-            ";
-  }
 ",
             "
   margin: 0 0.5rem 0 0;
@@ -80,12 +81,13 @@ exports[`<ManualPricingColumnCellRenderer /> should render correctly when isEdit
 ",
           ],
         },
-        "displayName": "Styled(styled.input)",
+        "displayName": "Styled(Styled(styled.input))",
         "foldedComponentIds": Array [
-          "sc-iELTvK",
+          "sc-frDJqD",
+          "sc-hqyNC",
         ],
         "render": [Function],
-        "styledComponentId": "sc-fjmCvl",
+        "styledComponentId": "sc-jVODtj",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],
