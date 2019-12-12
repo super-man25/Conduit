@@ -21,10 +21,7 @@ import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations'
 import { isMobileDevice } from '_helpers';
 import { useSidebar } from '_hooks';
 
-const SeasonOverviewTitle = styled(H1)`
-  margin: ${(props) =>
-    props.sidebarIsOpen || isMobileDevice ? '0' : '0 0 0 1rem'};
-`;
+const SeasonOverviewTitle = styled(H1)``;
 
 const Heading = styled(H4)`
   margin: 0;
@@ -60,7 +57,12 @@ const Season = ({ activeSeason, loading }) => {
       <Spacing padding={`${containerPadding}px`}>
         <Flex align="center" margin="0 0 1.5rem">
           {!isSidebarOpen && !isMobileDevice && (
-            <TextButton onClick={toggleSidebar}>
+            <TextButton
+              onClick={toggleSidebar}
+              padding="0"
+              textAlign="left"
+              minWidth="60px"
+            >
               <Icon
                 name="arrow-right"
                 size={24}

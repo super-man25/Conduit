@@ -6,12 +6,20 @@ import paths from './icons.data';
 const Svg = styled.svg`
   display: inline-block;
   vertical-align: middle;
+
+  ${({ onClick }) =>
+    onClick &&
+    `
+    cursor: pointer;
+  `}
+
   path {
     fill: ${(props) => props.color};
   }
 `;
 
 type Props = {
+  onClick: () => void,
   className?: string,
   /** The name of the icon as defined in icons.data.json */
   name: string,
@@ -23,9 +31,10 @@ type Props = {
   color: string
 };
 
-export const Icon = ({ className, name, size, color }: Props) => {
+export const Icon = ({ onClick, className, name, size, color }: Props) => {
   return (
     <Svg
+      onClick={onClick}
       className={className}
       color={color}
       width={`${size}px`}
