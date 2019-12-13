@@ -313,7 +313,6 @@ export function renderMajorXAxisTicks({
     }
 
     const currentDay = formatDate(value, 'D', timeZone);
-
     if (ticksToRender.includes(currentDay))
       return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
 
@@ -385,7 +384,6 @@ export function renderMobileXAxisTicks({
     }
 
     const currentDay = formatDate(value, 'D', timeZone);
-
     if (ticksToRender.includes(currentDay))
       return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
 

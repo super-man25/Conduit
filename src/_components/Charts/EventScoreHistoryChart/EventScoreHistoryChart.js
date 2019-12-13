@@ -1,34 +1,23 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
 import {
   ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
+  LineChart,
   CartesianGrid,
+  YAxis,
+  XAxis,
   Label,
-  Tooltip,
-  ReferenceLine
+  Line,
+  Tooltip
 } from 'recharts';
-import { cssConstants, chartLabelStyles } from '_constants';
-import { ChartContainer } from '_components';
-import { truncateNumber } from '_helpers/string-utils';
-import { PeriodicInventoryTooltip } from './PeriodicInventoryTooltip';
-import type { EventStat } from '_models/eventStat';
-import { isMobileDevice } from '_helpers';
 
-type Props = {
-  height: number,
-  data: EventStat[],
-  renderNoData?: () => React.Node,
-  tooltipDateFormatter: (Date) => string,
-  majorXAxisTickRenderer: () => HTMLElement,
-  minorXAxisTickRenderer: () => HTMLElement,
-  mobileXAxisTickRenderer: () => HTMLElement
-};
+import { truncateNumber, isMobileDevice } from '_helpers';
+import { chartLabelStyles, cssConstants } from '_constants';
+import { ChartContainer } from '_components/ChartContainer';
+import { EventScoreHistoryTooltip } from './EventScoreHistoryTooltip';
 
-export const PeriodicInventoryChart = ({
+const ANIMATION_DURATION = 1000;
+
+export const EventScoreHistoryChart = ({
   height,
   data,
   renderNoData,
@@ -36,17 +25,16 @@ export const PeriodicInventoryChart = ({
   majorXAxisTickRenderer,
   minorXAxisTickRenderer,
   mobileXAxisTickRenderer
-}: Props) => {
-  if (!data.length && renderNoData) {
+}) => {
+  if (!data.length) {
     return renderNoData();
   }
 
   return (
     <ChartContainer>
-      <ResponsiveContainer width="100%" height={height}>
-        <BarChart data={data}>
+      <ResponsiveContainer width="100%" height={height} debounce={100}>
+        <LineChart data={data}>
           <CartesianGrid vertical={false} />
-          <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
           {isMobileDevice && (
             <XAxis
               dataKey="timestamp"
@@ -76,45 +64,39 @@ export const PeriodicInventoryChart = ({
               height={10}
             />
           )}
-
           <YAxis
             tickCount={10}
             tickFormatter={truncateNumber}
-            tickLine={false}
             axisLine={false}
             tick={{ fontSize: 10 }}
             domain={['auto', 'auto']}
           >
             <Label
-              value="Inventory"
+              value="Event Score"
               angle={-90}
               position="insideLeft"
               style={chartLabelStyles}
             />
           </YAxis>
-
-          <Bar
-            dataKey="periodicInventory"
-            stackId="a"
-            fill={cssConstants.SECONDARY_PURPLE}
+          <Line
+            dataKey="eventScore"
+            animationDuration={ANIMATION_DURATION}
+            type="monotone"
+            dot={false}
+            strokeWidth={2}
+            stroke={cssConstants.PRIMARY_BLUE}
           />
-          <Bar
-            dataKey="projectedPeriodicInventory"
-            stackId="a"
-            fill={cssConstants.SECONDARY_LIGHT_PURPLE}
-          />
-
           <Tooltip
             cursor={{
-              fill: cssConstants.SECONDARY_LIGHT_PURPLE,
-              opacity: 0.4
+              stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
+              strokeWidth: 2,
+              opacity: 0.5
             }}
-            animationDuration={500}
             content={
-              <PeriodicInventoryTooltip dateFormatter={tooltipDateFormatter} />
+              <EventScoreHistoryTooltip dateFormatter={tooltipDateFormatter} />
             }
           />
-        </BarChart>
+        </LineChart>
       </ResponsiveContainer>
     </ChartContainer>
   );

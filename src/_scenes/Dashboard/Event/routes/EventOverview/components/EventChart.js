@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import { actions as eventStatActions } from '_state/eventStat';
+import { actions as eventScoreHistoryActions } from '_state/eventScoreHistory';
 import {
   Spacing,
   Panel,
@@ -49,6 +50,7 @@ import {
   renderMobileXAxisTicks,
   isMobileDevice
 } from '_helpers';
+import { EventScoreHistoryChart } from '_components/Charts/EventScoreHistoryChart';
 
 const TabLink = styled.span`
   color: ${(props) =>
@@ -88,7 +90,11 @@ const DateFilterOptions = styled.div`
   }
 `;
 
-const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
+const NoData = ({
+  type
+}: {
+  type: 'Revenue' | 'Inventory' | 'Event Score'
+}) => (
   <Flex justify="center" align="center" height={`${CHART_HEIGHT}px`}>
     No {type} Data to Display
   </Flex>
@@ -117,6 +123,8 @@ const ChartLegend = ({
 type Props = {
   eventStatState: EventStatState,
   eventStatActions: EventStatActions,
+  eventScoreHistoryState: any,
+  eventScoreHistoryActions: any,
   activeEvent: EDEvent,
   selectedSeason: EDSeason,
   hasProjected: boolean
@@ -125,6 +133,11 @@ type Props = {
 export class EventChart extends React.Component<Props> {
   componentDidMount() {
     this.props.eventStatActions.fetch();
+    this.props.eventScoreHistoryActions.fetch({
+      eventId: this.props.activeEvent.id,
+      startDate: this.props.eventStatState.dateRange.from,
+      endDate: this.props.eventStatState.dateRange.to
+    });
   }
 
   componentWillUnmount() {
@@ -135,6 +148,19 @@ export class EventChart extends React.Component<Props> {
     if (prevProps.activeEvent.id !== this.props.activeEvent.id) {
       this.props.eventStatActions.clear();
       this.props.eventStatActions.fetch();
+    }
+
+    if (
+      prevProps.eventStatState.dateRange.from !==
+        this.props.eventStatState.dateRange.from ||
+      prevProps.eventStatState.dateRange.to !==
+        this.props.eventStatState.dateRange.to
+    ) {
+      this.props.eventScoreHistoryActions.fetch({
+        eventId: this.props.activeEvent.id,
+        startDate: this.props.eventStatState.dateRange.from,
+        endDate: this.props.eventStatState.dateRange.to
+      });
     }
   }
 
@@ -167,6 +193,7 @@ export class EventChart extends React.Component<Props> {
         eventStatsMeta
       },
       eventStatActions: { setDateRange, setGroupFilter },
+      eventScoreHistoryState: { eventScoreHistory },
       selectedSeason: { startTimestamp },
       activeEvent: { timestamp, totalInventory },
       hasProjected
@@ -230,19 +257,27 @@ export class EventChart extends React.Component<Props> {
                   >
                     INVENTORY
                   </TabLink>
-                </FlexItem>
-                <FlexItem flex="0" margin="0 0 0 auto">
-                  <ChipButtonGroup
-                    onChange={setGroupFilter}
-                    value={selectedGroupFilter}
+                  <TabLink
+                    isActive={selectedTab === 2}
+                    onClick={() => onTabChange(2)}
                   >
-                    {groupFilters.map((group, idx) => (
-                      <ChipButton key={idx} value={group.value}>
-                        {group.label}
-                      </ChipButton>
-                    ))}
-                  </ChipButtonGroup>
+                    EVENT SCORE
+                  </TabLink>
                 </FlexItem>
+                {selectedTab !== 2 && (
+                  <FlexItem flex="0" margin="0 0 0 auto">
+                    <ChipButtonGroup
+                      onChange={setGroupFilter}
+                      value={selectedGroupFilter}
+                    >
+                      {groupFilters.map((group, idx) => (
+                        <ChipButton key={idx} value={group.value}>
+                          {group.label}
+                        </ChipButton>
+                      ))}
+                    </ChipButtonGroup>
+                  </FlexItem>
+                )}
               </Flex>
             </PanelHeader>
             {loading && (
@@ -347,6 +382,17 @@ export class EventChart extends React.Component<Props> {
                     )}
                   </Fragment>
                 )}
+                {selectedTab === 2 && (
+                  <EventScoreHistoryChart
+                    data={eventScoreHistory}
+                    height={CHART_HEIGHT}
+                    tooltipDateFormatter={tooltipDateFormatter}
+                    minorXAxisTickRenderer={minorXAxisTickRenderer}
+                    majorXAxisTickRenderer={majorXAxisTickRenderer}
+                    mobileXAxisTickRenderer={mobileXAxisTickRenderer}
+                    renderNoData={() => <NoData type="Event Score" />}
+                  />
+                )}
                 <Spacing height="18px" />
               </PanelContent>
             )}
@@ -359,6 +405,7 @@ export class EventChart extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   eventStatState: getEventStatState,
+  eventScoreHistoryState: (state) => state.eventScoreHistory,
   activeEvent: selectors.selectEvent,
   selectedSeason: seasonSelector.selectActiveSeason,
   hasProjected: getHasProjected
@@ -366,7 +413,11 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    eventStatActions: bindActionCreators(eventStatActions, dispatch)
+    eventStatActions: bindActionCreators(eventStatActions, dispatch),
+    eventScoreHistoryActions: bindActionCreators(
+      eventScoreHistoryActions,
+      dispatch
+    )
   };
 }
 

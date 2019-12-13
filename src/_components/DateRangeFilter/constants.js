@@ -2,41 +2,17 @@ import { isMobileDevice } from '_helpers';
 
 export const getFilterOptions = () => {
   const filterOptions = [
-    {
-      title: 'All Time',
-      key: 0
-    },
-    {
-      title: 'Today',
-      key: 1
-    },
-    {
-      title: 'Yesterday',
-      key: 2
-    },
-    {
-      title: 'Last 7 Days',
-      key: 3
-    },
-    {
-      title: 'Month to Date',
-      key: 4
-    },
-    {
-      title: 'Previous Month',
-      key: 5
-    },
-    {
-      title: 'Year to Date',
-      key: 6
-    }
+    'All Time',
+    'Today',
+    'Yesterday',
+    'Last 7 Days',
+    'Month to Date',
+    'Previous Month',
+    'Year to Date'
   ];
 
   if (!isMobileDevice) {
-    filterOptions.push({
-      title: 'Select Date Range',
-      key: 7
-    });
+    filterOptions.push('Select Date Range');
   }
 
   return filterOptions;
