@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { colorForStatus } from '_constants/status.constants';
-import { Flex, P1 } from '_components';
+import { P1 } from '_components';
 import type { EDScheduledJob } from '_models';
 import { readableDate } from '_helpers/string-utils';
 
