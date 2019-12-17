@@ -10,6 +10,7 @@ export const DropdownMenu = styled.div`
   opacity: 0;
   visibility: hidden;
   box-shadow: ${shadows.SMALL};
+  background-color: white;
   ${(props) =>
     props.show &&
     css`
