@@ -15,9 +15,10 @@ import {
   finalSpringValue
 } from '_helpers';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
+import { EventScoreIcon } from '_components/Icon/EventScoreIcon';
 
 const Heading = styled(H4)`
-  margin: 2px 0 20px 0;
+  margin: 0 0 20px 0;
   padding: 0;
   display: inline-block;
   overflow: hidden;
@@ -93,7 +94,7 @@ const EventDetailsLabel = styled(P1)`
       : cssConstants.PRIMARY_DARKEST_GRAY};
   font-size: 14px;
   font-weight: 600;
-  margin: 0 0 2px 0;
+  margin: 0 0 3px 0;
   white-space: nowrap;
 `;
 
@@ -104,6 +105,12 @@ const SubtextP1 = styled(P1)`
       : cssConstants.PRIMARY_DARKEST_GRAY};
   font-size: 14px;
   white-space: nowrap;
+`;
+
+const EventScoreDetails = styled.div`
+  ${SubtextP1} {
+    color: ${cssConstants.PRIMARY_BLUE};
+  }
 `;
 
 const EventDetails = ({
@@ -118,7 +125,7 @@ const EventDetails = ({
   text: string
 }) => {
   return (
-    <FlexItem flex={flex} padding="2px 3px 0 3px" alignSelf="flex-end">
+    <FlexItem flex={flex} alignSelf="flex-end">
       <EventDetailsLabel past={isPast}>{title}</EventDetailsLabel>
       <SubtextP1 past={isPast}>{text}</SubtextP1>
     </FlexItem>
@@ -188,13 +195,21 @@ export class EventListItem extends React.PureComponent<Props> {
               })}
               text="Revenue to Date"
             />
-            <EventDetails
-              flex={isAdmin ? 3 : 1}
-              isPast={past}
-              title={`${this.calculateEventScore(event)}
-                ${isAdmin ? ` / ${this.calculateSpring(event)}` : ''}`}
-              text={`Score${isAdmin ? ` / Spring` : ''}`}
-            />
+            {isAdmin ? (
+              <EventDetails
+                flex={3}
+                isPast={past}
+                title={`${this.calculateEventScore(
+                  event
+                )} / ${this.calculateSpring(event)}`}
+                text="Score / Spring"
+              />
+            ) : (
+              <EventScoreDetails>
+                <EventScoreIcon eventScore={this.calculateEventScore(event)} />
+                <SubtextP1>Event Score</SubtextP1>
+              </EventScoreDetails>
+            )}
           </Flex>
           <FlexItem flex={1}>
             <ScheduledJobStatus

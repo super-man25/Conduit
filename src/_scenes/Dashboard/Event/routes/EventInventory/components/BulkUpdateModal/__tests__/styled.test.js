@@ -5,9 +5,7 @@ import {
   FieldErrorText,
   Label,
   ModalBody,
-  ModalContent,
   ModalHeader,
-  ModalOverlay,
   NumberInput,
   Title
 } from '../styled';

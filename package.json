@@ -102,7 +102,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "flow && lint-staged"
+      "pre-commit": "flow && lint-staged",
+      "pre-push": "eslint src --max-warnings 0"
     }
   }
 }

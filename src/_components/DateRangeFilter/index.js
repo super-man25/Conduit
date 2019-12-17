@@ -1,6 +1,5 @@
 // @flow
 import React, { useReducer } from 'react';
-import DayPicker from 'react-day-picker';
 import styled from 'styled-components';
 
 import { Flex, Icon, Text } from '_components';
@@ -22,11 +21,9 @@ import { Option } from './Option';
 import { DropdownContainer } from './DropdownContainer';
 import { Dropdown } from './Dropdown';
 import { DropdownMenu } from './DropdownMenu';
+import { DayPicker } from './DayPicker';
 
-type DropdownOption = {
-  title: string,
-  key: number
-};
+type DropdownOption = string;
 
 type ActionType =
   | 'setSelected'
@@ -143,7 +140,7 @@ export const DateRangeFilter = (props: Props) => {
   const filterOptions = getFilterOptions();
 
   const parseOption = (option: ?DropdownOption) => {
-    return option ? option.title : 'Select Filter';
+    return option ? option : 'Select Filter';
   };
 
   const onFilterChange = (option: DropdownOption) => {
@@ -151,7 +148,7 @@ export const DateRangeFilter = (props: Props) => {
     let from = null;
     let to = null;
 
-    switch (option.title) {
+    switch (option) {
       case 'Today':
         to = endOfDay(new Date());
         from = startOfDay(new Date());
@@ -199,8 +196,7 @@ export const DateRangeFilter = (props: Props) => {
   const toggleDropdownOpen = () => {
     const { selected } = state;
 
-    const showDatePicker =
-      selected && selected.title === 'Select Date Range' ? true : false;
+    const showDatePicker = selected === 'Select Date Range' ? true : false;
 
     if (showDatePicker) {
       dispatch({ type: 'openFromInput' });
@@ -217,7 +213,7 @@ export const DateRangeFilter = (props: Props) => {
       return;
     }
 
-    if (newSelected.title !== 'Select Date Range') {
+    if (newSelected !== 'Select Date Range') {
       dispatch({ type: 'closeDatePicker' });
       dispatch({ type: 'toggleDropdown' });
     }
@@ -230,8 +226,9 @@ export const DateRangeFilter = (props: Props) => {
     end: ?Date
   ) => {
     const selectedItem = filterOptions.find((option) => option === selected);
+
     if (!selectedItem) return parseOption(filterOptions[0]);
-    if (selectedItem && selectedItem.title === 'Select Date Range') {
+    if (selectedItem && selectedItem === 'Select Date Range') {
       return displayDateRangeOption(start, end);
     } else {
       return parseOption(selected);

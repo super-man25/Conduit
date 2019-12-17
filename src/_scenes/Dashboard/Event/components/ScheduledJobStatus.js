@@ -3,19 +3,28 @@ import React from 'react';
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { colorForStatus } from '_constants/status.constants';
-import { Flex, P1, DotIcon } from '_components';
+import { P1 } from '_components';
 import type { EDScheduledJob } from '_models';
 import { readableDate } from '_helpers/string-utils';
 
-const Container = styled(Flex)`
-  padding: 6px 0 0 0;
-`;
-
 const ScheduledJobStatusNotice = styled(P1)`
   font-size: 12px;
+  position: relative;
   font-weight: 600;
-  height: 13px;
-  margin: 0px 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-left: 5px;
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 100%;
+    top: 1px; /* vertically centers visually */
+    background-color: ${({ color }) => color};
+  }
 `;
 
 export const ScheduledJobStatus = ({
@@ -57,11 +66,8 @@ export const ScheduledJobStatus = ({
     : colorForStatus(args.status);
 
   return (
-    <Container align="center">
-      <DotIcon width={14} height={14} fill={color} />
-      <ScheduledJobStatusNotice color={color}>
-        {args.title} on {readableDate(modifiedAt, timeZone)}
-      </ScheduledJobStatusNotice>
-    </Container>
+    <ScheduledJobStatusNotice color={color}>
+      {args.title} on {readableDate(modifiedAt, timeZone)}
+    </ScheduledJobStatusNotice>
   );
 };

@@ -48,7 +48,7 @@ export function CumulativeInventoryChart({
     <ChartContainer>
       <ResponsiveContainer width="100%" height={height}>
         <LineChart data={data}>
-          {isMobileDevice ? (
+          {isMobileDevice && (
             <XAxis
               dataKey="timestamp"
               tick={mobileXAxisTickRenderer}
@@ -56,25 +56,26 @@ export function CumulativeInventoryChart({
               tickLine={false}
               interval={0}
             />
-          ) : (
-            <>
-              <XAxis
-                dataKey="timestamp"
-                tick={minorXAxisTickRenderer}
-                tickLine={false}
-                interval={0}
-                height={30}
-              />
-              <XAxis
-                dataKey="timestamp"
-                tick={majorXAxisTickRenderer}
-                xAxisId="majorXAxis"
-                axisLine={false}
-                tickLine={false}
-                interval={0}
-                height={10}
-              />
-            </>
+          )}
+          {!isMobileDevice && (
+            <XAxis
+              dataKey="timestamp"
+              tick={minorXAxisTickRenderer}
+              tickLine={false}
+              interval={0}
+              height={30}
+            />
+          )}
+          {!isMobileDevice && (
+            <XAxis
+              dataKey="timestamp"
+              tick={majorXAxisTickRenderer}
+              xAxisId="majorXAxis"
+              axisLine={false}
+              tickLine={false}
+              interval={0}
+              height={10}
+            />
           )}
 
           <YAxis

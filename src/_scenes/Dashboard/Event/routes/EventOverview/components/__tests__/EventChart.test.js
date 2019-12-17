@@ -17,6 +17,12 @@ const createProps = () => ({
     setDateRange: jest.fn(),
     clear: jest.fn()
   },
+  eventScoreHistoryState: {
+    eventScoreHistory: []
+  },
+  eventScoreHistoryActions: {
+    fetch: jest.fn()
+  },
   activeEvent: { id: 1 },
   selectedSeason: { startTimestamp: null }
 });

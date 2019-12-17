@@ -36,6 +36,10 @@ import {
   saga as eventListSaga
 } from './eventList';
 import {
+  reducer as eventScoreHistoryReducer,
+  saga as eventScoreHistorySaga
+} from './eventScoreHistory';
+import {
   reducer as eventStatReducer,
   saga as eventStatSaga
 } from './eventStat';
@@ -82,6 +86,7 @@ export const reducers = {
   eventInventory: eventInventoryReducer,
   eventInventoryBulk: eventInventoryBulkReducer,
   eventList: eventListReducer,
+  eventScoreHistory: eventScoreHistoryReducer,
   eventStat: eventStatReducer,
   onboard: onboardReducer,
   priceRule: priceRuleReducer,
@@ -136,6 +141,7 @@ const combineSagas = {
   eventInventory: eventInventorySaga,
   eventInventoryBulk: eventInventoryBulkSaga,
   eventList: eventListSaga,
+  eventScoreHistory: eventScoreHistorySaga,
   eventStat: eventStatSaga,
   onboard: onboardSaga,
   priceRule: priceRuleSaga,

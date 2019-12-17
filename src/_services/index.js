@@ -3,6 +3,7 @@ export * from './client';
 export * from './demo';
 export * from './event';
 export * from './eventCategory';
+export * from './eventScoreHistory';
 export * from './eventStats';
 export * from './integration';
 export * from './integrationStats';
