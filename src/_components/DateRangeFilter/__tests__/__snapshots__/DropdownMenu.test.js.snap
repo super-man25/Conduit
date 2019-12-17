@@ -10,7 +10,6 @@ exports[`renders correctly 1`] = `
   opacity: 0;
   visibility: hidden;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  background-color: white;
 }
 
 <div
@@ -28,7 +27,6 @@ exports[`renders correctly with the show prop 1`] = `
   opacity: 0;
   visibility: hidden;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  background-color: white;
   opacity: 1;
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
