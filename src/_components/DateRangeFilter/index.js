@@ -1,6 +1,5 @@
 // @flow
 import React, { useReducer } from 'react';
-import DayPicker from 'react-day-picker';
 import styled from 'styled-components';
 
 import { Flex, Icon, Text } from '_components';
@@ -22,6 +21,7 @@ import { Option } from './Option';
 import { DropdownContainer } from './DropdownContainer';
 import { Dropdown } from './Dropdown';
 import { DropdownMenu } from './DropdownMenu';
+import { DayPicker } from './DayPicker';
 
 type DropdownOption = string;
 
