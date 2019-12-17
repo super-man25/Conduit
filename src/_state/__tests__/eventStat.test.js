@@ -257,10 +257,6 @@ describe('reducer', () => {
       eventStatsMeta
     });
 
-    // Assert on projection keys
-    const projectedStat = serializedEventStats.find((e) => e.isProjected);
-    const negativeProjection = eventStats.find((e) => e.isProjected);
-
     const projectedStat1 = serializedEventStats[0];
     const projectedStat2 = serializedEventStats[1];
 

@@ -1,13 +1,4 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { DateRangeFilter } from '_components/DateRangeFilter';
 import { initialState, reducer } from '_components/DateRangeFilter';
-
-const defaultProps = {
-  dateRange: { from: null, to: null },
-  setDateRange: jest.fn(),
-  disabledDays: { after: null, before: null }
-};
 
 describe('reducer tests', () => {
   it('should set selected', () => {
