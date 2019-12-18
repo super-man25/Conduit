@@ -16,7 +16,8 @@ const Background = styled.div`
     content: '';
     width: 8px;
     height: 8px;
-    background-color: white;
+    background-color: ${({ past }) =>
+      past ? cssConstants.PRIMARY_DARK_GRAY : 'white'};
     border-radius: 5px;
     position: absolute;
     top: calc(50% - 4px);
@@ -35,8 +36,8 @@ const Text = styled.div`
   color: white;
 `;
 
-export const EventScoreIcon = ({ eventScore }) => (
-  <Background>
+export const EventScoreIcon = ({ eventScore, past }) => (
+  <Background past={past}>
     <Text>{eventScore}</Text>
   </Background>
 );
