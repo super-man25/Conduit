@@ -17,7 +17,7 @@ const Background = styled.div`
     width: 8px;
     height: 8px;
     background-color: ${({ past }) =>
-      past ? cssConstants.PRIMARY_DARK_GRAY : 'white'};
+      past ? cssConstants.PRIMARY_LIGHTER_GRAY : 'white'};
     border-radius: 5px;
     position: absolute;
     top: calc(50% - 4px);
