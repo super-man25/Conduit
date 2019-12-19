@@ -257,12 +257,12 @@ export class EventChart extends React.Component<Props> {
                   >
                     INVENTORY
                   </TabLink>
-                  {/* <TabLink
+                  <TabLink
                     isActive={selectedTab === 2}
                     onClick={() => onTabChange(2)}
                   >
                     EVENT SCORE
-                  </TabLink> */}
+                  </TabLink>
                 </FlexItem>
                 {selectedTab !== 2 && (
                   <FlexItem flex="0" margin="0 0 0 auto">

@@ -81,7 +81,7 @@ export const EventScoreHistoryChart = ({
           <Line
             dataKey="eventScore"
             animationDuration={ANIMATION_DURATION}
-            type="monotone"
+            type="stepAfter"
             dot={false}
             strokeWidth={2}
             stroke={cssConstants.PRIMARY_BLUE}
