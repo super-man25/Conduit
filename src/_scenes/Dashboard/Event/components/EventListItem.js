@@ -1,10 +1,10 @@
 // @flow
-
-import { cssConstants, containerPadding } from '_constants';
-import { darken } from 'polished';
-import { Flex, FlexItem, H4, P1 } from '_components';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { darken } from 'polished';
+
+import { cssConstants, containerPadding } from '_constants';
+import { Flex, FlexItem, H4, P1 } from '_components';
 import type { EDEvent } from '_models';
 import {
   formatNumber,
@@ -15,7 +15,7 @@ import {
   finalSpringValue
 } from '_helpers';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
-import { EventScoreIcon } from '_components/Icon/EventScoreIcon';
+import { EventScoreIcon } from './EventScoreIcon';
 
 const Heading = styled(H4)`
   margin: 0 0 20px 0;
@@ -206,7 +206,10 @@ export class EventListItem extends React.PureComponent<Props> {
               />
             ) : (
               <EventScoreDetails>
-                <EventScoreIcon eventScore={this.calculateEventScore(event)} />
+                <EventScoreIcon
+                  eventScore={this.calculateEventScore(event)}
+                  past={past}
+                />
                 <SubtextP1>Event Score</SubtextP1>
               </EventScoreDetails>
             )}
