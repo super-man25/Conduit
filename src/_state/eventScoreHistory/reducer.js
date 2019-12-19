@@ -9,10 +9,7 @@ const initialState = {
 function serialize(eventScoreHistory) {
   return eventScoreHistory.map((eventScoreHistoryFactor) =>
     eventScoreHistoryFactor.eventScore
-      ? {
-          ...eventScoreHistoryFactor,
-          eventScore: eventScoreHistoryFactor.eventScore.toFixed(2)
-        }
+      ? eventScoreHistoryFactor
       : {
           ...eventScoreHistoryFactor,
           eventScore: null
