@@ -1,5 +1,4 @@
 // @flow
-import { types, actions } from '.';
 import {
   fork,
   take,
@@ -10,20 +9,22 @@ import {
   select,
   all
 } from 'redux-saga/effects';
-import { eventService, venueService } from '_services';
 import type { Saga } from 'redux-saga';
+
+import { eventService, venueService } from '_services';
 import { actions as alertActions } from '_state/alert';
 import { selectors as eventSelectors } from '../event';
-import type {
-  FetchEventInventoryAction,
-  SetEventRowListedRequestAction,
-  SetEventRowManualPriceRequestAction
-} from '.';
 import {
   alphaFirstSort,
   findUniqueSections,
   mapSectionsToPriceScales
 } from './utils';
+import type {
+  FetchEventInventoryAction,
+  SetEventRowListedRequestAction,
+  SaveEditedRowAction
+} from './';
+import { types, actions, selectors as eventInventorySelectors } from './';
 
 export function* fetchEventInventory(
   action: FetchEventInventoryAction
@@ -88,34 +89,68 @@ export function* setRowListed(
   }
 }
 
-export function* setOverridePrice(
-  action: SetEventRowManualPriceRequestAction
-): Saga<void> {
-  const { row, value } = action.payload;
+// export function* setOverridePrice(
+//   action: SetEventRowPropertyRequestAction
+// ): Saga<void> {
+//   const { row, value } = action.payload;
+//   const updateParams = {
+//     eventSeatIds: row.seats,
+//     overridePrice: value.length ? value : null
+//   };
+
+//   try {
+//     yield call(eventService.updateEventSeats, updateParams);
+
+//     yield put({
+//       type: types.SAVE_EDITED_ROW_SUCCESS,
+//       payload: action.payload
+//     });
+//   } catch (error) {
+//     let msg =
+//       error.name === 'ValidationError'
+//         ? error.errors[0]
+//         : `Could not update section ${row.section} row ${row.row}.`;
+
+//     yield put(alertActions.error(msg));
+//     yield put({
+//       type: types.SAVE_EDITED_ROW_ERROR,
+//       payload: {
+//         error,
+//         row
+//       }
+//     });
+//   }
+// }
+
+export function* saveEditedRow(action: SaveEditedRowAction): Saga<void> {
+  const editedRowId = select(eventInventorySelectors.selectEditedRowId);
+  const editedRowState = select(eventInventorySelectors.selectEditedRowState);
+  console.log('EDITED ROW STATE', editedRowState);
   const updateParams = {
-    eventSeatIds: row.seats,
-    overridePrice: value.length ? value : null
+    eventSeatIds: [editedRowId],
+    overridePrice: editedRowState.overridePrice || null,
+    minimumPrice: editedRowState.minimumPrice,
+    maximumPrice: editedRowState.maximimumPrice
   };
 
   try {
     yield call(eventService.updateEventSeats, updateParams);
 
     yield put({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
-      payload: action.payload
+      type: types.SAVE_EDITED_ROW_SUCCESS
     });
   } catch (error) {
     let msg =
       error.name === 'ValidationError'
         ? error.errors[0]
-        : `Could not update section ${row.section} row ${row.row}.`;
+        : `Could not update seat ${editedRowId}.`;
 
     yield put(alertActions.error(msg));
     yield put({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE_ERROR,
+      type: types.SAVE_EDITED_ROW_ERROR,
       payload: {
         error,
-        row
+        editedRowId
       }
     });
   }
@@ -149,10 +184,10 @@ function* watchSetRowListed(): Saga<void> {
   );
 }
 
-function* watchSetManualPrice(): Saga<void> {
+function* watchSaveEditedRow(): Saga<void> {
   yield takeLatestById(
-    types.SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
-    setOverridePrice,
+    types.SAVE_EDITED_ROW,
+    saveEditedRow,
     (action) => action.payload.row.id
   );
 }
@@ -160,5 +195,5 @@ function* watchSetManualPrice(): Saga<void> {
 export default {
   watchFetchEventInventory,
   watchSetRowListed,
-  watchSetManualPrice
+  watchSaveEditedRow
 };
