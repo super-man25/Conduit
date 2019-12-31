@@ -1,16 +1,18 @@
-import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
-import { defaultCellRenderer } from './CellRenderer';
-import { filterColumnHeaderRenderer } from './FilterColumnHeaderRenderer';
 import { formatUSD } from '_helpers/string-utils';
+import { defaultCellRenderer } from './CellRenderer';
+import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
+import { filterColumnHeaderRenderer } from './FilterColumnHeaderRenderer';
 import { listedColumnCellRenderer } from './ListedColumnCellRenderer';
-import { manualPricingColumnCellRenderer } from './ManualPricingColumnCellRenderer';
 import { selectableColumnCellRenderer } from './SelectableCellRenderer';
 import { selectableColumnHeaderRenderer } from './SelectableHeaderRenderer';
+import { rowControlsCellRenderer } from './RowControlsCellRenderer';
 
 function combineColumnWithDefaults(column) {
   return {
     headerRenderer: defaultColumnHeaderRenderer,
     cellRenderer: defaultCellRenderer,
+    width: 0,
+    flexGrow: 10,
     ...column
   };
 }
@@ -32,17 +34,14 @@ export const getInventoryColumns = function(props) {
   return [
     {
       label: 'Checkbox',
-      width: 5,
-      flexGrow: 2,
+      flexGrow: 5,
       dataKey: '',
       headerRenderer: selectableColumnHeaderRenderer,
       cellRenderer: selectableColumnCellRenderer
     },
     {
       label: 'Scale',
-      width: 0,
       dataKey: 'priceScaleId',
-      flexGrow: 15,
       headerRenderer: (props) =>
         filterColumnHeaderRenderer(
           props,
@@ -64,9 +63,7 @@ export const getInventoryColumns = function(props) {
     },
     {
       label: 'Section',
-      width: 0,
       dataKey: 'section',
-      flexGrow: 10,
       headerRenderer: (props) =>
         filterColumnHeaderRenderer(
           props,
@@ -80,60 +77,62 @@ export const getInventoryColumns = function(props) {
     },
     {
       label: 'Row',
-      width: 0,
-      dataKey: 'row',
-      flexGrow: 5
+      dataKey: 'row'
     },
     {
       label: '# of Seats',
-      width: 0,
       dataKey: 'seats',
-      flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey].length;
       }
     },
     {
       label: 'Price Floor',
-      width: 0,
       dataKey: 'minimumPrice',
-      flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
+      },
+      columnData: {
+        isEditable: true
       }
     },
     {
       label: 'Price Ceiling',
-      width: 0,
       dataKey: 'maximumPrice',
-      flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
+      },
+      columnData: {
+        isEditable: true
       }
     },
     {
       label: 'List Price',
-      width: 0,
       dataKey: 'listedPrice',
-      flexGrow: 10,
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       }
     },
     {
+      label: 'Manual Price',
+      dataKey: 'overridePrice',
+      cellDataGetter({ columnData, dataKey, rowData }) {
+        return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
+      },
+      columnData: {
+        isEditable: true
+      }
+    },
+    {
       label: 'Pricing',
-      width: 0,
       dataKey: 'isListed',
-      flexGrow: 10,
       cellRenderer: listedColumnCellRenderer
     },
     {
-      label: 'Manual Pricing',
-      width: 0,
-      dataKey: 'overridePrice',
-      flexGrow: 15,
+      label: '',
+      dataKey: '',
       disableSort: true,
-      cellRenderer: manualPricingColumnCellRenderer
+      cellRenderer: rowControlsCellRenderer
     }
   ].map(combineColumnWithDefaults);
 };
