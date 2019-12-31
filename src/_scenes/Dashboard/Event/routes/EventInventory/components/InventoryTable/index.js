@@ -111,8 +111,8 @@ export const VirtualizedEventInventoryPresenter = (props: Props) => {
           {columns.map((column) => (
             <Column
               key={column.label}
-              columnData={{ allRows, priceScales }}
               {...column}
+              columnData={{ allRows, priceScales, ...column.columnData }}
             />
           ))}
         </Table>
