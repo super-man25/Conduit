@@ -11,7 +11,6 @@ const FETCH_PRICE_RULES_ERROR = 'priceRule/FETCH_PRICE_RULES_ERROR';
 const RESET_PRICE_RULES = 'priceRule/RESET_PRICE_RULES';
 const START_EDIT_PRICE_RULE = 'priceRule/START_EDIT_PRICE_RULE';
 const CANCEL_EDIT_PRICE_RULE = 'priceRule/CANCEL_EDIT_PRICE_RULE';
-const SAVE_EDITED_PRICE_RULE = 'priceRule/SAVE_EDITED_PRICE_RULE';
 const UPDATE_PRICE_RULE_PROPERTY = 'priceRule/UPDATE_PRICE_RULE_PROPERTY';
 const CREATE_PRICE_RULE = 'priceRule/CREATE_PRICE_RULE';
 const SAVE_PRICE_RULE = 'priceRule/SAVE_PRICE_RULE';
@@ -46,11 +45,6 @@ export type StartEditingPriceRuleAction = {
 
 export type CancelEditingPriceRuleAction = {
   type: 'priceRule/CANCEL_EDIT_PRICE_RULE',
-  payload: number
-};
-
-export type SaveEditedPriceRuleAction = {
-  type: 'priceRule/SAVE_EDITED_PRICE_RULE',
   payload: number
 };
 
@@ -140,7 +134,6 @@ export const types = {
   RESET_PRICE_RULES,
   START_EDIT_PRICE_RULE,
   CANCEL_EDIT_PRICE_RULE,
-  SAVE_EDITED_PRICE_RULE,
   UPDATE_PRICE_RULE_PROPERTY,
   CREATE_PRICE_RULE,
   SAVE_PRICE_RULE,
@@ -169,13 +162,6 @@ const startEditingPriceRule = (id: number): StartEditingPriceRuleAction => {
 const cancelEditingPriceRule = (id: number): CancelEditingPriceRuleAction => {
   return {
     type: CANCEL_EDIT_PRICE_RULE,
-    payload: id
-  };
-};
-
-const saveEditedPriceRule = (id: number): SaveEditedPriceRuleAction => {
-  return {
-    type: SAVE_EDITED_PRICE_RULE,
     payload: id
   };
 };
@@ -222,7 +208,6 @@ export const actions = {
   fetchPriceRules,
   startEditingPriceRule,
   cancelEditingPriceRule,
-  saveEditedPriceRule,
   resetPriceRules,
   updatePriceRuleProperty,
   createPriceRule,
