@@ -7,8 +7,10 @@ import { actions } from '_state/eventInventory';
 import { ManualPricingInput } from './styled';
 
 type Props = {
+  dataKey: string,
   cellData: any,
   isEditing: boolean,
+  editedRowState: any,
   rulePropertyValue: string,
   columnData: any,
   updateEditedRowProperty: (any) => void,
@@ -26,15 +28,14 @@ class DefaultCellPresenter extends React.Component<Props, State> {
     const { value } = (e.currentTarget: HTMLInputElement);
     const { updateEditedRowProperty } = this.props;
 
-    // convert empty string values to null
-    const newProperty = value === '' ? null : value;
-
-    updateEditedRowProperty(newProperty);
+    updateEditedRowProperty(value);
   };
 
   render() {
     const {
+      dataKey,
       isEditing,
+      editedRowState,
       cellData,
       columnData: { isEditable }
     } = this.props;
@@ -44,7 +45,7 @@ class DefaultCellPresenter extends React.Component<Props, State> {
         <Flex align="center">
           <NumberInputField
             component={ManualPricingInput}
-            value={cellData}
+            value={editedRowState[dataKey] || ''}
             onChange={this.onRulePropertyChange}
             placeholder={'-'}
           />
@@ -60,11 +61,12 @@ class DefaultCellPresenter extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (
-  { eventInventory: { editedRowId, loading } },
+  { eventInventory: { editedRowId, editedRowState, loading } },
   { rowData }
 ) => ({
   isEditing: editedRowId === rowData.id,
-  isLoading: loading
+  isLoading: loading,
+  editedRowState
 });
 
 const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
