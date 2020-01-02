@@ -37,6 +37,14 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
               "label": "Update Pricing Status",
               "value": 1,
             },
+            Object {
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "label": "Update Maximum Price",
+              "value": 3,
+            },
           ]
         }
         placeholder="Select"
@@ -88,7 +96,6 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -283,6 +290,14 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
               "label": "Update Pricing Status",
               "value": 1,
             },
+            Object {
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "label": "Update Maximum Price",
+              "value": 3,
+            },
           ]
         }
         placeholder="Select"
@@ -334,7 +349,6 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -401,6 +415,14 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
             Object {
               "label": "Update Pricing Status",
               "value": 1,
+            },
+            Object {
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "label": "Update Maximum Price",
+              "value": 3,
             },
           ]
         }
