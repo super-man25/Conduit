@@ -547,6 +547,15 @@ const selectEditedRowId = (store: Store) => store.eventInventory.editedRowId;
 const selectEditedRowState = (store: Store) =>
   store.eventInventory.editedRowState;
 
+const selectEditedRowSeatIds = (store: Store) => {
+  const rowSeats = store.eventInventory.allRows.find(
+    (row: EDInventoryRow) => row.id === store.eventInventory.editedRowId
+  );
+  if (rowSeats) {
+    return rowSeats.seats;
+  }
+};
+
 const selectScaleFilters = (store: Store) => store.eventInventory.scaleFilters;
 
 const selectSectionFilters = (store: Store) =>
@@ -603,6 +612,7 @@ export const selectors = {
   selectEventInventoryRows,
   selectEditedRowId,
   selectEditedRowState,
+  selectEditedRowSeatIds,
   selectEventInventoryLoading,
   selectEventInventoryError,
   selectEventInventoryFilter,
