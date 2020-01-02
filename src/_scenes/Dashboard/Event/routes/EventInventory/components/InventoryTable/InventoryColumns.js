@@ -126,13 +126,15 @@ export const getInventoryColumns = function(props) {
     {
       label: 'Pricing',
       dataKey: 'isListed',
-      cellRenderer: listedColumnCellRenderer
+      cellRenderer: listedColumnCellRenderer,
+      flexGrow: 5
     },
     {
       label: '',
       dataKey: '',
       disableSort: true,
-      cellRenderer: rowControlsCellRenderer
+      cellRenderer: rowControlsCellRenderer,
+      flexGrow: 15
     }
   ].map(combineColumnWithDefaults);
 };
