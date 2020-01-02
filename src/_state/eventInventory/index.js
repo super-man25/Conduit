@@ -330,7 +330,9 @@ export const initialState: State = {
   filterDirection: 'asc',
   filterName: '',
   editedRowId: null,
-  editedRowState: {},
+  editedRowState: {
+    isListed: true
+  },
   selectedRowIds: [],
   scaleFilters: [],
   selectedScaleFilters: [],
@@ -352,21 +354,17 @@ export const reducer = (state: State = initialState, action: Action) => {
     case FETCH_EVENT_INVENTORY_ERROR:
       return { ...state, error: action.payload, loading: false };
     case START_EDITING_ROW:
+      const editedRow = state.allRows.find((row) => row.id === action.payload);
+      const isListed = editedRow ? editedRow.isListed : true;
       return {
         ...state,
         editedRowId: action.payload,
-        editedRowState: state.allRows.find((row) => row.id === action.payload)
+        editedRowState: {
+          ...initialState.editedRowState,
+          isListed
+        }
       };
     case CANCEL_EDITING_ROW:
-      // if (action.payload === 0) {
-      //   return {
-      //     ...state,
-      //     editedRowId: null,
-      //     editedRowState: {},
-      //     error: null,
-      //     allRows: state.allRows.slice(1)
-      //   };
-      // }
       return {
         ...state,
         editedRowId: null,
