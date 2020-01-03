@@ -163,6 +163,14 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
               "label": "Update Pricing Status",
               "value": 1,
             },
+            Object {
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "label": "Update Maximum Price",
+              "value": 3,
+            },
           ]
         }
         placeholder="Select"
@@ -214,7 +222,6 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
