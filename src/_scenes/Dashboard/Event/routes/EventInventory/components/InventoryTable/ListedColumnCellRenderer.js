@@ -6,7 +6,6 @@ import { actions } from '_state/eventInventory';
 
 type Props = {
   cellData: any,
-  setListed: () => void,
   isEditing: boolean,
   editedRowState: any,
   dataKey: string,
@@ -15,7 +14,6 @@ type Props = {
 
 export const ListedColumnCellPresenter = ({
   cellData,
-  setListed,
   isEditing,
   editedRowState,
   updateEditedRowProperty,
