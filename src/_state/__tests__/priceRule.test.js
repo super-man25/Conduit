@@ -41,14 +41,6 @@ describe('actions', () => {
     });
   });
 
-  it('should create an action to save price rule', () => {
-    const action = actions.saveEditedPriceRule(1);
-    expect(action).toEqual({
-      type: types.SAVE_EDITED_PRICE_RULE,
-      payload: 1
-    });
-  });
-
   it('should create an action to update a price rule property', () => {
     const action = actions.updatePriceRuleProperty({
       propertyName: 'constant',
