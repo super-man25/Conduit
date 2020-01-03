@@ -330,9 +330,7 @@ export const initialState: State = {
   filterDirection: 'asc',
   filterName: '',
   editedRowId: null,
-  editedRowState: {
-    isListed: true
-  },
+  editedRowState: {},
   selectedRowIds: [],
   scaleFilters: [],
   selectedScaleFilters: [],
