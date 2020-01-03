@@ -21,7 +21,7 @@ type State = {
   rulePropertyValue: string
 };
 
-class DefaultCellPresenter extends React.Component<Props, State> {
+export class DefaultCellPresenter extends React.Component<Props, State> {
   state = { rulePropertyValue: '' };
 
   onRulePropertyChange = (e: SyntheticEvent<HTMLInputElement>) => {
