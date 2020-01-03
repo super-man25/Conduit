@@ -1,0 +1,8 @@
+{
+  "title": [
+    {
+      "pattern": "^ED-[0-9]{1,5}: ",
+      "message": "Your title should include ED-[ticket_number]: [pr_summary]"
+    }
+  ]
+}
