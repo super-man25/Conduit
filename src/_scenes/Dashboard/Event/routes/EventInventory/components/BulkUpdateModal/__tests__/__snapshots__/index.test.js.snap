@@ -30,18 +30,22 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
             },
             Object {
+              "dataKey": "minimumPrice",
               "label": "Update Minimum Price",
               "value": 2,
             },
             Object {
+              "dataKey": "maximumPrice",
               "label": "Update Maximum Price",
               "value": 3,
             },
@@ -50,6 +54,7 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -156,18 +161,22 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
             },
             Object {
+              "dataKey": "minimumPrice",
               "label": "Update Minimum Price",
               "value": 2,
             },
             Object {
+              "dataKey": "maximumPrice",
               "label": "Update Maximum Price",
               "value": 3,
             },
@@ -176,6 +185,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -290,18 +300,22 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
             },
             Object {
+              "dataKey": "minimumPrice",
               "label": "Update Minimum Price",
               "value": 2,
             },
             Object {
+              "dataKey": "maximumPrice",
               "label": "Update Maximum Price",
               "value": 3,
             },
@@ -310,6 +324,7 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -416,18 +431,22 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
             },
             Object {
+              "dataKey": "minimumPrice",
               "label": "Update Minimum Price",
               "value": 2,
             },
             Object {
+              "dataKey": "maximumPrice",
               "label": "Update Maximum Price",
               "value": 3,
             },
@@ -436,6 +455,7 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "isListed",
             "label": "Update Pricing Status",
             "value": 1,
           }
