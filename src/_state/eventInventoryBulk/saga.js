@@ -4,7 +4,6 @@ import { ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
 import { chunk } from '_helpers';
 import { eventService } from '_services';
 import { actions as alertActions } from '_state/alert';
-import { selectors as eventSelectors } from '../event';
 import { types } from '../eventInventoryBulk';
 import { selectors, actions as eventInventoryActions } from '../eventInventory';
 
