@@ -75,7 +75,7 @@ const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
       actions.updateEditedRowProperty({
         id: rowData.id,
         propertyName: dataKey,
-        propertyValue: value
+        propertyValue: parseFloat(value)
       })
     )
 });
