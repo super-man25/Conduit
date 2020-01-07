@@ -34,10 +34,26 @@ const ACTIONS = {
 };
 
 export const selectActions = [
-  { label: 'Update Manual Price', value: ACTIONS.updatePrice },
-  { label: 'Update Pricing Status', value: ACTIONS.updateListed },
-  { label: 'Update Minimum Price', value: ACTIONS.updateMinimumPrice },
-  { label: 'Update Maximum Price', value: ACTIONS.updateMaximumPrice }
+  {
+    label: 'Update Manual Price',
+    value: ACTIONS.updatePrice,
+    dataKey: 'overridePrice'
+  },
+  {
+    label: 'Update Pricing Status',
+    value: ACTIONS.updateListed,
+    dataKey: 'isListed'
+  },
+  {
+    label: 'Update Minimum Price',
+    value: ACTIONS.updateMinimumPrice,
+    dataKey: 'minimumPrice'
+  },
+  {
+    label: 'Update Maximum Price',
+    value: ACTIONS.updateMaximumPrice,
+    dataKey: 'maximumPrice'
+  }
 ];
 
 export class BulkUpdateModalPresenter extends Component {
@@ -75,10 +91,12 @@ export class BulkUpdateModalPresenter extends Component {
   submit = () => {
     const { submitBulkUpdate } = this.props;
     const { value, selectedAction } = this.state;
-    const isOverridePriceAction = selectedAction.value === ACTIONS.updatePrice;
 
     submitBulkUpdate({
-      [isOverridePriceAction ? 'overridePrice' : 'isListed']: value
+      [selectedAction.dataKey]:
+        selectedAction.value === ACTIONS.updateListed
+          ? value
+          : parseFloat(value)
     });
   };
 
