@@ -390,7 +390,8 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         error: null,
-        loading: false
+        loading: false,
+        editedRowId: null
       };
     case SAVE_EDITED_ROW_ERROR:
       return {
