@@ -138,7 +138,9 @@ describe('saga workers', () => {
   it('bulkUpdate saga should handle bulk updates', () => {
     const action = actions.submitBulkUpdate({
       isListed: true,
-      overridePrice: 10.0
+      overridePrice: 10.0,
+      maximumPrice: 100,
+      minimumPrice: 5
     });
     const generator = cloneableGenerator(bulkUpdate)(action);
 
@@ -155,7 +157,9 @@ describe('saga workers', () => {
         call(eventService.updateEventSeats, {
           eventSeatIds: [1, 2, 3, 4, 5, 6],
           overridePrice: 10.0,
-          isListed: true
+          isListed: true,
+          maximumPrice: 100,
+          minimumPrice: 5
         })
       ])
     );

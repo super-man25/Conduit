@@ -353,7 +353,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return { ...state, error: action.payload, loading: false };
     case START_EDITING_ROW:
       const editedRow = state.allRows.find((row) => row.id === action.payload);
-      if (!editedRow) return state;
+      if (!editedRow) return { ...state, editedRowId: action.payload };
       const { isListed, overridePrice, minimumPrice, maximumPrice } = editedRow;
       return {
         ...state,

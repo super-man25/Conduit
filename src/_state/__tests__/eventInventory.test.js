@@ -272,10 +272,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      editedRowId: 1,
-      editedRowState: {
-        isListed: true
-      }
+      editedRowId: 1
     });
   });
 
