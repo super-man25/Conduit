@@ -478,48 +478,4 @@ describe('Saga workers', () => {
       })
     );
   });
-
-  // it('setting manual price should set a rows listed status', () => {
-  //   const row = { id: 1, seats: [1, 2, 3], section: 1, row: 1 };
-  //   const action = actions.updateEditedRowProperty({
-  //     id: row.id,
-  //     propertyName: 'overridePrice',
-  //     propertyValue: 10
-  //   });
-  //   const generator = cloneableGenerator(setOverridePrice)(action);
-
-  //   const updateParams = {
-  //     eventSeatIds: action.payload.row.seats,
-  //     overridePrice: action.payload.value
-  //   };
-
-  //   expect(generator.next().value).toEqual(
-  //     call(eventService.updateEventSeats, updateParams)
-  //   );
-
-  //   const fail = generator.clone();
-  //   const error = new Error('API Error');
-
-  //   expect(fail.throw(error).value).toEqual(
-  //     put(
-  //       alertActions.error(
-  //         `Could not update section ${row.section} row ${row.row}.`
-  //       )
-  //     )
-  //   );
-
-  //   expect(fail.next().value).toEqual(
-  //     put({
-  //       type: types.SET,
-  //       payload: { error, row }
-  //     })
-  //   );
-
-  //   expect(generator.next().value).toEqual(
-  //     put({
-  //       type: types.SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
-  //       payload: action.payload
-  //     })
-  //   );
-  // });
 });
