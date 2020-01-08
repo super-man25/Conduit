@@ -30,18 +30,31 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
+            },
+            Object {
+              "dataKey": "minimumPrice",
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "dataKey": "maximumPrice",
+              "label": "Update Maximum Price",
+              "value": 3,
             },
           ]
         }
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -88,7 +101,6 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -149,18 +161,31 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
+            },
+            Object {
+              "dataKey": "minimumPrice",
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "dataKey": "maximumPrice",
+              "label": "Update Maximum Price",
+              "value": 3,
             },
           ]
         }
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -207,7 +232,6 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -276,18 +300,31 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
+            },
+            Object {
+              "dataKey": "minimumPrice",
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "dataKey": "maximumPrice",
+              "label": "Update Maximum Price",
+              "value": 3,
             },
           ]
         }
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "overridePrice",
             "label": "Update Manual Price",
             "value": 0,
           }
@@ -334,7 +371,6 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "withComponent": [Function],
           }
         }
-        id="manual-price"
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -395,18 +431,31 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
         options={
           Array [
             Object {
+              "dataKey": "overridePrice",
               "label": "Update Manual Price",
               "value": 0,
             },
             Object {
+              "dataKey": "isListed",
               "label": "Update Pricing Status",
               "value": 1,
+            },
+            Object {
+              "dataKey": "minimumPrice",
+              "label": "Update Minimum Price",
+              "value": 2,
+            },
+            Object {
+              "dataKey": "maximumPrice",
+              "label": "Update Maximum Price",
+              "value": 3,
             },
           ]
         }
         placeholder="Select"
         selected={
           Object {
+            "dataKey": "isListed",
             "label": "Update Pricing Status",
             "value": 1,
           }

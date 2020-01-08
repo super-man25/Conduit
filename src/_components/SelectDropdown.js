@@ -129,7 +129,7 @@ export class SelectDropdown extends React.Component<Props, State> {
         <DropdownSelectedItem onClick={this.toggleIsOpen} dropdownOpen={isOpen}>
           <span>{selected ? selected.label : placeholder}</span>
           <DropdownIconWrapper active={isOpen}>
-            <Icon size={24} name="arrow-drop-down" />
+            <Icon size={12} name="arrow-drop-down" />
           </DropdownIconWrapper>
         </DropdownSelectedItem>
         {isOpen && (

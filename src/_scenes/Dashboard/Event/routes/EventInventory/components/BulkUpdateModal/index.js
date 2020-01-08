@@ -28,12 +28,32 @@ import {
 
 const ACTIONS = {
   updatePrice: 0,
-  updateListed: 1
+  updateListed: 1,
+  updateMinimumPrice: 2,
+  updateMaximumPrice: 3
 };
 
 export const selectActions = [
-  { label: 'Update Manual Price', value: ACTIONS.updatePrice },
-  { label: 'Update Pricing Status', value: ACTIONS.updateListed }
+  {
+    label: 'Update Manual Price',
+    value: ACTIONS.updatePrice,
+    dataKey: 'overridePrice'
+  },
+  {
+    label: 'Update Pricing Status',
+    value: ACTIONS.updateListed,
+    dataKey: 'isListed'
+  },
+  {
+    label: 'Update Minimum Price',
+    value: ACTIONS.updateMinimumPrice,
+    dataKey: 'minimumPrice'
+  },
+  {
+    label: 'Update Maximum Price',
+    value: ACTIONS.updateMaximumPrice,
+    dataKey: 'maximumPrice'
+  }
 ];
 
 export class BulkUpdateModalPresenter extends Component {
@@ -71,14 +91,13 @@ export class BulkUpdateModalPresenter extends Component {
   submit = () => {
     const { submitBulkUpdate } = this.props;
     const { value, selectedAction } = this.state;
-    const isOverridePriceAction = selectedAction.value === ACTIONS.updatePrice;
 
     submitBulkUpdate({
-      [isOverridePriceAction ? 'overridePrice' : 'isListed']: value
+      [selectedAction.dataKey]: value
     });
   };
 
-  get isValidManualPrice() {
+  get isValidPrice() {
     const { value } = this.state;
 
     const isValidNumber = validateDecimal(value, {
@@ -99,7 +118,7 @@ export class BulkUpdateModalPresenter extends Component {
     const { selectedAction } = this.state;
 
     if (selectedAction.value === ACTIONS.updatePrice) {
-      return this.isValidManualPrice;
+      return this.isValidPrice;
     }
 
     return true;
@@ -143,7 +162,6 @@ export class BulkUpdateModalPresenter extends Component {
               <Label>Manual Price</Label>
               <NumberInputField
                 component={NumberInput}
-                id="manual-price"
                 name="price"
                 type="number"
                 value={value}
@@ -151,7 +169,7 @@ export class BulkUpdateModalPresenter extends Component {
                 onChange={this.updatePrice}
                 placeholder="$ Manual Price"
               />
-              {this.state.touched.price && !this.isValidManualPrice && (
+              {this.state.touched.price && !this.isValidPrice && (
                 <FieldErrorText
                   marginTop="0.5rem"
                   size={12}
@@ -171,6 +189,54 @@ export class BulkUpdateModalPresenter extends Component {
                 onChange={this.updateIsListed}
                 size="small"
               />
+            </Field>
+          )}
+          {selectedAction.value === ACTIONS.updateMinimumPrice && (
+            <Field marginBottom="2rem">
+              <Label>Minimum Price</Label>
+              <NumberInputField
+                component={NumberInput}
+                name="price"
+                type="number"
+                value={value}
+                onBlur={this.onBlur}
+                onChange={this.updatePrice}
+                placeholder="$ Minimumn Price"
+              />
+              {this.state.touched.price && !this.isValidPrice && (
+                <FieldErrorText
+                  marginTop="0.5rem"
+                  size={12}
+                  weight={300}
+                  color={cssConstants.SECONDARY_RED}
+                >
+                  Minimum Price must be a valid dollar amount.
+                </FieldErrorText>
+              )}
+            </Field>
+          )}
+          {selectedAction.value === ACTIONS.updateMaximumPrice && (
+            <Field marginBottom="2rem">
+              <Label>Maximum Price</Label>
+              <NumberInputField
+                component={NumberInput}
+                name="price"
+                type="number"
+                value={value}
+                onBlur={this.onBlur}
+                onChange={this.updatePrice}
+                placeholder="$ Maximumn Price"
+              />
+              {this.state.touched.price && !this.isValidPrice && (
+                <FieldErrorText
+                  marginTop="0.5rem"
+                  size={12}
+                  weight={300}
+                  color={cssConstants.SECONDARY_RED}
+                >
+                  Maximum Price must be a valid dollar amount.
+                </FieldErrorText>
+              )}
             </Field>
           )}
           <Flex justify="flex-end">

@@ -102,7 +102,9 @@ function getInventory(eventId: number): EDInventoryRow[] {
 function updateEventSeats(payload: {
   eventSeatIds: Array<number>,
   overridePrice?: number,
-  isListed?: boolean
+  isListed?: boolean,
+  minimumPrice?: number,
+  maximumPrice?: number
 }) {
   return validateOverridePrice(payload).then((denormalizedPayload) => {
     return post('eventRows/_bulk', denormalizedPayload);

@@ -31,7 +31,7 @@ describe('<BulkUpdateModal />', () => {
       },
       value: '12.222'
     });
-    expect(wrapper.instance().isValidManualPrice).toEqual(false);
+    expect(wrapper.instance().isValidPrice).toEqual(false);
     expect(wrapper).toMatchSnapshot();
   });
 
