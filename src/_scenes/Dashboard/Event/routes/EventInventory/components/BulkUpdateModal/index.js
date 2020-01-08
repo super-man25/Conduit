@@ -93,10 +93,7 @@ export class BulkUpdateModalPresenter extends Component {
     const { value, selectedAction } = this.state;
 
     submitBulkUpdate({
-      [selectedAction.dataKey]:
-        selectedAction.value === ACTIONS.updateListed
-          ? value
-          : parseFloat(value)
+      [selectedAction.dataKey]: value
     });
   };
 

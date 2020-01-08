@@ -28,7 +28,10 @@ export function* bulkUpdate(action) {
     yield all(
       chunkedRowSeatIds.map((seatIds) =>
         call(eventService.updateEventSeats, {
-          ...payload,
+          isListed: payload.isListed,
+          overridePrice: parseFloat(payload.overridePrice),
+          minimumPrice: parseFloat(payload.minimumPrice),
+          maximumPrice: parseFloat(payload.maximumPrice),
           eventSeatIds: seatIds
         })
       )
