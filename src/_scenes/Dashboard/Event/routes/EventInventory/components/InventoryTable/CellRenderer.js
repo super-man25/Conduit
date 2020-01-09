@@ -54,7 +54,7 @@ export class DefaultCellPresenter extends React.Component<Props, State> {
     }
     return (
       <Flex align="center">
-        <Text>{cellData}</Text>
+        <Text className="private">{cellData}</Text>
       </Flex>
     );
   }

@@ -131,6 +131,7 @@ export const PricingPreview = (props: Props) => {
                 weight="heavy"
                 textAlign="right"
                 color={cssConstants.PRIMARY_BLUE}
+                className="private"
               >
                 {row.min}
               </Text>
@@ -140,6 +141,7 @@ export const PricingPreview = (props: Props) => {
                 weight="heavy"
                 textAlign="right"
                 color={cssConstants.PRIMARY_BLUE}
+                className="private"
               >
                 {row.max}
               </Text>

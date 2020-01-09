@@ -4,7 +4,9 @@ exports[`defaultCellRenderer should render correctly 1`] = `
 <Flex
   align="center"
 >
-  <Styled(styled.p)>
+  <Styled(styled.p)
+    className="private"
+  >
     10
   </Styled(styled.p)>
 </Flex>

@@ -111,12 +111,12 @@ export const PricingForm = (props: Props) => {
             <Text color={cssConstants.PRIMARY_GRAY}>PREDICTED</Text>
           </Box>
           <Box width="33%">
-            <Text textAlign="right">
+            <Text textAlign="right" className="private">
               {fixedOrDash(eventScore, SCORE_DECIMALS)}
             </Text>
           </Box>
           <Box width="33%">
-            <Text textAlign="right">
+            <Text textAlign="right" className="private">
               {fixedOrDash(spring, SPRING_DECIMALS)}
             </Text>
           </Box>
@@ -145,7 +145,7 @@ export const PricingForm = (props: Props) => {
                 onChange={handleChange}
               />
             ) : (
-              <Text textAlign="right">
+              <Text textAlign="right" className="private">
                 {fixedOrDash(eventScoreModifier, SCORE_DECIMALS)}
               </Text>
             )}
@@ -159,7 +159,7 @@ export const PricingForm = (props: Props) => {
                 onChange={handleChange}
               />
             ) : (
-              <Text textAlign="right">
+              <Text textAlign="right" className="private">
                 {fixedOrDash(springModifier, SPRING_DECIMALS)}
               </Text>
             )}
@@ -179,7 +179,7 @@ export const PricingForm = (props: Props) => {
             <Text color={cssConstants.PRIMARY_GRAY}>VELOCITY</Text>
           </Flex>
           <Flex width="33%" justify="flex-end">
-            <Text textAlign="right">
+            <Text textAlign="right" className="private">
               {fixedOrDash(
                 velocityScore(eventScore, velocityFactor),
                 SCORE_DECIMALS
@@ -194,12 +194,12 @@ export const PricingForm = (props: Props) => {
             <Text weight="heavy">FINAL</Text>
           </Box>
           <Box width="33%">
-            <Text weight="heavy" textAlign="right">
+            <Text weight="heavy" textAlign="right" className="private">
               {finalEventScore(eventScore, velocityFactor, eventScoreModifier)}
             </Text>
           </Box>
           <Box width="33%">
-            <Text weight="heavy" textAlign="right">
+            <Text weight="heavy" textAlign="right" className="private">
               {finalSpringValue(spring, springModifier)}
             </Text>
           </Box>

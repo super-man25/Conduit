@@ -16,7 +16,9 @@ exports[`<ChartTooltip /> should render correctly 1`] = `
       <styled.h3>
         key
       </styled.h3>
-      <styled.p>
+      <styled.p
+        className="private"
+      >
         value
       </styled.p>
     </Styled(Component)>

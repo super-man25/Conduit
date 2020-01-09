@@ -71,7 +71,7 @@ export const ChartTooltip = ({ headerText, bodyJson }: Props) => (
       {Object.keys(bodyJson).map((key) => (
         <TooltipRow key={key} justify="space-between" align="center">
           <TooltipBodyTitle>{key}</TooltipBodyTitle>
-          <TooltipBodyText>{bodyJson[key]}</TooltipBodyText>
+          <TooltipBodyText className="private">{bodyJson[key]}</TooltipBodyText>
         </TooltipRow>
       ))}
     </TooltipBody>

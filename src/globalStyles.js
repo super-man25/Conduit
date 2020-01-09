@@ -101,5 +101,4 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: inset 4px 0 0 var(--PRIMARY_LIGHT_BLUE);
     background-color: #eaf6fb;
   }
-  
 `;

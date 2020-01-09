@@ -48,7 +48,7 @@ export function LegendItem({ color, label, value }: Props) {
       <LegendItemColoredBar color={color} />
       <LegendItemContent>
         <LegendItemTitle>{label}</LegendItemTitle>
-        <LegendItemValue>{value}</LegendItemValue>
+        <LegendItemValue className="private">{value}</LegendItemValue>
       </LegendItemContent>
     </LegendItemContainer>
   );
