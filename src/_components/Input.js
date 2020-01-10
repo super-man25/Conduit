@@ -101,7 +101,7 @@ export class NumberInputField extends React.Component<NumberInputProps> {
 
     // Allow: allowedKeycodes, Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X, home, end, left, right
     if (
-      allowedKeyCodes.indexOf(e.keyCode) !== -1 ||
+      allowedKeyCodes.includes(e.keyCode) ||
       (e.keyCode === 65 && isCtrlOrMetaKey) ||
       (e.keyCode === 67 && isCtrlOrMetaKey) ||
       (e.keyCode === 86 && isCtrlOrMetaKey) ||

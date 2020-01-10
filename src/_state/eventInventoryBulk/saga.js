@@ -1,10 +1,11 @@
 import { select, takeLatest, call, put, all } from 'redux-saga/effects';
-import { selectors, actions as eventInventoryActions } from '../eventInventory';
-import { types } from '../eventInventoryBulk';
-import { actions as alertActions } from '_state/alert';
-import { eventService } from '_services';
-import { chunk } from '_helpers';
+
 import { ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
+import { chunk } from '_helpers';
+import { eventService } from '_services';
+import { actions as alertActions } from '_state/alert';
+import { types } from '../eventInventoryBulk';
+import { selectors, actions as eventInventoryActions } from '../eventInventory';
 
 export function* bulkUpdate(action) {
   const { payload } = action;
@@ -27,7 +28,10 @@ export function* bulkUpdate(action) {
     yield all(
       chunkedRowSeatIds.map((seatIds) =>
         call(eventService.updateEventSeats, {
-          ...payload,
+          isListed: payload.isListed,
+          overridePrice: parseFloat(payload.overridePrice),
+          minimumPrice: parseFloat(payload.minimumPrice),
+          maximumPrice: parseFloat(payload.maximumPrice),
           eventSeatIds: seatIds
         })
       )

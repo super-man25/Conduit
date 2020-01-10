@@ -3,10 +3,12 @@ export type EDInventoryRow = {
   section: string,
   row: string,
   priceScaleId: number,
-  seats: number,
+  seats: [number],
   listedPrice: number,
   isListed: boolean,
   overridePrice: ?number,
+  minimumPrice: number,
+  maximumPrice: number,
   id: string
 };
 

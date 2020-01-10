@@ -126,7 +126,9 @@ const EventDetails = ({
 }) => {
   return (
     <FlexItem flex={flex} alignSelf="flex-end">
-      <EventDetailsLabel past={isPast}>{title}</EventDetailsLabel>
+      <EventDetailsLabel past={isPast} className="private">
+        {title}
+      </EventDetailsLabel>
       <SubtextP1 past={isPast}>{text}</SubtextP1>
     </FlexItem>
   );

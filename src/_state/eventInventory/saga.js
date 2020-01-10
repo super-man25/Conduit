@@ -1,29 +1,17 @@
 // @flow
-import { types, actions } from '.';
-import {
-  fork,
-  take,
-  put,
-  cancel,
-  takeLatest,
-  call,
-  select,
-  all
-} from 'redux-saga/effects';
-import { eventService, venueService } from '_services';
+import { put, takeLatest, call, select, all } from 'redux-saga/effects';
 import type { Saga } from 'redux-saga';
+
+import { eventService, venueService } from '_services';
 import { actions as alertActions } from '_state/alert';
 import { selectors as eventSelectors } from '../event';
-import type {
-  FetchEventInventoryAction,
-  SetEventRowListedRequestAction,
-  SetEventRowManualPriceRequestAction
-} from '.';
 import {
   alphaFirstSort,
   findUniqueSections,
   mapSectionsToPriceScales
 } from './utils';
+import type { FetchEventInventoryAction } from './';
+import { types, actions, selectors as eventInventorySelectors } from './';
 
 export function* fetchEventInventory(
   action: FetchEventInventoryAction
@@ -59,106 +47,54 @@ export function* fetchEventInventory(
   }
 }
 
-export function* setRowListed(
-  action: SetEventRowListedRequestAction
-): Saga<void> {
-  const { row, value } = action.payload;
-  const updateParams = { eventSeatIds: row.seats, isListed: value };
+export function* saveEditedRow(): Saga<void> {
+  const editedRowSeatIds = yield select(
+    eventInventorySelectors.selectEditedRowSeatIds
+  );
+  const editedRowState = yield select(
+    eventInventorySelectors.selectEditedRowState
+  );
 
-  try {
-    yield call(eventService.updateEventSeats, updateParams);
-
-    yield put({
-      type: types.SET_EVENT_ROW_LISTED_SUCCESS,
-      payload: action.payload
-    });
-  } catch (error) {
-    yield put(
-      alertActions.error(
-        `Could not update section ${row.section} row ${row.row}.`
-      )
-    );
-    yield put({
-      type: types.SET_EVENT_ROW_LISTED_ERROR,
-      payload: {
-        error,
-        row
-      }
-    });
-  }
-}
-
-export function* setOverridePrice(
-  action: SetEventRowManualPriceRequestAction
-): Saga<void> {
-  const { row, value } = action.payload;
   const updateParams = {
-    eventSeatIds: row.seats,
-    overridePrice: value.length ? value : null
+    eventSeatIds: editedRowSeatIds,
+    overridePrice: parseFloat(editedRowState.overridePrice),
+    minimumPrice: parseFloat(editedRowState.minimumPrice),
+    maximumPrice: parseFloat(editedRowState.maximumPrice),
+    isListed: editedRowState.isListed
   };
 
   try {
     yield call(eventService.updateEventSeats, updateParams);
 
     yield put({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
-      payload: action.payload
+      type: types.SAVE_EDITED_ROW_SUCCESS
     });
   } catch (error) {
     let msg =
       error.name === 'ValidationError'
         ? error.errors[0]
-        : `Could not update section ${row.section} row ${row.row}.`;
+        : `Could not update seats.`;
 
     yield put(alertActions.error(msg));
     yield put({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE_ERROR,
+      type: types.SAVE_EDITED_ROW_ERROR,
       payload: {
         error,
-        row
+        editedRowSeatIds
       }
     });
   }
 }
 
-const takeLatestById = (pattern, saga, actionIdGetter, ...args) =>
-  fork(function*() {
-    const tasks = {};
-
-    while (true) {
-      const action = yield take(pattern);
-      const id = actionIdGetter(action);
-
-      if (tasks[id]) {
-        yield cancel(tasks[id]);
-      }
-
-      tasks[id] = yield fork(saga, action);
-    }
-  });
-
 function* watchFetchEventInventory(): Saga<void> {
   yield takeLatest(types.FETCH_EVENT_INVENTORY, fetchEventInventory);
 }
 
-function* watchSetRowListed(): Saga<void> {
-  yield takeLatestById(
-    types.SET_EVENT_ROW_LISTED_REQUEST,
-    setRowListed,
-    (action) => action.payload.row.id
-  );
-}
-
-function* watchSetManualPrice(): Saga<void> {
-  yield takeLatestById(
-    types.SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
-    setOverridePrice,
-    (action) => action.payload.row.id
-  );
+function* watchSaveEditedRow(): Saga<void> {
+  yield takeLatest(types.SAVE_EDITED_ROW, saveEditedRow);
 }
 
 export default {
   watchFetchEventInventory,
-  watchSetRowListed,
-  watchSetManualPrice
+  watchSaveEditedRow
 };

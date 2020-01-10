@@ -128,6 +128,7 @@ export function EventHeader(props: Props) {
                 size="22"
                 weight="heavy"
                 textAlign={isMobileDevice ? 'left' : 'right'}
+                className="private"
               >
                 {inventoryString}
               </Text>
@@ -148,6 +149,7 @@ export function EventHeader(props: Props) {
               size="22"
               weight="heavy"
               textAlign={isMobileDevice ? 'left' : 'right'}
+              className="private"
             >
               {revenue}
             </Text>

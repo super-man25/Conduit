@@ -7,14 +7,9 @@ import {
 } from '../eventInventory';
 import { selectors as eventSelectors } from '../event';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import {
-  fetchEventInventory,
-  setRowListed,
-  setOverridePrice
-} from '../eventInventory/saga';
+import { fetchEventInventory } from '../eventInventory/saga';
 import { call, put, all, select } from 'redux-saga/effects';
 import { eventService, venueService } from '_services';
-import { actions as alertActions } from '_state/alert';
 import {
   findUniqueSections,
   mapSectionsToPriceScales
@@ -55,17 +50,14 @@ describe('actions', () => {
     });
   });
 
-  it('should create an action to update the the manual price of an inventory row', () => {
-    const action = actions.setEventRowManualPrice(
-      { id: 1, overridePrice: null },
+  it('should create an action to update a property of the edited row', () => {
+    const action = actions.updateEditedRowProperty(
+      { id: 1, propertyName: 'overridePrice', propertyValue: null },
       true
     );
     expect(action).toEqual({
-      type: types.SET_EVENT_ROW_MANUAL_PRICE_REQUEST,
-      payload: {
-        row: { id: 1, overridePrice: null },
-        value: true
-      }
+      type: types.UPDATE_EDITED_ROW_PROPERTY,
+      payload: { id: 1, propertyName: 'overridePrice', propertyValue: null }
     });
   });
 
@@ -84,18 +76,18 @@ describe('actions', () => {
     });
   });
 
-  it('should create an action to start editing a rows manual price', () => {
-    const action = actions.setEditingManualPrice(1);
+  it('should create an action to start editing a row', () => {
+    const action = actions.startEditingRow(1);
     expect(action).toEqual({
-      type: types.SET_EDITING_MANUAL_PRICE,
+      type: types.START_EDITING_ROW,
       payload: 1
     });
   });
 
-  it('should create an action to cancel editing manual pricing', () => {
-    const action = actions.cancelEditingManualPrice();
+  it('should create an action to cancel editing a row', () => {
+    const action = actions.cancelEditingRow();
     expect(action).toEqual({
-      type: types.CANCEL_EDITING_MANUAL_PRICE
+      type: types.CANCEL_EDITING_ROW
     });
   });
 
@@ -270,50 +262,48 @@ describe('reducer', () => {
     });
   });
 
-  it('should handle SET_EDITING_MANUAL_PRICE actions', () => {
+  it('should handle START_EDITING_ROW actions', () => {
     const prevState = {
       ...initialState,
-      manualPriceEditId: null
+      editedRowId: null
     };
-    const action = actions.setEditingManualPrice(1);
+    const action = actions.startEditingRow(1);
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      manualPriceEditId: 1
+      editedRowId: 1
     });
   });
 
-  it('should handle CANCEL_EDITING_MANUAL_PRICE actions', () => {
+  it('should handle CANCEL_EDITING_ROW actions', () => {
     const prevState = {
       ...initialState,
-      manualPriceEditId: 1
+      editedRowId: 1
     };
-    const action = actions.cancelEditingManualPrice();
+    const action = actions.cancelEditingRow();
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      manualPriceEditId: null
+      editedRowId: null
     });
   });
 
-  it('should handle SET_EVENT_ROW_MANUAL_PRICE actions', () => {
+  it('should handle UPDATE_EDITED_ROW_PROPERTY actions', () => {
     const prevState = {
       ...initialState,
-      manualPriceEditId: 10,
-      allRows: [{ id: 10, overridePrice: false }]
+      editedRowState: {}
     };
-    const action = actions.setEventRowManualPrice(
-      { id: 10, overridePrice: false },
+    const action = actions.updateEditedRowProperty(
+      { id: 10, propertyName: 'overridePrice', propertyValue: 100 },
       100
     );
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      manualPriceEditId: null,
-      allRows: [{ id: 10, overridePrice: 100 }]
+      editedRowState: { overridePrice: 100 }
     });
   });
 
@@ -485,83 +475,6 @@ describe('Saga workers', () => {
       put({
         type: types.FETCH_EVENT_INVENTORY_SUCCESS,
         payload: eventInventory
-      })
-    );
-  });
-
-  it('setRowListed should set a rows listed status', () => {
-    const row = { id: 1, seats: [1, 2, 3], section: 1, row: 1 };
-    const action = actions.setEventRowListed(row, true);
-    const generator = cloneableGenerator(setRowListed)(action);
-
-    const updateParams = {
-      eventSeatIds: action.payload.row.seats,
-      isListed: action.payload.value
-    };
-
-    expect(generator.next().value).toEqual(
-      call(eventService.updateEventSeats, updateParams)
-    );
-
-    const fail = generator.clone();
-    const error = new Error('API Error');
-
-    expect(fail.throw(error).value).toEqual(
-      put(
-        alertActions.error(
-          `Could not update section ${row.section} row ${row.row}.`
-        )
-      )
-    );
-
-    expect(fail.next().value).toEqual(
-      put({ type: types.SET_EVENT_ROW_LISTED_ERROR, payload: { error, row } })
-    );
-
-    expect(generator.next().value).toEqual(
-      put({
-        type: types.SET_EVENT_ROW_LISTED_SUCCESS,
-        payload: action.payload
-      })
-    );
-  });
-
-  it('setOverridePrice should set a rows listed status', () => {
-    const row = { id: 1, seats: [1, 2, 3], section: 1, row: 1 };
-    const action = actions.setEventRowManualPrice(row, '100');
-    const generator = cloneableGenerator(setOverridePrice)(action);
-
-    const updateParams = {
-      eventSeatIds: action.payload.row.seats,
-      overridePrice: action.payload.value
-    };
-
-    expect(generator.next().value).toEqual(
-      call(eventService.updateEventSeats, updateParams)
-    );
-
-    const fail = generator.clone();
-    const error = new Error('API Error');
-
-    expect(fail.throw(error).value).toEqual(
-      put(
-        alertActions.error(
-          `Could not update section ${row.section} row ${row.row}.`
-        )
-      )
-    );
-
-    expect(fail.next().value).toEqual(
-      put({
-        type: types.SET_EVENT_ROW_MANUAL_PRICE_ERROR,
-        payload: { error, row }
-      })
-    );
-
-    expect(generator.next().value).toEqual(
-      put({
-        type: types.SET_EVENT_ROW_MANUAL_PRICE_SUCCESS,
-        payload: action.payload
       })
     );
   });

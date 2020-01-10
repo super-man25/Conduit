@@ -3,10 +3,16 @@
 exports[`<ListedColumnCellPresenter /> should render correctly 1`] = `
 <Styled(styled.div)
   marginLeft="1.25rem"
+  style={
+    Object {
+      "opacity": 0.5,
+    }
+  }
 >
   <Toggle
     isChecked="Data"
-    onChange={[MockFunction]}
+    isDisabled={true}
+    onChange={[Function]}
     size="xsmall"
   />
 </Styled(styled.div)>

@@ -59,9 +59,9 @@ exports[`<SelectDropdown /> renders correctly 1`] = `
       >
         <svg
           className="c3"
-          height="24px"
+          height="12px"
           viewBox="0 0 24 24"
-          width="24px"
+          width="12px"
         >
           <path
             d="M0,6.5l12,12,12-12Z"

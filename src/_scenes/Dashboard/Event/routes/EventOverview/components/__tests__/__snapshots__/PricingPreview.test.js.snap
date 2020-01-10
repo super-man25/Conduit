@@ -201,7 +201,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $52.18
@@ -212,7 +212,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $1,147.73
@@ -239,7 +239,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $421.36
@@ -250,7 +250,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $1,120.58
@@ -277,7 +277,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $285.06
@@ -288,7 +288,7 @@ exports[`renders correctly 1`] = `
         width="33%"
       >
         <p
-          className="c12"
+          className="private c12"
           color="#0A169A"
         >
           $856.69

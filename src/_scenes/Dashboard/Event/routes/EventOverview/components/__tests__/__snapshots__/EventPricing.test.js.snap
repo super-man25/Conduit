@@ -504,7 +504,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c22"
+                className="private c22"
               >
                 1.00
               </p>
@@ -514,7 +514,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c22"
+                className="private c22"
               >
                 1.0000
               </p>
@@ -546,7 +546,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c22"
+                className="private c22"
               >
                 1.00
               </p>
@@ -556,7 +556,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c22"
+                className="private c22"
               >
                 1.0000
               </p>
@@ -587,7 +587,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c22"
+                className="private c22"
               >
                 --
               </p>
@@ -616,7 +616,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c26"
+                className="private c26"
               >
                 --
               </p>
@@ -626,7 +626,7 @@ exports[`renders correctly 1`] = `
               width="33%"
             >
               <p
-                className="c26"
+                className="private c26"
               >
                 2.0000
               </p>

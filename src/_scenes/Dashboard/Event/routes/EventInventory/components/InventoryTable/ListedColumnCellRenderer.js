@@ -6,22 +6,50 @@ import { actions } from '_state/eventInventory';
 
 type Props = {
   cellData: any,
-  setListed: () => void
+  isEditing: boolean,
+  editedRowState: any,
+  dataKey: string,
+  updateEditedRowProperty: (any) => void
 };
 
-export const ListedColumnCellPresenter = ({ cellData, setListed }: Props) => (
-  <Box marginLeft="1.25rem">
-    <Toggle isChecked={cellData} onChange={setListed} size="xsmall" />
+export const ListedColumnCellPresenter = ({
+  cellData,
+  isEditing,
+  editedRowState,
+  updateEditedRowProperty,
+  dataKey
+}: Props) => (
+  <Box marginLeft="1.25rem" style={{ opacity: isEditing ? 1 : 0.5 }}>
+    <Toggle
+      isDisabled={!isEditing}
+      isChecked={isEditing ? editedRowState[dataKey] : cellData}
+      onChange={() => updateEditedRowProperty(!editedRowState[dataKey])}
+      size="xsmall"
+    />
   </Box>
 );
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  setListed: () =>
-    dispatch(actions.setEventRowListed(ownProps.rowData, !ownProps.cellData))
+const mapStateToProps = (
+  { eventInventory: { editedRowId, editedRowState } },
+  { rowData }
+) => ({
+  isEditing: editedRowId === rowData.id,
+  editedRowState
+});
+
+const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
+  updateEditedRowProperty: (value) =>
+    dispatch(
+      actions.updateEditedRowProperty({
+        id: rowData.id,
+        propertyName: dataKey,
+        propertyValue: value
+      })
+    )
 });
 
 const ListedColumnCell = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ListedColumnCellPresenter);
 

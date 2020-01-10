@@ -18,7 +18,9 @@ export type SubmitBulkUpdateAction = {
   type: 'eventInventoryBulk/SUBMIT_BULK_UPDATE',
   payload: {
     isListed?: boolean,
-    overridePrice?: number
+    overridePrice?: number,
+    minimumPrice?: number,
+    maximumPrice?: number
   }
 };
 export type SubmitBulkUpdateSuccessAction = {
@@ -47,7 +49,9 @@ export const actions = {
 
   submitBulkUpdate: (payload: {
     isListed?: boolean,
-    overridePrice?: number
+    overridePrice?: number,
+    minimumPrice?: number,
+    maximumPrice?: number
   }): SubmitBulkUpdateAction => ({
     type: types.SUBMIT_BULK_UPDATE,
     payload

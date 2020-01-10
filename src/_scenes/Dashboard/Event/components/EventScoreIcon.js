@@ -38,6 +38,6 @@ const Text = styled.div`
 
 export const EventScoreIcon = ({ eventScore, past }) => (
   <Background past={past}>
-    <Text>{eventScore}</Text>
+    <Text className="private">{eventScore}</Text>
   </Background>
 );

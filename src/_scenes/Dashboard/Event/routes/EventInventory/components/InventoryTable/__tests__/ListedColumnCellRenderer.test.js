@@ -6,7 +6,10 @@ import { Toggle } from '_components';
 describe('<ListedColumnCellPresenter />', () => {
   const props = {
     cellData: 'Data',
-    setListed: jest.fn()
+    updateEditedRowProperty: jest.fn(),
+    editedRowState: {
+      isListed: true
+    }
   };
 
   it('should render correctly', () => {
@@ -22,6 +25,6 @@ describe('<ListedColumnCellPresenter />', () => {
       .first()
       .prop('onChange')();
 
-    expect(clonedProps.setListed).toHaveBeenCalled();
+    expect(clonedProps.updateEditedRowProperty).toHaveBeenCalled();
   });
 });

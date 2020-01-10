@@ -112,7 +112,13 @@ export const TicketIntegrationListItem = ({
           </Flex>
         )}
         <Box>
-          <Text marginBottom=".33rem" size={22} align="center" weight="heavy">
+          <Text
+            marginBottom=".33rem"
+            size={22}
+            align="center"
+            weight="heavy"
+            className="private"
+          >
             {formatNumber(integration.sold)}
           </Text>
           <Text size={12}>Tickets Sold</Text>
@@ -121,7 +127,13 @@ export const TicketIntegrationListItem = ({
           <Box border={`1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`} />
         )}
         <Box>
-          <Text marginBottom=".33rem" size={22} align="center" weight="heavy">
+          <Text
+            marginBottom=".33rem"
+            size={22}
+            align="center"
+            weight="heavy"
+            className="private"
+          >
             {getTicketShare(integration.sold, integration.total)}
           </Text>
           <Text size={12}>Ticket Share</Text>
