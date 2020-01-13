@@ -5,7 +5,7 @@ import * as React from 'react';
 type Props = {
   children: () => React.Node,
   data: Array<any>,
-  scrollIndex: number
+  scrollIndex: number,
 };
 
 export class ScrollableList extends React.Component<Props> {

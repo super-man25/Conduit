@@ -10,7 +10,7 @@ import type {
   ToggleEventBroadcastingAction,
   FetchEventAction,
   SaveAdminModifiersAction,
-  FetchAutomatedSpringValueAction
+  FetchAutomatedSpringValueAction,
 } from '.';
 import { finalEventScore } from '_helpers/pricing-utils';
 import { push } from 'connected-react-router';
@@ -22,7 +22,7 @@ export function* fetchEvent(action: FetchEventAction): Saga {
 
     const event = yield call(eventService.getOne, eventId);
     const {
-      factors: { eventScore, velocityFactor, eventScoreModifier }
+      factors: { eventScore, velocityFactor, eventScoreModifier },
     } = event;
     yield put({ type: types.FETCH_EVENT_SUCCESS, payload: event });
     yield put({
@@ -33,8 +33,8 @@ export function* fetchEvent(action: FetchEventAction): Saga {
           eventScore,
           velocityFactor,
           eventScoreModifier
-        )
-      }
+        ),
+      },
     });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_ERROR, payload: err });
@@ -55,7 +55,7 @@ export function* toggleBroadcasting(
 
     yield put({
       type: types.TOGGLE_BROADCASTING_SUCCESS,
-      payload: { ...response, eventId }
+      payload: { ...response, eventId },
     });
   } catch (err) {
     yield put({ type: types.TOGGLE_BROADCASTING_ERROR, payload: err });
@@ -69,7 +69,7 @@ export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
     springModifier,
     seasonId,
     reasonType,
-    reasonComments
+    reasonComments,
   } = action.payload;
   try {
     const response = yield call(eventService.updateAdminModifiers, {
@@ -77,17 +77,17 @@ export function* saveAdminModifiers(action: SaveAdminModifiersAction): Saga {
       eventScoreModifier,
       springModifier,
       reasonType,
-      reasonComments
+      reasonComments,
     });
 
     yield put({
       type: types.SAVE_ADMIN_MODIFIERS_SUCCESS,
-      payload: { ...response, eventId }
+      payload: { ...response, eventId },
     });
     yield put(alertActions.success('Successfully saved modifier'));
     yield put({
       type: eventListTypes.FETCH_EVENT_LIST,
-      payload: { seasonId }
+      payload: { seasonId },
     });
   } catch (err) {
     yield put({ type: types.SAVE_ADMIN_MODIFIERS_ERROR, payload: err });
@@ -107,7 +107,7 @@ export function* fetchAutomatedSpring(
     );
     yield put({
       type: types.FETCH_AUTOMATED_SPRING_VALUE_SUCCESS,
-      payload: springValue
+      payload: springValue,
     });
     yield put(paramsChanged(id));
   } catch (err) {
@@ -142,5 +142,5 @@ export default {
   watchFetchEvent,
   watchToggleBroadcasting,
   watchSaveAdminModifiers,
-  watchFetchAutomatedSpring
+  watchFetchAutomatedSpring,
 };

@@ -16,7 +16,7 @@ export const ChartLegendItemContainer = styled.div`
 
 export const ChartLegendBar: React.ComponentType<{
   dashed: boolean,
-  color: string
+  color: string,
 }> = styled.div`
   height: 32px;
   min-width: 8px;
@@ -39,7 +39,7 @@ ChartLegendLabel.displayName = 'ChartLegendLabel';
 type Props = {
   label: string,
   color: string,
-  dashed: boolean
+  dashed: boolean,
 };
 
 export const ChartLegendItem = ({ label, color, dashed }: Props) => {
@@ -52,5 +52,5 @@ export const ChartLegendItem = ({ label, color, dashed }: Props) => {
 };
 
 ChartLegendItem.defaultProps = {
-  color: cssConstants.PRIMARY_BLUE
+  color: cssConstants.PRIMARY_BLUE,
 };

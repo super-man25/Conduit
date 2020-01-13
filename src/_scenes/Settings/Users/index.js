@@ -8,12 +8,12 @@ import { UsersTable } from './components/UsersTable';
 const crumbs = [
   {
     title: 'Dashboard',
-    path: '/dashboard'
+    path: '/dashboard',
   },
   {
     title: 'View Users',
-    path: '/settings/users'
-  }
+    path: '/settings/users',
+  },
 ];
 
 export const UsersPresenter = (props) => {
@@ -38,11 +38,11 @@ export const UsersPresenter = (props) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  userList: selectors.selectUserList
+  userList: selectors.selectUserList,
 });
 const mapDispatchToProps = {
   fetchUserList: actions.fetchUserList,
-  reset: actions.resetUsers
+  reset: actions.resetUsers,
 };
 export const Users = connect(
   mapStateToProps,

@@ -13,7 +13,7 @@ import {
   Label,
   Flex,
   H3,
-  Loader
+  Loader,
 } from '_components';
 import { Dropdown } from '_components';
 import type { EDUser, EDClient } from '_models';
@@ -27,16 +27,16 @@ const CreateUserWrapper = styled(Flex)`
 
 type Props = {
   usersActions: {
-    create: (user: EDUser) => void
+    create: (user: EDUser) => void,
   },
   userState: {
     loading: boolean,
-    saved: boolean
+    saved: boolean,
   },
   authState: {
-    model: EDUser
+    model: EDUser,
   },
-  clientList: [EDClient]
+  clientList: [EDClient],
 };
 
 type State = {
@@ -46,14 +46,14 @@ type State = {
     email: string,
     password: string,
     isAdmin: boolean,
-    clientId: ?number
+    clientId: ?number,
   },
   submitted: boolean,
   emailHadFocus: boolean,
   firstNameHadFocus: boolean,
   lastNameHadFocus: boolean,
   validEmail: boolean,
-  createEnabled: boolean
+  createEnabled: boolean,
 };
 
 class CreateUser extends React.Component<Props, State> {
@@ -67,14 +67,14 @@ class CreateUser extends React.Component<Props, State> {
         email: '',
         password: '',
         isAdmin: false,
-        clientId: null
+        clientId: null,
       },
       submitted: false,
       emailHadFocus: false,
       firstNameHadFocus: false,
       lastNameHadFocus: false,
       validEmail: false,
-      createEnabled: false
+      createEnabled: false,
     };
   }
 
@@ -98,8 +98,8 @@ class CreateUser extends React.Component<Props, State> {
     this.setState({
       user: {
         ...user,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
     this.setState({ submitted: false });
     if (name === 'email' && !this.emailCheck(value)) {
@@ -122,8 +122,8 @@ class CreateUser extends React.Component<Props, State> {
         email: '',
         password: '',
         isAdmin: false,
-        clientId: activeClientId
-      }
+        clientId: activeClientId,
+      },
     });
   };
 
@@ -170,7 +170,7 @@ class CreateUser extends React.Component<Props, State> {
       firstNameHadFocus,
       lastNameHadFocus,
       validEmail,
-      createEnabled
+      createEnabled,
     } = this.state;
 
     if (!!clientList.length && !user.clientId) {
@@ -278,13 +278,13 @@ function mapStateToProps(state) {
   return {
     userState: state.user,
     authState: state.auth,
-    clientList: clientListSelector.getClients(state)
+    clientList: clientListSelector.getClients(state),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    usersActions: bindActionCreators(usersActions, dispatch)
+    usersActions: bindActionCreators(usersActions, dispatch),
   };
 }
 

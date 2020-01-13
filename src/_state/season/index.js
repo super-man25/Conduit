@@ -16,7 +16,7 @@ export type InitAction = { type: 'season/INIT' };
 export type FetchAction = { type: 'season/FETCH' };
 export type FetchSuccessAction = {
   type: 'season/FETCH_SUCCESS',
-  payload: EDSeason[]
+  payload: EDSeason[],
 };
 export type FetchErrorAction = { type: 'season/FETCH_ERROR', payload: Error };
 export type SetActiveAction = { type: 'season/SET_ACTIVE', payload: number };
@@ -36,7 +36,7 @@ export const types = {
   FETCH_ERROR,
   SET_ACTIVE,
   RESET,
-  INIT
+  INIT,
 };
 
 // Actions
@@ -44,13 +44,13 @@ const fetchSeasons = (): FetchAction => ({ type: FETCH });
 const resetSeasons = (): ResetAction => ({ type: RESET });
 const setActiveId = (id: number): SetActiveAction => ({
   type: SET_ACTIVE,
-  payload: id
+  payload: id,
 });
 
 export const actions = {
   fetchSeasons,
   resetSeasons,
-  setActiveId
+  setActiveId,
 };
 
 // Reducer/Initial State
@@ -58,14 +58,14 @@ export type State = {
   seasons: EDSeason[],
   activeId: number,
   loading: boolean,
-  error: ?Error
+  error: ?Error,
 };
 
 export const initialState = {
   seasons: [],
   activeId: -1,
   loading: false,
-  error: null
+  error: null,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -87,7 +87,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // Selectors
 type Store = {
-  season: State
+  season: State,
 };
 
 const selectSeasons = (store: Store) => store.season.seasons;
@@ -104,5 +104,5 @@ export const selectors = {
   selectLoading,
   selectError,
   selectActiveSeasonId,
-  selectActiveSeason
+  selectActiveSeason,
 };

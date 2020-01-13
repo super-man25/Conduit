@@ -16,5 +16,5 @@ function* watchGetClientListAsync() {
 }
 
 export default {
-  watchGetClientListAsync
+  watchGetClientListAsync,
 };

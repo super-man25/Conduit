@@ -49,5 +49,5 @@ function* watchGlobalReset() {
 }
 
 export default {
-  watchGlobalReset
+  watchGlobalReset,
 };

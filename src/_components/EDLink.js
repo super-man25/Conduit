@@ -16,12 +16,12 @@ const attrs = (props) => ({
     (props.size === 'small' && '0.875rem') ||
     (props.size === 'medium' && '1rem') ||
     (props.size === 'large' && '1.2rem') ||
-    '1rem' // default
+    '1rem', // default
 });
 
 type Props = {
   size: 'small' | 'medium' | 'large',
-  weight: 'normal' | 'heavy' | 'light' | 'lighter'
+  weight: 'normal' | 'heavy' | 'light' | 'lighter',
 };
 
 export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`

@@ -38,12 +38,12 @@ type Props = {
   children: React.Node,
   onChange: (value: any) => void,
   value: any,
-  handleChange: () => void
+  handleChange: () => void,
 };
 
 export class ChipButtonGroup extends React.Component<Props> {
   static defaultProps = {
-    handleChange: () => {}
+    handleChange: () => {},
   };
 
   cloneChildren(children: React.Node) {
@@ -51,7 +51,7 @@ export class ChipButtonGroup extends React.Component<Props> {
       return React.cloneElement(child, {
         ...child.props,
         active: child.props.value === this.props.value,
-        onClick: () => this.props.onChange(child.props.value)
+        onClick: () => this.props.onChange(child.props.value),
       });
     });
   }

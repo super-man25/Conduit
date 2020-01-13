@@ -8,7 +8,7 @@ import { TextButton, SecondaryButton, PrimaryButton } from '_components';
 
 type Props = {
   margin: string,
-  padding: string
+  padding: string,
 };
 
 export const SettingButton: React.ComponentType<Props> = styled(TextButton)`

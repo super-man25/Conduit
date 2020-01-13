@@ -10,11 +10,11 @@ export const withClickAway = (WrappedComponent) => {
 
   class Clickaway extends Component {
     static defaultProps = {
-      onClickAway: () => {}
+      onClickAway: () => {},
     };
 
     static propTypes = {
-      onClickAway: PropTypes.func
+      onClickAway: PropTypes.func,
     };
 
     componentDidMount() {

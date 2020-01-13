@@ -14,36 +14,36 @@ const RESET = 'buyerType/RESET';
 // Action types
 export type FetchBuyerTypesAction = {
   type: 'buyerType/FETCH_BUYER_TYPES',
-  payload: { seasonId: number }
+  payload: { seasonId: number },
 };
 
 export type FetchBuyerTypesSuccessAction = {
   type: 'buyerType/FETCH_BUYER_TYPES_SUCCESS',
-  payload: EDBuyerType[]
+  payload: EDBuyerType[],
 };
 
 export type FetchBuyerTypesErrorAction = {
   type: 'buyerType/FETCH_BUYER_TYPES_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type UpdateBuyerTypesAction = {
   type: 'buyerType/UPDATE_BUYER_TYPES',
-  payload: any
+  payload: any,
 };
 
 export type UpdateBuyerTypesSuccessAction = {
   type: 'buyerType/UPDATE_BUYER_TYPES_SUCCESS',
-  payload: number
+  payload: number,
 };
 
 export type UpdateBuyerTypeErrorAction = {
   type: 'buyerType/UPDATE_BUYER_TYPES_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type ResetBuyerTypesAction = {
-  type: 'buyerType/RESET'
+  type: 'buyerType/RESET',
 };
 
 export type Action =
@@ -62,22 +62,22 @@ export const types = {
   UPDATE_BUYER_TYPES,
   UPDATE_BUYER_TYPES_SUCCESS,
   UPDATE_BUYER_TYPES_ERROR,
-  RESET
+  RESET,
 };
 
 // Actions
 const fetchBuyerTypes = (payload: {
-  seasonId: number
+  seasonId: number,
 }): FetchBuyerTypesAction => ({
   type: FETCH_BUYER_TYPES,
-  payload
+  payload,
 });
 
 const updateBuyerTypes = (
   buyerTypes: EDBuyerType[]
 ): UpdateBuyerTypesAction => ({
   type: UPDATE_BUYER_TYPES,
-  payload: buyerTypes
+  payload: buyerTypes,
 });
 
 const resetBuyerTypes = (): ResetBuyerTypesAction => ({ type: RESET });
@@ -85,24 +85,24 @@ const resetBuyerTypes = (): ResetBuyerTypesAction => ({ type: RESET });
 export const actions = {
   fetchBuyerTypes,
   updateBuyerTypes,
-  resetBuyerTypes
+  resetBuyerTypes,
 };
 
 // State/reducer
 type State = {
   buyerTypes: EDBuyerType[],
   loading: boolean,
-  error: ?Error
+  error: ?Error,
 };
 
 export const initialState: State = {
   buyerTypes: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 type Store = {
-  buyerType: State
+  buyerType: State,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -114,7 +114,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         loading: false,
         error: null,
-        buyerTypes: action.payload
+        buyerTypes: action.payload,
       };
     case FETCH_BUYER_TYPES_ERROR:
       return { ...state, loading: false, error: action.payload };
@@ -124,7 +124,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         loading: false,
-        error: null
+        error: null,
       };
     case UPDATE_BUYER_TYPES_ERROR:
       return { ...state, error: action.payload, loading: false };
@@ -143,5 +143,5 @@ const selectError = (store: Store) => store.buyerType.error;
 export const selectors = {
   selectAllBuyerTypes,
   selectIsLoading,
-  selectError
+  selectError,
 };

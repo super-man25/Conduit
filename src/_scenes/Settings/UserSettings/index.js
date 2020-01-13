@@ -8,7 +8,7 @@ import {
   PageWrapper,
   PrimaryContent,
   S1,
-  Spacing
+  Spacing,
 } from '_components';
 import React from 'react';
 import ContactInfoContainer from './containers/ContactInfoContainer';
@@ -22,12 +22,12 @@ const UserWrapper = styled(Flex)`
 const userCrumb = [
   {
     title: 'Dashboard',
-    path: '/dashboard'
+    path: '/dashboard',
   },
   {
     title: 'User Settings',
-    path: '/settings/user'
-  }
+    path: '/settings/user',
+  },
 ];
 
 function UserSettings() {

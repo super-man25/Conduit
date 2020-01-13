@@ -14,7 +14,7 @@ import {
   TextButton,
   Center,
   Icon,
-  CenteredLoader
+  CenteredLoader,
 } from '_components';
 import SeasonRevenuePanel from './components/SeasonRevenuePanel';
 import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations';
@@ -84,7 +84,7 @@ const Season = ({ activeSeason, loading }) => {
 
 const mapStateToProps = createStructuredSelector({
   activeSeason: selectors.selectActiveSeason,
-  loading: selectors.selectLoading
+  loading: selectors.selectLoading,
 });
 
 export default connect(mapStateToProps)(Season);

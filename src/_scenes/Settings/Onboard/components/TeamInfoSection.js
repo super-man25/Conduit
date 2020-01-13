@@ -6,7 +6,7 @@ import {
   format as dateFnsFormat,
   parse as dateFnsParse,
   isAfter,
-  isBefore
+  isBefore,
 } from 'date-fns';
 
 import { cssConstants } from '_constants';
@@ -31,7 +31,7 @@ const leagueOptions = [
   { label: 'MLB', value: 'MLB' },
   { label: 'NCAAB', value: 'NCAAB' },
   { label: 'NCAAF', value: 'NCAAF' },
-  { label: 'NFL', value: 'NFL' }
+  { label: 'NFL', value: 'NFL' },
 ];
 
 export const TeamInfoSection = ({ values }) => (
@@ -93,7 +93,7 @@ export const TeamInfoSection = ({ values }) => (
               inputProps={{
                 ...field,
                 valid: !form.errors.seasonStart && form.touched.seasonStart,
-                invalid: form.errors.seasonStart && form.touched.seasonStart
+                invalid: form.errors.seasonStart && form.touched.seasonStart,
               }}
               formatDate={formatDate}
               parseDate={parseDate}
@@ -120,13 +120,13 @@ export const TeamInfoSection = ({ values }) => (
                 container: 'DayPickerInput-Container',
                 overlayWrapper: 'DayPickerInput-OverlayWrapper',
                 overlay:
-                  'DayPickerInput-Overlay DayPickerInput-Overlay--AlignRight'
+                  'DayPickerInput-Overlay DayPickerInput-Overlay--AlignRight',
               }}
               component={Input}
               inputProps={{
                 ...field,
                 valid: !form.errors.seasonEnd && form.touched.seasonEnd,
-                invalid: form.errors.seasonEnd && form.touched.seasonEnd
+                invalid: form.errors.seasonEnd && form.touched.seasonEnd,
               }}
               valid={!form.errors.seasonEnd && form.touched.seasonEnd}
               invalid={form.errors.seasonEnd && form.touched.seasonEnd}

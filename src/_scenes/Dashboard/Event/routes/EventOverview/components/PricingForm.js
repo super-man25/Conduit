@@ -11,7 +11,7 @@ import {
   finalEventScore,
   finalSpringValue,
   SPRING_DECIMALS,
-  SCORE_DECIMALS
+  SCORE_DECIMALS,
 } from '_helpers/pricing-utils';
 
 const StyledPricingForm = styled(Flex)`
@@ -37,10 +37,10 @@ type Props = {
   pricingError: ?Error,
   pricingPreview: {
     error: ?Error,
-    loading: boolean
+    loading: boolean,
   },
   isEditing: boolean,
-  setIsEditing: Function
+  setIsEditing: Function,
 };
 
 export const PricingForm = (props: Props) => {
@@ -51,17 +51,17 @@ export const PricingForm = (props: Props) => {
       eventScoreModifier,
       spring,
       springModifier,
-      velocityFactor
+      velocityFactor,
     },
     fetchAutomatedSpring,
     eventId,
     pricingError,
     pricingPreview: {
       error: pricingPreviewError,
-      loading: pricingPreviewLoading
+      loading: pricingPreviewLoading,
     },
     isEditing,
-    setIsEditing
+    setIsEditing,
   } = props;
 
   const [timer, setTimer] = useState(null);
@@ -83,7 +83,7 @@ export const PricingForm = (props: Props) => {
 
   useEffect(() => (pricingError ? setIsEditing(true) : setIsEditing(false)), [
     pricingError,
-    setIsEditing
+    setIsEditing,
   ]);
 
   return (
@@ -125,7 +125,7 @@ export const PricingForm = (props: Props) => {
         <Flex
           style={{
             borderTop: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
-            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`
+            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
           }}
           padding="14px 0"
           direction="row"
@@ -168,7 +168,7 @@ export const PricingForm = (props: Props) => {
 
         <Flex
           style={{
-            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`
+            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
           }}
           padding="14px 0"
           direction="row"

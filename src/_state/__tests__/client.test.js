@@ -10,12 +10,12 @@ import {
   UPDATE_ASYNC,
   UPDATE_SUCCESS,
   UPDATE_ERROR,
-  UPDATE_INTEGRATION
+  UPDATE_INTEGRATION,
 } from '_state/client/actions';
 import {
   getClientAsync,
   updateClientAsync,
-  toggleIntegrationAsync
+  toggleIntegrationAsync,
 } from '_state/client/saga';
 import { types as authTypes } from '_state/auth';
 import { call, put, select } from 'redux-saga/effects';
@@ -28,14 +28,14 @@ describe('actions', () => {
   it('should create an action to get a client', () => {
     const action = actions.fetch();
     expect(action).toEqual({
-      type: FETCH_ASYNC
+      type: FETCH_ASYNC,
     });
   });
 
   it('should create an action to update a client', () => {
     const action = actions.update();
     expect(action).toEqual({
-      type: UPDATE_ASYNC
+      type: UPDATE_ASYNC,
     });
   });
 });
@@ -54,14 +54,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const payload = { id: 1, name: 'Mets', pricingInterval: 15 };
@@ -74,7 +74,7 @@ describe('reducer', () => {
       id: payload.id,
       name: payload.name,
       pricingInterval: payload.pricingInterval,
-      dirtyPricingInterval: payload.pricingInterval
+      dirtyPricingInterval: payload.pricingInterval,
     });
   });
 
@@ -84,7 +84,7 @@ describe('reducer', () => {
       loading: false,
       id: 1,
       name: 'Mets',
-      pricingInterval: 30
+      pricingInterval: 30,
     };
     const payload = { id: 1, name: 'Mets', pricingInterval: 1440 };
     const action = { type: UPDATE_ASYNC, payload };
@@ -92,7 +92,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -101,7 +101,7 @@ describe('reducer', () => {
       loading: true,
       id: 1,
       name: 'Mets',
-      pricingInterval: 30
+      pricingInterval: 30,
     };
     const payload = { id: 1, name: 'Mets', pricingInterval: 1440 };
     const action = { type: UPDATE_SUCCESS, payload };
@@ -112,7 +112,7 @@ describe('reducer', () => {
       integrations: [],
       loading: false,
       pricingInterval: 1440,
-      dirtyPricingInterval: 1440
+      dirtyPricingInterval: 1440,
     });
   });
 });
@@ -158,7 +158,7 @@ describe('saga workers', () => {
     expect(success.next(client).value).toEqual(
       put({
         type: UPDATE_SUCCESS,
-        payload: client
+        payload: client,
       })
     );
 

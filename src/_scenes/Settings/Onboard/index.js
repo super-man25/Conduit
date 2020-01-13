@@ -11,7 +11,7 @@ import {
   H3,
   PrimaryButton,
   Loader,
-  Form
+  Form,
 } from '_components';
 import { cssConstants } from '_constants';
 import { OnboardWrapper } from './components/styled';
@@ -23,19 +23,19 @@ import { SkyBoxCustomersSection } from './components/SkyBoxCustomersSection';
 const onboardCrumb = [
   {
     title: 'Dashboard',
-    path: '/dashboard'
+    path: '/dashboard',
   },
   {
     title: 'Onboard',
-    path: '/settings/onboard'
-  }
+    path: '/settings/onboard',
+  },
 ];
 
 const formValues = {
   team: '',
   league: {
     label: '',
-    value: ''
+    value: '',
   },
   seasonName: '',
   seasonEnd: '',
@@ -46,7 +46,7 @@ const formValues = {
   stadiumCapacity: '',
   stadiumTimezone: {
     label: '',
-    value: ''
+    value: '',
   },
   stadiumMapUrl: '',
   accountId: '',
@@ -57,20 +57,20 @@ const formValues = {
       skyBoxCustomer: '',
       mapsTo: {
         label: '',
-        value: ''
-      }
-    }
-  ]
+        value: '',
+      },
+    },
+  ],
 };
 
 export const Onboard = ({
   onboardClient,
   inProgress,
-  auth
+  auth,
 }: {
   onboardClient: any,
   inProgress: boolean,
-  auth: any
+  auth: any,
 }) => {
   const handleFormSubmit = (values, actions) => {
     const clientIntegrations = {};
@@ -100,7 +100,7 @@ export const Onboard = ({
       defaultVendorId: parseInt(values.defaultVendorId),
       integrations: clientIntegrations,
       customersToIgnore,
-      userId: auth.id
+      userId: auth.id,
     });
   };
 
@@ -139,11 +139,11 @@ export const Onboard = ({
 
 const mapStateToProps = ({ onboard, auth }) => ({
   inProgress: onboard.loading,
-  auth: auth.model
+  auth: auth.model,
 });
 
 const mapDispatchToProps = {
-  onboardClient: onboardActions.onboardClient
+  onboardClient: onboardActions.onboardClient,
 };
 
 export default connect(

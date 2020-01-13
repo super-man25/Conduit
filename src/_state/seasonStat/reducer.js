@@ -9,7 +9,7 @@ import {
   SET_DATE_RANGE,
   DOWNLOAD_SEASON_REPORT,
   DOWNLOAD_SEASON_REPORT_SUCCESS,
-  DOWNLOAD_SEASON_REPORT_ERROR
+  DOWNLOAD_SEASON_REPORT_ERROR,
 } from './actions';
 import type { Action } from './actions';
 import type { EventStat, EventStatsMeta } from '_models';
@@ -25,7 +25,7 @@ export type SeasonStatState = {
   +dateLimits: DateRange,
   +eventDateLimits: DateRange,
   +dateRange: DateRange,
-  +error: ?Error
+  +error: ?Error,
 };
 
 // When there is an endpoint to get first/last date, replace eventDateLimits
@@ -36,22 +36,22 @@ export const initialState: SeasonStatState = {
   seasonStatsMeta: null,
   groupFilters: [
     { label: 'Periodic', value: 0 },
-    { label: 'Cumulative', value: 1 }
+    { label: 'Cumulative', value: 1 },
   ],
   selectedGroupFilter: 0,
   dateRange: {
     from: null,
-    to: null
+    to: null,
   },
   dateLimits: {
     from: null,
-    to: null
+    to: null,
   },
   eventDateLimits: {
     from: null,
-    to: null
+    to: null,
   },
-  error: null
+  error: null,
 };
 
 export function serialize(seasonStats: EventStat[]): EventStat[] {
@@ -71,7 +71,7 @@ export default function seasonStatReducer(
         ...state,
         loading: false,
         seasonStats: serialize(action.payload.data),
-        seasonStatsMeta: action.payload.meta
+        seasonStatsMeta: action.payload.meta,
       };
     case FETCH_ERROR:
       return { ...state, loading: false };
@@ -82,13 +82,13 @@ export default function seasonStatReducer(
     case SET_DATE_RANGE:
       return {
         ...state,
-        dateRange: action.payload
+        dateRange: action.payload,
       };
     case SET_FIRST_AND_LAST_DATE:
       return {
         ...state,
         dateLimits: { ...action.payload },
-        dateRange: { ...action.payload }
+        dateRange: { ...action.payload },
       };
     case DOWNLOAD_SEASON_REPORT:
       return { ...state, downloading: true };

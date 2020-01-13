@@ -8,7 +8,7 @@ describe('<BulkUpdateModal />', () => {
     rows: [{ seats: [1, 2, 3] }, { seats: [4, 5, 6] }, { seats: [7, 8, 9] }],
     loading: false,
     cancelBulkUpdate: jest.fn(),
-    submitBulkUpdate: jest.fn()
+    submitBulkUpdate: jest.fn(),
   };
 
   it('should render correctly', () => {
@@ -27,9 +27,9 @@ describe('<BulkUpdateModal />', () => {
     const wrapper = shallow(<BulkUpdateModalPresenter {...props} />);
     wrapper.setState({
       touched: {
-        price: true
+        price: true,
       },
-      value: '12.222'
+      value: '12.222',
     });
     expect(wrapper.instance().isValidPrice).toEqual(false);
     expect(wrapper).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('<BulkUpdateModal />', () => {
       <BulkUpdateModalPresenter {...props} loading={true} />
     );
     wrapper.setState({
-      selectedAction: selectActions[1]
+      selectedAction: selectActions[1],
     });
     expect(wrapper).toMatchSnapshot();
   });
@@ -76,7 +76,7 @@ describe('<BulkUpdateModal />', () => {
       <BulkUpdateModalPresenter {...props} submitBulkUpdate={fn} />
     );
     wrapper.setState({
-      value: '12.22'
+      value: '12.22',
     });
 
     wrapper.find(AsyncButton).simulate('click');

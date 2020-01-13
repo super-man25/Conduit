@@ -17,7 +17,7 @@ type Props = {
   startEditingRule: () => void,
   cancelEditingRule: () => void,
   deletePriceRule: (number) => void,
-  saveEditedRule: () => void
+  saveEditedRule: () => void,
 };
 
 export const RuleControlsCellPresenter = ({
@@ -29,7 +29,7 @@ export const RuleControlsCellPresenter = ({
   editingAnyPriceRule,
   isEditing,
   isNewRule,
-  isLoading
+  isLoading,
 }: Props) => {
   const startEditing = () => {
     if (editingAnyPriceRule || isLoading) return;
@@ -114,7 +114,7 @@ const mapStateToProps = (
   return {
     editingAnyPriceRule: editingRowId !== null,
     isNewRule: row.id === 0,
-    isLoading: loading
+    isLoading: loading,
   };
 };
 
@@ -124,7 +124,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   cancelEditingRule: () =>
     dispatch(actions.cancelEditingPriceRule(ownProps.rowData.id)),
   saveEditedRule: () => dispatch(actions.savePriceRule(ownProps.rowData.id)),
-  deletePriceRule: (payload) => dispatch(actions.deletePriceRule(payload))
+  deletePriceRule: (payload) => dispatch(actions.deletePriceRule(payload)),
 });
 
 export const RuleControlsCell = connect(

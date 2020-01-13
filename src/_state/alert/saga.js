@@ -27,5 +27,5 @@ function* watchErrorAlertAsync() {
 
 export default {
   watchSuccessAlertAsync,
-  watchErrorAlertAsync
+  watchErrorAlertAsync,
 };

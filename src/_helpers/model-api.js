@@ -11,9 +11,9 @@ export function request(path, opts = {}) {
   return fetch(`${modelURL}/${path}`, {
     mode: 'cors',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    ...opts
+    ...opts,
   }).then(handleResponse);
 }
 
@@ -28,6 +28,6 @@ export function post(path, body = {}, opts = {}) {
   return request(path, {
     method: 'POST',
     body: JSON.stringify(body),
-    ...opts
+    ...opts,
   });
 }

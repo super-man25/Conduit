@@ -10,7 +10,7 @@ import {
   formatNumber,
   formatUSD,
   readableDateAndTime,
-  isMobileDevice
+  isMobileDevice,
 } from '_helpers';
 import { EDEvent } from '_models';
 import { selectors } from '_state/event';
@@ -27,7 +27,7 @@ import {
   Breadcrumbs,
   Spacing,
   Box,
-  Text
+  Text,
 } from '_components';
 
 const EventDetails = styled.div``;
@@ -57,7 +57,7 @@ const InventoryLink = styled(S1)`
 const createCrumbs = (event: EDEvent, isViewingInventory: boolean) => {
   const crumbs = [
     { title: 'Season Dashboard', path: '/season' },
-    { title: event.name, path: `/event/${event.id}` }
+    { title: event.name, path: `/event/${event.id}` },
   ];
 
   if (isViewingInventory) {
@@ -71,7 +71,7 @@ type Props = {
   event: EDEvent,
   availableInventory: number,
   totalInventory: number,
-  pathname: string
+  pathname: string,
 };
 
 export function EventHeader(props: Props) {
@@ -84,7 +84,7 @@ export function EventHeader(props: Props) {
   const unsold = formatNumber(event.unsoldInventory);
   const revenue = formatUSD(event.revenue, {
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    maximumFractionDigits: 0,
   });
   const inventoryString = `${unsold} / ${sold}`;
   const showInventoryLink = isAfter(timestamp, new Date());
@@ -175,7 +175,7 @@ export function EventHeader(props: Props) {
 function mapStateToProps(state) {
   return {
     event: selectors.selectEvent(state),
-    pathname: state.router.location.pathname
+    pathname: state.router.location.pathname,
   };
 }
 

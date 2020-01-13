@@ -9,7 +9,7 @@ describe('<DefaultColumnHeaderPresenter />', () => {
     filterDirection: 'asc',
     setFilter: jest.fn(),
     disableSort: false,
-    label: 'Label'
+    label: 'Label',
   };
 
   it('should render correctly', () => {

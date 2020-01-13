@@ -15,7 +15,7 @@ import {
   Spacing,
   Flex,
   Box,
-  Dropdown
+  Dropdown,
 } from '_components';
 import { VirtualizedPricingRules } from './components/PricingRulesTable';
 import { withRouter } from 'react-router-dom';
@@ -23,15 +23,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   actions as priceRuleActions,
-  selectors as priceRuleSelectors
+  selectors as priceRuleSelectors,
 } from '_state/priceRule';
 import {
   actions as buyerTypeActions,
-  selectors as buyerTypeSelectors
+  selectors as buyerTypeSelectors,
 } from '_state/buyerType';
 import {
   selectors as seasonSelectors,
-  actions as seasonActions
+  actions as seasonActions,
 } from '_state/season';
 import { createStructuredSelector } from 'reselect';
 import type { EDSeason } from '_models';
@@ -39,12 +39,12 @@ import type { EDSeason } from '_models';
 const pricingCrumb = [
   {
     title: 'Dashboard',
-    path: '/dashboard'
+    path: '/dashboard',
   },
   {
     title: 'Pricing Rules',
-    path: '/pricing'
-  }
+    path: '/pricing',
+  },
 ];
 
 const PricingRulesTableTableContainer = styled(FlexItem)`
@@ -59,7 +59,7 @@ type Props = {
   seasons: EDSeason[],
   selectedSeason: EDSeason,
   setActiveSeasonId: (id: number) => void,
-  cancelEditingRule: () => void
+  cancelEditingRule: () => void,
 };
 
 export class PricingRules extends React.Component<Props> {
@@ -80,7 +80,7 @@ export class PricingRules extends React.Component<Props> {
 
   createNewPriceRule() {
     const {
-      priceRuleActions: { createPriceRule }
+      priceRuleActions: { createPriceRule },
     } = this.props;
     createPriceRule();
   }
@@ -89,7 +89,7 @@ export class PricingRules extends React.Component<Props> {
     const { activeSeasonId, buyerTypeActions } = this.props;
 
     buyerTypeActions.fetchBuyerTypes({
-      seasonId: activeSeasonId
+      seasonId: activeSeasonId,
     });
   }
 
@@ -99,7 +99,7 @@ export class PricingRules extends React.Component<Props> {
       activeSeasonId,
       seasons,
       selectedSeason,
-      setActiveSeasonId
+      setActiveSeasonId,
     } = this.props;
 
     const seasonsWithPricingRuleName = seasons.map((season) => {
@@ -111,7 +111,7 @@ export class PricingRules extends React.Component<Props> {
 
       return {
         ...season,
-        nameWithPricingRules: newName + ' Pricing Rules'
+        nameWithPricingRules: newName + ' Pricing Rules',
       };
     });
 
@@ -152,7 +152,7 @@ export class PricingRules extends React.Component<Props> {
                     disabled={editingAnyPriceRule}
                     style={{
                       marginLeft: '2rem',
-                      cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer'
+                      cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer',
                     }}
                   >
                     New Rule
@@ -177,7 +177,7 @@ const mapDispatchToProps = (dispatch) => ({
   cancelEditingRule: bindActionCreators(
     priceRuleActions.cancelEditingPriceRule,
     dispatch
-  )
+  ),
 });
 
 const mapStateToProps = createStructuredSelector({
@@ -185,7 +185,7 @@ const mapStateToProps = createStructuredSelector({
   buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
   activeSeasonId: seasonSelectors.selectActiveSeasonId,
   seasons: seasonSelectors.selectSeasons,
-  selectedSeason: seasonSelectors.selectActiveSeason
+  selectedSeason: seasonSelectors.selectActiveSeason,
 });
 
 export default connect(

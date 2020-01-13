@@ -9,15 +9,15 @@ const FETCH_ERROR = 'demoPrice/FETCH_ERROR';
 
 export type FetchDemoPricesAction = {
   type: 'demoPrice/FETCH',
-  payload: { context: DemoPriceContext, examples: Array<DemoPriceExample> }
+  payload: { context: DemoPriceContext, examples: Array<DemoPriceExample> },
 };
 export type FetchDemoPricesSuccessAction = {
   type: 'demoPrice/FETCH_SUCCESS',
-  payload: Array<number>
+  payload: Array<number>,
 };
 export type FetchDemoPricesErrorAction = {
   type: 'demoPrice/FETCH_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type Action =
@@ -28,23 +28,23 @@ export type Action =
 // Actions
 const fetch = (payload: {
   context: DemoPriceContext,
-  examples: Array<DemoPriceExample>
+  examples: Array<DemoPriceExample>,
 }): FetchDemoPricesAction => ({
   type: FETCH,
-  payload
+  payload,
 });
 
 // InitialState / Reducer
 export type State = {
   +loading: boolean,
   +prices: Array<number>,
-  +error: ?Error
+  +error: ?Error,
 };
 
 export const initialState: State = {
   loading: false,
   prices: [],
-  error: null
+  error: null,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -56,7 +56,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         loading: false,
         prices: action.payload,
-        error: null
+        error: null,
       };
     case FETCH_ERROR:
       return { ...state, loading: false, error: action.payload };

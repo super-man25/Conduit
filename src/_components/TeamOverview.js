@@ -52,7 +52,7 @@ type Stats = {
   losses: number,
   ties?: number,
   overtimeLosses?: number,
-  gamesTotal: number
+  gamesTotal: number,
 };
 
 type Props = {
@@ -62,7 +62,7 @@ type Props = {
   seasons: EDSeason[],
   selectedSeason: EDSeason,
   setActiveSeasonId: (id: number) => void,
-  eventList: EDEvent[]
+  eventList: EDEvent[],
 };
 
 export const TeamOverviewPresenter = (props: Props) => {
@@ -73,7 +73,7 @@ export const TeamOverviewPresenter = (props: Props) => {
     seasons,
     selectedSeason,
     setActiveSeasonId,
-    stats
+    stats,
   } = props;
 
   const calculateRecordWithOvertimeLosses = (
@@ -208,11 +208,11 @@ const mapStateToProps = createStructuredSelector({
   seasons: selectors.selectSeasons,
   selectedSeason: selectors.selectActiveSeason,
   eventList: eventListSelectors.selectEventList,
-  client: clientSelectors.getClient
+  client: clientSelectors.getClient,
 });
 
 const mapDispatchToProps = {
-  setActiveSeasonId: actions.setActiveId
+  setActiveSeasonId: actions.setActiveId,
 };
 
 export const TeamOverview = connect(

@@ -7,7 +7,7 @@ import { cssConstants } from '_constants';
 type Props = {
   isFiltered: boolean,
   filterDirection: 'asc' | 'desc',
-  onClick: () => void
+  onClick: () => void,
 };
 
 export const SortIcon = ({ isFiltered, filterDirection, onClick }: Props) => (

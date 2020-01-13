@@ -2,12 +2,12 @@ import { cssConstants } from './css.constants';
 
 export const chartLabelStyles = {
   fontSize: 12,
-  color: cssConstants.PRIMARY_GRAY
+  color: cssConstants.PRIMARY_GRAY,
 };
 
 export const GROUP_FILTERS = {
   periodic: 0,
-  cumulative: 1
+  cumulative: 1,
 };
 
 export const CHART_HEIGHT = 400;

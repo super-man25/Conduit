@@ -8,7 +8,7 @@ const statusColorMap = {
   error: cssConstants.SECONDARY_PURPLE,
   warn: cssConstants.SECONDARY_BURNT_ORANGE,
   info: cssConstants.SECONDARY_BLUE,
-  disabled: cssConstants.PRIMARY_GRAY
+  disabled: cssConstants.PRIMARY_GRAY,
 };
 
 export function colorForStatus(status: Status) {

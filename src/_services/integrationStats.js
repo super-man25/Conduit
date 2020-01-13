@@ -9,5 +9,5 @@ function getAll(params: GetAllParams): Promise<EDIntegrationStat[]> {
 }
 
 export const integrationStatService = {
-  getAll
+  getAll,
 };

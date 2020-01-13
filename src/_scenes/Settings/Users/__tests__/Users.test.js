@@ -6,7 +6,7 @@ describe('<Users />', () => {
   const props = {
     userList: [],
     fetchUserList: jest.fn(),
-    reset: jest.fn()
+    reset: jest.fn(),
   };
 
   it('renders correctly', () => {

@@ -10,13 +10,13 @@ import {
   UPDATE_EMAIL_ERROR,
   CHANGE_PASSWORD_ASYNC,
   CHANGE_PASSWORD_SUCCESS,
-  CHANGE_PASSWORD_ERROR
+  CHANGE_PASSWORD_ERROR,
 } from './actions';
 
 const initialState = {
   loading: false,
   saved: false,
-  model: null
+  model: null,
 };
 
 export default function usersReducer(state = initialState, action) {

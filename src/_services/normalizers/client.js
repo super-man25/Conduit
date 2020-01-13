@@ -19,7 +19,7 @@ const secondaryPriceRuleSchema = yup.object({
     .number()
     .money()
     .nullable()
-    .label('Dollar change')
+    .label('Dollar change'),
 });
 
 export function denormalize(body) {

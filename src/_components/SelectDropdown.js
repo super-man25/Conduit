@@ -9,7 +9,7 @@ import { Icon } from '_components';
 import type { Option } from '_helpers/types';
 
 const DropdownContainer: ComponentType<{
-  active: boolean
+  active: boolean,
 }> = withClickAway(styled.div`
   display: block;
   position: relative;
@@ -26,7 +26,7 @@ const DropdownContainer: ComponentType<{
 `);
 
 const DropdownSelectedItem: ComponentType<{
-  dropdownOpen: boolean
+  dropdownOpen: boolean,
 }> = styled.div`
   display: flex;
   justify-content: space-between;
@@ -79,21 +79,21 @@ type Props = {
   selected: Option,
   selectedValue?: any,
   onChange: (option: Option) => void,
-  placeholder: string
+  placeholder: string,
 };
 
 type State = {
-  isOpen: boolean
+  isOpen: boolean,
 };
 
 export class SelectDropdown extends React.Component<Props, State> {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   static defaultProps = {
     onChange: () => {},
-    placeholder: 'Select'
+    placeholder: 'Select',
   };
 
   handleClickAway = () => {
@@ -106,7 +106,7 @@ export class SelectDropdown extends React.Component<Props, State> {
 
   toggleIsOpen = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   };
 

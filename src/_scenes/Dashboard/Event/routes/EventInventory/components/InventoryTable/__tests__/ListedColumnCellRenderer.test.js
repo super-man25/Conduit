@@ -8,8 +8,8 @@ describe('<ListedColumnCellPresenter />', () => {
     cellData: 'Data',
     updateEditedRowProperty: jest.fn(),
     editedRowState: {
-      isListed: true
-    }
+      isListed: true,
+    },
   };
 
   it('should render correctly', () => {

@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   Label,
   Tooltip,
-  ReferenceLine
+  ReferenceLine,
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
 import { ChartContainer } from '_components';
@@ -25,7 +25,7 @@ type Props = {
   tooltipDateFormatter: (Date) => string,
   majorXAxisTickRenderer: () => HTMLElement,
   minorXAxisTickRenderer: () => HTMLElement,
-  mobileXAxisTickRenderer: () => HTMLElement
+  mobileXAxisTickRenderer: () => HTMLElement,
 };
 
 export const PeriodicInventoryChart = ({
@@ -35,7 +35,7 @@ export const PeriodicInventoryChart = ({
   tooltipDateFormatter,
   majorXAxisTickRenderer,
   minorXAxisTickRenderer,
-  mobileXAxisTickRenderer
+  mobileXAxisTickRenderer,
 }: Props) => {
   if (!data.length && renderNoData) {
     return renderNoData();
@@ -107,7 +107,7 @@ export const PeriodicInventoryChart = ({
           <Tooltip
             cursor={{
               fill: cssConstants.SECONDARY_LIGHT_PURPLE,
-              opacity: 0.4
+              opacity: 0.4,
             }}
             animationDuration={500}
             content={

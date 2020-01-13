@@ -9,7 +9,7 @@ describe('actions', () => {
   it('should create an action to request the seatMap', () => {
     const action = actions.fetchSeatMap();
     expect(action).toEqual({
-      type: types.FETCH_SEAT_MAP_REQUEST
+      type: types.FETCH_SEAT_MAP_REQUEST,
     });
   });
 
@@ -17,15 +17,15 @@ describe('actions', () => {
     const action = actions.fetchSeatMapSuccess({
       mapping: [1, 2, 3],
       venue: { id: 1 },
-      objUrl: 'url'
+      objUrl: 'url',
     });
     expect(action).toEqual({
       type: types.FETCH_SEAT_MAP_SUCCESS,
       payload: {
         mapping: [1, 2, 3],
         venue: { id: 1 },
-        objUrl: 'url'
-      }
+        objUrl: 'url',
+      },
     });
   });
 
@@ -33,14 +33,14 @@ describe('actions', () => {
     const action = actions.fetchSeatMapError('Some Api Error');
     expect(action).toEqual({
       type: types.FETCH_SEAT_MAP_ERROR,
-      payload: 'Some Api Error'
+      payload: 'Some Api Error',
     });
   });
 
   it('should create an action to reset to the initial state', () => {
     const action = actions.resetSeatMap();
     expect(action).toEqual({
-      type: types.RESET
+      type: types.RESET,
     });
   });
 });
@@ -60,7 +60,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: true,
-      error: null
+      error: null,
     });
   });
 
@@ -69,7 +69,7 @@ describe('reducer', () => {
     const action = actions.fetchSeatMapSuccess({
       mapping: [1, 2, 3],
       venue: { id: 1 },
-      objUrl: 'url'
+      objUrl: 'url',
     });
 
     const nextState = reducer(prevState, action);
@@ -79,7 +79,7 @@ describe('reducer', () => {
       loading: false,
       mapping: [1, 2, 3],
       venue: { id: 1 },
-      objUrl: 'url'
+      objUrl: 'url',
     });
   });
 
@@ -92,7 +92,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Some API Error'
+      error: 'Some API Error',
     });
   });
 
@@ -103,7 +103,7 @@ describe('reducer', () => {
       error: 'some error',
       mapping: [1, 2, 3],
       venue: { id: 1 },
-      objUrl: 'url'
+      objUrl: 'url',
     };
     const action = actions.resetSeatMap();
 
@@ -121,8 +121,8 @@ describe('selectors', () => {
       objUrl: 'url',
       mapping: [1, 2, 3],
       error: 'Some Error',
-      venue: { id: 1 }
-    }
+      venue: { id: 1 },
+    },
   };
 
   it('selectLoading should select the loading state', () => {
@@ -173,7 +173,7 @@ describe('saga workers', () => {
       put(
         actions.fetchSeatMapSuccess({
           venue: { id: 1, svgUrl: 'url' },
-          objUrl: 'blob:url'
+          objUrl: 'blob:url',
         })
       )
     );

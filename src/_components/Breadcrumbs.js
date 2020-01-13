@@ -7,10 +7,10 @@ import { cssConstants } from '_constants';
 type Props = {
   crumbs: Array<{
     title: string,
-    path: string
+    path: string,
   }>,
   onClick?: () => void,
-  maxWidth?: string
+  maxWidth?: string,
 };
 
 function Crumb(props) {

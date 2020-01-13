@@ -10,7 +10,7 @@ import { selectors as eventSelectors } from '_state/event';
 import { selectors as eventInventorySelectors } from '_state/eventInventory';
 import {
   actions as eventInventoryBulkActions,
-  selectors as eventInventoryBulkSelectors
+  selectors as eventInventoryBulkSelectors,
 } from '_state/eventInventoryBulk';
 import type { EDEvent } from '_models';
 import {
@@ -19,7 +19,7 @@ import {
   Box,
   Flex,
   FlexItem,
-  PrimaryButton
+  PrimaryButton,
 } from '_components';
 import EventHeader from '../../components/EventHeader';
 import { VirtualizedEventInventory } from './components/InventoryTable';
@@ -35,14 +35,14 @@ type Props = {
   event: ?EDEvent,
   selectedEventIds: number[],
   isBulkUpdating: boolean,
-  startBulkUpdate: () => void
+  startBulkUpdate: () => void,
 };
 
 export const EventInventory = ({
   event,
   selectedEventIds,
   isBulkUpdating,
-  startBulkUpdate
+  startBulkUpdate,
 }: Props) =>
   !!event && (
     <PageWrapper>
@@ -77,12 +77,12 @@ export const EventInventory = ({
 const mapStateToProps = createStructuredSelector({
   event: eventSelectors.selectEvent,
   selectedEventIds: eventInventorySelectors.selectSelectedRowIds,
-  isBulkUpdating: eventInventoryBulkSelectors.isBulkUpdating
+  isBulkUpdating: eventInventoryBulkSelectors.isBulkUpdating,
 });
 
 const mapDispatchToProps = {
   startBulkUpdate: eventInventoryBulkActions.startBulkUpdate,
-  cancelBulkUpdate: eventInventoryBulkActions.cancelBulkUpdate
+  cancelBulkUpdate: eventInventoryBulkActions.cancelBulkUpdate,
 };
 
 export default connect(

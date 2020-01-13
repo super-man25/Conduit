@@ -11,7 +11,7 @@ import {
   SET_DATE_RANGE,
   DOWNLOAD_EVENT_REPORT,
   DOWNLOAD_EVENT_REPORT_SUCCESS,
-  DOWNLOAD_EVENT_REPORT_ERROR
+  DOWNLOAD_EVENT_REPORT_ERROR,
 } from './actions';
 import type { Action } from './actions';
 import type { EventStat, EventStatsMeta } from '_models';
@@ -26,7 +26,7 @@ export type EventStatState = {
   +selectedGroupFilter: number,
   +eventDateLimits: DateRange,
   +dateRange: DateRange,
-  +error: ?Error
+  +error: ?Error,
 };
 
 // When there is an endpoint to get first/last date, replace eventDateLimits
@@ -37,18 +37,18 @@ export const initialState: EventStatState = {
   eventStatsMeta: null,
   groupFilters: [
     { label: 'Periodic', value: 0 },
-    { label: 'Cumulative', value: 1 }
+    { label: 'Cumulative', value: 1 },
   ],
   selectedGroupFilter: 0,
   dateRange: {
     from: null,
-    to: null
+    to: null,
   },
   eventDateLimits: {
     from: null,
-    to: null
+    to: null,
   },
-  error: null
+  error: null,
 };
 
 export function serialize(
@@ -91,7 +91,7 @@ export function serialize(
           projectedRevenue: null,
           projectedPeriodicRevenue: null,
           projectedPeriodicInventory: null,
-          isProjected: e.isProjected
+          isProjected: e.isProjected,
         };
       }
 
@@ -101,7 +101,7 @@ export function serialize(
         projectedRevenue: e.revenue,
         projectedPeriodicRevenue: computedProjectedPeriodicRevenue,
         projectedPeriodicInventory: computedProjectedPeriodicInventory,
-        isProjected: e.isProjected
+        isProjected: e.isProjected,
       };
     });
 
@@ -114,12 +114,12 @@ export function serialize(
       revenue: e.revenue,
       periodicRevenue: e.periodicRevenue,
       periodicInventory: e.periodicInventory,
-      isProjected: e.isProjected
+      isProjected: e.isProjected,
     }));
 
   const serializedEventStats = [
     ...eventStatsNoProjections,
-    ...eventStatsProjections
+    ...eventStatsProjections,
   ];
 
   return serializedEventStats;
@@ -137,7 +137,7 @@ export default function eventStatReducer(
         ...state,
         loading: false,
         eventStats: serialize(action.payload.data, state),
-        eventStatsMeta: action.payload.meta
+        eventStatsMeta: action.payload.meta,
       };
     case FETCH_ERROR:
       return { ...state, loading: false };
@@ -151,7 +151,7 @@ export default function eventStatReducer(
       return {
         ...state,
         eventDateLimits: { ...action.payload },
-        dateRange: { ...action.payload }
+        dateRange: { ...action.payload },
       };
     case DOWNLOAD_EVENT_REPORT:
       return { ...state, downloading: true };

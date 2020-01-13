@@ -42,7 +42,7 @@ type Props = {
   logoUrl: string,
   name: string,
   percent: number,
-  constant: number
+  constant: number,
 };
 
 export function Integration(props: Props) {

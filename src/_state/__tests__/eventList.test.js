@@ -5,14 +5,14 @@ import {
   fetchAsync,
   handleSearchInput,
   initFuse,
-  fuzzySearch
+  fuzzySearch,
 } from '_state/eventList/saga';
 import {
   selectors,
   actions,
   types,
   reducer,
-  initialState
+  initialState,
 } from '_state/eventList';
 
 describe('actions', () => {
@@ -21,15 +21,15 @@ describe('actions', () => {
     expect(action).toEqual({
       type: types.FETCH_EVENT_LIST,
       payload: {
-        seasonId: 1
-      }
+        seasonId: 1,
+      },
     });
   });
 
   it('should create an action to clear records', () => {
     const action = actions.resetEventList();
     expect(action).toEqual({
-      type: types.RESET
+      type: types.RESET,
     });
   });
 
@@ -37,7 +37,7 @@ describe('actions', () => {
     const action = actions.searchEventList('filter');
     expect(action).toEqual({
       type: types.SEARCH,
-      payload: 'filter'
+      payload: 'filter',
     });
   });
 
@@ -45,7 +45,7 @@ describe('actions', () => {
     const action = actions.setVisibleEvents([]);
     expect(action).toEqual({
       type: types.SET_VISIBLE_EVENTS,
-      payload: []
+      payload: [],
     });
   });
 });
@@ -59,7 +59,7 @@ describe('reducer', () => {
   it('should handle FETCH_EVENT_LIST', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.FETCH_EVENT_LIST };
@@ -67,14 +67,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_EVENT_LIST_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const events = [{ name: 'Cardinals at Mets' }];
@@ -83,7 +83,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      events
+      events,
     });
   });
 
@@ -93,19 +93,19 @@ describe('reducer', () => {
       loading: true,
       events: [],
       visibleEvents: [],
-      filter: ''
+      filter: '',
     };
 
     const action = {
       type: types.FETCH_EVENT_LIST_ERROR,
-      payload: 'Some Error'
+      payload: 'Some Error',
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Some Error'
+      error: 'Some Error',
     });
   });
 
@@ -115,7 +115,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       loading: false,
-      visibleEvents: []
+      visibleEvents: [],
     };
 
     const action = { type: types.SET_VISIBLE_EVENTS, payload: events };
@@ -123,7 +123,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      visibleEvents: events
+      visibleEvents: events,
     });
   });
 
@@ -133,7 +133,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       events,
-      visibleEvents: events
+      visibleEvents: events,
     };
 
     const action = { type: types.RESET };
@@ -204,8 +204,8 @@ describe('selectors', () => {
     const state = {
       eventList: {
         ...initialState,
-        events: [1, 2, 3]
-      }
+        events: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectEventList(state)).toEqual([1, 2, 3]);
@@ -215,8 +215,8 @@ describe('selectors', () => {
     const state = {
       eventList: {
         ...initialState,
-        filter: 'Some filter'
-      }
+        filter: 'Some filter',
+      },
     };
 
     expect(selectors.selectEventListSearchFilter(state)).toEqual('Some filter');
@@ -226,13 +226,13 @@ describe('selectors', () => {
     const state = {
       eventList: {
         ...initialState,
-        events: [{ id: 1 }, { id: 2 }]
+        events: [{ id: 1 }, { id: 2 }],
       },
       router: {
         location: {
-          pathname: '/event/2'
-        }
-      }
+          pathname: '/event/2',
+        },
+      },
     };
 
     expect(selectors.selectActiveEventListId(state)).toEqual(2);

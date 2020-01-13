@@ -40,7 +40,7 @@ export const FormInput = ({
   children,
   valid,
   invalid,
-  placeholder
+  placeholder,
 }) => {
   return (
     <>

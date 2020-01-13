@@ -5,7 +5,7 @@ import {
   ScrollableList,
   Spacing,
   Flex,
-  CenteredLoader
+  CenteredLoader,
 } from '_components';
 import { cssConstants, containerPadding } from '_constants';
 import React from 'react';
@@ -70,7 +70,7 @@ type Props = {
   loading: boolean,
   onClick: (event: EDEvent) => void,
   onSearchInputChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
-  title: string
+  title: string,
 };
 
 export function EventListPresenter(props: Props) {
@@ -82,7 +82,7 @@ export function EventListPresenter(props: Props) {
     title,
     onSearchInputChange,
     filter,
-    isAdmin
+    isAdmin,
   } = props;
 
   const filtered = !!filter;
@@ -140,7 +140,7 @@ export function EventListPresenter(props: Props) {
 }
 
 EventListPresenter.defaultProps = {
-  loading: true
+  loading: true,
 };
 
 export default EventListPresenter;

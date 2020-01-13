@@ -41,18 +41,18 @@ export const DayPicker = ({
   handleFromChange,
   handleToChange,
   modifiers,
-  disabledDays
+  disabledDays,
 }) => {
   const generateDisabledStartDates = () => {
     return {
-      ...disabledDays
+      ...disabledDays,
     };
   };
 
   const generateDisabledEndDates = () => {
     return {
       ...disabledDays,
-      before: from
+      before: from,
     };
   };
 

@@ -6,14 +6,14 @@ describe('<VirtualizedEventInventoryPresenter />', () => {
   const props = {
     allRows: [1, 2, 3],
     event: {
-      timestamp: '3000-01-01T18:00:00Z'
+      timestamp: '3000-01-01T18:00:00Z',
     },
-    loading: false
+    loading: false,
   };
 
   it('should render loading state', () => {
     const newProps = {
-      loading: true
+      loading: true,
     };
     const wrapper = shallow(
       <VirtualizedEventInventoryPresenter {...props} {...newProps} />
@@ -23,7 +23,7 @@ describe('<VirtualizedEventInventoryPresenter />', () => {
 
   it('should render empty inventory message', () => {
     const newProps = {
-      allRows: []
+      allRows: [],
     };
     const wrapper = shallow(
       <VirtualizedEventInventoryPresenter {...props} {...newProps} />

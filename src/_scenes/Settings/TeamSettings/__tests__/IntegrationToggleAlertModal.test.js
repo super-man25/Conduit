@@ -8,7 +8,7 @@ describe('<IntegrationToggleAlertModal />', () => {
     ...overrides,
     onCancel: jest.fn(),
     onConfirm: jest.fn(),
-    integration: { isActive: false }
+    integration: { isActive: false },
   });
 
   it('should call onCancel when the cancel button is clicked', () => {

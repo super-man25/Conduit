@@ -11,7 +11,7 @@ describe('<TicketIntegrations />', () => {
         logoUrl: '#',
         isActive: true,
         sold: 1000,
-        total: 1000
+        total: 1000,
       },
       {
         id: 2,
@@ -19,11 +19,11 @@ describe('<TicketIntegrations />', () => {
         logoUrl: '#',
         isActive: true,
         sold: 1000,
-        total: 1000
-      }
+        total: 1000,
+      },
     ],
     loading: false,
-    fetchTicketIntegrations: jest.fn()
+    fetchTicketIntegrations: jest.fn(),
   });
 
   it('should render correctly', () => {

@@ -30,12 +30,12 @@ const HorizontalBar = styled.div`
 `;
 
 HorizontalBar.defaultProps = {
-  backgroundColor: cssConstants.PRIMARY_BLUE
+  backgroundColor: cssConstants.PRIMARY_BLUE,
 };
 
 type HorizontalBarProps = {
   data: number[],
-  colors: string[]
+  colors: string[],
 };
 
 export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
@@ -55,5 +55,5 @@ export const HorizontalBars = ({ data, colors }: HorizontalBarProps) => {
 };
 
 HorizontalBar.defaultProps = {
-  colors: []
+  colors: [],
 };

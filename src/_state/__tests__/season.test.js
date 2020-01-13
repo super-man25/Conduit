@@ -27,7 +27,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: false,
-      error: null
+      error: null,
     };
 
     const action = { type: types.FETCH };
@@ -37,7 +37,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: true,
-      error: null
+      error: null,
     });
   });
 
@@ -46,7 +46,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: true,
-      error: null
+      error: null,
     };
 
     const seasons = [{ id: 1, name: 'Season 1' }, { id: 2, name: 'Season 2' }];
@@ -58,7 +58,7 @@ describe('reducer', () => {
       seasons,
       activeId: -1,
       loading: false,
-      error: null
+      error: null,
     });
   });
 
@@ -67,7 +67,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: true,
-      error: null
+      error: null,
     };
 
     const error = 'Some Error';
@@ -79,7 +79,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: false,
-      error
+      error,
     });
   });
 
@@ -88,7 +88,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: -1,
       loading: false,
-      error: null
+      error: null,
     };
 
     const action = { type: types.SET_ACTIVE, payload: 1 };
@@ -98,7 +98,7 @@ describe('reducer', () => {
       seasons: [],
       activeId: 1,
       loading: false,
-      error: null
+      error: null,
     });
   });
 
@@ -107,7 +107,7 @@ describe('reducer', () => {
       seasons: [1, 2, 3],
       activeId: 2,
       loading: true,
-      error: 'Some error'
+      error: 'Some error',
     };
 
     const action = { type: types.RESET };
@@ -123,14 +123,14 @@ describe('selectors', () => {
       seasons: [{ id: 1, name: 'Season 1' }, { id: 2, name: 'Season 2' }],
       activeId: 2,
       loading: true,
-      error: 'Some error'
-    }
+      error: 'Some error',
+    },
   };
 
   it('selectSeasons selector should select all seasons', () => {
     expect(selectors.selectSeasons(store)).toEqual([
       { id: 1, name: 'Season 1' },
-      { id: 2, name: 'Season 2' }
+      { id: 2, name: 'Season 2' },
     ]);
   });
 
@@ -149,7 +149,7 @@ describe('selectors', () => {
   it('selectActiveSeason should return the active season', () => {
     expect(selectors.selectActiveSeason(store)).toEqual({
       id: 2,
-      name: 'Season 2'
+      name: 'Season 2',
     });
   });
 });

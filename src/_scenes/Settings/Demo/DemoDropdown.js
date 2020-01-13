@@ -7,7 +7,7 @@ export const DemoDropdown = ({
   selected,
   onChange,
   options,
-  parseOption
+  parseOption,
 }) => {
   return (
     <Dropdown

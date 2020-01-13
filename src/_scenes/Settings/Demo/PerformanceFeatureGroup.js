@@ -4,14 +4,14 @@ import { Flex, Spacing, Text } from '_components';
 import {
   FeatureGroupWrapper,
   SoupedUpSlider,
-  FeatureGroupTitle
+  FeatureGroupTitle,
 } from './styled';
 
 export function PerformanceFeatureGroup({
   gamesAhead,
   onGamesAheadChange,
   winLossRatio,
-  onWinLossRatioChange
+  onWinLossRatioChange,
 }) {
   return (
     <FeatureGroupWrapper>

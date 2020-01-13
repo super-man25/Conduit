@@ -8,9 +8,9 @@ export type EDClient = {
   name: string,
   pricingInterval: number,
   logoUrl: string,
-  performanceType: PerformanceType
+  performanceType: PerformanceType,
 };
 
 export type EDClientList = {
-  clients: EDClient[]
+  clients: EDClient[],
 };

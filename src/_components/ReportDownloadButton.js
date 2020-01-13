@@ -5,7 +5,7 @@ import { Flex, Icon, EDText } from '_components';
 
 export const ReportDownloadButton = (props: {
   onClick: () => void,
-  downloading: boolean
+  downloading: boolean,
 }) => {
   const { onClick, downloading } = props;
   const cursor = downloading ? 'no-drop' : 'pointer';

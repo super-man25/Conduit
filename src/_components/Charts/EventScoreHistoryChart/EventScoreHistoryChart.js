@@ -7,7 +7,7 @@ import {
   XAxis,
   Label,
   Line,
-  Tooltip
+  Tooltip,
 } from 'recharts';
 
 import { truncateNumber, isMobileDevice } from '_helpers';
@@ -24,7 +24,7 @@ export const EventScoreHistoryChart = ({
   tooltipDateFormatter,
   majorXAxisTickRenderer,
   minorXAxisTickRenderer,
-  mobileXAxisTickRenderer
+  mobileXAxisTickRenderer,
 }) => {
   if (!data.length) {
     return renderNoData();
@@ -90,7 +90,7 @@ export const EventScoreHistoryChart = ({
             cursor={{
               stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
               strokeWidth: 2,
-              opacity: 0.5
+              opacity: 0.5,
             }}
             content={
               <EventScoreHistoryTooltip dateFormatter={tooltipDateFormatter} />

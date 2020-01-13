@@ -1,5 +1,5 @@
 export const integrationConstants = {
   ticketsDotCom: {
-    name: 'Tickets.com'
-  }
+    name: 'Tickets.com',
+  },
 };

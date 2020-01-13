@@ -10,7 +10,7 @@ const buyerTypeDisabledUpdateSchema = yup.array().of(
       disabled: yup
         .boolean()
         .required()
-        .label('Disabled')
+        .label('Disabled'),
     })
     .from('id', 'externalBuyerTypeId')
 );

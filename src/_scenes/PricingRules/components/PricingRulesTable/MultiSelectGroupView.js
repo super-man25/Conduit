@@ -21,11 +21,11 @@ type Props = {
   selected: any[],
   labelFn: (option: any) => string,
   onItemClicked: (option: any) => void,
-  updatePriceRuleProperty: (options: any[]) => void
+  updatePriceRuleProperty: (options: any[]) => void,
 };
 
 type State = {
-  selectAllNext: any
+  selectAllNext: any,
 };
 
 export class MultiSelectGroupView extends React.Component<Props, State> {
@@ -35,7 +35,7 @@ export class MultiSelectGroupView extends React.Component<Props, State> {
     const selectAllNext = this.props.categories.reduce(
       (acc, category) => ({
         ...acc,
-        [category.id]: true
+        [category.id]: true,
       }),
       {}
     );
@@ -62,8 +62,8 @@ export class MultiSelectGroupView extends React.Component<Props, State> {
     this.setState({
       selectAllNext: {
         ...selectAllNext,
-        [category.id]: !selectAllNext[category.id]
-      }
+        [category.id]: !selectAllNext[category.id],
+      },
     });
   }
 
@@ -73,7 +73,7 @@ export class MultiSelectGroupView extends React.Component<Props, State> {
       grouped,
       selected,
       onItemClicked,
-      labelFn
+      labelFn,
     } = this.props;
 
     return (

@@ -7,7 +7,7 @@ import {
   fetchAsync,
   signInAsync,
   signOutAsync,
-  forgotPassAsync
+  forgotPassAsync,
 } from '_state/auth/saga';
 import { call, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
@@ -19,14 +19,14 @@ describe('actions', () => {
     const action = actions.signIn(email, password);
     expect(action).toEqual({
       type: types.SIGN_IN_ASYNC,
-      payload: { email, password }
+      payload: { email, password },
     });
   });
 
   it('should create an action to sign out', () => {
     const action = actions.signOut();
     expect(action).toEqual({
-      type: types.SIGN_OUT_ASYNC
+      type: types.SIGN_OUT_ASYNC,
     });
   });
 
@@ -35,14 +35,14 @@ describe('actions', () => {
     const action = actions.forgotPass(email);
     expect(action).toEqual({
       type: types.FORGOT_PASS_ASYNC,
-      payload: { email }
+      payload: { email },
     });
   });
 
   it('should create an action to fetch "me"', () => {
     const action = actions.fetch();
     expect(action).toEqual({
-      type: types.FETCH_ASYNC
+      type: types.FETCH_ASYNC,
     });
   });
 
@@ -50,14 +50,14 @@ describe('actions', () => {
     const action = actions.setUser({ id: 1 });
     expect(action).toEqual({
       type: types.SET_USER,
-      payload: { id: 1 }
+      payload: { id: 1 },
     });
   });
 
   it('should create an action to unset the user', () => {
     const action = actions.unsetUser();
     expect(action).toEqual({
-      type: types.UNSET_USER
+      type: types.UNSET_USER,
     });
   });
 });
@@ -72,21 +72,21 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       model: null,
-      loading: false
+      loading: false,
     };
 
     const user = { id: 1, email: 'some@email.com' };
 
     const action = {
       type: types.SET_USER,
-      payload: user
+      payload: user,
     };
 
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
       model: user,
-      loading: false
+      loading: false,
     });
   });
 
@@ -94,7 +94,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       model: { id: 1 },
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.UNSET_USER };
@@ -111,7 +111,7 @@ describe('reducer', () => {
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -123,7 +123,7 @@ describe('reducer', () => {
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
-      loggingIn: true
+      loggingIn: true,
     });
   });
 
@@ -136,7 +136,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loggingIn: false,
-      error: 'Some error'
+      error: 'Some error',
     });
   });
 
@@ -149,7 +149,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       model: 'User',
-      loggingIn: false
+      loggingIn: false,
     });
   });
 });

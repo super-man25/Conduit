@@ -69,5 +69,5 @@ export const userService = {
   updateEmail,
   delete: deleteUser,
   setAuthInStorage,
-  getAuthFromStorage
+  getAuthFromStorage,
 };

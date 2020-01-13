@@ -6,7 +6,7 @@ import {
   FilterButton,
   FilterContainer,
   FilterList,
-  FilterListItem
+  FilterListItem,
 } from './styled';
 import type { EDInventorySectionFilter, EDVenuePriceScale } from '_models';
 import { cssConstants } from '_constants';
@@ -17,7 +17,7 @@ type Props = {
   label: string,
   onItemClicked: (filter: EDVenuePriceScale | EDInventorySectionFilter) => void,
   onClearAllClicked: () => void,
-  selectedFilters: EDVenuePriceScale[] | EDInventorySectionFilter[]
+  selectedFilters: EDVenuePriceScale[] | EDInventorySectionFilter[],
 };
 
 export const Filter = ({
@@ -26,7 +26,7 @@ export const Filter = ({
   label,
   onItemClicked,
   onClearAllClicked,
-  selectedFilters
+  selectedFilters,
 }: Props) => (
   <FilterContainer>
     <Flex align="center" justify="space-between" padding="1rem">

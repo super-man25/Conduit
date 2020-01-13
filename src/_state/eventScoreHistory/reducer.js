@@ -3,7 +3,7 @@ import { FETCH_ASYNC, FETCH_SUCCESS, FETCH_ERROR } from './actions';
 const initialState = {
   loading: false,
   eventScoreHistory: [],
-  error: null
+  error: null,
 };
 
 function serialize(eventScoreHistory) {
@@ -12,7 +12,7 @@ function serialize(eventScoreHistory) {
       ? eventScoreHistoryFactor
       : {
           ...eventScoreHistoryFactor,
-          eventScore: null
+          eventScore: null,
         }
   );
 }
@@ -22,19 +22,19 @@ export default function eventScoreHistoryReducer(state = initialState, action) {
     case FETCH_ASYNC:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
-        eventScoreHistory: serialize(action.payload)
+        eventScoreHistory: serialize(action.payload),
       };
     case FETCH_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     default:
       return state;

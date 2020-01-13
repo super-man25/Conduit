@@ -4,7 +4,7 @@ export function normalize(priceRule) {
   const { proVenuePricingRule, ...rest } = priceRule;
   return {
     ...rest,
-    ...proVenuePricingRule
+    ...proVenuePricingRule,
   };
 }
 
@@ -64,7 +64,7 @@ const priceRuleSchema = yup.object({
   eventIds: yup
     .array(yup.number())
     .required()
-    .label('Events')
+    .label('Events'),
 });
 
 export function denormalize(priceRule) {

@@ -12,7 +12,7 @@ import {
   UPDATE_EMAIL_ERROR,
   UPDATE_EMAIL_SUCCESS,
   UPDATE_ERROR,
-  UPDATE_SUCCESS
+  UPDATE_SUCCESS,
 } from './actions';
 import { actions as alertActions } from '../alert';
 import { actions as authActions } from '../auth';
@@ -93,5 +93,5 @@ export default {
   watchCreateAsync,
   watchUpdateAsync,
   watchUpdateEmailAsync,
-  watchChangePasswordAsync
+  watchChangePasswordAsync,
 };

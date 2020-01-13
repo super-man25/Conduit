@@ -20,5 +20,5 @@ export const clientService = {
   getClient,
   getClientList,
   setActiveClient,
-  updateClient
+  updateClient,
 };

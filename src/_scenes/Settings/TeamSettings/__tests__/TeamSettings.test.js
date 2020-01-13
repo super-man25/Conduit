@@ -6,13 +6,13 @@ describe('<TeamSettings />', () => {
   const props = {
     clientActions: {
       fetch: jest.fn(),
-      update: jest.fn()
+      update: jest.fn(),
     },
     clientState: {
       id: 1,
       name: 'New York Mets',
-      pricingInterval: 15
-    }
+      pricingInterval: 15,
+    },
   };
 
   it('renders correctly', () => {

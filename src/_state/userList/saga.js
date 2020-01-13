@@ -3,7 +3,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import {
   FETCH_USERS_ASYNC,
   FETCH_USERS_ASYNC_SUCCESS,
-  FETCH_USERS_ASYNC_ERROR
+  FETCH_USERS_ASYNC_ERROR,
 } from './index';
 import { actions as alertActions } from '../alert';
 
@@ -24,5 +24,5 @@ function* watchFetchUsersAsync() {
 }
 
 export default {
-  watchFetchUsersAsync
+  watchFetchUsersAsync,
 };

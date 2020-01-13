@@ -7,5 +7,5 @@ function downloadReport(payload: EDReportPayload): Promise<Blob> {
 }
 
 export const transactionReportService = {
-  downloadReport
+  downloadReport,
 };

@@ -10,5 +10,5 @@ export type EDScheduledJob = {
   endTime: Date,
   error?: string,
   createdAt: Date,
-  modifiedAt: Date
+  modifiedAt: Date,
 };

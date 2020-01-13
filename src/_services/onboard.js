@@ -5,5 +5,5 @@ function onboardClient(data) {
 }
 
 export const onboardService = {
-  onboardClient
+  onboardClient,
 };

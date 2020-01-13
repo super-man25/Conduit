@@ -5,5 +5,5 @@ function getAll() {
 }
 
 export const eventCategoryService = {
-  getAll
+  getAll,
 };

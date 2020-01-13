@@ -6,7 +6,7 @@ describe('<SortIcon />', () => {
   const props = {
     isFiltered: false,
     filterDirection: 'asc',
-    onClick: jest.fn()
+    onClick: jest.fn(),
   };
 
   it('should render correctly when not filtered', () => {

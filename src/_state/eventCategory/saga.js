@@ -7,7 +7,7 @@ export function* fetchEventCategories() {
     const eventCategories = yield call(eventCategoryService.getAll);
     yield put({
       type: types.FETCH_EVENT_CATEGORIES_SUCCESS,
-      payload: eventCategories
+      payload: eventCategories,
     });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_CATEGORIES_ERROR, payload: err });
@@ -19,5 +19,5 @@ function* watchFetchEventCategories() {
 }
 
 export default {
-  watchFetchEventCategories
+  watchFetchEventCategories,
 };

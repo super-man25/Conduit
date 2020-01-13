@@ -17,11 +17,11 @@ const createProps = () => ({
         revenue: 100,
         periodicRevenue: 100,
         isProjected: false,
-        timestamp: 1529336865706
-      }
-    }
+        timestamp: 1529336865706,
+      },
+    },
   ],
-  dateFormatter: (d) => d.toString
+  dateFormatter: (d) => d.toString,
 });
 
 describe('<PeriodicInventoryTooltip />', () => {
@@ -45,7 +45,10 @@ describe('<PeriodicInventoryTooltip />', () => {
   it('should render correctly with different dateformats ', () => {
     const props = {
       ...createProps(),
-      dateFormatter: dateFormatter(READABLE_DATETIME_FORMAT, 'America/New_York')
+      dateFormatter: dateFormatter(
+        READABLE_DATETIME_FORMAT,
+        'America/New_York'
+      ),
     };
     const wrapper = shallow(<PeriodicInventoryTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();

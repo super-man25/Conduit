@@ -8,7 +8,7 @@ function getAll(params) {
 function updateMultiple(buyerTypes) {
   return denormalize(buyerTypes).then((payload) =>
     put('buyerTypes/_bulk', payload, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     }).catch(handleResponseError)
   );
 }
@@ -27,5 +27,5 @@ function handleResponseError(error) {
 
 export const buyerTypeService = {
   getAll,
-  updateMultiple
+  updateMultiple,
 };

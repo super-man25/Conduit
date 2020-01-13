@@ -6,9 +6,9 @@ describe('normalizer', () => {
       proVenuePricingRule: {
         id: 1,
         constant: 20,
-        name: 'sample'
+        name: 'sample',
       },
-      eventIds: [2, 3]
+      eventIds: [2, 3],
     };
 
     const normalizedPriceRule = normalize(receivedPriceRule);
@@ -17,7 +17,7 @@ describe('normalizer', () => {
       id: 1,
       constant: 20,
       name: 'sample',
-      eventIds: [2, 3]
+      eventIds: [2, 3],
     });
   });
 });
@@ -35,7 +35,7 @@ describe('denormalizer', () => {
       isActive: true,
       round: 'Floor',
       priceFloor: 10.99,
-      proVenuePricingRule: undefined
+      proVenuePricingRule: undefined,
     };
   });
 
@@ -56,7 +56,7 @@ describe('denormalizer', () => {
       constant: -20,
       isActive: true,
       round: 'Floor',
-      priceFloor: 10.99
+      priceFloor: 10.99,
     });
   });
 

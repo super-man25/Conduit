@@ -3,7 +3,7 @@ import {
   types,
   reducer,
   initialState,
-  selectors
+  selectors,
 } from '../eventInventory';
 import { selectors as eventSelectors } from '../event';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
@@ -12,7 +12,7 @@ import { call, put, all, select } from 'redux-saga/effects';
 import { eventService, venueService } from '_services';
 import {
   findUniqueSections,
-  mapSectionsToPriceScales
+  mapSectionsToPriceScales,
 } from '../eventInventory/utils';
 
 describe('actions', () => {
@@ -20,14 +20,14 @@ describe('actions', () => {
     const action = actions.fetchEventInventory(1);
     expect(action).toEqual({
       type: types.FETCH_EVENT_INVENTORY,
-      payload: 1
+      payload: 1,
     });
   });
 
   it('should create an action to reset the eventInventoryState', () => {
     const action = actions.resetEventInventory();
     expect(action).toEqual({
-      type: types.RESET
+      type: types.RESET,
     });
   });
 
@@ -35,7 +35,7 @@ describe('actions', () => {
     const action = actions.setEventInventoryFilter('price');
     expect(action).toEqual({
       type: types.SET_EVENT_INVENTORY_FILTER,
-      payload: 'price'
+      payload: 'price',
     });
   });
 
@@ -45,8 +45,8 @@ describe('actions', () => {
       type: types.SET_EVENT_ROW_LISTED_REQUEST,
       payload: {
         row: { id: 1, isListed: false },
-        value: true
-      }
+        value: true,
+      },
     });
   });
 
@@ -57,7 +57,7 @@ describe('actions', () => {
     );
     expect(action).toEqual({
       type: types.UPDATE_EDITED_ROW_PROPERTY,
-      payload: { id: 1, propertyName: 'overridePrice', propertyValue: null }
+      payload: { id: 1, propertyName: 'overridePrice', propertyValue: null },
     });
   });
 
@@ -65,14 +65,14 @@ describe('actions', () => {
     const action = actions.selectEventRow(1);
     expect(action).toEqual({
       type: types.SELECT_EVENT_ROW,
-      payload: 1
+      payload: 1,
     });
   });
 
   it('should create an action to select all event rows', () => {
     const action = actions.selectAllEventRows();
     expect(action).toEqual({
-      type: types.SELECT_ALL_EVENT_ROWS
+      type: types.SELECT_ALL_EVENT_ROWS,
     });
   });
 
@@ -80,14 +80,14 @@ describe('actions', () => {
     const action = actions.startEditingRow(1);
     expect(action).toEqual({
       type: types.START_EDITING_ROW,
-      payload: 1
+      payload: 1,
     });
   });
 
   it('should create an action to cancel editing a row', () => {
     const action = actions.cancelEditingRow();
     expect(action).toEqual({
-      type: types.CANCEL_EDITING_ROW
+      type: types.CANCEL_EDITING_ROW,
     });
   });
 
@@ -95,14 +95,14 @@ describe('actions', () => {
     const action = actions.setScaleFilters([1, 2, 3]);
     expect(action).toEqual({
       type: types.SET_SCALE_FILTERS,
-      payload: [1, 2, 3]
+      payload: [1, 2, 3],
     });
   });
 
   it('should create an action to clear all scale filters', () => {
     const action = actions.clearSelectedScaleFilters();
     expect(action).toEqual({
-      type: types.CLEAR_SELECTED_SCALE_FILTERS
+      type: types.CLEAR_SELECTED_SCALE_FILTERS,
     });
   });
 
@@ -110,7 +110,7 @@ describe('actions', () => {
     const action = actions.setSelectedScaleFilters([1, 2, 3]);
     expect(action).toEqual({
       type: types.SET_SELECTED_SCALE_FILTERS,
-      payload: [1, 2, 3]
+      payload: [1, 2, 3],
     });
   });
 });
@@ -129,7 +129,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -138,14 +138,14 @@ describe('reducer', () => {
 
     const action = {
       type: types.FETCH_EVENT_INVENTORY_SUCCESS,
-      payload: [1, 2, 3]
+      payload: [1, 2, 3],
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      allRows: [1, 2, 3]
+      allRows: [1, 2, 3],
     });
   });
 
@@ -154,14 +154,14 @@ describe('reducer', () => {
 
     const action = {
       type: types.FETCH_EVENT_INVENTORY_ERROR,
-      payload: 'Some API Error'
+      payload: 'Some API Error',
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Some API Error'
+      error: 'Some API Error',
     });
   });
 
@@ -173,7 +173,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       filterDirection: 'asc',
-      filterName: 'Some Filter'
+      filterName: 'Some Filter',
     });
   });
 
@@ -181,14 +181,14 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       filterName: 'Some Filter',
-      filterDirection: 'asc'
+      filterDirection: 'asc',
     };
     const action = actions.setEventInventoryFilter('Some Filter');
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      filterDirection: 'desc'
+      filterDirection: 'desc',
     });
   });
 
@@ -199,7 +199,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      selectedRowIds: [10]
+      selectedRowIds: [10],
     });
   });
 
@@ -210,7 +210,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      selectedRowIds: [0, 2]
+      selectedRowIds: [0, 2],
     });
   });
 
@@ -218,14 +218,14 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       allRows: [{ id: 0 }, { id: 1 }, { id: 2 }],
-      selectedRowIds: []
+      selectedRowIds: [],
     };
     const action = actions.selectAllEventRows();
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      selectedRowIds: [0, 1, 2]
+      selectedRowIds: [0, 1, 2],
     });
   });
 
@@ -233,67 +233,67 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       allRows: [{ id: 0 }, { id: 1 }, { id: 2 }],
-      selectedRowIds: [0, 1, 2]
+      selectedRowIds: [0, 1, 2],
     };
     const action = actions.selectAllEventRows();
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      selectedRowIds: []
+      selectedRowIds: [],
     });
   });
 
   it('should handle SET_EVENT_ROW_LISTED_SUCCESS actions', () => {
     const prevState = {
       ...initialState,
-      allRows: [{ id: 10, isListed: false }]
+      allRows: [{ id: 10, isListed: false }],
     };
     const action = {
       type: types.SET_EVENT_ROW_LISTED_REQUEST,
-      payload: { row: { id: 10, isListed: false }, value: true }
+      payload: { row: { id: 10, isListed: false }, value: true },
     };
 
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      allRows: [{ id: 10, isListed: true }]
+      allRows: [{ id: 10, isListed: true }],
     });
   });
 
   it('should handle START_EDITING_ROW actions', () => {
     const prevState = {
       ...initialState,
-      editedRowId: null
+      editedRowId: null,
     };
     const action = actions.startEditingRow(1);
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      editedRowId: 1
+      editedRowId: 1,
     });
   });
 
   it('should handle CANCEL_EDITING_ROW actions', () => {
     const prevState = {
       ...initialState,
-      editedRowId: 1
+      editedRowId: 1,
     };
     const action = actions.cancelEditingRow();
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      editedRowId: null
+      editedRowId: null,
     });
   });
 
   it('should handle UPDATE_EDITED_ROW_PROPERTY actions', () => {
     const prevState = {
       ...initialState,
-      editedRowState: {}
+      editedRowState: {},
     };
     const action = actions.updateEditedRowProperty(
       { id: 10, propertyName: 'overridePrice', propertyValue: 100 },
@@ -303,7 +303,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      editedRowState: { overridePrice: 100 }
+      editedRowState: { overridePrice: 100 },
     });
   });
 
@@ -315,7 +315,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       scaleFilters: [1, 2, 3],
-      selectedScaleFilters: []
+      selectedScaleFilters: [],
     });
   });
 
@@ -323,7 +323,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       selectedScaleFilters: [1, 2],
-      scaleFilters: [1, 2, 3]
+      scaleFilters: [1, 2, 3],
     };
     const action = actions.clearSelectedScaleFilters();
     const nextState = reducer(prevState, action);
@@ -331,7 +331,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       scaleFilters: [1, 2, 3],
-      selectedScaleFilters: []
+      selectedScaleFilters: [],
     });
   });
 
@@ -342,7 +342,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      selectedScaleFilters: [1, 2, 3]
+      selectedScaleFilters: [1, 2, 3],
     });
   });
 
@@ -350,7 +350,7 @@ describe('reducer', () => {
     const prevState = { ...initialState };
 
     const action = {
-      type: types.RESET
+      type: types.RESET,
     };
     const nextState = reducer(prevState, action);
 
@@ -362,8 +362,8 @@ describe('Selectors', () => {
   it('selectAllEventInventoryRows should return the allRows state', () => {
     const state = {
       eventInventory: {
-        allRows: [1, 2, 3]
-      }
+        allRows: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectAllEventInventoryRows(state)).toEqual([1, 2, 3]);
@@ -373,8 +373,8 @@ describe('Selectors', () => {
     const state = {
       eventInventory: {
         ...initialState,
-        allRows: [1, 2, 3]
-      }
+        allRows: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectEventInventoryRows(state)).toEqual([1, 2, 3]);
@@ -383,8 +383,8 @@ describe('Selectors', () => {
   it('selectEventInventoryLoading should return the loading state', () => {
     const state = {
       eventInventory: {
-        loading: true
-      }
+        loading: true,
+      },
     };
 
     expect(selectors.selectEventInventoryLoading(state)).toEqual(true);
@@ -393,8 +393,8 @@ describe('Selectors', () => {
   it('selectEventInventoryError should return the error state', () => {
     const state = {
       eventInventory: {
-        error: 'Some API Error'
-      }
+        error: 'Some API Error',
+      },
     };
 
     expect(selectors.selectEventInventoryError(state)).toEqual(
@@ -406,21 +406,21 @@ describe('Selectors', () => {
     const state = {
       eventInventory: {
         filterName: 'Some Filter',
-        filterDirection: 'desc'
-      }
+        filterDirection: 'desc',
+      },
     };
 
     expect(selectors.selectEventInventoryFilter(state)).toEqual({
       name: 'Some Filter',
-      direction: 'desc'
+      direction: 'desc',
     });
   });
 
   it('selectScaleFilters should return the current scale filters', () => {
     const state = {
       eventInventory: {
-        scaleFilters: [1, 2, 3]
-      }
+        scaleFilters: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectScaleFilters(state)).toEqual([1, 2, 3]);
@@ -437,7 +437,7 @@ describe('Saga workers', () => {
     expect(generator.next({ id: 1, venueId: 1 }).value).toEqual(
       all([
         call(eventService.getInventory, 1),
-        call(venueService.getPriceScales, 1)
+        call(venueService.getPriceScales, 1),
       ])
     );
 
@@ -474,7 +474,7 @@ describe('Saga workers', () => {
     expect(generator.next([eventInventory, priceScales]).value).toEqual(
       put({
         type: types.FETCH_EVENT_INVENTORY_SUCCESS,
-        payload: eventInventory
+        payload: eventInventory,
       })
     );
   });

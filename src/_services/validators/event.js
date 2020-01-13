@@ -6,7 +6,7 @@ const percentPriceModifierSchema = yup.object({
     .integer()
     .min(-50)
     .max(50)
-    .label('Percent Price Modifier')
+    .label('Percent Price Modifier'),
 });
 
 const adminModifierSchema = yup.object({
@@ -21,7 +21,7 @@ const adminModifierSchema = yup.object({
     .max(2)
     .label('Spring Modifier'),
   reasonType: yup.string().nullable(),
-  reasonComments: yup.string().nullable()
+  reasonComments: yup.string().nullable(),
 });
 
 const overridePriceSchema = yup.object({
@@ -29,7 +29,7 @@ const overridePriceSchema = yup.object({
     .number()
     .moreThan(0)
     .nullable()
-    .label('Price')
+    .label('Price'),
 });
 
 export function validatePercentPriceModifier(body) {

@@ -11,27 +11,27 @@ describe('<RevenueBreakdown />', () => {
           id: 1,
           name: 'Single Game',
           revenue: 1000,
-          inventory: 10000
+          inventory: 10000,
         },
         {
           id: 2,
           name: 'Group Tickets',
           revenue: 1000,
-          inventory: 5000
+          inventory: 5000,
         },
         {
           id: 3,
           name: 'Single Suites',
           revenue: 1000,
-          inventory: 7000
-        }
-      ]
+          inventory: 7000,
+        },
+      ],
     },
     revenueStatActions: {
       fetch: jest.fn(),
-      reset: jest.fn()
+      reset: jest.fn(),
     },
-    type: 'revenue'
+    type: 'revenue',
   });
 
   it('should call fetch on componentDidMount', () => {

@@ -38,7 +38,7 @@ export const H3 = styled.h3.attrs((props) => ({
   color:
     (props.type === 'secondary' && cssConstants.SECONDARY_BLUE) ||
     (props.type === 'tertiary' && cssConstants.PRIMARY_LIGHT_BLACK) ||
-    cssConstants.PRIMARY_BLUE
+    cssConstants.PRIMARY_BLUE,
 }))`
   color: ${(props) => props.color};
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H3};
@@ -50,7 +50,7 @@ export const H4 = withBoxModelProps(
   styled.h4.attrs((props) => ({
     color:
       (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
-      cssConstants.PRIMARY_LIGHT_BLACK
+      cssConstants.PRIMARY_LIGHT_BLACK,
   }))`
     color: ${(props) => props.color};
     font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H4};
@@ -61,7 +61,7 @@ export const H4 = withBoxModelProps(
 export const H5 = styled.h5.attrs((props) => ({
   color:
     (props.type === 'secondary' && cssConstants.PRIMARY_GRAY) ||
-    cssConstants.PRIMARY_LIGHT_BLACK
+    cssConstants.PRIMARY_LIGHT_BLACK,
 }))`
   color: ${(props) => props.color};
   font-size: ${(props) => props.size || cssConstants.TITLE_SIZE_H5};
@@ -69,7 +69,7 @@ export const H5 = styled.h5.attrs((props) => ({
 `;
 
 export const P1 = styled.p.attrs((props) => ({
-  size: props.size === 'small' ? '0.875rem' : props.size
+  size: props.size === 'small' ? '0.875rem' : props.size,
 }))`
   margin: 0;
   color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};

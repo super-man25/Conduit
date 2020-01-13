@@ -9,5 +9,5 @@ export type EDIntegration = {
   modifiedAt: Date,
   name: string,
   version: string,
-  logoUrl: string
+  logoUrl: string,
 };

@@ -7,7 +7,7 @@ type Factors = {
   eventScoreModifier: number,
   spring: ?number,
   springModifier: number,
-  velocityFactor: number
+  velocityFactor: number,
 };
 
 export type EDEvent = {
@@ -29,5 +29,5 @@ export type EDEvent = {
   percentPriceModifier: number,
   factors: Factors,
   timeZone: string,
-  scheduledJob: EDScheduledJob
+  scheduledJob: EDScheduledJob,
 };

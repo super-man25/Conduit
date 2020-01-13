@@ -40,7 +40,7 @@ const ModalContent = styled.div`
 `;
 
 type PortalProps = {
-  children: Node
+  children: Node,
 };
 
 const modalRoot: ?HTMLElement = document.getElementById('modal-root');
@@ -64,7 +64,7 @@ const Portal = ({ children }: PortalProps) => {
 
 type Props = {
   children: Node,
-  closeModal: () => void
+  closeModal: () => void,
 };
 
 export const Modal = ({ children, closeModal }: Props) => {
@@ -72,7 +72,7 @@ export const Modal = ({ children, closeModal }: Props) => {
 
   useClickAway({
     ref: modalRef,
-    handleClickAway: closeModal
+    handleClickAway: closeModal,
   });
 
   return (

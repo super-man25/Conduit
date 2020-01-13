@@ -5,7 +5,7 @@ import { DropdownButton } from '_components/DropdownButton';
 
 const requiredProps = {
   options: ['dog', 'cat'],
-  selected: 0
+  selected: 0,
 };
 
 it('renders correctly', () => {

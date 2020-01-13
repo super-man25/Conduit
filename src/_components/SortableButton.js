@@ -39,7 +39,7 @@ const nextDirection = (dir) => {
   const steps = {
     asc: 'desc',
     desc: 'indeterminate',
-    indeterminate: 'asc'
+    indeterminate: 'asc',
   };
 
   return steps[dir] || 'indeterminate';
@@ -48,7 +48,7 @@ const nextDirection = (dir) => {
 type Props = {
   children: React.Node,
   direction: 'asc' | 'desc' | 'indeterminate',
-  onClick: (prev: string, next: string) => void
+  onClick: (prev: string, next: string) => void,
 };
 
 export const SortableButton = (props: Props) => {
@@ -87,5 +87,5 @@ export const SortableButton = (props: Props) => {
 
 SortableButton.defaultProps = {
   onClick: () => {},
-  direction: 'indeterminate'
+  direction: 'indeterminate',
 };

@@ -8,7 +8,7 @@ import {
   actions,
   types,
   reducer,
-  initialState
+  initialState,
 } from '_state/buyerType';
 
 describe('actions', () => {
@@ -33,7 +33,7 @@ describe('reducer', () => {
   it('should handle FETCH_BUYER_TYPES', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.FETCH_BUYER_TYPES };
@@ -41,20 +41,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_BUYER_TYPES_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const buyerTypes = [{ publicDescription: 'Adult' }];
     const action = {
       type: types.FETCH_BUYER_TYPES_SUCCESS,
-      payload: buyerTypes
+      payload: buyerTypes,
     };
 
     const nextState = reducer(prevState, action);
@@ -62,19 +62,19 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      buyerTypes
+      buyerTypes,
     });
   });
 
   it('should handle FETCH_BUYER_TYPES_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = {
       type: types.FETCH_BUYER_TYPES_ERROR,
-      payload: 'An error'
+      payload: 'An error',
     };
 
     const nextState = reducer(prevState, action);
@@ -82,19 +82,19 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'An error'
+      error: 'An error',
     });
   });
 
   it('should handle UPDATE_BUYER_TYPES', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const bts = [
       { id: '3161', code: 'ADULT', disabled: true },
-      { id: '3162', code: 'CHILD', disabled: false }
+      { id: '3162', code: 'CHILD', disabled: false },
     ];
     const action = { type: types.UPDATE_BUYER_TYPES, payload: bts };
 
@@ -102,14 +102,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle UPDATE_BUYER_TYPES_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = { type: types.UPDATE_BUYER_TYPES_SUCCESS, payload: 2 };
@@ -118,20 +118,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle UPDATE_BUYER_TYPE_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const err = { code: 409, body: { proVenuePricingRules: [1] } };
     const action = {
       type: types.UPDATE_BUYER_TYPES_ERROR,
-      payload: err
+      payload: err,
     };
 
     const nextState = reducer(prevState, action);
@@ -139,7 +139,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: err
+      error: err,
     });
   });
 });
@@ -205,8 +205,8 @@ describe('selectors', () => {
     const store = {
       buyerType: {
         ...initialState,
-        buyerTypes: [1, 2, 3]
-      }
+        buyerTypes: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectAllBuyerTypes(store)).toEqual([1, 2, 3]);
@@ -216,8 +216,8 @@ describe('selectors', () => {
     const store = {
       buyerType: {
         ...initialState,
-        loading: true
-      }
+        loading: true,
+      },
     };
 
     expect(selectors.selectIsLoading(store)).toEqual(true);
@@ -228,8 +228,8 @@ describe('selectors', () => {
     const store = {
       buyerType: {
         ...initialState,
-        error
-      }
+        error,
+      },
     };
 
     expect(selectors.selectError(store)).toEqual(error);

@@ -15,7 +15,7 @@ import {
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
   UPDATE_INTEGRATION,
   RESET_DIRTY_PRICING_INTERVAL,
-  SET_PRICING_INTERVAL
+  SET_PRICING_INTERVAL,
 } from './actions';
 import type { Action } from './actions';
 
@@ -35,13 +35,13 @@ type State = {
     +modifiedAt: Date,
     +isPrimary: boolean,
     +isActive: boolean,
-    +logoUrl: string
-  }>
+    +logoUrl: string,
+  }>,
 };
 
 export const initialState: State = {
   loading: false,
-  integrations: []
+  integrations: [],
 };
 
 export default function clientReducer(
@@ -52,79 +52,79 @@ export default function clientReducer(
     case FETCH_ASYNC:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FETCH_SUCCESS:
       return {
         ...state,
         ...action.payload,
         loading: false,
-        dirtyPricingInterval: action.payload.pricingInterval
+        dirtyPricingInterval: action.payload.pricingInterval,
       };
     case FETCH_ERROR:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
       };
     case UPDATE_ASYNC:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case SET_PRICING_INTERVAL:
       return {
         ...state,
-        dirtyPricingInterval: action.payload
+        dirtyPricingInterval: action.payload,
       };
     case RESET_DIRTY_PRICING_INTERVAL:
       return {
         ...state,
-        dirtyPricingInterval: state.pricingInterval
+        dirtyPricingInterval: state.pricingInterval,
       };
     case UPDATE_SUCCESS:
       return {
         ...initialState,
         ...action.payload,
         loading: false,
-        dirtyPricingInterval: action.payload.pricingInterval
+        dirtyPricingInterval: action.payload.pricingInterval,
       };
     case UPDATE_ERROR:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
       };
     case UPDATE_SECONDARY_PRICING_RULE_ASYNC:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS:
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     case UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case FETCH_INTEGRATIONS_ASYNC:
       return {
         ...state,
-        loading: action.payload
+        loading: action.payload,
       };
     case FETCH_INTEGRATIONS_SUCCESS:
       return {
         ...state,
         loading: false,
-        integrations: action.payload
+        integrations: action.payload,
       };
     case FETCH_INTEGRATIONS_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case UPDATE_INTEGRATION:
       const { id, isActive, modifiedAt } = action.payload;
@@ -136,7 +136,7 @@ export default function clientReducer(
           }
 
           return integration;
-        })
+        }),
       };
     default:
       return state;

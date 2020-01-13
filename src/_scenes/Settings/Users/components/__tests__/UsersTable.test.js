@@ -6,7 +6,7 @@ describe('<UsersTable />', () => {
   const props = {
     userList: [],
     fetchUserList: jest.fn(),
-    reset: jest.fn()
+    reset: jest.fn(),
   };
 
   const propsWithUserList = {
@@ -15,11 +15,11 @@ describe('<UsersTable />', () => {
         firstName: 'Bruce',
         lastName: 'Wayne',
         email: 'bwayne@wayne.com',
-        phoneNumber: '5555555555'
-      }
+        phoneNumber: '5555555555',
+      },
     ],
     fetchUserList: jest.fn(),
-    reset: jest.fn()
+    reset: jest.fn(),
   };
 
   it('renders correctly without a userList', () => {

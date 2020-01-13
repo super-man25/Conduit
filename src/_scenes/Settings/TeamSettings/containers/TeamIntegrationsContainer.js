@@ -9,11 +9,11 @@ import { connect } from 'react-redux';
 type Props = {
   clientActions: {
     fetchIntegrations: () => void,
-    toggleIntegration: ({ id: number, isActive: boolean }) => void
+    toggleIntegration: ({ id: number, isActive: boolean }) => void,
   },
   clientState: {
-    integrations: Array<any>
-  }
+    integrations: Array<any>,
+  },
 };
 
 export class TeamIntegrationsContainer extends React.Component<Props> {
@@ -42,13 +42,13 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    clientState: state.client
+    clientState: state.client,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    clientActions: bindActionCreators(clientActions, dispatch)
+    clientActions: bindActionCreators(clientActions, dispatch),
   };
 }
 

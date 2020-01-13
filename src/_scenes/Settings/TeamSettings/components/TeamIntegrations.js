@@ -20,13 +20,13 @@ type ClientIntegration = {
   createdAt: Date,
   modifiedAt: Date,
   isPrimary: boolean,
-  isActive: boolean
+  isActive: boolean,
 };
 
 type Props = {
   primary: Array<ClientIntegration>,
   secondary: Array<ClientIntegration>,
-  handleIntegrationToggle: (i: ClientIntegration, e: any) => void
+  handleIntegrationToggle: (i: ClientIntegration, e: any) => void,
 };
 
 export const TeamIntegrations = (props: Props) => {

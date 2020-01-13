@@ -5,9 +5,9 @@ export type RouterState = {
     pathname: string,
     search: string,
     hash: string,
-    key: string
+    key: string,
   },
-  action: string
+  action: string,
 };
 
 export const selectRouterLocation = (state: { router: RouterState }) =>

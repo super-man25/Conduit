@@ -11,7 +11,7 @@ import {
   fetchAutomatedSpring,
   fetchEvent,
   saveAdminModifiers,
-  toggleBroadcasting
+  toggleBroadcasting,
 } from '../event/saga';
 import { push } from 'connected-react-router';
 
@@ -20,7 +20,7 @@ describe('actions', () => {
     const action = actions.fetchEvent(1);
     expect(action).toEqual({
       type: types.FETCH_EVENT,
-      payload: 1
+      payload: 1,
     });
   });
 
@@ -30,8 +30,8 @@ describe('actions', () => {
       type: types.TOGGLE_BROADCASTING,
       payload: {
         eventId: 1,
-        isBroadcast: true
-      }
+        isBroadcast: true,
+      },
     });
   });
 
@@ -42,7 +42,7 @@ describe('actions', () => {
       springModifier: 1,
       seasonId: 1,
       reasonType: 'reason type',
-      reasonComments: 'reason comments'
+      reasonComments: 'reason comments',
     });
     expect(action).toEqual({
       type: types.SAVE_ADMIN_MODIFIERS,
@@ -52,8 +52,8 @@ describe('actions', () => {
         springModifier: 1,
         seasonId: 1,
         reasonType: 'reason type',
-        reasonComments: 'reason comments'
-      }
+        reasonComments: 'reason comments',
+      },
     });
   });
 
@@ -63,8 +63,8 @@ describe('actions', () => {
       type: types.FETCH_AUTOMATED_SPRING_VALUE,
       payload: {
         id: 1,
-        eventScore: 1
-      }
+        eventScore: 1,
+      },
     });
   });
 
@@ -74,15 +74,15 @@ describe('actions', () => {
       type: types.HANDLE_MODIFIER_CHANGE,
       payload: {
         name: 'eventScoreModifier',
-        value: '1'
-      }
+        value: '1',
+      },
     });
   });
 
   it('should create an action to reset to initial factors', () => {
     const action = actions.resetToInitialFactors();
     expect(action).toEqual({
-      type: types.RESET_TO_INITIAL_FACTORS
+      type: types.RESET_TO_INITIAL_FACTORS,
     });
   });
 });
@@ -100,7 +100,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -114,9 +114,9 @@ describe('reducer', () => {
           eventScoreModifier: 1,
           spring: 1,
           springModifier: 1,
-          velocityFactor: 1
-        }
-      }
+          velocityFactor: 1,
+        },
+      },
     };
     const nextState = reducer(prevState, action);
 
@@ -129,16 +129,16 @@ describe('reducer', () => {
           eventScoreModifier: 1,
           spring: 1,
           springModifier: 1,
-          velocityFactor: 1
-        }
+          velocityFactor: 1,
+        },
       },
       pendingFactors: {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
         springModifier: 1,
-        velocityFactor: 1
-      }
+        velocityFactor: 1,
+      },
     });
   });
 
@@ -150,7 +150,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Some Error'
+      error: 'Some Error',
     });
   });
 
@@ -159,7 +159,7 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       event: {},
-      error: 'some error'
+      error: 'some error',
     };
     const action = { type: types.RESET };
     const nextState = reducer(prevState, action);
@@ -170,7 +170,7 @@ describe('reducer', () => {
   it('should handle TOGGLE_BROADCASTING', () => {
     const prevState = {
       ...initialState,
-      isTogglingBroadcasting: false
+      isTogglingBroadcasting: false,
     };
 
     const action = { type: types.TOGGLE_BROADCASTING };
@@ -178,14 +178,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      isTogglingBroadcasting: true
+      isTogglingBroadcasting: true,
     });
   });
 
   it('should handle TOGGLE_BROADCASTING_ERROR', () => {
     const prevState = {
       ...initialState,
-      isTogglingBroadcasting: true
+      isTogglingBroadcasting: true,
     };
 
     const action = { type: types.TOGGLE_BROADCASTING_ERROR };
@@ -193,7 +193,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      isTogglingBroadcasting: false
+      isTogglingBroadcasting: false,
     });
   });
 
@@ -201,7 +201,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       isTogglingBroadcasting: true,
-      event: { id: 1, isBroadcast: false, modifiedAt: 0 }
+      event: { id: 1, isBroadcast: false, modifiedAt: 0 },
     };
 
     const action = {
@@ -209,22 +209,22 @@ describe('reducer', () => {
       payload: {
         eventId: 1,
         isBroadcast: true,
-        modifiedAt: 123
-      }
+        modifiedAt: 123,
+      },
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
       isTogglingBroadcasting: false,
-      event: { id: 1, isBroadcast: true, modifiedAt: 123 }
+      event: { id: 1, isBroadcast: true, modifiedAt: 123 },
     });
   });
 
   it('should handle SAVE_ADMIN_MODIFIERS', () => {
     const prevState = {
       ...initialState,
-      savingAdminModifiers: false
+      savingAdminModifiers: false,
     };
 
     const action = {
@@ -233,35 +233,35 @@ describe('reducer', () => {
         eventId: 1,
         eventScoreModifier: 1,
         springModifier: 1,
-        seasonId: 1
-      }
+        seasonId: 1,
+      },
     };
 
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
-      savingAdminModifiers: true
+      savingAdminModifiers: true,
     });
   });
 
   it('should handle SAVE_ADMIN_MODIFIERS_ERROR', () => {
     const prevState = {
       ...initialState,
-      savingAdminModifiers: true
+      savingAdminModifiers: true,
     };
 
     const error = new Error('saving error');
 
     const action = {
       type: types.SAVE_ADMIN_MODIFIERS_ERROR,
-      payload: error
+      payload: error,
     };
 
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
       savingAdminModifiers: false,
-      pricingError: error
+      pricingError: error,
     });
   });
 
@@ -272,9 +272,9 @@ describe('reducer', () => {
         eventScore: 0,
         eventScoreModifier: 0,
         spring: 0,
-        springModifier: 0
+        springModifier: 0,
       },
-      savingAdminModifiers: true
+      savingAdminModifiers: true,
     };
 
     const action = {
@@ -283,8 +283,8 @@ describe('reducer', () => {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
-        springModifier: 1
-      }
+        springModifier: 1,
+      },
     };
 
     const nextState = reducer(prevState, action);
@@ -294,33 +294,33 @@ describe('reducer', () => {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
-        springModifier: 1
+        springModifier: 1,
       },
       pendingFactors: {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
-        springModifier: 1
+        springModifier: 1,
       },
       savingAdminModifiers: false,
-      pricingError: null
+      pricingError: null,
     });
   });
 
   it('should handle FETCH_AUTOMATED_SPRING_VALUE', () => {
     const prevState = {
       ...initialState,
-      fetchingSpring: false
+      fetchingSpring: false,
     };
 
     const action = {
-      type: types.FETCH_AUTOMATED_SPRING_VALUE
+      type: types.FETCH_AUTOMATED_SPRING_VALUE,
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      fetchingSpring: true
+      fetchingSpring: true,
     });
   });
 
@@ -328,14 +328,14 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       fetchingSpring: true,
-      springError: null
+      springError: null,
     };
 
     const message = 'Unable to fetch automated spring value';
 
     const action = {
       type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR,
-      payload: message
+      payload: message,
     };
     const nextState = reducer(prevState, action);
 
@@ -345,8 +345,8 @@ describe('reducer', () => {
       springError: message,
       pendingFactors: {
         ...prevState.pendingFactors,
-        spring: undefined
-      }
+        spring: undefined,
+      },
     });
   });
 
@@ -355,13 +355,13 @@ describe('reducer', () => {
       ...initialState,
       fetchingSpring: true,
       pendingFactors: {
-        spring: 1
-      }
+        spring: 1,
+      },
     };
 
     const action = {
       type: types.FETCH_AUTOMATED_SPRING_VALUE_SUCCESS,
-      payload: 2
+      payload: 2,
     };
     const nextState = reducer(prevState, action);
 
@@ -369,8 +369,8 @@ describe('reducer', () => {
       ...prevState,
       fetchingSpring: false,
       pendingFactors: {
-        spring: 2
-      }
+        spring: 2,
+      },
     });
   });
 });
@@ -382,7 +382,7 @@ describe('sagas', () => {
     const factors = {
       eventScore: 5.0,
       eventScoreModifier: 0.21,
-      velocityFactor: 1
+      velocityFactor: 1,
     };
     const mockEvent = { id: 1, factors };
     expect(generator.next().value).toEqual(call(eventService.getOne, 1));
@@ -393,7 +393,7 @@ describe('sagas', () => {
     expect(generator.next(mockEvent).value).toEqual(
       put({
         type: types.FETCH_EVENT_SUCCESS,
-        payload: mockEvent
+        payload: mockEvent,
       })
     );
 
@@ -406,8 +406,8 @@ describe('sagas', () => {
             factors.eventScore,
             factors.velocityFactor,
             factors.eventScoreModifier
-          )
-        }
+          ),
+        },
       })
     );
 
@@ -438,8 +438,8 @@ describe('sagas', () => {
         payload: {
           eventId: action.payload.eventId,
           modifiedAt: 123,
-          isBroadcast: true
-        }
+          isBroadcast: true,
+        },
       })
     );
 
@@ -458,7 +458,7 @@ describe('sagas', () => {
       springModifier: 1,
       seasonId: 1,
       reasonType: 'reason type',
-      reasonComments: 'reason comments'
+      reasonComments: 'reason comments',
     });
     const generator = cloneableGenerator(saveAdminModifiers)(action);
     expect(generator.next().value).toEqual(
@@ -467,7 +467,7 @@ describe('sagas', () => {
         eventScoreModifier: action.payload.eventScoreModifier,
         springModifier: action.payload.springModifier,
         reasonType: action.payload.reasonType,
-        reasonComments: action.payload.reasonComments
+        reasonComments: action.payload.reasonComments,
       })
     );
 
@@ -478,7 +478,7 @@ describe('sagas', () => {
         eventScore: 1,
         eventScoreModifier: 2,
         spring: 3,
-        springModifier: 4
+        springModifier: 4,
       }).value
     ).toEqual(
       put({
@@ -488,8 +488,8 @@ describe('sagas', () => {
           eventScoreModifier: 2,
           spring: 3,
           springModifier: 4,
-          eventId: action.payload.eventId
-        }
+          eventId: action.payload.eventId,
+        },
       })
     );
 
@@ -501,8 +501,8 @@ describe('sagas', () => {
       put({
         type: eventListTypes.FETCH_EVENT_LIST,
         payload: {
-          seasonId: action.payload.seasonId
-        }
+          seasonId: action.payload.seasonId,
+        },
       })
     );
     // fail path
@@ -544,7 +544,7 @@ describe('sagas', () => {
     expect(fail.throw(error).value).toEqual(
       put({
         type: types.FETCH_AUTOMATED_SPRING_VALUE_ERROR,
-        payload: error
+        payload: error,
       })
     );
 
@@ -557,8 +557,8 @@ describe('selectors', () => {
     const state = {
       event: {
         ...initialState,
-        isTogglingBroadcasting: true
-      }
+        isTogglingBroadcasting: true,
+      },
     };
 
     expect(selectors.selectEventTogglingBroadcasting(state)).toEqual(true);
@@ -570,10 +570,10 @@ describe('selectors', () => {
         ...initialState,
         event: {
           event: {
-            id: 1
-          }
-        }
-      }
+            id: 1,
+          },
+        },
+      },
     };
 
     expect(selectors.selectEvent(store)).toEqual({ event: { id: 1 } });
@@ -584,8 +584,8 @@ describe('selectors', () => {
     const store = {
       event: {
         ...initialState,
-        pricingError: error
-      }
+        pricingError: error,
+      },
     };
 
     expect(selectors.selectPricingError(store)).toEqual(error);
@@ -595,8 +595,8 @@ describe('selectors', () => {
     const store = {
       event: {
         ...initialState,
-        savingAdminModifiers: true
-      }
+        savingAdminModifiers: true,
+      },
     };
 
     expect(selectors.selectSavingAdminModifiers(store)).toEqual(true);
@@ -611,10 +611,10 @@ describe('selectors', () => {
             eventScore: 1,
             eventScoreModifier: 1,
             spring: 1,
-            springModifier: 1
-          }
-        }
-      }
+            springModifier: 1,
+          },
+        },
+      },
     };
 
     expect(selectors.selectEvent(store)).toEqual({
@@ -622,8 +622,8 @@ describe('selectors', () => {
         eventScore: 1,
         eventScoreModifier: 1,
         spring: 1,
-        springModifier: 1
-      }
+        springModifier: 1,
+      },
     });
   });
 });

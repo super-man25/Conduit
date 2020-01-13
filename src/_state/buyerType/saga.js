@@ -39,5 +39,5 @@ function* watchUpdatedBuyerTypesSuccessfully() {
 export default {
   watchFetchBuyerTypes,
   watchUpdateBuyerTypes,
-  watchUpdatedBuyerTypesSuccessfully
+  watchUpdatedBuyerTypesSuccessfully,
 };

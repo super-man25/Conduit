@@ -6,7 +6,7 @@ type Props = {
   isEditing: boolean,
   rowData: { [string]: any },
   rulePropertyValue: any,
-  updatePriceRuleProperty: (enabled: boolean) => void
+  updatePriceRuleProperty: (enabled: boolean) => void,
 };
 
 export class ToggleCellPresenter extends React.Component<Props> {

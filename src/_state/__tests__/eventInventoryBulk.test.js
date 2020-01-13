@@ -3,14 +3,14 @@ import {
   types,
   reducer,
   initialState,
-  selectors
+  selectors,
 } from '../eventInventoryBulk';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { bulkUpdate } from '../eventInventoryBulk/saga';
 import { select, all, call, put } from 'redux-saga/effects';
 import {
   selectors as eventInventorySelectors,
-  actions as eventInventoryActions
+  actions as eventInventoryActions,
 } from '_state/eventInventory';
 import { actions as alertActions } from '_state/alert';
 import { eventService } from '_services';
@@ -20,25 +20,25 @@ describe('actions', () => {
   it('should create an action to start a bulk update', () => {
     const action = actions.startBulkUpdate();
     expect(action).toEqual({
-      type: types.START_BULK_UPDATE
+      type: types.START_BULK_UPDATE,
     });
   });
 
   it('should create an action to cancel a bulk update', () => {
     const action = actions.cancelBulkUpdate();
     expect(action).toEqual({
-      type: types.CANCEL_BULK_UPDATE
+      type: types.CANCEL_BULK_UPDATE,
     });
   });
 
   it('should create an action to submit a bulk update', () => {
     const action = actions.submitBulkUpdate({
       isListed: true,
-      overridePrice: 10.0
+      overridePrice: 10.0,
     });
     expect(action).toEqual({
       type: types.SUBMIT_BULK_UPDATE,
-      payload: { isListed: true, overridePrice: 10.0 }
+      payload: { isListed: true, overridePrice: 10.0 },
     });
   });
 });
@@ -56,7 +56,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      isBulkUpdating: true
+      isBulkUpdating: true,
     });
   });
 
@@ -67,7 +67,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      isBulkUpdating: false
+      isBulkUpdating: false,
     });
   });
 
@@ -75,13 +75,13 @@ describe('reducer', () => {
     const prevState = { ...initialState };
     const action = actions.submitBulkUpdate({
       isListed: true,
-      overridePrice: 10.0
+      overridePrice: 10.0,
     });
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -93,7 +93,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      isBulkUpdating: false
+      isBulkUpdating: false,
     });
   });
 
@@ -101,13 +101,13 @@ describe('reducer', () => {
     const prevState = { ...initialState };
     const action = {
       type: types.SUBMIT_BULK_UPDATE_ERROR,
-      payload: 'Some Error'
+      payload: 'Some Error',
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ...prevState,
-      error: 'Some Error'
+      error: 'Some Error',
     });
   });
 });
@@ -117,8 +117,8 @@ describe('selectors', () => {
     eventInventoryBulk: {
       loading: false,
       error: 'Some Error',
-      isBulkUpdating: true
-    }
+      isBulkUpdating: true,
+    },
   };
 
   it('isBulkUpdating selector should selector the isBulkUpdating state', () => {
@@ -140,7 +140,7 @@ describe('saga workers', () => {
       isListed: true,
       overridePrice: 10.0,
       maximumPrice: 100,
-      minimumPrice: 5
+      minimumPrice: 5,
     });
     const generator = cloneableGenerator(bulkUpdate)(action);
 
@@ -149,7 +149,7 @@ describe('saga workers', () => {
     );
     const selectedRows = [
       { seats: [1, 2, 3], eventId: 1 },
-      { seats: [4, 5, 6], eventId: 1 }
+      { seats: [4, 5, 6], eventId: 1 },
     ];
 
     expect(generator.next(selectedRows).value).toEqual(
@@ -159,8 +159,8 @@ describe('saga workers', () => {
           overridePrice: 10.0,
           isListed: true,
           maximumPrice: 100,
-          minimumPrice: 5
-        })
+          minimumPrice: 5,
+        }),
       ])
     );
 
@@ -175,7 +175,7 @@ describe('saga workers', () => {
 
     expect(generator.next().value).toEqual(
       put({
-        type: types.SUBMIT_BULK_UPDATE_SUCCESS
+        type: types.SUBMIT_BULK_UPDATE_SUCCESS,
       })
     );
     expect(generator.next().value).toEqual(

@@ -10,14 +10,14 @@ type Props = {
   filterDirection: 'asc' | 'desc',
   setFilter: () => void,
   disableSort: boolean,
-  label: string
+  label: string,
 };
 
 export const DefaultColumnHeaderPresenter = ({
   label,
   setFilter,
   isFiltered,
-  filterDirection
+  filterDirection,
 }: Props) => {
   return (
     <TableHeaderCell active={isFiltered}>
@@ -35,11 +35,11 @@ const mapStateToProps = (
   ownProps
 ) => ({
   isFiltered: filterName === ownProps.dataKey,
-  filterDirection
+  filterDirection,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  setFilter: () => dispatch(actions.setEventInventoryFilter(ownProps.dataKey))
+  setFilter: () => dispatch(actions.setEventInventoryFilter(ownProps.dataKey)),
 });
 
 const ColumnHeader = connect(

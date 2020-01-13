@@ -35,7 +35,7 @@ export type Action =
   | { type: typeof UPDATE_ERROR, payload?: Error }
   | {
       type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC,
-      payload: { clientId: number, percent: number, constant: number }
+      payload: { clientId: number, percent: number, constant: number },
     }
   | { type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS, payload: null }
   | { type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR, payload?: Error }
@@ -44,51 +44,51 @@ export type Action =
   | { type: typeof FETCH_INTEGRATIONS_ERROR, payload?: Error }
   | {
       type: typeof TOGGLE_INTEGRATION,
-      payload: { id: number, isActive: boolean }
+      payload: { id: number, isActive: boolean },
     }
   | {
       type: typeof UPDATE_INTEGRATION,
-      payload: { id: number, isActive: boolean, modifiedAt: Date }
+      payload: { id: number, isActive: boolean, modifiedAt: Date },
     };
 
 // Action creators
 function fetch(): Action {
   return {
-    type: FETCH_ASYNC
+    type: FETCH_ASYNC,
   };
 }
 
 function update(payload: {}): Action {
   return {
     type: UPDATE_ASYNC,
-    payload
+    payload,
   };
 }
 
 function fetchIntegrations(): Action {
   return {
     type: FETCH_INTEGRATIONS_ASYNC,
-    payload: true
+    payload: true,
   };
 }
 
 function toggleIntegration(payload: { id: number, isActive: boolean }): Action {
   return {
     type: TOGGLE_INTEGRATION,
-    payload
+    payload,
   };
 }
 
 function setPricingInterval(pricingInterval: number): Action {
   return {
     type: SET_PRICING_INTERVAL,
-    payload: pricingInterval
+    payload: pricingInterval,
   };
 }
 
 function resetDirtyPricingInterval(): Action {
   return {
-    type: RESET_DIRTY_PRICING_INTERVAL
+    type: RESET_DIRTY_PRICING_INTERVAL,
   };
 }
 
@@ -97,11 +97,11 @@ function updateSecondaryPricingRule(payload: {
   percent: number,
   constant: number,
   onSuccess: () => void,
-  onError: () => void
+  onError: () => void,
 }): Action {
   return {
     type: UPDATE_SECONDARY_PRICING_RULE_ASYNC,
-    payload
+    payload,
   };
 }
 
@@ -112,5 +112,5 @@ export default {
   toggleIntegration,
   setPricingInterval,
   resetDirtyPricingInterval,
-  updateSecondaryPricingRule
+  updateSecondaryPricingRule,
 };

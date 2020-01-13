@@ -3,7 +3,7 @@ import type { SeasonStatState } from './reducer';
 import type { DateRange } from '_helpers/types';
 
 type State = {
-  seasonStat: SeasonStatState
+  seasonStat: SeasonStatState,
 };
 
 export const getSeasonStats = (state: State) => state.seasonStat.seasonStats;

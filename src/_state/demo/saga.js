@@ -21,5 +21,5 @@ function* fetchDemoPricesSaga(): Saga<void> {
 }
 
 export default {
-  fetchDemoPricesSaga
+  fetchDemoPricesSaga,
 };

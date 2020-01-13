@@ -1,14 +1,14 @@
 import {
   validatePercentPriceModifier,
   validateAdminModifiers,
-  validateOverridePrice
+  validateOverridePrice,
 } from '../event';
 
 describe('validator for percentPriceModifier', () => {
   let payload;
   beforeEach(() => {
     payload = {
-      percentPriceModifier: 10
+      percentPriceModifier: 10,
     };
   });
 
@@ -77,7 +77,7 @@ describe('validator for eventScoreModifier and springModifier', () => {
   beforeEach(() => {
     payload = {
       eventScoreModifier: 50,
-      springModifier: 0.1
+      springModifier: 0.1,
     };
   });
 
@@ -195,7 +195,7 @@ describe('validator for overridePrice', () => {
   let payload;
   beforeEach(() => {
     payload = {
-      overridePrice: 10
+      overridePrice: 10,
     };
   });
 

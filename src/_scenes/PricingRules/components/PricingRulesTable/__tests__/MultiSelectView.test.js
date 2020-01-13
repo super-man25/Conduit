@@ -8,7 +8,7 @@ describe('<MultiSelectView />', () => {
     options: [{ id: 2, name: 'Diamond Club' }, { id: 15, name: 'Dugout Club' }],
     selected: [2],
     onItemClicked: jest.fn(),
-    labelFn: jest.fn()
+    labelFn: jest.fn(),
   };
 
   it('should render correctly', () => {

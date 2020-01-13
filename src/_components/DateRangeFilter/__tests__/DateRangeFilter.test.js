@@ -43,7 +43,7 @@ describe('reducer tests', () => {
         isOpen: true,
         dateRangePickerOpen: true,
         fromIsOpen: true,
-        toIsOpen: true
+        toIsOpen: true,
       },
       action
     );
@@ -61,7 +61,7 @@ describe('reducer tests', () => {
         isOpen: true,
         dateRangePickerOpen: true,
         fromIsOpen: true,
-        toIsOpen: true
+        toIsOpen: true,
       },
       action
     );

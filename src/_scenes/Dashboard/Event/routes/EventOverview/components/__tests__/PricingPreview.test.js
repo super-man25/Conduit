@@ -9,26 +9,26 @@ it('renders correctly', () => {
       event: {
         min: 52.18,
         max: 1147.73,
-        mean: 186.57703
+        mean: 186.57703,
       },
       sections: {
         14: {
           min: 421.36,
           max: 1120.58,
-          mean: 592.9125
+          mean: 592.9125,
         },
         114: {
           min: 285.06,
           max: 856.69,
-          mean: 393.8181
-        }
-      }
+          mean: 393.8181,
+        },
+      },
     },
     error: null,
     springError: null,
     pendingFactors: {
-      eventScore: 1
-    }
+      eventScore: 1,
+    },
   };
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
@@ -39,13 +39,13 @@ it('renders the loading preview', () => {
     loading: true,
     record: {
       event: {},
-      sections: []
+      sections: [],
     },
     error: null,
     springError: null,
     pendingFactors: {
-      eventScore: null
-    }
+      eventScore: null,
+    },
   };
 
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();
@@ -57,13 +57,13 @@ it('renders the error preview', () => {
     loading: false,
     record: {
       event: {},
-      sections: []
+      sections: [],
     },
     error: new Error('Error fetching pricing preview'),
     springError: new Error('Error fetching spring value'),
     pendingFactors: {
-      eventScore: 1
-    }
+      eventScore: 1,
+    },
   };
 
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();
@@ -75,13 +75,13 @@ it('renders the null eventScore message in pricing preview', () => {
     loading: false,
     record: {
       event: {},
-      sections: []
+      sections: [],
     },
     error: null,
     springError: null,
     pendingFactors: {
-      eventScore: null
-    }
+      eventScore: null,
+    },
   };
 
   const tree = renderer.create(<PricingPreview {...props} />).toJSON();

@@ -14,14 +14,14 @@ describe('<ContactInfo />', () => {
         firstName: 'First',
         lastName: 'Last',
         phoneNumber: '',
-        clientId: 1
-      }
+        clientId: 1,
+      },
     },
     userActions: {
       changePassword: jest.fn(),
       update: jest.fn(),
-      updateEmail: jest.fn()
-    }
+      updateEmail: jest.fn(),
+    },
   };
 
   it('renders correctly', () => {

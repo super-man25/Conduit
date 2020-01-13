@@ -6,7 +6,7 @@ import {
   FETCH_ASYNC,
   FETCH_ERROR,
   FETCH_SUCCESS,
-  RESET
+  RESET,
 } from '_state/teamStat/actions';
 import { fetchTeamStatAsync } from '_state/teamStat/saga';
 import { initialState } from '_state/teamStat/reducer';
@@ -15,14 +15,14 @@ describe('actions', () => {
   it('should create an action to fetch teamStats', () => {
     const action = actions.fetch();
     expect(action).toEqual({
-      type: FETCH_ASYNC
+      type: FETCH_ASYNC,
     });
   });
 
   it('should create an action to clear teamStats', () => {
     const action = actions.resetTeamStat();
     expect(action).toEqual({
-      type: RESET
+      type: RESET,
     });
   });
 });
@@ -36,7 +36,7 @@ describe('reducer', () => {
   it('should handle FETCH_ASYNC', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: FETCH_ASYNC };
@@ -44,14 +44,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const teamStats = [
@@ -63,8 +63,8 @@ describe('reducer', () => {
         wins: 10,
         losses: 10,
         gamesTotal: 50,
-        seasonId: 1
-      }
+        seasonId: 1,
+      },
     ];
 
     const action = { type: FETCH_SUCCESS, payload: teamStats };
@@ -73,14 +73,14 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      allSeasons: teamStats
+      allSeasons: teamStats,
     });
   });
 
   it('should handle FETCH_ERROR', () => {
     const prevState = {
       loading: true,
-      allSeasons: null
+      allSeasons: null,
     };
 
     const action = { type: FETCH_ERROR };
@@ -88,7 +88,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: false
+      loading: false,
     });
   });
 });
@@ -102,7 +102,7 @@ describe('saga workers', () => {
       clientId: 1,
       wins: 10,
       losses: 10,
-      gamesTotal: 50
+      gamesTotal: 50,
     };
 
     const action = actions.fetch();

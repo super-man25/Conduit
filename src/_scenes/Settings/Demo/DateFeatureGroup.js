@@ -6,7 +6,7 @@ import {
   FeatureGroupWrapper,
   SoupedUpSlider,
   FeatureGroupTitle,
-  FeatureInputLabel
+  FeatureInputLabel,
 } from './styled';
 import { DemoDropdown } from './DemoDropdown';
 
@@ -22,7 +22,7 @@ export function DateFeatureGroup({
   homeOpenerIsChecked,
   onHomeOpenerChanged,
   minutesBeforeValue,
-  onMinutesBeforeChange
+  onMinutesBeforeChange,
 }) {
   return (
     <FeatureGroupWrapper>

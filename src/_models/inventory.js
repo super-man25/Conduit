@@ -9,19 +9,19 @@ export type EDInventoryRow = {
   overridePrice: ?number,
   minimumPrice: number,
   maximumPrice: number,
-  id: string
+  id: string,
 };
 
 export type EDInventorySectionFilter = {
-  name: string
+  name: string,
 };
 
 export type EDSectionsToPriceScale = {
   priceScaleId: string,
-  sections: number[]
+  sections: number[],
 };
 
 export type EDInventorySort = {
   name: string,
-  direction: string
+  direction: string,
 };

@@ -6,5 +6,5 @@ export const getClientId = (state) => state.auth.model.clientId;
 
 export default {
   getClient,
-  getClientId
+  getClientId,
 };

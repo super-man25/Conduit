@@ -14,24 +14,24 @@ const SEARCH = 'eventList/SEARCH';
 
 export type FetchEventListAction = {
   type: 'eventList/FETCH',
-  payload: { seasonId?: number }
+  payload: { seasonId?: number },
 };
 export type FetchEventListSuccessAction = {
   type: 'eventList/FETCH_SUCCESS',
-  payload: EDEvent[]
+  payload: EDEvent[],
 };
 export type FetchEventListErrorAction = {
   type: 'eventList/FETCH_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type SetVisibleEventsAction = {
   type: 'eventList/SET_VISIBLE_EVENTS',
-  payload: EDEvent[]
+  payload: EDEvent[],
 };
 export type ResetEventListAction = { type: 'eventList/RESET' };
 export type SearchEventListAction = {
   type: 'eventList/SEARCH',
-  payload: string
+  payload: string,
 };
 
 export type Action =
@@ -48,28 +48,28 @@ export const types = {
   FETCH_EVENT_LIST_ERROR,
   SET_VISIBLE_EVENTS,
   RESET,
-  SEARCH
+  SEARCH,
 };
 
 // Actions
 const fetchEventList = (payload: {
-  seasonId?: number
+  seasonId?: number,
 }): FetchEventListAction => ({ type: FETCH_EVENT_LIST, payload });
 const resetEventList = (): ResetEventListAction => ({ type: RESET });
 const searchEventList = (query: string): SearchEventListAction => ({
   type: SEARCH,
-  payload: query
+  payload: query,
 });
 const setVisibleEvents = (events: EDEvent[]): SetVisibleEventsAction => ({
   type: SET_VISIBLE_EVENTS,
-  payload: events
+  payload: events,
 });
 
 export const actions = {
   fetchEventList,
   resetEventList,
   searchEventList,
-  setVisibleEvents
+  setVisibleEvents,
 };
 
 // State/Reducer
@@ -80,11 +80,11 @@ export type State = {
   +filter: string,
   +filterOptions: Array<{
     +id: number,
-    +label: string
+    +label: string,
   }>,
   +sortDir: string,
   +selectedFilter: number,
-  +error: ?Error
+  +error: ?Error,
 };
 
 export const initialState: State = {
@@ -94,11 +94,11 @@ export const initialState: State = {
   filter: '',
   filterOptions: [
     { id: 1, label: 'All Events' },
-    { id: 2, label: 'Promotions' }
+    { id: 2, label: 'Promotions' },
   ],
   sortDir: 'asc',
   selectedFilter: 1,
-  error: null
+  error: null,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -122,7 +122,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // Selectors
 type Store = {
-  eventList: State
+  eventList: State,
 };
 
 const selectEventList = (store: Store) => store.eventList.events;
@@ -167,5 +167,5 @@ export const selectors = {
   selectCurrentFilterOption,
   selectActiveEventListId,
   selectGroupedByCategoryId,
-  selectIsLoading
+  selectIsLoading,
 };

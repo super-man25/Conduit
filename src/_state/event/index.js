@@ -23,27 +23,27 @@ const RESET_TO_INITIAL_FACTORS = 'event/RESET_TO_INITIAL_FACTORS';
 
 export type FetchEventAction = {
   type: 'event/FETCH',
-  payload: number
+  payload: number,
 };
 export type FetchEventSuccessAction = {
   type: 'event/FETCH_SUCCESS',
-  payload: EDEvent
+  payload: EDEvent,
 };
 export type FetchEventErrorAction = {
   type: 'event/FETCH_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type ToggleEventBroadcastingAction = {
   type: 'event/TOGGLE_BROADCASTING',
-  payload: { eventId: number, isBroadcast: boolean }
+  payload: { eventId: number, isBroadcast: boolean },
 };
 export type ToggleEventBroadcastingSuccessAction = {
   type: 'event/TOGGLE_BROADCASTING_SUCCESS',
-  payload: { isBroadcast: boolean, modifiedAt: number }
+  payload: { isBroadcast: boolean, modifiedAt: number },
 };
 export type ToggleEventBroadcastingErrorAction = {
   type: 'event/TOGGLE_BROADCASTING_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type SaveAdminModifiersAction = {
   type: 'event/SAVE_ADMIN_MODIFIERS',
@@ -53,8 +53,8 @@ export type SaveAdminModifiersAction = {
     springModifier: number,
     seasonId: number,
     reasonType: string,
-    reasonComments: string
-  }
+    reasonComments: string,
+  },
 };
 export type SaveAdminModifiersSuccessAction = {
   type: 'event/SAVE_ADMIN_MODIFIERS_SUCCESS',
@@ -62,42 +62,42 @@ export type SaveAdminModifiersSuccessAction = {
     eventScore: number,
     eventScoreModifier: number,
     spring: number,
-    springModifier: number
-  }
+    springModifier: number,
+  },
 };
 export type SaveAdminModifiersErrorAction = {
   type: 'event/SAVE_ADMIN_MODIFIERS_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type ResetEventAction = {
-  type: 'event/RESET'
+  type: 'event/RESET',
 };
 
 export type ResetToInitialFactorsAction = {
-  type: 'event/RESET_TO_INITIAL_FACTORS'
+  type: 'event/RESET_TO_INITIAL_FACTORS',
 };
 
 export type FetchAutomatedSpringValueAction = {
   type: 'event/FETCH_AUTOMATED_SPRING_VALUE',
   payload: {
     id: number,
-    eventScore: number
-  }
+    eventScore: number,
+  },
 };
 
 export type FetchAutomatedSpringValueSuccessAction = {
   type: 'event/FETCH_AUTOMATED_SPRING_VALUE_SUCCESS',
-  payload: number
+  payload: number,
 };
 
 export type FetchAutomatedSpringValueErrorAction = {
   type: 'event/FETCH_AUTOMATED_SPRING_VALUE_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type HandleModifierChangeAction = {
   type: 'event/HANDLE_MODIFIER_CHANGE',
-  payload: { name: string, value: string }
+  payload: { name: string, value: string },
 };
 
 export type Action =
@@ -124,13 +124,13 @@ export const types = {
   FETCH_AUTOMATED_SPRING_VALUE_SUCCESS,
   RESET,
   HANDLE_MODIFIER_CHANGE,
-  RESET_TO_INITIAL_FACTORS
+  RESET_TO_INITIAL_FACTORS,
 };
 
 // Actions
 const fetchEvent = (eventId: number): FetchEventAction => ({
   type: FETCH_EVENT,
-  payload: eventId
+  payload: eventId,
 });
 
 const setEventBroadcasting = (
@@ -140,8 +140,8 @@ const setEventBroadcasting = (
   type: TOGGLE_BROADCASTING,
   payload: {
     eventId,
-    isBroadcast
-  }
+    isBroadcast,
+  },
 });
 
 function saveAdminModifiers({
@@ -150,14 +150,14 @@ function saveAdminModifiers({
   springModifier,
   seasonId,
   reasonType,
-  reasonComments
+  reasonComments,
 }: {
   eventId: number,
   eventScoreModifier: number,
   springModifier: number,
   seasonId: number,
   reasonType: string,
-  reasonComments: string
+  reasonComments: string,
 }): SaveAdminModifiersAction {
   return {
     type: SAVE_ADMIN_MODIFIERS,
@@ -167,8 +167,8 @@ function saveAdminModifiers({
       springModifier,
       seasonId,
       reasonType,
-      reasonComments
-    }
+      reasonComments,
+    },
   };
 }
 
@@ -180,8 +180,8 @@ function fetchAutomatedSpringValue(
     type: FETCH_AUTOMATED_SPRING_VALUE,
     payload: {
       id,
-      eventScore
-    }
+      eventScore,
+    },
   };
 }
 
@@ -193,20 +193,20 @@ function handleModifierChange(
     type: HANDLE_MODIFIER_CHANGE,
     payload: {
       name,
-      value
-    }
+      value,
+    },
   };
 }
 
 function resetToInitialFactors(): ResetToInitialFactorsAction {
   return {
-    type: RESET_TO_INITIAL_FACTORS
+    type: RESET_TO_INITIAL_FACTORS,
   };
 }
 
 function resetEvent(): ResetEventAction {
   return {
-    type: RESET
+    type: RESET,
   };
 }
 
@@ -217,7 +217,7 @@ export const actions = {
   fetchAutomatedSpringValue,
   handleModifierChange,
   resetToInitialFactors,
-  resetEvent
+  resetEvent,
 };
 
 // State/Reducer
@@ -230,7 +230,7 @@ export type State = {
   +fetchingSpring: boolean,
   +pendingFactors: PendingFactors,
   +pricingError: ?Error,
-  +springError: ?Error
+  +springError: ?Error,
 };
 
 export const initialState = {
@@ -244,10 +244,10 @@ export const initialState = {
     eventScore: undefined,
     eventScoreModifier: undefined,
     spring: undefined,
-    springModifier: undefined
+    springModifier: undefined,
   },
   pricingError: null,
-  springError: null
+  springError: null,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -260,7 +260,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         eventScoreModifier,
         spring,
         springModifier,
-        velocityFactor
+        velocityFactor,
       } = action.payload.factors;
       return {
         ...state,
@@ -271,8 +271,8 @@ export const reducer = (state: State = initialState, action: Action) => {
           eventScoreModifier,
           spring,
           springModifier,
-          velocityFactor
-        }
+          velocityFactor,
+        },
       };
     case FETCH_EVENT_ERROR:
       return { ...state, loading: false, error: action.payload };
@@ -284,14 +284,14 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         savingAdminModifiers: false,
-        pricingError: action.payload
+        pricingError: action.payload,
       };
     case SAVE_ADMIN_MODIFIERS_SUCCESS: {
       const {
         eventScore,
         eventScoreModifier,
         spring,
-        springModifier
+        springModifier,
       } = action.payload;
       return {
         ...state,
@@ -301,15 +301,15 @@ export const reducer = (state: State = initialState, action: Action) => {
           eventScore,
           eventScoreModifier,
           spring,
-          springModifier
+          springModifier,
         },
         pendingFactors: {
           eventScore,
           eventScoreModifier,
           spring,
-          springModifier
+          springModifier,
         },
-        pricingError: null
+        pricingError: null,
       };
     }
     case TOGGLE_BROADCASTING:
@@ -321,13 +321,13 @@ export const reducer = (state: State = initialState, action: Action) => {
         event: {
           ...state.event,
           isBroadcast: action.payload.isBroadcast,
-          modifiedAt: action.payload.modifiedAt
-        }
+          modifiedAt: action.payload.modifiedAt,
+        },
       };
     case TOGGLE_BROADCASTING_ERROR:
       return {
         ...state,
-        isTogglingBroadcasting: false
+        isTogglingBroadcasting: false,
       };
     case FETCH_AUTOMATED_SPRING_VALUE:
       return { ...state, fetchingSpring: true };
@@ -335,7 +335,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         fetchingSpring: false,
-        pendingFactors: { ...state.pendingFactors, spring: action.payload }
+        pendingFactors: { ...state.pendingFactors, spring: action.payload },
       };
     case FETCH_AUTOMATED_SPRING_VALUE_ERROR:
       const { pendingFactors } = state;
@@ -343,13 +343,13 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         fetchingSpring: false,
         springError: action.payload,
-        pendingFactors: { ...pendingFactors, spring: undefined }
+        pendingFactors: { ...pendingFactors, spring: undefined },
       };
     case HANDLE_MODIFIER_CHANGE:
       const { name, value } = action.payload;
       return {
         ...state,
-        pendingFactors: { ...state.pendingFactors, [name]: value }
+        pendingFactors: { ...state.pendingFactors, [name]: value },
       };
     case RESET_TO_INITIAL_FACTORS:
       const { factors } = state.event;
@@ -360,8 +360,8 @@ export const reducer = (state: State = initialState, action: Action) => {
           eventScoreModifier: factors.eventScoreModifier,
           spring: factors.spring,
           springModifier: factors.springModifier,
-          velocityFactor: factors.velocityFactor
-        }
+          velocityFactor: factors.velocityFactor,
+        },
       };
     default:
       return state;
@@ -370,7 +370,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // Selectors
 type Store = {
-  event: State
+  event: State,
 };
 
 const selectPendingFactors = (store: Store) => store.event.pendingFactors;
@@ -386,5 +386,5 @@ export const selectors = {
   selectEventTogglingBroadcasting,
   selectPendingFactors,
   selectPricingError,
-  selectSavingAdminModifiers
+  selectSavingAdminModifiers,
 };

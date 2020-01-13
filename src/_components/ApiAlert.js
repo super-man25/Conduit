@@ -9,8 +9,8 @@ import { Icon } from './Icon';
 type Props = {
   alertState: {
     type: 'api-error' | 'api-success',
-    message: string
-  }
+    message: string,
+  },
 };
 
 export const ApiAlertDiv: React.ComponentType<{}> = styled.div`
@@ -60,7 +60,7 @@ export class ApiAlertPresenter extends React.Component<Props> {
   render() {
     const { alertState } = this.props;
     const show = {
-      show: alertState.type !== null && alertState.message !== null
+      show: alertState.type !== null && alertState.message !== null,
     };
     const statusColor =
       alertState.type === 'api-error'
@@ -82,7 +82,7 @@ export class ApiAlertPresenter extends React.Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    alertState: state.alert
+    alertState: state.alert,
   };
 }
 

@@ -4,8 +4,8 @@ import { seasonService } from '../season';
 const seasons = [
   {
     id: 1,
-    name: 'Event'
-  }
+    name: 'Event',
+  },
 ];
 
 describe('get all', () => {

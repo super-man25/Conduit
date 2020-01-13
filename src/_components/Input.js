@@ -9,7 +9,7 @@ import badIcon from '_images/invalid.png';
 import { Label } from './StyledTags';
 
 export const InputBase = styled.input.attrs((props) => ({
-  autoComplete: props.autoComplete || 'off'
+  autoComplete: props.autoComplete || 'off',
 }))`
   position: relative;
   padding: 15px;
@@ -51,7 +51,7 @@ function autofillOK(valid) {
 type InputProps = {
   disabled?: boolean,
   valid?: boolean,
-  invalid?: boolean
+  invalid?: boolean,
 };
 
 export const Input: React.ComponentType<InputProps> = styled(InputBase)`
@@ -81,7 +81,7 @@ export const Input: React.ComponentType<InputProps> = styled(InputBase)`
 `;
 
 type NumberInputProps = {
-  component: React.ComponentType<{}>
+  component: React.ComponentType<{}>,
 };
 
 // delete, backspace, tab, escape, enter, decimal, period

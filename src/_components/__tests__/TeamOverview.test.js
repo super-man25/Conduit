@@ -10,9 +10,9 @@ const createProps = (update) => ({
   setActiveSeasonId: jest.fn(),
   eventList: [],
   client: {
-    performanceType: 'MLB'
+    performanceType: 'MLB',
   },
-  ...update
+  ...update,
 });
 
 it('renders correctly with MLB performance type', () => {
@@ -24,8 +24,8 @@ it('renders correctly with MLB performance type', () => {
 it('renders correctly with NFL performance type', () => {
   const props = createProps({
     client: {
-      performanceType: 'NFL'
-    }
+      performanceType: 'NFL',
+    },
   });
   const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
@@ -34,8 +34,8 @@ it('renders correctly with NFL performance type', () => {
 it('renders correctly with MLS performance type', () => {
   const props = createProps({
     client: {
-      performanceType: 'MLS'
-    }
+      performanceType: 'MLS',
+    },
   });
   const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
@@ -44,8 +44,8 @@ it('renders correctly with MLS performance type', () => {
 it('renders correctly with NCAAF performance type', () => {
   const props = createProps({
     client: {
-      performanceType: 'NCAAF'
-    }
+      performanceType: 'NCAAF',
+    },
   });
   const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();
@@ -54,8 +54,8 @@ it('renders correctly with NCAAF performance type', () => {
 it('renders correctly with NCAAB performance type', () => {
   const props = createProps({
     client: {
-      performanceType: 'NCAAB'
-    }
+      performanceType: 'NCAAB',
+    },
   });
   const tree = renderer.create(<TeamOverview {...props} />).toJSON();
   expect(tree).toMatchSnapshot();

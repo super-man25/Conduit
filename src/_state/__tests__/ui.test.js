@@ -14,14 +14,14 @@ describe('reducer', () => {
 
   it('should handle SIDEBAR_TOGGLE actions', () => {
     const prevState = {
-      sidebarIsOpen: false
+      sidebarIsOpen: false,
     };
 
     const action = { type: types.SIDEBAR_TOGGLE };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
-      sidebarIsOpen: true
+      sidebarIsOpen: true,
     });
   });
 });
@@ -30,8 +30,8 @@ describe('selectors', () => {
   it('selectIsSidebarOpen selector should return whether the sidebar is open', () => {
     const store = {
       ui: {
-        sidebarIsOpen: true
-      }
+        sidebarIsOpen: true,
+      },
     };
 
     expect(selectors.selectIsSidebarOpen(store)).toEqual(true);

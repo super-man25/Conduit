@@ -8,11 +8,11 @@ const createProps = () => ({
   renderSelected: (option) => <div>{option.label}</div>,
   options: [
     { label: 'Option 1', value: 'Value 1' },
-    { label: 'Option 2', value: 'Value 2' }
+    { label: 'Option 2', value: 'Value 2' },
   ],
   selected: { label: 'Option 1', value: 'Value 1' },
   noneSelected: 'None selected',
-  onChange: jest.fn()
+  onChange: jest.fn(),
 });
 
 describe('<Dropdown />', () => {

@@ -11,7 +11,7 @@ type Props = {
   loading: boolean,
   error: ?Error,
   id: number,
-  fetchTicketIntegrations: ({ eventId: number }) => void
+  fetchTicketIntegrations: ({ eventId: number }) => void,
 };
 
 export class EventTicketIntegrationsPresenter extends Component<Props> {
@@ -44,11 +44,11 @@ export class EventTicketIntegrationsPresenter extends Component<Props> {
 const mapStateToProps = createStructuredSelector({
   ticketIntegrations: selectors.selectTicketIntegrations,
   loading: selectors.selectTicketIntegrationsLoading,
-  error: selectors.selectTicketIntegrationsError
+  error: selectors.selectTicketIntegrationsError,
 });
 
 const mapDispatchToProps = {
-  fetchTicketIntegrations: actions.fetchTicketIntegrations
+  fetchTicketIntegrations: actions.fetchTicketIntegrations,
 };
 
 export const EventTicketIntegrations = connect(

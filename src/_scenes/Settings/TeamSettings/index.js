@@ -8,7 +8,7 @@ import {
   PageWrapper,
   PrimaryContent,
   S1,
-  Spacing
+  Spacing,
 } from '_components';
 import { withRouter } from 'react-router-dom';
 import React, { useEffect } from 'react';
@@ -28,20 +28,20 @@ const TeamWrapper = styled(Flex)`
 type Props = {
   clientActions: {
     fetch: () => void,
-    update: ({ pricingInterval?: number }) => void
+    update: ({ pricingInterval?: number }) => void,
   },
-  clientState: EDClient
+  clientState: EDClient,
 };
 
 const teamCrumb = [
   {
     title: 'Dashboard',
-    path: '/dashboard'
+    path: '/dashboard',
   },
   {
     title: 'Team Settings',
-    path: '/settings/team'
-  }
+    path: '/settings/team',
+  },
 ];
 
 export const TeamSettings = (props: Props) => {
@@ -74,13 +74,13 @@ export const TeamSettings = (props: Props) => {
 
 function mapStateToProps(state) {
   return {
-    clientState: state.client
+    clientState: state.client,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    clientActions: bindActionCreators(clientActions, dispatch)
+    clientActions: bindActionCreators(clientActions, dispatch),
   };
 }
 

@@ -8,7 +8,7 @@ import {
   H5,
   PrimaryButton,
   SelectBox,
-  Setting
+  Setting,
 } from '_components';
 import { orDash, titleCase } from '_helpers/string-utils';
 import { withClickAway } from '_hoc';
@@ -34,16 +34,16 @@ type Props = {
   dirtyPricingInterval: number,
   resetDirtyPricingInterval: () => void,
   setPricingInterval: (number) => void,
-  update: ({ pricingInterval: number }) => void
+  update: ({ pricingInterval: number }) => void,
 };
 
 type State = {
-  isEditing: boolean
+  isEditing: boolean,
 };
 
 type Interval = {
   label: string,
-  value: number
+  value: number,
 };
 
 const intervals: Array<Interval> = [
@@ -51,12 +51,12 @@ const intervals: Array<Interval> = [
   { label: '30 minutes', value: 30 },
   { label: '1 hour', value: 60 },
   { label: '6 hours', value: 360 },
-  { label: 'Daily', value: 1440 }
+  { label: 'Daily', value: 1440 },
 ];
 
 export class TeamInfo extends React.Component<Props, State> {
   state = {
-    isEditing: false
+    isEditing: false,
   };
 
   toggleEditButton = (event: SyntheticMouseEvent<HTMLElement>) => {
@@ -106,7 +106,7 @@ export class TeamInfo extends React.Component<Props, State> {
 
     const textProps = {
       size: 'large',
-      margin: '1rem 0'
+      margin: '1rem 0',
     };
 
     return (

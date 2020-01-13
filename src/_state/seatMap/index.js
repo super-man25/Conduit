@@ -5,25 +5,25 @@ export const types = {
   FETCH_SEAT_MAP_REQUEST: 'seatmap/FETCH_SEAT_MAP_REQUEST',
   FETCH_SEAT_MAP_SUCCESS: 'seatmap/FETCH_SEAT_MAP_SUCCESS',
   FETCH_SEAT_MAP_ERROR: 'seatmap/FETCH_SEAT_MAP_ERROR',
-  RESET: 'seatmap/RESET'
+  RESET: 'seatmap/RESET',
 };
 
 export type FetchSeatMapRequest = {
-  type: 'seatmap/FETCH_SEAT_MAP_REQUEST'
+  type: 'seatmap/FETCH_SEAT_MAP_REQUEST',
 };
 export type FetchSeatMapSuccess = {
   type: 'seatmap/FETCH_SEAT_MAP_SUCCESS',
   payload: {
     venue: EDVenue,
-    objUrl: string
-  }
+    objUrl: string,
+  },
 };
 export type FetchSeatMapError = {
   type: 'seatmap/FETCH_SEAT_MAP_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type ResetSeatMap = {
-  type: 'seatmap/RESET'
+  type: 'seatmap/RESET',
 };
 
 export type Action =
@@ -34,25 +34,25 @@ export type Action =
 
 export const actions = {
   fetchSeatMap: (): FetchSeatMapRequest => ({
-    type: types.FETCH_SEAT_MAP_REQUEST
+    type: types.FETCH_SEAT_MAP_REQUEST,
   }),
 
   fetchSeatMapSuccess: (payload: {
     venue: EDVenue,
-    objUrl: string
+    objUrl: string,
   }): FetchSeatMapSuccess => ({
     type: types.FETCH_SEAT_MAP_SUCCESS,
-    payload
+    payload,
   }),
 
   fetchSeatMapError: (error: Error): FetchSeatMapError => ({
     type: types.FETCH_SEAT_MAP_ERROR,
-    payload: error
+    payload: error,
   }),
 
   resetSeatMap: (): ResetSeatMap => ({
-    type: types.RESET
-  })
+    type: types.RESET,
+  }),
 };
 
 export type State = {
@@ -60,7 +60,7 @@ export type State = {
   +error: ?Error,
   +mapping: EDVenueSVGMapping[],
   +venue: ?EDVenue,
-  objUrl: ?string
+  objUrl: ?string,
 };
 
 export const initialState = {
@@ -68,7 +68,7 @@ export const initialState = {
   error: null,
   mapping: [],
   objUrl: null,
-  venue: null
+  venue: null,
 };
 
 export const reducer = (state: State = initialState, action: Action): State => {
@@ -87,7 +87,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
 };
 
 type Store = {
-  seatMap: State
+  seatMap: State,
 };
 
 export const selectors = {
@@ -95,7 +95,7 @@ export const selectors = {
   selectError: (store: Store) => store.seatMap.error,
   selectMapping: (store: Store) => store.seatMap.mapping,
   selectVenue: (store: Store) => store.seatMap.venue,
-  selectVenueMapBlob: (store: Store) => store.seatMap.objUrl
+  selectVenueMapBlob: (store: Store) => store.seatMap.objUrl,
 };
 
 export { default as saga } from './saga';

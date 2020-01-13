@@ -7,8 +7,8 @@ const eventStats = [
   {
     id: 1,
     revenue: 1000,
-    inventory: 1000
-  }
+    inventory: 1000,
+  },
 ];
 
 const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -20,7 +20,7 @@ describe('get all', () => {
     const eventId = 1;
     const params = {
       eventId,
-      timezone
+      timezone,
     };
 
     const mock = fetchMock.get(
@@ -41,7 +41,7 @@ describe('get all', () => {
     const params = {
       eventId,
       startDate: isoDateFormat(start),
-      timezone
+      timezone,
     };
 
     const mock = fetchMock.get(
@@ -62,7 +62,7 @@ describe('get all', () => {
     const params = {
       eventId,
       endDate: isoDateFormat(end),
-      timezone
+      timezone,
     };
 
     const mock = fetchMock.get(
@@ -85,7 +85,7 @@ describe('get all', () => {
       eventId,
       startDate: isoDateFormat(start),
       endDate: isoDateFormat(end),
-      timezone
+      timezone,
     };
 
     const mock = fetchMock.get(

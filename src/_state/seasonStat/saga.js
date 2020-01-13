@@ -6,7 +6,7 @@ import actions, {
   SET_DATE_RANGE,
   DOWNLOAD_SEASON_REPORT,
   DOWNLOAD_SEASON_REPORT_SUCCESS,
-  DOWNLOAD_SEASON_REPORT_ERROR
+  DOWNLOAD_SEASON_REPORT_ERROR,
 } from './actions';
 import { eventStatService, transactionReportService } from '_services';
 import { getSeasonStatFilterArguments } from './selectors';
@@ -25,7 +25,7 @@ export function* setDefaultDateRange() {
   } else {
     [from, to] = [
       new Date(season.startTimestamp),
-      new Date(season.endTimestamp)
+      new Date(season.endTimestamp),
     ];
   }
 
@@ -40,7 +40,7 @@ export function* fetchSeasonTimeStats(action) {
     const timeStatsResponse = yield call(eventStatService.getAll, {
       seasonId,
       start: from,
-      end: to
+      end: to,
     });
     yield put({ type: FETCH_SUCCESS, payload: timeStatsResponse });
   } catch (err) {
@@ -80,5 +80,5 @@ function* watchDownloadSeasonReport() {
 export default {
   watchFetchEventStats,
   watchSetDateRange,
-  watchDownloadSeasonReport
+  watchDownloadSeasonReport,
 };

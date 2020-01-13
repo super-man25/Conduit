@@ -38,7 +38,7 @@ type Props = {
   margin?: string,
   height?: string,
   width?: string,
-  display?: string
+  display?: string,
 };
 
 export const Spacing: React.ComponentType<Props> = styled.div`

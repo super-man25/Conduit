@@ -5,7 +5,7 @@ import {
   isBefore,
   differenceInHours,
   format,
-  differenceInCalendarDays
+  differenceInCalendarDays,
 } from 'date-fns';
 
 import {
@@ -21,25 +21,25 @@ import {
   MONTHLY,
   BUSINESS_WEEK,
   END_OF_MONTH,
-  QUARTERLY
+  QUARTERLY,
 } from '_constants';
 import { formatDate, formatUSD, formatNumber } from './string-utils';
 import { EventStat, EventStatInterval } from '_models';
 import { MinorXAxisTick } from '_components/Charts/MinorXAxisTick';
 import {
   MajorXAxisTick,
-  MajorXAxisTickLine
+  MajorXAxisTickLine,
 } from '_components/Charts/MajorXAxisTick';
 
 export type ChartPoint = { x: Date, y: number };
 
 type DataSet = {
-  [string]: Array<ChartPoint>
+  [string]: Array<ChartPoint>,
 };
 
 type TickProps = {
   tickTotal: number,
-  tickFormat: (any) => string
+  tickFormat: (any) => string,
 };
 
 type RenderXAxisTicksProps = {
@@ -48,10 +48,10 @@ type RenderXAxisTicksProps = {
     x: number,
     y: number,
     payload: { value: Date },
-    index: number
+    index: number,
   },
   timeZone: Object,
-  dataLength: number
+  dataLength: number,
 };
 
 export function dayFormat(t: Date): string {
@@ -76,7 +76,7 @@ export function periodicTooltip(stat: EventStat) {
   return {
     periodicInventory: formatNumber(periodicInventory),
     periodicRevenue: formatUSD(periodicRevenue),
-    avgTicketPrice: formatUSD(avgTicketPrice)
+    avgTicketPrice: formatUSD(avgTicketPrice),
   };
 }
 
@@ -90,7 +90,7 @@ export function cumulativeTooltip(stat: EventStat, totalInventory: number) {
   return {
     inventory: formatNumber(inventory),
     revenue: formatUSD(revenue),
-    avgTicketPrice: formatUSD(avgTicketPrice)
+    avgTicketPrice: formatUSD(avgTicketPrice),
   };
 }
 
@@ -121,12 +121,12 @@ export function getAxisTickOptions(dataset: DataSet = {}): TickProps {
   if (totalDays <= 1) {
     return {
       tickTotal: Math.min(differenceInHours(lastDay, firstDay), 6),
-      tickFormat: dayTimeFormat
+      tickFormat: dayTimeFormat,
     };
   } else if (totalDays) {
     return {
       tickTotal: Math.min(totalDays, END_OF_MONTH),
-      tickFormat: dayFormat
+      tickFormat: dayFormat,
     };
   }
 
@@ -157,12 +157,12 @@ export function renderMinorXAxisTicks({
   interval,
   tickProps,
   dataLength,
-  timeZone
+  timeZone,
 }: RenderXAxisTicksProps) {
   const {
     x,
     y,
-    payload: { value }
+    payload: { value },
   } = tickProps;
   let ticksToRender = [];
   let formattedValue = '';
@@ -267,12 +267,12 @@ export function renderMajorXAxisTicks({
   interval,
   tickProps,
   dataLength,
-  timeZone
+  timeZone,
 }: RenderXAxisTicksProps) {
   const {
     x,
     y,
-    payload: { value }
+    payload: { value },
   } = tickProps;
   let ticksToRender = [];
   let tickLinesToRender = [];
@@ -330,12 +330,12 @@ export function renderMobileXAxisTicks({
   interval,
   tickProps,
   dataLength,
-  timeZone
+  timeZone,
 }: RenderXAxisTicksProps) {
   const {
     x,
     y,
-    payload: { value }
+    payload: { value },
   } = tickProps;
   let ticksToRender = [];
   let tickLinesToRender = [];

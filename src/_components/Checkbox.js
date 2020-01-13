@@ -15,7 +15,7 @@ const CheckboxContainer = styled.label`
 `;
 
 const HiddenCheckbox = styled.input.attrs({
-  type: 'checkbox'
+  type: 'checkbox',
 })`
   visibility: hidden;
   display: block;

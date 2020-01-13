@@ -89,5 +89,5 @@ export default {
   watchSavePriceRule,
   watchFetchPriceRule,
   watchSavePriceRuleSuccess,
-  watchDeletePriceRule
+  watchDeletePriceRule,
 };

@@ -10,7 +10,7 @@ import {
   Text,
   FlexItem,
   CenteredLoader,
-  EDLink
+  EDLink,
 } from '_components';
 import EdLogoDark from '_images/logo_dark.svg';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ import { sizes } from '_helpers/style-utils';
 const percentFormatter = Intl.NumberFormat('en-US', {
   style: 'percent',
   minimumFractionDigits: 0,
-  maximumFractionDigits: 0
+  maximumFractionDigits: 0,
 });
 
 const UnpaddedPanelContent = styled(PanelContent)`
@@ -62,9 +62,9 @@ const HorizontalListItem = styled(FlexItem)`
 `;
 
 const TicketIntegrationLogo = ({
-  integration
+  integration,
 }: {
-  integration: EDIntegrationStat
+  integration: EDIntegrationStat,
 }) =>
   integration.name === 'Skybox' ? (
     <LogoImg height="60%" src={EdLogoDark} />
@@ -85,12 +85,12 @@ const getTicketShare = (sold: number, total: ?number): string => {
 
 type ListItemProps = {
   integration: EDIntegrationStat,
-  integrations: EDIntegrationStat[]
+  integrations: EDIntegrationStat[],
 };
 
 export const TicketIntegrationListItem = ({
   integration,
-  integrations
+  integrations,
 }: ListItemProps) => (
   <HorizontalListItem
     key={integration.id}
@@ -160,7 +160,7 @@ type Props = {
   loading: boolean,
   error: ?Error,
   id: number,
-  showSettings: boolean
+  showSettings: boolean,
 };
 
 export const TicketIntegrations = (props: Props) => {

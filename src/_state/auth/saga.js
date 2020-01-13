@@ -83,5 +83,5 @@ export default {
   watchFetchAsync,
   watchSignInAsync,
   watchSignOutAsync,
-  watchForgotPassAsync
+  watchForgotPassAsync,
 };

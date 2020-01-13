@@ -14,13 +14,13 @@ import {
   UPDATE_EMAIL_ERROR,
   UPDATE_EMAIL_SUCCESS,
   UPDATE_ERROR,
-  UPDATE_SUCCESS
+  UPDATE_SUCCESS,
 } from '_state/user/actions';
 import {
   changePasswordAsync,
   createAsync,
   updateAsync,
-  updateEmailAsync
+  updateEmailAsync,
 } from '_state/user/saga';
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
@@ -31,7 +31,7 @@ describe('actions', () => {
     const action = actions.create(user);
     expect(action).toEqual({
       type: CREATE_ASYNC,
-      payload: user
+      payload: user,
     });
   });
 });
@@ -42,14 +42,14 @@ describe('reducer', () => {
     expect(state).toEqual({
       model: null,
       saved: false,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle CREATE_ASYNC', () => {
     const prevState = {
       model: null,
-      saved: false
+      saved: false,
     };
 
     const action = actions.create();
@@ -58,13 +58,13 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       model: null,
       loading: true,
-      saved: false
+      saved: false,
     });
   });
 
   it('should handle CREATE_SUCCESS', () => {
     const prevState = {
-      saved: false
+      saved: false,
     };
 
     const action = { type: CREATE_SUCCESS };
@@ -72,14 +72,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       loading: false,
-      saved: true
+      saved: true,
     });
   });
 
   it('should handle CREATE_ERROR', () => {
     const prevState = {
       loading: true,
-      saved: false
+      saved: false,
     };
 
     const action = { type: CREATE_ERROR };
@@ -87,218 +87,218 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       loading: false,
-      saved: false
+      saved: false,
     });
   });
 
   it('should create an action to update contact info', () => {
     const action = actions.update();
     expect(action).toEqual({
-      type: UPDATE_ASYNC
+      type: UPDATE_ASYNC,
     });
   });
 
   it('should create an action to change password', () => {
     const action = actions.changePassword();
     expect(action).toEqual({
-      type: CHANGE_PASSWORD_ASYNC
+      type: CHANGE_PASSWORD_ASYNC,
     });
   });
 
   it('should create an action to update email', () => {
     const action = actions.updateEmail();
     expect(action).toEqual({
-      type: UPDATE_EMAIL_ASYNC
+      type: UPDATE_EMAIL_ASYNC,
     });
   });
 
   it('should handle UPDATE_ASYNC', () => {
     const prevState = {
       model: null,
-      loading: false
+      loading: false,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, { type: UPDATE_ASYNC, payload: user });
 
     expect(nextState).toEqual({
       model: null,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle UPDATE_SUCCESS', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: UPDATE_SUCCESS,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: user,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle UPDATE_ERROR', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, { type: UPDATE_ERROR, payload: user });
 
     expect(nextState).toEqual({
       model: null,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle UPDATE_EMAIL_ASYNC', () => {
     const prevState = {
-      model: null
+      model: null,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: UPDATE_EMAIL_ASYNC,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: null,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle UPDATE_EMAIL_SUCCESS', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: UPDATE_EMAIL_SUCCESS,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: user,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle UPDATE_EMAIL_ERROR', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: UPDATE_EMAIL_ERROR,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: null,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle CHANGE_PASSWORD_ASYNC', () => {
     const prevState = {
-      model: null
+      model: null,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: CHANGE_PASSWORD_ASYNC,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: null,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle CHANGE_PASSWORD_SUCCESS', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: CHANGE_PASSWORD_SUCCESS,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: user,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle CHANGE_PASSWORD_ERROR', () => {
     const prevState = {
       model: null,
-      loading: true
+      loading: true,
     };
 
     const user = {
       id: 1,
-      email: 'some@email.com'
+      email: 'some@email.com',
     };
 
     const nextState = reducer(prevState, {
       type: CHANGE_PASSWORD_ERROR,
-      payload: user
+      payload: user,
     });
 
     expect(nextState).toEqual({
       model: null,
-      loading: false
+      loading: false,
     });
   });
 });
@@ -334,7 +334,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(
       put({
         type: SUCCESS_ASYNC,
-        payload: 'Successfully Updated Personal Information'
+        payload: 'Successfully Updated Personal Information',
       })
     );
     expect(generator.next().done).toBe(true);
@@ -345,7 +345,7 @@ describe('saga workers', () => {
       id: 1,
       email: 'test@dialexa.com',
       password: '123456',
-      newPassword: '654321'
+      newPassword: '654321',
     };
     const action = actions.changePassword(data);
     const generator = changePasswordAsync(action);
@@ -369,7 +369,7 @@ describe('saga workers', () => {
       id: 1,
       email: 'test@dialexa.com',
       password: '123456',
-      newPassword: '654321'
+      newPassword: '654321',
     };
     const action = actions.updateEmail(data);
     const generator = updateEmailAsync(action);

@@ -12,5 +12,5 @@ function getOne(id: number): Promise<EDSeason> {
 
 export const seasonService = {
   getAll,
-  getOne
+  getOne,
 };

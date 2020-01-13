@@ -28,7 +28,7 @@ describe('request', () => {
     const mock = fetchMock.mock({
       matcher: `end:${path}`,
       response: rawBody,
-      headers: {}
+      headers: {},
     });
 
     return request(path).then((data) => {
@@ -39,12 +39,12 @@ describe('request', () => {
 
   it('should make a request with opts', () => {
     const headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     };
     const mock = fetchMock.mock({
       matcher: `end:${path}`,
       response: rawBody,
-      headers
+      headers,
     });
 
     return request(path, { headers }).then((data) => {
@@ -59,8 +59,8 @@ describe('request', () => {
       matcher: `end:${path}`,
       response: {
         status: code,
-        body: rawBody
-      }
+        body: rawBody,
+      },
     });
 
     return request(path).catch((err) => {
@@ -76,13 +76,13 @@ describe('request', () => {
 it('get should make a GET request', () => {
   const params = {
     some: 'test',
-    params: 'values'
+    params: 'values',
   };
   const mock = fetchMock.mock({
     matcher: `glob:*${path}*`,
     method: 'GET',
     query: params,
-    response: rawBody
+    response: rawBody,
   });
 
   return get(path, params).then((data) => {
@@ -96,7 +96,7 @@ it('post should make a POST request', () => {
   const mock = fetchMock.mock({
     matcher: `end:${path}`,
     method: 'POST',
-    response: rawBody
+    response: rawBody,
   });
 
   return post(path, reqBody).then((data) => {
@@ -110,7 +110,7 @@ it('put should make a PUT request', () => {
   const mock = fetchMock.mock({
     matcher: `end:${path}`,
     method: 'PUT',
-    response: rawBody
+    response: rawBody,
   });
 
   return put(path, reqBody).then((data) => {
@@ -122,13 +122,13 @@ it('put should make a PUT request', () => {
 it('del should make a DELETE request', () => {
   const params = {
     some: 'test',
-    params: 'values'
+    params: 'values',
   };
   const mock = fetchMock.mock({
     matcher: `glob:*${path}*`,
     method: 'DELETE',
     query: params,
-    response: rawBody
+    response: rawBody,
   });
 
   return del(path, params).then((data) => {

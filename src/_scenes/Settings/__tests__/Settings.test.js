@@ -5,7 +5,7 @@ import { Settings } from '../index';
 describe('<Settings />', () => {
   const props = {
     authState: { model: { id: 1, firstName: 'groot', lastName: 'groot' } },
-    authActions: {}
+    authActions: {},
   };
 
   it('renders correctly', () => {

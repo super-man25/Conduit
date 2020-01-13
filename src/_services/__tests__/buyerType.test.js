@@ -5,17 +5,17 @@ const buyerTypes = [
   {
     id: '3161',
     code: 'ADULT',
-    disabled: true
+    disabled: true,
   },
   {
     id: '3162',
     code: 'CHILD',
-    disabled: false
-  }
+    disabled: false,
+  },
 ];
 
 jest.mock('../normalizers/buyerType', () => ({
-  denormalize: jest.fn((payload) => Promise.resolve(payload))
+  denormalize: jest.fn((payload) => Promise.resolve(payload)),
 }));
 
 describe('get all', () => {

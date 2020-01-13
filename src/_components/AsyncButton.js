@@ -7,7 +7,7 @@ import { PrimaryButton, Loader } from '_components';
 type Props = {
   isLoading: boolean,
   disabled?: boolean,
-  children: React.Node
+  children: React.Node,
 };
 
 export const AsyncButton = (props: Props) => {

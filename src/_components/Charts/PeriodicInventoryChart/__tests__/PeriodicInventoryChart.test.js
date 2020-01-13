@@ -13,11 +13,11 @@ const createProps = () => ({
       revenue: 100,
       periodicRevenue: 100,
       isProjected: false,
-      timestamp: 1529336865706
-    }
+      timestamp: 1529336865706,
+    },
   ],
   dateFormatter: (d) => d.toString,
-  renderNoData: () => <div />
+  renderNoData: () => <div />,
 });
 
 describe('<PeriodicInventoryChart />', () => {

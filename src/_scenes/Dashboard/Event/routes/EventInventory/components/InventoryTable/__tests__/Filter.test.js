@@ -7,7 +7,7 @@ describe('<Filter />', () => {
   const props = {
     filters: [],
     selectedFilters: [],
-    onItemClicked: jest.fn()
+    onItemClicked: jest.fn(),
   };
 
   it('should render correctly', () => {
@@ -21,7 +21,7 @@ describe('<Filter />', () => {
       { id: 2, name: 'Some Scale 2' },
       { id: 3, name: 'Some Scale 3' },
       { id: 4, name: 'Some Scale 4' },
-      { id: 5, name: 'Some Scale 5' }
+      { id: 5, name: 'Some Scale 5' },
     ];
     const wrapper = shallow(<Filter {...props} filters={scales} />);
     expect(wrapper).toMatchSnapshot();
@@ -33,13 +33,13 @@ describe('<Filter />', () => {
       { id: 2, name: 'Some Scale 2' },
       { id: 3, name: 'Some Scale 3' },
       { id: 4, name: 'Some Scale 4' },
-      { id: 5, name: 'Some Scale 5' }
+      { id: 5, name: 'Some Scale 5' },
     ];
 
     const selectedScales = [
       { id: 1, name: 'Some Scale 1' },
       { id: 2, name: 'Some Scale 2' },
-      { id: 3, name: 'Some Scale 3' }
+      { id: 3, name: 'Some Scale 3' },
     ];
     const wrapper = shallow(
       <Filter {...props} filters={scales} selectedFilters={selectedScales} />
@@ -53,13 +53,13 @@ describe('<Filter />', () => {
       { id: 2, name: 'Some Scale 2' },
       { id: 3, name: 'Some Scale 3' },
       { id: 4, name: 'Some Scale 4' },
-      { id: 5, name: 'Some Scale 5' }
+      { id: 5, name: 'Some Scale 5' },
     ];
 
     const selectedScales = [
       { id: 1, name: 'Some Scale 1' },
       { id: 2, name: 'Some Scale 2' },
-      { id: 3, name: 'Some Scale 3' }
+      { id: 3, name: 'Some Scale 3' },
     ];
     const onItemClicked = jest.fn();
 
@@ -86,12 +86,12 @@ describe('<Filter />', () => {
       { id: 2, name: 'Some Scale 2' },
       { id: 3, name: 'Some Scale 3' },
       { id: 4, name: 'Some Scale 4' },
-      { id: 5, name: 'Some Scale 5' }
+      { id: 5, name: 'Some Scale 5' },
     ];
     const selectedScales = [
       { id: 1, name: 'Some Scale 1' },
       { id: 2, name: 'Some Scale 2' },
-      { id: 3, name: 'Some Scale 3' }
+      { id: 3, name: 'Some Scale 3' },
     ];
     const onClearAllClicked = jest.fn();
 

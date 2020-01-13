@@ -18,7 +18,7 @@ export const DOWNLOAD_SEASON_REPORT_ERROR =
 type SeasonStatParams = {
   seasonId: number,
   start?: Date,
-  end?: Date
+  end?: Date,
 };
 
 export type Action =
@@ -29,11 +29,11 @@ export type Action =
   | { type: typeof SET_GROUPING_FILTER, payload: number }
   | {
       type: typeof SET_DATE_RANGE,
-      payload: { from: ?Date, to: ?Date }
+      payload: { from: ?Date, to: ?Date },
     }
   | {
       type: typeof SET_FIRST_AND_LAST_DATE,
-      payload: { from: ?Date, to: ?Date }
+      payload: { from: ?Date, to: ?Date },
     }
   | { type: typeof DOWNLOAD_SEASON_REPORT, payload: EDReportPayload }
   | { type: typeof DOWNLOAD_SEASON_REPORT_SUCCESS, payload: any }
@@ -43,33 +43,33 @@ export type Action =
 function fetch(seasonStatParams: SeasonStatParams): Action {
   return {
     type: FETCH_ASYNC,
-    payload: seasonStatParams
+    payload: seasonStatParams,
   };
 }
 
 function clear(): Action {
   return {
-    type: RESET
+    type: RESET,
   };
 }
 
 function setGroupFilter(filter: number): Action {
   return {
     type: SET_GROUPING_FILTER,
-    payload: filter
+    payload: filter,
   };
 }
 
 function setDateRange(dateRange: { from: ?Date, to: ?Date }): Action {
   return {
     type: SET_DATE_RANGE,
-    payload: dateRange
+    payload: dateRange,
   };
 }
 
 const downloadSeasonReport = (payload: EDReportPayload) => ({
   type: DOWNLOAD_SEASON_REPORT,
-  payload
+  payload,
 });
 
 export default {
@@ -77,5 +77,5 @@ export default {
   clear,
   setGroupFilter,
   setDateRange,
-  downloadSeasonReport
+  downloadSeasonReport,
 };

@@ -8,8 +8,8 @@ describe('defaultCellRenderer', () => {
     cellData: 20,
     isEditing: false,
     columnData: {
-      displayFn: jest.fn((a) => a)
-    }
+      displayFn: jest.fn((a) => a),
+    },
   };
 
   it('should render correctly', () => {

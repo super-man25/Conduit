@@ -13,12 +13,12 @@ import {
   SettingSaveButton,
   H5,
   HelpBlockDiv,
-  Spacing
+  Spacing,
 } from '_components';
 import {
   validateEmail,
   validatePhoneNumber,
-  orDash
+  orDash,
 } from '_helpers/string-utils';
 import { actions as userActions } from '_state/user';
 import type { EDUser } from '_models';
@@ -51,11 +51,11 @@ type Props = {
   userActions: {
     changePassword: (e: any) => void,
     update: (e: any) => void,
-    updateEmail: (e: any) => void
+    updateEmail: (e: any) => void,
   },
   authState: {
-    model: {}
-  }
+    model: {},
+  },
 };
 
 type State = {
@@ -68,7 +68,7 @@ type State = {
   password: string,
   passwordsMatch: boolean,
   user: EDUser,
-  touchedFields: Object
+  touchedFields: Object,
 };
 
 export class ContactInfo extends React.Component<Props, State> {
@@ -85,7 +85,7 @@ export class ContactInfo extends React.Component<Props, State> {
       password: '',
       passwordsMatch: false,
       user: props.authState.model,
-      touchedFields: {}
+      touchedFields: {},
     };
   }
 
@@ -100,7 +100,7 @@ export class ContactInfo extends React.Component<Props, State> {
       password: '',
       passwordsMatch: false,
       user: this.props.authState.model,
-      touchedFields: {}
+      touchedFields: {},
     });
   };
 
@@ -125,8 +125,8 @@ export class ContactInfo extends React.Component<Props, State> {
       this.setState({
         user: {
           ...user,
-          [name]: value
-        }
+          [name]: value,
+        },
       });
     }
   };
@@ -185,7 +185,7 @@ export class ContactInfo extends React.Component<Props, State> {
     if (validateEmail(user.email) && password !== '' && password.length >= 8) {
       this.props.userActions.updateEmail({
         email: user.email,
-        password
+        password,
       });
       this.reset();
     } else {
@@ -202,14 +202,14 @@ export class ContactInfo extends React.Component<Props, State> {
       password,
       passwordsMatch,
       newPassword,
-      confirmPassword
+      confirmPassword,
     } = this.state;
 
     if (passwordsMatch && password !== '' && password.length >= 8) {
       this.props.userActions.changePassword({
         password,
         newPassword,
-        confirmNewPassword: confirmPassword
+        confirmNewPassword: confirmPassword,
       });
       this.reset();
     }
@@ -226,7 +226,7 @@ export class ContactInfo extends React.Component<Props, State> {
       confirmPassword,
       password,
       passwordsMatch,
-      touchedFields
+      touchedFields,
     } = this.state;
 
     return (
@@ -484,13 +484,13 @@ export class ContactInfo extends React.Component<Props, State> {
 
 function mapStateToProps(state) {
   return {
-    authState: state.auth
+    authState: state.auth,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    userActions: bindActionCreators(userActions, dispatch)
+    userActions: bindActionCreators(userActions, dispatch),
   };
 }
 

@@ -6,7 +6,7 @@ import { mobileBreakpoint } from '_constants';
 
 type Props = {
   children: React.Node,
-  imageSrc: string
+  imageSrc: string,
 };
 
 const Wrapper = styled.div`

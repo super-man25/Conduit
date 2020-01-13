@@ -5,10 +5,10 @@ function getEventScoreHistory({ eventId, startDate, endDate }) {
   return get('eventScoreHistory', {
     eventId,
     startDate: isoDateFormat(startDate),
-    endDate: isoDateFormat(endDate)
+    endDate: isoDateFormat(endDate),
   });
 }
 
 export const eventScoreHistoryService = {
-  getEventScoreHistory
+  getEventScoreHistory,
 };

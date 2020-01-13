@@ -4,7 +4,7 @@ import { DefaultColumnHeaderPresenter } from '../ColumnHeaderRenderer';
 
 describe('<DefaultColumnHeaderPresenter />', () => {
   const props = {
-    label: 'Label'
+    label: 'Label',
   };
 
   it('should render correctly', () => {

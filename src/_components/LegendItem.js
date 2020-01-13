@@ -39,7 +39,7 @@ LegendItemValue.displayName = 'LegendItemValue';
 type Props = {
   color: string,
   label: string,
-  value: number | string
+  value: number | string,
 };
 
 export function LegendItem({ color, label, value }: Props) {

@@ -17,10 +17,10 @@ const Row = styled(Flex)`
 `;
 const PricingPreviewText = ({
   children,
-  color
+  color,
 }: {
   children: Node,
-  color?: string
+  color?: string,
 }) => (
   <Flex align="center" justify="center" margin="auto">
     <Text color={color}>{children}</Text>
@@ -32,7 +32,7 @@ type Props = {
   record: ?EDPricingPreview,
   error: ?Error,
   springError: ?Error,
-  pendingFactors: PendingFactors
+  pendingFactors: PendingFactors,
 };
 
 export const PricingPreview = (props: Props) => {
@@ -41,7 +41,7 @@ export const PricingPreview = (props: Props) => {
     loading,
     record: pricingPreview,
     springError,
-    pendingFactors: { eventScore }
+    pendingFactors: { eventScore },
   } = props;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +50,7 @@ export const PricingPreview = (props: Props) => {
     const { min, max } = stats;
     return {
       min: formatUSD(min),
-      max: formatUSD(max)
+      max: formatUSD(max),
     };
   };
 
@@ -84,7 +84,7 @@ export const PricingPreview = (props: Props) => {
           <a
             style={{
               color: cssConstants.PRIMARY_RED,
-              fontWeight: 'bold'
+              fontWeight: 'bold',
             }}
             href="mailto:support@eventdynamic.com"
           >
@@ -108,8 +108,8 @@ export const PricingPreview = (props: Props) => {
       { label: 'EVENT', ...formatStats(pricingPreview.event) },
       ...Object.keys(pricingPreview.sections).map((section) => ({
         label: `SECTION ${section}`,
-        ...formatStats(pricingPreview.sections[section])
-      }))
+        ...formatStats(pricingPreview.sections[section]),
+      })),
     ];
 
     preview = (

@@ -26,7 +26,7 @@ const Tbody = styled.tbody`
 type Props = {
   columns: Array<string>,
   header?: { [column: string]: string },
-  data: Array<{ [column: string]: string }>
+  data: Array<{ [column: string]: string }>,
 };
 
 function renderCells(columns, identifier, rowData) {

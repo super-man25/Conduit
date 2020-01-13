@@ -8,7 +8,7 @@ type Props = {
   selected: any[],
   disabled: string[],
   onItemClicked: (option: any) => void,
-  labelFn: (option: any, truncate: boolean) => string
+  labelFn: (option: any, truncate: boolean) => string,
 };
 
 export function MultiSelectView({
@@ -16,7 +16,7 @@ export function MultiSelectView({
   selected,
   disabled,
   onItemClicked,
-  labelFn
+  labelFn,
 }: Props) {
   const isDisabled = (option) => {
     return !!disabled && disabled.includes(option.id);

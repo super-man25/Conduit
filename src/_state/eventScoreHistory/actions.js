@@ -5,10 +5,10 @@ export const FETCH_ERROR = 'eventScoreHistory/FETCH_ERROR';
 function fetch(payload) {
   return {
     type: FETCH_ASYNC,
-    payload
+    payload,
   };
 }
 
 export default {
-  fetch
+  fetch,
 };

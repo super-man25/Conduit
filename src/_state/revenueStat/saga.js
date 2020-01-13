@@ -21,5 +21,5 @@ function* fetchRevenueBreakdownSaga(): Saga<void> {
 }
 
 export default {
-  fetchRevenueBreakdownSaga
+  fetchRevenueBreakdownSaga,
 };

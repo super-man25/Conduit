@@ -4,7 +4,7 @@ import type { EventStatState } from './reducer';
 import type { DateRange } from '_helpers/types';
 
 type State = {
-  eventStat: EventStatState
+  eventStat: EventStatState,
 };
 
 export const getEventStats = (state: State) => state.eventStat.eventStats;

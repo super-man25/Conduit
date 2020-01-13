@@ -3,7 +3,7 @@ import type {
   EDInventorySectionFilter,
   EDInventoryRow,
   EDVenuePriceScale,
-  EDSectionsToPriceScale
+  EDSectionsToPriceScale,
 } from '_models';
 import type { State } from '.';
 import { sortAlphaNum } from '_helpers';
@@ -92,7 +92,7 @@ export function getSectionsByScaleFilter(
     selectedScaleFilters,
     selectedSectionFilters,
     sectionsToPriceScale,
-    sectionFilters
+    sectionFilters,
   } = state;
   const selectedPriceScaleIds = payload.map((priceScale) => priceScale.id);
 
@@ -169,7 +169,7 @@ export function alphaFirstSort(rows: EDInventoryRow, sortBy: string) {
   if (charIndex >= 0) {
     sorted = [
       ...sorted.slice(charIndex, sorted.length),
-      ...sorted.slice(0, charIndex)
+      ...sorted.slice(0, charIndex),
     ];
   }
   return sorted;
@@ -192,12 +192,12 @@ export function mapSectionsToPriceScales(
       if (!priceScaleSections) {
         //add new price scale with section
         return acc.concat([
-          { priceScaleId: cur.priceScaleId, sections: [cur.section] }
+          { priceScaleId: cur.priceScaleId, sections: [cur.section] },
         ]);
       } else if (!priceScaleSections.sections.includes(cur.section)) {
         //add section to corresponding price scale sections
         priceScaleSections.sections = priceScaleSections.sections.concat([
-          cur.section
+          cur.section,
         ]);
       }
       return acc;

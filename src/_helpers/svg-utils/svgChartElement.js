@@ -31,7 +31,7 @@ export class SVGChartElement {
       selectedFill,
       highlightFill,
       unavailableFill,
-      dirty
+      dirty,
     } = this;
 
     if (!dirty) return;

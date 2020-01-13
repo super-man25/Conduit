@@ -7,7 +7,7 @@ describe('<ToggleCellPresenter />', () => {
   const props = {
     isEditing: false,
     updatePriceRuleProperty: jest.fn(),
-    rulePropertyValue: false
+    rulePropertyValue: false,
   };
 
   it('should render correctly', () => {

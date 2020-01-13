@@ -12,7 +12,7 @@ import {
   Icon,
   CenteredLoader,
   Text,
-  TextButton
+  TextButton,
 } from '_components';
 import { useClickAway } from '_hooks';
 
@@ -88,7 +88,7 @@ type Props = {
   lastName: string,
   client: EDClient,
   clientList: EDClientList,
-  updateClient: (client: EDClient) => void
+  updateClient: (client: EDClient) => void,
 };
 
 export const UserWelcome = (props: Props) => {
@@ -104,7 +104,7 @@ export const UserWelcome = (props: Props) => {
 
   useClickAway({
     ref: dropdownRef,
-    handleClickAway: () => setIsOpen(false)
+    handleClickAway: () => setIsOpen(false),
   });
 
   const toggleDropdown = function() {

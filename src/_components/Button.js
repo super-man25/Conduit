@@ -8,7 +8,7 @@ import { withBoxModelProps } from '_helpers/style-utils';
 type Props = {
   fontSize: string,
   textAlign: string,
-  minWidth: string
+  minWidth: string,
 };
 
 export const Button: React.ComponentType<Props> = withBoxModelProps(styled.button`

@@ -19,5 +19,5 @@ function* watchFetchTeamStatAsync() {
 }
 
 export default {
-  watchFetchTeamStatAsync
+  watchFetchTeamStatAsync,
 };

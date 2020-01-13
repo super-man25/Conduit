@@ -12,8 +12,8 @@ describe('<MultiSelectCellRenderer />', () => {
     parent: {
       props: {
         height: '180',
-        headerHeight: '45'
-      }
+        headerHeight: '45',
+      },
     },
     columnData: {
       label: 'Price Scales',
@@ -21,10 +21,10 @@ describe('<MultiSelectCellRenderer />', () => {
       priceScales: [
         { id: 2, name: 'DUGOUT' },
         { id: 10, name: 'FIELD' },
-        { id: 5, name: 'GOLD' }
+        { id: 5, name: 'GOLD' },
       ],
-      labelFn: (o) => o.name
-    }
+      labelFn: (o) => o.name,
+    },
   };
 
   const buyerTypesProps = {
@@ -34,8 +34,8 @@ describe('<MultiSelectCellRenderer />', () => {
     parent: {
       props: {
         height: '180',
-        headerHeight: '45'
-      }
+        headerHeight: '45',
+      },
     },
     columnData: {
       label: 'Buyer Types',
@@ -45,23 +45,23 @@ describe('<MultiSelectCellRenderer />', () => {
           id: 2,
           code: 'DUGOUT',
           publicDescription: 'desc1',
-          isInPriceStructure: false
+          isInPriceStructure: false,
         },
         {
           id: 10,
           code: 'FIELD',
           publicDescription: 'desc2',
-          isInPriceStructure: true
+          isInPriceStructure: true,
         },
         {
           id: 5,
           code: 'GOLD',
           publicDescription: 'desc3',
-          isInPriceStructure: false
-        }
+          isInPriceStructure: false,
+        },
       ],
-      labelFn: (o) => o.code
-    }
+      labelFn: (o) => o.code,
+    },
   };
 
   it('should render correctly', () => {
@@ -98,7 +98,7 @@ describe('<MultiSelectCellRenderer />', () => {
   it('should sort with the sort function correctly', () => {
     const columnData = {
       ...props.columnData,
-      sortFn: (first, second) => (first.id >= second.id ? 1 : -1)
+      sortFn: (first, second) => (first.id >= second.id ? 1 : -1),
     };
 
     const wrapper = mount(
@@ -122,7 +122,7 @@ describe('<MultiSelectCellRenderer />', () => {
   it('should append correctly for buyer types', () => {
     const columnData = {
       ...buyerTypesProps.columnData,
-      sortFn: (first, second) => (first.id >= second.id ? 1 : -1)
+      sortFn: (first, second) => (first.id >= second.id ? 1 : -1),
     };
 
     const wrapper = mount(

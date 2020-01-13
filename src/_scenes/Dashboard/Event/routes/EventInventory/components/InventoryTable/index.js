@@ -4,7 +4,7 @@ import {
   Table,
   Column,
   AutoSizer,
-  defaultTableRowRenderer
+  defaultTableRowRenderer,
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
@@ -23,7 +23,7 @@ type Props = {
   priceScales: EDVenuePriceScale[],
   rows: EDInventoryRow[],
   fetchInventory: (id: number) => void,
-  reset: () => void
+  reset: () => void,
 };
 
 const withAlternatingBackgroundColor = (rowRenderer) => {
@@ -37,7 +37,7 @@ const withAlternatingBackgroundColor = (rowRenderer) => {
 
     return rowRenderer({
       ...props,
-      className
+      className,
     });
   }
 
@@ -61,7 +61,7 @@ export const VirtualizedEventInventoryPresenter = (props: Props) => {
     loading,
     priceScales,
     reset,
-    rows
+    rows,
   } = props;
   const columns = getInventoryColumns(props);
 
@@ -130,7 +130,7 @@ const mapStateToProps = createStructuredSelector({
   rows: selectors.selectEventInventoryRows,
   sections: selectors.selectSectionFilters,
   selectedScaleFilters: selectors.selectSelectedScaleFilters,
-  selectedSectionFilters: selectors.selectSelectedSectionFilters
+  selectedSectionFilters: selectors.selectSelectedSectionFilters,
 });
 
 const mapDispatchToProps = {
@@ -140,7 +140,7 @@ const mapDispatchToProps = {
   reset: actions.resetEventInventory,
   setEventInventoryFilter: actions.setEventInventoryFilter,
   setSelectedScaleFilters: actions.setSelectedScaleFilters,
-  setSelectedSectionFilters: actions.setSelectedSectionFilters
+  setSelectedSectionFilters: actions.setSelectedSectionFilters,
 };
 
 export const VirtualizedEventInventory = connect(

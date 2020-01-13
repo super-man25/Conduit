@@ -5,5 +5,5 @@ function getStats() {
 }
 
 export const teamStatService = {
-  getStats
+  getStats,
 };

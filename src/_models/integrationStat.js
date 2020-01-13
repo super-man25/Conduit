@@ -6,5 +6,5 @@ export type EDIntegrationStat = {
   logoUrl: string,
   isActive: boolean,
   sold: number,
-  total: number
+  total: number,
 };

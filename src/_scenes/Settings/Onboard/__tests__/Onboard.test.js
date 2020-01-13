@@ -4,7 +4,7 @@ import { Onboard } from '../index';
 
 describe('<Onboard />', () => {
   const props = {
-    onboardActions: {}
+    onboardActions: {},
   };
 
   it('renders correctly', () => {

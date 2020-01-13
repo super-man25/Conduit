@@ -14,11 +14,11 @@ type Props = {
   rulePropertyValue: string,
   columnData: any,
   updateEditedRowProperty: (any) => void,
-  isEditable: boolean
+  isEditable: boolean,
 };
 
 type State = {
-  rulePropertyValue: string
+  rulePropertyValue: string,
 };
 
 export class DefaultCellPresenter extends React.Component<Props, State> {
@@ -37,7 +37,7 @@ export class DefaultCellPresenter extends React.Component<Props, State> {
       isEditing,
       editedRowState,
       cellData,
-      columnData: { isEditable }
+      columnData: { isEditable },
     } = this.props;
 
     if (isEditing && isEditable) {
@@ -66,7 +66,7 @@ const mapStateToProps = (
 ) => ({
   isEditing: editedRowId === rowData.id,
   isLoading: loading,
-  editedRowState
+  editedRowState,
 });
 
 const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
@@ -75,9 +75,9 @@ const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
       actions.updateEditedRowProperty({
         id: rowData.id,
         propertyName: dataKey,
-        propertyValue: value
+        propertyValue: value,
       })
-    )
+    ),
 });
 
 const DefaultCell = connect(
