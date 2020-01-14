@@ -29,6 +29,7 @@ import {
   Box,
   Text,
 } from '_components';
+import EventWeather from './EventWeather';
 
 const EventDetails = styled.div``;
 
@@ -163,6 +164,7 @@ export function EventHeader(props: Props) {
           </FlexItem>
         </Flex>
       </Flex>
+      <EventWeather />
       {showInventoryLink && !isViewingInventory && (
         <EDLink to={`/event/${id}/inventory`}>
           <InventoryLink>SEE INVENTORY LIST</InventoryLink>

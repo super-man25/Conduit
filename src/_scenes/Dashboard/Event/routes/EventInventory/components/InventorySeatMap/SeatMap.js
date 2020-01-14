@@ -82,7 +82,6 @@ export class SeatMapPresenter extends React.Component {
 
     return (
       <React.Fragment>
-        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
         <SeatMapObject
           role="search"
           ref={this.seatmap}

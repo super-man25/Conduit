@@ -1,5 +1,6 @@
 // @flow
 
+import type { GameDayWeather } from '_models';
 import type { EDScheduledJob } from './scheduledJob';
 
 type Factors = {
@@ -30,4 +31,5 @@ export type EDEvent = {
   factors: Factors,
   timeZone: string,
   scheduledJob: EDScheduledJob,
+  gameDayWeather: GameDayWeather,
 };
