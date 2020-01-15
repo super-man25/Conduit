@@ -86,34 +86,6 @@ describe('validator for eventScoreModifier and springModifier', () => {
     expect(validatedPayload).toEqual(payload);
   });
 
-  it('should throw an error if eventScoreModifier > 100', async () => {
-    payload.eventScoreModifier = 200;
-
-    let error;
-    try {
-      await validateAdminModifiers(payload);
-    } catch (err) {
-      error = err;
-    }
-    expect(error.toString()).toEqual(
-      'Event Score Modifier must be less than or equal to 100'
-    );
-  });
-
-  it('should throw an error if eventScoreModifier < -100', async () => {
-    payload.eventScoreModifier = -200;
-
-    let error;
-    try {
-      await validateAdminModifiers(payload);
-    } catch (err) {
-      error = err;
-    }
-    expect(error.toString()).toEqual(
-      'Event Score Modifier must be greater than or equal to -100'
-    );
-  });
-
   it('should throw an error if eventScoreModifier is not a number', async () => {
     payload.eventScoreModifier = 'a';
 

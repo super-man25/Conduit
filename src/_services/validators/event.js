@@ -10,11 +10,7 @@ const percentPriceModifierSchema = yup.object({
 });
 
 const adminModifierSchema = yup.object({
-  eventScoreModifier: yup
-    .number()
-    .min(-100)
-    .max(100)
-    .label('Event Score Modifier'),
+  eventScoreModifier: yup.number().label('Event Score Modifier'),
   springModifier: yup
     .number()
     .min(-2)
