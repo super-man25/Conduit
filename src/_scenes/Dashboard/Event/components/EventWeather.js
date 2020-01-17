@@ -91,8 +91,12 @@ const EventWeather = ({
           {parseInt(temperature)}°<FarenheitSymbol>F</FarenheitSymbol>
         </WeatherDataPoint>
         <WeatherDataPoint>{summary},</WeatherDataPoint>
-        <WeatherDataPoint>{precipitationProbability * 100}%</WeatherDataPoint>
-        <WeatherDataPoint>Chance of {precipitationType}</WeatherDataPoint>
+        <WeatherDataPoint>
+          {parseInt(precipitationProbability * 100)}%
+        </WeatherDataPoint>
+        <WeatherDataPoint>
+          Chance of {precipitationType || 'precipitation'}
+        </WeatherDataPoint>
       </WeatherSummary>
     </StyledEventWeather>
   );
