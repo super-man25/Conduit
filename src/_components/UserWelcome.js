@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-import { cssConstants, shadows, zIndexes } from '_constants';
+import { cssConstants, shadows, zIndexes, navigationHeight } from '_constants';
 import type { EDClient, EDClientList } from '_models';
 import { isMobileDevice } from '_helpers';
 import {
@@ -29,6 +29,7 @@ const Overlay = styled.div`
 
 const UserWelcomeDropdown = styled.div`
   position: relative;
+  margin-right: 5px;
 `;
 
 const ClientDropDown = styled.div`
@@ -38,6 +39,8 @@ const ClientDropDown = styled.div`
   right: 0;
   box-shadow: ${shadows.MEDIUM};
   z-index: ${zIndexes.DROPDOWN_CLIENT_HEADER};
+  max-height: calc(100vh - ${navigationHeight}px);
+  overflow: scroll;
 `;
 
 const ClientMenuItem = styled.div`
