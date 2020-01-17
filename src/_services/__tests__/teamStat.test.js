@@ -8,7 +8,7 @@ const teamStat = {
   clientId: 1,
   wins: 10,
   losses: 10,
-  gamesTotal: 50
+  gamesTotal: 50,
 };
 
 describe('get by Id', () => {

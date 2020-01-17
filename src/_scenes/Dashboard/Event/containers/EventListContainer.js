@@ -19,7 +19,7 @@ type Props = {
   push: (path: string) => void,
   toggleSidebar: () => void,
   isAdmin: boolean,
-  loading: boolean
+  loading: boolean,
 };
 
 class EventListContainer extends React.Component<Props> {
@@ -34,7 +34,7 @@ class EventListContainer extends React.Component<Props> {
     if (this.props.activeSeasonId !== prevProps.activeSeasonId) {
       this.props.eventListActions.resetEventList();
       this.props.eventListActions.fetchEventList({
-        seasonId: this.props.activeSeasonId
+        seasonId: this.props.activeSeasonId,
       });
     }
   }
@@ -63,7 +63,7 @@ class EventListContainer extends React.Component<Props> {
       eventListState: { filterOptions, sortDir, visibleEvents, filter },
       isAdmin,
       activeEventId,
-      loading
+      loading,
     } = this.props;
 
     return (
@@ -93,7 +93,7 @@ function mapStateToProps(state) {
       state.season.loading ||
       state.seasonStat.loading ||
       state.teamStat.loading,
-    isAdmin: state.auth.model.isAdmin
+    isAdmin: state.auth.model.isAdmin,
   };
 }
 
@@ -101,7 +101,7 @@ function mapDispatchToProps(dispatch) {
   return {
     eventListActions: bindActionCreators(eventListActions, dispatch),
     push: (path) => dispatch(push(path)),
-    toggleSidebar: bindActionCreators(uiActions.toggleSidebar, dispatch)
+    toggleSidebar: bindActionCreators(uiActions.toggleSidebar, dispatch),
   };
 }
 

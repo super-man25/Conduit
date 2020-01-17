@@ -3,7 +3,7 @@ import { FETCH_ASYNC, FETCH_ERROR, FETCH_SUCCESS, RESET } from './actions';
 export const initialState = {
   loading: false,
   record: null,
-  error: null
+  error: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -13,20 +13,20 @@ export default function reducer(state = initialState, action) {
     case FETCH_ASYNC:
       return {
         ...initialState,
-        loading: true
+        loading: true,
       };
     case FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
-        record: action.payload
+        record: action.payload,
       };
     case FETCH_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     default:
       return state;

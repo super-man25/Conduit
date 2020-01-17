@@ -7,19 +7,19 @@ import { LoginPresenter } from '../index';
 const props = {
   authState: {
     model: null,
-    pending: false
+    pending: false,
   },
   authActions: {
     forgotPass: jest.fn(),
-    signIn: jest.fn()
+    signIn: jest.fn(),
   },
   location: {
     state: {
       from: {
-        pathname: ''
-      }
-    }
-  }
+        pathname: '',
+      },
+    },
+  },
 };
 
 describe('<LoginPresenter />', () => {
@@ -65,7 +65,7 @@ describe('<LoginPresenter />', () => {
       emailHadFocus: false,
       validEmail: false,
       passwordHadFocus: false,
-      submitEnabled: false
+      submitEnabled: false,
     });
     expect(wrapper.instance().submitEnabled()).toEqual(false);
 
@@ -139,7 +139,7 @@ describe('<LoginPresenter />', () => {
     // Render the component and submit the form
     const authActions = {
       signIn: jest.fn(),
-      forgotPass: jest.fn()
+      forgotPass: jest.fn(),
     };
     const authActionsSignIn = jest.spyOn(authActions, 'signIn');
     const wrapper = shallow(
@@ -155,10 +155,10 @@ describe('<LoginPresenter />', () => {
     // Render the component and submit the form
     const authActions = {
       forgotPass: jest.fn(),
-      signIn: jest.fn()
+      signIn: jest.fn(),
     };
     const authState = {
-      forgot: true
+      forgot: true,
     };
     const wrapper = shallow(
       <LoginPresenter

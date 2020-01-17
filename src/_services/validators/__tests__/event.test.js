@@ -1,14 +1,14 @@
 import {
   validatePercentPriceModifier,
   validateAdminModifiers,
-  validateOverridePrice
+  validateOverridePrice,
 } from '../event';
 
 describe('validator for percentPriceModifier', () => {
   let payload;
   beforeEach(() => {
     payload = {
-      percentPriceModifier: 10
+      percentPriceModifier: 10,
     };
   });
 
@@ -77,41 +77,13 @@ describe('validator for eventScoreModifier and springModifier', () => {
   beforeEach(() => {
     payload = {
       eventScoreModifier: 50,
-      springModifier: 0.1
+      springModifier: 0.1,
     };
   });
 
   it('should validate eventScoreModifier with valid payload', async () => {
     const validatedPayload = await validateAdminModifiers(payload);
     expect(validatedPayload).toEqual(payload);
-  });
-
-  it('should throw an error if eventScoreModifier > 100', async () => {
-    payload.eventScoreModifier = 200;
-
-    let error;
-    try {
-      await validateAdminModifiers(payload);
-    } catch (err) {
-      error = err;
-    }
-    expect(error.toString()).toEqual(
-      'Event Score Modifier must be less than or equal to 100'
-    );
-  });
-
-  it('should throw an error if eventScoreModifier < -100', async () => {
-    payload.eventScoreModifier = -200;
-
-    let error;
-    try {
-      await validateAdminModifiers(payload);
-    } catch (err) {
-      error = err;
-    }
-    expect(error.toString()).toEqual(
-      'Event Score Modifier must be greater than or equal to -100'
-    );
   });
 
   it('should throw an error if eventScoreModifier is not a number', async () => {
@@ -195,7 +167,7 @@ describe('validator for overridePrice', () => {
   let payload;
   beforeEach(() => {
     payload = {
-      overridePrice: 10
+      overridePrice: 10,
     };
   });
 

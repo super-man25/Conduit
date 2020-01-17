@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 type Props = {
   component: React.ElementType,
-  authorized: boolean
+  authorized: boolean,
 };
 
 export const SecuredRoute = ({

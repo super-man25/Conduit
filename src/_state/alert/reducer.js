@@ -2,7 +2,7 @@ import { SUCCESS, ERROR, CLEAR } from './actions';
 
 const initialState = {
   type: null,
-  message: null
+  message: null,
 };
 
 export default function alertReducer(state = initialState, action) {
@@ -10,12 +10,12 @@ export default function alertReducer(state = initialState, action) {
     case SUCCESS:
       return {
         type: 'api-success',
-        message: action.payload
+        message: action.payload,
       };
     case ERROR:
       return {
         type: 'api-error',
-        message: action.payload
+        message: action.payload,
       };
     case CLEAR:
       return initialState;

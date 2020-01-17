@@ -32,7 +32,7 @@ export function* bulkUpdate(action) {
           overridePrice: parseFloat(payload.overridePrice),
           minimumPrice: parseFloat(payload.minimumPrice),
           maximumPrice: parseFloat(payload.maximumPrice),
-          eventSeatIds: seatIds
+          eventSeatIds: seatIds,
         })
       )
     );
@@ -54,5 +54,5 @@ function* watchBulkUpdate() {
 }
 
 export default {
-  watchBulkUpdate
+  watchBulkUpdate,
 };

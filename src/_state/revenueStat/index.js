@@ -10,15 +10,15 @@ const RESET = `revenueStat/RESET`;
 
 export type FetchStatsAction = {
   type: 'revenueStat/FETCH',
-  payload: { seasonId?: number, eventId?: number }
+  payload: { seasonId?: number, eventId?: number },
 };
 export type FetchSuccessAction = {
   type: 'revenueStat/FETCH_SUCCESS',
-  payload: EDTicketBreakdown[]
+  payload: EDTicketBreakdown[],
 };
 export type FetchErrorAction = {
   type: 'revenueStat/FETCH_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type ResetAction = { type: 'revenueStat/RESET' };
 
@@ -31,10 +31,10 @@ export type Action =
 // Actions
 const fetch = (payload: {
   seasonId?: number,
-  eventId?: number
+  eventId?: number,
 }): FetchStatsAction => ({
   type: FETCH,
-  payload
+  payload,
 });
 const reset = (): ResetAction => ({ type: RESET });
 
@@ -42,13 +42,13 @@ const reset = (): ResetAction => ({ type: RESET });
 type State = {
   +loading: boolean,
   +ticketBreakdown: EDTicketBreakdown[],
-  +error: ?Error
+  +error: ?Error,
 };
 
 export const initialState: State = {
   loading: false,
   ticketBreakdown: [],
-  error: null
+  error: null,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -60,7 +60,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         loading: false,
         ticketBreakdown: action.payload,
-        error: null
+        error: null,
       };
     case FETCH_ERROR:
       return { ...state, loading: false, error: action.payload };

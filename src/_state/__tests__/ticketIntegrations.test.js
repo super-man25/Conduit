@@ -2,7 +2,7 @@ import reducer, {
   types,
   selectors,
   actions,
-  initialState
+  initialState,
 } from '../ticketIntegrations';
 import { fetchTicketIntegrations as fetchTicketIntegrationsSaga } from '../ticketIntegrations/saga';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
@@ -25,7 +25,7 @@ describe('reducer', () => {
     const prevState = {
       ticketIntegrations: [],
       loading: false,
-      error: 'Possible Error'
+      error: 'Possible Error',
     };
 
     const action = { type: types.FETCH };
@@ -34,7 +34,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ticketIntegrations: [],
       loading: true,
-      error: null
+      error: null,
     });
   });
 
@@ -42,26 +42,26 @@ describe('reducer', () => {
     const prevState = {
       ticketIntegrations: [],
       loading: true,
-      error: null
+      error: null,
     };
 
     const action = {
       type: types.FETCH_SUCCESS,
-      payload: [{ id: 1 }, { id: 2 }]
+      payload: [{ id: 1 }, { id: 2 }],
     };
     const nextState = reducer(prevState, action);
 
     expect(nextState).toEqual({
       ticketIntegrations: [{ id: 1 }, { id: 2 }],
       loading: false,
-      error: null
+      error: null,
     });
   });
 
   it('should handle FETCH_ERROR actions', () => {
     const prevState = {
       loading: true,
-      error: null
+      error: null,
     };
 
     const action = { type: types.FETCH_ERROR, payload: 'ERROR' };
@@ -69,7 +69,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       loading: false,
-      error: 'ERROR'
+      error: 'ERROR',
     });
   });
 });
@@ -78,8 +78,8 @@ describe('selectors', () => {
   it('selectTicketIntegrations should return the current ticketIntegrations', () => {
     const store = {
       ticketIntegration: {
-        ticketIntegrations: [1, 2, 3]
-      }
+        ticketIntegrations: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectTicketIntegrations(store)).toEqual([1, 2, 3]);
@@ -89,8 +89,8 @@ describe('selectors', () => {
     const store = {
       ticketIntegration: {
         loading: true,
-        ticketIntegrations: [1, 2, 3]
-      }
+        ticketIntegrations: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectTicketIntegrationsLoading(store)).toEqual(true);
@@ -101,8 +101,8 @@ describe('selectors', () => {
       ticketIntegration: {
         loading: true,
         ticketIntegrations: [1, 2, 3],
-        error: 'Possible Error'
-      }
+        error: 'Possible Error',
+      },
     };
 
     expect(selectors.selectTicketIntegrationsError(store)).toEqual(

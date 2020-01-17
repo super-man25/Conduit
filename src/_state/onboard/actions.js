@@ -7,10 +7,10 @@ export const ONBOARD_CLIENT_ERROR = 'onboard/ONBOARD_CLIENT_ERROR';
 function onboardClient(data) {
   return {
     type: ONBOARD_CLIENT_ASYNC,
-    payload: data
+    payload: data,
   };
 }
 
 export default {
-  onboardClient
+  onboardClient,
 };

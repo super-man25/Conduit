@@ -4,7 +4,7 @@ import { SecondaryPricingRulePresenter } from '../components/SecondaryPricingRul
 import {
   SettingEditButton,
   PrimaryButton,
-  NumberInputField
+  NumberInputField,
 } from '_components';
 
 describe('<SecondaryPricingRulePresenter />', () => {
@@ -12,7 +12,7 @@ describe('<SecondaryPricingRulePresenter />', () => {
     id: 1,
     percent: 10,
     constant: null,
-    updateSecondaryPricingRule: jest.fn()
+    updateSecondaryPricingRule: jest.fn(),
   };
 
   it('renders correctly', () => {

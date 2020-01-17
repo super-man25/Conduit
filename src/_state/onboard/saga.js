@@ -4,7 +4,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import {
   ONBOARD_CLIENT_ASYNC,
   ONBOARD_CLIENT_SUCCESS,
-  ONBOARD_CLIENT_ERROR
+  ONBOARD_CLIENT_ERROR,
 } from './actions';
 import { actions as alertActions } from '../alert';
 
@@ -26,5 +26,5 @@ function* watchOnboardClientAsync() {
 }
 
 export default {
-  watchOnboardClientAsync
+  watchOnboardClientAsync,
 };

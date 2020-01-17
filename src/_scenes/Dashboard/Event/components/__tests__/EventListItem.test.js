@@ -11,10 +11,10 @@ const createProps = () => ({
     capacity: 10000,
     timestamp: 1529336865706,
     modifiedAt: 1529336865706,
-    createdAt: 1529336865706
+    createdAt: 1529336865706,
   },
   active: true,
-  onClick: () => {}
+  onClick: () => {},
 });
 
 describe('<EventListItem />', () => {

@@ -8,7 +8,7 @@ import { selectors as eventSelectors } from '../event';
 import {
   alphaFirstSort,
   findUniqueSections,
-  mapSectionsToPriceScales
+  mapSectionsToPriceScales,
 } from './utils';
 import type { FetchEventInventoryAction } from './';
 import { types, actions, selectors as eventInventorySelectors } from './';
@@ -21,7 +21,7 @@ export function* fetchEventInventory(
 
     const [eventInventory, priceScales] = yield all([
       call(eventService.getInventory, id),
-      call(venueService.getPriceScales, venueId)
+      call(venueService.getPriceScales, venueId),
     ]);
     yield put(
       actions.setSectionsToPriceScaleAction(
@@ -36,11 +36,11 @@ export function* fetchEventInventory(
     );
     yield put({
       type: types.FETCH_EVENT_INVENTORY_SUCCESS,
-      payload: eventInventory
+      payload: eventInventory,
     });
     yield put({
       type: types.SET_EVENT_INVENTORY_FILTER,
-      payload: 'priceScaleId'
+      payload: 'priceScaleId',
     });
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_INVENTORY_ERROR, payload: err });
@@ -60,14 +60,14 @@ export function* saveEditedRow(): Saga<void> {
     overridePrice: parseFloat(editedRowState.overridePrice),
     minimumPrice: parseFloat(editedRowState.minimumPrice),
     maximumPrice: parseFloat(editedRowState.maximumPrice),
-    isListed: editedRowState.isListed
+    isListed: editedRowState.isListed,
   };
 
   try {
     yield call(eventService.updateEventSeats, updateParams);
 
     yield put({
-      type: types.SAVE_EDITED_ROW_SUCCESS
+      type: types.SAVE_EDITED_ROW_SUCCESS,
     });
   } catch (error) {
     let msg =
@@ -80,8 +80,8 @@ export function* saveEditedRow(): Saga<void> {
       type: types.SAVE_EDITED_ROW_ERROR,
       payload: {
         error,
-        editedRowSeatIds
-      }
+        editedRowSeatIds,
+      },
     });
   }
 }
@@ -96,5 +96,5 @@ function* watchSaveEditedRow(): Saga<void> {
 
 export default {
   watchFetchEventInventory,
-  watchSaveEditedRow
+  watchSaveEditedRow,
 };

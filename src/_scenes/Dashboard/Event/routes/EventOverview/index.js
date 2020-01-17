@@ -14,7 +14,7 @@ import { EventPricing } from './components/EventPricing';
 
 type Props = {
   event: ?EDEvent,
-  isAdmin: boolean
+  isAdmin: boolean,
 };
 
 export const EventOverview = ({ event, isAdmin }: Props) =>
@@ -37,7 +37,7 @@ export const EventOverview = ({ event, isAdmin }: Props) =>
 function mapStateToProps(state) {
   return {
     event: selectors.selectEvent(state),
-    isAdmin: state.auth.model.isAdmin
+    isAdmin: state.auth.model.isAdmin,
   };
 }
 

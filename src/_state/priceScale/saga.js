@@ -17,5 +17,5 @@ function* watchFetchPriceScales() {
 }
 
 export default {
-  watchFetchPriceScales
+  watchFetchPriceScales,
 };

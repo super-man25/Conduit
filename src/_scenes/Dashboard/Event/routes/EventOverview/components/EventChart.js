@@ -26,7 +26,7 @@ import {
   CumulativeInventoryChartLegend,
   ReportDownloadButton,
   Text,
-  DateRangeFilter
+  DateRangeFilter,
 } from '_components';
 import {
   cssConstants,
@@ -34,7 +34,7 @@ import {
   GROUP_FILTERS,
   CONCISE_READABLE_DATETIME_FORMAT,
   READABLE_DATE_FORMAT,
-  mobileBreakpoint
+  mobileBreakpoint,
 } from '_constants';
 import type { EventStatState } from '_state/eventStat/reducer';
 import { selectors } from '_state/event';
@@ -48,7 +48,7 @@ import {
   renderMinorXAxisTicks,
   renderMajorXAxisTicks,
   renderMobileXAxisTicks,
-  isMobileDevice
+  isMobileDevice,
 } from '_helpers';
 import { EventScoreHistoryChart } from '_components/Charts/EventScoreHistoryChart';
 
@@ -91,9 +91,9 @@ const DateFilterOptions = styled.div`
 `;
 
 const NoData = ({
-  type
+  type,
 }: {
-  type: 'Revenue' | 'Inventory' | 'Event Score'
+  type: 'Revenue' | 'Inventory' | 'Event Score',
 }) => (
   <Flex justify="center" align="center" height={`${CHART_HEIGHT}px`}>
     No {type} Data to Display
@@ -103,11 +103,11 @@ const NoData = ({
 const ChartLegend = ({
   selectedGroupFilter,
   selectedTab,
-  hasProjected
+  hasProjected,
 }: {
   selectedGroupFilter: number,
   selectedTab: number,
-  hasProjected: boolean
+  hasProjected: boolean,
 }) => {
   if (selectedGroupFilter === 0 && selectedTab === 0)
     return <PeriodicRevenueChartLegend hasProjected={hasProjected} />;
@@ -127,7 +127,7 @@ type Props = {
   eventScoreHistoryActions: any,
   activeEvent: EDEvent,
   selectedSeason: EDSeason,
-  hasProjected: boolean
+  hasProjected: boolean,
 };
 
 export class EventChart extends React.Component<Props> {
@@ -136,7 +136,7 @@ export class EventChart extends React.Component<Props> {
     this.props.eventScoreHistoryActions.fetch({
       eventId: this.props.activeEvent.id,
       startDate: this.props.eventStatState.dateRange.from,
-      endDate: this.props.eventStatState.dateRange.to
+      endDate: this.props.eventStatState.dateRange.to,
     });
   }
 
@@ -159,7 +159,7 @@ export class EventChart extends React.Component<Props> {
       this.props.eventScoreHistoryActions.fetch({
         eventId: this.props.activeEvent.id,
         startDate: this.props.eventStatState.dateRange.from,
-        endDate: this.props.eventStatState.dateRange.to
+        endDate: this.props.eventStatState.dateRange.to,
       });
     }
   }
@@ -168,15 +168,15 @@ export class EventChart extends React.Component<Props> {
     const {
       activeEvent: { id },
       eventStatState: {
-        dateRange: { from, to }
+        dateRange: { from, to },
       },
-      eventStatActions: { downloadEventReport }
+      eventStatActions: { downloadEventReport },
     } = this.props;
     downloadEventReport({
       id: id,
       type: 'event',
       start: from ? from.toISOString() : null,
-      end: to ? to.toISOString() : null
+      end: to ? to.toISOString() : null,
     });
   };
 
@@ -190,13 +190,13 @@ export class EventChart extends React.Component<Props> {
         eventDateLimits,
         selectedGroupFilter,
         eventStats,
-        eventStatsMeta
+        eventStatsMeta,
       },
       eventStatActions: { setDateRange, setGroupFilter },
       eventScoreHistoryState: { eventScoreHistory },
       selectedSeason: { startTimestamp },
       activeEvent: { timestamp, totalInventory },
-      hasProjected
+      hasProjected,
     } = this.props;
     const { interval, timeZone } = eventStatsMeta || {};
 
@@ -216,7 +216,7 @@ export class EventChart extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: eventStats.length
+        dataLength: eventStats.length,
       });
     };
 
@@ -225,7 +225,7 @@ export class EventChart extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: eventStats.length
+        dataLength: eventStats.length,
       });
     };
 
@@ -234,7 +234,7 @@ export class EventChart extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: eventStats.length
+        dataLength: eventStats.length,
       });
     };
 
@@ -302,12 +302,12 @@ export class EventChart extends React.Component<Props> {
                       dateRange={{ from, to }}
                       allTimeDateRange={{
                         from: startTimestamp,
-                        to: timestamp
+                        to: timestamp,
                       }}
                       setDateRange={setDateRange}
                       disabledDays={{
                         before: eventDateLimits.from,
-                        after: eventDateLimits.to
+                        after: eventDateLimits.to,
                       }}
                     />
                     <ReportDownloadButton
@@ -408,7 +408,7 @@ const mapStateToProps = createStructuredSelector({
   eventScoreHistoryState: (state) => state.eventScoreHistory,
   activeEvent: selectors.selectEvent,
   selectedSeason: seasonSelector.selectActiveSeason,
-  hasProjected: getHasProjected
+  hasProjected: getHasProjected,
 });
 
 function mapDispatchToProps(dispatch) {
@@ -417,7 +417,7 @@ function mapDispatchToProps(dispatch) {
     eventScoreHistoryActions: bindActionCreators(
       eventScoreHistoryActions,
       dispatch
-    )
+    ),
   };
 }
 

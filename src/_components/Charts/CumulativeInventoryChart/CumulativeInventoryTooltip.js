@@ -7,7 +7,7 @@ type TooltipContentProps = {
   active?: boolean,
   payload?: any,
   dateFormatter: (Date) => string,
-  totalInventory: number
+  totalInventory: number,
 };
 
 export function CumulativeInventoryTooltip(props: TooltipContentProps) {
@@ -24,7 +24,7 @@ export function CumulativeInventoryTooltip(props: TooltipContentProps) {
   const bodyJson = {
     'Remaining Inventory': inventory,
     'Revenue To Date': revenue,
-    'Avg. Ticket Price To Date': avgTicketPrice
+    'Avg. Ticket Price To Date': avgTicketPrice,
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;

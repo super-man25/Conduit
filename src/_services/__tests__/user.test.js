@@ -5,18 +5,18 @@ const user = {
   id: 1,
   email: 'test@dialexa.com',
   firstName: 'test',
-  lastName: 'user'
+  lastName: 'user',
 };
 
 const updatedUser = {
   id: 1,
   email: 'test@dialexa.com',
   firstName: 'test1',
-  lastName: 'user1'
+  lastName: 'user1',
 };
 
 const forgotEmail = {
-  email: 'test@dialexa.com'
+  email: 'test@dialexa.com',
 };
 
 describe('get by Id', () => {

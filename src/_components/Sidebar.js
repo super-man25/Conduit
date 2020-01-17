@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { cssConstants, mobileBreakpoint } from '_constants';
 
 type Props = {
-  collapsed: boolean
+  collapsed: boolean,
 };
 
 export const Sidebar: React.ComponentType<Props> = styled.div`

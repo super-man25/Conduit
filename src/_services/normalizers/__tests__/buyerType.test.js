@@ -7,13 +7,13 @@ describe('denormalize', () => {
       {
         id: '3161',
         code: 'ADULT',
-        disabled: true
+        disabled: true,
       },
       {
         id: '3162',
         code: 'CHILD',
-        disabled: false
-      }
+        disabled: false,
+      },
     ];
   });
 
@@ -30,7 +30,7 @@ describe('denormalize', () => {
       expect.objectContaining({
         externalBuyerTypeId: '3161',
         code: 'ADULT',
-        disabled: true
+        disabled: true,
       })
     );
   });

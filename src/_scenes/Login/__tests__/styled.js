@@ -4,7 +4,7 @@ import {
   ForgotLink,
   Content,
   LoginFooter,
-  LogoImg
+  LogoImg,
 } from '../components/styled';
 import edLogoImage from '_images/eventdynamiclogo.svg';
 import renderer from 'react-test-renderer';

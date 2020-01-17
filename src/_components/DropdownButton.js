@@ -63,11 +63,11 @@ const Option = styled.div`
 export class DropdownButton extends React.Component {
   static defaultProps = {
     onSelect: () => {},
-    parseLabel: (opt) => opt
+    parseLabel: (opt) => opt,
   };
 
   state = {
-    show: false
+    show: false,
   };
 
   handleClickAway = () => {
@@ -125,5 +125,5 @@ DropdownButton.propTypes = {
    * Function to be called when an item is selected. It is passed the selected option and
    * its index.
    */
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
 };

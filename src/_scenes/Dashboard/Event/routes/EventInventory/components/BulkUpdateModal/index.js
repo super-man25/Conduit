@@ -9,7 +9,7 @@ import {
   SelectDropdown,
   NumberInputField,
   AsyncButton,
-  Modal
+  Modal,
 } from '_components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -23,44 +23,44 @@ import {
   Label,
   Field,
   NumberInput,
-  FieldErrorText
+  FieldErrorText,
 } from './styled';
 
 const ACTIONS = {
   updatePrice: 0,
   updateListed: 1,
   updateMinimumPrice: 2,
-  updateMaximumPrice: 3
+  updateMaximumPrice: 3,
 };
 
 export const selectActions = [
   {
     label: 'Update Manual Price',
     value: ACTIONS.updatePrice,
-    dataKey: 'overridePrice'
+    dataKey: 'overridePrice',
   },
   {
     label: 'Update Pricing Status',
     value: ACTIONS.updateListed,
-    dataKey: 'isListed'
+    dataKey: 'isListed',
   },
   {
     label: 'Update Minimum Price',
     value: ACTIONS.updateMinimumPrice,
-    dataKey: 'minimumPrice'
+    dataKey: 'minimumPrice',
   },
   {
     label: 'Update Maximum Price',
     value: ACTIONS.updateMaximumPrice,
-    dataKey: 'maximumPrice'
-  }
+    dataKey: 'maximumPrice',
+  },
 ];
 
 export class BulkUpdateModalPresenter extends Component {
   state = {
     touched: {},
     selectedAction: selectActions[0],
-    value: ''
+    value: '',
   };
 
   onBlur = (e) => {
@@ -70,8 +70,8 @@ export class BulkUpdateModalPresenter extends Component {
     this.setState({
       touched: {
         ...touched,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
   };
 
@@ -93,7 +93,7 @@ export class BulkUpdateModalPresenter extends Component {
     const { value, selectedAction } = this.state;
 
     submitBulkUpdate({
-      [selectedAction.dataKey]: value
+      [selectedAction.dataKey]: value,
     });
   };
 
@@ -101,7 +101,7 @@ export class BulkUpdateModalPresenter extends Component {
     const { value } = this.state;
 
     const isValidNumber = validateDecimal(value, {
-      decimalDigits: '1,2'
+      decimalDigits: '1,2',
     });
 
     return isValidNumber && Number(value) >= 0;
@@ -263,12 +263,12 @@ export class BulkUpdateModalPresenter extends Component {
 
 const mapStateToProps = createStructuredSelector({
   rows: eventInventorySelectors.selectSelectedRows,
-  loading: selectors.isLoading
+  loading: selectors.isLoading,
 });
 
 const mapDispatchToProps = {
   cancelBulkUpdate: actions.cancelBulkUpdate,
-  submitBulkUpdate: actions.submitBulkUpdate
+  submitBulkUpdate: actions.submitBulkUpdate,
 };
 
 export const BulkUpdateModal = connect(

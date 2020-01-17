@@ -11,15 +11,15 @@ describe('<SeasonRevenuePanel />', () => {
       dateRange: { from: null, to: null },
       eventDateLimits: { from: null, to: null },
       selectedGroupFilter: null,
-      seasonStats: []
+      seasonStats: [],
     },
     seasonStatActions: {
       fetch: jest.fn(),
       setGroupFilter: jest.fn(),
       setDateRange: jest.fn(),
-      downloadSeasonReport: jest.fn()
+      downloadSeasonReport: jest.fn(),
     },
-    selectedSeason: { startTimestamp: null, endTimestamp: null }
+    selectedSeason: { startTimestamp: null, endTimestamp: null },
   };
 
   it('should render correctly', () => {

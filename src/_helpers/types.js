@@ -3,12 +3,12 @@
 
 export type Option = {
   label: string,
-  value: any
+  value: any,
 };
 
 export type Filter = Option;
 
 export type DateRange = {
   from: ?Date,
-  to: ?Date
+  to: ?Date,
 };

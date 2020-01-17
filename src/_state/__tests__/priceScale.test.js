@@ -7,7 +7,7 @@ import {
   actions,
   types,
   reducer,
-  initialState
+  initialState,
 } from '_state/priceScale';
 
 describe('actions', () => {
@@ -26,7 +26,7 @@ describe('reducer', () => {
   it('should handle FETCH_PRICE_SCALES', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.FETCH_PRICE_SCALES };
@@ -34,20 +34,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_PRICE_SCALES_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const priceScales = [{ name: 'Dugout Club' }];
     const action = {
       type: types.FETCH_PRICE_SCALES_SUCCESS,
-      payload: priceScales
+      payload: priceScales,
     };
 
     const nextState = reducer(prevState, action);
@@ -55,19 +55,19 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      priceScales
+      priceScales,
     });
   });
 
   it('should handle FETCH_PRICE_SCALES_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = {
       type: types.FETCH_PRICE_SCALES_ERROR,
-      payload: 'An error'
+      payload: 'An error',
     };
 
     const nextState = reducer(prevState, action);
@@ -75,7 +75,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'An error'
+      error: 'An error',
     });
   });
 });
@@ -108,8 +108,8 @@ describe('selectors', () => {
     const store = {
       priceScale: {
         ...initialState,
-        priceScales: [1, 2, 3]
-      }
+        priceScales: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectAllPriceScales(store)).toEqual([1, 2, 3]);

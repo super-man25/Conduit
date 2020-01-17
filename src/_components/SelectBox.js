@@ -16,7 +16,7 @@ type Props = {
   margin: string,
   padding: string,
   border: string,
-  background: string
+  background: string,
 };
 export const SelectBox: React.ComponentType<Props> = styled.select.attrs(
   (props) => ({
@@ -25,7 +25,7 @@ export const SelectBox: React.ComponentType<Props> = styled.select.attrs(
       : cssConstants.PRIMARY_DARKEST_GRAY,
     background: props.noBg ? 'transparent' : cssConstants.PRIMARY_WHITE,
     border: props.noBg ? 'none' : '1px solid',
-    margin: props.noBg ? '0 0 0 -10px' : 0
+    margin: props.noBg ? '0 0 0 -10px' : 0,
   })
 )`
   position: relative;

@@ -13,15 +13,15 @@ const toggleSidebar = (): SidebarToggleAction => ({ type: SIDEBAR_TOGGLE });
 
 // State/Reducer
 type State = {
-  +sidebarIsOpen: boolean
+  +sidebarIsOpen: boolean,
 };
 
 export const initialState: State = {
-  sidebarIsOpen: !isMobileDevice
+  sidebarIsOpen: !isMobileDevice,
 };
 
 type Store = {
-  ui: State
+  ui: State,
 };
 
 export default function reducer(state: State = initialState, action: Action) {

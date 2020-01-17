@@ -10,13 +10,13 @@ const priceRules = [
     name: 'Twenty bucks off',
     constant: -20,
     isActive: true,
-    round: 'Floor'
-  }
+    round: 'Floor',
+  },
 ];
 
 jest.mock('../normalizers/priceRule', () => ({
   normalize: jest.fn((body) => body),
-  denormalize: jest.fn((payload) => Promise.resolve(payload))
+  denormalize: jest.fn((payload) => Promise.resolve(payload)),
 }));
 
 describe('get all', () => {
@@ -52,7 +52,7 @@ describe('update', () => {
   it('should update a price rule', () => {
     const prId = priceRules[0].id;
     const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
-      id: prId
+      id: prId,
     });
 
     return priceRuleService.update(priceRules[0]).then((res) => {
@@ -65,7 +65,7 @@ describe('update', () => {
     const prId = priceRules[0].id;
     const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
       status: 409,
-      body: { proVenuePricingRules: [1, 2] }
+      body: { proVenuePricingRules: [1, 2] },
     });
 
     const success = jest.fn();
@@ -86,7 +86,7 @@ describe('update', () => {
     const prId = priceRules[0].id;
     const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
       status: 409,
-      body: { excludedBuyerTypes: ['222'] }
+      body: { excludedBuyerTypes: ['222'] },
     });
 
     const success = jest.fn();
@@ -109,7 +109,7 @@ describe('update', () => {
     const prId = priceRules[0].id;
     const mock = fetchMock.put(`end:proVenuePricingRules/${prId}`, {
       status: 409,
-      body: { excludedBuyerTypes: ['222'], proVenuePricingRules: [1, 2] }
+      body: { excludedBuyerTypes: ['222'], proVenuePricingRules: [1, 2] },
     });
 
     const success = jest.fn();

@@ -4,7 +4,7 @@ import { EventPricingPresenter } from '../EventPricing';
 
 const defaultProps = {
   event: {
-    id: 1
+    id: 1,
   },
   togglingBroadcasting: false,
   setBroadcasting: jest.fn(),
@@ -17,14 +17,14 @@ const defaultProps = {
     eventScore: 1,
     eventScoreModifier: 1,
     spring: 1,
-    springModifier: 1
+    springModifier: 1,
   },
   pricingPreview: {
     record: 'record',
-    loading: false
+    loading: false,
   },
   handleModifierChange: jest.fn(),
-  resetFactors: jest.fn()
+  resetFactors: jest.fn(),
 };
 
 it('renders correctly', () => {

@@ -8,7 +8,7 @@ import { mockDateFnsFormat, mockIsAfter } from '_helpers/test-utils';
 
 jest.mock('date-fns', () => ({
   format: (date, format) => mockDateFnsFormat(date, format),
-  isAfter: (timestamp, today) => mockIsAfter(timestamp, today)
+  isAfter: (timestamp, today) => mockIsAfter(timestamp, today),
 }));
 
 const createProps = () => ({
@@ -23,16 +23,16 @@ const createProps = () => ({
     timestamp: 1529336865706,
     venueId: 1,
     revenue: 739472,
-    timeZone: 'America/Chicago'
+    timeZone: 'America/Chicago',
   },
   availableInventory: 100,
   totalInventory: 1000,
-  pathname: '/event/1/'
+  pathname: '/event/1/',
 });
 
 describe('<EventHeader />', () => {
   const initialState = {
-    sidebarIsOpen: true
+    sidebarIsOpen: true,
   };
   const mockStore = configureStore();
   it('should render correctly', () => {

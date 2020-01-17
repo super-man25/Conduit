@@ -4,7 +4,7 @@ import { Flex } from '_components';
 import {
   FeatureGroupWrapper,
   FeatureGroupTitle,
-  FeatureInputLabel
+  FeatureInputLabel,
 } from './styled';
 import { DemoDropdown } from './DemoDropdown';
 
@@ -12,7 +12,7 @@ export function OpponentFeatureGroup({
   selectedOpponentType,
   onOpponentTypeChange,
   optionsOpponentType,
-  parseOption
+  parseOption,
 }) {
   return (
     <FeatureGroupWrapper>

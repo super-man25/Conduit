@@ -6,7 +6,7 @@ import { SeatMap } from './SeatMap';
 
 export class EventInventorySeatMap extends React.Component {
   state = {
-    showMap: false
+    showMap: false,
   };
 
   toggleSeatMap = (value) => {

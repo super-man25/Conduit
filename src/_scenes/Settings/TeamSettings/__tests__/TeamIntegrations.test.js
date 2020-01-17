@@ -8,18 +8,18 @@ describe('<TeamIntegrations />', () => {
       {
         name: 'tickets.com',
         isPrimary: true,
-        isActive: true
-      }
+        isActive: true,
+      },
     ],
     secondary: [
       {
         name: 'seatgeek.com',
         isPrimary: false,
-        isActive: true
-      }
+        isActive: true,
+      },
     ],
     handleIntegrationToggle: jest.fn(),
-    handleSecondaryPriceRuleUpdate: jest.fn()
+    handleSecondaryPriceRuleUpdate: jest.fn(),
   };
 
   it('render correctly', () => {

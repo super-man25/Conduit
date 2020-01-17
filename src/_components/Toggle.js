@@ -8,24 +8,24 @@ const toggleSizes = {
   xsmall: {
     width: 30,
     height: 6,
-    toggleRadius: 10
+    toggleRadius: 10,
   },
   small: {
     width: 40,
     height: 8,
-    toggleRadius: 15
+    toggleRadius: 15,
   },
   large: {
     width: 60,
     height: 10,
-    toggleRadius: 20
-  }
+    toggleRadius: 20,
+  },
 };
 
 function getSliderTransformX(props) {
   const {
     isActive,
-    size: { width, toggleRadius }
+    size: { width, toggleRadius },
   } = props;
 
   return isActive ? width - toggleRadius : 0;
@@ -81,7 +81,7 @@ type Props = {
   onChange: () => void,
   isDisabled: boolean,
   size: 'large' | 'small' | 'xsmall',
-  title?: string
+  title?: string,
 };
 
 export function Toggle(props: Props) {
@@ -99,5 +99,5 @@ export function Toggle(props: Props) {
 }
 
 Toggle.defaultProps = {
-  size: 'large'
+  size: 'large',
 };

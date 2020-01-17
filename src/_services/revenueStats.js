@@ -4,7 +4,7 @@ import type { EDTicketBreakdown } from '_models';
 
 function getAll(payload: {
   seasonId?: number,
-  eventId?: number
+  eventId?: number,
 }): Promise<EDTicketBreakdown[]> {
   return get('revenueStats', payload);
 }

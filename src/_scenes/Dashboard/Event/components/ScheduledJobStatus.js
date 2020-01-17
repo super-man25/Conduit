@@ -30,11 +30,11 @@ const ScheduledJobStatusNotice = styled(P1)`
 export const ScheduledJobStatus = ({
   past,
   scheduledJob,
-  timeZone
+  timeZone,
 }: {
   past: Boolean,
   scheduledJob: EDScheduledJob,
-  timeZone: string
+  timeZone: string,
 }) => {
   if (past || !scheduledJob) {
     return null;
@@ -44,20 +44,20 @@ export const ScheduledJobStatus = ({
   const map = {
     Pending: {
       status: 'warn',
-      title: 'Pending'
+      title: 'Pending',
     },
     Success: {
       status: 'success',
-      title: 'Success'
+      title: 'Success',
     },
     Failure: {
       status: 'error',
-      title: 'Notice'
+      title: 'Notice',
     },
     Running: {
       status: 'info',
-      title: 'Running'
-    }
+      title: 'Running',
+    },
   };
 
   const args = map[status];

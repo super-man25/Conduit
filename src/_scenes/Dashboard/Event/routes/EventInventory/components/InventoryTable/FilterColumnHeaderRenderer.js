@@ -9,7 +9,7 @@ import { cssConstants } from '_constants';
 import type {
   EDInventorySectionFilter,
   EDInventorySort,
-  EDVenuePriceScale
+  EDVenuePriceScale,
 } from '_models';
 
 type Props = {
@@ -25,11 +25,11 @@ type Props = {
   setSelectedFilters: (
     EDVenuePriceScale[] | EDInventorySectionFilter[]
   ) => void,
-  clearFilters: () => void
+  clearFilters: () => void,
 };
 
 type State = {
-  filterDropdownOpen: boolean
+  filterDropdownOpen: boolean,
 };
 
 export const FilterWithClickAway = withClickAway(Filter);
@@ -56,7 +56,7 @@ export class FilterColumnHeader extends React.Component<Props, State> {
     const { filterDropdownOpen } = this.state;
 
     this.setState({
-      filterDropdownOpen: !filterDropdownOpen
+      filterDropdownOpen: !filterDropdownOpen,
     });
   };
 
@@ -67,7 +67,7 @@ export class FilterColumnHeader extends React.Component<Props, State> {
 
     return {
       top: `calc(${Math.ceil(top)}px + 25px)`,
-      left: `calc(${Math.ceil(left)}px - 43px)`
+      left: `calc(${Math.ceil(left)}px - 43px)`,
     };
   }
 
@@ -80,7 +80,7 @@ export class FilterColumnHeader extends React.Component<Props, State> {
       selectedFilters,
       clearFilters,
       dataKey,
-      filter
+      filter,
     } = this.props;
     const { filterDropdownOpen } = this.state;
     const { top, left } = this.getPositionOfFilterIcon();
@@ -153,7 +153,7 @@ export const filterColumnHeaderRenderer = (
       filter,
       setFilter,
       clearFilters,
-      setSelectedFilters
+      setSelectedFilters,
     }}
   />
 );

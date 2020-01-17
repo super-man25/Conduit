@@ -16,28 +16,28 @@ export const CHANGE_PASSWORD_ERROR = 'user/CHANGE_PASSWORD_ERROR';
 function create(user) {
   return {
     type: CREATE_ASYNC,
-    payload: user
+    payload: user,
   };
 }
 
 function update(user) {
   return {
     type: UPDATE_ASYNC,
-    payload: user
+    payload: user,
   };
 }
 
 function updateEmail(data) {
   return {
     type: UPDATE_EMAIL_ASYNC,
-    payload: data
+    payload: data,
   };
 }
 
 function changePassword(data) {
   return {
     type: CHANGE_PASSWORD_ASYNC,
-    payload: data
+    payload: data,
   };
 }
 
@@ -45,5 +45,5 @@ export default {
   create,
   update,
   updateEmail,
-  changePassword
+  changePassword,
 };

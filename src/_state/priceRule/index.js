@@ -25,87 +25,87 @@ const DELETE_PRICE_RULE_ERROR = 'priceRule/DELETE_PRICE_RULE_ERROR';
 
 // Action types
 export type FetchPriceRulesAction = {
-  type: 'priceRule/FETCH_PRICE_RULES'
+  type: 'priceRule/FETCH_PRICE_RULES',
 };
 
 export type FetchPriceRulesSuccessAction = {
   type: 'priceRule/FETCH_PRICE_RULES_SUCCESS',
-  payload: EDPriceRule[]
+  payload: EDPriceRule[],
 };
 
 export type FetchPriceRulesErrorAction = {
   type: 'priceRule/FETCH_PRICE_RULES_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type StartEditingPriceRuleAction = {
   type: 'priceRule/START_EDIT_PRICE_RULE',
-  payload: number
+  payload: number,
 };
 
 export type CancelEditingPriceRuleAction = {
   type: 'priceRule/CANCEL_EDIT_PRICE_RULE',
-  payload: number
+  payload: number,
 };
 
 export type ResetPriceRulesAction = {
   type: 'priceRule/RESET_PRICE_RULES',
-  payload: null
+  payload: null,
 };
 
 export type UpdatePriceRulePropertyAction = {
   type: 'priceRule/UPDATE_PRICE_RULE_PROPERTY',
-  payload: any
+  payload: any,
 };
 
 export type CreatePriceRuleAction = {
   type: 'priceRule/CREATE_PRICE_RULE',
-  payload: null
+  payload: null,
 };
 
 export type SavePriceRuleAction = {
   type: 'priceRule/SAVE_PRICE_RULE',
-  payload: number
+  payload: number,
 };
 
 export type SavePriceRuleSuccessAction = {
   type: 'priceRule/SAVE_PRICE_RULE_SUCCESS',
-  payload: number
+  payload: number,
 };
 
 export type SavePriceRuleErrorAction = {
   type: 'priceRule/SAVE_PRICE_RULE_ERROR',
-  payload: any
+  payload: any,
 };
 
 export type FetchPriceRuleAction = {
   type: 'priceRule/FETCH_PRICE_RULE',
-  payload: number
+  payload: number,
 };
 
 export type FetchPriceRuleSuccessAction = {
   type: 'priceRule/FETCH_PRICE_RULE_SUCCESS',
-  payload: EDPriceRule
+  payload: EDPriceRule,
 };
 
 export type FetchPriceRuleErrorAction = {
   type: 'priceRule/FETCH_PRICE_RULE_ERROR',
-  payload: any
+  payload: any,
 };
 
 export type DeletePricingRuleAction = {
   type: 'priceRule/DELETE_PRICE_RULE',
-  payload: number
+  payload: number,
 };
 
 export type DeletePricingRuleSuccessAction = {
   type: 'priceRule/DELETE_PRICE_RULE_SUCCESS',
-  payload: any
+  payload: any,
 };
 
 export type DeletePricingRuleErrorAction = {
   type: 'priceRule/DELETE_PRICE_RULE_ERROR',
-  payload: any
+  payload: any,
 };
 
 export type Action =
@@ -144,25 +144,25 @@ export const types = {
   FETCH_PRICE_RULE_ERROR,
   DELETE_PRICE_RULE,
   DELETE_PRICE_RULE_SUCCESS,
-  DELETE_PRICE_RULE_ERROR
+  DELETE_PRICE_RULE_ERROR,
 };
 
 // Actions
 const fetchPriceRules = (): FetchPriceRulesAction => ({
-  type: FETCH_PRICE_RULES
+  type: FETCH_PRICE_RULES,
 });
 
 const startEditingPriceRule = (id: number): StartEditingPriceRuleAction => {
   return {
     type: START_EDIT_PRICE_RULE,
-    payload: id
+    payload: id,
   };
 };
 
 const cancelEditingPriceRule = (id: number): CancelEditingPriceRuleAction => {
   return {
     type: CANCEL_EDIT_PRICE_RULE,
-    payload: id
+    payload: id,
   };
 };
 
@@ -171,36 +171,36 @@ const updatePriceRuleProperty = (
 ): UpdatePriceRulePropertyAction => {
   return {
     type: UPDATE_PRICE_RULE_PROPERTY,
-    payload
+    payload,
   };
 };
 
 const createPriceRule = (): CreatePriceRuleAction => {
   return {
     type: CREATE_PRICE_RULE,
-    payload: null
+    payload: null,
   };
 };
 
 const resetPriceRules = (): ResetPriceRulesAction => ({
   type: RESET_PRICE_RULES,
-  payload: null
+  payload: null,
 });
 
 const savePriceRule = (id: number): SavePriceRuleAction => ({
   type: SAVE_PRICE_RULE,
-  payload: id
+  payload: id,
 });
 
 const fetchPriceRule = (id: number): FetchPriceRuleAction => ({
   type: FETCH_PRICE_RULE,
-  payload: id
+  payload: id,
 });
 
 const deletePriceRule = (id: number): DeletePricingRuleAction => {
   return {
     type: DELETE_PRICE_RULE,
-    payload: id
+    payload: id,
   };
 };
 
@@ -213,7 +213,7 @@ export const actions = {
   createPriceRule,
   fetchPriceRule,
   savePriceRule,
-  deletePriceRule
+  deletePriceRule,
 };
 
 // State/Reducer
@@ -222,7 +222,7 @@ type State = {
   loading: boolean,
   editingRowId: number | null,
   editingRowState: ?any,
-  error: ?any
+  error: ?any,
 };
 
 export const initialState: State = {
@@ -230,11 +230,11 @@ export const initialState: State = {
   loading: false,
   editingRowId: null,
   editingRowState: {},
-  error: null
+  error: null,
 };
 
 type Store = {
-  priceRule: State
+  priceRule: State,
 };
 
 export const reducer = (state: State = initialState, action: Action): State => {
@@ -242,25 +242,25 @@ export const reducer = (state: State = initialState, action: Action): State => {
     case FETCH_PRICE_RULES:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FETCH_PRICE_RULES_SUCCESS:
       return {
         ...state,
         loading: false,
-        allRows: action.payload
+        allRows: action.payload,
       };
     case FETCH_PRICE_RULES_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case START_EDIT_PRICE_RULE:
       return {
         ...state,
         editingRowId: action.payload,
-        editingRowState: state.allRows.find((pr) => pr.id === action.payload)
+        editingRowState: state.allRows.find((pr) => pr.id === action.payload),
       };
     case CANCEL_EDIT_PRICE_RULE:
       if (action.payload === 0) {
@@ -269,14 +269,14 @@ export const reducer = (state: State = initialState, action: Action): State => {
           editingRowId: null,
           editingRowState: {},
           error: null,
-          allRows: state.allRows.slice(1)
+          allRows: state.allRows.slice(1),
         };
       }
       return {
         ...state,
         editingRowId: null,
         editingRowState: {},
-        error: null
+        error: null,
       };
     case UPDATE_PRICE_RULE_PROPERTY:
       const { propertyName, propertyValue } = action.payload;
@@ -284,8 +284,8 @@ export const reducer = (state: State = initialState, action: Action): State => {
         ...state,
         editingRowState: {
           ...state.editingRowState,
-          [propertyName]: propertyValue
-        }
+          [propertyName]: propertyValue,
+        },
       };
     case CREATE_PRICE_RULE:
       const initialPriceRule = { ...emptyEDPriceRule, id: 0 };
@@ -293,29 +293,29 @@ export const reducer = (state: State = initialState, action: Action): State => {
         ...state,
         editingRowId: 0,
         editingRowState: initialPriceRule,
-        allRows: [initialPriceRule, ...state.allRows]
+        allRows: [initialPriceRule, ...state.allRows],
       };
     case SAVE_PRICE_RULE:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case SAVE_PRICE_RULE_SUCCESS:
       return {
         ...state,
         error: null,
-        loading: false
+        loading: false,
       };
     case SAVE_PRICE_RULE_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case FETCH_PRICE_RULE:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FETCH_PRICE_RULE_SUCCESS:
       const { payload } = action;
@@ -329,7 +329,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
         error: null,
         allRows: state.allRows.some((pr) => payload.id === pr.id)
           ? state.allRows.map((pr) => (pr.id === payload.id ? payload : pr))
-          : [...state.allRows.slice(1), payload]
+          : [...state.allRows.slice(1), payload],
       };
     case FETCH_PRICE_RULE_ERROR:
       return {
@@ -337,24 +337,24 @@ export const reducer = (state: State = initialState, action: Action): State => {
         loading: false,
         editingRowId: null,
         editingRowState: {},
-        error: action.payload
+        error: action.payload,
       };
     case DELETE_PRICE_RULE:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case DELETE_PRICE_RULE_SUCCESS:
       return {
         ...state,
         loading: false,
-        error: null
+        error: null,
       };
     case DELETE_PRICE_RULE_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case RESET_PRICE_RULES:
       return initialState;
@@ -383,5 +383,5 @@ export const selectors = {
   selectEditingPriceRule,
   selectIsEditingPriceRule,
   selectBuyerTypesInActivePriceRules,
-  selectIsLoading
+  selectIsLoading,
 };

@@ -5,13 +5,13 @@ type SVGProps = {
   width: number,
   height: number,
   fill: string,
-  styles: { [string]: any }
+  styles: { [string]: any },
 };
 
 const defaultSVGProps = {
   width: 24,
   height: 24,
-  fill: '#000'
+  fill: '#000',
 };
 
 export const ExpandMoreIcon = ({

@@ -26,7 +26,7 @@ const WEIGHTS = new Map()
 type Props = {
   size: 'small' | 'medium' | 'large' | 'xlarge',
   weight: 'normal' | 'heavy' | 'light' | 'lighter',
-  types: 'primary' | 'secondary' | 'tertiary'
+  types: 'primary' | 'secondary' | 'tertiary',
 };
 
 export const EDText: React.ComponentType<Props> = withBoxModelProps(styled.div`

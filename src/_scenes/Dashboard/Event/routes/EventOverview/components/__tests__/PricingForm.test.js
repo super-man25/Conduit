@@ -7,13 +7,13 @@ const defaultProps = {
     eventScore: 1,
     eventScoreModifier: 1,
     spring: 1,
-    springModifier: 1
+    springModifier: 1,
   },
   pendingFactors: {
     eventScore: 1,
     eventScoreModifier: 1,
     spring: 1,
-    springModifier: 1
+    springModifier: 1,
   },
   onChange: jest.fn(),
   onSubmit: jest.fn(),
@@ -22,8 +22,8 @@ const defaultProps = {
   onCancel: jest.fn(),
   pricingPreview: {
     error: null,
-    loading: false
-  }
+    loading: false,
+  },
 };
 
 it('render correctly', () => {

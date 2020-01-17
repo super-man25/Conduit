@@ -7,11 +7,11 @@ import {
   RESET,
   FETCH_ASYNC,
   FETCH_SUCCESS,
-  FETCH_ERROR
+  FETCH_ERROR,
 } from '../pricingPreview/actions';
 import {
   fetchPricingPreview,
-  fetchPricingPreviewDebounced
+  fetchPricingPreviewDebounced,
 } from '../pricingPreview/saga';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import reducer, { initialState } from '../pricingPreview/reducer';
@@ -24,8 +24,8 @@ describe('actions', () => {
     expect(action).toEqual({
       type: FETCH,
       payload: {
-        eventId: 1
-      }
+        eventId: 1,
+      },
     });
   });
 
@@ -34,8 +34,8 @@ describe('actions', () => {
     expect(action).toEqual({
       type: PARAMS_CHANGED,
       payload: {
-        eventId: 1
-      }
+        eventId: 1,
+      },
     });
   });
 });
@@ -59,7 +59,7 @@ describe('reducer', () => {
     const nextState = reducer(prevState, action);
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -70,7 +70,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      record: 'record'
+      record: 'record',
     });
   });
 
@@ -81,7 +81,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: undefined
+      error: undefined,
     });
   });
 });
@@ -100,7 +100,7 @@ describe('sagas', () => {
       eventScoreModifier: 1,
       spring: 1,
       springModifier: 1,
-      velocityFactor: 1
+      velocityFactor: 1,
     };
     const action = fetch(1);
     const generator = cloneableGenerator(fetchPricingPreview)(action);

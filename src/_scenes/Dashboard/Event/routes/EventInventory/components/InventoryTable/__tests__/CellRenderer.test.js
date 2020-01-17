@@ -6,7 +6,7 @@ describe('defaultCellRenderer', () => {
   it('should render correctly', () => {
     const props = {
       cellData: 10,
-      columnData: {}
+      columnData: {},
     };
     const wrapper = shallow(<DefaultCellPresenter {...props} />);
     expect(wrapper).toMatchSnapshot();

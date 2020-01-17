@@ -10,7 +10,7 @@ import {
   Flex,
   SecondaryButton,
   PrimaryButton,
-  Modal
+  Modal,
 } from '_components';
 import type { EDIntegration } from '_models';
 
@@ -38,13 +38,13 @@ const Title = styled(H4)`
 type Props = {
   onCancel: () => void,
   onConfirm: () => void,
-  integration: EDIntegration
+  integration: EDIntegration,
 };
 
 export const IntegrationToggleAlertModal = ({
   integration,
   onCancel,
-  onConfirm
+  onConfirm,
 }: Props) => (
   <Modal closeModal={onCancel}>
     <ModalHeader>

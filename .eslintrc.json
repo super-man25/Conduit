@@ -3,11 +3,10 @@
   "extends": [
     "react-app",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:flowtype/recommended",
     "prettier/react"
   ],
-  "plugins": ["jest", "jsx-a11y", "redux-saga", "flowtype", "import"],
+  "plugins": ["jest", "redux-saga", "flowtype", "import"],
   "env": {
     "jest/globals": true
   },

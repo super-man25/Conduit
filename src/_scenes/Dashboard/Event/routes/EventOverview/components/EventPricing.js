@@ -13,11 +13,11 @@ import {
   PanelHeader,
   SecondaryButton,
   Text,
-  Toggle
+  Toggle,
 } from '_components';
 import {
   actions as eventActions,
-  selectors as eventSelectors
+  selectors as eventSelectors,
 } from '_state/event';
 import { actions as pricingPreviewActions } from '_state/pricingPreview';
 import { selectors as seasonSelectors } from '_state/season';
@@ -56,12 +56,12 @@ type Props = {
   pricingPreview: {
     record: EDPricingPreview,
     loading: boolean,
-    error: ?Error
+    error: ?Error,
   },
   handleModifierChange: Function,
   resetFactors: Function,
   pricingError: ?Error,
-  savingAdminModifiers: boolean
+  savingAdminModifiers: boolean,
 };
 
 export const EventPricingPresenter = (props: Props) => {
@@ -79,7 +79,7 @@ export const EventPricingPresenter = (props: Props) => {
     resetFactors,
     pricingPreview,
     pricingError,
-    savingAdminModifiers
+    savingAdminModifiers,
   } = props;
 
   const [isEditing, setIsEditing] = useState(false);
@@ -124,7 +124,7 @@ export const EventPricingPresenter = (props: Props) => {
       springModifier,
       seasonId,
       reasonType,
-      reasonComments
+      reasonComments,
     });
   };
 
@@ -209,7 +209,7 @@ const mapStateToProps = createStructuredSelector({
   pricingPreview: (state) => state.pricingPreview,
   pricingError: eventSelectors.selectPricingError,
   savingAdminModifiers: eventSelectors.selectSavingAdminModifiers,
-  seasonId: seasonSelectors.selectActiveSeasonId
+  seasonId: seasonSelectors.selectActiveSeasonId,
 });
 
 const mapDispatchToProps = {
@@ -219,7 +219,7 @@ const mapDispatchToProps = {
   fetchPricingPreview: pricingPreviewActions.fetch,
   pricingPreviewParamsChanged: pricingPreviewActions.paramsChanged,
   handleModifierChange: eventActions.handleModifierChange,
-  resetFactors: eventActions.resetToInitialFactors
+  resetFactors: eventActions.resetToInitialFactors,
 };
 
 export const EventPricing = connect(

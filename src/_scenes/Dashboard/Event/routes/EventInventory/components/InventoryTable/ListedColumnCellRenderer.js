@@ -9,7 +9,7 @@ type Props = {
   isEditing: boolean,
   editedRowState: any,
   dataKey: string,
-  updateEditedRowProperty: (any) => void
+  updateEditedRowProperty: (any) => void,
 };
 
 export const ListedColumnCellPresenter = ({
@@ -17,7 +17,7 @@ export const ListedColumnCellPresenter = ({
   isEditing,
   editedRowState,
   updateEditedRowProperty,
-  dataKey
+  dataKey,
 }: Props) => (
   <Box marginLeft="1.25rem" style={{ opacity: isEditing ? 1 : 0.5 }}>
     <Toggle
@@ -34,7 +34,7 @@ const mapStateToProps = (
   { rowData }
 ) => ({
   isEditing: editedRowId === rowData.id,
-  editedRowState
+  editedRowState,
 });
 
 const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
@@ -43,9 +43,9 @@ const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
       actions.updateEditedRowProperty({
         id: rowData.id,
         propertyName: dataKey,
-        propertyValue: value
+        propertyValue: value,
       })
-    )
+    ),
 });
 
 const ListedColumnCell = connect(

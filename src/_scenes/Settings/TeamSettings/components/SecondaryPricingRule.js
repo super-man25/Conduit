@@ -6,7 +6,7 @@ import {
   NumberInputField,
   Flex,
   FlexItem,
-  Input
+  Input,
 } from '_components';
 import { withClickAway } from '_hoc';
 import { actions } from '_state/client';
@@ -20,7 +20,7 @@ export class SecondaryPricingRulePresenter extends Component {
     percent: this.props.percent,
     constant: this.props.constant,
     percentInvalid: false,
-    constantInvalid: false
+    constantInvalid: false,
   };
 
   reset = () => {
@@ -30,7 +30,7 @@ export class SecondaryPricingRulePresenter extends Component {
       percent: this.props.percent,
       constant: this.props.constant,
       percentInvalid: false,
-      constantInvalid: false
+      constantInvalid: false,
     });
   };
 
@@ -45,7 +45,7 @@ export class SecondaryPricingRulePresenter extends Component {
       percent: percent !== '' ? percent : null,
       constant: constant !== '' ? constant : null,
       onSuccess: this.handleSuccess,
-      onError: this.handleError
+      onError: this.handleError,
     };
     this.props.updateSecondaryPricingRule(payload);
   };
@@ -53,7 +53,7 @@ export class SecondaryPricingRulePresenter extends Component {
   handleSuccess = () => {
     this.setState({
       percentInvalid: false,
-      constantInvalid: false
+      constantInvalid: false,
     });
     this.toggleEdit();
   };
@@ -69,7 +69,7 @@ export class SecondaryPricingRulePresenter extends Component {
     this.setState({
       [name]: value,
       percentInvalid: false,
-      constantInvalid: false
+      constantInvalid: false,
     });
   };
 
@@ -119,7 +119,7 @@ export class SecondaryPricingRulePresenter extends Component {
 }
 
 const mapDispatchToProps = {
-  updateSecondaryPricingRule: actions.updateSecondaryPricingRule
+  updateSecondaryPricingRule: actions.updateSecondaryPricingRule,
 };
 
 export const SecondaryPricingRule = connect(

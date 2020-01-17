@@ -13,7 +13,7 @@ import {
   CenteredLoader,
   Flex,
   FlexItem,
-  Spacing
+  Spacing,
 } from '_components';
 import { cssConstants } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
@@ -30,7 +30,7 @@ const BREAKDOWN_COLORSET = [
   cssConstants.SECONDARY_LIGHTEST_BLUE,
   cssConstants.SECONDARY_BLUE_GRAY,
   cssConstants.SECONDARY_LIGHT_PURPLE,
-  cssConstants.SECONDARY_PURPLE
+  cssConstants.SECONDARY_PURPLE,
 ];
 
 const CenteredText = styled(P1)`
@@ -40,7 +40,7 @@ const CenteredText = styled(P1)`
 const formatters = {
   revenue: (value) =>
     formatUSD(value, { maximumFractionDigits: 0, minimumFractionDigits: 0 }),
-  ticketsSold: formatNumber
+  ticketsSold: formatNumber,
 };
 
 function hasNonZeroValues(arr: number[]) {
@@ -71,14 +71,14 @@ type Props = {
   revenueStatState: {
     loading: boolean,
     ticketBreakdown: EDTicketBreakdown[],
-    error?: ApiError
+    error?: ApiError,
   },
   revenueStatActions: {
     fetch: ({ seasonId: number }) => void,
-    reset: () => void
+    reset: () => void,
   },
   seasonId: number,
-  type: BreakdownType
+  type: BreakdownType,
 };
 
 export class RevenueBreakdown extends React.Component<Props> {
@@ -97,7 +97,7 @@ export class RevenueBreakdown extends React.Component<Props> {
   render() {
     const {
       revenueStatState: { loading, ticketBreakdown, error },
-      type
+      type,
     } = this.props;
 
     const property = type === 'inventory' ? 'ticketsSold' : 'revenue';
@@ -147,13 +147,13 @@ export class RevenueBreakdown extends React.Component<Props> {
 function mapStateToProps(state) {
   return {
     revenueStatState: state.revenueStat,
-    seasonId: seasonSelectors.selectActiveSeasonId(state)
+    seasonId: seasonSelectors.selectActiveSeasonId(state),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    revenueStatActions: bindActionCreators(revenueStatActions, dispatch)
+    revenueStatActions: bindActionCreators(revenueStatActions, dispatch),
   };
 }
 

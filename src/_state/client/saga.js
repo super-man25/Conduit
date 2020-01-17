@@ -17,7 +17,7 @@ import {
   UPDATE_INTEGRATION,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
-  UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR
+  UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
 } from './actions';
 import { RESET } from '../app/actions';
 
@@ -57,7 +57,7 @@ export function* getIntegrationsAsync() {
 
 export function* toggleIntegrationAsync({ payload: { id, isActive } }) {
   const result = yield call(integrationService.toggleIntegration, id, {
-    isActive
+    isActive,
   });
   yield put({ type: UPDATE_INTEGRATION, payload: { id, ...result } });
 }
@@ -75,7 +75,7 @@ export function* updateSecondaryPricingRuleAsync(body) {
   } catch (err) {
     yield put({
       type: UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
-      payload: err
+      payload: err,
     });
     yield put(alertActions.error(err.toString()));
     onError(err);
@@ -111,5 +111,5 @@ export default {
   watchUpdateClientAsync,
   watchGetClientIntegrationsAsync,
   watchToggleClientIntegrationAsync,
-  watchUpdateSecondaryPricingRuleAsync
+  watchUpdateSecondaryPricingRuleAsync,
 };

@@ -30,14 +30,14 @@ export const PricingUpdateReason = ({
   reasonType,
   handleTypeChange,
   reasonComments,
-  handleCommentChange
+  handleCommentChange,
 }) => {
   const {
     weather,
     demand,
     teamStats,
     opponentStats,
-    other
+    other,
   } = adminModifierReasonTypes;
   return (
     <PricingUpdateReasonContainer>

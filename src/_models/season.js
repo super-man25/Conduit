@@ -6,5 +6,5 @@ export type EDSeason = {
   clientId: number,
   startTimestamp: number,
   endTimestamp: number,
-  isCurrentSeason: boolean
+  isCurrentSeason: boolean,
 };

@@ -8,7 +8,7 @@ import { cssConstants } from '_constants';
 const mapsToOptions = [
   { label: 'StubHub', value: 6 },
   { label: 'Vivid Seats', value: 7 },
-  { label: 'Ignored Customer', value: 'ignored' }
+  { label: 'Ignored Customer', value: 'ignored' },
 ];
 
 export const SkyBoxCustomersSection = ({ values }) => {

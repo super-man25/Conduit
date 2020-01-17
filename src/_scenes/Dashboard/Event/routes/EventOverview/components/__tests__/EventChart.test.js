@@ -9,22 +9,22 @@ const createProps = () => ({
     dateRange: { from: null, to: null },
     eventDateLimits: { from: null, to: null },
     selectedGroupFilter: null,
-    eventStats: []
+    eventStats: [],
   },
   eventStatActions: {
     fetch: jest.fn(),
     setGroupFilter: jest.fn(),
     setDateRange: jest.fn(),
-    clear: jest.fn()
+    clear: jest.fn(),
   },
   eventScoreHistoryState: {
-    eventScoreHistory: []
+    eventScoreHistory: [],
   },
   eventScoreHistoryActions: {
-    fetch: jest.fn()
+    fetch: jest.fn(),
   },
   activeEvent: { id: 1 },
-  selectedSeason: { startTimestamp: null }
+  selectedSeason: { startTimestamp: null },
 });
 
 describe('<EventChart />', () => {
@@ -52,7 +52,7 @@ describe('<EventChart />', () => {
     expect(props.eventStatActions.fetch).toHaveBeenCalledTimes(1);
 
     wrapper.setProps({
-      activeEvent: { id: 2 }
+      activeEvent: { id: 2 },
     });
 
     expect(props.eventStatActions.fetch).toHaveBeenCalledTimes(2);

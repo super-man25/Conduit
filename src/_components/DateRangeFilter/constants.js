@@ -8,7 +8,7 @@ export const getFilterOptions = () => {
     'Last 7 Days',
     'Month to Date',
     'Previous Month',
-    'Year to Date'
+    'Year to Date',
   ];
 
   if (!isMobileDevice) {

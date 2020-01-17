@@ -10,65 +10,65 @@ import { reducer as alertReducer, saga as alertSaga } from './alert';
 import { reducer as authReducer, saga as authSaga } from './auth';
 import {
   reducer as buyerTypeReducer,
-  saga as buyerTypeSaga
+  saga as buyerTypeSaga,
 } from './buyerType';
 import { reducer as clientReducer, saga as clientSaga } from './client';
 import {
   reducer as clientListReducer,
-  saga as clientListSaga
+  saga as clientListSaga,
 } from './clientList';
 import { reducer as demoPriceReducer, saga as demoPriceSaga } from './demo';
 import { reducer as eventReducer, saga as eventSaga } from './event';
 import {
   reducer as eventCategoryReducer,
-  saga as eventCategorySaga
+  saga as eventCategorySaga,
 } from './eventCategory';
 import {
   reducer as eventInventoryReducer,
-  saga as eventInventorySaga
+  saga as eventInventorySaga,
 } from './eventInventory';
 import {
   reducer as eventInventoryBulkReducer,
-  saga as eventInventoryBulkSaga
+  saga as eventInventoryBulkSaga,
 } from './eventInventoryBulk';
 import {
   reducer as eventListReducer,
-  saga as eventListSaga
+  saga as eventListSaga,
 } from './eventList';
 import {
   reducer as eventScoreHistoryReducer,
-  saga as eventScoreHistorySaga
+  saga as eventScoreHistorySaga,
 } from './eventScoreHistory';
 import {
   reducer as eventStatReducer,
-  saga as eventStatSaga
+  saga as eventStatSaga,
 } from './eventStat';
 import { reducer as onboardReducer, saga as onboardSaga } from './onboard';
 import {
   reducer as priceRuleReducer,
-  saga as priceRuleSaga
+  saga as priceRuleSaga,
 } from './priceRule';
 import {
   reducer as priceScaleReducer,
-  saga as priceScaleSaga
+  saga as priceScaleSaga,
 } from './priceScale';
 import {
   reducer as pricingPreviewReducer,
-  saga as pricingPreviewSaga
+  saga as pricingPreviewSaga,
 } from './pricingPreview';
 import {
   reducer as revenueStatReducer,
-  saga as revenueStatSaga
+  saga as revenueStatSaga,
 } from './revenueStat';
 import { reducer as seasonReducer, saga as seasonSaga } from './season';
 import {
   reducer as seasonStatReducer,
-  saga as seasonStatSaga
+  saga as seasonStatSaga,
 } from './seasonStat';
 import { reducer as seatMapReducer, saga as seatMapSaga } from './seatMap';
 import { reducer as teamStatReducer, saga as teamStatSaga } from './teamStat';
 import ticketIntegrationReducer, {
-  saga as ticketIntegrationSaga
+  saga as ticketIntegrationSaga,
 } from './ticketIntegrations';
 import { reducer as userReducer, saga as userSaga } from './user';
 import { reducer as userListReducer, saga as userListSaga } from './userList';
@@ -100,13 +100,13 @@ export const reducers = {
   ticketIntegration: ticketIntegrationReducer,
   user: userReducer,
   userList: userListReducer,
-  ui: uiReducer
+  ui: uiReducer,
 };
 
 // Build root reducer
 const reducer = combineReducers({
   router: connectRouter(history),
-  ...reducers
+  ...reducers,
 });
 const rootReducer = (state, action) => {
   if (action.type === 'global/RESET') {
@@ -154,7 +154,7 @@ const combineSagas = {
   teamStat: teamStatSaga,
   ticketIntegration: ticketIntegrationSaga,
   user: userSaga,
-  userList: userListSaga
+  userList: userListSaga,
 };
 
 export function* rootSaga() {

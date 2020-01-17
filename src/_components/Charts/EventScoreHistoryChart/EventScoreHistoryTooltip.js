@@ -5,7 +5,7 @@ import { ChartTooltip } from '../ChartTooltip';
 type TooltipProps = {
   active?: boolean,
   payload?: any,
-  dateFormatter: (Date) => string
+  dateFormatter: (Date) => string,
 };
 
 export function EventScoreHistoryTooltip(props: TooltipProps) {
@@ -16,7 +16,7 @@ export function EventScoreHistoryTooltip(props: TooltipProps) {
   const [{ payload: stat }] = payload;
   const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {
-    'Event Score': stat.eventScore.toFixed(2)
+    'Event Score': stat.eventScore.toFixed(2),
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;

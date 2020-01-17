@@ -6,12 +6,12 @@ import { Flex } from '_components';
 
 type Props = {
   isSelected: boolean,
-  select: () => void
+  select: () => void,
 };
 
 export const SelectableColumnCellPresenter = ({
   isSelected,
-  select
+  select,
 }: Props) => (
   <Flex align="center" justify="center">
     <input type="checkbox" onChange={select} checked={isSelected} />
@@ -19,11 +19,11 @@ export const SelectableColumnCellPresenter = ({
 );
 
 const mapStateToProps = ({ eventInventory: { selectedRowIds } }, ownProps) => ({
-  isSelected: selectedRowIds.includes(ownProps.rowData.id)
+  isSelected: selectedRowIds.includes(ownProps.rowData.id),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  select: () => dispatch(actions.selectEventRow(ownProps.rowData.id))
+  select: () => dispatch(actions.selectEventRow(ownProps.rowData.id)),
 });
 
 const SelectableColumnCell = connect(

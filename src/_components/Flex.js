@@ -37,7 +37,7 @@ type FlexProps = {
   align?: FlexContentAlignment,
   justify?: FlexContentAlignment,
   alignItems?: FlexAlignment,
-  alignSelf?: FlexAlignment
+  alignSelf?: FlexAlignment,
 };
 
 type FlexItemProps = {
@@ -46,7 +46,7 @@ type FlexItemProps = {
   height: string,
   alignSelf: FlexAlignment,
   margin: string,
-  padding: string
+  padding: string,
 };
 
 function generateFlexDirection(props: FlexProps): FlexDirection {

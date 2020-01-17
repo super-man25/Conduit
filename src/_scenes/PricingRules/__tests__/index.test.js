@@ -9,9 +9,9 @@ describe('<PricingRules /> index route', () => {
     editingAnyPriceRule: false,
     buyerTypes: [],
     buyerTypeActions: {
-      fetchBuyerTypes: jest.fn()
+      fetchBuyerTypes: jest.fn(),
     },
-    seasons: []
+    seasons: [],
   };
 
   it('should render corectly', () => {

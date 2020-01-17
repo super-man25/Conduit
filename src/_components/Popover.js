@@ -20,11 +20,11 @@ type Props = {
   target: React.ElementType,
   placement: 'top' | 'right' | 'bottom' | 'left',
   style: {
-    maxWidth?: string
+    maxWidth?: string,
   },
   isOpen: boolean,
   hideCaret: boolean,
-  arrowOffset?: string
+  arrowOffset?: string,
 };
 const ReferenceBox = styled.div`
   display: inline-block;
@@ -49,7 +49,7 @@ const PopperBox = styled.div.attrs((props) => {
 const Arrow = styled.div.attrs((props) => {
   const arrowColor = BACKGROUND.get(props.theme);
   return {
-    arrowColor
+    arrowColor,
   };
 })`
   ${(props) => props.arrowStyle};
@@ -125,7 +125,7 @@ export const Popover = ({
   style,
   isOpen,
   hideCaret,
-  arrowOffset
+  arrowOffset,
 }: Props) => {
   // Sample modifiers for react-popper behavior
   const modifiers = {

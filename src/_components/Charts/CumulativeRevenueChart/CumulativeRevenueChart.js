@@ -8,7 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Label,
-  Tooltip
+  Tooltip,
 } from 'recharts';
 
 import { cssConstants, chartLabelStyles } from '_constants';
@@ -28,7 +28,7 @@ type Props = {
   renderNoData: () => React.Node,
   majorXAxisTickRenderer: () => HTMLElement,
   minorXAxisTickRenderer: () => HTMLElement,
-  mobileXAxisTickRenderer: () => HTMLElement
+  mobileXAxisTickRenderer: () => HTMLElement,
 };
 
 export function CumulativeRevenueChart({
@@ -39,7 +39,7 @@ export function CumulativeRevenueChart({
   renderNoData,
   majorXAxisTickRenderer,
   minorXAxisTickRenderer,
-  mobileXAxisTickRenderer
+  mobileXAxisTickRenderer,
 }: Props) {
   if (!data.length) {
     return renderNoData();
@@ -121,7 +121,7 @@ export function CumulativeRevenueChart({
             cursor={{
               stroke: cssConstants.SECONDARY_BLUE,
               strokeWidth: 2,
-              opacity: 0.5
+              opacity: 0.5,
             }}
             content={
               <CumulativeRevenueTooltip

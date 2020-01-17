@@ -12,7 +12,7 @@ export type EDPriceRule = {
   priceCeiling?: number,
   externalBuyerTypeIds: string[],
   priceScaleIds: number[],
-  eventIds: number[]
+  eventIds: number[],
 };
 
 export const emptyEDPriceRule = {
@@ -26,5 +26,5 @@ export const emptyEDPriceRule = {
   priceFloor: 0,
   externalBuyerTypeIds: [],
   priceScaleIds: [],
-  eventIds: []
+  eventIds: [],
 };

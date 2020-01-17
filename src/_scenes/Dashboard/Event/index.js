@@ -18,8 +18,8 @@ type Props = {
   fetchEvent: typeof actions.fetchEvent,
   eventState: EventState,
   authState: {
-    model: EDUser
-  }
+    model: EDUser,
+  },
 };
 
 export class EventRoute extends React.Component<Props> {
@@ -39,7 +39,7 @@ export class EventRoute extends React.Component<Props> {
   render() {
     const {
       eventState: { event, loading },
-      authState
+      authState,
     } = this.props;
 
     const isAuthorized = !!authState.model;
@@ -76,12 +76,12 @@ export class EventRoute extends React.Component<Props> {
 
 const mapStateToProps = (state) => ({
   eventState: state.event,
-  authState: state.auth
+  authState: state.auth,
 });
 
 const mapDispatchToProps = {
   fetchEvent: actions.fetchEvent,
-  replace
+  replace,
 };
 
 export const Event = connect(

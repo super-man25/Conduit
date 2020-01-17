@@ -12,7 +12,7 @@ function* fetchEventScoreHistory(action) {
       {
         eventId,
         startDate,
-        endDate
+        endDate,
       }
     );
     yield put({ type: FETCH_SUCCESS, payload: eventScoreHistoryResponse });
@@ -26,5 +26,5 @@ function* watchFetchAsync() {
 }
 
 export default {
-  watchFetchAsync
+  watchFetchAsync,
 };

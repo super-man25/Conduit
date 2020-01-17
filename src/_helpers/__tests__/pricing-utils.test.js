@@ -1,7 +1,7 @@
 import {
   velocityScore,
   finalEventScore,
-  finalSpringValue
+  finalSpringValue,
 } from '_helpers/pricing-utils';
 
 it('display the correct velocity score', () => {

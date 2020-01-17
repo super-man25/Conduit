@@ -1,7 +1,7 @@
 import { SVGChartElement } from './svgChartElement';
 import {
   findElementsBySelectedSectionFilters,
-  findElementsNotSelected
+  findElementsNotSelected,
 } from './helpers';
 
 /**

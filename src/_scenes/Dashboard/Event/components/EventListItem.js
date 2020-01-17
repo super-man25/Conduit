@@ -12,7 +12,7 @@ import {
   readableDateAndTime,
   isPastEvent,
   finalEventScore,
-  finalSpringValue
+  finalSpringValue,
 } from '_helpers';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
 import { EventScoreIcon } from './EventScoreIcon';
@@ -117,12 +117,12 @@ const EventDetails = ({
   flex,
   isPast,
   title,
-  text
+  text,
 }: {
   flex: number,
   isPast: boolean,
   title: string,
-  text: string
+  text: string,
 }) => {
   return (
     <FlexItem flex={flex} alignSelf="flex-end">
@@ -138,7 +138,7 @@ type Props = {
   event: EDEvent,
   active: boolean,
   onClick: (event: EDEvent) => void,
-  isAdmin: boolean
+  isAdmin: boolean,
 };
 
 export class EventListItem extends React.PureComponent<Props> {
@@ -193,7 +193,7 @@ export class EventListItem extends React.PureComponent<Props> {
               isPast={past}
               title={formatUSD(event.revenue, {
                 minimumFractionDigits: 0,
-                maximumFractionDigits: 0
+                maximumFractionDigits: 0,
               })}
               text="Revenue to Date"
             />

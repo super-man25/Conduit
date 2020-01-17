@@ -15,28 +15,28 @@ import { SecuredRoute, CenteredLoader, ApiAlert } from '_components';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
-  loading: CenteredLoader
+  loading: CenteredLoader,
 });
 
 const Login = Loadable({
   loader: () => import('_scenes/Login'),
-  loading: CenteredLoader
+  loading: CenteredLoader,
 });
 
 const Settings = Loadable({
   loader: () => import('_scenes/Settings'),
-  loading: CenteredLoader
+  loading: CenteredLoader,
 });
 
 const PricingRules = Loadable({
   loader: () => import('_scenes/PricingRules'),
-  loading: CenteredLoader
+  loading: CenteredLoader,
 });
 
 type Props = {
   fetchUser: () => void,
   loading: boolean,
-  user: ?EDUser
+  user: ?EDUser,
 };
 
 class App extends React.Component<Props> {
@@ -74,7 +74,7 @@ class App extends React.Component<Props> {
       window.FS.identify(id, {
         displayName: `${firstName} ${lastName}`,
         email: email,
-        clientId: clientId
+        clientId: clientId,
       });
   }
 
@@ -113,11 +113,11 @@ class App extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   loading: selectors.selectLoading,
-  user: selectors.selectUser
+  user: selectors.selectUser,
 });
 
 const mapDispatchToProps = {
-  fetchUser: authActions.fetch
+  fetchUser: authActions.fetch,
 };
 
 export default connect(

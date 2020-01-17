@@ -10,7 +10,7 @@ describe('<TeamInfo />', () => {
     pricingInterval: 15,
     update: jest.fn(),
     resetDirtyPricingInterval: jest.fn(),
-    setPricingInterval: jest.fn()
+    setPricingInterval: jest.fn(),
   };
 
   it('renders correctly', () => {

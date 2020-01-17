@@ -13,11 +13,11 @@ describe('<ScaleColumnHeaderRenderer />', () => {
     label: 'Label',
     filter: {
       name: 'priceScaleId',
-      direction: 'asc'
+      direction: 'asc',
     },
     filters: [],
     selectedFilters: [],
-    setSelectedFilters: jest.fn()
+    setSelectedFilters: jest.fn(),
   };
 
   it('should render correctly', () => {

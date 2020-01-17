@@ -7,7 +7,7 @@ import {
   ModalBody,
   ModalHeader,
   NumberInput,
-  Title
+  Title,
 } from '../styled';
 
 describe('BulkUpdateModal styled components', () => {

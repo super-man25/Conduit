@@ -15,10 +15,10 @@ export type EventStat = {
   periodicRevenue: ?number,
   projectedPeriodicRevenue: ?number,
   isProjected: boolean,
-  timestamp: number
+  timestamp: number,
 };
 
 export type EventStatsMeta = {
   timeZone: String,
-  interval: EventStatInterval
+  interval: EventStatInterval,
 };

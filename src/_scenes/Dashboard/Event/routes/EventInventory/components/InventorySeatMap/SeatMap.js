@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { selectors, actions } from '_state/eventInventory';
 import {
   actions as seatMapActions,
-  selectors as seatMapSelectors
+  selectors as seatMapSelectors,
 } from '_state/seatMap';
 import { Flex } from '_components';
 import { SeatMapLoader, SeatMapObject } from './styled';
@@ -41,7 +41,7 @@ export class SeatMapPresenter extends React.Component {
         setSelectedSectionFilters(updatedSectionFilters);
       },
       clickable: true,
-      allSectionFilters: this.props.allSectionFilters
+      allSectionFilters: this.props.allSectionFilters,
     });
   };
 
@@ -57,7 +57,7 @@ export class SeatMapPresenter extends React.Component {
       loading,
       loadingEventInventory,
       venueMapBlob,
-      error
+      error,
     } = this.props;
 
     if (loading || loadingEventInventory) {
@@ -82,7 +82,6 @@ export class SeatMapPresenter extends React.Component {
 
     return (
       <React.Fragment>
-        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
         <SeatMapObject
           role="search"
           ref={this.seatmap}
@@ -107,14 +106,14 @@ const mapStateToProps = createStructuredSelector({
   error: seatMapSelectors.selectError,
   venue: seatMapSelectors.selectVenue,
   venueMapBlob: seatMapSelectors.selectVenueMapBlob,
-  loadingEventInventory: selectors.selectEventInventoryLoading
+  loadingEventInventory: selectors.selectEventInventoryLoading,
 });
 
 const mapDispatchToProps = {
   setSelectedScaleFilters: actions.setSelectedScaleFilters,
   setSelectedSectionFilters: actions.setSelectedSectionFilters,
   fetchSeatMap: seatMapActions.fetchSeatMap,
-  resetSeatMap: seatMapActions.resetSeatMap
+  resetSeatMap: seatMapActions.resetSeatMap,
 };
 
 export const SeatMap = connect(

@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 type Props = {
   allSelected: boolean,
-  selectAll: () => void
+  selectAll: () => void,
 };
 
 export const SelectableHeaderPresenter = ({
   allSelected,
-  selectAll
+  selectAll,
 }: Props) => {
   return (
     <Flex align="center" justify="center">
@@ -25,12 +25,12 @@ const mapStateToProps = (store) => {
   const rows = selectors.selectEventInventoryRows(store);
 
   return {
-    allSelected: selectedRowIds.length === rows.length
+    allSelected: selectedRowIds.length === rows.length,
   };
 };
 
 const mapDispatchToProps = {
-  selectAll: actions.selectAllEventRows
+  selectAll: actions.selectAllEventRows,
 };
 
 const SelectableHeader = connect(

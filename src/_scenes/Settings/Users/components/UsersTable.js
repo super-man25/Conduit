@@ -5,7 +5,7 @@ import {
   Table,
   Column,
   AutoSizer,
-  defaultTableRowRenderer
+  defaultTableRowRenderer,
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { withRowStyles } from './withRowStyles';
@@ -15,7 +15,7 @@ import type { EDUser } from '_models/user';
 type Props = {
   userList: EDUser[],
   fetchUserList: () => EDUser[],
-  reset: () => void
+  reset: () => void,
 };
 
 const columns = [
@@ -24,24 +24,24 @@ const columns = [
     dataKey: 'firstName',
     flexGrow: 6,
     columnData: {
-      labelFn: (option) => option.firstName
-    }
+      labelFn: (option) => option.firstName,
+    },
   },
   {
     label: 'Last Name',
     dataKey: 'lastName',
     flexGrow: 6,
     columnData: {
-      labelFn: (option) => option.lastName
-    }
+      labelFn: (option) => option.lastName,
+    },
   },
   {
     label: 'Email',
     dataKey: 'email',
     flexGrow: 6,
     columnData: {
-      labelFn: (option) => option.email
-    }
+      labelFn: (option) => option.email,
+    },
   },
   {
     label: 'Phone Number',
@@ -49,8 +49,8 @@ const columns = [
     flexGrow: 6,
     cellRenderer: ({ cellData }) => {
       return orDash(cellData);
-    }
-  }
+    },
+  },
 ];
 
 export class UsersTable extends Component<Props> {

@@ -4,7 +4,7 @@ import { cloneableGenerator } from '@redux-saga/testing-utils';
 import {
   fetchPriceRules,
   savePriceRule,
-  fetchOnePriceRule
+  fetchOnePriceRule,
 } from '_state/priceRule/saga';
 import { actions as alertActions } from '_state/alert';
 import {
@@ -12,7 +12,7 @@ import {
   actions,
   types,
   reducer,
-  initialState
+  initialState,
 } from '_state/priceRule';
 
 import { emptyEDPriceRule } from '_models/priceRule';
@@ -21,7 +21,7 @@ describe('actions', () => {
   it('should create an action to fetch price rules', () => {
     const action = actions.fetchPriceRules();
     expect(action).toEqual({
-      type: types.FETCH_PRICE_RULES
+      type: types.FETCH_PRICE_RULES,
     });
   });
 
@@ -29,7 +29,7 @@ describe('actions', () => {
     const action = actions.startEditingPriceRule(1);
     expect(action).toEqual({
       type: types.START_EDIT_PRICE_RULE,
-      payload: 1
+      payload: 1,
     });
   });
 
@@ -37,7 +37,7 @@ describe('actions', () => {
     const action = actions.cancelEditingPriceRule(1);
     expect(action).toEqual({
       type: types.CANCEL_EDIT_PRICE_RULE,
-      payload: 1
+      payload: 1,
     });
   });
 
@@ -45,7 +45,7 @@ describe('actions', () => {
     const action = actions.updatePriceRuleProperty({
       propertyName: 'constant',
       propertyValue: 1,
-      id: 3
+      id: 3,
     });
 
     expect(action).toEqual({
@@ -53,8 +53,8 @@ describe('actions', () => {
       payload: {
         propertyName: 'constant',
         propertyValue: 1,
-        id: 3
-      }
+        id: 3,
+      },
     });
   });
 
@@ -62,7 +62,7 @@ describe('actions', () => {
     const action = actions.createPriceRule();
     expect(action).toEqual({
       type: types.CREATE_PRICE_RULE,
-      payload: null
+      payload: null,
     });
   });
 
@@ -70,7 +70,7 @@ describe('actions', () => {
     const action = actions.resetPriceRules();
     expect(action).toEqual({
       type: types.RESET_PRICE_RULES,
-      payload: null
+      payload: null,
     });
   });
 });
@@ -84,7 +84,7 @@ describe('reducer', () => {
   it('should handle FETCH_PRICE_RULES', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.FETCH_PRICE_RULES };
@@ -93,20 +93,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_PRICE_RULES_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const priceRules = [{ id: 2, name: '50% off' }];
     const action = {
       type: types.FETCH_PRICE_RULES_SUCCESS,
-      payload: priceRules
+      payload: priceRules,
     };
 
     const nextState = reducer(prevState, action);
@@ -116,16 +116,16 @@ describe('reducer', () => {
       allRows: [
         {
           id: 2,
-          name: '50% off'
-        }
-      ]
+          name: '50% off',
+        },
+      ],
     });
   });
 
   it('should handle FETCH_PRICE_RULES_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = { type: types.FETCH_PRICE_RULES_ERROR, payload: 'An error' };
@@ -135,14 +135,14 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      error: 'An error'
+      error: 'An error',
     });
   });
 
   it('should handle START_EDIT_PRICE_RULE', () => {
     const prevState = {
       ...initialState,
-      allRows: [{ id: 1 }, { id: -2 }]
+      allRows: [{ id: 1 }, { id: -2 }],
     };
 
     const action = { type: types.START_EDIT_PRICE_RULE, payload: 1 };
@@ -153,7 +153,7 @@ describe('reducer', () => {
       ...initialState,
       editingRowId: 1,
       editingRowState: { id: 1 },
-      allRows: [{ id: 1 }, { id: -2 }]
+      allRows: [{ id: 1 }, { id: -2 }],
     });
   });
 
@@ -163,7 +163,7 @@ describe('reducer', () => {
         ...initialState,
         editingRowId: 1,
         editingRowState: { id: 1, constant: 2 },
-        allRows: [{ id: 1 }, { id: -3 }, { id: 70 }]
+        allRows: [{ id: 1 }, { id: -3 }, { id: 70 }],
       };
 
       const action = { type: types.CANCEL_EDIT_PRICE_RULE, payload: 1 };
@@ -172,7 +172,7 @@ describe('reducer', () => {
         ...initialState,
         editingRowId: null,
         editingRowState: {},
-        allRows: [{ id: 1 }, { id: -3 }, { id: 70 }]
+        allRows: [{ id: 1 }, { id: -3 }, { id: 70 }],
       });
     });
 
@@ -181,14 +181,14 @@ describe('reducer', () => {
         ...initialState,
         editingRowId: 0,
         editingRowState: { id: 0, percent: -20, mirroPriceScaleId: 2383 },
-        allRows: [{ id: 0 }, { id: 1 }, { id: 70 }]
+        allRows: [{ id: 0 }, { id: 1 }, { id: 70 }],
       };
 
       const action = { type: types.CANCEL_EDIT_PRICE_RULE, payload: 0 };
       const nextState = reducer(prevState, action);
       expect(nextState).toEqual({
         ...initialState,
-        allRows: [{ id: 1 }, { id: 70 }]
+        allRows: [{ id: 1 }, { id: 70 }],
       });
     });
   });
@@ -202,14 +202,14 @@ describe('reducer', () => {
         { id: 3, constant: 2 },
         {
           id: 5,
-          percent: -40
-        }
-      ]
+          percent: -40,
+        },
+      ],
     };
 
     const action = {
       type: types.UPDATE_PRICE_RULE_PROPERTY,
-      payload: { id: 3, propertyName: 'constant', propertyValue: 13 }
+      payload: { id: 3, propertyName: 'constant', propertyValue: 13 },
     };
 
     const nextState = reducer(prevState, action);
@@ -221,13 +221,13 @@ describe('reducer', () => {
       allRows: [
         {
           id: 3,
-          constant: 2
+          constant: 2,
         },
         {
           id: 5,
-          percent: -40
-        }
-      ]
+          percent: -40,
+        },
+      ],
     });
   });
 
@@ -240,14 +240,14 @@ describe('reducer', () => {
       ...initialState,
       editingRowId: 0,
       editingRowState: { ...emptyEDPriceRule, id: 0 },
-      allRows: [{ ...emptyEDPriceRule, id: 0 }]
+      allRows: [{ ...emptyEDPriceRule, id: 0 }],
     });
   });
 
   it('should handle RESET_PRICE_RULES', () => {
     const prevState = {
       ...initialState,
-      allRows: [{ id: 10 }]
+      allRows: [{ id: 10 }],
     };
 
     const action = { type: types.RESET_PRICE_RULES };
@@ -259,7 +259,7 @@ describe('reducer', () => {
   it('should handle SAVE_PRICE_RULE', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.SAVE_PRICE_RULE };
@@ -268,7 +268,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -278,7 +278,7 @@ describe('reducer', () => {
       editingRowId: 1,
       editingRowState: { id: 1, constant: 2 },
       loading: true,
-      allRows: [{ id: 0 }]
+      allRows: [{ id: 0 }],
     };
 
     const action = { type: types.SAVE_PRICE_RULE_SUCCESS, payload: 1 };
@@ -287,19 +287,19 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: false
+      loading: false,
     });
   });
 
   it('should handle SAVE_PRICE_RULE_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = {
       type: types.SAVE_PRICE_RULE_ERROR,
-      payload: 'Could Not Save Price Rule'
+      payload: 'Could Not Save Price Rule',
     };
 
     const nextState = reducer(prevState, action);
@@ -307,7 +307,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Could Not Save Price Rule'
+      error: 'Could Not Save Price Rule',
     });
   });
 
@@ -321,7 +321,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -331,7 +331,7 @@ describe('reducer', () => {
       prevState = {
         ...initialState,
         loading: true,
-        allRows: [{ id: 2 }, { id: 3 }, { id: 4 }]
+        allRows: [{ id: 2 }, { id: 3 }, { id: 4 }],
       };
     });
 
@@ -339,7 +339,7 @@ describe('reducer', () => {
       const fetchedPriceRule = { id: 3, percent: -30 };
       const action = {
         type: types.FETCH_PRICE_RULE_SUCCESS,
-        payload: fetchedPriceRule
+        payload: fetchedPriceRule,
       };
 
       const nextState = reducer(prevState, action);
@@ -347,7 +347,7 @@ describe('reducer', () => {
       expect(nextState).toEqual({
         ...prevState,
         loading: false,
-        allRows: [{ id: 2 }, { id: 3, percent: -30 }, { id: 4 }]
+        allRows: [{ id: 2 }, { id: 3, percent: -30 }, { id: 4 }],
       });
     });
 
@@ -355,7 +355,7 @@ describe('reducer', () => {
       const fetchedPriceRule = { id: 7, percent: 10 };
       const action = {
         type: types.FETCH_PRICE_RULE_SUCCESS,
-        payload: fetchedPriceRule
+        payload: fetchedPriceRule,
       };
 
       const nextState = reducer(prevState, action);
@@ -363,7 +363,7 @@ describe('reducer', () => {
       expect(nextState).toEqual({
         ...prevState,
         loading: false,
-        allRows: [{ id: 3 }, { id: 4 }, { id: 7, percent: 10 }]
+        allRows: [{ id: 3 }, { id: 4 }, { id: 7, percent: 10 }],
       });
     });
   });
@@ -371,12 +371,12 @@ describe('reducer', () => {
   it('should handle FETCH_PRICE_RULE_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = {
       type: types.FETCH_PRICE_RULE_ERROR,
-      payload: 'Could Not Fetch Price Rule'
+      payload: 'Could Not Fetch Price Rule',
     };
 
     const nextState = reducer(prevState, action);
@@ -384,7 +384,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Could Not Fetch Price Rule'
+      error: 'Could Not Fetch Price Rule',
     });
   });
 });
@@ -461,7 +461,7 @@ describe('saga workers', () => {
     expect(success.next({ id: 1 }).value).toEqual(
       put({
         type: types.FETCH_PRICE_RULE_SUCCESS,
-        payload: { id: 1 }
+        payload: { id: 1 },
       })
     );
 
@@ -481,8 +481,8 @@ describe('selectors', () => {
     const store = {
       priceRule: {
         ...initialState,
-        allRows: [1, 2, 3]
-      }
+        allRows: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectAllPriceRuleRows(store)).toEqual([1, 2, 3]);
@@ -493,13 +493,13 @@ describe('selectors', () => {
       priceRule: {
         ...initialState,
         allRows: [1, 2, 3],
-        editingRowState: { id: 1, constant: 2 }
-      }
+        editingRowState: { id: 1, constant: 2 },
+      },
     };
 
     expect(selectors.selectEditingPriceRule(store)).toEqual({
       id: 1,
-      constant: 2
+      constant: 2,
     });
   });
 
@@ -507,8 +507,8 @@ describe('selectors', () => {
     const store = {
       priceRule: {
         ...initialState,
-        editingRowId: 0
-      }
+        editingRowId: 0,
+      },
     };
 
     expect(selectors.selectIsEditingPriceRule(store)).toEqual(true);
@@ -521,26 +521,26 @@ describe('selectors', () => {
           {
             id: 1,
             externalBuyerTypeIds: ['3161', '1111'],
-            isActive: true
+            isActive: true,
           },
           {
             id: 2,
             externalBuyerTypeIds: ['2222', '1111'],
-            isActive: true
+            isActive: true,
           },
           {
             id: 3,
             externalBuyerTypeIds: ['5555', '9999'],
-            isActive: false
-          }
-        ]
-      }
+            isActive: false,
+          },
+        ],
+      },
     };
 
     expect(selectors.selectBuyerTypesInActivePriceRules(store)).toEqual([
       '3161',
       '1111',
-      '2222'
+      '2222',
     ]);
   });
 });

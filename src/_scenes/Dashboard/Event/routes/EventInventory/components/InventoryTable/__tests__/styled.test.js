@@ -10,7 +10,7 @@ import {
   FilterList,
   FilterListItem,
   Checkbox,
-  FilterButton
+  FilterButton,
 } from '../styled';
 
 describe('InventoryTable styled components', () => {

@@ -28,7 +28,7 @@ import {
   CumulativeInventoryChart,
   CumulativeInventoryChartLegend,
   ReportDownloadButton,
-  Text
+  Text,
 } from '_components';
 import {
   cssConstants,
@@ -36,7 +36,7 @@ import {
   GROUP_FILTERS,
   CONCISE_READABLE_DATETIME_FORMAT,
   READABLE_DATE_FORMAT,
-  mobileBreakpoint
+  mobileBreakpoint,
 } from '_constants';
 import type { SeasonStatState } from '_state/seasonStat/reducer';
 import { selectors as seasonSelectors } from '_state/season';
@@ -48,7 +48,7 @@ import {
   renderMinorXAxisTicks,
   renderMajorXAxisTicks,
   renderMobileXAxisTicks,
-  isMobileDevice
+  isMobileDevice,
 } from '_helpers';
 
 const TabLink = styled.span`
@@ -92,7 +92,7 @@ const DateFilterOptions = styled.div`
 type Props = {
   seasonStatState: SeasonStatState,
   selectedSeason: EDSeason,
-  seasonStatActions: SeasonStatActions
+  seasonStatActions: SeasonStatActions,
 };
 
 const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
@@ -103,10 +103,10 @@ const NoData = ({ type }: { type: 'Revenue' | 'Inventory' }) => (
 
 const ChartLegend = ({
   selectedGroupFilter,
-  selectedTab
+  selectedTab,
 }: {
   selectedGroupFilter: number,
-  selectedTab: number
+  selectedTab: number,
 }) => {
   if (selectedGroupFilter === 0 && selectedTab === 0)
     return <PeriodicRevenueChartLegend />;
@@ -141,15 +141,15 @@ export class SeasonRevenuePanel extends React.Component<Props> {
     const {
       selectedSeason,
       seasonStatState: {
-        dateRange: { from, to }
+        dateRange: { from, to },
       },
-      seasonStatActions: { downloadSeasonReport }
+      seasonStatActions: { downloadSeasonReport },
     } = this.props;
     downloadSeasonReport({
       id: selectedSeason.id,
       type: 'season',
       start: from ? from.toISOString() : null,
-      end: to ? to.toISOString() : null
+      end: to ? to.toISOString() : null,
     });
   };
 
@@ -163,10 +163,10 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         dateLimits,
         selectedGroupFilter,
         seasonStats,
-        seasonStatsMeta
+        seasonStatsMeta,
       },
       seasonStatActions: { setDateRange, setGroupFilter },
-      selectedSeason: { startTimestamp, endTimestamp }
+      selectedSeason: { startTimestamp, endTimestamp },
     } = this.props;
     const { timeZone, interval } = seasonStatsMeta || {};
 
@@ -186,7 +186,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: seasonStats.length
+        dataLength: seasonStats.length,
       });
     };
 
@@ -195,7 +195,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: seasonStats.length
+        dataLength: seasonStats.length,
       });
     };
 
@@ -204,7 +204,7 @@ export class SeasonRevenuePanel extends React.Component<Props> {
         tickProps,
         interval,
         timeZone,
-        dataLength: seasonStats.length
+        dataLength: seasonStats.length,
       });
     };
 
@@ -264,12 +264,12 @@ export class SeasonRevenuePanel extends React.Component<Props> {
                       dateRange={{ from, to }}
                       allTimeDateRange={{
                         from: startTimestamp,
-                        to: endTimestamp
+                        to: endTimestamp,
                       }}
                       setDateRange={setDateRange}
                       disabledDays={{
                         before: dateLimits.from,
-                        after: dateLimits.to
+                        after: dateLimits.to,
                       }}
                     />
                     <ReportDownloadButton
@@ -357,12 +357,12 @@ export class SeasonRevenuePanel extends React.Component<Props> {
 
 const mapStateToProps = createStructuredSelector({
   seasonStatState: getSeasonStatState,
-  selectedSeason: seasonSelectors.selectActiveSeason
+  selectedSeason: seasonSelectors.selectActiveSeason,
 });
 
 function mapActionCreators(dispatch) {
   return {
-    seasonStatActions: bindActionCreators(seasonStatActions, dispatch)
+    seasonStatActions: bindActionCreators(seasonStatActions, dispatch),
   };
 }
 

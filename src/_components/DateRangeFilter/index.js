@@ -14,7 +14,7 @@ import {
   startOfMonth,
   subMonths,
   endOfMonth,
-  startOfYear
+  startOfYear,
 } from 'date-fns';
 import { getFilterOptions } from './constants';
 import { Option } from './Option';
@@ -38,7 +38,7 @@ type ActionType =
 
 type Action = {
   type: ActionType,
-  payload?: DropdownOption
+  payload?: DropdownOption,
 };
 
 type Props = {
@@ -46,7 +46,7 @@ type Props = {
   setDateRange: ({ from: ?Date, to: ?Date }) => void,
   disabledDays: { after: ?Date, before: ?Date },
   allTimeDateRange: { from: ?Date, to: ?Date },
-  arrowColor?: string
+  arrowColor?: string,
 };
 
 type State = {
@@ -56,7 +56,7 @@ type State = {
   fromIsOpen: boolean,
   toIsOpen: boolean,
   toError: boolean,
-  fromError: boolean
+  fromError: boolean,
 };
 
 const DropdownText = styled.span`
@@ -70,7 +70,7 @@ export const initialState: State = {
   fromIsOpen: false,
   toIsOpen: false,
   toError: false,
-  fromError: false
+  fromError: false,
 };
 
 export const reducer = (state: State, action: Action) => {
@@ -85,7 +85,7 @@ export const reducer = (state: State, action: Action) => {
         isOpen: true,
         dateRangePickerOpen: true,
         fromIsOpen: true,
-        toIsOpen: false
+        toIsOpen: false,
       };
     case 'openToInput':
       return {
@@ -93,7 +93,7 @@ export const reducer = (state: State, action: Action) => {
         isOpen: true,
         dateRangePickerOpen: true,
         fromIsOpen: false,
-        toIsOpen: true
+        toIsOpen: true,
       };
     case 'closeAll':
       return {
@@ -101,14 +101,14 @@ export const reducer = (state: State, action: Action) => {
         isOpen: false,
         dateRangePickerOpen: false,
         fromIsOpen: false,
-        toIsOpen: false
+        toIsOpen: false,
       };
     case 'closeDatePicker':
       return {
         ...state,
         dateRangePickerOpen: false,
         fromIsOpen: false,
-        toIsOpen: false
+        toIsOpen: false,
       };
     case 'toClickAwayError':
       return {
@@ -117,7 +117,7 @@ export const reducer = (state: State, action: Action) => {
         dateRangePickerOpen: true,
         toIsOpen: true,
         fromIsOpen: false,
-        toError: true
+        toError: true,
       };
     case 'fromClickAwayError':
       return {
@@ -126,7 +126,7 @@ export const reducer = (state: State, action: Action) => {
         dateRangePickerOpen: true,
         fromIsOpen: true,
         toIsOpen: false,
-        fromError: true
+        fromError: true,
       };
     case 'resetError':
       return { ...state, toError: false, fromError: false };
@@ -284,7 +284,7 @@ export const DateRangeFilter = (props: Props) => {
   const handleToChange = (toDay: Date, modifiers: { disabled: boolean }) => {
     const {
       setDateRange,
-      dateRange: { from }
+      dateRange: { from },
     } = props;
 
     if (modifiers.disabled) {
@@ -298,7 +298,7 @@ export const DateRangeFilter = (props: Props) => {
 
   const clickAway = () => {
     const {
-      dateRange: { from, to }
+      dateRange: { from, to },
     } = props;
     if (!!from && !!to) {
       dispatch({ type: 'closeAll' });
@@ -313,7 +313,7 @@ export const DateRangeFilter = (props: Props) => {
   const {
     arrowColor,
     dateRange: { from, to },
-    disabledDays
+    disabledDays,
   } = props;
   const {
     selected,
@@ -322,7 +322,7 @@ export const DateRangeFilter = (props: Props) => {
     fromIsOpen,
     toIsOpen,
     fromError,
-    toError
+    toError,
   } = state;
   const modifiers = { from, to };
 

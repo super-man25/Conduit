@@ -4,7 +4,7 @@ import { Option } from '../Option';
 
 const defaultProps = {
   isActive: false,
-  dateRangePickerOpen: false
+  dateRangePickerOpen: false,
 };
 
 it('renders correctly', () => {

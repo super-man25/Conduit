@@ -22,5 +22,5 @@ function getAll(params: TimeStatsRequest) {
 }
 
 export const eventStatService = {
-  getAll
+  getAll,
 };

@@ -13,7 +13,7 @@ function combineColumnWithDefaults(column) {
     cellRenderer: defaultCellRenderer,
     width: 0,
     flexGrow: 10,
-    ...column
+    ...column,
   };
 }
 
@@ -28,7 +28,7 @@ export const getInventoryColumns = function(props) {
     selectedSectionFilters,
     setEventInventoryFilter,
     setSelectedScaleFilters,
-    setSelectedSectionFilters
+    setSelectedSectionFilters,
   } = props;
 
   return [
@@ -37,7 +37,7 @@ export const getInventoryColumns = function(props) {
       flexGrow: 5,
       dataKey: '',
       headerRenderer: selectableColumnHeaderRenderer,
-      cellRenderer: selectableColumnCellRenderer
+      cellRenderer: selectableColumnCellRenderer,
     },
     {
       label: 'Scale',
@@ -59,7 +59,7 @@ export const getInventoryColumns = function(props) {
 
         if (!priceScale) return '';
         return priceScale.name;
-      }
+      },
     },
     {
       label: 'Section',
@@ -73,18 +73,18 @@ export const getInventoryColumns = function(props) {
           setEventInventoryFilter,
           clearSectionFilters,
           setSelectedSectionFilters
-        )
+        ),
     },
     {
       label: 'Row',
-      dataKey: 'row'
+      dataKey: 'row',
     },
     {
       label: '# of Seats',
       dataKey: 'seats',
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey].length;
-      }
+      },
     },
     {
       label: 'Price Floor',
@@ -93,8 +93,8 @@ export const getInventoryColumns = function(props) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       },
       columnData: {
-        isEditable: true
-      }
+        isEditable: true,
+      },
     },
     {
       label: 'Price Ceiling',
@@ -103,15 +103,15 @@ export const getInventoryColumns = function(props) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       },
       columnData: {
-        isEditable: true
-      }
+        isEditable: true,
+      },
     },
     {
       label: 'List Price',
       dataKey: 'listedPrice',
       cellDataGetter({ columnData, dataKey, rowData }) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
-      }
+      },
     },
     {
       label: 'Manual Price',
@@ -120,21 +120,21 @@ export const getInventoryColumns = function(props) {
         return rowData[dataKey] !== null ? formatUSD(rowData[dataKey]) : '--';
       },
       columnData: {
-        isEditable: true
-      }
+        isEditable: true,
+      },
     },
     {
       label: 'Pricing',
       dataKey: 'isListed',
       cellRenderer: listedColumnCellRenderer,
-      flexGrow: 5
+      flexGrow: 5,
     },
     {
       label: '',
       dataKey: '',
       disableSort: true,
       cellRenderer: rowControlsCellRenderer,
-      flexGrow: 15
-    }
+      flexGrow: 15,
+    },
   ].map(combineColumnWithDefaults);
 };

@@ -61,7 +61,7 @@ const DateRangeLabel: React.ComponentType<{}> = styled.span`
 `;
 
 const DropdownSelectedItem: React.ComponentType<{
-  dropdownOpen: boolean
+  dropdownOpen: boolean,
 }> = styled.div`
   display: flex;
   justify-content: space-between;
@@ -107,29 +107,29 @@ type Props = {
   disabledDays: { after: Date, before: Date },
   startPlaceholder: string,
   endPlaceholder: string,
-  dateDisplayFormat: string
+  dateDisplayFormat: string,
 };
 
 type State = {
   fromIsOpen: boolean,
-  toIsOpen: boolean
+  toIsOpen: boolean,
 };
 
 export class DateRangeDropdown extends React.Component<Props, State> {
   state = {
     fromIsOpen: false,
-    toIsOpen: false
+    toIsOpen: false,
   };
 
   static defaultProps = {
     onChange: () => {},
-    dateDisplayFormat: 'MM/DD/YYYY'
+    dateDisplayFormat: 'MM/DD/YYYY',
   };
 
   handleClickaway = () => {
     this.setState({
       fromIsOpen: false,
-      toIsOpen: false
+      toIsOpen: false,
     });
   };
 
@@ -138,7 +138,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
 
     return {
       ...disabledDays,
-      after: to
+      after: to,
     };
   }
 
@@ -147,7 +147,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
 
     return {
       ...disabledDays,
-      before: from
+      before: from,
     };
   }
 
@@ -193,7 +193,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
       endPlaceholder,
       dateDisplayFormat,
       from,
-      to
+      to,
     } = this.props;
 
     const { fromIsOpen, toIsOpen } = this.state;

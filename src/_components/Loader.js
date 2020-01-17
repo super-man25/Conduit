@@ -11,7 +11,7 @@ const SMALL_WIDTH = '46px';
 
 const Wrapper = styled.div.attrs((props) => ({
   height: props.small ? SMALL_HEIGHT : LARGE_HEIGHT,
-  width: props.small ? SMALL_WIDTH : LARGE_WIDTH
+  width: props.small ? SMALL_WIDTH : LARGE_WIDTH,
 }))`
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ const Dot = styled.div`
 
 type Props = {
   small: boolean,
-  color: string
+  color: string,
 };
 
 export const Loader = (props: Props) => (

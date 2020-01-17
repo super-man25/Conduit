@@ -11,17 +11,17 @@ export type Action = { type: typeof FETCH_ASYNC } | { type: typeof RESET };
 // Action creators
 function fetch(): Action {
   return {
-    type: FETCH_ASYNC
+    type: FETCH_ASYNC,
   };
 }
 
 function resetTeamStat(): Action {
   return {
-    type: RESET
+    type: RESET,
   };
 }
 
 export default {
   fetch,
-  resetTeamStat
+  resetTeamStat,
 };

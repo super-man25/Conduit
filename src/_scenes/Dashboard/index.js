@@ -17,7 +17,7 @@ import {
   SidebarContent,
   SidebarHeader,
   SiteHeader,
-  TeamOverview
+  TeamOverview,
 } from '_components';
 import EventListContainer from './Event/containers/EventListContainer';
 import { Event } from './Event';
@@ -33,8 +33,8 @@ type Props = {
   sidebarIsOpen: boolean,
   uiActions: typeof uiActions,
   authState: {
-    model: EDUser
-  }
+    model: EDUser,
+  },
 };
 
 class Dashboard extends Component<Props> {
@@ -59,7 +59,7 @@ class Dashboard extends Component<Props> {
       sidebarIsOpen,
       teamStatState,
       uiActions: { toggleSidebar },
-      authState
+      authState,
     } = this.props;
 
     const isAuthorized = !!authState.model;
@@ -108,7 +108,7 @@ function mapStateToProps(state) {
     activeSeasonState: state.season.activeId,
     sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state),
     teamStatState: state.teamStat,
-    authState: state.auth
+    authState: state.auth,
   };
 }
 
@@ -116,7 +116,7 @@ function mapDispatchToProps(dispatch) {
   return {
     teamStatActions: bindActionCreators(teamStatActions, dispatch),
     uiActions: bindActionCreators(uiActions, dispatch),
-    clientActions: bindActionCreators(clientActions, dispatch)
+    clientActions: bindActionCreators(clientActions, dispatch),
   };
 }
 

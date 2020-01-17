@@ -5,5 +5,5 @@ function getAll() {
 }
 
 export const priceScaleService = {
-  getAll
+  getAll,
 };

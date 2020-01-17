@@ -4,7 +4,7 @@ import { get, post, put } from '_helpers/api';
 import {
   validateAdminModifiers,
   validateOverridePrice,
-  validatePercentPriceModifier
+  validatePercentPriceModifier,
 } from './validators/event';
 import type { EDEvent, EDInventoryRow } from '_models';
 
@@ -27,7 +27,7 @@ function getPricingPreview(
 ): Promise<EDPricingPreview> {
   return get(`events/${id}/pricingPreview`, {
     eventScore: eventScore.toFixed(2),
-    spring: spring.toFixed(4)
+    spring: spring.toFixed(4),
   });
 }
 
@@ -37,7 +37,7 @@ function getAutomatedSpringValue(id: number, eventScore: number): Promise<any> {
 
 type ToggleBroadcastingResponse = {
   modifiedAt: number,
-  isBroadcast: boolean
+  isBroadcast: boolean,
 };
 
 function toggleBroadcasting(
@@ -65,19 +65,19 @@ function updateAdminModifiers({
   eventScoreModifier,
   springModifier,
   reasonType,
-  reasonComments
+  reasonComments,
 }: {
   eventId: number,
   eventScoreModifier: number,
   springModifier: number,
   reasonType: string,
-  reasonComments: string
+  reasonComments: string,
 }) {
   return validateAdminModifiers({
     eventScoreModifier,
     springModifier,
     reasonType,
-    reasonComments
+    reasonComments,
   }).then((payload) => {
     return put(`events/${eventId}/adminModifier`, payload).catch(
       handleResponseError
@@ -90,7 +90,7 @@ function updateAdminModifiers({
 // Remove if an Id starts getting generated on the server
 const generateComputedInventoryRowId = (row: EDInventoryRow) => ({
   ...row,
-  id: `${row.eventId}_${row.section}_${row.row}`
+  id: `${row.eventId}_${row.section}_${row.row}`,
 });
 
 function getInventory(eventId: number): EDInventoryRow[] {
@@ -104,7 +104,7 @@ function updateEventSeats(payload: {
   overridePrice?: number,
   isListed?: boolean,
   minimumPrice?: number,
-  maximumPrice?: number
+  maximumPrice?: number,
 }) {
   return validateOverridePrice(payload).then((denormalizedPayload) => {
     return post('eventRows/_bulk', denormalizedPayload);
@@ -131,5 +131,5 @@ export const eventService = {
   updateAdminModifiers,
   updateEventSeats,
   updatePercentPriceModifier,
-  getAutomatedSpringValue
+  getAutomatedSpringValue,
 };

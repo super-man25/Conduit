@@ -8,7 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Label,
-  Tooltip
+  Tooltip,
 } from 'recharts';
 import { cssConstants, chartLabelStyles } from '_constants';
 import { ChartContainer } from '_components';
@@ -27,7 +27,7 @@ type Props = {
   renderNoData: () => React.Node,
   majorXAxisTickRenderer: () => HTMLElement,
   minorXAxisTickRenderer: () => HTMLElement,
-  mobileXAxisTickRenderer: () => HTMLElement
+  mobileXAxisTickRenderer: () => HTMLElement,
 };
 
 export function CumulativeInventoryChart({
@@ -38,7 +38,7 @@ export function CumulativeInventoryChart({
   renderNoData,
   majorXAxisTickRenderer,
   minorXAxisTickRenderer,
-  mobileXAxisTickRenderer
+  mobileXAxisTickRenderer,
 }: Props) {
   if (!data.length) {
     return renderNoData();
@@ -120,7 +120,7 @@ export function CumulativeInventoryChart({
             cursor={{
               stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
               strokeWidth: 2,
-              opacity: 0.5
+              opacity: 0.5,
             }}
             content={
               <CumulativeInventoryTooltip

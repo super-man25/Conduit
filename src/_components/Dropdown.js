@@ -10,7 +10,7 @@ import { Flex } from './Flex';
 import { InputBase } from './Input';
 
 const DropdownContainer = withClickAway(styled(InputBase).attrs({
-  as: 'div'
+  as: 'div',
 })`
   cursor: pointer;
 `);
@@ -76,7 +76,7 @@ type Props = {
   noneSelected: string | Node,
   arrowColor?: string,
   valid: boolean,
-  invalid: boolean
+  invalid: boolean,
 };
 
 export const Dropdown = (props: Props) => {
@@ -102,7 +102,7 @@ export const Dropdown = (props: Props) => {
     arrowColor,
     valid,
     invalid,
-    onBlur
+    onBlur,
   } = props;
 
   const hasSelectedItem = !!options.find(

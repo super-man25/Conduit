@@ -10,21 +10,21 @@ const RESET_PRICE_SCALES = 'priceScale/RESET_PRICE_SCALES';
 
 // Action types
 export type FetchPriceScaleAction = {
-  type: 'priceScale/FETCH_PRICE_SCALES'
+  type: 'priceScale/FETCH_PRICE_SCALES',
 };
 
 export type FetchPriceScaleSuccessAction = {
   type: 'priceScale/FETCH_PRICE_SCALES_SUCCESS',
-  payload: EDPriceScale[]
+  payload: EDPriceScale[],
 };
 
 export type FetchPriceScaleErrorAction = {
   type: 'priceScale/FETCH_PRICE_SCALES_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type ResetPriceScaleAction = {
-  type: 'priceScale/RESET_PRICE_SCALES'
+  type: 'priceScale/RESET_PRICE_SCALES',
 };
 
 export type Action =
@@ -37,38 +37,38 @@ export const types = {
   FETCH_PRICE_SCALES,
   FETCH_PRICE_SCALES_SUCCESS,
   FETCH_PRICE_SCALES_ERROR,
-  RESET_PRICE_SCALES
+  RESET_PRICE_SCALES,
 };
 
 // Actions
 const fetchPriceScales = (): FetchPriceScaleAction => ({
-  type: FETCH_PRICE_SCALES
+  type: FETCH_PRICE_SCALES,
 });
 
 const resetPriceScales = (): ResetPriceScaleAction => ({
-  type: RESET_PRICE_SCALES
+  type: RESET_PRICE_SCALES,
 });
 
 export const actions = {
   fetchPriceScales,
-  resetPriceScales
+  resetPriceScales,
 };
 
 // State/reducer
 type State = {
   priceScales: EDPriceScale[],
   loading: boolean,
-  error: ?Error
+  error: ?Error,
 };
 
 export const initialState: State = {
   priceScales: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 type Store = {
-  priceScale: State
+  priceScale: State,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -92,5 +92,5 @@ const selectIsLoading = (store: Store) => store.priceScale.loading;
 
 export const selectors = {
   selectAllPriceScales,
-  selectIsLoading
+  selectIsLoading,
 };

@@ -8,7 +8,7 @@ describe('<MultiSelect />', () => {
     options: [
       { id: 2, name: 'Braves at Zephyrs' },
       { id: 5, name: 'Dogs at Cats' },
-      { id: 17, name: 'Mariners at Zephyrs' }
+      { id: 17, name: 'Mariners at Zephyrs' },
     ],
     selected: [17],
     labelFn: jest.fn(),
@@ -16,7 +16,7 @@ describe('<MultiSelect />', () => {
     label: 'Events',
     isGroupable: false,
     updatePriceRuleProperty: jest.fn(),
-    onItemClicked: jest.fn()
+    onItemClicked: jest.fn(),
   };
 
   it('should render correctly', () => {
@@ -42,7 +42,7 @@ describe('<MultiSelect />', () => {
 describe('<GroupedSplitButton />', () => {
   const props = {
     isGrouped: true,
-    selectGrouping: jest.fn()
+    selectGrouping: jest.fn(),
   };
 
   it('should render correctly', () => {

@@ -48,14 +48,14 @@ export const cssConstants = {
   SUBHEADING_SIZE_S1: '12px',
   SUBHEADING_WEIGHT_S1: 'normal',
   LABEL_SIZE: '14px',
-  LABEL_WEIGHT: 'normal'
+  LABEL_WEIGHT: 'normal',
 };
 
 export const shadows = {
   ACTIVE_BUTTON: '0 0 3px rgba(56, 169, 219, 100)',
   SMALL: '0 1px 5px rgba(0, 0, 0, 0.1)',
   MEDIUM: '0 1px 10px rgba(0, 0, 0, 0.15)',
-  LARGE: '0 1px 15px rgba(0, 0, 0, 0.15)'
+  LARGE: '0 1px 15px rgba(0, 0, 0, 0.15)',
 };
 
 export const zIndexes = {
@@ -63,14 +63,14 @@ export const zIndexes = {
   DROPDOWN_FILTER: BASE + 1,
   POPOVER: BASE + 2,
   OVERLAY,
-  DROPDOWN_CLIENT_HEADER: OVERLAY + 1
+  DROPDOWN_CLIENT_HEADER: OVERLAY + 1,
 };
 
 const getFontFamily = (fontName) =>
   `${fontName}, Roboto, Helvetica, sans-serif`;
 
 export const fonts = {
-  FUTURA: getFontFamily('FuturaPT')
+  FUTURA: getFontFamily('FuturaPT'),
 };
 
 export const navigationHeight = 70;

@@ -8,11 +8,11 @@ type Props = {
   isEditing: boolean,
   rulePropertyValue: string,
   columnData: any,
-  updatePriceRuleProperty: (any) => void
+  updatePriceRuleProperty: (any) => void,
 };
 
 type State = {
-  rulePropertyValue: string
+  rulePropertyValue: string,
 };
 
 export class DefaultCellPresenter extends React.Component<Props, State> {
@@ -32,7 +32,7 @@ export class DefaultCellPresenter extends React.Component<Props, State> {
     const {
       isEditing,
       rulePropertyValue,
-      columnData: { displayFn }
+      columnData: { displayFn },
     } = this.props;
 
     const value = rulePropertyValue || '';

@@ -12,7 +12,7 @@ type Props = {
   rulePropertyValue: number[],
   parent: any,
   isGroupable: boolean,
-  updatePriceRuleProperty: (rulePropertyValue: number[]) => void
+  updatePriceRuleProperty: (rulePropertyValue: number[]) => void,
 };
 
 export class MultiSelectCellPresenter extends React.Component<Props> {
@@ -43,7 +43,7 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
                   id: rpv,
                   code: 'Unknown',
                   publicDescription: rpv,
-                  isInPriceStructure: false
+                  isInPriceStructure: false,
                 }))
             )
         : columnData[optionsKey];
@@ -74,7 +74,7 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
       columnData: { label, labelFn, isGroupable, optionsKey },
       rulePropertyValue,
       updatePriceRuleProperty,
-      columnData
+      columnData,
     } = this.props;
 
     const items = this.items();

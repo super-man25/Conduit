@@ -68,21 +68,21 @@ type Props = {
   hasNone: boolean,
   noneSelected: string | React.Node,
   gridProps: any,
-  onChange: (newSelected: any, prevSelected: any, options: any[]) => void
+  onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
 };
 
 type State = {
-  isOpen: boolean
+  isOpen: boolean,
 };
 
 export class Dropdown extends React.Component<Props, State> {
   ref = React.createRef<HTMLDivElement>();
   static defaultProps = {
-    noneSelected: 'Select an Item'
+    noneSelected: 'Select an Item',
   };
 
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   toggleDropdownOpen = () => {
@@ -117,7 +117,7 @@ export class Dropdown extends React.Component<Props, State> {
       hasNone,
       parseOption,
       noneSelected,
-      renderSelected
+      renderSelected,
     } = this.props;
     const { isOpen } = this.state;
 
@@ -150,7 +150,7 @@ export class Dropdown extends React.Component<Props, State> {
           ref={this.ref}
           style={{
             position: 'fixed',
-            zIndex: 9
+            zIndex: 9,
           }}
         >
           <DropdownMenu

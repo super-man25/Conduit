@@ -11,15 +11,15 @@ describe('<DropdownCellRenderer />', () => {
     parent: {
       props: {
         height: '180',
-        headerHeight: '45'
-      }
+        headerHeight: '45',
+      },
     },
     columnData: {
       optionsKey: 'priceScales',
       priceScales: [{ id: 2, name: 'DUGOUT' }, { id: 1, name: 'GOLD' }],
-      hasId: true
+      hasId: true,
     },
-    selectedItemId: 2
+    selectedItemId: 2,
   };
 
   it('should render correctly', () => {
@@ -54,7 +54,7 @@ describe('<DropdownCellRenderer />', () => {
   it('should sort with the sort function correctly', () => {
     const columnData = {
       ...props.columnData,
-      sortFn: (first, second) => (first.id >= second.id ? 1 : -1)
+      sortFn: (first, second) => (first.id >= second.id ? 1 : -1),
     };
 
     const wrapper = mount(
@@ -68,7 +68,7 @@ describe('<DropdownCellRenderer />', () => {
     expect(wrapper.find(Option).map((o) => o.text())).toEqual([
       'None',
       'GOLD',
-      'DUGOUT'
+      'DUGOUT',
     ]);
 
     wrapper.unmount();

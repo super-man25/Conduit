@@ -8,7 +8,7 @@ describe('<EventInventory /> index route', () => {
     event: {},
     selectedEventIds: [],
     isBulkUpdating: false,
-    startBulkUpdate: jest.fn()
+    startBulkUpdate: jest.fn(),
   };
 
   it('should render correctly', () => {

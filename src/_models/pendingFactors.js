@@ -4,5 +4,5 @@ export type PendingFactors = {
   +eventScoreModifier: ?number,
   +spring: ?number,
   +springModifier: ?number,
-  +velocityFactor: ?number
+  +velocityFactor: ?number,
 };

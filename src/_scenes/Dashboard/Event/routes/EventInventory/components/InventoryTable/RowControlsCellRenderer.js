@@ -16,7 +16,7 @@ type Props = {
   editingAnyRow: boolean,
   startEditingRow: () => void,
   cancelEditingRow: () => void,
-  saveEditedRow: () => void
+  saveEditedRow: () => void,
 };
 
 export const RowControlsCellPresenter = ({
@@ -28,7 +28,7 @@ export const RowControlsCellPresenter = ({
   isEditing,
   editingAnyRow,
   isNewRow,
-  isLoading
+  isLoading,
 }: Props) => {
   const startEditing = () => {
     // if (isEditing || isLoading) return;
@@ -50,10 +50,10 @@ export const RowControlsCellPresenter = ({
             editingAnyRow
               ? {
                   cursor: 'not-allowed',
-                  opacity: 0.5
+                  opacity: 0.5,
                 }
               : {
-                  cursor: 'pointer'
+                  cursor: 'pointer',
                 }
           }
           weight="heavy"
@@ -96,13 +96,13 @@ const mapStateToProps = (
 ) => ({
   isEditing: editedRowId === rowData.id,
   editingAnyRow: editedRowId !== null,
-  isLoading: loading
+  isLoading: loading,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   startEditingRow: () => dispatch(actions.startEditingRow(ownProps.rowData.id)),
   cancelEditingRow: () => dispatch(actions.cancelEditingRow()),
-  saveEditedRow: () => dispatch(actions.saveEditedRow())
+  saveEditedRow: () => dispatch(actions.saveEditedRow()),
 });
 
 const RowControlsCell = connect(

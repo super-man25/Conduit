@@ -28,7 +28,7 @@ type Props = {
   size: number,
 
   /** HTML color (HEX or color string) for the icon fill  */
-  color: string
+  color: string,
 };
 
 export const Icon = ({ onClick, className, name, size, color }: Props) => {

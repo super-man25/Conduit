@@ -4,7 +4,7 @@ import {
   ERROR,
   CLEAR,
   SUCCESS_ASYNC,
-  ERROR_ASYNC
+  ERROR_ASYNC,
 } from '_state/alert/actions';
 import { successAlertAsync, errorAlertAsync } from '_state/alert/saga';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
@@ -16,7 +16,7 @@ describe('actions', () => {
     const action = actions.success(message);
     expect(action).toEqual({
       type: SUCCESS_ASYNC,
-      payload: message
+      payload: message,
     });
   });
 
@@ -25,7 +25,7 @@ describe('actions', () => {
     const action = actions.error(message);
     expect(action).toEqual({
       type: ERROR_ASYNC,
-      payload: message
+      payload: message,
     });
   });
 });
@@ -36,14 +36,14 @@ describe('reducer', () => {
 
     expect(state).toEqual({
       type: null,
-      message: null
+      message: null,
     });
   });
 
   it('should handle SUCCESS', () => {
     const prevState = {
       type: null,
-      message: null
+      message: null,
     };
 
     const message = 'message';
@@ -51,14 +51,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       type: 'api-success',
-      message
+      message,
     });
   });
 
   it('should handle ERROR', () => {
     const prevState = {
       type: null,
-      message: null
+      message: null,
     };
 
     const message = 'message';
@@ -66,21 +66,21 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       type: 'api-error',
-      message
+      message,
     });
   });
 
   it('should handle CLEAR', () => {
     const prevState = {
       type: 'api-success',
-      message: 'message'
+      message: 'message',
     };
 
     const nextState = reducer(prevState, { type: CLEAR });
 
     expect(nextState).toEqual({
       type: null,
-      message: null
+      message: null,
     });
   });
 });

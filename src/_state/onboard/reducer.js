@@ -1,12 +1,12 @@
 import {
   ONBOARD_CLIENT_ASYNC,
   ONBOARD_CLIENT_SUCCESS,
-  ONBOARD_CLIENT_ERROR
+  ONBOARD_CLIENT_ERROR,
 } from './actions';
 
 const initialState = {
   loading: false,
-  saved: false
+  saved: false,
 };
 
 export default function onboardReducer(state = initialState, action) {

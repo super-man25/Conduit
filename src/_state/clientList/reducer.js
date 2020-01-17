@@ -1,13 +1,13 @@
 import {
   FETCH_CLIENT_LIST,
   FETCH_CLIENT_LIST_SUCCESS,
-  FETCH_CLIENT_LIST_ERROR
+  FETCH_CLIENT_LIST_ERROR,
 } from './actions';
 
 export const initialState = {
   clients: [],
   error: null,
-  loading: false
+  loading: false,
 };
 
 export default function clientListReducer(state = initialState, action) {
@@ -15,19 +15,19 @@ export default function clientListReducer(state = initialState, action) {
     case FETCH_CLIENT_LIST:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case FETCH_CLIENT_LIST_SUCCESS:
       return {
         ...state,
         clients: action.payload,
-        loading: false
+        loading: false,
       };
     case FETCH_CLIENT_LIST_ERROR:
       return {
         ...state,
         error: action.payload,
-        loading: false
+        loading: false,
       };
     default:
       return state;

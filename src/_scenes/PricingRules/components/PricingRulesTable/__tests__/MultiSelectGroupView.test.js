@@ -9,14 +9,14 @@ describe('<MultiSelectGroupView />', () => {
     grouped: {
       2: [
         { id: 6, name: 'Braves at Zephyrs' },
-        { id: 18, name: 'Dogs FIGHT Cats' }
+        { id: 18, name: 'Dogs FIGHT Cats' },
       ],
-      3: [{ id: 23, name: 'Cardinals at Zephyrs' }]
+      3: [{ id: 23, name: 'Cardinals at Zephyrs' }],
     },
     selected: [18],
     labelFn: (o) => o.name,
     onItemClicked: jest.fn(),
-    updatePriceRuleProperty: jest.fn()
+    updatePriceRuleProperty: jest.fn(),
   };
 
   it('should render correctly', () => {
@@ -25,8 +25,8 @@ describe('<MultiSelectGroupView />', () => {
     expect(wrapper.state()).toEqual({
       selectAllNext: {
         2: true,
-        3: true
-      }
+        3: true,
+      },
     });
   });
 

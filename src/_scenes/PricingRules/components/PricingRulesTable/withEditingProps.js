@@ -12,7 +12,7 @@ const mapStateToProps = (
   return {
     isEditing,
     rulePropertyValue: row[dataKey],
-    ruleId: allRows.find((pr) => pr.id === rowData.id).id
+    ruleId: allRows.find((pr) => pr.id === rowData.id).id,
   };
 };
 
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
       actions.updatePriceRuleProperty({
         id: rowData.id,
         propertyName: dataKey,
-        propertyValue: value
+        propertyValue: value,
       })
-    )
+    ),
 });
 
 export const withEditingProps = connect(

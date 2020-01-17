@@ -12,7 +12,7 @@ export function* fetchPricingPreview(action) {
     eventScoreModifier,
     spring,
     springModifier,
-    velocityFactor
+    velocityFactor,
   } = yield select(eventSelectors.selectPendingFactors);
 
   const newEventScore = +finalEventScore(
@@ -55,5 +55,5 @@ function* watchParamsChanged() {
 
 export default {
   watchFetchPricingPreview,
-  watchParamsChanged
+  watchParamsChanged,
 };

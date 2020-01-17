@@ -18,7 +18,7 @@ export const DOWNLOAD_EVENT_REPORT_ERROR =
 type EventStatParams = {
   eventId: number,
   start: ?Date,
-  end: ?Date
+  end: ?Date,
 };
 
 export type Action =
@@ -30,7 +30,7 @@ export type Action =
   | { type: typeof SET_DATE_RANGE, payload: { from: ?Date, to: ?Date } }
   | {
       type: typeof SET_FIRST_AND_LAST_DATE,
-      payload: { from: ?Date, to: ?Date }
+      payload: { from: ?Date, to: ?Date },
     }
   | { type: typeof DOWNLOAD_EVENT_REPORT, payload: EDReportPayload }
   | { type: typeof DOWNLOAD_EVENT_REPORT_SUCCESS, payload: any }
@@ -40,33 +40,33 @@ export type Action =
 function fetch(eventStatParams?: EventStatParams): Action {
   return {
     type: FETCH_ASYNC,
-    payload: eventStatParams
+    payload: eventStatParams,
   };
 }
 
 function clear(): Action {
   return {
-    type: RESET
+    type: RESET,
   };
 }
 
 function setGroupFilter(filter: number): Action {
   return {
     type: SET_GROUPING_FILTER,
-    payload: filter
+    payload: filter,
   };
 }
 
 function setDateRange(dateRange: { from: ?Date, to: ?Date }): Action {
   return {
     type: SET_DATE_RANGE,
-    payload: dateRange
+    payload: dateRange,
   };
 }
 
 const downloadEventReport = (payload: EDReportPayload) => ({
   type: DOWNLOAD_EVENT_REPORT,
-  payload
+  payload,
 });
 
 export default {
@@ -74,5 +74,5 @@ export default {
   clear,
   setGroupFilter,
   setDateRange,
-  downloadEventReport
+  downloadEventReport,
 };

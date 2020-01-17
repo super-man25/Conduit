@@ -11,15 +11,15 @@ export const RESET_USERS = 'users/RESET_USERS';
 export type FetchUsersAction = { type: 'users/FETCH_USERS_ASYNC' };
 export type FetchUsersSuccessAction = {
   type: 'users/FETCH_USERS_ASYNC_SUCCESS',
-  payload: EDUser[]
+  payload: EDUser[],
 };
 export type FetchUsersErrorAction = {
   type: 'users/FETCH_USERS_ASYNC_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type ResetUsers = {
   type: 'users/RESET_USERS',
-  payload: null
+  payload: null,
 };
 export type Action =
   | FetchUsersAction
@@ -31,19 +31,19 @@ export type Action =
 const fetchUserList = (): FetchUsersAction => ({ type: FETCH_USERS_ASYNC });
 const resetUsers = (): ResetUsers => ({
   type: RESET_USERS,
-  payload: null
+  payload: null,
 });
 export const actions = { fetchUserList, resetUsers };
 
 // Reducer/Initial State
 export type State = {
   loading: boolean,
-  userList: EDUser[]
+  userList: EDUser[],
 };
 
 export const initialState = {
   loading: false,
-  userList: []
+  userList: [],
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -63,12 +63,12 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // Selectors
 type Store = {
-  userList: State
+  userList: State,
 };
 const selectUserList = (store: Store) => store.userList.userList;
 
 export const selectors = {
-  selectUserList
+  selectUserList,
 };
 
 export { default as saga } from './saga';

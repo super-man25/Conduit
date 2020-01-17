@@ -20,7 +20,7 @@ export const withPricingRuleRowStyles = (RowRenderer) => {
   const mapStateToRowProps = ({ priceRule: { error } }, { rowData }) => ({
     rowIsConflicting:
       get(error, 'code') === 409 &&
-      get(error, 'body.proVenuePricingRules', []).includes(rowData.id)
+      get(error, 'body.proVenuePricingRules', []).includes(rowData.id),
   });
 
   const PriceRuleRowRenderer = connect(

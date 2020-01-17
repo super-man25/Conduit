@@ -12,19 +12,19 @@ import {
   SET_DATE_RANGE,
   DOWNLOAD_EVENT_REPORT,
   DOWNLOAD_EVENT_REPORT_SUCCESS,
-  DOWNLOAD_EVENT_REPORT_ERROR
+  DOWNLOAD_EVENT_REPORT_ERROR,
 } from '_state/eventStat/actions';
 import {
   setDefaultDateRange,
   fetchEventTimeStats,
-  downloadEventReport
+  downloadEventReport,
 } from '_state/eventStat/saga';
 import { initialState, serialize } from '_state/eventStat/reducer';
 import {
   getEventStatFilterArguments,
   getEventStats,
   getEventStatState,
-  getEventStatDateLimits
+  getEventStatDateLimits,
 } from '../eventStat/selectors';
 import { selectors } from '../event';
 import { selectors as seasonSelectors } from '../season';
@@ -35,14 +35,14 @@ describe('actions', () => {
   it('should create an action to fetch eventStats', () => {
     const action = actions.fetch();
     expect(action).toEqual({
-      type: FETCH_ASYNC
+      type: FETCH_ASYNC,
     });
   });
 
   it('should create an action to clear eventStats', () => {
     const action = actions.clear();
     expect(action).toEqual({
-      type: RESET
+      type: RESET,
     });
   });
 
@@ -50,7 +50,7 @@ describe('actions', () => {
     const action = actions.setGroupFilter(1);
     expect(action).toEqual({
       type: SET_GROUPING_FILTER,
-      payload: 1
+      payload: 1,
     });
   });
 
@@ -60,7 +60,7 @@ describe('actions', () => {
     const action = actions.setDateRange({ from, to });
     expect(action).toEqual({
       type: SET_DATE_RANGE,
-      payload: { to, from }
+      payload: { to, from },
     });
   });
 
@@ -68,12 +68,12 @@ describe('actions', () => {
     const payload = {
       id: 1,
       start: '2018-10-01T00:00:00.00Z',
-      end: '2019-01-01T00:00:00.00Z'
+      end: '2019-01-01T00:00:00.00Z',
     };
     const action = actions.downloadEventReport(payload);
     expect(action).toEqual({
       type: DOWNLOAD_EVENT_REPORT,
-      payload
+      payload,
     });
   });
 });
@@ -88,7 +88,7 @@ describe('reducer', () => {
   it('should handle FETCH_ASYNC actions', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: FETCH_ASYNC };
@@ -96,7 +96,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      loading: true
+      loading: true,
     });
   });
 
@@ -105,7 +105,7 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       eventStats: [],
-      eventStatsMeta: null
+      eventStatsMeta: null,
     };
 
     const eventStats = [
@@ -115,7 +115,7 @@ describe('reducer', () => {
         periodicInventory: -201,
         periodicRevenue: 6704.91,
         revenue: 26184.1,
-        timestamp: '2019-09-25T04:00:00Z'
+        timestamp: '2019-09-25T04:00:00Z',
       },
       {
         inventory: 2568,
@@ -123,16 +123,16 @@ describe('reducer', () => {
         periodicInventory: -2,
         periodicRevenue: 170.5,
         revenue: 13142.28,
-        timestamp: '2019-09-18T04:00:00Z'
-      }
+        timestamp: '2019-09-18T04:00:00Z',
+      },
     ];
     const eventStatsMeta = {
       interval: 'So meta',
-      timeZone: 'America/New_York'
+      timeZone: 'America/New_York',
     };
     const eventStatsResponse = {
       data: eventStats,
-      meta: eventStatsMeta
+      meta: eventStatsMeta,
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
@@ -142,7 +142,7 @@ describe('reducer', () => {
       ...initialState,
       loading: false,
       eventStats: serializedEventStats,
-      eventStatsMeta
+      eventStatsMeta,
     });
 
     // Assert on projection keys
@@ -158,7 +158,7 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       eventStats: [],
-      eventStatsMeta: null
+      eventStatsMeta: null,
     };
 
     const eventStats = [
@@ -168,7 +168,7 @@ describe('reducer', () => {
         periodicInventory: -210,
         periodicRevenue: 6704.91,
         revenue: 26184.1,
-        timestamp: '2019-09-25T04:00:00Z'
+        timestamp: '2019-09-25T04:00:00Z',
       },
       {
         inventory: 2568,
@@ -176,16 +176,16 @@ describe('reducer', () => {
         periodicInventory: -2,
         periodicRevenue: 170.5,
         revenue: 13142.28,
-        timestamp: '2019-09-18T04:00:00Z'
-      }
+        timestamp: '2019-09-18T04:00:00Z',
+      },
     ];
     const eventStatsMeta = {
       interval: 'So meta',
-      timeZone: 'America/New_York'
+      timeZone: 'America/New_York',
     };
     const eventStatsResponse = {
       data: eventStats,
-      meta: eventStatsMeta
+      meta: eventStatsMeta,
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
@@ -195,7 +195,7 @@ describe('reducer', () => {
       ...initialState,
       loading: false,
       eventStats: serializedEventStats,
-      eventStatsMeta
+      eventStatsMeta,
     });
 
     // Assert on projection keys
@@ -217,7 +217,7 @@ describe('reducer', () => {
       ...initialState,
       loading: true,
       eventStats: [],
-      eventStatsMeta: null
+      eventStatsMeta: null,
     };
 
     const eventStats = [
@@ -227,7 +227,7 @@ describe('reducer', () => {
         periodicInventory: 0,
         periodicRevenue: 6704.91,
         revenue: 26184.1,
-        timestamp: '2019-09-25T04:00:00Z'
+        timestamp: '2019-09-25T04:00:00Z',
       },
       {
         inventory: 2568,
@@ -235,16 +235,16 @@ describe('reducer', () => {
         periodicInventory: -2,
         periodicRevenue: 0,
         revenue: 13142.28,
-        timestamp: '2019-09-18T04:00:00Z'
-      }
+        timestamp: '2019-09-18T04:00:00Z',
+      },
     ];
     const eventStatsMeta = {
       interval: 'So meta',
-      timeZone: 'America/New_York'
+      timeZone: 'America/New_York',
     };
     const eventStatsResponse = {
       data: eventStats,
-      meta: eventStatsMeta
+      meta: eventStatsMeta,
     };
     const action = { type: FETCH_SUCCESS, payload: eventStatsResponse };
     const nextState = reducer(prevState, action);
@@ -254,7 +254,7 @@ describe('reducer', () => {
       ...initialState,
       loading: false,
       eventStats: serializedEventStats,
-      eventStatsMeta
+      eventStatsMeta,
     });
 
     const projectedStat1 = serializedEventStats[0];
@@ -279,7 +279,7 @@ describe('reducer', () => {
     const prevState = {
       ...initialState,
       loading: true,
-      model: []
+      model: [],
     };
 
     const action = { type: FETCH_ERROR };
@@ -288,7 +288,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...initialState,
       loading: false,
-      model: []
+      model: [],
     });
   });
 
@@ -299,18 +299,18 @@ describe('reducer', () => {
       eventStats: [1, 2, 3],
       eventStatsMeta: {
         interval: 'So meta',
-        timeZone: 'America/New_York'
+        timeZone: 'America/New_York',
       },
       selectedGroupFilter: 1,
       selectedDateFilter: 1,
       dateFilter: {
         from: new Date(),
-        to: new Date()
+        to: new Date(),
       },
       eventDateLimits: {
         from: new Date(),
-        to: new Date()
-      }
+        to: new Date(),
+      },
     };
 
     const action = { type: RESET };
@@ -322,7 +322,7 @@ describe('reducer', () => {
   it('should handle SET_GROUPING_FILTER', () => {
     const prevState = {
       ...initialState,
-      selectedGroupFilter: 0
+      selectedGroupFilter: 0,
     };
 
     const action = { type: SET_GROUPING_FILTER, payload: 1 };
@@ -330,14 +330,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      selectedGroupFilter: 1
+      selectedGroupFilter: 1,
     });
   });
 
   it('should handle SET_DATE_RANGE', () => {
     const prevState = {
       ...initialState,
-      dateRange: { from: null, to: null }
+      dateRange: { from: null, to: null },
     };
 
     const from = new Date();
@@ -347,14 +347,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      dateRange: { from, to }
+      dateRange: { from, to },
     });
   });
 
   it('should handle SET_FIRST_AND_LAST_DATE', () => {
     const prevState = {
       ...initialState,
-      eventDateLimits: { from: null, to: null }
+      eventDateLimits: { from: null, to: null },
     };
 
     const from = new Date();
@@ -365,14 +365,14 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...initialState,
       eventDateLimits: { from, to },
-      dateRange: { from, to }
+      dateRange: { from, to },
     });
   });
 
   it('should handle DOWNLOAD_EVENT_REPORT', () => {
     const prevState = {
       ...initialState,
-      downloading: false
+      downloading: false,
     };
 
     const action = { type: DOWNLOAD_EVENT_REPORT };
@@ -380,14 +380,14 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      downloading: true
+      downloading: true,
     });
   });
 
   it('should handle DOWNLOAD_EVENT_REPORT_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      downloading: true
+      downloading: true,
     };
 
     const action = { type: DOWNLOAD_EVENT_REPORT_SUCCESS };
@@ -395,7 +395,7 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...initialState,
-      downloading: false
+      downloading: false,
     });
   });
 
@@ -403,7 +403,7 @@ describe('reducer', () => {
     const error = new Error();
     const prevState = {
       ...initialState,
-      downloading: true
+      downloading: true,
     };
 
     const action = { type: DOWNLOAD_EVENT_REPORT_ERROR, payload: error };
@@ -412,7 +412,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...initialState,
       downloading: false,
-      error
+      error,
     });
   });
 });
@@ -424,14 +424,14 @@ describe('saga workers', () => {
       {
         id: 1,
         startTimestamp: 1531934104198,
-        endTimestamp: 1531934104198
-      }
+        endTimestamp: 1531934104198,
+      },
     ];
 
     const event = {
       id: 1,
       seasonId: 1,
-      timestamp: 1531934104198
+      timestamp: 1531934104198,
     };
 
     expect(generator.next().value).toEqual(
@@ -445,7 +445,7 @@ describe('saga workers', () => {
       put(
         actions.setDateRange({
           from: new Date(seasons[0].startTimestamp),
-          to: new Date(event.timestamp)
+          to: new Date(event.timestamp),
         })
       )
     );
@@ -455,7 +455,7 @@ describe('saga workers', () => {
     const generator = cloneableGenerator(fetchEventTimeStats)();
     const dateRange = {
       from: new Date(),
-      to: new Date()
+      to: new Date(),
     };
     const activeEvent = { id: 1 };
 
@@ -468,7 +468,7 @@ describe('saga workers', () => {
       call(eventStatService.getAll, {
         eventId: 1,
         start: dateRange.from,
-        end: dateRange.to
+        end: dateRange.to,
       })
     );
 
@@ -477,7 +477,7 @@ describe('saga workers', () => {
 
     const eventStats = [
       { date: new Date(), id: 1 },
-      { date: new Date(), id: 2 }
+      { date: new Date(), id: 2 },
     ];
 
     expect(successPath.next(eventStats).value).toEqual(
@@ -497,12 +497,12 @@ describe('saga workers', () => {
     const payload = {
       id: 1,
       start: '2018-10-01T00:00:00.00Z',
-      end: '2019-01-01T00:00:00.00Z'
+      end: '2019-01-01T00:00:00.00Z',
     };
     const csv = '"Header1", "Header2", "Header3", "Header4"';
     const blob = new Blob([csv], {
       encoding: 'UTF-8',
-      type: 'text/csv;charset=UTF-8'
+      type: 'text/csv;charset=UTF-8',
     });
     const action = actions.downloadEventReport(payload);
     const generator = cloneableGenerator(downloadEventReport)(action);
@@ -540,8 +540,8 @@ describe('selectors', () => {
     const state = {
       eventStat: {
         ...initialState,
-        eventStats: [1, 2, 3]
-      }
+        eventStats: [1, 2, 3],
+      },
     };
 
     expect(getEventStats(state)).toEqual([1, 2, 3]);
@@ -551,8 +551,8 @@ describe('selectors', () => {
     const state = {
       eventStat: {
         ...initialState,
-        eventStats: [1, 2, 3]
-      }
+        eventStats: [1, 2, 3],
+      },
     };
 
     expect(getEventStatState(state)).toEqual(state.eventStat);
@@ -564,9 +564,9 @@ describe('selectors', () => {
         ...initialState,
         dateRange: {
           from: 1,
-          to: 1
-        }
-      }
+          to: 1,
+        },
+      },
     };
 
     expect(getEventStatFilterArguments(state)).toEqual({ from: 1, to: 1 });
@@ -578,9 +578,9 @@ describe('selectors', () => {
         ...initialState,
         eventDateLimits: {
           from: 1,
-          to: 1
-        }
-      }
+          to: 1,
+        },
+      },
     };
 
     expect(getEventStatDateLimits(state)).toEqual({ from: 1, to: 1 });

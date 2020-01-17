@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Flex } from './Flex';
 
 const ArrayItem = styled(Flex).attrs({
-  align: 'center'
+  align: 'center',
 })`
   margin-bottom: 20px;
 `;
@@ -37,7 +37,7 @@ export const FormInputArray = ({ name, values, children }) => (
           onClick={() =>
             arrayHelpers.insert(values.length, {
               skyBoxCustomer: '',
-              mapsTo: ''
+              mapsTo: '',
             })
           }
         >

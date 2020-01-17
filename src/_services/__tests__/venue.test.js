@@ -8,7 +8,7 @@ describe('venueService', () => {
     const venue = {
       id: 1,
       name: 'Mets',
-      svgUrl: 'url'
+      svgUrl: 'url',
     };
     const id = 1;
     const mock = fetchMock.get(`end:venues/${id}?`, venue);

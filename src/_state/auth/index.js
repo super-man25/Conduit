@@ -10,7 +10,7 @@ export const initialState = {
   loggingIn: false,
   error: null,
   requestingPassword: false,
-  forgot: false
+  forgot: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -66,7 +66,7 @@ const UPDATE_USER = createActionType('UPDATE_USER');
 // Actions
 const signIn = (email, password) => ({
   type: SIGN_IN_ASYNC,
-  payload: { email, password }
+  payload: { email, password },
 });
 const signOut = () => ({ type: SIGN_OUT_ASYNC });
 const forgotPass = (email) => ({ type: FORGOT_PASS_ASYNC, payload: { email } });
@@ -92,7 +92,7 @@ export const types = {
   PASSWORD_RESET_REQUEST,
   PASSWORD_RESET_SUCCESS,
   PASSWORD_RESET_ERROR,
-  UPDATE_USER
+  UPDATE_USER,
 };
 export const actions = {
   signIn,
@@ -102,10 +102,10 @@ export const actions = {
   fetch,
   setUser,
   unsetUser,
-  updateUser
+  updateUser,
 };
 export const selectors = {
   selectUser,
   selectLoading,
-  selectLoggingIn
+  selectLoggingIn,
 };

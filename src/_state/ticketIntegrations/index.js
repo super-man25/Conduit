@@ -9,15 +9,15 @@ const FETCH_ERROR = 'ticketIntegration/FETCH_ERROR';
 
 export type FetchAction = {
   type: 'ticketIntegration/FETCH',
-  payload: { eventId?: number, seasonId?: number }
+  payload: { eventId?: number, seasonId?: number },
 };
 export type FetchSuccessAction = {
   type: 'ticketIntegration/FETCH_SUCCESS',
-  payload: EDIntegrationStat[]
+  payload: EDIntegrationStat[],
 };
 export type FetchErrorAction = {
   type: 'ticketIntegration/FETCH_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type Action = FetchAction | FetchSuccessAction | FetchErrorAction;
@@ -25,20 +25,20 @@ export type Action = FetchAction | FetchSuccessAction | FetchErrorAction;
 // actions
 const fetchTicketIntegrations = (payload: {
   eventId?: number,
-  seasonId?: number
+  seasonId?: number,
 }): FetchAction => ({ type: FETCH, payload });
 
 // reducer/initialState
 export type State = {
   +ticketIntegrations: EDIntegrationStat[],
   +loading: boolean,
-  +error: ?Error
+  +error: ?Error,
 };
 
 export const initialState = {
   ticketIntegrations: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 export default function reducer(state: State = initialState, action: Action) {
@@ -70,6 +70,6 @@ export const actions = { fetchTicketIntegrations };
 export const selectors = {
   selectTicketIntegrations,
   selectTicketIntegrationsLoading,
-  selectTicketIntegrationsError
+  selectTicketIntegrationsError,
 };
 export { saga };

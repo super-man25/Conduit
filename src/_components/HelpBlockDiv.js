@@ -7,7 +7,7 @@ import { cssConstants } from '_constants';
 
 type Props = {
   type: 'alert-danger' | 'alert-success' | 'hint',
-  show: 'visible' | 'hidden'
+  show: 'visible' | 'hidden',
 };
 
 export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
@@ -16,7 +16,7 @@ export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
       (props.type === 'alert-danger' && cssConstants.SECONDARY_RED) ||
       (props.type === 'alert-success' && cssConstants.SECONDARY_GREEN) ||
       (props.type === 'hint' && cssConstants.SECONDARY_PURPLE) ||
-      cssConstants.PRIMARY_LIGHT_BLACK
+      cssConstants.PRIMARY_LIGHT_BLACK,
   })
 )`
   color: ${(props) => props.color};

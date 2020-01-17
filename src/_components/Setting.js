@@ -7,7 +7,7 @@ type Props = {
   cols: number,
   width: string,
   margin: string,
-  columns: string // override for css grid-template-columns
+  columns: string, // override for css grid-template-columns
 };
 
 export const Setting: React.ComponentType<Props> = styled.div.attrs(
@@ -15,7 +15,7 @@ export const Setting: React.ComponentType<Props> = styled.div.attrs(
     columns: (props) => {
       const cols = props.cols || 2;
       return `repeat(${cols}, 1fr)`;
-    }
+    },
   })
 )`
   display: grid;

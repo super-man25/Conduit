@@ -30,5 +30,5 @@ function handleResponseError(error) {
 export const integrationService = {
   getIntegrations,
   toggleIntegration,
-  updateSecondaryPricingRule
+  updateSecondaryPricingRule,
 };

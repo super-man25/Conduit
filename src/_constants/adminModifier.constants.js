@@ -1,22 +1,22 @@
 export const adminModifierReasonTypes = {
   weather: {
     label: 'Weather',
-    value: 'Weather'
+    value: 'Weather',
   },
   demand: {
     label: 'Calibration (Demand)',
-    value: 'Demand'
+    value: 'Demand',
   },
   teamStats: {
     label: 'Team Performance',
-    value: 'TeamStats'
+    value: 'TeamStats',
   },
   opponentStats: {
     label: 'Strength Of Opponent',
-    value: 'OpponentStats'
+    value: 'OpponentStats',
   },
   other: {
     label: 'Other',
-    value: 'Other'
-  }
+    value: 'Other',
+  },
 };

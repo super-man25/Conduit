@@ -9,18 +9,18 @@ export const CLEAR = 'alert/CLEAR';
 function success(message) {
   return {
     type: SUCCESS_ASYNC,
-    payload: message
+    payload: message,
   };
 }
 
 function error(message) {
   return {
     type: ERROR_ASYNC,
-    payload: message
+    payload: message,
   };
 }
 
 export default {
   success,
-  error
+  error,
 };

@@ -8,8 +8,8 @@ const createProps = () => ({
   fetchEvent: jest.fn(),
   eventState: { event: { id: 1 }, loading: false, error: null },
   authState: {
-    model: true
-  }
+    model: true,
+  },
 });
 
 describe('<Event /> index route', () => {
@@ -40,7 +40,7 @@ describe('<Event /> index route', () => {
     expect(props.fetchEvent).toHaveBeenCalledTimes(1);
 
     wrapper.setProps({
-      match: { params: { id: 2 } }
+      match: { params: { id: 2 } },
     });
 
     expect(props.fetchEvent).toHaveBeenCalledTimes(2);

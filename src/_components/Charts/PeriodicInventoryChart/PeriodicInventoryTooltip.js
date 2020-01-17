@@ -6,7 +6,7 @@ import { periodicTooltip } from '_helpers/chart-utils';
 type TooltipContentProps = {
   active?: boolean,
   payload?: any,
-  dateFormatter: (Date) => string
+  dateFormatter: (Date) => string,
 };
 
 export function PeriodicInventoryTooltip(props: TooltipContentProps) {
@@ -19,14 +19,14 @@ export function PeriodicInventoryTooltip(props: TooltipContentProps) {
   const {
     periodicInventory,
     periodicRevenue,
-    avgTicketPrice
+    avgTicketPrice,
   } = periodicTooltip(stat);
 
   const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {
     Inventory: periodicInventory,
     Revenue: periodicRevenue,
-    'Avg. Ticket Price': avgTicketPrice
+    'Avg. Ticket Price': avgTicketPrice,
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;

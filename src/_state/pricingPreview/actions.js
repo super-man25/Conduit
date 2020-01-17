@@ -11,8 +11,8 @@ export function fetch(eventId) {
   return {
     type: FETCH,
     payload: {
-      eventId
-    }
+      eventId,
+    },
   };
 }
 
@@ -20,12 +20,12 @@ export function paramsChanged(eventId) {
   return {
     type: PARAMS_CHANGED,
     payload: {
-      eventId
-    }
+      eventId,
+    },
   };
 }
 
 export default {
   fetch,
-  paramsChanged
+  paramsChanged,
 };

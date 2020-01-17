@@ -8,7 +8,7 @@ import { Box, H3, H4, PageWrapper, PrimaryContent, S1 } from '_components';
 import { connect } from 'react-redux';
 import {
   actions as demoPriceActions,
-  type State as DemoState
+  type State as DemoState,
 } from '_state/demo';
 import { DemoPriceContext, DemoPriceExample } from '_models';
 import {
@@ -16,7 +16,7 @@ import {
   DAYS_OF_WEEK,
   WEATHER_CONDITIONS,
   LIMITED_SECTIONS,
-  OPPONENTS
+  OPPONENTS,
 } from './constants';
 import {
   DemoWrapper,
@@ -24,7 +24,7 @@ import {
   SectionWrapper,
   SectionData,
   SectionText,
-  RowWrapper
+  RowWrapper,
 } from './styled';
 import { DateFeatureGroup } from './DateFeatureGroup';
 import { OpponentFeatureGroup } from './OpponentFeatureGroup';
@@ -33,12 +33,12 @@ import { WeatherFeatureGroup } from './WeatherFeatureGroup';
 
 type State = {
   context: DemoPriceContext,
-  examples: Array<DemoPriceExample>
+  examples: Array<DemoPriceExample>,
 };
 
 type Props = {
   demoState: DemoState,
-  fetch: (context: DemoPriceContext, examples: Array<DemoPriceExample>) => void
+  fetch: (context: DemoPriceContext, examples: Array<DemoPriceExample>) => void,
 };
 
 const parseOption = (option) => option.title;
@@ -50,7 +50,7 @@ const calculateExamples = () => {
       section: sec_num,
       degrees: section.degrees,
       distance: section.distance,
-      row_number: row
+      row_number: row,
     }));
 
     return examples.concat(section_rows);
@@ -62,7 +62,7 @@ class DemoRoute extends React.Component<Props, State> {
     demoState: {
       loading: false,
       prices: [],
-      error: null
+      error: null,
     },
     context: {
       event_month: 4,
@@ -74,9 +74,9 @@ class DemoRoute extends React.Component<Props, State> {
       games_ahead: 2,
       win_loss_ratio: 0.6,
       is_wheelchair: false,
-      home_opener: false
+      home_opener: false,
     },
-    examples: calculateExamples()
+    examples: calculateExamples(),
   };
 
   componentDidMount() {
@@ -126,7 +126,7 @@ class DemoRoute extends React.Component<Props, State> {
       weather_condition,
       temp,
       minutes_before,
-      opponent_heuristic
+      opponent_heuristic,
     } = this.state.context;
 
     const prices = this.props.demoState.prices;
@@ -139,7 +139,7 @@ class DemoRoute extends React.Component<Props, State> {
         agg[data[1].section] = {
           min: 10000,
           max: 0,
-          rows: []
+          rows: [],
         };
       }
 
@@ -148,7 +148,7 @@ class DemoRoute extends React.Component<Props, State> {
       sectionData.max = Math.max(sectionData.max, data[0]);
       sectionData.rows.push({
         row_number: data[1].row_number,
-        price: data[0]
+        price: data[0],
       });
 
       return agg;
@@ -246,12 +246,12 @@ class DemoRoute extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (state) => ({
-  demoState: state.demoPrice
+  demoState: state.demoPrice,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetch: (context, examples) =>
-    dispatch(demoPriceActions.fetch({ context, examples }))
+    dispatch(demoPriceActions.fetch({ context, examples })),
 });
 
 export default connect(

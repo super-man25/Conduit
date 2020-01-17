@@ -4,8 +4,8 @@ import fetchMock from 'fetch-mock';
 const events = [
   {
     id: 1,
-    name: 'Event'
-  }
+    name: 'Event',
+  },
 ];
 
 describe('get all', () => {
@@ -46,7 +46,7 @@ describe('toggle broadcasting', () => {
   afterEach(fetchMock.restore);
   const toggleBroadcastResponse = {
     isBroadcast: true,
-    modifiedAt: 123
+    modifiedAt: 123,
   };
 
   it('should toggle an events broadcasting flag', () => {
@@ -69,7 +69,7 @@ describe('getInventory', () => {
   const eventRows = [
     { eventId: 1, row: '1', section: '1' },
     { eventId: 2, row: '2', section: '2' },
-    { eventId: 3, row: '3', section: '3' }
+    { eventId: 3, row: '3', section: '3' },
   ];
 
   it('should get all inventory for an event', () => {
@@ -81,7 +81,7 @@ describe('getInventory', () => {
       expect(res).toEqual(
         eventRows.map((row) => ({
           ...row,
-          id: `${row.eventId}_${row.section}_${row.row}`
+          id: `${row.eventId}_${row.section}_${row.row}`,
         }))
       );
     });
@@ -94,11 +94,11 @@ describe('updateEventSeats', () => {
   it('should update eventSeats', () => {
     const updateParams = {
       eventSeats: [1, 2, 3],
-      isListed: true
+      isListed: true,
     };
 
     const mock = fetchMock.post('end:eventRows/_bulk', {
-      msg: `${updateParams.eventSeats.length} seats updated`
+      msg: `${updateParams.eventSeats.length} seats updated`,
     });
 
     return eventService.updateEventSeats().then((res) => {

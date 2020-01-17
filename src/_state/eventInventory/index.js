@@ -5,12 +5,12 @@ import type {
   EDInventorySectionFilter,
   EDInventoryRow,
   EDVenuePriceScale,
-  EDSectionsToPriceScale
+  EDSectionsToPriceScale,
 } from '_models';
 import {
   calculateFilteredRows,
   getSectionsByScaleFilter,
-  getScalesBySectionFilter
+  getScalesBySectionFilter,
 } from './utils';
 export { default as saga } from './saga';
 
@@ -49,86 +49,86 @@ const RESET = 'eventInventory/RESET';
 
 export type FetchEventInventoryAction = {
   type: 'eventInventory/FETCH_EVENT_INVENTORY',
-  payload: number
+  payload: number,
 };
 export type FetchEventInventorySuccessAction = {
   type: 'eventInventory/FETCH_EVENT_INVENTORY_SUCCESS',
-  payload: any
+  payload: any,
 };
 export type FetchEventInventoryErrorAction = {
   type: 'eventInventory/FETCH_EVENT_INVENTORY_ERROR',
-  payload: Error
+  payload: Error,
 };
 export type StartEditingRowAction = {
   type: 'eventInventory/START_EDITING_ROW',
-  payload: number
+  payload: number,
 };
 export type CancelEditingRowAction = {
-  type: 'eventInventory/CANCEL_EDITING_ROW'
+  type: 'eventInventory/CANCEL_EDITING_ROW',
 };
 export type UpdateEditedRowPropertyAction = {
   type: 'eventInventory/UPDATE_EDITED_ROW_PROPERTY',
-  payload: any
+  payload: any,
 };
 export type SaveEditedRowAction = {
-  type: 'eventInventory/SAVE_EDITED_ROW'
+  type: 'eventInventory/SAVE_EDITED_ROW',
 };
 export type SaveEditedRowSuccessAction = {
   type: 'eventInventory/SAVE_EDITED_ROW_SUCCESS',
-  payload: { row: EDInventoryRow }
+  payload: { row: EDInventoryRow },
 };
 export type SaveEditedRowErrorAction = {
   type: 'eventInventory/SAVE_EDITED_ROW_ERROR',
-  payload: { row: EDInventoryRow, error: Error }
+  payload: { row: EDInventoryRow, error: Error },
 };
 export type SetEventInventoryFilterAction = {
   type: 'eventInventory/SET_EVENT_INVENTORY_FILTER',
-  payload: string
+  payload: string,
 };
 export type SetEventRowListedRequestAction = {
   type: 'eventInventory/SET_EVENT_ROW_LISTED_REQUEST',
-  payload: { row: EDInventoryRow, value: boolean }
+  payload: { row: EDInventoryRow, value: boolean },
 };
 export type SetEventRowListedSuccessAction = {
   type: 'eventInventory/SET_EVENT_ROW_LISTED_SUCCESS',
-  payload: { row: EDInventoryRow, value: boolean }
+  payload: { row: EDInventoryRow, value: boolean },
 };
 export type SetEventRowListedErrorAction = {
   type: 'eventInventory/SET_EVENT_ROW_LISTED_ERROR',
-  payload: { row: EDInventoryRow, value: boolean }
+  payload: { row: EDInventoryRow, value: boolean },
 };
 export type SelectEventRowAction = {
   type: 'eventInventory/SELECT_EVENT_ROW',
-  payload: number
+  payload: number,
 };
 export type SelectAllEventRowsAction = {
-  type: 'eventInventory/SELECT_ALL_EVENT_ROWS'
+  type: 'eventInventory/SELECT_ALL_EVENT_ROWS',
 };
 export type SetScaleFiltersAction = {
   type: 'eventInventory/SET_SCALE_FILTERS',
-  payload: EDVenuePriceScale[]
+  payload: EDVenuePriceScale[],
 };
 export type ClearSelectedScaleFiltersAction = {
-  type: 'eventInventory/CLEAR_SELECTED_SCALE_FILTERS'
+  type: 'eventInventory/CLEAR_SELECTED_SCALE_FILTERS',
 };
 export type SetSelectedScaleFiltersAction = {
   type: 'eventInventory/SET_SELECTED_SCALE_FILTERS',
-  payload: EDVenuePriceScale[]
+  payload: EDVenuePriceScale[],
 };
 export type SetSectionFiltersAction = {
   type: 'eventInventory/SET_SECTION_FILTERS',
-  payload: EDInventorySectionFilter[]
+  payload: EDInventorySectionFilter[],
 };
 export type SetSelectedSectionFiltersAction = {
   type: 'eventInventory/SET_SELECTED_SECTION_FILTERS',
-  payload: EDInventorySectionFilter[]
+  payload: EDInventorySectionFilter[],
 };
 export type ClearSelectedSectionFiltersAction = {
-  type: 'eventInventory/CLEAR_SELECTED_SECTION_FILTERS'
+  type: 'eventInventory/CLEAR_SELECTED_SECTION_FILTERS',
 };
 export type SetSectionsToPriceScaleAction = {
   type: 'eventInventory/SET_SECTIONS_TO_PRICE_SCALE',
-  payload: EDSectionsToPriceScale[]
+  payload: EDSectionsToPriceScale[],
 };
 export type ResetEventInventoryAction = { type: 'eventInventory/RESET' };
 
@@ -180,25 +180,25 @@ export const types = {
   SET_SELECTED_SECTION_FILTERS,
   CLEAR_SELECTED_SECTION_FILTERS,
   SET_SECTIONS_TO_PRICE_SCALE,
-  RESET
+  RESET,
 };
 
 // Actions
 const fetchEventInventory = (id: number): FetchEventInventoryAction => ({
   type: FETCH_EVENT_INVENTORY,
-  payload: id
+  payload: id,
 });
 
 const startEditingRow = (id: number): StartEditingRowAction => {
   return {
     type: START_EDITING_ROW,
-    payload: id
+    payload: id,
   };
 };
 
 const cancelEditingRow = (): CancelEditingRowAction => {
   return {
-    type: CANCEL_EDITING_ROW
+    type: CANCEL_EDITING_ROW,
   };
 };
 
@@ -207,13 +207,13 @@ const updateEditedRowProperty = (
 ): UpdateEditedRowPropertyAction => {
   return {
     type: UPDATE_EDITED_ROW_PROPERTY,
-    payload
+    payload,
   };
 };
 
 const saveEditedRow = (): SaveEditedRowAction => {
   return {
-    type: SAVE_EDITED_ROW
+    type: SAVE_EDITED_ROW,
   };
 };
 
@@ -221,7 +221,7 @@ const setEventInventoryFilter = (
   name: string
 ): SetEventInventoryFilterAction => ({
   type: SET_EVENT_INVENTORY_FILTER,
-  payload: name
+  payload: name,
 });
 
 const setEventRowListed = (
@@ -229,59 +229,59 @@ const setEventRowListed = (
   value: boolean
 ): SetEventRowListedRequestAction => ({
   type: SET_EVENT_ROW_LISTED_REQUEST,
-  payload: { row, value }
+  payload: { row, value },
 });
 
 const selectEventRow = (id: number): SelectEventRowAction => ({
   type: SELECT_EVENT_ROW,
-  payload: id
+  payload: id,
 });
 
 const selectAllEventRows = (): SelectAllEventRowsAction => ({
-  type: SELECT_ALL_EVENT_ROWS
+  type: SELECT_ALL_EVENT_ROWS,
 });
 
 const setScaleFilters = (
   filters: EDVenuePriceScale[]
 ): SetScaleFiltersAction => ({
   type: SET_SCALE_FILTERS,
-  payload: filters
+  payload: filters,
 });
 
 const clearSelectedScaleFilters = (): ClearSelectedScaleFiltersAction => ({
-  type: CLEAR_SELECTED_SCALE_FILTERS
+  type: CLEAR_SELECTED_SCALE_FILTERS,
 });
 
 const setSelectedScaleFilters = (
   filters: EDVenuePriceScale[]
 ): SetSelectedScaleFiltersAction => ({
   type: SET_SELECTED_SCALE_FILTERS,
-  payload: filters
+  payload: filters,
 });
 
 const setSectionFilters = (
   filters: EDInventorySectionFilter[]
 ): SetSectionFiltersAction => ({
   type: SET_SECTION_FILTERS,
-  payload: filters
+  payload: filters,
 });
 
 const setSelectedSectionFilters = (
   filters: EDInventorySectionFilter[]
 ): SetSelectedSectionFiltersAction => ({
   type: SET_SELECTED_SECTION_FILTERS,
-  payload: filters
+  payload: filters,
 });
 
 const clearSelectedSectionFilters = (): ClearSelectedSectionFiltersAction => ({
-  type: CLEAR_SELECTED_SECTION_FILTERS
+  type: CLEAR_SELECTED_SECTION_FILTERS,
 });
 
 const setSectionsToPriceScaleAction = (
   sectionsToPriceScale: EDSectionsToPriceScale
 ): SetSectionsToPriceScaleAction => ({
   type: SET_SECTIONS_TO_PRICE_SCALE,
-  payload: sectionsToPriceScale
+  payload: sectionsToPriceScale,
 });
 
 const resetEventInventory = (): ResetEventInventoryAction => ({ type: RESET });
@@ -303,7 +303,7 @@ export const actions = {
   setSelectedSectionFilters,
   clearSelectedSectionFilters,
   setSectionsToPriceScaleAction,
-  resetEventInventory
+  resetEventInventory,
 };
 
 // State/Reducer
@@ -320,7 +320,7 @@ export type State = {
   selectedScaleFilters: EDVenuePriceScale[],
   sectionFilters: EDInventorySectionFilter[],
   selectedSectionFilters: EDInventorySectionFilter[],
-  sectionsToPriceScale: EDSectionsToPriceScale[]
+  sectionsToPriceScale: EDSectionsToPriceScale[],
 };
 
 export const initialState: State = {
@@ -336,7 +336,7 @@ export const initialState: State = {
   selectedScaleFilters: [],
   sectionFilters: [],
   selectedSectionFilters: [],
-  sectionsToPriceScale: []
+  sectionsToPriceScale: [],
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -347,7 +347,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         allRows: action.payload,
-        loading: false
+        loading: false,
       };
     case FETCH_EVENT_INVENTORY_ERROR:
       return { ...state, error: action.payload, loading: false };
@@ -362,15 +362,15 @@ export const reducer = (state: State = initialState, action: Action) => {
           isListed,
           overridePrice,
           minimumPrice,
-          maximumPrice
-        }
+          maximumPrice,
+        },
       };
     case CANCEL_EDITING_ROW:
       return {
         ...state,
         editedRowId: null,
         editedRowState: {},
-        error: null
+        error: null,
       };
     case UPDATE_EDITED_ROW_PROPERTY:
       const { propertyName, propertyValue } = action.payload;
@@ -378,26 +378,26 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         editedRowState: {
           ...state.editedRowState,
-          [propertyName]: propertyValue
-        }
+          [propertyName]: propertyValue,
+        },
       };
     case SAVE_EDITED_ROW:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case SAVE_EDITED_ROW_SUCCESS:
       return {
         ...state,
         error: null,
         loading: false,
-        editedRowId: null
+        editedRowId: null,
       };
     case SAVE_EDITED_ROW_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
       };
     case SET_EVENT_INVENTORY_FILTER: {
       const filterName = action.payload;
@@ -412,7 +412,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         filterName,
-        filterDirection
+        filterDirection,
       };
     }
     case SELECT_EVENT_ROW: {
@@ -428,7 +428,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
       return {
         ...state,
-        selectedRowIds
+        selectedRowIds,
       };
     }
     case SELECT_ALL_EVENT_ROWS: {
@@ -447,13 +447,13 @@ export const reducer = (state: State = initialState, action: Action) => {
 
       return {
         ...state,
-        selectedRowIds
+        selectedRowIds,
       };
     }
     case SET_EVENT_ROW_LISTED_REQUEST: {
       const {
         row: { id },
-        value
+        value,
       } = action.payload;
 
       const allRows: EDInventoryRow[] = state.allRows.map((row) =>
@@ -462,7 +462,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
       return {
         ...state,
-        allRows
+        allRows,
       };
     }
     case SET_EVENT_ROW_LISTED_ERROR: {
@@ -479,7 +479,7 @@ export const reducer = (state: State = initialState, action: Action) => {
       return {
         ...state,
         scaleFilters: action.payload,
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case CLEAR_SELECTED_SCALE_FILTERS: {
@@ -487,7 +487,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         selectedScaleFilters: [],
         selectedSectionFilters: getSectionsByScaleFilter(state, []),
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case SET_SELECTED_SCALE_FILTERS: {
@@ -495,14 +495,14 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         selectedScaleFilters: action.payload,
         selectedSectionFilters: getSectionsByScaleFilter(state, action.payload),
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case SET_SECTION_FILTERS: {
       return {
         ...state,
         sectionFilters: action.payload,
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case SET_SELECTED_SECTION_FILTERS: {
@@ -510,7 +510,7 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         selectedSectionFilters: action.payload,
         selectedScaleFilters: getScalesBySectionFilter(state, action.payload),
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case CLEAR_SELECTED_SECTION_FILTERS: {
@@ -518,13 +518,13 @@ export const reducer = (state: State = initialState, action: Action) => {
         ...state,
         selectedSectionFilters: [],
         selectedScaleFilters: [],
-        selectedRowIds: []
+        selectedRowIds: [],
       };
     }
     case SET_SECTIONS_TO_PRICE_SCALE: {
       return {
         ...state,
-        sectionsToPriceScale: action.payload
+        sectionsToPriceScale: action.payload,
       };
     }
     case RESET:
@@ -536,7 +536,7 @@ export const reducer = (state: State = initialState, action: Action) => {
 
 // Selectors
 type Store = {
-  eventInventory: State
+  eventInventory: State,
 };
 
 const selectAllEventInventoryRows = (store: Store) =>
@@ -586,7 +586,7 @@ const selectEventInventoryFilter = (store: Store) => {
   const { eventInventory } = store;
   return {
     name: eventInventory.filterName,
-    direction: eventInventory.filterDirection
+    direction: eventInventory.filterDirection,
   };
 };
 
@@ -595,7 +595,7 @@ const selectEventInventoryRows = createSelector(
     selectAllEventInventoryRows,
     selectEventInventoryFilter,
     selectScaleFilters,
-    selectSelectedSectionFilters
+    selectSelectedSectionFilters,
   ],
   (rows, filters, scaleFilters, selectSelectedSectionFilters) =>
     calculateFilteredRows(
@@ -621,5 +621,5 @@ export const selectors = {
   selectSelectedRowIds,
   selectSelectedRows,
   selectSectionFilters,
-  selectSelectedSectionFilters
+  selectSelectedSectionFilters,
 };

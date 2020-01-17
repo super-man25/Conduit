@@ -4,8 +4,8 @@ import { integrationStatService } from '../integrationStats';
 const integrations = [
   {
     id: 1,
-    name: 'Stubhub'
-  }
+    name: 'Stubhub',
+  },
 ];
 
 describe('get all', () => {

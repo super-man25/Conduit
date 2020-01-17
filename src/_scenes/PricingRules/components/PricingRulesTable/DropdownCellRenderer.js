@@ -10,16 +10,16 @@ type Props = {
   columnData: any,
   rulePropertyValue: string | number,
   parent: any,
-  updatePriceRuleProperty: (option: number | string) => void
+  updatePriceRuleProperty: (option: number | string) => void,
 };
 
 type State = {
-  selectedOption: any
+  selectedOption: any,
 };
 
 type DropdownOption = {
   name: string,
-  id: string | number
+  id: string | number,
 };
 
 const labelLength = 13;
@@ -47,7 +47,7 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
 
     return {
       name: hasId ? selectedItem.name : selectedItem,
-      id: hasId ? selectedItem.id : selectedItem
+      id: hasId ? selectedItem.id : selectedItem,
     };
   }
 

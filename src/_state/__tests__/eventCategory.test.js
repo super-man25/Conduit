@@ -7,7 +7,7 @@ import {
   actions,
   types,
   reducer,
-  initialState
+  initialState,
 } from '_state/eventCategory';
 
 describe('actions', () => {
@@ -26,7 +26,7 @@ describe('reducer', () => {
   it('should handle FETCH_EVENT_CATEGORIES', () => {
     const prevState = {
       ...initialState,
-      loading: false
+      loading: false,
     };
 
     const action = { type: types.FETCH_EVENT_CATEGORIES };
@@ -34,20 +34,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_EVENT_CATEGORIES_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const eventCategories = [{ name: 'Dugout Club' }];
     const action = {
       type: types.FETCH_EVENT_CATEGORIES_SUCCESS,
-      payload: eventCategories
+      payload: eventCategories,
     };
 
     const nextState = reducer(prevState, action);
@@ -55,19 +55,19 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      eventCategories
+      eventCategories,
     });
   });
 
   it('should handle FETCH_EVENT_CATEGORIES_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = {
       type: types.FETCH_EVENT_CATEGORIES_ERROR,
-      payload: 'An error'
+      payload: 'An error',
     };
 
     const nextState = reducer(prevState, action);
@@ -75,7 +75,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'An error'
+      error: 'An error',
     });
   });
 });
@@ -92,7 +92,7 @@ describe('saga workers', () => {
     expect(success.next(eventCategories).value).toEqual(
       put({
         type: types.FETCH_EVENT_CATEGORIES_SUCCESS,
-        payload: eventCategories
+        payload: eventCategories,
       })
     );
     expect(success.next().done).toBe(true);
@@ -111,8 +111,8 @@ describe('selectors', () => {
     const store = {
       eventCategory: {
         ...initialState,
-        eventCategories: [1, 2, 3]
-      }
+        eventCategories: [1, 2, 3],
+      },
     };
 
     expect(selectors.selectAllEventCategories(store)).toEqual([1, 2, 3]);

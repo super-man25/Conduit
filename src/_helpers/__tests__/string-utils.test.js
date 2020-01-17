@@ -11,7 +11,7 @@ import {
   formatNumber,
   formatUSD,
   safeAdd,
-  fixedOrDash
+  fixedOrDash,
 } from '_helpers/string-utils';
 
 describe('readableDate', () => {

@@ -3,7 +3,7 @@ import {
   dayFormat,
   dayTimeFormat,
   getChartRange,
-  cumulativeTooltip
+  cumulativeTooltip,
 } from '../chart-utils';
 import { addDays, subDays, startOfDay, endOfDay, format } from 'date-fns';
 
@@ -11,7 +11,7 @@ describe('getAxisTickOptions', () => {
   it('should return a sane default', () => {
     expect(getAxisTickOptions({})).toEqual({
       tickTotal: 10,
-      tickFormat: dayFormat
+      tickFormat: dayFormat,
     });
   });
 
@@ -20,23 +20,23 @@ describe('getAxisTickOptions', () => {
       actual: [
         {
           x: subDays(new Date(), 15),
-          y: 0
+          y: 0,
         },
         {
           x: new Date(),
-          y: 0
-        }
+          y: 0,
+        },
       ],
       projected: [
         {
           x: addDays(new Date(), 15),
-          y: 0
-        }
-      ]
+          y: 0,
+        },
+      ],
     };
     expect(getAxisTickOptions(dataset)).toEqual({
       tickTotal: 30,
-      tickFormat: dayFormat
+      tickFormat: dayFormat,
     });
   });
 
@@ -45,20 +45,20 @@ describe('getAxisTickOptions', () => {
       actual: [
         {
           x: startOfDay(new Date(10000)),
-          y: 0
-        }
+          y: 0,
+        },
       ],
       projected: [
         {
           x: endOfDay(new Date(10000)),
-          y: 0
-        }
-      ]
+          y: 0,
+        },
+      ],
     };
 
     expect(getAxisTickOptions(dataset)).toEqual({
       tickTotal: 6,
-      tickFormat: dayTimeFormat
+      tickFormat: dayTimeFormat,
     });
   });
 
@@ -67,20 +67,20 @@ describe('getAxisTickOptions', () => {
       actual: [
         {
           x: addDays(new Date(), 50),
-          y: 0
-        }
+          y: 0,
+        },
       ],
       projected: [
         {
           x: new Date(),
-          y: 0
-        }
-      ]
+          y: 0,
+        },
+      ],
     };
 
     expect(getAxisTickOptions(dataset)).toEqual({
       tickTotal: 31,
-      tickFormat: dayFormat
+      tickFormat: dayFormat,
     });
   });
 });
@@ -103,7 +103,7 @@ describe('getChartRange', () => {
   it('should calculate the range, lower bounded by 0', () => {
     const dataset = {
       actual: [{ y: 10 }, { y: 20 }, { y: 30 }],
-      projected: [{ y: 40 }, { y: 50 }, { y: 60 }]
+      projected: [{ y: 40 }, { y: 50 }, { y: 60 }],
     };
 
     expect(getChartRange(dataset)).toEqual([0, 60]);
@@ -112,7 +112,7 @@ describe('getChartRange', () => {
   it('if the range goes below 0, should be lower bounded by the minimum', () => {
     const dataset = {
       actual: [{ y: 10 }, { y: 20 }, { y: 30 }],
-      projected: [{ y: 40 }, { y: -50 }, { y: 60 }]
+      projected: [{ y: 40 }, { y: -50 }, { y: 60 }],
     };
 
     expect(getChartRange(dataset)).toEqual([-50, 60]);
@@ -121,7 +121,7 @@ describe('getChartRange', () => {
   it('if all values are below 0, should still return a viable range', () => {
     const dataset = {
       actual: [{ y: -10 }, { y: -20 }, { y: -30 }],
-      projected: [{ y: -40 }, { y: -50 }, { y: -60 }]
+      projected: [{ y: -40 }, { y: -50 }, { y: -60 }],
     };
 
     expect(getChartRange(dataset)).toEqual([-60, -10]);
@@ -134,13 +134,13 @@ describe('cumulativeTooltip', () => {
       isProjected: false,
       inventory: 50,
       revenue: 2000,
-      soldInventory: 100
+      soldInventory: 100,
     };
 
     expect(cumulativeTooltip(dataset, undefined)).toEqual({
       inventory: '50',
       revenue: '$2,000.00',
-      avgTicketPrice: '$20.00'
+      avgTicketPrice: '$20.00',
     });
   });
 
@@ -148,7 +148,7 @@ describe('cumulativeTooltip', () => {
     const dataset = {
       isProjected: true,
       projectedInventory: 50,
-      projectedRevenue: 2000
+      projectedRevenue: 2000,
     };
 
     const totalInventory = 150;
@@ -156,7 +156,7 @@ describe('cumulativeTooltip', () => {
     expect(cumulativeTooltip(dataset, totalInventory)).toEqual({
       inventory: '50',
       revenue: '$2,000.00',
-      avgTicketPrice: '$20.00'
+      avgTicketPrice: '$20.00',
     });
   });
 });

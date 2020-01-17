@@ -59,7 +59,7 @@ export const TooltipRow: ComponentType<{}> = styled((props) => (
 
 type Props = {
   headerText: string,
-  bodyJson: Object
+  bodyJson: Object,
 };
 
 export const ChartTooltip = ({ headerText, bodyJson }: Props) => (

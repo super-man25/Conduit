@@ -62,5 +62,5 @@ export const priceRuleService = {
   create,
   update,
   getOne,
-  deletePriceRule
+  deletePriceRule,
 };

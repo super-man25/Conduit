@@ -43,5 +43,5 @@ function* watchFetchSeasonsOnLogin() {
 
 export default {
   watchFetchSeasons,
-  watchFetchSeasonsOnLogin
+  watchFetchSeasonsOnLogin,
 };

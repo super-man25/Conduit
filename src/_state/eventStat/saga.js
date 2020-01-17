@@ -6,7 +6,7 @@ import actions, {
   SET_DATE_RANGE,
   DOWNLOAD_EVENT_REPORT,
   DOWNLOAD_EVENT_REPORT_SUCCESS,
-  DOWNLOAD_EVENT_REPORT_ERROR
+  DOWNLOAD_EVENT_REPORT_ERROR,
 } from './actions';
 import { eventStatService, transactionReportService } from '_services';
 import { getEventStatFilterArguments } from './selectors';
@@ -43,7 +43,7 @@ export function* fetchEventTimeStats() {
     const timeStatsResponse = yield call(eventStatService.getAll, {
       eventId,
       start: from,
-      end: to
+      end: to,
     });
     yield put({ type: FETCH_SUCCESS, payload: timeStatsResponse });
   } catch (err) {
@@ -83,5 +83,5 @@ function* watchDownloadEventReport() {
 export default {
   watchFetchEventStats,
   watchSetDateRange,
-  watchDownloadEventReport
+  watchDownloadEventReport,
 };

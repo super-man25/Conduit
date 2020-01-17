@@ -6,7 +6,7 @@ import {
   FeatureGroupWrapper,
   SoupedUpSlider,
   FeatureGroupTitle,
-  FeatureInputLabel
+  FeatureInputLabel,
 } from './styled';
 import { DemoDropdown } from './DemoDropdown';
 
@@ -16,7 +16,7 @@ export function WeatherFeatureGroup({
   optionsWeatherCondition,
   parseOption,
   temp,
-  onTempChange
+  onTempChange,
 }) {
   return (
     <FeatureGroupWrapper>
@@ -42,7 +42,7 @@ export function WeatherFeatureGroup({
             <span
               style={{
                 color: cssConstants.PRIMARY_DARKEST_GRAY,
-                marginLeft: '5px'
+                marginLeft: '5px',
               }}
             >
               {temp}&deg;F

@@ -6,20 +6,20 @@ import {
   MultiSelectContainer,
   MultiSelectMenu,
   SplitButtonContainer,
-  SplitButtonHalf
+  SplitButtonHalf,
 } from './styled';
 
 import { MultiSelectGroupView } from './MultiSelectGroupView';
 import { MultiSelectView } from './MultiSelectView';
 
 export type Option = {
-  id: number
+  id: number,
 };
 
 type State = {
   isOpen: boolean,
   selectAllNext: boolean,
-  isGrouped: boolean
+  isGrouped: boolean,
 };
 
 type Props = {
@@ -35,17 +35,17 @@ type Props = {
   isGroupable: boolean,
   columnData: any,
   updatePriceRuleProperty: (option: any[]) => void,
-  onItemClicked: (option: any) => void
+  onItemClicked: (option: any) => void,
 };
 
 type GroupedSplitButtonProps = {
   isGrouped: boolean,
-  selectGrouping: (grouped: boolean) => void
+  selectGrouping: (grouped: boolean) => void,
 };
 
 export function GroupedSplitButton({
   isGrouped,
-  selectGrouping
+  selectGrouping,
 }: GroupedSplitButtonProps) {
   return (
     <SplitButtonContainer>
@@ -119,13 +119,13 @@ export class MultiSelect extends React.Component<Props, State> {
       columnData,
       labelFn,
       onItemClicked,
-      updatePriceRuleProperty
+      updatePriceRuleProperty,
     } = this.props;
 
     let OptionsView;
     if (isGroupable && this.state.isGrouped) {
       const {
-        grouping: { categoriesKey, groupedKey }
+        grouping: { categoriesKey, groupedKey },
       } = columnData;
       OptionsView = (
         <MultiSelectGroupView
@@ -170,7 +170,7 @@ export class MultiSelect extends React.Component<Props, State> {
           ref={this.ref}
           style={{
             position: 'fixed',
-            zIndex: 9
+            zIndex: 9,
           }}
         >
           <MultiSelectMenu

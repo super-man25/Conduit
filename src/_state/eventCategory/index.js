@@ -12,21 +12,21 @@ const RESET_EVENT_CATEGORIES = 'eventCategory/RESET_EVENT_CATEGORIES';
 
 // Action types
 export type FetchEventCategoryAction = {
-  type: 'eventCategory/FETCH_EVENT_CATEGORIES'
+  type: 'eventCategory/FETCH_EVENT_CATEGORIES',
 };
 
 export type FetchEventCategorySuccessAction = {
   type: 'eventCategory/FETCH_EVENT_CATEGORIES_SUCCESS',
-  payload: EDEventCategory[]
+  payload: EDEventCategory[],
 };
 
 export type FetchEventCategoryErrorAction = {
   type: 'eventCategory/FETCH_EVENT_CATEGORIES_ERROR',
-  payload: Error
+  payload: Error,
 };
 
 export type ResetEventCategoryAction = {
-  type: 'eventCategory/RESET_EVENT_CATEGORIES'
+  type: 'eventCategory/RESET_EVENT_CATEGORIES',
 };
 
 export type Action =
@@ -39,38 +39,38 @@ export const types = {
   FETCH_EVENT_CATEGORIES,
   FETCH_EVENT_CATEGORIES_SUCCESS,
   FETCH_EVENT_CATEGORIES_ERROR,
-  RESET_EVENT_CATEGORIES
+  RESET_EVENT_CATEGORIES,
 };
 
 // Actions
 const fetchEventCategories = (): FetchEventCategoryAction => ({
-  type: FETCH_EVENT_CATEGORIES
+  type: FETCH_EVENT_CATEGORIES,
 });
 
 const resetEventCategories = (): ResetEventCategoryAction => ({
-  type: RESET_EVENT_CATEGORIES
+  type: RESET_EVENT_CATEGORIES,
 });
 
 export const actions = {
   fetchEventCategories,
-  resetEventCategories
+  resetEventCategories,
 };
 
 // State/reducer
 type State = {
   eventCategories: EDEventCategory[],
   loading: boolean,
-  error: ?Error
+  error: ?Error,
 };
 
 export const initialState: State = {
   eventCategories: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 type Store = {
-  eventCategory: State
+  eventCategory: State,
 };
 
 export const reducer = (state: State = initialState, action: Action) => {
@@ -103,5 +103,5 @@ const selectIsLoading = (store: Store) => store.eventCategory.loading;
 export const selectors = {
   selectAllEventCategories,
   selectEventCategoryMap,
-  selectIsLoading
+  selectIsLoading,
 };

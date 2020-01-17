@@ -10,5 +10,5 @@ function getPriceScales(id) {
 
 export const venueService = {
   getOne,
-  getPriceScales
+  getPriceScales,
 };

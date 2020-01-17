@@ -14,7 +14,7 @@ import {
   PageWrapper,
   PrimaryContent,
   SiteHeader,
-  Spacing
+  Spacing,
 } from '_components';
 import { cssConstants } from '_constants';
 import { actions as authActions } from '_state/auth';
@@ -31,7 +31,7 @@ type RouteConfig = {
   path: string,
   linkText: string,
   adminOnly: boolean,
-  main: ElementType
+  main: ElementType,
 };
 
 const routes: Array<RouteConfig> = [
@@ -39,47 +39,47 @@ const routes: Array<RouteConfig> = [
     path: '/settings/team',
     linkText: 'Team Settings',
     adminOnly: false,
-    main: TeamSettings
+    main: TeamSettings,
   },
   {
     path: '/settings/user',
     linkText: 'User Settings',
     adminOnly: false,
-    main: UserSettings
+    main: UserSettings,
   },
   {
     path: '/settings/users',
     linkText: 'View Users',
     adminOnly: false,
-    main: Users
+    main: Users,
   },
   {
     path: '/settings/create-user',
     linkText: 'Create User',
     adminOnly: true,
-    main: CreateUser
+    main: CreateUser,
   },
   {
     path: '/settings/demo',
     linkText: 'Demo',
     adminOnly: true,
-    main: Demo
+    main: Demo,
   },
   {
     path: '/settings/onboard',
     linkText: 'Onboard',
     adminOnly: true,
-    main: Onboard
-  }
+    main: Onboard,
+  },
 ];
 
 type Props = {
   authActions: {
-    signOut: () => void
+    signOut: () => void,
   },
   authState: {
-    model: EDUser
-  }
+    model: EDUser,
+  },
 };
 
 export const Settings = ({ authState, authActions }: Props) => (
@@ -99,7 +99,7 @@ export const Settings = ({ authState, authActions }: Props) => (
                     to={r.path}
                     activeStyle={{
                       color: cssConstants.PRIMARY_BLUE,
-                      textShadow: `0 0 0.5px ${cssConstants.PRIMARY_BLUE}`
+                      textShadow: `0 0 0.5px ${cssConstants.PRIMARY_BLUE}`,
                     }}
                   >
                     {r.linkText}
@@ -129,13 +129,13 @@ export const Settings = ({ authState, authActions }: Props) => (
 
 function mapStateToProps(state) {
   return {
-    authState: state.auth
+    authState: state.auth,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    authActions: bindActionCreators(authActions, dispatch)
+    authActions: bindActionCreators(authActions, dispatch),
   };
 }
 

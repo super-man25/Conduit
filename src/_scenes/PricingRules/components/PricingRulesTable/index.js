@@ -4,7 +4,7 @@ import {
   Table,
   Column,
   AutoSizer,
-  defaultTableRowRenderer
+  defaultTableRowRenderer,
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
@@ -13,20 +13,20 @@ import { format } from 'date-fns';
 
 import {
   selectors as priceRuleSelectors,
-  actions as priceRuleActions
+  actions as priceRuleActions,
 } from '_state/priceRule';
 import {
   actions as eventListActions,
-  selectors as eventSelectors
+  selectors as eventSelectors,
 } from '_state/eventList';
 import { selectors as buyerTypeSelectors } from '_state/buyerType';
 import {
   selectors as priceScaleSelectors,
-  actions as priceScaleActions
+  actions as priceScaleActions,
 } from '_state/priceScale';
 import {
   actions as eventCategoryActions,
-  selectors as eventCategorySelectors
+  selectors as eventCategorySelectors,
 } from '_state/eventCategory';
 import { formatUSD, compare } from '_helpers/string-utils';
 import { CenteredLoader, Flex, Text } from '_components';
@@ -51,7 +51,7 @@ function combineColumnWithDefaults(column) {
     cellRenderer: asNodeWithEditingProps(DefaultCellPresenter),
     width: 0,
     flexGrow: 10,
-    ...column
+    ...column,
   };
 }
 
@@ -90,9 +90,9 @@ const columns = [
           ? `${option.code} - ${option.publicDescription}`
           : 'Unknown';
         return <Text ellipsis={truncate}>{labelText}</Text>;
-      }
+      },
     },
-    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
+    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter),
   },
   {
     label: 'Price Scales',
@@ -100,9 +100,9 @@ const columns = [
     columnData: {
       optionsKey: 'priceScales',
       labelFn: (option) => option.name,
-      sortFn: (first, second) => (first.name >= second.name ? 1 : -1)
+      sortFn: (first, second) => (first.name >= second.name ? 1 : -1),
     },
-    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
+    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter),
   },
   {
     label: 'Mirrors',
@@ -111,9 +111,9 @@ const columns = [
       optionsKey: 'priceScales',
       hasId: true,
       hasNone: false,
-      sortFn: (first, second) => (first.name >= second.name ? 1 : -1)
+      sortFn: (first, second) => (first.name >= second.name ? 1 : -1),
     },
-    cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
+    cellRenderer: asNodeWithEditingProps(DropDownCellPresenter),
   },
   {
     label: '% Change',
@@ -123,8 +123,8 @@ const columns = [
         if (!percent) return '-';
         if (percent >= 0) return `+${percent}%`;
         return `${percent}%`;
-      }
-    }
+      },
+    },
   },
   {
     label: '$ Change',
@@ -134,8 +134,8 @@ const columns = [
         if (!dollars) return '-';
         if (dollars >= 0) return `+${formatUSD(dollars)}`;
         return formatUSD(dollars);
-      }
-    }
+      },
+    },
   },
   {
     label: 'Events',
@@ -148,49 +148,49 @@ const columns = [
       isGroupable: true,
       grouping: {
         categoriesKey: 'eventCategories',
-        groupedKey: 'eventsGroupedByCategoryId'
-      }
+        groupedKey: 'eventsGroupedByCategoryId',
+      },
     },
-    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter)
+    cellRenderer: asNodeWithEditingProps(MultiSelectCellPresenter),
   },
   {
     label: 'Round',
     dataKey: 'round',
     columnData: { optionsKey: 'roundOptions', hasId: true, hasNone: true },
-    cellRenderer: asNodeWithEditingProps(DropDownCellPresenter)
+    cellRenderer: asNodeWithEditingProps(DropDownCellPresenter),
   },
   {
     label: 'Price Floor',
     dataKey: 'priceFloor',
     columnData: {
-      displayFn: (value) => formatUSD(value)
-    }
+      displayFn: (value) => formatUSD(value),
+    },
   },
   {
     label: 'Price Ceiling',
     dataKey: 'priceCeiling',
     columnData: {
-      displayFn: (value) => (value ? formatUSD(value) : '-')
-    }
+      displayFn: (value) => (value ? formatUSD(value) : '-'),
+    },
   },
   {
     label: 'Enabled',
     dataKey: 'isActive',
-    cellRenderer: asNodeWithEditingProps(ToggleCellPresenter)
+    cellRenderer: asNodeWithEditingProps(ToggleCellPresenter),
   },
   {
     label: '',
     dataKey: '',
     minWidth: 125,
-    cellRenderer: asNodeWithEditingProps(RuleControlsCell)
-  }
+    cellRenderer: asNodeWithEditingProps(RuleControlsCell),
+  },
 ].map(combineColumnWithDefaults);
 
 const roundOptions = [
   { id: 'Ceil', name: 'Up' },
   { id: 'Floor', name: 'Down' },
   { id: 'Round', name: 'Nearest Dollar' },
-  { id: 'None', name: 'No Rounding' }
+  { id: 'None', name: 'No Rounding' },
 ];
 
 const NoTableRowsText = ({ children }) => (
@@ -217,7 +217,7 @@ type Props = {
   priceScalesLoading: boolean,
   eventCategoriesLoading: boolean,
   eventsLoading: boolean,
-  activeSeasonId: number
+  activeSeasonId: number,
 };
 
 export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
@@ -241,7 +241,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
       fetchEventList,
       fetchEventCategories,
       fetchPriceRules,
-      fetchPriceScales
+      fetchPriceScales,
     } = this.props;
 
     fetchPriceScales();
@@ -262,7 +262,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
       priceScalesLoading,
       priceRulesLoading,
       eventCategoriesLoading,
-      eventsLoading
+      eventsLoading,
     } = this.props;
     const rowRenderer = withPricingRuleRowStyles(defaultTableRowRenderer);
 
@@ -314,7 +314,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
                   priceScales,
                   buyerTypes,
                   eventCategories,
-                  eventsGroupedByCategoryId
+                  eventsGroupedByCategoryId,
                 }}
               />
             ))}
@@ -336,7 +336,7 @@ const mapStateToProps = createStructuredSelector({
   priceScalesLoading: priceScaleSelectors.selectIsLoading,
   priceRulesLoading: priceRuleSelectors.selectIsLoading,
   eventCategoriesLoading: eventCategorySelectors.selectIsLoading,
-  eventsLoading: eventSelectors.selectIsLoading
+  eventsLoading: eventSelectors.selectIsLoading,
 });
 
 const mapDispatchToProps = {
@@ -344,7 +344,7 @@ const mapDispatchToProps = {
   fetchEventList: eventListActions.fetchEventList,
   reset: priceRuleActions.resetPriceRules,
   fetchPriceScales: priceScaleActions.fetchPriceScales,
-  fetchEventCategories: eventCategoryActions.fetchEventCategories
+  fetchEventCategories: eventCategoryActions.fetchEventCategories,
 };
 
 export const VirtualizedPricingRules = connect(

@@ -7,11 +7,11 @@ type Props = {
   children: (
     selectedIndex: number,
     onTabChange: (index: number) => void
-  ) => React.Node
+  ) => React.Node,
 };
 
 type State = {
-  selectedIndex: number
+  selectedIndex: number,
 };
 
 export class Tabbable extends React.Component<Props, State> {
@@ -21,7 +21,7 @@ export class Tabbable extends React.Component<Props, State> {
       nextProps.selectedIndex !== prevState.selectedIndex
     ) {
       return {
-        selectedIndex: nextProps.selectedIndex
+        selectedIndex: nextProps.selectedIndex,
       };
     }
 
@@ -29,12 +29,12 @@ export class Tabbable extends React.Component<Props, State> {
   }
 
   state = {
-    selectedIndex: 0
+    selectedIndex: 0,
   };
 
   onTabChange = (idx: number) => {
     this.setState({
-      selectedIndex: idx
+      selectedIndex: idx,
     });
   };
 

@@ -6,7 +6,7 @@ const testUser = { id: 1, firstName: 'John', lastName: 'Smith' };
 const testClient = { name: 'Mets', logoUrl: '' };
 const clientList = {
   clientList: [{ name: 'Mets', logoUrl: '' }, { name: 'Falcons', logoUrl: '' }],
-  loading: false
+  loading: false,
 };
 
 it('renders correctly with a valid user prop', () => {

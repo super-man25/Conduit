@@ -4,12 +4,12 @@ import type { Action } from './actions';
 
 export type TeamStatState = {
   +loading: boolean,
-  +allSeasons: Object[]
+  +allSeasons: Object[],
 };
 
 export const initialState: TeamStatState = {
   loading: false,
-  allSeasons: []
+  allSeasons: [],
 };
 
 export default function teamStatReducer(

@@ -24,5 +24,5 @@ function* watchFetchTicketIntegrations(): Saga {
 }
 
 export default {
-  watchFetchTicketIntegrations
+  watchFetchTicketIntegrations,
 };

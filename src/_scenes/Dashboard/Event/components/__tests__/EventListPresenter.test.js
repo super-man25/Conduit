@@ -19,7 +19,7 @@ const defaultProps = {
       name: 'Some Event',
       seasonId: 1,
       timestamp: 1529336865706,
-      venueId: 1
+      venueId: 1,
     },
     {
       clientId: 1,
@@ -30,7 +30,7 @@ const defaultProps = {
       name: 'Some Event',
       seasonId: 1,
       timestamp: 1529336865706,
-      venueId: 1
+      venueId: 1,
     },
     {
       clientId: 1,
@@ -41,10 +41,10 @@ const defaultProps = {
       name: 'Some Event',
       seasonId: 1,
       timestamp: 1529336865706,
-      venueId: 1
-    }
+      venueId: 1,
+    },
   ],
-  filter: ''
+  filter: '',
 };
 
 describe('<EventListPresenter />', () => {

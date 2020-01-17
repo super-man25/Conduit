@@ -48,7 +48,7 @@ export function request(path, opts = {}) {
   return fetch(`${baseURL}/${path}`, {
     credentials: 'include',
     mode: 'cors',
-    ...opts
+    ...opts,
   }).then(handleResponse);
 }
 
@@ -63,7 +63,7 @@ export function get(path, params = {}, opts = {}) {
   const search = stringify(params);
   return request(`${path}?${search}`, {
     method: 'GET',
-    ...opts
+    ...opts,
   });
 }
 
@@ -78,7 +78,7 @@ export function post(path, body = {}, opts = {}) {
   return request(path, {
     method: 'POST',
     body: JSON.stringify(body),
-    ...opts
+    ...opts,
   });
 }
 
@@ -93,7 +93,7 @@ export function put(path, body = {}, opts = {}) {
   return request(path, {
     method: 'PUT',
     body: JSON.stringify(body),
-    ...opts
+    ...opts,
   });
 }
 
@@ -108,6 +108,6 @@ export function del(path, params = {}, opts = {}) {
   const search = stringify(params);
   return request(`${path}?${search}`, {
     method: 'DELETE',
-    ...opts
+    ...opts,
   });
 }

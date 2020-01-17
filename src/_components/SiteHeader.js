@@ -14,7 +14,7 @@ import {
   integrationConstants,
   navigationHeight,
   mobileBreakpoint,
-  containerPadding
+  containerPadding,
 } from '_constants';
 import { useClickAway, useSidebar } from '_hooks';
 import { actions as authActions } from '_state/auth';
@@ -124,7 +124,7 @@ export const SiteHeader = () => {
 
   useClickAway({
     ref: dropdownRef,
-    handleClickAway: () => setShowMenu(false)
+    handleClickAway: () => setShowMenu(false),
   });
 
   return (

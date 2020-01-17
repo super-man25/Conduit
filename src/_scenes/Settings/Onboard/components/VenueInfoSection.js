@@ -7,7 +7,7 @@ import { cssConstants } from '_constants';
 // TODO: Replace hard-coded value
 const timezoneOptions = [
   { label: 'America/Chicago', value: 'America/Chicago' },
-  { label: 'America/New_York', value: 'America/New_York' }
+  { label: 'America/New_York', value: 'America/New_York' },
 ];
 
 export const VenueInfoSection = () => (

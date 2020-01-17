@@ -12,14 +12,14 @@ describe('actions', () => {
     const action = actions.fetch(payload);
     expect(action).toEqual({
       type: FETCH,
-      payload
+      payload,
     });
   });
 
   it('should create an action to reset revenueStats', () => {
     const action = actions.reset();
     expect(action).toEqual({
-      type: RESET
+      type: RESET,
     });
   });
 });
@@ -32,7 +32,7 @@ describe('reducer', () => {
 
   it('should handle FETCH', () => {
     const prevState = {
-      ...initialState
+      ...initialState,
     };
 
     const action = { type: FETCH };
@@ -40,20 +40,20 @@ describe('reducer', () => {
 
     expect(nextState).toEqual({
       ...prevState,
-      loading: true
+      loading: true,
     });
   });
 
   it('should handle FETCH_SUCCESS', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const ticketBreakdown = [
       { id: 1, revenue: 100, ticketsSold: 100, name: 'Item 1' },
       { id: 2, revenue: 100, ticketsSold: 100, name: 'Item 2' },
-      { id: 3, revenue: 100, ticketsSold: 100, name: 'Item 3' }
+      { id: 3, revenue: 100, ticketsSold: 100, name: 'Item 3' },
     ];
 
     const action = { type: FETCH_SUCCESS, payload: ticketBreakdown };
@@ -62,14 +62,14 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      ticketBreakdown
+      ticketBreakdown,
     });
   });
 
   it('should handle FETCH_ERROR', () => {
     const prevState = {
       ...initialState,
-      loading: true
+      loading: true,
     };
 
     const action = { type: FETCH_ERROR, payload: 'Some Error' };
@@ -78,7 +78,7 @@ describe('reducer', () => {
     expect(nextState).toEqual({
       ...prevState,
       loading: false,
-      error: 'Some Error'
+      error: 'Some Error',
     });
   });
 
@@ -86,7 +86,7 @@ describe('reducer', () => {
     const prevState = {
       loading: true,
       error: 'An Error',
-      ticketBreakdown: [{ id: 1, revenue: 100, ticketsSold: 100 }]
+      ticketBreakdown: [{ id: 1, revenue: 100, ticketsSold: 100 }],
     };
 
     const action = { type: RESET };
@@ -110,7 +110,7 @@ describe('saga workers', () => {
 
     const revenueStats = [
       { name: 'Group', id: 1, revenue: 1, ticketsSold: 1 },
-      { name: 'Single', id: 2, revenue: 1, ticketsSold: 1 }
+      { name: 'Single', id: 2, revenue: 1, ticketsSold: 1 },
     ];
 
     expect(successPath.next(revenueStats).value).toEqual(

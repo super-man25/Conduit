@@ -9,5 +9,5 @@ export type EDUser = {
   isAdmin: boolean,
   lastName: string,
   modifiedAt: Date,
-  phoneNumber: string
+  phoneNumber: string,
 };

@@ -4,7 +4,7 @@ export const sizes = {
   large: 1440,
   medium: 1280,
   small: 1120,
-  xSmall: 1024
+  xSmall: 1024,
 };
 
 export const withBoxModelProps = (styledComponent) => {

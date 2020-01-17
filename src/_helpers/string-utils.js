@@ -4,7 +4,7 @@ import {
   distanceInWordsToNow,
   format,
   isThisYear,
-  isToday
+  isToday,
 } from 'date-fns';
 import { formatToTimeZone } from 'date-fns-timezone';
 import { ISO_DATE_FORMAT } from '_constants';
@@ -125,14 +125,14 @@ export function orDash(value: any): string {
  */
 type USDFormatOptions = {
   minimumFractionDigits: number,
-  maximumFractionDigits: number
+  maximumFractionDigits: number,
 };
 
 export function formatUSD(
   value: number,
   options: USDFormatOptions = {
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+    maximumFractionDigits: 2,
   }
 ): string {
   if (isNaN(value) || value === null) {
@@ -141,12 +141,12 @@ export function formatUSD(
 
   const defaults = {
     style: 'currency',
-    currency: 'USD'
+    currency: 'USD',
   };
 
   const formatter = new Intl.NumberFormat('en-US', {
     ...defaults,
-    ...options
+    ...options,
   });
 
   return formatter.format(value);
@@ -200,7 +200,7 @@ export function validatePhoneNumber(phoneNumber: any): boolean {
 
 type DecimalValidationOptions = {
   decimalDigits: number,
-  forceDecimal: boolean
+  forceDecimal: boolean,
 };
 
 export function validateDecimal(
@@ -266,7 +266,7 @@ export function truncateNumber(value: number): string {
  */
 const collator = new Intl.Collator(undefined, {
   numeric: true,
-  sensitivity: 'base'
+  sensitivity: 'base',
 });
 
 export const sortAlphaNum = (a: any, b: any) => {

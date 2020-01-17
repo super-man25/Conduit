@@ -18,7 +18,7 @@ import {
   Label,
   MailtoLink,
   Flex,
-  AsyncButton
+  AsyncButton,
 } from '_components';
 import {
   CenteredContainer,
@@ -26,7 +26,7 @@ import {
   LoginFooter,
   LogoImg,
   ForgotLink,
-  HideMe
+  HideMe,
 } from './components/styled';
 
 type Props = {
@@ -35,10 +35,10 @@ type Props = {
     loggingIn: boolean,
     requestingPassword: boolean,
     forgot: boolean,
-    model: ?EDUser
+    model: ?EDUser,
   },
   authActions: typeof authActions,
-  location: { state: { from: { pathname: string } } }
+  location: { state: { from: { pathname: string } } },
 };
 
 type State = {
@@ -46,7 +46,7 @@ type State = {
   password: string,
   submitted: boolean,
   showAlert: boolean,
-  touched: { [name: string]: boolean }
+  touched: { [name: string]: boolean },
 };
 
 export class LoginPresenter extends React.Component<Props, State> {
@@ -55,7 +55,7 @@ export class LoginPresenter extends React.Component<Props, State> {
     password: '',
     submitted: false,
     showAlert: false,
-    touched: {}
+    touched: {},
   };
 
   submitEnabled() {
@@ -86,7 +86,7 @@ export class LoginPresenter extends React.Component<Props, State> {
     this.setState({
       [name]: value,
       submitted: false,
-      showAlert: false
+      showAlert: false,
     });
   };
 
@@ -95,7 +95,7 @@ export class LoginPresenter extends React.Component<Props, State> {
     const { touched } = this.state;
 
     this.setState({
-      touched: { ...touched, [name]: true }
+      touched: { ...touched, [name]: true },
     });
   };
 
@@ -115,8 +115,8 @@ export class LoginPresenter extends React.Component<Props, State> {
         submitted: false,
         touched: {
           email: true,
-          password: false
-        }
+          password: false,
+        },
       });
     } else {
       this.props.authActions.signIn(email, password);
@@ -161,7 +161,7 @@ export class LoginPresenter extends React.Component<Props, State> {
                   style={{
                     marginTop: showAlert && submitted ? '15px' : '0px',
                     marginBottom: showAlert && submitted ? '10px' : '0px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
                   }}
                 >
                   Incorrect Email Address or Password.
@@ -246,13 +246,13 @@ export class LoginPresenter extends React.Component<Props, State> {
 function mapStateToProps(state) {
   return {
     authState: state.auth,
-    location: state.router.location
+    location: state.router.location,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    authActions: bindActionCreators(authActions, dispatch)
+    authActions: bindActionCreators(authActions, dispatch),
   };
 }
 
