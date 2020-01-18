@@ -16,7 +16,7 @@ export function EventScoreHistoryTooltip(props: TooltipProps) {
   const [{ payload: stat }] = payload;
   const headerText = dateFormatter(stat.timestamp);
   const bodyJson = {
-    'Event Score': stat.eventScore.toFixed(2),
+    'Event Score': stat.eventScore,
   };
 
   return <ChartTooltip headerText={headerText} bodyJson={bodyJson} />;
