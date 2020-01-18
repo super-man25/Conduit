@@ -1,26 +1,27 @@
 // @flow
-
 import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+
 import { cssConstants, shadows, zIndexes } from '_constants';
+import { actions } from '_state/alert';
 import { Icon } from './Icon';
+import { Flex } from './Flex';
 
 type Props = {
   alertState: {
     type: 'api-error' | 'api-success',
     message: string,
   },
+  clearAlert: () => void,
 };
 
-export const ApiAlertDiv: React.ComponentType<{}> = styled.div`
+export const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 25px;
+  top: 25px;
   z-index: ${zIndexes.BASE};
-  font-size: 18px;
-  width: 357px;
-  height: 90px;
+  width: 350px;
   background-color: ${cssConstants.PRIMARY_WHITE};
   border-color: ${(props) =>
     props.type === 'api-error'
@@ -28,57 +29,48 @@ export const ApiAlertDiv: React.ComponentType<{}> = styled.div`
       : cssConstants.SECONDARY_GREEN};
   box-shadow: ${shadows.SMALL};
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+  cursor: pointer;
+  padding: 25px;
 `;
 
 const StatusIcon: React.ComponentType<{}> = styled.div`
-  position: absolute;
-  top: 26px;
-  left: 26px;
+  margin-right: 15px;
 `;
 
 const StatusText: React.ComponentType<{}> = styled.div`
-  position: absolute;
-  top: 26px;
-  left: 93px;
-  font-size: 1.2em;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 1px;
   color: ${(props) => props.color};
+  margin-bottom: 3px;
 `;
 
 const MsgText: React.ComponentType<{}> = styled.div`
-  position: absolute;
-  top: 54px;
-  left: 93px;
-  font-size: 0.7em;
+  font-size: 13px;
   font-weight: 300;
-  margin-right: 24px;
   color: ${cssConstants.PRIMARY_BLACK};
 `;
 
-export class ApiAlertPresenter extends React.Component<Props> {
-  render() {
-    const { alertState } = this.props;
-    const show = {
-      show: alertState.type !== null && alertState.message !== null,
-    };
-    const statusColor =
-      alertState.type === 'api-error'
-        ? cssConstants.SECONDARY_RED
-        : cssConstants.SECONDARY_GREEN;
-    const statusText = alertState.type === 'api-error' ? 'Error:' : 'Success!';
+export const ApiAlertPresenter = ({ alertState, clearAlert }: Props) => {
+  const show = alertState.type !== null && alertState.message !== null;
+  const statusColor =
+    alertState.type === 'api-error'
+      ? cssConstants.SECONDARY_RED
+      : cssConstants.SECONDARY_GREEN;
+  const statusText = alertState.type === 'api-error' ? 'Error:' : 'Success!';
 
-    return (
-      <ApiAlertDiv {...alertState} {...show}>
-        <StatusIcon>
-          <Icon name={alertState.type} size={39} color={statusColor} />
-        </StatusIcon>
+  return (
+    <StyledApiAlert {...alertState} show={show} onClick={clearAlert}>
+      <StatusIcon>
+        <Icon name={alertState.type} size={40} color={statusColor} />
+      </StatusIcon>
+      <Flex direction="column">
         <StatusText color={statusColor}>{statusText}</StatusText>
         <MsgText>{alertState.message}</MsgText>
-      </ApiAlertDiv>
-    );
-  }
-}
+      </Flex>
+    </StyledApiAlert>
+  );
+};
 
 function mapStateToProps(state) {
   return {
@@ -86,7 +78,11 @@ function mapStateToProps(state) {
   };
 }
 
+const mapDispatchToProps = {
+  clearAlert: actions.clear,
+};
+
 export const ApiAlert = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(ApiAlertPresenter);
