@@ -387,8 +387,14 @@ export const reducer = (state: State = initialState, action: Action) => {
         loading: true,
       };
     case SAVE_EDITED_ROW_SUCCESS:
+      const updatedRows: EDInventoryRow[] = state.allRows.map((inventoryRow) =>
+        inventoryRow.id === state.editedRowId
+          ? { ...inventoryRow, ...state.editedRowState }
+          : inventoryRow
+      );
       return {
         ...state,
+        allRows: updatedRows,
         error: null,
         loading: false,
         editedRowId: null,
