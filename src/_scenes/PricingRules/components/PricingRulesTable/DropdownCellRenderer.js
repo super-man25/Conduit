@@ -83,18 +83,16 @@ export class DropDownCellPresenter extends React.Component<Props, State> {
     }
 
     return (
-      <Flex>
-        <Dropdown
-          options={withOptionsAsObject}
-          selected={withSelectedAsOption}
-          hasNone={hasNone}
-          noneSelected={<Text>None</Text>}
-          parseOption={(option) => option.name}
-          renderSelected={(option) => <Text>{option.name}</Text>}
-          onChange={(option) => this.setSelectedOption(option)}
-          gridProps={this.props.parent.props}
-        />
-      </Flex>
+      <Dropdown
+        options={withOptionsAsObject}
+        selected={withSelectedAsOption}
+        hasNone={hasNone}
+        noneSelected={<Text>None</Text>}
+        parseOption={(option) => option.name}
+        renderSelected={(option) => <Text>{option.name}</Text>}
+        onChange={(option) => this.setSelectedOption(option)}
+        gridProps={this.props.parent.props}
+      />
     );
   }
 }

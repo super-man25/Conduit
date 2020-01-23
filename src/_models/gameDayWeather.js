@@ -4,7 +4,8 @@ export type GameDayWeather = {
   updatedAt: number,
   summary: string,
   icon: string,
-  temperature: number,
+  temperatureHigh: number,
+  temperatureLow: number,
   precipitationProbability: number,
   precipitationType: string,
 };

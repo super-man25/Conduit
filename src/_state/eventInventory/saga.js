@@ -57,7 +57,7 @@ export function* saveEditedRow(): Saga<void> {
 
   const updateParams = {
     eventSeatIds: editedRowSeatIds,
-    overridePrice: parseFloat(editedRowState.overridePrice),
+    overridePrice: parseFloat(editedRowState.overridePrice) || null,
     minimumPrice: parseFloat(editedRowState.minimumPrice),
     maximumPrice: parseFloat(editedRowState.maximumPrice),
     isListed: editedRowState.isListed,

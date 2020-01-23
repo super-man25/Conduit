@@ -66,12 +66,18 @@ const EventWeather = ({
     updatedAt,
     icon,
     summary,
-    temperature,
+    temperatureHigh,
+    temperatureLow,
     precipitationProbability,
     precipitationType,
   },
 }) => {
   const [now, setNow] = useState(new Date());
+  const weatherIcon = weatherIcons.find(
+    (weatherIcon) => weatherIcon.key === icon
+  );
+  const formattedSummary =
+    summary[summary.length - 1] === '.' ? summary.slice(0, -1) : summary;
 
   return (
     <StyledEventWeather
@@ -83,14 +89,13 @@ const EventWeather = ({
       )} ago`}
       onMouseOver={() => setNow(new Date())}
     >
-      <WeatherIcon
-        src={weatherIcons.find((weatherIcon) => weatherIcon.key === icon).icon}
-      />
+      <WeatherIcon src={weatherIcon && weatherIcon.icon} />
       <WeatherSummary>
         <WeatherDataPoint>
-          {parseInt(temperature)}°<FarenheitSymbol>F</FarenheitSymbol>
+          {parseInt(temperatureHigh)}°<FarenheitSymbol>F</FarenheitSymbol>/
+          {parseInt(temperatureLow)}°<FarenheitSymbol>F</FarenheitSymbol>
         </WeatherDataPoint>
-        <WeatherDataPoint>{summary},</WeatherDataPoint>
+        <WeatherDataPoint>{formattedSummary},</WeatherDataPoint>
         <WeatherDataPoint>
           {parseInt(precipitationProbability * 100)}%
         </WeatherDataPoint>

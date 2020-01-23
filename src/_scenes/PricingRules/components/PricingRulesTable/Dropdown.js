@@ -10,6 +10,7 @@ import { Flex } from '_components/Flex';
 const DropdownContainer = withClickAway(styled.div`
   position: relative;
   cursor: pointer;
+  width: 100%;
 `);
 DropdownContainer.displayName = 'DropdownContainer';
 
@@ -130,14 +131,14 @@ export class Dropdown extends React.Component<Props, State> {
         onClick={this.toggleDropdownOpen}
         onClickAway={() => this.setState({ isOpen: false })}
       >
-        <Flex justify="space-between" align="center">
+        <Flex justify="space-between" align="center" width="100%">
           {hasSelectedItem
             ? renderSelected
               ? renderSelected(selected, options)
               : parseOption(selected, options)
             : noneSelected}
           <Icon
-            size={24}
+            size={12}
             color={
               isOpen
                 ? cssConstants.PRIMARY_LIGHT_BLUE

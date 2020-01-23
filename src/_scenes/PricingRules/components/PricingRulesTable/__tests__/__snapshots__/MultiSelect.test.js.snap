@@ -22,16 +22,11 @@ exports[`<MultiSelect /> should render correctly 1`] = `
   onClick={[Function]}
   onClickAway={[Function]}
 >
-  <Flex
-    align="center"
-    justify="space-between"
-  >
-    <Icon
-      color="#070707"
-      name="arrow-drop-down"
-      size={24}
-    />
-  </Flex>
+  <Icon
+    color="#070707"
+    name="arrow-drop-down"
+    size={12}
+  />
   <div
     style={
       Object {
@@ -112,16 +107,11 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
   onClick={[Function]}
   onClickAway={[Function]}
 >
-  <Flex
-    align="center"
-    justify="space-between"
-  >
-    <Icon
-      color="#070707"
-      name="arrow-drop-down"
-      size={24}
-    />
-  </Flex>
+  <Icon
+    color="#070707"
+    name="arrow-drop-down"
+    size={12}
+  />
   <div
     style={
       Object {

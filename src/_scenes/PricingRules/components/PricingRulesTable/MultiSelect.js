@@ -154,18 +154,16 @@ export class MultiSelect extends React.Component<Props, State> {
         onClick={this.openDropdown}
         onClickAway={() => this.setState({ isOpen: false })}
       >
-        <Flex justify="space-between" align="center">
-          {cellLabel}
-          <Icon
-            color={
-              isOpen
-                ? cssConstants.PRIMARY_LIGHT_BLUE
-                : cssConstants.PRIMARY_LIGHT_BLACK
-            }
-            name={'arrow-drop-down'}
-            size={24}
-          />
-        </Flex>
+        {cellLabel}
+        <Icon
+          color={
+            isOpen
+              ? cssConstants.PRIMARY_LIGHT_BLUE
+              : cssConstants.PRIMARY_LIGHT_BLACK
+          }
+          name={'arrow-drop-down'}
+          size={12}
+        />
         <div
           ref={this.ref}
           style={{

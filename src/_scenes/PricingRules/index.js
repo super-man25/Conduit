@@ -51,6 +51,12 @@ const PricingRulesTableTableContainer = styled(FlexItem)`
   min-height: 100%;
 `;
 
+const SeasonDropdown = styled(Dropdown)`
+  margin-top: 5px;
+`;
+
+const DropdownItem = styled.div``;
+
 type Props = {
   buyerTypeActions: any,
   priceRuleActions: any,
@@ -133,7 +139,7 @@ export class PricingRules extends React.Component<Props> {
             <Spacing margin="1rem 0">
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
-                <Dropdown
+                <SeasonDropdown
                   arrowColor={cssConstants.SECONDARY_BLUE}
                   options={seasonsWithPricingRuleName}
                   selected={selectedSeasonWithPricingRuleName}
@@ -141,9 +147,7 @@ export class PricingRules extends React.Component<Props> {
                   parseOption={(option) => option.nameWithPricingRules}
                   onChange={(option) => setActiveSeasonId(option.id)}
                   renderSelected={(option) => (
-                    <H3 type="secondary" size="18px" weight="heavy">
-                      {option.nameWithPricingRules}
-                    </H3>
+                    <DropdownItem>{option.nameWithPricingRules}</DropdownItem>
                   )}
                 />
                 <Box>

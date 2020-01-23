@@ -20,7 +20,14 @@ function error(message) {
   };
 }
 
+function clear() {
+  return {
+    type: CLEAR,
+  };
+}
+
 export default {
   success,
   error,
+  clear,
 };
