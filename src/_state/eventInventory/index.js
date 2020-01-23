@@ -314,7 +314,7 @@ export type State = {
   filterDirection: 'asc' | 'desc',
   filterName: string,
   editedRowId: ?number,
-  editedRowState: ?any,
+  editedRowState: EDInventoryRow,
   selectedRowIds: number[],
   scaleFilters: number[],
   selectedScaleFilters: EDVenuePriceScale[],
@@ -389,7 +389,11 @@ export const reducer = (state: State = initialState, action: Action) => {
     case SAVE_EDITED_ROW_SUCCESS:
       const updatedRows: EDInventoryRow[] = state.allRows.map((inventoryRow) =>
         inventoryRow.id === state.editedRowId
-          ? { ...inventoryRow, ...state.editedRowState }
+          ? {
+              ...inventoryRow,
+              ...state.editedRowState,
+              overridePrice: state.editedRowState.overridePrice || undefined,
+            }
           : inventoryRow
       );
       return {
