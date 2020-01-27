@@ -43,6 +43,13 @@ exports[`<MultiSelect /> should render correctly 1`] = `
         }
       }
     >
+      <styled.div>
+        <styled.input
+          onChange={[Function]}
+          placeholder="Filter..."
+          value=""
+        />
+      </styled.div>
       <Flex
         align="center"
         flexWrap="wrap"
@@ -128,6 +135,13 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
         }
       }
     >
+      <styled.div>
+        <styled.input
+          onChange={[Function]}
+          placeholder="Filter..."
+          value=""
+        />
+      </styled.div>
       <Flex
         align="center"
         flexWrap="wrap"

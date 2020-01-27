@@ -32,6 +32,9 @@ export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
 export const MultiSelectContainer = withClickAway(styled.div`
   position: relative;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `);
 
 export const MultiSelectMenu = styled.div`
@@ -110,4 +113,17 @@ export const SplitButtonHalf = styled.span`
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
   }
+`;
+
+export const DropdownFilterInputContainer = styled.div`
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+`;
+
+export const DropdownFilterInput = styled.input`
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-radius: 3px;
 `;
