@@ -7,6 +7,8 @@ import {
   MultiSelectMenu,
   SplitButtonContainer,
   SplitButtonHalf,
+  DropdownFilterInput,
+  DropdownFilterInputContainer,
 } from './styled';
 
 import { MultiSelectGroupView } from './MultiSelectGroupView';
@@ -20,6 +22,7 @@ type State = {
   isOpen: boolean,
   selectAllNext: boolean,
   isGrouped: boolean,
+  filterText: string,
 };
 
 type Props = {
@@ -66,7 +69,12 @@ export function GroupedSplitButton({
 }
 
 export class MultiSelect extends React.Component<Props, State> {
-  state = { isOpen: false, selectAllNext: true, isGrouped: false };
+  state = {
+    isOpen: false,
+    selectAllNext: true,
+    isGrouped: false,
+    filterText: '',
+  };
   ref = React.createRef<HTMLDivElement>();
 
   componentDidMount() {
@@ -108,7 +116,7 @@ export class MultiSelect extends React.Component<Props, State> {
   };
 
   render() {
-    const { isOpen, selectAllNext } = this.state;
+    const { isOpen, selectAllNext, filterText } = this.state;
     const {
       cellLabel,
       label,
@@ -127,10 +135,25 @@ export class MultiSelect extends React.Component<Props, State> {
       const {
         grouping: { categoriesKey, groupedKey },
       } = columnData;
+      const filteredOptions = {};
+      Object.keys(columnData[groupedKey]).map(
+        (key) =>
+          (filteredOptions[key] = columnData[groupedKey][key].filter(
+            (option) => {
+              return (
+                option.id === filterText ||
+                option.name.toLowerCase().includes(filterText.toLowerCase())
+              );
+            }
+          ))
+      );
+      const filteredCategories = columnData[categoriesKey].filter(
+        (category) => filteredOptions[category.id].length > 0
+      );
       OptionsView = (
         <MultiSelectGroupView
-          categories={columnData[categoriesKey]}
-          grouped={columnData[groupedKey]}
+          categories={filteredCategories}
+          grouped={filteredOptions}
           selected={selected}
           labelFn={labelFn}
           updatePriceRuleProperty={updatePriceRuleProperty}
@@ -138,9 +161,31 @@ export class MultiSelect extends React.Component<Props, State> {
         />
       );
     } else {
+      const filteredOptions = filterText
+        ? options.filter((option) => {
+            if (columnData.optionsKey === 'buyerTypes') {
+              return (
+                option.id === filterText ||
+                option.publicDescription.toLowerCase().includes(filterText) ||
+                option.code.toLowerCase().includes(filterText.toLowerCase())
+              );
+            } else if (columnData.optionsKey === 'priceScales') {
+              return (
+                option.id === filterText ||
+                option.name.toLowerCase().includes(filterText.toLowerCase())
+              );
+            } else if (columnData.optionsKey === 'events') {
+              return (
+                option.id === filterText ||
+                option.name.toLowerCase().includes(filterText.toLowerCase())
+              );
+            }
+            return true;
+          })
+        : options;
       OptionsView = (
         <MultiSelectView
-          options={options}
+          options={filteredOptions}
           selected={selected}
           disabled={disabled}
           labelFn={labelFn}
@@ -175,6 +220,15 @@ export class MultiSelect extends React.Component<Props, State> {
             show={isOpen}
             style={{ maxHeight: this.getMultiSelectHeight() }}
           >
+            <DropdownFilterInputContainer>
+              <DropdownFilterInput
+                value={this.state.filterText}
+                onChange={({ target: { value } }) =>
+                  this.setState({ filterText: value })
+                }
+                placeholder="Filter..."
+              />
+            </DropdownFilterInputContainer>
             <Flex
               align="center"
               justify="space-between"

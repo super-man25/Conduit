@@ -6,6 +6,7 @@ import { cssConstants } from '_constants';
 import { darken } from 'polished';
 import { Icon } from '_components/Icon';
 import { Flex } from '_components/Flex';
+import { DropdownFilterInput, DropdownFilterInputContainer } from './styled';
 
 const DropdownContainer = withClickAway(styled.div`
   position: relative;
@@ -74,6 +75,7 @@ type Props = {
 
 type State = {
   isOpen: boolean,
+  filterText: string,
 };
 
 export class Dropdown extends React.Component<Props, State> {
@@ -84,6 +86,7 @@ export class Dropdown extends React.Component<Props, State> {
 
   state = {
     isOpen: false,
+    filterText: '',
   };
 
   toggleDropdownOpen = () => {
@@ -111,6 +114,13 @@ export class Dropdown extends React.Component<Props, State> {
     return `${getDropdownHeight}px`;
   };
 
+  openDropdown = () => {
+    if (this.state.isOpen) return;
+    this.setState({ isOpen: true });
+  };
+
+  closeDropdown = () => this.setState({ isOpen: false });
+
   render() {
     const {
       selected,
@@ -120,15 +130,21 @@ export class Dropdown extends React.Component<Props, State> {
       noneSelected,
       renderSelected,
     } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, filterText } = this.state;
 
     const hasSelectedItem = !!options.find(
       (option) => option.id === selected.id
     );
 
+    const filteredOptions = options.filter(
+      (option) =>
+        option.id === filterText ||
+        option.name.toLowerCase().includes(filterText.toLowerCase())
+    );
+
     return (
       <DropdownContainer
-        onClick={this.toggleDropdownOpen}
+        onClick={this.openDropdown}
         onClickAway={() => this.setState({ isOpen: false })}
       >
         <Flex justify="space-between" align="center" width="100%">
@@ -158,20 +174,35 @@ export class Dropdown extends React.Component<Props, State> {
             show={isOpen}
             style={{ maxHeight: this.getDropdownHeight() }}
           >
+            <DropdownFilterInputContainer>
+              <DropdownFilterInput
+                value={this.state.filterText}
+                onChange={({ target: { value } }) =>
+                  this.setState({ filterText: value })
+                }
+                placeholder="Filter..."
+              />
+            </DropdownFilterInputContainer>
             {!hasNone && (
               <Option
                 isActive={!selected || !selected.id}
                 key={-1}
-                onClick={() => this.itemClicked(null)}
+                onClick={() => {
+                  this.itemClicked(null);
+                  this.closeDropdown();
+                }}
               >
                 None
               </Option>
             )}
-            {options.map((option, idx) => (
+            {filteredOptions.map((option, idx) => (
               <Option
                 isActive={option.id === selected.id}
                 key={idx}
-                onClick={() => this.itemClicked(option.id)}
+                onClick={() => {
+                  this.itemClicked(option.id);
+                  this.closeDropdown();
+                }}
               >
                 {parseOption(option, options)}
               </Option>
