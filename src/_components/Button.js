@@ -19,7 +19,6 @@ export const Button: React.ComponentType<Props> = withBoxModelProps(styled.butto
   border-radius: 3px;
   font-size: ${(props) => props.fontSize || '1rem'};
   cursor: pointer;
-  text-transform: uppercase;
   transition-duration: 0.3s;
 
   &:disabled {

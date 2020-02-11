@@ -60,7 +60,7 @@ exports[`renders correctly when downloading is false 1`] = `
     size="small"
     type="secondary"
   >
-    DOWNLOAD TRANSACTIONS
+    Download Transactions
   </div>
 </div>
 `;
@@ -124,7 +124,7 @@ exports[`renders correctly when downloading is true 1`] = `
     size="small"
     type="disabled"
   >
-    DOWNLOADING...
+    Downloading...
   </div>
 </div>
 `;

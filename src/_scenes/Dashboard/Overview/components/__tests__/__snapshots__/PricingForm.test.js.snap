@@ -1,0 +1,374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  padding: 14px 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 33%;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 33%;
+}
+
+.c3 {
+  border: none;
+  min-width: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  padding: 0;
+  color: #0A169A;
+  background-color: inherit;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
+}
+
+.c3:disabled {
+  color: #D1D1D1;
+  opacity: 0.5;
+}
+
+.c3:hover:not(:disabled) {
+  color: #38A9DB;
+}
+
+.c2 {
+  color: #070707;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.c4 {
+  padding: 1.5rem;
+}
+
+.c6 {
+  width: 33%;
+}
+
+.c7 {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  text-align: right;
+}
+
+.c9 {
+  color: #999999;
+  margin: 0;
+}
+
+.c10 {
+  color: #070707;
+  margin: 0;
+  text-align: right;
+}
+
+.c13 {
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+}
+
+.c14 {
+  font-weight: 700;
+  color: #070707;
+  margin: 0;
+  text-align: right;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-right: 1px solid #D1D1D1;
+  padding: 0 20px;
+  width: 100%;
+}
+
+<div
+  className="c0"
+  direction="column"
+>
+  <div
+    className="c1"
+  >
+    <h4
+      className="c2"
+      color="#070707"
+    >
+      Modifiers
+    </h4>
+    <button
+      className="c3"
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "fontWeight": 600,
+        }
+      }
+    >
+      Edit
+    </button>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+      direction="row"
+    >
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="c7"
+          color="#999999"
+          size={14}
+        >
+          Event Score
+        </p>
+      </div>
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="c7"
+          color="#999999"
+          size={14}
+        >
+          Spring Value
+        </p>
+      </div>
+    </div>
+    <div
+      className="c8"
+      direction="row"
+    >
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="c9"
+          color="#999999"
+        >
+          Predicted
+        </p>
+      </div>
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="private c10"
+        >
+          1.00
+        </p>
+      </div>
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="private c10"
+        >
+          1.0000
+        </p>
+      </div>
+    </div>
+    <div
+      className="c8"
+      direction="row"
+      style={
+        Object {
+          "borderBottom": "1px solid #EEEEEE",
+          "borderTop": "1px solid #EEEEEE",
+        }
+      }
+    >
+      <div
+        className="c11"
+        width="33%"
+      >
+        <p
+          className="c9"
+          color="#999999"
+        >
+          Modifier
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      >
+        <p
+          className="private c10"
+        >
+          1.00
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      >
+        <p
+          className="private c10"
+        >
+          1.0000
+        </p>
+      </div>
+    </div>
+    <div
+      className="c8"
+      direction="row"
+      style={
+        Object {
+          "borderBottom": "1px solid #EEEEEE",
+        }
+      }
+    >
+      <div
+        className="c11"
+        width="33%"
+      >
+        <p
+          className="c9"
+          color="#999999"
+        >
+          Velocity
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      >
+        <p
+          className="private c10"
+        >
+          --
+        </p>
+      </div>
+      <div
+        className="c12"
+        width="33%"
+      />
+    </div>
+    <div
+      className="c8"
+      direction="row"
+    >
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="c13"
+        >
+          Final
+        </p>
+      </div>
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="private c14"
+        >
+          --
+        </p>
+      </div>
+      <div
+        className="c6"
+        width="33%"
+      >
+        <p
+          className="private c14"
+        >
+          2.0000
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

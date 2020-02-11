@@ -58,7 +58,7 @@ export const RuleControlsCellPresenter = ({
           weight="heavy"
           marginRight="15px"
         >
-          EDIT
+          Edit
         </Text>
         <Text
           size={14}
@@ -75,7 +75,7 @@ export const RuleControlsCellPresenter = ({
               : { cursor: 'pointer' }
           }
         >
-          DELETE
+          Delete
         </Text>
       </Flex>
     );
@@ -91,7 +91,7 @@ export const RuleControlsCellPresenter = ({
         weight="heavy"
         marginRight="15px"
       >
-        SAVE
+        Save
       </Text>
       <Text
         size={14}
@@ -100,7 +100,7 @@ export const RuleControlsCellPresenter = ({
         onClick={cancelEditingRule}
         style={{ cursor: 'pointer' }}
       >
-        CANCEL
+        Cancel
       </Text>
     </Flex>
   );

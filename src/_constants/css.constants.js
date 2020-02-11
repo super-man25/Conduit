@@ -66,13 +66,6 @@ export const zIndexes = {
   DROPDOWN_CLIENT_HEADER: OVERLAY + 1,
 };
 
-const getFontFamily = (fontName) =>
-  `${fontName}, Roboto, Helvetica, sans-serif`;
-
-export const fonts = {
-  FUTURA: getFontFamily('FuturaPT'),
-};
-
 export const navigationHeight = 70;
 
 export const mobileBreakpoint = 1024;

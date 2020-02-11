@@ -25,11 +25,11 @@ import {
 } from '_constants';
 import { formatDate, formatUSD, formatNumber } from './string-utils';
 import { EventStat, EventStatInterval } from '_models';
-import { MinorXAxisTick } from '_components/Charts/MinorXAxisTick';
+import { MinorXAxisTick } from '_scenes/Dashboard/Overview/components/MinorXAxisTick';
 import {
   MajorXAxisTick,
   MajorXAxisTickLine,
-} from '_components/Charts/MajorXAxisTick';
+} from '_scenes/Dashboard/Overview/components/MajorXAxisTick';
 
 export type ChartPoint = { x: Date, y: number };
 

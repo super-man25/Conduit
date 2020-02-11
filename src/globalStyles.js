@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Proxima Nova, Roboto, Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     background: #ffffff;
   }

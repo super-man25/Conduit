@@ -9,7 +9,6 @@ exports[`renders correctly with disabled prop 1`] = `
   border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
-  text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   background-color: #FFFFFF;
@@ -44,7 +43,7 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 .c0::before {
-  content: 'CANCEL';
+  content: 'Cancel';
 }
 
 <button
@@ -62,7 +61,6 @@ exports[`renders correctly with no props 1`] = `
   border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
-  text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   background-color: #FFFFFF;
@@ -97,7 +95,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0::before {
-  content: 'CANCEL';
+  content: 'Cancel';
 }
 
 <button

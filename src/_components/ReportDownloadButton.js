@@ -13,7 +13,7 @@ export const ReportDownloadButton = (props: {
     ? cssConstants.PRIMARY_GRAY
     : cssConstants.PRIMARY_BLUE;
   const type = downloading ? 'disabled' : 'secondary';
-  const text = downloading ? 'DOWNLOADING...' : 'DOWNLOAD TRANSACTIONS';
+  const text = downloading ? 'Downloading...' : 'Download Transactions';
   return (
     <Flex
       style={{ cursor }}

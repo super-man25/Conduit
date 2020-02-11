@@ -12,16 +12,16 @@ it('renders correctly with show = true & no type prop', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with show = true & type = api-error', () => {
+it('renders correctly with show = true & type = apiError', () => {
   const tree = renderer
-    .create(<StyledApiAlert show="true" type="api-error" />)
+    .create(<StyledApiAlert show="true" type="apiError" />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly with show = true & type = api-success', () => {
+it('renders correctly with show = true & type = apiSuccess', () => {
   const tree = renderer
-    .create(<StyledApiAlert show="true" type="api-success" />)
+    .create(<StyledApiAlert show="true" type="apiSuccess" />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

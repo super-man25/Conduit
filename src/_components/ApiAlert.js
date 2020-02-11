@@ -10,7 +10,7 @@ import { Flex } from './Flex';
 
 type Props = {
   alertState: {
-    type: 'api-error' | 'api-success',
+    type: 'apiError' | 'apiSuccess',
     message: string,
   },
   clearAlert: () => void,
@@ -24,7 +24,7 @@ export const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
   width: 350px;
   background-color: ${cssConstants.PRIMARY_WHITE};
   border-color: ${(props) =>
-    props.type === 'api-error'
+    props.type === 'apiError'
       ? cssConstants.SECONDARY_RED
       : cssConstants.SECONDARY_GREEN};
   box-shadow: ${shadows.SMALL};
@@ -54,10 +54,10 @@ const MsgText: React.ComponentType<{}> = styled.div`
 export const ApiAlertPresenter = ({ alertState, clearAlert }: Props) => {
   const show = alertState.type !== null && alertState.message !== null;
   const statusColor =
-    alertState.type === 'api-error'
+    alertState.type === 'apiError'
       ? cssConstants.SECONDARY_RED
       : cssConstants.SECONDARY_GREEN;
-  const statusText = alertState.type === 'api-error' ? 'Error:' : 'Success!';
+  const statusText = alertState.type === 'apiError' ? 'Error:' : 'Success!';
 
   return (
     <StyledApiAlert {...alertState} show={show} onClick={clearAlert}>

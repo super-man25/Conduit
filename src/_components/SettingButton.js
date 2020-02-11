@@ -23,19 +23,19 @@ export const SettingButton: React.ComponentType<Props> = styled(TextButton)`
 
 export const SettingEditButton = styled(SettingButton)`
   ::before {
-    content: 'EDIT';
+    content: 'Edit';
   }
 `;
 
 export const SettingSaveButton = styled(PrimaryButton)`
   ::before {
-    content: 'SAVE';
+    content: 'Save';
   }
 `;
 
 export const SettingCancelButton = styled(SecondaryButton)`
   color: ${lighten(0.2, cssConstants.SECONDARY_RED)};
   ::before {
-    content: 'CANCEL';
+    content: 'Cancel';
   }
 `;

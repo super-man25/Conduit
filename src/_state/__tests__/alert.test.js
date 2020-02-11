@@ -50,7 +50,7 @@ describe('reducer', () => {
     const nextState = reducer(prevState, { type: SUCCESS, payload: message });
 
     expect(nextState).toEqual({
-      type: 'api-success',
+      type: 'apiSuccess',
       message,
     });
   });
@@ -65,14 +65,14 @@ describe('reducer', () => {
     const nextState = reducer(prevState, { type: ERROR, payload: message });
 
     expect(nextState).toEqual({
-      type: 'api-error',
+      type: 'apiError',
       message,
     });
   });
 
   it('should handle CLEAR', () => {
     const prevState = {
-      type: 'api-success',
+      type: 'apiSuccess',
       message: 'message',
     };
 

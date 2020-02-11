@@ -24,7 +24,7 @@ exports[`<MultiSelect /> should render correctly 1`] = `
 >
   <Icon
     color="#070707"
-    name="arrow-drop-down"
+    name="arrowDown"
     size={12}
   />
   <div
@@ -116,7 +116,7 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
 >
   <Icon
     color="#070707"
-    name="arrow-drop-down"
+    name="arrowDown"
     size={12}
   />
   <div

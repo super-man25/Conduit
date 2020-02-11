@@ -7,7 +7,7 @@ import App from './App';
 import { actions } from '_state/ui';
 import { actions as authActions } from '_state/auth';
 import { userService } from '_services';
-import './fonts/fonts.css';
+import '_fonts/fonts.css';
 
 render(
   <Provider store={store}>
@@ -30,6 +30,3 @@ window.addEventListener('storage', (window, ev) => {
     store.dispatch(authActions.unsetUser());
   }
 });
-
-// registerServiceWorker();   // commented out because it will not work until we have an https connection
-// in localhost, the requirement for a secure host is relaxed, for ease in development

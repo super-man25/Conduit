@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonTicketIntegrations /> should render correctly 1`] = `
+<TicketIntegrations
+  id={1}
+  ticketIntegrations={
+    Array [
+      Object {
+        "id": 1,
+        "isActive": true,
+        "logoUrl": "#",
+        "name": "Some Name",
+        "sold": 1000,
+        "total": 1000,
+      },
+      Object {
+        "id": 2,
+        "isActive": true,
+        "logoUrl": "#",
+        "name": "Some Name",
+        "sold": 1000,
+        "total": 1000,
+      },
+    ]
+  }
+/>
+`;

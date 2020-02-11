@@ -63,7 +63,7 @@ export const SortableButton = (props: Props) => {
         <IconContainer>
           <Abs top="-2px">
             <Icon
-              name="arrow-drop-up"
+              name="arrowUp"
               size={24}
               color={
                 direction === 'desc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)
@@ -72,7 +72,7 @@ export const SortableButton = (props: Props) => {
           </Abs>
           <Abs top="4px">
             <Icon
-              name="arrow-drop-down"
+              name="arrowDown"
               size={24}
               color={
                 direction === 'asc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)

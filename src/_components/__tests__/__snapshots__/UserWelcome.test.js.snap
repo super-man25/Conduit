@@ -39,7 +39,6 @@ exports[`renders correctly with a valid user prop 1`] = `
   border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
-  text-transform: uppercase;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   padding: 8px;

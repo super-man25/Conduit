@@ -1,128 +1,65 @@
 // @flow
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Redirect, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { actions as teamStatActions } from '_state/teamStat';
-import { actions as uiActions, selectors as uiSelectors } from '_state/ui';
 import { actions as clientActions } from '_state/client';
 import {
   FullContent,
-  PageWrapper,
   PrimaryContent,
   SecuredRoute,
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
   SiteHeader,
-  TeamOverview,
 } from '_components';
-import EventListContainer from './Event/containers/EventListContainer';
-import { Event } from './Event';
-import Season from './Season';
-import type { TeamStatState } from '_state/teamStat';
-import type { EDUser } from '_models/user';
+import { Overview } from './Overview';
+import { Sidebar } from './components/Sidebar';
+import EventInventory from './Inventory';
 
-type Props = {
-  teamStatActions: typeof teamStatActions,
-  clientActions: typeof clientActions,
-  activeSeasonState: number,
-  teamStatState: TeamStatState,
-  sidebarIsOpen: boolean,
-  uiActions: typeof uiActions,
-  authState: {
-    model: EDUser,
-  },
+export const Dashboard = () => {
+  const dispatch = useDispatch();
+  const authState = useSelector(({ auth }) => auth);
+
+  useEffect(() => {
+    const fetchTeamStats = () => dispatch(teamStatActions.fetch());
+    const fetchIntegrations = () => dispatch(clientActions.fetchIntegrations());
+    fetchTeamStats();
+    fetchIntegrations();
+  }, [dispatch]);
+
+  const isAuthorized = !!authState.model;
+
+  return (
+    <>
+      <SiteHeader />
+      <FullContent>
+        <Sidebar />
+        <PrimaryContent>
+          <Switch>
+            <SecuredRoute
+              path="/season"
+              authorized={isAuthorized}
+              component={Overview}
+              componentProps={{ isSeason: true }}
+            />
+            <SecuredRoute
+              path="/event/:id/inventory"
+              authorized={isAuthorized}
+              component={EventInventory}
+              componentProps={{ isEvent: true }}
+            />
+            <SecuredRoute
+              path="/event/:id"
+              authorized={isAuthorized}
+              component={Overview}
+              componentProps={{ isEvent: true }}
+            />
+            <Redirect to="/season" />
+          </Switch>
+        </PrimaryContent>
+      </FullContent>
+    </>
+  );
 };
 
-class Dashboard extends Component<Props> {
-  componentDidMount() {
-    this.props.teamStatActions.fetch();
-    this.props.clientActions.fetchIntegrations();
-  }
-
-  statsForSeason(allSeasonsStats, seasonId) {
-    var activeSeasonStats = null;
-    allSeasonsStats.forEach((stats) => {
-      if (stats.seasonId === seasonId) {
-        activeSeasonStats = stats;
-      }
-    });
-    return activeSeasonStats;
-  }
-
-  render() {
-    const {
-      activeSeasonState,
-      sidebarIsOpen,
-      teamStatState,
-      uiActions: { toggleSidebar },
-      authState,
-    } = this.props;
-
-    const isAuthorized = !!authState.model;
-
-    return (
-      <PageWrapper>
-        <SiteHeader />
-        <FullContent>
-          <Sidebar collapsed={!sidebarIsOpen}>
-            <SidebarHeader>
-              <TeamOverview
-                onToggleSidebar={toggleSidebar}
-                stats={this.statsForSeason(
-                  teamStatState.allSeasons,
-                  activeSeasonState
-                )}
-              />
-            </SidebarHeader>
-            <SidebarContent>
-              <EventListContainer />
-            </SidebarContent>
-          </Sidebar>
-          <PrimaryContent>
-            <Switch>
-              <SecuredRoute
-                path="/season"
-                component={Season}
-                authorized={isAuthorized}
-              />
-              <SecuredRoute
-                path="/event/:id"
-                component={Event}
-                authorized={isAuthorized}
-              />
-              <Redirect to="/season" />
-            </Switch>
-          </PrimaryContent>
-        </FullContent>
-      </PageWrapper>
-    );
-  }
-}
-
-function mapStateToProps(state) {
-  return {
-    activeSeasonState: state.season.activeId,
-    sidebarIsOpen: uiSelectors.selectIsSidebarOpen(state),
-    teamStatState: state.teamStat,
-    authState: state.auth,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    teamStatActions: bindActionCreators(teamStatActions, dispatch),
-    uiActions: bindActionCreators(uiActions, dispatch),
-    clientActions: bindActionCreators(clientActions, dispatch),
-  };
-}
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Dashboard)
-);
+export default withRouter(Dashboard);
