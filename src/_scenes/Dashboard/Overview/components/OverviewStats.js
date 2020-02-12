@@ -154,7 +154,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
     : event.soldInventory;
   const sellThrough = isEvent && event.soldInventory / event.totalInventory;
   const revenuePerSeat = isSeason
-    ? season.revenue / season.inventory
+    ? season.revenue / (season.inventory + Math.abs(season.soldInventory))
     : event.revenue / event.totalInventory;
   const averageTicketPrice = isSeason
     ? season.revenue / Math.abs(season.soldInventory)
