@@ -150,7 +150,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
 
   const totalRevenue = isSeason ? season.revenue : event.revenue;
   const soldInventory = isSeason
-    ? season.soldInventory * -1
+    ? Math.abs(season.soldInventory)
     : event.soldInventory;
   const sellThrough = isEvent && event.soldInventory / event.totalInventory;
   const revenuePerSeat = isSeason
@@ -287,7 +287,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
           </StatContainer>
         )}
       </StatsRow>
-      {(isSeason || isFutureEvent) && (
+      {(isSeasonInProgress || isFutureEvent) && (
         <StatsRow>
           <StatContainer highlighted>
             <PeriodicStatLabel>
