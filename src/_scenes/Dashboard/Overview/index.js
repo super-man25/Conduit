@@ -16,6 +16,7 @@ import { DashboardHeader } from '../components/DashboardHeader';
 import { isPastEvent } from '_helpers';
 import { EventPricing } from './components/EventPricing';
 import { cssConstants } from '_constants';
+import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 
 const Heading = styled(H4)`
   margin: 0;
@@ -41,7 +42,7 @@ export const Overview = ({ isSeason, isEvent, match }) => {
     if (isEvent && !event.event) return true;
     return event.loading;
   });
-  const activeSeason = useSelector(seasonSelectors.selectActiveSeason);
+  const season = useSelector(seasonSelectors.selectActiveSeason);
   const isAdmin = useSelector(({ auth }) => auth.model.isAdmin);
   const event = useSelector(eventSelectors.selectEvent);
   const loading = seasonLoading || eventLoading;
@@ -62,7 +63,7 @@ export const Overview = ({ isSeason, isEvent, match }) => {
     );
   }
 
-  if (!activeSeason) {
+  if (!season) {
     return (
       <PageWrapper style={{ position: 'relative' }}>
         <Center>
@@ -82,7 +83,11 @@ export const Overview = ({ isSeason, isEvent, match }) => {
         </InventoryLink>
       )}
       <OverviewCharts isSeason={isSeason} isEvent={isEvent} />
-      <SeasonTicketIntegrations id={activeSeason.id} />
+      {isSeason ? (
+        <SeasonTicketIntegrations id={season.id} />
+      ) : (
+        <EventTicketIntegrations id={event.id} />
+      )}
       {isEvent && isAdmin && !isPastEvent(event) && <EventPricing />}
     </>
   );

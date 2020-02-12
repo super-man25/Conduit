@@ -5,7 +5,7 @@ import { cssConstants } from '_constants';
 export function CumulativeRevenueChartLegend({ hasProjected }) {
   return (
     <Fragment>
-      <ChartLegendItem label="Actual Revenue" />
+      <ChartLegendItem label={hasProjected ? 'Actual Revenue' : 'Revenue'} />
       {hasProjected && (
         <ChartLegendItem
           dashed

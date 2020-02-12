@@ -4,7 +4,7 @@ exports[`<CumulativeRevenueChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
     color="#0A169A"
-    label="Actual Revenue"
+    label="Revenue"
   />
 </Fragment>
 `;

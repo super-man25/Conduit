@@ -114,18 +114,20 @@ const NoData = ({
 const ChartLegend = ({
   selectedGroupFilter,
   selectedTabIndex,
+  hasProjected,
 }: {
   selectedGroupFilter: number,
   selectedTabIndex: number,
+  hasProjected: boolean,
 }) => {
   if (selectedGroupFilter === 0 && selectedTabIndex === 0)
-    return <PeriodicRevenueChartLegend />;
+    return <PeriodicRevenueChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 0 && selectedTabIndex === 1)
-    return <PeriodicInventoryChartLegend />;
+    return <PeriodicInventoryChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 1 && selectedTabIndex === 0)
-    return <CumulativeRevenueChartLegend />;
+    return <CumulativeRevenueChartLegend hasProjected={hasProjected} />;
   else if (selectedGroupFilter === 1 && selectedTabIndex === 1)
-    return <CumulativeInventoryChartLegend />;
+    return <CumulativeInventoryChartLegend hasProjected={hasProjected} />;
   else return null;
 };
 
@@ -344,6 +346,10 @@ export const OverviewCharts = ({
                 <ChartLegend
                   selectedGroupFilter={selectedGroupFilter}
                   selectedTabIndex={selectedTabIndex}
+                  hasProjected={
+                    isEvent &&
+                    !!eventStats.find(({ isProjected }) => isProjected)
+                  }
                 />
               </Flex>
             </FlexItem>

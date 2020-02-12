@@ -6,7 +6,7 @@ export function PeriodicRevenueChartLegend({ hasProjected }) {
   return (
     <Fragment>
       <ChartLegendItem
-        label="Actual Revenue"
+        label={hasProjected ? 'Actual Revenue' : 'Revenue'}
         color={cssConstants.PRIMARY_BLUE}
       />
       {hasProjected && (
