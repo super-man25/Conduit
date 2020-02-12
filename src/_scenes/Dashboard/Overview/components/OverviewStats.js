@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import {
   isAfter,
   subDays,
-  isBefore,
   isFuture,
   format,
   isSameYear,
+  isSameDay,
 } from 'date-fns';
 
 import { cssConstants, mobileBreakpoint } from '_constants';
@@ -142,11 +142,10 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
   const event = useSelector(eventSelectors.selectEvent);
   const eventStats = useSelector(getEventStats);
   const seasonStats = useSelector(getSeasonStats);
-  const season = [...seasonStats].sort((a, b) =>
-    isAfter(new Date(a.timestamp), new Date(b.timestamp)) ? -1 : 1
-  )[0] || {
-    revenue: 0,
-  };
+  const season =
+    [...seasonStats].sort((a, b) =>
+      isAfter(new Date(a.timestamp), new Date(b.timestamp)) ? -1 : 1
+    )[0] || {};
 
   const totalRevenue = isSeason ? season.revenue : event.revenue;
   const soldInventory = isSeason
@@ -170,35 +169,26 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
 
   const todaySeasonStats =
     seasonStats.filter((seasonStat) =>
-      isAfter(seasonStat.timestamp, subDays(today, 1))
+      isSameDay(seasonStat.timestamp, today)
     ) || [];
   const todayEventStats =
-    eventStats.filter((eventStat) =>
-      isAfter(eventStat.timestamp, subDays(today, 1))
-    ) || [];
+    eventStats.filter((eventStat) => isSameDay(eventStat.timestamp, today)) ||
+    [];
   const yesterdaySeasonStats =
-    seasonStats.filter(
-      (seasonStat) =>
-        isAfter(seasonStat.timestamp, subDays(today, 2)) &&
-        isBefore(seasonStat.timestamp, subDays(today, 1))
+    seasonStats.filter((seasonStat) =>
+      isSameDay(seasonStat.timestamp, subDays(today, 1))
     ) || [];
   const yesterdayEventStats =
-    eventStats.filter(
-      (eventStat) =>
-        isAfter(eventStat.timestamp, subDays(today, 2)) &&
-        isBefore(eventStat.timestamp, subDays(today, 1))
+    eventStats.filter((eventStat) =>
+      isSameDay(eventStat.timestamp, subDays(today, 1))
     ) || [];
   const twoDaysAgoSeasonStats =
-    seasonStats.filter(
-      (seasonStat) =>
-        isAfter(seasonStat.timestamp, subDays(today, 3)) &&
-        isBefore(seasonStat.timestamp, subDays(today, 2))
+    seasonStats.filter((seasonStat) =>
+      isSameDay(seasonStat.timestamp, subDays(today, 2))
     ) || [];
   const twoDaysAgoEventStats =
-    eventStats.filter(
-      (eventStat) =>
-        isAfter(eventStat.timestamp, subDays(today, 3)) &&
-        isBefore(eventStat.timestamp, subDays(today, 2))
+    eventStats.filter((eventStat) =>
+      isSameDay(eventStat.timestamp, subDays(today, 2))
     ) || [];
 
   const todayRevenueStat = isSeason
