@@ -172,15 +172,22 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
       isSameDay(seasonStat.timestamp, today)
     ) || [];
   const todayEventStats =
-    eventStats.filter((eventStat) => isSameDay(eventStat.timestamp, today)) ||
-    [];
+    eventStats.filter((eventStat) =>
+      isSameDay(
+        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        today
+      )
+    ) || [];
   const yesterdaySeasonStats =
     seasonStats.filter((seasonStat) =>
       isSameDay(seasonStat.timestamp, subDays(today, 1))
     ) || [];
   const yesterdayEventStats =
     eventStats.filter((eventStat) =>
-      isSameDay(eventStat.timestamp, subDays(today, 1))
+      isSameDay(
+        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        subDays(today, 1)
+      )
     ) || [];
   const twoDaysAgoSeasonStats =
     seasonStats.filter((seasonStat) =>
@@ -188,7 +195,10 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
     ) || [];
   const twoDaysAgoEventStats =
     eventStats.filter((eventStat) =>
-      isSameDay(eventStat.timestamp, subDays(today, 2))
+      isSameDay(
+        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        subDays(today, 2)
+      )
     ) || [];
 
   const todayRevenueStat = isSeason
