@@ -287,7 +287,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
           </StatContainer>
         )}
       </StatsRow>
-      {(isSeason || isFutureEvent) && (
+      {(isSeasonInProgress || isFutureEvent) && (
         <StatsRow>
           <StatContainer highlighted>
             <PeriodicStatLabel>
