@@ -236,50 +236,52 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
           </StatContainer>
         )}
       </StatsRow>
-      <StatsRow>
-        <StatContainer highlighted>
-          <PeriodicStatLabel>
-            <strong>Today</strong> {format(today, 'MMM DD')}
-          </PeriodicStatLabel>
-          <PeriodicStatRevenue>
-            <Value>{formatUSD(todayRevenueStat)}</Value>
-            <Change isPositive={todayRevenueStat - yesterdayRevenueStat >= 0}>
-              {formatUSD(Math.abs(todayRevenueStat - yesterdayRevenueStat))}
-            </Change>
-          </PeriodicStatRevenue>
-          <PeriodicStatInventory>
-            <Value>{formatNumber(todayTicketStat)} Tickets</Value>
-            <Change isPositive={todayTicketStat - yesterdayTicketStat >= 0}>
-              {formatNumber(Math.abs(todayTicketStat - yesterdayTicketStat))}
-            </Change>
-          </PeriodicStatInventory>
-        </StatContainer>
-        <StatContainer>
-          <PeriodicStatLabel>
-            <strong>Yesterday</strong> {format(subDays(today, 1), 'MMM DD')}
-          </PeriodicStatLabel>
-          <PeriodicStatRevenue>
-            <Value>{formatUSD(yesterdayRevenueStat)}</Value>
-            <Change
-              isPositive={yesterdayRevenueStat - twoDaysAgoRevenueStat >= 0}
-            >
-              {formatUSD(
-                Math.abs(yesterdayRevenueStat - twoDaysAgoRevenueStat)
-              )}
-            </Change>
-          </PeriodicStatRevenue>
-          <PeriodicStatInventory>
-            <Value>{formatNumber(yesterdayTicketStat)} Tickets</Value>
-            <Change
-              isPositive={yesterdayTicketStat - twoDaysAgoTicketStat >= 0}
-            >
-              {formatNumber(
-                Math.abs(yesterdayTicketStat - twoDaysAgoTicketStat)
-              )}
-            </Change>
-          </PeriodicStatInventory>
-        </StatContainer>
-      </StatsRow>
+      {(isSeason || isFutureEvent) && (
+        <StatsRow>
+          <StatContainer highlighted>
+            <PeriodicStatLabel>
+              <strong>Today</strong> {format(today, 'MMM DD')}
+            </PeriodicStatLabel>
+            <PeriodicStatRevenue>
+              <Value>{formatUSD(todayRevenueStat)}</Value>
+              <Change isPositive={todayRevenueStat - yesterdayRevenueStat >= 0}>
+                {formatUSD(Math.abs(todayRevenueStat - yesterdayRevenueStat))}
+              </Change>
+            </PeriodicStatRevenue>
+            <PeriodicStatInventory>
+              <Value>{formatNumber(todayTicketStat)} Tickets</Value>
+              <Change isPositive={todayTicketStat - yesterdayTicketStat >= 0}>
+                {formatNumber(Math.abs(todayTicketStat - yesterdayTicketStat))}
+              </Change>
+            </PeriodicStatInventory>
+          </StatContainer>
+          <StatContainer>
+            <PeriodicStatLabel>
+              <strong>Yesterday</strong> {format(subDays(today, 1), 'MMM DD')}
+            </PeriodicStatLabel>
+            <PeriodicStatRevenue>
+              <Value>{formatUSD(yesterdayRevenueStat)}</Value>
+              <Change
+                isPositive={yesterdayRevenueStat - twoDaysAgoRevenueStat >= 0}
+              >
+                {formatUSD(
+                  Math.abs(yesterdayRevenueStat - twoDaysAgoRevenueStat)
+                )}
+              </Change>
+            </PeriodicStatRevenue>
+            <PeriodicStatInventory>
+              <Value>{formatNumber(yesterdayTicketStat)} Tickets</Value>
+              <Change
+                isPositive={yesterdayTicketStat - twoDaysAgoTicketStat >= 0}
+              >
+                {formatNumber(
+                  Math.abs(yesterdayTicketStat - twoDaysAgoTicketStat)
+                )}
+              </Change>
+            </PeriodicStatInventory>
+          </StatContainer>
+        </StatsRow>
+      )}
     </div>
   );
 };
