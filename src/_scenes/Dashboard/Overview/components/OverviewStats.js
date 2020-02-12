@@ -58,17 +58,29 @@ const StatContainer = styled.div`
 const OverallStatLabel = styled.span`
   font-size: 14px;
   font-weight: bold;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 12px;
+  }
 `;
 
 const OverallStatValue = styled.span`
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 5px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 18px;
+  }
 `;
 
 const PeriodicStatLabel = styled.span`
   font-size: 14px;
   margin-bottom: 15px;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 12px;
+  }
 `;
 
 const PeriodicStatRevenue = styled.span`
@@ -76,12 +88,20 @@ const PeriodicStatRevenue = styled.span`
   margin-bottom: 5px;
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 18px;
+  }
 `;
 
 const PeriodicStatInventory = styled.span`
   font-size: 16px;
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 14px;
+  }
 `;
 
 const Value = styled.div``;
@@ -110,6 +130,10 @@ const Change = styled.div`
     bottom: 3px;
     font-size: 10px;
     margin-left: 1px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    font-size: 14px;
   }
 `;
 
