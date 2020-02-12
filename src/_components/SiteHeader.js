@@ -133,7 +133,7 @@ export const SiteHeader = () => {
         {isMobileDevice && (
           <SidebarToggle
             onClick={toggleSidebar}
-            name={isSidebarOpen ? 'arrow-left' : 'arrow-right'}
+            name={isSidebarOpen ? 'arrowLeft' : 'arrowRight'}
             size={24}
             color={cssConstants.PRIMARY_WHITE}
           />

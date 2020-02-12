@@ -14,7 +14,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
     </div>
     <Styled(Icon)
       color="#FFFFFF"
-      name="arrow-drop-up"
+      name="arrowUp"
       size={12}
     />
   </Flex>
@@ -53,7 +53,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
     </div>
     <Styled(Icon)
       color="#FFFFFF"
-      name="arrow-drop-down"
+      name="arrowDown"
       size={12}
     />
   </Flex>

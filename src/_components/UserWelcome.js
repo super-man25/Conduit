@@ -188,7 +188,7 @@ export const UserWelcome = (props: Props) => {
             <FlexItem>
               <DropdownArrow
                 size={12}
-                name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
+                name={isOpen ? 'arrowUp' : 'arrowDown'}
                 color={cssConstants.PRIMARY_WHITE}
               />
             </FlexItem>

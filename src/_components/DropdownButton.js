@@ -94,7 +94,7 @@ export class DropdownButton extends React.Component {
           <Label onClick={() => this.setState({ show: !show })}>
             {parseLabel(options[selected])}
           </Label>
-          <Icon name="arrow-drop-down" size={24} color="#000" />
+          <Icon name="arrowDown" size={24} color="#000" />
         </Flex>
         <Dropdown show={show}>
           {options.map((o, key) => (

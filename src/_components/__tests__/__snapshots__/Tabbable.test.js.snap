@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`renders correctly 1`] = `
-<div>
-  <span>
-    I am tab number 0
-  </span>
-</div>
-`;

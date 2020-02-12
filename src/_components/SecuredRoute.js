@@ -5,11 +5,13 @@ import { Route, Redirect } from 'react-router-dom';
 type Props = {
   component: React.ElementType,
   authorized: boolean,
+  componentProps: any,
 };
 
 export const SecuredRoute = ({
   component: Component,
   authorized,
+  componentProps,
   ...rest
 }: Props) => {
   return (
@@ -17,7 +19,7 @@ export const SecuredRoute = ({
       {...rest}
       render={(props) =>
         authorized ? (
-          <Component {...props} />
+          <Component {...props} {...componentProps} />
         ) : (
           <Redirect
             to={{ pathname: '/login', state: { from: props.location } }}

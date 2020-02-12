@@ -9,12 +9,12 @@ export default function alertReducer(state = initialState, action) {
   switch (action.type) {
     case SUCCESS:
       return {
-        type: 'api-success',
+        type: 'apiSuccess',
         message: action.payload,
       };
     case ERROR:
       return {
-        type: 'api-error',
+        type: 'apiError',
         message: action.payload,
       };
     case CLEAR:

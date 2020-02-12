@@ -206,7 +206,7 @@ export class MultiSelect extends React.Component<Props, State> {
               ? cssConstants.PRIMARY_LIGHT_BLUE
               : cssConstants.PRIMARY_LIGHT_BLACK
           }
-          name={'arrow-drop-down'}
+          name={'arrowDown'}
           size={12}
         />
         <div

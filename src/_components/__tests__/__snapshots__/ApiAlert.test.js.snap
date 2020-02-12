@@ -54,7 +54,7 @@ exports[`renders correctly with show = true & no type prop 1`] = `
 />
 `;
 
-exports[`renders correctly with show = true & type = api-error 1`] = `
+exports[`renders correctly with show = true & type = apiError 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -78,11 +78,11 @@ exports[`renders correctly with show = true & type = api-error 1`] = `
 
 <div
   className="c0"
-  type="api-error"
+  type="apiError"
 />
 `;
 
-exports[`renders correctly with show = true & type = api-success 1`] = `
+exports[`renders correctly with show = true & type = apiSuccess 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -106,6 +106,6 @@ exports[`renders correctly with show = true & type = api-success 1`] = `
 
 <div
   className="c0"
-  type="api-success"
+  type="apiSuccess"
 />
 `;

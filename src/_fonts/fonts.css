@@ -1,0 +1,25 @@
+/*
+  Fonts are loaded here instead of globalStyles.js to eliminate
+  loading fonts with multiple http requests
+*/
+
+/*
+  FONT WEIGHT REFERENCE:
+  black: 900
+  bold: 700
+  normal: 400
+  light: 300
+  thin: 100
+*/
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./robotoRegular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./robotoBold.ttf');
+  font-weight: 700;
+}

@@ -136,7 +136,7 @@ export const Dropdown = (props: Props) => {
         <DropdownArrow
           size={12}
           color={getArrowColor()}
-          name={isOpen ? 'arrow-drop-up' : 'arrow-drop-down'}
+          name={isOpen ? 'arrowUp' : 'arrowDown'}
         />
       </Flex>
       <DropdownMenu show={isOpen}>
