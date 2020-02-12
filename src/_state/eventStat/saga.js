@@ -22,7 +22,8 @@ export function* setDefaultDateRange() {
   const seasons = yield select(seasonSelectors.selectSeasons);
   const event = yield select(eventSelectors.selectEvent);
 
-  const seasonForEvent = seasons.find((season) => season.id === event.seasonId);
+  const seasonForEvent =
+    seasons.find((season) => season.id === event.seasonId) || {};
   const { startTimestamp: seasonStart } = seasonForEvent;
   const { timestamp: eventStart } = event;
 
