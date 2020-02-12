@@ -13,8 +13,8 @@ import {
 import { cssConstants, mobileBreakpoint } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { selectors as eventSelectors } from '_state/event';
-import { getEventStats } from '_state/eventStat/selectors';
-import { getSeasonStats } from '_state/seasonStat/selectors';
+import { getEventStatState } from '_state/eventStat/selectors';
+import { getSeasonStatState } from '_state/seasonStat/selectors';
 import { convertToTimeZone } from 'date-fns-timezone';
 
 const StatsRow = styled.div`
@@ -140,8 +140,8 @@ const Change = styled.div`
 
 export const OverviewStats = ({ isSeason, isEvent }) => {
   const event = useSelector(eventSelectors.selectEvent);
-  const eventStats = useSelector(getEventStats);
-  const seasonStats = useSelector(getSeasonStats);
+  const { eventStats, eventStatsMeta } = useSelector(getEventStatState);
+  const { seasonStats, seasonStatsMeta } = useSelector(getSeasonStatState);
   const season =
     [...seasonStats].sort((a, b) =>
       isAfter(new Date(a.timestamp), new Date(b.timestamp)) ? -1 : 1
@@ -169,34 +169,55 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
 
   const todaySeasonStats =
     seasonStats.filter((seasonStat) =>
-      isSameDay(seasonStat.timestamp, today)
+      isSameDay(
+        convertToTimeZone(seasonStat.timestamp, {
+          timeZone: seasonStatsMeta.timeZone,
+        }),
+        today
+      )
     ) || [];
   const todayEventStats =
     eventStats.filter((eventStat) =>
       isSameDay(
-        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        convertToTimeZone(eventStat.timestamp, {
+          timeZone: eventStatsMeta.timeZone,
+        }),
         today
       )
     ) || [];
   const yesterdaySeasonStats =
     seasonStats.filter((seasonStat) =>
-      isSameDay(seasonStat.timestamp, subDays(today, 1))
+      isSameDay(
+        convertToTimeZone(seasonStat.timestamp, {
+          timeZone: seasonStatsMeta.timeZone,
+        }),
+        subDays(today, 1)
+      )
     ) || [];
   const yesterdayEventStats =
     eventStats.filter((eventStat) =>
       isSameDay(
-        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        convertToTimeZone(eventStat.timestamp, {
+          timeZone: eventStatsMeta.timeZone,
+        }),
         subDays(today, 1)
       )
     ) || [];
   const twoDaysAgoSeasonStats =
     seasonStats.filter((seasonStat) =>
-      isSameDay(seasonStat.timestamp, subDays(today, 2))
+      isSameDay(
+        convertToTimeZone(seasonStat.timestamp, {
+          timeZone: seasonStatsMeta.timeZone,
+        }),
+        subDays(today, 2)
+      )
     ) || [];
   const twoDaysAgoEventStats =
     eventStats.filter((eventStat) =>
       isSameDay(
-        convertToTimeZone(eventStat.timestamp, { timeZone: event.timeZone }),
+        convertToTimeZone(eventStat.timestamp, {
+          timeZone: eventStatsMeta.timeZone,
+        }),
         subDays(today, 2)
       )
     ) || [];
