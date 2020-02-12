@@ -70,7 +70,7 @@ const OverallStatValue = styled.span`
   margin-bottom: 5px;
 
   @media (max-width: ${mobileBreakpoint}px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
@@ -80,6 +80,7 @@ const PeriodicStatLabel = styled.span`
 
   @media (max-width: ${mobileBreakpoint}px) {
     font-size: 12px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -90,7 +91,7 @@ const PeriodicStatRevenue = styled.span`
   align-items: flex-end;
 
   @media (max-width: ${mobileBreakpoint}px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
