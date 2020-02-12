@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { isAfter, subDays, isBefore, isFuture, format } from 'date-fns';
+import {
+  isAfter,
+  subDays,
+  isBefore,
+  isFuture,
+  format,
+  isSameYear,
+} from 'date-fns';
 
 import { cssConstants, mobileBreakpoint } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
@@ -124,13 +131,17 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
   const revenuePerSeat = isSeason
     ? season.revenue / season.inventory
     : event.revenue / event.totalInventory;
-  const averageTicketPrice = isEvent && event.revenue / event.soldInventory;
+  const averageTicketPrice = isSeason
+    ? season.revenue / Math.abs(season.soldInventory)
+    : event.revenue / event.soldInventory;
 
   const today = new Date();
 
   const isFutureEvent =
     isEvent &&
     isFuture(convertToTimeZone(event.timestamp, { timeZone: event.timeZone }));
+  const isSeasonInProgress =
+    isSeason && isSameYear(new Date(season.timestamp), today);
 
   const todaySeasonStats =
     seasonStats.filter((seasonStat) =>
@@ -239,7 +250,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
             <OverallStatLabel>Sell-Through</OverallStatLabel>
           </StatContainer>
         )}
-        {isFutureEvent ? (
+        {isSeasonInProgress || isFutureEvent ? (
           <StatContainer>
             <OverallStatValue>{formatUSD(averageTicketPrice)}</OverallStatValue>
             <OverallStatLabel>Average Ticket Price</OverallStatLabel>
