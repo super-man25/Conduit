@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { isAfter, subDays, isBefore, isFuture, format } from 'date-fns';
 
-import { cssConstants } from '_constants';
+import { cssConstants, mobileBreakpoint } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { selectors as eventSelectors } from '_state/event';
 import { getEventStats } from '_state/eventStat/selectors';
@@ -13,6 +13,7 @@ import { convertToTimeZone } from 'date-fns-timezone';
 const StatsRow = styled.div`
   display: flex;
   margin-bottom: 25px;
+  flex-wrap: wrap;
 `;
 
 const StatContainer = styled.div`
@@ -30,6 +31,20 @@ const StatContainer = styled.div`
 
   & + & {
     margin-left: 15px;
+  }
+
+  @media (max-width: ${mobileBreakpoint}px) {
+    & {
+      width: calc((100% - 15px) / 2);
+    }
+
+    &:nth-child(even) {
+      margin-left: 15px;
+    }
+
+    &:nth-child(odd) {
+      margin-left: 0;
+    }
   }
 `;
 
