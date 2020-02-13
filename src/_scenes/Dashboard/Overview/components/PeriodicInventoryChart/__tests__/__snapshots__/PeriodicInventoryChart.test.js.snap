@@ -175,6 +175,12 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
       />
       <Tooltip
         active={false}
+        allowEscapeViewBox={
+          Object {
+            "x": false,
+            "y": false,
+          }
+        }
         animationDuration={500}
         animationEasing="ease"
         content={<PeriodicInventoryTooltip />}
@@ -389,6 +395,12 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
       />
       <Tooltip
         active={false}
+        allowEscapeViewBox={
+          Object {
+            "x": false,
+            "y": false,
+          }
+        }
         animationDuration={500}
         animationEasing="ease"
         content={<PeriodicInventoryTooltip />}

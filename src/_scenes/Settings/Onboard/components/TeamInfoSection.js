@@ -13,7 +13,7 @@ import { cssConstants } from '_constants';
 import { H3, Input, Dropdown, FormInput } from '_components';
 import { InputGroup, InputContainer } from './styled';
 
-const dateFormat = 'MM/DD/YYYY';
+const dateFormat = 'MM/dd/yyyy';
 
 function parseDate(dateString) {
   const parsed = dateFnsParse(dateString);

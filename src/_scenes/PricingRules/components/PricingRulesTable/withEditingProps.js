@@ -27,7 +27,4 @@ const mapDispatchToProps = (dispatch, { rowData, dataKey }) => ({
     ),
 });
 
-export const withEditingProps = connect(
-  mapStateToProps,
-  mapDispatchToProps
-);
+export const withEditingProps = connect(mapStateToProps, mapDispatchToProps);

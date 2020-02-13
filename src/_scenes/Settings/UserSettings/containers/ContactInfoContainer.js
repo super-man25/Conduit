@@ -494,7 +494,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContactInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactInfo);

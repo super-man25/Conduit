@@ -86,16 +86,16 @@ describe('getAxisTickOptions', () => {
 });
 
 describe('dayFormat', () => {
-  it('should return a date formatted as MM/DD', () => {
+  it('should return a date formatted as MM/dd', () => {
     const d = new Date('2018-04-17T19:28:43+00:00');
-    expect(dayFormat(d)).toEqual(format(d, 'MM/DD'));
+    expect(dayFormat(d)).toEqual(format(d, 'MM/dd'));
   });
 });
 
 describe('timeFormat', () => {
-  it('should return a date formatted as MM/DD HH:MM', () => {
+  it('should return a date formatted as MM/dd HH:MM', () => {
     const d = new Date('2018-04-17T19:28:43+00:00');
-    expect(dayTimeFormat(d)).toEqual(format(d, 'MM/DD HH:MM'));
+    expect(dayTimeFormat(d)).toEqual(format(d, 'MM/dd HH:MM'));
   });
 });
 

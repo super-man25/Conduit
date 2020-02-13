@@ -85,7 +85,4 @@ const mapDispatchToProps = {
   cancelBulkUpdate: eventInventoryBulkActions.cancelBulkUpdate,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EventInventory);
+export default connect(mapStateToProps, mapDispatchToProps)(EventInventory);

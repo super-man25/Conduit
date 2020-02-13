@@ -155,8 +155,8 @@ export const DateRangeFilter = (props: Props) => {
         setDateRange({ from, to });
         break;
       case 'Yesterday':
-        to = endOfYesterday(new Date());
-        from = startOfYesterday(new Date());
+        to = endOfYesterday();
+        from = startOfYesterday();
         setDateRange({ from, to });
         break;
       case 'Last 7 Days':
@@ -180,8 +180,8 @@ export const DateRangeFilter = (props: Props) => {
         setDateRange({ from, to });
         break;
       case 'All Time':
-        to = endOfDay(allTimeDateRange.to);
-        from = startOfDay(allTimeDateRange.from);
+        to = allTimeDateRange.to && endOfDay(allTimeDateRange.to);
+        from = allTimeDateRange.from && startOfDay(allTimeDateRange.from);
         setDateRange({ from, to });
         break;
       case 'Select Date Range':
@@ -236,7 +236,7 @@ export const DateRangeFilter = (props: Props) => {
   };
 
   const displayDateRangeOption = (from: ?Date, to: ?Date) => {
-    const pattern = 'MMM DD[,] YYYY';
+    const pattern = 'MMM dd, yyyy';
     return (
       <Flex align="center">
         <Text
@@ -291,7 +291,7 @@ export const DateRangeFilter = (props: Props) => {
       return;
     }
 
-    setDateRange({ from: startOfDay(from), to: endOfDay(toDay) });
+    setDateRange({ from: from && startOfDay(from), to: endOfDay(toDay) });
     dispatch({ type: 'resetError' });
     dispatch({ type: 'closeAll' });
   };

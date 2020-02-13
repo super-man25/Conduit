@@ -148,15 +148,13 @@ const selectActiveEventListId = createSelector(
     return hasEvent ? routeIndex : -1;
   }
 );
-const selectGroupedByCategoryId = createSelector(
-  [selectEventList],
-  (events) =>
-    events.reduce((acc, { eventCategoryId, ...rest }) => {
-      const ec = acc[eventCategoryId];
-      return ec
-        ? { ...acc, [eventCategoryId]: [...ec, rest] }
-        : { ...acc, [eventCategoryId]: [rest] };
-    }, {})
+const selectGroupedByCategoryId = createSelector([selectEventList], (events) =>
+  events.reduce((acc, { eventCategoryId, ...rest }) => {
+    const ec = acc[eventCategoryId];
+    return ec
+      ? { ...acc, [eventCategoryId]: [...ec, rest] }
+      : { ...acc, [eventCategoryId]: [rest] };
+  }, {})
 );
 const selectIsLoading = (store: Store) => store.eventList.loading;
 

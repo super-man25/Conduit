@@ -123,7 +123,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
 
   static defaultProps = {
     onChange: () => {},
-    dateDisplayFormat: 'MM/DD/YYYY',
+    dateDisplayFormat: 'MM/dd/yyyy',
   };
 
   handleClickaway = () => {

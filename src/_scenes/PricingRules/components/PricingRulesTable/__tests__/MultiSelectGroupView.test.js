@@ -5,7 +5,10 @@ import { Checkbox } from '../styled';
 
 describe('<MultiSelectGroupView />', () => {
   const props = {
-    categories: [{ id: 2, name: 'Value' }, { id: 3, name: 'Classic' }],
+    categories: [
+      { id: 2, name: 'Value' },
+      { id: 3, name: 'Classic' },
+    ],
     grouped: {
       2: [
         { id: 6, name: 'Braves at Zephyrs' },

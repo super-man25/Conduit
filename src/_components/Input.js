@@ -107,13 +107,14 @@ export class NumberInputField extends React.Component<NumberInputProps> {
       (e.keyCode === 86 && isCtrlOrMetaKey) ||
       (e.keyCode === 88 && isCtrlOrMetaKey) ||
       (e.keyCode >= 35 && e.keyCode <= 39) ||
-      (isPlusKey || isMinusKey)
+      isPlusKey ||
+      isMinusKey
     ) {
       return;
     }
     // Prevent default if it is not a number (stops keypress event)
     if (
-      (e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) &&
+      (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
       (e.keyCode < 96 || e.keyCode > 105)
     ) {
       e.preventDefault();

@@ -47,7 +47,7 @@ type RenderXAxisTicksProps = {
   tickProps: {
     x: number,
     y: number,
-    payload: { value: Date },
+    payload: { value: string },
     index: number,
   },
   timeZone: Object,
@@ -55,11 +55,11 @@ type RenderXAxisTicksProps = {
 };
 
 export function dayFormat(t: Date): string {
-  return format(new Date(t), 'MM/DD');
+  return format(new Date(t), 'MM/dd');
 }
 
 export function dayTimeFormat(t: Date): string {
-  return format(new Date(t), 'MM/DD HH:MM');
+  return format(new Date(t), 'MM/dd HH:MM');
 }
 
 export function periodicTooltip(stat: EventStat) {
@@ -252,7 +252,7 @@ export function renderMinorXAxisTicks({
         break;
     }
 
-    const currentDay = formatDate(value, 'D', timeZone);
+    const currentDay = formatDate(value, 'd', timeZone);
     if (ticksToRender.includes(currentDay))
       return <MinorXAxisTick x={x} y={y} value={formattedValue} />;
   }
@@ -312,7 +312,7 @@ export function renderMajorXAxisTicks({
       formattedValue = formatDate(value, READABLE_MONTH_YEAR_FORMAT, timeZone);
     }
 
-    const currentDay = formatDate(value, 'D', timeZone);
+    const currentDay = formatDate(value, 'd', timeZone);
     if (ticksToRender.includes(currentDay))
       return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
 
@@ -383,7 +383,7 @@ export function renderMobileXAxisTicks({
       formattedValue = formatDate(value, 'MMM', timeZone);
     }
 
-    const currentDay = formatDate(value, 'D', timeZone);
+    const currentDay = formatDate(value, 'd', timeZone);
     if (ticksToRender.includes(currentDay))
       return <MajorXAxisTick x={x} y={y} value={formattedValue} />;
 

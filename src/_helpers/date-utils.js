@@ -1,5 +1,6 @@
 //@flow
-import { isBefore, subMinutes } from 'date-fns';
+import { isBefore, subMinutes, parseISO } from 'date-fns';
+
 import { Event } from '_models';
 
 /**
@@ -7,5 +8,5 @@ import { Event } from '_models';
  */
 export function isPastEvent(event: Event) {
   const pastHour = subMinutes(new Date(), 60);
-  return isBefore(event.timestamp, pastHour);
+  return isBefore(parseISO(event.timestamp), pastHour);
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { distanceInWordsToNow, subMinutes } from 'date-fns';
+import { formatDistanceToNow, subMinutes } from 'date-fns';
 
 import { Flex, Toggle, Spacing, Text } from '_components';
 import {
@@ -94,7 +94,7 @@ export function DateFeatureGroup({
             onChange={onMinutesBeforeChange}
           />
           <Text size={12} style={{ marginTop: '1rem' }}>
-            {distanceInWordsToNow(subMinutes(new Date(), minutesBeforeValue))}{' '}
+            {formatDistanceToNow(subMinutes(new Date(), minutesBeforeValue))}{' '}
             before game
           </Text>
         </Flex>

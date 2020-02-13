@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { READABLE_DATETIME_FORMAT } from '_constants';
-import { CumulativeInventoryTooltip } from '../CumulativeInventoryTooltip';
-import { dateFormatter } from '_helpers';
 
-const createProps = () => ({
+import { CumulativeInventoryTooltip } from '../CumulativeInventoryTooltip';
+
+const defaultProps = {
   active: true,
   payload: [
     {
@@ -22,34 +21,22 @@ const createProps = () => ({
     },
   ],
   dateFormatter: (d) => d.toString,
-});
+};
 
 describe('<CumulativeInventoryTooltip />', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<CumulativeInventoryTooltip {...createProps()} />);
+    const wrapper = shallow(<CumulativeInventoryTooltip {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when active is false', () => {
-    const props = { ...createProps(), active: false };
+    const props = { ...defaultProps, active: false };
     const wrapper = shallow(<CumulativeInventoryTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when no payload is passed', () => {
-    const props = { ...createProps(), payload: [] };
-    const wrapper = shallow(<CumulativeInventoryTooltip {...props} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render correctly with different dateformats ', () => {
-    const props = {
-      ...createProps(),
-      dateFormatter: dateFormatter(
-        READABLE_DATETIME_FORMAT,
-        'America/New_York'
-      ),
-    };
+    const props = { ...defaultProps, payload: [] };
     const wrapper = shallow(<CumulativeInventoryTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

@@ -5,7 +5,10 @@ import renderer from 'react-test-renderer';
 const testUser = { id: 1, firstName: 'John', lastName: 'Smith' };
 const testClient = { name: 'Mets', logoUrl: '' };
 const clientList = {
-  clientList: [{ name: 'Mets', logoUrl: '' }, { name: 'Falcons', logoUrl: '' }],
+  clientList: [
+    { name: 'Mets', logoUrl: '' },
+    { name: 'Falcons', logoUrl: '' },
+  ],
   loading: false,
 };
 

@@ -16,7 +16,10 @@ describe('<DropdownCellRenderer />', () => {
     },
     columnData: {
       optionsKey: 'priceScales',
-      priceScales: [{ id: 2, name: 'DUGOUT' }, { id: 1, name: 'GOLD' }],
+      priceScales: [
+        { id: 2, name: 'DUGOUT' },
+        { id: 1, name: 'GOLD' },
+      ],
       hasId: true,
     },
     selectedItemId: 2,

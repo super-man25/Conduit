@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { distanceInWords } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 import clearDayIcon from '_images/clearDay.svg';
 import clearNightIcon from '_images/clearNight.svg';
@@ -77,9 +77,9 @@ const EventWeather = ({
   return (
     <Flex
       align="center"
-      title={`Updated ${distanceInWords(
-        new Date(parseInt(`${updatedAt}000`)),
+      title={`Updated ${formatDistance(
         now,
+        new Date(parseInt(`${updatedAt}000`)),
         { includeSeconds: true }
       )} ago`}
       onMouseOver={() => setNow(new Date())}
@@ -106,7 +106,4 @@ const mapStateToProps = (state) => ({
   gameDayWeather: state.event.event.gameDayWeather,
 });
 
-export default connect(
-  mapStateToProps,
-  null
-)(EventWeather);
+export default connect(mapStateToProps, null)(EventWeather);

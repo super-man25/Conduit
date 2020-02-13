@@ -1,12 +1,13 @@
 // @flow
 import {
-  distanceInWords,
-  distanceInWordsToNow,
+  formatDistance,
+  formatDistanceToNow,
   format,
   isThisYear,
   isToday,
+  parseISO,
 } from 'date-fns';
-import { formatToTimeZone } from 'date-fns-timezone';
+import { format as formatWithTimeZone, utcToZonedTime } from 'date-fns-tz';
 import { ISO_DATE_FORMAT } from '_constants';
 
 /**
@@ -22,13 +23,19 @@ function shortenTimeZone(dateString: string): string {
 /**
  * Generic date format function that shortens time zones so 'EST' becomes 'ET' for example
  *
- * @param {Date} d date object to format
+ * @param {string} d date object to format
  * @param {string} format date-fns-timezone compatible format string
  * @param {string} timeZone time zone string like 'America/New_York'
  */
-export function formatDate(d: Date, format: string, timeZone: string): string {
-  const str = formatToTimeZone(d, format, { timeZone });
-  return shortenTimeZone(str);
+export function formatDate(
+  d: string,
+  dateFormat: string,
+  timeZone: string
+): string {
+  const date = parseISO(d);
+  const localDate = utcToZonedTime(date, timeZone);
+  const dateString = formatWithTimeZone(localDate, dateFormat, { timeZone });
+  return shortenTimeZone(dateString);
 }
 
 /**
@@ -39,31 +46,32 @@ export function formatDate(d: Date, format: string, timeZone: string): string {
  * @param {string} timeZone canonical time zone string like 'America/New_York'
  */
 export function dateFormatter(
-  format: string,
+  dateFormat: string,
   timeZone: string
-): (Date) => string {
-  return (d: Date) => formatDate(d, format, timeZone);
+): (string) => string {
+  return (d: string) => formatDate(d, dateFormat, timeZone);
 }
 
 /**
  * Return a date as a string
  *
- * @param {Date} d - date to format
+ * @param {string} d - date to format
  * @param {sring} timeZone - timeZone override, default system timezone
  */
-export function readableDate(d: Date, timeZone: string): string {
-  return formatDate(d, 'ddd, M/DD/YY @ h:mm A z', timeZone);
+export function readableDate(d: string, timeZone: string): string {
+  return formatDate(d, 'eee, M/dd/yy @ h:mm a z', timeZone);
 }
 
 /**
  * Format date and time
  *
- * @param {Date} d - date to format
+ * @param {string} d - date to format
  * @param {string} timeZone - timeZone override, default system timezone
  */
-export function readableDateAndTime(d: Date, timeZone?: string) {
-  if (!timeZone) return format(d, 'dddd, MMMM Do, YYYY @ h:mm A');
-  return formatDate(d, 'dddd, MMMM Do, YYYY @ h:mm A z', timeZone);
+export function readableDateAndTime(d: string, timeZone?: string) {
+  const date = parseISO(d);
+  if (!timeZone) return format(date, 'EEEE, MMMM do, yyyy @ h:mm A');
+  return formatDate(d, 'EEEE, MMMM do, yyyy @ h:mm a z', timeZone);
 }
 
 /**
@@ -84,14 +92,15 @@ export function isoDateFormat(date: Date) {
 export function readableTimeOrDate(d: Date, timeZone: ?string): string {
   if (isToday(d)) {
     if (!timeZone) return format(d, 'h:mm A');
-    return formatToTimeZone(d, 'h:mm A', { timeZone });
+    const localDate = utcToZonedTime(d, timeZone);
+    return format(localDate, 'h:mm A');
   }
 
   if (isThisYear(d)) {
     return format(d, 'MMM D');
   }
 
-  return format(d, 'M/DD/YY');
+  return format(d, 'M/dd/yy');
 }
 
 /**
@@ -103,10 +112,10 @@ export function readableTimeOrDate(d: Date, timeZone: ?string): string {
  */
 export function readableDuration(t1: Date, t0?: Date): string {
   if (!t0) {
-    return distanceInWordsToNow(t1);
+    return formatDistanceToNow(t1);
   }
 
-  return distanceInWords(t1, t0);
+  return formatDistance(t0, t1);
 }
 
 /**

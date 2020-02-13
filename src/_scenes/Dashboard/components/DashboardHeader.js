@@ -81,7 +81,7 @@ const EventDetails = ({ event }) => (
   <StyledEventDetails>
     <DateContainer>
       <Month>{formatDate(event.timestamp, 'MMM', event.timeZone)}</Month>
-      <Day>{formatDate(event.timestamp, 'DD', event.timeZone)}</Day>
+      <Day>{formatDate(event.timestamp, 'dd', event.timeZone)}</Day>
     </DateContainer>
     <div>
       <EventTime event={event} />

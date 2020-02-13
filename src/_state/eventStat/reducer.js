@@ -1,5 +1,5 @@
 // @flow
-import { isSameDay } from 'date-fns';
+import { isSameDay, parseISO } from 'date-fns';
 
 import {
   FETCH_ASYNC,
@@ -56,9 +56,11 @@ export function serialize(
   eventStatState: EventStatState
 ) {
   const eventDay = eventStatState.dateRange.to;
-  const eventDayStat: EventStat = eventStats.find((eventStat) =>
-    isSameDay(eventStat.timestamp, eventDay)
-  );
+  const eventDayStat: EventStat =
+    eventDay &&
+    eventStats.find((eventStat) =>
+      isSameDay(parseISO(eventStat.timestamp), eventDay)
+    );
   const eventDayStatIsProjected = eventDayStat && eventDayStat.isProjected;
   const eventDayStatProjectionIsNull =
     eventDayStatIsProjected &&

@@ -49,7 +49,10 @@ describe('reducer', () => {
       error: null,
     };
 
-    const seasons = [{ id: 1, name: 'Season 1' }, { id: 2, name: 'Season 2' }];
+    const seasons = [
+      { id: 1, name: 'Season 1' },
+      { id: 2, name: 'Season 2' },
+    ];
 
     const action = { type: types.FETCH_SUCCESS, payload: seasons };
     const nextState = reducer(prevState, action);
@@ -120,7 +123,10 @@ describe('reducer', () => {
 describe('selectors', () => {
   const store = {
     season: {
-      seasons: [{ id: 1, name: 'Season 1' }, { id: 2, name: 'Season 2' }],
+      seasons: [
+        { id: 1, name: 'Season 1' },
+        { id: 2, name: 'Season 2' },
+      ],
       activeId: 2,
       loading: true,
       error: 'Some error',
