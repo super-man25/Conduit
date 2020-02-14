@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { containerPadding } from '_constants';
@@ -12,6 +12,7 @@ import {
   actions as eventInventoryBulkActions,
   selectors as eventInventoryBulkSelectors,
 } from '_state/eventInventoryBulk';
+import { actions as eventActions } from '_state/event';
 import type { EDEvent } from '_models';
 import {
   PageWrapper,
@@ -20,6 +21,7 @@ import {
   Flex,
   FlexItem,
   PrimaryButton,
+  CenteredLoader,
 } from '_components';
 import { VirtualizedEventInventory } from './components/InventoryTable';
 import { EventInventorySeatMap } from './components/InventorySeatMap';
@@ -36,6 +38,7 @@ type Props = {
   selectedEventIds: number[],
   isBulkUpdating: boolean,
   startBulkUpdate: () => void,
+  match: any,
 };
 
 export const EventInventory = ({
@@ -43,8 +46,18 @@ export const EventInventory = ({
   selectedEventIds,
   isBulkUpdating,
   startBulkUpdate,
-}: Props) =>
-  !!event && (
+  match,
+}: Props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (event) return;
+    const { id } = match.params;
+    const fetchEvent = () => dispatch(eventActions.fetchEvent(id));
+    fetchEvent();
+  }, [dispatch, event, match]);
+
+  return event ? (
     <PageWrapper>
       <Flex direction="column" height="100%">
         <Box padding={`${containerPadding}px`}>
@@ -72,7 +85,10 @@ export const EventInventory = ({
         <BulkUpdateModal selectedEventIds={selectedEventIds} />
       )}
     </PageWrapper>
+  ) : (
+    <CenteredLoader />
   );
+};
 
 const mapStateToProps = createStructuredSelector({
   event: eventSelectors.selectEvent,
