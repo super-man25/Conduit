@@ -9,7 +9,9 @@ exports[`<EventInventory /> index route should render correctly 1`] = `
     <Styled(styled.div)
       padding="25px"
     >
-      <DashboardHeader />
+      <DashboardHeader
+        isEventInventory={true}
+      />
       <Styled(styled.div)
         marginTop="1rem"
       >
@@ -51,7 +53,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
     <Styled(styled.div)
       padding="25px"
     >
-      <DashboardHeader />
+      <DashboardHeader
+        isEventInventory={true}
+      />
       <Styled(styled.div)
         marginTop="1rem"
       >
@@ -93,7 +97,9 @@ exports[`<EventInventory /> index route should render correctly when there are s
     <Styled(styled.div)
       padding="25px"
     >
-      <DashboardHeader />
+      <DashboardHeader
+        isEventInventory={true}
+      />
       <Styled(styled.div)
         marginTop="1rem"
       >

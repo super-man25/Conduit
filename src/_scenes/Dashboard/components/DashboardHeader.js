@@ -25,7 +25,7 @@ const Title = styled.div`
   font-weight: 900;
 `;
 
-const DashboardLink = styled(Link)`
+const DashboardHeaderLink = styled(Link)`
   color: black;
   font-weight: normal;
   text-decoration: underline;
@@ -90,7 +90,7 @@ const EventDetails = ({ event }) => (
   </StyledEventDetails>
 );
 
-export const DashboardHeader = ({ isSeason, isEvent }) => {
+export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
   const [isSidebarOpen, toggleSidebar] = useSidebar();
   const season = useSelector(seasonSelectors.selectActiveSeason);
   const event = useSelector(eventSelectors.selectEvent);
@@ -108,10 +108,23 @@ export const DashboardHeader = ({ isSeason, isEvent }) => {
         )}
         {isSeason ? (
           <span>Overview - {season.name}</span>
+        ) : isEventInventory ? (
+          <span>
+            <DashboardHeaderLink to="/season">
+              Season Dashboard
+            </DashboardHeaderLink>{' '}
+            >{' '}
+            <DashboardHeaderLink to={`/event/${event.id}`}>
+              {event.name}
+            </DashboardHeaderLink>{' '}
+            > Inventory
+          </span>
         ) : (
           <span>
-            <DashboardLink to="/season">Season Dashboard</DashboardLink> >{' '}
-            {event.name}
+            <DashboardHeaderLink to="/season">
+              Season Dashboard
+            </DashboardHeaderLink>{' '}
+            > {event.name}
           </span>
         )}
       </Title>

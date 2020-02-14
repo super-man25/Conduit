@@ -48,7 +48,7 @@ export const EventInventory = ({
     <PageWrapper>
       <Flex direction="column" height="100%">
         <Box padding={`${containerPadding}px`}>
-          <DashboardHeader />
+          <DashboardHeader isEventInventory={true} />
           <Box marginTop="1rem">
             <EventInventorySeatMap />
           </Box>
