@@ -97,7 +97,7 @@ export function readableTimeOrDate(d: Date, timeZone: ?string): string {
   }
 
   if (isThisYear(d)) {
-    return format(d, 'MMM D');
+    return format(d, 'MMM d');
   }
 
   return format(d, 'M/dd/yy');
