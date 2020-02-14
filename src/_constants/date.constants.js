@@ -1,9 +1,9 @@
-export const ISO_DATE_FORMAT = 'YYYY-MM-DD'; // e.g. "2019-01-01"
-export const READABLE_DATETIME_FORMAT = 'dddd, MMMM Do, YYYY @ h:mm A z'; // e.g. "Monday, July 1st, 2019 @ 1:10 PM ET"
-export const CONCISE_READABLE_DATETIME_FORMAT = 'MMM DD, YYYY hh:mm a z'; // e.g. "Jun 12, 2019 12:00 pm ET"
-export const READABLE_DATE_FORMAT = 'ddd, MMM Do, YYYY'; // e.g. "Jun 01, 2019"
-export const CONCISE_READABLE_DATE_FORMAT = 'dddd, MMM DD'; // e.g. "Tuesday, Jan 04"
-export const ABBREVIATED_READABLE_DATE_FORMAT = 'ddd M/D';
+export const ISO_DATE_FORMAT = 'yyyy-MM-dd'; // e.g. "2019-01-01"
+export const READABLE_DATETIME_FORMAT = 'EEEE, MMMM do, yyyy @ h:mm a z'; // e.g. "Monday, July 1st, 2019 @ 1:10 PM ET"
+export const CONCISE_READABLE_DATETIME_FORMAT = 'MMM dd, yyyy hh:mm a z'; // e.g. "Jun 12, 2019 12:00 pm ET"
+export const READABLE_DATE_FORMAT = 'E, MMM do, yyyy'; // e.g. "Jun 01, 2019"
+export const CONCISE_READABLE_DATE_FORMAT = 'EEEE, MMM dd'; // e.g. "Tuesday, Jan 04"
+export const ABBREVIATED_READABLE_DATE_FORMAT = 'E M/d';
 export const READABLE_TIME_FORMAT = 'hh:mm a'; // e.g. 05:00 am
 export const READABLE_MONTH_FORMAT = 'MMMM'; // e.g. January
-export const READABLE_MONTH_YEAR_FORMAT = 'MMMM YYYY'; // e.g. January 2019
+export const READABLE_MONTH_YEAR_FORMAT = 'MMMM yyyy'; // e.g. January 2019

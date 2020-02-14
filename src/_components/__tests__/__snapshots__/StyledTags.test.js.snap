@@ -133,7 +133,7 @@ exports[`H3 renders correctly with color prop 1`] = `
 
 <h3
   className="c0"
-  color="red"
+  color="#0A169A"
 />
 `;
 
@@ -212,7 +212,7 @@ exports[`H4 renders correctly with color prop 1`] = `
 
 <h4
   className="c0"
-  color="red"
+  color="#070707"
 />
 `;
 
@@ -317,7 +317,7 @@ exports[`H5 renders correctly with color prop 1`] = `
 
 <h5
   className="c0"
-  color="red"
+  color="#070707"
 />
 `;
 

@@ -14,7 +14,7 @@ import {
 } from '_components';
 import { Overview } from './Overview';
 import { Sidebar } from './components/Sidebar';
-import EventInventory from './Inventory';
+import { EventInventory } from './Inventory';
 
 export const Dashboard = () => {
   const dispatch = useDispatch();

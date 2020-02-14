@@ -5,7 +5,10 @@ import { Checkbox } from '../styled';
 
 describe('<MultiSelectView />', () => {
   const props = {
-    options: [{ id: 2, name: 'Diamond Club' }, { id: 15, name: 'Dugout Club' }],
+    options: [
+      { id: 2, name: 'Diamond Club' },
+      { id: 15, name: 'Dugout Club' },
+    ],
     selected: [2],
     onItemClicked: jest.fn(),
     labelFn: jest.fn(),

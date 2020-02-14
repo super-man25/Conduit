@@ -16,16 +16,3 @@ exports[`<CumulativeInventoryTooltip /> should render correctly 1`] = `
 exports[`<CumulativeInventoryTooltip /> should render correctly when active is false 1`] = `""`;
 
 exports[`<CumulativeInventoryTooltip /> should render correctly when no payload is passed 1`] = `""`;
-
-exports[`<CumulativeInventoryTooltip /> should render correctly with different dateformats  1`] = `
-<ChartTooltip
-  bodyJson={
-    Object {
-      "Avg. Ticket Price To Date": "$2.00",
-      "Remaining Inventory": "100",
-      "Revenue To Date": "$100.00",
-    }
-  }
-  headerText="Monday, June 18th, 2018 @ 11:47 AM ET"
-/>
-`;

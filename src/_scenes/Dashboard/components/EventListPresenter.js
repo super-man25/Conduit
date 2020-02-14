@@ -9,7 +9,8 @@ import { isPastEvent } from '_helpers';
 
 const OverflowContent = styled.div`
   overflow-y: scroll;
-  flex: 1;
+  flex-grow: 1;
+  flex-basis: 0;
 `;
 
 const Heading = styled(H4)`

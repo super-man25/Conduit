@@ -46,9 +46,10 @@ export function calculateFilteredRows(
       return sortAlphaNum(firstPriceScaleName, secondPriceScaleName);
     }): EDInventoryRow[]);
   } else {
-    sorted = ([...rowsFilteredBySection].sort(
-      (a: EDInventoryRow, b: EDInventoryRow) =>
-        sortAlphaNum(a[filterName], b[filterName])
+    sorted = ([
+      ...rowsFilteredBySection,
+    ].sort((a: EDInventoryRow, b: EDInventoryRow) =>
+      sortAlphaNum(a[filterName], b[filterName])
     ): EDInventoryRow[]);
 
     //Sort letters before numbers, for alphanumeric columns
@@ -71,9 +72,10 @@ export function findUniqueKeys(prop: string, objArray: any[]): any[] {
 }
 
 export function findUniqueSections(eventInventory: EDInventoryRow[]) {
-  const uniqueSections = findUniqueKeys('section', eventInventory).map(
-    (section, index) => ({ id: index, name: section })
-  );
+  const uniqueSections = findUniqueKeys(
+    'section',
+    eventInventory
+  ).map((section, index) => ({ id: index, name: section }));
   return alphaFirstSort(uniqueSections, 'name');
 }
 

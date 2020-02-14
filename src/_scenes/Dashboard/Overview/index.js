@@ -50,8 +50,8 @@ export const Overview = ({ isSeason, isEvent, match }) => {
   useEffect(() => {
     if (isEvent) {
       const { id } = match.params;
-      const fetchEvent = (id) => dispatch(eventActions.fetchEvent(id));
-      fetchEvent(id);
+      const fetchEvent = () => dispatch(eventActions.fetchEvent(id));
+      fetchEvent();
     }
   }, [dispatch, isEvent, match]);
 

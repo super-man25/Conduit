@@ -1,129 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<EventInventory /> index route should render correctly 1`] = `
-<styled.div>
-  <Flex
-    direction="column"
-    height="100%"
-  >
-    <Styled(styled.div)
-      padding="25px"
-    >
-      <DashboardHeader />
-      <Styled(styled.div)
-        marginTop="1rem"
-      >
-        <EventInventorySeatMap />
-      </Styled(styled.div)>
-    </Styled(styled.div)>
-    <styled.div
-      height="2rem"
-    />
-    <Styled(styled.div)
-      padding="0 1rem"
-    >
-      <Styled(Styled(styled.button))
-        disabled={true}
-        onClick={[MockFunction]}
-        small={true}
-        title="Update Selected Items"
-      >
-        Bulk Update (
-        0
-         Rows)
-      </Styled(Styled(styled.button))>
-    </Styled(styled.div)>
-    <Styled(FlexItem)>
-      <Connect(VirtualizedEventInventoryPresenter)
-        event={Object {}}
-      />
-    </Styled(FlexItem)>
-  </Flex>
-</styled.div>
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <EventInventory
+    event={Object {}}
+    isBulkUpdating={false}
+    selectedEventIds={Array []}
+    startBulkUpdate={[MockFunction]}
+  />
+</ContextProvider>
 `;
 
 exports[`<EventInventory /> index route should render correctly when there are selectedEventIds 1`] = `
-<styled.div>
-  <Flex
-    direction="column"
-    height="100%"
-  >
-    <Styled(styled.div)
-      padding="25px"
-    >
-      <DashboardHeader />
-      <Styled(styled.div)
-        marginTop="1rem"
-      >
-        <EventInventorySeatMap />
-      </Styled(styled.div)>
-    </Styled(styled.div)>
-    <styled.div
-      height="2rem"
-    />
-    <Styled(styled.div)
-      padding="0 1rem"
-    >
-      <Styled(Styled(styled.button))
-        disabled={false}
-        onClick={[MockFunction]}
-        small={true}
-        title="Update Selected Items"
-      >
-        Bulk Update (
-        3
-         Rows)
-      </Styled(Styled(styled.button))>
-    </Styled(styled.div)>
-    <Styled(FlexItem)>
-      <Connect(VirtualizedEventInventoryPresenter)
-        event={Object {}}
-      />
-    </Styled(FlexItem)>
-  </Flex>
-</styled.div>
-`;
-
-exports[`<EventInventory /> index route should render correctly when there are selectedEventIds and isBulkUpdating is true 1`] = `
-<styled.div>
-  <Flex
-    direction="column"
-    height="100%"
-  >
-    <Styled(styled.div)
-      padding="25px"
-    >
-      <DashboardHeader />
-      <Styled(styled.div)
-        marginTop="1rem"
-      >
-        <EventInventorySeatMap />
-      </Styled(styled.div)>
-    </Styled(styled.div)>
-    <styled.div
-      height="2rem"
-    />
-    <Styled(styled.div)
-      padding="0 1rem"
-    >
-      <Styled(Styled(styled.button))
-        disabled={false}
-        onClick={[MockFunction]}
-        small={true}
-        title="Update Selected Items"
-      >
-        Bulk Update (
-        3
-         Rows)
-      </Styled(Styled(styled.button))>
-    </Styled(styled.div)>
-    <Styled(FlexItem)>
-      <Connect(VirtualizedEventInventoryPresenter)
-        event={Object {}}
-      />
-    </Styled(FlexItem)>
-  </Flex>
-  <Connect(BulkUpdateModalPresenter)
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <EventInventory
+    event={Object {}}
+    isBulkUpdating={false}
     selectedEventIds={
       Array [
         1,
@@ -131,6 +89,57 @@ exports[`<EventInventory /> index route should render correctly when there are s
         3,
       ]
     }
+    startBulkUpdate={[MockFunction]}
   />
-</styled.div>
+</ContextProvider>
+`;
+
+exports[`<EventInventory /> index route should render correctly when there are selectedEventIds and isBulkUpdating is true 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <EventInventory
+    event={Object {}}
+    isBulkUpdating={true}
+    selectedEventIds={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
+    startBulkUpdate={[MockFunction]}
+  />
+</ContextProvider>
 `;

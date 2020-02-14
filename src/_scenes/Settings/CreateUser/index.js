@@ -288,7 +288,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CreateUser);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);

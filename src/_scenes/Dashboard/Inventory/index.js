@@ -1,18 +1,19 @@
 // @flow
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { containerPadding } from '_constants';
-import { selectors as eventSelectors } from '_state/event';
+import {
+  actions as eventActions,
+  selectors as eventSelectors,
+} from '_state/event';
 import { selectors as eventInventorySelectors } from '_state/eventInventory';
 import {
   actions as eventInventoryBulkActions,
   selectors as eventInventoryBulkSelectors,
 } from '_state/eventInventoryBulk';
-import type { EDEvent } from '_models';
 import {
   PageWrapper,
   Spacing,
@@ -20,6 +21,7 @@ import {
   Flex,
   FlexItem,
   PrimaryButton,
+  CenteredLoader,
 } from '_components';
 import { VirtualizedEventInventory } from './components/InventoryTable';
 import { EventInventorySeatMap } from './components/InventorySeatMap';
@@ -32,23 +34,33 @@ const EventInventoryTableContainer = styled(FlexItem)`
 `;
 
 type Props = {
-  event: ?EDEvent,
-  selectedEventIds: number[],
-  isBulkUpdating: boolean,
-  startBulkUpdate: () => void,
+  match: any,
 };
 
-export const EventInventory = ({
-  event,
-  selectedEventIds,
-  isBulkUpdating,
-  startBulkUpdate,
-}: Props) =>
-  !!event && (
+export const EventInventory = ({ match }: Props) => {
+  const dispatch = useDispatch();
+  const startBulkUpdate = () =>
+    dispatch(eventInventoryBulkActions.startBulkUpdate());
+  const event = useSelector(eventSelectors.selectEvent);
+  const selectedEventIds = useSelector(
+    eventInventorySelectors.selectSelectedRowIds
+  );
+  const isBulkUpdating = useSelector(
+    eventInventoryBulkSelectors.isBulkUpdating
+  );
+
+  useEffect(() => {
+    if (event) return;
+    const { id } = match.params;
+    const fetchEvent = () => dispatch(eventActions.fetchEvent(id));
+    fetchEvent();
+  }, [dispatch, event, match]);
+
+  return event ? (
     <PageWrapper>
       <Flex direction="column" height="100%">
         <Box padding={`${containerPadding}px`}>
-          <DashboardHeader />
+          <DashboardHeader isEventInventory={true} />
           <Box marginTop="1rem">
             <EventInventorySeatMap />
           </Box>
@@ -72,20 +84,7 @@ export const EventInventory = ({
         <BulkUpdateModal selectedEventIds={selectedEventIds} />
       )}
     </PageWrapper>
+  ) : (
+    <CenteredLoader />
   );
-
-const mapStateToProps = createStructuredSelector({
-  event: eventSelectors.selectEvent,
-  selectedEventIds: eventInventorySelectors.selectSelectedRowIds,
-  isBulkUpdating: eventInventoryBulkSelectors.isBulkUpdating,
-});
-
-const mapDispatchToProps = {
-  startBulkUpdate: eventInventoryBulkActions.startBulkUpdate,
-  cancelBulkUpdate: eventInventoryBulkActions.cancelBulkUpdate,
 };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EventInventory);

@@ -254,7 +254,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(demoPriceActions.fetch({ context, examples })),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DemoRoute);
+export default connect(mapStateToProps, mapDispatchToProps)(DemoRoute);

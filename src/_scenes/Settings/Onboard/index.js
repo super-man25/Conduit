@@ -146,7 +146,4 @@ const mapDispatchToProps = {
   onboardClient: onboardActions.onboardClient,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Onboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Onboard);

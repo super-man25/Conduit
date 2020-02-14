@@ -1,15 +1,9 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { READABLE_DATETIME_FORMAT } from '_constants';
-import { dateFormatter } from '_helpers';
-import { mockDateFnsFormat } from '_helpers/test-utils';
+
 import { CumulativeRevenueTooltip } from '../CumulativeRevenueTooltip';
 
-jest.mock('date-fns', () => ({
-  format: (date, format) => mockDateFnsFormat(date, format),
-}));
-
-const createProps = () => ({
+const defaultProps = {
   active: true,
   payload: [
     {
@@ -26,35 +20,23 @@ const createProps = () => ({
       },
     },
   ],
-  dateFormatter: (d) => d.toString,
-});
+  dateFormatter: (d) => d.toString(),
+};
 
 describe('<CumulativeRevenueTooltip />', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<CumulativeRevenueTooltip {...createProps()} />);
+    const wrapper = shallow(<CumulativeRevenueTooltip {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when active is false', () => {
-    const props = { ...createProps(), active: false };
+    const props = { ...defaultProps, active: false };
     const wrapper = shallow(<CumulativeRevenueTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render correctly when no payload is passed', () => {
-    const props = { ...createProps(), payload: [] };
-    const wrapper = shallow(<CumulativeRevenueTooltip {...props} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should render correctly with different dateformats ', () => {
-    const props = {
-      ...createProps(),
-      dateFormatter: dateFormatter(
-        READABLE_DATETIME_FORMAT,
-        'America/New_York'
-      ),
-    };
+    const props = { ...defaultProps, payload: [] };
     const wrapper = shallow(<CumulativeRevenueTooltip {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

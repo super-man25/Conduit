@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with a valid user prop 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c7 path {
+.c6 path {
   fill: #FFFFFF;
 }
 
@@ -89,7 +89,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   height: 36px;
 }
 
-.c6 {
+.c7 {
   margin-left: 10px;
 }
 

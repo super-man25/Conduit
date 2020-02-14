@@ -79,12 +79,12 @@ exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
 `;
 
 exports[`<Dropdown /> renders correctly with a selected item 1`] = `
-.c3 {
+.c2 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c3 path {
+.c2 path {
   fill: #FFFFFF;
 }
 
@@ -184,7 +184,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   background-color: #f2f2f2;
 }
 
-.c2 {
+.c3 {
   margin-left: 10px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -236,12 +236,12 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 `;
 
 exports[`<Dropdown /> renders correctly with none selected 1`] = `
-.c3 {
+.c2 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c3 path {
+.c2 path {
   fill: #FFFFFF;
 }
 
@@ -324,7 +324,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   background-color: #f2f2f2;
 }
 
-.c2 {
+.c3 {
   margin-left: 10px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
