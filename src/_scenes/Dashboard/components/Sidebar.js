@@ -13,6 +13,8 @@ const StyledSidebar = styled.div`
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   transition: 0.1s ease-in-out transform;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 
   ${(props) =>
     props.collapsed &&
@@ -38,7 +40,8 @@ const SidebarHeader = styled.div`
 `;
 
 const SidebarContent = styled.div`
-  height: calc(100% - 150px);
+  flex-basis: 0;
+  flex-grow: 1;
 `;
 
 export const Sidebar = () => {
