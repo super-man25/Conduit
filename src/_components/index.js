@@ -1,4 +1,4 @@
-export * from './ApiAlert';
+export * from './Alert';
 export * from './AsyncButton';
 export * from './Breadcrumbs';
 export * from './Button';

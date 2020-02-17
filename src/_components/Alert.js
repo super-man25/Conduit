@@ -1,20 +1,12 @@
 // @flow
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import { cssConstants, shadows, zIndexes } from '_constants';
 import { actions } from '_state/alert';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
-
-type Props = {
-  alertState: {
-    type: 'apiError' | 'apiSuccess',
-    message: string,
-  },
-  clearAlert: () => void,
-};
 
 export const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
   position: absolute;
@@ -51,7 +43,11 @@ const MsgText: React.ComponentType<{}> = styled.div`
   color: ${cssConstants.PRIMARY_BLACK};
 `;
 
-export const ApiAlertPresenter = ({ alertState, clearAlert }: Props) => {
+export const Alert = () => {
+  const alertState = useSelector(({ alert }) => alert);
+  const dispatch = useDispatch();
+  const clearAlert = () => dispatch(actions.clear());
+
   const show = alertState.type !== null && alertState.message !== null;
   const statusColor =
     alertState.type === 'apiError'
@@ -71,18 +67,3 @@ export const ApiAlertPresenter = ({ alertState, clearAlert }: Props) => {
     </StyledApiAlert>
   );
 };
-
-function mapStateToProps(state) {
-  return {
-    alertState: state.alert,
-  };
-}
-
-const mapDispatchToProps = {
-  clearAlert: actions.clear,
-};
-
-export const ApiAlert = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ApiAlertPresenter);

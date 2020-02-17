@@ -11,7 +11,7 @@ import type { EDUser } from '_models/user';
 import { history } from '_helpers';
 import { actions as authActions, selectors } from '_state/auth';
 import { GlobalStyles } from './globalStyles';
-import { SecuredRoute, CenteredLoader, ApiAlert } from '_components';
+import { SecuredRoute, CenteredLoader, Alert } from '_components';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
@@ -105,7 +105,7 @@ class App extends React.Component<Props> {
             component={Dashboard}
           />
         </Switch>
-        <ApiAlert />
+        <Alert />
       </ConnectedRouter>
     );
   }
