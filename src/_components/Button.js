@@ -73,21 +73,6 @@ export const SecondaryButton = styled(Button)`
   }
 `;
 
-export const TertiaryButton = styled(Button)`
-  background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-  opacity: 0.8;
-
-  &:disabled {
-    opacity: 0.5;
-  }
-
-  &:hover:not(:disabled) {
-    opacity: 1;
-    background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
-  }
-`;
-
 export const TextButton = styled(Button)`
   color: ${cssConstants.PRIMARY_BLUE};
   background-color: inherit;

@@ -6,7 +6,7 @@ import { useSidebar } from '_hooks';
 import { isMobileDevice, formatDate } from '_helpers';
 import { selectors as seasonSelectors } from '_state/season';
 import { selectors as eventSelectors } from '_state/event';
-import { Icon } from '_components';
+import { Icon, Breadcrumbs } from '_components';
 import { cssConstants } from '_constants';
 import { Link } from 'react-router-dom';
 import EventWeather from './EventWeather';
@@ -23,12 +23,6 @@ const Title = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: 900;
-`;
-
-const DashboardHeaderLink = styled(Link)`
-  color: black;
-  font-weight: normal;
-  text-decoration: underline;
 `;
 
 const StyledEventDetails = styled.div`
@@ -95,6 +89,21 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
   const season = useSelector(seasonSelectors.selectActiveSeason);
   const event = useSelector(eventSelectors.selectEvent);
 
+  const crumbs = isSeason
+    ? [{ title: 'Overview', path: '/season' }]
+    : isEvent
+    ? [
+        { title: 'Season Dashboard', path: '/season' },
+        { title: event.name, path: `/event/${event.id}` },
+      ]
+    : isEventInventory
+    ? [
+        { title: 'Season Dashboard', path: '/season' },
+        { title: event.name, path: `/event/${event.id}` },
+        { title: 'Inventory', path: `/event/${event.id}/inventory` },
+      ]
+    : [];
+
   return (
     <StyledDashboardHeader>
       <Title>
@@ -106,7 +115,8 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
             color={cssConstants.PRIMARY_BLUE}
           />
         )}
-        {isSeason ? (
+        <Breadcrumbs crumbs={crumbs} />
+        {/* {isSeason ? (
           <span>Overview - {season.name}</span>
         ) : isEventInventory ? (
           <span>
@@ -126,7 +136,7 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
             </DashboardHeaderLink>{' '}
             > {event.name}
           </span>
-        )}
+        )} */}
       </Title>
       {isEvent && <EventDetails event={event} />}
     </StyledDashboardHeader>
