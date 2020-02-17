@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { parseISO } from 'date-fns';
+
 import { cssConstants } from '_constants';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
@@ -35,7 +37,7 @@ export const ToggleContainer = styled.div`
 
 type Props = {
   img: String,
-  modifiedAt: Date,
+  modifiedAt: string,
   onChange: () => void,
   isActive: boolean,
   isPrimary: boolean,
@@ -51,7 +53,9 @@ export function Integration(props: Props) {
   return (
     <Card>
       <EDText size="small" type="tertiary">
-        {sentenceCase(`last updated ${readableDuration(modifiedAt)} ago`)}
+        {sentenceCase(
+          `last updated ${readableDuration(parseISO(modifiedAt))} ago`
+        )}
       </EDText>
       <Details>
         <Img src={logoUrl} alt={name} />
