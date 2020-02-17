@@ -71,7 +71,7 @@ export const initialState = {
   venue: null,
 };
 
-export const reducer = (state: State = initialState, action: Action): State => {
+export const reducer = (state: State = initialState, action: any): State => {
   switch (action.type) {
     case types.FETCH_SEAT_MAP_REQUEST:
       return { ...state, loading: true, error: null };

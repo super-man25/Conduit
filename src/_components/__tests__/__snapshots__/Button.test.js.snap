@@ -37,7 +37,7 @@ exports[`<PrimaryButton /> renders correctly 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD c0"
 />
 `;
 
@@ -78,7 +78,7 @@ exports[`<PrimaryButton /> renders when disabled 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD c0"
   disabled={true}
 />
 `;
@@ -120,7 +120,7 @@ exports[`<PrimaryButton /> renders with a small prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD c0"
   disabled={true}
 />
 `;
@@ -167,7 +167,7 @@ exports[`<SecondaryButton /> renders correctly 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD c0"
 />
 `;
 
@@ -201,7 +201,7 @@ exports[`<TertiaryButton /> renders correctly 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD c0"
 />
 `;
 
@@ -223,7 +223,7 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi c0"
   disabled={true}
 />
 `;
@@ -246,7 +246,7 @@ exports[`renders correctly with hidden prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi c0"
   hidden={true}
 />
 `;
@@ -269,7 +269,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi c0"
 />
 `;
 
@@ -291,7 +291,7 @@ exports[`renders correctly with secondary prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi c0"
 />
 `;
 
@@ -313,6 +313,6 @@ exports[`renders correctly with small prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi c0"
 />
 `;

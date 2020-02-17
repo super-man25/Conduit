@@ -92,7 +92,7 @@ class CreateUser extends React.Component<Props, State> {
   }
 
   handleChange = (event) => {
-    const { name, value: rawValue } = event.target;
+    const { name, value: rawValue }: any = event.target;
     const value = name === 'isAdmin' ? !!event.target.checked : rawValue;
     const { user } = this.state;
     this.setState({

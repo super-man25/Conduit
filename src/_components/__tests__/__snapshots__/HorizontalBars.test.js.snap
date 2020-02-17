@@ -21,8 +21,8 @@ exports[`renders correctly 1`] = `
   transform-origin: left;
   -webkit-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
-  -webkit-animation: dxgQlt 1s ease-in-out;
-  animation: dxgQlt 1s ease-in-out;
+  -webkit-animation: jGecwr 1s ease-in-out;
+  animation: jGecwr 1s ease-in-out;
 }
 
 .c1:not(:last-child) {
@@ -39,8 +39,8 @@ exports[`renders correctly 1`] = `
   transform-origin: left;
   -webkit-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
-  -webkit-animation: dxgQlt 1s ease-in-out;
-  animation: dxgQlt 1s ease-in-out;
+  -webkit-animation: jGecwr 1s ease-in-out;
+  animation: jGecwr 1s ease-in-out;
 }
 
 .c2:not(:last-child) {
@@ -57,8 +57,8 @@ exports[`renders correctly 1`] = `
   transform-origin: left;
   -webkit-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
-  -webkit-animation: dxgQlt 1s ease-in-out;
-  animation: dxgQlt 1s ease-in-out;
+  -webkit-animation: jGecwr 1s ease-in-out;
+  animation: jGecwr 1s ease-in-out;
 }
 
 .c3:not(:last-child) {

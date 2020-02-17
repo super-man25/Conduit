@@ -97,11 +97,11 @@ exports[`renders correctly with a valid user prop 1`] = `
   className="c0"
 >
   <button
-    className="c1"
+    className="sc-fzozJi sc-fzoLsD c1"
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="sc-AxirZ c2"
     >
       <div
         className="c3"
@@ -112,7 +112,7 @@ exports[`renders correctly with a valid user prop 1`] = `
         />
       </div>
       <div
-        className="c5"
+        className="sc-AxhCb c5"
       >
         <svg
           className="c6 c7"

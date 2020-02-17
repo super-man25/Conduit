@@ -23,7 +23,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ sc-AxiKw c0"
 />
 `;
 
@@ -50,7 +50,7 @@ exports[`renders correctly with show = true & no type prop 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ sc-AxiKw c0"
 />
 `;
 
@@ -77,7 +77,7 @@ exports[`renders correctly with show = true & type = apiError 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ sc-AxiKw c0"
   type="apiError"
 />
 `;
@@ -105,7 +105,7 @@ exports[`renders correctly with show = true & type = apiSuccess 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ sc-AxiKw c0"
   type="apiSuccess"
 />
 `;

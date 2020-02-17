@@ -47,12 +47,7 @@ const Dot = styled.div`
     `};
 `;
 
-type Props = {
-  small: boolean,
-  color: string,
-};
-
-export const Loader = (props: Props) => (
+export const Loader = (props: any) => (
   <Wrapper {...props}>
     <Dot index={0} {...props} />
     <Dot index={1} {...props} />

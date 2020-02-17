@@ -54,7 +54,7 @@ exports[`InventoryTable styled components <FilterContainer /> should render corr
 }
 
 <div
-  className="c0"
+  className="sc-fzpkqZ sc-fznAgC c0"
 />
 `;
 
@@ -115,7 +115,7 @@ exports[`InventoryTable styled components <IconContainer /> should render correc
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ sc-AxiKw c0"
 />
 `;
 
@@ -161,7 +161,7 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD sc-fzpans c0"
 />
 `;
 
@@ -210,13 +210,13 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
 
 <input
   autoComplete="off"
-  className="c0"
+  className="sc-fzomuh sc-fzqMdD c0"
 />
 `;
 
 exports[`InventoryTable styled components <PositionedBox /> should render correctly 1`] = `
 <div
-  className=""
+  className="sc-fzpkqZ sc-fznAgC "
 />
 `;
 

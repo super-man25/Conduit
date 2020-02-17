@@ -1,7 +1,7 @@
 // @flow
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Box, Flex, H4, Icon, Popover, Text } from '_components';
+import { Box, Flex, H4, Icon, Text } from '_components';
 import { cssConstants } from '_constants';
 import { formatUSD } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
@@ -16,6 +16,30 @@ const Row = styled(Flex)`
     border-bottom: none;
   }
 `;
+
+const HoverTipContainer = styled(Box)`
+  position: relative;
+  width: 22px;
+`;
+
+const HoverTip = styled.div`
+  position: absolute;
+  bottom: 100%;
+  left: -64px; /* (150px / 2) - (22px / 2) * -1 */
+  background-color: ${cssConstants.PRIMARY_BLUE};
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+
+  ${({ isOpen }) =>
+    isOpen ||
+    `
+    display: none;
+  `}
+`;
+
 const PricingPreviewText = ({
   children,
   color,
@@ -157,23 +181,17 @@ export const PricingPreview = (props: Props) => {
     <Flex direction="column" padding="0 20px" width="100%">
       <Flex align="center">
         <H4 margin="0.5rem 1rem 0.5rem 0">Preview</H4>
-        <Popover
-          placement="top"
-          isOpen={isOpen}
-          arrowOffset="-0.9rem"
-          target={
-            <Box
-              margin="0.5rem 0"
-              onMouseEnter={() => setIsOpen(true)}
-              onMouseLeave={() => setIsOpen(false)}
-            >
-              <Icon name="info" color={cssConstants.PRIMARY_BLUE} size={22} />
-            </Box>
-          }
+        <HoverTipContainer
+          margin="0.5rem 0"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
         >
-          The preview is calculated off the final values from Event Score and
-          Spring value in relation to modifiers that are entered.
-        </Popover>
+          <Icon name="info" color={cssConstants.PRIMARY_BLUE} size={22} />
+          <HoverTip isOpen={isOpen}>
+            The preview is calculated off the final values from Event Score and
+            Spring value in relation to modifiers that are entered.
+          </HoverTip>
+        </HoverTipContainer>
       </Flex>
       {preview}
     </Flex>

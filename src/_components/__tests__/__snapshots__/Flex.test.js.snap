@@ -20,7 +20,7 @@ exports[`Flex renders correcly 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxjAm c0"
   direction="row"
 >
   <span>
@@ -44,7 +44,7 @@ exports[`FlexItem renders correcly 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxiKw c0"
   height="100px"
   width="100px"
 >

@@ -1,13 +1,6 @@
 // @flow
 import * as React from 'react';
 
-type SVGProps = {
-  width: number,
-  height: number,
-  fill: string,
-  styles: { [string]: any },
-};
-
 const defaultSVGProps = {
   width: 24,
   height: 24,
@@ -20,7 +13,7 @@ export const ExpandMoreIcon = ({
   fill,
   styles,
   ...rest
-}: SVGProps) => (
+}: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -42,7 +35,7 @@ export const ExpandLessIcon = ({
   fill,
   styles,
   ...rest
-}: SVGProps) => (
+}: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -64,7 +57,7 @@ export const FilterListIcon = ({
   fill,
   styles,
   ...rest
-}: SVGProps) => (
+}: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -80,13 +73,7 @@ export const FilterListIcon = ({
 
 FilterListIcon.defaultProps = defaultSVGProps;
 
-export const ClearIcon = ({
-  width,
-  height,
-  fill,
-  styles,
-  ...rest
-}: SVGProps) => (
+export const ClearIcon = ({ width, height, fill, styles, ...rest }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -105,13 +92,7 @@ export const ClearIcon = ({
 
 ClearIcon.defaultProps = defaultSVGProps;
 
-export const MenuIcon = ({
-  width,
-  height,
-  fill,
-  styles,
-  ...rest
-}: SVGProps) => (
+export const MenuIcon = ({ width, height, fill, styles, ...rest }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
@@ -127,13 +108,7 @@ export const MenuIcon = ({
 
 MenuIcon.defaultProps = defaultSVGProps;
 
-export const SeatIcon = ({
-  width,
-  height,
-  fill,
-  styles,
-  ...rest
-}: SVGProps) => (
+export const SeatIcon = ({ width, height, fill, styles, ...rest }: any) => (
   <svg
     width={width}
     height={height}

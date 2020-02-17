@@ -34,7 +34,7 @@ exports[`renders correctly when downloading is false 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="row"
   height="24px"
   onClick={[MockFunction]}
@@ -56,7 +56,7 @@ exports[`renders correctly when downloading is false 1`] = `
     />
   </svg>
   <div
-    className="c2"
+    className="sc-fzoxnE c2"
     size="small"
     type="secondary"
   >
@@ -99,7 +99,7 @@ exports[`renders correctly when downloading is true 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="row"
   height="24px"
   style={
@@ -120,7 +120,7 @@ exports[`renders correctly when downloading is true 1`] = `
     />
   </svg>
   <div
-    className="c2"
+    className="sc-fzoxnE c2"
     size="small"
     type="disabled"
   >

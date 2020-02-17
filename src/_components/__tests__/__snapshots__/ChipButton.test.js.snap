@@ -101,23 +101,6 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 `;
 
 exports[`ChipButtonGroup renders correctly with a value set 1`] = `
-.c3 {
-  background-color: transparent;
-  color: #070707;
-  cursor: pointer;
-  font-size: 12px;
-  padding: 8px 14px;
-  min-width: 60px;
-  border: none;
-  outline: none;
-  border-radius: 24px;
-}
-
-.c3:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
-}
-
 .c2 {
   background-color: #1F49B6;
   color: #FFFFFF;
@@ -131,6 +114,23 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c2:hover {
+  background-color: #848ACC;
+  color: #FFFFFF;
+}
+
+.c3 {
+  background-color: transparent;
+  color: #070707;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+  min-width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+}
+
+.c3:hover {
   background-color: #848ACC;
   color: #FFFFFF;
 }

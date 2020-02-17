@@ -63,11 +63,11 @@ exports[`should render correctly 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="sc-fzokOt c1"
     direction="row"
   >
     <p
-      className="c2"
+      className="sc-Axmtr c2"
       onClick={[Function]}
     />
     <div
@@ -109,15 +109,6 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly with optional props 1`] = `
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.c7 path {
-  fill: #808080;
-}
-
 .c5 {
   display: inline-block;
   vertical-align: middle;
@@ -125,6 +116,15 @@ exports[`should render correctly with optional props 1`] = `
 
 .c5 path {
   fill: #000;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c7 path {
+  fill: #808080;
 }
 
 .c1 {
@@ -180,11 +180,11 @@ exports[`should render correctly with optional props 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="sc-fzokOt c1"
     direction="row"
   >
     <p
-      className="c2"
+      className="sc-Axmtr c2"
       onClick={[Function]}
     >
       Button Label

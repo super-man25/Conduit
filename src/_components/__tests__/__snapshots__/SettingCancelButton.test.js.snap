@@ -47,7 +47,7 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD sc-fzplWN c0"
   disabled={true}
 />
 `;
@@ -99,6 +99,6 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <button
-  className="c0"
+  className="sc-fzozJi sc-fzoLsD sc-fzplWN c0"
 />
 `;

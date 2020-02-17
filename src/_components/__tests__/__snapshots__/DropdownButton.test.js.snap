@@ -81,11 +81,11 @@ exports[`renders correctly 1`] = `
     className="c0"
   >
     <div
-      className="c1"
+      className="sc-fzokOt c1"
       direction="row"
     >
       <p
-        className="c2"
+        className="sc-AxmLO c2"
         onClick={[Function]}
       >
         dog

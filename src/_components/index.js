@@ -35,7 +35,6 @@ export * from './MailtoLink';
 export * from './MainContent';
 export * from './Modal';
 export * from './Panel';
-export * from './Popover';
 export * from './ReportDownloadButton';
 export * from './ScreenTitleBlock';
 export * from './ScrollableList';

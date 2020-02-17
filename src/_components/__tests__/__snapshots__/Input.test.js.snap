@@ -41,7 +41,7 @@ exports[`renders correctly with disabled prop 1`] = `
 
 <input
   autoComplete="off"
-  className="c0"
+  className="sc-fzomuh c0"
   disabled={true}
 />
 `;
@@ -80,15 +80,15 @@ exports[`renders correctly with invalid prop 1`] = `
 }
 
 .c0:-webkit-autofill {
-  -webkit-animation-name: beEagS;
-  animation-name: beEagS;
+  -webkit-animation-name: iNHLNs;
+  animation-name: iNHLNs;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 <input
   autoComplete="off"
-  className="c0"
+  className="sc-fzomuh c0"
 />
 `;
 
@@ -133,7 +133,7 @@ exports[`renders correctly with no props 1`] = `
 
 <input
   autoComplete="off"
-  className="c0"
+  className="sc-fzomuh c0"
 />
 `;
 
@@ -171,14 +171,14 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 .c0:-webkit-autofill {
-  -webkit-animation-name: fbmvYu;
-  animation-name: fbmvYu;
+  -webkit-animation-name: bOhPIr;
+  animation-name: bOhPIr;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
 <input
   autoComplete="off"
-  className="c0"
+  className="sc-fzomuh c0"
 />
 `;

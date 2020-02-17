@@ -5,7 +5,7 @@ import { isoDateFormat } from '_helpers';
 
 type DateRange = { start?: Date, end: Date };
 
-function formatDateParams({ start, end, ...rest }) {
+function formatDateParams({ start, end, ...rest }: any) {
   const res = { ...rest };
   if (start) res.startDate = isoDateFormat(start);
   if (end) res.endDate = isoDateFormat(end);

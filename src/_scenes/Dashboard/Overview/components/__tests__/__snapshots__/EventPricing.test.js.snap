@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c32 {
+.c30 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c32 path {
+.c30 path {
   fill: #0A169A;
 }
 
@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
   flex-direction: row;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,7 @@ exports[`renders correctly 1`] = `
   margin: 0.5rem 0;
 }
 
-.c17 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,7 +83,7 @@ exports[`renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,7 +99,7 @@ exports[`renders correctly 1`] = `
   padding: 14px 0;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`renders correctly 1`] = `
   width: 33%;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
   width: 33%;
 }
 
-.c27 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,7 +137,7 @@ exports[`renders correctly 1`] = `
   padding: 0 20px;
 }
 
-.c28 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,7 +151,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
 }
 
-.c33 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -170,7 +170,7 @@ exports[`renders correctly 1`] = `
   margin: auto;
 }
 
-.c15 {
+.c14 {
   border: none;
   min-width: 0;
   padding: 1rem 2rem;
@@ -185,16 +185,16 @@ exports[`renders correctly 1`] = `
   background-color: inherit;
 }
 
-.c15:disabled {
+.c14:disabled {
   cursor: not-allowed;
 }
 
-.c15:disabled {
+.c14:disabled {
   color: #D1D1D1;
   opacity: 0.5;
 }
 
-.c15:hover:not(:disabled) {
+.c14:hover:not(:disabled) {
   color: #38A9DB;
 }
 
@@ -205,57 +205,53 @@ exports[`renders correctly 1`] = `
   margin: 0 2.5rem 0 0;
 }
 
-.c14 {
+.c13 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
 }
 
-.c29 {
+.c28 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c16 {
+.c15 {
   padding: 1.5rem;
 }
 
-.c18 {
+.c17 {
   width: 33%;
 }
 
-.c31 {
-  margin: 0.5rem 0;
-}
-
-.c19 {
+.c18 {
   font-size: 14px;
   color: #999999;
   margin: 0;
   text-align: right;
 }
 
-.c21 {
+.c20 {
   color: #999999;
   margin: 0;
 }
 
-.c22 {
+.c21 {
   color: #070707;
   margin: 0;
   text-align: right;
 }
 
-.c25 {
+.c24 {
   font-weight: 700;
   color: #070707;
   margin: 0;
 }
 
-.c26 {
+.c25 {
   font-weight: 700;
   color: #070707;
   margin: 0;
@@ -267,10 +263,6 @@ exports[`renders correctly 1`] = `
   border-radius: 6px 6px 0 0;
   padding: 0 24px;
   height: 56px;
-}
-
-.c30 {
-  display: inline-block;
 }
 
 .c8 {
@@ -330,7 +322,7 @@ exports[`renders correctly 1`] = `
   cursor: not-allowed;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -343,12 +335,31 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
+.c29 {
+  margin: 0.5rem 0;
+  position: relative;
+  width: 22px;
+}
+
+.c31 {
+  position: absolute;
+  bottom: 100%;
+  left: -64px;
+  background-color: #0A169A;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+  display: none;
+}
+
 .c0 {
   background-color: #FFFFFF;
   margin-top: 25px;
 }
 
-.c10 {
+.c9 {
   border: 1px solid #D1D1D1;
   border-top: none;
   padding: 18px 24px 30px;
@@ -366,30 +377,30 @@ exports[`renders correctly 1`] = `
   justify-content: space-around;
 }
 
-.c10 + .c9 {
+.c9 + .sc-pZBmh {
   padding-top: 24px;
 }
 
-.c10:last-child {
+.c9:last-child {
   border-radius: 0 0 6px 6px;
   padding-bottom: 18px;
 }
 
 <div
-  className="c0"
+  className="sc-pIJJz c0"
 >
   <header
     className="c1"
   >
     <div
-      className="c2"
+      className="sc-AxirZ c2"
       height="100%"
     >
       <div
-        className="c3"
+        className="sc-AxirZ c3"
       >
         <h4
-          className="c4"
+          className="sc-fzoant c4"
           color="#070707"
         >
           Pricing
@@ -419,28 +430,28 @@ exports[`renders correctly 1`] = `
     </div>
   </header>
   <section
-    className="c9 c10"
+    className="sc-pZBmh c9"
   >
     <div
-      className="c11"
+      className="sc-AxirZ c10"
       direction="column"
       width="100%"
     >
       <div
-        className="c12"
+        className="sc-AxirZ c11"
         direction="column"
       >
         <div
-          className="c13"
+          className="sc-AxirZ c12"
         >
           <h4
-            className="c14"
+            className="sc-fzoant c13"
             color="#070707"
           >
             Modifiers
           </h4>
           <button
-            className="c15"
+            className="sc-fzozJi sc-fzoLsD c14"
             disabled={false}
             onClick={[Function]}
             style={
@@ -453,18 +464,18 @@ exports[`renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="c16"
+          className="sc-fzpkqZ c15"
         >
           <div
-            className="c17"
+            className="sc-AxirZ c16"
             direction="row"
           >
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c19"
+                className="sc-fznLPX c18"
                 color="#999999"
                 size={14}
               >
@@ -472,11 +483,11 @@ exports[`renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c19"
+                className="sc-fznLPX c18"
                 color="#999999"
                 size={14}
               >
@@ -485,43 +496,43 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="c20"
+            className="sc-AxirZ c19"
             direction="row"
           >
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c21"
+                className="sc-fznLPX c20"
                 color="#999999"
               >
                 Predicted
               </p>
             </div>
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c22 private"
+                className="sc-fznLPX c21 private"
               >
                 1.00
               </p>
             </div>
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c22 private"
+                className="sc-fznLPX c21 private"
               >
                 1.0000
               </p>
             </div>
           </div>
           <div
-            className="c20"
+            className="sc-AxirZ c19"
             direction="row"
             style={
               Object {
@@ -531,39 +542,39 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="c23"
+              className="sc-AxirZ c22"
               width="33%"
             >
               <p
-                className="c21"
+                className="sc-fznLPX c20"
                 color="#999999"
               >
                 Modifier
               </p>
             </div>
             <div
-              className="c24"
+              className="sc-AxirZ c23"
               width="33%"
             >
               <p
-                className="c22 private"
+                className="sc-fznLPX c21 private"
               >
                 1.00
               </p>
             </div>
             <div
-              className="c24"
+              className="sc-AxirZ c23"
               width="33%"
             >
               <p
-                className="c22 private"
+                className="sc-fznLPX c21 private"
               >
                 1.0000
               </p>
             </div>
           </div>
           <div
-            className="c20"
+            className="sc-AxirZ c19"
             direction="row"
             style={
               Object {
@@ -572,61 +583,61 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="c23"
+              className="sc-AxirZ c22"
               width="33%"
             >
               <p
-                className="c21"
+                className="sc-fznLPX c20"
                 color="#999999"
               >
                 Velocity
               </p>
             </div>
             <div
-              className="c24"
+              className="sc-AxirZ c23"
               width="33%"
             >
               <p
-                className="c22 private"
+                className="sc-fznLPX c21 private"
               >
                 --
               </p>
             </div>
             <div
-              className="c24"
+              className="sc-AxirZ c23"
               width="33%"
             />
           </div>
           <div
-            className="c20"
+            className="sc-AxirZ c19"
             direction="row"
           >
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c25"
+                className="sc-fznLPX c24"
               >
                 Final
               </p>
             </div>
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c26 private"
+                className="sc-fznLPX c25 private"
               >
                 --
               </p>
             </div>
             <div
-              className="c18"
+              className="sc-fzpkqZ c17"
               width="33%"
             >
               <p
-                className="c26 private"
+                className="sc-fznLPX c25 private"
               >
                 2.0000
               </p>
@@ -635,46 +646,47 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="c27"
+        className="sc-AxirZ c26"
         direction="column"
         width="100%"
       >
         <div
-          className="c28"
+          className="sc-AxirZ c27"
         >
           <h4
-            className="c29"
+            className="sc-fzoant c28"
             color="#070707"
           >
             Preview
           </h4>
           <div
-            className="c30"
+            className="sc-fzpkqZ c29"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
+            <svg
+              className="c30"
+              color="#0A169A"
+              height="22px"
+              viewBox="0 0 24 24"
+              width="22px"
+            >
+              <path
+                d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
             <div
               className="c31"
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
             >
-              <svg
-                className="c32"
-                color="#0A169A"
-                height="22px"
-                viewBox="0 0 24 24"
-                width="22px"
-              >
-                <path
-                  d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                />
-              </svg>
+              The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
             </div>
           </div>
         </div>
         <div
-          className="c33"
+          className="sc-AxirZ c32"
         >
           <p
-            className="c21"
+            className="sc-fznLPX c20"
             color="#999999"
           >
             No Price Preview

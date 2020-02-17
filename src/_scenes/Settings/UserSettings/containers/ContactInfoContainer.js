@@ -115,7 +115,7 @@ export class ContactInfo extends React.Component<Props, State> {
   };
 
   handleChange = (event: SyntheticInputEvent<Input>) => {
-    const { name, value } = event.target;
+    const { name, value }: any = event.target;
     const { user } = this.state;
 
     if (name === 'confirmPassword' || name === 'newPassword') {
