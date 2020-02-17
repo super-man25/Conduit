@@ -86,7 +86,6 @@ exports[`render correctly 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 0;
   color: #0A169A;
   background-color: inherit;
 }
@@ -177,7 +176,7 @@ exports[`render correctly 1`] = `
       Modifiers
     </h4>
     <button
-      className="sc-fzozJi sc-fzoLsD c3"
+      className="sc-fzplWN c3"
       disabled={false}
       onClick={[Function]}
       style={

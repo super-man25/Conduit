@@ -9,7 +9,7 @@ import {
   Box,
   Text,
   FlexItem,
-  CenteredLoader,
+  Loader,
   EDLink,
 } from '_components';
 import EdLogoDark from '_images/logo_dark.svg';
@@ -71,12 +71,6 @@ const TicketIntegrationLogo = ({
   ) : (
     <LogoImg src={integration.logoUrl} />
   );
-
-const Loader = () => (
-  <div style={{ position: 'relative', height: 100 }}>
-    <CenteredLoader />
-  </div>
-);
 
 const getTicketShare = (sold: number, total: ?number): string => {
   if (!total) return '--';

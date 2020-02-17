@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, CenteredLoader } from '_components';
+import { Box, Loader } from '_components';
 import styled from 'styled-components';
 
 export const SeatMapObject = styled.object`
@@ -18,6 +18,6 @@ export const SeatIcon = styled.img`
 
 export const SeatMapLoader = () => (
   <div style={{ position: 'relative', height: '100%', minHeight: 400 }}>
-    <CenteredLoader />
+    <Loader centered />
   </div>
 );

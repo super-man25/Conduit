@@ -122,11 +122,7 @@ export const Onboard = ({
                 <ApiCredentialsSection />
                 <SkyBoxCustomersSection values={values} />
                 <PrimaryButton type="submit">
-                  {inProgress ? (
-                    <Loader small color={cssConstants.PRIMARY_WHITE} />
-                  ) : (
-                    'Onboard'
-                  )}
+                  {inProgress ? <Loader small /> : 'Onboard'}
                 </PrimaryButton>
               </>
             )}

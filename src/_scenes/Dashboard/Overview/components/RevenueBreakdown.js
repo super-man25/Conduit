@@ -10,7 +10,7 @@ import {
   HorizontalBars,
   LegendItem,
   Box,
-  CenteredLoader,
+  Loader,
   Flex,
   FlexItem,
   Spacing,
@@ -59,7 +59,7 @@ const RevenueBreakdownError = () => (
 
 const BreakdownLoader = () => (
   <div style={{ position: 'relative', height: 100 }}>
-    <CenteredLoader />
+    <Loader centered />
   </div>
 );
 

@@ -8,7 +8,7 @@ import { actions } from '_state/alert';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
 
-export const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
+const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
   position: absolute;
   right: 25px;
   top: 25px;

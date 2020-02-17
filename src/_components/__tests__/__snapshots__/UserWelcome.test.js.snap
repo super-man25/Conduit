@@ -41,7 +41,6 @@ exports[`renders correctly with a valid user prop 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 8px;
   color: #0A169A;
   background-color: inherit;
 }
@@ -97,7 +96,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   className="c0"
 >
   <button
-    className="sc-fzozJi sc-fzoLsD c1"
+    className="sc-fzplWN c1"
     onClick={[Function]}
   >
     <div

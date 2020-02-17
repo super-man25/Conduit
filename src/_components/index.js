@@ -2,8 +2,6 @@ export * from './Alert';
 export * from './AsyncButton';
 export * from './Breadcrumbs';
 export * from './Button';
-export * from './Center';
-export * from './CenteredLoader';
 export * from './ChartContainer';
 export * from './ChartLegend';
 export * from './Checkbox';

@@ -8,7 +8,7 @@ import {
   actions as eventActions,
   selectors as eventSelectors,
 } from '_state/event';
-import { H4, PageWrapper, Center, CenteredLoader } from '_components';
+import { H4, PageWrapper, Center, Loader } from '_components';
 import { OverviewCharts } from './components/OverviewCharts';
 import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations';
 import { OverviewStats } from './components/OverviewStats';
@@ -18,7 +18,15 @@ import { EventPricing } from './components/EventPricing';
 import { cssConstants } from '_constants';
 import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 
-const Heading = styled(H4)`
+const EmptyContentContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const EmptyContentMessage = styled(H4)`
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -58,7 +66,7 @@ export const Overview = ({ isSeason, isEvent, match }) => {
   if (loading) {
     return (
       <PageWrapper style={{ position: 'relative' }}>
-        <CenteredLoader />
+        <Loader centered />
       </PageWrapper>
     );
   }
@@ -66,9 +74,9 @@ export const Overview = ({ isSeason, isEvent, match }) => {
   if (!season) {
     return (
       <PageWrapper style={{ position: 'relative' }}>
-        <Center>
-          <Heading>No Season Selected</Heading>
-        </Center>
+        <EmptyContentContainer>
+          <EmptyContentMessage>No Season Selected</EmptyContentMessage>
+        </EmptyContentContainer>
       </PageWrapper>
     );
   }

@@ -29,7 +29,7 @@ import {
   selectors as eventCategorySelectors,
 } from '_state/eventCategory';
 import { formatUSD, compare } from '_helpers/string-utils';
-import { CenteredLoader, Flex, Text } from '_components';
+import { Loader, Flex, Text } from '_components';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
@@ -278,7 +278,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
     ) {
       return (
         <div style={{ position: 'relative', height: '100%' }}>
-          <CenteredLoader />
+          <Loader centered />
         </div>
       );
     }

@@ -161,7 +161,7 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 }
 
 <button
-  className="sc-fzozJi sc-fzoLsD sc-fzpans c0"
+  className="sc-fzplWN sc-fznyAO c0"
 />
 `;
 

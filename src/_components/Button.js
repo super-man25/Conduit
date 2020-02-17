@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
+
 import { cssConstants, shadows } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
@@ -11,7 +12,7 @@ type Props = {
   minWidth: string,
 };
 
-export const Button: React.ComponentType<Props> = withBoxModelProps(styled.button`
+export const Button: React.ComponentType<Props> = styled.button`
   border: none;
   min-width: ${(props) => props.minWidth || '100px'};
   padding: 1rem 2rem;
@@ -24,7 +25,7 @@ export const Button: React.ComponentType<Props> = withBoxModelProps(styled.butto
   &:disabled {
     cursor: not-allowed;
   }
-`);
+`;
 
 export const PrimaryButton = styled(Button)`
   transition: opacity 100ms ease-out;

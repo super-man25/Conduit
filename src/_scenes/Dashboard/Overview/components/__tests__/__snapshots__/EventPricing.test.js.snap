@@ -180,7 +180,6 @@ exports[`renders correctly 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 0;
   color: #0A169A;
   background-color: inherit;
 }
@@ -377,7 +376,7 @@ exports[`renders correctly 1`] = `
   justify-content: space-around;
 }
 
-.c9 + .sc-pZBmh {
+.c9 + .sc-oTbqq {
   padding-top: 24px;
 }
 
@@ -387,7 +386,7 @@ exports[`renders correctly 1`] = `
 }
 
 <div
-  className="sc-pIJJz c0"
+  className="sc-pRFjI c0"
 >
   <header
     className="c1"
@@ -430,7 +429,7 @@ exports[`renders correctly 1`] = `
     </div>
   </header>
   <section
-    className="sc-pZBmh c9"
+    className="sc-oTbqq c9"
   >
     <div
       className="sc-AxirZ c10"
@@ -451,7 +450,7 @@ exports[`renders correctly 1`] = `
             Modifiers
           </h4>
           <button
-            className="sc-fzozJi sc-fzoLsD c14"
+            className="sc-fzplWN c14"
             disabled={false}
             onClick={[Function]}
             style={
