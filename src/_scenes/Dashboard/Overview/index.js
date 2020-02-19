@@ -8,7 +8,7 @@ import {
   actions as eventActions,
   selectors as eventSelectors,
 } from '_state/event';
-import { H4, PageWrapper, Center, Loader } from '_components';
+import { H4, PageWrapper, Loader } from '_components';
 import { OverviewCharts } from './components/OverviewCharts';
 import { SeasonTicketIntegrations } from './components/SeasonTicketIntegrations';
 import { OverviewStats } from './components/OverviewStats';

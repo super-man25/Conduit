@@ -4,7 +4,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { cssConstants, shadows } from '_constants';
-import { withBoxModelProps } from '_helpers/style-utils';
 
 type Props = {
   fontSize: string,

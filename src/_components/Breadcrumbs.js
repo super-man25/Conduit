@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Flex } from '_components';
-import { cssConstants } from '_constants';
 
 const StyledBreadcrumbLink = styled(Link)`
   color: black;

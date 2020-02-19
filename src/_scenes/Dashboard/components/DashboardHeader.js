@@ -8,7 +8,6 @@ import { selectors as seasonSelectors } from '_state/season';
 import { selectors as eventSelectors } from '_state/event';
 import { Icon, Breadcrumbs } from '_components';
 import { cssConstants } from '_constants';
-import { Link } from 'react-router-dom';
 import EventWeather from './EventWeather';
 import clockIcon from '_images/clock.svg';
 
@@ -90,7 +89,7 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
   const event = useSelector(eventSelectors.selectEvent);
 
   const crumbs = isSeason
-    ? [{ title: 'Overview', path: '/season' }]
+    ? [{ title: `Overview - ${season.name}`, path: '/season' }]
     : isEvent
     ? [
         { title: 'Season Dashboard', path: '/season' },
@@ -116,27 +115,6 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
           />
         )}
         <Breadcrumbs crumbs={crumbs} />
-        {/* {isSeason ? (
-          <span>Overview - {season.name}</span>
-        ) : isEventInventory ? (
-          <span>
-            <DashboardHeaderLink to="/season">
-              Season Dashboard
-            </DashboardHeaderLink>{' '}
-            >{' '}
-            <DashboardHeaderLink to={`/event/${event.id}`}>
-              {event.name}
-            </DashboardHeaderLink>{' '}
-            > Inventory
-          </span>
-        ) : (
-          <span>
-            <DashboardHeaderLink to="/season">
-              Season Dashboard
-            </DashboardHeaderLink>{' '}
-            > {event.name}
-          </span>
-        )} */}
       </Title>
       {isEvent && <EventDetails event={event} />}
     </StyledDashboardHeader>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { cssConstants } from '_constants';
 
 const smallHeight = '10px';
 const largeHeight = '14px';

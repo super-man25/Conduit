@@ -13,7 +13,6 @@ import {
   Loader,
   Form,
 } from '_components';
-import { cssConstants } from '_constants';
 import { OnboardWrapper } from './components/styled';
 import { TeamInfoSection } from './components/TeamInfoSection';
 import { VenueInfoSection } from './components/VenueInfoSection';
