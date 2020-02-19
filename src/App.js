@@ -15,22 +15,22 @@ import { SecuredRoute, Alert, Loader } from '_components';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
-  loading: Loader,
+  loading: () => <Loader centered />,
 });
 
 const Login = Loadable({
   loader: () => import('_scenes/Login'),
-  loading: Loader,
+  loading: () => <Loader centered />,
 });
 
 const Settings = Loadable({
   loader: () => import('_scenes/Settings'),
-  loading: Loader,
+  loading: () => <Loader centered />,
 });
 
 const PricingRules = Loadable({
   loader: () => import('_scenes/PricingRules'),
-  loading: Loader,
+  loading: () => <Loader centered />,
 });
 
 type Props = {

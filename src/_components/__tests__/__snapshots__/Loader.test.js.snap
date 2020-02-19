@@ -10,34 +10,49 @@ exports[`should render default 1`] = `
   height: 14px;
 }
 
-.c1 {
-  width: 75px;
+.c2 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
+  background-color: #0A169A;
 }
 
-.c2 {
-  width: 75px;
+.c2 + .c1 {
+  margin-left: 5px;
+}
+
+.c3 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.30000000000000004s;
   animation-delay: 0.30000000000000004s;
+  background-color: #0A169A;
 }
 
-.c3 {
-  width: 75px;
+.c3 + .c1 {
+  margin-left: 5px;
+}
+
+.c4 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  background-color: #0A169A;
+}
+
+.c4 + .c1 {
+  margin-left: 5px;
 }
 
 <div
@@ -47,13 +62,13 @@ exports[`should render default 1`] = `
     className="c0"
   >
     <div
-      className="c1"
+      className="c1 c2"
     />
     <div
-      className="c2"
+      className="c1 c3"
     />
     <div
-      className="c3"
+      className="c1 c4"
     />
   </div>
 </div>
@@ -69,34 +84,49 @@ exports[`should render with optional props 1`] = `
   height: 10px;
 }
 
-.c1 {
-  width: 75px;
+.c2 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
+  background-color: #0A169A;
 }
 
-.c2 {
-  width: 75px;
+.c2 + .c1 {
+  margin-left: 5px;
+}
+
+.c3 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.30000000000000004s;
   animation-delay: 0.30000000000000004s;
+  background-color: #0A169A;
 }
 
-.c3 {
-  width: 75px;
+.c3 + .c1 {
+  margin-left: 5px;
+}
+
+.c4 {
+  width: 14px;
   height: 14px;
-  border-radius: 100%;
+  border-radius: 100px;
   -webkit-animation: cHDNma 1.3s ease infinite;
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  background-color: #0A169A;
+}
+
+.c4 + .c1 {
+  margin-left: 5px;
 }
 
 <div
@@ -106,13 +136,13 @@ exports[`should render with optional props 1`] = `
     className="c0"
   >
     <div
-      className="c1"
+      className="c1 c2"
     />
     <div
-      className="c2"
+      className="c1 c3"
     />
     <div
-      className="c3"
+      className="c1 c4"
     />
   </div>
 </div>

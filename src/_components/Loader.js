@@ -1,15 +1,19 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { cssConstants } from '_constants';
 
-const smallHeight = '10px';
-const largeHeight = '14px';
-const smallWidth = '45px';
-const largeWidth = '75px';
+const smallHeight = 10;
+const largeHeight = 14;
+const smallWidth = 45;
+const largeWidth = 75;
 
 const StyledLoader = styled.div`
   ${({ centered }) =>
     centered &&
     `
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     display: flex;
@@ -20,8 +24,8 @@ const StyledLoader = styled.div`
 
 const DotContainer = styled.div`
   display: flex;
-  width: ${({ small }) => (small ? smallWidth : largeWidth)};
-  height: ${({ small }) => (small ? smallHeight : largeHeight)};
+  width: ${({ small }) => (small ? smallWidth : largeWidth)}px;
+  height: ${({ small }) => (small ? smallHeight : largeHeight)}px;
 `;
 
 const dotAnimation = keyframes`
@@ -34,15 +38,20 @@ const dotAnimation = keyframes`
 `;
 
 const AnimatedDot = styled.div`
-  width: ${({ small }) => (small ? smallWidth : largeWidth)};
-  height: ${({ small }) => (small ? smallHeight : largeHeight)};
-  border-radius: 100%;
+  width: ${({ small }) => (small ? smallHeight : largeHeight)}px;
+  height: ${({ small }) => (small ? smallHeight : largeHeight)}px;
+  border-radius: 100px;
   animation: ${dotAnimation} 1.3s ease infinite;
   animation-delay: ${(props) => `${0.1 + props.index * 0.2}s`};
+  background-color: ${cssConstants.PRIMARY_BLUE};
+
+  & + & {
+    margin-left: 5px;
+  }
 `;
 
-export const Loader = ({ small }) => (
-  <StyledLoader>
+export const Loader = ({ small, centered }) => (
+  <StyledLoader centered={centered}>
     <DotContainer small={small}>
       <AnimatedDot index={0} />
       <AnimatedDot index={1} />
