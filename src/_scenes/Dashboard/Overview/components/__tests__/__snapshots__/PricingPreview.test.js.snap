@@ -19,7 +19,7 @@ exports[`renders correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px;
+  padding: 25px;
 }
 
 .c1 {
@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
   color: #070707;
   font-size: 18px;
   font-weight: normal;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0 5px 0 0;
 }
 
 .c6 {
@@ -106,7 +106,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c3 {
-  margin: 0.5rem 0;
   position: relative;
   width: 22px;
 }
@@ -339,7 +338,7 @@ exports[`renders the error preview 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px;
+  padding: 25px;
 }
 
 .c1 {
@@ -380,7 +379,7 @@ exports[`renders the error preview 1`] = `
   color: #070707;
   font-size: 18px;
   font-weight: normal;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0 5px 0 0;
 }
 
 .c8 {
@@ -390,7 +389,6 @@ exports[`renders the error preview 1`] = `
 }
 
 .c3 {
-  margin: 0.5rem 0;
   position: relative;
   width: 22px;
 }
@@ -502,7 +500,7 @@ exports[`renders the loading preview 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px;
+  padding: 25px;
 }
 
 .c1 {
@@ -542,7 +540,7 @@ exports[`renders the loading preview 1`] = `
   color: #070707;
   font-size: 18px;
   font-weight: normal;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0 5px 0 0;
 }
 
 .c7 {
@@ -551,7 +549,6 @@ exports[`renders the loading preview 1`] = `
 }
 
 .c3 {
-  margin: 0.5rem 0;
   position: relative;
   width: 22px;
 }
@@ -638,7 +635,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px;
+  padding: 25px;
 }
 
 .c1 {
@@ -678,7 +675,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   color: #070707;
   font-size: 18px;
   font-weight: normal;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0 5px 0 0;
 }
 
 .c7 {
@@ -687,7 +684,6 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
 }
 
 .c3 {
-  margin: 0.5rem 0;
   position: relative;
   width: 22px;
 }

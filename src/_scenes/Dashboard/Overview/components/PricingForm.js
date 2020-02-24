@@ -1,7 +1,7 @@
 // @flow
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Box, Flex, H4, NumberInputField, Text, TextButton } from '_components';
+import { Box, Flex, H4, NumberInputField, Text } from '_components';
 import { cssConstants } from '_constants';
 import { fixedOrDash } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
@@ -16,8 +16,15 @@ import {
 
 const StyledPricingForm = styled(Flex)`
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  padding: 0 20px;
+  padding: 25px;
   width: 100%;
+`;
+
+const EditButton = styled.div`
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  font-weight: bold;
+  color: ${({ disabled }) =>
+    disabled ? cssConstants.PRIMARY_LIGHT_GRAY : cssConstants.PRIMARY_BLUE};
 `;
 
 const Input = styled.input`
@@ -86,22 +93,20 @@ export const PricingForm = (props: Props) => {
     setIsEditing,
   ]);
 
+  const editButtonDisabled =
+    !eventScore || !!pricingPreviewError || pricingPreviewLoading;
+
   return (
     <StyledPricingForm direction="column">
-      <Flex margin="0.5rem 0" align="center" justify="space-between">
+      <Flex align="center" justify="space-between">
         <H4 margin="0">Modifiers</H4>
         {!isEditing && (
-          <TextButton
-            style={{ fontWeight: 600 }}
-            minWidth="0"
-            padding="0"
-            onClick={() => setIsEditing(true)}
-            disabled={
-              !eventScore || !!pricingPreviewError || pricingPreviewLoading
-            }
+          <EditButton
+            onClick={() => !editButtonDisabled && setIsEditing(true)}
+            disabled={editButtonDisabled}
           >
             Edit
-          </TextButton>
+          </EditButton>
         )}
       </Flex>
       <Box padding="1.5rem">

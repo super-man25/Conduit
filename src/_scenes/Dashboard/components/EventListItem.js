@@ -1,229 +1,316 @@
 // @flow
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { darken } from 'polished';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
-import { cssConstants, containerPadding } from '_constants';
-import { Flex, FlexItem, H4, P1 } from '_components';
+import { cssConstants } from '_constants';
 import type { EDEvent } from '_models';
 import {
-  formatNumber,
   formatUSD,
-  readableDateAndTime,
   isPastEvent,
   finalEventScore,
-  finalSpringValue,
+  isMobileDevice,
+  formatDate,
+  formatNumber,
 } from '_helpers';
+import { selectors as eventListSelectors } from '_state/eventList';
+import { actions as uiActions } from '_state/ui';
+import { Flex } from '_components';
 import { ScheduledJobStatus } from './ScheduledJobStatus';
 import { EventScoreIcon } from './EventScoreIcon';
 
-const Heading = styled(H4)`
-  margin: 0 0 20px 0;
-  padding: 0;
-  display: inline-block;
+const StyledEventListItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  background-color: white;
+  color: black;
+  position: relative;
+  cursor: pointer;
+
+  ${({ past }) =>
+    past &&
+    `
+    background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    color: ${cssConstants.PRIMARY_DARK_GRAY};
+  `}
+
+  ${({ active }) =>
+    active &&
+    `
+      background-color: ${cssConstants.PRIMARY_BLUE};
+      color: white;
+      z-index: 999;
+    `}
+`;
+
+const EventListItemRow = styled.div`
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+
+  & + & {
+    margin-top: 15px;
+  }
+`;
+
+const DateContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 10px;
+
+  ${({ past }) =>
+    past &&
+    `
+    border-color: ${cssConstants.PRIMARY_DARK_GRAY};
+  `}
+
+  ${({ active }) =>
+    active &&
+    `
+    border-color: white;
+  `}
+`;
+
+const Month = styled.div`
+  background-color: black;
+  color: white;
+  padding: 0 5px;
+  font-weight: bold;
+
+  ${({ past }) =>
+    past &&
+    `
+    background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+  `}
+
+  ${({ active }) =>
+    active &&
+    `
+    background-color: white;
+    color: ${cssConstants.PRIMARY_BLUE};
+  `}
+`;
+
+const Day = styled.div`
+  padding: 1px 3px;
+`;
+
+const EventTitleContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+`;
+
+const EventTitle = styled.div`
+  max-width: 250px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-weight: 600;
-  color: ${(props) =>
-    props.past
-      ? cssConstants.PRIMARY_DARK_GRAY
-      : cssConstants.PRIMARY_DARKEST_GRAY};
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 5px;
 `;
-const SubHeading = styled(P1)`
-  margin: 2px 0 0 0;
+
+const EventTime = styled.div`
+  text-transform: lowercase;
   font-size: 12px;
-  color: ${(props) =>
-    props.past
-      ? cssConstants.PRIMARY_DARK_GRAY
-      : cssConstants.PRIMARY_DARKEST_GRAY};
 `;
 
-const boxShadow = (props) =>
-  props.active &&
-  css`
-    box-shadow: 0px 6px 8px ${cssConstants.PRIMARY_LIGHT_GRAY};
-    z-index: 999;
-  `;
-
-const Container = styled.div`
+const EventDetail = styled.div`
   display: flex;
-  flex-direction: row;
-  padding: 15px ${containerPadding}px;
-  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
-  background-color: ${(props) =>
-    props.past
-      ? cssConstants.PRIMARY_LIGHTER_GRAY
-      : cssConstants.PRIMARY_WHITE};
-  color: ${(props) =>
-    props.past ? cssConstants.PRIMARY_DARK_GRAY : cssConstants.PRIMARY_BLACK};
-  transition: 0.15s ease-in-out all;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & + & {
+    margin-left: 15px;
+  }
+`;
+
+const EventDetailValue = styled.div`
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+const EventDetailLabel = styled.div`
+  font-size: 14px;
+`;
+
+const InventoryProgressBar = styled.div`
+  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-out 0.2s;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   position: relative;
-  ${boxShadow};
 
-  :hover {
-    cursor: pointer;
-    background-color: ${(props) =>
-      darken(
-        0.02,
-        props.past
-          ? cssConstants.PRIMARY_LIGHTER_GRAY
-          : cssConstants.PRIMARY_WHITE
-      )};
-  }
-
-  ::before {
-    transition: 0.3s ease-out transform;
-    content: '';
+  &:after {
     position: absolute;
+    z-index: 1;
+    color: white;
     top: 0;
-    left: 0;
-    right: 0;
+    right: 5px;
+    opacity: 0;
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  ${({ active, percentage }) =>
+    active &&
+    `
+    width: ${percentage}%;
+
+    &:after {
+      content: '${percentage}%';
+      ${
+        percentage < 15
+          ? `
+        right: initial;
+        left: calc(100% + 5px);
+      `
+          : ''
+      }
+    }
+  `}
+`;
+
+const InventoryProgressBarContainer = styled.div`
+  height: 0;
+  width: 100%;
+  transition: height 0.2s ease-out;
+  background-color: ${cssConstants.SECONDARY_BLUE_ACCENT};
+
+  ${({ active }) =>
+    active &&
+    `
     height: 10px;
-    transform: scaleY(${(props) => (props.active ? 1 : 0)});
-    transform-origin: top;
-    background-color: ${cssConstants.PRIMARY_BLUE};
+  `}
+
+  &:hover {
+    height: 15px;
+  }
+
+  &:hover ${/* sc-selector */ InventoryProgressBar}:after {
+    opacity: 1;
   }
 `;
 
-const EventDetailsLabel = styled(P1)`
-  color: ${(props) =>
-    props.past
-      ? cssConstants.PRIMARY_DARK_GRAY
-      : cssConstants.PRIMARY_DARKEST_GRAY};
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0 0 3px 0;
-  white-space: nowrap;
-`;
-
-const SubtextP1 = styled(P1)`
-  color: ${(props) =>
-    props.past
-      ? cssConstants.PRIMARY_DARK_GRAY
-      : cssConstants.PRIMARY_DARKEST_GRAY};
-  font-size: 14px;
-  white-space: nowrap;
-`;
-
-const EventScoreDetails = styled.div`
-  ${SubtextP1} {
-    color: ${cssConstants.PRIMARY_BLUE};
-  }
-`;
-
-const EventDetails = ({
-  flex,
-  isPast,
-  title,
-  text,
+export const EventListItem = ({
+  event,
+  active,
+  isAdmin,
 }: {
-  flex: number,
-  isPast: boolean,
-  title: string,
-  text: string,
-}) => {
-  return (
-    <FlexItem flex={flex} alignSelf="flex-end">
-      <EventDetailsLabel past={isPast} className="private">
-        {title}
-      </EventDetailsLabel>
-      <SubtextP1 past={isPast}>{text}</SubtextP1>
-    </FlexItem>
-  );
-};
-
-type Props = {
   event: EDEvent,
   active: boolean,
-  onClick: (event: EDEvent) => void,
   isAdmin: boolean,
-};
+}) => {
+  const activeEventId = useSelector(eventListSelectors.selectActiveEventListId);
+  const dispatch = useDispatch();
+  const toggleSidebar = () => dispatch(uiActions.toggleSidebar());
+  const history = useHistory();
+  const past = isPastEvent(event);
+  const soldInventoryPercentage = Math.round(
+    (event.soldInventory / event.totalInventory) * 100
+  );
 
-export class EventListItem extends React.PureComponent<Props> {
-  calculateEventScore = (event: EDEvent) => {
+  const handleClick = () => {
+    if (isMobileDevice) toggleSidebar();
+
+    if (event.id !== activeEventId) {
+      history.push(`/event/${event.id}`);
+    } else {
+      history.push(`/season`);
+    }
+  };
+
+  const calculateEventScore = (event: EDEvent) => {
     const { eventScore, eventScoreModifier, velocityFactor } = event.factors;
     if (eventScore === undefined) {
       return '--';
     }
-
     return finalEventScore(eventScore, velocityFactor, eventScoreModifier);
   };
 
-  calculateSpring = (event: EDEvent) => {
-    const { spring, springModifier } = event.factors;
-    if (spring === undefined) {
-      return '--';
-    }
-
-    return `${finalSpringValue(spring, springModifier, 2)}%`;
-  };
-
-  render() {
-    const { event, active, onClick, isAdmin } = this.props;
-    const past = isPastEvent(event);
-    return (
-      <Container
-        onClick={() => onClick(event)}
-        active={active}
-        past={past}
-        data-test-id="event-list-card"
-      >
-        <Flex direction="column" flex={1} style={{ overflow: 'hidden' }}>
-          <Heading past={past} title={event.name}>
-            {event.name}
-            <SubHeading past={past}>
-              {readableDateAndTime(event.timestamp, event.timeZone)}
-            </SubHeading>
-          </Heading>
-          <Flex direction="row" flex={1}>
-            <EventDetails
-              flex={4}
-              isPast={past}
-              title={
-                formatNumber(event.unsoldInventory) +
-                ' / ' +
-                formatNumber(event.soldInventory)
-              }
-              text="Unsold / Sold"
-            />
-            <EventDetails
-              flex={4}
-              isPast={past}
-              title={formatUSD(event.revenue, {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-              })}
-              text="Revenue to Date"
-            />
-            {isAdmin ? (
-              <EventDetails
-                flex={3}
-                isPast={past}
-                title={`${this.calculateEventScore(
-                  event
-                )} / ${this.calculateSpring(event)}`}
-                text="Score / Spring"
-              />
-            ) : (
-              <EventScoreDetails>
-                <EventScoreIcon
-                  eventScore={this.calculateEventScore(event)}
-                  past={past}
-                />
-                <SubtextP1>Event Score</SubtextP1>
-              </EventScoreDetails>
-            )}
-          </Flex>
-          <FlexItem flex={1}>
+  return (
+    <>
+      <StyledEventListItem onClick={handleClick} active={active} past={past}>
+        <EventListItemRow>
+          <DateContainer active={active} past={past}>
+            <Month active={active} past={past}>
+              {formatDate(event.timestamp, 'MMM', event.timeZone)}
+            </Month>
+            <Day>{formatDate(event.timestamp, 'dd', event.timeZone)}</Day>
+          </DateContainer>
+          <Flex direction="column" flex={1}>
+            <EventTitleContainer past={past} title={event.name}>
+              <EventTitle>{event.name}</EventTitle>
+              <EventTime>
+                {formatDate(event.timestamp, 'h:mma', event.timeZone)}
+              </EventTime>
+            </EventTitleContainer>
             <ScheduledJobStatus
               past={past}
               scheduledJob={event.scheduledJob}
               timeZone={event.timeZone}
             />
-          </FlexItem>
-        </Flex>
-      </Container>
-    );
-  }
-}
+          </Flex>
+        </EventListItemRow>
+        <EventListItemRow>
+          <EventDetail>
+            <EventScoreIcon
+              eventScore={calculateEventScore(event)}
+              past={past}
+              active={active}
+            />
+            <EventDetailLabel>Event Score</EventDetailLabel>
+          </EventDetail>
+          <EventDetail>
+            <EventDetailValue>
+              {formatUSD(event.revenue, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              })}
+            </EventDetailValue>
+            <EventDetailLabel>Revenue</EventDetailLabel>
+          </EventDetail>
+          {isAdmin ? (
+            <EventDetail>
+              <EventDetailValue>
+                {formatNumber(event.unsoldInventory)} /{' '}
+                {formatNumber(event.soldInventory)}
+              </EventDetailValue>
+              <EventDetailLabel>Unsold / Sold</EventDetailLabel>
+            </EventDetail>
+          ) : (
+            <EventDetail>
+              <EventDetailValue
+                title={`${formatNumber(event.soldInventory)} tickets sold`}
+              >
+                {soldInventoryPercentage}%
+              </EventDetailValue>
+              <EventDetailLabel>
+                of {formatNumber(event.totalInventory)} tickets
+              </EventDetailLabel>
+            </EventDetail>
+          )}
+        </EventListItemRow>
+      </StyledEventListItem>
+      <InventoryProgressBarContainer active={active}>
+        <InventoryProgressBar
+          active={active}
+          percentage={soldInventoryPercentage}
+        />
+      </InventoryProgressBarContainer>
+    </>
+  );
+};
