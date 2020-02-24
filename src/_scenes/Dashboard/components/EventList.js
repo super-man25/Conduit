@@ -1,10 +1,15 @@
 // @flow
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import { cssConstants, containerPadding } from '_constants';
 import { isPastEvent } from '_helpers';
-import type { EDEvent } from '_models';
+import {
+  actions as eventListActions,
+  selectors as eventListSelectors,
+} from '_state/eventList';
+import { selectors as seasonSelectors } from '_state/season';
 import { H4, Input, ScrollableList, Flex, Loader } from '_components';
 import { EventListItem } from './EventListItem';
 
@@ -35,7 +40,7 @@ const NoContentWrap = styled.div`
   color: ${cssConstants.PRIMARY_DARK_GRAY};
 `;
 
-function getScrollIndex(events, activeId, filtered) {
+function getScrollIndex(events, activeEventId, filtered) {
   if (!events.length) {
     return -1;
   }
@@ -44,8 +49,8 @@ function getScrollIndex(events, activeId, filtered) {
     return 0;
   }
 
-  if (activeId && activeId !== -1) {
-    return events.findIndex((e) => e.id === activeId);
+  if (activeEventId && activeEventId !== -1) {
+    return events.findIndex((e) => e.id === activeEventId);
   }
 
   const index = events.findIndex((e) => {
@@ -55,30 +60,38 @@ function getScrollIndex(events, activeId, filtered) {
   return index;
 }
 
-type Props = {
-  activeId: number,
-  events: Array<EDEvent>,
-  filter: string,
-  filterOptions: Array<{ +id: number, +label: string }>,
-  isAdmin: boolean,
-  loading: boolean,
-  onClick: (event: EDEvent) => void,
-  onSearchInputChange: (event: SyntheticInputEvent<HTMLInputElement>) => void,
-};
+export const EventList = () => {
+  const loading = useSelector(
+    (state) =>
+      state.eventList.loading ||
+      state.season.loading ||
+      state.seasonStat.loading ||
+      state.teamStat.loading
+  );
+  const activeEventId = useSelector(eventListSelectors.selectActiveEventListId);
+  const eventListState = useSelector((state) => state.eventList);
+  const { visibleEvents: events, filter } = eventListState;
+  const isAdmin = useSelector((state) => state.auth.model.isAdmin);
+  const seasonId = useSelector(seasonSelectors.selectActiveSeasonId);
 
-export function EventListPresenter(props: Props) {
-  const {
-    activeId,
-    events,
-    loading,
-    onClick,
-    onSearchInputChange,
-    filter,
-    isAdmin,
-  } = props;
-
-  const filtered = !!filter;
+  const dispatch = useDispatch();
+  const searchEventList = (value) =>
+    dispatch(eventListActions.filterEventList(value));
   const noResult = !events || !events.length;
+  const filtered = !!filter;
+
+  useEffect(() => {
+    const resetEventList = () => dispatch(eventListActions.resetEventList());
+    const fetchEventList = (seasonId) =>
+      dispatch(eventListActions.fetchEventList({ seasonId }));
+    resetEventList();
+    fetchEventList(seasonId);
+  }, [dispatch, seasonId]);
+
+  const handleSearchInput = (event: any) => {
+    const { value } = event.target;
+    searchEventList(value);
+  };
 
   const renderContent = () => {
     if (noResult) {
@@ -94,13 +107,12 @@ export function EventListPresenter(props: Props) {
       <OverflowContent>
         <ScrollableList
           data={events}
-          scrollIndex={getScrollIndex(events, activeId, filtered)}
+          scrollIndex={getScrollIndex(events, activeEventId, filtered)}
         >
           {(event, key) => (
             <EventListItem
-              onClick={onClick}
-              active={event.id === activeId}
               key={event.id}
+              active={event.id === activeEventId}
               event={event}
               isAdmin={isAdmin}
             />
@@ -117,7 +129,7 @@ export function EventListPresenter(props: Props) {
           <Input
             type="text"
             placeholder="Filter..."
-            onChange={onSearchInputChange}
+            onChange={handleSearchInput}
             value={filter}
             data-test-id="event-list-search"
           />
@@ -127,10 +139,4 @@ export function EventListPresenter(props: Props) {
       {loading ? <Loader centered /> : renderContent()}
     </Flex>
   );
-}
-
-EventListPresenter.defaultProps = {
-  loading: true,
 };
-
-export default EventListPresenter;

@@ -2,6 +2,7 @@ const BASE = 1000;
 const OVERLAY = BASE + 100;
 
 export const cssConstants = {
+  // PRIMARY_BLUE: '#35c',
   PRIMARY_EVEN_LIGHTER_GRAY: '#F2F2F2',
   PRIMARY_BLUE: '#0A169A',
   PRIMARY_BLUE_HOVER: '#848ACC',

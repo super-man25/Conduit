@@ -45,20 +45,25 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
             renderSelected={[Function]}
             selected={null}
           />
-          <Styled(styled.div)>
+          <div>
+            <Styled(styled.button)
+              onClick={[Function]}
+            >
+              Price All Events
+            </Styled(styled.button)>
             <Styled(styled.button)
               disabled={false}
               onClick={[Function]}
               style={
                 Object {
                   "cursor": "pointer",
-                  "marginLeft": "2rem",
+                  "marginLeft": "15px",
                 }
               }
             >
               New Rule
             </Styled(styled.button)>
-          </Styled(styled.div)>
+          </div>
         </Flex>
       </styled.div>
       <Styled(FlexItem)>

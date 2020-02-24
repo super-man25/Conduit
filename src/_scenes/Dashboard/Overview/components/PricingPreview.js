@@ -178,11 +178,10 @@ export const PricingPreview = (props: Props) => {
   }
 
   return (
-    <Flex direction="column" padding="0 20px" width="100%">
+    <Flex direction="column" padding="25px" width="100%">
       <Flex align="center">
-        <H4 margin="0.5rem 1rem 0.5rem 0">Preview</H4>
+        <H4 margin="0 5px 0 0">Preview</H4>
         <HoverTipContainer
-          margin="0.5rem 0"
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >

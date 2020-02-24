@@ -36,7 +36,7 @@ const StyledEventPricing = styled(Panel)`
 const PaddedPanelContent = styled(PanelContent)`
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 0;
   justify-content: space-around;
 `;
 

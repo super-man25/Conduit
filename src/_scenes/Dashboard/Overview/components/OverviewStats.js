@@ -268,7 +268,12 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
     <div>
       <StatsRow>
         <StatContainer>
-          <OverallStatValue>{formatUSD(totalRevenue)}</OverallStatValue>
+          <OverallStatValue>
+            {formatUSD(totalRevenue, {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })}
+          </OverallStatValue>
           <OverallStatLabel>Total Revenue</OverallStatLabel>
         </StatContainer>
         <StatContainer>
@@ -290,7 +295,12 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
           </StatContainer>
         ) : (
           <StatContainer>
-            <OverallStatValue>{formatUSD(revenuePerSeat)}</OverallStatValue>
+            <OverallStatValue>
+              {formatUSD(revenuePerSeat, {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              })}
+            </OverallStatValue>
             <OverallStatLabel>Revenue Per Seat</OverallStatLabel>
           </StatContainer>
         )}
@@ -302,15 +312,26 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
               <strong>Today</strong> {format(today, 'MMM dd')}
             </PeriodicStatLabel>
             <PeriodicStatRevenue>
-              <Value>{formatUSD(todayRevenueStat)}</Value>
+              <Value>
+                {formatUSD(todayRevenueStat, {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}
+              </Value>
               <Change isPositive={todayRevenueStat - yesterdayRevenueStat >= 0}>
-                {formatUSD(Math.abs(todayRevenueStat - yesterdayRevenueStat))}
+                {formatUSD(Math.abs(todayRevenueStat - yesterdayRevenueStat), {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}
               </Change>
             </PeriodicStatRevenue>
             <PeriodicStatInventory>
               <Value>{formatNumber(todayTicketStat)} Tickets</Value>
               <Change isPositive={todayTicketStat - yesterdayTicketStat >= 0}>
-                {formatNumber(Math.abs(todayTicketStat - yesterdayTicketStat))}
+                {formatNumber(Math.abs(todayTicketStat - yesterdayTicketStat), {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}
               </Change>
             </PeriodicStatInventory>
           </StatContainer>
@@ -319,12 +340,21 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
               <strong>Yesterday</strong> {format(subDays(today, 1), 'MMM dd')}
             </PeriodicStatLabel>
             <PeriodicStatRevenue>
-              <Value>{formatUSD(yesterdayRevenueStat)}</Value>
+              <Value>
+                {formatUSD(yesterdayRevenueStat, {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}
+              </Value>
               <Change
                 isPositive={yesterdayRevenueStat - twoDaysAgoRevenueStat >= 0}
               >
                 {formatUSD(
-                  Math.abs(yesterdayRevenueStat - twoDaysAgoRevenueStat)
+                  Math.abs(yesterdayRevenueStat - twoDaysAgoRevenueStat),
+                  {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  }
                 )}
               </Change>
             </PeriodicStatRevenue>

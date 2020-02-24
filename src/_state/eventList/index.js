@@ -56,7 +56,7 @@ const fetchEventList = (payload: {
   seasonId?: number,
 }): FetchEventListAction => ({ type: FETCH_EVENT_LIST, payload });
 const resetEventList = (): ResetEventListAction => ({ type: RESET });
-const searchEventList = (query: string): SearchEventListAction => ({
+const filterEventList = (query: string): SearchEventListAction => ({
   type: SEARCH,
   payload: query,
 });
@@ -68,7 +68,7 @@ const setVisibleEvents = (events: EDEvent[]): SetVisibleEventsAction => ({
 export const actions = {
   fetchEventList,
   resetEventList,
-  searchEventList,
+  filterEventList,
   setVisibleEvents,
 };
 

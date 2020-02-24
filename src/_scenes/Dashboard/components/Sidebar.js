@@ -1,14 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { cssConstants, mobileBreakpoint } from '_constants';
 import { TeamOverview } from './TeamOverview';
-import EventListContainer from './EventListContainer';
+import { EventList } from './EventList';
 
 const StyledSidebar = styled.div`
-  max-width: 500px;
-  min-width: 380px;
+  width: 400px;
   visibility: visible;
   border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
   transition: 0.1s ease-in-out transform;
@@ -53,7 +52,7 @@ export const Sidebar = () => {
         <TeamOverview />
       </SidebarHeader>
       <SidebarContent>
-        <EventListContainer />
+        <EventList />
       </SidebarContent>
     </StyledSidebar>
   );

@@ -5,14 +5,14 @@ import { cssConstants } from '_constants';
 import { colorForStatus } from '_constants/status.constants';
 import { P1 } from '_components';
 import type { EDScheduledJob } from '_models';
-import { readableDate } from '_helpers/string-utils';
+import { readableDuration } from '_helpers/string-utils';
 
 const ScheduledJobStatusNotice = styled(P1)`
   font-size: 12px;
   position: relative;
   font-weight: 600;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   padding-left: 5px;
 
   &:before {
@@ -67,7 +67,7 @@ export const ScheduledJobStatus = ({
 
   return (
     <ScheduledJobStatusNotice color={color}>
-      {args.title} on {readableDate(modifiedAt, timeZone)}
+      Price updated {readableDuration(modifiedAt)} ago
     </ScheduledJobStatusNotice>
   );
 };

@@ -34,7 +34,7 @@ describe('actions', () => {
   });
 
   it('should create an action to search the eventList', () => {
-    const action = actions.searchEventList('filter');
+    const action = actions.filterEventList('filter');
     expect(action).toEqual({
       type: types.SEARCH,
       payload: 'filter',
@@ -173,7 +173,7 @@ describe('saga workers', () => {
 
   it('should handle search', () => {
     const events = [{ name: 'Cardinals at Mets' }];
-    const action = actions.searchEventList('Some Filter');
+    const action = actions.filterEventList('Some Filter');
     const generator = cloneableGenerator(handleSearchInput)(action);
 
     expect(generator.next().value).toEqual(delay(500));
