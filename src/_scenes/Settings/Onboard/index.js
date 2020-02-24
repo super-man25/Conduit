@@ -13,7 +13,6 @@ import {
   Loader,
   Form,
 } from '_components';
-import { cssConstants } from '_constants';
 import { OnboardWrapper } from './components/styled';
 import { TeamInfoSection } from './components/TeamInfoSection';
 import { VenueInfoSection } from './components/VenueInfoSection';
@@ -122,11 +121,7 @@ export const Onboard = ({
                 <ApiCredentialsSection />
                 <SkyBoxCustomersSection values={values} />
                 <PrimaryButton type="submit">
-                  {inProgress ? (
-                    <Loader small color={cssConstants.PRIMARY_WHITE} />
-                  ) : (
-                    'Onboard'
-                  )}
+                  {inProgress ? <Loader small /> : 'Onboard'}
                 </PrimaryButton>
               </>
             )}

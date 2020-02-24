@@ -106,16 +106,18 @@ export function readableTimeOrDate(d: Date, timeZone: ?string): string {
 /**
  * Given two dates, generate a human readable time duration
  *
- * @param {Date} t1 - time in question
- * @param {Date} t0 - time to compare
+ * @param {string} d1 - time in question
+ * @param {string} d2 - time to compare
  * @return {string}
  */
-export function readableDuration(t1: Date, t0?: Date): string {
-  if (!t0) {
-    return formatDistanceToNow(t1);
+export function readableDuration(d1: string, d2?: string): string {
+  const date1 = typeof d1 === 'string' ? parseISO(d1) : d1;
+  const date2 = d2 && typeof d2 === 'string' ? parseISO(d2) : d2;
+  if (!date2) {
+    return formatDistanceToNow(date1);
   }
 
-  return formatDistance(t0, t1);
+  return formatDistance(date1, date2);
 }
 
 /**
@@ -132,14 +134,9 @@ export function orDash(value: any): string {
  *
  * @param {number} value
  */
-type USDFormatOptions = {
-  minimumFractionDigits: number,
-  maximumFractionDigits: number,
-};
-
 export function formatUSD(
   value: number,
-  options: USDFormatOptions = {
+  options: any = {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }

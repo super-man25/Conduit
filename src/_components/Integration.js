@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { parseISO } from 'date-fns';
 
 import { cssConstants } from '_constants';
 import { Toggle, Flex, EDText } from '_components';
@@ -53,9 +52,7 @@ export function Integration(props: Props) {
   return (
     <Card>
       <EDText size="small" type="tertiary">
-        {sentenceCase(
-          `last updated ${readableDuration(parseISO(modifiedAt))} ago`
-        )}
+        {sentenceCase(`last updated ${readableDuration(modifiedAt)} ago`)}
       </EDText>
       <Details>
         <Img src={logoUrl} alt={name} />

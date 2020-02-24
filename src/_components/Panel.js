@@ -20,6 +20,7 @@ export const PanelContent: ComponentType<{}> = styled.section`
   border: ${panelBorder};
   border-top: none;
   padding: 18px 24px 30px;
+  position: relative;
 
   & + ${() => PanelContent} {
     padding-top: 24px;

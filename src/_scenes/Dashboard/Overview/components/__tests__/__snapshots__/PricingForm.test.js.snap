@@ -86,7 +86,6 @@ exports[`render correctly 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 0;
   color: #0A169A;
   background-color: inherit;
 }
@@ -164,20 +163,20 @@ exports[`render correctly 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="column"
 >
   <div
-    className="c1"
+    className="sc-AxirZ c1"
   >
     <h4
-      className="c2"
+      className="sc-fzoant c2"
       color="#070707"
     >
       Modifiers
     </h4>
     <button
-      className="c3"
+      className="sc-fzplWN c3"
       disabled={false}
       onClick={[Function]}
       style={
@@ -190,18 +189,18 @@ exports[`render correctly 1`] = `
     </button>
   </div>
   <div
-    className="c4"
+    className="sc-fzpkqZ c4"
   >
     <div
-      className="c5"
+      className="sc-AxirZ c5"
       direction="row"
     >
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c7"
+          className="sc-fznLPX c7"
           color="#999999"
           size={14}
         >
@@ -209,11 +208,11 @@ exports[`render correctly 1`] = `
         </p>
       </div>
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c7"
+          className="sc-fznLPX c7"
           color="#999999"
           size={14}
         >
@@ -222,43 +221,43 @@ exports[`render correctly 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="sc-AxirZ c8"
       direction="row"
     >
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c9"
+          className="sc-fznLPX c9"
           color="#999999"
         >
           Predicted
         </p>
       </div>
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c10 private"
+          className="sc-fznLPX c10 private"
         >
           1.00
         </p>
       </div>
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c10 private"
+          className="sc-fznLPX c10 private"
         >
           1.0000
         </p>
       </div>
     </div>
     <div
-      className="c8"
+      className="sc-AxirZ c8"
       direction="row"
       style={
         Object {
@@ -268,39 +267,39 @@ exports[`render correctly 1`] = `
       }
     >
       <div
-        className="c11"
+        className="sc-AxirZ c11"
         width="33%"
       >
         <p
-          className="c9"
+          className="sc-fznLPX c9"
           color="#999999"
         >
           Modifier
         </p>
       </div>
       <div
-        className="c12"
+        className="sc-AxirZ c12"
         width="33%"
       >
         <p
-          className="c10 private"
+          className="sc-fznLPX c10 private"
         >
           1.00
         </p>
       </div>
       <div
-        className="c12"
+        className="sc-AxirZ c12"
         width="33%"
       >
         <p
-          className="c10 private"
+          className="sc-fznLPX c10 private"
         >
           1.0000
         </p>
       </div>
     </div>
     <div
-      className="c8"
+      className="sc-AxirZ c8"
       direction="row"
       style={
         Object {
@@ -309,61 +308,61 @@ exports[`render correctly 1`] = `
       }
     >
       <div
-        className="c11"
+        className="sc-AxirZ c11"
         width="33%"
       >
         <p
-          className="c9"
+          className="sc-fznLPX c9"
           color="#999999"
         >
           Velocity
         </p>
       </div>
       <div
-        className="c12"
+        className="sc-AxirZ c12"
         width="33%"
       >
         <p
-          className="c10 private"
+          className="sc-fznLPX c10 private"
         >
           --
         </p>
       </div>
       <div
-        className="c12"
+        className="sc-AxirZ c12"
         width="33%"
       />
     </div>
     <div
-      className="c8"
+      className="sc-AxirZ c8"
       direction="row"
     >
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c13"
+          className="sc-fznLPX c13"
         >
           Final
         </p>
       </div>
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c14 private"
+          className="sc-fznLPX c14 private"
         >
           --
         </p>
       </div>
       <div
-        className="c6"
+        className="sc-fzpkqZ c6"
         width="33%"
       >
         <p
-          className="c14 private"
+          className="sc-fznLPX c14 private"
         >
           2.0000
         </p>

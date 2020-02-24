@@ -73,7 +73,8 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-laTMn",
+              "baseHash": 599074387,
+              "componentId": "sc-qPlga",
               "isStatic": false,
               "rules": Array [
                 "
@@ -90,11 +91,12 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
   width: 100%;
 ",
               ],
+              "staticRulesId": "",
             },
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-laTMn",
+            "styledComponentId": "sc-qPlga",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -112,13 +114,13 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
     <Flex
       justify="flex-end"
     >
-      <Styled(Styled(styled.button))
+      <Styled(styled.button)
         margin="0 1rem 0 0"
         onClick={[MockFunction]}
         small={true}
       >
         Cancel
-      </Styled(Styled(styled.button))>
+      </Styled(styled.button)>
       <AsyncButton
         disabled={false}
         isLoading={false}
@@ -204,7 +206,8 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-laTMn",
+              "baseHash": 599074387,
+              "componentId": "sc-qPlga",
               "isStatic": false,
               "rules": Array [
                 "
@@ -221,11 +224,12 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
   width: 100%;
 ",
               ],
+              "staticRulesId": "",
             },
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-laTMn",
+            "styledComponentId": "sc-qPlga",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -251,13 +255,13 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
     <Flex
       justify="flex-end"
     >
-      <Styled(Styled(styled.button))
+      <Styled(styled.button)
         margin="0 1rem 0 0"
         onClick={[MockFunction]}
         small={true}
       >
         Cancel
-      </Styled(Styled(styled.button))>
+      </Styled(styled.button)>
       <AsyncButton
         disabled={true}
         isLoading={false}
@@ -343,7 +347,8 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-laTMn",
+              "baseHash": 599074387,
+              "componentId": "sc-qPlga",
               "isStatic": false,
               "rules": Array [
                 "
@@ -360,11 +365,12 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
   width: 100%;
 ",
               ],
+              "staticRulesId": "",
             },
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-laTMn",
+            "styledComponentId": "sc-qPlga",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -382,13 +388,13 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
     <Flex
       justify="flex-end"
     >
-      <Styled(Styled(styled.button))
+      <Styled(styled.button)
         margin="0 1rem 0 0"
         onClick={[MockFunction]}
         small={true}
       >
         Cancel
-      </Styled(Styled(styled.button))>
+      </Styled(styled.button)>
       <AsyncButton
         disabled={false}
         isLoading={true}
@@ -477,13 +483,13 @@ exports[`<BulkUpdateModal /> should render correctly when the selectedAction is 
     <Flex
       justify="flex-end"
     >
-      <Styled(Styled(styled.button))
+      <Styled(styled.button)
         margin="0 1rem 0 0"
         onClick={[MockFunction]}
         small={true}
       >
         Cancel
-      </Styled(Styled(styled.button))>
+      </Styled(styled.button)>
       <AsyncButton
         disabled={false}
         isLoading={true}

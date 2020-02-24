@@ -19,7 +19,7 @@ Object.setPrototypeOf(ApiError, Error);
  *
  * @param {Object} response - Fetch response object
  */
-export function handleResponse(response) {
+export async function handleResponse(response) {
   const contentType = response.headers.get('content-type');
   const statusCode = response.status;
   if (statusCode < 400) {

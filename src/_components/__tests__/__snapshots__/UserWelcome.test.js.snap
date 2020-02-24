@@ -41,7 +41,6 @@ exports[`renders correctly with a valid user prop 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  padding: 8px;
   color: #0A169A;
   background-color: inherit;
 }
@@ -97,11 +96,11 @@ exports[`renders correctly with a valid user prop 1`] = `
   className="c0"
 >
   <button
-    className="c1"
+    className="sc-fzplWN c1"
     onClick={[Function]}
   >
     <div
-      className="c2"
+      className="sc-AxirZ c2"
     >
       <div
         className="c3"
@@ -112,7 +111,7 @@ exports[`renders correctly with a valid user prop 1`] = `
         />
       </div>
       <div
-        className="c5"
+        className="sc-AxhCb c5"
       >
         <svg
           className="c6 c7"

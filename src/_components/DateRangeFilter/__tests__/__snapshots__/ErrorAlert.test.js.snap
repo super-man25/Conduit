@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   height="20px"
 >
   <svg
@@ -49,7 +49,7 @@ exports[`renders correctly 1`] = `
     />
   </svg>
   <p
-    className="c2"
+    className="sc-fznLPX c2"
     color="#DC0A0A"
     size={12}
   >

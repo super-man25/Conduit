@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
+
 import { cssConstants, shadows } from '_constants';
-import { withBoxModelProps } from '_helpers/style-utils';
 
 type Props = {
   fontSize: string,
@@ -11,7 +11,7 @@ type Props = {
   minWidth: string,
 };
 
-export const Button: React.ComponentType<Props> = withBoxModelProps(styled.button`
+export const Button: React.ComponentType<Props> = styled.button`
   border: none;
   min-width: ${(props) => props.minWidth || '100px'};
   padding: 1rem 2rem;
@@ -24,7 +24,7 @@ export const Button: React.ComponentType<Props> = withBoxModelProps(styled.butto
   &:disabled {
     cursor: not-allowed;
   }
-`);
+`;
 
 export const PrimaryButton = styled(Button)`
   transition: opacity 100ms ease-out;
@@ -70,21 +70,6 @@ export const SecondaryButton = styled(Button)`
     border: 3px solid ${cssConstants.PRIMARY_BLUE};
     background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
     color: ${cssConstants.PRIMARY_BLUE};
-  }
-`;
-
-export const TertiaryButton = styled(Button)`
-  background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-  opacity: 0.8;
-
-  &:disabled {
-    opacity: 0.5;
-  }
-
-  &:hover:not(:disabled) {
-    opacity: 1;
-    background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
   }
 `;
 

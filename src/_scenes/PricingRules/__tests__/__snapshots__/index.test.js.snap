@@ -46,7 +46,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
             selected={null}
           />
           <Styled(styled.div)>
-            <Styled(Styled(styled.button))
+            <Styled(styled.button)
               disabled={false}
               onClick={[Function]}
               style={
@@ -57,7 +57,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
               }
             >
               New Rule
-            </Styled(Styled(styled.button))>
+            </Styled(styled.button)>
           </Styled(styled.div)>
         </Flex>
       </styled.div>

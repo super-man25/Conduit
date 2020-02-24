@@ -31,6 +31,8 @@ exports[`<VirtualizedEventInventoryPresenter /> should render loading state 1`] 
     }
   }
 >
-  <CenteredLoader />
+  <Loader
+    centered={true}
+  />
 </div>
 `;

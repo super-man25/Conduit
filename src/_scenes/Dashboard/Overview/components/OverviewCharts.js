@@ -304,7 +304,7 @@ export const OverviewCharts = ({
       {loading ? (
         <PanelContent>
           <Spacing padding="200px 0">
-            <Loader />
+            <Loader centered />
           </Spacing>
         </PanelContent>
       ) : (

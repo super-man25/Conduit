@@ -51,6 +51,7 @@ exports[`renders correctly with a header and content 1`] = `
   border: 1px solid #D1D1D1;
   border-top: none;
   padding: 18px 24px 30px;
+  position: relative;
 }
 
 .c3 + .c2 {

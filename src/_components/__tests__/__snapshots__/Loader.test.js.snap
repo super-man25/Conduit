@@ -6,65 +6,71 @@ exports[`should render default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: auto;
-  width: 68px;
+  width: 75px;
   height: 14px;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c1 {
-  height: 14px;
-  width: 14px;
-  border-radius: 14px;
-  background-color: #0A169A;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
 }
 
 .c2 {
-  height: 14px;
   width: 14px;
-  border-radius: 14px;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
   background-color: #0A169A;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
-  -webkit-animation-delay: 0.30000000000000004s;
-  animation-delay: 0.30000000000000004s;
+}
+
+.c2 + .c1 {
+  margin-left: 5px;
 }
 
 .c3 {
-  height: 14px;
   width: 14px;
-  border-radius: 14px;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
+  -webkit-animation-delay: 0.30000000000000004s;
+  animation-delay: 0.30000000000000004s;
   background-color: #0A169A;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
+}
+
+.c3 + .c1 {
+  margin-left: 5px;
+}
+
+.c4 {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  background-color: #0A169A;
+}
+
+.c4 + .c1 {
+  margin-left: 5px;
 }
 
 <div
-  className="c0"
-  height="14px"
-  width="68px"
+  className=""
 >
   <div
-    className="c1"
-  />
-  <div
-    className="c2"
-  />
-  <div
-    className="c3"
-  />
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+    />
+    <div
+      className="c1 c3"
+    />
+    <div
+      className="c1 c4"
+    />
+  </div>
 </div>
 `;
 
@@ -74,77 +80,70 @@ exports[`should render with optional props 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: auto;
-  width: 46px;
+  width: 45px;
   height: 10px;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.c1 {
-  height: 14px;
-  width: 14px;
-  border-radius: 14px;
-  background-color: pink;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-  height: 10px;
-  width: 10px;
-  border-radiusd: 10px;
 }
 
 .c2 {
-  height: 14px;
   width: 14px;
-  border-radius: 14px;
-  background-color: pink;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
-  -webkit-animation-delay: 0.30000000000000004s;
-  animation-delay: 0.30000000000000004s;
-  height: 10px;
-  width: 10px;
-  border-radiusd: 10px;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  background-color: #0A169A;
+}
+
+.c2 + .c1 {
+  margin-left: 5px;
 }
 
 .c3 {
-  height: 14px;
   width: 14px;
-  border-radius: 14px;
-  background-color: pink;
-  -webkit-animation: bFptHC 1.3s ease infinite;
-  animation: bFptHC 1.3s ease infinite;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
+  -webkit-animation-delay: 0.30000000000000004s;
+  animation-delay: 0.30000000000000004s;
+  background-color: #0A169A;
+}
+
+.c3 + .c1 {
+  margin-left: 5px;
+}
+
+.c4 {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  -webkit-animation: cHDNma 1.3s ease infinite;
+  animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
-  height: 10px;
-  width: 10px;
-  border-radiusd: 10px;
+  background-color: #0A169A;
+}
+
+.c4 + .c1 {
+  margin-left: 5px;
 }
 
 <div
-  className="c0"
-  color="pink"
-  height="10px"
-  width="46px"
+  className=""
 >
   <div
-    className="c1"
-    color="pink"
-  />
-  <div
-    className="c2"
-    color="pink"
-  />
-  <div
-    className="c3"
-    color="pink"
-  />
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+    />
+    <div
+      className="c1 c3"
+    />
+    <div
+      className="c1 c4"
+    />
+  </div>
 </div>
 `;

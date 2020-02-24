@@ -1,11 +1,12 @@
 // @flow
-import { H4, Input, ScrollableList, Flex, CenteredLoader } from '_components';
-import { cssConstants, containerPadding } from '_constants';
 import React from 'react';
 import styled from 'styled-components';
-import { EventListItem } from './EventListItem';
-import type { EDEvent } from '_models';
+
+import { cssConstants, containerPadding } from '_constants';
 import { isPastEvent } from '_helpers';
+import type { EDEvent } from '_models';
+import { H4, Input, ScrollableList, Flex, Loader } from '_components';
+import { EventListItem } from './EventListItem';
 
 const OverflowContent = styled.div`
   overflow-y: scroll;
@@ -123,7 +124,7 @@ export function EventListPresenter(props: Props) {
         </SearchContainer>
       </HeaderContainer>
 
-      {loading ? <CenteredLoader /> : renderContent()}
+      {loading ? <Loader centered /> : renderContent()}
     </Flex>
   );
 }

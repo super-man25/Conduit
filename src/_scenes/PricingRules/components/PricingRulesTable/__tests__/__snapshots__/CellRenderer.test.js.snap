@@ -21,7 +21,8 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "componentId": "sc-rBLzX",
+          "baseHash": -2040692261,
+          "componentId": "sc-pbYBj",
           "isStatic": false,
           "rules": Array [
             "
@@ -71,14 +72,15 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
   max-width: 80px;
 ",
           ],
+          "staticRulesId": "",
         },
         "displayName": "Styled(Styled(styled.input))",
         "foldedComponentIds": Array [
-          "sc-cHGsZl",
-          "sc-kgAjT",
+          "sc-fzomuh",
+          "sc-fzqMdD",
         ],
         "render": [Function],
-        "styledComponentId": "sc-rBLzX",
+        "styledComponentId": "sc-pbYBj",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

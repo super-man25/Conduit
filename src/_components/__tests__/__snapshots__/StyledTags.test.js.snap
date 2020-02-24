@@ -6,26 +6,26 @@ exports[`H1 renders correctly with color prop 1`] = `
 }
 
 <h1
-  className="c0"
+  className="sc-fzoYkl c0"
   color="red"
 />
 `;
 
 exports[`H1 renders correctly with floatLeft prop 1`] = `
 <h1
-  className=""
+  className="sc-fzoYkl "
 />
 `;
 
 exports[`H1 renders correctly with floatRight prop 1`] = `
 <h1
-  className=""
+  className="sc-fzoYkl "
 />
 `;
 
 exports[`H1 renders correctly with no props 1`] = `
 <h1
-  className=""
+  className="sc-fzoYkl "
 />
 `;
 
@@ -35,7 +35,7 @@ exports[`H1 renders correctly with size prop 1`] = `
 }
 
 <h1
-  className="c0"
+  className="sc-fzoYkl c0"
   size="31px"
 />
 `;
@@ -46,7 +46,7 @@ exports[`H1 renders correctly with weight prop 1`] = `
 }
 
 <h1
-  className="c0"
+  className="sc-fzoYkl c0"
 />
 `;
 
@@ -211,7 +211,7 @@ exports[`H4 renders correctly with color prop 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
 />
 `;
@@ -224,7 +224,7 @@ exports[`H4 renders correctly with floatLeft prop 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
 />
 `;
@@ -237,7 +237,7 @@ exports[`H4 renders correctly with floatRight prop 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
 />
 `;
@@ -250,7 +250,7 @@ exports[`H4 renders correctly with no props 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
 />
 `;
@@ -263,7 +263,7 @@ exports[`H4 renders correctly with size prop 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
   size="31px"
 />
@@ -277,7 +277,7 @@ exports[`H4 renders correctly with weight prop 1`] = `
 }
 
 <h4
-  className="c0"
+  className="sc-fzoant c0"
   color="#070707"
 />
 `;

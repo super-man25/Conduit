@@ -1,24 +1,31 @@
-// @flow
-
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { cssConstants } from '_constants';
 
-const LARGE_HEIGHT = '14px';
-const SMALL_HEIGHT = '10px';
-const LARGE_WIDTH = '68px';
-const SMALL_WIDTH = '46px';
+const smallHeight = 10;
+const largeHeight = 14;
+const smallWidth = 45;
+const largeWidth = 75;
 
-const Wrapper = styled.div.attrs((props) => ({
-  height: props.small ? SMALL_HEIGHT : LARGE_HEIGHT,
-  width: props.small ? SMALL_WIDTH : LARGE_WIDTH,
-}))`
+const StyledLoader = styled.div`
+  ${({ centered }) =>
+    centered &&
+    `
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
+`;
+
+const DotContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: auto;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  align-self: center;
+  width: ${({ small }) => (small ? smallWidth : largeWidth)}px;
+  height: ${({ small }) => (small ? smallHeight : largeHeight)}px;
 `;
 
 const dotAnimation = keyframes`
@@ -30,32 +37,25 @@ const dotAnimation = keyframes`
   }
 `;
 
-const Dot = styled.div`
-  height: ${LARGE_HEIGHT};
-  width: ${LARGE_HEIGHT};
-  border-radius: ${LARGE_HEIGHT};
-  background-color: ${(props) => props.color || cssConstants.PRIMARY_BLUE};
+const AnimatedDot = styled.div`
+  width: ${({ small }) => (small ? smallHeight : largeHeight)}px;
+  height: ${({ small }) => (small ? smallHeight : largeHeight)}px;
+  border-radius: 100px;
   animation: ${dotAnimation} 1.3s ease infinite;
   animation-delay: ${(props) => `${0.1 + props.index * 0.2}s`};
+  background-color: ${cssConstants.PRIMARY_BLUE};
 
-  ${(props) =>
-    props.small &&
-    css`
-      height: ${SMALL_HEIGHT};
-      width: ${SMALL_HEIGHT};
-      border-radiusd: ${SMALL_HEIGHT};
-    `};
+  & + & {
+    margin-left: 5px;
+  }
 `;
 
-type Props = {
-  small: boolean,
-  color: string,
-};
-
-export const Loader = (props: Props) => (
-  <Wrapper {...props}>
-    <Dot index={0} {...props} />
-    <Dot index={1} {...props} />
-    <Dot index={2} {...props} />
-  </Wrapper>
+export const Loader = ({ small, centered }) => (
+  <StyledLoader centered={centered}>
+    <DotContainer small={small}>
+      <AnimatedDot index={0} />
+      <AnimatedDot index={1} />
+      <AnimatedDot index={2} />
+    </DotContainer>
+  </StyledLoader>
 );

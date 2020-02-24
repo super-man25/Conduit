@@ -9,7 +9,7 @@ import {
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import {
   selectors as priceRuleSelectors,
@@ -29,7 +29,7 @@ import {
   selectors as eventCategorySelectors,
 } from '_state/eventCategory';
 import { formatUSD, compare } from '_helpers/string-utils';
-import { CenteredLoader, Flex, Text } from '_components';
+import { Loader, Flex, Text } from '_components';
 import { defaultColumnHeaderRenderer } from './ColumnHeaderRenderer';
 import { MultiSelectCellPresenter } from './MultiSelectCellRenderer';
 import { DropDownCellPresenter } from './DropdownCellRenderer';
@@ -144,7 +144,8 @@ const columns = [
       optionsKey: 'events',
       labelLength: 28,
       labelFn: (option) =>
-        option && `${format(option.timestamp, 'M/d/yyyy')} - ${option.name}`,
+        option &&
+        `${format(parseISO(option.timestamp), 'M/d/yyyy')} - ${option.name}`,
       isGroupable: true,
       grouping: {
         categoriesKey: 'eventCategories',
@@ -278,7 +279,7 @@ export class VirtualizedPricingRulesPresenter extends React.Component<Props> {
     ) {
       return (
         <div style={{ position: 'relative', height: '100%' }}>
-          <CenteredLoader />
+          <Loader centered />
         </div>
       );
     }

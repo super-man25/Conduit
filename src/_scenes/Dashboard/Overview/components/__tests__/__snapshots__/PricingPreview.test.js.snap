@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c5 path {
+.c4 path {
   fill: #0A169A;
 }
 
@@ -57,10 +57,6 @@ exports[`renders correctly 1`] = `
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c4 {
-  margin: 0.5rem 0;
-}
-
 .c6 {
   padding: 1.5rem;
 }
@@ -88,10 +84,6 @@ exports[`renders correctly 1`] = `
   text-align: right;
 }
 
-.c3 {
-  display: inline-block;
-}
-
 .c10 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -113,55 +105,75 @@ exports[`renders correctly 1`] = `
   border-bottom: none;
 }
 
+.c3 {
+  margin: 0.5rem 0;
+  position: relative;
+  width: 22px;
+}
+
+.c5 {
+  position: absolute;
+  bottom: 100%;
+  left: -64px;
+  background-color: #0A169A;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+  display: none;
+}
+
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="column"
   width="100%"
 >
   <div
-    className="c1"
+    className="sc-AxirZ c1"
   >
     <h4
-      className="c2"
+      className="sc-fzoant c2"
       color="#070707"
     >
       Preview
     </h4>
     <div
-      className="c3"
+      className="sc-fzpkqZ c3"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <div
+      <svg
         className="c4"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        color="#0A169A"
+        height="22px"
+        viewBox="0 0 24 24"
+        width="22px"
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
-        >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+        <path
+          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+        />
+      </svg>
+      <div
+        className="c5"
+      >
+        The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="sc-fzpkqZ c6"
   >
     <div
-      className="c7"
+      className="sc-AxirZ c7"
       direction="row"
     >
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c9"
+          className="sc-fznLPX c9"
           color="#999999"
           size={14}
         >
@@ -169,11 +181,11 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c9"
+          className="sc-fznLPX c9"
           color="#999999"
           size={14}
         >
@@ -182,37 +194,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="sc-AxirZ c10"
       direction="row"
     >
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c11"
+          className="sc-fznLPX c11"
           color="#999999"
         >
           Event
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $52.18
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $1,147.73
@@ -220,37 +232,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="sc-AxirZ c10"
       direction="row"
     >
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c11"
+          className="sc-fznLPX c11"
           color="#999999"
         >
           Section 14
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $421.36
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $1,120.58
@@ -258,37 +270,37 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="c10"
+      className="sc-AxirZ c10"
       direction="row"
     >
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c11"
+          className="sc-fznLPX c11"
           color="#999999"
         >
           Section 114
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $285.06
         </p>
       </div>
       <div
-        className="c8"
+        className="sc-fzpkqZ c8"
         width="33%"
       >
         <p
-          className="c12 private"
+          className="sc-fznLPX c12 private"
           color="#0A169A"
         >
           $856.69
@@ -300,12 +312,12 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders the error preview 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c5 path {
+.c4 path {
   fill: #0A169A;
 }
 
@@ -371,10 +383,6 @@ exports[`renders the error preview 1`] = `
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c4 {
-  margin: 0.5rem 0;
-}
-
 .c8 {
   color: #B80C09;
   margin: 0;
@@ -382,47 +390,63 @@ exports[`renders the error preview 1`] = `
 }
 
 .c3 {
-  display: inline-block;
+  margin: 0.5rem 0;
+  position: relative;
+  width: 22px;
+}
+
+.c5 {
+  position: absolute;
+  bottom: 100%;
+  left: -64px;
+  background-color: #0A169A;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+  display: none;
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="column"
   width="100%"
 >
   <div
-    className="c1"
+    className="sc-AxirZ c1"
   >
     <h4
-      className="c2"
+      className="sc-fzoant c2"
       color="#070707"
     >
       Preview
     </h4>
     <div
-      className="c3"
+      className="sc-fzpkqZ sc-fznAgC c3"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <div
+      <svg
         className="c4"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        color="#0A169A"
+        height="22px"
+        viewBox="0 0 24 24"
+        width="22px"
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
-        >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+        <path
+          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+        />
+      </svg>
+      <div
+        className="c5"
+      >
+        The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="sc-AxirZ c6"
     direction="column"
     width="50%"
   >
@@ -438,7 +462,7 @@ exports[`renders the error preview 1`] = `
       />
     </svg>
     <p
-      className="c8"
+      className="sc-fznLPX c8"
       color="#B80C09"
     >
       A server error has occurred, please contact
@@ -460,12 +484,12 @@ exports[`renders the error preview 1`] = `
 `;
 
 exports[`renders the loading preview 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c5 path {
+.c4 path {
   fill: #0A169A;
 }
 
@@ -521,60 +545,72 @@ exports[`renders the loading preview 1`] = `
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c4 {
-  margin: 0.5rem 0;
-}
-
 .c7 {
   color: #0A169A;
   margin: 0;
 }
 
 .c3 {
-  display: inline-block;
+  margin: 0.5rem 0;
+  position: relative;
+  width: 22px;
+}
+
+.c5 {
+  position: absolute;
+  bottom: 100%;
+  left: -64px;
+  background-color: #0A169A;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+  display: none;
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="column"
   width="100%"
 >
   <div
-    className="c1"
+    className="sc-AxirZ c1"
   >
     <h4
-      className="c2"
+      className="sc-fzoant c2"
       color="#070707"
     >
       Preview
     </h4>
     <div
-      className="c3"
+      className="sc-fzpkqZ sc-fznAgC c3"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <div
+      <svg
         className="c4"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        color="#0A169A"
+        height="22px"
+        viewBox="0 0 24 24"
+        width="22px"
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
-        >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+        <path
+          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+        />
+      </svg>
+      <div
+        className="c5"
+      >
+        The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="sc-AxirZ c6"
   >
     <p
-      className="c7"
+      className="sc-fznLPX c7"
       color="#0A169A"
     >
       Loading Price Preview...
@@ -584,12 +620,12 @@ exports[`renders the loading preview 1`] = `
 `;
 
 exports[`renders the null eventScore message in pricing preview 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c5 path {
+.c4 path {
   fill: #0A169A;
 }
 
@@ -645,60 +681,72 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c4 {
-  margin: 0.5rem 0;
-}
-
 .c7 {
   color: #999999;
   margin: 0;
 }
 
 .c3 {
-  display: inline-block;
+  margin: 0.5rem 0;
+  position: relative;
+  width: 22px;
+}
+
+.c5 {
+  position: absolute;
+  bottom: 100%;
+  left: -64px;
+  background-color: #0A169A;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  font-size: 10px;
+  display: none;
 }
 
 <div
-  className="c0"
+  className="sc-AxirZ c0"
   direction="column"
   width="100%"
 >
   <div
-    className="c1"
+    className="sc-AxirZ c1"
   >
     <h4
-      className="c2"
+      className="sc-fzoant c2"
       color="#070707"
     >
       Preview
     </h4>
     <div
-      className="c3"
+      className="sc-fzpkqZ sc-fznAgC c3"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
     >
-      <div
+      <svg
         className="c4"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        color="#0A169A"
+        height="22px"
+        viewBox="0 0 24 24"
+        width="22px"
       >
-        <svg
-          className="c5"
-          color="#0A169A"
-          height="22px"
-          viewBox="0 0 24 24"
-          width="22px"
-        >
-          <path
-            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-          />
-        </svg>
+        <path
+          d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+        />
+      </svg>
+      <div
+        className="c5"
+      >
+        The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="sc-AxirZ c6"
   >
     <p
-      className="c7"
+      className="sc-fznLPX c7"
       color="#999999"
     >
       The pricing preview section will be available once the event has been priced.

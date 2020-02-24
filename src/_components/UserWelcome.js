@@ -6,14 +6,7 @@ import styled from 'styled-components';
 import { cssConstants, shadows, zIndexes, navigationHeight } from '_constants';
 import type { EDClient, EDClientList } from '_models';
 import { isMobileDevice } from '_helpers';
-import {
-  Flex,
-  FlexItem,
-  Icon,
-  CenteredLoader,
-  Text,
-  TextButton,
-} from '_components';
+import { Flex, FlexItem, Icon, Loader, Text, TextButton } from '_components';
 import { useClickAway } from '_hooks';
 
 const Overlay = styled.div`
@@ -198,7 +191,7 @@ export const UserWelcome = (props: Props) => {
         {isOpen && (
           <ClientDropDown>
             {loading ? (
-              <CenteredLoader />
+              <Loader centered />
             ) : (
               clientList.clients.map((client) =>
                 renderClientMenuItem(client, id)

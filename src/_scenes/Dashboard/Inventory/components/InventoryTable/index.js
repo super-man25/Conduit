@@ -10,7 +10,7 @@ import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
 import { selectors, actions } from '_state/eventInventory';
 import { connect } from 'react-redux';
-import { CenteredLoader, Flex, Text } from '_components';
+import { Loader, Flex, Text } from '_components';
 import { getInventoryColumns } from './InventoryColumns';
 import type { EDEvent, EDInventoryRow, EDVenuePriceScale } from '_models';
 import type { Node } from 'react';
@@ -76,7 +76,7 @@ export const VirtualizedEventInventoryPresenter = (props: Props) => {
   if (loading) {
     return (
       <div style={{ position: 'relative', height: '100%' }}>
-        <CenteredLoader />
+        <Loader centered />
       </div>
     );
   }

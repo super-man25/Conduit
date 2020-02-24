@@ -26,7 +26,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
         Last
       </Styled(Styled(styled.div))>
     </Styled(Flex)>
-    <Styled(Styled(Styled(Styled(styled.button))))
+    <Styled(Styled(Styled(styled.button)))
       data-test-id="edit-name-button"
       onClick={[Function]}
       weight="bold"
@@ -45,7 +45,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     <Styled(Styled(styled.div))>
       test@eventdynamic.com
     </Styled(Styled(styled.div))>
-    <Styled(Styled(Styled(Styled(styled.button))))
+    <Styled(Styled(Styled(styled.button)))
       onClick={[Function]}
       weight="bold"
     />
@@ -65,7 +65,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
     <Styled(Flex)>
       <Styled(Styled(styled.div)) />
     </Styled(Flex)>
-    <Styled(Styled(Styled(Styled(styled.button))))
+    <Styled(Styled(Styled(styled.button)))
       data-test-id="edit-phone-number-button"
       onClick={[Function]}
       weight="bold"
@@ -86,7 +86,7 @@ exports[`<ContactInfo /> renders correctly 1`] = `
         xxxxxxxxxx
       </Styled(Styled(styled.div))>
     </Styled(Flex)>
-    <Styled(Styled(Styled(Styled(styled.button))))
+    <Styled(Styled(Styled(styled.button)))
       onClick={[Function]}
       weight="bold"
     />

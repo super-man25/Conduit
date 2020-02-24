@@ -121,11 +121,11 @@ exports[`<TeamInfo /> renders correctly when isEditing is true 1`] = `
       </option>
     </styled.select>
     <Styled(Flex)>
-      <Styled(Styled(styled.button))
+      <Styled(styled.button)
         onClick={[Function]}
       >
         Save
-      </Styled(Styled(styled.button))>
+      </Styled(styled.button)>
     </Styled(Flex)>
   </withClickAway(Styled(styled.div))>
 </Styled(Flex)>

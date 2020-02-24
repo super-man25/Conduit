@@ -122,7 +122,7 @@ export class NumberInputField extends React.Component<NumberInputProps> {
   };
 
   render() {
-    const { component, ...props } = this.props;
+    const { component, ...props }: any = this.props;
 
     let InputComponent = component;
     return <InputComponent onKeyDown={this.onKeyDown} {...props} />;

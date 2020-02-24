@@ -11,26 +11,26 @@ import type { EDUser } from '_models/user';
 import { history } from '_helpers';
 import { actions as authActions, selectors } from '_state/auth';
 import { GlobalStyles } from './globalStyles';
-import { SecuredRoute, CenteredLoader, ApiAlert } from '_components';
+import { SecuredRoute, Alert, Loader } from '_components';
 
 const Dashboard = Loadable({
   loader: () => import('_scenes/Dashboard'),
-  loading: CenteredLoader,
+  loading: () => <Loader centered />,
 });
 
 const Login = Loadable({
   loader: () => import('_scenes/Login'),
-  loading: CenteredLoader,
+  loading: () => <Loader centered />,
 });
 
 const Settings = Loadable({
   loader: () => import('_scenes/Settings'),
-  loading: CenteredLoader,
+  loading: () => <Loader centered />,
 });
 
 const PricingRules = Loadable({
   loader: () => import('_scenes/PricingRules'),
-  loading: CenteredLoader,
+  loading: () => <Loader centered />,
 });
 
 type Props = {
@@ -83,7 +83,7 @@ class App extends React.Component<Props> {
     const isAuthorized = !!user;
 
     return loading ? (
-      <CenteredLoader />
+      <Loader centered />
     ) : (
       <ConnectedRouter history={history}>
         <GlobalStyles />
@@ -105,7 +105,7 @@ class App extends React.Component<Props> {
             component={Dashboard}
           />
         </Switch>
-        <ApiAlert />
+        <Alert />
       </ConnectedRouter>
     );
   }

@@ -21,7 +21,7 @@ import {
   Flex,
   FlexItem,
   PrimaryButton,
-  CenteredLoader,
+  Loader,
 } from '_components';
 import { VirtualizedEventInventory } from './components/InventoryTable';
 import { EventInventorySeatMap } from './components/InventorySeatMap';
@@ -85,6 +85,6 @@ export const EventInventory = ({ match }: Props) => {
       )}
     </PageWrapper>
   ) : (
-    <CenteredLoader />
+    <Loader centered />
   );
 };
