@@ -9,7 +9,7 @@ import {
 import 'react-virtualized/styles.css';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import {
   selectors as priceRuleSelectors,
@@ -144,7 +144,8 @@ const columns = [
       optionsKey: 'events',
       labelLength: 28,
       labelFn: (option) =>
-        option && `${format(option.timestamp, 'M/d/yyyy')} - ${option.name}`,
+        option &&
+        `${format(parseISO(option.timestamp), 'M/d/yyyy')} - ${option.name}`,
       isGroupable: true,
       grouping: {
         categoriesKey: 'eventCategories',
