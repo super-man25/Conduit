@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c30 {
+.c32 {
   display: inline-block;
   vertical-align: middle;
 }
 
-.c30 path {
+.c32 path {
   fill: #0A169A;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
   height: 100%;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
   flex-direction: row;
 }
 
-.c10 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
-.c12 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,7 @@ exports[`renders correctly 1`] = `
   margin: 0.5rem 0;
 }
 
-.c16 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,7 +83,7 @@ exports[`renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -99,7 +99,7 @@ exports[`renders correctly 1`] = `
   padding: 14px 0;
 }
 
-.c22 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`renders correctly 1`] = `
   width: 33%;
 }
 
-.c23 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
   width: 33%;
 }
 
-.c26 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,7 +137,7 @@ exports[`renders correctly 1`] = `
   padding: 0 20px;
 }
 
-.c27 {
+.c29 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -151,7 +151,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
 }
 
-.c32 {
+.c34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -170,7 +170,7 @@ exports[`renders correctly 1`] = `
   margin: auto;
 }
 
-.c14 {
+.c16 {
   border: none;
   min-width: 0;
   padding: 1rem 2rem;
@@ -184,87 +184,86 @@ exports[`renders correctly 1`] = `
   background-color: inherit;
 }
 
-.c14:disabled {
+.c16:disabled {
   cursor: not-allowed;
 }
 
-.c14:disabled {
+.c16:disabled {
   color: #D1D1D1;
   opacity: 0.5;
 }
 
-.c14:hover:not(:disabled) {
+.c16:hover:not(:disabled) {
   color: #38A9DB;
 }
 
-.c4 {
+.c5 {
   color: #070707;
   font-size: 18px;
   font-weight: bold;
   margin: 0 2.5rem 0 0;
 }
 
-.c13 {
+.c15 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
 }
 
-.c28 {
+.c30 {
   color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.c15 {
+.c17 {
   padding: 1.5rem;
 }
 
-.c17 {
+.c19 {
   width: 33%;
 }
 
-.c18 {
+.c20 {
   font-size: 14px;
   color: #999999;
   margin: 0;
   text-align: right;
 }
 
-.c20 {
+.c22 {
   color: #999999;
   margin: 0;
 }
 
-.c21 {
+.c23 {
   color: #070707;
   margin: 0;
   text-align: right;
 }
 
-.c24 {
+.c26 {
   font-weight: 700;
   color: #070707;
   margin: 0;
 }
 
-.c25 {
+.c27 {
   font-weight: 700;
   color: #070707;
   margin: 0;
   text-align: right;
 }
 
-.c1 {
+.c2 {
   border: 1px solid #D1D1D1;
   border-radius: 6px 6px 0 0;
-  padding: 0 24px;
-  height: 56px;
+  padding: 15px 25px;
 }
 
-.c8 {
+.c9 {
   cursor: pointer;
   width: 40px;
   height: 8px;
@@ -273,7 +272,7 @@ exports[`renders correctly 1`] = `
   position: relative;
 }
 
-.c8::before {
+.c9::before {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -292,7 +291,7 @@ exports[`renders correctly 1`] = `
   transition: 0.3s transform;
 }
 
-.c5 {
+.c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -308,20 +307,20 @@ exports[`renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c6 {
+.c7 {
   display: none;
   background-color: #767676;
 }
 
-.c6:checked + .c7 {
+.c7:checked + .c8 {
   background-color: #1F49B6;
 }
 
-.c6:disabled + .c7 {
+.c7:disabled + .c8 {
   cursor: not-allowed;
 }
 
-.c11 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -334,13 +333,13 @@ exports[`renders correctly 1`] = `
   width: 100%;
 }
 
-.c29 {
+.c31 {
   margin: 0.5rem 0;
   position: relative;
   width: 22px;
 }
 
-.c31 {
+.c33 {
   position: absolute;
   bottom: 100%;
   left: -64px;
@@ -353,15 +352,19 @@ exports[`renders correctly 1`] = `
   display: none;
 }
 
-.c0 {
+.c1 {
   background-color: #FFFFFF;
   margin-top: 25px;
 }
 
-.c9 {
+.c1 + .c0 {
+  margin-top: 25px;
+}
+
+.c11 {
   border: 1px solid #D1D1D1;
   border-top: none;
-  padding: 18px 24px 30px;
+  padding: 25px;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -377,46 +380,45 @@ exports[`renders correctly 1`] = `
   justify-content: space-around;
 }
 
-.c9 + .sc-oTbqq {
-  padding-top: 24px;
+.c11 + .c10 {
+  padding-top: 25px;
 }
 
-.c9:last-child {
+.c11:last-child {
   border-radius: 0 0 6px 6px;
-  padding-bottom: 18px;
 }
 
 <div
-  className="sc-pRFjI c0"
+  className="sc-pRFjI c0 c1"
 >
   <header
-    className="c1"
+    className="c2"
   >
     <div
-      className="sc-AxirZ c2"
+      className="sc-AxirZ c3"
       height="100%"
     >
       <div
-        className="sc-AxirZ c3"
+        className="sc-AxirZ c4"
       >
         <h4
-          className="sc-fzoant c4"
+          className="sc-fzoant c5"
           color="#070707"
         >
           Pricing
         </h4>
         <label
-          className="c5"
+          className="c6"
           title="Enable pricing"
         >
           <input
-            className="c6"
+            className="c7"
             disabled={false}
             onChange={[Function]}
             type="checkbox"
           />
           <span
-            className="c7 c8"
+            className="c8 c9"
             size={
               Object {
                 "height": 8,
@@ -430,28 +432,28 @@ exports[`renders correctly 1`] = `
     </div>
   </header>
   <section
-    className="sc-oTbqq c9"
+    className="sc-oTbqq c10 c11"
   >
     <div
-      className="sc-AxirZ c10"
+      className="sc-AxirZ c12"
       direction="column"
       width="100%"
     >
       <div
-        className="sc-AxirZ c11"
+        className="sc-AxirZ c13"
         direction="column"
       >
         <div
-          className="sc-AxirZ c12"
+          className="sc-AxirZ c14"
         >
           <h4
-            className="sc-fzoant c13"
+            className="sc-fzoant c15"
             color="#070707"
           >
             Modifiers
           </h4>
           <button
-            className="sc-fzplWN c14"
+            className="sc-fzplWN c16"
             disabled={false}
             onClick={[Function]}
             style={
@@ -464,18 +466,18 @@ exports[`renders correctly 1`] = `
           </button>
         </div>
         <div
-          className="sc-fzpkqZ c15"
+          className="sc-fzpkqZ c17"
         >
           <div
-            className="sc-AxirZ c16"
+            className="sc-AxirZ c18"
             direction="row"
           >
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c18"
+                className="sc-fznLPX c20"
                 color="#999999"
                 size={14}
               >
@@ -483,11 +485,11 @@ exports[`renders correctly 1`] = `
               </p>
             </div>
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c18"
+                className="sc-fznLPX c20"
                 color="#999999"
                 size={14}
               >
@@ -496,43 +498,43 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
           <div
-            className="sc-AxirZ c19"
+            className="sc-AxirZ c21"
             direction="row"
           >
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c20"
+                className="sc-fznLPX c22"
                 color="#999999"
               >
                 Predicted
               </p>
             </div>
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c21 private"
+                className="sc-fznLPX c23 private"
               >
                 1.00
               </p>
             </div>
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c21 private"
+                className="sc-fznLPX c23 private"
               >
                 1.0000
               </p>
             </div>
           </div>
           <div
-            className="sc-AxirZ c19"
+            className="sc-AxirZ c21"
             direction="row"
             style={
               Object {
@@ -542,39 +544,39 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="sc-AxirZ c22"
+              className="sc-AxirZ c24"
               width="33%"
             >
               <p
-                className="sc-fznLPX c20"
+                className="sc-fznLPX c22"
                 color="#999999"
               >
                 Modifier
               </p>
             </div>
             <div
-              className="sc-AxirZ c23"
+              className="sc-AxirZ c25"
               width="33%"
             >
               <p
-                className="sc-fznLPX c21 private"
+                className="sc-fznLPX c23 private"
               >
                 1.00
               </p>
             </div>
             <div
-              className="sc-AxirZ c23"
+              className="sc-AxirZ c25"
               width="33%"
             >
               <p
-                className="sc-fznLPX c21 private"
+                className="sc-fznLPX c23 private"
               >
                 1.0000
               </p>
             </div>
           </div>
           <div
-            className="sc-AxirZ c19"
+            className="sc-AxirZ c21"
             direction="row"
             style={
               Object {
@@ -583,61 +585,61 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="sc-AxirZ c22"
+              className="sc-AxirZ c24"
               width="33%"
             >
               <p
-                className="sc-fznLPX c20"
+                className="sc-fznLPX c22"
                 color="#999999"
               >
                 Velocity
               </p>
             </div>
             <div
-              className="sc-AxirZ c23"
+              className="sc-AxirZ c25"
               width="33%"
             >
               <p
-                className="sc-fznLPX c21 private"
+                className="sc-fznLPX c23 private"
               >
                 --
               </p>
             </div>
             <div
-              className="sc-AxirZ c23"
+              className="sc-AxirZ c25"
               width="33%"
             />
           </div>
           <div
-            className="sc-AxirZ c19"
+            className="sc-AxirZ c21"
             direction="row"
           >
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c24"
+                className="sc-fznLPX c26"
               >
                 Final
               </p>
             </div>
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c25 private"
+                className="sc-fznLPX c27 private"
               >
                 --
               </p>
             </div>
             <div
-              className="sc-fzpkqZ c17"
+              className="sc-fzpkqZ c19"
               width="33%"
             >
               <p
-                className="sc-fznLPX c25 private"
+                className="sc-fznLPX c27 private"
               >
                 2.0000
               </p>
@@ -646,26 +648,26 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxirZ c26"
+        className="sc-AxirZ c28"
         direction="column"
         width="100%"
       >
         <div
-          className="sc-AxirZ c27"
+          className="sc-AxirZ c29"
         >
           <h4
-            className="sc-fzoant c28"
+            className="sc-fzoant c30"
             color="#070707"
           >
             Preview
           </h4>
           <div
-            className="sc-fzpkqZ c29"
+            className="sc-fzpkqZ c31"
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
           >
             <svg
-              className="c30"
+              className="c32"
               color="#0A169A"
               height="22px"
               viewBox="0 0 24 24"
@@ -676,17 +678,17 @@ exports[`renders correctly 1`] = `
               />
             </svg>
             <div
-              className="c31"
+              className="c33"
             >
               The preview is calculated off the final values from Event Score and Spring value in relation to modifiers that are entered.
             </div>
           </div>
         </div>
         <div
-          className="sc-AxirZ c32"
+          className="sc-AxirZ c34"
         >
           <p
-            className="sc-fznLPX c20"
+            className="sc-fznLPX c22"
             color="#999999"
           >
             No Price Preview

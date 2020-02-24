@@ -1,34 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.c0 {
+.c1 {
   background-color: #FFFFFF;
 }
 
+.c1 + .c0 {
+  margin-top: 25px;
+}
+
 <div
-  className="c0"
+  className="c0 c1"
 >
   No Content
 </div>
 `;
 
 exports[`renders correctly with a header 1`] = `
-.c0 {
+.c1 {
   background-color: #FFFFFF;
 }
 
-.c1 {
+.c1 + .c0 {
+  margin-top: 25px;
+}
+
+.c2 {
   border: 1px solid #D1D1D1;
   border-radius: 6px 6px 0 0;
-  padding: 0 24px;
-  height: 56px;
+  padding: 15px 25px;
 }
 
 <div
-  className="c0"
+  className="c0 c1"
 >
   <header
-    className="c1"
+    className="c2"
   >
     This is a header
   </header>
@@ -36,43 +43,45 @@ exports[`renders correctly with a header 1`] = `
 `;
 
 exports[`renders correctly with a header and content 1`] = `
-.c0 {
+.c1 {
   background-color: #FFFFFF;
 }
 
-.c1 {
-  border: 1px solid #D1D1D1;
-  border-radius: 6px 6px 0 0;
-  padding: 0 24px;
-  height: 56px;
+.c1 + .c0 {
+  margin-top: 25px;
 }
 
-.c3 {
+.c2 {
+  border: 1px solid #D1D1D1;
+  border-radius: 6px 6px 0 0;
+  padding: 15px 25px;
+}
+
+.c4 {
   border: 1px solid #D1D1D1;
   border-top: none;
-  padding: 18px 24px 30px;
+  padding: 25px;
   position: relative;
 }
 
-.c3 + .c2 {
-  padding-top: 24px;
+.c4 + .c3 {
+  padding-top: 25px;
 }
 
-.c3:last-child {
+.c4:last-child {
   border-radius: 0 0 6px 6px;
-  padding-bottom: 18px;
 }
 
 <div
-  className="c0"
+  className="c0 c1"
 >
   <header
-    className="c1"
+    className="c2"
   >
     This is a header
   </header>
   <section
-    className="c2 c3"
+    className="c3 c4"
   >
     This is the panels content
   </section>

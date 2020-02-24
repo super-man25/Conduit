@@ -14,8 +14,8 @@ import {
   PrimaryButton,
   Spacing,
   Flex,
-  Box,
   Dropdown,
+  SecondaryButton,
 } from '_components';
 import { VirtualizedPricingRules } from './components/PricingRulesTable';
 import { withRouter } from 'react-router-dom';
@@ -35,6 +35,7 @@ import {
 } from '_state/season';
 import { createStructuredSelector } from 'reselect';
 import type { EDSeason } from '_models';
+import { seasonService } from '_services';
 
 const pricingCrumb = [
   {
@@ -99,6 +100,9 @@ export class PricingRules extends React.Component<Props> {
     });
   }
 
+  handlePriceAllEvents = () =>
+    seasonService.priceAllEvents(this.props.activeSeasonId);
+
   render() {
     const {
       editingAnyPriceRule,
@@ -150,18 +154,21 @@ export class PricingRules extends React.Component<Props> {
                     <DropdownItem>{option.nameWithPricingRules}</DropdownItem>
                   )}
                 />
-                <Box>
+                <div>
+                  <SecondaryButton onClick={this.handlePriceAllEvents}>
+                    Price All Events
+                  </SecondaryButton>
                   <PrimaryButton
                     onClick={this.createNewPriceRule.bind(this)}
                     disabled={editingAnyPriceRule}
                     style={{
-                      marginLeft: '2rem',
+                      marginLeft: '15px',
                       cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer',
                     }}
                   >
                     New Rule
                   </PrimaryButton>
-                </Box>
+                </div>
               </Flex>
             </Spacing>
             <PricingRulesTableTableContainer>

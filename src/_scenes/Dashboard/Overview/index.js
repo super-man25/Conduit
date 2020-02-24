@@ -17,6 +17,7 @@ import { isPastEvent } from '_helpers';
 import { EventPricing } from './components/EventPricing';
 import { cssConstants } from '_constants';
 import { EventTicketIntegrations } from './components/EventTicketIntegrations';
+import { PriceAllSection } from './components/PriceAllSection';
 
 const EmptyContentContainer = styled.div`
   height: 100%;
@@ -92,7 +93,10 @@ export const Overview = ({ isSeason, isEvent, match }) => {
       )}
       <OverviewCharts isSeason={isSeason} isEvent={isEvent} />
       {isSeason ? (
-        <SeasonTicketIntegrations id={season.id} />
+        <>
+          <SeasonTicketIntegrations id={season.id} />
+          {isAdmin && <PriceAllSection />}
+        </>
       ) : (
         <EventTicketIntegrations id={event.id} />
       )}

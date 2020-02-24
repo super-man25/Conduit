@@ -7,28 +7,30 @@ const panelBorder = `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`;
 
 export const Panel: ComponentType<{}> = styled.div`
   background-color: ${cssConstants.PRIMARY_WHITE};
+
+  & + & {
+    margin-top: 25px;
+  }
 `;
 
 export const PanelHeader: ComponentType<{}> = styled.header`
   border: ${panelBorder};
   border-radius: 6px 6px 0 0;
-  padding: 0 24px;
-  height: 56px;
+  padding: 15px 25px;
 `;
 
 export const PanelContent: ComponentType<{}> = styled.section`
   border: ${panelBorder};
   border-top: none;
-  padding: 18px 24px 30px;
+  padding: 25px;
   position: relative;
 
-  & + ${() => PanelContent} {
-    padding-top: 24px;
+  & + & {
+    padding-top: 25px;
   }
 
   &:last-child {
     border-radius: 0 0 6px 6px;
-    padding-bottom: 18px;
   }
 `;
 
