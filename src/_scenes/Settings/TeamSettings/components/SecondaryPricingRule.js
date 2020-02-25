@@ -110,7 +110,7 @@ export class SecondaryPricingRulePresenter extends Component {
               </FlexItem>
             </Flex>
             <PrimaryButton onClick={this.saveSettings}>Save</PrimaryButton>
-            <TextButton onClick={this.saveSettings}>Cancel</TextButton>
+            <TextButton onClick={this.toggleEdit}>Cancel</TextButton>
           </Fragment>
         ) : (
           <SettingEditButton weight="bold" onClick={this.toggleEdit} />
