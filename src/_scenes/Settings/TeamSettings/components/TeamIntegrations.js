@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import type { EDIntegration } from '_models';
-import { Flex, FlexItem, H5, HR, S1, Integration, Box } from '_components';
+import { Flex, FlexItem, H5, HR, S1, Box } from '_components';
 import { IntegrationToggleAlertModal } from './IntegrationToggleAlertModal';
+import { Integration } from './Integration';
 
 const TeamIntegrationsWrapper = styled(Flex)`
   flex-direction: column;
@@ -17,8 +18,8 @@ type ClientIntegration = {
   appId: string,
   name: string,
   version: string,
-  createdAt: Date,
-  modifiedAt: Date,
+  createdAt: string,
+  modifiedAt: string,
   isPrimary: boolean,
   isActive: boolean,
 };

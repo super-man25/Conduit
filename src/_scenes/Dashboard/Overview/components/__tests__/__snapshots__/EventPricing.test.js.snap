@@ -366,7 +366,7 @@ exports[`renders correctly 1`] = `
 }
 
 <div
-  className="sc-pRFjI c0 c1"
+  className="sc-fzqyOu c0 c1"
 >
   <header
     className="c2"
@@ -409,7 +409,7 @@ exports[`renders correctly 1`] = `
     </div>
   </header>
   <section
-    className="sc-oTbqq c10 c11"
+    className="sc-pANHa c10 c11"
   >
     <div
       className="sc-AxirZ c12"

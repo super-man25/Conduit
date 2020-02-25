@@ -73,8 +73,8 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -96,7 +96,7 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -206,8 +206,8 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -229,7 +229,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -347,8 +347,8 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -370,7 +370,7 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],

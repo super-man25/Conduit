@@ -7,6 +7,7 @@ import {
   Flex,
   FlexItem,
   Input,
+  TextButton,
 } from '_components';
 import { withClickAway } from '_hoc';
 import { actions } from '_state/client';
@@ -108,7 +109,8 @@ export class SecondaryPricingRulePresenter extends Component {
                 />
               </FlexItem>
             </Flex>
-            <PrimaryButton onClick={this.saveSettings}>SAVE</PrimaryButton>
+            <PrimaryButton onClick={this.saveSettings}>Save</PrimaryButton>
+            <TextButton onClick={this.saveSettings}>Cancel</TextButton>
           </Fragment>
         ) : (
           <SettingEditButton weight="bold" onClick={this.toggleEdit} />
