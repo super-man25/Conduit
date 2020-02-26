@@ -107,7 +107,6 @@ function updateEventSeats(payload: {
   maximumPrice?: number,
 }) {
   return validateOverridePrice(payload).then((denormalizedPayload) => {
-    console.log('DENORMALIZED PAYLOAD', denormalizedPayload);
     return post('eventRows/_bulk', denormalizedPayload);
   });
 }
