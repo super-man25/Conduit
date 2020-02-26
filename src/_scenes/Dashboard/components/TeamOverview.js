@@ -169,7 +169,7 @@ export const TeamOverview = () => {
               {showRecordLabel(performanceType)}
             </P1>
           </FlexItem>
-          <FlexItem flex={2}>
+          <FlexItem flex={1}>
             <StatLabel>{showGamesRemaining(eventList)}</StatLabel>
             <P1
               color={cssConstants.PRIMARY_WHITE}
