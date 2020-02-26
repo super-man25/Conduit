@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { cssConstants } from '_constants';
-import { Box, Text, H4 } from '_components';
+import { Box, Text, H4, Checkbox } from '_components';
 
 export const ModalHeader = styled.div`
   padding: 1.5rem;
@@ -46,4 +46,8 @@ export const Field = styled(Box)`
 export const FieldErrorText = styled(Text)`
   position: absolute;
   top: 100%;
+`;
+
+export const StyledCheckbox = styled(Checkbox)`
+  margin-top: 15px;
 `;

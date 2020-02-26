@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { cssConstants, ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
 import {
   Box,
@@ -11,8 +14,6 @@ import {
   AsyncButton,
   Modal,
 } from '_components';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { selectors, actions } from '_state/eventInventoryBulk';
 import { selectors as eventInventorySelectors } from '_state/eventInventory';
 import { validateDecimal } from '_helpers';
@@ -24,6 +25,7 @@ import {
   Field,
   NumberInput,
   FieldErrorText,
+  StyledCheckbox,
 } from './styled';
 
 const ACTIONS = {
@@ -61,6 +63,7 @@ export class BulkUpdateModalPresenter extends Component {
     touched: {},
     selectedAction: selectActions[0],
     value: '',
+    removeOverridePricesChecked: false,
   };
 
   onBlur = (e) => {
@@ -90,9 +93,18 @@ export class BulkUpdateModalPresenter extends Component {
 
   submit = () => {
     const { submitBulkUpdate } = this.props;
-    const { value, selectedAction } = this.state;
+    const { value, selectedAction, removeOverridePricesChecked } = this.state;
 
-    submitBulkUpdate({
+    if (
+      selectedAction.value === ACTIONS.updatePrice &&
+      removeOverridePricesChecked
+    ) {
+      return submitBulkUpdate({
+        removeOverridePrices: true,
+      });
+    }
+
+    return submitBulkUpdate({
       [selectedAction.dataKey]: value,
     });
   };
@@ -123,6 +135,12 @@ export class BulkUpdateModalPresenter extends Component {
 
     return true;
   }
+
+  toggleRemoveOverridePricesChecked = () => {
+    this.setState((state) => ({
+      removeOverridePricesChecked: !state.removeOverridePricesChecked,
+    }));
+  };
 
   render() {
     const { selectedAction, value } = this.state;
@@ -168,6 +186,7 @@ export class BulkUpdateModalPresenter extends Component {
                 onBlur={this.onBlur}
                 onChange={this.updatePrice}
                 placeholder="$ Manual Price"
+                disabled={this.state.removeOverridePricesChecked}
               />
               {this.state.touched.price && !this.isValidPrice && (
                 <FieldErrorText
@@ -179,6 +198,11 @@ export class BulkUpdateModalPresenter extends Component {
                   Manual Price must be a valid dollar amount.
                 </FieldErrorText>
               )}
+              <StyledCheckbox
+                label="Remove manual prices"
+                checked={this.state.removeOverridePricesChecked}
+                handleChange={this.toggleRemoveOverridePricesChecked}
+              />
             </Field>
           )}
           {selectedAction.value === ACTIONS.updateListed && (

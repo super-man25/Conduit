@@ -103,12 +103,18 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="$ Manual Price"
         type="number"
         value=""
+      />
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
       />
     </Styled(Styled(styled.div))>
     <Flex
@@ -236,6 +242,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -251,6 +258,11 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
       >
         Manual Price must be a valid dollar amount.
       </Styled(Styled(styled.p))>
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
+      />
     </Styled(Styled(styled.div))>
     <Flex
       justify="flex-end"
@@ -377,12 +389,18 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="$ Manual Price"
         type="number"
         value=""
+      />
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
       />
     </Styled(Styled(styled.div))>
     <Flex

@@ -9,7 +9,7 @@ import { selectors, actions as eventInventoryActions } from '../eventInventory';
 
 export function* bulkUpdate(action) {
   const { payload } = action;
-
+  console.log('PAYLOAD', payload);
   if (payload.overridePrice === '') {
     payload.overridePrice = null;
   }
@@ -29,10 +29,11 @@ export function* bulkUpdate(action) {
       chunkedRowSeatIds.map((seatIds) =>
         call(eventService.updateEventSeats, {
           isListed: payload.isListed,
-          overridePrice: parseFloat(payload.overridePrice),
-          minimumPrice: parseFloat(payload.minimumPrice),
-          maximumPrice: parseFloat(payload.maximumPrice),
+          overridePrice: parseFloat(payload.overridePrice) || null,
+          minimumPrice: parseFloat(payload.minimumPrice) || null,
+          maximumPrice: parseFloat(payload.maximumPrice) || null,
           eventSeatIds: seatIds,
+          removeOverridePrices: payload.removeOverridePrices,
         })
       )
     );

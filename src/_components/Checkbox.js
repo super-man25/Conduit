@@ -44,8 +44,8 @@ export const CheckboxGroup = styled.div`
   }
 `;
 
-export const Checkbox = ({ label, checked, handleChange }) => (
-  <CheckboxContainer>
+export const Checkbox = ({ label, checked, handleChange, className }) => (
+  <CheckboxContainer className={className}>
     <HiddenCheckbox checked={checked} onChange={handleChange} name={label} />
     <StyledCheckbox>
       <StyledIcon
