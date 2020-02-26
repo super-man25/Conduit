@@ -91,7 +91,7 @@ export class SecondaryPricingRulePresenter extends Component {
                   component={Input}
                   name="percent"
                   value={this.state.percent || ''}
-                  onChange={(e) => this.update(e)}
+                  onChange={this.update}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Percent"
                   invalid={this.state.percentInvalid}
@@ -102,7 +102,7 @@ export class SecondaryPricingRulePresenter extends Component {
                   component={Input}
                   name="constant"
                   value={this.state.constant || ''}
-                  onChange={(e) => this.update(e)}
+                  onChange={this.update}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Constant"
                   invalid={this.state.constantInvalid}
