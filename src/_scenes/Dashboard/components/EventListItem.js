@@ -109,13 +109,18 @@ const EventTitleContainer = styled.div`
 `;
 
 const EventTitle = styled.div`
-  max-width: 250px;
+  max-width: 200px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: bold;
   font-size: 16px;
   margin-right: 5px;
+`;
+
+const EventDayOfWeek = styled.div`
+  font-size: 12px;
+  margin-right: 3px;
 `;
 
 const EventTime = styled.div`
@@ -254,6 +259,9 @@ export const EventListItem = ({
           <Flex direction="column" flex={1}>
             <EventTitleContainer past={past} title={event.name}>
               <EventTitle>{event.name}</EventTitle>
+              <EventDayOfWeek>
+                {formatDate(event.timestamp, 'EEEE,', event.timeZone)}
+              </EventDayOfWeek>
               <EventTime>
                 {formatDate(event.timestamp, 'h:mma', event.timeZone)}
               </EventTime>
