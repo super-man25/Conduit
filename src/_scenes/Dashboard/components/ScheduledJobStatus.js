@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+
 import { cssConstants } from '_constants';
-import { colorForStatus } from '_constants/status.constants';
 import { P1 } from '_components';
 import type { EDScheduledJob } from '_models';
 import { readableDuration } from '_helpers/string-utils';
@@ -41,33 +41,32 @@ export const ScheduledJobStatus = ({
   }
   const { status, modifiedAt } = scheduledJob;
 
-  const map = {
-    Pending: {
-      status: 'warn',
-      title: 'Pending',
-    },
-    Success: {
-      status: 'success',
-      title: 'Success',
-    },
-    Failure: {
-      status: 'error',
-      title: 'Notice',
-    },
-    Running: {
-      status: 'info',
-      title: 'Running',
-    },
-  };
-
-  const args = map[status];
-  const color = past
+  const statusColor = past
     ? cssConstants.PRIMARY_DARKEST_GRAY
-    : colorForStatus(args.status);
+    : status === 'Pending'
+    ? cssConstants.SECONDARY_BURNT_ORANGE
+    : status === 'Success'
+    ? cssConstants.SECONDARY_GREEN
+    : status === 'Failure'
+    ? cssConstants.SECONDARY_PURPLE
+    : status === 'Running'
+    ? cssConstants.SECONDARY_BLUE
+    : cssConstants.PRIMARY_DARKEST_GRAY;
+
+  const statusText =
+    status === 'Pending'
+      ? `Price update scheduled ${readableDuration(modifiedAt)} ago`
+      : status === 'Success'
+      ? `Price updated ${readableDuration(modifiedAt)} ago`
+      : status === 'Failure'
+      ? `Price update ran ${readableDuration(modifiedAt)} ago`
+      : status === 'Running'
+      ? `Price update started ${readableDuration(modifiedAt)} ago`
+      : '';
 
   return (
-    <ScheduledJobStatusNotice color={color}>
-      Price updated {readableDuration(modifiedAt)} ago
+    <ScheduledJobStatusNotice color={statusColor}>
+      {statusText}
     </ScheduledJobStatusNotice>
   );
 };
