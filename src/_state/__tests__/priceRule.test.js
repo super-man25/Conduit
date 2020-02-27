@@ -436,10 +436,6 @@ describe('saga workers', () => {
     expect(success.next(priceRule).value).toEqual(
       put({ type: types.SAVE_PRICE_RULE_SUCCESS, payload: priceRule })
     );
-
-    expect(success.next().value).toEqual(
-      put(alertActions.success('Successfully saved price rule'))
-    );
     expect(success.next().done).toBe(true);
 
     const fail = generator.clone();

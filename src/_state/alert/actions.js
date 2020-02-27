@@ -6,10 +6,10 @@ export const ERROR = 'alert/ERROR';
 export const CLEAR = 'alert/CLEAR';
 
 // Action creators
-function success(message) {
+function success(message, duration) {
   return {
     type: SUCCESS_ASYNC,
-    payload: message,
+    payload: { message, duration },
   };
 }
 

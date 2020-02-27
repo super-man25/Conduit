@@ -16,7 +16,7 @@ describe('actions', () => {
     const action = actions.success(message);
     expect(action).toEqual({
       type: SUCCESS_ASYNC,
-      payload: message,
+      payload: { message },
     });
   });
 
