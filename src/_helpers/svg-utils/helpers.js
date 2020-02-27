@@ -1,5 +1,4 @@
 export function appendSVGElement(el, tagname, properties) {
-  // console.log(el);
   const newElement = document.createElementNS(
     'http://www.w3.org/2000/svg',
     tagname

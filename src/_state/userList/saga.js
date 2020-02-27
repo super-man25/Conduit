@@ -11,7 +11,10 @@ import { actions as alertActions } from '../alert';
 export function* fetchUsersAsync() {
   try {
     const users = yield call(userService.getAll);
-    yield put({ type: FETCH_USERS_ASYNC_SUCCESS, payload: users });
+    const filteredUsers = users.filter(
+      (user) => !user.email.includes('eventdynamic')
+    );
+    yield put({ type: FETCH_USERS_ASYNC_SUCCESS, payload: filteredUsers });
   } catch (err) {
     put({ type: FETCH_USERS_ASYNC_ERROR, payload: err });
     yield put(alertActions.error('Error occurred while fetching all users'));

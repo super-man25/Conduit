@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { cssConstants } from '_constants';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
-import { SecondaryPricingRule } from '_scenes/Settings/TeamSettings/components/SecondaryPricingRule';
+import { SecondaryPricingRule } from './SecondaryPricingRule';
 
 const Card = styled.div`
   display: flex;
@@ -35,15 +35,15 @@ export const ToggleContainer = styled.div`
 `;
 
 type Props = {
-  img: String,
+  img?: String,
   modifiedAt: string,
   onChange: () => void,
   isActive: boolean,
   isPrimary: boolean,
-  logoUrl: string,
+  logoUrl?: string,
   name: string,
-  percent: number,
-  constant: number,
+  percent?: number,
+  constant?: number,
 };
 
 export function Integration(props: Props) {

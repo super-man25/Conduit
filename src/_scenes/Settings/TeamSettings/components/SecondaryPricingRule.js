@@ -7,6 +7,7 @@ import {
   Flex,
   FlexItem,
   Input,
+  TextButton,
 } from '_components';
 import { withClickAway } from '_hoc';
 import { actions } from '_state/client';
@@ -90,7 +91,7 @@ export class SecondaryPricingRulePresenter extends Component {
                   component={Input}
                   name="percent"
                   value={this.state.percent || ''}
-                  onChange={(e) => this.update(e)}
+                  onChange={this.update}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Percent"
                   invalid={this.state.percentInvalid}
@@ -101,14 +102,15 @@ export class SecondaryPricingRulePresenter extends Component {
                   component={Input}
                   name="constant"
                   value={this.state.constant || ''}
-                  onChange={(e) => this.update(e)}
+                  onChange={this.update}
                   onFocus={(e) => this.handleFocus(e.target.name)}
                   placeholder="Constant"
                   invalid={this.state.constantInvalid}
                 />
               </FlexItem>
             </Flex>
-            <PrimaryButton onClick={this.saveSettings}>SAVE</PrimaryButton>
+            <PrimaryButton onClick={this.saveSettings}>Save</PrimaryButton>
+            <TextButton onClick={this.toggleEdit}>Cancel</TextButton>
           </Fragment>
         ) : (
           <SettingEditButton weight="bold" onClick={this.toggleEdit} />

@@ -21,8 +21,8 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           [Function],
         ],
         "componentStyle": ComponentStyle {
-          "baseHash": -2040692261,
-          "componentId": "sc-pbYBj",
+          "baseHash": 1892245677,
+          "componentId": "sc-pHIBf",
           "isStatic": false,
           "rules": Array [
             "
@@ -80,7 +80,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
           "sc-fzqMdD",
         ],
         "render": [Function],
-        "styledComponentId": "sc-pbYBj",
+        "styledComponentId": "sc-pHIBf",
         "target": "input",
         "toString": [Function],
         "warnTooManyClasses": [Function],

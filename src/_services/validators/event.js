@@ -26,6 +26,7 @@ const overridePriceSchema = yup.object({
     .moreThan(0)
     .nullable()
     .label('Price'),
+  isListed: yup.boolean(),
 });
 
 export function validatePercentPriceModifier(body) {

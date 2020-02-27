@@ -24,7 +24,6 @@ export * from './Icon';
 export * from './Icon/SVGIcons';
 export * from './ImageLayout';
 export * from './Input';
-export * from './Integration';
 export * from './Layout';
 export * from './LeftNav';
 export * from './LegendItem';

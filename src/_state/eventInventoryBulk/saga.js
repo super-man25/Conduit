@@ -29,10 +29,14 @@ export function* bulkUpdate(action) {
       chunkedRowSeatIds.map((seatIds) =>
         call(eventService.updateEventSeats, {
           isListed: payload.isListed,
-          overridePrice: parseFloat(payload.overridePrice),
-          minimumPrice: parseFloat(payload.minimumPrice),
-          maximumPrice: parseFloat(payload.maximumPrice),
+          overridePrice:
+            payload.overridePrice && parseFloat(payload.overridePrice),
+          minimumPrice:
+            payload.minimumPrice && parseFloat(payload.minimumPrice),
+          maximumPrice:
+            payload.maximumPrice && parseFloat(payload.maximumPrice),
           eventSeatIds: seatIds,
+          removeOverridePrices: payload.removeOverridePrices,
         })
       )
     );

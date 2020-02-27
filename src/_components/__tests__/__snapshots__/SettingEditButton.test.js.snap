@@ -42,7 +42,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <button
-  className="sc-fzplWN sc-fznZeY sc-qapaw c0"
+  className="sc-fzplWN sc-fznZeY sc-qYiqT c0"
 />
 `;
 
@@ -88,6 +88,6 @@ exports[`renders correctly with noEdit prop 1`] = `
 }
 
 <button
-  className="sc-fzplWN sc-fznZeY sc-qapaw c0"
+  className="sc-fzplWN sc-fznZeY sc-qYiqT c0"
 />
 `;

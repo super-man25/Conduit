@@ -73,8 +73,8 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -96,19 +96,25 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="$ Manual Price"
         type="number"
         value=""
+      />
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
       />
     </Styled(Styled(styled.div))>
     <Flex
@@ -206,8 +212,8 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -229,13 +235,14 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
@@ -251,6 +258,11 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
       >
         Manual Price must be a valid dollar amount.
       </Styled(Styled(styled.p))>
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
+      />
     </Styled(Styled(styled.div))>
     <Flex
       justify="flex-end"
@@ -347,8 +359,8 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "baseHash": 599074387,
-              "componentId": "sc-qPlga",
+              "baseHash": 1819112339,
+              "componentId": "sc-oUcyK",
               "isStatic": false,
               "rules": Array [
                 "
@@ -370,19 +382,25 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
             "displayName": "styled.input",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-qPlga",
+            "styledComponentId": "sc-oUcyK",
             "target": "input",
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }
         }
+        disabled={false}
         name="price"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="$ Manual Price"
         type="number"
         value=""
+      />
+      <Styled(Checkbox)
+        checked={false}
+        handleChange={[Function]}
+        label="Remove manual prices"
       />
     </Styled(Styled(styled.div))>
     <Flex
