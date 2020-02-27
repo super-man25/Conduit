@@ -3,10 +3,15 @@ import { CLEAR, ERROR, ERROR_ASYNC, SUCCESS, SUCCESS_ASYNC } from './actions';
 
 // Workers
 export function* successAlertAsync(action) {
-  const message = action.payload;
+  const { message, duration } = action.payload;
   yield put({ type: SUCCESS, payload: message });
-  yield delay(3000);
-  yield put({ type: CLEAR });
+  if (duration === undefined) {
+    yield delay(3000);
+    yield put({ type: CLEAR });
+  } else if (duration > 0) {
+    yield delay(duration);
+    yield put({ type: CLEAR });
+  }
 }
 
 export function* errorAlertAsync(action) {

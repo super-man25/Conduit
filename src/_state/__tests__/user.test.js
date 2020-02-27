@@ -334,7 +334,7 @@ describe('saga workers', () => {
     expect(generator.next().value).toEqual(
       put({
         type: SUCCESS_ASYNC,
-        payload: 'Successfully Updated Personal Information',
+        payload: { message: 'Successfully Updated Personal Information' },
       })
     );
     expect(generator.next().done).toBe(true);
@@ -359,7 +359,10 @@ describe('saga workers', () => {
       put({ type: authTypes.FETCH_ASYNC })
     );
     expect(generator.next().value).toEqual(
-      put({ type: SUCCESS_ASYNC, payload: 'Successfully Changed Password' })
+      put({
+        type: SUCCESS_ASYNC,
+        payload: { message: 'Successfully Changed Password' },
+      })
     );
     expect(generator.next().done).toBe(true);
   });
@@ -381,7 +384,10 @@ describe('saga workers', () => {
       put({ type: authTypes.FETCH_ASYNC })
     );
     expect(generator.next().value).toEqual(
-      put({ type: SUCCESS_ASYNC, payload: 'Successfully Updated Email' })
+      put({
+        type: SUCCESS_ASYNC,
+        payload: { message: 'Successfully Updated Email' },
+      })
     );
     expect(generator.next().done).toBe(true);
   });

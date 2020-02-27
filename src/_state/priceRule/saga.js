@@ -1,5 +1,7 @@
 import { put, call, takeLatest, select, takeEvery } from 'redux-saga/effects';
-import { priceRuleService } from '_services';
+
+import { priceRuleService, eventService } from '_services';
+import { selectors as eventListSelectors } from '_state/eventList';
 import alertActions from '../alert/actions';
 import { selectors as seasonSelectors } from '../season';
 import { types, selectors } from '.';
@@ -25,7 +27,6 @@ export function* savePriceRule() {
       result = yield call(priceRuleService.create, priceRule);
     }
     yield put({ type: types.SAVE_PRICE_RULE_SUCCESS, payload: result });
-    yield put(alertActions.success('Successfully saved price rule'));
   } catch (err) {
     yield put({ type: types.SAVE_PRICE_RULE_ERROR, payload: err });
     yield put(
@@ -63,6 +64,45 @@ export function* deletePriceRule(action) {
   }
 }
 
+function* handleSavePriceRuleSuccess(action) {
+  fetchPriceRuleAfterSave(action);
+  const priceRule = yield select(selectors.selectEditingPriceRule);
+  const eventList = yield select(eventListSelectors.selectEventList);
+  let updatedEventCount = 0;
+  yield put(
+    alertActions.success(`Updating ${priceRule.eventIds.length} events...`, 0)
+  );
+
+  for (const eventId of priceRule.eventIds) {
+    const event = eventList.find((event) => event.id === eventId);
+    const {
+      factors: {
+        eventScoreModifier,
+        springModifier,
+        reasonType,
+        reasonComments,
+      },
+    } = event;
+    const isLastEventId =
+      priceRule.eventIds[priceRule.eventIds.length - 1] === eventId;
+    yield call(eventService.updateAdminModifiers, {
+      eventId,
+      eventScoreModifier,
+      springModifier,
+      reasonType,
+      reasonComments,
+    });
+    yield put(
+      alertActions.success(
+        `Successfully updated ${++updatedEventCount} / ${
+          priceRule.eventIds.length
+        } events`,
+        isLastEventId ? undefined : 0
+      )
+    );
+  }
+}
+
 function* watchFetchPriceRules() {
   yield takeLatest(types.FETCH_PRICE_RULES, fetchPriceRules);
 }
@@ -81,7 +121,7 @@ function* watchDeletePriceRule() {
 
 // Fetch price rule whenever one is updated so it can be refreshed in the store
 function* watchSavePriceRuleSuccess(action) {
-  yield takeEvery(types.SAVE_PRICE_RULE_SUCCESS, fetchPriceRuleAfterSave);
+  yield takeEvery(types.SAVE_PRICE_RULE_SUCCESS, handleSavePriceRuleSuccess);
 }
 
 export default {
