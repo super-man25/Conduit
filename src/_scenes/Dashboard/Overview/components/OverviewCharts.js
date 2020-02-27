@@ -378,6 +378,7 @@ export const OverviewCharts = ({
                   majorXAxisTickRenderer={majorXAxisTickRenderer}
                   mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                   renderNoData={() => <NoData type="Revenue" />}
+                  totalInventory={selectedSeasonOrEvent.totalInventory}
                 />
               )}
             </Fragment>
@@ -405,6 +406,7 @@ export const OverviewCharts = ({
                   majorXAxisTickRenderer={majorXAxisTickRenderer}
                   mobileXAxisTickRenderer={mobileXAxisTickRenderer}
                   renderNoData={() => <NoData type="Inventory" />}
+                  totalInventory={selectedSeasonOrEvent.totalInventory}
                 />
               )}
             </Fragment>
