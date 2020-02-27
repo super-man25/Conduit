@@ -35,10 +35,6 @@ export function* savePriceRule() {
   }
 }
 
-export function* fetchPriceRuleAfterSave(action) {
-  yield put({ type: types.FETCH_PRICE_RULE, payload: action.payload });
-}
-
 export function* fetchOnePriceRule(action) {
   try {
     const result = yield call(priceRuleService.getOne, action.payload);
@@ -65,14 +61,14 @@ export function* deletePriceRule(action) {
 }
 
 function* handleSavePriceRuleSuccess(action) {
-  fetchPriceRuleAfterSave(action);
+  yield put({ type: types.FETCH_PRICE_RULE, payload: action.payload });
   const priceRule = yield select(selectors.selectEditingPriceRule);
   const eventList = yield select(eventListSelectors.selectEventList);
   let updatedEventCount = 0;
   yield put(
     alertActions.success(`Updating ${priceRule.eventIds.length} events...`, 0)
   );
-  yield put(actions.cancelEditingPriceRule());
+  yield put(actions.cancelEditingPriceRule(0));
   for (const eventId of priceRule.eventIds) {
     const event = eventList.find((event) => event.id === eventId);
     const {
