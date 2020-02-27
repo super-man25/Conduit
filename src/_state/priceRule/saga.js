@@ -4,7 +4,7 @@ import { priceRuleService, eventService } from '_services';
 import { selectors as eventListSelectors } from '_state/eventList';
 import alertActions from '../alert/actions';
 import { selectors as seasonSelectors } from '../season';
-import { types, selectors } from '.';
+import { types, selectors, actions } from '.';
 
 export function* fetchPriceRules() {
   try {
@@ -72,7 +72,7 @@ function* handleSavePriceRuleSuccess(action) {
   yield put(
     alertActions.success(`Updating ${priceRule.eventIds.length} events...`, 0)
   );
-
+  yield put(actions.cancelEditingPriceRule());
   for (const eventId of priceRule.eventIds) {
     const event = eventList.find((event) => event.id === eventId);
     const {
@@ -96,7 +96,7 @@ function* handleSavePriceRuleSuccess(action) {
       alertActions.success(
         `Successfully updated ${++updatedEventCount} / ${
           priceRule.eventIds.length
-        } events`,
+        } events...`,
         isLastEventId ? undefined : 0
       )
     );
