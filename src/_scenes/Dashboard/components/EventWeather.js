@@ -72,7 +72,7 @@ const EventWeather = ({
     (weatherIcon) => weatherIcon.key === icon
   );
   const formattedSummary =
-    summary[summary.length - 1] === '.' ? summary.slice(0, -1) : summary;
+    summary[summary && summary.length - 1] === '.' ? summary.slice(0, -1) : summary;
 
   return (
     <Flex
