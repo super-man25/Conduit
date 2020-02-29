@@ -307,7 +307,8 @@ export const EventListItem = ({
                 {soldInventoryPercentage}%
               </EventDetailValue>
               <EventDetailLabel>
-                of {formatNumber(event.totalInventory)} tickets
+                of {formatNumber(event.soldInventory + event.unsoldInventory)}{' '}
+                tickets
               </EventDetailLabel>
             </EventDetail>
           )}
