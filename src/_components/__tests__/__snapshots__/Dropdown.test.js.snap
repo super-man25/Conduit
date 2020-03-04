@@ -152,7 +152,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 
 .c5 {
   padding: 12px 16px;
-  background-color: #f2f2f2;
+  background-color: #ddd;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
@@ -163,7 +163,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 
 .c5:hover {
   cursor: default;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c6 {
@@ -179,7 +179,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 
 .c6:hover {
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c3 {
@@ -318,7 +318,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
 
 .c5:hover {
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c3 {

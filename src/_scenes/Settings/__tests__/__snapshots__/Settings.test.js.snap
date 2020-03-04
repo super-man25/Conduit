@@ -121,24 +121,11 @@ exports[`<Settings /> renders correctly 1`] = `
             "$$typeof": Symbol(react.memo),
             "WrappedComponent": [Function],
             "compare": null,
-            "displayName": "Connect(DemoRoute)",
-            "type": [Function],
-          }
-        }
-        key="4"
-        path="/settings/demo"
-      />
-      <SecuredRoute
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
             "displayName": "Connect(Onboard)",
             "type": [Function],
           }
         }
-        key="5"
+        key="4"
         path="/settings/onboard"
       />
     </styled.div>

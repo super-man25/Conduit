@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import { withClickAway } from '_hoc';
 import { colors } from '_constants';
-import { darken } from 'polished';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
 import { InputBase } from './Input';
@@ -44,7 +43,7 @@ DropdownMenu.displayName = 'DropdownMenu';
 const DropdownMenuOption = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive ? darken(0.05, colors.white) : colors.white};
+    props.isActive ? colors.lightGray : colors.white};
   transition: 0.1s ease-in-out all;
 
   :not(:last-child) {
@@ -53,7 +52,7 @@ const DropdownMenuOption = styled.div`
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, colors.white)};
+    background-color: ${colors.lightGray};
   }
 `;
 DropdownMenuOption.displayName = 'DropdownMenuOption';

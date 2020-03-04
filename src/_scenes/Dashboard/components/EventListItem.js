@@ -24,7 +24,7 @@ const StyledEventListItem = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px 25px;
-  border-top: 1px solid ${colors.lightGray};
+  border-bottom: 1px solid ${colors.lightGray};
   background-color: white;
   position: relative;
   cursor: pointer;
@@ -34,15 +34,16 @@ const StyledEventListItem = styled.div`
     past &&
     `
     background-color: ${colors.lightGray};
+    border-color: ${colors.gray};
     color: ${colors.gray};
   `}
 
   ${({ active, progressBarHovered }) =>
     active &&
     `
+      border: none;
       background-color: ${colors.blue};
       color: white;
-      z-index: 999;
       margin-bottom: ${progressBarHovered ? '15px' : '10px'};
     `}
 `;
@@ -203,6 +204,7 @@ const InventoryProgressBarContainer = styled.div`
   ${({ active }) =>
     active &&
     `
+    border-bottom: 1px solid ${colors.lightGray};
     height: 10px;
   `}
 

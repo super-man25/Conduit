@@ -12,7 +12,7 @@ exports[`renders correctly with login prop 1`] = `
   dark-blue: #004;
   light-blue: #44b;
   red: #b44;
-  green: #4b4;
+  green: #3a3;
   orange: #fa3;
   purple: #a3f;
   neon-blue: #3af;
@@ -42,7 +42,7 @@ exports[`renders correctly with no props 1`] = `
   dark-blue: #004;
   light-blue: #44b;
   red: #b44;
-  green: #4b4;
+  green: #3a3;
   orange: #fa3;
   purple: #a3f;
   neon-blue: #3af;

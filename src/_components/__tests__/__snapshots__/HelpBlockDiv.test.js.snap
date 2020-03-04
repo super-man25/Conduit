@@ -41,7 +41,7 @@ exports[`renders correctly with show and type="alert-danger" props 1`] = `
 
 exports[`renders correctly with show and type="alert-success" props 1`] = `
 .c0 {
-  color: #4b4;
+  color: #3a3;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -53,7 +53,7 @@ exports[`renders correctly with show and type="alert-success" props 1`] = `
 
 <div
   className="c0"
-  color="#4b4"
+  color="#3a3"
   type="alert-success"
 >
   error message

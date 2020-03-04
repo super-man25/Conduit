@@ -34,7 +34,6 @@ const StyledSidebar = styled.div`
 `;
 
 const SidebarHeader = styled.div`
-  color: ${colors.lightGray};
   background: ${colors.darkBlue};
 `;
 

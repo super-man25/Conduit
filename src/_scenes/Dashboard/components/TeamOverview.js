@@ -17,7 +17,6 @@ import { Dropdown } from '_components/Dropdown';
 
 const StyledTeamOverview = styled.div`
   padding: ${containerPadding}px;
-  color: ${colors.white};
 `;
 
 const Heading = styled(H4)`
@@ -42,6 +41,7 @@ const SeasonDropdown = styled(Dropdown)`
   border: none;
   padding: 0;
   background: none;
+  margin-right: 15px;
 `;
 
 type Stats = {

@@ -19,7 +19,6 @@ import {
 import { colors } from '_constants';
 import { actions as authActions } from '_state/auth';
 import CreateUser from './CreateUser';
-import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import Onboard from './Onboard';
@@ -58,12 +57,6 @@ const routes: Array<RouteConfig> = [
     linkText: 'Create User',
     adminOnly: true,
     main: CreateUser,
-  },
-  {
-    path: '/settings/demo',
-    linkText: 'Demo',
-    adminOnly: true,
-    main: Demo,
   },
   {
     path: '/settings/onboard',

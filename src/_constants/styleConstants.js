@@ -7,7 +7,7 @@ export const colors = {
   darkBlue: '#004',
   lightBlue: '#44b',
   red: '#b44',
-  green: '#4b4',
+  green: '#3a3',
   orange: '#fa3',
   purple: '#a3f',
   neonBlue: '#3af',
