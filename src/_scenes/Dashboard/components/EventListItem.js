@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -29,6 +29,7 @@ const StyledEventListItem = styled.div`
   color: black;
   position: relative;
   cursor: pointer;
+  transition: margin-bottom 0.2s ease-out;
 
   ${({ past }) =>
     past &&
@@ -37,12 +38,13 @@ const StyledEventListItem = styled.div`
     color: ${cssConstants.PRIMARY_DARK_GRAY};
   `}
 
-  ${({ active }) =>
+  ${({ active, progressBarHovered }) =>
     active &&
     `
       background-color: ${cssConstants.PRIMARY_BLUE};
       color: white;
       z-index: 999;
+      margin-bottom: ${progressBarHovered ? '15px' : '10px'};
     `}
 `;
 
@@ -190,6 +192,9 @@ const InventoryProgressBar = styled.div`
 `;
 
 const InventoryProgressBarContainer = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
   height: 0;
   width: 100%;
   transition: height 0.2s ease-out;
@@ -219,6 +224,8 @@ export const EventListItem = ({
   active: boolean,
   isAdmin: boolean,
 }) => {
+  const [progressBarHovered, setProgressBarHovered] = useState(false);
+
   const activeEventId = useSelector(eventListSelectors.selectActiveEventListId);
   const dispatch = useDispatch();
   const toggleSidebar = () => dispatch(uiActions.toggleSidebar());
@@ -227,6 +234,9 @@ export const EventListItem = ({
   const soldInventoryPercentage = Math.round(
     (event.soldInventory / event.totalInventory) * 100
   );
+
+  const handleProgressBarMouseEnter = () => setProgressBarHovered(true);
+  const handleProgressBarMouseOut = () => setProgressBarHovered(false);
 
   const handleClick = () => {
     if (isMobileDevice) toggleSidebar();
@@ -248,7 +258,12 @@ export const EventListItem = ({
 
   return (
     <>
-      <StyledEventListItem onClick={handleClick} active={active} past={past}>
+      <StyledEventListItem
+        onClick={handleClick}
+        active={active}
+        past={past}
+        progressBarHovered={progressBarHovered}
+      >
         <EventListItemRow>
           <DateContainer active={active} past={past}>
             <Month active={active} past={past}>
@@ -313,13 +328,17 @@ export const EventListItem = ({
             </EventDetail>
           )}
         </EventListItemRow>
-      </StyledEventListItem>
-      <InventoryProgressBarContainer active={active}>
-        <InventoryProgressBar
+        <InventoryProgressBarContainer
           active={active}
-          percentage={soldInventoryPercentage}
-        />
-      </InventoryProgressBarContainer>
+          onMouseEnter={handleProgressBarMouseEnter}
+          onMouseOut={handleProgressBarMouseOut}
+        >
+          <InventoryProgressBar
+            active={active}
+            percentage={soldInventoryPercentage}
+          />
+        </InventoryProgressBarContainer>
+      </StyledEventListItem>
     </>
   );
 };

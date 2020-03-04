@@ -53,9 +53,7 @@ function getScrollIndex(events, activeEventId, filtered) {
     return events.findIndex((e) => e.id === activeEventId);
   }
 
-  const index = events.findIndex((e) => {
-    return !isPastEvent(e);
-  });
+  const index = events.findIndex((e) => !isPastEvent(e));
 
   return index;
 }
