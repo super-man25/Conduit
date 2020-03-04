@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import styled from 'styled-components';
 
 import { Flex, Icon, Text } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import {
   format,
   startOfDay,
@@ -239,27 +239,13 @@ export const DateRangeFilter = (props: Props) => {
     const pattern = 'MMM dd, yyyy';
     return (
       <Flex align="center">
-        <Text
-          color={
-            !!from
-              ? cssConstants.PRIMARY_LIGHT_BLACK
-              : cssConstants.PRIMARY_LIGHT_GRAY
-          }
-          cursor="pointer"
-        >
+        <Text color={!!from ? null : colors.lightGray} cursor="pointer">
           {!!from ? format(from, pattern) : 'select date'}
         </Text>
         <Text marginLeft="15px" marginRight="15px">
           to
         </Text>
-        <Text
-          color={
-            !!to
-              ? cssConstants.PRIMARY_LIGHT_BLACK
-              : cssConstants.PRIMARY_LIGHT_GRAY
-          }
-          cursor="pointer"
-        >
+        <Text color={!!to ? null : colors.lightGray} cursor="pointer">
           {!!to ? format(to, pattern) : 'select date'}
         </Text>
       </Flex>
@@ -332,7 +318,7 @@ export const DateRangeFilter = (props: Props) => {
         <DropdownText>{displayDropdownText(selected, from, to)}</DropdownText>
         <Icon
           size={10}
-          color={arrowColor ? arrowColor : cssConstants.PRIMARY_DARK_BLUE}
+          color={arrowColor ? arrowColor : colors.darkBlue}
           name={isOpen ? 'arrowUp' : 'arrowDown'}
         />
       </Dropdown>
@@ -349,11 +335,7 @@ export const DateRangeFilter = (props: Props) => {
                 <Flex justify="space-between">
                   {parseOption(option)}
                   {option === selected && (
-                    <Icon
-                      size={20}
-                      name="check"
-                      color={cssConstants.PRIMARY_BLUE}
-                    />
+                    <Icon size={20} name="check" color={colors.blue} />
                   )}
                 </Flex>
               </Option>

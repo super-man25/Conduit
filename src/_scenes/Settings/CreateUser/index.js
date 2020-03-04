@@ -17,7 +17,7 @@ import {
 } from '_components';
 import { Dropdown } from '_components';
 import type { EDUser, EDClient } from '_models';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const CreateUserWrapper = styled(Flex)`
   flex-direction: column;
@@ -247,7 +247,7 @@ class CreateUser extends React.Component<Props, State> {
             options={clientList}
             noneSelected={'Select a client'}
             onChange={this.handleClientChange}
-            arrowColor={cssConstants.PRIMARY_BLUE}
+            arrowColor={colors.blue}
           />
           <input
             type="checkbox"
@@ -263,7 +263,7 @@ class CreateUser extends React.Component<Props, State> {
           <br />
           <PrimaryButton disabled={!createEnabled}>
             {userState.loading ? (
-              <Loader small color={cssConstants.PRIMARY_WHITE} />
+              <Loader small color={colors.white} />
             ) : (
               'Create'
             )}

@@ -4,7 +4,7 @@ import type { Node } from 'react';
 import ReactDOM from 'react-dom';
 import styled, { keyframes } from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { useClickAway } from '_hooks';
 
 const slideUp = keyframes`
@@ -24,7 +24,7 @@ const ModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   opacity: 0.3;
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  background-color: ${colors.black};
 `;
 
 const ModalContent = styled.div`

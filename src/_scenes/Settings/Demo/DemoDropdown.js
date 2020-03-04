@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dropdown } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export const DemoDropdown = ({
   id,
@@ -16,7 +16,7 @@ export const DemoDropdown = ({
       onChange={onChange}
       options={options}
       parseOption={parseOption}
-      arrowColor={cssConstants.PRIMARY_BLUE}
+      arrowColor={colors.blue}
     />
   );
 };

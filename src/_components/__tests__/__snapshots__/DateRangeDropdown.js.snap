@@ -17,7 +17,7 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
   align-items: center;
   position: relative;
   text-align: left;
-  border: 1px solid #999999;
+  border: 1px solid #667;
 }
 
 .c0 {

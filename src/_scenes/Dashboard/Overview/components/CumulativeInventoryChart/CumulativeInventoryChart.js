@@ -10,7 +10,8 @@ import {
   Label,
   Tooltip,
 } from 'recharts';
-import { cssConstants, chartLabelStyles } from '_constants';
+
+import { chartLabelStyles, colors } from '_constants';
 import { ChartContainer } from '_components';
 import { CumulativeInventoryTooltip } from './CumulativeInventoryTooltip';
 import { truncateNumber } from '_helpers/string-utils';
@@ -103,7 +104,7 @@ export function CumulativeInventoryChart({
             name="actual"
             dot={false}
             strokeWidth={2}
-            stroke={cssConstants.SECONDARY_PURPLE}
+            stroke={colors.purple}
           />
 
           <Line
@@ -114,11 +115,11 @@ export function CumulativeInventoryChart({
             dot={false}
             name="projected"
             strokeWidth={2}
-            stroke={cssConstants.SECONDARY_LIGHT_PURPLE}
+            stroke={colors.purpls}
           />
           <Tooltip
             cursor={{
-              stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
+              stroke: colors.purpls,
               strokeWidth: 2,
               opacity: 0.5,
             }}

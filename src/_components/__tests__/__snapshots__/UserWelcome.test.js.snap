@@ -7,7 +7,7 @@ exports[`renders correctly with a valid user prop 1`] = `
 }
 
 .c6 path {
-  fill: #FFFFFF;
+  fill: #fff;
 }
 
 .c2 {
@@ -41,7 +41,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  color: #0A169A;
+  color: #007;
   background-color: inherit;
 }
 
@@ -50,12 +50,12 @@ exports[`renders correctly with a valid user prop 1`] = `
 }
 
 .c1:disabled {
-  color: #D1D1D1;
+  color: #ddd;
   opacity: 0.5;
 }
 
 .c1:hover:not(:disabled) {
-  color: #38A9DB;
+  color: #3af;
 }
 
 .c0 {
@@ -115,7 +115,7 @@ exports[`renders correctly with a valid user prop 1`] = `
       >
         <svg
           className="c6 c7"
-          color="#FFFFFF"
+          color="#fff"
           height="12px"
           viewBox="0 0 24 24"
           width="12px"

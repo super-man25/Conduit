@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colors } from '_constants';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -22,10 +23,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Roboto, sans-serif;
     font-size: 14px;
     background: #ffffff;
+    color: ${colors.black};
   }
 
   a {
     text-decoration: none;
+    color: ${colors.black};
   }
   
   /*

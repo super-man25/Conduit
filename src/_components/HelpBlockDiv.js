@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 type Props = {
   type: 'alert-danger' | 'alert-success' | 'hint',
@@ -13,10 +13,10 @@ type Props = {
 export const HelpBlockDiv: React.ComponentType<Props> = styled.div.attrs(
   (props) => ({
     color:
-      (props.type === 'alert-danger' && cssConstants.SECONDARY_RED) ||
-      (props.type === 'alert-success' && cssConstants.SECONDARY_GREEN) ||
-      (props.type === 'hint' && cssConstants.SECONDARY_PURPLE) ||
-      cssConstants.PRIMARY_LIGHT_BLACK,
+      (props.type === 'alert-danger' && colors.red) ||
+      (props.type === 'alert-success' && colors.green) ||
+      (props.type === 'hint' && colors.purple) ||
+      colors.black,
   })
 )`
   color: ${(props) => props.color};

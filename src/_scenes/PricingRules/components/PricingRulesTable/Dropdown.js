@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { withClickAway } from '_hoc';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { darken } from 'polished';
 import { Icon } from '_components/Icon';
 import { Flex } from '_components/Flex';
@@ -23,7 +23,7 @@ const DropdownMenu = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 10;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border: 1px solid ${colors.lightGray};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
 
   transition: 0.1s ease-in-out all;
@@ -44,20 +44,18 @@ DropdownMenu.displayName = 'DropdownMenu';
 export const Option = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive
-      ? darken(0.05, cssConstants.PRIMARY_WHITE)
-      : cssConstants.PRIMARY_WHITE};
+    props.isActive ? darken(0.05, colors.white) : colors.white};
   transition: 0.1s ease-in-out all;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${colors.black};
   white-space: normal;
 
   :not(:last-child) {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    border-bottom: 1px solid ${colors.lightGray};
   }
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
+    background-color: ${darken(0.05, colors.white)};
   }
 `;
 Option.displayName = 'Option';
@@ -155,11 +153,7 @@ export class Dropdown extends React.Component<Props, State> {
             : noneSelected}
           <Icon
             size={12}
-            color={
-              isOpen
-                ? cssConstants.PRIMARY_LIGHT_BLUE
-                : cssConstants.PRIMARY_LIGHT_BLACK
-            }
+            color={isOpen ? colors.blue : colors.black}
             name={'arrowDown'}
           />
         </Flex>

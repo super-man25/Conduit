@@ -11,13 +11,13 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
   <HorizontalBars
     colors={
       Array [
-        "#0A169A",
-        "#1F49B6",
-        "#4B98CF",
-        "#7CBCDD",
-        "#C4D2E1",
-        "#817CB8",
-        "#5A288F",
+        "#004",
+        "#007",
+        "#44b",
+        "#3af",
+        "#667",
+        "#ddd",
+        "#a3f",
       ]
     }
     data={
@@ -38,7 +38,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#0A169A"
+        color="#004"
         label="Single Game"
         value="$1,000"
       />
@@ -49,7 +49,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#1F49B6"
+        color="#007"
         label="Group Tickets"
         value="$1,000"
       />
@@ -60,7 +60,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 1`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#4B98CF"
+        color="#44b"
         label="Single Suites"
         value="$1,000"
       />
@@ -80,13 +80,13 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
   <HorizontalBars
     colors={
       Array [
-        "#0A169A",
-        "#1F49B6",
-        "#4B98CF",
-        "#7CBCDD",
-        "#C4D2E1",
-        "#817CB8",
-        "#5A288F",
+        "#004",
+        "#007",
+        "#44b",
+        "#3af",
+        "#667",
+        "#ddd",
+        "#a3f",
       ]
     }
     data={
@@ -107,7 +107,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#0A169A"
+        color="#004"
         label="Single Game"
         value="--"
       />
@@ -118,7 +118,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#1F49B6"
+        color="#007"
         label="Group Tickets"
         value="--"
       />
@@ -129,7 +129,7 @@ exports[`<RevenueBreakdown /> should render correctly with revenue data 2`] = `
       padding="1rem"
     >
       <LegendItem
-        color="#4B98CF"
+        color="#44b"
         label="Single Suites"
         value="--"
       />

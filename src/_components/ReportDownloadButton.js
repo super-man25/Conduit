@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { Flex, Icon, EDText } from '_components';
 
 export const ReportDownloadButton = (props: {
@@ -9,9 +9,7 @@ export const ReportDownloadButton = (props: {
 }) => {
   const { onClick, downloading } = props;
   const cursor = downloading ? 'no-drop' : 'pointer';
-  const color = downloading
-    ? cssConstants.PRIMARY_GRAY
-    : cssConstants.PRIMARY_BLUE;
+  const color = downloading ? colors.gray : colors.blue;
   const type = downloading ? 'disabled' : 'secondary';
   const text = downloading ? 'Downloading...' : 'Download Transactions';
   return (

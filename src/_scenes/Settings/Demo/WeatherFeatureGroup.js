@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Flex, Spacing } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import {
   FeatureGroupWrapper,
   SoupedUpSlider,
@@ -41,7 +41,7 @@ export function WeatherFeatureGroup({
             Temperature
             <span
               style={{
-                color: cssConstants.PRIMARY_DARKEST_GRAY,
+                color: colors.gray,
                 marginLeft: '5px',
               }}
             >

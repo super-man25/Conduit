@@ -11,7 +11,7 @@ exports[`renders correctly with no props 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  color: #0A169A;
+  color: #007;
   background-color: inherit;
   display: -webkit-box;
   display: -webkit-flex;
@@ -29,12 +29,12 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0:disabled {
-  color: #D1D1D1;
+  color: #ddd;
   opacity: 0.5;
 }
 
 .c0:hover:not(:disabled) {
-  color: #38A9DB;
+  color: #3af;
 }
 
 .c0::before {
@@ -57,7 +57,7 @@ exports[`renders correctly with noEdit prop 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  color: #0A169A;
+  color: #007;
   background-color: inherit;
   display: -webkit-box;
   display: -webkit-flex;
@@ -75,12 +75,12 @@ exports[`renders correctly with noEdit prop 1`] = `
 }
 
 .c0:disabled {
-  color: #D1D1D1;
+  color: #ddd;
   opacity: 0.5;
 }
 
 .c0:hover:not(:disabled) {
-  color: #38A9DB;
+  color: #3af;
 }
 
 .c0::before {

@@ -2,8 +2,9 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
+
 import { withClickAway } from '_hoc';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { fadeIn } from './keyframes';
 import { Icon } from '_components';
 import type { Option } from '_helpers/types';
@@ -16,11 +17,7 @@ const DropdownContainer: ComponentType<{
   min-width: 100px;
   cursor: pointer;
   text-align: left;
-  border: 1px solid
-    ${(props) =>
-      props.active
-        ? cssConstants.PRIMARY_LIGHT_BLUE
-        : cssConstants.PRIMARY_GRAY};
+  border: 1px solid ${(props) => (props.active ? colors.blue : colors.gray)};
   border-radius: 3px;
   font-size: 14px;
 `);
@@ -33,8 +30,7 @@ const DropdownSelectedItem: ComponentType<{
   align-items: center;
   padding: 8px 14px;
   border-bottom: 1px solid
-    ${(props) =>
-      props.dropdownOpen ? cssConstants.PRIMARY_LIGHT_GRAY : 'transparent'};
+    ${(props) => (props.dropdownOpen ? colors.lightGray : 'transparent')};
 `;
 
 const DropdownIconWrapper: ComponentType<{ active: boolean }> = styled.span`
@@ -45,8 +41,8 @@ const DropdownIconWrapper: ComponentType<{ active: boolean }> = styled.span`
 const DropdownMenu = styled.ul`
   position: absolute;
   left: -1px;
-  background-color: ${cssConstants.PRIMARY_WHITE};
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${colors.white};
+  border: 1px solid ${colors.blue};
   border-top: none;
   list-style: none;
   min-width: 100%;
@@ -64,7 +60,7 @@ const DropdownItem = styled.li`
 
   &:hover {
     color: #54a1d5;
-    background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
+    background-color: ${colors.lightGray};
   }
 `;
 

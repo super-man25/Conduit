@@ -76,7 +76,6 @@ exports[`render correctly 1`] = `
 }
 
 .c2 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
@@ -92,31 +91,28 @@ exports[`render correctly 1`] = `
 
 .c7 {
   font-size: 14px;
-  color: #999999;
+  color: #667;
   margin: 0;
   text-align: right;
 }
 
 .c9 {
-  color: #999999;
+  color: #667;
   margin: 0;
 }
 
 .c10 {
-  color: #070707;
   margin: 0;
   text-align: right;
 }
 
 .c13 {
   font-weight: 700;
-  color: #070707;
   margin: 0;
 }
 
 .c14 {
   font-weight: 700;
-  color: #070707;
   margin: 0;
   text-align: right;
 }
@@ -129,7 +125,7 @@ exports[`render correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-right: 1px solid #D1D1D1;
+  border-right: 1px solid #ddd;
   padding: 25px;
   width: 100%;
 }
@@ -137,7 +133,7 @@ exports[`render correctly 1`] = `
 .c3 {
   cursor: pointer;
   font-weight: bold;
-  color: #0A169A;
+  color: #007;
 }
 
 <div
@@ -149,7 +145,7 @@ exports[`render correctly 1`] = `
   >
     <h4
       className="sc-fzoant c2"
-      color="#070707"
+      color={null}
     >
       Modifiers
     </h4>
@@ -174,7 +170,7 @@ exports[`render correctly 1`] = `
       >
         <p
           className="sc-fznLPX c7"
-          color="#999999"
+          color="#667"
           size={14}
         >
           Event Score
@@ -186,7 +182,7 @@ exports[`render correctly 1`] = `
       >
         <p
           className="sc-fznLPX c7"
-          color="#999999"
+          color="#667"
           size={14}
         >
           Spring Value
@@ -203,7 +199,7 @@ exports[`render correctly 1`] = `
       >
         <p
           className="sc-fznLPX c9"
-          color="#999999"
+          color="#667"
         >
           Predicted
         </p>
@@ -234,8 +230,8 @@ exports[`render correctly 1`] = `
       direction="row"
       style={
         Object {
-          "borderBottom": "1px solid #EEEEEE",
-          "borderTop": "1px solid #EEEEEE",
+          "borderBottom": "1px solid #ddd",
+          "borderTop": "1px solid #ddd",
         }
       }
     >
@@ -245,7 +241,7 @@ exports[`render correctly 1`] = `
       >
         <p
           className="sc-fznLPX c9"
-          color="#999999"
+          color="#667"
         >
           Modifier
         </p>
@@ -276,7 +272,7 @@ exports[`render correctly 1`] = `
       direction="row"
       style={
         Object {
-          "borderBottom": "1px solid #EEEEEE",
+          "borderBottom": "1px solid #ddd",
         }
       }
     >
@@ -286,7 +282,7 @@ exports[`render correctly 1`] = `
       >
         <p
           className="sc-fznLPX c9"
-          color="#999999"
+          color="#667"
         >
           Velocity
         </p>

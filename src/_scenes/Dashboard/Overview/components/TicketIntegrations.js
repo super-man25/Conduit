@@ -14,7 +14,7 @@ import {
 } from '_components';
 import EdLogoDark from '_images/logo_dark.svg';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import type { EDIntegrationStat } from '_models';
 import { formatNumber } from '_helpers/string-utils';
 import { sizes } from '_helpers/style-utils';
@@ -44,7 +44,7 @@ const HorizontalList = styled(Flex)`
 `;
 
 const HorizontalListItem = styled(FlexItem)`
-  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-right: 1px solid ${colors.lightGray};
   flex: 1 0 auto;
   width: 50%;
 
@@ -118,7 +118,7 @@ export const TicketIntegrationListItem = ({
           <Text size={12}>Tickets Sold</Text>
         </Box>
         {integrations.length > 1 && (
-          <Box border={`1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`} />
+          <Box border={`1px solid ${colors.lightGray}`} />
         )}
         <Box>
           <Text

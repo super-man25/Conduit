@@ -1,12 +1,13 @@
 // @flow
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
 
-const panelBorder = `1px solid ${cssConstants.PRIMARY_LIGHT_GRAY}`;
+import { colors } from '_constants';
+
+const panelBorder = `1px solid ${colors.lightGray}`;
 
 export const Panel: ComponentType<{}> = styled.div`
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.white};
 
   & + & {
     margin-top: 25px;

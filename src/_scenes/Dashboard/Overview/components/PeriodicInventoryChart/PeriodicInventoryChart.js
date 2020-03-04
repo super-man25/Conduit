@@ -11,7 +11,7 @@ import {
   Tooltip,
   ReferenceLine,
 } from 'recharts';
-import { cssConstants, chartLabelStyles } from '_constants';
+import { chartLabelStyles, colors } from '_constants';
 import { ChartContainer } from '_components';
 import { truncateNumber } from '_helpers/string-utils';
 import { PeriodicInventoryTooltip } from './PeriodicInventoryTooltip';
@@ -46,7 +46,7 @@ export const PeriodicInventoryChart = ({
       <ResponsiveContainer width="100%" height={height}>
         <BarChart data={data}>
           <CartesianGrid vertical={false} />
-          <ReferenceLine y={0} stroke={cssConstants.SECONDARY_BLUE} />
+          <ReferenceLine y={0} stroke={colors.blue} />
           {isMobileDevice && (
             <XAxis
               dataKey="timestamp"
@@ -93,20 +93,16 @@ export const PeriodicInventoryChart = ({
             />
           </YAxis>
 
-          <Bar
-            dataKey="periodicInventory"
-            stackId="a"
-            fill={cssConstants.SECONDARY_PURPLE}
-          />
+          <Bar dataKey="periodicInventory" stackId="a" fill={colors.purple} />
           <Bar
             dataKey="projectedPeriodicInventory"
             stackId="a"
-            fill={cssConstants.SECONDARY_LIGHT_PURPLE}
+            fill={colors.purple}
           />
 
           <Tooltip
             cursor={{
-              fill: cssConstants.SECONDARY_LIGHT_PURPLE,
+              fill: colors.purple,
               opacity: 0.4,
             }}
             animationDuration={500}

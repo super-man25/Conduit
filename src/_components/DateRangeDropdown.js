@@ -4,9 +4,10 @@ import styled, { css } from 'styled-components';
 import DayPicker from 'react-day-picker';
 import { format, isSameDay, startOfDay, endOfDay } from 'date-fns';
 import 'react-day-picker/lib/style.css';
+
 import { withClickAway } from '_hoc';
 import { Icon } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { fadeIn } from './keyframes';
 
 const DateRangeInput: React.ComponentType<{ active: boolean }> = styled.div`
@@ -14,12 +15,12 @@ const DateRangeInput: React.ComponentType<{ active: boolean }> = styled.div`
   align-items: center;
   position: relative;
   text-align: left;
-  border: 1px solid ${cssConstants.PRIMARY_GRAY};
+  border: 1px solid ${colors.gray};
 
   ${(props) =>
     props.active &&
     css`
-      border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE} !important;
+      border: 1px solid ${colors.blue} !important;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     `}
@@ -53,7 +54,7 @@ const DateRangeDropdownContainer: React.ComponentType<{}> = styled.div`
 const ClickAwayDropdownContainer = withClickAway(DateRangeDropdownContainer);
 
 const DateRangeLabel: React.ComponentType<{}> = styled.span`
-  color: ${cssConstants.PRIMARY_GRAY};
+  color: ${colors.gray};
   font-size: 12px;
   position: absolute;
   top: 8px;
@@ -68,8 +69,7 @@ const DropdownSelectedItem: React.ComponentType<{
   align-items: center;
   padding: 8px 14px;
   border-bottom: 1px solid
-    ${(props) =>
-      props.dropdownOpen ? cssConstants.PRIMARY_LIGHT_GRAY : 'transparent'};
+    ${(props) => (props.dropdownOpen ? colors.gray : 'transparent')};
 `;
 
 const DropdownIconWrapper: React.ComponentType<{}> = styled.span`
@@ -85,9 +85,9 @@ const DropdownMenu: React.ComponentType<{}> = styled.div`
   top: 100%;
   left: -1px;
   min-width: 100%;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+  border: 1px solid ${colors.blue};
   z-index: 10;
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.white};
   opacity: 0;
 
   animation: ${fadeIn} 0.2s ease-out;

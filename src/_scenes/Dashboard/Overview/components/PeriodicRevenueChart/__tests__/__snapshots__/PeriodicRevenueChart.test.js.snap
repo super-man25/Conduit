@@ -52,7 +52,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         ifOverflow="discard"
         isFront={false}
         position="middle"
-        stroke="#1F49B6"
+        stroke="#007"
         strokeWidth={1}
         xAxisId={0}
         y={0}
@@ -129,7 +129,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -142,7 +142,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="periodicRevenue"
-        fill="#0A169A"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -160,7 +160,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicRevenue"
-        fill="#38A9DB"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -192,7 +192,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         }
         cursor={
           Object {
-            "fill": "#1F49B6",
+            "fill": "#007",
             "opacity": 0.4,
           }
         }
@@ -271,7 +271,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         ifOverflow="discard"
         isFront={false}
         position="middle"
-        stroke="#1F49B6"
+        stroke="#007"
         strokeWidth={1}
         xAxisId={0}
         y={0}
@@ -348,7 +348,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -361,7 +361,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         animationEasing="ease"
         data={Array []}
         dataKey="periodicRevenue"
-        fill="#0A169A"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -379,7 +379,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicRevenue"
-        fill="#38A9DB"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -411,7 +411,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         }
         cursor={
           Object {
-            "fill": "#1F49B6",
+            "fill": "#007",
             "opacity": 0.4,
           }
         }

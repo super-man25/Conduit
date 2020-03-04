@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { cssConstants, ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
+import { rowSeatsNetworkChunkSize, colors } from '_constants';
 import {
   Box,
   Toggle,
@@ -123,7 +123,7 @@ export class BulkUpdateModalPresenter extends Component {
     const { rows } = this.props;
 
     const totalSeatIds = rows.reduce((acc, row) => acc + row.seats.length, 0);
-    return totalSeatIds > ROW_SEATS_NETWORK_CHUNK_SIZE;
+    return totalSeatIds > rowSeatsNetworkChunkSize;
   }
 
   submitEnabled() {
@@ -156,11 +156,7 @@ export class BulkUpdateModalPresenter extends Component {
             Updating inventory for {rows.length} row(s).
           </Text>
           {this.showNetworkWarning && (
-            <Text
-              color={cssConstants.SECONDARY_BLUE_ACCENT}
-              marginTop="1rem"
-              size={12}
-            >
+            <Text color={colors.blue_ACCENT} marginTop="1rem" size={12}>
               Note: This update will result in multiple network requests
             </Text>
           )}
@@ -193,7 +189,7 @@ export class BulkUpdateModalPresenter extends Component {
                   marginTop="0.5rem"
                   size={12}
                   weight={300}
-                  color={cssConstants.SECONDARY_RED}
+                  color={colors.red}
                 >
                   Manual Price must be a valid dollar amount.
                 </FieldErrorText>
@@ -232,7 +228,7 @@ export class BulkUpdateModalPresenter extends Component {
                   marginTop="0.5rem"
                   size={12}
                   weight={300}
-                  color={cssConstants.SECONDARY_RED}
+                  color={colors.red}
                 >
                   Minimum Price must be a valid dollar amount.
                 </FieldErrorText>
@@ -256,7 +252,7 @@ export class BulkUpdateModalPresenter extends Component {
                   marginTop="0.5rem"
                   size={12}
                   weight={300}
-                  color={cssConstants.SECONDARY_RED}
+                  color={colors.red}
                 >
                   Maximum Price must be a valid dollar amount.
                 </FieldErrorText>

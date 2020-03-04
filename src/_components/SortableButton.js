@@ -1,9 +1,9 @@
 // @flow
-
 import * as React from 'react';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 import { P1 } from './StyledTags';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
@@ -15,12 +15,12 @@ const Container = styled.div`
 `;
 
 const Label = styled(P1)`
-  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${colors.blue};
   transition: 0.2s ease-in-out all;
 
   :hover {
     cursor: pointer;
-    color: ${darken(0.1, cssConstants.PRIMARY_LIGHT_BLUE)};
+    color: ${darken(0.1, colors.blue)};
   }
 `;
 

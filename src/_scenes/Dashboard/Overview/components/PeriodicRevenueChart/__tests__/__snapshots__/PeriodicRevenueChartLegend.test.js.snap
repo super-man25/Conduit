@@ -3,7 +3,7 @@
 exports[`<PeriodicRevenueChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
-    color="#0A169A"
+    color="#007"
     label="Revenue"
   />
 </Fragment>
@@ -12,11 +12,11 @@ exports[`<PeriodicRevenueChartLegend /> should render correctly 1`] = `
 exports[`<PeriodicRevenueChartLegend /> should render correctly when projections are present 1`] = `
 <Fragment>
   <ChartLegendItem
-    color="#0A169A"
+    color="#007"
     label="Actual Revenue"
   />
   <ChartLegendItem
-    color="#38A9DB"
+    color="#007"
     label="Projected Revenue"
   />
 </Fragment>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { H3, FormInput, Dropdown } from '_components';
 import { InputGroup, InputContainer } from './styled';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 // TODO: Replace hard-coded value
 const timezoneOptions = [
@@ -50,7 +50,7 @@ export const VenueInfoSection = () => (
               invalid={
                 form.errors.stadiumTimezone && form.touched.stadiumTimezone
               }
-              arrowColor={cssConstants.PRIMARY_BLUE}
+              arrowColor={colors.blue}
             />
           )}
         </FormInput>

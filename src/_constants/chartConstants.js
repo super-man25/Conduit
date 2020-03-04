@@ -1,8 +1,8 @@
-import { cssConstants } from './css.constants';
+import { colors } from './styleConstants';
 
 export const chartLabelStyles = {
   fontSize: 12,
-  color: cssConstants.PRIMARY_GRAY,
+  color: colors.gray,
 };
 
 export const GROUP_FILTERS = {

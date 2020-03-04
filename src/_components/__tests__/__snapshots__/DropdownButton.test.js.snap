@@ -31,17 +31,17 @@ exports[`renders correctly 1`] = `
 
 .c2 {
   margin: 0;
-  color: #070707;
+  color: #002;
   font-size: 1rem;
   font-weight: normal;
-  color: #38A9DB;
+  color: #007;
   -webkit-transition: 0.2s ease-in-out all;
   transition: 0.2s ease-in-out all;
 }
 
 .c2:hover {
   cursor: pointer;
-  color: #228ebe;
+  color: #004;
 }
 
 .c4 {
@@ -49,7 +49,7 @@ exports[`renders correctly 1`] = `
   width: 180px;
   top: calc(100% + 8px);
   z-index: 10;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #ddd;
   box-shadow: 0 20px 20px rgba(0,0,0,0.06);
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
@@ -62,13 +62,13 @@ exports[`renders correctly 1`] = `
 
 .c5 {
   padding: 12px 16px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 
 .c5:not(:last-child) {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #ddd;
 }
 
 .c5:hover {

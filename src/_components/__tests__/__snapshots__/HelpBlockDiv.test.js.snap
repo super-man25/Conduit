@@ -2,7 +2,7 @@
 
 exports[`renders correctly with no props 1`] = `
 .c0 {
-  color: #070707;
+  color: #002;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -14,13 +14,13 @@ exports[`renders correctly with no props 1`] = `
 
 <div
   className="c0"
-  color="#070707"
+  color="#002"
 />
 `;
 
 exports[`renders correctly with show and type="alert-danger" props 1`] = `
 .c0 {
-  color: #DC0A0A;
+  color: #b44;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -32,7 +32,7 @@ exports[`renders correctly with show and type="alert-danger" props 1`] = `
 
 <div
   className="c0"
-  color="#DC0A0A"
+  color="#b44"
   type="alert-danger"
 >
   error message
@@ -41,7 +41,7 @@ exports[`renders correctly with show and type="alert-danger" props 1`] = `
 
 exports[`renders correctly with show and type="alert-success" props 1`] = `
 .c0 {
-  color: #2F6450;
+  color: #4b4;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -53,7 +53,7 @@ exports[`renders correctly with show and type="alert-success" props 1`] = `
 
 <div
   className="c0"
-  color="#2F6450"
+  color="#4b4"
   type="alert-success"
 >
   error message
@@ -62,7 +62,7 @@ exports[`renders correctly with show and type="alert-success" props 1`] = `
 
 exports[`renders correctly with show and type="hint" props 1`] = `
 .c0 {
-  color: #5A288F;
+  color: #a3f;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -74,7 +74,7 @@ exports[`renders correctly with show and type="hint" props 1`] = `
 
 <div
   className="c0"
-  color="#5A288F"
+  color="#a3f"
   type="hint"
 >
   error message
@@ -83,7 +83,7 @@ exports[`renders correctly with show and type="hint" props 1`] = `
 
 exports[`renders correctly with show prop 1`] = `
 .c0 {
-  color: #070707;
+  color: #002;
   font-size: 12px;
   font-weight: 200;
   width: 100%;
@@ -95,7 +95,7 @@ exports[`renders correctly with show prop 1`] = `
 
 <div
   className="c0"
-  color="#070707"
+  color="#002"
 >
   message
 </div>

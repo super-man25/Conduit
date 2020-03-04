@@ -1,6 +1,6 @@
 import { Flex, Box, S1, Text } from '_components';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export const DemoWrapper = styled(Flex)`
   flex-direction: column;
@@ -34,21 +34,21 @@ export const RowWrapper = styled(Box)`
 
 export const FeatureGroupWrapper = styled.div`
   padding: 20px 25px;
-  background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
-  box-shadow: 1px 1px 3px ${cssConstants.PRIMARY_LIGHT_GRAY};
+  background-color: ${colors.lightGray};
+  box-shadow: 1px 1px 3px ${colors.lightGray};
   margin-top: 2rem;
 `;
 
 export const FeatureGroupTitle = styled(Text)`
-  font-size: ${cssConstants.TITLE_SIZE_H4};
-  font-weight: ${cssConstants.TITLE_WEIGHT_H4};
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  font-size: 18px;
+  font-weight: normal;
+  color: ${colors.gray};
   margin-bottom: 20px;
 `;
 
 export const FeatureInputLabel = styled(Text)`
   font-size: 12px;
-  color: ${cssConstants.PRIMARY_GRAY};
+  color: ${colors.gray};
   margin-bottom: 10px;
 `;
 
@@ -60,7 +60,7 @@ export const SoupedUpSlider = styled.input`
   ::-webkit-slider-runnable-track {
     width: 100%;
     height: 5px;
-    background: ${cssConstants.PRIMARY_GRAY};
+    background: ${colors.gray};
     border: none;
     border-radius: 3px;
   }
@@ -68,7 +68,7 @@ export const SoupedUpSlider = styled.input`
   ::-moz-range-track {
     width: 100%;
     height: 5px;
-    background: ${cssConstants.PRIMARY_GRAY};
+    background: ${colors.gray};
     border: none;
     border-radius: 3px;
   }
@@ -79,8 +79,8 @@ export const SoupedUpSlider = styled.input`
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: ${cssConstants.PRIMARY_WHITE};
-    border: 1px solid ${cssConstants.PRIMARY_BLUE};
+    background: ${colors.white};
+    border: 1px solid ${colors.blue};
   }
 
   ::-moz-range-thumb {
@@ -88,8 +88,8 @@ export const SoupedUpSlider = styled.input`
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: ${cssConstants.PRIMARY_WHITE};
-    border: 1px solid ${cssConstants.PRIMARY_BLUE};
+    background: ${colors.white};
+    border: 1px solid ${colors.blue};
   }
 
   :-moz-focusring {
@@ -98,7 +98,7 @@ export const SoupedUpSlider = styled.input`
   }
 
   :focus::-moz-range-track {
-    background: ${cssConstants.PRIMARY_GRAY};
+    background: ${colors.gray};
   }
 
   :focus {

@@ -9,7 +9,7 @@ import {
   FilterListItem,
 } from './styled';
 import type { EDInventorySectionFilter, EDVenuePriceScale } from '_models';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 type Props = {
   disclaimer: string,
@@ -36,11 +36,7 @@ export const Filter = ({
       <FilterButton onClick={onClearAllClicked}>Clear</FilterButton>
     </Flex>
     <Box padding="0rem 1rem 1rem 1rem">
-      <Text
-        size={12}
-        color={cssConstants.PRIMARY_LIGHT_GRAY}
-        fontStyle="italic"
-      >
+      <Text size={12} color={colors.lightGray} fontStyle="italic">
         {disclaimer}
       </Text>
     </Box>

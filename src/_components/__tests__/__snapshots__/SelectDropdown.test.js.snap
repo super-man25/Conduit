@@ -12,7 +12,7 @@ exports[`<SelectDropdown /> renders correctly 1`] = `
   min-width: 100px;
   cursor: pointer;
   text-align: left;
-  border: 1px solid #999999;
+  border: 1px solid #667;
   border-radius: 3px;
   font-size: 14px;
 }

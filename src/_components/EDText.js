@@ -2,14 +2,14 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { withBoxModelProps } from '_helpers/style-utils';
 
 const TYPES = new Map()
-  .set('primary', cssConstants.PRIMARY_DARKEST_GRAY)
-  .set('secondary', cssConstants.PRIMARY_BLUE)
-  .set('tertiary', cssConstants.PRIMARY_DARK_GRAY)
-  .set('disabled', cssConstants.PRIMARY_GRAY);
+  .set('primary', colors.gray)
+  .set('secondary', colors.blue)
+  .set('tertiary', colors.gray)
+  .set('disabled', colors.gray);
 
 const SIZES = new Map()
   .set('small', '0.875rem')
@@ -31,8 +31,7 @@ type Props = {
 
 export const EDText: React.ComponentType<Props> = withBoxModelProps(styled.div`
   font-size: ${(props) => SIZES.get(props.size) || '1rem'};
-  color: ${(props) =>
-    TYPES.get(props.type) || cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${(props) => TYPES.get(props.type) || colors.gray};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
   margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || 0};

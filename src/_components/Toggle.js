@@ -1,8 +1,8 @@
 // @flow
-
-import styled from 'styled-components';
-import { cssConstants } from '_constants';
 import React from 'react';
+import styled from 'styled-components';
+
+import { colors } from '_constants';
 
 const toggleSizes = {
   xsmall: {
@@ -36,7 +36,7 @@ const Slider = styled.span`
   width: ${(props) => props.size.width}px;
   height: ${(props) => props.size.height}px;
   border-radius: 1rem;
-  background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+  background-color: ${colors.gray};
   position: relative;
 
   ::before {
@@ -48,9 +48,9 @@ const Slider = styled.span`
     left: 0;
     top: 50%;
     transform: translate(${getSliderTransformX}px, -50%);
-    border: 0.5px solid ${cssConstants.SECONDARY_BLUE};
-    box-shadow: 0 1px 1px ${cssConstants.PRIMARY_DARK_GRAY};
-    background-color: ${cssConstants.PRIMARY_WHITE};
+    border: 0.5px solid ${colors.blue};
+    box-shadow: 0 1px 1px ${colors.gray};
+    background-color: ${colors.white};
     transition: 0.3s transform;
   }
 `;
@@ -65,10 +65,10 @@ const Label = styled.label`
 const Input = styled.input`
   display: none;
 
-  background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+  background-color: ${colors.gray};
 
   :checked + ${Slider} {
-    background-color: ${cssConstants.SECONDARY_BLUE};
+    background-color: ${colors.blue};
   }
 
   :disabled + ${Slider} {

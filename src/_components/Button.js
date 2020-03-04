@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants, shadows } from '_constants';
+import { shadows, colors } from '_constants';
 
 type Props = {
   fontSize: string,
@@ -28,61 +28,61 @@ export const Button: React.ComponentType<Props> = styled.button`
 
 export const PrimaryButton = styled(Button)`
   transition: opacity 100ms ease-out;
-  color: ${cssConstants.PRIMARY_WHITE};
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  color: ${colors.white};
+  background-color: ${colors.blue};
 
   &:disabled {
-    color: ${cssConstants.PRIMARY_GRAY};
-    background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+    color: ${colors.gray};
+    background-color: ${colors.lightGray};
     opacity: 0.5;
   }
 
   &:active {
-    background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    background-color: ${colors.lightBlue};
     box-shadow: ${shadows.ACTIVE_BUTTON};
   }
 
   &:hover:not(:disabled) {
-    background-color: ${cssConstants.PRIMARY_BLUE_HOVER};
+    background-color: ${colors.blue};
   }
 `;
 
 export const SecondaryButton = styled(Button)`
-  background-color: ${cssConstants.PRIMARY_WHITE};
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
-  color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.white};
+  border: 2px solid ${colors.blue};
+  color: ${colors.blue};
   transition: border linear;
 
   &:disabled {
-    border: 2px solid ${cssConstants.PRIMARY_GRAY};
-    color: ${cssConstants.PRIMARY_GRAY};
+    border: 2px solid ${colors.gray};
+    color: ${colors.gray};
     opacity: 0.5;
   }
 
   &:active {
-    background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
-    outline: 2px solid ${cssConstants.PRIMARY_LIGHT_BLUE};
+    background-color: ${colors.neonBlue};
+    color: ${colors.neonBlue};
+    outline: 2px solid ${colors.neonBlue};
     box-shadow: ${shadows.ACTIVE_BUTTON};
   }
 
   &:hover:not(:disabled) {
-    border: 3px solid ${cssConstants.PRIMARY_BLUE};
-    background-color: ${cssConstants.SECONDARY_BACKGROUND_LIGHTEST_BLUE};
-    color: ${cssConstants.PRIMARY_BLUE};
+    border: 3px solid ${colors.blue};
+    background-color: ${colors.lightGray};
+    color: ${colors.blue};
   }
 `;
 
 export const TextButton = styled(Button)`
-  color: ${cssConstants.PRIMARY_BLUE};
+  color: ${colors.blue};
   background-color: inherit;
 
   &:disabled {
-    color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+    color: ${colors.lightGray};
     opacity: 0.5;
   }
 
   &:hover:not(:disabled) {
-    color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+    color: ${colors.neonBlue};
   }
 `;

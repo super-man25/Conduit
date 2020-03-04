@@ -15,7 +15,7 @@ import { OverviewStats } from './components/OverviewStats';
 import { DashboardHeader } from '../components/DashboardHeader';
 import { isPastEvent } from '_helpers';
 import { EventPricing } from './components/EventPricing';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { EventTicketIntegrations } from './components/EventTicketIntegrations';
 import { PriceAllSection } from './components/PriceAllSection';
 
@@ -37,8 +37,8 @@ const EmptyContentMessage = styled(H4)`
 const InventoryLink = styled(Link)`
   display: inline-block;
   padding: 10px 15px;
-  color: ${cssConstants.PRIMARY_BLUE};
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
+  color: ${colors.blue};
+  border: 2px solid ${colors.blue};
   border-radius: 5px;
   margin-bottom: 25px;
   font-weight: bold;

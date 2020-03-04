@@ -1,9 +1,9 @@
 // @flow
-
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
 import { lighten } from 'polished';
+
+import { colors } from '_constants';
 import { TextButton, SecondaryButton, PrimaryButton } from '_components';
 
 type Props = {
@@ -34,7 +34,7 @@ export const SettingSaveButton = styled(PrimaryButton)`
 `;
 
 export const SettingCancelButton = styled(SecondaryButton)`
-  color: ${lighten(0.2, cssConstants.SECONDARY_RED)};
+  color: ${lighten(0.2, colors.red)};
   ::before {
     content: 'Cancel';
   }

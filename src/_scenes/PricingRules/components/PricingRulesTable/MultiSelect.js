@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { Text, Flex, Icon } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import {
   MultiSelectContainer,
   MultiSelectMenu,
@@ -201,11 +201,7 @@ export class MultiSelect extends React.Component<Props, State> {
       >
         {cellLabel}
         <Icon
-          color={
-            isOpen
-              ? cssConstants.PRIMARY_LIGHT_BLUE
-              : cssConstants.PRIMARY_LIGHT_BLACK
-          }
+          color={isOpen ? colors.blue : colors.black}
           name={'arrowDown'}
           size={12}
         />
@@ -234,13 +230,13 @@ export class MultiSelect extends React.Component<Props, State> {
               justify="space-between"
               padding="1rem"
               flexWrap="wrap"
-              style={{ backgroundColor: cssConstants.PRIMARY_WHITE }}
+              style={{ backgroundColor: colors.white }}
             >
               <Text size={13} weight={600}>
                 {label}
               </Text>
               <Text
-                color={cssConstants.PRIMARY_LIGHT_BLUE}
+                color={colors.blue}
                 style={{ cursor: 'pointer' }}
                 onClick={() => this.toggleSelectAll()}
               >

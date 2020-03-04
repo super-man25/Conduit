@@ -13,8 +13,8 @@ exports[`renders correctly 1`] = `
   width: calc(30% - 10rem);
   height: auto;
   margin: 0;
-  background: #FFFFFF;
-  border-right: 1px solid #D1D1D1;
+  background: #fff;
+  border-right: 1px solid #ddd;
 }
 
 <div

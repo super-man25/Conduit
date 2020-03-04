@@ -26,7 +26,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c1:not(:last-child) {
-  border-right: 1px solid #FFFFFF;
+  border-right: 1px solid #fff;
 }
 
 .c2 {
@@ -44,7 +44,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c2:not(:last-child) {
-  border-right: 1px solid #FFFFFF;
+  border-right: 1px solid #fff;
 }
 
 .c3 {
@@ -62,7 +62,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c3:not(:last-child) {
-  border-right: 1px solid #FFFFFF;
+  border-right: 1px solid #fff;
 }
 
 <div

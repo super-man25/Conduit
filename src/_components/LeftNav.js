@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export const LeftNav = styled.div`
   display: flex;
@@ -9,6 +9,6 @@ export const LeftNav = styled.div`
   width: calc(30% - 10rem);
   height: auto;
   margin: 0;
-  background: ${cssConstants.PRIMARY_WHITE};
-  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  background: ${colors.white};
+  border-right: 1px solid ${colors.lightGray};
 `;

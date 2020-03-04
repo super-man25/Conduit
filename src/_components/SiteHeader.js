@@ -1,5 +1,4 @@
 // @flow
-
 import React, { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -9,9 +8,8 @@ import { isMobileDevice } from '_helpers';
 import settingsIcon from '_images/settingsIcon.svg';
 import logoSvg from '_images/logo.svg';
 import {
-  cssConstants,
+  colors,
   zIndexes,
-  integrationConstants,
   navigationHeight,
   mobileBreakpoint,
   containerPadding,
@@ -30,7 +28,7 @@ const StyledSiteHeader = styled.div`
   width: 100%;
   min-height: ${navigationHeight}px;
   padding: 0 ${containerPadding}px;
-  background: ${cssConstants.PRIMARY_BLUE};
+  background: ${colors.blue};
 `;
 
 const Logo = styled.img`
@@ -55,7 +53,7 @@ const DropdownMenu = styled.div`
   right: -10px;
   top: calc(100% + ${caretWidth / 2}px);
   padding: 25px;
-  background: ${cssConstants.SECONDARY_BLUE};
+  background: ${colors.blue};
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
 
   ::before,
@@ -67,7 +65,7 @@ const DropdownMenu = styled.div`
     position: absolute;
     bottom: calc(100% - ${caretWidth}px / 2);
     right: ${caretWidth / 2}px;
-    background-color: ${cssConstants.SECONDARY_BLUE};
+    background-color: ${colors.blue};
   }
 
   ::before {
@@ -109,8 +107,7 @@ export const SiteHeader = () => {
   const clientList = useSelector(({ clientList }) => clientList);
   const hasTicketsDotComIntegration = useSelector(({ client }) =>
     client.integrations.some(
-      (integration) =>
-        integration.name === integrationConstants.ticketsDotCom.name
+      (integration) => integration.name === 'Tickets.com'
     )
   );
 
@@ -135,7 +132,7 @@ export const SiteHeader = () => {
             onClick={toggleSidebar}
             name={isSidebarOpen ? 'arrowLeft' : 'arrowRight'}
             size={24}
-            color={cssConstants.PRIMARY_WHITE}
+            color={colors.white}
           />
         )}
         <Link to="/">

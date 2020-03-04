@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { ChartLegendItem } from '_components';
 
 export function PeriodicRevenueChartLegend({ hasProjected }) {
@@ -7,13 +7,10 @@ export function PeriodicRevenueChartLegend({ hasProjected }) {
     <Fragment>
       <ChartLegendItem
         label={hasProjected ? 'Actual Revenue' : 'Revenue'}
-        color={cssConstants.PRIMARY_BLUE}
+        color={colors.blue}
       />
       {hasProjected && (
-        <ChartLegendItem
-          label="Projected Revenue"
-          color={cssConstants.PRIMARY_LIGHT_BLUE}
-        />
+        <ChartLegendItem label="Projected Revenue" color={colors.blue} />
       )}
     </Fragment>
   );

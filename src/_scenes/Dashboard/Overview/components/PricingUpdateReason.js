@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { CheckboxGroup, Checkbox } from '_components';
-import { adminModifierReasonTypes } from '_constants/adminModifier.constants';
 
 const PricingUpdateReasonContainer = styled.div`
-  border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-top: 1px solid ${colors.lightGray};
   margin-top: 20px;
   padding-top: 20px;
 `;
@@ -17,7 +16,7 @@ const ReasonOptions = styled.div`
 
 const CommentBox = styled.textarea`
   width: 100%;
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
+  border: 2px solid ${colors.blue};
   outline: none;
   border-radius: 3px;
   resize: vertical;
@@ -25,6 +24,29 @@ const CommentBox = styled.textarea`
   margin-bottom: 25px;
   padding: 10px;
 `;
+
+const adminModifierReasonTypes = {
+  weather: {
+    label: 'Weather',
+    value: 'Weather',
+  },
+  demand: {
+    label: 'Calibration (Demand)',
+    value: 'Demand',
+  },
+  teamStats: {
+    label: 'Team Performance',
+    value: 'TeamStats',
+  },
+  opponentStats: {
+    label: 'Strength Of Opponent',
+    value: 'OpponentStats',
+  },
+  other: {
+    label: 'Other',
+    value: 'Other',
+  },
+};
 
 export const PricingUpdateReason = ({
   reasonType,

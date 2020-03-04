@@ -1,8 +1,8 @@
 // @flow
-
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 
 const SIZES = new Map()
   .set('small', '0.875rem')
@@ -20,10 +20,8 @@ type Props = {
 };
 export const SelectBox: React.ComponentType<Props> = styled.select.attrs(
   (props) => ({
-    color: props.noBg
-      ? cssConstants.PRIMARY_LIGHT_BLUE
-      : cssConstants.PRIMARY_DARKEST_GRAY,
-    background: props.noBg ? 'transparent' : cssConstants.PRIMARY_WHITE,
+    color: props.noBg ? colors.blue : colors.gray,
+    background: props.noBg ? 'transparent' : colors.white,
     border: props.noBg ? 'none' : '1px solid',
     margin: props.noBg ? '0 0 0 -10px' : 0,
   })

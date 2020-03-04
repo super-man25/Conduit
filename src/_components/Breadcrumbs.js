@@ -7,7 +7,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Flex } from '_components';
 
 const StyledBreadcrumbLink = styled(Link)`
-  color: black;
   font-weight: normal;
   text-decoration: underline;
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { MenuIcon, Flex, Box, SeatIcon } from '_components';
 import { EventInventoryVerticalRule } from './styled';
 import { SeatMap } from './SeatMap';
@@ -23,9 +23,7 @@ export class EventInventorySeatMap extends React.Component {
             height={30}
             width={30}
             styles={{ cursor: 'pointer' }}
-            fill={
-              showMap ? cssConstants.PRIMARY_GRAY : cssConstants.SECONDARY_BLUE
-            }
+            fill={showMap ? colors.gray : colors.blue}
             onClick={() => this.toggleSeatMap(false)}
           />
           <EventInventoryVerticalRule
@@ -37,9 +35,7 @@ export class EventInventorySeatMap extends React.Component {
             height={28}
             width={28}
             styles={{ cursor: 'pointer' }}
-            fill={
-              showMap ? cssConstants.SECONDARY_BLUE : cssConstants.PRIMARY_GRAY
-            }
+            fill={showMap ? colors.blue : colors.gray}
             onClick={() => this.toggleSeatMap(true)}
           />
         </Flex>

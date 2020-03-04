@@ -11,12 +11,12 @@ exports[`renders correctly with disabled prop 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  background-color: #FFFFFF;
-  border: 2px solid #0A169A;
-  color: #0A169A;
+  background-color: #fff;
+  border: 2px solid #007;
+  color: #007;
   -webkit-transition: border linear;
   transition: border linear;
-  color: #f75555;
+  color: #d68f8f;
 }
 
 .c0:disabled {
@@ -24,22 +24,22 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 .c0:disabled {
-  border: 2px solid #999999;
-  color: #999999;
+  border: 2px solid #667;
+  color: #667;
   opacity: 0.5;
 }
 
 .c0:active {
-  background-color: #F0F4F7;
-  color: #38A9DB;
-  outline: 2px solid #38A9DB;
+  background-color: #3af;
+  color: #3af;
+  outline: 2px solid #3af;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
 .c0:hover:not(:disabled) {
-  border: 3px solid #0A169A;
-  background-color: #F0F4F7;
-  color: #0A169A;
+  border: 3px solid #007;
+  background-color: #ddd;
+  color: #007;
 }
 
 .c0::before {
@@ -63,12 +63,12 @@ exports[`renders correctly with no props 1`] = `
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  background-color: #FFFFFF;
-  border: 2px solid #0A169A;
-  color: #0A169A;
+  background-color: #fff;
+  border: 2px solid #007;
+  color: #007;
   -webkit-transition: border linear;
   transition: border linear;
-  color: #f75555;
+  color: #d68f8f;
 }
 
 .c0:disabled {
@@ -76,22 +76,22 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0:disabled {
-  border: 2px solid #999999;
-  color: #999999;
+  border: 2px solid #667;
+  color: #667;
   opacity: 0.5;
 }
 
 .c0:active {
-  background-color: #F0F4F7;
-  color: #38A9DB;
-  outline: 2px solid #38A9DB;
+  background-color: #3af;
+  color: #3af;
+  outline: 2px solid #3af;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
 .c0:hover:not(:disabled) {
-  border: 3px solid #0A169A;
-  background-color: #F0F4F7;
-  color: #0A169A;
+  border: 3px solid #007;
+  background-color: #ddd;
+  color: #007;
 }
 
 .c0::before {

@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c4 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c0 {
@@ -51,7 +51,6 @@ exports[`renders correctly 1`] = `
 }
 
 .c2 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0 5px 0 0;
@@ -67,19 +66,19 @@ exports[`renders correctly 1`] = `
 
 .c9 {
   font-size: 14px;
-  color: #999999;
+  color: #667;
   margin: 0;
   text-align: right;
 }
 
 .c11 {
-  color: #999999;
+  color: #667;
   margin: 0;
 }
 
 .c12 {
   font-weight: 700;
-  color: #0A169A;
+  color: #007;
   margin: 0;
   text-align: right;
 }
@@ -98,7 +97,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
   min-height: 36px;
   padding: 14px 0;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #ddd;
 }
 
 .c10:last-child {
@@ -114,7 +113,7 @@ exports[`renders correctly 1`] = `
   position: absolute;
   bottom: 100%;
   left: -64px;
-  background-color: #0A169A;
+  background-color: #007;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -133,7 +132,7 @@ exports[`renders correctly 1`] = `
   >
     <h4
       className="sc-fzoant c2"
-      color="#070707"
+      color={null}
     >
       Preview
     </h4>
@@ -144,7 +143,7 @@ exports[`renders correctly 1`] = `
     >
       <svg
         className="c4"
-        color="#0A169A"
+        color="#007"
         height="22px"
         viewBox="0 0 24 24"
         width="22px"
@@ -173,7 +172,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c9"
-          color="#999999"
+          color="#667"
           size={14}
         >
           Min Price
@@ -185,7 +184,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c9"
-          color="#999999"
+          color="#667"
           size={14}
         >
           Max Price
@@ -202,7 +201,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c11"
-          color="#999999"
+          color="#667"
         >
           Event
         </p>
@@ -213,7 +212,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $52.18
         </p>
@@ -224,7 +223,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $1,147.73
         </p>
@@ -240,7 +239,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c11"
-          color="#999999"
+          color="#667"
         >
           Section 14
         </p>
@@ -251,7 +250,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $421.36
         </p>
@@ -262,7 +261,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $1,120.58
         </p>
@@ -278,7 +277,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c11"
-          color="#999999"
+          color="#667"
         >
           Section 114
         </p>
@@ -289,7 +288,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $285.06
         </p>
@@ -300,7 +299,7 @@ exports[`renders correctly 1`] = `
       >
         <p
           className="sc-fznLPX c12 private"
-          color="#0A169A"
+          color="#007"
         >
           $856.69
         </p>
@@ -317,7 +316,7 @@ exports[`renders the error preview 1`] = `
 }
 
 .c4 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c7 {
@@ -326,7 +325,7 @@ exports[`renders the error preview 1`] = `
 }
 
 .c7 path {
-  fill: #DC0A0A;
+  fill: #b44;
 }
 
 .c0 {
@@ -376,14 +375,13 @@ exports[`renders the error preview 1`] = `
 }
 
 .c2 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0 5px 0 0;
 }
 
 .c8 {
-  color: #B80C09;
+  color: #b44;
   margin: 0;
   text-align: center;
 }
@@ -397,7 +395,7 @@ exports[`renders the error preview 1`] = `
   position: absolute;
   bottom: 100%;
   left: -64px;
-  background-color: #0A169A;
+  background-color: #007;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -416,7 +414,7 @@ exports[`renders the error preview 1`] = `
   >
     <h4
       className="sc-fzoant c2"
-      color="#070707"
+      color={null}
     >
       Preview
     </h4>
@@ -427,7 +425,7 @@ exports[`renders the error preview 1`] = `
     >
       <svg
         className="c4"
-        color="#0A169A"
+        color="#007"
         height="22px"
         viewBox="0 0 24 24"
         width="22px"
@@ -450,7 +448,7 @@ exports[`renders the error preview 1`] = `
   >
     <svg
       className="c7"
-      color="#DC0A0A"
+      color="#b44"
       height="24px"
       viewBox="0 0 24 24"
       width="24px"
@@ -461,7 +459,7 @@ exports[`renders the error preview 1`] = `
     </svg>
     <p
       className="sc-fznLPX c8"
-      color="#B80C09"
+      color="#b44"
     >
       A server error has occurred, please contact
        
@@ -469,7 +467,7 @@ exports[`renders the error preview 1`] = `
         href="mailto:support@eventdynamic.com"
         style={
           Object {
-            "color": "#B80C09",
+            "color": "#b44",
             "fontWeight": "bold",
           }
         }
@@ -488,7 +486,7 @@ exports[`renders the loading preview 1`] = `
 }
 
 .c4 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c0 {
@@ -537,14 +535,13 @@ exports[`renders the loading preview 1`] = `
 }
 
 .c2 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0 5px 0 0;
 }
 
 .c7 {
-  color: #0A169A;
+  color: #007;
   margin: 0;
 }
 
@@ -557,7 +554,7 @@ exports[`renders the loading preview 1`] = `
   position: absolute;
   bottom: 100%;
   left: -64px;
-  background-color: #0A169A;
+  background-color: #007;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -576,7 +573,7 @@ exports[`renders the loading preview 1`] = `
   >
     <h4
       className="sc-fzoant c2"
-      color="#070707"
+      color={null}
     >
       Preview
     </h4>
@@ -587,7 +584,7 @@ exports[`renders the loading preview 1`] = `
     >
       <svg
         className="c4"
-        color="#0A169A"
+        color="#007"
         height="22px"
         viewBox="0 0 24 24"
         width="22px"
@@ -608,7 +605,7 @@ exports[`renders the loading preview 1`] = `
   >
     <p
       className="sc-fznLPX c7"
-      color="#0A169A"
+      color="#007"
     >
       Loading Price Preview...
     </p>
@@ -623,7 +620,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
 }
 
 .c4 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c0 {
@@ -672,14 +669,13 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
 }
 
 .c2 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0 5px 0 0;
 }
 
 .c7 {
-  color: #999999;
+  color: #667;
   margin: 0;
 }
 
@@ -692,7 +688,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   position: absolute;
   bottom: 100%;
   left: -64px;
-  background-color: #0A169A;
+  background-color: #007;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -711,7 +707,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   >
     <h4
       className="sc-fzoant c2"
-      color="#070707"
+      color={null}
     >
       Preview
     </h4>
@@ -722,7 +718,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
     >
       <svg
         className="c4"
-        color="#0A169A"
+        color="#007"
         height="22px"
         viewBox="0 0 24 24"
         width="22px"
@@ -743,7 +739,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
   >
     <p
       className="sc-fznLPX c7"
-      color="#999999"
+      color="#667"
     >
       The pricing preview section will be available once the event has been priced.
     </p>

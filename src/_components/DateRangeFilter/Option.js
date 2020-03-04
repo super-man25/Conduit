@@ -1,34 +1,35 @@
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 
 export const Option = styled.div`
   padding: 12px 16px;
   width: 164px;
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.white};
   transition: 0.1s ease-in-out all;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
-  border-left: 1px solid ${cssConstants.PRIMARY_BLUE};
-  border-right: 1px solid ${cssConstants.PRIMARY_BLUE};
+  color: ${colors.black};
+  border-left: 1px solid ${colors.blue};
+  border-right: 1px solid ${colors.blue};
 
   :first-child {
-    border-top: 1px solid ${cssConstants.PRIMARY_BLUE};
+    border-top: 1px solid ${colors.blue};
     border-radius: 0 4px 0 0;
   }
   :last-child {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_BLUE};
+    border-bottom: 1px solid ${colors.blue};
     border-radius: 0 0 4px 4px;
   }
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
+    background-color: ${darken(0.05, colors.white)};
   }
 
   ${(props) =>
     props.dateRangePickerOpen &&
     css`
-      border-right: 1px solid ${cssConstants.PRIMARY_GRAY};
+      border-right: 1px solid ${colors.gray};
       :first-child {
         border-radius: 0;
       }

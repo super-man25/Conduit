@@ -4,21 +4,21 @@ exports[`renders correctly 1`] = `
 .c0 {
   padding: 12px 16px;
   width: 164px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
-  border-left: 1px solid #0A169A;
-  border-right: 1px solid #0A169A;
+  color: #002;
+  border-left: 1px solid #007;
+  border-right: 1px solid #007;
 }
 
 .c0:first-child {
-  border-top: 1px solid #0A169A;
+  border-top: 1px solid #007;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #0A169A;
+  border-bottom: 1px solid #007;
   border-radius: 0 0 4px 4px;
 }
 
@@ -36,21 +36,21 @@ exports[`renders correctly when active 1`] = `
 .c0 {
   padding: 12px 16px;
   width: 164px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
-  border-left: 1px solid #0A169A;
-  border-right: 1px solid #0A169A;
+  color: #002;
+  border-left: 1px solid #007;
+  border-right: 1px solid #007;
 }
 
 .c0:first-child {
-  border-top: 1px solid #0A169A;
+  border-top: 1px solid #007;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #0A169A;
+  border-bottom: 1px solid #007;
   border-radius: 0 0 4px 4px;
 }
 
@@ -68,22 +68,22 @@ exports[`renders correctly when dateRangePickerOpen is open 1`] = `
 .c0 {
   padding: 12px 16px;
   width: 164px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
-  border-left: 1px solid #0A169A;
-  border-right: 1px solid #0A169A;
-  border-right: 1px solid #999999;
+  color: #002;
+  border-left: 1px solid #007;
+  border-right: 1px solid #007;
+  border-right: 1px solid #667;
 }
 
 .c0:first-child {
-  border-top: 1px solid #0A169A;
+  border-top: 1px solid #007;
   border-radius: 0 4px 0 0;
 }
 
 .c0:last-child {
-  border-bottom: 1px solid #0A169A;
+  border-bottom: 1px solid #007;
   border-radius: 0 0 4px 4px;
 }
 

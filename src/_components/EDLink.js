@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const WEIGHTS = new Map()
   .set('normal', '400')
@@ -27,7 +27,7 @@ type Props = {
 export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
-  color: ${(props) => props.color || cssConstants.SECONDARY_BLUE};
+  color: ${(props) => props.color || colors.blue};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
   transition: all 0.1s ease-in-out;
 
@@ -36,8 +36,8 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
     outline: 0;
     text-decoration: none;
     cursor: pointer;
-    color: ${cssConstants.PRIMARY_BLUE_HOVER};
-    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_BLUE_HOVER};
+    color: ${colors.blue};
+    text-shadow: 0 0 0.5px ${colors.blue};
   }
 
   &:active,
@@ -50,7 +50,7 @@ export const EDLink: React.ComponentType<Props> = styled(Link).attrs(attrs)`
 export const EDNavLink = styled(NavLink).attrs(attrs)`
   text-decoration: none;
   font-size: ${(props) => props.size};
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${colors.gray};
   font-weight: ${(props) => WEIGHTS.get(props.weight) || 'normal'};
   transition: all 0.1s ease-in-out;
 
@@ -59,8 +59,8 @@ export const EDNavLink = styled(NavLink).attrs(attrs)`
     outline: 0;
     text-decoration: none;
     cursor: pointer;
-    color: ${cssConstants.PRIMARY_BLUE};
-    text-shadow: 0 0 0.5px ${cssConstants.PRIMARY_BLUE};
+    color: ${colors.blue};
+    text-shadow: 0 0 0.5px ${colors.blue};
   }
 
   &:active,

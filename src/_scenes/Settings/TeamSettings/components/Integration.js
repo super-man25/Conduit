@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { Toggle, Flex, EDText } from '_components';
 import { readableDuration, sentenceCase } from '_helpers/string-utils';
 import { SecondaryPricingRule } from './SecondaryPricingRule';
@@ -11,11 +11,11 @@ import { SecondaryPricingRule } from './SecondaryPricingRule';
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${cssConstants.CARD_PURPLE};
+  background-color: ${colors.lightGray};
   width: 20rem;
-  box-shadow: 0 4px 4px 0 ${cssConstants.PRIMARY_LIGHT_GRAY};
+  box-shadow: 0 4px 4px 0 ${colors.lightGray};
   padding: 1rem 2rem;
-  border: 1px solid ${cssConstants.PRIMARY_DARK_GRAY};
+  border: 1px solid ${colors.gray};
 `;
 
 const Details = styled(Flex)`

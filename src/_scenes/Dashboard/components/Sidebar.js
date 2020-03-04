@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { cssConstants, mobileBreakpoint } from '_constants';
+import { colors, mobileBreakpoint } from '_constants';
 import { TeamOverview } from './TeamOverview';
 import { EventList } from './EventList';
 
 const StyledSidebar = styled.div`
   width: 400px;
   visibility: visible;
-  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-right: 1px solid ${colors.lightGray};
   transition: 0.1s ease-in-out transform;
   background-color: white;
   display: flex;
@@ -34,8 +34,8 @@ const StyledSidebar = styled.div`
 `;
 
 const SidebarHeader = styled.div`
-  color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  background: ${cssConstants.SECONDARY_BLUE_ACCENT};
+  color: ${colors.lightGray};
+  background: ${colors.darkBlue};
 `;
 
 const SidebarContent = styled.div`

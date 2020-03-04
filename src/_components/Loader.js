@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const smallHeight = 10;
 const largeHeight = 14;
@@ -43,7 +43,7 @@ const AnimatedDot = styled.div`
   border-radius: 100px;
   animation: ${dotAnimation} 1.3s ease infinite;
   animation-delay: ${(props) => `${0.1 + props.index * 0.2}s`};
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.blue};
 
   & + & {
     margin-left: 5px;

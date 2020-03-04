@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { PrimaryButton, Input, Flex, Box } from '_components';
 
 export const ManualPricingInput = styled(Input)`
@@ -19,7 +19,7 @@ export const ManualPricingButton = styled(PrimaryButton)`
 
 export const TableHeaderCell = styled.div`
   text-align: ${(props) => props.align || 'left'};
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${colors.gray};
   font-weight: 500;
 `;
 
@@ -44,8 +44,8 @@ export const PositionedBox = styled(Box)`
 
 export const FilterContainer = styled(Box)`
   width: 280px;
-  border: 1px solid ${cssConstants.SECONDARY_BLUE};
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  border: 1px solid ${colors.blue};
+  background-color: ${colors.white};
   position: relative;
   box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.43);
 
@@ -58,9 +58,9 @@ export const FilterContainer = styled(Box)`
     left: 43px;
     transform: rotate(45deg);
     z-index: 1;
-    background-color: ${cssConstants.PRIMARY_WHITE};
-    border-top: 1px solid ${cssConstants.SECONDARY_BLUE};
-    border-left: 1px solid ${cssConstants.SECONDARY_BLUE};
+    background-color: ${colors.white};
+    border-top: 1px solid ${colors.blue};
+    border-left: 1px solid ${colors.blue};
   }
 `;
 
@@ -84,10 +84,10 @@ export const Checkbox = styled.input.attrs(() => ({ type: 'checkbox' }))`
 `;
 
 export const FilterButton = styled.button`
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.blue};
   border: none;
   border-radius: 2px;
-  color: ${cssConstants.PRIMARY_WHITE};
+  color: ${colors.white};
   font-weight: 300;
   height: 25px;
   min-width: 60px;

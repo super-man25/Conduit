@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 
 export const MainContent = styled.div`
   position: relative;
@@ -13,5 +14,5 @@ export const MainContent = styled.div`
   height: calc(100% - 70px);
   margin: 0;
   padding: 35px;
-  background: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
+  background: ${colors.lightGray};
 `;

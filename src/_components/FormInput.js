@@ -3,12 +3,12 @@ import { Field } from 'formik';
 import styled from 'styled-components';
 import get from 'lodash.get';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { InputLabel, Input } from './Input';
 
 const FieldError = styled.div`
   font-size: 12px;
-  color: ${cssConstants.SECONDARY_RED};
+  color: ${colors.red};
   margin-top: 5px;
 `;
 

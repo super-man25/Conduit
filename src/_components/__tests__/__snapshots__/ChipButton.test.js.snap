@@ -3,7 +3,6 @@
 exports[`ChipButton renders correctly 1`] = `
 .c0 {
   background-color: transparent;
-  color: #070707;
   cursor: pointer;
   font-size: 12px;
   padding: 8px 14px;
@@ -14,21 +13,21 @@ exports[`ChipButton renders correctly 1`] = `
 }
 
 .c0:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
+  background-color: #007;
+  color: #fff;
 }
 
-<button
+<div
   className="c0"
 >
   Chip Button
-</button>
+</div>
 `;
 
 exports[`ChipButton renders correctly with an active prop 1`] = `
 .c0 {
-  background-color: #1F49B6;
-  color: #FFFFFF;
+  background-color: #44b;
+  color: #fff;
   cursor: pointer;
   font-size: 12px;
   padding: 8px 14px;
@@ -39,21 +38,21 @@ exports[`ChipButton renders correctly with an active prop 1`] = `
 }
 
 .c0:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
+  background-color: #007;
+  color: #fff;
 }
 
-<button
+<div
   className="c0"
 >
   Chip Button
-</button>
+</div>
 `;
 
 exports[`ChipButtonGroup renders correctly 1`] = `
 .c2 {
-  background-color: #1F49B6;
-  color: #FFFFFF;
+  background-color: #44b;
+  color: #fff;
   cursor: pointer;
   font-size: 12px;
   padding: 8px 14px;
@@ -64,8 +63,8 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 }
 
 .c2:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
+  background-color: #007;
+  color: #fff;
 }
 
 .c0 {
@@ -85,25 +84,25 @@ exports[`ChipButtonGroup renders correctly 1`] = `
 <div
   className="c0"
 >
-  <button
+  <div
     className="c1 c2"
     onClick={[Function]}
   >
     ChipButton 1
-  </button>
-  <button
+  </div>
+  <div
     className="c1 c2"
     onClick={[Function]}
   >
     ChipButton 2
-  </button>
+  </div>
 </div>
 `;
 
 exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 .c2 {
-  background-color: #1F49B6;
-  color: #FFFFFF;
+  background-color: #44b;
+  color: #fff;
   cursor: pointer;
   font-size: 12px;
   padding: 8px 14px;
@@ -114,13 +113,12 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c2:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
+  background-color: #007;
+  color: #fff;
 }
 
 .c3 {
   background-color: transparent;
-  color: #070707;
   cursor: pointer;
   font-size: 12px;
   padding: 8px 14px;
@@ -131,8 +129,8 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 }
 
 .c3:hover {
-  background-color: #848ACC;
-  color: #FFFFFF;
+  background-color: #007;
+  color: #fff;
 }
 
 .c0 {
@@ -152,18 +150,18 @@ exports[`ChipButtonGroup renders correctly with a value set 1`] = `
 <div
   className="c0"
 >
-  <button
+  <div
     className="c1 c2"
     onClick={[Function]}
     value="Active"
   >
     ChipButton 1
-  </button>
-  <button
+  </div>
+  <div
     className="c1 c3"
     onClick={[Function]}
   >
     ChipButton 2
-  </button>
+  </div>
 </div>
 `;

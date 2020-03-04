@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import type { EDEvent } from '_models';
 import {
   formatUSD,
@@ -24,9 +24,8 @@ const StyledEventListItem = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px 25px;
-  border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-top: 1px solid ${colors.lightGray};
   background-color: white;
-  color: black;
   position: relative;
   cursor: pointer;
   transition: margin-bottom 0.2s ease-out;
@@ -34,14 +33,14 @@ const StyledEventListItem = styled.div`
   ${({ past }) =>
     past &&
     `
-    background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
-    color: ${cssConstants.PRIMARY_DARK_GRAY};
+    background-color: ${colors.lightGray};
+    color: ${colors.gray};
   `}
 
   ${({ active, progressBarHovered }) =>
     active &&
     `
-      background-color: ${cssConstants.PRIMARY_BLUE};
+      background-color: ${colors.blue};
       color: white;
       z-index: 999;
       margin-bottom: ${progressBarHovered ? '15px' : '10px'};
@@ -71,7 +70,7 @@ const DateContainer = styled.div`
   ${({ past }) =>
     past &&
     `
-    border-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    border-color: ${colors.gray};
   `}
 
   ${({ active }) =>
@@ -90,14 +89,14 @@ const Month = styled.div`
   ${({ past }) =>
     past &&
     `
-    background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    background-color: ${colors.gray};
   `}
 
   ${({ active }) =>
     active &&
     `
     background-color: white;
-    color: ${cssConstants.PRIMARY_BLUE};
+    color: ${colors.blue};
   `}
 `;
 
@@ -150,7 +149,7 @@ const EventDetailLabel = styled.div`
 `;
 
 const InventoryProgressBar = styled.div`
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${colors.neonBlue};
   height: 100%;
   width: 0;
   transition: width 0.3s ease-out 0.2s;
@@ -161,7 +160,6 @@ const InventoryProgressBar = styled.div`
   &:after {
     position: absolute;
     z-index: 1;
-    color: white;
     top: 0;
     right: 5px;
     opacity: 0;
@@ -179,11 +177,13 @@ const InventoryProgressBar = styled.div`
 
     &:after {
       content: '${percentage}%';
+      color: ${colors.darkBlue};
       ${
         percentage < 15
           ? `
         right: initial;
         left: calc(100% + 5px);
+        color: white;
       `
           : ''
       }
@@ -198,7 +198,7 @@ const InventoryProgressBarContainer = styled.div`
   height: 0;
   width: 100%;
   transition: height 0.2s ease-out;
-  background-color: ${cssConstants.SECONDARY_BLUE_ACCENT};
+  background-color: ${colors.darkBlue};
 
   ${({ active }) =>
     active &&

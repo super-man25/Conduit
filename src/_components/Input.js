@@ -3,7 +3,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import okIcon from '_images/valid.png';
 import badIcon from '_images/invalid.png';
 import { Label } from './StyledTags';
@@ -14,20 +14,13 @@ export const InputBase = styled.input.attrs((props) => ({
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
+  border: 2px solid ${colors.blue};
   border-color: ${({ valid, invalid }) =>
-    valid
-      ? cssConstants.SECONDARY_GREEN
-      : invalid
-      ? cssConstants.SECONDARY_RED
-      : null};
+    valid ? colors.green : invalid ? colors.red : null};
   border-radius: 3px;
-  background: ${(props) =>
-    props.disabled
-      ? cssConstants.PRIMARY_LIGHT_GRAY
-      : cssConstants.PRIMARY_WHITE};
+  background: ${(props) => (props.disabled ? colors.lightGray : colors.white)};
   ::placeholder {
-    color: ${cssConstants.PRIMARY_GRAY};
+    color: ${colors.gray};
   }
 `;
 
@@ -56,10 +49,7 @@ type InputProps = {
 
 export const Input: React.ComponentType<InputProps> = styled(InputBase)`
   display: block;
-  background: ${(props) =>
-    props.disabled
-      ? cssConstants.PRIMARY_LIGHT_GRAY
-      : cssConstants.PRIMARY_WHITE};
+  background: ${(props) => (props.disabled ? colors.lightGray : colors.white)};
   background-image: ${(props) =>
     props.valid
       ? `url(${okIcon})`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { cssConstants, mobileBreakpoint } from '_constants';
+import { mobileBreakpoint, colors } from '_constants';
 
 export const HideMe = styled.div`
   display: ${(props) => (props.show ? 'block' : 'none')};
@@ -10,12 +10,12 @@ export const HideMe = styled.div`
 
 export const ForgotLink = styled.span`
   cursor: pointer;
-  color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_GRAY};
-  font-size: ${(props) => props.size || cssConstants.SUBHEADING_SIZE_S1};
-  font-weight: ${(props) => props.weight || cssConstants.SUBHEADING_WEIGHT_S1};
+  color: ${(props) => props.color || colors.lightGray};
+  font-size: ${(props) => props.size || '12px'};
+  font-weight: ${(props) => props.weight || 'normal'};
 
   &:hover {
-    color: ${(props) => props.color || cssConstants.PRIMARY_LIGHT_BLACK};
+    color: ${(props) => props.color || colors.black};
   }
 `;
 
@@ -28,7 +28,7 @@ export const Content = styled.div`
 
 export const LoginFooter = styled.div`
   padding: 40px;
-  background-color: ${cssConstants.PRIMARY_EVEN_LIGHTER_GRAY};
+  background-color: ${colors.lightGray};
   font-size: 10px;
   line-height: 130%;
 `;

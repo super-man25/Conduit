@@ -7,7 +7,7 @@ exports[`renders correctly when downloading is false 1`] = `
 }
 
 .c1 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c0 {
@@ -27,7 +27,7 @@ exports[`renders correctly when downloading is false 1`] = `
 
 .c2 {
   font-size: 0.875rem;
-  color: #0A169A;
+  color: #007;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -46,7 +46,7 @@ exports[`renders correctly when downloading is false 1`] = `
 >
   <svg
     className="c1"
-    color="#0A169A"
+    color="#007"
     height="24px"
     viewBox="0 0 24 24"
     width="24px"
@@ -72,7 +72,7 @@ exports[`renders correctly when downloading is true 1`] = `
 }
 
 .c1 path {
-  fill: #999999;
+  fill: #667;
 }
 
 .c0 {
@@ -92,7 +92,7 @@ exports[`renders correctly when downloading is true 1`] = `
 
 .c2 {
   font-size: 0.875rem;
-  color: #999999;
+  color: #667;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -110,7 +110,7 @@ exports[`renders correctly when downloading is true 1`] = `
 >
   <svg
     className="c1"
-    color="#999999"
+    color="#667"
     height="24px"
     viewBox="0 0 24 24"
     width="24px"

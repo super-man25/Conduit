@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import {
   H3,
   PageWrapper,
@@ -144,7 +144,7 @@ export class PricingRules extends React.Component<Props> {
               <Breadcrumbs crumbs={pricingCrumb} />
               <Flex direction="row" justify="space-between" align="baseline">
                 <SeasonDropdown
-                  arrowColor={cssConstants.SECONDARY_BLUE}
+                  arrowColor={colors.blue}
                   options={seasonsWithPricingRuleName}
                   selected={selectedSeasonWithPricingRuleName}
                   noneSelected={<H3>Select a Season</H3>}

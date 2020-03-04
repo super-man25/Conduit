@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import type { Node } from 'react';
 import styled from 'styled-components';
+
 import { withClickAway } from '_hoc';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { darken } from 'polished';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
@@ -22,7 +23,7 @@ const DropdownMenu = styled.div`
   left: 0;
   width: 100%;
   z-index: 10;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border: 1px solid ${colors.lightGray};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
   transition: 0.1s ease-in-out all;
   opacity: 0;
@@ -43,19 +44,16 @@ DropdownMenu.displayName = 'DropdownMenu';
 const DropdownMenuOption = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive
-      ? darken(0.05, cssConstants.PRIMARY_WHITE)
-      : cssConstants.PRIMARY_WHITE};
+    props.isActive ? darken(0.05, colors.white) : colors.white};
   transition: 0.1s ease-in-out all;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
 
   :not(:last-child) {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    border-bottom: 1px solid ${colors.lightGray};
   }
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
+    background-color: ${darken(0.05, colors.white)};
   }
 `;
 DropdownMenuOption.displayName = 'DropdownMenuOption';
@@ -110,10 +108,10 @@ export const Dropdown = (props: Props) => {
   );
 
   const getArrowColor = () => {
-    if (valid) return cssConstants.SECONDARY_GREEN;
-    if (invalid) return cssConstants.SECONDARY_RED;
+    if (valid) return colors.green;
+    if (invalid) return colors.red;
     if (arrowColor) return arrowColor;
-    return cssConstants.PRIMARY_WHITE;
+    return colors.white;
   };
 
   return (

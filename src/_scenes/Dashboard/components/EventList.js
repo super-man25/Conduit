@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import { cssConstants, containerPadding } from '_constants';
+import { colors, containerPadding } from '_constants';
 import { isPastEvent } from '_helpers';
 import {
   actions as eventListActions,
@@ -27,7 +27,7 @@ const Heading = styled(H4)`
 `;
 
 const HeaderContainer = styled.div`
-  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-bottom: 1px solid ${colors.lightGray};
 `;
 
 const SearchContainer = styled.div`
@@ -37,7 +37,7 @@ const SearchContainer = styled.div`
 const NoContentWrap = styled.div`
   padding: 10vh 0;
   text-align: center;
-  color: ${cssConstants.PRIMARY_DARK_GRAY};
+  color: ${colors.gray};
 `;
 
 function getScrollIndex(events, activeEventId, filtered) {

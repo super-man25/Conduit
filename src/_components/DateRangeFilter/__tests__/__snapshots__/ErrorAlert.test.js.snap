@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c1 path {
-  fill: #DC0A0A;
+  fill: #b44;
 }
 
 .c0 {
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
 
 .c2 {
   font-size: 12px;
-  color: #DC0A0A;
+  color: #b44;
   margin: 0;
   padding-left: 5px;
 }
@@ -39,7 +39,7 @@ exports[`renders correctly 1`] = `
 >
   <svg
     className="c1"
-    color="#DC0A0A"
+    color="#b44"
     height="16px"
     viewBox="0 0 24 24"
     width="16px"
@@ -50,7 +50,7 @@ exports[`renders correctly 1`] = `
   </svg>
   <p
     className="sc-fznLPX c2"
-    color="#DC0A0A"
+    color="#b44"
     size={12}
   >
     This is a test message

@@ -15,7 +15,7 @@ import {
   FlexItem,
   Spacing,
 } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { EDTicketBreakdown } from '_models';
 import { ApiError } from '_helpers/api';
@@ -24,13 +24,13 @@ import { selectors as seasonSelectors } from '_state/season';
 type BreakdownType = 'revenue' | 'inventory';
 
 const BREAKDOWN_COLORSET = [
-  cssConstants.PRIMARY_BLUE,
-  cssConstants.SECONDARY_BLUE,
-  cssConstants.SECONDARY_LIGHT_BLUE,
-  cssConstants.SECONDARY_LIGHTEST_BLUE,
-  cssConstants.SECONDARY_BLUE_GRAY,
-  cssConstants.SECONDARY_LIGHT_PURPLE,
-  cssConstants.SECONDARY_PURPLE,
+  colors.darkBlue,
+  colors.blue,
+  colors.lightBlue,
+  colors.neonBlue,
+  colors.gray,
+  colors.lightGray,
+  colors.purple,
 ];
 
 const CenteredText = styled(P1)`

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { H3, FormInput, FormInputArray, Dropdown } from '_components';
 import { InputGroup, InputContainer } from './styled';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 // TODO: Replace hard-coded value
 const mapsToOptions = [
@@ -71,7 +71,7 @@ export const SkyBoxCustomersSection = ({ values }) => {
                     }}
                     options={mapsToOptions}
                     parseOption={(option) => option.label}
-                    arrowColor={cssConstants.PRIMARY_BLUE}
+                    arrowColor={colors.blue}
                     valid={isMapsToValid({ form, fieldIndex: index })}
                     invalid={isMapsToInvalid({ form, fieldIndex: index })}
                   />

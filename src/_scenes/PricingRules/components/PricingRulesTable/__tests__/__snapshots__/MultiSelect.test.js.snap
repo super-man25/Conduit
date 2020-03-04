@@ -23,7 +23,7 @@ exports[`<MultiSelect /> should render correctly 1`] = `
   onClickAway={[Function]}
 >
   <Icon
-    color="#070707"
+    color="#002"
     name="arrowDown"
     size={12}
   />
@@ -57,7 +57,7 @@ exports[`<MultiSelect /> should render correctly 1`] = `
         padding="1rem"
         style={
           Object {
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#fff",
           }
         }
       >
@@ -68,7 +68,7 @@ exports[`<MultiSelect /> should render correctly 1`] = `
           Events
         </Styled(styled.p)>
         <Styled(styled.p)
-          color="#38A9DB"
+          color="#007"
           onClick={[Function]}
           style={
             Object {
@@ -115,7 +115,7 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
   onClickAway={[Function]}
 >
   <Icon
-    color="#070707"
+    color="#002"
     name="arrowDown"
     size={12}
   />
@@ -149,7 +149,7 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
         padding="1rem"
         style={
           Object {
-            "backgroundColor": "#FFFFFF",
+            "backgroundColor": "#fff",
           }
         }
       >
@@ -160,7 +160,7 @@ exports[`<MultiSelect /> should update the state if the grouped view is toggled 
           Events
         </Styled(styled.p)>
         <Styled(styled.p)
-          color="#38A9DB"
+          color="#007"
           onClick={[Function]}
           style={
             Object {

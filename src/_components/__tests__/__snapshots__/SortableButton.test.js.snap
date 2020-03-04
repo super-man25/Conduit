@@ -30,17 +30,17 @@ exports[`should render correctly 1`] = `
 
 .c2 {
   margin: 0;
-  color: #070707;
+  color: #002;
   font-size: 1rem;
   font-weight: normal;
-  color: #38A9DB;
+  color: #007;
   -webkit-transition: 0.2s ease-in-out all;
   transition: 0.2s ease-in-out all;
 }
 
 .c2:hover {
   cursor: pointer;
-  color: #228ebe;
+  color: #004;
 }
 
 .c3 {
@@ -147,17 +147,17 @@ exports[`should render correctly with optional props 1`] = `
 
 .c2 {
   margin: 0;
-  color: #070707;
+  color: #002;
   font-size: 1rem;
   font-weight: normal;
-  color: #38A9DB;
+  color: #007;
   -webkit-transition: 0.2s ease-in-out all;
   transition: 0.2s ease-in-out all;
 }
 
 .c2:hover {
   cursor: pointer;
-  color: #228ebe;
+  color: #004;
 }
 
 .c3 {
