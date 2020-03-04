@@ -10,7 +10,6 @@ yup.addMethod(yup.number, 'money', function() {
 const secondaryPriceRuleSchema = yup.object({
   percent: yup
     .number()
-    .integer()
     .nullable()
     .min(-100)
     .max(100)
