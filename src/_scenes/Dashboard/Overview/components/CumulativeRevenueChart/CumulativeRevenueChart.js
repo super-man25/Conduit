@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from 'recharts';
 
-import { cssConstants, chartLabelStyles } from '_constants';
+import { chartLabelStyles, colors } from '_constants';
 import { truncateNumber } from '_helpers/string-utils';
 import { ChartContainer } from '_components';
 import { CumulativeRevenueTooltip } from './CumulativeRevenueTooltip';
@@ -104,7 +104,7 @@ export function CumulativeRevenueChart({
             name="actual"
             dot={false}
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_BLUE}
+            stroke={colors.blue}
           />
 
           <Line
@@ -115,11 +115,11 @@ export function CumulativeRevenueChart({
             dot={false}
             name="projected"
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_LIGHT_BLUE}
+            stroke={colors.neonBlue}
           />
           <Tooltip
             cursor={{
-              stroke: cssConstants.SECONDARY_BLUE,
+              stroke: colors.blue,
               strokeWidth: 2,
               opacity: 0.5,
             }}

@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c32 path {
-  fill: #0A169A;
+  fill: #007;
 }
 
 .c3 {
@@ -170,21 +170,18 @@ exports[`renders correctly 1`] = `
 }
 
 .c5 {
-  color: #070707;
   font-size: 18px;
   font-weight: bold;
   margin: 0 2.5rem 0 0;
 }
 
 .c15 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
 }
 
 .c30 {
-  color: #070707;
   font-size: 18px;
   font-weight: normal;
   margin: 0 5px 0 0;
@@ -200,37 +197,34 @@ exports[`renders correctly 1`] = `
 
 .c20 {
   font-size: 14px;
-  color: #999999;
+  color: #667;
   margin: 0;
   text-align: right;
 }
 
 .c22 {
-  color: #999999;
+  color: #667;
   margin: 0;
 }
 
 .c23 {
-  color: #070707;
   margin: 0;
   text-align: right;
 }
 
 .c26 {
   font-weight: 700;
-  color: #070707;
   margin: 0;
 }
 
 .c27 {
   font-weight: 700;
-  color: #070707;
   margin: 0;
   text-align: right;
 }
 
 .c2 {
-  border: 1px solid #D1D1D1;
+  border: 1px solid #ddd;
   border-radius: 6px 6px 0 0;
   padding: 15px 25px;
 }
@@ -240,7 +234,7 @@ exports[`renders correctly 1`] = `
   width: 40px;
   height: 8px;
   border-radius: 1rem;
-  background-color: #767676;
+  background-color: #667;
   position: relative;
 }
 
@@ -255,9 +249,9 @@ exports[`renders correctly 1`] = `
   -webkit-transform: translate(0px,-50%);
   -ms-transform: translate(0px,-50%);
   transform: translate(0px,-50%);
-  border: 0.5px solid #1F49B6;
-  box-shadow: 0 1px 1px #767676;
-  background-color: #FFFFFF;
+  border: 0.5px solid #007;
+  box-shadow: 0 1px 1px #667;
+  background-color: #fff;
   -webkit-transition: 0.3s -webkit-transform;
   -webkit-transition: 0.3s transform;
   transition: 0.3s transform;
@@ -281,11 +275,11 @@ exports[`renders correctly 1`] = `
 
 .c7 {
   display: none;
-  background-color: #767676;
+  background-color: #667;
 }
 
 .c7:checked + .c8 {
-  background-color: #1F49B6;
+  background-color: #007;
 }
 
 .c7:disabled + .c8 {
@@ -300,7 +294,7 @@ exports[`renders correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-right: 1px solid #D1D1D1;
+  border-right: 1px solid #ddd;
   padding: 25px;
   width: 100%;
 }
@@ -308,7 +302,7 @@ exports[`renders correctly 1`] = `
 .c16 {
   cursor: pointer;
   font-weight: bold;
-  color: #0A169A;
+  color: #007;
 }
 
 .c31 {
@@ -320,7 +314,7 @@ exports[`renders correctly 1`] = `
   position: absolute;
   bottom: 100%;
   left: -64px;
-  background-color: #0A169A;
+  background-color: #007;
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -330,7 +324,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c1 {
-  background-color: #FFFFFF;
+  background-color: #fff;
   margin-top: 25px;
 }
 
@@ -339,7 +333,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c11 {
-  border: 1px solid #D1D1D1;
+  border: 1px solid #ddd;
   border-top: none;
   padding: 25px;
   position: relative;
@@ -380,7 +374,7 @@ exports[`renders correctly 1`] = `
       >
         <h4
           className="sc-fzoant c5"
-          color="#070707"
+          color={null}
         >
           Pricing
         </h4>
@@ -425,7 +419,7 @@ exports[`renders correctly 1`] = `
         >
           <h4
             className="sc-fzoant c15"
-            color="#070707"
+            color={null}
           >
             Modifiers
           </h4>
@@ -450,7 +444,7 @@ exports[`renders correctly 1`] = `
             >
               <p
                 className="sc-fznLPX c20"
-                color="#999999"
+                color="#667"
                 size={14}
               >
                 Event Score
@@ -462,7 +456,7 @@ exports[`renders correctly 1`] = `
             >
               <p
                 className="sc-fznLPX c20"
-                color="#999999"
+                color="#667"
                 size={14}
               >
                 Spring Value
@@ -479,7 +473,7 @@ exports[`renders correctly 1`] = `
             >
               <p
                 className="sc-fznLPX c22"
-                color="#999999"
+                color="#667"
               >
                 Predicted
               </p>
@@ -510,8 +504,8 @@ exports[`renders correctly 1`] = `
             direction="row"
             style={
               Object {
-                "borderBottom": "1px solid #EEEEEE",
-                "borderTop": "1px solid #EEEEEE",
+                "borderBottom": "1px solid #ddd",
+                "borderTop": "1px solid #ddd",
               }
             }
           >
@@ -521,7 +515,7 @@ exports[`renders correctly 1`] = `
             >
               <p
                 className="sc-fznLPX c22"
-                color="#999999"
+                color="#667"
               >
                 Modifier
               </p>
@@ -552,7 +546,7 @@ exports[`renders correctly 1`] = `
             direction="row"
             style={
               Object {
-                "borderBottom": "1px solid #EEEEEE",
+                "borderBottom": "1px solid #ddd",
               }
             }
           >
@@ -562,7 +556,7 @@ exports[`renders correctly 1`] = `
             >
               <p
                 className="sc-fznLPX c22"
-                color="#999999"
+                color="#667"
               >
                 Velocity
               </p>
@@ -629,7 +623,7 @@ exports[`renders correctly 1`] = `
         >
           <h4
             className="sc-fzoant c30"
-            color="#070707"
+            color={null}
           >
             Preview
           </h4>
@@ -640,7 +634,7 @@ exports[`renders correctly 1`] = `
           >
             <svg
               className="c32"
-              color="#0A169A"
+              color="#007"
               height="22px"
               viewBox="0 0 24 24"
               width="22px"
@@ -661,7 +655,7 @@ exports[`renders correctly 1`] = `
         >
           <p
             className="sc-fznLPX c22"
-            color="#999999"
+            color="#667"
           >
             No Price Preview
           </p>

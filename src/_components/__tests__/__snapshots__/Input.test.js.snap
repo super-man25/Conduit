@@ -5,11 +5,11 @@ exports[`renders correctly with disabled prop 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
+  border: 2px solid #007;
   border-radius: 3px;
-  background: #D1D1D1;
+  background: #ddd;
   display: block;
-  background: #D1D1D1;
+  background: #ddd;
   background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
@@ -17,19 +17,19 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-webkit-autofill {
@@ -51,12 +51,12 @@ exports[`renders correctly with invalid prop 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
-  border-color: #DC0A0A;
+  border: 2px solid #007;
+  border-color: #b44;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   display: block;
-  background: #FFFFFF;
+  background: #fff;
   background-image: url(invalid.png);
   background-repeat: no-repeat;
   background-position: right center;
@@ -64,19 +64,19 @@ exports[`renders correctly with invalid prop 1`] = `
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-webkit-autofill {
@@ -97,11 +97,11 @@ exports[`renders correctly with no props 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
+  border: 2px solid #007;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   display: block;
-  background: #FFFFFF;
+  background: #fff;
   background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
@@ -109,19 +109,19 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-webkit-autofill {
@@ -142,12 +142,12 @@ exports[`renders correctly with valid prop 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
-  border-color: #2F6450;
+  border: 2px solid #007;
+  border-color: #3a3;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   display: block;
-  background: #FFFFFF;
+  background: #fff;
   background-image: url(valid.png);
   background-repeat: no-repeat;
   background-position: right center;
@@ -155,19 +155,19 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-webkit-autofill {

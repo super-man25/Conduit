@@ -22,12 +22,12 @@ import {
   Text,
 } from '_components';
 import {
-  cssConstants,
   CHART_HEIGHT,
   GROUP_FILTERS,
   CONCISE_READABLE_DATETIME_FORMAT,
   READABLE_DATE_FORMAT,
   mobileBreakpoint,
+  colors,
 } from '_constants';
 import { selectors as seasonSelectors } from '_state/season';
 import { selectors as eventSelectors } from '_state/event';
@@ -64,16 +64,13 @@ const StyledOverviewCharts = styled(Panel)`
 `;
 
 const TabLink = styled.span`
-  color: ${(props) =>
-    props.isActive
-      ? cssConstants.SECONDARY_BLUE
-      : cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${({ isActive }) => isActive && colors.blue};
 
   font-weight: ${(props) => (props.isActive ? 'bold' : 'normal')};
   font-size: 14px;
 
   &:hover {
-    color: ${cssConstants.PRIMARY_BLUE_HOVER};
+    color: ${colors.blue};
     cursor: pointer;
   }
 

@@ -23,11 +23,10 @@ exports[`renders correctly 1`] = `
 .c2 {
   height: 32px;
   min-width: 8px;
-  background: #0A169A;
+  background: #007;
 }
 
 .c3 {
-  color: #323232;
   font-size: 12px;
   margin-left: 10px;
 }
@@ -37,7 +36,7 @@ exports[`renders correctly 1`] = `
 >
   <div
     className="c2"
-    color="#0A169A"
+    color="#007"
   />
   <span
     className="c3"
@@ -74,7 +73,6 @@ exports[`renders correctly with color prop 1`] = `
 }
 
 .c3 {
-  color: #323232;
   font-size: 12px;
   margin-left: 10px;
 }
@@ -117,11 +115,10 @@ exports[`renders correctly with dashed prop 1`] = `
 .c2 {
   height: 32px;
   min-width: 8px;
-  background: repeating-linear-gradient(to bottom,#0A169A,#0A169A 15%,transparent 15%,transparent 20%);
+  background: repeating-linear-gradient(to bottom,#007,#007 15%,transparent 15%,transparent 20%);
 }
 
 .c3 {
-  color: #323232;
   font-size: 12px;
   margin-left: 10px;
 }
@@ -131,7 +128,7 @@ exports[`renders correctly with dashed prop 1`] = `
 >
   <div
     className="c2"
-    color="#0A169A"
+    color="#007"
   />
   <span
     className="c3"

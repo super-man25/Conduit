@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export const ChartContainer = styled.div`
-  background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  background-color: ${colors.whiteSmoke};
+  border: 1px solid ${colors.lightGray};
   position: relative;
   padding: 14px 14px;
   overflow: hidden;

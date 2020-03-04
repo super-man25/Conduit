@@ -108,7 +108,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -142,7 +142,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#0A169A"
+        stroke="#007"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -165,7 +165,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#3af"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -193,7 +193,7 @@ exports[`<CumulativeRevenueChart /> should render correctly 1`] = `
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": "#1F49B6",
+            "stroke": "#007",
             "strokeWidth": 2,
           }
         }
@@ -328,7 +328,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -362,7 +362,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#0A169A"
+        stroke="#007"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -385,7 +385,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#38A9DB"
+        stroke="#3af"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -413,7 +413,7 @@ exports[`<CumulativeRevenueChart /> should render correctly with a different hei
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": "#1F49B6",
+            "stroke": "#007",
             "strokeWidth": 2,
           }
         }

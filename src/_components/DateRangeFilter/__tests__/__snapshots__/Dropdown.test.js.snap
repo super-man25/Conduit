@@ -15,10 +15,9 @@ exports[`renders correctly when closed 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  border: 1px solid #0A169A;
-  background-color: #FFFFFF;
+  border: 1px solid #007;
+  background-color: #fff;
   padding: 8px 12px;
-  color: #323232;
   border-radius: 4px;
 }
 
@@ -46,14 +45,13 @@ exports[`renders correctly when open 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
-  border: 1px solid #0A169A;
-  background-color: #FFFFFF;
+  border: 1px solid #007;
+  background-color: #fff;
   padding: 8px 12px;
-  color: #323232;
   border-radius: 4px;
-  border-left: 1px solid #0A169A;
-  border-top: 1px solid #0A169A;
-  border-right: 1px solid #0A169A;
+  border-left: 1px solid #007;
+  border-top: 1px solid #007;
+  border-right: 1px solid #007;
   border-radius: 4px 4px 0 0;
 }
 

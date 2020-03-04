@@ -16,9 +16,9 @@ exports[`renders correctly when not showing 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border: 1px solid #0A169A;
+  border: 1px solid #007;
   border-left: none;
-  background: #FFFFFF;
+  background: #fff;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.1s ease-in-out;
@@ -46,9 +46,9 @@ exports[`renders correctly when showing 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border: 1px solid #0A169A;
+  border: 1px solid #007;
   border-left: none;
-  background: #FFFFFF;
+  background: #fff;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.1s ease-in-out;

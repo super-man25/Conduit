@@ -5,7 +5,7 @@ import { SortIcon } from './SortIcon';
 import { Box, Flex, FilterListIcon } from '_components';
 import { Filter } from './Filter';
 import { withClickAway } from '_hoc';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import type {
   EDInventorySectionFilter,
   EDInventorySort,
@@ -103,8 +103,8 @@ export class FilterColumnHeader extends React.Component<Props, State> {
               <FilterListIcon
                 fill={
                   filterDropdownOpen || selectedFilters.length
-                    ? cssConstants.PRIMARY_BLUE
-                    : cssConstants.PRIMARY_LIGHT_BLACK
+                    ? colors.blue
+                    : colors.black
                 }
                 style={{ cursor: 'pointer' }}
                 height={SVGSideLength}

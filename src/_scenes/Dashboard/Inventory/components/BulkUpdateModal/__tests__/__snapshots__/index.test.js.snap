@@ -79,10 +79,10 @@ exports[`<BulkUpdateModal /> should render correctly 1`] = `
               "rules": Array [
                 "
   background-color: ",
-                "#FFFFFF",
+                "#fff",
                 ";
   border: 1px solid ",
-                "#999999",
+                "#667",
                 ";
   border-radius: 3px;
   height: 40px;
@@ -218,10 +218,10 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
               "rules": Array [
                 "
   background-color: ",
-                "#FFFFFF",
+                "#fff",
                 ";
   border: 1px solid ",
-                "#999999",
+                "#667",
                 ";
   border-radius: 3px;
   height: 40px;
@@ -251,7 +251,7 @@ exports[`<BulkUpdateModal /> should render correctly when an invalid manual pric
         value="12.222"
       />
       <Styled(Styled(styled.p))
-        color="#DC0A0A"
+        color="#b44"
         marginTop="0.5rem"
         size={12}
         weight={300}
@@ -365,10 +365,10 @@ exports[`<BulkUpdateModal /> should render correctly when loading is true 1`] = 
               "rules": Array [
                 "
   background-color: ",
-                "#FFFFFF",
+                "#fff",
                 ";
   border: 1px solid ",
-                "#999999",
+                "#667",
                 ";
   border-radius: 3px;
   height: 40px;

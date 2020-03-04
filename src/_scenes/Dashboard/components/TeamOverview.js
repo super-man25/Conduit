@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { isAfter } from 'date-fns';
 
 import { pluralize } from '_helpers/string-utils';
-import { cssConstants, containerPadding } from '_constants';
+import { containerPadding, colors } from '_constants';
 import type { PerformanceType, EDEvent } from '_models';
 import { selectors, actions as seasonActions } from '_state/season';
 import { actions as uiActions } from '_state/ui';
@@ -17,14 +17,13 @@ import { Dropdown } from '_components/Dropdown';
 
 const StyledTeamOverview = styled.div`
   padding: ${containerPadding}px;
-  color: ${cssConstants.PRIMARY_WHITE};
 `;
 
 const Heading = styled(H4)`
   margin: 0;
   padding: 0;
   vertical-align: top;
-  color: ${cssConstants.PRIMARY_WHITE};
+  color: ${colors.white};
   letter-spacing: 0.5px;
   font-weight: bold;
 `;
@@ -32,7 +31,7 @@ const Heading = styled(H4)`
 const StatLabel = styled(H3)`
   margin: 0;
   padding: 0;
-  color: ${cssConstants.PRIMARY_WHITE};
+  color: ${colors.white};
   font-weight: bold;
 `;
 
@@ -42,6 +41,7 @@ const SeasonDropdown = styled(Dropdown)`
   border: none;
   padding: 0;
   background: none;
+  margin-right: 15px;
 `;
 
 type Stats = {
@@ -161,18 +161,14 @@ export const TeamOverview = () => {
         <Flex direction="row" align="center" justify="space-between">
           <FlexItem flex={1}>
             <StatLabel>{showRecord(stats, performanceType)}</StatLabel>
-            <P1
-              color={cssConstants.PRIMARY_WHITE}
-              size="14px"
-              letterSpacing="1px"
-            >
+            <P1 color={colors.white} size="14px" letterSpacing="1px">
               {showRecordLabel(performanceType)}
             </P1>
           </FlexItem>
           <FlexItem flex={1}>
             <StatLabel>{showGamesRemaining(eventList)}</StatLabel>
             <P1
-              color={cssConstants.PRIMARY_WHITE}
+              color={colors.white}
               size="14px"
               letterSpacing="1px"
             >{`${pluralize(

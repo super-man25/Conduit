@@ -1,10 +1,11 @@
 // @flow
 import * as React from 'react';
+import { colors } from '_constants';
 
 const defaultSVGProps = {
   width: 24,
   height: 24,
-  fill: '#000',
+  fill: colors.black,
 };
 
 export const ExpandMoreIcon = ({

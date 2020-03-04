@@ -18,7 +18,7 @@ exports[`should render default 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c2 + .c1 {
@@ -33,7 +33,7 @@ exports[`should render default 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.30000000000000004s;
   animation-delay: 0.30000000000000004s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c3 + .c1 {
@@ -48,7 +48,7 @@ exports[`should render default 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c4 + .c1 {
@@ -92,7 +92,7 @@ exports[`should render with optional props 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c2 + .c1 {
@@ -107,7 +107,7 @@ exports[`should render with optional props 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.30000000000000004s;
   animation-delay: 0.30000000000000004s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c3 + .c1 {
@@ -122,7 +122,7 @@ exports[`should render with optional props 1`] = `
   animation: cHDNma 1.3s ease infinite;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
-  background-color: #0A169A;
+  background-color: #007;
 }
 
 .c4 + .c1 {

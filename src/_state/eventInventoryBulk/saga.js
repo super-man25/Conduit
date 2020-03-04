@@ -1,6 +1,6 @@
 import { select, takeLatest, call, put, all } from 'redux-saga/effects';
 
-import { ROW_SEATS_NETWORK_CHUNK_SIZE } from '_constants';
+import { rowSeatsNetworkChunkSize } from '_constants';
 import { chunk } from '_helpers';
 import { eventService } from '_services';
 import { actions as alertActions } from '_state/alert';
@@ -19,10 +19,7 @@ export function* bulkUpdate(action) {
     []
   );
 
-  const chunkedRowSeatIds = chunk(
-    selectedRowSeatIds,
-    ROW_SEATS_NETWORK_CHUNK_SIZE
-  );
+  const chunkedRowSeatIds = chunk(selectedRowSeatIds, rowSeatsNetworkChunkSize);
 
   try {
     yield all(

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactDayPicker from 'react-day-picker';
 
-import { cssConstants, shadows } from '_constants';
+import { shadows, colors } from '_constants';
 import { Flex, Text } from '_components';
 import { ErrorAlert } from './ErrorAlert';
 
@@ -11,9 +11,9 @@ const DayPickerContainer = styled.div`
   align-items: center;
   align-content: space-between;
   flex-direction: column;
-  border: 1px solid ${cssConstants.PRIMARY_BLUE};
+  border: 1px solid ${colors.blue};
   border-left: none;
-  background: ${cssConstants.PRIMARY_WHITE};
+  background: ${colors.white};
   opacity: 0;
   visibility: hidden;
   transition: all 0.1s ease-in-out;
@@ -64,12 +64,7 @@ export const DayPicker = ({
             {fromError ? (
               <ErrorAlert msg="Start Date Required" />
             ) : (
-              <Text
-                color={cssConstants.PRIMARY_GRAY}
-                margin="20px"
-                size={12}
-                height="20px"
-              >
+              <Text color={colors.gray} margin="20px" size={12} height="20px">
                 Start Date
               </Text>
             )}
@@ -90,12 +85,7 @@ export const DayPicker = ({
             {toError ? (
               <ErrorAlert msg="End Date Required" />
             ) : (
-              <Text
-                color={cssConstants.PRIMARY_GRAY}
-                margin="20px"
-                size={12}
-                height="20px"
-              >
+              <Text color={colors.gray} margin="20px" size={12} height="20px">
                 End Date
               </Text>
             )}

@@ -33,7 +33,7 @@ exports[`<PricingRules /> index route should render corectly 1`] = `
           justify="space-between"
         >
           <Styled(Dropdown)
-            arrowColor="#1F49B6"
+            arrowColor="#007"
             noneSelected={
               <ForwardRef(styled.h3)>
                 Select a Season

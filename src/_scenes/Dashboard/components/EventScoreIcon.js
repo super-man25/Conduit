@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const TicketBackground = styled.div`
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.blue};
   padding: 4px 12px; /* numbers chosen visually to make a ticket shape */
   border-radius: 3px;
   position: relative;
@@ -36,11 +36,11 @@ const TicketBackground = styled.div`
   ${({ past }) =>
     past &&
     `
-    background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    background-color: ${colors.gray};
 
     &:before,
     &:after {
-      background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
+      background-color: ${colors.lightGray};
     }
   `}
 
@@ -48,11 +48,11 @@ const TicketBackground = styled.div`
     active &&
     `
     background-color: white;
-    color: ${cssConstants.PRIMARY_BLUE};
+    color: ${colors.blue};
 
     &:before,
     &:after {
-      background-color: ${cssConstants.PRIMARY_BLUE};
+      background-color: ${colors.blue};
     }
   `}
 `;

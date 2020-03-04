@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { Icon, Flex } from '_components';
 
 const StyledIcon = styled((props) => <Icon {...props} />)`
@@ -26,7 +26,7 @@ const HiddenCheckbox = styled.input.attrs({
 const StyledCheckbox = styled((props) => <Flex {...props} />)`
   width: 16px;
   height: 16px;
-  border: 2px solid ${cssConstants.PRIMARY_BLUE};
+  border: 2px solid ${colors.blue};
   border-radius: 3px;
 `;
 
@@ -52,7 +52,7 @@ export const Checkbox = ({ label, checked, handleChange, className }) => (
         checked={checked}
         size={12}
         name="check"
-        color={cssConstants.PRIMARY_BLUE}
+        color={colors.blue}
       />
     </StyledCheckbox>
     <CheckboxLabel>{label}</CheckboxLabel>

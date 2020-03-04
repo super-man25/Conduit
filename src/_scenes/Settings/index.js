@@ -16,10 +16,9 @@ import {
   SiteHeader,
   Spacing,
 } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { actions as authActions } from '_state/auth';
 import CreateUser from './CreateUser';
-import Demo from './Demo';
 import TeamSettings from './TeamSettings';
 import UserSettings from './UserSettings';
 import Onboard from './Onboard';
@@ -60,12 +59,6 @@ const routes: Array<RouteConfig> = [
     main: CreateUser,
   },
   {
-    path: '/settings/demo',
-    linkText: 'Demo',
-    adminOnly: true,
-    main: Demo,
-  },
-  {
     path: '/settings/onboard',
     linkText: 'Onboard',
     adminOnly: true,
@@ -98,8 +91,8 @@ export const Settings = ({ authState, authActions }: Props) => (
                     weight="heavy"
                     to={r.path}
                     activeStyle={{
-                      color: cssConstants.PRIMARY_BLUE,
-                      textShadow: `0 0 0.5px ${cssConstants.PRIMARY_BLUE}`,
+                      color: colors.blue,
+                      textShadow: `0 0 0.5px ${colors.blue}`,
                     }}
                   >
                     {r.linkText}

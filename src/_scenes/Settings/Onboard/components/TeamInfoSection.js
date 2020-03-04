@@ -9,7 +9,7 @@ import {
   isBefore,
 } from 'date-fns';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { H3, Input, Dropdown, FormInput } from '_components';
 import { InputGroup, InputContainer } from './styled';
 
@@ -63,7 +63,7 @@ export const TeamInfoSection = ({ values }) => (
               }}
               valid={!form.errors.league && form.touched.league}
               invalid={form.errors.league && form.touched.league}
-              arrowColor={cssConstants.PRIMARY_BLUE}
+              arrowColor={colors.blue}
             />
           )}
         </FormInput>

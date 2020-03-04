@@ -13,7 +13,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
       Option 1
     </div>
     <Styled(Icon)
-      color="#FFFFFF"
+      color="#fff"
       name="arrowUp"
       size={12}
     />
@@ -52,7 +52,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
       Option 1
     </div>
     <Styled(Icon)
-      color="#FFFFFF"
+      color="#fff"
       name="arrowDown"
       size={12}
     />
@@ -85,7 +85,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 }
 
 .c2 path {
-  fill: #FFFFFF;
+  fill: #fff;
 }
 
 .c1 {
@@ -110,26 +110,26 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
+  border: 2px solid #007;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   cursor: pointer;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c4 {
@@ -138,7 +138,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
   left: 0;
   width: 100%;
   z-index: 10;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #ddd;
   box-shadow: 0 20px 20px rgba(0,0,0,0.06);
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
@@ -152,36 +152,34 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 
 .c5 {
   padding: 12px 16px;
-  background-color: #f2f2f2;
+  background-color: #ddd;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
 }
 
 .c5:not(:last-child) {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #ddd;
 }
 
 .c5:hover {
   cursor: default;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c6 {
   padding: 12px 16px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
 }
 
 .c6:not(:last-child) {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #ddd;
 }
 
 .c6:hover {
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c3 {
@@ -205,7 +203,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
       </div>
       <svg
         className="c2 c3"
-        color="#FFFFFF"
+        color="#fff"
         height="12px"
         viewBox="0 0 24 24"
         width="12px"
@@ -242,7 +240,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
 }
 
 .c2 path {
-  fill: #FFFFFF;
+  fill: #fff;
 }
 
 .c1 {
@@ -267,26 +265,26 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
+  border: 2px solid #007;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   cursor: pointer;
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c4 {
@@ -295,7 +293,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
   left: 0;
   width: 100%;
   z-index: 10;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #ddd;
   box-shadow: 0 20px 20px rgba(0,0,0,0.06);
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
@@ -309,19 +307,18 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
 
 .c5 {
   padding: 12px 16px;
-  background-color: #FFFFFF;
+  background-color: #fff;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
-  color: #070707;
 }
 
 .c5:not(:last-child) {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #ddd;
 }
 
 .c5:hover {
   cursor: pointer;
-  background-color: #f2f2f2;
+  background-color: #ddd;
 }
 
 .c3 {
@@ -345,7 +342,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
       </div>
       <svg
         className="c2 c3"
-        color="#FFFFFF"
+        color="#fff"
         height="12px"
         viewBox="0 0 24 24"
         width="12px"

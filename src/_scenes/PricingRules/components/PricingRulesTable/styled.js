@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { darken } from 'polished';
 import { withClickAway } from '_hoc';
 import { Input, Box } from '_components';
@@ -13,7 +13,7 @@ export const EditPricingRuleInput = styled(Input)`
 
 export const TableHeaderCell = styled.div`
   text-align: ${(props) => props.align || 'left'};
-  color: ${cssConstants.PRIMARY_DARKEST_GRAY};
+  color: ${colors.gray};
   font-weight: 500;
 `;
 
@@ -45,7 +45,7 @@ export const MultiSelectMenu = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 10;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border: 1px solid ${colors.lightGray};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
 
   transition: 0.1s ease-in-out all;
@@ -65,20 +65,18 @@ export const MultiSelectMenu = styled.div`
 export const MultiSelectOption = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive
-      ? darken(0.05, cssConstants.PRIMARY_WHITE)
-      : cssConstants.PRIMARY_WHITE};
+    props.isActive ? darken(0.05, colors.white) : colors.white};
   transition: 0.1s ease-in-out all;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${colors.black};
   white-space: normal;
 
   :not(:last-child) {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    border-bottom: 1px solid ${colors.lightGray};
   }
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
+    background-color: ${darken(0.05, colors.white)};
   }
 `;
 
@@ -91,17 +89,15 @@ export const SplitButtonContainer = styled.div`
 
 export const SplitButtonHalf = styled.span`
   padding: 8px;
-  border: 1px solid ${cssConstants.PRIMARY_BLUE};
+  border: 1px solid ${colors.blue};
   display: inline-block;
   min-width: 35%;
   text-align: center;
   cursor: pointer;
 
-  color: ${(props) =>
-    props.isActive ? cssConstants.PRIMARY_WHITE : cssConstants.PRIMARY_BLUE};
+  color: ${(props) => (props.isActive ? colors.white : colors.blue)};
 
-  background-color: ${(props) =>
-    props.isActive ? cssConstants.PRIMARY_BLUE : cssConstants.PRIMARY_WHITE};
+  background-color: ${(props) => (props.isActive ? colors.blue : colors.white)};
 
   :not(:last-child) {
     border-bottom-left-radius: 2px;
@@ -118,12 +114,12 @@ export const SplitButtonHalf = styled.span`
 export const DropdownFilterInputContainer = styled.div`
   background-color: white;
   padding: 10px;
-  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border-bottom: 1px solid ${colors.lightGray};
 `;
 
 export const DropdownFilterInput = styled.input`
   width: 100%;
   padding: 10px 15px;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border: 1px solid ${colors.lightGray};
   border-radius: 3px;
 `;

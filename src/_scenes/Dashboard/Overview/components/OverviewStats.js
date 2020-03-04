@@ -10,7 +10,7 @@ import {
   isSameDay,
 } from 'date-fns';
 
-import { cssConstants, mobileBreakpoint } from '_constants';
+import { mobileBreakpoint, colors } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { selectors as eventSelectors } from '_state/event';
 import { getEventStatState } from '_state/eventStat/selectors';
@@ -33,7 +33,7 @@ const StatContainer = styled.div`
     highlighted &&
     `
     border-radius: 10px;
-    background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    background-color: ${colors.lightGray};
   `}
 
   & + & {
@@ -116,12 +116,12 @@ const Change = styled.div`
   ${({ isPositive }) =>
     isPositive
       ? `
-    color: ${cssConstants.SECONDARY_GREEN};
+    color: ${colors.green};
 
     &:after { content: '⬆︎'; }
   `
       : `
-    color: ${cssConstants.PRIMARY_RED};
+    color: ${colors.red};
     &:after { content: '⬇︎';}
   `}
 

@@ -1,13 +1,13 @@
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export class SVGChartElement {
   constructor(svgElement, associatedMapping) {
     this.element = svgElement;
     this.customFill = svgElement.getAttribute('fill');
-    this.originalFill = cssConstants.SECONDARY_BLUE_GRAY;
-    this.selectedFill = cssConstants.SECONDARY_BLUE;
-    this.highlightFill = cssConstants.SECONDARY_LIGHTEST_BLUE;
-    this.unavailableFill = cssConstants.PRIMARY_LIGHT_GRAY;
+    this.originalFill = colors.blue_GRAY;
+    this.selectedFill = colors.blue;
+    this.highlightFill = colors.neonBlue;
+    this.unavailableFill = colors.lightGray;
     this.associatedMapping = associatedMapping;
     this.sectionRef = svgElement.dataset.sectionRef;
     this.element.style.cursor = associatedMapping ? 'pointer' : 'not-allowed';

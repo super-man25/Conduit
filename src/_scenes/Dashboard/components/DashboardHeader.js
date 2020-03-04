@@ -7,7 +7,7 @@ import { isMobileDevice, formatDate } from '_helpers';
 import { selectors as seasonSelectors } from '_state/season';
 import { selectors as eventSelectors } from '_state/event';
 import { Icon, Breadcrumbs } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import EventWeather from './EventWeather';
 import clockIcon from '_images/clock.svg';
 
@@ -111,7 +111,7 @@ export const DashboardHeader = ({ isSeason, isEvent, isEventInventory }) => {
             onClick={toggleSidebar}
             name="arrowRight"
             size={24}
-            color={cssConstants.PRIMARY_BLUE}
+            color={colors.blue}
           />
         )}
         <Breadcrumbs crumbs={crumbs} />

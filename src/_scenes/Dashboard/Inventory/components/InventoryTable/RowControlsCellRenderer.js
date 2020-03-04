@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { actions } from '_state/eventInventory';
 import { Text, Flex } from '_components';
 
@@ -40,11 +40,7 @@ export const RowControlsCellPresenter = ({
       <Flex align="center" justify="flex-end">
         <Text
           size={14}
-          color={
-            isEditing || isLoading
-              ? cssConstants.PRIMARY_LIGHT_GRAY
-              : cssConstants.PRIMARY_BLUE
-          }
+          color={isEditing || isLoading ? colors.lightGray : colors.blue}
           onClick={startEditing}
           style={
             editingAnyRow
@@ -69,7 +65,7 @@ export const RowControlsCellPresenter = ({
     <Flex align="center" justify="flex-end">
       <Text
         size={14}
-        color={cssConstants.PRIMARY_BLUE}
+        color={colors.blue}
         onClick={saveEditedRow}
         style={{ cursor: 'pointer' }}
         weight="heavy"
@@ -80,7 +76,7 @@ export const RowControlsCellPresenter = ({
       <Text
         size={14}
         weight="heavy"
-        color={cssConstants.SECONDARY_RED}
+        color={colors.red}
         onClick={cancelEditingRow}
         style={{ cursor: 'pointer' }}
       >

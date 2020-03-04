@@ -2,15 +2,12 @@
 
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
-export const ChipButton = styled.button`
+export const ChipButton = styled.div`
   background-color: ${(props) =>
-    props.active ? props.color || cssConstants.SECONDARY_BLUE : 'transparent'};
-  color: ${(props) =>
-    props.active
-      ? props.fontColor || cssConstants.PRIMARY_WHITE
-      : cssConstants.PRIMARY_LIGHT_BLACK};
+    props.active ? props.color || colors.lightBlue : 'transparent'};
+  color: ${(props) => (props.active ? props.fontColor || colors.white : null)};
   cursor: pointer;
   font-size: ${(props) => props.fontSize || '12px'};
   padding: 8px 14px;
@@ -20,8 +17,8 @@ export const ChipButton = styled.button`
   border-radius: ${(props) => props.fontSize * 2 || '24px'};
 
   &:hover {
-    background-color: ${cssConstants.PRIMARY_BLUE_HOVER};
-    color: ${cssConstants.PRIMARY_WHITE};
+    background-color: ${colors.blue};
+    color: ${colors.white};
   }
 `;
 

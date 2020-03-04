@@ -2,7 +2,8 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 
 const LegendItemContainer: ComponentType<{}> = styled.div`
   display: inline-flex;
@@ -20,7 +21,7 @@ const LegendItemContent: ComponentType<{}> = styled.div`
 `;
 
 const LegendItemTitle: ComponentType<{}> = styled.span`
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${colors.black};
   font-size: 12px;
   margin-bottom: 2px;
 `;

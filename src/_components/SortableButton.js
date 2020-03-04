@@ -1,26 +1,22 @@
 // @flow
-
 import * as React from 'react';
 import styled from 'styled-components';
-import { darken, lighten } from 'polished';
-import { cssConstants } from '_constants';
+
+import { colors } from '_constants';
 import { P1 } from './StyledTags';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
-
-const ARROW_COLOR = '#000';
 
 const Container = styled.div`
   display: inline-block;
 `;
 
 const Label = styled(P1)`
-  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${colors.blue};
   transition: 0.2s ease-in-out all;
 
   :hover {
     cursor: pointer;
-    color: ${darken(0.1, cssConstants.PRIMARY_LIGHT_BLUE)};
   }
 `;
 
@@ -62,22 +58,10 @@ export const SortableButton = (props: Props) => {
         </Label>
         <IconContainer>
           <Abs top="-2px">
-            <Icon
-              name="arrowUp"
-              size={24}
-              color={
-                direction === 'desc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)
-              }
-            />
+            <Icon name="arrowUp" size={24} color={colors.black} />
           </Abs>
           <Abs top="4px">
-            <Icon
-              name="arrowDown"
-              size={24}
-              color={
-                direction === 'asc' ? ARROW_COLOR : lighten(0.5, ARROW_COLOR)
-              }
-            />
+            <Icon name="arrowDown" size={24} color={colors.black} />
           </Abs>
         </IconContainer>
       </Flex>

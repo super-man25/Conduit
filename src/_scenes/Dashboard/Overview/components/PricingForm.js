@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Box, Flex, H4, NumberInputField, Text } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { fixedOrDash } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
 import { PricingTableHeader } from './PricingTableHeader';
@@ -15,7 +15,7 @@ import {
 } from '_helpers/pricing-utils';
 
 const StyledPricingForm = styled(Flex)`
-  border-right: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-right: 1px solid ${colors.lightGray};
   padding: 25px;
   width: 100%;
 `;
@@ -23,8 +23,7 @@ const StyledPricingForm = styled(Flex)`
 const EditButton = styled.div`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   font-weight: bold;
-  color: ${({ disabled }) =>
-    disabled ? cssConstants.PRIMARY_LIGHT_GRAY : cssConstants.PRIMARY_BLUE};
+  color: ${({ disabled }) => (disabled ? colors.lightGray : colors.blue)};
 `;
 
 const Input = styled.input`
@@ -33,7 +32,7 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
   text-align: right;
   border-radius: 3px;
-  border: 1px solid ${cssConstants.PRIMARY_GRAY};
+  border: 1px solid ${colors.gray};
 `;
 
 type Props = {
@@ -113,7 +112,7 @@ export const PricingForm = (props: Props) => {
         <PricingTableHeader headers={['Event Score', 'Spring Value']} />
         <Flex padding="14px 0" direction="row" minHeight="36px" align="center">
           <Box width="33%">
-            <Text color={cssConstants.PRIMARY_GRAY}>Predicted</Text>
+            <Text color={colors.gray}>Predicted</Text>
           </Box>
           <Box width="33%">
             <Text textAlign="right" className="private">
@@ -129,8 +128,8 @@ export const PricingForm = (props: Props) => {
 
         <Flex
           style={{
-            borderTop: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
-            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
+            borderTop: `1px solid ${colors.lightGray}`,
+            borderBottom: `1px solid ${colors.lightGray}`,
           }}
           padding="14px 0"
           direction="row"
@@ -138,7 +137,7 @@ export const PricingForm = (props: Props) => {
           minHeight="36px"
         >
           <Flex width="33%">
-            <Text color={cssConstants.PRIMARY_GRAY}>Modifier</Text>
+            <Text color={colors.gray}>Modifier</Text>
           </Flex>
           <Flex width="33%" justify="flex-end">
             {isEditing ? (
@@ -173,7 +172,7 @@ export const PricingForm = (props: Props) => {
 
         <Flex
           style={{
-            borderBottom: `1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY}`,
+            borderBottom: `1px solid ${colors.lightGray}`,
           }}
           padding="14px 0"
           direction="row"
@@ -181,7 +180,7 @@ export const PricingForm = (props: Props) => {
           minHeight="36px"
         >
           <Flex width="33%">
-            <Text color={cssConstants.PRIMARY_GRAY}>Velocity</Text>
+            <Text color={colors.gray}>Velocity</Text>
           </Flex>
           <Flex width="33%" justify="flex-end">
             <Text textAlign="right" className="private">

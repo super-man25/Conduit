@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Box, Flex, H4, Icon, Text } from '_components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { formatUSD } from '_helpers/string-utils';
 import { PendingFactors } from '_models';
 import { PricingTableHeader } from './PricingTableHeader';
@@ -10,7 +10,7 @@ import type { EDPricingPreview } from '_models/pricingPreview';
 import type { Node } from 'react';
 
 const Row = styled(Flex)`
-  border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border-bottom: 1px solid ${colors.lightGray};
 
   &:last-child {
     border-bottom: none;
@@ -26,7 +26,7 @@ const HoverTip = styled.div`
   position: absolute;
   bottom: 100%;
   left: -64px; /* (150px / 2) - (22px / 2) * -1 */
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.blue};
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -84,12 +84,12 @@ export const PricingPreview = (props: Props) => {
   if (loading) {
     preview = (
       <Flex align="center" justify="center" margin="auto">
-        <Text color={cssConstants.PRIMARY_BLUE}>Loading Price Preview...</Text>
+        <Text color={colors.blue}>Loading Price Preview...</Text>
       </Flex>
     );
   } else if (!eventScore) {
     preview = (
-      <PricingPreviewText color={cssConstants.PRIMARY_GRAY}>
+      <PricingPreviewText color={colors.gray}>
         The pricing preview section will be available once the event has been
         priced.
       </PricingPreviewText>
@@ -103,12 +103,12 @@ export const PricingPreview = (props: Props) => {
         direction="column"
         width="50%"
       >
-        <Icon name="apiError" color={cssConstants.SECONDARY_RED} size={24} />
-        <Text color={cssConstants.PRIMARY_RED} textAlign="center">
+        <Icon name="apiError" color={colors.red} size={24} />
+        <Text color={colors.red} textAlign="center">
           A server error has occurred, please contact{' '}
           <a
             style={{
-              color: cssConstants.PRIMARY_RED,
+              color: colors.red,
               fontWeight: 'bold',
             }}
             href="mailto:support@eventdynamic.com"
@@ -124,7 +124,7 @@ export const PricingPreview = (props: Props) => {
     !pricingPreview.sections
   ) {
     preview = (
-      <PricingPreviewText color={cssConstants.PRIMARY_GRAY}>
+      <PricingPreviewText color={colors.gray}>
         No Price Preview
       </PricingPreviewText>
     );
@@ -149,13 +149,13 @@ export const PricingPreview = (props: Props) => {
             key={idx}
           >
             <Box width="33%">
-              <Text color={cssConstants.PRIMARY_GRAY}>{row.label}</Text>
+              <Text color={colors.gray}>{row.label}</Text>
             </Box>
             <Box width="33%">
               <Text
                 weight="heavy"
                 textAlign="right"
-                color={cssConstants.PRIMARY_BLUE}
+                color={colors.blue}
                 className="private"
               >
                 {row.min}
@@ -165,7 +165,7 @@ export const PricingPreview = (props: Props) => {
               <Text
                 weight="heavy"
                 textAlign="right"
-                color={cssConstants.PRIMARY_BLUE}
+                color={colors.blue}
                 className="private"
               >
                 {row.max}
@@ -185,7 +185,7 @@ export const PricingPreview = (props: Props) => {
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
-          <Icon name="info" color={cssConstants.PRIMARY_BLUE} size={22} />
+          <Icon name="info" color={colors.blue} size={22} />
           <HoverTip isOpen={isOpen}>
             The preview is calculated off the final values from Event Score and
             Spring value in relation to modifiers that are entered.

@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 export const ChartLegendItemContainer = styled.div`
   display: inline-flex;
@@ -27,7 +27,6 @@ export const ChartLegendBar: React.ComponentType<{
 `;
 
 export const ChartLegendLabel = styled.span`
-  color: #323232;
   font-size: 12px;
   margin-left: 10px;
 `;
@@ -52,5 +51,5 @@ export const ChartLegendItem = ({ label, color, dashed }: Props) => {
 };
 
 ChartLegendItem.defaultProps = {
-  color: cssConstants.PRIMARY_BLUE,
+  color: colors.blue,
 };

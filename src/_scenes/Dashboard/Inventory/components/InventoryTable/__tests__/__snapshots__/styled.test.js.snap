@@ -13,10 +13,10 @@ exports[`InventoryTable styled components <Checkbox /> should render correctly 1
 
 exports[`InventoryTable styled components <FilterButton /> should render correctly 1`] = `
 .c0 {
-  background-color: #0A169A;
+  background-color: #007;
   border: none;
   border-radius: 2px;
-  color: #FFFFFF;
+  color: #fff;
   font-weight: 300;
   height: 25px;
   min-width: 60px;
@@ -31,8 +31,8 @@ exports[`InventoryTable styled components <FilterButton /> should render correct
 exports[`InventoryTable styled components <FilterContainer /> should render correctly 1`] = `
 .c0 {
   width: 280px;
-  border: 1px solid #1F49B6;
-  background-color: #FFFFFF;
+  border: 1px solid #007;
+  background-color: #fff;
   position: relative;
   box-shadow: 0 2px 5px 0px rgba(0,0,0,0.43);
 }
@@ -48,9 +48,9 @@ exports[`InventoryTable styled components <FilterContainer /> should render corr
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   z-index: 1;
-  background-color: #FFFFFF;
-  border-top: 1px solid #1F49B6;
-  border-left: 1px solid #1F49B6;
+  background-color: #fff;
+  border-top: 1px solid #007;
+  border-left: 1px solid #007;
 }
 
 <div
@@ -132,8 +132,8 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
   transition-duration: 0.3s;
   -webkit-transition: opacity 100ms ease-out;
   transition: opacity 100ms ease-out;
-  color: #FFFFFF;
-  background-color: #0A169A;
+  color: #fff;
+  background-color: #007;
   margin: 0;
   min-width: 50px;
   width: 80px;
@@ -146,18 +146,18 @@ exports[`InventoryTable styled components <ManualPricingButton /> should render 
 }
 
 .c0:disabled {
-  color: #999999;
-  background-color: #D1D1D1;
+  color: #667;
+  background-color: #ddd;
   opacity: 0.5;
 }
 
 .c0:active {
-  background-color: #38A9DB;
+  background-color: #44b;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
 .c0:hover:not(:disabled) {
-  background-color: #848ACC;
+  background-color: #007;
 }
 
 <button
@@ -170,11 +170,11 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
   position: relative;
   padding: 15px;
   font-size: 14px;
-  border: 2px solid #0A169A;
+  border: 2px solid #007;
   border-radius: 3px;
-  background: #FFFFFF;
+  background: #fff;
   display: block;
-  background: #FFFFFF;
+  background: #fff;
   background-image: none;
   background-repeat: no-repeat;
   background-position: right center;
@@ -186,19 +186,19 @@ exports[`InventoryTable styled components <ManualPricingInput /> should render c
 }
 
 .c0::-webkit-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::-moz-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-ms-input-placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0::placeholder {
-  color: #999999;
+  color: #667;
 }
 
 .c0:-webkit-autofill {
@@ -223,7 +223,7 @@ exports[`InventoryTable styled components <PositionedBox /> should render correc
 exports[`InventoryTable styled components <TableHeaderCell /> should render correctly 1`] = `
 .c0 {
   text-align: left;
-  color: #323232;
+  color: #667;
   font-weight: 500;
 }
 

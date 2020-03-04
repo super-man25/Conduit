@@ -52,7 +52,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         ifOverflow="discard"
         isFront={false}
         position="middle"
-        stroke="#1F49B6"
+        stroke="#007"
         strokeWidth={1}
         xAxisId={0}
         y={0}
@@ -130,7 +130,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -143,7 +143,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="periodicInventory"
-        fill="#5A288F"
+        fill="#a3f"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -161,7 +161,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicInventory"
-        fill="#817CB8"
+        fill="#a3f"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -193,7 +193,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         }
         cursor={
           Object {
-            "fill": "#817CB8",
+            "fill": "#a3f",
             "opacity": 0.4,
           }
         }
@@ -272,7 +272,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         ifOverflow="discard"
         isFront={false}
         position="middle"
-        stroke="#1F49B6"
+        stroke="#007"
         strokeWidth={1}
         xAxisId={0}
         y={0}
@@ -350,7 +350,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
           position="insideLeft"
           style={
             Object {
-              "color": "#999999",
+              "color": "#667",
               "fontSize": 12,
             }
           }
@@ -363,7 +363,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         animationEasing="ease"
         data={Array []}
         dataKey="periodicInventory"
-        fill="#5A288F"
+        fill="#a3f"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -381,7 +381,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicInventory"
-        fill="#817CB8"
+        fill="#a3f"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -413,7 +413,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         }
         cursor={
           Object {
-            "fill": "#817CB8",
+            "fill": "#a3f",
             "opacity": 0.4,
           }
         }

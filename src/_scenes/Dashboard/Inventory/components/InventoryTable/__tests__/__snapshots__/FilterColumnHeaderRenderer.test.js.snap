@@ -23,7 +23,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly 1`] = `
         marginLeft="7px"
       >
         <FilterListIcon
-          fill="#070707"
+          fill="#002"
           height={14}
           onClick={[Function]}
           style={
@@ -57,7 +57,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when disableSort 
         marginLeft="7px"
       >
         <FilterListIcon
-          fill="#070707"
+          fill="#002"
           height={14}
           onClick={[Function]}
           style={
@@ -96,7 +96,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when isFiltered i
         marginLeft="7px"
       >
         <FilterListIcon
-          fill="#070707"
+          fill="#002"
           height={14}
           onClick={[Function]}
           style={
@@ -135,7 +135,7 @@ exports[`<ScaleColumnHeaderRenderer /> should render correctly when sort isFilte
         marginLeft="7px"
       >
         <FilterListIcon
-          fill="#070707"
+          fill="#002"
           height={14}
           onClick={[Function]}
           style={

@@ -30,7 +30,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
   padding: 15px;
   font-size: 14px;
   border: 2px solid ",
-            "#0A169A",
+            "#007",
             ";
   border-color: ",
             [Function],
@@ -41,7 +41,7 @@ exports[`defaultCellRenderer should render correctly when editing 1`] = `
             ";
   ::placeholder {
     color: ",
-            "#999999",
+            "#667",
             ";
   }
 ",

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { withClickAway } from '_hoc';
 import PropTypes from 'prop-types';
 import { Icon } from './Icon';
@@ -14,12 +14,12 @@ const Container = withClickAway(styled.div`
 `);
 
 const Label = styled(P1)`
-  color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  color: ${colors.blue};
   transition: 0.2s ease-in-out all;
 
   :hover {
     cursor: pointer;
-    color: ${darken(0.1, cssConstants.PRIMARY_LIGHT_BLUE)};
+    color: ${darken(0.1, colors.blue)};
   }
 `;
 
@@ -28,7 +28,7 @@ const Dropdown = styled.div`
   width: 180px;
   top: calc(100% + 8px);
   z-index: 10;
-  border: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+  border: 1px solid ${colors.lightGray};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
 
   transition: 0.1s ease-in-out all;
@@ -47,16 +47,16 @@ const Dropdown = styled.div`
 
 const Option = styled.div`
   padding: 12px 16px;
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.white};
   transition: 0.1s ease-in-out all;
 
   :not(:last-child) {
-    border-bottom: 1px solid ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    border-bottom: 1px solid ${colors.lightGray};
   }
 
   :hover {
     cursor: pointer;
-    background-color: ${darken(0.05, cssConstants.PRIMARY_WHITE)};
+    background-color: ${darken(0.05, colors.white)};
   }
 `;
 

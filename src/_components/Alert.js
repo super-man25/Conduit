@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import { cssConstants, shadows, zIndexes } from '_constants';
+import { colors, shadows, zIndexes } from '_constants';
 import { actions } from '_state/alert';
 import { Icon } from './Icon';
 import { Flex } from './Flex';
@@ -14,11 +14,9 @@ const StyledApiAlert: React.ComponentType<{}> = styled(Flex)`
   top: 25px;
   z-index: ${zIndexes.BASE};
   width: 350px;
-  background-color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.white};
   border-color: ${(props) =>
-    props.type === 'apiError'
-      ? cssConstants.SECONDARY_RED
-      : cssConstants.SECONDARY_GREEN};
+    props.type === 'apiError' ? colors.red : colors.green};
   box-shadow: ${shadows.SMALL};
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
   cursor: pointer;
@@ -40,7 +38,6 @@ const StatusText: React.ComponentType<{}> = styled.div`
 const MsgText: React.ComponentType<{}> = styled.div`
   font-size: 13px;
   font-weight: 300;
-  color: ${cssConstants.PRIMARY_BLACK};
 `;
 
 export const Alert = () => {
@@ -50,9 +47,7 @@ export const Alert = () => {
 
   const show = alertState.type !== null && alertState.message !== null;
   const statusColor =
-    alertState.type === 'apiError'
-      ? cssConstants.SECONDARY_RED
-      : cssConstants.SECONDARY_GREEN;
+    alertState.type === 'apiError' ? colors.red : colors.green;
   const statusText = alertState.type === 'apiError' ? 'Error:' : 'Success!';
 
   return (

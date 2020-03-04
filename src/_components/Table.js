@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+
 import { Text } from '_components';
-import { cssConstants } from '_constants/css.constants';
+import { colors } from '_constants';
 
 const StyledTable = styled.table`
   border-spacing: 0;
@@ -19,7 +20,7 @@ const Thead = styled.thead`
 
 const Tbody = styled.tbody`
   > tr:nth-child(odd) {
-    background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
+    background-color: ${colors.lightGray};
   }
 `;
 

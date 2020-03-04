@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 
 import { truncateNumber, isMobileDevice } from '_helpers';
-import { chartLabelStyles, cssConstants } from '_constants';
+import { chartLabelStyles, colors } from '_constants';
 import { ChartContainer } from '_components/ChartContainer';
 import { EventScoreHistoryTooltip } from './EventScoreHistoryTooltip';
 
@@ -84,11 +84,11 @@ export const EventScoreHistoryChart = ({
             type="stepAfter"
             dot={false}
             strokeWidth={2}
-            stroke={cssConstants.PRIMARY_BLUE}
+            stroke={colors.blue}
           />
           <Tooltip
             cursor={{
-              stroke: cssConstants.SECONDARY_LIGHT_PURPLE,
+              stroke: colors.purple,
               strokeWidth: 2,
               opacity: 0.5,
             }}

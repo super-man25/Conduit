@@ -2,15 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
-import { P1 } from '_components';
+import { colors } from '_constants';
 import type { EDScheduledJob } from '_models';
 import { readableDuration } from '_helpers/string-utils';
 
-const ScheduledJobStatusNotice = styled(P1)`
+const ScheduledJobStatusNotice = styled.div`
   font-size: 12px;
   position: relative;
-  font-weight: 600;
   margin-left: 10px;
   margin-top: 5px;
   padding-left: 5px;
@@ -42,16 +40,16 @@ export const ScheduledJobStatus = ({
   const { status, modifiedAt } = scheduledJob;
 
   const statusColor = past
-    ? cssConstants.PRIMARY_DARKEST_GRAY
+    ? colors.gray
     : status === 'Pending'
-    ? cssConstants.SECONDARY_BURNT_ORANGE
+    ? colors.orange
     : status === 'Success'
-    ? cssConstants.SECONDARY_GREEN
+    ? colors.green
     : status === 'Failure'
-    ? cssConstants.SECONDARY_PURPLE
+    ? colors.purple
     : status === 'Running'
-    ? cssConstants.SECONDARY_BLUE
-    : cssConstants.PRIMARY_DARKEST_GRAY;
+    ? colors.neonBlue
+    : colors.gray;
 
   const statusText =
     status === 'Pending'

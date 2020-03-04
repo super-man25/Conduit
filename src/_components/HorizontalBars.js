@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { scaleToRight } from './keyframes';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const BarContainer = styled.div`
   overflow: hidden;
@@ -25,12 +25,12 @@ const HorizontalBar = styled.div`
   animation: ${scaleToRight} 1s ease-in-out;
 
   &:not(:last-child) {
-    border-right: 1px solid ${cssConstants.PRIMARY_WHITE};
+    border-right: 1px solid ${colors.white};
   }
 `;
 
 HorizontalBar.defaultProps = {
-  backgroundColor: cssConstants.PRIMARY_BLUE,
+  backgroundColor: colors.blue,
 };
 
 type HorizontalBarProps = {

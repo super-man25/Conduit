@@ -1,5 +1,6 @@
-import { cssConstants, navigationHeight, containerPadding } from '_constants';
 import styled from 'styled-components';
+
+import { colors, navigationHeight, containerPadding } from '_constants';
 
 export const PageWrapper = styled.div`
   height: 100%;
@@ -7,7 +8,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const PrimaryContent = styled.div`
-  background-color: ${cssConstants.PRIMARY_LIGHTEST_GRAY};
+  background-color: ${colors.whiteSmoke};
   overflow-y: ${(props) => props.overflowY || 'scroll'};
   flex: 1;
   padding: ${containerPadding}px;

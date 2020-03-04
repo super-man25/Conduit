@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 
 const Background = styled.div`
-  background-color: ${cssConstants.PRIMARY_BLUE};
+  background-color: ${colors.blue};
   padding: 4px 12px; /* numbers chosen visually to make a ticket shape */
   border-radius: 3px;
   position: relative;

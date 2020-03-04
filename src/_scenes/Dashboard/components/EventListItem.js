@@ -1,10 +1,10 @@
 // @flow
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import type { EDEvent } from '_models';
 import {
   formatUSD,
@@ -24,25 +24,27 @@ const StyledEventListItem = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px 25px;
-  border-top: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border-bottom: 1px solid ${colors.lightGray};
   background-color: white;
-  color: black;
   position: relative;
   cursor: pointer;
+  transition: margin-bottom 0.2s ease-out;
 
   ${({ past }) =>
     past &&
     `
-    background-color: ${cssConstants.PRIMARY_LIGHTER_GRAY};
-    color: ${cssConstants.PRIMARY_DARK_GRAY};
+    background-color: ${colors.lightGray};
+    border-color: ${colors.gray};
+    color: ${colors.gray};
   `}
 
-  ${({ active }) =>
+  ${({ active, progressBarHovered }) =>
     active &&
     `
-      background-color: ${cssConstants.PRIMARY_BLUE};
+      border: none;
+      background-color: ${colors.blue};
       color: white;
-      z-index: 999;
+      margin-bottom: ${progressBarHovered ? '15px' : '10px'};
     `}
 `;
 
@@ -69,7 +71,7 @@ const DateContainer = styled.div`
   ${({ past }) =>
     past &&
     `
-    border-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    border-color: ${colors.gray};
   `}
 
   ${({ active }) =>
@@ -88,14 +90,14 @@ const Month = styled.div`
   ${({ past }) =>
     past &&
     `
-    background-color: ${cssConstants.PRIMARY_DARK_GRAY};
+    background-color: ${colors.gray};
   `}
 
   ${({ active }) =>
     active &&
     `
     background-color: white;
-    color: ${cssConstants.PRIMARY_BLUE};
+    color: ${colors.blue};
   `}
 `;
 
@@ -148,7 +150,7 @@ const EventDetailLabel = styled.div`
 `;
 
 const InventoryProgressBar = styled.div`
-  background-color: ${cssConstants.PRIMARY_LIGHT_BLUE};
+  background-color: ${colors.neonBlue};
   height: 100%;
   width: 0;
   transition: width 0.3s ease-out 0.2s;
@@ -159,7 +161,6 @@ const InventoryProgressBar = styled.div`
   &:after {
     position: absolute;
     z-index: 1;
-    color: white;
     top: 0;
     right: 5px;
     opacity: 0;
@@ -177,11 +178,13 @@ const InventoryProgressBar = styled.div`
 
     &:after {
       content: '${percentage}%';
+      color: ${colors.darkBlue};
       ${
         percentage < 15
           ? `
         right: initial;
         left: calc(100% + 5px);
+        color: white;
       `
           : ''
       }
@@ -190,14 +193,18 @@ const InventoryProgressBar = styled.div`
 `;
 
 const InventoryProgressBarContainer = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
   height: 0;
   width: 100%;
   transition: height 0.2s ease-out;
-  background-color: ${cssConstants.SECONDARY_BLUE_ACCENT};
+  background-color: ${colors.darkBlue};
 
   ${({ active }) =>
     active &&
     `
+    border-bottom: 1px solid ${colors.lightGray};
     height: 10px;
   `}
 
@@ -219,6 +226,8 @@ export const EventListItem = ({
   active: boolean,
   isAdmin: boolean,
 }) => {
+  const [progressBarHovered, setProgressBarHovered] = useState(false);
+
   const activeEventId = useSelector(eventListSelectors.selectActiveEventListId);
   const dispatch = useDispatch();
   const toggleSidebar = () => dispatch(uiActions.toggleSidebar());
@@ -227,6 +236,9 @@ export const EventListItem = ({
   const soldInventoryPercentage = Math.round(
     (event.soldInventory / event.totalInventory) * 100
   );
+
+  const handleProgressBarMouseEnter = () => setProgressBarHovered(true);
+  const handleProgressBarMouseLeave = () => setProgressBarHovered(false);
 
   const handleClick = () => {
     if (isMobileDevice) toggleSidebar();
@@ -248,7 +260,12 @@ export const EventListItem = ({
 
   return (
     <>
-      <StyledEventListItem onClick={handleClick} active={active} past={past}>
+      <StyledEventListItem
+        onClick={handleClick}
+        active={active}
+        past={past}
+        progressBarHovered={progressBarHovered}
+      >
         <EventListItemRow>
           <DateContainer active={active} past={past}>
             <Month active={active} past={past}>
@@ -313,13 +330,17 @@ export const EventListItem = ({
             </EventDetail>
           )}
         </EventListItemRow>
-      </StyledEventListItem>
-      <InventoryProgressBarContainer active={active}>
-        <InventoryProgressBar
+        <InventoryProgressBarContainer
           active={active}
-          percentage={soldInventoryPercentage}
-        />
-      </InventoryProgressBarContainer>
+          onMouseEnter={handleProgressBarMouseEnter}
+          onMouseLeave={handleProgressBarMouseLeave}
+        >
+          <InventoryProgressBar
+            active={active}
+            percentage={soldInventoryPercentage}
+          />
+        </InventoryProgressBarContainer>
+      </StyledEventListItem>
     </>
   );
 };

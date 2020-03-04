@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { actions } from '_state/priceRule';
 import { Text, Flex } from '_components';
 
@@ -49,9 +49,7 @@ export const RuleControlsCellPresenter = ({
         <Text
           size={14}
           color={
-            editingAnyPriceRule || isLoading
-              ? cssConstants.PRIMARY_LIGHT_GRAY
-              : cssConstants.PRIMARY_BLUE
+            editingAnyPriceRule || isLoading ? colors.lightGray : colors.blue
           }
           onClick={startEditing}
           style={{ cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer' }}
@@ -63,11 +61,7 @@ export const RuleControlsCellPresenter = ({
         <Text
           size={14}
           weight="heavy"
-          color={
-            editingAnyPriceRule
-              ? cssConstants.PRIMARY_LIGHT_GRAY
-              : cssConstants.SECONDARY_RED
-          }
+          color={editingAnyPriceRule ? colors.lightGray : colors.red}
           onClick={editingAnyPriceRule ? null : confirmDelete}
           style={
             editingAnyPriceRule
@@ -85,7 +79,7 @@ export const RuleControlsCellPresenter = ({
     <Flex align="center" justify="flex-end">
       <Text
         size={14}
-        color={cssConstants.PRIMARY_BLUE}
+        color={colors.blue}
         onClick={saveEditedRule}
         style={{ cursor: 'pointer' }}
         weight="heavy"
@@ -96,7 +90,7 @@ export const RuleControlsCellPresenter = ({
       <Text
         size={14}
         weight="heavy"
-        color={cssConstants.SECONDARY_RED}
+        color={colors.red}
         onClick={cancelEditingRule}
         style={{ cursor: 'pointer' }}
       >

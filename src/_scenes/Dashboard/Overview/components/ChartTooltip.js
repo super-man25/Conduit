@@ -2,20 +2,20 @@
 import * as React from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
-import { cssConstants } from '_constants';
+import { colors } from '_constants';
 import { Flex } from '_components';
 
 const TooltipContainer: ComponentType<{}> = styled.div`
-  border: 1px solid ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border: 1px solid ${colors.lightGray};
   min-width: 175px;
   font-size: 14px;
-  background-color: ${cssConstants.PRIMARY_WHITE};
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  background-color: ${colors.white};
+  color: ${colors.black};
 `;
 
 const TooltipHeader: ComponentType<{}> = styled.header`
-  background-color: ${cssConstants.PRIMARY_BLUE};
-  color: ${cssConstants.PRIMARY_WHITE};
+  background-color: ${colors.blue};
+  color: ${colors.white};
   font-weight: 300;
   padding: 0.5rem 1rem;
   display: flex;
@@ -44,7 +44,7 @@ export const TooltipBodyText: ComponentType<{}> = styled.p`
   margin: 0;
   padding: 0;
   font-size: 16px;
-  color: ${cssConstants.PRIMARY_LIGHT_BLACK};
+  color: ${colors.black};
 `;
 
 export const TooltipRow: ComponentType<{}> = styled((props) => (

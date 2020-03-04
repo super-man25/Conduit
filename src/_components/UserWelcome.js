@@ -1,9 +1,8 @@
 // @flow
-
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
-import { cssConstants, shadows, zIndexes, navigationHeight } from '_constants';
+import { shadows, zIndexes, navigationHeight, colors } from '_constants';
 import type { EDClient, EDClientList } from '_models';
 import { isMobileDevice } from '_helpers';
 import { Flex, FlexItem, Icon, Loader, Text, TextButton } from '_components';
@@ -27,7 +26,7 @@ const UserWelcomeDropdown = styled.div`
 
 const ClientDropDown = styled.div`
   position: absolute;
-  background: ${cssConstants.PRIMARY_WHITE};
+  background: ${colors.white};
   width: 280px;
   right: 0;
   box-shadow: ${shadows.MEDIUM};
@@ -70,8 +69,8 @@ const ClientLogo = styled.img`
 const EmptyLogo = styled.div`
   height: 30px;
   width: 30px;
-  border: 1px solid ${cssConstants.PRIMARY_GRAY};
-  background-color: ${cssConstants.PRIMARY_LIGHT_GRAY};
+  border: 1px solid ${colors.gray};
+  background-color: ${colors.lightGray};
   border-radius: 50%;
 `;
 
@@ -135,11 +134,7 @@ export const UserWelcome = (props: Props) => {
           </FlexItem>
           <FlexItem flex="0 1 10%">
             {client.id === chosenClientID && (
-              <Icon
-                size={24}
-                name="check"
-                color={cssConstants.PRIMARY_LIGHT_BLUE}
-              />
+              <Icon size={24} name="check" color={colors.blue} />
             )}
           </FlexItem>
         </Flex>
@@ -160,7 +155,7 @@ export const UserWelcome = (props: Props) => {
               <FlexItem flex="0 1 auto" overflow="hidden">
                 <Text
                   ellipsis
-                  color={cssConstants.PRIMARY_WHITE}
+                  color={colors.white}
                   textTransform="none"
                   textAlign="right"
                   size="14"
@@ -171,7 +166,7 @@ export const UserWelcome = (props: Props) => {
                 </Text>
                 <Text
                   ellipsis
-                  color={cssConstants.PRIMARY_WHITE}
+                  color={colors.white}
                   textTransform="capitalize"
                   textAlign="right"
                 >{`${team}`}</Text>
@@ -182,7 +177,7 @@ export const UserWelcome = (props: Props) => {
               <DropdownArrow
                 size={12}
                 name={isOpen ? 'arrowUp' : 'arrowDown'}
-                color={cssConstants.PRIMARY_WHITE}
+                color={colors.white}
               />
             </FlexItem>
           </Flex>

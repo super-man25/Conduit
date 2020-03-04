@@ -8,7 +8,7 @@ exports[`<SortIcon /> should render correctly when filtered asc 1`] = `
   onClick={[MockFunction]}
 >
   <ExpandLessIcon
-    fill="#0A169A"
+    fill="#007"
     height={14}
     styles={
       Object {
@@ -18,7 +18,7 @@ exports[`<SortIcon /> should render correctly when filtered asc 1`] = `
     width={14}
   />
   <ExpandMoreIcon
-    fill="#323232"
+    fill="#667"
     height={14}
     width={14}
   />
@@ -33,7 +33,7 @@ exports[`<SortIcon /> should render correctly when filtered desc 1`] = `
   onClick={[MockFunction]}
 >
   <ExpandLessIcon
-    fill="#323232"
+    fill="#667"
     height={14}
     styles={
       Object {
@@ -43,7 +43,7 @@ exports[`<SortIcon /> should render correctly when filtered desc 1`] = `
     width={14}
   />
   <ExpandMoreIcon
-    fill="#0A169A"
+    fill="#007"
     height={14}
     width={14}
   />
@@ -58,7 +58,7 @@ exports[`<SortIcon /> should render correctly when not filtered 1`] = `
   onClick={[MockFunction]}
 >
   <ExpandLessIcon
-    fill="#323232"
+    fill="#667"
     height={14}
     styles={
       Object {
@@ -68,7 +68,7 @@ exports[`<SortIcon /> should render correctly when not filtered 1`] = `
     width={14}
   />
   <ExpandMoreIcon
-    fill="#323232"
+    fill="#667"
     height={14}
     width={14}
   />
