@@ -182,7 +182,7 @@ export const EventPricingPresenter = (props: Props) => {
           />
         </Flex>
         {(isEditing || savingAdminModifiers) && (
-          <Flex direction="column" padding="0 20px">
+          <Flex direction="column" padding="0 25px 25px 25px">
             <PricingUpdateReason
               reasonType={reasonType}
               handleTypeChange={handleTypeChange}
