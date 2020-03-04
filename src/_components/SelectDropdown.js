@@ -59,7 +59,6 @@ const DropdownItem = styled.li`
   padding: 10px 14px;
 
   &:hover {
-    color: #54a1d5;
     background-color: ${colors.lightGray};
   }
 `;
