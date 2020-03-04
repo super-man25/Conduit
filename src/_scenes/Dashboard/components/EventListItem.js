@@ -238,7 +238,7 @@ export const EventListItem = ({
   );
 
   const handleProgressBarMouseEnter = () => setProgressBarHovered(true);
-  const handleProgressBarMouseOut = () => setProgressBarHovered(false);
+  const handleProgressBarMouseLeave = () => setProgressBarHovered(false);
 
   const handleClick = () => {
     if (isMobileDevice) toggleSidebar();
@@ -333,7 +333,7 @@ export const EventListItem = ({
         <InventoryProgressBarContainer
           active={active}
           onMouseEnter={handleProgressBarMouseEnter}
-          onMouseOut={handleProgressBarMouseOut}
+          onMouseLeave={handleProgressBarMouseLeave}
         >
           <InventoryProgressBar
             active={active}
