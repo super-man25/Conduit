@@ -4,7 +4,7 @@ exports[`<PeriodicInventoryChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
     color="#007"
-    label="Revenue"
+    label="Inventory"
   />
 </Fragment>
 `;
@@ -13,7 +13,7 @@ exports[`<PeriodicInventoryChartLegend /> should render correctly when projectio
 <Fragment>
   <ChartLegendItem
     color="#007"
-    label="Actual Revenue"
+    label="Actual Inventory"
   />
   <ChartLegendItem
     color="#3af"

@@ -4,7 +4,7 @@ exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
     color="#007"
-    label="Revenue"
+    label="Inventory"
   />
 </Fragment>
 `;
@@ -13,7 +13,7 @@ exports[`<CumulativeInventoryChartLegend /> should render correctly when project
 <Fragment>
   <ChartLegendItem
     color="#007"
-    label="Actual Revenue"
+    label="Actual Inventory"
   />
   <ChartLegendItem
     color="#3af"

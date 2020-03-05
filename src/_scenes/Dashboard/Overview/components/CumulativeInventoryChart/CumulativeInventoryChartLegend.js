@@ -7,7 +7,7 @@ export function CumulativeInventoryChartLegend({ hasProjected }) {
   return (
     <Fragment>
       <ChartLegendItem
-        label={hasProjected ? 'Actual Revenue' : 'Revenue'}
+        label={hasProjected ? 'Actual Inventory' : 'Inventory'}
         color={colors.blue}
       />
       {hasProjected && (

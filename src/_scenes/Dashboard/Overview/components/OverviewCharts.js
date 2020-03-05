@@ -284,18 +284,20 @@ export const OverviewCharts = ({
               </TabLink>
             )}
           </FlexItem>
-          <FlexItem flex="0" margin="0 0 0 auto">
-            <ChipButtonGroup
-              onChange={setGroupFilter}
-              value={selectedGroupFilter}
-            >
-              {groupFilters.map((group, idx) => (
-                <ChipButton key={idx} value={group.value}>
-                  {group.label}
-                </ChipButton>
-              ))}
-            </ChipButtonGroup>
-          </FlexItem>
+          {selectedTabIndex !== 2 && (
+            <FlexItem flex="0" margin="0 0 0 auto">
+              <ChipButtonGroup
+                onChange={setGroupFilter}
+                value={selectedGroupFilter}
+              >
+                {groupFilters.map((group, idx) => (
+                  <ChipButton key={idx} value={group.value}>
+                    {group.label}
+                  </ChipButton>
+                ))}
+              </ChipButtonGroup>
+            </FlexItem>
+          )}
         </Flex>
       </PanelHeader>
       {loading ? (
