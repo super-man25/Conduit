@@ -102,8 +102,8 @@ export const PeriodicRevenueChart = ({
 
           <Tooltip
             cursor={{
-              opacity: 0.4,
-              fill: colors.blue,
+              fill: colors.gray,
+              opacity: 0.25,
             }}
             animationDuration={500}
             content={

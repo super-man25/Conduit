@@ -192,8 +192,8 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         }
         cursor={
           Object {
-            "opacity": 0.5,
-            "stroke": "#007",
+            "opacity": 0.25,
+            "stroke": "#667",
             "strokeWidth": 2,
           }
         }
@@ -412,8 +412,8 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         }
         cursor={
           Object {
-            "opacity": 0.5,
-            "stroke": "#007",
+            "opacity": 0.25,
+            "stroke": "#667",
             "strokeWidth": 2,
           }
         }
