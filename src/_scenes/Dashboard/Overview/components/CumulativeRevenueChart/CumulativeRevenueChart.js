@@ -18,7 +18,7 @@ import { CumulativeRevenueTooltip } from './CumulativeRevenueTooltip';
 import { isMobileDevice } from '_helpers';
 import type { EventStat } from '_models/eventStat';
 
-const ANIMATION_DURATION = 1000;
+const animationDuration = 1000;
 
 type Props = {
   height: number,
@@ -98,7 +98,7 @@ export function CumulativeRevenueChart({
           <CartesianGrid vertical={false} />
 
           <Line
-            animationDuration={ANIMATION_DURATION}
+            animationDuration={animationDuration}
             type="monotone"
             dataKey="revenue"
             name="actual"
@@ -108,7 +108,7 @@ export function CumulativeRevenueChart({
           />
 
           <Line
-            animationDuration={ANIMATION_DURATION}
+            animationDuration={animationDuration}
             type="monotone"
             dataKey="projectedRevenue"
             strokeDasharray="5 5"

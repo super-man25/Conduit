@@ -3,7 +3,7 @@
 exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `
 <Fragment>
   <ChartLegendItem
-    color="#a3f"
+    color="#007"
     label="Revenue"
   />
 </Fragment>
@@ -12,11 +12,11 @@ exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `
 exports[`<CumulativeInventoryChartLegend /> should render correctly when projections are present 1`] = `
 <Fragment>
   <ChartLegendItem
-    color="#a3f"
+    color="#007"
     label="Actual Revenue"
   />
   <ChartLegendItem
-    color="#a3f"
+    color="#3af"
     dashed={true}
     label="Projected Inventory"
   />

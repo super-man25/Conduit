@@ -6,11 +6,11 @@ export function PeriodicInventoryChartLegend({ hasProjected }) {
   return (
     <Fragment>
       <ChartLegendItem
-        color={colors.purple}
+        color={colors.blue}
         label={hasProjected ? 'Actual Revenue' : 'Revenue'}
       />
       {hasProjected && (
-        <ChartLegendItem color={colors.purple} label="Projected Inventory" />
+        <ChartLegendItem color={colors.neonBlue} label="Projected Inventory" />
       )}
     </Fragment>
   );

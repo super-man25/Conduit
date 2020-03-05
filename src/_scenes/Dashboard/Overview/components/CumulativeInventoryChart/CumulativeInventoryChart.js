@@ -18,7 +18,7 @@ import { truncateNumber } from '_helpers/string-utils';
 import type { EventStat } from '_models/eventStat';
 import { isMobileDevice } from '_helpers';
 
-const ANIMATION_DURATION = 1000;
+const animationDuration = 1000;
 
 type Props = {
   height: number,
@@ -98,28 +98,28 @@ export function CumulativeInventoryChart({
           <CartesianGrid vertical={false} />
 
           <Line
-            animationDuration={ANIMATION_DURATION}
+            animationDuration={animationDuration}
             type="monotone"
             dataKey="inventory"
             name="actual"
             dot={false}
             strokeWidth={2}
-            stroke={colors.purple}
+            stroke={colors.blue}
           />
 
           <Line
-            animationDuration={ANIMATION_DURATION}
+            animationDuration={animationDuration}
             type="monotone"
             dataKey="projectedInventory"
             strokeDasharray="5 5"
             dot={false}
             name="projected"
             strokeWidth={2}
-            stroke={colors.purpls}
+            stroke={colors.neonBlue}
           />
           <Tooltip
             cursor={{
-              stroke: colors.purpls,
+              stroke: colors.blue,
               strokeWidth: 2,
               opacity: 0.5,
             }}

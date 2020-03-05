@@ -16,7 +16,7 @@ exports[`<CumulativeRevenueChartLegend /> should render correctly when projectio
     label="Actual Revenue"
   />
   <ChartLegendItem
-    color="#007"
+    color="#3af"
     dashed={true}
     label="Projected Revenue"
   />

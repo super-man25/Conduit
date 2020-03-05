@@ -142,7 +142,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#a3f"
+        stroke="#007"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -165,7 +165,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#3182bd"
+        stroke="#3af"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -193,7 +193,7 @@ exports[`<CumulativeInventoryChart /> should render correctly 1`] = `
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": undefined,
+            "stroke": "#007",
             "strokeWidth": 2,
           }
         }
@@ -362,7 +362,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#a3f"
+        stroke="#007"
         strokeWidth={2}
         type="monotone"
         xAxisId={0}
@@ -385,7 +385,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         onAnimationEnd={[Function]}
         onAnimationStart={[Function]}
         points={Array []}
-        stroke="#3182bd"
+        stroke="#3af"
         strokeDasharray="5 5"
         strokeWidth={2}
         type="monotone"
@@ -413,7 +413,7 @@ exports[`<CumulativeInventoryChart /> should render correctly with a different h
         cursor={
           Object {
             "opacity": 0.5,
-            "stroke": undefined,
+            "stroke": "#007",
             "strokeWidth": 2,
           }
         }

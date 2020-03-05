@@ -16,7 +16,7 @@ exports[`<PeriodicRevenueChartLegend /> should render correctly when projections
     label="Actual Revenue"
   />
   <ChartLegendItem
-    color="#007"
+    color="#3af"
     label="Projected Revenue"
   />
 </Fragment>

@@ -93,16 +93,16 @@ export const PeriodicInventoryChart = ({
             />
           </YAxis>
 
-          <Bar dataKey="periodicInventory" stackId="a" fill={colors.purple} />
+          <Bar dataKey="periodicInventory" stackId="a" fill={colors.blue} />
           <Bar
             dataKey="projectedPeriodicInventory"
             stackId="a"
-            fill={colors.purple}
+            fill={colors.neonBlue}
           />
 
           <Tooltip
             cursor={{
-              fill: colors.purple,
+              fill: colors.blue,
               opacity: 0.4,
             }}
             animationDuration={500}
