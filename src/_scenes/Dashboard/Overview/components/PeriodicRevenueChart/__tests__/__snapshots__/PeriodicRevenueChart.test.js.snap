@@ -160,7 +160,7 @@ exports[`<PeriodicRevenueChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicRevenue"
-        fill="#007"
+        fill="#3af"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -379,7 +379,7 @@ exports[`<PeriodicRevenueChart /> should render correctly with a different heigh
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicRevenue"
-        fill="#007"
+        fill="#3af"
         hide={false}
         isAnimationActive={true}
         layout="vertical"

@@ -5,9 +5,16 @@ import { colors } from '_constants';
 export function CumulativeRevenueChartLegend({ hasProjected }) {
   return (
     <Fragment>
-      <ChartLegendItem label={hasProjected ? 'Actual Revenue' : 'Revenue'} />
+      <ChartLegendItem
+        color={colors.blue}
+        label={hasProjected ? 'Actual Revenue' : 'Revenue'}
+      />
       {hasProjected && (
-        <ChartLegendItem dashed color={colors.blue} label="Projected Revenue" />
+        <ChartLegendItem
+          dashed
+          color={colors.neonBlue}
+          label="Projected Revenue"
+        />
       )}
     </Fragment>
   );

@@ -10,7 +10,7 @@ export function PeriodicRevenueChartLegend({ hasProjected }) {
         color={colors.blue}
       />
       {hasProjected && (
-        <ChartLegendItem label="Projected Revenue" color={colors.blue} />
+        <ChartLegendItem label="Projected Revenue" color={colors.neonBlue} />
       )}
     </Fragment>
   );

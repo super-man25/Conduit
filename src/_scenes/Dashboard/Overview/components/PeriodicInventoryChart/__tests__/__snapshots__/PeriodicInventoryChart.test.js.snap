@@ -143,7 +143,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="periodicInventory"
-        fill="#a3f"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -161,7 +161,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicInventory"
-        fill="#a3f"
+        fill="#3af"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -193,7 +193,7 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         }
         cursor={
           Object {
-            "fill": "#a3f",
+            "fill": "#007",
             "opacity": 0.4,
           }
         }
@@ -363,7 +363,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         animationEasing="ease"
         data={Array []}
         dataKey="periodicInventory"
-        fill="#a3f"
+        fill="#007"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -381,7 +381,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         animationEasing="ease"
         data={Array []}
         dataKey="projectedPeriodicInventory"
-        fill="#a3f"
+        fill="#3af"
         hide={false}
         isAnimationActive={true}
         layout="vertical"
@@ -413,7 +413,7 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         }
         cursor={
           Object {
-            "fill": "#a3f",
+            "fill": "#007",
             "opacity": 0.4,
           }
         }

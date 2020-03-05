@@ -97,7 +97,7 @@ export const PeriodicRevenueChart = ({
           <Bar
             dataKey="projectedPeriodicRevenue"
             stackId="a"
-            fill={colors.blue}
+            fill={colors.neonBlue}
           />
 
           <Tooltip
