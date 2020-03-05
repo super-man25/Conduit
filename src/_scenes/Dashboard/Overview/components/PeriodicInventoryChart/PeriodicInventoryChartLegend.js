@@ -7,7 +7,7 @@ export function PeriodicInventoryChartLegend({ hasProjected }) {
     <Fragment>
       <ChartLegendItem
         color={colors.blue}
-        label={hasProjected ? 'Actual Revenue' : 'Revenue'}
+        label={hasProjected ? 'Actual Inventory' : 'Inventory'}
       />
       {hasProjected && (
         <ChartLegendItem color={colors.neonBlue} label="Projected Inventory" />
