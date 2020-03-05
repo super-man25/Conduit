@@ -102,8 +102,8 @@ export const PeriodicInventoryChart = ({
 
           <Tooltip
             cursor={{
-              fill: colors.blue,
-              opacity: 0.4,
+              fill: colors.gray,
+              opacity: 0.25,
             }}
             animationDuration={500}
             content={

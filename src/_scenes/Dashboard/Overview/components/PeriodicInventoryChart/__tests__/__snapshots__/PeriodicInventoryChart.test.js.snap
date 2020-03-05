@@ -193,8 +193,8 @@ exports[`<PeriodicInventoryChart /> should render correctly 1`] = `
         }
         cursor={
           Object {
-            "fill": "#007",
-            "opacity": 0.4,
+            "fill": "#667",
+            "opacity": 0.25,
           }
         }
         cursorStyle={Object {}}
@@ -413,8 +413,8 @@ exports[`<PeriodicInventoryChart /> should render correctly with a different hei
         }
         cursor={
           Object {
-            "fill": "#007",
-            "opacity": 0.4,
+            "fill": "#667",
+            "opacity": 0.25,
           }
         }
         cursorStyle={Object {}}

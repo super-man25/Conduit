@@ -15,7 +15,7 @@ import { chartLabelStyles, colors } from '_constants';
 import { ChartContainer } from '_components/ChartContainer';
 import { EventScoreHistoryTooltip } from './EventScoreHistoryTooltip';
 
-const ANIMATION_DURATION = 1000;
+const animationDuration = 1000;
 
 export const EventScoreHistoryChart = ({
   height,
@@ -80,7 +80,7 @@ export const EventScoreHistoryChart = ({
           </YAxis>
           <Line
             dataKey="eventScore"
-            animationDuration={ANIMATION_DURATION}
+            animationDuration={animationDuration}
             type="stepAfter"
             dot={false}
             strokeWidth={2}
@@ -88,9 +88,9 @@ export const EventScoreHistoryChart = ({
           />
           <Tooltip
             cursor={{
-              stroke: colors.purple,
+              stroke: colors.gray,
               strokeWidth: 2,
-              opacity: 0.5,
+              opacity: 0.25,
             }}
             content={
               <EventScoreHistoryTooltip dateFormatter={tooltipDateFormatter} />
