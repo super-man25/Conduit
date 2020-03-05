@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
+
 import { colors } from '_constants';
-import { darken } from 'polished';
 import { withClickAway } from '_hoc';
 import { Input, Box } from '_components';
 
@@ -65,7 +65,7 @@ export const MultiSelectMenu = styled.div`
 export const MultiSelectOption = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive ? darken(0.05, colors.white) : colors.white};
+    props.isActive ? colors.lightGray : colors.white};
   transition: 0.1s ease-in-out all;
   color: ${colors.black};
   white-space: normal;
@@ -76,7 +76,7 @@ export const MultiSelectOption = styled.div`
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, colors.white)};
+    background-color: ${colors.lightGray};
   }
 `;
 

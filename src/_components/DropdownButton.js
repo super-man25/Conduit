@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { darken } from 'polished';
+import PropTypes from 'prop-types';
+
 import { colors } from '_constants';
 import { withClickAway } from '_hoc';
-import PropTypes from 'prop-types';
 import { Icon } from './Icon';
 import { P1 } from './StyledTags';
 import { Flex } from './Flex';
@@ -16,11 +16,7 @@ const Container = withClickAway(styled.div`
 const Label = styled(P1)`
   color: ${colors.blue};
   transition: 0.2s ease-in-out all;
-
-  :hover {
-    cursor: pointer;
-    color: ${darken(0.1, colors.blue)};
-  }
+  cursor: pointer;
 `;
 
 const Dropdown = styled.div`
@@ -56,7 +52,7 @@ const Option = styled.div`
 
   :hover {
     cursor: pointer;
-    background-color: ${darken(0.05, colors.white)};
+    background-color: ${colors.lightGray};
   }
 `;
 

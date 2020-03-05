@@ -15,7 +15,6 @@
     "history": "^4.10.1",
     "lodash.get": "^4.4.2",
     "node-fetch": "^2.6.0",
-    "polished": "^3.4.4",
     "prop-types": "^15.7.2",
     "querystring": "^0.2.0",
     "react": "^16.13.0",
