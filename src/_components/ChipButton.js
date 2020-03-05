@@ -6,7 +6,7 @@ import { colors } from '_constants';
 
 export const ChipButton = styled.div`
   background-color: ${(props) =>
-    props.active ? props.color || colors.lightBlue : 'transparent'};
+    props.active ? props.color || colors.blue : 'transparent'};
   color: ${(props) => (props.active ? props.fontColor || colors.white : null)};
   cursor: pointer;
   font-size: ${(props) => props.fontSize || '12px'};
@@ -17,7 +17,7 @@ export const ChipButton = styled.div`
   border-radius: ${(props) => props.fontSize * 2 || '24px'};
 
   &:hover {
-    background-color: ${colors.blue};
+    background-color: ${colors.lightBlue};
     color: ${colors.white};
   }
 `;
