@@ -308,27 +308,13 @@ export const EventListItem = ({
             </EventDetailValue>
             <EventDetailLabel>Revenue</EventDetailLabel>
           </EventDetail>
-          {isAdmin ? (
-            <EventDetail>
-              <EventDetailValue>
-                {formatNumber(event.unsoldInventory)} /{' '}
-                {formatNumber(event.soldInventory)}
-              </EventDetailValue>
-              <EventDetailLabel>Unsold / Sold</EventDetailLabel>
-            </EventDetail>
-          ) : (
-            <EventDetail>
-              <EventDetailValue
-                title={`${formatNumber(event.soldInventory)} tickets sold`}
-              >
-                {soldInventoryPercentage}%
-              </EventDetailValue>
-              <EventDetailLabel>
-                of {formatNumber(event.soldInventory + event.unsoldInventory)}{' '}
-                tickets
-              </EventDetailLabel>
-            </EventDetail>
-          )}
+          <EventDetail>
+            <EventDetailValue>
+              {formatNumber(event.unsoldInventory)} /{' '}
+              {formatNumber(event.soldInventory)}
+            </EventDetailValue>
+            <EventDetailLabel>Unsold / Sold</EventDetailLabel>
+          </EventDetail>
         </EventListItemRow>
         <InventoryProgressBarContainer
           active={active}
