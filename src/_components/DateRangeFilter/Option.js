@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { darken } from 'polished';
 
 import { colors } from '_constants';
 
@@ -23,7 +22,7 @@ export const Option = styled.div`
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, colors.white)};
+    background-color: ${colors.lightGray};
   }
 
   ${(props) =>

@@ -3,7 +3,6 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { withClickAway } from '_hoc';
 import { colors } from '_constants';
-import { darken } from 'polished';
 import { Icon } from '_components/Icon';
 import { Flex } from '_components/Flex';
 import { DropdownFilterInput, DropdownFilterInputContainer } from './styled';
@@ -44,7 +43,7 @@ DropdownMenu.displayName = 'DropdownMenu';
 export const Option = styled.div`
   padding: 12px 16px;
   background-color: ${(props) =>
-    props.isActive ? darken(0.05, colors.white) : colors.white};
+    props.isActive ? colors.lightGray : colors.white};
   transition: 0.1s ease-in-out all;
   color: ${colors.black};
   white-space: normal;
@@ -55,7 +54,7 @@ export const Option = styled.div`
 
   :hover {
     cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${darken(0.05, colors.white)};
+    background-color: ${colors.lightGray};
   }
 `;
 Option.displayName = 'Option';
