@@ -7,6 +7,7 @@ import { TeamOverview } from './TeamOverview';
 import { EventList } from './EventList';
 import { actions as uiActions } from '_state/ui';
 import { useClickAway } from '_hooks';
+import { isMobileDevice } from '_helpers';
 
 const StyledSidebar = styled.div`
   width: 400px;
@@ -51,7 +52,7 @@ export const Sidebar = () => {
   const toggleSidebar = () => dispatch(uiActions.toggleSidebar());
 
   const handleClickAway = () => {
-    if (!sidebarIsOpen) return;
+    if (!sidebarIsOpen || !isMobileDevice) return;
     toggleSidebar();
   };
   useClickAway({ ref, handleClickAway });
