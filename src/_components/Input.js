@@ -22,6 +22,17 @@ export const InputBase = styled.input.attrs((props) => ({
   ::placeholder {
     color: ${colors.gray};
   }
+
+  ${({ plain }) =>
+    plain &&
+    `
+    background: none;
+    border: none;
+    border-bottom: 1px solid ${colors.gray};
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 5px;
+  `}
 `;
 
 export const InputLabel = styled(Label)`

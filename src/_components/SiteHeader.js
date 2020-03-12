@@ -102,7 +102,7 @@ export const SiteHeader = () => {
   const dispatch = useDispatch();
   const [isSidebarOpen, toggleSidebar] = useSidebar();
 
-  const auth = useSelector(({ auth }) => auth.model);
+  const auth = useSelector(({ auth }) => auth.model || {});
   const client = useSelector(({ client }) => client);
   const clientList = useSelector(({ clientList }) => clientList);
   const hasTicketsDotComIntegration = useSelector(({ client }) =>

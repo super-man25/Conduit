@@ -1,103 +1,59 @@
-// @flow
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { colors } from '_constants';
 
-const toggleSizes = {
-  xsmall: {
-    width: 30,
-    height: 6,
-    toggleRadius: 10,
-  },
-  small: {
-    width: 40,
-    height: 8,
-    toggleRadius: 15,
-  },
-  large: {
-    width: 60,
-    height: 10,
-    toggleRadius: 20,
-  },
-};
-
-function getSliderTransformX(props) {
-  const {
-    isActive,
-    size: { width, toggleRadius },
-  } = props;
-
-  return isActive ? width - toggleRadius : 0;
-}
-
-const Slider = styled.span`
-  cursor: pointer;
-  width: ${(props) => props.size.width}px;
-  height: ${(props) => props.size.height}px;
-  border-radius: 1rem;
-  background-color: ${colors.gray};
-  position: relative;
-
-  ::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    height: ${(props) => props.size.toggleRadius}px;
-    width: ${(props) => props.size.toggleRadius}px;
-    left: 0;
-    top: 50%;
-    transform: translate(${getSliderTransformX}px, -50%);
-    border: 0.5px solid ${colors.blue};
-    box-shadow: 0 1px 1px ${colors.gray};
-    background-color: ${colors.white};
-    transition: 0.3s transform;
-  }
-`;
-
-const Label = styled.label`
-  display: inline-flex;
-  justify-content: center;
+const StyledToggle = styled.div`
+  display: flex;
   align-items: center;
+  position: relative;
   cursor: pointer;
-`;
+  width: 35px;
+  user-select: none;
 
-const Input = styled.input`
-  display: none;
-
-  background-color: ${colors.gray};
-
-  :checked + ${Slider} {
-    background-color: ${colors.blue};
-  }
-
-  :disabled + ${Slider} {
+  ${({ isDisabled }) =>
+    isDisabled &&
+    `
     cursor: not-allowed;
-  }
+    opacity: 0.25;
+  `}
 `;
 
-type Props = {
-  isChecked: boolean,
-  onChange: () => void,
-  isDisabled: boolean,
-  size: 'large' | 'small' | 'xsmall',
-  title?: string,
-};
+const ToggleBackground = styled.div`
+  background-color: ${({ isChecked }) =>
+    isChecked ? colors.blue : colors.gray};
+  height: 8px;
+  border-radius: 5px;
+  width: 100%;
+`;
 
-export function Toggle(props: Props) {
+const ToggleIndicator = styled.div`
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  background-color: ${colors.white};
+  border: 1px solid ${colors.blue};
+  position: absolute;
+
+  ${({ isChecked }) => (isChecked ? `right: 0;` : `left: 0;`)}
+`;
+
+export const Toggle = ({
+  isCheckedDefault = true,
+  handleChange,
+  isDisabled,
+}) => {
+  const [isChecked, setIsChecked] = useState(isCheckedDefault);
+  const handleClick = () => {
+    if (isDisabled) return;
+    setIsChecked(!isChecked);
+    handleChange(!isChecked);
+  };
+
   return (
-    <Label title={props.title}>
-      <Input
-        type="checkbox"
-        checked={props.isChecked}
-        onChange={props.onChange}
-        disabled={props.isDisabled}
-      />
-      <Slider isActive={props.isChecked} size={toggleSizes[props.size]} />
-    </Label>
+    <StyledToggle onClick={handleClick} isDisabled={isDisabled}>
+      <ToggleBackground isChecked={isChecked} />
+      <ToggleIndicator isChecked={isChecked} />
+    </StyledToggle>
   );
-}
-
-Toggle.defaultProps = {
-  size: 'large',
 };

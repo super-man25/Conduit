@@ -8,6 +8,7 @@ const panelBorder = `1px solid ${colors.lightGray}`;
 
 export const Panel: ComponentType<{}> = styled.div`
   background-color: ${colors.white};
+  width: 100%;
 
   & + & {
     margin-top: 25px;

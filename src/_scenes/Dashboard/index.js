@@ -6,12 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 import { actions as teamStatActions } from '_state/teamStat';
 import { actions as clientActions } from '_state/client';
-import {
-  FullContent,
-  PrimaryContent,
-  SecuredRoute,
-  SiteHeader,
-} from '_components';
+import { PrimaryContent, SecuredRoute, DualContent, Layout } from '_components';
 import { Overview } from './Overview';
 import { Sidebar } from './components/Sidebar';
 import { EventInventory } from './Inventory';
@@ -30,9 +25,8 @@ export const Dashboard = () => {
   const isAuthorized = !!authState.model;
 
   return (
-    <>
-      <SiteHeader />
-      <FullContent>
+    <Layout>
+      <DualContent>
         <Sidebar />
         <PrimaryContent>
           <Switch>
@@ -57,8 +51,8 @@ export const Dashboard = () => {
             <Redirect to="/season" />
           </Switch>
         </PrimaryContent>
-      </FullContent>
-    </>
+      </DualContent>
+    </Layout>
   );
 };
 

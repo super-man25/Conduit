@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    outline: none;
   }
   
   html,
@@ -29,6 +30,14 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${colors.black};
+  }
+
+  input {
+    border: none;
+  }
+
+  #root {
+    height: 100%;
   }
   
   /*
@@ -73,35 +82,5 @@ export const GlobalStyles = createGlobalStyle`
   .DayPickerInput-Overlay.DayPickerInput-Overlay--AlignRight {
     left: initial;
     right: 0;
-  }
-  
-  /*
-    react-virtualized styles
-  */
-  .ReactVirtualized__Table {
-    background-color: #070707;
-  }
-  
-  .ReactVirtualized__Grid {
-    outline: none;
-  }
-  
-  /* For some reason by default React virtualized thinks its good to force text-transform: uppercase... */
-  .ReactVirtualized__Table__headerRow {
-    border-bottom: 1px solid var(--PRIMARY_DARK_GRAY);
-    text-transform: none !important;
-  }
-  
-  .ReactVirtualized__Table__row--even {
-    background-color: var(--PRIMARY_LIGHTER_GRAY);
-  }
-  
-  .ReactVirtualized__Table__row--conflicting {
-    background-color: rgba(255, 99, 71, 0.25);
-  }
-  
-  .ReactVirtualized__Table__row:hover {
-    box-shadow: inset 4px 0 0 var(--PRIMARY_LIGHT_BLUE);
-    background-color: #eaf6fb;
   }
 `;

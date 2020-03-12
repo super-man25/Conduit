@@ -9,13 +9,17 @@ import {
   isSameYear,
   isSameDay,
 } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 
 import { mobileBreakpoint, colors } from '_constants';
 import { formatUSD, formatNumber } from '_helpers/string-utils';
 import { selectors as eventSelectors } from '_state/event';
 import { getEventStatState } from '_state/eventStat/selectors';
 import { getSeasonStatState } from '_state/seasonStat/selectors';
-import { utcToZonedTime } from 'date-fns-tz';
+
+const StyledOverviewStats = styled.div`
+  width: 100%;
+`;
 
 const StatsRow = styled.div`
   display: flex;
@@ -265,7 +269,7 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
       );
 
   return (
-    <div>
+    <StyledOverviewStats>
       <StatsRow>
         <StatContainer>
           <OverallStatValue>
@@ -371,6 +375,6 @@ export const OverviewStats = ({ isSeason, isEvent }) => {
           </StatContainer>
         </StatsRow>
       )}
-    </div>
+    </StyledOverviewStats>
   );
 };

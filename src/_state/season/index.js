@@ -56,14 +56,14 @@ export const actions = {
 // Reducer/Initial State
 export type State = {
   seasons: EDSeason[],
-  activeId: number,
+  activeId: ?number,
   loading: boolean,
   error: ?Error,
 };
 
 export const initialState = {
   seasons: [],
-  activeId: -1,
+  activeId: null,
   loading: false,
   error: null,
 };

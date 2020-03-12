@@ -18,6 +18,7 @@ type Props = {
   cancelEditingRule: () => void,
   deletePriceRule: (number) => void,
   saveEditedRule: () => void,
+  bulkUpdateInProgress: boolean,
 };
 
 export const RuleControlsCellPresenter = ({
@@ -30,9 +31,11 @@ export const RuleControlsCellPresenter = ({
   isEditing,
   isNewRule,
   isLoading,
+  bulkUpdateInProgress,
 }: Props) => {
+  const disabled = editingAnyPriceRule || bulkUpdateInProgress;
   const startEditing = () => {
-    if (editingAnyPriceRule || isLoading) return;
+    if (disabled || isLoading) return;
     startEditingRule();
   };
 
@@ -48,11 +51,9 @@ export const RuleControlsCellPresenter = ({
       <Flex align="center" justify="flex-end">
         <Text
           size={14}
-          color={
-            editingAnyPriceRule || isLoading ? colors.lightGray : colors.blue
-          }
+          color={disabled || isLoading ? colors.lightGray : colors.blue}
           onClick={startEditing}
-          style={{ cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer' }}
+          style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
           weight="heavy"
           marginRight="15px"
         >
@@ -61,13 +62,9 @@ export const RuleControlsCellPresenter = ({
         <Text
           size={14}
           weight="heavy"
-          color={editingAnyPriceRule ? colors.lightGray : colors.red}
-          onClick={editingAnyPriceRule ? null : confirmDelete}
-          style={
-            editingAnyPriceRule
-              ? { cursor: 'not-allowed' }
-              : { cursor: 'pointer' }
-          }
+          color={disabled ? colors.lightGray : colors.red}
+          onClick={disabled ? null : confirmDelete}
+          style={disabled ? { cursor: 'not-allowed' } : { cursor: 'pointer' }}
         >
           Delete
         </Text>

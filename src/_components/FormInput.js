@@ -6,6 +6,11 @@ import get from 'lodash.get';
 import { colors } from '_constants';
 import { InputLabel, Input } from './Input';
 
+const StyledFormInput = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const FieldError = styled.div`
   font-size: 12px;
   color: ${colors.red};
@@ -43,7 +48,7 @@ export const FormInput = ({
   placeholder,
 }) => {
   return (
-    <>
+    <StyledFormInput>
       <InputLabel>{label}</InputLabel>
       <Field
         validate={(value) => validate(value)}
@@ -54,6 +59,6 @@ export const FormInput = ({
           renderInput({ form, field, placeholder, children })
         }
       </Field>
-    </>
+    </StyledFormInput>
   );
 };

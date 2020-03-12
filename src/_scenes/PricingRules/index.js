@@ -1,41 +1,13 @@
 // @flow
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import styled from 'styled-components';
-import React from 'react';
-
-import { colors } from '_constants';
-import {
-  H3,
-  PageWrapper,
-  SiteHeader,
-  FullContent,
-  FlexItem,
-  Breadcrumbs,
-  PrimaryButton,
-  Spacing,
-  Flex,
-  Dropdown,
-  SecondaryButton,
-} from '_components';
-import { VirtualizedPricingRules } from './components/PricingRulesTable';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import {
-  actions as priceRuleActions,
-  selectors as priceRuleSelectors,
-} from '_state/priceRule';
-import {
-  actions as buyerTypeActions,
-  selectors as buyerTypeSelectors,
-} from '_state/buyerType';
-import {
-  selectors as seasonSelectors,
-  actions as seasonActions,
-} from '_state/season';
-import { createStructuredSelector } from 'reselect';
-import type { EDSeason } from '_models';
-import { seasonService } from '_services';
+import { Breadcrumbs, PrimaryContent, Layout } from '_components';
+import { actions as buyerTypeActions } from '_state/buyerType';
+import { selectors as seasonSelectors } from '_state/season';
+import { PricingRulesTable } from './components/PricingRulesTable';
+import { PricingRulesButtonRow } from './components/PricingRulesButtonRow';
+import { PricingRulesBulkUpdate } from './components/PricingRulesBulkUpdate';
 
 const pricingCrumb = [
   {
@@ -48,158 +20,56 @@ const pricingCrumb = [
   },
 ];
 
-const PricingRulesTableTableContainer = styled(FlexItem)`
-  min-height: 100%;
-`;
+export const PricingRules = () => {
+  const [bulkUpdateRowIds, setBulkUpdateRowIds] = useState(new Set());
+  const [bulkUpdateInProgress, setBulkUpdateInProgress] = useState(false);
+  const activeSeasonId = useSelector(seasonSelectors.selectActiveSeasonId);
+  const dispatch = useDispatch();
 
-const SeasonDropdown = styled(Dropdown)`
-  margin-top: 5px;
-`;
+  const selectForBulkUpdate = (id) => {
+    const newState = new Set(bulkUpdateRowIds);
+    newState.add(id);
+    setBulkUpdateRowIds(newState);
+  };
+  const deselectForBulkUpdate = (id) => {
+    const newState = new Set(bulkUpdateRowIds);
+    newState.delete(id);
+    setBulkUpdateRowIds(newState);
+  };
 
-const DropdownItem = styled.div``;
+  // TODO: Should this be in PricingRulesTable.js with similar calls?
+  useEffect(() => {
+    if (!activeSeasonId) return;
+    const fetchBuyerTypes = () =>
+      dispatch(buyerTypeActions.fetchBuyerTypes({ seasonId: activeSeasonId }));
+    fetchBuyerTypes();
+  }, [activeSeasonId, dispatch]);
 
-type Props = {
-  buyerTypeActions: any,
-  priceRuleActions: any,
-  editingAnyPriceRule: boolean,
-  activeSeasonId: number,
-  seasons: EDSeason[],
-  selectedSeason: EDSeason,
-  setActiveSeasonId: (id: number) => void,
-  cancelEditingRule: () => void,
+  const toggleBulkUpdateInProgress = () =>
+    setBulkUpdateInProgress(!bulkUpdateInProgress);
+  const cancelBulkUpdate = () => setBulkUpdateInProgress(false);
+
+  return (
+    <Layout>
+      <PrimaryContent>
+        <Breadcrumbs crumbs={pricingCrumb} />
+        <PricingRulesButtonRow
+          bulkUpdateInProgress={bulkUpdateInProgress}
+          toggleBulkUpdateInProgress={toggleBulkUpdateInProgress}
+          bulkUpdateRowCount={bulkUpdateRowIds.size}
+        />
+        <PricingRulesBulkUpdate
+          open={bulkUpdateInProgress}
+          setBulkUpdateInProgress={setBulkUpdateInProgress}
+          bulkUpdateRowIds={Array.from(bulkUpdateRowIds)}
+          cancelBulkUpdate={cancelBulkUpdate}
+        />
+        <PricingRulesTable
+          selectForBulkUpdate={selectForBulkUpdate}
+          deselectForBulkUpdate={deselectForBulkUpdate}
+          bulkUpdateInProgress={bulkUpdateInProgress}
+        />
+      </PrimaryContent>
+    </Layout>
+  );
 };
-
-export class PricingRules extends React.Component<Props> {
-  componentDidMount() {
-    this.getBuyerTypes();
-  }
-
-  componentDidUpdate(prevProps: Props) {
-    const { activeSeasonId, cancelEditingRule } = this.props;
-
-    if (prevProps.activeSeasonId !== activeSeasonId) {
-      this.getBuyerTypes();
-
-      // Cover case of switching seasons while editing/adding price rule
-      cancelEditingRule();
-    }
-  }
-
-  createNewPriceRule() {
-    const {
-      priceRuleActions: { createPriceRule },
-    } = this.props;
-    createPriceRule();
-  }
-
-  getBuyerTypes() {
-    const { activeSeasonId, buyerTypeActions } = this.props;
-
-    buyerTypeActions.fetchBuyerTypes({
-      seasonId: activeSeasonId,
-    });
-  }
-
-  handlePriceAllEvents = () =>
-    seasonService.priceAllEvents(this.props.activeSeasonId);
-
-  render() {
-    const {
-      editingAnyPriceRule,
-      activeSeasonId,
-      seasons,
-      selectedSeason,
-      setActiveSeasonId,
-    } = this.props;
-
-    const seasonsWithPricingRuleName = seasons.map((season) => {
-      const startYear = new Date(season.startTimestamp).getFullYear();
-      const endYear = new Date(season.endTimestamp).getFullYear();
-
-      const newName =
-        startYear === endYear ? endYear : `${startYear} - ${endYear}`;
-
-      return {
-        ...season,
-        nameWithPricingRules: newName + ' Pricing Rules',
-      };
-    });
-
-    // If no selected season, display placeholder text
-    const selectedSeasonWithPricingRuleName = selectedSeason
-      ? seasonsWithPricingRuleName.find(({ id }) => id === selectedSeason.id)
-      : null;
-
-    return (
-      <PageWrapper>
-        <SiteHeader />
-        <FullContent>
-          <Flex
-            direction="column"
-            justify="center"
-            padding="6rem 4rem"
-            width="100%"
-          >
-            <Spacing margin="1rem 0">
-              <Breadcrumbs crumbs={pricingCrumb} />
-              <Flex direction="row" justify="space-between" align="baseline">
-                <SeasonDropdown
-                  arrowColor={colors.blue}
-                  options={seasonsWithPricingRuleName}
-                  selected={selectedSeasonWithPricingRuleName}
-                  noneSelected={<H3>Select a Season</H3>}
-                  parseOption={(option) => option.nameWithPricingRules}
-                  onChange={(option) => setActiveSeasonId(option.id)}
-                  renderSelected={(option) => (
-                    <DropdownItem>{option.nameWithPricingRules}</DropdownItem>
-                  )}
-                />
-                <div>
-                  <SecondaryButton onClick={this.handlePriceAllEvents}>
-                    Price All Events
-                  </SecondaryButton>
-                  <PrimaryButton
-                    onClick={this.createNewPriceRule.bind(this)}
-                    disabled={editingAnyPriceRule}
-                    style={{
-                      marginLeft: '15px',
-                      cursor: editingAnyPriceRule ? 'not-allowed' : 'pointer',
-                    }}
-                  >
-                    New Rule
-                  </PrimaryButton>
-                </div>
-              </Flex>
-            </Spacing>
-            <PricingRulesTableTableContainer>
-              <VirtualizedPricingRules activeSeasonId={activeSeasonId} />
-            </PricingRulesTableTableContainer>
-          </Flex>
-        </FullContent>
-      </PageWrapper>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  priceRuleActions: bindActionCreators(priceRuleActions, dispatch),
-  buyerTypeActions: bindActionCreators(buyerTypeActions, dispatch),
-  setActiveSeasonId: bindActionCreators(seasonActions.setActiveId, dispatch),
-  cancelEditingRule: bindActionCreators(
-    priceRuleActions.cancelEditingPriceRule,
-    dispatch
-  ),
-});
-
-const mapStateToProps = createStructuredSelector({
-  editingAnyPriceRule: priceRuleSelectors.selectIsEditingPriceRule,
-  buyerTypes: buyerTypeSelectors.selectAllBuyerTypes,
-  activeSeasonId: seasonSelectors.selectActiveSeasonId,
-  seasons: seasonSelectors.selectSeasons,
-  selectedSeason: seasonSelectors.selectActiveSeason,
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(PricingRules));

@@ -7,7 +7,10 @@ export function* fetchBuyerTypes(action) {
   try {
     const { payload } = action;
     const buyerTypes = yield call(buyerTypeService.getAll, payload);
-    yield put({ type: types.FETCH_BUYER_TYPES_SUCCESS, payload: buyerTypes });
+    yield put({
+      type: types.FETCH_BUYER_TYPES_SUCCESS,
+      payload: buyerTypes.filter((buyerType) => buyerType.isInPriceStructure),
+    });
   } catch (err) {
     yield put(alertActions.error('Failed to Fetch Buyer Types'));
     yield put({ type: types.FETCH_BUYER_TYPES_ERROR, payload: err });
@@ -32,12 +35,12 @@ function* watchUpdateBuyerTypes() {
   yield takeEvery(types.UPDATE_BUYER_TYPES, updateBuyerTypes);
 }
 
-function* watchUpdatedBuyerTypesSuccessfully() {
-  yield takeLatest(types.UPDATE_BUYER_TYPES_SUCCESS, fetchBuyerTypes);
-}
+// function* watchUpdatedBuyerTypesSuccessfully() {
+//   yield takeLatest(types.UPDATE_BUYER_TYPES_SUCCESS, fetchBuyerTypes);
+// }
 
 export default {
   watchFetchBuyerTypes,
   watchUpdateBuyerTypes,
-  watchUpdatedBuyerTypesSuccessfully,
+  // watchUpdatedBuyerTypesSuccessfully,
 };

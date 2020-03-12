@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
-import { Flex } from '_components';
-
-export const OnboardWrapper = styled(Flex)`
+export const OnboardWrapper = styled.div`
+  display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
-export const InputGroup = styled(Flex)`
+export const InputGroup = styled.div`
+  display: flex;
   flex-wrap: wrap;
   margin: -10px;
 `;
 
-export const InputContainer = styled(Flex)`
+export const InputContainer = styled.div`
+  display: flex;
   flex-direction: column;
   width: ${({ quarterWidth }) => (quarterWidth ? '25%' : '50%')};
   padding: 10px;

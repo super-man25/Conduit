@@ -62,12 +62,11 @@ export const SecondaryButton = styled(Button)`
   &:active {
     background-color: ${colors.neonBlue};
     color: ${colors.neonBlue};
-    outline: 2px solid ${colors.neonBlue};
+    border-color: ${colors.neonBlue};
     box-shadow: ${shadows.ACTIVE_BUTTON};
   }
 
   &:hover:not(:disabled) {
-    border: 3px solid ${colors.blue};
     background-color: ${colors.lightGray};
     color: ${colors.blue};
   }

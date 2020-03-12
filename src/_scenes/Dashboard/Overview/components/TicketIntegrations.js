@@ -1,5 +1,8 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
 import {
   Panel,
   PanelContent,
@@ -10,10 +13,8 @@ import {
   Text,
   FlexItem,
   Loader,
-  EDLink,
 } from '_components';
 import EdLogoDark from '_images/logo_dark.svg';
-import styled from 'styled-components';
 import { colors } from '_constants';
 import type { EDIntegrationStat } from '_models';
 import { formatNumber } from '_helpers/string-utils';
@@ -58,6 +59,18 @@ const HorizontalListItem = styled(FlexItem)`
 
   @media (min-width: ${sizes.large}px) {
     width: 25%;
+  }
+`;
+
+const IntegrationLink = styled(Link)`
+  color: ${colors.blue};
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+
+  &:focus,
+  &:hover {
+    color: ${colors.blue};
+    text-shadow: 0 0 0.5px ${colors.blue};
   }
 `;
 
@@ -172,9 +185,7 @@ export const TicketIntegrations = (props: Props) => {
                   Integrations
                 </H4>
               </Flex>
-              <EDLink to="/settings/team" weight="heavy">
-                Manage All
-              </EDLink>
+              <IntegrationLink to="/settings/team">Manage All</IntegrationLink>
             </React.Fragment>
           )}
         </Flex>

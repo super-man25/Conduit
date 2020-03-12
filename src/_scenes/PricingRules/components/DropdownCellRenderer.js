@@ -26,7 +26,7 @@ const labelLength = 13;
 const clipLabel = (label) =>
   label.length > labelLength ? `${label.slice(0, labelLength)}...` : label;
 
-export class DropDownCellPresenter extends React.Component<Props, State> {
+export class DropdownCellPresenter extends React.Component<Props, State> {
   state = { selectedOption: null };
 
   items = () => {

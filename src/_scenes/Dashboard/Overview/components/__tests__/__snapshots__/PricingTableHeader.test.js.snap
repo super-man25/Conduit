@@ -31,11 +31,11 @@ exports[`renders correctly 1`] = `
   direction="row"
 >
   <div
-    className="sc-fzpkqZ c1"
+    className="sc-fzqAui c1"
     width="33%"
   >
     <p
-      className="sc-fznLPX c2"
+      className="sc-fzowVh c2"
       color="#667"
       size={14}
     >
@@ -43,11 +43,11 @@ exports[`renders correctly 1`] = `
     </p>
   </div>
   <div
-    className="sc-fzpkqZ c1"
+    className="sc-fzqAui c1"
     width="33%"
   >
     <p
-      className="sc-fznLPX c2"
+      className="sc-fzowVh c2"
       color="#667"
       size={14}
     >

@@ -153,7 +153,9 @@ describe('saga workers', () => {
     );
 
     const success = generator.clone();
-    const buyerTypes = [{ publicDescription: 'Adult' }];
+    const buyerTypes = [
+      { publicDescription: 'Adult', isInPriceStructure: true },
+    ];
 
     expect(success.next(buyerTypes).value).toEqual(
       put({ type: types.FETCH_BUYER_TYPES_SUCCESS, payload: buyerTypes })

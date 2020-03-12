@@ -12,9 +12,7 @@ export const EditPricingRuleInput = styled(Input)`
 `;
 
 export const TableHeaderCell = styled.div`
-  text-align: ${(props) => props.align || 'left'};
-  color: ${colors.gray};
-  font-weight: 500;
+  font-weight: bold;
 `;
 
 export const PositionedBox = styled(Box)`
@@ -94,9 +92,7 @@ export const SplitButtonHalf = styled.span`
   min-width: 35%;
   text-align: center;
   cursor: pointer;
-
   color: ${(props) => (props.isActive ? colors.white : colors.blue)};
-
   background-color: ${(props) => (props.isActive ? colors.blue : colors.white)};
 
   :not(:last-child) {

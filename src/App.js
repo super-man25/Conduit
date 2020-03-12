@@ -4,7 +4,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router-dom';
-import Loadable from 'react-loadable';
 import { createStructuredSelector } from 'reselect';
 
 import type { EDUser } from '_models/user';
@@ -12,26 +11,10 @@ import { history } from '_helpers';
 import { actions as authActions, selectors } from '_state/auth';
 import { GlobalStyles } from './globalStyles';
 import { SecuredRoute, Alert, Loader } from '_components';
-
-const Dashboard = Loadable({
-  loader: () => import('_scenes/Dashboard'),
-  loading: () => <Loader centered />,
-});
-
-const Login = Loadable({
-  loader: () => import('_scenes/Login'),
-  loading: () => <Loader centered />,
-});
-
-const Settings = Loadable({
-  loader: () => import('_scenes/Settings'),
-  loading: () => <Loader centered />,
-});
-
-const PricingRules = Loadable({
-  loader: () => import('_scenes/PricingRules'),
-  loading: () => <Loader centered />,
-});
+import { PricingRules } from '_scenes/PricingRules';
+import Login from '_scenes/Login';
+import Settings from '_scenes/Settings';
+import Dashboard from '_scenes/Dashboard';
 
 type Props = {
   fetchUser: () => void,

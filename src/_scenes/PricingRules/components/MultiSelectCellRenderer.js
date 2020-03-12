@@ -26,7 +26,6 @@ export class MultiSelectCellPresenter extends React.Component<Props> {
   items = () => {
     const { columnData, rulePropertyValue } = this.props;
     const { optionsKey, sortFn } = columnData;
-
     const columnDataIds = columnData[optionsKey].map((option) => option.id);
     const options =
       optionsKey === 'buyerTypes'

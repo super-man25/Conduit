@@ -144,7 +144,7 @@ exports[`render correctly 1`] = `
     className="sc-AxirZ c1"
   >
     <h4
-      className="sc-fzoant c2"
+      className="sc-fzoJMP c2"
       color={null}
     >
       Modifiers
@@ -158,18 +158,18 @@ exports[`render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkqZ c4"
+    className="sc-fzqAui c4"
   >
     <div
       className="sc-AxirZ c5"
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c7"
+          className="sc-fzowVh c7"
           color="#667"
           size={14}
         >
@@ -177,11 +177,11 @@ exports[`render correctly 1`] = `
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c7"
+          className="sc-fzowVh c7"
           color="#667"
           size={14}
         >
@@ -194,32 +194,32 @@ exports[`render correctly 1`] = `
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c9"
+          className="sc-fzowVh c9"
           color="#667"
         >
           Predicted
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c10 private"
+          className="sc-fzowVh c10 private"
         >
           1.00
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c10 private"
+          className="sc-fzowVh c10 private"
         >
           1.0000
         </p>
@@ -240,7 +240,7 @@ exports[`render correctly 1`] = `
         width="33%"
       >
         <p
-          className="sc-fznLPX c9"
+          className="sc-fzowVh c9"
           color="#667"
         >
           Modifier
@@ -251,7 +251,7 @@ exports[`render correctly 1`] = `
         width="33%"
       >
         <p
-          className="sc-fznLPX c10 private"
+          className="sc-fzowVh c10 private"
         >
           1.00
         </p>
@@ -261,7 +261,7 @@ exports[`render correctly 1`] = `
         width="33%"
       >
         <p
-          className="sc-fznLPX c10 private"
+          className="sc-fzowVh c10 private"
         >
           1.0000
         </p>
@@ -281,7 +281,7 @@ exports[`render correctly 1`] = `
         width="33%"
       >
         <p
-          className="sc-fznLPX c9"
+          className="sc-fzowVh c9"
           color="#667"
         >
           Velocity
@@ -292,7 +292,7 @@ exports[`render correctly 1`] = `
         width="33%"
       >
         <p
-          className="sc-fznLPX c10 private"
+          className="sc-fzowVh c10 private"
         >
           --
         </p>
@@ -307,31 +307,31 @@ exports[`render correctly 1`] = `
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c13"
+          className="sc-fzowVh c13"
         >
           Final
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c14 private"
+          className="sc-fzowVh c14 private"
         >
           --
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c6"
+        className="sc-fzqAui c6"
         width="33%"
       >
         <p
-          className="sc-fznLPX c14 private"
+          className="sc-fzowVh c14 private"
         >
           2.0000
         </p>

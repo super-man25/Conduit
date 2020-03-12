@@ -19,7 +19,6 @@ exports[`<TicketIntegrations /> should render correctly 1`] = `
       </Flex>
       <Styled(Link)
         to="/settings/team"
-        weight="heavy"
       >
         Manage All
       </Styled(Link)>
@@ -117,7 +116,6 @@ exports[`<TicketIntegrations /> should render correctly when an error occurs 1`]
       </Flex>
       <Styled(Link)
         to="/settings/team"
-        weight="heavy"
       >
         Manage All
       </Styled(Link)>
@@ -163,7 +161,6 @@ exports[`<TicketIntegrations /> should render correctly when no data is found 1`
       </Flex>
       <Styled(Link)
         to="/settings/team"
-        weight="heavy"
       >
         Manage All
       </Styled(Link)>

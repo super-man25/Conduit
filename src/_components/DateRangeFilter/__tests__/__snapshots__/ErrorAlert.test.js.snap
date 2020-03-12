@@ -49,7 +49,7 @@ exports[`renders correctly 1`] = `
     />
   </svg>
   <p
-    className="sc-fznLPX c2"
+    className="sc-fzowVh c2"
     color="#b44"
     size={12}
   >
