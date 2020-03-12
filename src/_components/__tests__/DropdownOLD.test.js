@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
-import { Dropdown } from '../Dropdown';
+import { Dropdown } from '../DropdownOLD';
 
 const createProps = () => ({
   parseOption: (option) => option.label,

@@ -13,7 +13,6 @@ export const ChipButton = styled.div`
   padding: 8px 14px;
   min-width: 60px;
   border: none;
-  outline: none;
   border-radius: ${(props) => props.fontSize * 2 || '24px'};
 
   &:hover {

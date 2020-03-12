@@ -3,7 +3,7 @@ import { actions } from '_state/priceRule';
 
 const mapStateToProps = (
   { priceRule: { allRows, editingRowId, editingRowState } },
-  { rowData, dataKey }
+  { rowData, dataKey, columnData }
 ) => {
   const isEditing = editingRowId === rowData.id;
   const row = isEditing
@@ -12,7 +12,8 @@ const mapStateToProps = (
   return {
     isEditing,
     rulePropertyValue: row[dataKey],
-    ruleId: allRows.find((pr) => pr.id === rowData.id).id,
+    ruleId: allRows.find((pr) => pr.id === rowData.id)?.id,
+    bulkUpdateInProgress: columnData.bulkUpdateInProgress,
   };
 };
 

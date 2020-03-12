@@ -9,7 +9,6 @@ import {
   isBefore,
 } from 'date-fns';
 
-import { colors } from '_constants';
 import { H3, Input, Dropdown, FormInput } from '_components';
 import { InputGroup, InputContainer } from './styled';
 
@@ -54,16 +53,20 @@ export const TeamInfoSection = ({ values }) => (
           {({ field, form }) => (
             <Dropdown
               options={leagueOptions}
-              selected={field.value}
-              parseOption={(option) => option.label}
-              noneSelected={'Select a league'}
-              onChange={(event) => {
-                form.setFieldValue('league', event);
+              handleChange={(selectedOption) => {
+                form.setFieldValue('league', selectedOption.label);
                 form.setFieldTouched('league', true);
               }}
-              valid={!form.errors.league && form.touched.league}
-              invalid={form.errors.league && form.touched.league}
-              arrowColor={colors.blue}
+              // selected={field.value}
+              // parseOption={(option) => option.label}
+              // noneSelected={'Select a league'}
+              // onChange={(event) => {
+              //   form.setFieldValue('league', event);
+              //   form.setFieldTouched('league', true);
+              // }}
+              // valid={!form.errors.league && form.touched.league}
+              // invalid={form.errors.league && form.touched.league}
+              // arrowColor={colors.blue}
             />
           )}
         </FormInput>

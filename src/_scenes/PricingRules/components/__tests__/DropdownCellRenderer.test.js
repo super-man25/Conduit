@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { DropDownCellPresenter } from '../DropdownCellRenderer';
+import { DropdownCellPresenter } from '../DropdownCellRenderer';
 import { Dropdown, Option } from '../Dropdown';
 
 describe('<DropdownCellRenderer />', () => {
@@ -26,14 +26,14 @@ describe('<DropdownCellRenderer />', () => {
   };
 
   it('should render correctly', () => {
-    const wrapper = shallow(<DropDownCellPresenter {...props} />);
+    const wrapper = shallow(<DropdownCellPresenter {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should trigger updatePriceRuleProperty function', () => {
     const fn = jest.fn();
     const wrapper = mount(
-      <DropDownCellPresenter
+      <DropdownCellPresenter
         {...props}
         updatePriceRuleProperty={fn}
         isEditing={true}
@@ -61,7 +61,7 @@ describe('<DropdownCellRenderer />', () => {
     };
 
     const wrapper = mount(
-      <DropDownCellPresenter
+      <DropdownCellPresenter
         {...props}
         columnData={columnData}
         isEditing={true}

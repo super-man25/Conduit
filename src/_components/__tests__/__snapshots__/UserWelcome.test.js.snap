@@ -96,7 +96,7 @@ exports[`renders correctly with a valid user prop 1`] = `
   className="c0"
 >
   <button
-    className="sc-fzplWN c1"
+    className="sc-fznyAO c1"
     onClick={[Function]}
   >
     <div

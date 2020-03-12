@@ -6,7 +6,7 @@ exports[`BulkUpdateModal styled components <Field /> renders correctly 1`] = `
 }
 
 <div
-  className="sc-fzpkqZ sc-fznAgC c0"
+  className="sc-fzqAui sc-fzqMdD c0"
 />
 `;
 
@@ -18,7 +18,7 @@ exports[`BulkUpdateModal styled components <FieldErrorText /> renders correctly 
 }
 
 <p
-  className="sc-fznLPX sc-fzoaKM c0"
+  className="sc-fzowVh sc-fzoJus c0"
 >
   Text
 </p>
@@ -97,7 +97,7 @@ exports[`BulkUpdateModal styled components <Title /> renders correctly 1`] = `
 }
 
 <h4
-  className="sc-fzoant sc-fzomME c0"
+  className="sc-fzoJMP sc-fzoYHE c0"
   color={null}
 >
   Title

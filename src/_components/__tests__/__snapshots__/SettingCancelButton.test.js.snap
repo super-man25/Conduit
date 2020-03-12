@@ -32,12 +32,11 @@ exports[`renders correctly with disabled prop 1`] = `
 .c0:active {
   background-color: #3af;
   color: #3af;
-  outline: 2px solid #3af;
+  border-color: #3af;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
 .c0:hover:not(:disabled) {
-  border: 3px solid #007;
   background-color: #ddd;
   color: #007;
 }
@@ -47,7 +46,7 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 <button
-  className="sc-fzplWN sc-fznKkj c0"
+  className="sc-fznyAO sc-fznZeY c0"
   disabled={true}
 />
 `;
@@ -84,12 +83,11 @@ exports[`renders correctly with no props 1`] = `
 .c0:active {
   background-color: #3af;
   color: #3af;
-  outline: 2px solid #3af;
+  border-color: #3af;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
 .c0:hover:not(:disabled) {
-  border: 3px solid #007;
   background-color: #ddd;
   color: #007;
 }
@@ -99,6 +97,6 @@ exports[`renders correctly with no props 1`] = `
 }
 
 <button
-  className="sc-fzplWN sc-fznKkj c0"
+  className="sc-fznyAO sc-fznZeY c0"
 />
 `;

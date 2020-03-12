@@ -5,7 +5,7 @@ exports[`<Onboard /> renders correctly 1`] = `
   <styled.div
     padding="2rem"
   >
-    <Styled(Flex)>
+    <styled.div>
       <styled.div
         margin="2rem 0"
       >
@@ -69,7 +69,7 @@ exports[`<Onboard /> renders correctly 1`] = `
       >
         <Component />
       </Form>
-    </Styled(Flex)>
+    </styled.div>
   </styled.div>
 </styled.div>
 `;

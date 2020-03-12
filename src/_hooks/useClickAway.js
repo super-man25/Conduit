@@ -21,5 +21,5 @@ export function useClickAway({ ref, handleClickAway }) {
       document.removeEventListener('mouseup', handleOutsideClick);
       document.removeEventListener('keyup', handleKey);
     };
-  });
+  }, [ref, handleClickAway]);
 }

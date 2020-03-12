@@ -17,7 +17,6 @@ const ReasonOptions = styled.div`
 const CommentBox = styled.textarea`
   width: 100%;
   border: 2px solid ${colors.blue};
-  outline: none;
   border-radius: 3px;
   resize: vertical;
   min-height: 100px;

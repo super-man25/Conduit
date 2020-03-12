@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 .c1 {
   background-color: #fff;
+  width: 100%;
 }
 
 .c1 + .c0 {
@@ -19,6 +20,7 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly with a header 1`] = `
 .c1 {
   background-color: #fff;
+  width: 100%;
 }
 
 .c1 + .c0 {
@@ -45,6 +47,7 @@ exports[`renders correctly with a header 1`] = `
 exports[`renders correctly with a header and content 1`] = `
 .c1 {
   background-color: #fff;
+  width: 100%;
 }
 
 .c1 + .c0 {

@@ -1,152 +1,117 @@
-// @flow
-import React, { useState } from 'react';
-import type { Node } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { withClickAway } from '_hoc';
+import { useClickAway } from '_hooks';
 import { colors } from '_constants';
 import { Icon } from './Icon';
-import { Flex } from './Flex';
-import { InputBase } from './Input';
 
-const DropdownContainer = withClickAway(styled(InputBase).attrs({
-  as: 'div',
-})`
+const StyledDropdown = styled.div`
+  background-color: white;
+  border: 2px solid ${colors.blue};
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 3px;
+  position: relative;
   cursor: pointer;
-`);
-DropdownContainer.displayName = 'DropdownContainer';
+  user-select: none;
 
-const DropdownMenu = styled.div`
-  position: absolute;
-  top: calc(100%);
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  border: 1px solid ${colors.lightGray};
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.06);
-  transition: 0.1s ease-in-out all;
-  opacity: 0;
-  transform: translateY(20px);
-  visibility: hidden;
-  margin-top: 5px;
-
-  ${(props) =>
-    props.show &&
+  ${({ plain }) =>
+    plain &&
     `
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-    `};
+    background: none;
+    border: none;
+    padding: 0;
+  `}
 `;
-DropdownMenu.displayName = 'DropdownMenu';
-
-const DropdownMenuOption = styled.div`
-  padding: 12px 16px;
-  background-color: ${(props) =>
-    props.isActive ? colors.lightGray : colors.white};
-  transition: 0.1s ease-in-out all;
-
-  :not(:last-child) {
-    border-bottom: 1px solid ${colors.lightGray};
-  }
-
-  :hover {
-    cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
-    background-color: ${colors.lightGray};
-  }
-`;
-DropdownMenuOption.displayName = 'DropdownMenuOption';
 
 const DropdownArrow = styled(Icon)`
-  margin-left: 10px;
-  flex-shrink: 0;
+  margin-left: 15px;
 `;
 
-type Props = {
-  className?: string,
-  options: any[],
-  selected: any,
-  onChange: (newSelected: any, prevSelected: any, options: any[]) => void,
-  onBlur: any,
-  parseOption: (option: any, options: any[]) => string,
-  renderSelected: (selectedOption: any, options: any[]) => Node,
-  noneSelected: string | Node,
-  arrowColor?: string,
-  valid: boolean,
-  invalid: boolean,
+const StyledDropdownMenu = styled.div`
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border: 1px solid ${colors.lightGray};
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+`;
+
+const Option = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${colors.lightGray};
+  }
+
+  & + & {
+    border-top: 1px solid ${colors.lightGray};
+  }
+`;
+
+const DropdownMenu = ({ options, handleSelect, handleClickAway }) => {
+  const ref = useRef();
+  useClickAway({ ref, handleClickAway });
+
+  return (
+    <StyledDropdownMenu ref={ref}>
+      {options.map((option, index) => (
+        <Option key={index} onClick={() => handleSelect(option)}>
+          {option.label}
+        </Option>
+      ))}
+    </StyledDropdownMenu>
+  );
 };
 
-export const Dropdown = (props: Props) => {
+export const Dropdown = ({ options, defaultOption, plain, handleChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(defaultOption);
 
-  const itemClicked = (newSelected: any) => {
-    const { onChange, options, selected: prevSelected } = props;
+  useEffect(() => {
+    if (selectedOption.label) return;
+    setSelectedOption(defaultOption);
+  }, [defaultOption, selectedOption.label]);
 
-    if (prevSelected === newSelected) {
-      return;
-    }
-
-    onChange(newSelected, prevSelected, options);
+  const handleOpen = () => setIsOpen(true);
+  const handleSelect = (option) => {
+    handleChange(option);
+    setSelectedOption(option);
+    setIsOpen(false);
   };
-
-  const {
-    className,
-    selected,
-    options,
-    parseOption,
-    noneSelected,
-    renderSelected,
-    arrowColor,
-    valid,
-    invalid,
-    onBlur,
-  } = props;
-
-  const hasSelectedItem = !!options.find(
-    (option) => selected && option.value === selected.value
-  );
-
-  const getArrowColor = () => {
-    if (valid) return colors.green;
-    if (invalid) return colors.red;
-    if (arrowColor) return arrowColor;
-    return colors.white;
+  const handleClickAway = () => {
+    isOpen && setIsOpen(false);
   };
 
   return (
-    <DropdownContainer
-      className={className}
-      onClick={() => setIsOpen(!isOpen)}
-      onClickAway={() => {
-        onBlur && onBlur();
-        setIsOpen(false);
-      }}
-      valid={valid}
-      invalid={invalid}
-    >
-      <Flex justify="space-between" align="center">
-        {hasSelectedItem
-          ? renderSelected
-            ? renderSelected(selected, options)
-            : parseOption(selected, options)
-          : noneSelected}
-        <DropdownArrow
-          size={12}
-          color={getArrowColor()}
-          name={isOpen ? 'arrowUp' : 'arrowDown'}
+    <StyledDropdown onMouseUp={handleOpen} plain={plain}>
+      {selectedOption?.label}
+      <DropdownArrow
+        size={10}
+        color={colors.blue}
+        name={isOpen ? 'arrowUp' : 'arrowDown'}
+      />
+      {isOpen && (
+        <DropdownMenu
+          options={options}
+          handleSelect={handleSelect}
+          handleClickAway={handleClickAway}
         />
-      </Flex>
-      <DropdownMenu show={isOpen}>
-        {options.map((option, index) => (
-          <DropdownMenuOption
-            isActive={option === selected}
-            key={index}
-            onClick={() => itemClicked(option)}
-          >
-            {parseOption(option, options)}
-          </DropdownMenuOption>
-        ))}
-      </DropdownMenu>
-    </DropdownContainer>
+      )}
+    </StyledDropdown>
   );
 };

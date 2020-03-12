@@ -24,7 +24,7 @@ exports[`EventInventorySeatMap should render correctly 1`] = `
 }
 
 <div
-  className="sc-fzpkqZ "
+  className="sc-fzqAui "
 >
   <div
     className="sc-AxirZ c0"
@@ -51,7 +51,7 @@ exports[`EventInventorySeatMap should render correctly 1`] = `
       />
     </svg>
     <div
-      className="sc-fzpkqZ c1"
+      className="sc-fzqAui c1"
       height="28px"
       width="2px"
     />

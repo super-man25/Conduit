@@ -14,7 +14,6 @@ import clockIcon from '_images/clock.svg';
 const StyledDashboardHeader = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
 `;
 
 const Title = styled.div`
@@ -27,7 +26,6 @@ const Title = styled.div`
 const StyledEventDetails = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 15px;
 `;
 
 const DateContainer = styled.div`

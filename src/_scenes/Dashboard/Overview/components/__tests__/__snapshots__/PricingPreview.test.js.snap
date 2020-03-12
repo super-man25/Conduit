@@ -131,13 +131,13 @@ exports[`renders correctly 1`] = `
     className="sc-AxirZ c1"
   >
     <h4
-      className="sc-fzoant c2"
+      className="sc-fzoJMP c2"
       color={null}
     >
       Preview
     </h4>
     <div
-      className="sc-fzpkqZ c3"
+      className="sc-fzqAui c3"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -160,18 +160,18 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-fzpkqZ c6"
+    className="sc-fzqAui c6"
   >
     <div
       className="sc-AxirZ c7"
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c9"
+          className="sc-fzowVh c9"
           color="#667"
           size={14}
         >
@@ -179,11 +179,11 @@ exports[`renders correctly 1`] = `
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c9"
+          className="sc-fzowVh c9"
           color="#667"
           size={14}
         >
@@ -196,33 +196,33 @@ exports[`renders correctly 1`] = `
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c11"
+          className="sc-fzowVh c11"
           color="#667"
         >
           Event
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $52.18
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $1,147.73
@@ -234,33 +234,33 @@ exports[`renders correctly 1`] = `
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c11"
+          className="sc-fzowVh c11"
           color="#667"
         >
           Section 14
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $421.36
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $1,120.58
@@ -272,33 +272,33 @@ exports[`renders correctly 1`] = `
       direction="row"
     >
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c11"
+          className="sc-fzowVh c11"
           color="#667"
         >
           Section 114
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $285.06
         </p>
       </div>
       <div
-        className="sc-fzpkqZ c8"
+        className="sc-fzqAui c8"
         width="33%"
       >
         <p
-          className="sc-fznLPX c12 private"
+          className="sc-fzowVh c12 private"
           color="#007"
         >
           $856.69
@@ -413,13 +413,13 @@ exports[`renders the error preview 1`] = `
     className="sc-AxirZ c1"
   >
     <h4
-      className="sc-fzoant c2"
+      className="sc-fzoJMP c2"
       color={null}
     >
       Preview
     </h4>
     <div
-      className="sc-fzpkqZ sc-fznAgC c3"
+      className="sc-fzqAui sc-fzqMdD c3"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -458,7 +458,7 @@ exports[`renders the error preview 1`] = `
       />
     </svg>
     <p
-      className="sc-fznLPX c8"
+      className="sc-fzowVh c8"
       color="#b44"
     >
       A server error has occurred, please contact
@@ -572,13 +572,13 @@ exports[`renders the loading preview 1`] = `
     className="sc-AxirZ c1"
   >
     <h4
-      className="sc-fzoant c2"
+      className="sc-fzoJMP c2"
       color={null}
     >
       Preview
     </h4>
     <div
-      className="sc-fzpkqZ sc-fznAgC c3"
+      className="sc-fzqAui sc-fzqMdD c3"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -604,7 +604,7 @@ exports[`renders the loading preview 1`] = `
     className="sc-AxirZ c6"
   >
     <p
-      className="sc-fznLPX c7"
+      className="sc-fzowVh c7"
       color="#007"
     >
       Loading Price Preview...
@@ -706,13 +706,13 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
     className="sc-AxirZ c1"
   >
     <h4
-      className="sc-fzoant c2"
+      className="sc-fzoJMP c2"
       color={null}
     >
       Preview
     </h4>
     <div
-      className="sc-fzpkqZ sc-fznAgC c3"
+      className="sc-fzqAui sc-fzqMdD c3"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
@@ -738,7 +738,7 @@ exports[`renders the null eventScore message in pricing preview 1`] = `
     className="sc-AxirZ c6"
   >
     <p
-      className="sc-fznLPX c7"
+      className="sc-fzowVh c7"
       color="#667"
     >
       The pricing preview section will be available once the event has been priced.

@@ -28,6 +28,10 @@ function getOne(id) {
   return get(`${route}/${id}`).then(normalize);
 }
 
+function bulkUpdate(payload) {
+  return post(`${route}/bulkUpdate`, payload);
+}
+
 function handleResponseError(error) {
   switch (error.code) {
     case 409:
@@ -63,4 +67,5 @@ export const priceRuleService = {
   update,
   getOne,
   deletePriceRule,
+  bulkUpdate,
 };

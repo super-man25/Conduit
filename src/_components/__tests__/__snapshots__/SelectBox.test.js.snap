@@ -14,10 +14,6 @@ exports[`renders correctly with invalid prop 1`] = `
   background: #fff;
 }
 
-.c0:focus {
-  outline: none;
-}
-
 <select
   className="c0"
   color="#667"
@@ -36,10 +32,6 @@ exports[`renders correctly with no props 1`] = `
   margin: 0;
   padding: 0;
   background: #fff;
-}
-
-.c0:focus {
-  outline: none;
 }
 
 <select
@@ -62,10 +54,6 @@ exports[`renders correctly with noBg prop 1`] = `
   background: transparent;
 }
 
-.c0:focus {
-  outline: 0;
-}
-
 <select
   className="c0"
   color="#007"
@@ -84,10 +72,6 @@ exports[`renders correctly with valid prop 1`] = `
   margin: 0;
   padding: 0;
   background: #fff;
-}
-
-.c0:focus {
-  outline: none;
 }
 
 <select

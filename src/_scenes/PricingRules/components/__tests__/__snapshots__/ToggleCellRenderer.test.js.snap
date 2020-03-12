@@ -1,15 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ToggleCellPresenter /> should render correctly 1`] = `
+exports[`<ToggleCellRenderer /> should render correctly 1`] = `
 <Flex
   align="center"
   margin="1rem"
 >
   <Toggle
-    isChecked={false}
+    handleChange={[Function]}
+    isCheckedDefault={false}
     isDisabled={true}
-    onChange={[Function]}
-    size="small"
   />
 </Flex>
 `;

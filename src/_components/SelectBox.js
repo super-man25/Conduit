@@ -36,10 +36,4 @@ export const SelectBox: React.ComponentType<Props> = styled.select.attrs(
   margin: ${(props) => props.margin || 0};
   padding: ${(props) => props.padding || 0};
   background: ${(props) => props.background};
-
-  &:focus {
-    outline: ${(props) => {
-      return props.noBg ? 0 : 'none';
-    }};
-  }
 `;

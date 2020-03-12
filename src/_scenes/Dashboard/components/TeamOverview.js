@@ -13,7 +13,7 @@ import { selectors as clientSelectors } from '_state/client';
 import { selectors as eventListSelectors } from '_state/eventList';
 import { Icon, Flex, FlexItem, H4, H3, P1 } from '_components';
 import { isMobileDevice } from '_helpers';
-import { Dropdown } from '_components/Dropdown';
+import { Dropdown } from '_components/DropdownOLD';
 
 const StyledTeamOverview = styled.div`
   padding: ${containerPadding}px;
