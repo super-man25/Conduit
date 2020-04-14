@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { colors } from '_constants';
+import { Icon } from '_components';
 
 const TicketBackground = styled.div`
   background-color: ${colors.blue};
   padding: 4px 12px; /* numbers chosen visually to make a ticket shape */
   border-radius: 3px;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 2px;
   color: white;
   text-align: center;
@@ -57,8 +59,22 @@ const TicketBackground = styled.div`
   `}
 `;
 
-export const EventScoreIcon = ({ eventScore, past, active }) => (
+const EventScoreTrendIndicator = styled(Icon)`
+  margin-left: 5px;
+`;
+
+export const EventScoreIcon = ({
+  eventScore,
+  eventScoreTrendPositive,
+  past,
+  active,
+}) => (
   <TicketBackground past={past} active={active}>
     {eventScore}
+    <EventScoreTrendIndicator
+      size={8}
+      name={eventScoreTrendPositive ? 'arrowUp' : 'arrowDown'}
+      color={active ? colors.blue : colors.white}
+    />
   </TicketBackground>
 );

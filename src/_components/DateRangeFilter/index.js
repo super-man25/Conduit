@@ -319,7 +319,7 @@ export const DateRangeFilter = (props: Props) => {
         <Icon
           size={10}
           color={arrowColor ? arrowColor : colors.darkBlue}
-          name={isOpen ? 'arrowUp' : 'arrowDown'}
+          name={isOpen ? 'caretUp' : 'caretDown'}
         />
       </Dropdown>
       <DropdownMenu show={isOpen}>

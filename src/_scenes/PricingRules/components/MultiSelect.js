@@ -202,7 +202,7 @@ export class MultiSelect extends React.Component<Props, State> {
         {cellLabel}
         <Icon
           color={isOpen ? colors.blue : colors.black}
-          name={'arrowDown'}
+          name={'caretDown'}
           size={12}
         />
         <div

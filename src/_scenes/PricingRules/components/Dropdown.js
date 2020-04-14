@@ -153,7 +153,7 @@ export class Dropdown extends React.Component<Props, State> {
           <Icon
             size={12}
             color={isOpen ? colors.blue : colors.black}
-            name={'arrowDown'}
+            name={'caretDown'}
           />
         </Flex>
         <div

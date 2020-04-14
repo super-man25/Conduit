@@ -58,10 +58,10 @@ export const SortableButton = (props: Props) => {
         </Label>
         <IconContainer>
           <Abs top="-2px">
-            <Icon name="arrowUp" size={24} color={colors.black} />
+            <Icon name="caretUp" size={24} color={colors.black} />
           </Abs>
           <Abs top="4px">
-            <Icon name="arrowDown" size={24} color={colors.black} />
+            <Icon name="caretDown" size={24} color={colors.black} />
           </Abs>
         </IconContainer>
       </Flex>

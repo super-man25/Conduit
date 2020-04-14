@@ -121,7 +121,11 @@ exports[`renders correctly with a valid user prop 1`] = `
           width="12px"
         >
           <path
-            d="M0,6.5l12,12,12-12Z"
+            d={
+              Array [
+                "M0,6.5l12,12,12-12Z",
+              ]
+            }
           />
         </svg>
       </div>

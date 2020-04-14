@@ -91,7 +91,11 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
             width="24px"
           >
             <path
-              d="M0,6.5l12,12,12-12Z"
+              d={
+                Array [
+                  "M0,6.5l12,12,12-12Z",
+                ]
+              }
             />
           </svg>
         </span>
@@ -117,7 +121,11 @@ exports[`<DateRangeDropdown /> renders correctly 1`] = `
             width="24px"
           >
             <path
-              d="M0,6.5l12,12,12-12Z"
+              d={
+                Array [
+                  "M0,6.5l12,12,12-12Z",
+                ]
+              }
             />
           </svg>
         </span>
