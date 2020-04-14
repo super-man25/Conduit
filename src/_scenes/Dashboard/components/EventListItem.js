@@ -294,7 +294,7 @@ export const EventListItem = ({
           <EventDetail>
             <EventScoreIcon
               eventScore={calculateEventScore(event)}
-              eventScoreTrendPositive={event.factors.eventScoreTrendPositive}
+              eventScoreTrend={event.factors.eventScoreTrend}
               past={past}
               active={active}
             />

@@ -5,7 +5,7 @@ import type { EDScheduledJob } from './scheduledJob';
 type Factors = {
   eventScore: ?number,
   eventScoreModifier: number,
-  eventScoreTrendPositive: Boolean,
+  eventScoreTrend: ?Boolean,
   spring: ?number,
   springModifier: number,
   velocityFactor: number,

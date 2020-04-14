@@ -65,16 +65,18 @@ const EventScoreTrendIndicator = styled(Icon)`
 
 export const EventScoreIcon = ({
   eventScore,
-  eventScoreTrendPositive,
+  eventScoreTrend,
   past,
   active,
 }) => (
   <TicketBackground past={past} active={active}>
     {eventScore}
-    <EventScoreTrendIndicator
-      size={8}
-      name={eventScoreTrendPositive ? 'arrowUp' : 'arrowDown'}
-      color={active ? colors.blue : colors.white}
-    />
+    {eventScoreTrend !== null && (
+      <EventScoreTrendIndicator
+        size={8}
+        name={eventScoreTrend ? 'arrowUp' : 'arrowDown'}
+        color={active ? colors.blue : colors.white}
+      />
+    )}
   </TicketBackground>
 );

@@ -30,12 +30,29 @@ export function* fetchAsync(action: FetchEventListAction): Saga {
     const { payload } = action;
     const events = yield call(eventService.getAll, payload);
 
-    const sorted = events.slice().sort((a, b) => {
-      return a.timestamp > b.timestamp ? 1 : -1;
+    const serializedEvents = events
+      .slice()
+      .sort((a, b) => {
+        return a.timestamp > b.timestamp ? 1 : -1;
+      })
+      .map((event) => {
+        const eventFactorsObjectKeys = Object.keys(event.factors);
+        if (eventFactorsObjectKeys.includes('eventScoreTrend')) return event;
+        else
+          return {
+            ...event,
+            factors: {
+              ...event.factors,
+              eventScoreTrend: null,
+            },
+          };
+      });
+    console.log('SERIALIZED', serializedEvents);
+    yield put({
+      type: types.FETCH_EVENT_LIST_SUCCESS,
+      payload: serializedEvents,
     });
-
-    yield put({ type: types.FETCH_EVENT_LIST_SUCCESS, payload: sorted });
-    yield put(actions.setVisibleEvents(sorted));
+    yield put(actions.setVisibleEvents(serializedEvents));
     yield call(initFuse, events);
   } catch (err) {
     yield put({ type: types.FETCH_EVENT_LIST_ERROR, payload: err });
