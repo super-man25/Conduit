@@ -176,7 +176,7 @@ export const UserWelcome = (props: Props) => {
             <FlexItem>
               <DropdownArrow
                 size={12}
-                name={isOpen ? 'arrowUp' : 'arrowDown'}
+                name={isOpen ? 'caretUp' : 'caretDown'}
                 color={colors.white}
               />
             </FlexItem>

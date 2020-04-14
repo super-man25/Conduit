@@ -14,7 +14,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
     </div>
     <Styled(Icon)
       color="#fff"
-      name="arrowUp"
+      name="caretUp"
       size={12}
     />
   </Flex>
@@ -53,7 +53,7 @@ exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
     </div>
     <Styled(Icon)
       color="#fff"
-      name="arrowDown"
+      name="caretDown"
       size={12}
     />
   </Flex>
@@ -209,7 +209,11 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
         width="12px"
       >
         <path
-          d="M0,6.5l12,12,12-12Z"
+          d={
+            Array [
+              "M0,6.5l12,12,12-12Z",
+            ]
+          }
         />
       </svg>
     </div>
@@ -348,7 +352,11 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
         width="12px"
       >
         <path
-          d="M0,6.5l12,12,12-12Z"
+          d={
+            Array [
+              "M0,6.5l12,12,12-12Z",
+            ]
+          }
         />
       </svg>
     </div>

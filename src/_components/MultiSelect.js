@@ -184,7 +184,7 @@ export const MultiSelect = ({ options, handleChange }) => {
           <DropdownArrow
             size={10}
             color={colors.blue}
-            name={isOpen ? 'arrowUp' : 'arrowDown'}
+            name={isOpen ? 'caretUp' : 'caretDown'}
           />
         </DefaultOption>
       )}

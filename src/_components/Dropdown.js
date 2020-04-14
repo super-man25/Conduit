@@ -103,7 +103,7 @@ export const Dropdown = ({ options, defaultOption, plain, handleChange }) => {
       <DropdownArrow
         size={10}
         color={colors.blue}
-        name={isOpen ? 'arrowUp' : 'arrowDown'}
+        name={isOpen ? 'caretUp' : 'caretDown'}
       />
       {isOpen && (
         <DropdownMenu

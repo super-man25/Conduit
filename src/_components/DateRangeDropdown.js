@@ -207,7 +207,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
               {from ? format(from, dateDisplayFormat) : startPlaceholder}
             </span>
             <DropdownIconWrapper active={fromIsOpen}>
-              <Icon size={24} name="arrowDown" />
+              <Icon size={24} name="caretDown" />
             </DropdownIconWrapper>
           </DropdownSelectedItem>
           {fromIsOpen && (
@@ -228,7 +228,7 @@ export class DateRangeDropdown extends React.Component<Props, State> {
           <DropdownSelectedItem dropdownOpen={toIsOpen}>
             <span>{to ? format(to, dateDisplayFormat) : endPlaceholder}</span>
             <DropdownIconWrapper active={toIsOpen}>
-              <Icon size={24} name="arrowDown" />
+              <Icon size={24} name="caretDown" />
             </DropdownIconWrapper>
           </DropdownSelectedItem>
           {toIsOpen && (

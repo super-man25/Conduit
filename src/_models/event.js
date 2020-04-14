@@ -1,11 +1,11 @@
 // @flow
-
 import type { GameDayWeather } from '_models';
 import type { EDScheduledJob } from './scheduledJob';
 
 type Factors = {
   eventScore: ?number,
   eventScoreModifier: number,
+  eventScoreTrendPositive: Boolean,
   spring: ?number,
   springModifier: number,
   velocityFactor: number,
