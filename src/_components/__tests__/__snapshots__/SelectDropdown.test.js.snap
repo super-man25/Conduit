@@ -64,11 +64,7 @@ exports[`<SelectDropdown /> renders correctly 1`] = `
           width="12px"
         >
           <path
-            d={
-              Array [
-                "M0,6.5l12,12,12-12Z",
-              ]
-            }
+            d="M0,6.5l12,12,12-12Z"
           />
         </svg>
       </span>

@@ -209,11 +209,7 @@ exports[`<Dropdown /> renders correctly with a selected item 1`] = `
         width="12px"
       >
         <path
-          d={
-            Array [
-              "M0,6.5l12,12,12-12Z",
-            ]
-          }
+          d="M0,6.5l12,12,12-12Z"
         />
       </svg>
     </div>
@@ -352,11 +348,7 @@ exports[`<Dropdown /> renders correctly with none selected 1`] = `
         width="12px"
       >
         <path
-          d={
-            Array [
-              "M0,6.5l12,12,12-12Z",
-            ]
-          }
+          d="M0,6.5l12,12,12-12Z"
         />
       </svg>
     </div>

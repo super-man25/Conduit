@@ -83,11 +83,7 @@ exports[`should render correctly 1`] = `
           width="24px"
         >
           <path
-            d={
-              Array [
-                "M0,18.5l12-12,12,12Z",
-              ]
-            }
+            d="M0,18.5l12-12,12,12Z"
           />
         </svg>
       </div>
@@ -102,11 +98,7 @@ exports[`should render correctly 1`] = `
           width="24px"
         >
           <path
-            d={
-              Array [
-                "M0,6.5l12,12,12-12Z",
-              ]
-            }
+            d="M0,6.5l12,12,12-12Z"
           />
         </svg>
       </div>
@@ -200,11 +192,7 @@ exports[`should render correctly with optional props 1`] = `
           width="24px"
         >
           <path
-            d={
-              Array [
-                "M0,18.5l12-12,12,12Z",
-              ]
-            }
+            d="M0,18.5l12-12,12,12Z"
           />
         </svg>
       </div>
@@ -219,11 +207,7 @@ exports[`should render correctly with optional props 1`] = `
           width="24px"
         >
           <path
-            d={
-              Array [
-                "M0,6.5l12,12,12-12Z",
-              ]
-            }
+            d="M0,6.5l12,12,12-12Z"
           />
         </svg>
       </div>

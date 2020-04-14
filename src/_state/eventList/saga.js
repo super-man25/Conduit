@@ -36,6 +36,7 @@ export function* fetchAsync(action: FetchEventListAction): Saga {
         return a.timestamp > b.timestamp ? 1 : -1;
       })
       .map((event) => {
+        if (!event.factors) return event;
         const eventFactorsObjectKeys = Object.keys(event.factors);
         if (eventFactorsObjectKeys.includes('eventScoreTrend')) return event;
         else
@@ -47,7 +48,6 @@ export function* fetchAsync(action: FetchEventListAction): Saga {
             },
           };
       });
-    console.log('SERIALIZED', serializedEvents);
     yield put({
       type: types.FETCH_EVENT_LIST_SUCCESS,
       payload: serializedEvents,
