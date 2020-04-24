@@ -36,6 +36,10 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
   }
 
+  button + button {
+    margin-left: 5px;
+  }
+
   #root {
     height: 100%;
   }

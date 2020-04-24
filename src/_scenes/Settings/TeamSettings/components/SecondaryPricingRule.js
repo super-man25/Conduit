@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+
 import {
-  SettingEditButton,
   PrimaryButton,
   NumberInputField,
   Flex,
@@ -12,7 +13,14 @@ import {
 import { withClickAway } from '_hoc';
 import { actions } from '_state/client';
 
-const ClickAwayDiv = withClickAway(Fragment);
+export const EditButton = styled(TextButton)`
+  padding: 0;
+  min-width: 0;
+  font-weight: bold;
+  margin-top: 15px;
+`;
+
+const ClickAwayDiv = withClickAway(Fragment, { style: { marginTop: 'auto' } });
 
 export class SecondaryPricingRulePresenter extends Component {
   state = {
@@ -113,7 +121,9 @@ export class SecondaryPricingRulePresenter extends Component {
             <TextButton onClick={this.toggleEdit}>Cancel</TextButton>
           </Fragment>
         ) : (
-          <SettingEditButton weight="bold" onClick={this.toggleEdit} />
+          <EditButton weight="bold" onClick={this.toggleEdit}>
+            Edit
+          </EditButton>
         )}
       </ClickAwayDiv>
     );

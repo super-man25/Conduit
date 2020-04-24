@@ -14,8 +14,6 @@ exports[`renders correctly with disabled prop 1`] = `
   background-color: #fff;
   border: 2px solid #007;
   color: #007;
-  -webkit-transition: border linear;
-  transition: border linear;
   color: #b44;
 }
 
@@ -30,9 +28,9 @@ exports[`renders correctly with disabled prop 1`] = `
 }
 
 .c0:active {
-  background-color: #3af;
-  color: #3af;
-  border-color: #3af;
+  background-color: #44b;
+  color: #44b;
+  border-color: #44b;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 
@@ -65,8 +63,6 @@ exports[`renders correctly with no props 1`] = `
   background-color: #fff;
   border: 2px solid #007;
   color: #007;
-  -webkit-transition: border linear;
-  transition: border linear;
   color: #b44;
 }
 
@@ -81,9 +77,9 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0:active {
-  background-color: #3af;
-  color: #3af;
-  border-color: #3af;
+  background-color: #44b;
+  color: #44b;
+  border-color: #44b;
   box-shadow: 0 0 3px rgba(56,169,219,100);
 }
 

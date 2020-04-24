@@ -1,11 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { SecondaryPricingRulePresenter } from '../components/SecondaryPricingRule';
-import {
-  SettingEditButton,
-  PrimaryButton,
-  NumberInputField,
-} from '_components';
+import { PrimaryButton, NumberInputField } from '_components';
+import { EditButton } from '../components/SecondaryPricingRule';
 
 describe('<SecondaryPricingRulePresenter />', () => {
   const defaultProps = {
@@ -28,7 +25,7 @@ describe('<SecondaryPricingRulePresenter />', () => {
   it('Can handle switching focus correctly', () => {
     const wrapper = mount(<SecondaryPricingRulePresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'handleFocus');
-    wrapper.find(SettingEditButton).simulate('click');
+    wrapper.find(EditButton).simulate('click');
     expect(wrapper.find(NumberInputField)).toHaveLength(2);
     wrapper
       .find(NumberInputField)
@@ -43,7 +40,7 @@ describe('<SecondaryPricingRulePresenter />', () => {
   it('Will run saveSettings when save is clicked', () => {
     const wrapper = mount(<SecondaryPricingRulePresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'saveSettings');
-    wrapper.find(SettingEditButton).simulate('click');
+    wrapper.find(EditButton).simulate('click');
     wrapper.find(PrimaryButton).simulate('click');
     expect(spy).toHaveBeenCalled();
     wrapper.unmount();
@@ -53,7 +50,7 @@ describe('<SecondaryPricingRulePresenter />', () => {
     const wrapper = mount(<SecondaryPricingRulePresenter {...defaultProps} />);
     const spy = jest.spyOn(wrapper.instance(), 'update');
     const event = { target: { name: 'percent', value: 15 } };
-    wrapper.find(SettingEditButton).simulate('click');
+    wrapper.find(EditButton).simulate('click');
     wrapper
       .find(NumberInputField)
       .at(0)

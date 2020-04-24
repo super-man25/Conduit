@@ -30,6 +30,7 @@ export const PrimaryButton = styled(Button)`
   transition: opacity 100ms ease-out;
   color: ${colors.white};
   background-color: ${colors.blue};
+  border: 2px solid ${colors.blue};
 
   &:disabled {
     color: ${colors.gray};
@@ -51,7 +52,6 @@ export const SecondaryButton = styled(Button)`
   background-color: ${colors.white};
   border: 2px solid ${colors.blue};
   color: ${colors.blue};
-  transition: border linear;
 
   &:disabled {
     border: 2px solid ${colors.gray};
@@ -60,9 +60,9 @@ export const SecondaryButton = styled(Button)`
   }
 
   &:active {
-    background-color: ${colors.neonBlue};
-    color: ${colors.neonBlue};
-    border-color: ${colors.neonBlue};
+    background-color: ${colors.lightBlue};
+    color: ${colors.lightBlue};
+    border-color: ${colors.lightBlue};
     box-shadow: ${shadows.ACTIVE_BUTTON};
   }
 
@@ -82,6 +82,6 @@ export const TextButton = styled(Button)`
   }
 
   &:hover:not(:disabled) {
-    color: ${colors.neonBlue};
+    color: ${colors.lightBlue};
   }
 `;

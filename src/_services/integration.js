@@ -1,4 +1,4 @@
-import { get, put } from '_helpers/api';
+import { get, put, post } from '_helpers/api';
 import { denormalize } from './normalizers/client';
 
 function getIntegrations(clientId) {
@@ -18,8 +18,12 @@ function updateSecondaryPricingRule(body) {
   });
 }
 
+function disableClientIntegration(integrationId) {
+  return post(`clientIntegrations/disable/${integrationId}`);
+}
+
 function handleResponseError(error) {
-  console.log(error);
+  console.error(error);
   switch (error.code) {
     default:
       error.toString = () => 'Error saving client integration';
@@ -31,4 +35,5 @@ export const integrationService = {
   getIntegrations,
   toggleIntegration,
   updateSecondaryPricingRule,
+  disableClientIntegration,
 };

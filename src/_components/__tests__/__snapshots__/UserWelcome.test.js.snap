@@ -55,7 +55,7 @@ exports[`renders correctly with a valid user prop 1`] = `
 }
 
 .c1:hover:not(:disabled) {
-  color: #3af;
+  color: #44b;
 }
 
 .c0 {

@@ -8,59 +8,6 @@ exports[`<TeamIntegrations /> render correctly 1`] = `
     >
       Integrations
     </styled.h5>
-    <styled.span
-      weight="300"
-    >
-      <i>
-        Primary Integration
-      </i>
-    </styled.span>
-    <styled.hr />
-    <Flex
-      flexWrap="wrap"
-    >
-      <FlexItem
-        flex="0 1 auto"
-        key="0"
-        margin="1rem"
-      >
-        <Integration
-          isActive={true}
-          isPrimary={true}
-          name="tickets.com"
-          onChange={[Function]}
-        />
-      </FlexItem>
-    </Flex>
-  </Styled(styled.div)>
-  <Styled(styled.div)
-    marginTop="4rem"
-  >
-    <styled.span
-      weight="300"
-    >
-      <i>
-        Secondary Integrations
-      </i>
-    </styled.span>
-    <styled.hr />
-    <Flex
-      flexWrap="wrap"
-    >
-      <FlexItem
-        flex="0 1 auto"
-        height="245px"
-        key="0"
-        margin="1rem"
-      >
-        <Integration
-          isActive={true}
-          isPrimary={false}
-          name="seatgeek.com"
-          onChange={[Function]}
-        />
-      </FlexItem>
-    </Flex>
   </Styled(styled.div)>
 </Styled(Flex)>
 `;

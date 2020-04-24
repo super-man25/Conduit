@@ -1,4 +1,4 @@
-import { clientService, integrationService } from '_services';
+import { clientService } from '_services';
 import { actions, reducer } from '_state/client';
 import { actions as alertActions } from '_state/alert';
 
@@ -10,13 +10,8 @@ import {
   UPDATE_ASYNC,
   UPDATE_SUCCESS,
   UPDATE_ERROR,
-  UPDATE_INTEGRATION,
 } from '_state/client/actions';
-import {
-  getClientAsync,
-  updateClientAsync,
-  toggleIntegrationAsync,
-} from '_state/client/saga';
+import { getClientAsync, updateClientAsync } from '_state/client/saga';
 import { types as authTypes } from '_state/auth';
 import { call, put, select } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
@@ -176,19 +171,6 @@ describe('saga workers', () => {
     const fail = generator.clone();
     expect(fail.throw(error).value).toEqual(
       put({ type: UPDATE_ERROR, payload: error })
-    );
-  });
-
-  it('should handle toggle', () => {
-    const id = 1;
-    const isActive = true;
-    const action = actions.toggleIntegration({ id, isActive });
-    const generator = cloneableGenerator(toggleIntegrationAsync)(action);
-    expect(generator.next({ id, isActive }).value).toEqual(
-      call(integrationService.toggleIntegration, id, { isActive })
-    );
-    expect(generator.next({ isActive }).value).toEqual(
-      put({ type: UPDATE_INTEGRATION, payload: { id, isActive } })
     );
   });
 });

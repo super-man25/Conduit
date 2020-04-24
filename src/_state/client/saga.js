@@ -13,11 +13,12 @@ import {
   FETCH_INTEGRATIONS_ASYNC,
   FETCH_INTEGRATIONS_SUCCESS,
   FETCH_INTEGRATIONS_ERROR,
-  TOGGLE_INTEGRATION,
-  UPDATE_INTEGRATION,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
+  DISABLE_INTEGRATION_ASYNC,
+  DISABLE_INTEGRATION_ERROR,
+  DISABLE_INTEGRATION_SUCCESS,
 } from './actions';
 import { RESET } from '../app/actions';
 
@@ -55,11 +56,17 @@ export function* getIntegrationsAsync() {
   }
 }
 
-export function* toggleIntegrationAsync({ payload: { id, isActive } }) {
-  const result = yield call(integrationService.toggleIntegration, id, {
-    isActive,
-  });
-  yield put({ type: UPDATE_INTEGRATION, payload: { id, ...result } });
+export function* disableIntegrationAsync({ payload: integrationId }) {
+  const result = yield call(
+    integrationService.disableClientIntegration,
+    integrationId
+  );
+
+  if (result.errors) {
+    yield put({ type: DISABLE_INTEGRATION_ERROR, payload: result.errors });
+  } else {
+    yield put({ type: DISABLE_INTEGRATION_SUCCESS, payload: result });
+  }
 }
 
 export function* updateSecondaryPricingRuleAsync(body) {
@@ -95,8 +102,8 @@ function* watchGetClientIntegrationsAsync() {
   yield takeEvery(FETCH_INTEGRATIONS_ASYNC, getIntegrationsAsync);
 }
 
-function* watchToggleClientIntegrationAsync() {
-  yield takeEvery(TOGGLE_INTEGRATION, toggleIntegrationAsync);
+function* watchDisableClientIntegrationAsync() {
+  yield takeEvery(DISABLE_INTEGRATION_ASYNC, disableIntegrationAsync);
 }
 
 function* watchUpdateSecondaryPricingRuleAsync() {
@@ -110,6 +117,6 @@ export default {
   watchGetClientAsync,
   watchUpdateClientAsync,
   watchGetClientIntegrationsAsync,
-  watchToggleClientIntegrationAsync,
+  watchDisableClientIntegrationAsync,
   watchUpdateSecondaryPricingRuleAsync,
 };

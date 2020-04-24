@@ -1,15 +1,14 @@
 // @flow
-
 import React from 'react';
-import { TeamIntegrations } from '../components/TeamIntegrations';
 import { bindActionCreators } from 'redux';
-import { actions as clientActions } from '_state/client';
 import { connect } from 'react-redux';
+
+import { actions as clientActions } from '_state/client';
+import { TeamIntegrations } from '../components/TeamIntegrations';
 
 type Props = {
   clientActions: {
     fetchIntegrations: () => void,
-    toggleIntegration: ({ id: number, isActive: boolean }) => void,
   },
   clientState: {
     integrations: Array<any>,
@@ -21,20 +20,15 @@ export class TeamIntegrationsContainer extends React.Component<Props> {
     this.props.clientActions.fetchIntegrations();
   }
 
-  handleIntegrationToggle = ({ id }: { id: number }, isActive: boolean) => {
-    this.props.clientActions.toggleIntegration({ id, isActive });
-  };
-
   render() {
     const { integrations } = this.props.clientState;
-    const primary = integrations.filter((i) => i.isPrimary);
-    const secondary = integrations.filter((i) => !i.isPrimary);
+    const primaryIntegrations = integrations.filter((i) => i.isPrimary);
+    const secondaryIntegrations = integrations.filter((i) => !i.isPrimary);
 
     return (
       <TeamIntegrations
-        primary={primary}
-        secondary={secondary}
-        handleIntegrationToggle={this.handleIntegrationToggle}
+        primaryIntegrations={primaryIntegrations}
+        secondaryIntegrations={secondaryIntegrations}
       />
     );
   }

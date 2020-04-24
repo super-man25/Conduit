@@ -34,7 +34,7 @@ exports[`renders correctly with no props 1`] = `
 }
 
 .c0:hover:not(:disabled) {
-  color: #3af;
+  color: #44b;
 }
 
 .c0::before {
@@ -80,7 +80,7 @@ exports[`renders correctly with noEdit prop 1`] = `
 }
 
 .c0:hover:not(:disabled) {
-  color: #3af;
+  color: #44b;
 }
 
 .c0::before {

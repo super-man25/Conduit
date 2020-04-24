@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 
-export const withClickAway = (WrappedComponent) => {
+export const withClickAway = (WrappedComponent, containerProps) => {
   const displayName = WrappedComponent.displayName || WrappedComponent.name;
 
   class Clickaway extends Component {
@@ -47,6 +47,7 @@ export const withClickAway = (WrappedComponent) => {
           ref={(node) => {
             this.wrappedRef = node;
           }}
+          {...containerProps}
         >
           <WrappedComponent {...passProps} />
         </div>

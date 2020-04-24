@@ -65,9 +65,10 @@ const Portal = ({ children }: PortalProps) => {
 type Props = {
   children: Node,
   closeModal: () => void,
+  className: string,
 };
 
-export const Modal = ({ children, closeModal }: Props) => {
+export const Modal = ({ children, closeModal, className }: Props) => {
   const modalRef = useRef();
 
   useClickAway({
@@ -78,7 +79,9 @@ export const Modal = ({ children, closeModal }: Props) => {
   return (
     <Portal>
       <ModalOverlay />
-      <ModalContent ref={modalRef}>{children}</ModalContent>
+      <ModalContent ref={modalRef} className={className}>
+        {children}
+      </ModalContent>
     </Portal>
   );
 };

@@ -1,5 +1,4 @@
 // @flow
-
 import {
   FETCH_ASYNC,
   FETCH_SUCCESS,
@@ -13,9 +12,11 @@ import {
   UPDATE_SECONDARY_PRICING_RULE_ASYNC,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS,
   UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR,
-  UPDATE_INTEGRATION,
   RESET_DIRTY_PRICING_INTERVAL,
   SET_PRICING_INTERVAL,
+  DISABLE_INTEGRATION_ASYNC,
+  DISABLE_INTEGRATION_SUCCESS,
+  DISABLE_INTEGRATION_ERROR,
 } from './actions';
 import type { Action } from './actions';
 
@@ -126,17 +127,21 @@ export default function clientReducer(
         loading: false,
         error: action.payload,
       };
-    case UPDATE_INTEGRATION:
-      const { id, isActive, modifiedAt } = action.payload;
+    case DISABLE_INTEGRATION_ASYNC:
       return {
         ...state,
-        integrations: state.integrations.map((integration) => {
-          if (integration.id === id) {
-            return { ...integration, isActive, modifiedAt };
-          }
-
-          return integration;
-        }),
+        loading: true,
+      };
+    case DISABLE_INTEGRATION_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+    case DISABLE_INTEGRATION_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
       };
     default:
       return state;

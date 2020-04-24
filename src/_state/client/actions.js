@@ -18,8 +18,9 @@ export const UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS =
   'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC_SUCCESS';
 export const UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR =
   'client/UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR';
-export const TOGGLE_INTEGRATION = 'client/TOGGLE_INTEGRATION';
-export const UPDATE_INTEGRATION = 'client/UPDATE_INTEGRATION';
+export const DISABLE_INTEGRATION_ASYNC = 'client/DISABLE_INTEGRATION';
+export const DISABLE_INTEGRATION_SUCCESS = 'client/DISABLE_INTEGRATION_SUCCESS';
+export const DISABLE_INTEGRATION_ERROR = 'client/DISABLE_INTEGRATION_ERROR';
 export const SET_PRICING_INTERVAL = 'client/SET_PRICING_INTERVAL';
 export const RESET_DIRTY_PRICING_INTERVAL =
   'client/RESET_DIRTY_PRICING_INTERVAL';
@@ -41,15 +42,7 @@ export type Action =
   | { type: typeof UPDATE_SECONDARY_PRICING_RULE_ASYNC_ERROR, payload?: Error }
   | { type: typeof FETCH_INTEGRATIONS_ASYNC, payload: boolean }
   | { type: typeof FETCH_INTEGRATIONS_SUCCESS, payload: Array<EDIntegration> }
-  | { type: typeof FETCH_INTEGRATIONS_ERROR, payload?: Error }
-  | {
-      type: typeof TOGGLE_INTEGRATION,
-      payload: { id: number, isActive: boolean },
-    }
-  | {
-      type: typeof UPDATE_INTEGRATION,
-      payload: { id: number, isActive: boolean, modifiedAt: Date },
-    };
+  | { type: typeof FETCH_INTEGRATIONS_ERROR, payload?: Error };
 
 // Action creators
 function fetch(): Action {
@@ -72,10 +65,10 @@ function fetchIntegrations(): Action {
   };
 }
 
-function toggleIntegration(payload: { id: number, isActive: boolean }): Action {
+function disableIntegration(integrationId: number): Action {
   return {
-    type: TOGGLE_INTEGRATION,
-    payload,
+    type: DISABLE_INTEGRATION_ASYNC,
+    payload: integrationId,
   };
 }
 
@@ -109,7 +102,7 @@ export default {
   fetch,
   update,
   fetchIntegrations,
-  toggleIntegration,
+  disableIntegration,
   setPricingInterval,
   resetDirtyPricingInterval,
   updateSecondaryPricingRule,
