@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PeriodicRevenueChartLegend /> should render correctly 1`] = `
-<Fragment>
-  <ChartLegendItem
-    color="#007"
-    label="Revenue"
-  />
-</Fragment>
-`;
+exports[`<PeriodicRevenueChartLegend /> should render correctly 1`] = `ShallowWrapper {}`;
 
-exports[`<PeriodicRevenueChartLegend /> should render correctly when projections are present 1`] = `
-<Fragment>
-  <ChartLegendItem
-    color="#007"
-    label="Actual Revenue"
-  />
-  <ChartLegendItem
-    color="#3af"
-    label="Projected Revenue"
-  />
-</Fragment>
-`;
+exports[`<PeriodicRevenueChartLegend /> should render correctly when projections are present 1`] = `ShallowWrapper {}`;

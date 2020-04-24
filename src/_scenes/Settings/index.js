@@ -130,8 +130,8 @@ export const Settings = ({ authState, authActions }: Props) => (
               component={route.main}
             />
           ) : (
-            <Route key={index} path={route.path} component={route.main} />
-          )
+              <Route key={index} path={route.path} component={route.main} />
+            )
         )}
       </PrimaryContent>
     </DualContent>

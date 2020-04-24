@@ -59,13 +59,7 @@ function getScrollIndex(events, activeEventId, filtered) {
 }
 
 export const EventList = () => {
-  const loading = useSelector(
-    (state) =>
-      state.eventList.loading ||
-      state.season.loading ||
-      state.seasonStat.loading ||
-      state.teamStat.loading
-  );
+  const loading = useSelector((state) => state.eventList.loading);
   const activeEventId = useSelector(eventListSelectors.selectActiveEventListId);
   const eventListState = useSelector((state) => state.eventList);
   const { visibleEvents: events, filter } = eventListState;

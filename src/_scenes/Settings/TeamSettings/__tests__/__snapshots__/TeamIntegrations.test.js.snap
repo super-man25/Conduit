@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TeamIntegrations /> render correctly 1`] = `
-<Styled(Flex)>
-  <Styled(styled.div)>
-    <styled.h5
-      type="secondary"
-    >
-      Integrations
-    </styled.h5>
-  </Styled(styled.div)>
-</Styled(Flex)>
-`;
+exports[`<TeamIntegrations /> render correctly 1`] = `ShallowWrapper {}`;

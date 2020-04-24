@@ -1,88 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DefaultColumnHeaderPresenter /> should render correctly 1`] = `
-<styled.div
-  active={false}
-  sortable={true}
->
-  <Styled(Styled(styled.div))
-    position="relative"
-  >
-    <SortIcon
-      filterDirection="asc"
-      isFiltered={false}
-      onClick={[MockFunction]}
-    />
-    <Flex
-      align="center"
-      marginLeft="1.25rem"
-    >
-      Label
-    </Flex>
-  </Styled(Styled(styled.div))>
-</styled.div>
-`;
+exports[`<DefaultColumnHeaderPresenter /> should render correctly 1`] = `ShallowWrapper {}`;
 
-exports[`<DefaultColumnHeaderPresenter /> should render correctly when disableSort is true 1`] = `
-<styled.div
-  active={false}
-  sortable={false}
->
-  <Styled(Styled(styled.div))
-    position="relative"
-  >
-    <Flex
-      align="center"
-      marginLeft={false}
-    >
-      Label
-    </Flex>
-  </Styled(Styled(styled.div))>
-</styled.div>
-`;
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when disableSort is true 1`] = `ShallowWrapper {}`;
 
-exports[`<DefaultColumnHeaderPresenter /> should render correctly when isFiltered is true 1`] = `
-<styled.div
-  active={true}
-  sortable={true}
->
-  <Styled(Styled(styled.div))
-    position="relative"
-  >
-    <SortIcon
-      filterDirection="asc"
-      isFiltered={true}
-      onClick={[MockFunction]}
-    />
-    <Flex
-      align="center"
-      marginLeft="1.25rem"
-    >
-      Label
-    </Flex>
-  </Styled(Styled(styled.div))>
-</styled.div>
-`;
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when isFiltered is true 1`] = `ShallowWrapper {}`;
 
-exports[`<DefaultColumnHeaderPresenter /> should render correctly when sort isFiltered is true 1`] = `
-<styled.div
-  active={true}
-  sortable={true}
->
-  <Styled(Styled(styled.div))
-    position="relative"
-  >
-    <SortIcon
-      filterDirection="asc"
-      isFiltered={true}
-      onClick={[MockFunction]}
-    />
-    <Flex
-      align="center"
-      marginLeft="1.25rem"
-    >
-      Label
-    </Flex>
-  </Styled(Styled(styled.div))>
-</styled.div>
-`;
+exports[`<DefaultColumnHeaderPresenter /> should render correctly when sort isFiltered is true 1`] = `ShallowWrapper {}`;

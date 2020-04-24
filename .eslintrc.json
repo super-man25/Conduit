@@ -1,15 +1,9 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "react-app",
-    "plugin:prettier/recommended",
-    "plugin:flowtype/recommended",
-    "prettier/react"
+    "react-app"
   ],
-  "plugins": ["jest", "redux-saga", "flowtype", "import"],
-  "env": {
-    "jest/globals": true
-  },
+  "plugins": [],
   "rules": {
     "flowtype/generic-spacing": [0, "never"],
     "camelcase": 2

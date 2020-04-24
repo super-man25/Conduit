@@ -1,18 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PeriodicRevenueTooltip /> should render correctly 1`] = `
-<ChartTooltip
-  bodyJson={
-    Object {
-      "Avg. Ticket Price": "-$1.00",
-      "Inventory": "100",
-      "Revenue": "$100.00",
-    }
-  }
-  headerText="1529336865706"
-/>
-`;
+exports[`<PeriodicRevenueTooltip /> should render correctly 1`] = `ShallowWrapper {}`;
 
-exports[`<PeriodicRevenueTooltip /> should render correctly when active is false 1`] = `""`;
+exports[`<PeriodicRevenueTooltip /> should render correctly when active is false 1`] = `ShallowWrapper {}`;
 
-exports[`<PeriodicRevenueTooltip /> should render correctly when no payload is passed 1`] = `""`;
+exports[`<PeriodicRevenueTooltip /> should render correctly when no payload is passed 1`] = `ShallowWrapper {}`;

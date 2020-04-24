@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -25,7 +24,7 @@ type Props = {
 class App extends React.Component<Props> {
   componentDidMount() {
     this.props.fetchUser();
-    if (process.env.REACT_APP_ENVIRONMENT === 'PROD') {
+    if (process.env.REACT_APP_ENVIRONMENT === 'prod') {
       const script = document.createElement('script');
       script.innerHTML = `
         window['_fs_debug'] = false;

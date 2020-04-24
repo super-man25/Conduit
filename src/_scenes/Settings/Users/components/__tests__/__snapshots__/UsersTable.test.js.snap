@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UsersTable /> renders correctly with a userList 1`] = `
-<AutoSizer
-  disableHeight={false}
-  disableWidth={false}
-  onResize={[Function]}
-  style={Object {}}
->
-  <Component />
-</AutoSizer>
-`;
+exports[`<UsersTable /> renders correctly with a userList 1`] = `ShallowWrapper {}`;
 
-exports[`<UsersTable /> renders correctly without a userList 1`] = `
-<AutoSizer
-  disableHeight={false}
-  disableWidth={false}
-  onResize={[Function]}
-  style={Object {}}
->
-  <Component />
-</AutoSizer>
-`;
+exports[`<UsersTable /> renders correctly without a userList 1`] = `ShallowWrapper {}`;

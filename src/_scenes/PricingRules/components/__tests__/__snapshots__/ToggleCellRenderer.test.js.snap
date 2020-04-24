@@ -1,14 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ToggleCellRenderer /> should render correctly 1`] = `
-<Flex
-  align="center"
-  margin="1rem"
->
-  <Toggle
-    handleChange={[Function]}
-    isCheckedDefault={false}
-    isDisabled={true}
-  />
-</Flex>
-`;
+exports[`<ToggleCellRenderer /> should render correctly 1`] = `ShallowWrapper {}`;

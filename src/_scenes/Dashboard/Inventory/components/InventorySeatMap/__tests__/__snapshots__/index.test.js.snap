@@ -97,43 +97,4 @@ exports[`EventInventorySeatMap should render correctly 1`] = `
 </div>
 `;
 
-exports[`EventInventorySeatMap should render correctly when showmap is true 1`] = `
-<Styled(styled.div)>
-  <Flex
-    align="center"
-  >
-    <MenuIcon
-      fill="#667"
-      height={30}
-      onClick={[Function]}
-      styles={
-        Object {
-          "cursor": "pointer",
-        }
-      }
-      width={30}
-    />
-    <Styled(Styled(styled.div))
-      height="28px"
-      margin="0 0.75rem"
-      width="2px"
-    />
-    <SeatIcon
-      fill="#007"
-      height={28}
-      onClick={[Function]}
-      styles={
-        Object {
-          "cursor": "pointer",
-        }
-      }
-      width={28}
-    />
-  </Flex>
-  <Flex
-    justify="center"
-  >
-    <Connect(SeatMapPresenter) />
-  </Flex>
-</Styled(styled.div)>
-`;
+exports[`EventInventorySeatMap should render correctly when showmap is true 1`] = `ShallowWrapper {}`;

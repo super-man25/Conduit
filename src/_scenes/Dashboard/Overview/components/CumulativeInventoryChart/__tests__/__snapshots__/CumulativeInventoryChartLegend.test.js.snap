@@ -1,24 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `
-<Fragment>
-  <ChartLegendItem
-    color="#007"
-    label="Inventory"
-  />
-</Fragment>
-`;
+exports[`<CumulativeInventoryChartLegend /> should render correctly 1`] = `ShallowWrapper {}`;
 
-exports[`<CumulativeInventoryChartLegend /> should render correctly when projections are present 1`] = `
-<Fragment>
-  <ChartLegendItem
-    color="#007"
-    label="Actual Inventory"
-  />
-  <ChartLegendItem
-    color="#3af"
-    dashed={true}
-    label="Projected Inventory"
-  />
-</Fragment>
-`;
+exports[`<CumulativeInventoryChartLegend /> should render correctly when projections are present 1`] = `ShallowWrapper {}`;

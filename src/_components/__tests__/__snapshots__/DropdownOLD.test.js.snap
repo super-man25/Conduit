@@ -1,82 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Dropdown /> opens the dropdown when clicked 1`] = `
-<DropdownContainer
-  onClick={[Function]}
-  onClickAway={[Function]}
->
-  <Flex
-    align="center"
-    justify="space-between"
-  >
-    <div>
-      Option 1
-    </div>
-    <Styled(Icon)
-      color="#fff"
-      name="caretUp"
-      size={12}
-    />
-  </Flex>
-  <DropdownMenu
-    show={true}
-  >
-    <DropdownMenuOption
-      isActive={false}
-      key="0"
-      onClick={[Function]}
-    >
-      Option 1
-    </DropdownMenuOption>
-    <DropdownMenuOption
-      isActive={false}
-      key="1"
-      onClick={[Function]}
-    >
-      Option 2
-    </DropdownMenuOption>
-  </DropdownMenu>
-</DropdownContainer>
-`;
+exports[`<Dropdown /> opens the dropdown when clicked 1`] = `ShallowWrapper {}`;
 
-exports[`<Dropdown /> opens the dropdown when clicked 2`] = `
-<DropdownContainer
-  onClick={[Function]}
-  onClickAway={[Function]}
->
-  <Flex
-    align="center"
-    justify="space-between"
-  >
-    <div>
-      Option 1
-    </div>
-    <Styled(Icon)
-      color="#fff"
-      name="caretDown"
-      size={12}
-    />
-  </Flex>
-  <DropdownMenu
-    show={false}
-  >
-    <DropdownMenuOption
-      isActive={false}
-      key="0"
-      onClick={[Function]}
-    >
-      Option 1
-    </DropdownMenuOption>
-    <DropdownMenuOption
-      isActive={false}
-      key="1"
-      onClick={[Function]}
-    >
-      Option 2
-    </DropdownMenuOption>
-  </DropdownMenu>
-</DropdownContainer>
-`;
+exports[`<Dropdown /> opens the dropdown when clicked 2`] = `ShallowWrapper {}`;
 
 exports[`<Dropdown /> renders correctly with a selected item 1`] = `
 .c2 {

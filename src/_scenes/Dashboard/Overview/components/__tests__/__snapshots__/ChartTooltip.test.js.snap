@@ -1,27 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ChartTooltip /> should render correctly 1`] = `
-<styled.div>
-  <styled.header>
-    <styled.p>
-      text
-    </styled.p>
-  </styled.header>
-  <styled.section>
-    <Styled(Component)
-      align="center"
-      justify="space-between"
-      key="key"
-    >
-      <styled.h3>
-        key
-      </styled.h3>
-      <styled.p
-        className="private"
-      >
-        value
-      </styled.p>
-    </Styled(Component)>
-  </styled.section>
-</styled.div>
-`;
+exports[`<ChartTooltip /> should render correctly 1`] = `ShallowWrapper {}`;

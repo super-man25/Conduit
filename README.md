@@ -47,5 +47,3 @@ Note: _Sample workspace settings in vscode for project_
   }
 }
 ```
-
-Note: _Sample jsconfig for absolute path imports in vscode_

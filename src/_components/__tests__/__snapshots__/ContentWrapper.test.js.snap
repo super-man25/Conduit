@@ -19,7 +19,7 @@ exports[`renders correctly with login prop 1`] = `
   gray: #667;
   light-gray: #ddd;
   white-smoke: #f5f5f5;
-  background-image: url(stadium.jpg);
+  background-image: url(test-file-stub);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 70% auto;

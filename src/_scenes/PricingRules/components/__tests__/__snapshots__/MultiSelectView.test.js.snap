@@ -1,36 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MultiSelectView /> should render correctly 1`] = `
-Array [
-  <styled.div
-    isActive={true}
-    key="0"
-    onClick={[Function]}
-  >
-    <Flex
-      align="center"
-    >
-      <styled.input
-        checked={true}
-        disabled={false}
-        onChange={[Function]}
-      />
-    </Flex>
-  </styled.div>,
-  <styled.div
-    isActive={false}
-    key="1"
-    onClick={[Function]}
-  >
-    <Flex
-      align="center"
-    >
-      <styled.input
-        checked={false}
-        disabled={false}
-        onChange={[Function]}
-      />
-    </Flex>
-  </styled.div>,
-]
-`;
+exports[`<MultiSelectView /> should render correctly 1`] = `ShallowWrapper {}`;

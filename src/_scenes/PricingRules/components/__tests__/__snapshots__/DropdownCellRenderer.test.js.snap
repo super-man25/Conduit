@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DropdownCellRenderer /> should render correctly 1`] = `
-<Flex
-  align="center"
->
-  <Styled(styled.p)>
-    -
-  </Styled(styled.p)>
-</Flex>
-`;
+exports[`<DropdownCellRenderer /> should render correctly 1`] = `ShallowWrapper {}`;

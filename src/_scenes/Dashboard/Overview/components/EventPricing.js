@@ -1,5 +1,4 @@
 // @flow
-
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -133,9 +132,7 @@ export const EventPricingPresenter = (props: Props) => {
     });
   };
 
-  const toggleIsBroadcasting = (e: Object) => {
-    const { checked } = e.target;
-
+  const toggleIsBroadcasting = (checked) => {
     const verb = checked ? 'enable' : 'disable';
     const msg = `Are you sure you want to ${verb} pricing for this event?`;
 
@@ -153,11 +150,9 @@ export const EventPricingPresenter = (props: Props) => {
               Pricing
             </H4>
             <Toggle
-              isChecked={isBroadcast}
-              onChange={toggleIsBroadcasting}
+              isCheckedDefault={isBroadcast}
+              handleChange={toggleIsBroadcasting}
               isDisabled={togglingBroadcasting}
-              size="small"
-              title={isBroadcast ? 'Disable pricing' : 'Enable pricing'}
             />
             {togglingBroadcasting && <Text marginLeft="1.5rem">Saving...</Text>}
           </Flex>

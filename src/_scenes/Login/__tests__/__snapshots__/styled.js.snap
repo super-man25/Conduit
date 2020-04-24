@@ -75,6 +75,6 @@ exports[`Login styled components <LogoImg /> should render correctly 1`] = `
 <img
   alt="Some alt text"
   className="c0"
-  src="eventdynamiclogo.svg"
+  src="test-file-stub"
 />
 `;

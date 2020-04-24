@@ -57,7 +57,7 @@ exports[`renders correctly with invalid prop 1`] = `
   background: #fff;
   display: block;
   background: #fff;
-  background-image: url(invalid.png);
+  background-image: url(test-file-stub);
   background-repeat: no-repeat;
   background-position: right center;
   width: 100%;
@@ -80,8 +80,8 @@ exports[`renders correctly with invalid prop 1`] = `
 }
 
 .c0:-webkit-autofill {
-  -webkit-animation-name: iNHLNs;
-  animation-name: iNHLNs;
+  -webkit-animation-name: fyaVcq;
+  animation-name: fyaVcq;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -148,7 +148,7 @@ exports[`renders correctly with valid prop 1`] = `
   background: #fff;
   display: block;
   background: #fff;
-  background-image: url(valid.png);
+  background-image: url(test-file-stub);
   background-repeat: no-repeat;
   background-position: right center;
   width: 100%;
@@ -171,8 +171,8 @@ exports[`renders correctly with valid prop 1`] = `
 }
 
 .c0:-webkit-autofill {
-  -webkit-animation-name: bOhPIr;
-  animation-name: bOhPIr;
+  -webkit-animation-name: fyaVcq;
+  animation-name: fyaVcq;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }

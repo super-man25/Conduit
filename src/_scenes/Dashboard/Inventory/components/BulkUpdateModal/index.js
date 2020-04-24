@@ -206,7 +206,7 @@ export class BulkUpdateModalPresenter extends Component {
               <Label>Pricing</Label>
               <Toggle
                 isChecked={value}
-                onChange={this.updateIsListed}
+                handleChange={this.updateIsListed}
                 size="small"
               />
             </Field>

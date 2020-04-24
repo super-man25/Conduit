@@ -1,76 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SortIcon /> should render correctly when filtered asc 1`] = `
-<Styled(Flex)
-  align="center"
-  direction="column"
-  justify="center"
-  onClick={[MockFunction]}
->
-  <ExpandLessIcon
-    fill="#007"
-    height={14}
-    styles={
-      Object {
-        "marginBottom": -4,
-      }
-    }
-    width={14}
-  />
-  <ExpandMoreIcon
-    fill="#667"
-    height={14}
-    width={14}
-  />
-</Styled(Flex)>
-`;
+exports[`<SortIcon /> should render correctly when filtered asc 1`] = `ShallowWrapper {}`;
 
-exports[`<SortIcon /> should render correctly when filtered desc 1`] = `
-<Styled(Flex)
-  align="center"
-  direction="column"
-  justify="center"
-  onClick={[MockFunction]}
->
-  <ExpandLessIcon
-    fill="#667"
-    height={14}
-    styles={
-      Object {
-        "marginBottom": -4,
-      }
-    }
-    width={14}
-  />
-  <ExpandMoreIcon
-    fill="#007"
-    height={14}
-    width={14}
-  />
-</Styled(Flex)>
-`;
+exports[`<SortIcon /> should render correctly when filtered desc 1`] = `ShallowWrapper {}`;
 
-exports[`<SortIcon /> should render correctly when not filtered 1`] = `
-<Styled(Flex)
-  align="center"
-  direction="column"
-  justify="center"
-  onClick={[MockFunction]}
->
-  <ExpandLessIcon
-    fill="#667"
-    height={14}
-    styles={
-      Object {
-        "marginBottom": -4,
-      }
-    }
-    width={14}
-  />
-  <ExpandMoreIcon
-    fill="#667"
-    height={14}
-    width={14}
-  />
-</Styled(Flex)>
-`;
+exports[`<SortIcon /> should render correctly when not filtered 1`] = `ShallowWrapper {}`;

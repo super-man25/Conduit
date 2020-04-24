@@ -1,27 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SelectableHeaderPresenter /> should render correctly when allSelected is false 1`] = `
-<Flex
-  align="center"
-  justify="center"
->
-  <input
-    checked={false}
-    onChange={[MockFunction]}
-    type="checkbox"
-  />
-</Flex>
-`;
+exports[`<SelectableHeaderPresenter /> should render correctly when allSelected is false 1`] = `ShallowWrapper {}`;
 
-exports[`<SelectableHeaderPresenter /> should render correctly when allSelected is true 1`] = `
-<Flex
-  align="center"
-  justify="center"
->
-  <input
-    checked={false}
-    onChange={[MockFunction]}
-    type="checkbox"
-  />
-</Flex>
-`;
+exports[`<SelectableHeaderPresenter /> should render correctly when allSelected is true 1`] = `ShallowWrapper {}`;
