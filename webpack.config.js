@@ -58,7 +58,7 @@ module.exports = (env) => {
       }),
     ],
     output: {
-      publicPath: '/public',
+      publicPath: '/',
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.[hash].js',
     },
