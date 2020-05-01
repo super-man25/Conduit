@@ -173,6 +173,7 @@ describe('saga workers', () => {
 
   it('should handle search', () => {
     const events = [{ name: 'Cardinals at Mets' }];
+    const filteredEvents = [{ item: { name: 'Cardinals at Mets' }}];
     const action = actions.filterEventList('Some Filter');
     const generator = cloneableGenerator(handleSearchInput)(action);
 
@@ -186,7 +187,7 @@ describe('saga workers', () => {
       call(fuzzySearch, 'cardinals')
     );
 
-    expect(filter.next(events).value).toEqual(
+    expect(filter.next(filteredEvents).value).toEqual(
       put({ type: types.SET_VISIBLE_EVENTS, payload: events })
     );
 
