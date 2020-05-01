@@ -73,7 +73,9 @@ export function* handleSearchInput(): Saga {
   }
 
   const result = yield call(fuzzySearch, filter);
-  yield put(actions.setVisibleEvents(result));
+  yield put(actions.setVisibleEvents(result.map(({ item }) => ({
+    ...item,
+  }))));
 }
 
 // Sagas

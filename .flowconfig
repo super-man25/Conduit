@@ -17,5 +17,6 @@ module.name_mapper='_scenes' -> '<PROJECT_ROOT>/src/_scenes'
 module.name_mapper='_services' -> '<PROJECT_ROOT>/src/_services'
 module.name_mapper='_state' -> '<PROJECT_ROOT>/src/_state'
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+esproposal.optional_chaining=enable
 
 [strict]

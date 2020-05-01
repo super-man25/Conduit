@@ -251,7 +251,7 @@ export const EventListItem = ({
   };
 
   const calculateEventScore = (event: EDEvent) => {
-    const { eventScore, eventScoreModifier, velocityFactor } = event.factors;
+    const { eventScore, eventScoreModifier, velocityFactor } = event.factors || {};
     if (eventScore === undefined) {
       return '--';
     }
@@ -294,7 +294,7 @@ export const EventListItem = ({
           <EventDetail>
             <EventScoreIcon
               eventScore={calculateEventScore(event)}
-              eventScoreTrend={event.factors.eventScoreTrend}
+              eventScoreTrend={event.factors?.eventScoreTrend}
               past={past}
               active={active}
             />
